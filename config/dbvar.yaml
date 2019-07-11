@@ -1,19 +1,23 @@
-prefix
-  - dbvaro: http://purl.jp/bio/10/dbvar#
-  - dbvar_variant_region: http://purl.jp/bio/10/dbvar/variant_region/
-  - dbvar_variant_calln: http://purl.jp/bio/10/dbvar/variant_call/
-  - faldo: http://biohackathon.org/resource/faldo#
-  - obo: http://purl.obolibrary.org/obo/
-  - refeq: http://identifiers.org/refseq/
-  - rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
-  - dc: http://purl.org/dc/elements/1.1/
-  - xsd: http://www.w3.org/2001/XMLSchema#
+prefix {
+  "rdf" => "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "rdfs" => "http://www.w3.org/2000/01/rdf-schema#",
+  "owl" => "http://www.w3.org/2002/07/owl#",
+  "xsd" => "http://www.w3.org/2001/XMLSchema#",
+  "dc" => "http://purl.org/dc/elements/1.1/",
+  "dbvaro" => "http://purl.jp/bio/10/dbvar#",
+  "dbvar_variant_region" => "http://purl.jp/bio/10/dbvar/variant_region/",
+  "dbvar_variant_calln" => "http://purl.jp/bio/10/dbvar/variant_call/",
+  "faldo" => "http://biohackathon.org/resource/faldo#",
+  "obo" => "http://purl.obolibrary.org/obo/",
+  "refeq" => "http://identifiers.org/refseq/",
+}
 
-subject: dbvaro:VariantRegion
-  predicate:
-    - rdf:type
-      object: owl:Class
-      value: obo:SO_0001019
+subject "dbvaro:VariantRegion" [
+  predicate "rdf:type" {
+    object: owl:Class
+    value: obo:SO_0001019
+  },
+    
     - dc:identifier
       object: xsd:string
       example: "nsv945265"

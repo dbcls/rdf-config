@@ -1,5 +1,7 @@
 # RDF config (senbero)
 
+![](assets/senbero-logo.png)
+
 ## TODO
 
 * design
