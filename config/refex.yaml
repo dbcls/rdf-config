@@ -22,20 +22,23 @@ subjects:
       label: "A RefEx entry"
     predicates:
       refexo:refexSample:
-        object: refexo:RefExSample
+        object:
+          type: refexo:RefExSample
+          example: "A RefEx sample"
       refexo:exValue:
         object:
           type: refexo:TPM
           example: "An expression value"
       dct:identifier:
-        object: xsd:string
-        example: "An identifier"
+        object:
+          type: xsd:string
+          example: "An identifier"
+          index: true
       # can two rdfs:seeAlso co-exist? nope
       rdfs:seeAlso:
-        object: xxxx:NCBIGeneID or xxxx:AffymetrixID or xsd:string (ID) or a Resource URI
-        example: "foobar"  # NCBI Gene for the Fantom 5 CAGE dataset, Affymetrix probeset for the GeneChip dataset
-    textindex:
-      - dct:identifier
+        object:
+          type: xxxx:NCBIGeneID or xxxx:AffymetrixID or xsd:string (ID) or a Resource URI
+          example: "foobar"  # NCBI Gene for the Fantom 5 CAGE dataset, Affymetrix probeset for the GeneChip dataset
   refexo:RefExSample:
     attributes:
       type: refexo:RefExSample

@@ -8,7 +8,27 @@ class RDFconf
     @yaml = YAML.load(yaml)
   end
 
-  def schema(*args)
+  def schema
+  end
+
+  def indent(level)
+    "    " * level
+  end
+
+  def senbero
+    level = 0
+    @yaml["subjects"].each do |subject, hash|
+      attr = hash["attributes"]
+      puts "<#{subject}> (#{attr['label']})"
+      level += 1
+      predicates = hash["predicates"]
+      predicates.each do |predicate, hash|
+        puts "#{indent(level)}|-- <#{predicate}>"
+        object = hash["object"]
+        puts "#{indent(level)}|       `-- <#{object['type']}> (#{object['example']})"
+      end
+      level -= 1
+    end
   end
 
   def stanza(*args)

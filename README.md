@@ -5,6 +5,7 @@
 ## TODO
 
 * design
+  * provides spec for validation of data type & cardinality to generate ShEx
 * implement
 * test
 
@@ -14,6 +15,9 @@
 * generate SPARQL queries
 * generate schema chart
 * generate TogoStanza
-* generate set of APIs for SPARQList, thus for data science
+* generate dataset for machine learning
+  * set of APIs for SPARQList
+  * bulk download
+  * data frame
 
 

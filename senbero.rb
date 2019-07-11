@@ -6,7 +6,8 @@ yaml = File.read(ARGV.shift)
 
 conf = RDFconf.new(yaml)
 
-p conf
+#p conf
+conf.senbero
 #p conf.yaml["subject"]
 
 
