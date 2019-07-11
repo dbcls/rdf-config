@@ -9,45 +9,97 @@ class RDFconf
   end
 
   def schema
-  end
-
-  def indent(level)
-    "    " * level
+    # TODO: draw SVG or HTML/CSS diagram (as TogoStanza?)
   end
 
   def senbero
-    level = 0
-    @yaml["subjects"].each do |subject, hash|
-      attr = hash["attributes"]
-      puts "<#{subject}> (#{attr['label']})"
-      level += 1
-      predicates = hash["predicates"]
-      predicates.each do |predicate, hash|
-        puts "#{indent(level)}|-- <#{predicate}>"
+    subjects.each do |subject, hash|
+      puts "#{subject} (#{subject_label(hash)})"
+      predicates(hash).each do |predicate, hash|
+        puts "    |-- #{predicate}"
         object = hash["object"]
-        puts "#{indent(level)}|       `-- <#{object['type']}> (#{object['example']})"
+        puts "    |       `-- #{object['type']} (#{object['example']})"
       end
-      level -= 1
     end
   end
 
-  def stanza(*args)
+  def stanza
+    stanzas.each do |stanza, hash|
+      puts "# #{stanza} #{endpoint}"
+      puts
+      prefixes.each do |prefix, uri|
+        puts "PREFIX #{prefix}: <#{uri}>"
+      end
+      puts
+      puts "SELECT *"
+      graphs.each do |uri|
+        puts "FROM <#{uri}>"
+      end
+      puts "WHERE {"
+      variables(hash).each do |var, predicate|
+        puts "  ?s #{predicate} ?#{var} ."
+      end
+      puts "}"
+      puts
+    end
+  end
+
+  def draw_schema_chart
+  end
+
+  def generate_stanza(*args)
+  end
+
+  def generate_shex
+  end
+
+  def sparql_search
   end
 
   # object of given predicates will be subjected to the text search index
   def search(*args)
   end
 
-  def draw_schema_chart
+  private
+
+  def endpoint
+    @yaml["sparql"]["endpoint"]
   end
 
-  def sparql_stanza
+  def graphs
+    @yaml["sparql"]["graphs"]
   end
 
-  def sparql_search
+  def prefixes
+    @yaml["prefixes"]
   end
 
-  def generate_shex
+  def subjects
+    @yaml["subjects"]
+  end
+
+  def attributes(hash)
+    hash["attributes"]
+  end
+
+  def subject_label(hash)
+    attributes(hash)["label"]
+  end
+
+  def subject_type(hash)
+    attributes(hash)["type"]
+  end
+  
+  def predicates(hash)
+    hash["predicates"]
+  end
+
+  def stanzas
+    @yaml["stanzas"]
+  end
+
+  def variables(hash)
+    hash["variables"]
   end
 
 end
