@@ -1,0 +1,54 @@
+prefix
+  - dbvaro: http://purl.jp/bio/10/dbvar#
+  - dbvar_variant_region: http://purl.jp/bio/10/dbvar/variant_region/
+  - dbvar_variant_calln: http://purl.jp/bio/10/dbvar/variant_call/
+  - faldo: http://biohackathon.org/resource/faldo#
+  - obo: http://purl.obolibrary.org/obo/
+  - refeq: http://identifiers.org/refseq/
+  - rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  - dc: http://purl.org/dc/elements/1.1/
+  - xsd: http://www.w3.org/2001/XMLSchema#
+
+subject: dbvaro:VariantRegion
+  predicate:
+    - rdf:type
+      object: owl:Class
+      value: obo:SO_0001019
+    - dc:identifier
+      object: xsd:string
+      example: "nsv945265"
+    - dc:references
+      object: Resource
+      example: <https://www.ncbi.nlm.nih.gov/dbvar/variants/nsv945265/>
+    - faldo:location
+      object: faldo:Region
+    - dbvaro:variant_call
+      object: dbvaro:VariantCall
+  textindex:
+    - dc:identifier
+  example: <http://purl.jp/bio/10/dbvar/variant_region/nsv945265>
+
+subject "dbvaro:VariantCall" {
+  predicate "rdf:type" {
+    object "owl:Class" {
+      value: "obo:SO_000015"
+      example: deletion
+    }
+  }
+  predicate "dc:identifier" {
+    object: xsd:string
+  }
+}
+
+stanza: RefExEntryStanza
+  properties:
+    - refexo:RefExEntry#refexo:refexSample
+    - refexo:RefExEntryrefexo:exValue
+    - refexo:RefExEntry#rdfs:seeAlso/refexo:RefExSample#description
+
+stanza: RefExSampleStanza
+  properties:
+    - refexo:RefExSample#
+
+
+

@@ -1,4 +1,4 @@
-# DSL for RDF
+# RDF config (senbero)
 
 ## TODO
 
