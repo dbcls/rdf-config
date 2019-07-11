@@ -1,0 +1,154 @@
+{
+  "sparql": {
+    "endpoint": "https://integbio.jp/rdf/sparql",
+    "graphs": [
+      "http://refex.dbcls.jp/rdf/fantom5"
+    ]
+  },
+  "prefixes": {
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dct": "http://purl.org/dc/terms/",
+    "refexo": "http://purl.jp/bio/01/refexo#"
+  },
+  "schema": null,
+  "subjects": {
+    "refexo:RefExEntry": {
+      "attributes": {
+        "type": "refexo:RefExEntry",
+        "label": "A RefEx entry"
+      },
+      "predicates": {
+        "refexo:refexSample": {
+          "object": "refexo:RefExSample"
+        },
+        "refexo:exValue": {
+          "object": {
+            "type": "refexo:TPM",
+            "example": "An expression value"
+          }
+        },
+        "dct:identifier": {
+          "object": "xsd:string",
+          "example": "An identifier"
+        },
+        "rdfs:seeAlso": {
+          "object": "xxxx:NCBIGeneID or xxxx:AffymetrixID or xsd:string (ID) or a Resource URI",
+          "example": "foobar"
+        }
+      },
+      "textindex": [
+        "dct:identifier"
+      ]
+    },
+    "refexo:RefExSample": {
+      "attributes": {
+        "type": "refexo:RefExSample",
+        "label": "A RefEx sample"
+      },
+      "predicates": {
+        "dct:identifier": {
+          "object": {
+            "type": "xsd:string",
+            "example": "An identifier"
+          }
+        },
+        "refexo:organism": {
+          "object": {
+            "type": "Resource",
+            "example": "A taxonomy ID"
+          }
+        },
+        "refexo:refexTissueClass10": {
+          "object": {
+            "type": "refexo:AnatomicalClassification10"
+          }
+        },
+        "refexo:refexTissueClass40": {
+          "object": {
+            "type": "refexo:AnatomicalClassification40"
+          }
+        },
+        "refexo:sex": {
+          "object": {
+            "type": "xsd:string",
+            "example": "Male/Female"
+          }
+        },
+        "refexo:refexAlphabeticalUniqOrder": {
+          "object": {
+            "type": "xsd:string || xsd:integer",
+            "example": "A description || A number"
+          }
+        },
+        "refexo:refexRefinedDescription": {
+          "object": {
+            "type": "xsd:string",
+            "example": "A description"
+          }
+        },
+        "refexo:refexSampleCategory": {
+          "object": {
+            "type": "xsd:string",
+            "example": "A category"
+          }
+        },
+        "refexo:sampleReference": {
+          "object": {
+            "type": "blank"
+          }
+        },
+        "refexo:sampleReference/refexo:belongsToCellType": {
+          "object": {
+            "type": "UBERON",
+            "example": "A UBERON class"
+          }
+        },
+        "refexo:sampleReference/refexo:belongsToDisease": {
+          "object": {
+            "type": "CO",
+            "example": "A Cell Ontology"
+          }
+        },
+        "refexo:sampleReference/refexo:belongsToDevelopmentSite": {
+          "object": {
+            "type": "UBERON",
+            "example": "A UBERON class"
+          }
+        },
+        "refexo:sampleReference/refexo:sample": {
+          "object": {
+            "type": "xsd:string",
+            "example": "A BioSample entry"
+          }
+        }
+      }
+    }
+  },
+  "stanzas": {
+    "RefExStanza": {
+      "arguments": {
+        "refexo:RefExEntry#dct:identifier": {
+          "example": "RES00000436"
+        }
+      },
+      "predicates": {
+        "id": "refexo:RefExEntry#dct:identifier",
+        "value": "refexo:RefExEntry#refexo:exValue",
+        "link": "refexo:RefExEntry#rdfs:seeAlso",
+        "sample": "refexo:RefExEntry#refexo:refexSample/refexo:RefExSample#dct:identifier",
+        "organism": "refexo:RefExEntry#refexo:refexSample/refexo:RefExSample#refexo:organism"
+      }
+    }
+  },
+  "datasets": {
+    "id_value": {
+      "predicates": {
+        "id": "refexo:RefExEntry#dct:identifier",
+        "value": "refexo:RefExEntry#refexo:exValue"
+      }
+    }
+  }
+}

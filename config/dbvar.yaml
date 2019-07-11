@@ -1,58 +1,91 @@
-prefix {
-  "rdf" => "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-  "rdfs" => "http://www.w3.org/2000/01/rdf-schema#",
-  "owl" => "http://www.w3.org/2002/07/owl#",
-  "xsd" => "http://www.w3.org/2001/XMLSchema#",
-  "dc" => "http://purl.org/dc/elements/1.1/",
-  "dbvaro" => "http://purl.jp/bio/10/dbvar#",
-  "dbvar_variant_region" => "http://purl.jp/bio/10/dbvar/variant_region/",
-  "dbvar_variant_calln" => "http://purl.jp/bio/10/dbvar/variant_call/",
-  "faldo" => "http://biohackathon.org/resource/faldo#",
-  "obo" => "http://purl.obolibrary.org/obo/",
-  "refeq" => "http://identifiers.org/refseq/",
-}
+# Funamushi (a.k.a. RDF config): JSON schema -> YAML -> JSON?
+#
+# TODO: provides spec for validation of data type & cardinality to generate ShEx
+#
 
-subject "dbvaro:VariantRegion" [
-  predicate "rdf:type" {
-    object: owl:Class
-    value: obo:SO_0001019
-  },
-    
-    - dc:identifier
-      object: xsd:string
-      example: "nsv945265"
-    - dc:references
-      object: Resource
-      example: <https://www.ncbi.nlm.nih.gov/dbvar/variants/nsv945265/>
-    - faldo:location
-      object: faldo:Region
-    - dbvaro:variant_call
-      object: dbvaro:VariantCall
+sparql:
+  endpoint: http://ep.dbcls.jp/sparql-med2rdf
+  graphs:
+    - http://med2rdf.org/dbvar
+
+prefixes:
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  owl: http://www.w3.org/2002/07/owl#
+  xsd: http://www.w3.org/2001/XMLSchema#
+  dct: http://purl.org/dc/terms/
+  xsd: http://www.w3.org/2001/XMLSchema#
+  dbvaro: http://purl.jp/bio/10/dbvar#
+  dbvar_variant_region: http://purl.jp/bio/10/dbvar/variant_region/
+  dbvar_variant_calln: http://purl.jp/bio/10/dbvar/variant_call/
+  faldo: http://biohackathon.org/resource/faldo#
+  obo: http://purl.obolibrary.org/obo/
+  refeq: http://identifiers.org/refseq/
+
+subject:
+  attributes:
+    type: obo:SO_0001019  # copy_number_variation
+    label: Variant Region
+    example: <http://purl.jp/bio/10/dbvar/variant_region/nsv945265>
+  predicates:
+    dc:identifier:
+      object:
+        type: xsd:string
+        example: "nsv945265"
+    dc:references:
+      object:
+        type: Resource
+        example: <https://www.ncbi.nlm.nih.gov/dbvar/variants/nsv945265/>
+    faldo:location:
+      object:
+        type: faldo:Region
+    dbvaro:variant_call:
+      object:
+        type: dbvaro:VariantCall
+    http://purl.jp/bio/10/dbvar#hoge:
+      object:
+        type: fuga
   textindex:
     - dc:identifier
-  example: <http://purl.jp/bio/10/dbvar/variant_region/nsv945265>
+    - dc:references
 
-subject "dbvaro:VariantCall" {
-  predicate "rdf:type" {
-    object "owl:Class" {
-      value: "obo:SO_000015"
-      example: deletion
-    }
-  }
-  predicate "dc:identifier" {
-    object: xsd:string
-  }
-}
+subject:
+  attributes:
+    type: obo:SO_0000159  # deletion
+    label: Variant Call
+    example: <http://purl.jp/bio/10/dbvar/variant_call/nssv1677641>
+  predicates:
+    dc:identifier:
+      object:
+        type: xsd:string
+        example: "nssv1677641"
+    dbvaro:reference_sequence:
+      object:
+        type: xsd:string
+        example: "~"  # means a place holder for a sequence that is too long to include in the Variant_seq or Reference_seq attribute
+    dbvaro:variant_sequence:
+      object:
+        type: xsd:string
+        example: "~"
+    dbvaro:zygosity:
+      object:
+        type: xsd:string
+        example: ""
 
-stanza: RefExEntryStanza
-  properties:
-    - refexo:RefExEntry#refexo:refexSample
-    - refexo:RefExEntryrefexo:exValue
-    - refexo:RefExEntry#rdfs:seeAlso/refexo:RefExSample#description
+stanza:
+  name: DbVarStanza
+  arguments:
+    obo:SO_0001019#dc:identifier:
+      example: "nsv945265"
+  predicates:
+    id: obo:SO_0001019#dc:identifier
+    dbvar: obo:SO_0001019#dc:reference
+    location_type: obo:SO_0001019#faldo:location/rdf:begin/rdf:type
+    location_from: obo:SO_0001019#faldo:location/faldo:begin/faldo:position || obo:SO_0001019#faldo:location/faldo:begin/faldo:begin/faldo:position
+    location_to: obo:SO_0001019#faldo:location/faldo:end/faldo:position || obo:SO_0001019#faldo:location/faldo:end/faldo:end/faldo:position
+    refence_begin: obo:SO_0001019#faldo:location/faldo:begin/faldo:reference || obo:SO_0001019#faldo:location/faldo:begin/faldo:begin/faldo:reference
+    reference_end: obo:SO_0001019#faldo:location/faldo:end/faldo:reference || obo:SO_0001019#faldo:location/faldo:end/faldo:end/faldo:reference
 
-stanza: RefExSampleStanza
-  properties:
-    - refexo:RefExSample#
 
 
 
