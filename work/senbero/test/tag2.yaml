@@ -1,0 +1,14 @@
+%TAG !! tag:example.net,2000:
+---
+!!str 1         # グローバルタグ !<tag:example.net,2000:str>
+...
+---
+!foo "bar"      # ローカル・タグ !<!foo>
+...
+%TAG ! tag:example.net,2000:app/
+---
+!foo "bar"      # グローバル・タグ !<tag:example.net,2000:app/foo>
+...
+%TAG ! !schwarzschildprototype
+---
+!marktwo a regular folding parasol  # ローカルタグ !<!schwarzschildprototypemarktwo>

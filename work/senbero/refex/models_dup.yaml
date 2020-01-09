@@ -1,0 +1,49 @@
+refexo:RefExEntry:
+  - refexo:refexSample:
+      - refexo:RefExSample: "A RefEx sample"
+  - refexo:exValue:
+      - refexo:TPM: "An expression value"
+  - dct:identifier:
+      - xsd:string: "An identifier" # RFX0000113860
+  - rdfs:seeAlso:
+      - rdfs:Resource: NCBI Gene # for the Fantom 5 CAGE dataset
+      - rdfs:Resource: Affymetrix probeset # for the GeneChip dataset
+
+refexo:RefExSample:
+ - dct:identifier:
+    - xsd:string: "An identifier"
+ - refexo:organism:
+    - rdfs:Resource: "A taxonomy ID"
+ - refexo:refexTissueClass10:
+    - refexo:AnatomicalClassification10: "refexo:AnatomicalClassification10"
+ - refexo:refexTissueClass40:
+    - refexo:AnatomicalClassification40
+ - refexo:sex:
+    - xsd:string: "Male/Female"
+ # Statements exclusively for samples from the Fantom5
+ - refexo:refexAlphabeticalUniqOrder:  # duplication in the schema diagram
+    - xsd:integer: "A description || A number"
+ - refexo:refexRefinedDescription:
+    - xsd:string: "A description"
+ - refexo:refexSampleCategory:
+    - xsd:string: "A category"
+ - refexo:sampleReference:
+    - blank
+ - refexo:sampleReference/refexo:belongsToCellType:
+    - UBERON: "A UBERON class"
+ - refexo:sampleReference/refexo:belongsToDisease:
+    - CO: "A Cell Ontology"
+ - refexo:sampleReference/refexo:belongsToDevelopmentSite:
+    - UBERON: "A UBERON class"
+ - refexo:sampleReference/refexo:sample:
+    - xsd:string: "A BioSample entry"
+ - refexo:sampleReference/refexo:nest:
+    - blank: hoge:Class
+ - refexo:sampleReference/refexo:nest/rdfs:label:
+    - xsd:string: "hoge"
+ - refexo:sampleReference/refexo:nest/refexo:nest2:
+    - xsd:integer: 1
+ - refexo:sampleReference/refexo:nest/refexo:nestnest:
+    - blank: "A hoge fuga"
+ - refexo:sampleReference/refexo:nest/refexo:nestnest/foo:bar:
+    - xsd:integer: 3
