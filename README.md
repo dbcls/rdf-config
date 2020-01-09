@@ -82,5 +82,3 @@ WHERE {
 }
 ```
 
-![](http://www.dehara.com/contents/wp-content/uploads/2015/03/77c650a3c5c6436250d4c40955f96bf1-354x500.jpg)
-
