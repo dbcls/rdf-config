@@ -1,0 +1,69 @@
+mccv:MCCV_000001:
+  dcterms:identifier:
+    xsd:string: NBRC_00012843
+  mccv:MCCV_000010:
+    xsd:string: NBRC 12843
+  mccv:MCCV_000038:
+    mccv:MCCV_000040: Bacteria
+  skos:prefLabel:
+    xsd:string: Kitasatospora aureofaciens
+  skos:altLabel:
+    xsd:string: Streptomyces aureofaciens
+  mccv:MCCV_000065:
+    rdfs:Resource: taxonomy:1894
+  mccv:MCCV_000046:
+    xsd:integer: 1
+  mccv:MCCV_000017:
+    xsd:integer: 1
+  sio:SIO_000216:
+    []:
+      sio:SIO_000221:
+        obo:UO_0000027: degree Celsius
+      sio:SIO_000300:
+        xsd:integer: 28
+  mccv:MCCV_000073:
+    []:
+      mccv:MCCV_000018:
+        anyURI: http://purl.jp/bio/103/nite/medium/NBRC_M000227
+      mccv:MCCV_000019:
+        anyURI: http://purl.jp/bio/103/nite/medium/NBRC_M000707
+  mccv:MCCV_000024:
+    # [mccv:MCCV_000001] と記述すると found unexpected ':' while scanning a plain scalar というエラーになる
+    (mccv:MCCV_000001):
+      mccv:MCCV_000025:
+        anyURI: https://www.dsmz.de/catalogues/details/culture/DSM-40127.html
+      dcterms:identifier:
+        xsd:string: DSM 40127
+  mccv:MCCV_000027:
+    xsd:string: IFO 12843 <- SAJ <- OWU (ISP 5127) <- Lederle Labs. (E. Backus, A-377)
+  mccv:MCCV_000028:
+    - []:
+       rdf:type:
+         - mccv:MCCV_000006 (Sample)
+         - sio:SIO_001050
+       mccv:MCCV_000072:
+         []:
+           sio:SIO_000008:
+             meo:MEO_0000007
+           mccv:MCCV_000030:
+             xsd:string: Soil, USA
+    - []:
+       rdf:type:
+         - mccv:MCCV_000006 (Sample)
+         - sio:SIO_001050
+       mccv:MCCV_000072:
+         (mccv:MCCV_000008):
+           rdfs:label:
+             xsd:string: USA
+           mccv:MCCV_000030:
+             xsd:string: Soil, USA
+           sio:SIO_000008:
+             obo:GAZ_00600942
+  dcterms:references:
+    anyURI: pubmed:14657141
+  mccv:MCCV_000033:
+    xsd:string: |-
+      Chlortetracycline
+      (aureomycin);production
+  mccv:MCCV_000076:
+    anyURI: http://www.wfcc.info/ccinfo/collection/by_id/825
