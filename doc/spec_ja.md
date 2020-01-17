@@ -25,7 +25,7 @@ RDF データモデルは基本的に YAML に準拠した下記の構造で（�
 
 ### 主語
 
-主語の URI の例を記述する。主語には rdf:type (a) および rdfs:label または dct:identifier を追記することを強く推奨する。
+主語の URI の例を記述する。主語には rdf:type (a) を必ず指定すること。さらに rdfs:label または dct:identifier を追記することを強く推奨する。
 
 主語が URI の場合：
 ```
