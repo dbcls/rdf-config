@@ -84,8 +84,7 @@ CURIE/QName も文字列リテラルになってしまうが、prefixies.yaml �
 サンプル例を１行で記述する場合：
 ```
 - Subject my:subject1:
-  - a:
-    - type: my:Class
+  - a: my:Class
   - my:predicate1:
     - string_label: This is my value
   - my:predicate2:
@@ -99,8 +98,7 @@ CURIE/QName も文字列リテラルになってしまうが、prefixies.yaml �
   - my:refer:
     - other_subject: OtherSubject  # 同じモデルファイル内か、入力に与える他のモデルファイル内で主語として使われている主語名
 - OtherSubject my:other_subject1:
-  - a:
-    - type: my:OtherClass
+  - a: my:OtherClass
 ```
 
 目的語の例が長い場合は YAML の記法で | を用いることでインデントした部分を複数行リテラルとして扱われる。
