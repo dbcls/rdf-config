@@ -5,7 +5,7 @@
 RDF データモデルは基本的に YAML に準拠した下記の構造で（順序を保存し、重複した出現を許容するために）ネストした配列でもたせる。インデントがズレているとエラーになること（行頭にスペースとタブを混在させないようにすべき）、主語・述語がそれぞれがキーとなるため末尾に : をつけることに注意。
 
 ```
-- 主語名 (主語の例):
+- 主語名 主語の例:
   - 述語:
     - 目的語名1: 目的語の例1
   - 述語:
@@ -29,11 +29,11 @@ RDF データモデルは基本的に YAML に準拠した下記の構造で（�
 
 ### 主語
 
-主語の URI の例を記述する。主語には rdf:type (a) を必ず指定すること。さらに rdfs:label または dct:identifier を追記することを強く推奨する。
+主語名につづいて、空白区切りで主語の URI の例を記述する（省略可）。主語には rdf:type (a) を必ず指定すること。さらに rdfs:label または dct:identifier を追記することを強く推奨する。
 
 主語が URI の場合：
 ```
-- Entry (<http://example.org/mydb/entry/1>):
+- Entry <http://example.org/mydb/entry/1>:
   - a: mydb:Entry  # 型が一つの場合
   - a:             # 型が複数の場合
     - mydb:Entry
@@ -49,7 +49,7 @@ RDF データモデルは基本的に YAML に準拠した下記の構造で（�
 
 主語が CURIE/QName の場合：
 ```
-- Entry (mydb:1):
+- Entry mydb:1:
   - a: mydb:Entry
 （以下同様）
 ```
@@ -61,23 +61,31 @@ RDF データモデルは基本的に YAML に準拠した下記の構造で（�
 （以下同様）
 ```
 
-TODO：主語については、GraphQLでの型名（変数名）、RDFでの型（URI)、サンプル例（URI)の３つを与える必要があり、RDFでの型とサンプル例は複数になることもあり得る。
+主語については、GraphQLでの型名（変数名）、RDFでの型（URI)、サンプル例（URI)の３つを与える必要があり、RDFでの型とサンプル例は複数になることもあり得る。複数のサンプル例を載せたい場合はスペース区切りで列挙する。
+
+```
+- Entry mydb:1 mydb:2:
+  - a: mydb:Entry
+（以下同様）
+```
 
 ### 述語
 
-主語にぶら下がる述語を列挙する。必要なら同じ述語を繰り返して記述しても良い。
+主語にぶら下がる述語を URI (<http://...>) か CURIE/QName (prefix:local_part) で配列として列挙する。
 
 ### 目的語
 
 目的語の例は YAML パーザが型を推定するので、文字列（特にクオートは不要）、数値、日付などはそのまま記述できる。
 URI が文字列リテラルになってしまうため、<> で囲まれた文字列は特別に URI 扱いする。
 CURIE/QName も文字列リテラルになってしまうが、prefixies.yaml に定義されているプレフィックスで始まる文字列は特別に CURIE/QName と解釈する。
-目的語が他の RDF モデルを参照する場合は、キーにそのモデルのクラス（my:Datatype など）を、バリューに目的語の例としてインスタンス（my:instance1 など）を記述する。
-このインスタンスの URI は他の RDF モデルでの主語の例と一致させること。
+
+目的語が他の RDF モデルを参照する場合は、目的語に参照先の主語名を記述する。
 
 サンプル例を１行で記述する場合：
 ```
-- Subject (my:subject):
+- Subject my:subject1:
+  - a:
+    - type: my:Class
   - my:predicate1:
     - string_label: This is my value
   - my:predicate2:
@@ -86,16 +94,19 @@ CURIE/QName も文字列リテラルになってしまうが、prefixies.yaml �
     - link_url: <http://example.org/sample/uri>
   - my:predicate4:
     - link_alt: my:sample123
-  - my:predicate5:
-    - my:Datatype: my:instance1  # 同じモデルファイル内で主語の例として使われている URI
   - rdfs:seeAlso:
     - xref: <http://example.org/sample/uri>
+  - my:refer:
+    - other_subject: OtherSubject  # 同じモデルファイル内か、入力に与える他のモデルファイル内で主語として使われている主語名
+- OtherSubject my:other_subject1:
+  - a:
+    - type: my:OtherClass
 ```
 
 目的語の例が長い場合は YAML の記法で | を用いることでインデントした部分を複数行リテラルとして扱われる。
 
 ```
-- Subject (my:subject):
+- Subject my:subject:
   - my:predicate:
     - value: |
         long long line of
@@ -104,20 +115,21 @@ CURIE/QName も文字列リテラルになってしまうが、prefixies.yaml �
 ```
 
 言語タグ（"hoge"@en, "ほげ"@ja など）は下記のように指定すれば良さそう。
+（'' で囲まないと YAML としてエラーになる）
 
 ```
-- Subject (my:subject):
+- Subject my:subject:
   - my:predicate:
     - name: '"hoge"@en'
 ```
 
-TODO: ＜変数名ラベル付きの場合、要調整＞ リテラルの^^による型指定（"123"^^xsd:string など）は下記のように指定し、目的語の例が URI ではなくリテラルの場合に型指定と解釈すれば良さそう。
+リテラルの^^による型指定（"123"^^xsd:string など）は下記のように指定すれば良さそう。
+（'' で囲まないと YAML としてエラーになる）
 
 ```
-- Subject (my:subject):
-  - my:predicate5:
-    - my:Datatype: my:instance1  # 同じモデルファイル内で主語の例として使われている URI
+- Subject my:subject:
   - my:predicate:
-    - xsd:integer: 123
+    - myvalue: '"123"^^xsd:integer'
 ```
+
 
