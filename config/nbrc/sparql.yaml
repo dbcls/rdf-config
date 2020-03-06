@@ -1,0 +1,45 @@
+sparql:
+  description: Obtain taxonomy ID and preferred label of a bioresource 
+  parameters:
+    mccv:MCCV_000001:
+      dct:identifier: entry_id
+  subject: Culture
+  variables: [nbrc_id, clade, name, alias, taxid, attribute, habitat]
+    #mccv:MCCV_000001:
+    #  mccv:MCCV_000065: taxid 
+    #  skos:prefLabel: label
+    #mccv:MCCV_000007:
+    #  mccv:MCCV_000030: isolation
+
+---
+
+# Obtain taxonomy ID and preferred label of a bioresource
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX pubmed: <http://rdf.ncbi.nlm.nih.gov/pubmed/>
+PREFIX taxonomy: <http://identifiers.org/taxonomy/>
+PREFIX sio: <http://semanticscience.org/resource/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX mccv: <http://purl.jp/bio/01/mccv#>
+PREFIX meo: <http://purl.jp/bio/11/meo/>
+PREFIX mpo: <http://purl.jp/bio/10/mpo/>
+PREFIX nbrc: <http://purl.jp/bio/103/nite/cultures/>
+
+SELECT ?taxid ?label
+WHERE {
+  VALUES ?entry_id { {{entry_id }} }
+  ?s1
+    a mccv:MCCV_000001 ;
+    dct:identifier ?entry_id ;
+    mccv:MCCV_000065 ?taxid ;
+    skos:prefLabel ?label .
+    mccv:MCCV_000028/mccv:MCCV_000072 [
+      a mccv:MCCV_000007 ;
+      mccv:MCCV_000030 ?isolation .
+    ]
+}
+

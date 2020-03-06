@@ -1,0 +1,40 @@
+- RefEx_Entry <http://purl.jp/bio/01/refex/RFX0016539731>:
+    - a: refexo:RefExEntry
+    - refexo:exValue:
+        - ex_value: Ex value
+    - dct:identifier:
+        - refex_id: RFX0016539731
+    - rdfs:seeAlso:
+        - see_also: <http://identifiers.org/affy.probeset/224348_s_at>
+    - refexo:refexSample:
+        - RefEx_Sample: <http://refex.dbcls.jp/sample/RES00000884>
+
+- RefEx_Sample <http://refex.dbcls.jp/sample/RES00000100>:
+    - a: refexo:RefExSample
+    - dct:identifier:
+        - sample_id: RES00000100
+    - refexo:organism:
+        - taxonomy: <http://identifiers.org/taxonomy/9606>
+    - refexo:refexTissueClass10:
+        - class10: refexo:v04_10
+    - refexo:refexTissueClass40:
+        - class40: refexo:v20_4
+    - refexo:sex:
+        - sex: obo:PATO_0000383
+    - refexo:refexAlphabeticalUniqOrder:
+        - unique_order: 210
+    - refexo:refexRefinedDescription:
+        - ref_description: uterus, adult
+    - refexo:refexSampleCategory:
+        - sample_category: developmental
+    - refexo:sampleReference:
+        - []:
+          - a: refexo:SampleReference
+          - refexo:belongsToCellType:
+              - cell_type: obo:CL_0000003
+          - refexo:belongsToDisease:
+              - disease: obo:DOID_0050686
+          - refexo:belongsToDevelopmentSite:
+              - dev_site: obo:CL_0000134
+          - refexo:sample:
+              - refexo_sample: <http://fantom.gsc.riken.jp/5/sstar/FF:10828-111C9>

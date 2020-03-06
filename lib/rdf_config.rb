@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-# coding: utf-8
 
 require 'yaml'
 require 'json'
@@ -13,7 +12,8 @@ class RDFConfig
     attr_reader :model_type_map, :property_path_map
 
     def initialize(config_dir)
-      @model_config_file = "#{config_dir}/models_label.yaml"
+      # read prefix.yaml as well, then validate, provide interface for the data model
+      @model_config_file = "#{config_dir}/model.yaml"
 
       @model_type_map = {}
       @property_path_map = {}
@@ -106,7 +106,7 @@ class RDFConfig
       endpoint_config_file = "#{@config_dir}/endpoint.yaml"
       @endpoint_config = YAML.load_file(endpoint_config_file)
 
-      prefixes_config_file = "#{@config_dir}/prefixes.yaml"
+      prefixes_config_file = "#{@config_dir}/prefix.yaml"
       @prefixes_config = YAML.load_file(prefixes_config_file)
 
       @endpoint = @endpoint_config['endpoint']
@@ -462,8 +462,51 @@ EOS
     end
   end
 
+  class Figure
+    def initialize(config_dir)
+      @model = Model.new(config_dir)
+    end
+
+    class Senbero < Figure
+      def initialize(config_dir)
+        super
+      end
+
+      def generate
+        @model.subjects.each do |subject, hash|
+          puts "#{subject} (#{subject_label(hash)})"
+          predicates(hash).each do |predicate, hash|
+            puts "    |-- #{predicate}"
+            object = hash["object"]
+            puts "    |       `-- #{object['type']} (#{object['example']})"
+          end
+        end
+      end
+    end
+
+    class Schema < Figure
+    end
+  end
+
   def initialize(config_dir)
     @config_dir = config_dir
+  end
+
+  def exec(mode = :help)
+    case mode
+    when :sparql
+      puts generate_sparql
+    when :query
+      run_sparql
+    when :stanza_rb
+      generate_stanza_rb
+    when :stanza_js
+      generate_stanza_js
+    when :senbero
+      generate_senbero
+    when :schema
+      generate_schema
+    end
   end
 
   def generate_sparql
@@ -476,17 +519,20 @@ EOS
     sparql.run
   end
 
-  def generate_stanza
-    stanza = Stanza.new(@config_dir)
+  def generate_stanza_rb
+    stanza = Stanza::Ruby.new(@config_dir)
     stanza.generate
+  end
+
+  def generate_stanza_js
+    stanza = Stanza::JavaScript.new(@config_dir)
+    stanza.generate
+  end
+
+  def generate_senbero
+    senbero = Senbero.new(@config_dir)
+    senbero.generate
   end
 end
 
 
-if __FILE__ == $0
-  config_dir = ARGV[0]
-  rdf_config = RDFConfig.new(config_dir)
-  #puts rdf_config.generate_sparql
-  pp rdf_config.run_sparql
-  #rdf_config.generate_stanza
-end

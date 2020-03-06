@@ -1,0 +1,70 @@
+- Culture nbrc:NBRC_00012843:
+  - a: mccv:MCCV_000001
+  - dct:identifier:
+    - nbrc_id: NBRC_00012843
+  - mccv:MCCV_000010:
+    - label: NBRC 12843
+  - mccv:MCCV_000038:
+    - clade: mccv:MCCV_000040  # Bacteria
+  - skos:prefLabel:
+    - name: Kitasatospora aureofaciens
+  - skos:altLabel:
+    - alias: Streptomyces aureofaciens
+  - mccv:MCCV_000065:
+    - taxid: taxonomy:1894
+  - mccv:MCCV_000046:
+    - approved: 1
+  - mccv:MCCV_000017:
+    - type_strain: 1
+  - sio:SIO_000216:
+    - []:
+      - a:
+        - mpo:MPO_00102
+        - mpo:MPO_00103
+        - mpo:MPO_00104
+      - sio:SIO_000221:
+        - unit: obo:UO_0000027  # degree Celsius
+      - sio:SIO_000300:
+        - value: 28
+  - mccv:MCCV_000073:
+    - []:
+      - a: mccv:MCCV_000005
+      - mccv:MCCV_000018:
+        - growth_medium: <http://purl.jp/bio/103/nite/medium/NBRC_M000227>
+      - mccv:MCCV_000019:
+        - rehydration_fluid: <http://purl.jp/bio/103/nite/medium/NBRC_M000707>
+  - mccv:MCCV_000024:
+    - []:
+      - a: mccv:MCCV_000001
+      - mccv:MCCV_000025:
+        - xref: <https://www.dsmz.de/catalogues/details/culture/DSM-40127.html>
+      - dct:identifier:
+        - id1: DSM 40127
+  - mccv:MCCV_000027:
+    - history: IFO 12843 <- SAJ <- OWU (ISP 5127) <- Lederle Labs. (E. Backus, A-377)
+  - mccv:MCCV_000028:
+    - []:
+      - rdf:type:
+         - mccv:MCCV_000006  # Sample
+         - sio:SIO_001050
+      - mccv:MCCV_000072:
+        - []:
+          - rdf:type: mccv:MCCV_000007  # Habitat
+          - sio:SIO_000008:
+            - attribute: meo:MEO_0000007
+          - mccv:MCCV_000030:
+            - habitat: Soil, USA
+        - []:
+          - rdf:type: mccv:MCCV_000008  # Location
+          - rdfs:label:
+            - location: USA
+          - sio:SIO_000008:
+            - gazetteer: obo:GAZ_00600942
+  - dct:references:
+    - reference: pubmed:14657141
+  - mccv:MCCV_000033:
+    - application: |
+        Chlortetracycline
+        (aureomycin);production
+  - mccv:MCCV_000076:
+    - culture_collection: <http://www.wfcc.info/ccinfo/collection/by_id/825>
