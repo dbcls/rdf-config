@@ -23,7 +23,7 @@ RDF データモデルは基本的に YAML に準拠した下記の構造で（�
             - 目的語名: 目的語の例
 ```
 
-主語の例、述語、目的語の例は URI (<http://...>) か CURIE/QName (prefix:local_part) で記述する。目的語の例はリテラルでも良く、どうしても必要なら例を複数指定してもよい。なお、空白ノードは [] で表す。
+主語の例、述語、目的語の例は URI (`<http://...>`) か CURIE/QName (prefix:local_part) で記述する。目的語の例はリテラルでも良く、どうしても必要なら例を複数指定してもよい。なお、空白ノードは [] で表す。
 
 主語名、目的語名は、SPARQL 検索や結果を表示する際に利用する変数名なので意味がわかりやすい名前をつける。主語名は CamelCase の単語、変数名は snake_case の単語を用いることを推奨する。
 
@@ -71,11 +71,11 @@ RDF データモデルは基本的に YAML に準拠した下記の構造で（�
 
 ### 述語
 
-主語にぶら下がる述語を URI (<http://...>) か CURIE/QName (prefix:local_part) で配列として列挙する。
+主語にぶら下がる述語を URI (`<http://...>`) か CURIE/QName (prefix:local_part) で配列として列挙する。
 
 ### 目的語
 
-目的語の例は YAML パーザが型を推定するので、文字列（特にクオートは不要）、数値、日付などはそのまま記述できる。
+目的語の例は YAML パーザが型を推定するので、文字列（必ずしもクオートしなくてもYAMLとしては問題ない）、数値、日付などはそのまま記述できる。
 URI が文字列リテラルになってしまうため、<> で囲まれた文字列は特別に URI 扱いする。
 CURIE/QName も文字列リテラルになってしまうが、prefixies.yaml に定義されているプレフィックスで始まる文字列は特別に CURIE/QName と解釈する。
 
@@ -86,7 +86,7 @@ CURIE/QName も文字列リテラルになってしまうが、prefixies.yaml �
 - Subject my:subject1:
   - a: my:Class
   - my:predicate1:
-    - string_label: This is my value
+    - string_label: "This is my value"
   - my:predicate2:
     - integer_value: 123
   - my:predicate3:
