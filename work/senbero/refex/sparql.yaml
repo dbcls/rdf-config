@@ -1,52 +1,7 @@
-sparql1:
-  description: Obtain pairs of an entry ID and an expression value
-  variables:
-    id: refexo:RefExEntry#dct:identifier
-    value: refexo:RefExEntry#refexo:exValue
-
-# Obtain pairs of an entry ID and an expression value
-PREFIX refexo: <taken from prefixies.yaml>
-PREFIX dct: <taken from prefixies.yaml>
-
-SELECT ?id ?value
-WHERE {
-  ?s1
-    a refexo:RefExEntry;
-    dct:identifier ?id .
-  ?s1
-    a refexo:RefExEntry ;
-    refexo:exValue ?value .
-}
-
------
-
-
-sparql2:
-  description: Obtain a expression value and a sample identifier by entry ID
-  parameters:
-    entry_id: refexo:RefExEntry#dct:identifier
-  variables:
-    value: refexo:RefExEntry#refexo:exValue
-    xref: refexo:RefExEntry#rdfs:seeAlso^^hoge:NCBIGene
-    sample: refexo:refexSample/refexo:RefExSample#dct:identifier
-
-# Obtain a expression value and a sample identifier by entry ID
-PREFIX refexo: <taken from prefixies.yaml>
-PREFIX dct: <taken from prefixies.yaml>
-
-SELECT ?value ?xref ?sample
-WHERE {
-  ?s1
-    a refexo:RefExEntry;
-    dct:identifier {{entry_id}} .
-    refexo:exValue ?value .
-    rdfs:seeAlso ?xref ;
-  ?xref
-    a hoge:NCBIGene .
-  ?s1
-    refexo:refexSample ?s2 .
-  ?s2
-    a refexo:RefExSample ;
-    dct:identifier ?sample .
-}
-
+sparql:
+  description: RDFized reference gene expresson dataset derived from CAGE and GeneChip experiments in the RefEx database.
+  subject: RefEx_Entry
+  variables: [refex_id, see_also, RefEx_Sample, disease]
+  #subject: RefEx_Sample
+  #variables: [sample_id, taxonomy, class10, class40, sex, unique_order, ref_description, sample_category, cell_type]
+  #variables: [disease, dev_site, refexo_sample]

@@ -3,12 +3,13 @@ sparql:
   parameters:
     mccv:MCCV_000001:
       dct:identifier: entry_id
-  variables:
-    mccv:MCCV_000001:
-      mccv:MCCV_000065: taxid 
-      skos:prefLabel: label
-    mccv:MCCV_000007:
-      mccv:MCCV_000030: isolation
+  subject: Culture
+  variables: [nbrc_id, clade, name, alias, taxid, attribute, habitat]
+    #mccv:MCCV_000001:
+    #  mccv:MCCV_000065: taxid 
+    #  skos:prefLabel: label
+    #mccv:MCCV_000007:
+    #  mccv:MCCV_000030: isolation
 
 ---
 
