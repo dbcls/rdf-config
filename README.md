@@ -7,12 +7,14 @@
 * design
   * provides spec for validation of data type & cardinality to generate ShEx
 * implement
+  * support multiple models to be loaded in combination at once
 * test
 
 ## GOAL
 
 * capture the RDF data strucuture in ease
 * generate SPARQL queries
+* generate SPARQList
 * generate schema chart
 * generate TogoStanza
 * generate dataset for machine learning
