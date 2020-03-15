@@ -1,21 +1,32 @@
 class RDFConfig
 
   class Model
-    attr_reader :model_type_map, :property_path_map
+    attr_reader :subject_type_map, :predicate_path_map, :object_label_map,
+                :subjects, :predicates, :objects
 
     def initialize(config_dir)
-      # read prefix.yaml as well, then validate, provide interface for the data model
-      @model_config_file = "#{config_dir}/model.yaml"
-
-      @model_type_map = {}
-      @property_path_map = {}
+      # mappings for supplimental information
+      @subject_type_map = {}
+      @predicate_path_map = {}
       @property_paths = []
+      @object_label_map = {}
 
-      parse
+      # shortcut for ordered list of elements
+      @subjects = []
+      @predicates = {}
+      @objects = {}
+
+      # use @prefix to validate the data model config file
+      parse_prefix("#{config_dir}/prefix.yaml")
+      parse_model("#{config_dir}/model.yaml")
     end
 
-    def parse
-      model = YAML.load_file(@model_config_file)
+    def parse_prefix(prefix_config_file)
+      @prefix = YAML.load_file(prefix_config_file)
+    end
+
+    def parse_model(model_config_file)
+      model = YAML.load_file(model_config_file)
       model.each do |subject_block|
         proc_subject_block(subject_block)
       end
@@ -24,10 +35,13 @@ class RDFConfig
     def proc_subject_block(subject_block)
       subject_block.each do |subject, property_blocks|
         @current_subject_name = subject.split(/\s+/).at(0)
-        @property_path_map[@current_subject_name] = {}
+        @predicate_path_map[@current_subject_name] = {}
+        @object_label_map[@current_subject_name] = {}
         property_blocks.each do |property_block|
           if ['a', 'rdf:type'].include?(property_block.keys.at(0))
-            @model_type_map[@current_subject_name] = property_block[property_block.keys.at(0)]
+            @subject_type_map[@current_subject_name] = property_block[property_block.keys.at(0)]
+            # shortcut
+            @subjects << @current_subject_name
           else
             proc_property_block(property_block)
           end
@@ -63,7 +77,15 @@ class RDFConfig
           if key.to_s == '[]'
             proc_blank_node(value)
           else
-            @property_path_map[@current_subject_name][key] = @property_paths.join(' / ')
+            property_path = @property_paths.join(' / ')
+            @predicate_path_map[@current_subject_name][key] = property_path
+            @object_label_map[@current_subject_name][key] = value
+            # shortcut
+            @predicates[@current_subject_name] ||= []
+            @predicates[@current_subject_name] << property_path
+            @objects[@current_subject_name] ||= {}
+            @objects[@current_subject_name][property_path] ||= []
+            @objects[@current_subject_name][property_path] << key
           end
         end
       end

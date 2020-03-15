@@ -31,13 +31,13 @@ class RDFConfig
       sparql_lines << ''
       sparql_lines << %(SELECT ?s #{@variables.map { |var_name| "?#{var_name}" }.join(' ')})
       sparql_lines << 'WHERE {'
-      sparql_lines << "  ?s a #{@model.model_type_map[subject_name]} ."
+      sparql_lines << "  ?s a #{@model.subject_type_map[subject_name]} ."
       @variables.each do |var_name|
-        if @model.property_path_map[subject_name][var_name]
-          sparql_lines << "  ?s #{@model.property_path_map[subject_name][var_name]} ?#{var_name} ."
+        if @model.predicate_path_map[subject_name][var_name]
+          sparql_lines << "  ?s #{@model.predicate_path_map[subject_name][var_name]} ?#{var_name} ."
         else
           var_info = find_variable(var_name)
-          property_path = "#{@model.property_path_map[subject_name][var_info[:subject_name]]} / #{var_info[:path_map]}"
+          property_path = "#{@model.predicate_path_map[subject_name][var_info[:subject_name]]} / #{var_info[:path_map]}"
           sparql_lines << "  ?s #{property_path} ?#{var_name} ."
         end
       end
@@ -82,7 +82,7 @@ class RDFConfig
 
     def find_variable(var_name)
       var_info = {}
-      @model.property_path_map.each do |subj_name, path_map|
+      @model.predicate_path_map.each do |subj_name, path_map|
         if path_map[var_name]
           var_info[:subject_name] = subj_name
           var_info[:path_map] = path_map[var_name]
