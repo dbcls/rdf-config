@@ -27,6 +27,8 @@ class RDFConfig
 
     def generate
       sparql_lines = []
+      sparql_lines << "# #{@endpoint}"
+      sparql_lines << ''
       sparql_lines << prefix_lines_for_sparql
       sparql_lines << ''
       sparql_lines << %(SELECT ?s #{@variables.map { |var_name| "?#{var_name}" }.join(' ')})
