@@ -24,7 +24,7 @@
 
 ```
 % rdf-config --config config/refex --senbero
-RefEx_Entry (refexo:RefExEntry)
+RefExEntry (refexo:RefExEntry)
     |-- refexo:exValue
     |       `-- ex_value ("Ex value")
     |-- dct:identifier
@@ -32,8 +32,8 @@ RefEx_Entry (refexo:RefExEntry)
     |-- rdfs:seeAlso
     |       `-- see_also ("<http://identifiers.org/affy.probeset/224348_s_at>")
     `-- refexo:refexSample
-            `-- RefEx_Sample ("<http://refex.dbcls.jp/sample/RES00000884>")
-RefEx_Sample (refexo:RefExSample)
+            `-- RefExSample ("<http://refex.dbcls.jp/sample/RES00000884>")
+RefExSample (refexo:RefExSample)
     |-- dct:identifier
     |       `-- sample_id ("RES00000100")
     |-- refexo:organism
