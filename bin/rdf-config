@@ -9,8 +9,8 @@ def help
 end
 
 opts = {
-  :config_dir => '',
-  :mode => '',
+  :config_dir => nil,
+  :mode => nil,
 }
 
 args = GetoptLong.new(
@@ -46,13 +46,15 @@ args.each_option do |name, value|
     else
       opts[:mode] = :stanza_js
     end
-  else
-    help
   end
 end
 
-rdf_config = RDFConfig.new(opts[:config_dir])
-rdf_config.exec(opts[:mode])
+if opts[:config_dir] and opts[:mode]
+  rdf_config = RDFConfig.new(opts[:config_dir])
+  rdf_config.exec(opts[:mode])
+else
+  help
+end
 
 __END__
 NAME
