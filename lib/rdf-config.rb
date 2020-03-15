@@ -11,7 +11,7 @@ class RDFConfig
   require 'rdf-config/model'
   require 'rdf-config/sparql'
   require 'rdf-config/stanza'
-  require 'rdf-config/figure'
+  require 'rdf-config/chart'
 
   def initialize(config_dir)
     @config_dir = config_dir
@@ -56,12 +56,12 @@ class RDFConfig
   end
 
   def generate_schema
-    schema = Figure::Schema.new(@config_dir)
+    schema = Chart::Schema.new(@config_dir)
     schema.generate
   end
 
   def generate_senbero
-    senbero = Figure::Senbero.new(@model)
+    senbero = Chart::Senbero.new(@model)
     senbero.generate
   end
 end

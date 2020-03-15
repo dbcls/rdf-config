@@ -1,11 +1,11 @@
 class RDFConfig
 
-  class Figure
+  class Chart
     def initialize(model)
       @model = model
     end
 
-    class Senbero < Figure
+    class Senbero < Chart
       def initialize(model)
         super
       end
@@ -43,7 +43,7 @@ class RDFConfig
       end
     end
 
-    class Schema < Figure
+    class Schema < Chart
     end
   end
 
