@@ -1,0 +1,84 @@
+#!/usr/bin/env ruby
+
+require 'getoptlong'
+require 'rdf-config'
+
+def help
+  puts DATA.read
+  exit
+end
+
+opts = {
+  :config_dir => '',
+  :mode => '',
+}
+
+args = GetoptLong.new(
+  [ '--config',   '-c',  GetoptLong::REQUIRED_ARGUMENT ],
+  [ '--help',     '-h',  GetoptLong::NO_ARGUMENT ],
+  [ '--senbero',  '-l',  GetoptLong::NO_ARGUMENT ],
+  [ '--schema',   '-f',  GetoptLong::NO_ARGUMENT ],
+  [ '--sparql',   '-s',  GetoptLong::NO_ARGUMENT ],
+  [ '--query',    '-q',  GetoptLong::NO_ARGUMENT ],
+  [ '--stanza',   '-z',  GetoptLong::OPTIONAL_ARGUMENT ],
+)
+
+args.each_option do |name, value|
+  case name
+  when /--config/
+    opts[:config_dir] = value
+  when /--senbero/
+    # FIXME
+    opts[:mode] = :senbero
+  when /--schema/
+    # TODO!!
+    opts[:mode] = :schema
+  when /--sparql/
+    opts[:mode] = :sparql
+  when /--query/
+    # import https://gist.github.com/ktym/3385134
+    opts[:mode] = :query
+  when /--stanza/
+    # re-use sparql.yaml instead of stanza.yaml
+    case value
+    when /ruby/i
+      opts[:mode] = :stanza_rb
+    else
+      opts[:mode] = :stanza_js
+    end
+  else
+    help
+  end
+end
+
+rdf_config = RDFConfig.new(opts[:config_dir])
+rdf_config.exec(opts[:mode])
+
+__END__
+NAME
+    rdf-config -- RDF model to SPARQL, Schema, Stanza converter
+
+SYNOPSIS
+    rdf-config --help
+    rdf-config --config path/to/config/name --sparql
+    rdf-config --config path/to/config/name --query
+    rdf-config --config path/to/config/name --schema
+    rdf-config --config path/to/config/name --senbero
+    rdf-config --config path/to/config/name --stanza ruby
+    rdf-config --config path/to/config/name --stanza js
+
+DESCRIPTION
+
+    Read a RDF data model from config/name/ directory
+    then generate SPARQL query, exec SPARQL query,
+    generate Schema figure, and generate Stanza.
+
+    Configuration files of a RDF model are written
+    in the YAML format.
+
+    * config/name/model.yaml: RDF deta model structure and variable names
+    * config/name/endpoint.yaml: SPARQL endpoint
+    * config/name/prefix.yaml: URI prefixes
+    * config/name/metadata.yaml: Metadata compatible with NBRC RDF portal
+    * config/name/metadata_ja.yaml: Japanese version of Metadata
+
