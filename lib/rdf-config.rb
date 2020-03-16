@@ -56,7 +56,7 @@ class RDFConfig
   end
 
   def generate_schema
-    schema = Chart::Schema.new(@config_dir)
+    schema = Chart::Schema.new(@model)
     schema.generate
   end
 

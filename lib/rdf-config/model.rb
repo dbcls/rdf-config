@@ -26,8 +26,8 @@ class RDFConfig
     end
 
     def parse_model(model_config_file)
-      model = YAML.load_file(model_config_file)
-      model.each do |subject_block|
+      @yaml = YAML.load_file(model_config_file)
+      @yaml.each do |subject_block|
         proc_subject_block(subject_block)
       end
     end
@@ -99,6 +99,18 @@ class RDFConfig
       end
 
       @property_paths.pop
+    end
+
+    def subject_example_value(subejct_name)
+      value = ''
+      subject = @yaml.map{ |subject_hash| subject_hash.keys.first }. select { |subject| /\A#{subejct_name}/ =~ subject }
+      value = subject.first.split(/\s+/, 2).last if subject
+
+      value
+    end
+
+    def has_prefix?(prefix)
+      @prefix.keys.include?(prefix)
     end
   end
 
