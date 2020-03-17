@@ -14,7 +14,8 @@
 
 * capture the RDF data strucuture in ease
 * generate SPARQL queries
-* generate SPARQList
+* generate SPARQLet for SPARQList
+* generate Grasp config file
 * generate schema chart
 * generate TogoStanza
 * generate dataset for machine learning
