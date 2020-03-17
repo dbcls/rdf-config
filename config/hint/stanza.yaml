@@ -1,0 +1,10 @@
+hint_pair_stanza:
+  output_dir: /path/to/output/dir
+  label: "HiNT pair"
+  definition: "Stanza of a protein-protein interaction pair"
+  sparql: pair_stanza  # defined in sparql.yaml
+  parameters:
+    pair0:
+      example: uni:A0A024QYV7
+      description: UniProt identifier
+      required: true
