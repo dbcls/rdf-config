@@ -1,0 +1,10 @@
+sparql:
+  description: Obrain protein-protein interaction pairs from the HiNT database
+  variables: [data_source, display_hame, evidence, name, pair0, pair1, network_variety, accuracy]
+
+pair_stanza:
+  description: Get just a pair of interaction from the HiNT database for TogoStanza
+  parameters:
+    pair0: uni:A0A024QYV7
+  variables: [pair0, pair1, evidence]
+
