@@ -23,7 +23,16 @@ class RDFConfig
             end
             objects = @model.objects[subject][predicate]
             objects.each_with_index do |object, j|
-              object_label = @model.object_label_map[subject][object].inspect
+              object_label_value = @model.object_label_map[subject][object]
+              object_label = object_label_value ? object_label_value.inspect : "N/A"
+#              case object_label_value.type
+#              when :IRI
+#              when :Number
+#              when :String
+#                object_label = object_label_value.inspect
+#              else
+#                "N/A"
+#              end
               if i < predicates.size - 1
                 if j < objects.size - 1
                   puts "    |       |-- #{object} (#{object_label})"
