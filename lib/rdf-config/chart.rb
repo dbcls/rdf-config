@@ -25,7 +25,7 @@ class RDFConfig
             objects.each_with_index do |object, j|
               object_label_value = @model.object_label_map[subject][object]
               object_label = object_label_value ? object_label_value.inspect : "N/A"
-#              case object_label_value.type
+#              case @model.object_type(object_label_value)
 #              when :IRI
 #              when :Number
 #              when :String
