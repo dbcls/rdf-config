@@ -1,6 +1,35 @@
 # RDF-config specification
 
-## models.yaml
+## endpoint.yaml
+
+SPARQL エンドポイントを下記の記法で記述する。
+
+```
+endpoint: http://example.org/sparql
+```
+
+同じデータを持つ複数のエンドポイントを記述しておきたい場合は下記の記法を用いる。
+
+```
+endpoint:
+  - http://example.org/sparql  # プライマリの SPARQL エンドポイント
+  - http://another.org/sparql  # 予備の SPARQL エンドポイント
+```
+
+## prefix.yaml
+
+RDF データモデルで使われている CURIE/QName のプレフィックスは必ず下記の記法で定義しておく。
+
+```
+rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+xsd: <http://www.w3.org/2001/XMLSchema#>
+dc: <http://purl.org/dc/elements/1.1/>
+dct: <http://purl.org/dc/terms/>
+skos: <http://www.w3.org/2004/02/skos/core#>
+```
+
+## model.yaml
 
 RDF データモデルは基本的に YAML に準拠した下記の構造で（順序を保存し、重複した出現を許容するために）ネストした配列でもたせる。インデントがズレているとエラーになること（行頭にスペースとタブを混在させないようにすべき）、主語・述語・目的語がそれぞれがハッシュのキーとなるため末尾に `:` をつけることに注意。
 
@@ -25,7 +54,7 @@ RDF データモデルは基本的に YAML に準拠した下記の構造で（�
 
 主語の例、述語、目的語の例は URI (`<http://...>`) か CURIE/QName (`prefix:local_part`) で記述する。目的語の例はリテラルでも良く、どうしても必要なら例を複数指定してもよい。なお、空白ノードは `[]` で表す。
 
-主語名、目的語名は、SPARQL 検索や結果を表示する際に利用する変数名なので意味がわかりやすい名前をつける。主語名は CamelCase の単語、変数名は snake_case の名前を用いることを推奨する。
+主語名、目的語名は、SPARQL 検索や結果を表示する際に利用する変数名なので意味がわかりやすい名前をつける。主語名は CamelCase の単語、目的語名は snake_case の名前を用いることを推奨する。
 
 ### 主語
 
@@ -75,13 +104,22 @@ RDF データモデルは基本的に YAML に準拠した下記の構造で（�
 
 ### 目的語
 
-目的語の例は YAML パーザが型を推定するので、文字列（必ずしもクオートしなくてもYAMLとしては問題ない）、数値、日付などはそのまま記述できる。
-URI が文字列リテラルになってしまうため、`<>` で囲まれた文字列は特別に URI 扱いする。
-CURIE/QName も文字列リテラルになってしまうが、prefixies.yaml に定義されているプレフィックスで始まる文字列は特別に CURIE/QName と解釈する。
+述語にぶら下がる目的語は、目的語の名前およびその例を記述する。
+
+目的語の名前は、SPARQL クエリの変数名として使われるため、model.yaml ファイル内で一意なものを snake_case で設定すること。
+述語が取りうる目的語の有無（SPARQLのOPTIONALの有無）やその数（単数複数）を、変数名の後に下記の記号をつけることで明示できる。
+
+* var: 対応する値は「有る」はずで、「1つに限られる」場合
+* var+: 対応する値は「有る」はずで、「複数の可能性がある」場合
+* var?: 対応する値が「無い」か「１つに限られる」場合 →  OPTIONAL 句になる
+* var*: 対応する値が「無い」か「複数の可能性がある」場合 →  OPTIONAL句になる
+
+ただし、RDF/SPARQL では、変数に対応する値が必ず１つである（複数存在しない）ことを保証できないため、「varとvar+」および「var?とvar*」の区別はSPARQLのレベルでは生じないことに注意。
+
+目的語の例は省略してもよいが、スキーマ図を分かりやすくするためにも必ずつけることを推奨する。その値は YAML パーザが型を推定するので、文字列（必ずしもクオートしなくてもYAMLとしては問題ない）、数値、日付などはそのまま記述できる。URI は YAML では文字列として扱われてしまうため、RDF-config では `<>` で囲まれた文字列および CURIE/QName（プレフィックスが prefix.yaml で定義されているもの）は特別に URI として解釈する。
 
 目的語が他の RDF モデルを参照する場合は、目的語に参照先の主語名を記述する。
 
-サンプル例を１行で記述する場合：
 ```
 - Subject my:subject1:
   - a: my:Class
@@ -101,7 +139,7 @@ CURIE/QName も文字列リテラルになってしまうが、prefixies.yaml �
   - a: my:OtherClass
 ```
 
-目的語の例が長い場合は YAML の記法で `|` を用いることでインデントした部分を複数行リテラルとして扱われる。
+目的語の例が複数行にわたる場合は YAML の記法で `|` を用いることでインデントした部分を複数行リテラルとして扱われる。ただし、あまり長いとスキーマ図で表示できない、もしくは表示が崩れる可能性があることに注意。
 
 ```
 - Subject my:subject:
@@ -128,6 +166,41 @@ CURIE/QName も文字列リテラルになってしまうが、prefixies.yaml �
 - Subject my:subject:
   - my:predicate:
     - myvalue: '"123"^^xsd:integer'
+```
+
+## sparql.yaml
+
+複数の SPARQL クエリを設定できるファイルで、下記の YAML 形式で記述する。
+
+RDF-config では、対象となる目的語の名前から、必要となる property paths を同定し SPARQL クエリを自動生成するため、結果として得たい変数名を variables に列挙するだけでよい。ID や名前など、値の一部を引数として与えるクエリを作成する場合は、parameters に値をセットする変数名とそのデフォルト値を指定する。
+
+```
+クエリ名:
+  description: 何をする SPARQL クエリなのか説明
+  variables: [ foo, bar, ... ]  # SPARQL で SELECT の対象とする目的語の名前（変数名）を列挙
+
+別のクエリ名:
+  description: 何をする SPARQL クエリなのか説明
+  variables: [ foo, bar, ... ]  # SPARQL で SELECT の対象とする目的語の名前（変数名）を列挙
+  parameters:
+    目的語の名前: デフォルト値
+```
+
+## stanza.yaml
+
+TogoStanza を生成する際に必要な metadata.json ファイルのための情報を記述する。
+
+```
+スタンザのID:
+  output_dir: /path/to/output/dir     # 出力先ディレクトリ名
+  label: "スタンザの名前"
+  definition: "スタンザの説明"
+  sparql: pair_stanza                 # sparql.yaml で定義した対応する SPARQL クエリの名前
+  parameters:
+    変数名:
+      example: デフォルト値
+      description: 説明
+      required: true                  # 省略可能パラメータかどうか (true/false)
 ```
 
 
