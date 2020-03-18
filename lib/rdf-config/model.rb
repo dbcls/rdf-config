@@ -77,6 +77,7 @@ class RDFConfig
           if key.to_s == '[]'
             proc_blank_node(value)
           else
+            key = key.chop if key[/(\?|\+|\*)$/]  # work around for var?, var+, var*
             property_path = @property_paths.join(' / ')
             @predicate_path_map[@current_subject_name][key] = property_path
             @object_label_map[@current_subject_name][key] = value
