@@ -209,7 +209,7 @@ TogoStanza を生成する際に必要な metadata.json ファイルのための
 
 ```
 スタンザのID:
-  output_dir: /path/to/output/dir     # 出力先ディレクトリ名
+  output_dir: /path/to/output/dir     # 出力先ディレクトリ名（TODO: ここに書くのではなくコマンドラインで自由に変更できるようにすべきか）
   label: "スタンザの名前"
   definition: "スタンザの説明"
   sparql: pair_stanza                 # sparql.yaml で定義した対応する SPARQL クエリの名前
