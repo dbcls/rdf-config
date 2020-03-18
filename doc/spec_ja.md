@@ -121,7 +121,7 @@ RDF データモデルは基本的に YAML に準拠した下記の構造で（�
 目的語の例は省略してもよいが、スキーマ図を分かりやすくするためにも必ずつけることを推奨する。その値は YAML パーザが型を推定するので、文字列（必ずしもクオートしなくてもYAMLとしては問題ない）、数値、日付などはそのまま記述できる。URI は YAML では文字列として扱われてしまうため、RDF-config では `<>` で囲まれた文字列および CURIE/QName（プレフィックスが prefix.yaml で定義されているもの）は特別に URI として解釈する。
 
 ```
-- Subject my:subject1:
+- Subject my:subject:
   - a: my:Class
   - my:predicate1:
     - string_label: "This is my value"
