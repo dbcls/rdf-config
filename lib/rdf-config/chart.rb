@@ -10,16 +10,30 @@ class RDFConfig
         super
       end
 
+      def color_subject(str)
+        "\033[35m#{str}\033[0m"
+      end
+
+      def color_predicate(str)
+        "\033[33m#{str}\033[0m"
+      end
+
+      def color_object(str)
+        "\033[36m#{str}\033[0m"
+      end
+
       def generate
         @model.subjects.each do |subject|
           subject_class = @model.subject_type_map[subject]
-          puts "#{subject} (#{subject_class})"
+          subject_color = color_subject(subject)
+          puts "#{subject_color} (#{subject_class})"
           predicates = @model.predicates[subject]
           predicates.each_with_index do |predicate, i|
+            predicate_color = color_predicate(predicate)
             if i < predicates.size - 1
-              puts "    |-- #{predicate}"
+              puts "    |-- #{predicate_color}"
             else
-              puts "    `-- #{predicate}"
+              puts "    `-- #{predicate_color}"
             end
             objects = @model.objects[subject][predicate]
             objects.each_with_index do |object, j|
@@ -33,17 +47,18 @@ class RDFConfig
 #              else
 #                "N/A"
 #              end
+              object_color = color_object(object)
               if i < predicates.size - 1
                 if j < objects.size - 1
-                  puts "    |       |-- #{object} (#{object_label})"
+                  puts "    |       |-- #{object_color} (#{object_label})"
                 else
-                  puts "    |       `-- #{object} (#{object_label})"
+                  puts "    |       `-- #{object_color} (#{object_label})"
                 end
               else
                 if j < objects.size - 1
-                  puts "            |-- #{object} (#{object_label})"
+                  puts "            |-- #{object_color} (#{object_label})"
                 else
-                  puts "            `-- #{object} (#{object_label})"
+                  puts "            `-- #{object_color} (#{object_label})"
                 end
               end
             end
