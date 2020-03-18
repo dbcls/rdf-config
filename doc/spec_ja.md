@@ -69,7 +69,7 @@ RDF データモデルは基本的に YAML に準拠した下記の構造で（�
   - a:             # 型が複数の場合
     - mydb:Entry
     - hoge:Fuga
-  - rdf:type:      # rdf:type の短縮形 a を使わないで書く場合
+  - rdf:type:      # rdf:type の短縮形 a を使わないで書く場合 prefix.yaml に rdf: を定義
     - mydb:Entry
     - hoge:Fuga
   - rdfs:label:
@@ -106,17 +106,7 @@ RDF データモデルは基本的に YAML に準拠した下記の構造で（�
 
 ### 目的語
 
-述語にぶら下がる目的語は、目的語の名前およびその例を記述する。
-
-目的語の名前は、SPARQL クエリの変数名として使われるため、model.yaml ファイル内で一意なものを snake_case で設定すること。
-述語が取りうる目的語の有無（SPARQLのOPTIONALの有無）やその数（単数複数）を、変数名の後に下記の記号をつけることで明示できる。
-
-* var: 対応する値は「有る」はずで、「1つに限られる」場合
-* var+: 対応する値は「有る」はずで、「複数の可能性がある」場合
-* var?: 対応する値が「無い」か「１つに限られる」場合 →  OPTIONAL 句になる
-* var*: 対応する値が「無い」か「複数の可能性がある」場合 →  OPTIONAL句になる
-
-ただし、RDF/SPARQL では、変数に対応する値が必ず１つである（複数存在しない）ことを保証できないため、「varとvar+」および「var?とvar*」の区別はSPARQLのレベルでは生じないことに注意。
+述語にぶら下がる目的語は、目的語の名前およびその例を記述する。目的語の名前は、SPARQL クエリの変数名として使われるため、model.yaml ファイル内で一意なものを snake_case で設定すること。
 
 目的語の例は省略してもよいが、スキーマ図を分かりやすくするためにも必ずつけることを推奨する。その値は YAML パーザが型を推定するので、文字列（必ずしもクオートしなくてもYAMLとしては問題ない）、数値、日付などはそのまま記述できる。URI は YAML では文字列として扱われてしまうため、RDF-config では `<>` で囲まれた文字列および CURIE/QName（プレフィックスが prefix.yaml で定義されているもの）は特別に URI として解釈する。
 
@@ -134,7 +124,28 @@ RDF データモデルは基本的に YAML に準拠した下記の構造で（�
   - rdfs:seeAlso:
     - xref: <http://example.org/sample/uri>
 ```
-	
+
+述語が取りうる目的語の有無（SPARQLのOPTIONALの有無）やその数（単数複数）を、目的語名 `var` の後に下記の記号をつけることで明示できる。
+
+* var: 対応する値は「有る」はずで、「1つに限られる」場合
+* var+: 対応する値は「有る」はずで、「複数の可能性がある」場合
+* var?: 対応する値が「無い」か「１つに限られる」場合 →  OPTIONAL 句になる
+* var*: 対応する値が「無い」か「複数の可能性がある」場合 →  OPTIONAL句になる
+
+ただし、RDF/SPARQL では、変数に対応する値が必ず１つである（複数存在しない）ことを保証できないため、「varとvar+」および「var?とvar*」の区別はSPARQLのレベルでは生じないことに注意。
+
+```
+- Subject my:subject:
+  - my:single_predicate:
+    - var: "hoge"
+  - my:single_optional_predicate:
+    - var?: "hoge"
+  - my:multiple_predicate:
+    - var+: "hoge", "fuga"
+  - my:multiple_optional_predicate:
+    - var*: "hoge", "fuga"
+```
+
 目的語が他の RDF モデルを参照する場合は、目的語に参照先の主語名を記述する。（TODO: FALDOなど共通に使えるデータモデルを外部参照できるように拡張する）
 
 ```
