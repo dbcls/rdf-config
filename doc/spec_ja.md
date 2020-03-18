@@ -136,13 +136,13 @@ RDF データモデルは基本的に YAML に準拠した下記の構造で（�
 
 ```
 - Subject my:subject:
-  - my:single_predicate:
+  - my:single:
     - var: "hoge"
-  - my:single_optional_predicate:
+  - my:single_optional:
     - var?: "hoge"
-  - my:multiple_predicate:
+  - my:multiple:
     - var+: "hoge", "fuga"
-  - my:multiple_optional_predicate:
+  - my:multiple_optional:
     - var*: "hoge", "fuga"
 ```
 
