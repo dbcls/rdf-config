@@ -48,6 +48,7 @@ class RDFConfig
 #                "N/A"
 #              end
               object_color = color_object(object)
+              object_color = color_subject(object) if @model.subjects.include?(object)
               if i < predicates.size - 1
                 if j < objects.size - 1
                   puts "    |       |-- #{object_color} (#{object_label})"
