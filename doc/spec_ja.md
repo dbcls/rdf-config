@@ -120,8 +120,6 @@ RDF データモデルは基本的に YAML に準拠した下記の構造で（�
 
 目的語の例は省略してもよいが、スキーマ図を分かりやすくするためにも必ずつけることを推奨する。その値は YAML パーザが型を推定するので、文字列（必ずしもクオートしなくてもYAMLとしては問題ない）、数値、日付などはそのまま記述できる。URI は YAML では文字列として扱われてしまうため、RDF-config では `<>` で囲まれた文字列および CURIE/QName（プレフィックスが prefix.yaml で定義されているもの）は特別に URI として解釈する。
 
-目的語が他の RDF モデルを参照する場合は、目的語に参照先の主語名を記述する。
-
 ```
 - Subject my:subject1:
   - a: my:Class
@@ -130,14 +128,20 @@ RDF データモデルは基本的に YAML に準拠した下記の構造で（�
   - my:predicate2:
     - integer_value: 123
   - my:predicate3:
-    - link_url: <http://example.org/sample/uri>
+    - float_value: 123.45
   - my:predicate4:
-    - link_alt: my:sample123
+    - curie: my:sample123
   - rdfs:seeAlso:
     - xref: <http://example.org/sample/uri>
+```
+	
+目的語が他の RDF モデルを参照する場合は、目的語に参照先の主語名を記述する。（TODO: FALDOなど共通に使えるデータモデルを外部参照できるように拡張する）
+
+```
+- Subject my:subject:
   - my:refer:
-    - other_subject: OtherSubject  # 同じモデルファイル内か、入力に与える他のモデルファイル内で主語として使われている主語名
-- OtherSubject my:other_subject1:
+    - other_subject: OtherSubject  # 同じ model.yaml 内で主語として使われている主語名
+- OtherSubject my:other_subject:
   - a: my:OtherClass
 ```
 
