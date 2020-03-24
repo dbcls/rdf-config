@@ -2,7 +2,9 @@ class RDFConfig
 
   class Model
     attr_reader :subject_type_map, :predicate_path_map, :object_label_map,
-                :subjects, :predicates, :objects
+                :subjects, :predicates, :objects, :yaml, :prefix
+
+    PROPERTY_PATH_SEPARATOR = ' / '.freeze
 
     def initialize(config_dir)
       # mappings for supplimental information
@@ -10,6 +12,7 @@ class RDFConfig
       @predicate_path_map = {}
       @property_paths = []
       @object_label_map = {}
+      @object_type_map = {}
 
       # shortcut for ordered list of elements
       @subjects = []
@@ -19,10 +22,24 @@ class RDFConfig
       # use @prefix to validate the data model config file
       parse_prefix("#{config_dir}/prefix.yaml")
       parse_model("#{config_dir}/model.yaml")
+
+      @config_dir = config_dir
     end
 
     def parse_prefix(prefix_config_file)
       @prefix = YAML.load_file(prefix_config_file)
+    end
+
+    def parse_sparql
+      YAML.load_file("#{@config_dir}/sparql.yaml")
+    end
+
+    def parse_endpoint
+      YAML.load_file("#{@config_dir}/endpoint.yaml")
+    end
+
+    def parse_stanza
+      YAML.load_file("#{@config_dir}/stanza.yaml")
     end
 
     def parse_model(model_config_file)
@@ -78,9 +95,10 @@ class RDFConfig
             proc_blank_node(value)
           else
             key = key.chop if key[/(\?|\+|\*)$/]  # work around for var?, var+, var*
-            property_path = @property_paths.join(' / ')
+            property_path = @property_paths.join(PROPERTY_PATH_SEPARATOR)
             @predicate_path_map[@current_subject_name][key] = property_path
             @object_label_map[@current_subject_name][key] = value
+            @object_type_map[key] = determine_object_type(value)
             # shortcut
             @predicates[@current_subject_name] ||= []
             @predicates[@current_subject_name] << property_path
@@ -102,17 +120,116 @@ class RDFConfig
       @property_paths.pop
     end
 
-    def subject_example_value(subejct_name)
-      value = ''
-      subject = @yaml.map{ |subject_hash| subject_hash.keys.first }. select { |subject| /\A#{subejct_name}/ =~ subject }
-      value = subject.first.split(/\s+/, 2).last if subject
+    def subject_name(var_name)
+      subject_name = ''
+      @predicate_path_map.each do |key, pathmap_hash|
+        if pathmap_hash.keys.include?(var_name)
+          subject_name = key.dup
+          break
+        end
+      end
 
-      value
+      subject_name
+    end
+
+    def used_prefixes(variable_names)
+      prefixes = []
+      variable_names.each do |var_name|
+        subject_name = subject_name(var_name)
+        predicate = @predicate_path_map[subject_name][var_name].strip
+        predicate.split(PROPERTY_PATH_SEPARATOR).each do |p|
+          if /\A(\w+):\w+\z/ =~ p
+            prefixes << Regexp.last_match(1) unless prefixes.include?(Regexp.last_match(1))
+          end
+        end
+      end
+
+      prefixes
     end
 
     def has_prefix?(prefix)
       @prefix.keys.include?(prefix)
     end
-  end
 
+    def rdf_type_predicate?(predicate)
+      ['a', 'rdf:type'].include?(predicate)
+    end
+
+    def blank_node_object?(object)
+      case object
+      when Array
+        true
+      when String
+        object == '[]'
+      else
+        false
+      end
+    end
+
+    def determine_object_type(value)
+      case value
+      when String
+        if /\A<.+\>\z/ =~ value
+          :uri
+        else
+          if /\A(\w+):/ =~ value && has_prefix?(Regexp.last_match(1))
+            :uri
+          else
+            :literal
+          end
+        end
+      else
+        :literal
+      end
+    end
+
+    def object_type(object_name)
+      @object_type_map[object_name]
+    end
+
+    def sparql_triple_lines(variable_names)
+      subjects = subject_instances
+
+      required_lines = {}
+      optional_lines = {}
+      variable_names.each do |var_name|
+        subject_name = subject_name(var_name)
+        subject = subjects.select { |subj| subj.name == subject_name }.first
+        required_lines[subject_name] = [['a', @subject_type_map[subject_name]]] unless required_lines.key?(subject_name)
+        optional_lines[subject_name] = [] unless optional_lines.key?(subject_name)
+
+        if @predicate_path_map[subject_name][var_name]
+          property = [@predicate_path_map[subject_name][var_name], "?#{var_name}"]
+        else
+          var_info = find_variable(var_name)
+          property_path = "#{@predicate_path_map[subject_name][var_info[:subject_name]]}#{PROPERTY_PATH_SEPARATOR}#{var_info[:path_map]}"
+          property = [property_path, "?#{var_name}"]
+        end
+
+        property_instance = subject.properties.select { |property| property.object.name == var_name }.first
+        object = property_instance.object
+        if object.optional
+          optional_lines[subject_name] << property
+        else
+          required_lines[subject_name] << property
+        end
+      end
+
+      { required: required_lines, optional: optional_lines }
+    end
+
+    def subject?(name)
+      @subjects.include?(name)
+    end
+
+    def subject_instances
+      instances = []
+      @yaml.each do |subject_hash|
+        instances << RDFConfig::Model::Subject.new(subject_hash, @prefix)
+      end
+
+      instances
+    end
+
+  end
 end

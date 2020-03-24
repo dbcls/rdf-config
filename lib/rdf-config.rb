@@ -36,22 +36,22 @@ class RDFConfig
   end
 
   def generate_sparql
-    sparql = SPARQL.new(@config_dir)
+    sparql = SPARQL.new(@model)
     sparql.generate
   end
 
   def run_sparql
-    sparql = SPARQL.new(@config_dir)
+    sparql = SPARQL.new(@model)
     sparql.run
   end
 
   def generate_stanza_rb
-    stanza = Stanza::Ruby.new(@config_dir)
+    stanza = Stanza::Ruby.new(@model)
     stanza.generate
   end
 
   def generate_stanza_js
-    stanza = Stanza::JavaScript.new(@config_dir)
+    stanza = Stanza::JavaScript.new(@model)
     stanza.generate
   end
 

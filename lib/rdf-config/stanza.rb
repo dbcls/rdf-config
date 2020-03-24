@@ -1,22 +1,25 @@
+require 'rdf-config/stanza/ruby'
+require 'rdf-config/stanza/javascript'
+
 class RDFConfig
-
   class Stanza
-    def initialize(config_dir)
-      @config_dir = config_dir
+    def initialize(model, stanza_id = 'stanza')
+      @model = model
+      @metadata_config = @model.parse_stanza
+      @sparql = SPARQL.new(@model)
 
-      stanza_config_file = "#{config_dir}/stanza.yaml"
-      @stanza_config = YAML.load_file(stanza_config_file)
+      @name = @metadata_config.keys.at(0)
+      mkdir unless File.exist?(output_dir)
 
-      @name = @stanza_config.keys.at(0)
+      @stanza = @sparql.config(metadata['sparql'])
+    end
 
-      @model = Model.new(config_dir)
-      @sparql = SPARQL.new(config_dir)
+    def metadata
+      @metadata_config[@name]
     end
 
     def generate
       STDERR.puts "Generate stanza: #{@name}"
-
-      mkdir unless File.exist?(output_dir)
 
       case stanza_version
       when 'ruby'
@@ -41,18 +44,18 @@ class RDFConfig
     end
 
     def parameters_for_metadata(prefix = '')
-      parameters = []
+      params = []
 
-      arguments.each do |argument|
-        parameters << {
-            "#{prefix}key" => argument['key'],
-            "#{prefix}example" => argument['example'],
-            "#{prefix}description" => argument['description'],
-            "#{prefix}required" => argument['required'],
+      metadata_parameters.each do |key, parameter|
+        params << {
+            "#{prefix}key" => key,
+            "#{prefix}example" => parameter['example'],
+            "#{prefix}description" => parameter['description'],
+            "#{prefix}required" => parameter['required'],
         }
       end
 
-      parameters
+      params
     end
 
     def sparql_result_html(suffix = '', indent_chars = '  ')
@@ -60,8 +63,8 @@ class RDFConfig
 
       lines << "{{#each #{@name}}}"
       lines << %(#{indent_chars}<dl class="dl-horizontal">)
-      variables.each do |variable|
-        lines << "#{indent_chars * 2}<dt>#{variable['label']}</dt><dd>{{#{variable['name']}#{suffix}}}</dd>"
+      variables.each do |var_name|
+        lines << "#{indent_chars * 2}<dt>#{var_name}</dt><dd>{{#{var_name}#{suffix}}}</dd>"
       end
       lines << "#{indent_chars}</dl>"
       lines << '{{/each}}'
@@ -70,39 +73,46 @@ class RDFConfig
     end
 
     def sparql_query
-      sparql_lines = []
-      sparql_lines << @sparql.prefix_lines_for_sparql
-      sparql_lines << %(SELECT #{variables.map { |variable| "?#{variable['name']}" }.join(' ')})
+      sparql_lines = @sparql.prefix_lines_for_sparql(variables, stanza_parameters)
+      sparql_lines << ''
+      sparql_lines << %(SELECT #{variables.map { |variable| "?#{variable}" }.join(' ')})
       sparql_lines << 'WHERE {'
-      arguments.each do |argument|
-        predicate = @model.property_path_map[argument['key']]
-        object =
-        sparql_lines << "  ?s #{predicate} #{object_value_by_argument(argument)} ."
-      end
-      variables.each do |variable|
-        predicate = @model.property_path_map[variable['name']]
-        object = "?#{variable['name']}"
-        sparql_lines << "  ?s #{predicate} #{object} ."
-      end
+      sparql_lines += sparql_where_lines
       sparql_lines << '}'
 
       sparql_lines.join("\n")
     end
 
+    def sparql_where_lines
+      lines = @sparql.values_lines(sparql_hbs_parameters)
+      lines += @sparql.where_phase_lines(variables)
+
+      lines
+    end
+
+    def sparql_hbs_parameters
+      params = {}
+      stanza_parameters.keys.each do |var_name|
+        params[var_name] = %({{#{var_name}}})
+      end
+
+      params
+    end
+
     def output_dir
-      @stanza_config[@name]['output_dir']
+      "#{metadata['output_dir']}/#{@stanza_type}"
     end
 
-    def stanza_version
-      @stanza_config[@name]['stanza_version']
+    def metadata_parameters
+      metadata['parameters']
     end
 
-    def arguments
-      @stanza_config[@name]['arguments']
+    def stanza_parameters
+      @stanza['parameters']
     end
 
     def variables
-      @stanza_config[@name]['variables']
+      @stanza['variables']
     end
 
     def mkdir
@@ -118,162 +128,5 @@ class RDFConfig
     def metadata_json_fpath
       "#{@base_dir}/metadata.json"
     end
-
-    class Ruby < Stanza
-      def initialize(config_dir)
-        super(config_dir)
-        @base_dir = "#{output_dir}/#{@name}_stanza"
-        @generate_template_cmd = "togostanza init #{output_dir}; cd #{output_dir}; togostanza stanza new #{@name}"
-      end
-
-      def generate
-        generate_template
-        update_metadata_json
-        update_stanza_html
-        update_stanza_rb
-      end
-
-      def update_metadata_json
-        metadata = JSON.parse(File.read(metadata_json_fpath))
-        metadata['parameter'] = parameters_for_metadata
-        output_metadata_json(metadata)
-      end
-
-      def update_stanza_html
-        indent_chars = ''
-        lines = File.readlines(stanza_html_fpath)
-        File.open(stanza_html_fpath, 'w') do |f|
-          lines.each do |line|
-            if /(\s*)<body>/ =~ line
-              indent_chars = $1
-              f.write line
-              break
-            end
-            f.write line
-          end
-
-          f.puts sparql_result_html('', indent_chars)
-          f.puts "#{indent_chars}</body>"
-          f.puts '</html>'
-        end
-      end
-
-      def update_stanza_rb
-        lines = File.readlines(stanza_rb_fpath)
-        File.open(stanza_rb_fpath, 'w') do |f|
-          lines.each do |line|
-            break if /\Aend/ =~ line
-            f.write line
-          end
-          f.puts ''
-
-          f.puts "  property :#{@name} do |#{arguments.map { |arg| arg['key'] }.join(', ')}|"
-          f.puts "    query('#{@sparql.endpoint}', <<-SPARQL.strip_heredoc)"
-          f.puts sparql_query
-          f.puts '    SPARQL'
-          f.puts '  end'
-          f.puts 'end'
-        end
-      end
-
-      def object_value_by_argument(argument)
-        ['"#{', argument['key'], '}"'].join
-      end
-
-      def stanza_html_fpath
-        "#{@base_dir}/template.hbs"
-      end
-
-      def stanza_rb_fpath
-        "#{@base_dir}/stanza.rb"
-      end
-    end
-
-    class JavaScript < Stanza
-      def initialize(config_dir)
-        super(config_dir)
-        @base_dir = "#{output_dir}/#{@name}"
-        @generate_template_cmd = "cd #{output_dir}; ts new #{@name}"
-      end
-
-      def generate
-        generate_template
-        update_index_js
-        update_metadata_json
-        update_stanza_html
-        generate_stanza_rq
-      end
-
-      def update_index_js
-        index_js = <<-EOS
-Stanza(function(stanza, params) {
-  var q = stanza.query({
-    endpoint: "#{@sparql.endpoint}",
-    template: "stanza.rq",
-    parameters: params
-  });
-
-  q.then(function(data) {
-    var rows = data.results.bindings;
-    stanza.render({
-      template: "stanza.html",
-      parameters: {
-        #{@name}: rows
-      },
-    });
-  });
-});
-EOS
-        File.open(index_js_fpath, 'w') do |f|
-          f.write(index_js)
-        end
-      end
-
-      def update_metadata_json
-        stanza_parameters = parameters_for_metadata('stanza:')
-        stanza_usages = []
-        arguments.each do |argument|
-          stanza_usages << { argument['key'] => argument['example'] }
-        end
-        stanza_usage_attr = stanza_usages.map do |usage|
-          key = usage.keys.first
-          %(#{key}="#{usage[key]}")
-        end.join(' ')
-
-        metadata = JSON.parse(File.read(metadata_json_fpath))
-        metadata['stanza:parameter'] = stanza_parameters
-        metadata['stanza:usage'] = "<togostanza-#{@name} #{stanza_usage_attr}></togostanza-#{@name}>"
-        output_metadata_json(metadata)
-      end
-
-      def update_stanza_html
-        File.open(stanza_html_fpath, 'w') do |f|
-          f.puts sparql_result_html('.value')
-        end
-      end
-
-      def generate_stanza_rq
-        File.open(stanza_rq_fpath, 'w') do |f|
-          f.puts sparql_query
-        end
-      end
-
-      def object_value_by_argument(argument)
-        %("{{#{argument['key']}}}")
-      end
-
-      def index_js_fpath
-        "#{@base_dir}/index.js"
-      end
-
-      def stanza_html_fpath
-        "#{@base_dir}/templates/stanza.html"
-      end
-
-      def stanza_rq_fpath
-        "#{@base_dir}/templates/stanza.rq"
-      end
-    end
   end
-
 end
