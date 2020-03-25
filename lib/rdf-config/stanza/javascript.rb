@@ -1,12 +1,11 @@
 class RDFConfig
   class Stanza
     class JavaScript < RDFConfig::Stanza
-      def initialize(model)
+      def initialize(model, opts = {})
         @stanza_type = 'javascript'
 
         super
-        @base_dir = "#{output_dir}/#{@name}"
-        @generate_template_cmd = "cd #{output_dir}; ts new #{@name}"
+        @generate_template_cmd = "cd #{@stanza_base_dir}; ts new #{@stanza_name}"
       end
 
       def generate
@@ -31,7 +30,7 @@ Stanza(function(stanza, params) {
     stanza.render({
       template: "stanza.html",
       parameters: {
-        #{@name}: rows
+        #{@stanza_name}: rows
       },
     });
   });
@@ -54,10 +53,10 @@ Stanza(function(stanza, params) {
         end.join(' ')
 
         metadata = JSON.parse(File.read(metadata_json_fpath))
-        metadata['stanza:label'] = self.metadata['label']
-        metadata['stanza:definition'] = self.metadata['definition']
+        metadata['stanza:label'] = current_stanza['label']
+        metadata['stanza:definition'] = current_stanza['definition']
         metadata['stanza:parameter'] = stanza_parameters
-        metadata['stanza:usage'] = "<togostanza-#{@name} #{stanza_usage_attr}></togostanza-#{@name}>"
+        metadata['stanza:usage'] = "<togostanza-#{@stanza_name} #{stanza_usage_attr}></togostanza-#{@stanza_name}>"
         output_metadata_json(metadata)
       end
 
@@ -78,15 +77,15 @@ Stanza(function(stanza, params) {
       end
 
       def index_js_fpath
-        "#{@base_dir}/index.js"
+        "#{@stanza_dir}/index.js"
       end
 
       def stanza_html_fpath
-        "#{@base_dir}/templates/stanza.html"
+        "#{@stanza_dir}/templates/stanza.html"
       end
 
       def stanza_rq_fpath
-        "#{@base_dir}/templates/stanza.rq"
+        "#{@stanza_dir}/templates/stanza.rq"
       end
     end
   end

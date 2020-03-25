@@ -47,12 +47,12 @@ class RDFConfig
   end
 
   def generate_stanza_rb
-    stanza = Stanza::Ruby.new(@model)
+    stanza = Stanza::Ruby.new(@model, @opts)
     stanza.generate
   end
 
   def generate_stanza_js
-    stanza = Stanza::JavaScript.new(@model)
+    stanza = Stanza::JavaScript.new(@model, @opts)
     stanza.generate
   end
 

@@ -2,29 +2,31 @@ class RDFConfig
   class SPARQL
     require 'rdf-config/model/triple'
 
-    attr_reader :variables
+    attr_reader :parameters, :variables
 
     def initialize(model, opts)
       if opts[:sparql_query_name].to_s.empty?
-        query_name = 'sparql'
+        @query_name = 'sparql'
       else
-        query_name = opts[:sparql_query_name]
+        @query_name = opts[:sparql_query_name]
       end
 
       @model = model
-
       @prefixes = model.prefix
-
       @sparql_config = model.parse_sparql
 
-      if @sparql_config.key?(query_name)
-        @parameters = @sparql_config[query_name].key?('parameters') ? @sparql_config[query_name]['parameters'] : {}
-        @variables = @sparql_config[query_name]['variables']
+      if @sparql_config.key?(@query_name)
+        @parameters = current_sparql.key?('parameters') ? current_sparql['parameters'] : {}
+        @variables = current_sparql['variables']
       else
-        raise "Error: No SPARQL query (#{query_name}) exists."
+        raise "Error: No SPARQL query (#{@query_name}) exists."
       end
 
       @endpoint_config = model.parse_endpoint
+    end
+
+    def current_sparql
+      @sparql_config[@query_name]
     end
 
     def generate
@@ -193,7 +195,7 @@ class RDFConfig
     end
 
     def description
-      @sparql_config['sparql']['description'].to_s
+      current_sparql['description'].to_s
     end
 
     def all_endpoints
@@ -214,9 +216,6 @@ class RDFConfig
       end
     end
 
-    def config(name)
-      @sparql_config[name]
-    end
   end
 
 end

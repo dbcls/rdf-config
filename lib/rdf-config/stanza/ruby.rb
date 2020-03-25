@@ -1,12 +1,11 @@
 class RDFConfig
   class Stanza
     class Ruby < RDFConfig::Stanza
-      def initialize(model)
+      def initialize(model, opts = {})
         @stanza_type = 'ruby'
 
         super
-        @base_dir = "#{output_dir}/#{@name}"
-        @generate_template_cmd = "togostanza init #{output_dir}; cd #{output_dir}; togostanza stanza new #{@name}"
+        @generate_template_cmd = "togostanza init #{@stanza_base_dir}; cd #{@stanza_base_dir}; togostanza stanza new #{@stanza_name}"
       end
 
       def generate
@@ -51,7 +50,7 @@ class RDFConfig
           end
           f.puts ''
 
-          f.puts "  property :#{@name} do |#{stanza_parameters.keys.join(', ')}|"
+          f.puts "  property :#{@stanza_name} do |#{stanza_parameters.keys.join(', ')}|"
           f.puts "    query('#{@sparql.endpoint}', '#{sparql_hbs_fname}')"
           f.puts '  end'
           f.puts 'end'
@@ -65,19 +64,19 @@ class RDFConfig
       end
 
       def stanza_html_fpath
-        "#{@base_dir}/template.hbs"
+        "#{@stanza_dir}/template.hbs"
       end
 
       def stanza_rb_fpath
-        "#{@base_dir}/stanza.rb"
+        "#{@stanza_dir}/stanza.rb"
       end
 
       def sparql_hbs_fname
-        "#{@name}.hbs"
+        "#{@stanza_name}.hbs"
       end
 
       def sparql_hbs_fpath
-        File.expand_path("#{@base_dir}/sparql/#{sparql_hbs_fname}")
+        File.expand_path("#{@stanza_dir}/sparql/#{sparql_hbs_fname}")
       end
     end
   end

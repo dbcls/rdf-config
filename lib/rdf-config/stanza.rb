@@ -3,23 +3,32 @@ require 'rdf-config/stanza/javascript'
 
 class RDFConfig
   class Stanza
-    def initialize(model, stanza_id = 'stanza')
+    def initialize(model, opts = {})
+      if opts[:stanza_name].to_s.empty?
+        @stanza_name = 'stanza'
+      else
+        @stanza_name = opts[:stanza_name]
+      end
+
       @model = model
-      @metadata_config = @model.parse_stanza
-      @sparql = SPARQL.new(@model)
+      @stanza_config = @model.parse_stanza
 
-      @name = @metadata_config.keys.at(0)
-      mkdir unless File.exist?(output_dir)
-
-      @stanza = @sparql.config(metadata['sparql'])
+      if @stanza_config.key?(@stanza_name)
+        @sparql = SPARQL.new(@model, :sparql_query_name => current_stanza['sparql'])
+        @stanza_base_dir = "#{current_stanza['output_dir']}/#{@stanza_type}"
+        @stanza_dir = "#{@stanza_base_dir}/#{@stanza_name}"
+        mkdir(@stanza_dir) unless File.exist?(@stanza_dir)
+      else
+        raise "Error: No Stanza config (#{@stanza_name}) exists."
+      end
     end
 
-    def metadata
-      @metadata_config[@name]
+    def current_stanza
+      @stanza_config[@stanza_name]
     end
 
     def generate
-      STDERR.puts "Generate stanza: #{@name}"
+      STDERR.puts "Generate stanza: #{@stanza_name}"
 
       case stanza_version
       when 'ruby'
@@ -35,6 +44,12 @@ class RDFConfig
 
       if status.success?
         STDERR.puts 'Stanza template has been generated successfully.'
+        case @stanza_type
+        when 'javascript'
+          STDERR.puts "To view the stanza, run (cd #{@stanza_base_dir}; ts server) and open http://localhost:8080/"
+        when 'ruby'
+          STDERR.puts "To view the stanza, run (cd #{@stanza_base_dir}; bundle exec rackup) and open http://localhost:9292/"
+        end
         #puts stdout
         #puts stderr
       else
@@ -61,7 +76,7 @@ class RDFConfig
     def sparql_result_html(suffix = '', indent_chars = '  ')
       lines = []
 
-      lines << "{{#each #{@name}}}"
+      lines << "{{#each #{@stanza_name}}}"
       lines << %(#{indent_chars}<dl class="dl-horizontal">)
       variables.each do |var_name|
         lines << "#{indent_chars * 2}<dt>#{var_name}</dt><dd>{{#{var_name}#{suffix}}}</dd>"
@@ -99,24 +114,20 @@ class RDFConfig
       params
     end
 
-    def output_dir
-      "#{metadata['output_dir']}/#{@stanza_type}"
-    end
-
     def metadata_parameters
-      metadata['parameters']
+      current_stanza['parameters']
     end
 
     def stanza_parameters
-      @stanza['parameters']
+      @sparql.parameters
     end
 
     def variables
-      @stanza['variables']
+      @sparql.variables
     end
 
-    def mkdir
-      FileUtils.mkdir_p(output_dir)
+    def mkdir(dir)
+      FileUtils.mkdir_p(dir)
     end
 
     def output_metadata_json(metadata)
@@ -126,7 +137,7 @@ class RDFConfig
     end
 
     def metadata_json_fpath
-      "#{@base_dir}/metadata.json"
+      "#{@stanza_dir}/metadata.json"
     end
   end
 end
