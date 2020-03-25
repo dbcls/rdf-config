@@ -74,7 +74,6 @@ RefExSample (refexo:RefExSample)
 ```
 
 ![RefEx schema](./doc/figure/refex.svg)
-<img src="./doc/figure/refex.svg">
 
 ```
 % rdf-config --config config/nbrc --senbero
