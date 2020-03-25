@@ -27,6 +27,12 @@
 
 ## USAGE
 
+### Installation
+
+* Pre-requirements:
+  * To generate Ruby version of TogoStanza, install [TogoStanza gem](https://github.com/togostanza/togostanza-gem) by running `gem install togostanza`
+  * To generate JavaScript version of TogoStanza, install [ts](https://github.com/togostanza/ts/releases) command by downloading the latest release for your environment (e.g., ts_0.0.19_darwin_amd64.zip for macOS)
+
 ```
 % git clone https://github.com/dbcls/rdf-config.git
 
@@ -36,7 +42,10 @@
 % export RUBYLIB="./lib" 
 ```
 
-TODO: Installer will be provided soon!
+* TODO:
+  * Installer will be provided soon!
+
+### Generate schema ascii art
 
 ```
 % rdf-config --config config/refex --senbero
@@ -74,64 +83,20 @@ RefExSample (refexo:RefExSample)
     |       `-- dev_site ("obo:CL_0000134")
     `-- refexo:sampleReference / refexo:sample
             `-- refexo_sample ("<http://fantom.gsc.riken.jp/5/sstar/FF:10828-111C9>")
+```
+			
+### Generate schema diagram
 
+```
 % rdf-config --config config/refex --schema > refex.svg
 ```
 
 ![RefEx schema](./doc/figure/refex.svg)
 
+### Generate SPARQL query
+
 ```
-% rdf-config --config config/nbrc --senbero
-Culture (mccv:MCCV_000001)
-    |-- dct:identifier
-    |       `-- nbrc_id ("NBRC_00012843")
-    |-- mccv:MCCV_000010
-    |       `-- label ("NBRC 12843")
-    |-- mccv:MCCV_000038
-    |       `-- clade ("mccv:MCCV_000040")
-    |-- skos:prefLabel
-    |       `-- name ("Kitasatospora aureofaciens")
-    |-- skos:altLabel
-    |       `-- alias ("Streptomyces aureofaciens")
-    |-- mccv:MCCV_000065
-    |       `-- taxid ("taxonomy:1894")
-    |-- mccv:MCCV_000046
-    |       `-- approved (1)
-    |-- mccv:MCCV_000017
-    |       `-- type_strain (1)
-    |-- sio:SIO_000216 / sio:SIO_000221
-    |       `-- unit ("obo:UO_0000027")
-    |-- sio:SIO_000216 / sio:SIO_000300
-    |       `-- value (28)
-    |-- mccv:MCCV_000073 / mccv:MCCV_000018
-    |       `-- growth_medium ("<http://purl.jp/bio/103/nite/medium/NBRC_M000227>")
-    |-- mccv:MCCV_000073 / mccv:MCCV_000019
-    |       `-- rehydration_fluid ("<http://purl.jp/bio/103/nite/medium/NBRC_M000707>")
-    |-- mccv:MCCV_000024 / mccv:MCCV_000025
-    |       `-- xref ("<https://www.dsmz.de/catalogues/details/culture/DSM-40127.html>")
-    |-- mccv:MCCV_000024 / dct:identifier
-    |       `-- id1 ("DSM 40127")
-    |-- mccv:MCCV_000027
-    |       `-- history ("IFO 12843 <- SAJ <- OWU (ISP 5127) <- Lederle Labs. (E. Backus, A-377)")
-    |-- mccv:MCCV_000028 / mccv:MCCV_000072 / sio:SIO_000008
-    |       |-- attribute ("meo:MEO_0000007")
-    |       `-- gazetteer ("obo:GAZ_00600942")
-    |-- mccv:MCCV_000028 / mccv:MCCV_000072 / mccv:MCCV_000030
-    |       `-- habitat ("Soil, USA")
-    |-- mccv:MCCV_000028 / mccv:MCCV_000072 / rdfs:label
-    |       `-- location ("USA")
-    |-- mccv:MCCV_000028 / mccv:MCCV_000072 / sio:SIO_000008
-    |       |-- attribute ("meo:MEO_0000007")
-    |       `-- gazetteer ("obo:GAZ_00600942")
-    |-- dct:references
-    |       `-- reference ("pubmed:14657141")
-    |-- mccv:MCCV_000033
-    |       `-- application ("Chlortetracycline\n(aureomycin);production\n")
-    `-- mccv:MCCV_000076
-            `-- culture_collection ("<http://www.wfcc.info/ccinfo/collection/by_id/825>")
-
-
-% rdf-config --config config/nbrc --sparql                                                       
+% rdf-config --config config/nbrc --sparql
 # https://integbio.jp/rdf/sparql
 
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -161,6 +126,24 @@ WHERE {
   ?s mccv:MCCV_000028 / mccv:MCCV_000072 / mccv:MCCV_000030 ?habitat .
 }
 LIMIT 100
+```
+
+### Generate TogoStanza
+
+JavaScript version
+
+```
+% rdf-config --config config/hint --stanza_rb hint_pair_stanza
+Stanza template has been generated successfully.
+To view the stanza, run (cd stanza/javascript; ts server) and open http://localhost:8080/
+```
+
+Ruby version (it may take a while for the first time to install dependencies)
+
+```
+% rdf-config --config config/hint --stanza_rb hint_pair_stanza
+Stanza template has been generated successfully.
+To view the stanza, run (cd stanza/ruby; bundle exec rackup) and open http://localhost:9292/
 ```
 
 ## Authors
