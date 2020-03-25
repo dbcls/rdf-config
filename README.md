@@ -20,6 +20,11 @@
 * DONE: generate TogoStanza
 * generate ShEx and validate RDF data
 
+## SPECIFICATION
+
+* [Japanese version](./doc/spec_ja.md)
+* English version (under development)
+
 ## USAGE
 
 ```
@@ -157,4 +162,14 @@ WHERE {
 }
 LIMIT 100
 ```
+
+## Authors
+
+* Toshiaki Katayama (DBCLS)
+* Tatsuya Nishizawa (IMSBIO)
+
+## License
+
+* MIT License
+
 
