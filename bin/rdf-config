@@ -38,6 +38,7 @@ args.each_option do |name, value|
     opts[:mode] = :sparqlist
   when /--sparql/
     opts[:mode] = :sparql
+    opts[:sparql_query_name] = value
   when /--query/
     # pipe to https://gist.github.com/ktym/3385134 ?
     opts[:mode] = :query
@@ -51,8 +52,8 @@ args.each_option do |name, value|
 end
 
 if opts[:config_dir] and opts[:mode]
-  rdf_config = RDFConfig.new(opts[:config_dir])
-  rdf_config.exec(opts[:mode])
+  rdf_config = RDFConfig.new(opts)
+  rdf_config.exec(opts)
 else
   help
 end

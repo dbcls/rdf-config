@@ -4,14 +4,25 @@ class RDFConfig
 
     attr_reader :variables
 
-    def initialize(model, query_name = 'sparql')
+    def initialize(model, opts)
+      if opts[:sparql_query_name].to_s.empty?
+        query_name = 'sparql'
+      else
+        query_name = opts[:sparql_query_name]
+      end
+
       @model = model
 
       @prefixes = model.prefix
 
       @sparql_config = model.parse_sparql
-      @parameters = @sparql_config[query_name].key?('parameters') ? @sparql_config[query_name]['parameters'] : {}
-      @variables = @sparql_config[query_name]['variables']
+
+      if @sparql_config.key?(query_name)
+        @parameters = @sparql_config[query_name].key?('parameters') ? @sparql_config[query_name]['parameters'] : {}
+        @variables = @sparql_config[query_name]['variables']
+      else
+        raise "Error: No SPARQL query (#{query_name}) exists."
+      end
 
       @endpoint_config = model.parse_endpoint
     end

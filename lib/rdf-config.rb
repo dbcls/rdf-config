@@ -13,13 +13,14 @@ class RDFConfig
   require 'rdf-config/stanza'
   require 'rdf-config/chart'
 
-  def initialize(config_dir)
-    @config_dir = config_dir
-    @model = Model.new(config_dir)
+  def initialize(opts = {})
+    @config_dir = opts[:config_dir]
+    @model = Model.new(@config_dir)
+    @opts = opts
   end
 
-  def exec(mode = :help)
-    case mode
+  def exec(opts)
+    case opts[:mode]
     when :sparql
       puts generate_sparql
     when :query
@@ -36,7 +37,7 @@ class RDFConfig
   end
 
   def generate_sparql
-    sparql = SPARQL.new(@model)
+    sparql = SPARQL.new(@model, @opts)
     sparql.generate
   end
 
