@@ -208,7 +208,7 @@ RDF-config では、対象となる目的語の名前から、必要となる pr
 TogoStanza を生成する際に必要な metadata.json ファイルのための情報を記述する。
 
 ```
-スタンザのID:
+スタンザ名:
   output_dir: /path/to/output/dir     # 出力先ディレクトリ名（TODO: ここに書くのではなくコマンドラインで自由に変更できるようにすべきか）
   label: "スタンザの名前"
   definition: "スタンザの説明"
