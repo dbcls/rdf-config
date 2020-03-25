@@ -12,18 +12,26 @@
 
 ## GOAL
 
-* capture the RDF data strucuture in ease
-* generate SPARQL queries
+* DONE: capture the RDF data strucuture in ease
+* DONE: generate SPARQL queries
 * generate SPARQLet for SPARQList
 * generate Grasp config file
-* generate schema chart
-* generate TogoStanza
-* generate dataset for machine learning
-  * set of APIs for SPARQList
-  * bulk download
-  * data frame
+* DONE: generate schema chart
+* DONE: generate TogoStanza
+* generate ShEx and validate RDF data
 
 ## USAGE
+
+```
+% git clone https://github.com/dbcls/rdf-config.git
+
+% cd rdf-config
+
+% export PATH="./bin:$PATH"
+% export RUBYLIB="./lib" 
+```
+
+TODO: Installer will be provided soon!
 
 ```
 % rdf-config --config config/refex --senbero
@@ -61,6 +69,12 @@ RefExSample (refexo:RefExSample)
     |       `-- dev_site ("obo:CL_0000134")
     `-- refexo:sampleReference / refexo:sample
             `-- refexo_sample ("<http://fantom.gsc.riken.jp/5/sstar/FF:10828-111C9>")
+
+% rdf-config --config config/refex --schema > refex.svg
+
+![RefEx schema](./doc/figure/refex.svg)
+<img src="./doc/figure/refex.svg">
+
 
 % rdf-config --config config/nbrc --senbero
 Culture (mccv:MCCV_000001)
