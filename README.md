@@ -71,11 +71,12 @@ RefExSample (refexo:RefExSample)
             `-- refexo_sample ("<http://fantom.gsc.riken.jp/5/sstar/FF:10828-111C9>")
 
 % rdf-config --config config/refex --schema > refex.svg
+```
 
 ![RefEx schema](./doc/figure/refex.svg)
 <img src="./doc/figure/refex.svg">
 
-
+```
 % rdf-config --config config/nbrc --senbero
 Culture (mccv:MCCV_000001)
     |-- dct:identifier
