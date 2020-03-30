@@ -174,7 +174,7 @@ class RDFConfig
     end
 
     def select_var_names
-      used_subject_names.reject { |name| @variables.include?(name) } + @variables
+      @variables
     end
 
     def used_prefixes(variables = @variables, parameters = @parameters)

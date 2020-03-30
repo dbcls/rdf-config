@@ -134,12 +134,18 @@ class RDFConfig
 
     def used_prefixes(variable_names)
       prefixes = []
+
       variable_names.each do |var_name|
         subject_name = subject_name(var_name)
+        next if subject_name.to_s.empty?
+
+        rdf_type = @subject_type_map[subject_name].to_s
         predicate = @predicate_path_map[subject_name][var_name].strip
-        predicate.split(PROPERTY_PATH_SEPARATOR).each do |p|
-          if /\A(\w+):\w+\z/ =~ p
-            prefixes << Regexp.last_match(1) unless prefixes.include?(Regexp.last_match(1))
+        [rdf_type, predicate].reject(&:empty?).each do |uri_path|
+          uri_path.split(PROPERTY_PATH_SEPARATOR).each do |p|
+            if /\A(\w+):\w+\z/ =~ p
+              prefixes << Regexp.last_match(1) unless prefixes.include?(Regexp.last_match(1))
+            end
           end
         end
       end
@@ -194,6 +200,8 @@ class RDFConfig
       optional_lines = {}
       variable_names.each do |var_name|
         subject_name = subject_name(var_name)
+        next if subject_name.to_s.empty?
+
         subject = subjects.select { |subj| subj.name == subject_name }.first
         required_lines[subject_name] = [['a', @subject_type_map[subject_name]]] unless required_lines.key?(subject_name)
         optional_lines[subject_name] = [] unless optional_lines.key?(subject_name)
