@@ -103,6 +103,8 @@ class RDFConfig
         @subject_ypos = START_Y
         @object_pos = {}
         @num_objects = 0
+        @generated_subjects = []
+        @object_positions = []
       end
 
       def generate
@@ -119,6 +121,8 @@ class RDFConfig
       end
 
       def generate_subject(subject)
+        return if @generated_subjects.include?(subject.name)
+
         if @object_pos.key?(subject.name)
           # move to subject rectangle position
           @current_pos.x = @object_pos[subject.name].x
@@ -133,6 +137,8 @@ class RDFConfig
         subject.property_hash.each do |property_hash|
           generate_property(subject, property_hash)
         end
+
+        @generated_subjects << subject.name
       end
 
       def generate_property(subject, property_hash)
@@ -157,16 +163,43 @@ class RDFConfig
             end
           else
             objects.each do |object_hash|
-              object = Model::Object.instance(object_hash, @model.prefix)
-              if object.blank_node?
-                generate_blank_node(subject, predicate, object_hash[object.name])
-              else
-                generate_predicate(predicate)
-                generate_object(object)
-              end
+              generate_object_by_hash(subject, predicate, object_hash)
             end
           end
         end
+      end
+
+      def generate_object_by_hash(subject, predicate, object_hash)
+        object = Model::Object.instance(object_hash, @model.prefix)
+        if object.blank_node?
+          generate_blank_node(subject, predicate, object_hash[object.name])
+        else
+          generate_predicate(predicate)
+
+          if subject_name?(object.name)
+            subject_hash = subject_config(object.name)
+            if subject_hash.empty?
+              generate_object(object)
+            else
+              generate_object_as_subject(subject_hash)
+            end
+          else
+            generate_object(object)
+          end
+        end
+      end
+
+      def generate_object_as_subject(subject_hash)
+        subject = Model::Subject.new(subject_hash, @model.prefix)
+        @current_pos.x = @current_pos.x + PREDICATE_AREA_WIDTH
+        prev_subject_ypos = @subject_ypos
+        @subject_ypos = @current_pos.y
+        prev_num_objects = @num_objects
+        @num_objects = 0
+        generate_subject(subject)
+        @current_pos.x = @current_pos.x - (PREDICATE_AREA_WIDTH + RECT_WIDTH)
+        @subject_ypos = prev_subject_ypos
+        @num_objects = prev_num_objects
       end
 
       def generate_rdf_type(rdf_type)
@@ -201,7 +234,8 @@ class RDFConfig
           add_to_svg(object_literal_elements(pos, inner_texts, object.data_type))
         end
 
-        @object_pos[object.name] = pos
+        @object_pos[object.name] = pos.dup
+        @object_positions << pos.dup
         @num_objects += 1
         move_to_next_object
       end
@@ -267,6 +301,19 @@ class RDFConfig
         else
           @svg_element.add_element(element)
         end
+      end
+
+      def subject_config(subject_name)
+        @model.yaml.select do |subject_hash|
+          name = subject_hash.keys.first.split(/\s+/).first
+          name == subject_name
+        end.first
+      rescue
+        {}
+      end
+
+      def subject_name?(name)
+        /\A[A-Z]/ =~ name
       end
 
       def predicate_arrow_position(object_type = :not_bnode)
