@@ -1,6 +1,6 @@
 - RefExEntry <http://purl.jp/bio/01/refex/RFX0016539731>:
     - a: refexo:RefExEntry
-    - refexo:exValue:
+    - refexo:expValue:
         - ex_value: Ex value
     - dct:identifier:
         - refex_id: RFX0016539731
@@ -14,27 +14,33 @@
     - dct:identifier:
         - sample_id: RES00000100
     - refexo:organism:
-        - taxonomy: <http://identifiers.org/taxonomy/9606>
-    - refexo:refexTissueClass10:
-        - class10: refexo:v04_10
-    - refexo:refexTissueClass40:
-        - class40: refexo:v20_4
-    - refexo:sex:
+        - taxonomy?: <http://identifiers.org/taxonomy/9606>
+    - refexo:age:
+        - age*: obo:PATO_0000383
+    - refexo:sex?:
         - sex: obo:PATO_0000383
-    - refexo:refexAlphabeticalUniqOrder:
-        - unique_order: 210
-    - refexo:refexRefinedDescription:
-        - ref_description: uterus, adult
+    - refexo:developmentalStage:
+        - stage*: adult
     - refexo:refexSampleCategory:
-        - sample_category: developmental
+        - sample_category*: developmental
+    - refexo:refexRefinedDescription:
+        - description*: uterus, adult
+    - refexo:originalDescription*:
+        - original_description: "TPM (tags per million) of Smooth Muscle Cells - Subclavian Artery, donor1.CNhs11090.11289-117A2"
+    - refexo:refexAlphabeticalUniqOrder:
+        - unique_order?: 210
+    - refexo:refexTissueClass10:
+        - class10?: refexo:v04_10
+    - refexo:refexTissueClass40:
+        - class40?: refexo:v20_4
     - refexo:sampleReference:
         - []:
           - a: refexo:SampleReference
           - refexo:belongsToCellType:
-              - cell_type: obo:CL_0000003
+              - cell_type*: obo:CL_0000003
           - refexo:belongsToDisease:
-              - disease: obo:DOID_0050686
+              - disease*: obo:DOID_0050686
           - refexo:belongsToDevelopmentSite:
-              - dev_site: obo:CL_0000134
+              - dev_site*: obo:CL_0000134
           - refexo:sample:
-              - refexo_sample: <http://fantom.gsc.riken.jp/5/sstar/FF:10828-111C9>
+              - refexo_sample*: <http://fantom.gsc.riken.jp/5/sstar/FF:10828-111C9>

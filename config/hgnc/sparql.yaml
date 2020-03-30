@@ -1,0 +1,10 @@
+sparql:
+  description: Obrain gene records from the HGNC data
+  variables: [gene, label, see_also, reference]
+
+stanza_sparql:
+  description: Obtain a gene record from the HGNC data
+  parameters:
+    gene: TP53
+  variables: [gene, label, see_also, reference, alt_label]
+
