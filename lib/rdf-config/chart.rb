@@ -23,12 +23,18 @@ class RDFConfig
       end
 
       def generate
+        seen = {}
         @model.subjects.each do |subject|
           subject_class = @model.subject_type_map[subject]
           subject_color = color_subject(subject)
           puts "#{subject_color} (#{subject_class})"
           predicates = @model.predicates[subject]
           predicates.each_with_index do |predicate, i|
+            if seen[predicate]
+              next
+            else
+              seen[predicate] = true
+            end
             predicate_color = color_predicate(predicate)
             if i < predicates.size - 1
               puts "    |-- #{predicate_color}"
@@ -38,15 +44,14 @@ class RDFConfig
             objects = @model.objects[subject][predicate]
             objects.each_with_index do |object, j|
               object_label_value = @model.object_label_map[subject][object]
-              object_label = object_label_value ? object_label_value.inspect : "N/A"
-#              case @model.object_type(object_label_value)
-#              when :IRI
-#              when :Number
-#              when :String
-#                object_label = object_label_value.inspect
-#              else
-#                "N/A"
-#              end
+              case @model.object_type(object)
+              when :uri
+                object_label = object_label_value
+              when :literal
+                object_label =  object_label_value.inspect
+              else
+                "N/A"
+              end
               object_color = color_object(object)
               object_color = color_subject(object) if @model.subjects.include?(object)
               if i < predicates.size - 1
