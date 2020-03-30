@@ -1,0 +1,17 @@
+clinvar:
+  output_dir: "stanza"
+  label: "ClinVar"
+  definition: "Stanza of a clinical annotations"
+  sparql: sparql
+  parameters:
+    reference:
+      example: <http://identifiers.org/hco/13#GRCh37>
+      description: Genome reference
+      required: true
+    position:
+      example: '32889080' # FIXME: Integer literal occurrs TypeError
+      description: Genomic position
+      required: true
+    db:
+      example: MedGen
+      description: Database name

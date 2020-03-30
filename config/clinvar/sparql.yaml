@@ -1,0 +1,8 @@
+sparql:
+  description: Obrain clinical annotations from ClinVar
+  subject: ClinVarAnnotaions
+  parameters:
+    reference: <http://identifiers.org/hco/13#GRCh37>
+    position: '32889080' # FIXME: Integer literal occurrs TypeError
+    db: MedGen
+  variables: [title, vcv, review_status, interpretation, last_evaluated, condition, db, id, position, reference]
