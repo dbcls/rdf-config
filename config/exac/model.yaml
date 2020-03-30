@@ -1,0 +1,83 @@
+- ExACValiation exac:4-100197800-C-T:
+  - a: exo:Variant
+  - dct:identifier:
+    - identifier: "4-100197800-C-T"
+  - rdfs:seeAlso:
+    - browser: browser:chr4%3A100197800-100197800&position=chr4%3A100197775-100197825
+  - rdfs:seeAlso:
+    - homepage: hp:4-100197800-C-T
+
+  - faldo:location:
+    - []:
+      - a: faldo:Region
+      - faldo:begin:
+        - []:
+          - a: faldo:Position, faldo:ExactPosition
+          - faldo:position:
+            - begin_position: 100197800
+          - faldo:reference:
+            - []:
+              - a: obo:SO_0000340
+              - rdfs:label:
+                - begin_reference: "chr 4"
+      - faldo:end:
+        - []:
+          - a: faldo:Position, faldo:ExactPosition
+          - faldo:position:
+            - end_position: 100197800
+          - faldo:reference:
+            - []:
+              - a: obo:SO_0000340
+              - rdfs:label:
+                - end_reference: "chr 4"
+
+  - exo:referenceAllele:
+    - reference_allele: "C"
+  - exo:alternateAllele:
+    - alternate_allele: "T"
+  - exo:alleleCount:
+    - allele_count: 12
+  - exo:alleleNum:
+    - allele_num: 121220
+  - exo:numOfHomozygotes:
+    - num_of_homozygotes: 0
+  - exo:alleleFrequency:
+    - allele_frequency: 9.899356541824782e-5
+  - exo:consequence:
+    - consequence: "missense"
+  - exo:hgvs:
+    - hgvs: "p.Arg370His"
+
+  - exo:annotation:
+    - []:
+      - a: exo:Annotation
+      - exo:consequence:
+        - annotation_consequence: "missense_variant"
+      - exo:ensemblGene:
+        - annotation_gene: ensembl:ENSG00000187758
+      - exo:ensemblProtein:
+        - annotation_protein: ensembl:ENSP00000209668
+      - exo:ensemblTranscript:
+        - annotation_transcript: ensembl:ENST00000209668
+      - exo:geneSymbol:
+        - annotation_gene_symbol: ADH1A
+      - exo:hgvsc:
+        - annotation_agvsc: ENST00000209668.2:c.1109G>A
+      - exo:hgvsp:
+        - annotation_hgvsp: ENSP00000209668.2:p.Arg370His
+      - so:variant_of:
+        - annotation_hgnc: hgnc:249
+
+  - exo:population:
+    - []:
+      - a: exo:Population
+      - rdfs:label:
+        - population_label: South Asian
+      - exo:alleleCount:
+        - population_allele_count: 10
+      - exo:alleleFrequency:
+        - population_allele_frequency: 6.060606060606061e-4
+      - exo:alleleNum:
+        - population_allele_num: 16500
+      - exo:numOfHomozygotes:
+        - population_num_of_homozygotes: 0
