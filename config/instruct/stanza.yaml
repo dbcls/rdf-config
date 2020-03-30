@@ -1,0 +1,10 @@
+instruct_pair_stanza:
+  output_dir: "stanza"
+  label: "INstruct pair"
+  definition: "Stanza of a protein-protein interaction pair"
+  sparql: pair_stanza
+  parameters:
+    pair0:
+      example: uni:A0A024QYV7
+      description: UniProt identifier
+      required: true

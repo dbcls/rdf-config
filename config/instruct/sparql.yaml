@@ -1,0 +1,11 @@
+sparql:
+  description: Obrain protein-protein interaction pairs from the INstruct database
+  subject: INstruct
+  variables: [data_source, display_hame, evidence, name, pair0, pair1]
+
+pair_stanza:
+  description: Get just a pair of interaction from the INstruct database for TogoStanza
+  subject: INstruct
+  parameters:
+    pair0: uni:Q05513
+  variables: [pair0, pair1, evidence]
