@@ -25,15 +25,16 @@ class RDFConfig
       def generate
         seen = {}
         @model.subjects.each do |subject|
+          seen[subject] ||= {}
           subject_class = @model.subject_type_map[subject]
           subject_color = color_subject(subject)
           puts "#{subject_color} (#{subject_class})"
           predicates = @model.predicates[subject]
           predicates.each_with_index do |predicate, i|
-            if seen[predicate]
+            if seen[subject][predicate]
               next
             else
-              seen[predicate] = true
+              seen[subject][predicate] = true
             end
             predicate_color = color_predicate(predicate)
             if i < predicates.size - 1
