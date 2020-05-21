@@ -7,40 +7,40 @@
     - rdfs:seeAlso:
         - see_also: <http://identifiers.org/affy.probeset/224348_s_at>
     - refexo:refexSample:
-        - RefExSample: <http://refex.dbcls.jp/sample/RES00000884>
+        - sample: RefExSample
 
 - RefExSample <http://refex.dbcls.jp/sample/RES00000100>:
     - a: refexo:RefExSample
     - dct:identifier:
         - sample_id: RES00000100
-    - refexo:organism:
-        - taxonomy?: <http://identifiers.org/taxonomy/9606>
-    - refexo:age:
-        - age*: obo:PATO_0000383
+    - refexo:organism?:
+        - taxonomy: <http://identifiers.org/taxonomy/9606>
+    - refexo:age*:
+        - age: obo:PATO_0000383
     - refexo:sex?:
         - sex: obo:PATO_0000383
-    - refexo:developmentalStage:
-        - stage*: adult
-    - refexo:refexSampleCategory:
-        - sample_category*: developmental
-    - refexo:refexRefinedDescription:
-        - description*: uterus, adult
+    - refexo:developmentalStage*:
+        - stage: adult
+    - refexo:refexSampleCategory*:
+        - sample_category: developmental
+    - refexo:refexRefinedDescription*:
+        - description: uterus, adult
     - refexo:originalDescription*:
         - original_description: "TPM (tags per million) of Smooth Muscle Cells - Subclavian Artery, donor1.CNhs11090.11289-117A2"
-    - refexo:refexAlphabeticalUniqOrder:
-        - unique_order?: 210
-    - refexo:refexTissueClass10:
-        - class10?: refexo:v04_10
-    - refexo:refexTissueClass40:
-        - class40?: refexo:v20_4
+    - refexo:refexAlphabeticalUniqOrder?:
+        - unique_order: 210
+    - refexo:refexTissueClass10?:
+        - class10: refexo:v04_10
+    - refexo:refexTissueClass40?:
+        - class40: refexo:v20_4
     - refexo:sampleReference:
         - []:
           - a: refexo:SampleReference
-          - refexo:belongsToCellType:
-              - cell_type*: obo:CL_0000003
-          - refexo:belongsToDisease:
-              - disease*: obo:DOID_0050686
-          - refexo:belongsToDevelopmentSite:
-              - dev_site*: obo:CL_0000134
-          - refexo:sample:
-              - refexo_sample*: <http://fantom.gsc.riken.jp/5/sstar/FF:10828-111C9>
+          - refexo:belongsToCellType*:
+              - cell_type: obo:CL_0000003
+          - refexo:belongsToDisease*:
+              - disease: obo:DOID_0050686
+          - refexo:belongsToDevelopmentSite*:
+              - dev_site: obo:CL_0000134
+          - refexo:sample*:
+              - refexo_sample: <http://fantom.gsc.riken.jp/5/sstar/FF:10828-111C9>
