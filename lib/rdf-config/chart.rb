@@ -46,6 +46,8 @@ class RDFConfig
             objects.each_with_index do |object, j|
               object_label_value = @model.object_label_map[subject][object]
               case @model.object_type(object)
+              when :class
+                object_label = color_subject(object_label_value)
               when :uri
                 object_label = object_label_value
               when :literal

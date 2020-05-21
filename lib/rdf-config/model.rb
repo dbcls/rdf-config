@@ -44,6 +44,8 @@ class RDFConfig
 
     def parse_model(model_config_file)
       @yaml = YAML.load_file(model_config_file)
+      # ad hoc workaround
+      @subjects = @yaml.map{ |x| x.keys.first.split(/\s+/).at(0) }.uniq
       @yaml.each do |subject_block|
         proc_subject_block(subject_block)
       end
@@ -58,7 +60,7 @@ class RDFConfig
           if ['a', 'rdf:type'].include?(property_block.keys.at(0))
             @subject_type_map[@current_subject_name] = property_block[property_block.keys.at(0)]
             # shortcut
-            @subjects << @current_subject_name
+            #@subjects << @current_subject_name
           else
             proc_property_block(property_block)
           end
@@ -175,7 +177,9 @@ class RDFConfig
     def determine_object_type(value)
       case value
       when String
-        if /\A<.+\>\z/ =~ value
+        if @subjects.include?(value)
+          :class
+        elsif /\A<.+\>\z/ =~ value
           :uri
         else
           if /\A(\w+):/ =~ value && has_prefix?(Regexp.last_match(1))
