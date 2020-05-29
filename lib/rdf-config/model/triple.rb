@@ -1,6 +1,7 @@
 class RDFConfig
   class Model
-    Property = Struct.new(:predicate, :object)
+    Property = Struct.new(:predicate, :object, :property_paths)
+    Cardinality = Struct.new(:min, :max)
 
     class Subject
       attr_reader :name, :value, :properties, :property_hash
@@ -12,51 +13,118 @@ class RDFConfig
         @property_hash = subject_hash[key]
         @name, @value = key.split(/\s+/, 2)
         @properties = []
+
+        @property_paths = []
         subject_hash[key].each do |property_hash|
           add_property(property_hash)
         end
       end
 
+      def rdf_type
+        type = nil
+        properties.each do |property|
+          if property.predicate.rdf_type?
+            type = property.object.name
+            break
+          end
+        end
+
+        if type.nil?
+          raise SubjectClassNotFound, "Subject: #{subject_name}: rdf_type not found."
+        end
+
+        type
+      end
+
       def add_property(property_hash)
-        predicate = property_hash.keys.first
-        object = property_hash[predicate]
+        predicate_key = property_hash.keys.first
+        predicate = Predicate.new(predicate_key)
+        object = property_hash[predicate_key]
 
         case object
         when Array
           object.each do |obj|
             obj_inst = Object.instance(obj, @prefix_hash)
             if obj_inst.blank_node?
+              @property_paths << predicate.uri
               obj_inst.value.each do |bnode_property|
                 add_property(bnode_property)
               end
+              @property_paths.pop
             else
               @properties << property_instance(predicate, obj_inst)
             end
           end
         when Hash
-          @properties << property_instance(predicate, objects)
+          @properties << property_instance(predicate, object)
+        when String
+          @properties << property_instance(predicate, object)
         end
       end
 
       def property_instance(predicate, object)
         case object
         when Hash
-          object = Oject.instance(object, @prefix_hash)
+          object = Object.instance(object, @prefix_hash)
+        when String
+          object = Object.instance(object, @prefix_hash)
         end
 
-        Property.new(Predicate.new(predicate), object)
+        Property.new(predicate, object, @property_paths.dup.push(predicate.uri))
       end
     end
 
     class Predicate
-      attr_reader :uri
+      attr_reader :uri, :cardinality
 
       def initialize(predicate)
         @uri = predicate
+        @cardinality = nil
+
+        interpret_cardinality
+      end
+
+      def interpret_cardinality
+        last_char = @uri[-1]
+        case last_char
+        when '?', '*', '+'
+          handle_char_cardinality(last_char)
+        when '}'
+          handle_range_cardinality
+        end
       end
 
       def rdf_type?
         %w[a rdf:type].include?(@uri)
+      end
+
+      def sparql_optional_phrase?
+        @cardinality.is_a?(Cardinality) && (@cardinality.min.nil? || @cardinality.min == 0)
+      end
+
+      def handle_char_cardinality(cardinality)
+        @uri = @uri[0..-2]
+
+        case cardinality
+        when '?'
+          @cardinality = Cardinality.new(0, 1)
+        when '*'
+          @cardinality = Cardinality.new(0, nil)
+        when '+'
+          @cardinality = Cardinality.new(1, nil)
+        end
+      end
+
+      def handle_range_cardinality
+        pos = @uri.rindex('{')
+        range = @uri[pos + 1..-2]
+        @uri = @uri[0..pos - 1]
+        if range.index(',')
+          min, max = range.split(/\s*,\s*/)
+          @cardinality = Cardinality.new(min.to_s == '' ? nil : min.to_i, max.to_s == '' ? nil : max.to_i)
+        else
+          @cardinality = Cardinality.new(range.to_i, range.to_i)
+        end
       end
     end
 
@@ -119,7 +187,7 @@ class RDFConfig
         end
       end
 
-      attr_reader :name, :value, :optional
+      attr_reader :name, :value
 
       def initialize(object, prefix_hash = {})
         case object
@@ -129,17 +197,6 @@ class RDFConfig
         else
           @name = object
           @value = nil
-        end
-
-        @attribute = nil
-        @optional = false
-        last_char = @name[-1]
-        if %w[+ * ?].include?(last_char)
-          @name = @name[0..-2]
-          @attribute = last_char
-          if %w[* ?].include?(last_char)
-            @optional = true
-          end
         end
       end
 

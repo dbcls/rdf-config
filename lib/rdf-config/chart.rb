@@ -26,7 +26,8 @@ class RDFConfig
         seen = {}
         @model.subjects.each do |subject|
           seen[subject] ||= {}
-          subject_class = @model.subject_type_map[subject]
+          #subject_class = @model.subject_type_map[subject]
+          subject_class = @model.subject_type(subject)
           subject_color = color_subject(subject)
           puts "#{subject_color} (#{subject_class})"
           predicates = @model.predicates[subject]
@@ -44,7 +45,8 @@ class RDFConfig
             end
             objects = @model.objects[subject][predicate]
             objects.each_with_index do |object, j|
-              object_label_value = @model.object_label_map[subject][object]
+              #object_label_value = @model.object_label_map[subject][object]
+              object_label_value = @model.object_value(object)
               case @model.object_type(object)
               when :class
                 object_label = color_subject(object_label_value)

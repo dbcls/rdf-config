@@ -4,6 +4,8 @@ class RDFConfig
 
     attr_reader :parameters, :variables
 
+    PROPERTY_PATH_SEPARATOR = ' / '.freeze
+
     def initialize(model, opts)
       if opts[:sparql_query_name].to_s.empty?
         @query_name = 'sparql'
@@ -123,7 +125,7 @@ class RDFConfig
     end
 
     def where_phase_lines(var_names)
-      triple = @model.sparql_triple_lines(var_names)
+      triple = sparql_triple_lines(var_names)
       lines = []
       triple[:required].each do |subject_name, properties|
         next if properties.empty?
@@ -137,7 +139,7 @@ class RDFConfig
           end
           lines << "      #{last_line[0]} #{last_line[1]} ."
         else
-          lines << "  ?#{subject_name} #{first_line[0]} #{first_line[1]} ."
+          lines << "  ?#{subject_name} #{properties[0][0]} #{properties[0][1]} ."
         end
       end
 
@@ -148,6 +150,29 @@ class RDFConfig
       end
 
       lines
+    end
+
+    def sparql_triple_lines(variable_names)
+      required_lines = {}
+      optional_lines = {}
+      variable_names.each do |variable_name|
+        next if @model.subject_name?(variable_name)
+
+        subject = @model.subject_by_object_name(variable_name)
+        required_lines[subject.name] = [['a', @model.subject_type(subject.name)]] unless required_lines.key?(subject.name)
+        optional_lines[subject.name] = [] unless optional_lines.key?(subject.name)
+
+        property_phrase = [@model.property_paths(variable_name).join(PROPERTY_PATH_SEPARATOR), "?#{variable_name}"]
+
+        property = @model.property_by_object_name(variable_name)
+        if property.predicate.sparql_optional_phrase?
+          optional_lines[subject.name] << property_phrase
+        else
+          required_lines[subject.name] << property_phrase
+        end
+      end
+
+      { required: required_lines, optional: optional_lines }
     end
 
     def find_variable(var_name)
@@ -177,10 +202,32 @@ class RDFConfig
       @variables
     end
 
+    def used_prefixes_by_variable(variable_names)
+      prefixes = []
+
+      variable_names.each do |variable_name|
+        next if @model.subject_name?(variable_name)
+
+        subject_name = @model.subject_name(variable_name)
+        next if subject_name.to_s.empty?
+
+        rdf_type = @model.subject_type(subject_name)
+        property = @model.property_by_object_name(variable_name)
+        property.property_paths.dup.push(rdf_type).reject(&:empty?).each do |uri|
+          if /\A(\w+):\w+\z/ =~ uri
+            prefix = Regexp.last_match(1)
+            prefixes << prefix unless prefixes.include?(prefix)
+          end
+        end
+      end
+
+      prefixes
+    end
+
     def used_prefixes(variables = @variables, parameters = @parameters)
-      prefixes = @model.used_prefixes(variables)
+      prefixes = used_prefixes_by_variable(variables)
       parameters.each do |var_name, value|
-        next if @model.object_type(value) == :literal
+        next if @model.object_type(var_name) == :literal
 
         if /\A(\w+):(.+)/ =~ value && !prefixes.include?($1)
           prefixes << $1
