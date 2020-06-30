@@ -1,12 +1,16 @@
 - dbSNPValiation dbsnp:1000017372:
-  - a: m2r:Variation, obo:SO_0001483
+  - a:
+    - m2r:Variation
+    - obo:SO_0001483
   - dct:identifier:
     - identifier: "rs1000017372"
   - dbsnpo:is_created_in_build:
     - build: 150, 152
   - faldo:location:
     - []:
-      - a: faldo:Position, faldo:ExactPosition
+      - a:
+        - faldo:Position
+        - faldo:ExactPosition
       - faldo:reference:
         - reference: hco:1#GRCh37, refseq:NC_000001.10
       - faldo:position:
@@ -17,7 +21,7 @@
     - allele: dbSNPAllele
 
 - dbSNPAllele dbsnp:1000017372#G:
-  - a: snpo:Allele
+  - a: dbsnpo:Allele
   - m2r:alternativeAllele:
     - alternative_allele: "G"
   - dct:isPartOf:
@@ -29,9 +33,9 @@
         - source: "TOPMED"
       - rdf:value:
         - frequency: 2.389e-5
-    - []:
-      - a: dct:Frequency
-      - dct:source:
-        - source: "GnomAD"
-      - rdf:value:
-        - frequency: 3.236e-5
+    #- []:
+    #  - a: dct:Frequency
+    #  - dct:source:
+    #    - source: "GnomAD"
+    #  - rdf:value:
+    #    - frequency: 3.236e-5

@@ -3,7 +3,13 @@ sparql:
   variables: [nbrc_id, clade, name, alias, taxid, attribute, habitat]
   parameters:
     nbrc_id: NBRC_00100650
-    attribute: obo:GAZ_00002747
+    attribute: meo:MEO_0000198
+
+stanza_sparql:
+    description: NBRC bioresource is a dataset for microbes which are maintained, managed and provided from NBRC
+    variables: [clade, name, alias, taxid, xref]
+    parameters:
+      nbrc_id: NBRC_00100650
 
 ---
 
