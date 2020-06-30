@@ -1,26 +1,59 @@
+require 'open3'
+
 class RDFConfig
   class Stanza
-    class JavaScript < RDFConfig::Stanza
-      def initialize(model, opts = {})
+    class JavaScript < Stanza
+      def initialize(config, opts = {})
         @stanza_type = 'javascript'
 
         super
-        @generate_template_cmd = "cd #{@stanza_base_dir}; ts new #{@stanza_name}"
       end
 
-      def generate
-        generate_template
+      def generate_template
+        Dir.chdir(stanza_base_dir) do
+          stdout, stderr, status = Open3.capture3("ts new #{@name}")
+          unless  status.success?
+            raise StanzaExecutionFailure, "ERROR: Stanza files creation failed.\n#{stderr}"
+          end
+        end
+
+      rescue Errno::ENOENT => e
+        raise StanzaExecutionFailure, "#{e.message}\nMake sure ts command is installed or ts command path is set in your PATH environment variable."
+      end
+
+      def generate_versionspecific_files
         update_index_js
-        update_metadata_json
-        update_stanza_html
-        generate_stanza_rq
       end
 
       def update_index_js
-        index_js = <<-EOS
+        output_to_file(index_js_fpath, index_js)
+      end
+
+      def metadata_hash
+        stanza_usages = []
+        parameters.each do |key, parameter|
+          stanza_usages << { key => parameter['example'] }
+        end
+        stanza_usage_attr = stanza_usages.map do |usage|
+          key = usage.keys.first
+          %(#{key}="#{usage[key]}")
+        end.join(' ')
+
+        metadata = JSON.parse(File.read(metadata_json_fpath))
+        metadata['stanza:usage'] = "<togostanza-#{@name} #{stanza_usage_attr}></togostanza-#{@name}>"
+
+        metadata.merge(super('stanza:'))
+      end
+
+      def stanza_html
+        sparql_result_html('.value')
+      end
+
+      def index_js
+        <<-EOS
 Stanza(function(stanza, params) {
   var q = stanza.query({
-    endpoint: "#{@sparql.endpoint}",
+    endpoint: "#{sparql.endpoint}",
     template: "stanza.rq",
     parameters: params
   });
@@ -30,62 +63,29 @@ Stanza(function(stanza, params) {
     stanza.render({
       template: "stanza.html",
       parameters: {
-        #{@stanza_name}: rows
+        #{@name}: rows
       },
     });
   });
 });
         EOS
-        File.open(index_js_fpath, 'w') do |f|
-          f.write(index_js)
-        end
       end
 
-      def update_metadata_json
-        stanza_parameters = parameters_for_metadata('stanza:')
-        stanza_usages = []
-        metadata_parameters.each do |key, parameter|
-          stanza_usages << { key => parameter['example'] }
-        end
-        stanza_usage_attr = stanza_usages.map do |usage|
-          key = usage.keys.first
-          %(#{key}="#{usage[key]}")
-        end.join(' ')
-
-        metadata = JSON.parse(File.read(metadata_json_fpath))
-        metadata['stanza:label'] = current_stanza['label']
-        metadata['stanza:definition'] = current_stanza['definition']
-        metadata['stanza:parameter'] = stanza_parameters
-        metadata['stanza:usage'] = "<togostanza-#{@stanza_name} #{stanza_usage_attr}></togostanza-#{@stanza_name}>"
-        output_metadata_json(metadata)
-      end
-
-      def update_stanza_html
-        File.open(stanza_html_fpath, 'w') do |f|
-          f.puts sparql_result_html('.value')
-        end
-      end
-
-      def generate_stanza_rq
-        File.open(stanza_rq_fpath, 'w') do |f|
-          f.puts sparql_query
-        end
-      end
-
-      def object_value(value)
-        %("{{#{value}}}")
+      def after_generate
+        super
+        STDERR.puts "To view the stanza, run (cd #{stanza_base_dir}; ts server) and open http://localhost:8080/"
       end
 
       def index_js_fpath
-        "#{@stanza_dir}/index.js"
+        "#{stanza_dir}/index.js"
       end
 
       def stanza_html_fpath
-        "#{@stanza_dir}/templates/stanza.html"
+        "#{stanza_dir}/templates/stanza.html"
       end
 
-      def stanza_rq_fpath
-        "#{@stanza_dir}/templates/stanza.rq"
+      def sparql_fpath
+        "#{stanza_dir}/templates/stanza.rq"
       end
     end
   end

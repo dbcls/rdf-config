@@ -1,3 +1,5 @@
+require 'open3'
+
 class RDFConfig
   class Stanza
     class Ruby < RDFConfig::Stanza
@@ -5,78 +7,124 @@ class RDFConfig
         @stanza_type = 'ruby'
 
         super
-        @generate_template_cmd = "togostanza init #{@stanza_base_dir}; cd #{@stanza_base_dir}; togostanza stanza new #{@stanza_name}"
       end
 
-      def generate
-        generate_template
-        update_metadata_json
-        update_stanza_html
-        update_stanza_rb
-        generate_sparql_hbs
-      end
+      def generate_template
+        setup_stanza_provider if require_stanza_init?
 
-      def update_metadata_json
-        metadata = JSON.parse(File.read(metadata_json_fpath))
-        metadata['parameter'] = parameters_for_metadata
-        output_metadata_json(metadata)
-      end
-
-      def update_stanza_html
-        indent_chars = ''
-        lines = File.readlines(stanza_html_fpath)
-        File.open(stanza_html_fpath, 'w') do |f|
-          lines.each do |line|
-            if /(\s*)<body>/ =~ line
-              indent_chars = $1
-              f.write line
-              break
-            end
-            f.write line
+        Dir.chdir(stanza_base_dir) do
+          stdout, stderr, status = Open3.capture3("togostanza stanza new #{@name}")
+          unless status.success?
+            raise StanzaExecutionFailure, "ERROR: Stanza files creation failed.\n#{stderr}"
           end
-
-          f.puts sparql_result_html('', indent_chars)
-          f.puts "#{indent_chars}</body>"
-          f.puts '</html>'
         end
+      rescue Errno::ENOENT => e
+        raise StanzaExecutionFailure, "#{e.message}\nMake sure togostanza command is installed or togostanza command path is set in your PATH environment variable."
+      end
+
+      def setup_stanza_provider
+        STDERR.write "Setup togostanza provider. It will take a while ... "
+        STDERR.flush
+        stdout, stderr, status = Open3.capture3("togostanza init #{stanza_base_dir}")
+        unless status.success?
+          STDERR.puts
+          raise StanzaExecutionFailure, "ERROR: Stanza init execution failed.\n#{stderr}"
+        end
+
+        STDERR.puts "done ."
+      end
+
+      def generate_versionspecific_files
+        update_stanza_rb
       end
 
       def update_stanza_rb
-        lines = File.readlines(stanza_rb_fpath)
-        File.open(stanza_rb_fpath, 'w') do |f|
-          lines.each do |line|
-            break if /\Aend/ =~ line
-            f.write line
+        output_to_file(stanza_rb_fpath, stanza_ruby)
+      end
+
+      def metadata_hash
+        metadata = JSON.parse(File.read(metadata_json_fpath))
+
+        metadata.merge(super)
+      end
+
+      def stanza_html
+        stanza_html_lines.join("\n")
+      end
+
+      def stanza_html_lines
+        html_lines = []
+
+        indent_chars = ''
+        File.readlines(stanza_html_fpath).each do |line|
+          if /(\s*)<body>/ =~ line
+            indent_chars = $1
+            html_lines << line.chomp
+            break
           end
-          f.puts ''
-
-          f.puts "  property :#{@stanza_name} do |#{stanza_parameters.keys.join(', ')}|"
-          f.puts "    query('#{@sparql.endpoint}', '#{sparql_hbs_fname}')"
-          f.puts '  end'
-          f.puts 'end'
+          html_lines << line.chomp
         end
+
+        html_lines << sparql_result_html('', indent_chars)
+        html_lines << "#{indent_chars}</body>"
+        html_lines << '</html>'
+
+        html_lines
       end
 
-      def generate_sparql_hbs
-        File.open(sparql_hbs_fpath, 'w') do |f|
-          f.puts sparql_query
-        end
+      def stanza_ruby
+        <<-EOS
+#{ruby_class_def_line}
+  property :#{@name} do |#{sparql.parameters.keys.join(', ')}|
+    query('#{sparql.endpoint}', '#{sparql_fname}')
+  end
+end
+        EOS
       end
 
-      def stanza_html_fpath
-        "#{@stanza_dir}/template.hbs"
+      def ruby_class_def_line
+        class_def_line = ''
+        File.readlines(stanza_rb_fpath).each do |line|
+          if /class\s+\w+\s*\<\s*TogoStanza\:\:Stanza\:\:Base/ =~ line
+            class_def_line = line.chomp
+            break
+          end
+        end
+
+        class_def_line
+      end
+
+      def after_generate
+        super
+        STDERR.puts "To view the stanza, run (cd #{stanza_base_dir}; bundle exec rackup) and open http://localhost:9292/"
+      end
+
+      def require_stanza_init?
+        !File.exist?("#{stanza_base_dir}/Gemfile.lock")
       end
 
       def stanza_rb_fpath
-        "#{@stanza_dir}/stanza.rb"
+        "#{stanza_dir}/stanza.rb"
       end
 
-      def sparql_hbs_fname
-        "#{@stanza_name}.hbs"
+      def stanza_html_fpath
+        "#{stanza_dir}/template.hbs"
       end
 
-      def sparql_hbs_fpath
-        File.expand_path("#{@stanza_dir}/sparql/#{sparql_hbs_fname}")
+      def sparql_fname
+        "#{@name}.hbs"
+      end
+
+      def sparql_fpath
+        "#{stanza_dir}/sparql/#{sparql_fname}"
+      end
+
+      def stanza_dir
+        if /_stanza\z/ =~ @name
+          super
+        else
+          "#{super}_stanza"
+        end
       end
     end
   end

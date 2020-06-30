@@ -8,14 +8,15 @@ require 'fileutils'
 require 'open3'
 
 class RDFConfig
+  require 'rdf-config/config'
   require 'rdf-config/model'
   require 'rdf-config/sparql'
   require 'rdf-config/stanza'
-  require 'rdf-config/chart'
+  require 'rdf-config/schema/senbero'
+  require 'rdf-config/schema/chart'
 
   def initialize(opts = {})
-    @config_dir = opts[:config_dir]
-    @model = Model.new(@config_dir)
+    @config = Config.new(opts[:config_dir])
     @opts = opts
   end
 
@@ -31,40 +32,42 @@ class RDFConfig
       generate_stanza_js
     when :senbero
       generate_senbero
-    when :schema
-      generate_schema
+    when :chart
+      generate_chart
     end
   end
 
   def generate_sparql
-    sparql = SPARQL.new(@model, @opts)
+    sparql = SPARQL.new(@config, @opts)
     sparql.generate
   end
 
   def run_sparql
-    sparql = SPARQL.new(@model)
+    sparql = SPARQL.new(@model, @opts)
     sparql.run
   end
 
   def generate_stanza_rb
-    stanza = Stanza::Ruby.new(@model, @opts)
+    stanza = Stanza::Ruby.new(@config, @opts)
     stanza.generate
+  rescue Stanza::StanzaConfigNotFound, Stanza::StanzaExecutionFailure => e
+    STDERR.puts e
   end
 
   def generate_stanza_js
-    stanza = Stanza::JavaScript.new(@model, @opts)
+    stanza = Stanza::JavaScript.new(@config, @opts)
     stanza.generate
-  end
-
-  def generate_schema
-    schema = Chart::Schema.new(@model)
-    schema.generate
+  rescue Stanza::StanzaConfigNotFound, Stanza::StanzaExecutionFailure => e
+    STDERR.puts e
   end
 
   def generate_senbero
-    senbero = Chart::Senbero.new(@model)
+    senbero = Schema::Senbero.new(@config)
     senbero.generate
   end
+
+  def generate_chart
+    schema = Schema::Chart.new(@config)
+    schema.generate
+  end
 end
-
-

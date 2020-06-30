@@ -1,134 +1,257 @@
 class RDFConfig
   class Model
-    Property = Struct.new(:predicate, :object, :property_paths)
-    Cardinality = Struct.new(:min, :max)
+    Cardinality = Struct.new(:label, :min, :max)
 
-    class Subject
-      attr_reader :name, :value, :properties, :property_hash
+    class Triple
+      attr_reader :subject, :predicates, :object
 
-      def initialize(subject_hash, prefix_hash = {})
-        @prefix_hash = prefix_hash
+      def initialize(subject, predicates, object)
+        @subject = subject
+        @predicates = predicates
+        @object = object
+      end
 
-        key = subject_hash.keys.first
-        @property_hash = subject_hash[key]
-        @name, @value = key.split(/\s+/, 2)
-        @properties = []
+      def predicate
+        @predicates.last
+      end
 
-        @property_paths = []
-        subject_hash[key].each do |property_hash|
-          add_property(property_hash)
+      def property_path(separator = ' / ')
+        @predicates.map(&:uri).join(separator)
+      end
+
+      def last_predicate?(model)
+        last_property_path = model.select { |triple| triple.subject.name == subject.name }.last.property_path
+
+        property_path == last_property_path
+      end
+
+      def last_object?(model)
+        idx = model.find_index(self)
+
+        model.size == idx + 1 || model[idx].property_path != model[idx + 1].property_path
+      end
+
+      def subject_name
+        @subject.name
+      end
+
+      def object_name
+        case @object
+        when Model::Subject
+          @object.as_object_name(subject.name)
+        else
+          @object.name
         end
       end
 
-      def rdf_type
-        type = nil
-        properties.each do |property|
-          if property.predicate.rdf_type?
-            type = property.object.name
-            break
-          end
-        end
-
-        if type.nil?
-          raise SubjectClassNotFound, "Subject: #{subject_name}: rdf_type not found."
-        end
-
-        type
-      end
-
-      def add_property(property_hash)
-        predicate_key = property_hash.keys.first
-        predicate = Predicate.new(predicate_key)
-        object = property_hash[predicate_key]
-
-        case object
-        when Array
-          object.each do |obj|
-            obj_inst = Object.instance(obj, @prefix_hash)
-            if obj_inst.blank_node?
-              @property_paths << predicate.uri
-              obj_inst.value.each do |bnode_property|
-                add_property(bnode_property)
-              end
-              @property_paths.pop
-            else
-              @properties << property_instance(predicate, obj_inst)
-            end
-          end
-        when Hash
-          @properties << property_instance(predicate, object)
-        when String
-          @properties << property_instance(predicate, object)
+      def object_value
+        case @object
+        when Model::Subject
+          @object.as_object_value(subject.name)
+        else
+          @object.value
         end
       end
 
-      def property_instance(predicate, object)
-        case object
-        when Hash
-          object = Object.instance(object, @prefix_hash)
-        when String
-          object = Object.instance(object, @prefix_hash)
-        end
-
-        Property.new(predicate, object, @property_paths.dup.push(predicate.uri))
+      def bnode_connecting?
+        @predicates.size > 1
       end
     end
 
-    class Predicate
-      attr_reader :uri, :cardinality
+    class Subject
+      attr_reader :name, :value, :predicates
 
-      def initialize(predicate)
-        @uri = predicate
+      def initialize(subject_hash, prefix_hash = {})
+        @prefix_hash = prefix_hash
+        @as_object = {}
+
+        key = subject_hash.keys.first
+        if key.is_a?(Array)
+          @name = key
+          @value = nil
+        else
+          @name, @value = key.split(/\s+/, 2)
+        end
+
+        @predicates = []
+        subject_hash.each do |subject_data, predicate_object_hashes|
+          add_predicates(predicate_object_hashes)
+        end
+      end
+
+      def types
+        rdf_type_predicates = @predicates.select { |predicate| predicate.rdf_type? }
+        raise SubjectClassNotFound, "Subject: #{@name}: rdf:type not found." if rdf_type_predicates.empty?
+
+        rdf_type_predicates.map { |predicate| predicate.objects.map(&:name) }.flatten
+      end
+
+      def type(separator = ', ')
+        types.join(separator)
+      end
+
+      def blank_node?
+        @name.is_a?(Array)
+      end
+
+      def objects
+        @predicates.map(&:objects).flatten
+      end
+
+      def add_predicates(predicate_object_hashes)
+        predicate_object_hashes.each do |predicate_object_hash|
+          add_predicate(predicate_object_hash)
+        end
+      end
+
+      def add_predicate(predicate_object_hash)
+        predicate_uri = predicate_object_hash.keys.first
+        predicate = Predicate.new(predicate_uri, @prefix_hash)
+        object_data = predicate_object_hash[predicate_uri]
+        case object_data
+        when String, Hash
+          predicate.add_object(object_data)
+        when Array
+          if predicate.rdf_type?
+            predicate.add_object(object_data)
+          else
+            predicate_object_hash[predicate_uri].each do |object_hash|
+              predicate.add_object(object_hash)
+            end
+          end
+        end
+
+        @predicates << predicate
+      end
+
+      def add_as_object(subject_name, object)
+        @as_object[subject_name] = object
+      end
+
+      def as_object(subject_name)
+        @as_object[subject_name]
+      end
+
+      def as_object_name(subject_name)
+        as_object(subject_name).name
+      end
+
+      def as_object_value(subject_name)
+        as_object(subject_name).value
+      end
+
+      class SubjectClassNotFound < StandardError; end
+    end
+
+    class Predicate
+      attr_reader :name, :uri, :objects, :cardinality
+
+      def initialize(predicate, prefix_hash = {})
+        @name = predicate
+        @uri = predicate == 'a' ? 'rdf:type' : predicate
+        @prefix_hash = prefix_hash
         @cardinality = nil
+
+        @objects = []
 
         interpret_cardinality
       end
 
-      def interpret_cardinality
-        last_char = @uri[-1]
-        case last_char
-        when '?', '*', '+'
-          handle_char_cardinality(last_char)
-        when '}'
-          handle_range_cardinality
-        end
+      def add_object(object_data)
+        @objects << Object.instance(object_data, @prefix_hash)
       end
 
       def rdf_type?
         %w[a rdf:type].include?(@uri)
       end
 
-      def sparql_optional_phrase?
-        @cardinality.is_a?(Cardinality) && (@cardinality.min.nil? || @cardinality.min == 0)
+      private
+
+      def interpret_cardinality
+        last_char = @uri[-1]
+        case last_char
+        when '?', '*', '+'
+          proc_char_cardinality(last_char)
+        when '}'
+          proc_range_cardinality
+        end
       end
 
-      def handle_char_cardinality(cardinality)
+      def proc_char_cardinality(cardinality)
         @uri = @uri[0..-2]
 
         case cardinality
         when '?'
-          @cardinality = Cardinality.new(0, 1)
+          @cardinality = Cardinality.new(cardinality, 0, 1)
         when '*'
-          @cardinality = Cardinality.new(0, nil)
+          @cardinality = Cardinality.new(cardinality, 0, nil)
         when '+'
-          @cardinality = Cardinality.new(1, nil)
+          @cardinality = Cardinality.new(cardinality, 1, nil)
         end
       end
 
-      def handle_range_cardinality
+      def proc_range_cardinality
         pos = @uri.rindex('{')
         range = @uri[pos + 1..-2]
         @uri = @uri[0..pos - 1]
         if range.index(',')
           min, max = range.split(/\s*,\s*/)
-          @cardinality = Cardinality.new(min.to_s == '' ? nil : min.to_i, max.to_s == '' ? nil : max.to_i)
+          @cardinality = Cardinality.new("{#{range}}", min.to_s == '' ? nil : min.to_i, max.to_s == '' ? nil : max.to_i)
         else
-          @cardinality = Cardinality.new(range.to_i, range.to_i)
+          @cardinality = Cardinality.new("{#{range}}", range.to_i, range.to_i)
         end
       end
     end
 
     class Object
+      attr_reader :name, :value
+
+      def initialize(object, prefix_hash = {})
+        case object
+        when Hash
+          @name = object.keys.first
+          @value = object[@name]
+        else
+          @name = object
+          @value = nil
+        end
+      end
+
+      def type
+        ''
+      end
+
+      def data_type_by_string_value(value)
+        if /\^\^(\w+)\:(.+)\z/ =~ value
+          if $1 == 'xsd'
+            case $2
+            when 'string'
+              'String'
+            when 'integer'
+              'Int'
+            else
+              $2.capitalize
+            end
+          else
+            "#{$1}:#{$2}"
+          end
+        else
+          'String'
+        end
+      end
+
+      def uri?
+        false
+      end
+
+      def literal?
+        false
+      end
+
+      def blank_node?
+        false
+      end
+
       class << self
         def instance(object, prefix_hash = {})
           case object
@@ -142,12 +265,12 @@ class RDFConfig
           end
 
           if blank_node?(name)
-            BlankNode.new(object)
+            BlankNode.new(object, prefix_hash)
           else
             if value.nil?
               Unknown.new(object, prefix_hash)
             else
-              case format(value, prefix_hash)
+              case object_type(value, prefix_hash)
               when :uri
                 URI.new(object)
               when :literal
@@ -157,7 +280,7 @@ class RDFConfig
           end
         end
 
-        def format(value, prefix_hash = {})
+        def object_type(value, prefix_hash = {})
           case value
           when String
             if /\A<.+\>\z/ =~ value
@@ -186,65 +309,6 @@ class RDFConfig
           end
         end
       end
-
-      attr_reader :name, :value
-
-      def initialize(object, prefix_hash = {})
-        case object
-        when Hash
-          @name = object.keys.first
-          @value = object[@name]
-        else
-          @name = object
-          @value = nil
-        end
-      end
-
-      def data_type
-        case @value
-        when Integer
-          'Int'
-        when String
-          data_type_by_string_value(@value)
-        else
-          @value.class.to_s
-        end
-      end
-
-      def data_type_by_string_value(value)
-        if /\^\^(\w+)\:(.+)\z/ =~ value
-          if $1 == 'xsd'
-            case $2
-            when 'string'
-              'String'
-            when 'integer'
-              'Int'
-            else
-              $2.capitalize
-            end
-          else
-            "#{$1}:#{$2}"
-          end
-        else
-          'String'
-        end
-      end
-
-      def format
-        :unknown
-      end
-
-      def uri?
-        false
-      end
-
-      def literal?
-        false
-      end
-
-      def blank_node?
-        false
-      end
     end
 
     class URI < RDFConfig::Model::Object
@@ -252,8 +316,8 @@ class RDFConfig
         super
       end
 
-      def format
-        :uri
+      def type
+        'URI'
       end
 
       def uri?
@@ -266,8 +330,15 @@ class RDFConfig
         super
       end
 
-      def format
-        :literal
+      def type
+        case @value
+        when Integer
+          'Int'
+        when String
+          data_type_by_string_value(@value)
+        else
+          @value.class.to_s
+        end
       end
 
       def literal?
@@ -276,22 +347,31 @@ class RDFConfig
     end
 
     class BlankNode < RDFConfig::Model::Object
-      def initalize(object, prefixe_hash = {})
+      def initialize(object, prefixe_hash = {})
         super
+        @value = Subject.new({ @name => @value }, prefixe_hash)
       end
 
-      def format
-        :bnode
+      def type
+        'BNODE'
       end
 
       def blank_node?
         true
+      end
+
+      def rdf_type_uri
+        @name
       end
     end
 
     class Unknown < RDFConfig::Model::Object
       def initialize(object, prefix_hash = {})
         super
+      end
+
+      def type
+        'N/A'
       end
     end
   end

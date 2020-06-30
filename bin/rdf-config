@@ -26,36 +26,47 @@ args = GetoptLong.new(
   [ '--stanza_rb',       GetoptLong::OPTIONAL_ARGUMENT ],
 )
 
-args.each_option do |name, value|
-  case name
-  when /--config/
-    opts[:config_dir] = value
-  when /--senbero/
-    opts[:mode] = :senbero
-  when /--schema/
-    opts[:mode] = :schema
-  when /--sparqlist/
-    opts[:mode] = :sparqlist
-  when /--sparql/
-    opts[:mode] = :sparql
-    opts[:sparql_query_name] = value
-  when /--query/
-    # pipe to https://gist.github.com/ktym/3385134 ?
-    opts[:mode] = :query
-  when /--grasp/
-    opts[:mode] = :grasp
-  when /--stanza_rb/
-    opts[:mode] = :stanza_rb
-    opts[:stanza_name] = value
-  when /--stanza/
-    opts[:mode] = :stanza_js
-    opts[:stanza_name] = value
+begin
+  args.each_option do |name, value|
+    case name
+    when /--config/
+      opts[:config_dir] = value
+    when /--senbero/
+      opts[:mode] = :senbero
+    when /--schema/
+      opts[:mode] = :chart
+    when /--sparqlist/
+      opts[:mode] = :sparqlist
+    when /--sparql/
+      opts[:mode] = :sparql
+      opts[:sparql_query_name] = value
+    when /--query/
+      # pipe to https://gist.github.com/ktym/3385134 ?
+      opts[:mode] = :query
+    when /--grasp/
+      opts[:mode] = :grasp
+    when /--stanza_rb/
+      opts[:mode] = :stanza_rb
+      opts[:stanza_name] = value
+    when /--stanza/
+      opts[:mode] = :stanza_js
+      opts[:stanza_name] = value
+    end
   end
+rescue
+  puts
+  help
+  exit(1)
 end
 
 if opts[:config_dir] and opts[:mode]
-  rdf_config = RDFConfig.new(opts)
-  rdf_config.exec(opts)
+  begin
+    rdf_config = RDFConfig.new(opts)
+    rdf_config.exec(opts)
+  rescue => e
+    STDERR.puts e.message
+    exit(1)
+  end
 else
   help
 end
