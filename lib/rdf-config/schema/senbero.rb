@@ -17,6 +17,14 @@ class RDFConfig
         "\033[36m#{str}\033[0m"
       end
 
+      def color_property_path(predicates, separator = ' / ')
+        predicates.map { |x|
+          predicate = color_predicate(x.uri)
+          cardinality = x.cardinality ? ' ' + x.cardinality.label : ''
+          "#{predicate}#{cardinality}"
+        }.join(separator)
+      end
+
       def generate
         seen = {}
         rdf_type = ''
@@ -38,7 +46,7 @@ class RDFConfig
 
           unless seen[subject.name].key?("#{rdf_type}:#{triple.property_path}")
             # output predicate
-            predicate_color = color_predicate(triple.property_path)
+            predicate_color = color_property_path(triple.predicates)
             if triple.last_predicate?(@model)
               puts "    `-- #{predicate_color}"
             else
