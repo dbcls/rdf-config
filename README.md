@@ -39,7 +39,7 @@
 % cd rdf-config
 
 % export PATH="./bin:$PATH"
-% export RUBYLIB="./lib" 
+% export RUBYLIB="./lib"
 ```
 
 * TODO:
@@ -84,7 +84,7 @@ RefExSample (refexo:RefExSample)
     `-- refexo:sampleReference / refexo:sample
             `-- refexo_sample ("<http://fantom.gsc.riken.jp/5/sstar/FF:10828-111C9>")
 ```
-			
+
 ### Generate schema diagram
 
 ```
@@ -146,6 +146,14 @@ Stanza template has been generated successfully.
 To view the stanza, run (cd stanza/ruby; bundle exec rackup) and open http://localhost:9292/
 ```
 
+## Run via Docker Container
+
+```
+% docker run --rm -it -v <path to config file dir>:/config dbcls/rdf-config:<docker image tag> rdf-config --config /config/<config dir name> [options]
+```
+
+See available docker image tags at [Docker Hub](https://hub.docker.com/repository/docker/dbcls/rdf-config/tags?page=1)
+
 ## Authors
 
 * Toshiaki Katayama (DBCLS)
@@ -154,5 +162,3 @@ To view the stanza, run (cd stanza/ruby; bundle exec rackup) and open http://loc
 ## License
 
 * MIT License
-
-
