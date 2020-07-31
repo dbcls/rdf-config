@@ -133,7 +133,7 @@ LIMIT 100
 JavaScript version
 
 ```
-% rdf-config --config config/hint --stanza_rb hint_pair_stanza
+% rdf-config --config config/hint --stanza hint_pair
 Stanza template has been generated successfully.
 To view the stanza, run (cd stanza/javascript; ts server) and open http://localhost:8080/
 ```
@@ -141,7 +141,7 @@ To view the stanza, run (cd stanza/javascript; ts server) and open http://localh
 Ruby version (it may take a while for the first time to install dependencies)
 
 ```
-% rdf-config --config config/hint --stanza_rb hint_pair_stanza
+% rdf-config --config config/hint --stanza_rb hint_pair
 Stanza template has been generated successfully.
 To view the stanza, run (cd stanza/ruby; bundle exec rackup) and open http://localhost:9292/
 ```
