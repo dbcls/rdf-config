@@ -13,11 +13,19 @@ class RDFConfig
 
       def sparql_varname(variable_name)
         triple = model.find_by_object_name(variable_name)
-        case triple.object
-        when Model::Subject
-          "?#{triple.object.as_object_value(triple.subject.name)}"
+        if triple.nil?
+          if model.subject?(variable_name)
+            "?#{variable_name}"
+          else
+            ''
+          end
         else
-          "?#{triple.object.name}"
+          case triple.object
+          when Model::Subject
+            "?#{triple.object.as_object_value(triple.subject.name)}"
+          else
+            "?#{triple.object.name}"
+          end
         end
       end
     end
