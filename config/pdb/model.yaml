@@ -1,0 +1,111 @@
+- PDBDatablock <https://rdf.wwpdb.org/pdb/5KE7/entry/5KE7>:
+    - a: pdbo:datablock
+    - dc:title :
+        - title: "mouse Klf4 ZnF1-3 and TpG/MpA sequence DNA complex structure"
+    - dct:identifier: 
+        - pdb_id: "5KE7"
+    - rdfs:seeAlso:
+        - pdbj: <https://pdbj.org/pdb/5KE7>
+        - ebi: <https://www.ebi.ac.uk/pdbe/entry/pdb/5KE7>
+        - rcsb: <https://www.rcsb.org/pdb/explore.do?structureId=5KE7>
+    - pdbo:databalockName:
+        - datablock_name: "5KE7-noatom"
+    - pdbo:has_entityCategory:
+        - EntityCategory <https://pdbj.org/pdb/5KE7/entityCategory>:
+
+- EntityCategory <https://pdbj.org/pdb/5KE7/entityCategory>:
+    - a: pdbo:entityCategory
+    - pdbo:has_entity:
+        - Entity:
+
+- Entity <https://rdf.wwpdb.org/pdb/5KE7/entity/1>:
+    - a: pdbo:entity
+    - pdbo:entity.formula_weight:
+        - entity.formula_weight: "10840.261"
+    - pdbo:entity.id:
+        - entity.id: "1"
+    - pdbo:entity.pdbx_description:
+        - entity.pdbx_description: "Krueppel-like factor 4"
+    - pdbo:entity.pdbx_fragment:
+        - entity.pdbx_fragment: "unp residues 396-483"
+    - pdbo:entity.pdbx_number_of_molecules:
+        - entity.pdbx_number_of_molecules: "1"
+    - pdbo:entity.src_method:
+        - entity.src_method: "man"
+    - pdbo:entity.type:
+        - entity.type: "polymer"
+    - pdbo:referenced_by_entity_poly:
+        - EntityPoly:
+    - pdbo:referenced_by_entity_src_gen:
+        - EntitySrcGen:
+    - pdbo:referenced_by_struct_ref:
+        - StructRef:
+
+- EntityPoly <https://rdf.wwpdb.org/pdb/5KE7/entity_poly/1>:
+    - a: pdbo:entity_poly
+    - pdbo:entity_poly.pdbx_seq_one_letter_code:
+        - pdbx_seq_one_letter_code: "GPLGSRTATHTCDYAGCGKTYTKSSHLKAHLRTHTGEKPYHCDWDGCGWKFARSDELTRHYRKHTGHRPFQCQKCDRAFSRSDHLALHMKRHF"
+    - pdbo:entity_poly.pdbx_seq_one_letter_code_can:
+        - pdbx_seq_one_letter_code_can: "GPLGSRTATHTCDYAGCGKTYTKSSHLKAHLRTHTGEKPYHCDWDGCGWKFARSDELTRHYRKHTGHRPFQCQKCDRAFSRSDHLALHMKRHF"
+    - pdbo:referenced_by_entity_poly_seq: 
+        - PDBxPolySeqScheme:
+
+- PDBxPolySeqScheme <https://rdf.wwpdb.org/pdb/5KE7/pdbx_poly_seq_scheme/A,1,ALA,15>:
+    - a: PDBo:pdbx_poly_seq_scheme
+    - pdbo:reference_to_entity_poly_seq:
+        - EntityPolySeq:
+
+- EntityPolySeq <https://rdf.wwpdb.org/pdb/5KE7/entity_poly_seq/1,ALA,15>:
+    - a: PDBo:entity_poly_seq
+    - pdbo:reference_to_chem_comp:
+        - ChemComp:
+
+- ChemComp <https://rdf.wwpdb.org/pdb/5KE7/chem_comp/ALA>:
+    - a: PDBo:chem_comp <https://rdf.wwpdb.org/pdb/5KE7/chem_comp/ALA>
+    - pdbo:chem_comp.formula:
+        - chem_comp.formula: "C3 H7 N O2"
+    - pdbo:chem_comp.formula_weight:
+        - chem_comp.formula_weight: "89.093"
+    - pdbo:chem_comp.id:
+        - chem_comp.id: "ALA"
+    - pdbo:chem_comp.name:
+        - chem_comp.name: "ALANINE"
+    - pdbo:chem_comp.type:
+        - chem_comp.type: "L-peptide linking"
+    - pdbo:link_to_chem_comp:
+        - link_to_chem_comp: <https://rdf.wwpdb.org/cc/ALA>
+    - pdbo:of_datablock:
+        - PDBDatablock:
+
+
+- EntitySrcGen <https://rdf.wwpdb.org/pdb/5KE7/entity_src_gen/1,1>:
+    - a: pdbo:entity_src_gen
+    - rdfs:seeAlso: 
+        - src_gen_seeAlso: <http://identifiers.org/taxonomy/10090>
+    - pdbo:entity_src_gen.gene_src_common_name:
+        - src_common_name: "Mouse"
+    - pdbo:entity_src_gen.pdbx_gene_src_scientific_name:
+        - src_scientific_name: "Mus musculus"
+    - pdbo:entity_src_gen.pdbx_host_org_ncbi_taxonomy_id:
+        - host_org_ncbi_taxonomy_id: "469008"
+    - pdbo:entity_src_gen.pdbx_host_org_scientific_name:
+        - host_org_scientific_name: "Escherichia coli"
+    - pdbo:entity_src_gen.pdbx_host_org_strain:
+        - host_org_strain: "BL21 (DE3) codon plus"
+    - pdbo:entity_src_gen.pdbx_host_org_vector_type:
+        - host_org_vector_type: "pGEX-6p-1"
+    - pdbo:entity_src_gen.pdbx_seq_type:
+        - pdbx_seq_type: "Biological sequence"
+
+- SructRef <https://rdf.wwpdb.org/pdb/5KE7/struct_ref/1>:
+    - a: pdbo:struct_ref
+    - rdfs:seeAlso:
+        - struct_ref_seeAlso: <http://identifiers.org/uniprot/Q60793>
+    - pdbo:link_to_uniprot:
+        - link_to_uniprot: <http://purl.uniprot.org/uniprot/Q60793>
+    - pdbo:struct_ref.pdbx_align_begin:
+        - struct_ref.pdbx_align_begin: "396"
+    - pdbo:struct_ref.pdbx_seq_one_letter_code:
+        - struct_ref.pdbx_seq_one_letter_code: "RTATHTCDYAGCGKTYTKSSHLKAHLRTHTGEKPYHCDWDALHMKRHF"
+
+
