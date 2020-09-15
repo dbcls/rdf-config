@@ -1,0 +1,27 @@
+- ProbeEntry probe:1367452_at:
+  - a: ontology:Probe
+  - ontology:geneSymbol:
+    - gene_symbol: "Sumo2"
+  - ontology:taxon+:
+    - taxon: taxonomy:10116 # taxonomy:10116
+  - dct:identifier+:
+    - probe_id: "1367452_at"
+  - rdfs:label+:
+    - name1: "small ubiquitin-like modifier 2"
+    - name2: "small ubiquitin-like modifier 2"
+  - rdfs:seeAlso+:
+    - links: uniprot:P61959 # info:uniprot/P61959
+
+- ChipEntry chip:003017645018:
+  - a: array:Rat230_2
+  - ontology:digitizedBy:
+    - algorithm: "MAS5.0"
+  - ontology:normalizationMethod:
+    - method: "MedianNormalization"
+  - dct:identifier+:
+    - chip_id: "003017645018"
+  - sio:SIO_000216+: # has measurement value
+    - []:
+      - a: ontology:NormalizedSignalIntensity
+      - signal_intensity: {{expand blank node}}
+
