@@ -1,0 +1,93 @@
+- Methyl-seqDataset bsseqdataset:bs_data_9606_LC2ad:
+  - a: kero:MethylseqDataset
+  - kero:hasMethylationSite+:
+    - methylated_dna_base_feature: bsseqdata:bs_data_9606_LC2ad_163843 # Methylation site of LC2ad on chromosome 1:112708686
+  - kero:sample:
+    - sample_type: sample:s_18 # LC2/AD
+  - dct:identifier+:
+    - methyl-seq_dataset_identifier: "bs_data_9606_LC2ad"
+  - rdfs:label+:
+    - methyl-seq_dataset_label: "kero BS-seq dataset of LC2/AD"
+    - methyl-seq_dataset_label: "kero BS-seq dataset of LC2/AD"
+  - dcat:theme:
+    - species_type: species:9606 # Homo sapiens
+
+- Chip-seqDataset chipseqdataset:chip_inf_9606_LC2ad_H3K4me3:
+  - a: kero:ChIPseqDataset
+  - kero:antibodyFor:
+    - protein: "H3K4me3"
+  - kero:hasBindingSite+:
+    - chipseqdata: chipseqdata:chip_inf_9606_chr1_LC2ad_H3K4me3_720293
+  - kero:sample:
+    - sample_type: sample:s_18 # LC2/AD
+  - dct:identifier+:
+    - chip-seq_dataset_identifier: "chip_inf_9606_LC2ad_H3K4me3"
+  - rdfs:label+:
+    - chip-seq_dataset_label: "kero BS-seq dataset of LC2/AD (H3K4me3)"
+    - chip-seq_dataset_label: "kero BS-seq dataset of LC2/AD (H3K4me3)"
+  - dcat:theme:
+    - species_type: species:9606 # Homo sapiens
+
+- ChromhmmDataset chromhmmdataset:chromhmm_inf_9606_LC2ad:
+  - a: kero:ChromHMMDataset
+  - kero:hasChromHMM+:
+    - strong_enhancer: chromhmmdata:chromhmm_inf_9606_LC2ad_495479 # ChromHMM site of LC2ad on chromosome 9:94939718-94942918
+    - weak_enhancer: chromhmmdata:chromhmm_inf_9606_LC2ad_495480 # ChromHMM site of LC2ad on chromosome 9:94942918-94943918
+    - inactive_region: chromhmmdata:chromhmm_inf_9606_LC2ad_495600 # ChromHMM site of LC2ad on chromosome 9:95349318-95350118
+    - active_promoter: chromhmmdata:chromhmm_inf_9606_LC2ad_495517 # ChromHMM site of LC2ad on chromosome 9:95003918-95004718
+    - weak_or_poised_promoter: chromhmmdata:chromhmm_inf_9606_LC2ad_495509 # ChromHMM site of LC2ad on chromosome 9:94993918-94994118
+    - low_or_no_signal: chromhmmdata:chromhmm_inf_9606_LC2ad_495487 # ChromHMM site of LC2ad on chromosome 9:94954718-94955118
+    - transcriptional_elongation: chromhmmdata:chromhmm_inf_9606_LC2ad_495489 # ChromHMM site of LC2ad on chromosome 9:94955718-94957318
+    - inactive_region_or_heterochroma: chromhmmdata:chromhmm_inf_9606_LC2ad_495576 # ChromHMM site of LC2ad on chromosome 9:95163118-95164118
+  - kero:sample:
+    - sample_type: sample:s_18 # LC2/AD
+  - dct:identifier+:
+    - chromhmm_dataset_identifier: "chromhmm_inf_9606_LC2ad"
+  - rdfs:label+:
+    - chromhmm_dataset_label: "kero ChromHMM dataset of LC2/AD"
+    - chromhmm_dataset_label: "kero ChromHMM dataset of LC2/AD"
+  - dcat:theme:
+    - species_type: species:9606 # Homo sapiens
+
+- Rna-seqDataset rnaseqdataset:rnaseq_qty_9606_LC2ad:
+  - a: kero:RNAseqDataset
+  - kero:hasExpressionData+:
+    - transcript: rnaseqdata:rnaseq_qty_9606_LC2ad_1
+  - kero:sample:
+    - sample_type: sample:s_18 # LC2/AD
+  - dct:identifier+:
+    - rna-seq_dataset_identifier: "rnaseq_qty_9606_LC2ad"
+  - rdfs:label+:
+    - rna-seq_dataset_label: "kero RNA-seq dataset of LC2/AD"
+    - rna-seq_dataset_label: "kero RNA-seq dataset of LC2/AD"
+  - dcat:theme:
+    - species_type: species:9606 # Homo sapiens
+
+- SnvDataset snvdataset:vcf_inf_9606_LC2ad:
+  - a: kero:SNVDataset
+  - kero:hasVariationSite+:
+    - snv: snvdata:vcf_inf_9606_chr8_LC2ad_10000 # Variation site of LC2ad on chromosome 8:4942777
+  - kero:sample:
+    - sample_type: sample:s_18 # LC2/AD
+  - dct:identifier+:
+    - snv_dataset_identifier: "vcf_inf_9606_LC2ad"
+  - rdfs:label+:
+    - snv_dataset_label: "kero SNV dataset of LC2/AD"
+    - snv_dataset_label: "kero SNV dataset of LC2/AD"
+  - dcat:theme:
+    - species_type: species:9606 # Homo sapiens
+
+- Tss-seqDataset tssseqdataset:tss_bincount_9606_LC2ad:
+  - a: kero:TSSseqDataset
+  - kero:hasTranscriptionStartSite+:
+    - tss: tssseqdata:tss_bincount_9606_chr2_LC2ad_29457 # TSS site of LC2ad on chromosome 2:174248527
+  - kero:sample:
+    - sample_type: sample:s_18 # LC2/AD
+  - dct:identifier+:
+    - tss-seq_dataset_identifier: "tss_bincount_9606_LC2ad"
+  - rdfs:label+:
+    - tss-seq_dataset_label: "kero TSS-seq dataset of LC2/AD"
+    - tss-seq_dataset_label: "kero TSS-seq dataset of LC2/AD"
+  - dcat:theme:
+    - species_type: species:9606 # Homo sapiens
+
