@@ -1,0 +1,285 @@
+- Pathway reactome:Pathway655: ### nest
+  - a: biopax:Pathway
+  - biopax:comment:
+    - pathway_description: "Metabolic processes in human cells generate energy through ..."
+  - biopax:dataSource:
+    - provenance: reactome:Provenance1
+  - biopax:displayName:
+    - pathway_display_name: "Metabolism"
+  - biopax:name*:
+    - pathway_name: "Methylation of Histones and DNA by Polycomb Repressive Complex 2 (PRC2)"
+  - biopax:organism:
+    - organism: Organism
+  - biopax:pathwayComponent+:
+    - pathway: Pathway
+    - biochemical_reaction: BiochemicalReaction
+    - template_reaction: TemplateReaction
+    - degradation: Degradation
+  - biopax:pathwayOrder+:
+    - pathway_step: PathwayStep
+  - biopax:xref*:
+    - publicateion_xref: PublicationXref
+    - relationship_xref: RelationshipXref
+    - unification_xref: reactome:UnificationXref79533
+
+- PathwayStep reactome:PathwayStep5135: ### nest
+  - a: biopax:PathwayStep
+  - biopax:nextStep:
+    - pathway_step: PathwayStep
+  - biopax:stepProcess:
+    - catalysis: Catalysis
+    - control: Control
+
+- RelationshipXref reactome:RelationshipXref4654:
+  - a: biopax:RelationshipXref
+  - biopax:db:
+    - relationship_db: "GENE ONTOLOGY"
+  - biopax:id:
+    - go_id: "GO:0006357"
+
+- PublicationXref reactome:PublicationXref10806:
+  - a: biopax:PublicationXref
+  - biopax:db:
+    - publication_db: "Pubmed"
+  - biopax:id:
+    - pubmed_id: 16139204
+  - biopax:author:
+    - author: "Hardin, PE"
+  - biopax:source:
+    - source: "Curr Biol 15:R714-22"
+  - biopax:title:
+    - title: "The circadian timekeeping system of Drosophila"
+  - biopax:url:
+    - url: <https://www.immport.org/immportWeb/queryref/geneListSummary.do>
+  - biopax:year:
+    - year: 2005
+
+- Organism reactome:BioSource1:
+  - a: biopax:BioSource
+  - biopax:name:
+    - organism_name: "Homo sapiens"
+  - biopax:xref:
+    - organism_xref: OrganismXref
+
+- OrganismXref reactome:UnificationXref6:
+  - a: biopax:UnificationXref
+  - biopax:db:
+    - organism_db: "NCBI Taxonomy"
+  - biopax:id:
+    - taxonomy_id: "9606"
+
+### reaction
+- BiochemicalReaction reactome:BiochemicalReaction4485:
+  - a: biopax:BiochemicalReaction
+  - biopax:comment+:
+    - biochemical_reaction_description: "Cytosolic phosphoglucomutase (PGM) catalyses the reversible..."
+  - biopax:conversionDirection:
+    - conversion_direction: "LEFT-TO-RIGHT"
+  - biopax:displayName:
+    - biochemical_reaction_display_name: "PGM:Mg2+ isomerise G6P to G1P"
+  - biopax:eCNumber?:
+    - ec_number: "5.4.2.2"
+  - biopax:left*:
+    - left_small_molecule: SmallMolecule
+    - protein: Protein
+    - complex: Complex
+    - physical_entity: PhysicalEntity
+    - dna: Dna
+    - rna: Rna
+  - biopax:right*:
+    - right_small_molecule: SmallMolecule
+    - protein: Protein
+    - complex: Complex
+    - physical_entity: PhysicalEntity
+    - dna: Dna
+    - rna: Rna
+  - biopax:name*:
+    - biochemical_reaction_name: "alpha-D-Glucose 6-phosphate <=> D-Glucose 1-phosphate"
+  - biopax:xref+:
+    - publication_xref: reactome:PublicationXref10351
+    - unification_xref: reactome:UnificationXref59005
+    - relationship_xref: RelationshipXref    
+
+- TemplateReaction reactome:TemplateReaction1:
+  - a: biopax:TemplateReaction
+  - biopax:displayName:
+    - template_reaction_display_name: "CDC6 protein is synthesized under the control of E2F transcription factors"
+  - biopax:name*:
+    - template_reaction_name: "RBP-Jkappa transactivates Hes1 in the presence of NICD"
+  - biopax:product:
+    - small_molecule: SmallMolecule
+    - protein: Protein
+    - physical_entity: PhysicalEntity
+  - biopax:evidence:
+    - evidence: reactome:Evidence78
+  - biopax:comment:
+    - tenplate_reaction_description: "This event has been computationally inferred from an event..."
+
+- Degradation reactome:Degradation10:
+  - a: biopax:Degradation
+  - biopax:displayName:
+    - degradation_display_name: "Degradation of TGF-beta receptor complex"
+  - biopax:left:
+    - complex: Complex
+    - protein: Protein
+    - physical_entity: PhysicalEntity
+  - biopax:evidence:
+    - evidence: reactome:Evidence3071
+
+### catalysis, control
+- Catalysis reactome:Catalysis1822:
+  - a: biopax:Catalysis
+  - biopax:controlType:
+    - control_type: "ACTIVATION"
+  - biopax:controlled:
+    - biochemical_reacytion: BiochemicalReaction
+  - biopax:controller:
+    - complex: Complex
+  - biopax:xref+:
+    - xref: reactome:RelationshipXref2294
+
+- Control reactome:Control111:
+  - a: biopax:Control
+  - biopax:controlType:
+    - control_type: "ACTIVATION"
+  - biopax:comment:
+    - description: "all trans retinoic acid activates expression of HOXD1..."
+  - biopax:controlled:
+    - biochemical_reaction: BiochemicalReaction
+  - biopax:controller:
+    - complex: Complex
+    - small_molecule: SmallMolecule
+    - protein: Protein
+    - rna: Rna
+    - physical_entity: PhysicalEntity
+
+### complex, molecule, protein, dna, rna, physical entity
+- Complex reactome:Complex5217: ### nest
+  - a: biopax:Complex
+  - biopax:comment+:
+    - complex_description: "Converted from EntitySet in Reactome"
+  - biopax:displayName:
+    - complex_display_name: "PGM:Mg2+"
+  - biopax:memberPhysicalEntity+:
+    - complex: Complex
+  - biopax:name*:
+    - complex_name: "PGM1, PGM2, PGM2L1"
+  - biopax:component*:
+    - protein: ComponentProtein
+    - small_molecule: ComponentMolecule
+  - biopax:xref+:
+    - xref: reactome:UnificationXref59003
+    
+- SmallMolecule reactome:SmallMolecule1314:
+  - a: biopax:SmallMolecule
+  - biopax:cellularLocation:
+    - cellular_location: reactome:CellularLocationVocabulary2
+  - biopax:comment:
+    - small_molecule_description: "Reactome DB_ID: 30537"
+  - biopax:displayName:
+    - small_molecule_display_name: "G6P"
+  - biopax:entityReference:
+    - small_molecule_reference: SmallMoleculeReference
+  - biopax:name*:
+    - small_molecule_name: "alpha-D-glucose 6-phosphate"
+  - biopax:xref+:
+    - xref: reactome:UnificationXref47322
+
+- SmallMoleculeReference reactome:SmallMoleculeReference68:
+  - a: biopax:SmallMoleculeReference
+  - biopax:name*:
+    - small_molecule_reference_name: "magnesium(2+)"
+  - biopax:xref:
+    - small_molecule_reference: SmallMoleculeReference
+
+- SmallMoleculeReference reactome:UnificationXref6849:
+  - a: biopax:UnificationXref
+  - biopax:db:
+    - small_molecule_db: "ChEBI"
+  - biopax:id:
+    - chebi_id: "CHEBI:18420"
+
+- Protein reactome:Protein11497:
+  - a: biopax:Protein
+  - biopax:comment:
+    - protein_description: "Reactome DB_ID: 453136"
+  - biopax:displayName:
+    - protein_display_name: "PGM2"
+  - biopax:entityReference:
+    - protein_reference: ProteinReference
+  - biopax:feature:
+    - node_151: reactome:FragmentFeature10266
+  - biopax:name*:
+    - protein_name: "Phosphoglucomutase-2"
+  - biopax:xref+:
+    - xref: reactome:UnificationXref58994
+
+- ProteinReference reactome:ProteinReference6278:
+  - a: biopax:ProteinReference
+  - biopax:comment:
+    - protein_reference_description: "FUNCTION Catalyzes the conversion of the nucleoside ..."
+  - biopax:name*:
+    - protein_reference_name: "PGM2"
+  - biopax:organism:
+    organism: Organism
+  - biopax:xref:
+    - protein_xref: ProteinXref
+
+- ProteinXref reactome:UnificationXref58993:
+  - a: biopax:UnificationXref
+  - biopax:db:
+    - protein_db: "UniProt"
+  - biopax:id:
+    - uniprot_accession: "Q96G03"
+
+- Dna reactome:Dna100:
+  - a: biopax:Dna
+  - biopax:displayName:
+    - dna_display_name: "Bdnf gene"
+  - biopax:name*:
+    - dna_name: "APOC2_MOUSE"
+  - biopax:entityReference:
+    - dna_reference: DnaReference
+
+- DnaReference reactome:DnaReference97:
+  - a: biopax:DnaReference
+  - biopax:name*:
+    - dna_reference_name: "ENSEMBL:ENSMUSG00000002992 Apoc2"
+  - biopax:organism:
+    - organism: Organism
+
+- Rna reactome:Rna100:
+  - a: biopax:Dna
+  - biopax:diaplayName:
+    - rna_display_name: "Ppp1r15a-201 mRNA"
+  - biopax:name*:
+    - rna_name: "mitochondrial pre-tRNA-Arg"
+  - biopax:entityReference:
+    - rna_reference: RnaReference
+
+- DnaReference reactome:RnaReference6:
+  - a: biopax:RnaReference
+  - biopax:name*:
+    - rna_reference_name: "ENSEMBL:ENSMUST00000042105 Ppp1r15a"
+  - biopax:organism:
+    - organism: Organism
+
+- PhysicalEntity reactome:PhysicalEntity267:
+  - a: biopax:PhysicalEntity
+  - biopax:comment:
+    - physical_entity_description: "Reactome DB_ID: 9969441"
+  - biopax:displayName:
+    - physical_entity_display_name: "Ghost homologue of DNA repair genes regulated by CDK12"
+  - bipax:name*:
+    - physical_entity_name: "K6polyUb,K11polyUb,K27polyUb,K29polyUb,K33polyUb,K48polyUb,K63polyUb"
+  - biopax:dataSource:
+    - data_source: reactome:Provenance1
+  - biopax:cellularLocation:
+    - celllular_location: reactome:CellularLocationVocabulary36
+  - biopax:memberPhysicalEntity:
+    - small_molecule: SmallMolecule
+    - protein: Protein
+    - complex: Complex
+    - physical_entity: PhysicalEntity
+    - dna: Dna
+    - rna: Rna
