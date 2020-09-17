@@ -1,0 +1,71 @@
+- BioSample idorg_biosample:SAMD00222921:
+  - a: biosample_ont:BioSampleRecord
+  - dct:created:
+    - created: 2020-05-11T01:00:33.453
+  - dct:description:
+    - description: "24 h after HCV infection"
+  - dct:identifier:
+    - biosample_id: "SAMD00222921"
+  - dct:issued:
+    - publication_date: 2020-05-10T00:00:00.000
+  - dct:modified:
+    - modified_date: 2020-08-23T09:25:30.630
+  - schema:additionalProperty:
+    - sample_attribute: OriginalSampleProperty
+    - assigned_sample_attribute: AnnotatedSampleType
+  - rdfs:label:
+    - label: "24 h after HCV infection"
+  - rdfs:seeAlso+:
+    - sra_study: SRAStudy
+  - rdfs:seeAlso+:
+    - sra_experiment: SRAExperiment
+  - rdfs:seeAlso+:
+    - sra_accession: SRAAccession
+  - rdfs:seeAlso+:
+    - sra_sample: SRASample
+  - rdfs:seeAlso+:
+    - sra_run: SRARun
+  - rdfs:seeAlso+:
+    - bioproject: BioProject
+
+- SRAStudy idorg_sra:DRP006105:
+  - a: dra_ont:Study
+
+- SRAExperiment idorg_sra:DRX216152:
+  - a: dra_ont:Experiment
+
+- SRAAccession idorg_sra:DRA010135:
+  - a: dra_ont:Accession
+
+- SRASample idorg_sra:DRS138975:
+  - a: dra_ont:Sample
+
+- SRARun idorg_sra:DRR225867:
+  - a: dra_ont:Run
+
+- BioProject idorg_bioproject:PRJDB9772:
+  - a: bioproject_ont:BioProjectRecord
+
+- OriginalSampleProperty ddbj:SAMD00222921#cell+line:
+  - a: schema:PropertyValue
+  - schema:name:
+    - name: "cell_line"
+  - schema:value:
+    - value: "Huh-7.5"
+  - schema:valueReference+:
+    - ontology: cellosaurus:CVCL_7927
+  - prov:wasAttributedTo:
+    - software: biosample_ont:BioSamplePlusPipeline
+
+- AnnotatedSampleType ddbj:SAMD00222921#AnnotatedSampleType:
+  - a: schema:PropertyValue
+  - schema:name:
+    - name: "annotated sample type"
+  - schema:value:
+    - value: "cell_line"
+  - schema:valueReference+:
+    - ontology: ddbjont:CellLine
+  - prov:wasAttributedTo:
+    - software: biosample_ont:BioSamplePlusPipeline
+  - ddbjont:annotationConfidence:
+    - confidence: 1.0
