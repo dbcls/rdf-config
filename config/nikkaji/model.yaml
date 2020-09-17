@@ -1,0 +1,77 @@
+- Compound jglobal:200907064180837475:
+    - a: jst:Chemical
+    - dcterms:identifier:
+        - id: "J2.330B"
+    - jst:nikkaji-ID-registry:
+        - nikkaji_id: "00002330B"
+    - jst:nikkaji-number:
+        - nikkaji_number: "J2.330B"
+    - jst:material-type:
+        - material_type: "C"
+    - skos:closeMatch:
+        - kegg_drug: <http://www.kegg.jp/entry/D00528>
+        - kegg_compound: <http://www.kegg.jp/entry/C07481>
+    - rdfs:label+:
+        - label: '"カフェイン"@ja'
+    - jst:chem-formula+:
+        - chem_formula: '"C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub>"^^rdfs:Literal'
+        - chem-formula_in_plain_text: "C8-H10-N4-O2"
+    - jst:molar-weight:
+        - molar-weight: '"194.194"^^xsd.float'
+    - jst:regulation-number+:
+        - rtecs_number: "EV6475000"
+        - miti_number: "(9)-419"
+        - einecs_number: "EINECS2003621"
+        - tsca_cas_number: "TSCA(58-08-2)"
+        - un_recommendations: "UN-1544"
+    - jst:systematic-name+:
+        - systematic_name: '"7-メチルテオフィリン"@ja'
+    - jst:common-name+:
+        - common_name: '"テイン"@ja'
+    - jst:use-for*:
+        - use_for: '"強心薬"@ja'
+    - jst:smiles:
+        - smiles: "c12c(n(c(=O)n(c1=O)C)C)ncn2C"
+    - foaf:depiction*:
+        - structure_image: <http://api.jglobal.jst.go.jp/chemical/images//detail_large/000/023/J2.330B.png>
+    - owl:sameAs+:
+        - nikkaji_entry: JGlobalNikkajiEntry
+    - jst:component-nikkaji-number?:
+      - []:
+        - a: rdf:List
+        - rdf:first:
+            - []:
+                - a: rdf:Datatype
+                - rdfs:label+:
+                    - component_nikkaji_id: "00002330B"
+                - rdfs:seeAlso+:
+                    - component_entry: jglobal:200907064180837475 # カフェイン
+        - rdf:rest:
+            - []:
+                - a: rdf:List
+
+
+- JGlobalNikkajiEntry nikkaji:J2.330B:
+    - a: jst:Chemical
+    - dct:identifier+:
+      - nikkaji_id_jglobal: "J2.330B"
+    - sio:CHEMINF_000200+: # has attribute
+      - inchikey_generated_by_software_version_1.0.4: nikkaji:J2.330B_standard_InChIKey
+      - inchi_calculated_by_library_version_1.0.4: nikkaji:J2.330B_standard_InChI
+      - average_molecular_weight_descriptor: nikkaji:J2.330B_Molecular_Weight
+      - canonical_smiles_descriptor: nikkaji:J2.330B_canonical_SMILES
+      - molecular_formula: nikkaji:J2.330B_Molecular_Formula
+    - jst:InChI:
+      - inchi: "InChI=1S/C8H10N4O2/c1-10-4-9-6-5(10)7(13)12(3)8(14)11(6)2/h4H,1-3H3"
+    - jst:InChIKey:
+      - inchikey: "RYYVLZVUVIJVGH-UHFFFAOYSA-N"
+    - jst:chem-formula+:
+      - chem_formula_jglobal: C8H10N4O2
+    - jst:molar-weight:
+      - molar_weight_jglobal: '"194.194"^^xsd.float'
+    - rdfs:label+:
+      - label_jglobal: "Caffeine"
+    - skos:closeMatch+:
+       - id_other_db: knapsack:information.jsp?word=C00001492
+    - skos:exactMatch+:
+      - pubchem_substance: pubchem_substance:275793704
