@@ -344,6 +344,14 @@ class RDFConfig
       def literal?
         true
       end
+
+      def has_lang_tag?
+        /\A".*"@[\w\-]+\z/ =~ @value.to_s.strip
+      end
+
+      def has_data_type?
+        /\A".*"\^\^.+\z/ =~ @value.to_s.strip
+      end
     end
 
     class BlankNode < RDFConfig::Model::Object

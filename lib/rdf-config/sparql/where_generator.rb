@@ -169,6 +169,13 @@ class RDFConfig
           triple_in_model = model.find_by_object_name(variable_name)
           next if triple_in_model.nil?
 
+          object = triple_in_model.object
+          if object.is_a?(RDFConfig::Model::Subject)
+            subject = variable(object.name)
+            subject.rdf_types = object.types
+            add_triple(Triple.new(subject, nil, variable('')), false)
+          end
+
           if triple_in_model.bnode_connecting?
             generate_triples_with_bnode(triple_in_model)
           else
@@ -237,9 +244,11 @@ class RDFConfig
 
       def add_values_lines_by_parameters
         parameters.each do |variable_name, value|
-          value = "{{#{variable_name}}}" if template?
           object = model.find_object(variable_name)
-          value = %("#{value}") if object.is_a?(RDFConfig::Model::Literal)
+          next if object.nil?
+
+          value = "{{#{variable_name}}}" if template?
+          value = %("#{value}") if object.is_a?(RDFConfig::Model::Literal) && !object.has_lang_tag? && !object.has_data_type?
 
           add_values_line(values_line("?#{variable_name}", value))
         end
@@ -255,7 +264,14 @@ class RDFConfig
 
       def required_lines
         lines = []
-        @required_triples.map(&:subject).uniq.each do |subject|
+        @model.subjects.each do |subject_in_model|
+          subjects = @required_triples.map(&:subject).select { |subject| subject.name == subject_in_model.name }
+          next if subjects.empty?
+
+          lines += lines_by_subject(subjects.first)
+        end
+
+        @required_triples.map(&:subject).select { |subject| subject.is_a?(BlankNode) }.uniq.each do |subject|
           lines += lines_by_subject(subject)
         end
 
@@ -266,8 +282,11 @@ class RDFConfig
         lines = []
 
         triples = @required_triples.select { |triple| triple.subject == subject }
+        return [] if triples.empty?
+
         if subject.has_rdf_type?
           triples = [Triple.new(subject, 'a', subject)] + triples
+          triples.reject! { |triple| triple.predicate.nil? }
         end
 
         triples.each do |triple|
