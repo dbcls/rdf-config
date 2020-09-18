@@ -23,9 +23,13 @@
     - core:enzyme:
         - enzyme: [enzyme:2.7.11.22, enzyme:2.7.11.23]
     - core:annotation:
-        - annotation: up:P06493\#SIP04650F2717A2389F
+        - helix_annotation: up:P06493#SIP04650F2717A2389F
+    - core:annotation:
+        - catalitic_activity_annotation: up:P06493#SIP11972EF825D39FC9
     - core:interaction:
         - interaction: [intact:297353-444308, intact:347640-444308]
+    - core:attribution:
+        - attribution: [up:P06493#attribution-7E665CB8C69D9461711A57FE630BA789]
 
 - structured_recommended_name:
     - a: core:Structured_Name
@@ -78,17 +82,59 @@
     - core:xeno:
         - xeno: false
 
+- catalitic_activity_annotation:
+    - a: core:Catalytic_Activity_Annotation
+    - core:catalyticActivity:
+        - catalytic_activity: core:P06493#SIP33DD9A7A16603D04
 
+- catalytic_activity:
+    - a: core:Catalytic_Activity
+    - core:catalyticReaction:
+        - catalytic_reaction: <http://rdf.rhea-db.org/10216>
+    - core:enzymeClass:
+        - enzyme_class: enzyme:2.7.11.23
 
+- helix_annotation:
+    - a: core:Helix_Annotation
+    - core:range:
+        - range: range:22571007499383598tt285tt287
 
+- range:
+    - a: faldo:Region
+    - faldo:begin:
+        - begin: position:22571007499383598tt285
+    - faldo:end:
+        - end: position:22571007499383598tt287
+
+- begin:
+    - a: ['faldo:ExactPosition', 'faldo:Position']
+    - faldo:position:
+        - begin_position: 285
+    - faldo:reference:
+        - reference: isoform:P06493-1
+
+- end:
+    - a: ['faldo:ExactPosition', 'faldo:Position']
+    - faldo:position:
+        - end_position: 285
+    - faldo:reference:
+        - reference: isoform:P06493-1
+   
 - annotation_statement:
     - a: rdf:Statement
     - core:attribution:
+
     - rdf:subject:
-        - annotation_subject: sp:P06493\#SIP04650F2717A2389F
+        - annotation_subject: sp:P06493#SIP04650F2717A2389F
     - rdf:predicate:
         - annotation_predicate: core:annotation
     - rdf:object:
         - annotation_object: up:P06493
 
-
+- attribution:
+    - core:evidence:
+        - evidence: obo:ECO_0000244
+    - core:manual:
+        - manual: true
+    - core:source:
+        - source: <http://rdf.wwpdb.org/pdb/6GU2>
