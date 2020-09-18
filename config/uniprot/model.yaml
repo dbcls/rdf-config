@@ -1,0 +1,94 @@
+- UniProt <http://rdf.uniprot.org/protein/P06493>:
+    - a: core:Protein
+    - core:recommendedName:
+        - structured_recommended_name: up:P06493\#SIP5A4FD37A407EF4B7
+    - core:alternativeName:
+        - structured_alternative_name: up:P06493\#SIP00349E63D97E99F2
+    - core:mnemonic:
+        - mnemonic: CDK1_HUMAN
+    - core:oldMnemonic:
+        - mnemonic: ['CC2_HUMAN', 'CDC2_HUMAN']
+    - core:reviewed:
+        - reviewed: true
+    - core:sequence:
+        - sequence: [isoform:P06493-1, isoform:P06493-2]
+    - core:conflictingSequence:
+        - confilicting_sequence: <http://purl.uniprot.org/uniprot/P06493\#SIP57DD48EE8AF6F997>
+    - core:created:
+        - created: 1988-01-01
+    - core:modified:
+        - modified: 2020-08-12
+    - core:encodedBy:
+        - encoded_by: up:P06493\#gene-MD5066A21D78DD806AEF8C6D2D66E098AF8
+    - core:enzyme:
+        - enzyme: [enzyme:2.7.11.22, enzyme:2.7.11.23]
+    - core:annotation:
+        - annotation: up:P06493\#SIP04650F2717A2389F
+    - core:interaction:
+        - interaction: [intact:297353-444308, intact:347640-444308]
+
+- structured_recommended_name:
+    - a: core:Structured_Name
+    - core:ecName:
+        - ec_name: '2.7.11.22'
+    - core:fullName:
+        - full_name: Cyclin-dependent kinase 1
+    - core:shortName:
+        - short_name: CDK1
+
+- structured_alternative_name:
+    - a: core:Structured_Name
+    - core:fullName:
+        - alternative_name: p34 protein kinase
+
+- encoded_by:
+    - a: core:Gene
+    - skos:altLabel:
+        - alt_label: ['CDC2', 'CDC28A', 'CDKN1', 'P34CDC2']
+    - skos:prefLabel:
+        - pref_label: CDK1
+
+- sequence:
+    - a: core:Simple_Sequence
+    - core:mass:
+        - mass: 34095
+    - core:md5Checksum:
+        - md5_checksum: c5f024db8fdfc09c76e40635fc0aa6f1
+    - core:modified:
+        - isoform_modified: 2011-05-31
+    - core:name:
+        - isoform_name: '1'
+    - core:version:
+        - isoform_version: '3'
+    - rdf:value:
+        - isoform_sequence: MEDYTKIEKIGEGTYGVVYKGRHKTTGQVVAMKKIRLESEEEGVPSTAIREISLLKELRHPNIVSLQDVLMQDSRLYLIFEFLSMDLKKYLDSIPPGQYMDSSLVKSYLYQILQGIVFCHSRRVLHRDLKPQNLLIDDKGTIKLADFGLARAFGIPIRVYTHEVVTLWYRSPEVLLGSARYSTPVDIWSIGTIFAELATKKPLFHGDSEIDQLFRIFRALGTPNNEVWPEVESLQDYKNTFPKWKPGSLASHVKNLDENGLDLLSKMLIYDPAKRISGKMALNHPYFNDLDNQIKKM
+
+
+- confilicting_sequence:
+    - a: core:External_Sequence
+    - core:translatedFrom:
+        - translated_from: up:P06493\#SIP57DD48EE8AF6F997
+
+- interaction:
+    - a: ['core:Interaction', 'core:Non_Self_Interaction']
+    - core:experiments:
+        - experiments: 3
+    - core:participant:
+        - participant: ['intact:EBI-297353', 'intact:EBI-444308']
+    - core:xeno:
+        - xeno: false
+
+
+
+
+- annotation_statement:
+    - a: rdf:Statement
+    - core:attribution:
+    - rdf:subject:
+        - annotation_subject: sp:P06493\#SIP04650F2717A2389F
+    - rdf:predicate:
+        - annotation_predicate: core:annotation
+    - rdf:object:
+        - annotation_object: up:P06493
+
+
