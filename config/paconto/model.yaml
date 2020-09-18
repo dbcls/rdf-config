@@ -1,0 +1,270 @@
+- DiseaseConcept paconto:DIS093:
+  - a:
+    - skos:Concept
+    - pacsch:DiseasesPACDB
+  - ggdsch:diseaseName:
+    - disorder: "Cystitis"
+  - ggdont:conceptType:
+    - thing: Thing
+  - gmschema:causedBy+:
+    - upec: Upec # UPEC
+    - ecoli: Ecoli # Escherichia coli
+  - pacsch:diseaseClass:
+    - disease: "Urologic Disease"
+  - pacsch:diseasesClassificationSystems:
+    - cystitis: Cystitis # Cystitis
+  - pacsch:inDiseasesClassification:
+    - thing: Thing
+  - dct:identifier:
+    - name: "DIS093"
+  - rdfs:label:
+    - disorder_name: "Cystitis"
+  - rdfs:seeAlso+:
+    - mesh: Mesh
+  - skos:inScheme:
+    - pacdb: Pacdb
+
+- Thing pacsch:DiseasesNameAndClass:
+  - a:
+    - owl:Thing
+    - ggdont:ConceptType
+  - rdfs:label:
+    - thing_label: "Diseases Name and Class"
+
+- Upec paconto:SPE381:
+  - a:
+    - skos:Concept
+    - up:Strain
+  - ggdont:conceptType:
+    - thing: Thing
+  - gmschema:causes+:
+    - disease: Disease # Sepsis
+  - pacsch:organismForm:
+    - thing: Thing
+  - pacsch:pathogenMaterialType:
+    - material: "strain"
+  - pacsch:speciesForStrain:
+    - species: "Escherichia coli"
+  - pacsch:strainName:
+    - strain: "UPEC"
+  - pacsch:tropismInReference+:
+    - tropism_in_reference: TropismInReference
+  - dct:identifier:
+    - upec_identifier: "SPE381"
+  - up:rank:
+    - rank: pacsch:NoRank
+  - rdfs:label:
+    - upec_label: "UPEC"
+
+- Ecoli paconto:SPE009:
+  - a:
+    - skos:Concept
+    - pacsch:Microorganisms
+  - gmschema:causes+:
+    - case: Case # Diarrhea
+  - pacsch:ncbiTaxonomyId:
+    - taxoid: "562"
+  - pacsch:tropismInReference+:
+    - tropism_in_reference: TropismInReference
+  - glycan:has_strain+:
+    - strain: "DS17"
+  - dct:identifier:
+    - ecoli_identifier: "SPE009"
+  - up:rank:
+    - species: Species
+  - up:scientificName:
+    - strain: "Escherichia coli"
+  - up:strain+:
+    - paconto_strain: PacontoStrain # str. 346
+  - rdfs:label:
+    - ecoli_label: "Escherichia coli"
+  - rdfs:seeAlso:
+    - taxo: Taxo
+
+- Cystitis paconto:DIC111:
+  - a:
+    - skos:Concept
+    - pacsch:DiseasesPACDB
+  - ggdsch:diseaseName:
+    - disorder: "Cystitis"
+  - ggdont:conceptType:
+    - thing: Thing
+  - ggdont:meshUniqueID:
+    - mesh_id: "D003556"
+  - ggdont:umlsCUI:
+    - umls: "C0010692"
+  - pacsch:broaderInDisClassifSystems:
+    - pacdb_diseases: PacdbDiseases # Urinary Bladder Diseases
+  - dct:identifier:
+    - name: "DIC111"
+  - rdfs:label:
+    - disorder: "Cystitis"
+
+- Thing pacsch:DiseasesClassificationSystems:
+  - a:
+    - owl:Thing
+    - pacsch:DiseasesClassificationsMeSH
+  - rdfs:comment:
+    - mesh: "Classification of infectious diseases by organ systems using MeSH vocabulary"
+  - rdfs:label:
+    - thing_label: "Classification of Diseases by Systems"
+  - skos:altLabel:
+    - label: "Infectious diseases according to body site (by organ systems and organs)"
+
+- Pacdb pacsch:ConceptSchemePACDB:
+  - a: skos:ConceptScheme
+  - dct:title:
+    - pacdb_title: "This concept scheme includes concepts that represent entries from Pathogen Adherence to Carbohydrate Database (PACDB)"
+
+- Thing pacsch:DiseasesClassifications:
+  - a:
+    - owl:Thing
+    - ggdont:ConceptType
+  - rdfs:comment:
+    - comment: "Classifications of infectious diseases recorded in PACDB by using MeSH (Medical Subject Headings) vocabulary"
+  - rdfs:label:
+    - thing_label: "Classifications of Diseases"
+
+- PacdbDiseases paconto:DIC181:
+  - a:
+    - skos:Concept
+    - pacsch:DiseasesPACDB
+  - ggdsch:diseaseName:
+    - disease: "Urinary Bladder Diseases"
+  - ggdont:meshUniqueID:
+    - mesh_id: "D001745"
+  - ggdont:umlsCUI:
+    - umls: "C0005686"
+  - pacsch:broaderInDisClassifSystems:
+    - pacdb_diseases: PacdbDiseases # Urologic Diseases
+  - dct:identifier:
+    - pacdb_diseases_identifier: "DIC181"
+  - rdfs:label:
+    - pacdb_diseases_label: "Urinary Bladder Diseases"
+  - rdfs:seeAlso+:
+    - mesh_id: MeshId
+
+- Thing pacsch:PathogenicMicroorganisms:
+  - a:
+    - owl:Thing
+    - ggdont:ConceptType
+  - rdfs:label:
+    - thing_label: "Pathogenic Microorganisms"
+
+- Disease paconto:DIS043:
+  - a:
+    - skos:Concept
+    - pacsch:DiseasesPACDB
+  - ggdsch:diseaseName:
+    - disorder: "Sepsis"
+  - gmschema:causedBy+:
+    - strain: Strain # serotype 1 str. 836 (type Po)
+  - pacsch:diseaseClass:
+    - disease: "Inflammation"
+  - pacsch:diseasesClassificationPathogens:
+    - disease: paconto:DIC019 # Sepsis
+  - pacsch:diseasesClassificationSystems+:
+    - disease: paconto:DIC019 # Sepsis
+  - pacsch:inDiseasesClassification+:
+    - thing: pacsch:DiseasesClassificationPathogens
+  - dct:identifier:
+    - disease_identifier: "DIS043"
+  - rdfs:label:
+    - disease_label: "Sepsis"
+  - rdfs:seeAlso+:
+    - mesh_id: MeshId
+
+- Thing pacsch:Bacteria:
+  - a:
+    - owl:Thing
+    - pacsch:OrganismForms
+  - rdfs:label:
+    - thing_label: "Bacteria"
+  - rdfs:seeAlso:
+    - taxo: taxo:2
+  - skos:altLabel:
+    - classification: "SUPERKINGDOM Bacteria"
+
+- TropismInReference paconto:SOU072_PUB216:
+  - a: pacsch:TropismInReference
+  - pacsch:describedInReference:
+    - pacdb_references: paconto:PUB216
+  - pacsch:hasTropismTo:
+    - target_tissues_and_cells: paconto:SOU072 # Acute cystitis patients
+  - dct:references:
+    - pacdb_references: paconto:PUB216
+
+- Case paconto:DIS018:
+  - a:
+    - skos:Concept
+    - pacsch:DiseasesPACDB
+  - ggdsch:diseaseName:
+    - disease: "Diarrhea"
+  - gmschema:causedBy+:
+    - species: paconto:SPE217 # genogroup II (GII)
+  - pacsch:diseaseClass:
+    - disease: "Digestive System Disease"
+  - pacsch:diseasesClassificationSystems:
+    - disease: paconto:DIC187 # Diarrhea
+  - dct:identifier:
+    - case_identifier: "DIS018"
+  - rdfs:label:
+    - case_label: "Diarrhea"
+  - rdfs:seeAlso+:
+    - mesh_id: mesh:D003967
+
+- TropismInReference paconto:SOU173_PUB089:
+  - a: pacsch:TropismInReference
+  - pacsch:describedInReference:
+    - pacdb_references: paconto:PUB089
+  - pacsch:hasTropismTo:
+    - target_tissues_and_cells: paconto:SOU173 # Eukaryotic cells
+  - dct:references:
+    - pacdb_references: paconto:PUB089
+
+- PacontoStrain paconto:SPE130:
+  - a:
+    - skos:Concept
+    - up:Strain
+  - pacsch:pathogenMaterialType:
+    - strain: "strain"
+  - pacsch:speciesForStrain:
+    - ecoli: "Escherichia coli"
+  - pacsch:strainName:
+    - strain: "str. 346"
+  - pacsch:tropismInReference:
+    - tropism_in_reference: paconto:SOU098_PUB151
+  - dct:identifier:
+    - paconto_strain_identifier: "SPE130"
+  - rdfs:label:
+    - paconto_strain_label: "str. 346"
+
+- Taxo taxo:562:
+  - a: up:taxon
+  - glyc:has_strain:
+    - spieces: "Salmonella enterica serovar Typhimurium"
+  - up:scientificName+:
+    - species: "Escherichia coli"
+
+- Strain paconto:SPE145:
+  - a: up:Strain
+
+- PacdbDiseases paconto:DIC185:
+  - a:
+    - skos:Concept
+    - pacsch:DiseasesPACDB
+  - ggdsch:diseaseName:
+    - disease: "Urologic Diseases"
+  - ggdont:meshUniqueID:
+    - mesh_id: "D014570"
+  - ggdont:umlsCUI:
+    - umls: "C0042075"
+  - pacsch:broaderInDisClassifSystems:
+    - pacdb_diseases: paconto:DIC095 # Diseases
+  - dct:identifier:
+    - pacdb_diseases_identifier: "DIC185"
+  - rdfs:label:
+    - pacdb_diseases_label: "Urologic Diseases"
+  - rdfs:seeAlso+:
+    - mesh_id: mesh:D014570
+
