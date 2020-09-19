@@ -1,5 +1,4 @@
 - UniProt <http://rdf.uniprot.org/protein/P06493>:
-    - core:annotation:
     - a: core:Protein
     - core:recommendedName:
         - structured_recommended_name: up:P06493\#SIP5A4FD37A407EF4B7
@@ -34,7 +33,7 @@
     - core:classifiedWith:
         - classified_with: ["obo:GO_0000086", "keywords:1017"]
     - core:annotation:
-        - actively_regulation_annotation: up:P06493#SIPBD7EB44EAA4E6471
+        - activity_regulation_annotation: up:P06493#SIPBD7EB44EAA4E6471
     - core:annotation:
         - allergen_annotation: 
     - core:annotation:
@@ -48,7 +47,7 @@
     - core:annotation:
         - alternative_splicing_annotation: up:P06493#SIPDE7757750C226E88
     - core:annotation:
-        - ribosomal_frameshifting: 
+        - ribosomal_frameshifting: up:P06710#SIPFCC4F752FDF91CCD
     - core:annotation:
         - absorption_annotation: 
     - core:annotation:
@@ -104,7 +103,7 @@
     - core:annotation:
         - chain_annotation: annotation:PRO_0000085724
     - core:annotation:
-        - initiator_methionine_annotation: 
+        - initiator_methionine_annotation: up:P06710#SIP1A9E0754F14CA9D9
     - core:annotation:
         - peptide_annotation: 
     - core:annotation:
@@ -288,6 +287,13 @@
         - sequence: ["isoform:P06493-1", "isoform:P06493-2"]
     - alternative_splicing_annotation_comment: ""
 
+- ribosomal_frameshifting:
+    - a: core:Ribosomal_Frameshifting
+    - core:sequence:
+        - sequence: ["isoform:P06710-1", "isoform:P06710-2"]
+    - rdfs:comment:
+        - ribosomal_frameshifting_comment: "The production of the two protein products from this region is due to programmed ribosomal frameshifting. Frameshifting is about 40% efficient."
+
 - beta_strand_annotation:
     - a: core:Beta_Strand_Annotation
     - core:range:
@@ -312,6 +318,13 @@
     - rdfs:comment:
         - chain_annotation_comment: "Cyclin-dependent kinase 1"
 
+- initiator_methionine_annotation:
+    - a: core:Initiator_Methionine_Annotation
+    - core:range:
+        - range: range:22571007549190190tt1tt1
+    - rdfs:comment:
+        - initiator_methionine_comment: "Removed"
+
 - cross-link_annotation:
     - a: core:Cross-link_Annotation
     - core:range:
@@ -330,6 +343,13 @@
     - a: core:Erroneous_Gene_Model_Prediction_Annotation
     - core:confilictingSequence:
         - conflicting_sequence: up:P06493#SIP57DD48EE8AF6F997
+
+- erroneous_initiation_annotation:
+    - a: core:Erroneous_Initiation_Annotation
+    - core:confilictingSequence:
+        - conflicting_sequence: up:P06710#SIP5B121DCACC8D3D21
+    - rdfs:comment:
+        - erroneous_initiation_annotation_comment: "Truncated N-terminus."
 
 - function_annotation:
     - a: core:Function_Annotation
