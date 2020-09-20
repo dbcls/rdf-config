@@ -1,0 +1,72 @@
+- FAMSBASEEntry famsbase:2RH1_A_ref_NP_000673.2:
+    - a: famso:Protein3DModel
+    - dcterms:identifier:
+        - identifier: "2RH1_A_ref_NP_000673.2"
+    - famsbase:hasModel:
+        - protein_structure: <http://fams.bio.chuo-u.ac.jp/storage/famsbase/GPCR/INs/2RH1_A/ref_NP_000673.2/ref_NP_000673.2.pdb>
+    - famsbaseo:hasTemplateForAlignedRegion:
+        - template: <http://fams.bio.chuo-u.ac.jp/storage/famsbase/GPCR/INs/2RH1_A/ref_NP_000673.2/2RH1_A_cut>
+
+- protein_structure:
+    - a: edam:data_1460
+    - edam:is_output_of:
+        - protein_modelling: []
+
+- protein_modelling:
+    - a: edam:operation_0477
+    - edam:hasInput:
+        - input_template: <http://fams.bio.chuo-u.ac.jp/storage/famsbase/GPCR/CHAINs/2RH1_A.pdb>
+        - input_alignment: <http://fams.bio.chuo-u.ac.jp/storage/famsbase/GPCR/INs/2RH1_A/ref_NP_000673.2/ref_NP_000673.2.in>
+
+- input_alignment:
+    - a: edam:data_0863
+    - famsbaseo:evalue:
+        - evalue: 1.0e-143
+    - famsbaseo:identity:
+        - identity: 23
+    - famsbaseo:hasRegion:
+        - pdb_region: []
+        - refseq_region: []
+    - edam:is_output_of:
+        - local_alignment: []
+
+- pdb_region:
+    - a: faldo:Region
+    - faldo:begin:
+        - begin: []
+    - faldo:end:
+        - end: []
+
+- refseq_region:
+    - a: faldo:Region
+    - faldo:begin:
+        - begin: []
+    - faldo:end:
+        - end: []
+
+- begin:
+    - a: ["faldo:Position", "faldo:ExactPosition"]
+    - faldo:position:
+        - begin_position: 8
+    - faldo:reference: 
+        - reference: refseq:NP_000673.2
+
+- end:
+    - a: ["faldo:Position", "faldo:ExactPosition"]
+    - faldo:position:
+        - begin_position: 442 
+    - faldo:reference: 
+        - reference: refseq:NP_000673.2
+
+- local_alignment:
+    - a: edam:operation_0495
+    - edam:hasInput:
+        - pdb_chain: <http://fams.bio.chuo-u.ac.jp/storage/famsbase/GPCR/CHAINs/2RH1_A.pdb>
+        - na_sequence: []
+
+- na_sequence:
+    - a: edam:data_2976
+    - rdfs:seeAlso:
+        - uniprot: up:P18089
+        - refseq: refseq:NP_000673.2
+

@@ -1,0 +1,11 @@
+original_attributes:
+  description: Get original sample attributes
+  variables: [BioSample, sra_run, sample_attribute, name, value]
+
+annotated_attributes:
+  description: Get ontology annotated sample attributes
+  variables: [BioSample, sra_run, sample_attribute, name, value, ontology]
+
+get_object_relation:
+  description: Get related SRA data objects
+  variables: [BioSample, sra_study, sra_experiment, sra_accession, sra_sample, sra_run, bioproject]

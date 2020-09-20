@@ -1,0 +1,83 @@
+
+- QuantoReport quanto:ERR026579_1_fastqc:
+  - a: sos:SequenceStatisticsReport
+  - sos:encoding:
+    - encoding: "Sanger / Illumina 1.9"
+  - sos:fastqcVersion:
+    - fastqcVersion: "0.10.0"
+  - sos:fileType:
+    - fileType: "Conventional base calls"
+  - sos:filename:
+    - filename: "ERR026579_1.fastq"
+  - sos:filteredSequences:
+    - []:
+      - a: sos:SequenceReadAmount
+      - rdf:value+:
+        - node_39: 0
+  - sos:maxSequenceLength:
+    - []:
+      - a: sos:SequenceReadLength
+      - rdf:value+:
+        - maxSequenceLength: 62
+  - sos:meanSequenceLength:
+    - []:
+      - a: sos:SequenceReadLength
+      - sos:hasUnit+:
+        - basepair: obo:UO_0000244 # base pair
+      - rdf:value+:
+        - meanSequenceLength: 62.0
+  - sos:medianSequenceLength:
+    - []:
+      - a: sos:SequenceReadLength
+      - rdf:value+:
+        - medianSequenceLength: 62.0
+  - sos:minSequenceLength:
+    - []:
+      - a: sos:SequenceReadLength
+      - rdf:value+:
+        - minSequenceLength: 62
+  - sos:overallMeanBaseCallQuality:
+    - []:
+      - a: sos:PhredQualityScore
+      - sos:hasUnit+:
+        - countunit: obo:UO_0000189 # count unit
+      - rdf:value+:
+        - overallMeanBaseCallQuality: 33.1428
+  - sos:overallMedianBaseCallQuality:
+    - []:
+      - a: sos:PhredQualityScore
+      - rdf:value+:
+        - overallMedianBaseCallQuality: 33.909
+  - sos:overallNContent:
+    - []:
+      - a: sos:BaseRatio
+      - sos:hasUnit+:
+        - percent: obo:UO_0000187 # percent
+      - rdf:value+:
+        - overallNContent: 0.00158011
+  - sos:percentGC:
+    - []:
+      - a: sos:BaseRatio
+      - rdf:value+:
+        - percentGC: 40.0
+  - sos:totalSequences:
+    - []:
+      - a: sos:SequenceReadAmount
+      - rdf:value+:
+        - totalSequences: 4254262
+  - dct:contributor+:
+    - contributor: "Tazro Ohta"
+  - dct:created+:
+    - datecreated: "2016-07-10"
+  - dct:identifier+:
+    - identifier: "ERR026579_1_fastqc"
+  - dct:license+:
+    - resource: cc4
+  - dct:publisher+:
+    - publisher: dbcls
+  - pav:version+:
+    - version: "0.1.2"
+  - rdfs:seeAlso+:
+    - insdc.sra: sra:ERR026579
+  - foaf:page+:
+    - page: base:quanto.dbcls.jp
