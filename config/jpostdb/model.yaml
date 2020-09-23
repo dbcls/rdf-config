@@ -132,7 +132,7 @@
   - dct:identifier:
     - peptide_identifier: "PEP810_1_15421"
   - jpost:hasPsm+:
-    - peptide_spectrum match: PeptideSpectrum match
+    - peptide_spectrum_match: PeptideSpectrumMatch
   - jpost:hasSequence:
     - []:
       - a: obo:MS_1001344 # AA sequence
@@ -152,7 +152,7 @@
       - sio:SIO_000300: # has value
         - peptide_sequence-level_global_fdr: 0
 
-- PeptideSpectrum match jpostdb:PSM810_1_5259:
+- PeptideSpectrumMatch jpostdb:PSM810_1_5259:
   - a: jpost:PeptideSpectrumMatch
   - dct:identifier:
     - peptide_spectrum match_identifier: "PSM810_1_5259"
@@ -183,20 +183,43 @@
       - a: obo:MS_1000041 # charge state
       - sio:SIO_000300: # has value
         - charge_state: 3
-  - jpost:hasModification*:
+  - jpost:hasModification*: [Phospho, Acetyl, Oxidation]
+
+- Phospho []:
+  - a: unimod:UNIMOD_21
+  - jpost:modificationSite:
+    - modification_site: "S"
+  - faldo:location:
     - []:
-      - a:
-        - unimod:UNIMOD_21
-        - unimod:UNIMOD_35
-      - jpost:modificationSite:
-        - modification_site: "S"
-      - faldo:location:
-        - []:
-          - a: faldo:ExactPosition
-          - faldo:position:
-            - begin: 5
-          - faldo:reference:
-            - peptide: jpostdb:PEP810_1_15421
+      - a: faldo:ExactPosition
+      - faldo:position:
+        - begin: 5
+      - faldo:reference:
+        - peptide: jpostdb:PEP810_1_15421
+
+- Acetyl []:
+  - a: unimod:UNIMOD_1
+  - jpost:modificationSite:
+    - modification_site: "S"
+  - faldo:location:
+    - []:
+      - a: faldo:ExactPosition
+      - faldo:position:
+        - begin: 5
+      - faldo:reference:
+        - peptide: jpostdb:PEP810_1_15421
+
+- Oxidation []:
+  - a: unimod:UNIMOD_35
+  - jpost:modificationSite:
+    - modification_site: "M"
+  - faldo:location:
+    - []:
+      - a: faldo:ExactPosition
+      - faldo:position:
+        - begin: 5
+      - faldo:reference:
+        - peptide: jpostdb:PEP810_1_15421
 
 - Spectrum bid:SPC810_1_3_1.1.2188.10:
   - a: jpost:Spectrum
