@@ -1,0 +1,40 @@
+- GwasSnp gwas_snp:7827:
+  - a:
+    - owl:NamedIndividual
+    - gwas:SingleNucleotidePolymorphism
+  - oban:is_subject_of+:
+    - gwas_assosiation: GwasAssosiation # "21044949"^^xsd:string
+  - gwas:has_basepair_position:
+    - bp_position: 13764310
+  - gwas:has_snp_reference_id:
+    - rs: "rs2896103"
+  - ro:located_in:
+    - gwas_cytogenetic_region: gwas_cytogenetic_region:5p15.2
+  - rdfs:label:
+    - rs: "rs2896103"
+
+- GwasAssosiation gwas_trackable:6012:
+  - a:
+    - owl:NamedIndividual
+    - gwas:TraitAssociation
+    - gwas:Study
+  - oban:has_object+:
+    - efo_trait: efo:EFO_0003912 # ankle brachial index
+    - cardiovascular_disease_biomarker_measurement: efo:EFO_0005278 # cardiovascular disease biomarker measurement
+  - gwas:has_author:
+    - author: "Yang J"
+  - gwas:has_gwas_trait_name:
+    - gwas_trait_name: "Subclinical atherosclerosis traits (other)"
+  - gwas:has_p_value:
+    - p_value: 5e-06
+  - gwas:has_publication_date:
+    - publication_date: 2010-11-02T00:00:00Z
+  - gwas:has_pubmed_id:
+    - pubmed_id: "21044949"
+  - ro:has_part:
+    - gwas_association: gwas_trackable:16617 # Association between rs7329174 and Systemic lupus erythematosus
+  - ro:part_of:
+    - gwas_association: gwas_trackable:155 # "17903303"^^xsd:string
+  - rdfs:label+:
+    - asoosication_description: "Association between rs2896103 and Subclinical atherosclerosis traits (other)"
+
