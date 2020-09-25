@@ -23,3 +23,52 @@
   - rdfs:comment:
     - comment: "Oryza sativa Japonica Group DNA, chromosome 1, cultivar: Nipponbare, complete sequence."
 
+- Reference entry:reference.1:
+  - reference:author+:
+    - author: "Itoh, T."
+  - reference:journal:
+    - journal: "Submitted (09-OCT-2015) to the DDBJ/EMBL/GenBank databases. Contact:Takeshi Itoh National Institute of Agrobiological Sciences; Kannondai 2-1-2, Tsukuba 305-8602, Japan"
+  - reference:title:
+    - title: "Direct Submission"
+  - sio:SIO_000300:
+    - value: 1
+
+- Sequence entry:sequence:
+  - faldo:location:
+    - insdc: region:1
+  - nucleotide:location:
+    - location: "1..43270923"
+  - nucleotide:sequence_length:
+    - length: 43270923
+  - nucleotide:topology:
+    - topology: nucleotide:linear
+  - obo:RO_0002162+:
+    - taxonomy: taxonomy:39947 # 39947
+  - obo:so_has_quality:
+    - quality: obo:SO_0000987
+  - rdfs:seeAlso+:
+    - data: data:AP014957.1&amp;display=fasta
+  - rdfs:subClassOf:
+    - class: obo:SO_0000001
+
+- Region region:1:
+  - a: faldo:Region
+  - faldo:begin:
+    - insdc: position_start:1
+  - faldo:end:
+    - insdc: position_end:1
+
+- Sourcefeature fetaure:source:
+  - nucleotide:chromosome:
+    - number: 1
+  - nucleotide:cultivar:
+    - name: "Nipponbare"
+  - nucleotide:mol_type:
+    - type: "genomic DNA"
+  - nucleotide:organism:
+    - name: "Oryza sativa Japonica Group"
+  - obo:so_part_of:
+    - insdc: entry:sequence
+  - rdfs:seeAlso+:
+    - taxonomy: taxonomy:39947 # 39947
+
