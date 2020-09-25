@@ -1,0 +1,15 @@
+get_id:
+  description:  Obtain pairs of glycan ID and its entry URL
+  variables: [id,GlyTouCan_entry_URL]
+
+get_motif_label:
+  description: Retrieve motif labels for each glycan ID
+  variables: [id,Glycan_Motif,label]
+
+get_sequence:
+  description: Retrieve sequence data for each glycan ID
+  variables: [id,Sequence]
+  
+get_mass:
+  description: Retrieve mass for each glycan ID
+  variables: [id,Mass]
