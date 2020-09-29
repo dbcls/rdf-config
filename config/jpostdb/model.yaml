@@ -38,10 +38,10 @@
   - a: jpost:Dataset
   - dct:identifier:
     - dataset_identifier: "DS810_1"
-  - jpost:hasPeptide+:
-    - peptide: jpostdb:PEP810_1_14507
-    - unique_peptide_at_ms_level: jpostdb:PEP810_1_14508
-    - shared_peptide_at_ms_level: jpostdb:PEP810_1_14609
+#  - jpost:hasPeptide+:
+#    - peptide: jpostdb:PEP810_1_14507
+#    - unique_peptide_at_ms_level: jpostdb:PEP810_1_14508
+#    - shared_peptide_at_ms_level: jpostdb:PEP810_1_14609
   - jpost:hasProfile:
     - profile: Profile
   - jpost:hasProtein+:
@@ -185,7 +185,7 @@
         - charge_state: 3
   - jpost:hasModification*: [Phospho, Acetyl, Oxidation]
 
-- Phospho []:
+- Phospho:
   - a: unimod:UNIMOD_21
   - jpost:modificationSite:
     - phospho_modification_site: "S"
@@ -197,7 +197,7 @@
       - faldo:reference:
         - peptide: jpostdb:PEP810_1_15421
 
-- Acetyl []:
+- Acetyl:
   - a: unimod:UNIMOD_1
   - jpost:modificationSite:
     - acetyl_modification_site: "S"
@@ -209,7 +209,7 @@
       - faldo:reference:
         - peptide: jpostdb:PEP810_1_15421
 
-- Oxidation []:
+- Oxidation:
   - a: unimod:UNIMOD_35
   - jpost:modificationSite:
     - oxidation_modification_site: "M"
