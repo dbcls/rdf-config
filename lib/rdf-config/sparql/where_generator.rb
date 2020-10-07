@@ -91,7 +91,12 @@ class RDFConfig
         end
 
         def to_sparql
-          "?#{name}"
+          case name
+          when Array
+            name.to_s
+          else
+            "?#{name}"
+          end
         end
 
         def rdf_type_varname
@@ -185,8 +190,8 @@ class RDFConfig
       end
 
       def generate_triple_without_bnode(triple_in_model)
-        subject = variable(triple_in_model.subject.name)
-        subject.rdf_types = @model.find_subject(subject.name).types
+        subject = subject_instance(triple_in_model.subject)
+        subject.rdf_types = triple_in_model.subject.types
 
         add_triple(Triple.new(subject,
                               triple_in_model.predicates.first.uri,
@@ -198,7 +203,7 @@ class RDFConfig
         bnode_rdf_types = model.bnode_rdf_types(triple_in_model)
 
         if use_property_path?(bnode_rdf_types)
-          add_triple(Triple.new(variable(triple_in_model.subject.name),
+          add_triple(Triple.new(subject_instance(triple_in_model.subject),
                                 triple_in_model.property_path(PROPERTY_PATH_SEP),
                                 variable(triple_in_model.object_name)),
                      optional_phrase?(triple_in_model.predicate)
@@ -211,7 +216,7 @@ class RDFConfig
       def generate_triples_with_bnode_rdf_types(triple_in_model, bnode_rdf_types)
         predicates = triple_in_model.predicates
 
-        subject = variable(triple_in_model.subject_name)
+        subject = subject_instance(triple_in_model.subject)
         subject.rdf_types = triple_in_model.subject.types
 
         bnode_predicates = []
@@ -332,6 +337,14 @@ class RDFConfig
           else
             @required_triples << triple unless @required_triples.include?(triple)
           end
+        end
+      end
+
+      def subject_instance(subject_in_model)
+        if subject_in_model.blank_node? && subject_in_model.types.size > 1
+          blank_node(subject_in_model.predicates)
+        else
+          variable(subject_in_model.name)
         end
       end
 

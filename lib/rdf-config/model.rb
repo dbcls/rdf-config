@@ -1,4 +1,5 @@
 require 'rdf-config/model/triple'
+require 'rdf-config/model/validator'
 
 class RDFConfig
   class Model
@@ -11,6 +12,7 @@ class RDFConfig
       @subjects = []
 
       generate_triples
+      validate
     end
 
     def each
@@ -80,6 +82,13 @@ class RDFConfig
 
     def size
       @size ||= @triples.size
+    end
+
+    def validate
+      validator = Validator.new(self, @config)
+      validator.validate
+
+      raise Config::InvalidConfig, validator.error_message if validator.error?
     end
 
     private
