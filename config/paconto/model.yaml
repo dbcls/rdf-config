@@ -1,11 +1,20 @@
 - Diseaseconcept paconto:DIS093:
   - a:
     - skos:Concept
+  - rdf:type:
     - pacsch:DiseasesPACDB
+#   - DiseasesPACDB pacsch:DiseasesPACDB:
+#      - rdfs:comment:
+#        - comment: "For describing information about diseases from PACDB"
+#      - rdfs:label:
+#        - class_label: "PACDB Diseases"
+#      - rdfs:subClassOf:
+#        - sub_class_of: ncit:Diseases_and_Disorders    
+    
   - gdgsch:diseaseName:
     - disease_name: "Cystitis"
   - ggdsch:conceptType:
-    - concept_type: ConceptType
+    - concept_type: DiseasNameConceptType
   - gmsch:causedBy+:
     - upec: Upec # UPEC
     - ecoli: Ecoli # Escherichia coli
@@ -24,19 +33,31 @@
   - skos:inScheme:
     - concept_scheme_pacdb: pacsch:ConceptSchemePACDB
 
-- ConceptType pacsch:DiseasesNameAndClass:
+- DiseasesPACDB pacsch:DiseasesPACDB:
+  - a: owl:Class
+  - rdfs:comment:
+    - comment: "For describing information about diseases from PACDB"
+  - rdfs:label:
+    - class_label: "PACDB Diseases"
+  - rdfs:subClassOf:
+    - sub_class_of: ncit:Diseases_and_Disorders    
+
+- DiseasNameConceptType pacsch:DiseasesNameAndClass:
   - a:
     - owl:Thing
-    - ggdsch:ConceptType
+    - ggdsch:ConceptType 
   - rdfs:label:
     - concept_type_label: "Diseases Name and Class"
+  - seeAlso:
+    - diseasespacdb: Diseasespacdb
 
 - Upec paconto:SPE381:
   - a:
     - skos:Concept
     - up:Strain
   - ggdsch:conceptType:
-    - concept_type: ConceptType
+   #- concept_type: ConceptType 
+    - conceptpathogenic: Conceptpathogenic
   - gmsch:causes+:
     - causes: paconto:DIS043 # Sepsis
   - pacsch:organismForm:
@@ -88,7 +109,7 @@
   - gdgsch:diseaseName:
     - disease_name: "Cystitis"
   - ggdsch:conceptType:
-    - concept_type: ConceptType
+    - concept_type: DiseaseClassConceptType  
   - ggdsch:meshUniqueID:
     - mesh_id: "D003556"
   - ggdsch:umlsCUI:
@@ -99,15 +120,21 @@
     - diseases_classification_systems_identifier: "DIC111"
   - rdfs:label:
     - diseases_classification_systems_label: "Cystitis"
+  - rdfs:seeAlso+:
+    - resource_in_mesh: mesh:D003556
+  - skos:inScheme:
+    - concept_scheme_pacdb: pacsch:ConceptSchemePACDB
 
-- ConceptType pacsch:DiseasesClassifications:
+- DiseaseClassConceptType pacsch:DiseasesClassifications:
   - a:
     - owl:Thing
-    - ggdsch:ConceptType
+    - ggdsch:ConceptType 
   - rdfs:comment:
     - comment: "Classifications of infectious diseases recorded in PACDB by using MeSH (Medical Subject Headings) vocabulary"
   - rdfs:label:
     - concept_type_label: "Classifications of Diseases"
+  - rdfs:seeAlso+:
+    - diseases_pacdb: pacsch:DiseasesPACDB
 
 - PacdbDiseases paconto:DIC181:
   - a:
@@ -128,10 +155,11 @@
   - rdfs:seeAlso+:
     - mesh_id: mesh:D001745
 
-- ConceptType pacsch:PathogenicMicroorganisms:
+#- ConceptType pacsch:PathogenicMicroorganisms:
+- Conceptpathogenic pacsch:PathogenicMicroorganisms:
   - a:
     - owl:Thing
-    - ggdsch:ConceptType
+    - ggdsch:ConceptType 
   - rdfs:label:
     - concept_type_label: "Pathogenic Microorganisms"
   - rdfs:seeAlso:
@@ -177,7 +205,7 @@
     - skos:Concept
     - pacsch:TargetTissuesAndCells
   - ggdsch:conceptType:
-    - concept_type: ConceptType
+    - targets_classification: TargetsClassification
   - ggdsch:umlsCUI:
     - umls_cui: "C0086418"
   - dct:identifier:
@@ -191,7 +219,7 @@
   - skos:prefLabel:
     - pref_label: "Human"
 
-- ConceptType pacsch:TargetsClassificationNCIT:
+- TargetsClassification pacsch:TargetsClassificationNCIT:
   - a:
     - owl:Thing
     - ggdsch:ConceptType
