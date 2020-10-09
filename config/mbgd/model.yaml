@@ -24,28 +24,28 @@
   - rdfs:label:
     - node_14: "psbA"
   - foaf:page:
-    - node_15: bin:hcluster?prog=hcluster&amp;clustid=O3927&amp;tabid=default
+    - node_15: <http://mbgd.genome.ad.jp/htbin/hcluster?prog=hcluster&amp;clustid=O3927&amp;tabid=default>
 
-- Gene p246:DACSA_RS08170:
+- Gene <http://mbgd.genome.ad.jp/rdf/resource/gene/dsl:DACSA_RS08170>:
   - a:
     - orth:Gene
     - mbgd:CDS
   - mbgd:aaLength:
     - node_18: 353
   - mbgd:domain:
-    - node_19: p35:0
+    - domain: <http://mbgd.genome.ad.jp/rdf/resource/domain/2018-01_default/dsl:DACSA_RS08170/0>
   - mbgd:nucSeq:
     - nucseq: Nucseq # Chromosome 1
   - mbgd:organism:
     - organism: Organism
   - mbgd:protein:
-    - node_22: ncbiprotein:WP_015229298.1
+    - protein: ncbiprotein:WP_015229298.1
   - mbgd:taxon:
-    - taxon: taxid:13035 # Dactylococcopsis salina PCC 8305
+    - gene_taxid: taxid:13035 # Dactylococcopsis salina PCC 8305
   - mbgd:uniprot:
-    - node_24: uniprot:K9YTN9
+    - uniprot: uniprot:K9YTN9
   - obo:RO_0002162: # in taxon
-    - taxon: taxid:13035 # Dactylococcopsis salina PCC 8305
+    - gene_taxon: taxid:13035 # Dactylococcopsis salina PCC 8305
   - dct:description:
     - node_26: "photosystem II DII subunit, Q(A) protein"
   - dct:identifier:
@@ -53,14 +53,14 @@
   - dct:source:
     - node_28: ncbi:refseq
   - sio:SIO_000028:
-    - node_19: p35:0
+    - node_19: <http://mbgd.genome.ad.jp/rdf/resource/domain/2018-01_default/dsl:DACSA_RS08170/0>
   - sio:SIO_010078+:
     - node_24: uniprot:K9YTN9
     - node_22: ncbiprotein:WP_015229298.1
   - rdfs:label:
     - node_32: ""
   - foaf:page:
-    - node_33: p330:DACSA_RS08170
+    - node_33: <http://mbgd.genome.ad.jp/htbin/MBGD_gene_info_frame.pl?name=dsl:DACSA_RS08170>
 
 - Dataset resource:default:
   - a:
@@ -69,25 +69,25 @@
   - dct:created:
     - node_74: 2018-09-20T14:36:24+09:00
   - dct:creator:
-    - node_75: p297:mbgd.genome.ad.jp
+    - creator: <http://mbgd.genome.ad.jp>
   - dct:description:
     - node_76: "RDF representation of ortholog groups in MBGD."
   - dct:license:
     - node_77: https://creativecommons.org/licenses/by-sa/4.0/
   - dct:publisher:
-    - node_78: p297:www.nibb.ac.jp
+    - node_78: <http://www.nibb.ac.jp>
   - dct:source:
-    - node_75: p297:mbgd.genome.ad.jp
+    - node_75: <http://mbgd.genome.ad.jp>
   - dct:title:
     - node_80: "MBGD ortholog groups"
   - pav:derivedFrom:
-    - node_81: p299:mbgd_2018-01_default.dclst.gz
+    - node_81: <http://mbgd.genome.ad.jp/dist/mbgd_2018-01/mbgd_2018-01_default.dclst.gz>
   - pav:version:
     - node_82: "2018-01"
   - void:dataDump:
-    - node_83: p300:mbgd_2018-01_default.ttl.gz
+    - node_83: <http://mbgd.genome.ad.jp/rdf/archive/mbgd_2018-01/mbgd_2018-01_default.ttl.gz>
   - foaf:page:
-    - node_84: bin:cluster_map?tabid=default&amp;show_summary=1
+    - node_84: <http://mbgd.genome.ad.jp/htbin/cluster_map?tabid=default&amp;show_summary=1>
 
 - Nucseq nucseq:13397:
   - a:
@@ -102,7 +102,7 @@
   - rdfs:label:
     - node_70: "Chromosome 1"
   - rdfs:seeAlso:
-    - node_71: p289:NC_019780.1
+    - node_71: <http://www.ncbi.nlm.nih.gov/nuccore/NC_019780.1>
 
 - Organism organism:dsl:
   - a:
@@ -111,7 +111,7 @@
   - mbgd:abbrev:
     - node_36: "D.salina"
   - mbgd:assembly:
-    - node_37: p283:GCF_000317615.1
+    - node_37: <http://www.ncbi.nlm.nih.gov/assembly/GCF_000317615.1>
   - mbgd:assemblyContigCount:
     - node_38: 0
   - mbgd:assemblyContigN50:
@@ -131,19 +131,19 @@
   - mbgd:genus:
     - node_46: "Dactylococcopsis"
   - mbgd:inFamily:
-    - taxon: taxid:1890426 # Synechococcaceae
+    - family: taxid:1890426 # Synechococcaceae
   - mbgd:inGenus:
-    - taxon: taxid:13034 # Dactylococcopsis
+    - genus: taxid:13034 # Dactylococcopsis
   - mbgd:inOrder:
-    - taxon: taxid:1890424 # Synechococcales
+    - order: taxid:1890424 # Synechococcales
   - mbgd:inPhylum:
-    - taxon: taxid:1117 # Cyanobacteria
+    - phylum: taxid:1117 # Cyanobacteria
   - mbgd:inSpecies:
-    - taxon: taxid:292566 # Dactylococcopsis salina
+    - species: taxid:292566 # Dactylococcopsis salina
   - mbgd:inSuperkingdom:
-    - taxon: taxid:2
+    - superkingdom: taxid:2
   - mbgd:inTaxon:
-    - taxon: taxid:1117 # Cyanobacteria
+    - taxid: taxid:1117 # Cyanobacteria
   - mbgd:species:
     - node_54: "Dactylococcopsis salina"
   - mbgd:spid:
@@ -165,5 +165,4 @@
   - rdfs:label:
     - node_63: "Dactylococcopsis salina PCC 8305"
   - foaf:page:
-    - node_64: bin:MBGD_whole_html.pl?spec=dsl
-
+    - node_64: <http://mbgd.genome.ad.jp/htbin/MBGD_whole_html.pl?spec=dsl>
