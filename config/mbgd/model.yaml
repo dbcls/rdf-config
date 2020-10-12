@@ -1,37 +1,71 @@
 - Cluster cluster:2018-01_default_3927:
   - a: orth:OrthologsCluster
-  - mbgd:dist:
-    - node_2: 0
-  - mbgd:funcCog:
-    - node_3: "4.2"
-  - mbgd:funcKegg:
-    - node_4: "1.2"
-  - mbgd:funcMbgd:
-    - node_5: "6"
-  - mbgd:funcTigr:
-    - node_6: "6.15"
-  - mbgd:score:
-    - node_7: 0
-  - dct:description:
-    - node_8: "Photosystem II reaction center protein"
   - dct:identifier:
-    - node_9: "3927"
-  - orth:hasHomologous+:
-    - node_10: domain:0
-    - gene: Gene
+    - cluster_id: "3927"
+  - rdfs:label:
+    - cluster_label: "psbA"
+  - dct:description:
+    - cluster_descr: "Photosystem II reaction center protein"
   - void:inDataset:
     - dataset: Dataset
-  - rdfs:label:
-    - node_14: "psbA"
+  - mbgd:funcMbgd:
+    - func_mbgd: "6"
+  - mbgd:funcCog:
+    - func_cog: "4.2"
+  - mbgd:funcKegg:
+    - func_kegg: "1.2"
+  - mbgd:funcTigr:
+    - func_tigr: "6.15"
+  - mbgd:score:
+    - score: 0
+  - mbgd:dist:
+    - dist: 0
   - foaf:page:
-    - node_15: <http://mbgd.genome.ad.jp/htbin/hcluster?prog=hcluster&amp;clustid=O3927&amp;tabid=default>
+    - cluster_page: <http://mbgd.genome.ad.jp/htbin/hcluster?prog=hcluster&amp;clustid=O3927&amp;tabid=default>
+  - orth:hasHomologous+:
+    - orth:OrthologsCluster: <http://mbgd.genome.ad.jp/rdf/resource/cluster/2018-01_tax1177_3430>
+    - member_domain: Domain
+    - member_gene: Gene
+
+- Dataset resource:default:
+  - a:
+    - void:Dataset
+    - orth:OrthologyDataset
+  - dct:title:
+    - dataset_title: "MBGD ortholog groups"
+  - dct:description:
+    - dataset_descr: "RDF representation of ortholog groups in MBGD."
+  - dct:license:
+    - license: https://creativecommons.org/licenses/by-sa/4.0/
+  - dct:created:
+    - date_time: 2018-09-20T14:36:24+09:00
+  - dct:creator:
+    - creator: <http://mbgd.genome.ad.jp>
+  - dct:publisher:
+    - publisher: <http://www.nibb.ac.jp>
+  - dct:source:
+    - source: <http://mbgd.genome.ad.jp>
+  - pav:version:
+    - dataset_version: "2018-01"
+  - pav:derivedFrom:
+    - original_dataset: <http://mbgd.genome.ad.jp/dist/mbgd_2018-01/mbgd_2018-01_default.dclst.gz>
+  - void:dataDump:
+    - dataset_dump: <http://mbgd.genome.ad.jp/rdf/archive/mbgd_2018-01/mbgd_2018-01_default.ttl.gz>
+  - foaf:page:
+    - dataset_page: <http://mbgd.genome.ad.jp/htbin/cluster_map?tabid=default&amp;show_summary=1>
+
+- Domain <http://mbgd.genome.ad.jp/rdf/resource/domain/2018-01_default/dsl:DACSA_RS08170/0>:
+  - a:
+    - orth:Subgene
+    - mbgd:Domain
+    - faldo:Region
 
 - Gene <http://mbgd.genome.ad.jp/rdf/resource/gene/dsl:DACSA_RS08170>:
   - a:
     - orth:Gene
     - mbgd:CDS
   - mbgd:aaLength:
-    - node_18: 353
+    - aa_length: 353
   - mbgd:domain:
     - domain: <http://mbgd.genome.ad.jp/rdf/resource/domain/2018-01_default/dsl:DACSA_RS08170/0>
   - mbgd:nucSeq:
@@ -47,47 +81,20 @@
   - obo:RO_0002162: # in taxon
     - gene_taxon: taxid:13035 # Dactylococcopsis salina PCC 8305
   - dct:description:
-    - node_26: "photosystem II DII subunit, Q(A) protein"
+    - gene_descr: "photosystem II DII subunit, Q(A) protein"
   - dct:identifier:
-    - node_27: "dsl:DACSA_RS08170"
+    - gene_id: "dsl:DACSA_RS08170"
   - dct:source:
-    - node_28: ncbi:refseq
+    - gene_refseq: ncbi:refseq
   - sio:SIO_000028:
     - node_19: <http://mbgd.genome.ad.jp/rdf/resource/domain/2018-01_default/dsl:DACSA_RS08170/0>
   - sio:SIO_010078+:
     - node_24: uniprot:K9YTN9
     - node_22: ncbiprotein:WP_015229298.1
   - rdfs:label:
-    - node_32: ""
+    - gene_label: ""
   - foaf:page:
-    - node_33: <http://mbgd.genome.ad.jp/htbin/MBGD_gene_info_frame.pl?name=dsl:DACSA_RS08170>
-
-- Dataset resource:default:
-  - a:
-    - void:Dataset
-    - orth:OrthologyDataset
-  - dct:created:
-    - node_74: 2018-09-20T14:36:24+09:00
-  - dct:creator:
-    - creator: <http://mbgd.genome.ad.jp>
-  - dct:description:
-    - node_76: "RDF representation of ortholog groups in MBGD."
-  - dct:license:
-    - node_77: https://creativecommons.org/licenses/by-sa/4.0/
-  - dct:publisher:
-    - node_78: <http://www.nibb.ac.jp>
-  - dct:source:
-    - node_75: <http://mbgd.genome.ad.jp>
-  - dct:title:
-    - node_80: "MBGD ortholog groups"
-  - pav:derivedFrom:
-    - node_81: <http://mbgd.genome.ad.jp/dist/mbgd_2018-01/mbgd_2018-01_default.dclst.gz>
-  - pav:version:
-    - node_82: "2018-01"
-  - void:dataDump:
-    - node_83: <http://mbgd.genome.ad.jp/rdf/archive/mbgd_2018-01/mbgd_2018-01_default.ttl.gz>
-  - foaf:page:
-    - node_84: <http://mbgd.genome.ad.jp/htbin/cluster_map?tabid=default&amp;show_summary=1>
+    - gene_page: <http://mbgd.genome.ad.jp/htbin/MBGD_gene_info_frame.pl?name=dsl:DACSA_RS08170>
 
 - Nucseq nucseq:13397:
   - a:
