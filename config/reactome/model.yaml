@@ -10,16 +10,19 @@
     - pathway_name: "Methylation of Histones and DNA by Polycomb Repressive Complex 2 (PRC2)"
   - biopax:organism:
     - organism: Organism
-  - biopax:pathwayComponent+: [Pathway, BiochemicalReaction, TemplateReaction, Degradation]
+  - biopax:pathwayComponent+:
+    - pathway_component: [Pathway, BiochemicalReaction, TemplateReaction, Degradation]
   - biopax:pathwayOrder+:
     - pathway_step: PathwayStep
-  - biopax:xref*: [PublicationXref, RelationshipXref, UnificationXref]
+  - biopax:xref*:
+    - pathway_xref: [PublicationXref, RelationshipXref, UnificationXref]
 
 - PathwayStep reactome:PathwayStep5135:
   - a: biopax:PathwayStep
   - biopax:nextStep:
     - pathway_step: PathwayStep
-  - biopax:stepProcess: [Catalysis, Control]
+  - biopax:stepProcess:
+    - pathway_step_process: [Catalysis, Control]
 
 - PublicationXref reactome:PublicationXref10806:
   - a: biopax:PublicationXref
@@ -48,7 +51,7 @@
 - UnificationXref reactome:UnificationXref79533:
   - a: biopax:UnificationXref
   - biopax:comment:
-    - description: "Reactome stable identifier. Use this URL to connect to the web page of..."
+    - unification_xref_description: "Reactome stable identifier. Use this URL to connect to the web page of..."
   - biopax:db:
     - unification_db: "Reactome"
   - biopax:id:
@@ -83,9 +86,12 @@
     - biochemical_reaction_name: "alpha-D-Glucose 6-phosphate <=> D-Glucose 1-phosphate"
   - biopax:eCNumber?:
     - ec_number: "5.4.2.2"
-  - biopax:left*: [LeftComplex, LeftSmallMolecule, LeftProtein, LeftDna, LeftRna, LeftPhysicalEntity]
-  - biopax:right*: [RightComplex, RightSmallMolecule, RightProtein, RightDna, RightRna, RightPhysicalEntity]
-  - biopax:xref*: [PublicationXref, RelationshipXref, UnificationXref]  
+  - biopax:left*:
+    - reaction_left_component: [LeftComplex, LeftSmallMolecule, LeftProtein, LeftDna, LeftRna, LeftPhysicalEntity]
+  - biopax:right*:
+    - reaction_right_component: [RightComplex, RightSmallMolecule, RightProtein, RightDna, RightRna, RightPhysicalEntity]
+  - biopax:xref*:
+    - reaction_xref: [PublicationXref, RelationshipXref, UnificationXref]  
 
 - TemplateReaction reactome:TemplateReaction1:
   - a: biopax:TemplateReaction
@@ -94,9 +100,9 @@
   - biopax:name*:
     - template_reaction_name: "RBP-Jkappa transactivates Hes1 in the presence of NICD"
   - biopax:product:
-    - small_molecule: [TempSmallMolecule, TempProtein, TempPhysicalEntity]
+    - template_reaction_product: [TempSmallMolecule, TempProtein, TempPhysicalEntity]
   - biopax:evidence:
-    - evidence: reactome:Evidence78
+    - template_reaction_evidence: reactome:Evidence78
   - biopax:comment:
     - tenplate_reaction_description: "This event has been computationally inferred from an event..."
 
@@ -104,30 +110,33 @@
   - a: biopax:Degradation
   - biopax:displayName:
     - degradation_display_name: "Degradation of TGF-beta receptor complex"
-  - biopax:left: [DegradationComplex, DegradationProtein, DegradationPhysicalEntity]
+  - biopax:left:
+    - degradation_left_component: [DegradationComplex, DegradationProtein, DegradationPhysicalEntity]
   - biopax:evidence:
-    - evidence: reactome:Evidence3071
+    - degradation_evidence: reactome:Evidence3071
 
 ### catalysis, control
 - Catalysis reactome:Catalysis1822:
   - a: biopax:Catalysis
   - biopax:controlType:
-    - control_type: "ACTIVATION"
+    - catalysis_control_type: "ACTIVATION"
   - biopax:controlled:
     - biochemical_reacytion: BiochemicalReaction
-  - biopax:controller: [CatalysisComplex, CatalysisSmallMolecule, CatalysisProtein, CatalysisPhysicalEntity]
+  - biopax:controller:
+    - catalysis_controller: [CatalysisComplex, CatalysisSmallMolecule, CatalysisProtein, CatalysisPhysicalEntity]
   - biopax:xref+:
-    - xref: reactome:RelationshipXref2294
+    - catalysis_xref: reactome:RelationshipXref2294
 
 - Control reactome:Control111:
   - a: biopax:Control
   - biopax:controlType:
-    - control_type: "ACTIVATION"
+    - control_control_type: "ACTIVATION"
   - biopax:comment:
-    - description: "all trans retinoic acid activates expression of HOXD1..."
+    - control_description: "all trans retinoic acid activates expression of HOXD1..."
   - biopax:controlled:
     - biochemical_reaction: BiochemicalReaction
-  - biopax:controller: [ControlComplex, ControlSmallMolecule, ControlProtein, ControlRna, ControlPhysicalEntity]
+  - biopax:controller:
+    - control_controller: [ControlComplex, ControlSmallMolecule, ControlProtein, ControlRna, ControlPhysicalEntity]
 
 ### complex, molecule, protein, dna, rna, physical entity
 #### biochemical reaction left
@@ -141,9 +150,10 @@
     - left_complex: LeftComplex
   - biopax:name*:
     - left_complex_name: "PGM1, PGM2, PGM2L1"
-  - biopax:component*: [LeftComplex, LeftSmallMolecule, LeftProtein, LeftDna, LeftPhysicalEntity]
+  - biopax:component*:
+    - left_complex_component: [LeftComplex, LeftSmallMolecule, LeftProtein, LeftDna, LeftPhysicalEntity]
   - biopax:xref+:
-    - xref: reactome:UnificationXref59003
+    - left-complex_xref: reactome:UnificationXref59003
     
 - LeftSmallMolecule reactome:SmallMolecule1314:
   - a: biopax:SmallMolecule
@@ -158,23 +168,23 @@
   - biopax:name*:
     - left_small_molecule_name: "alpha-D-glucose 6-phosphate"
   - biopax:xref+:
-    - xref: reactome:UnificationXref47322
+    - left_small_molecule_xref: reactome:UnificationXref47322
 
 - LeftSmallMoleculeReference reactome:SmallMoleculeReference68:
   - a: biopax:SmallMoleculeReference
   - biopax:name*:
     - left_small_molecule_reference_name: "magnesium(2+)"
   - biopax:xref:
-    - left_small_molecule_reference: LeftSmallMoleculeReference
+    - left_small_molecule_ref_xref: LeftSmallMoleculeRefXref
 
-- LeftSmallMoleculeReference reactome:UnificationXref6849:
+- LeftSmallMoleculeRefXref reactome:UnificationXref6849:
   - a: biopax:UnificationXref
   - biopax:db:
     - left_small_molecule_db: "ChEBI"
   - biopax:id:
     - left_chebi_id: "CHEBI:18420"
 
-- Protein reactome:Protein11497:
+- LeftProtein reactome:Protein11497:
   - a: biopax:Protein
   - biopax:comment:
     - left_protein_description: "Reactome DB_ID: 453136"
@@ -187,7 +197,7 @@
   - biopax:name*:
     - left_protein_name: "Phosphoglucomutase-2"
   - biopax:xref+:
-    - left_xref: reactome:UnificationXref58994
+    - left_protein_xref: reactome:UnificationXref58994
 
 - LeftProteinReference reactome:ProteinReference6278:
   - a: biopax:ProteinReference
@@ -198,9 +208,9 @@
   - biopax:organism:
     organism: Organism
   - biopax:xref:
-    - left_protein_xref: ProteinXref
+    - left_protein_ref_xref: LeftProteinRefXref
 
-- LeftProteinXref reactome:UnificationXref58993:
+- LeftProteinRefXref reactome:UnificationXref58993:
   - a: biopax:UnificationXref
   - biopax:db:
     - left_protein_db: "UniProt"
@@ -232,7 +242,7 @@
   - biopax:entityReference:
     - left_rna_reference: LeftRnaReference
 
-- LeftDnaReference reactome:RnaReference6:
+- LeftRnaReference reactome:RnaReference6:
   - a: biopax:RnaReference
   - biopax:name*:
     - left_rna_reference_name: "ENSEMBL:ENSMUST00000042105 Ppp1r15a"
@@ -251,7 +261,8 @@
     - left_data_source: reactome:Provenance1
   - biopax:cellularLocation:
     - left_celllular_location: reactome:CellularLocationVocabulary36
-  - biopax:memberPhysicalEntity: [LeftComplex, LeftSmallMolecule, LefProtein, LeftDna, LeftRna, LeftPhysicalEntity]
+  - biopax:memberPhysicalEntity:
+    - left_member_physical_entity: [LeftComplex, LeftSmallMolecule, LefProtein, LeftDna, LeftRna, LeftPhysicalEntity]
 
 #### biochemical reaction right
 - RightComplex reactome:Complex5217:
@@ -264,9 +275,10 @@
     - right_complex: RightComplex
   - biopax:name*:
     - right_complex_name: "PGM1, PGM2, PGM2L1"
-  - biopax:component*: [RightComplex, RightSmallMolecule, RightProtein, RightDna, RightPhysicalEntity]
+  - biopax:component*:
+    - right_complex_component: [RightComplex, RightSmallMolecule, RightProtein, RightDna, RightPhysicalEntity]
   - biopax:xref+:
-    - xref: reactome:UnificationXref59003
+    - right_complex_xref: reactome:UnificationXref59003
     
 - RightSmallMolecule reactome:SmallMolecule1314:
   - a: biopax:SmallMolecule
@@ -281,23 +293,23 @@
   - biopax:name*:
     - right_small_molecule_name: "alpha-D-glucose 6-phosphate"
   - biopax:xref+:
-    - xref: reactome:UnificationXref47322
+    - right_small_molecule_xref: reactome:UnificationXref47322
 
 - RightSmallMoleculeReference reactome:SmallMoleculeReference68:
   - a: biopax:SmallMoleculeReference
   - biopax:name*:
     - right_small_molecule_reference_name: "magnesium(2+)"
   - biopax:xref:
-    - right_small_molecule_reference: RightSmallMoleculeReference
+    - right_small_molecule_ref_xref: RightSmallMoleculeRefXref
 
-- RightSmallMoleculeReference reactome:UnificationXref6849:
+- RightSmallMoleculeRefXref reactome:UnificationXref6849:
   - a: biopax:UnificationXref
   - biopax:db:
     - right_small_molecule_db: "ChEBI"
   - biopax:id:
     - right_chebi_id: "CHEBI:18420"
 
-- Protein reactome:Protein11497:
+- RightProtein reactome:Protein11497:
   - a: biopax:Protein
   - biopax:comment:
     - right_protein_description: "Reactome DB_ID: 453136"
@@ -310,7 +322,7 @@
   - biopax:name*:
     - right_protein_name: "Phosphoglucomutase-2"
   - biopax:xref+:
-    - right_xref: reactome:UnificationXref58994
+    - right_protein_xref: reactome:UnificationXref58994
 
 - RightProteinReference reactome:ProteinReference6278:
   - a: biopax:ProteinReference
@@ -321,9 +333,9 @@
   - biopax:organism:
     organism: Organism
   - biopax:xref:
-    - right_protein_xref: ProteinXref
+    - right_protein_ref_xref: RightProteinRefXref
 
-- RightProteinXref reactome:UnificationXref58993:
+- RightProteinRefXref reactome:UnificationXref58993:
   - a: biopax:UnificationXref
   - biopax:db:
     - right_protein_db: "UniProt"
@@ -355,7 +367,7 @@
   - biopax:entityReference:
     - right_rna_reference: RightRnaReference
 
-- RightDnaReference reactome:RnaReference6:
+- RightRnaReference reactome:RnaReference6:
   - a: biopax:RnaReference
   - biopax:name*:
     - right_rna_reference_name: "ENSEMBL:ENSMUST00000042105 Ppp1r15a"
@@ -374,7 +386,8 @@
     - right_data_source: reactome:Provenance1
   - biopax:cellularLocation:
     - right_celllular_location: reactome:CellularLocationVocabulary36
-  - biopax:memberPhysicalEntity: [RightComplex, RightSmallMolecule, LefProtein, RightDna, RightRna, RightPhysicalEntity]
+  - biopax:memberPhysicalEntity:
+    - right_member_phisical_entity: [RightComplex, RightSmallMolecule, LefProtein, RightDna, RightRna, RightPhysicalEntity]
 
 #### template reaction
 - TempComplex reactome:Complex5217:
@@ -387,9 +400,10 @@
     - temp_complex: TempComplex
   - biopax:name*:
     - temp_complex_name: "PGM1, PGM2, PGM2L1"
-  - biopax:component*: [TempComplex, TempSmallMolecule, TempProtein, TempDna, TempPhysicalEntity]
+  - biopax:component*:
+    - temp_complex_component: [TempComplex, TempSmallMolecule, TempProtein, TempDna, TempPhysicalEntity]
   - biopax:xref+:
-    - xref: reactome:UnificationXref59003
+    - temp_complex_xref: reactome:UnificationXref59003
     
 - TempSmallMolecule reactome:SmallMolecule1314:
   - a: biopax:SmallMolecule
@@ -404,23 +418,23 @@
   - biopax:name*:
     - temp_small_molecule_name: "alpha-D-glucose 6-phosphate"
   - biopax:xref+:
-    - xref: reactome:UnificationXref47322
+    - temp_small_molecule_xref: reactome:UnificationXref47322
 
 - TempSmallMoleculeReference reactome:SmallMoleculeReference68:
   - a: biopax:SmallMoleculeReference
   - biopax:name*:
     - temp_small_molecule_reference_name: "magnesium(2+)"
   - biopax:xref:
-    - temp_small_molecule_reference: TempSmallMoleculeReference
+    - temp_small_molecule_ref_xref: TempSmallMoleculeRefXref
 
-- TempSmallMoleculeReference reactome:UnificationXref6849:
+- TempSmallMoleculeRefXref reactome:UnificationXref6849:
   - a: biopax:UnificationXref
   - biopax:db:
     - temp_small_molecule_db: "ChEBI"
   - biopax:id:
     - temp_chebi_id: "CHEBI:18420"
 
-- Protein reactome:Protein11497:
+- TempProtein reactome:Protein11497:
   - a: biopax:Protein
   - biopax:comment:
     - temp_protein_description: "Reactome DB_ID: 453136"
@@ -433,7 +447,7 @@
   - biopax:name*:
     - temp_protein_name: "Phosphoglucomutase-2"
   - biopax:xref+:
-    - temp_xref: reactome:UnificationXref58994
+    - temp_protein_xref: reactome:UnificationXref58994
 
 - TempProteinReference reactome:ProteinReference6278:
   - a: biopax:ProteinReference
@@ -444,9 +458,9 @@
   - biopax:organism:
     organism: Organism
   - biopax:xref:
-    - temp_protein_xref: ProteinXref
+    - temp_protein_ref_xref: TempProteinRefXref
 
-- TempProteinXref reactome:UnificationXref58993:
+- TempProteinRefXref reactome:UnificationXref58993:
   - a: biopax:UnificationXref
   - biopax:db:
     - temp_protein_db: "UniProt"
@@ -478,7 +492,7 @@
   - biopax:entityReference:
     - temp_rna_reference: TempRnaReference
 
-- TempDnaReference reactome:RnaReference6:
+- TempRnaReference reactome:RnaReference6:
   - a: biopax:RnaReference
   - biopax:name*:
     - temp_rna_reference_name: "ENSEMBL:ENSMUST00000042105 Ppp1r15a"
@@ -497,7 +511,8 @@
     - temp_data_source: reactome:Provenance1
   - biopax:cellularLocation:
     - temp_celllular_location: reactome:CellularLocationVocabulary36
-  - biopax:memberPhysicalEntity: [TempComplex, TempSmallMolecule, LefProtein, TempDna, TempRna, TempPhysicalEntity]
+  - biopax:memberPhysicalEntity:
+    - temp_member_physical_entity: [TempComplex, TempSmallMolecule, LefProtein, TempDna, TempRna, TempPhysicalEntity]
 
 #### degradation
 - DegradationComplex reactome:Complex5217:
@@ -510,9 +525,10 @@
     - degradation_complex: DegradationComplex
   - biopax:name*:
     - degradation_complex_name: "PGM1, PGM2, PGM2L1"
-  - biopax:component*: [DegradationComplex, DegradationSmallMolecule, DegradationProtein, DegradationDna, DegradationPhysicalEntity]
+  - biopax:component*:
+    - degradation_complex_component: [DegradationComplex, DegradationSmallMolecule, DegradationProtein, DegradationDna, DegradationPhysicalEntity]
   - biopax:xref+:
-    - xref: reactome:UnificationXref59003
+    - degradation_complex_xref: reactome:UnificationXref59003
     
 - DegradationSmallMolecule reactome:SmallMolecule1314:
   - a: biopax:SmallMolecule
@@ -527,23 +543,23 @@
   - biopax:name*:
     - degradation_small_molecule_name: "alpha-D-glucose 6-phosphate"
   - biopax:xref+:
-    - xref: reactome:UnificationXref47322
+    - degradation_small_molecule_xref: reactome:UnificationXref47322
 
 - DegradationSmallMoleculeReference reactome:SmallMoleculeReference68:
   - a: biopax:SmallMoleculeReference
   - biopax:name*:
     - degradation_small_molecule_reference_name: "magnesium(2+)"
   - biopax:xref:
-    - degradation_small_molecule_reference: DegradationSmallMoleculeReference
+    - degradation_small_molecule_ref_xref: DegradationSmallMoleculeRefXref
 
-- DegradationSmallMoleculeReference reactome:UnificationXref6849:
+- DegradationSmallMoleculeRefXref reactome:UnificationXref6849:
   - a: biopax:UnificationXref
   - biopax:db:
     - degradation_small_molecule_db: "ChEBI"
   - biopax:id:
     - degradation_chebi_id: "CHEBI:18420"
 
-- Protein reactome:Protein11497:
+- DegradationProtein reactome:Protein11497:
   - a: biopax:Protein
   - biopax:comment:
     - degradation_protein_description: "Reactome DB_ID: 453136"
@@ -567,9 +583,9 @@
   - biopax:organism:
     organism: Organism
   - biopax:xref:
-    - degradation_protein_xref: ProteinXref
+    - degradation_protein_ref_xref: DegradationProteinRefXref
 
-- DegradationProteinXref reactome:UnificationXref58993:
+- DegradationProteinRefXref reactome:UnificationXref58993:
   - a: biopax:UnificationXref
   - biopax:db:
     - degradation_protein_db: "UniProt"
@@ -601,7 +617,7 @@
   - biopax:entityReference:
     - degradation_rna_reference: DegradationRnaReference
 
-- DegradationDnaReference reactome:RnaReference6:
+- DegradationRnaReference reactome:RnaReference6:
   - a: biopax:RnaReference
   - biopax:name*:
     - degradation_rna_reference_name: "ENSEMBL:ENSMUST00000042105 Ppp1r15a"
@@ -620,7 +636,8 @@
     - degradation_data_source: reactome:Provenance1
   - biopax:cellularLocation:
     - degradation_celllular_location: reactome:CellularLocationVocabulary36
-  - biopax:memberPhysicalEntity: [DegradationComplex, DegradationSmallMolecule, LefProtein, DegradationDna, DegradationRna, DegradationPhysicalEntity]
+  - biopax:memberPhysicalEntity:
+    - degradation_member_physical_entity: [DegradationComplex, DegradationSmallMolecule, LefProtein, DegradationDna, DegradationRna, DegradationPhysicalEntity]
 
 #### catalysis
 - CatalysisComplex reactome:Complex5217:
@@ -633,9 +650,10 @@
     - catalysis_complex: CatalysisComplex
   - biopax:name*:
     - catalysis_complex_name: "PGM1, PGM2, PGM2L1"
-  - biopax:component*: [CatalysisComplex, CatalysisSmallMolecule, CatalysisProtein, CatalysisDna, CatalysisPhysicalEntity]
+  - biopax:component*:
+    - catalysis_complex_component: [CatalysisComplex, CatalysisSmallMolecule, CatalysisProtein, CatalysisDna, CatalysisPhysicalEntity]
   - biopax:xref+:
-    - xref: reactome:UnificationXref59003
+    - catalysis_complex_xref: reactome:UnificationXref59003
     
 - CatalysisSmallMolecule reactome:SmallMolecule1314:
   - a: biopax:SmallMolecule
@@ -650,23 +668,23 @@
   - biopax:name*:
     - catalysis_small_molecule_name: "alpha-D-glucose 6-phosphate"
   - biopax:xref+:
-    - xref: reactome:UnificationXref47322
+    - catalysis_small_molecule_xref: reactome:UnificationXref47322
 
 - CatalysisSmallMoleculeReference reactome:SmallMoleculeReference68:
   - a: biopax:SmallMoleculeReference
   - biopax:name*:
     - catalysis_small_molecule_reference_name: "magnesium(2+)"
   - biopax:xref:
-    - catalysis_small_molecule_reference: CatalysisSmallMoleculeReference
+    - catalysis_small_molecule_ref_xref: CatalysisSmallMoleculeRefXref
 
-- CatalysisSmallMoleculeReference reactome:UnificationXref6849:
+- CatalysisSmallMoleculeRefXref reactome:UnificationXref6849:
   - a: biopax:UnificationXref
   - biopax:db:
     - catalysis_small_molecule_db: "ChEBI"
   - biopax:id:
     - catalysis_chebi_id: "CHEBI:18420"
 
-- Protein reactome:Protein11497:
+- CatalysisProtein reactome:Protein11497:
   - a: biopax:Protein
   - biopax:comment:
     - catalysis_protein_description: "Reactome DB_ID: 453136"
@@ -679,7 +697,7 @@
   - biopax:name*:
     - catalysis_protein_name: "Phosphoglucomutase-2"
   - biopax:xref+:
-    - catalysis_xref: reactome:UnificationXref58994
+    - catalysis_protein_xref: reactome:UnificationXref58994
 
 - CatalysisProteinReference reactome:ProteinReference6278:
   - a: biopax:ProteinReference
@@ -690,9 +708,9 @@
   - biopax:organism:
     organism: Organism
   - biopax:xref:
-    - catalysis_protein_xref: ProteinXref
+    - catalysis_protein_ref_xref: CatalysisProteinRefXref
 
-- CatalysisProteinXref reactome:UnificationXref58993:
+- CatalysisProteinRefXref reactome:UnificationXref58993:
   - a: biopax:UnificationXref
   - biopax:db:
     - catalysis_protein_db: "UniProt"
@@ -724,7 +742,7 @@
   - biopax:entityReference:
     - catalysis_rna_reference: CatalysisRnaReference
 
-- CatalysisDnaReference reactome:RnaReference6:
+- CatalysisRnaReference reactome:RnaReference6:
   - a: biopax:RnaReference
   - biopax:name*:
     - catalysis_rna_reference_name: "ENSEMBL:ENSMUST00000042105 Ppp1r15a"
@@ -743,7 +761,8 @@
     - catalysis_data_source: reactome:Provenance1
   - biopax:cellularLocation:
     - catalysis_celllular_location: reactome:CellularLocationVocabulary36
-  - biopax:memberPhysicalEntity: [CatalysisComplex, CatalysisSmallMolecule, LefProtein, CatalysisDna, CatalysisRna, CatalysisPhysicalEntity]
+  - biopax:memberPhysicalEntity:
+    - catalysis_member_physical_entity: [CatalysisComplex, CatalysisSmallMolecule, LefProtein, CatalysisDna, CatalysisRna, CatalysisPhysicalEntity]
 
 #### control
 - ControlComplex reactome:Complex5217:
@@ -756,9 +775,10 @@
     - control_complex: ControlComplex
   - biopax:name*:
     - control_complex_name: "PGM1, PGM2, PGM2L1"
-  - biopax:component*: [ControlComplex, ControlSmallMolecule, ControlProtein, ControlDna, ControlPhysicalEntity]
+  - biopax:component*:
+    - control_complex_component: [ControlComplex, ControlSmallMolecule, ControlProtein, ControlDna, ControlPhysicalEntity]
   - biopax:xref+:
-    - xref: reactome:UnificationXref59003
+    - control_complex_xref: reactome:UnificationXref59003
     
 - ControlSmallMolecule reactome:SmallMolecule1314:
   - a: biopax:SmallMolecule
@@ -773,23 +793,23 @@
   - biopax:name*:
     - control_small_molecule_name: "alpha-D-glucose 6-phosphate"
   - biopax:xref+:
-    - xref: reactome:UnificationXref47322
+    - control_small_molecule_xref: reactome:UnificationXref47322
 
 - ControlSmallMoleculeReference reactome:SmallMoleculeReference68:
   - a: biopax:SmallMoleculeReference
   - biopax:name*:
     - control_small_molecule_reference_name: "magnesium(2+)"
   - biopax:xref:
-    - control_small_molecule_reference: ControlSmallMoleculeReference
+    - control_small_molecule_ref_xref: ControlSmallMoleculeRefXref
 
-- ControlSmallMoleculeReference reactome:UnificationXref6849:
+- ControlSmallMoleculeRefXref reactome:UnificationXref6849:
   - a: biopax:UnificationXref
   - biopax:db:
     - control_small_molecule_db: "ChEBI"
   - biopax:id:
     - control_chebi_id: "CHEBI:18420"
 
-- Protein reactome:Protein11497:
+- ControlProtein reactome:Protein11497:
   - a: biopax:Protein
   - biopax:comment:
     - control_protein_description: "Reactome DB_ID: 453136"
@@ -802,7 +822,7 @@
   - biopax:name*:
     - control_protein_name: "Phosphoglucomutase-2"
   - biopax:xref+:
-    - control_xref: reactome:UnificationXref58994
+    - control_protein_xref: reactome:UnificationXref58994
 
 - ControlProteinReference reactome:ProteinReference6278:
   - a: biopax:ProteinReference
@@ -813,9 +833,9 @@
   - biopax:organism:
     organism: Organism
   - biopax:xref:
-    - control_protein_xref: ProteinXref
+    - control_protein_ref_xref: ControlProteinRefXref
 
-- ControlProteinXref reactome:UnificationXref58993:
+- ControlProteinRefXref reactome:UnificationXref58993:
   - a: biopax:UnificationXref
   - biopax:db:
     - control_protein_db: "UniProt"
@@ -847,7 +867,7 @@
   - biopax:entityReference:
     - control_rna_reference: ControlRnaReference
 
-- ControlDnaReference reactome:RnaReference6:
+- ControlRnaReference reactome:RnaReference6:
   - a: biopax:RnaReference
   - biopax:name*:
     - control_rna_reference_name: "ENSEMBL:ENSMUST00000042105 Ppp1r15a"
@@ -866,4 +886,5 @@
     - control_data_source: reactome:Provenance1
   - biopax:cellularLocation:
     - control_celllular_location: reactome:CellularLocationVocabulary36
-  - biopax:memberPhysicalEntity: [ControlComplex, ControlSmallMolecule, LefProtein, ControlDna, ControlRna, ControlPhysicalEntity]
+  - biopax:memberPhysicalEntity:
+    - control_member_physical_entity: [ControlComplex, ControlSmallMolecule, LefProtein, ControlDna, ControlRna, ControlPhysicalEntity]

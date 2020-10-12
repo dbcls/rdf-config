@@ -183,7 +183,8 @@
       - a: obo:MS_1000041 # charge state
       - sio:SIO_000300: # has value
         - charge_state: 3
-  - jpost:hasModification*: [Phospho, Acetyl, Oxidation]
+  - jpost:hasModification*:
+    - modification: [Phospho, Acetyl, Oxidation]
 
 - Phospho:
   - a: unimod:UNIMOD_21
