@@ -45,10 +45,10 @@
   - jpost:hasProfile:
     - profile: Profile
   - jpost:hasProtein+:
-    - spectrum_sub-set_protein: jpostdb:PRT810_1_A0A1B0GTU1
     - protein: Protein
-    - spectrum_subsumable_protein: jpostdb:PRT810_1_P10321 # P10321
-    - spectrum_same-set_protein: jpostdb:PRT810_1_P0CG08
+#    - spectrum_sub-set_protein: jpostdb:PRT810_1_A0A1B0GTU1
+#    - spectrum_subsumable_protein: jpostdb:PRT810_1_P10321 # P10321
+#    - spectrum_same-set_protein: jpostdb:PRT810_1_P0CG08
   - sio:SIO_000216+: # has measurement value
     - []:
       - a: jpost:NumOfRawData
@@ -83,8 +83,8 @@
   - a:
     - jpost:Protein
     - obo:MS_1002401 # leading protein
-    - jpost:RepresentativeIsoform
-    - obo:MS_1001591 # anchor protein
+#    - jpost:RepresentativeIsoform
+#    - obo:MS_1001591 # anchor protein
   - dct:identifier:
     - protein_identifier: "PRT810_1_A0A0B4J2D5"
   - jpost:hasDatabaseSequence:

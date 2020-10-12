@@ -2,16 +2,16 @@ sparql:
   description: get proteins in a dataset
   parameters:
     JpostDataset: jpostdb:DS810_1
-  variables: [JpostDataset, taxonomy, uniprot, protein]
+  variables: [JpostDataset, taxonomy, uniprot, Protein]
 
 peptide_mapping:
   description: peptide mapping
   parameters:
     protein_label: "Q9NYF8"
-  variables: [protein_label, protein, peptide, aa_sequence, begin, end]
+  variables: [protein_label, Protein, Peptide, aa_sequence, begin, end]
 
 protein_phospho:
   description: phosphorylation position
   parameters:
     protein_label: "Q9NYF8"
-  variables: [protein_label, protein, peptide, aa_sequence, begin, peptide_spectrum_match, phospho_position]
+  variables: [protein_label, Protein, Peptide, aa_sequence, begin, phospho_position]
