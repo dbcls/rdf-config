@@ -4,6 +4,12 @@ sparql:
     JpostDataset: jpostdb:DS810_1
   variables: [JpostDataset, taxonomy, uniprot, Protein]
 
+sparql_obj_test:
+  description: get proteins in a dataset
+  parameters:
+    JpostDataset: jpostdb:DS810_1
+  variables: [JpostDataset, Protein, peptide]
+  
 peptide_mapping:
   description: peptide mapping
   parameters:
