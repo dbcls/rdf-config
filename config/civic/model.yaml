@@ -1,0 +1,63 @@
+- Gene gene:10:
+  - a: med2rdf:Gene
+  - dct:identifier:
+    - gene_identifier: "10"
+  - rdfs:label:
+    - gene_label: "CCND3"
+  - rdfs:seeAlso:
+    - ncbigene: ncbigene:896
+  - med2rdf:variation:
+    - variation: Variation # LOSS
+
+- Variation variants:23:
+  - a: med2rdf:Variation
+  - med2rdf:disease:
+    - node_8: civic:T-cellLeukemia
+  - med2rdf:transcript:
+    - enst: enst:ENST00000372991
+  - civico:ensemblVersion:
+    - node_11: "75"
+  - civico:referenceBuild:
+    - node_12: "GRCh37"
+  - civico:transcript_label:
+    - node_13: "ENST00000372991.4"
+  - civico:variantOrigin:
+    - node_14: "Somatic"
+  - civico:variant_type:
+    - node_15: civic:loss_of_function_variant
+  - dct:description:
+    - variation_description: "Cyclin D has been shown in many cancer types to be misregulated. Well established for their oncogenic properties, the cyclins and the cyclin-dependent kinases (CDK's) they activate have been the focus of major research and development efforts over the past decade. The methods by which the cyclins are deregulated are widely variable, and range from genomic amplification to promoter methylation changes. Cyclin D3 loss has been reported in T-cell acute lymphoblastic leukemia (T-ALL), a seemingly unique trend when compared to the amplifcations and overexpressions of the other cyclin D's. Treating cyclin D3 knockout mice with the targeted therapeutic palbociclib significantly increased the median survival of a Notch-driven model of T-ALL."
+  - dct:identifier:
+    - variation_identifier: "23"
+  - rdfs:label:
+    - variation_label: "LOSS"
+  - faldo:location:
+    - []:
+      - a: faldo:Region
+      - node_7: {{expand blank node}}
+  - med2rdf:evidence:
+    - evidence: Evidence
+
+- Evidence evidence:263:
+  - a: med2rdf:Evidence
+  - civico:citation:
+    - node_20: "Sawai et al., 2012, Cancer Cell"
+  - civico:clinicalSignificance:
+    - node_21: "Sensitivity/Response"
+  - civico:drug:
+    - node_22: civic:drug_Palbociclib
+  - civico:evidenceDirection:
+    - node_23: "Supports"
+  - civico:evidenceLevel:
+    - node_24: "D"
+  - civico:evidenceStatus:
+    - node_25: "accepted"
+  - civico:evidenceType:
+    - node_26: "Predictive"
+  - civico:rating:
+    - node_27: "3.0"
+  - dct:description:
+    - evidence_description: "Treatment of Notch-driven T-cell leukemia in Ccnd3 knockout mice with Palbociclib (PD-0332991) significantly increased median survival."
+  - dct:references:
+    - pubmed: pupmed:23079656
+
