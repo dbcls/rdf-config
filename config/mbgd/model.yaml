@@ -25,7 +25,6 @@
   - orth:hasHomologous+:
     - orth:OrthologsCluster: <http://mbgd.genome.ad.jp/rdf/resource/cluster/2018-01_tax1177_3430>
     - member_domain: Domain
-    - member_gene: Gene
 
 - Dataset resource:default:
   - a:
@@ -59,6 +58,8 @@
     - orth:Subgene
     - mbgd:Domain
     - faldo:Region
+  - mbgd:gene:
+    - gene: Gene
 
 - Gene <http://mbgd.genome.ad.jp/rdf/resource/gene/dsl:DACSA_RS08170>:
   - a:
@@ -68,8 +69,6 @@
     - aa_length: 353
   - mbgd:domain:
     - domain: <http://mbgd.genome.ad.jp/rdf/resource/domain/2018-01_default/dsl:DACSA_RS08170/0>
-  - mbgd:nucSeq:
-    - nucseq: Nucseq # Chromosome 1
   - mbgd:organism:
     - organism: Organism
   - mbgd:protein:
@@ -95,6 +94,8 @@
     - gene_label: ""
   - foaf:page:
     - gene_page: <http://mbgd.genome.ad.jp/htbin/MBGD_gene_info_frame.pl?name=dsl:DACSA_RS08170>
+  - mbgd:nucSeq:
+    - nucseq: Nucseq # Chromosome 1
 
 - Nucseq nucseq:13397:
   - a:
@@ -116,60 +117,60 @@
     - mbgd:Genome
     - mbgd:CompleteGenome
   - mbgd:abbrev:
-    - node_36: "D.salina"
+    - abbrev: "D.salina"
   - mbgd:assembly:
-    - node_37: <http://www.ncbi.nlm.nih.gov/assembly/GCF_000317615.1>
+    - assembly: <http://www.ncbi.nlm.nih.gov/assembly/GCF_000317615.1>
   - mbgd:assemblyContigCount:
-    - node_38: 0
+    - assembly_contig_count: 0
   - mbgd:assemblyContigN50:
-    - node_39: 0
+    - assembly_contig_n50: 0
   - mbgd:assemblyLevel:
-    - node_40: "Complete Genome"
+    - assembly_level: "Complete Genome"
   - mbgd:assemblyMoleculeCount:
-    - node_41: 1
+    - assembly_molecule_count: 1
   - mbgd:assemblyTopLevelCount:
-    - node_42: 1
+    - assembly_top_level_count: 1
   - mbgd:assemblyTotalGapLength:
-    - node_43: 0
+    - assembly_total_gap_length: 0
   - mbgd:assemblyTotalLength:
-    - node_44: 3781008
+    - assembly_total_length: 3781008
   - mbgd:family:
-    - node_45: ""
+    - family: ""
   - mbgd:genus:
-    - node_46: "Dactylococcopsis"
+    - genus: "Dactylococcopsis"
+  - mbgd:species:
+    - species: "Dactylococcopsis salina"
   - mbgd:inFamily:
-    - family: taxid:1890426 # Synechococcaceae
+    - family_taxid: taxid:1890426 # Synechococcaceae
   - mbgd:inGenus:
-    - genus: taxid:13034 # Dactylococcopsis
+    - genus_taxid: taxid:13034 # Dactylococcopsis
   - mbgd:inOrder:
-    - order: taxid:1890424 # Synechococcales
+    - order_taxid: taxid:1890424 # Synechococcales
   - mbgd:inPhylum:
-    - phylum: taxid:1117 # Cyanobacteria
+    - phylum_taxid: taxid:1117 # Cyanobacteria
   - mbgd:inSpecies:
-    - species: taxid:292566 # Dactylococcopsis salina
+    - species_taxid: taxid:292566 # Dactylococcopsis salina
   - mbgd:inSuperkingdom:
-    - superkingdom: taxid:2
+    - superkingdom_taxid: taxid:2
   - mbgd:inTaxon:
     - taxid: taxid:1117 # Cyanobacteria
-  - mbgd:species:
-    - node_54: "Dactylococcopsis salina"
   - mbgd:spid:
-    - node_55: "gm02198"
+    - spid: "gm02198"
   - mbgd:strain:
-    - node_56: "PCC 8305"
-  - mbgd:unlocalizedTotalLength:
-    - node_57: 0
+    - strain: "PCC 8305"
+  - mbgd:unlocalized_total_length:
+    - unlocalized_total_length: 0
   - mbgd:unlocalizedUngappedLength:
-    - node_58: 0
+    - unlocalized_ungapped_length: 0
   - obo:RO_0002162: # in taxon
     - taxon: taxid:13035 # Dactylococcopsis salina PCC 8305
   - dct:identifier:
-    - node_60: "dsl"
+    - organism_id: "dsl"
   - dct:issued:
-    - node_61: 2012-12-07+09:00
+    - organism_issued_date: 2012-12-07+09:00
   - up:organism:
-    - node_62: uptax:13035
+    - organism_uniprot: uptax:13035
   - rdfs:label:
-    - node_63: "Dactylococcopsis salina PCC 8305"
+    - organism_label: "Dactylococcopsis salina PCC 8305"
   - foaf:page:
-    - node_64: <http://mbgd.genome.ad.jp/htbin/MBGD_whole_html.pl?spec=dsl>
+    - organism_page: <http://mbgd.genome.ad.jp/htbin/MBGD_whole_html.pl?spec=dsl>
