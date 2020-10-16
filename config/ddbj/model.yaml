@@ -4,13 +4,13 @@
     - bioproject: bioproject:PRJDB1747
     - biosample: biosample:SAMD00000397
   - insdc_ontology:comment:
-    - insdc_comment: ""
+    - entry_insdc_comment: ""
   - insdc_ontology:definition:
     - definition: "Oryza sativa Japonica Group DNA, chromosome 1, cultivar: Nipponbare, complete sequence."
   - insdc_ontology:division:
     - division: insdcdiv:PLN
   - insdc_ontology:organism:
-    - organism: "Oryza sativa Japonica Group"
+    - sequence_organism: "Oryza sativa Japonica Group"
   - insdc_ontology:reference+:
     - reference1: Reference
     - reference2: Reference
@@ -23,11 +23,11 @@
   - insdc_ontology:source:
     - source: "Oryza sativa Japonica Group (Japanese rice)"
   - insdc_ontology:taxonomy:
-    - taxonomy: "Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta; Spermatophyta; Magnoliophyta; Liliopsida; Poales; Poaceae; BOP clade; Oryzoideae; Oryzeae; Oryzinae; Oryza."
+    - entry_taxonomy: "Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta; Spermatophyta; Magnoliophyta; Liliopsida; Poales; Poaceae; BOP clade; Oryzoideae; Oryzeae; Oryzinae; Oryza."
   - rdfs:comment:
-    - comment: "Oryza sativa Japonica Group DNA, chromosome 1, cultivar: Nipponbare, complete sequence."
+    - entry_comment: "Oryza sativa Japonica Group DNA, chromosome 1, cultivar: Nipponbare, complete sequence."
   - rdfs:seeAlso:
-    - pubmed: pubmed:24280374
+    - entry_pubmed: pubmed:24280374
 
 - Reference entry:reference.1:
   - a: insdc_ontology:Entry
@@ -38,9 +38,9 @@
   - insdcref:title:
     - title: "Direct Submission"
   - insdcref:pubmed:
-    - pubmed: pubmed:24280374
+    - reference_pubmed: pubmed:24280374
   - insdcref:comments:
-    - comment: ""
+    - reference_comment: ""
   - sio:SIO_000300:
     - value: 1
 
@@ -49,13 +49,13 @@
   - faldo:location:
     - region: Region
   - insdc_ontology:location:
-    - location: "1..43270923"
+    - sequence_location: "1..43270923"
   - insdc_ontology:sequence_length:
     - length: 43270923
   - insdc_ontology:topology:
     - topology: insdc_ontology:linear
   - obo:RO_0002162+:
-    - taxonomy: taxonomy:39947 # 39947
+    - sequence_taxonomy: taxonomy:39947 # 39947
   - obo:so_has_quality:
     - quality: obo:SO_0000987
   - obo:so_part_of+:
@@ -66,30 +66,30 @@
     - ena: ena:AP014957.1&amp;display=fasta
     - genbank: genbank:AP014957.1?report=fasta
   - rdfs:subClassOf:
-    - upper_class: obo:SO_0000001
+    - sequence_upper_class: obo:SO_0000001
 
 - Feature feature:3449-10297:1:gene.1:
   - a: insdc_ontology:Gene
   - rdfs:subClassOf:
-    - upper_class: obo:SO_0000704
+    - feature_upper_class: obo:SO_0000704
   - rdfs:label:
-    - label: "OSNPB_010100100"
+    - feature_label: "OSNPB_010100100"
   - dc:identifier:
     - id: "OSNPB_010100100"
   - skos:prefLabel:
-    - preflabel: "OSNPB_010100100"
+    - feature_preflabel: "OSNPB_010100100"
   - insdc_ontology:gene:
     - gene: "Os01g0100100"
   - insdc_ontology:locus_tag:
     - locus_tag: "OSNPB_010100100"
   - insdc_ontology:location:
-    - location: "3449..10297"
+    - feature_location: "3449..10297"
   - obo:RO_0002162+:
-    - taxonomy: taxonomy:39947 # 39947
+    - feature_taxonomy: taxonomy:39947 # 39947
   - faldo:location:
     - region: Region
 
-- SourceFeature fetaure:1-43270923:1:source:
+- SourceFeature feature:1-43270923:1:source:
   - a: rdfs:Resource
   - insdc_ontology:chromosome:
     - chromosome: 1
@@ -98,18 +98,18 @@
   - insdc_ontology:mol_type:
     - mol_type: "genomic DNA"
   - insdc_ontology:organism:
-    - organism: "Oryza sativa Japonica Group"
+    - source_feature_organism: "Oryza sativa Japonica Group"
   - obo:so_part_of:
     - insdc: entry:sequence
   - rdfs:seeAlso+:
-    - taxonomy: taxonomy:39947 # 39947
+    - source_feature_taxonomy: taxonomy:39947 # 39947
 
 - Region region:3449-10297:1:
   - a: faldo:Region
   - rdfs:subClassOf:
-    - upper_class: obo:SO_0000001
+    - region_upper_class: obo:SO_0000001
   - rdfs:label:
-    - label: "OSNPB_010100100"
+    - region_label: "OSNPB_010100100"
   - faldo:begin:
     - begin: Position
   - faldo:end:
