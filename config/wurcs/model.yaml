@@ -1,59 +1,71 @@
-- Node0 p0:02513e64ba7686c21e13fdbc227d338602ed1aefe5e827273c81818de17f7522:
+- Glycan glycan:G00003VQ:
   - a: glycan:saccharide
   - glycan:has_glycosequence:
-    - node_2: Node2
+    - glycosequence_uri: glycan:G00013MO/wurcs/2.0
 
-- Node2 p1:2.0:
+- Wurcs glycan:G00018MO/wurcs/2.0:
   - a: glycan:glycosequence
-  - glycan:has_sequence:
-    - node_4: "WURCS=2.0/3,6,5/[u2112h_2*NCC/3=O][a2112h-1b_1-5][a2122h-1b_1-5_2*NCC/3=O]/1-2-3-2-3-2/a3-b1_b3-c1_c4-d1_d6-e1_e3-f1"
+  - glycan:glycosequence:
+    - glycosequence: "\"WURCS=2.0/3,4,3/[u2112h_2*NCC/3=O_4*OSO/3=O/3=O][a2122A-1b_1-5][a2112h-1b_1-5_2*NCC/3=O_4*OSO/3=O/3=O]/1-2-3-2/a3-b1_b4-c1_c3-d1\"^^xsd:string"
   - glycan:in_carbohydrate_format:
-    - node_5: glycan:carbohydrate_format_wurcs
+    - in_carbohydrate_format: glycan:carbohydrate_format_wurcs
   - wurcs:LIN_count:
-    - node_6: 5
+    - lin_count: 5
   - wurcs:RES_count:
-    - node_7: 6
+    - res_count: 6
   - wurcs:has_LIN+:
-    - node_8: Node8
-  - wurcs:has_basetype+:
-    - node_9: Node9
-  - wurcs:has_monosaccharide+:
-    - node_10: Node10
-  - wurcs:has_root_RES:
-    - node_11: Node11
-  - wurcs:has_uniqueRES+:
-    - node_12: Node12
-  - wurcs:uniqueRES_count:
-    - node_13: 3
-  - owl:sameAs:
-    - node_14: Node14
+    - has_lin1: wcs18MO:LIN/b4-c1
+    - has_lin2: wcs18MO:LIN/a3-b1
+    - has_lin3: wcs18MO:LIN/c3-d1
 
-- Node8 p3:a3-b1:
+  - wurcs:has_basetype+:
+    - has_basetype:  wurcs:/Basetype/u2112h_2%2ANCC%2F3%3DO, wurcs:/Basetype/u2122A
+  - wurcs:has_monosaccharide+:
+    - has_monosaccharide1: monosac:a2122A-1b_1-5
+    - has_monosaccharide2: monosac:a2112h-1b_1-5_2%2ANCC%2F3%3DO_4%2AOSO%2F3%3DO%2F3%3DO
+    - has_monosaccharide3: monosac:u2112h_2%2ANCC%2F3%3DO_4%2AOSO%2F3%3DO%2F3%3DO
+  - wurcs:has_root_RES:
+    - has_root_res: wcs18MO:RES/a
+  - wurcs:has_uniqueRES+:
+    - has_uniqueRES1: wcs18MO:UniqueRES/3
+    - has_uniqueRES2: wcs18MO:UniqueRES/1
+    - has_uniqueRES3: wcs18MO:UniqueRES/2
+  - wurcs:uniqueRES_count:
+    - uniqueres_count: 3
+  - owl:sameAs:
+    - sameas: wurcs:/WURCS%3D2.0%2F3%2C4%2C3%2F%5Bu2112h_2%2ANCC%2F3%3DO_4%2AOSO%2F3%3DO%2F3%3DO%5D%5Ba2122A-1b_1-5%5D%5Ba2112h-1b_1-5_2%2ANCC%2F3%3DO_4%2AOSO%2F3%3DO%2F3%3DO%5D%2F1-2-3-2%2Fa3-b1_b4-c1_c3-d1
+
+- Lin wcs18MO:LIN/b4-c1:
   - a: wurcs:LIN
   - wurcs:has_GLIPS+:
-    - node_16: Node16
+    - has_glips1: wurcs:/GLIPS/c1
+    - has_glips2: wurcs:/GLIPS/b4
   - wurcs:is_repeat:
-    - node_17: 0
+    - is_repeat: false
 
-- Node11 p6:a:
+- Res glycan:G00009BX/wurcs/2.0/RES/c:
   - a: wurcs:RES
+  - wurcs:has_LIN:
+    - has_lin4: glycan:G00009BX/wurcs/2.0/LIN/c4-d1
+    - has_lin5: glycan:G00009BX/wurcs/2.0/LIN/b3-c1
+  - wurcs:is_uniqueRES:
+    - uniqueres: glycan:G00009BX/wurcs/2.0/UniqueRES/3
 
-- Node12 p7:1:
+- UniqueRES glycan:G00019BE/wurcs/2.0/UniqueRES/5:
   - a: wurcs:UniqueRES
   - wurcs:is_monosaccharide:
-    - node_25: Node25
+    - is_monosaccharide: monosac:a2122h-1b_1-5
 
-- Node16 p9:a3:
+- Glips wurcs:/GLIPS/e4:
   - a: wurcs:GLIPS
   - wurcs:has_GLIP:
-    - node_19: Node19
+    - has_GLIP: wurcs:/GLIP/e4
   - wurcs:is_fuzzy:
-    - node_20: 0
+    - node_20: false
 
-- Node19 p10:a3:
+- Glip wurcs:/GLIP/b2:
   - a: wurcs:GLIP
   - wurcs:has_RES:
-    - node_22: Node22
+    - has_res:  wurcs:/RES/b
   - wurcs:has_SC_position:
-    - node_23: 3
-
+    - has_sc_position: 2
