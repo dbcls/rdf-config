@@ -6,8 +6,10 @@
     - cluster_label: "psbA"
   - dct:description:
     - cluster_descr: "Photosystem II reaction center protein"
-  - void:inDataset:
-    - dataset: Dataset
+  - mbgd:score:
+    - score: 0
+  - mbgd:dist:
+    - dist: 0
   - mbgd:funcMbgd:
     - func_mbgd: "6"
   - mbgd:funcCog:
@@ -16,12 +18,10 @@
     - func_kegg: "1.2"
   - mbgd:funcTigr:
     - func_tigr: "6.15"
-  - mbgd:score:
-    - score: 0
-  - mbgd:dist:
-    - dist: 0
   - foaf:page:
-    - cluster_page: <http://mbgd.genome.ad.jp/htbin/hcluster?prog=hcluster&amp;clustid=O3927&amp;tabid=default>
+    - cluster_page: <http://mbgd.genome.ad.jp/htbin/hcluster?prog=hcluster&clustid=O3927&tabid=default>
+  - void:inDataset:
+    - dataset: Dataset
   - orth:hasHomologous+:
     - orth:OrthologsCluster: <http://mbgd.genome.ad.jp/rdf/resource/cluster/2018-01_tax1177_3430>
     - member_domain: Domain
@@ -51,7 +51,7 @@
   - void:dataDump:
     - dataset_dump: <http://mbgd.genome.ad.jp/rdf/archive/mbgd_2018-01/mbgd_2018-01_default.ttl.gz>
   - foaf:page:
-    - dataset_page: <http://mbgd.genome.ad.jp/htbin/cluster_map?tabid=default&amp;show_summary=1>
+    - dataset_page: <http://mbgd.genome.ad.jp/htbin/cluster_map?tabid=default&show_summary=1>
 
 - Domain <http://mbgd.genome.ad.jp/rdf/resource/domain/2018-01_default/dsl:DACSA_RS08170/0>:
   - a:
@@ -73,8 +73,6 @@
     - gene_descr: "photosystem II DII subunit, Q(A) protein"
   - mbgd:aaLength:
     - aa_length: 353
-  - dct:source:
-    - gene_refseq: ncbi:refseq
   - foaf:page:
     - gene_page: <http://mbgd.genome.ad.jp/htbin/MBGD_gene_info_frame.pl?name=dsl:DACSA_RS08170>
   - mbgd:domain:
@@ -88,12 +86,14 @@
   - sio:SIO_010078+:
     - encoded_uniprot: uniprot:K9YTN9
     - encoded_protein: ncbiprotein:WP_015229298.1
+  - dct:source:
+    - gene_refseq: ncbi:refseq
+  - mbgd:nucSeq:
+    - nucseq: Nucseq # Chromosome 1
   - mbgd:taxon:
     - gene_taxid: taxid:13035 # Dactylococcopsis salina PCC 8305
   - obo:RO_0002162: # in taxon
     - gene_in_taxon: taxid:13035 # Dactylococcopsis salina PCC 8305
-  - mbgd:nucSeq:
-    - nucseq: Nucseq # Chromosome 1
   - mbgd:organism:
     - organism: Organism
 
