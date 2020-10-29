@@ -6,12 +6,7 @@ class RDFConfig
       end
 
       def generate
-        lines = []
-
-        lines << "# Endpoint: #{endpoints.first}"
-        (1 ... endpoints.size).each do |i|
-          lines << "#           #{endpoints[i]}"
-        end
+        lines = generate_endpoint_lines
 
         lines << "# Description: #{description}"
 
@@ -29,7 +24,24 @@ class RDFConfig
 
         lines
       end
+
+      private
+
+      def generate_endpoint_lines
+        return generate_no_endpoint_lines if endpoints.empty?
+
+        lines = []
+        lines << "# Endpoint: #{endpoints.first}"
+        (1 ... endpoints.size).each do |i|
+          lines << "#           #{endpoints[i]}"
+        end
+
+        lines
+      end
+
+      def generate_no_endpoint_lines
+        ['# Endpoint: Please define a SPARQL endpoint in the endpoint.yaml file.']
+      end
     end
   end
 end
-
