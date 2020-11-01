@@ -1,0 +1,42 @@
+- Dbvar dbvar_vcall:essv1:
+  - a:
+    - purl_dbvar:VariantCall
+    - obo:SO_0001743
+  - faldo:location:
+    - location: Location
+  - med2rdf:alternativeAllele:
+    - alt_allele: "-"
+  - med2rdf:phenotype:
+    - phenotype: "not_reported"
+  - med2rdf:referenceAllele:
+    - ref_allele: "~"
+  - obo:RO_0002162:
+    - taxonomy: taxon:9606
+  - dct:identifier:
+    - id: "essv1"
+  - dct:isPartOf:
+    - part_of_id: dbvar:esv2757469
+
+- Location dbvar_vcall_essv1_grch37:NC_000011.9:
+  - a: faldo:Region
+  - faldo:begin:
+    - location_begin: LocationBegin
+  - faldo:end:
+    - localtion_end: LocaltionEnd
+
+- LocationBegin dbvar_vcall_essv1_grch37_chr9:begin:
+  - a: faldo:FuzzyPosition
+  - faldo:begin:
+    - begin_begin: dbvar_vcall_essv1_grch37_chr9_begin:begin
+  - faldo:end:
+    - begin_end: dbvar_vcall_essv1_grch37_chr9_begin:end
+  - faldo:reference+:
+    - hco: hco:GRCh37
+
+- LocaltionEnd dbvar_vcall_essv1_grch37_chr9:end:
+  - a: faldo:FuzzyPosition
+  - faldo:begin:
+    - end_begin: dbvar_vcall_essv1_grch37_chr7_end:begin
+  - faldo:end:
+    - end_end: dbvar_vcall_essv1_grch37_chr7_end:end
+
