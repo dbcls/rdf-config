@@ -1,0 +1,134 @@
+- HCO <http://identifiers.org/hco/>:
+  - a: owl:Ontology
+  - dct:license:
+    - ontology_license: <http://creativecommons.org/publicdomain/zero/1.0/>
+  - rdfs:seeAlso:
+    - ontology_see_also:
+      - <https://github.com/med2rdf/hco/>
+      - <http://biohackathon.org/resource/hco/>
+  - owl:versionInfo:
+    - ontology_version: '"2020-07-15"^^xsd:date'
+
+- HumanChromosomeClass hco:HumanChromosome:
+  - a: owl:Class
+  - rdfs:label:
+    - human_chromosome_label: "Human chromosome"
+  - skos:definition:
+    - human_chromosome_definition: "Collection of human chromosomes"
+  - rdfs:seeAlso:
+    - taxonomy: <http://identifiers.org/taxonomy/9606>
+  - skos:broader:
+    - human_chromosome_broader: obo:SO_0000340
+
+- GenomeBuildClass hco:GenomeBuild:
+  - a: owl:Class
+  - rdfs:label:
+    - genome_build_label: "Genome build"
+  - skos:definition:
+    - genome_build_definition: "Version of a genome assembly"
+  - skos:broader:
+    - genome_build_broader: obo:SO_0001505
+
+- CytobandRootClass hco:Cytoband:
+  - a: owl:Class
+  - rdfs:label:
+    - cytoband_label: "Cytoband"
+  - skos:definition:
+    - cytoband_definition: "Chromosome band"
+  - skos:broader:
+    - cytoband_broader: obo:SO_0000341
+
+- CytobandTypeClass hco:CytobandType:
+  - a: owl:Class
+  - rdfs:label:
+    - cytoband_type_label: "Cytoband type"
+  - skos:definition:
+    - cytoband_type_definition: "Cytoband types including Giemsa-banding annotations"
+
+- ChromosomeClass hco:1:
+  - a: owl:Class
+  - rdfs:subClassOf:
+    - chromosome_parent_class: hco:HumanChromosome
+  - rdfs:label:
+    - chromosome_label: "Human chromosome 1"
+
+- Chromosome hco:1\/GRCh37:
+  - a: hco:1
+  - hco:build:
+    - build: hco:GRCh37
+  - hco:length:
+    - length: 249250621
+  - skos:altLabel:
+    - alt_label: "GPC_000000025"
+  - hco:insdc:
+    - insdc: <http://identifiers.org/insdc/CM000663.1>
+  - hco:refseq:
+    - refseq: <http://identifiers.org/refseq/NC_000001.10>
+  - hco:ucsc:
+    - ucsc: <http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&position=chr1>
+  - hco:ensembl:
+    - ensembl:
+      - <http://rdf.ebi.ac.uk/resource/ensembl/homo_sapiens/GRCh37/1>
+      - <http://grch37.ensembl.org/Homo_sapiens/Location/Chromosome?r=1>
+
+# - HumanGenomeBuildClass hco:GRCh37:
+#   - a: owl:Class
+#   - rdfs:label:
+#     - human_genome_build_label: "GRCh37"
+#   - skos:definition:
+#     - human_genome_build_definition: "Genome Reference Consortium Human Build 37"
+#   -  skos:altLabel:
+#     - human_genome_build_alt_label: "hg19"
+#   - rdfs:subClassOf:
+#     - human_genome_build_parent_class: hco:GenomeBuild
+
+- GenomeBuild hco:GRCh37.p13:
+  - a: hco:GRCh37
+  - rdfs:label:
+    - genome_build_patch_label: "GRCh37.p13"
+  - skos:definition:
+    - genome_build_path_definition: "Genome Reference Consortium Human Build 37 patch release 13"
+  - hco:length:
+    - genome_build_length: 3234834689
+  - dct:date:
+    - genome_build_patch_release_date: '"2013-06-28"^^xsd:date'
+  - rdfs:seeAlso:
+    - genome_build_patch_see_also:
+      - <https://www.ncbi.nlm.nih.gov/assembly/GCA_000001405.14>
+      - <https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.25>
+
+- CytobandType hco:Gneg:
+  - a: hco:CytobandType
+  - rdfs:label:
+    - human_cytoband_type_label: "gneg"
+  - skos:definition:
+    - human_cytoband_type_definition: "Giemsa negative band"
+
+- CytobandClass hco:1p36.33:
+  - a: owl:Class
+  - rdfs:label:
+    - human_cytoband_label: "1p36.33"
+  - rdfs:subClassOf:
+    - human_cytoband_parent_class: hco:Cytoband
+
+- Cytoband hco:1p36.33\/GRCh37:
+  - a: hco:1p36.33
+  - hco:build:
+    - cytoband_build: hco:GRCh37
+  - hco:bandtype:
+    - bandtype: hco:Gneg
+  - faldo:location:
+    - []:
+      - a: faldo:Region
+      - faldo:begin:
+        - begin_position: Position
+      - faldo:end:
+        - end_position: Position
+
+- Position:
+  - a: faldo:BothStrandsPosition
+  - faldo:position:
+    - position: 2300000
+  - faldo:reference:
+    - reference: hco:1\/GRCh37
+

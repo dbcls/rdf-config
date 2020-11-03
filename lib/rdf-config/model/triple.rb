@@ -80,9 +80,7 @@ class RDFConfig
       end
 
       def types
-        rdf_type_predicates = @predicates.select { |predicate| predicate.rdf_type? }
-        raise SubjectClassNotFound, "Subject: #{@name}: rdf:type not found." if rdf_type_predicates.empty?
-
+        rdf_type_predicates = @predicates.select(&:rdf_type?)
         rdf_type_predicates.map { |predicate| predicate.objects.map(&:name) }.flatten
       end
 
@@ -139,8 +137,6 @@ class RDFConfig
       def as_object_value(subject_name)
         as_object(subject_name).value
       end
-
-      class SubjectClassNotFound < StandardError; end
     end
 
     class Predicate

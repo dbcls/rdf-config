@@ -3,24 +3,114 @@
   - ssbdo:basedOn:
     - method: "Experiment"
   - ssbdo:correspondingAuthor:
-    - depositor: ssbd:depositor148
+    - depositor: Depositor
   - ssbdo:localID:
     - local_id: "FigS2_C5"
   - obo:RO_0002162+: # in taxon
-    - node_5: obo:NCBITaxon_10090 # Mus musculus
+    - quantitative_biological_dynamics_data_taxon: obo:NCBITaxon_10090 # Mus musculus
   - dct:contributor+:
-    - depositor: ssbd:depositor148
-  - dct:created+:
+    - quantitative_biological_dynamics_data_contributor: Depositor
+  - dct:created:
     - quantitative_biological_dynamics_data_created: 2017-12-20
-  - dct:description+:
+  - dct:description:
     - quantitative_biological_dynamics_data_description: "quantiative information about X chromosome structure from Hi-C data at 250-kb resolution for a male mouse T helper (TH1) cell #5 "
-  - dct:identifier+:
-    - quantitative_biological_dynamics_data_identifier: "1a0b3ab7-fc17-45a4-a1d6-29d4cc03f4d5"
-  - dct:license+:
-    - resource: ccbyncsa40:
+  - dct:identifier:
+    - quantitative_biological_dynamics_data_id: "1a0b3ab7-fc17-45a4-a1d6-29d4cc03f4d5"
+  - dct:license:
+    - quantitative_biological_dynamics_data_license: ccbyncsa40
   - dct:references+:
-    - resource: pubmed:27725694
-  - rdfs:label+:
-    - quantitative_biological_dynamics_data_label: "1a0b3ab7-fc17-45a4-a1d6-29d4cc03f4d5"
+    - quantitative_biological_dynamics_data_references: pubmed:27725694
+  - rdfs:label:
     - quantitative_biological_dynamics_data_label: "1a0b3ab7-fc17-45a4-a1d6-29d4cc03f4d5"
 
+- Depositor ssbd:depositor148:
+  - a: ssbdo:Depositor
+  - rdfs:label:
+    - depositor_label: "Yoshito Hirata"
+  - dct:identifier:
+    - depositor_id: "depositor148"
+  - vcard:family-name:
+    - family_name: "Hirata"
+  - vcard:given-name:
+    - given_name: "Yoshito"
+  - vcard:organization-name:
+    - organization_name: "University of Tokyo, Institute of Industrial Science"
+
+- CollectionOfImages ssbd:collection_1:
+  - a: ssbdo:XYZTImageCollection
+  - ssbdo:correspondingAuthor:
+    - collection_of_images_corresponding_author: Depositor
+  - ssbdo:hasBioFormat:
+    - formats_of_microscopy_images: ssbdo:IPM
+  - ssbdo:inBiologicalProcess:
+    - in_biological_process: obo:GO_0009790 # embryo development
+  - ssbdo:partOfCellularComponent:
+    - part_of_cellular_component: obo:GO_0005634 # nucleus
+  - ssbdo:pixelsSizeXOfMember:
+    - []:
+      - a: ssbdo:PixelsQuantity
+      - sio:SIO_000221:
+        - x_pixels_quantity_unit: ssbdo:Pixel
+      - sio:SIO_000300:
+        - x_pixels_quantity_value: "600"
+      - []:
+        - a: ssbdo:LengthQuantity
+        - sio:SIO_000300:
+          - x_length_quantity_value: "0.105"
+        - sio:SIO_000221:
+          - x_length_quantity_unit: obo:UO_0000017 #um
+  - ssbdo:pixelsSizeYOfMember:
+    - []:
+      - a: ssbdo:PixelsQuantity
+      - sio:SIO_000221:
+        - y_pixels_quantity_unit: ssbdo:Pixel
+      - sio:SIO_000300:
+        - y_pixels_quantity_value: "600"
+      - []:
+        - a: ssbdo:LengthQuantity
+        - sio:SIO_000300:
+          - y_length_quantity_value: "0.105"
+        - sio:SIO_000221:
+          - y_length_quantity_unit: obo:UO_0000017 #um
+  - ssbdo:pixelsSizeZOfMember:
+    - []:
+      - a: ssbdo:PixelsQuantity
+      - sio:SIO_000221:
+        - z_pixels_quantity_unit: ssbdo:Pixel
+      - sio:SIO_000300:
+        - z_pixels_quantity_value: "600"
+      - []:
+        - a: ssbdo:LengthQuantity
+        - sio:SIO_000300:
+          - z_length_quantity_value: "0.105"
+        - sio:SIO_000221:
+          - z_length_quantity_unit: obo:UO_0000017 #um
+  - ssbdo:pixelsSizeTOfMember:
+    - []:
+      - a: ssbdo:TimeslicesQuantity
+      - sio:SIO_000300:
+        - timeslices_quantity_value: "180"
+      - []:
+        - a: ssbdo:TimeintervalQuantity
+        - sio:SIO_000300:
+          - timeslices_quantity_value: "40"
+        - sio:SIO_000221:
+          - timeslices_quantity_unit: obo:UO_0000029 #second
+  - ssbdo:pixelsType:
+    - pixels_type: "uint16"
+  - obo:RO_0002162: # in taxon
+    - collection_of_images_taxon: obo:NCBITaxon_6239 # Caenorhabditis elegans
+  - dct:contributor+:
+    - collection_of_images_contributor: Depositor
+  - dct:description:
+    - collection_of_images_description: "3D time-lapse microscopy images about nuclear division dynamics in B0336.10(RNAi) embryo (rpl-23(RNAi) embryo)"
+  - dct:hasFormat:
+    - collection_of_images_format: "ipm"
+  - dct:identifier:
+    - collection_of_images_id: "collection_1"
+  - dct:license:
+    - collection_of_images_license: ccbyncsa40
+  - dct:references+:
+    - collection_of_images_references: pubmed:23172286
+  - rdfs:label:
+    - collection_of_images_label: "RNAi_B0336.10_040518_01"

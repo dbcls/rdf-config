@@ -1,4 +1,4 @@
-- Jpostproject jpostdb:JPST000810:
+- JpostProject jpostdb:JPST000810:
   - a: jpost:Project
   - dct:contributor+:
     - []:
@@ -38,17 +38,17 @@
   - a: jpost:Dataset
   - dct:identifier:
     - dataset_identifier: "DS810_1"
-  - jpost:hasPeptide+:
-    - peptide: jpostdb:PEP810_1_14507
-    - unique_peptide_at_ms_level: jpostdb:PEP810_1_14508
-    - shared_peptide_at_ms_level: jpostdb:PEP810_1_14609
+#  - jpost:hasPeptide+:
+#    - peptide: jpostdb:PEP810_1_14507
+#    - unique_peptide_at_ms_level: jpostdb:PEP810_1_14508
+#    - shared_peptide_at_ms_level: jpostdb:PEP810_1_14609
   - jpost:hasProfile:
     - profile: Profile
   - jpost:hasProtein+:
-    - spectrum_sub-set_protein: jpostdb:PRT810_1_A0A1B0GTU1
     - protein: Protein
-    - spectrum_subsumable_protein: jpostdb:PRT810_1_P10321 # P10321
-    - spectrum_same-set_protein: jpostdb:PRT810_1_P0CG08
+#    - spectrum_sub-set_protein: jpostdb:PRT810_1_A0A1B0GTU1
+#    - spectrum_subsumable_protein: jpostdb:PRT810_1_P10321 # P10321
+#    - spectrum_same-set_protein: jpostdb:PRT810_1_P0CG08
   - sio:SIO_000216+: # has measurement value
     - []:
       - a: jpost:NumOfRawData
@@ -83,8 +83,8 @@
   - a:
     - jpost:Protein
     - obo:MS_1002401 # leading protein
-    - jpost:RepresentativeIsoform
-    - obo:MS_1001591 # anchor protein
+#    - jpost:RepresentativeIsoform
+#    - obo:MS_1001591 # anchor protein
   - dct:identifier:
     - protein_identifier: "PRT810_1_A0A0B4J2D5"
   - jpost:hasDatabaseSequence:
@@ -128,11 +128,11 @@
 - Peptide jpostdb:PEP810_1_15421:
   - a:
     - jpost:Peptide
-    - jpost:SharedPeptide
+#    - jpost:SharedPeptide
   - dct:identifier:
     - peptide_identifier: "PEP810_1_15421"
   - jpost:hasPsm+:
-    - peptide_spectrum match: PeptideSpectrum match
+    - peptide_spectrum_match: PeptideSpectrumMatch
   - jpost:hasSequence:
     - []:
       - a: obo:MS_1001344 # AA sequence
@@ -152,7 +152,7 @@
       - sio:SIO_000300: # has value
         - peptide_sequence-level_global_fdr: 0
 
-- PeptideSpectrum match jpostdb:PSM810_1_5259:
+- PeptideSpectrumMatch jpostdb:PSM810_1_5259:
   - a: jpost:PeptideSpectrumMatch
   - dct:identifier:
     - peptide_spectrum match_identifier: "PSM810_1_5259"
@@ -184,19 +184,43 @@
       - sio:SIO_000300: # has value
         - charge_state: 3
   - jpost:hasModification*:
+    - modification: [Phospho, Acetyl, Oxidation]
+
+- Phospho:
+  - a: unimod:UNIMOD_21
+  - jpost:modificationSite:
+    - phospho_modification_site: "S"
+  - faldo:location:
     - []:
-      - a:
-        - unimod:UNIMOD_21
-        - unimod:UNIMOD_35
-      - jpost:modificationSite:
-        - modification_site: "S"
-      - faldo:location:
-        - []:
-          - a: faldo:ExactPosition
-          - faldo:position:
-            - begin: 5
-          - faldo:reference:
-            - peptide: jpostdb:PEP810_1_15421
+      - a: faldo:ExactPosition
+      - faldo:position:
+        - phospho_position: 5
+      - faldo:reference:
+        - peptide: jpostdb:PEP810_1_15421
+
+- Acetyl:
+  - a: unimod:UNIMOD_1
+  - jpost:modificationSite:
+    - acetyl_modification_site: "S"
+  - faldo:location:
+    - []:
+      - a: faldo:ExactPosition
+      - faldo:position:
+        - acetyle_position: 5
+      - faldo:reference:
+        - peptide: jpostdb:PEP810_1_15421
+
+- Oxidation:
+  - a: unimod:UNIMOD_35
+  - jpost:modificationSite:
+    - oxidation_modification_site: "M"
+  - faldo:location:
+    - []:
+      - a: faldo:ExactPosition
+      - faldo:position:
+        - oxidation_position: 5
+      - faldo:reference:
+        - peptide: jpostdb:PEP810_1_15421
 
 - Spectrum bid:SPC810_1_3_1.1.2188.10:
   - a: jpost:Spectrum

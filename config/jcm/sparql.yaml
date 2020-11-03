@@ -1,0 +1,21 @@
+#Retrieves JCM microbial strains whose growth temperature is more than 75 degree Celsius
+
+PREFIX mccv: <http://purl.jp/bio/10/mccv#>
+PREFIX sio: <http://semanticscience.org/resource/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX mpo: <http://purl.jp/bio/10/mpo/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+
+SELECT ?strain ?qualified_species_name ?v
+FROM <https://metadb.riken.jp/metadb/db/rikenbrc_jcm_microbe>
+where {
+?strain a mccv:MCCV_000001 ;
+       mccv:MCCV_000012 ?qualified_species_name ;
+       mccv:MCCV_000073 ?cc .
+    ?cc sio:SIO_000216 ?t .
+    ?t a mpo:MPO_00102 ;
+       sio:SIO_000300 ?v ;
+       sio:SIO_000211 obo:UO_0000027
+    FILTER(?v > 75)
+} LIMIT 100
