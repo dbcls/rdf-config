@@ -3,14 +3,6 @@
     - skos:Concept
   - rdf:type:
     - pacsch:DiseasesPACDB
-#   - DiseasesPACDB pacsch:DiseasesPACDB:
-#      - rdfs:comment:
-#        - comment: "For describing information about diseases from PACDB"
-#      - rdfs:label:
-#        - class_label: "PACDB Diseases"
-#      - rdfs:subClassOf:
-#        - sub_class_of: ncit:Diseases_and_Disorders    
-    
   - gdgsch:diseaseName:
     - disease_name: "Cystitis"
   - ggdsch:conceptType:
@@ -29,14 +21,14 @@
   - rdfs:label:
     - disease_names: "Cystitis"
   - rdfs:seeAlso+:
-    - mesh_id: mesh:D003556
+    - mesh_id_disease_link: mesh:D003556
   - skos:inScheme:
     - concept_scheme_pacdb: pacsch:ConceptSchemePACDB
 
 - DiseasesPACDB pacsch:DiseasesPACDB:
   - a: owl:Class
   - rdfs:comment:
-    - comment: "For describing information about diseases from PACDB"
+    - comment_pacdb: "For describing information about diseases from PACDB"
   - rdfs:label:
     - class_label: "PACDB Diseases"
   - rdfs:subClassOf:
@@ -47,7 +39,7 @@
     - owl:Thing
     - ggdsch:ConceptType 
   - rdfs:label:
-    - concept_type_label: "Diseases Name and Class"
+    - name_concept_type_label: "Diseases Name and Class"
   - rdfs:seeAlso:
     - diseasespacdb: Diseasespacdb
 
@@ -59,7 +51,7 @@
    #- concept_type: ConceptType 
     - conceptpathogenic: Conceptpathogenic
   - gmsch:causes+:
-    - causes: paconto:DIS043 # Sepsis
+    - causes_upec: paconto:DIS043 # Sepsis
   - pacsch:organismForm:
     - organism_form: OrganismForm
   - pacsch:pathogenMaterialType:
@@ -82,7 +74,7 @@
     - skos:Concept
     - pacsch:Microorganisms
   - gmsch:causes+:
-    - causes: paconto:DIS018 # Diarrhea
+    - causes_ecoli: paconto:DIS018 # Diarrhea
   - pacsch:ncbiTaxonomyId:
     - ncbi_taxonomy_id: "562"
   - pacsch:tropismInReference+:
@@ -96,7 +88,7 @@
   - up:scientificName:
     - scientific_name: "Escherichia coli"
   - up:strain+:
-    - strain: paconto:SPE130 # str. 346
+    - strain_bacteria: paconto:SPE130 # str. 346
   - rdfs:label:
     - ecoli_label: "Escherichia coli"
   - rdfs:seeAlso:
@@ -107,13 +99,13 @@
     - skos:Concept
     - pacsch:DiseasesPACDB
   - gdgsch:diseaseName:
-    - disease_name: "Cystitis"
+    - disease_class_name: "Cystitis"
   - ggdsch:conceptType:
     - concept_type: DiseaseClassConceptType  
   - ggdsch:meshUniqueID:
-    - mesh_id: "D003556"
+    - mesh_id_disease_class: "D003556"
   - ggdsch:umlsCUI:
-    - umls_cui: "C0010692"
+    - umls_cui_disease_class: "C0010692"
   - pacsch:broaderInDisClassifSystems:
     - pacdb_diseases: PacdbDiseases # Urinary Bladder Diseases
   - dct:identifier:
@@ -123,16 +115,16 @@
   - rdfs:seeAlso+:
     - resource_in_mesh: mesh:D003556
   - skos:inScheme:
-    - concept_scheme_pacdb: pacsch:ConceptSchemePACDB
+    - concept_class_scheme_pacdb: pacsch:ConceptSchemePACDB
 
 - DiseaseClassConceptType pacsch:DiseasesClassifications:
   - a:
     - owl:Thing
     - ggdsch:ConceptType 
-  - rdfs:comment:
+  - rdfs:comment_disease_class:
     - comment: "Classifications of infectious diseases recorded in PACDB by using MeSH (Medical Subject Headings) vocabulary"
   - rdfs:label:
-    - concept_type_label: "Classifications of Diseases"
+    - class_concept_type_label: "Classifications of Diseases"
   - rdfs:seeAlso+:
     - diseases_pacdb: pacsch:DiseasesPACDB
 
@@ -141,11 +133,11 @@
     - skos:Concept
     - pacsch:DiseasesPACDB
   - gdgsch:diseaseName:
-    - disease_name: "Urinary Bladder Diseases"
+    - disease_name_pacdb: "Urinary Bladder Diseases"
   - ggdsch:meshUniqueID:
-    - mesh_id: "D001745"
+    - mesh_id_pacdb: "D001745"
   - ggdsch:umlsCUI:
-    - umls_cui: "C0005686"
+    - umls_cui_pacdb: "C0005686"
   - pacsch:broaderInDisClassifSystems:
     - pacdb_diseases: paconto:DIC185 # Urologic Diseases
   - dct:identifier:
@@ -153,7 +145,7 @@
   - rdfs:label:
     - pacdb_diseases_label: "Urinary Bladder Diseases"
   - rdfs:seeAlso+:
-    - mesh_id: mesh:D001745
+    - mesh_id_pacdb_link: mesh:D001745
 
 #- ConceptType pacsch:PathogenicMicroorganisms:
 - Conceptpathogenic pacsch:PathogenicMicroorganisms:
@@ -179,7 +171,7 @@
 - TropismInReference paconto:SOU173_PUB089:
   - a: pacsch:TropismInReference
   - pacsch:describedInReference:
-    - pacdb_references: paconto:PUB089
+    - pacdb_references_paconto: paconto:PUB089
   - pacsch:hasTropismTo:
     - target_tissues_and_cells: TargetTissuesAndCells # Eukaryotic cells
   - dct:references:
@@ -207,13 +199,13 @@
   - ggdsch:conceptType:
     - targets_classification: TargetsClassification
   - ggdsch:umlsCUI:
-    - umls_cui: "C0086418"
+    - umls_cui_target_class: "C0086418"
   - dct:identifier:
     - target_classification_identifier: "SOC020"
   - rdfs:label:
     - target_classification_label: "Human"
   - skos:altLabel:
-    - alt_label: "Humans"
+    - alt_label_target: "Humans"
   - skos:broader:
     - broader: paconto:SOC019 # Hominidae
   - skos:prefLabel:
@@ -224,7 +216,7 @@
     - owl:Thing
     - ggdsch:ConceptType
   - rdfs:comment:
-    - comment: "Classifications of target sources in host-pathogen interactions based on the National Cancer Institute Thesaurus (NCIT), with adaptations to PACDB data"
+    - comment_target_class: "Classifications of target sources in host-pathogen interactions based on the National Cancer Institute Thesaurus (NCIT), with adaptations to PACDB data"
   - rdfs:label:
-    - concept_type_label: "Classification of targets in host-pathogen interactions based on the NCIT, with adaptations to PACDB data."
+    - target_concept_type_label: "Classification of targets in host-pathogen interactions based on the NCIT, with adaptations to PACDB data."
 
