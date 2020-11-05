@@ -1,0 +1,99 @@
+- Dbnsfpvariation dbnsfp_variation:grch38_1_65565_A_C:
+  - a: med2rdf:Variation
+  - faldo:location:
+    - dbnsfp_location_grch38: DbnsfpLocationGrch38
+  - dcmiterms:identifier:
+    - dbnsfp_id: "grch38_1_65565_A_C"
+  - med2rdf:alternative_allele:
+    - alt_allele: "C"
+  - med2rdf:gene:
+    - gene: Gene
+  - med2rdf:reference_allele:
+    - ref_allele: "A"
+  - dbnsfp:alternative_amino_acid:
+    - alt_amino_acid: "L"
+  - dbnsfp:grch37:
+    - dbnsfp_variation: DbnsfpVariation
+  - dbnsfp:hasConservation+:
+    - allele_conservation: AlleleConservation
+  - dbnsfp:hasPrediction+:
+    - damage_prediction: DamagePrediction
+  - dbnsfp:reference_amino_acid:
+    - ref_amino_acid: "M"
+
+- DbnsfpLocationGrch38 dbnsfp_faldo:grch38_1_65565:
+  - a: faldo:ExactPosition
+  - faldo:position:
+    - node_29: 65565
+  - faldo:reference:
+    - hco: hco:GRCh38
+  - dcmiterms:identifier:
+    - node_31: "grch38_1_65565"
+
+- Gene dbnsfp_gene:OR4F5:
+  - a: med2rdf:Gene
+  - rdfs:label:
+    - gene_label: "OR4F5"
+  - rdfs:seeAlso+:
+    - ensg: ensembl_gene:ENSG00000186092
+
+- DbnsfpVariation dbnsfp_variation:grch37_1_65565_A_C:
+  - a: med2rdf:Variation
+  - faldo:location:
+    - dbsnp_variation_location_grch37: DbsnpVariationLocationGrch37
+  - dcmiterms:identifier:
+    - dbsnp_variation_location_id: "grch37_1_65565_A_C"
+
+- AlleleConservation dbnsfp_variation:grch38_1_65565_A_C_phastCons100way_vertebrate:
+  - a: dbnsfp:AlleleConservation
+  - dbnsfp:conservationAlgorithm:
+    - dbnsfp_conservation_algorithm: DbnsfpConservationAlgorithm
+  - sio:SIO_000216+:
+    - phastcons100way_vertebrate_cscore: Phastcons100wayVertebrateCscore
+    - phastcons100way_vertebrate_crankscore: Phastcons100wayVertebrateCrankscore
+
+- DamagePrediction dbnsfp_variation:grch38_1_65565_A_C_HUVEC_fitCons:
+  - a: dbnsfp:DamagePrediction
+  - dbnsfp:algorithm:
+    - dbnsfp_algorithm: DbnsfpAlgorithm
+  - dbnsfp:confidence:
+    - dbnsfp_algorithm_confidence: 0
+  - sio:SIO_000216:
+    - sio_000216: Sio000216
+
+- DbnsfpAlgorithm dbnsfp_algorithm:HUVEC_fitCons:
+  - a: dbnsfp:PredictionAlgorithm
+  - rdfs:label:
+    - prediction_algorithm_name: "HUVEC_fitCons"
+
+- Sio000216 dbnsfp_variation:grch38_1_65565_A_C_HUVEC_fitCons_score:
+  - a: dbnsfp:PredictionScore
+  - dbnsfp:confidence:
+    - huvec_fitcons_score_confidence: 0
+  - rdf:value:
+    - huvec_fitcons_score: 0.057018
+
+- DbnsfpConservationAlgorithm dbnsfp_conservation:phastCons100way_vertebrate:
+  - a: dbnsfp:ConservationAlgorithm
+  - rdfs:label:
+    - conservation_algorithm_name: "phastCons100way_vertebrate"
+
+- Phastcons100wayVertebrateCscore dbnsfp_variation:grch38_1_65565_A_C_phastCons100way_vertebrate_cscore:
+  - a: dbnsfp:ConservationScore
+  - rdf:value:
+    - phastcons100way_vertebrate_cscore: 0.993
+
+- Phastcons100wayVertebrateCrankscore dbnsfp_variation:grch38_1_65565_A_C_phastCons100way_vertebrate_crankscore:
+  - a: dbnsfp:ConservationRankScore
+  - rdf:value:
+    - phastcons100way_vertebrate_crankscore: 0.37899
+
+- DbsnpVariationLocationGrch37 dbnsfp_faldo:grch37_1_65565:
+  - a: faldo:ExactPosition
+  - faldo:position:
+    - grch37_position: 65565
+  - dcmiterms:identifier:
+    - grch37_id: "grch37_1_65565"
+  - dbnsfp:reference:
+    - hco: hco:GRCh37
+
