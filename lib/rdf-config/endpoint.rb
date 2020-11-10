@@ -7,8 +7,10 @@ class RDFConfig
     def initialize(config, opts = {})
       @endpoint = config.endpoint
 
-      if opts.key?(:name) || opts.key?('name')
-        @target = config_by_name(opts[:name]) || config_by_name(opts['name'])
+      endpoint_name = opts[:name] || opts['name']
+      unless endpoint_name.nil?
+        @target = config_by_name(endpoint_name)
+        raise Config::InvalidConfig, %Q(ERROR: Endpoint "#{endpoint_name}" is not specified in endpoint.yaml file.) if @target.nil?
       else
         @target = config_by_name(DEFAULT_NAME)
       end
@@ -58,8 +60,7 @@ class RDFConfig
     end
 
     def config_by_name(name)
-      @endpoint[name]
+      @endpoint[name.to_s]
     end
   end
 end
-

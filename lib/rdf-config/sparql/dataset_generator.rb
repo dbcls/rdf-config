@@ -4,10 +4,8 @@ class RDFConfig
   class SPARQL
     class DatasetGenerator < SPARQL
       def initialize(config, opts = {})
-        if opts.key?(:endpoint)
-          endpoint = Endpoint.new(config, name: opts[:endpoint])
-        elsif opts.key?('endpoint')
-          endpoint = Endpoint.new(config, name: opts['endpoint'])
+        if opts.key?(:endpoint_name)
+          endpoint = Endpoint.new(config, name: opts[:endpoint_name])
         else
           endpoint = Endpoint.new(config)
         end
