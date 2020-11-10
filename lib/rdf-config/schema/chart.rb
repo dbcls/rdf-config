@@ -2,6 +2,7 @@ require 'rexml/document'
 require 'rdf-config/schema/chart/constant'
 require 'rdf-config/schema/chart/subject_generator'
 require 'rdf-config/schema/chart/predicate_generator'
+require 'rdf-config/schema/chart/loop_predicate_generator'
 require 'rdf-config/schema/chart/class_node_generator'
 require 'rdf-config/schema/chart/uri_node_generator'
 require 'rdf-config/schema/chart/literal_node_generator'
@@ -29,11 +30,13 @@ class RDFConfig
 
       def initialize(config)
         @model = Model.new(config)
+        @prefix = config.prefix
+
         generate_svg_element
         add_to_svg(style_element)
 
         @current_pos = Position.new(START_X, START_Y)
-        @subject_queue = []
+        @subjects = []
         @generated_subjects = []
         @element_pos = {}
       end
@@ -62,47 +65,82 @@ class RDFConfig
       end
 
       def generate_subject_graph(subject)
-        return if subject_graph_generated?(subject.name)
+        return if subject_graph_generated?(subject.name) && @subjects.empty?
 
-        unless @element_pos.key?(subject.object_id)
-          @element_pos[subject.object_id] = []
+        generate_subject(subject)
+        if subject_graph_generated?(subject.name)
+          @subjects.pop
+          return
         end
-        @subject_queue.push(subject)
-        add_element_position
-
-        generator = SubjectGenerator.new(subject, @current_pos)
-        add_to_svg(generator.generate)
 
         subject.predicates.each do |predicate|
           predicate.objects.each do |object|
             generate_predicate_object(predicate, object)
-            move_to_next_object
           end
         end
 
         add_subject(subject.name) unless subject.blank_node?
-        @subject_queue.pop
+        @subjects.pop
+      end
+
+      def generate_subject(subject)
+        unless @element_pos.key?(subject.object_id)
+          @element_pos[subject.object_id] = []
+        end
+
+        move_to_subject
+        @subjects.push(subject)
+        add_element_position
+
+        generator = SubjectGenerator.new(subject, @current_pos)
+        add_to_svg(generator.generate)
       end
 
       def generate_predicate_object(predicate, object)
-        move_to_predicate
-        generate_predicate(predicate)
+        if loop_to_subject?(object)
+          @current_pos.y = @element_pos[object.object_id].last.y + (RECT_HEIGHT + MARGIN_RECT)
+        end
 
-        # move object position after generating predicate
-        @current_pos.x += PREDICATE_AREA_WIDTH
-        generate_object(predicate, object)
+        value = predicate.rdf_type? ? object.name : object.value
+
+        case value
+        when Array
+          value.each do |object_value|
+            generate_predicate_object(predicate, object_value)
+          end
+        else
+          move_to_predicate
+          generate_predicate(predicate, loop_to_subject?(object))
+
+          # move object position after generating predicate
+          @current_pos.x += PREDICATE_AREA_WIDTH
+          generate_object(predicate, object)
+        end
+
+        #move_to_next_object unless loop_to_subject?(object)
+        move_to_next_object
       end
 
-      def generate_predicate(predicate)
-        predicate_generator = PredicateGenerator.new(predicate, predicate_arrow_position)
+      def generate_predicate(predicate, loop = false)
+        predicate_generator = if loop
+                                LoopPredicateGenerator.new(predicate, predicate_arrow_position)
+                              else
+                                PredicateGenerator.new(predicate, predicate_arrow_position)
+                              end
+
         add_to_svg(predicate_generator.generate)
       end
 
       def generate_object(predicate, object)
         add_element_position
 
-        if object.instance_of?(Model::Subject)
-          generate_subject_graph(object)
+        if object.is_a?(Model::Subject)
+          if draw_predicate_object?(object)
+            generate_subject_graph(object)
+          elsif !loop_to_subject?(object)
+            generate_subject(object)
+            @subjects.pop
+          end
         elsif object.blank_node?
           generate_subject_graph(object.value)
         elsif predicate.rdf_type?
@@ -120,6 +158,10 @@ class RDFConfig
 
           add_to_svg(generator.generate) if generator
         end
+      end
+
+      def draw_predicate_object?(object)
+        !@subjects.map(&:name).include?(object.name)
       end
 
       def subject_position(subject)
@@ -142,12 +184,21 @@ class RDFConfig
                           @current_pos.x + PREDICATE_AREA_WIDTH, y2)
       end
 
+      def loop_to_subject?(object)
+        #current_subject == object
+        false
+      end
+
+      def move_to_subject
+        @current_pos.x = START_X if @subjects.empty?
+      end
+
       def move_to_next_object
         @current_pos.y = @element_pos.values.flatten.map(&:y).max + RECT_HEIGHT + MARGIN_RECT
       end
 
       def current_subject
-        @subject_queue.last
+        @subjects.last
       end
 
       def num_objects

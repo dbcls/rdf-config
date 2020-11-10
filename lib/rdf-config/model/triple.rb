@@ -58,8 +58,101 @@ class RDFConfig
       end
     end
 
+    class Graph
+      attr_reader :subjects, :object_value
+
+      def initialize(config, opts = {})
+        @config = config
+        @opts = opts
+        @subject_names = config.model.map { |hash| hash.keys }.flatten
+
+        @subjects = []
+        @object_value = {}
+
+        @target_subject = nil
+      end
+
+      def generate
+        @subjects = @config.model.map { |subject_hash| Subject.new(subject_hash, prefix_hash) }
+        @subjects.each_with_index do |subject, i|
+          @target_subject = subject
+          setup_subject(subject, @config.model[i])
+        end
+
+        @subjects
+      end
+
+      private
+
+      def setup_subject(subject, subject_hash)
+        subject_hash.each do |subject_name, predicate_object_hashes|
+          predicate_object_hashes.each do |predicate_object_hash|
+            subject.add_predicate(predicate_instance(predicate_object_hash))
+          end
+        end
+      end
+
+      def predicate_instance(predicate_object_hash)
+        predicate_uri = predicate_object_hash.keys.first
+        predicate = Predicate.new(predicate_uri, prefix_hash)
+        object_data = predicate_object_hash[predicate_uri]
+        case object_data
+        when String, Hash
+          predicate.add_object(object_instance(object_data))
+        when Array
+          object_data.each do |obj_data|
+            predicate.add_object(object_instance(obj_data))
+          end
+        end
+
+        predicate
+      end
+
+      def object_instance(object_data)
+        case object_data
+        when Hash
+          name = object_data.keys.first
+          value = object_data[name]
+          @object_value[name] = value
+        when String
+          # object is object value, name is not available
+          name = nil
+          value = object_data
+        end
+
+        subject = @subjects.select { |subject| subject.name == value }.first
+        unless subject.nil?
+          subject.add_as_object(@target_subject.name, Literal.new(name => value))
+          return subject
+        end
+
+        if Object.blank_node?(name)
+          bnode = BlankNode.new(object_data, prefix_hash)
+          setup_subject(bnode.value, object_data)
+          bnode
+        else
+          if value.nil?
+            Unknown.new(object_data, prefix_hash)
+          elsif value.is_a?(Array)
+            ValueList.new({ name => value.map { |v| object_instance(name => v) } }, prefix_hash)
+          else
+            case Object.object_type(value, prefix_hash)
+            when :uri
+              URI.new(object_data, prefix_hash)
+            when :literal
+              Literal.new(object_data, prefix_hash)
+            end
+          end
+        end
+      end
+
+      def prefix_hash
+        @config.prefix
+      end
+    end
+
     class Subject
-      attr_reader :name, :value, :predicates
+      attr_reader :name, :value, :predicates, :as_object
 
       def initialize(subject_hash, prefix_hash = {})
         @prefix_hash = prefix_hash
@@ -74,9 +167,6 @@ class RDFConfig
         end
 
         @predicates = []
-        subject_hash.each do |subject_data, predicate_object_hashes|
-          add_predicates(predicate_object_hashes)
-        end
       end
 
       def types
@@ -102,23 +192,7 @@ class RDFConfig
         end
       end
 
-      def add_predicate(predicate_object_hash)
-        predicate_uri = predicate_object_hash.keys.first
-        predicate = Predicate.new(predicate_uri, @prefix_hash)
-        object_data = predicate_object_hash[predicate_uri]
-        case object_data
-        when String, Hash
-          predicate.add_object(object_data)
-        when Array
-          if predicate.rdf_type?
-            predicate.add_object(object_data)
-          else
-            predicate_object_hash[predicate_uri].each do |object_hash|
-              predicate.add_object(object_hash)
-            end
-          end
-        end
-
+      def add_predicate(predicate)
         @predicates << predicate
       end
 
@@ -126,16 +200,16 @@ class RDFConfig
         @as_object[subject_name] = object
       end
 
-      def as_object(subject_name)
-        @as_object[subject_name]
-      end
-
       def as_object_name(subject_name)
-        as_object(subject_name).name
+        @as_object.key?(subject_name) ? @as_object[subject_name].name : nil
       end
 
       def as_object_value(subject_name)
-        as_object(subject_name).value
+        @as_object.key?(subject_name) ? @as_object[subject_name].value : nil
+      end
+
+      def used_as_object?
+        !@as_object.empty?
       end
     end
 
@@ -153,12 +227,20 @@ class RDFConfig
         interpret_cardinality
       end
 
-      def add_object(object_data)
-        @objects << Object.instance(object_data, @prefix_hash)
+      def add_object(object)
+        @objects << object
       end
 
       def rdf_type?
         %w[a rdf:type].include?(@uri)
+      end
+
+      def required?
+        @cardinality.nil? || !@cardinality.min.nil? && @cardinality.min > 0
+      end
+
+      def plural?
+        !@cardinality.nil? && (@cardinality.max.nil? || @cardinality.max > 1)
       end
 
       private
@@ -218,15 +300,15 @@ class RDFConfig
       end
 
       def data_type_by_string_value(value)
-        if /\^\^(\w+)\:(.+)\z/ =~ value
-          if $1 == 'xsd'
-            case $2
-            when 'string'
-              'String'
+        if /\^\^(?<prefix>\w+)\:(?<local_part>.+)\z/ =~ value
+          if prefix == 'xsd'
+            case local_part
             when 'integer'
               'Int'
+            when /\A[a-z0-9]+\z/
+              local_part.capitalize
             else
-              $2.capitalize
+              local_part.dup
             end
           else
             "#{$1}:#{$2}"
@@ -249,40 +331,13 @@ class RDFConfig
       end
 
       class << self
-        def instance(object, prefix_hash = {})
-          case object
-          when Hash
-            name = object.keys.first
-            value = object[name]
-          when String
-            # object is object value, name is not available
-            name = nil
-            value = object
-          end
-
-          if blank_node?(name)
-            BlankNode.new(object, prefix_hash)
-          else
-            if value.nil?
-              Unknown.new(object, prefix_hash)
-            else
-              case object_type(value, prefix_hash)
-              when :uri
-                URI.new(object)
-              when :literal
-                Literal.new(object)
-              end
-            end
-          end
-        end
-
         def object_type(value, prefix_hash = {})
           case value
           when String
             if /\A<.+\>\z/ =~ value
               :uri
             else
-              prefix, local_part = value.split(':')
+              prefix, local_part = value.split(':', 2)
               if prefix_hash.keys.include?(prefix)
                 :uri
               else
@@ -347,6 +402,25 @@ class RDFConfig
 
       def has_data_type?
         /\A".*"\^\^.+\z/ =~ @value.to_s.strip
+      end
+
+      def rdf_data_type
+        case @value
+        when String
+          if /\^\^(?<prefix>\w+)\:(?<local_part>.+)\z/ =~ value
+            "#{prefix}:#{local_part}"
+          else
+            'xsd:string'
+          end
+        else
+          "xsd:#{@value.class.to_s.downcase}"
+        end
+      end
+    end
+
+    class ValueList < RDFConfig::Model::Object
+      def initialize(object, prefix_hash = {})
+        super
       end
     end
 
