@@ -16,6 +16,10 @@ class RDFConfig
       @config = config
       @opts = opts
 
+      sparql_query_name, endpoint_name = @opts[:sparql_query_name].to_s.split(':')
+      @opts[:sparql_query_name] = sparql_query_name.nil? ? DEFAULT_NAME : sparql_query_name
+      @opts[:endpoint_name] = endpoint_name unless endpoint_name.nil?
+
       @variables = opts[:variables] if opts.key?(:variables)
       @parameters = opts[:parameters] if opts.key?(:parameters)
       if !opts.key?(:check_query_name) || opts[:check_query_name] == true
@@ -60,8 +64,8 @@ class RDFConfig
 
     def endpoints
       begin
-        if @opts.key?(:endpoint)
-          endpoint_opts = { name: @opts[:endpoint]}
+        if @opts.key?(:endpoint_name)
+          endpoint_opts = { name: @opts[:endpoint_name] }
         else
           endpoint_opts = {}
         end
@@ -84,6 +88,35 @@ class RDFConfig
       @model ||= Model.new(@config)
     end
 
+    def variable_name_for_sparql(variable_name, add_question_mark = false)
+      triple = model.find_by_object_name(variable_name)
+      if triple.nil?
+        if model.subject?(variable_name)
+          sparql_variable_name = variable_name
+        else
+          sparql_variable_name = ''
+        end
+      else
+        case triple.object
+        when Model::Subject
+          object_names = triple.object.objects.map(&:name)
+          sparql_variable_name = if object_names.include?(variable_name)
+                                   triple.subject.name
+                                 else
+                                   triple.object.as_object_name(triple.subject.name)
+                                 end
+        else
+          sparql_variable_name = triple.object.name
+        end
+      end
+
+      if !sparql_variable_name.empty? && add_question_mark
+        "?#{sparql_variable_name}"
+      else
+        sparql_variable_name
+      end
+    end
+
     def run
       endpoint_uri = URI.parse(@endpoint)
 
@@ -93,8 +126,8 @@ class RDFConfig
       http = Net::HTTP.new(endpoint_uri.host, endpoint_uri.port)
       http.use_ssl = endpoint_uri.scheme == 'https'
       headers = {
-        'Accept' => 'application/sparql-results+json',
-        'Content-Type' => 'application/x-www-form-urlencoded'
+          'Accept' => 'application/sparql-results+json',
+          'Content-Type' => 'application/x-www-form-urlencoded'
       }
 
       url_path = endpoint_uri.path
