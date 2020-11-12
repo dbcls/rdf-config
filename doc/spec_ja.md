@@ -8,12 +8,21 @@ SPARQL エンドポイントを下記の記法で記述する。
 endpoint: http://example.org/sparql
 ```
 
-同じデータを持つ複数のエンドポイントを記述しておきたい場合は下記の記法を用いる。
+同じデータを持つ複数のエンドポイントを記述しておきたい場合は下記の記法を用いる。各エンドポイントでデータの含まれるグラフ名を記述しておけば、生成される SPARQL クエリの FROM 句で使われる。
 
 ```
 endpoint:
   - http://example.org/sparql  # プライマリの SPARQL エンドポイント
+  - graph:
+    - http://example.org/graph/1
+    - http://example.org/graph/2
+    - http://example.org/graph/3
+
+another_endpoint:
   - http://another.org/sparql  # 予備の SPARQL エンドポイント
+  - graph:
+    - http://another.org/graph/A
+    - http://another.org/graph/B
 ```
 
 ## prefix.yaml
@@ -113,7 +122,7 @@ RDF データモデルは基本的に YAML に準拠した下記の構造で（�
 * `{n}`: n個（対応する値が「n個」に限られる場合）
 * `{n,m}`: n個からm個（対応する値が「n個」以上「m個」以下に限られる場合）
 
-この指定は RDF のバリデーションに用いられるほか、SPARQL 検索結果を利用する際に参考とする。
+この指定は SPARQL クエリを OPTIONAL 句にするかどうかと、ShEx による RDF のバリデーションに用いられる。
 
 ```
 - Subject my:subject:
