@@ -50,17 +50,93 @@
 
 - Chemical mesh:C000002:
   - a: meshv:SCR_Chemical
+  - meshv:active:
+    - scr_chemical_active: true
   - rdfs:label:
     - chemical_label: '"bevonium"@en'
+  - meshv:frequency:
+    - scr_chemical_frequency: '"1"^^<http://www.w3.org/2001/XMLSchema#int>'
+  - meshv:identifier:
+    - scr_chemical_id: "C000002"
+  - meshv:concept:
+    - concept: Concept
+  - meshv:note:
+    - scr_chemical_note: '"structure given in first source"@en'
+  - meshv:pharmacologicalAction:
+    - pharmacological_action: TopicalDescriptor
+  - meshv:preferredConcept: 
+    - scr_chemical_preferred_concept: Concept
+  - meshv:preferredMappedTo:
+    - scr_chemical_preferred_mapped_to: TopicalDescriptor
+  - meshv:preferredTerm:
+    - scr_chemical_preferred_term: Term 
+  - meshv:previousIndexing:
+    - scr_chemical_previous_indexing: '"PIPERIDINES (71-81)"@en'
+  - meshv:source:
+    - scr_chemical_source: '"S Afr Med J 50(1):4;1976"@en'
 
-- Disease:
+- Disease mesh:C000591739:
   - a: meshv:SCR_Disease
+  - meshv:active:
+    - scr_disease_active: true
+  - meshv:frequency:
+    - scr_disease_frequency: '"1"^^<http://www.w3.org/2001/XMLSchema#int>'
+  - meshv:identifier:
+    - scr_disease_id: "C000591739"
+  - meshv:preferredConcept:
+    - scr_disease_preferred_concept: Concept
+  - meshv:preferredMappedTo:
+    - scr_disease_preferred_mapped_to: TopicalDescriptor
+  - meshv:preferredTerm:
+    - scr_disease_preferred_term: Term
+  - rdfs:label:
+    - scr_disease_label: '"Familial gynecomastia, due to increased aromatase activity"@en'
 
-- Protocol:
+- Protocol mesh:C010306:
   - a: meshv:SCR_Protocol
+  - meshv:active:
+    - scr_protocol_active: true
+  - meshv:concept:
+    - scr_protocol_concept: Concept
+  - meshv:frequency:
+    - scr_protocol_frequency: '"268"^^<http://www.w3.org/2001/XMLSchema#int>'
+  - meshv:identifier:
+    - scr_protocol_id: "C010306"
+  - meshv:mappedTo:
+    - scr_protocol_mapped_to: TopicalDescriptor
+  - meshv:note:
+    - scr_protocol_note: '"chemotherapy protocol consisting of above cpds; used in gynecologic neoplasms"@en'
+  - meshv:preferredConcept:
+    - scr_protocol_preferred_concept: Concept
+  - meshv:preferredMappedTo:
+    - scr_protocol_preferred_mapped_to: TopicalDescriptor
+  - meshv:preferredTerm:
+    - scr_protocol_preferred_term: Term
+  - meshv:previousIndexing:
+    - scr_protocol_previous_indexing: '"*CYCLOPHOSPHAMIDE (77-82)"@en'
+  - meshv:source:
+    - scr_protocol_source: '"Drug Therapy 6(2):28;1976"@en'
+  - rdfs:label:
+    - scr_protocol_label: '"VAC protocol"@en'
 
-- Organism:
+- Organism mesh:C000612320:
   - a: meshv:SCR_Organism
+  - meshv:active:
+    - scr_organism_active: true
+  - meshv:frequency:
+    - scr_organism_frequency: '"0"^^<http://www.w3.org/2001/XMLSchema#int>'
+  - meshv:identifier:
+    - scr_organism_id: "C000612320"
+  - meshv:indexerConsiderAlso:
+    - scr_organism_indexer_consider_also: TopicalDescriptor
+  - meshv:preferredConcept:
+    - scr_organism_preferred_concept: Concept
+  - meshv:preferredMappedTo:
+    - scr_organism_preferred_mapped_to: TopicalDescriptor
+  - meshv:preferredTerm:
+    - scr_organism_preferred_term: Term
+  - rdfs:label:
+    - scr_organism_label: '"UR2 sarcoma virus"@en'
 
 # Descriptor (D###### or D#########)
 
