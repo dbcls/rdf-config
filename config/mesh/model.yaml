@@ -1,0 +1,155 @@
+# M####### or M######### (2014.5-)
+- Concept mesh:M0000001:
+  - a: meshv:Concept
+  - rdfs:label:
+    - concept_label: "Calcimycin"
+  - meshv:active:
+    - concept_active: 1
+  - meshv:identifier:
+    - concept_id: "M0000001"
+  - meshv:preferredTerm:
+    - concept_term: mesh:T000002
+  - meshv:casn1_label:
+    - cas_label: "4-Benzoxazolecarboxylic acid, 5-(methylamino)-2-((3,9,11-trimethyl-8-(1-methyl..."
+  - meshv:narrowerConcept:
+    - narrower_concept: mesh:M0353609
+  - meshv:registryNumber: # One of FDA, CAS, EC, or 0 (no match)
+    - concept_registry_number: "37H9VM9WZL"
+  - meshv:relatedRegistryNumber:
+    - concept_related_registry_number: "52665-69-7 (Calcimycin)"
+  - meshv:scopeNote:
+    - concept_scope_note: "An ionophorous, polyether antibiotic from Streptomyces chartreusensis..."
+
+# T####### or T######### (2014.5-)
+- Term mesh:T000002:
+  - a: meshv:Term
+  - meshv:active:
+    - term_active: 1
+  - meshv:identifier:
+    - term_id: "T000002"
+  - meshv:prefLabel:
+    - term_label: "Calcimycin"
+  - meshv:thesaurusID*:
+    - term_thesaurus_id: "FDA SRS (2014)"
+
+# TODO:
+# * http://id.nlm.nih.gov/mesh/vocab#dateCreated	1999-01-01
+# * http://id.nlm.nih.gov/mesh/vocab#lexicalTag	"NON"
+
+# [A-Z]##.###.### ...
+- TreeNumber mesh:C01.069:
+  - a: meshv:TreeNumber
+  - meshv:active:
+    - tree_number_active: true
+  - meshv:parentTreeNumber:
+    - parent_tree_number: mesh:C01
+  - rdfs:label:
+    - tree_number_label: '"C01.069"@en'
+
+# Supplementary Concept Record (C###### or C#########)
+
+- Chemical mesh:C000002:
+  - a: meshv:SCR_Chemical
+  - rdfs:label:
+    - chemical_label: '"bevonium"@en'
+
+- Disease:
+  - a: meshv:SCR_Disease
+
+- Protocol:
+  - a: meshv:SCR_Protocol
+
+- Organism:
+  - a: meshv:SCR_Organism
+
+# Descriptor (D###### or D#########)
+
+- TopicalDescriptor mesh:D000785:
+  - a: meshv:TopicalDescriptor
+  - meshv:treeNumber:
+    - tree_number: TreeNumber
+  - meshv:active:
+    - descriptor_active: true
+
+- PublicationType:
+  - a: meshv:PublicationType
+
+- CheckTag:
+  - a: meshv:CheckTag
+
+- GeographicalDescriptor:
+  - a: meshv:GeographicalDescriptor
+
+# Qualifier (Q###### or Q#########)
+
+- Qualifier:
+  - a: meshv:Qualifier
+
+# DescriptorQualifierPair (D######Q######)
+
+- AllowedDescriptorQualifierPair:
+  - a: meshv:AllowedDescriptorQualifierPair
+
+- DisallowedDescriptorQualifierPair:
+  - a: meshv:DisallowedDescriptorQualifierPair
+
+# 
+# 
+# Anatomy [A] -> D
+# Organisms [B] -> D
+# Diseases [C] ->
+# Chemicals and Drugs [D]
+# Analytical, Diagnostic and Therapeutic Techniques and Equipment [E]
+# Psychiatry and Psychology [F]
+# Biological Sciences [G]
+# Physical Sciences [H]
+# Anthropology, Education, Sociology and Social Phenomena [I]
+# Technology and Food and Beverages [J]
+# Humanities [K]
+# Information Science [L]
+# Persons [M]
+# Health Care [N]
+# Publication Characteristics [V]
+# Geographic Locations [Z] -> D
+
+# <http://id.nlm.nih.gov/mesh/C000002>	<http://id.nlm.nih.gov/mesh/vocab#active>	"true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+# <http://id.nlm.nih.gov/mesh/C000002>	<http://id.nlm.nih.gov/mesh/vocab#concept>	<http://id.nlm.nih.gov/mesh/M0040001> .
+# <http://id.nlm.nih.gov/mesh/C000002>	<http://id.nlm.nih.gov/mesh/vocab#identifier>	"C000002" .
+# <http://id.nlm.nih.gov/mesh/C000002>	<http://id.nlm.nih.gov/mesh/vocab#note>	"structure given in first source"@en .
+# <http://id.nlm.nih.gov/mesh/C000002>	<http://id.nlm.nih.gov/mesh/vocab#pharmacologicalAction>	<http://id.nlm.nih.gov/mesh/D000894> .
+# <http://id.nlm.nih.gov/mesh/C000002>	<http://id.nlm.nih.gov/mesh/vocab#preferredConcept>	<http://id.nlm.nih.gov/mesh/M0040005> .
+# <http://id.nlm.nih.gov/mesh/C000002>	<http://id.nlm.nih.gov/mesh/vocab#preferredMappedTo>	<http://id.nlm.nih.gov/mesh/D001561> .
+# <http://id.nlm.nih.gov/mesh/C000002>	<http://id.nlm.nih.gov/mesh/vocab#preferredTerm>	<http://id.nlm.nih.gov/mesh/T070005> .
+
+
+# TODO:
+# <http://id.nlm.nih.gov/mesh/C000002>	<http://id.nlm.nih.gov/mesh/vocab#dateCreated>	"1971-01-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+# <http://id.nlm.nih.gov/mesh/C000002>	<http://id.nlm.nih.gov/mesh/vocab#dateRevised>	"2018-09-24"^^<http://www.w3.org/2001/XMLSchema#date> .
+# <http://id.nlm.nih.gov/mesh/C000002>	<http://id.nlm.nih.gov/mesh/vocab#frequency>	"1"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+
+# <http://id.nlm.nih.gov/mesh/C000002>	<http://id.nlm.nih.gov/mesh/vocab#previousIndexing>	"PIPERIDINES (71-81)"@en .
+# <http://id.nlm.nih.gov/mesh/C000002>	<http://id.nlm.nih.gov/mesh/vocab#source>	"S Afr Med J 50(1):4;1976"@en .
+
+
+# <http://id.nlm.nih.gov/mesh/D000785>    <http://id.nlm.nih.gov/mesh/vocab#allowableQualifier>   <http://id.nlm.nih.gov/mesh/Q000000981> .
+# 
+# <http://id.nlm.nih.gov/mesh/D000785>    <http://id.nlm.nih.gov/mesh/vocab#annotation>   "coordinate IM with specific bacteria or fungal infection (IM); note entry terms ANEURYSM, BACTERIAL, and ANEURYSM, MYCOTIC: do not coordinate with BACTERIAL INFECTIONS or MYCOSES if the specific bacterium or fungus is not specified,"@en .
+# <http://id.nlm.nih.gov/mesh/D000785>    <http://id.nlm.nih.gov/mesh/vocab#broaderDescriptor>    <http://id.nlm.nih.gov/mesh/D000783> .
+# <http://id.nlm.nih.gov/mesh/D000785>    <http://id.nlm.nih.gov/mesh/vocab#broaderDescriptor>    <http://id.nlm.nih.gov/mesh/D007239> .
+# <http://id.nlm.nih.gov/mesh/D000785>    <http://id.nlm.nih.gov/mesh/vocab#concept>      <http://id.nlm.nih.gov/mesh/M0001177> .
+# <http://id.nlm.nih.gov/mesh/D000785>    <http://id.nlm.nih.gov/mesh/vocab#concept>      <http://id.nlm.nih.gov/mesh/M0001178> .
+# <http://id.nlm.nih.gov/mesh/D000785>    <http://id.nlm.nih.gov/mesh/vocab#dateCreated>  "1999-01-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+# <http://id.nlm.nih.gov/mesh/D000785>    <http://id.nlm.nih.gov/mesh/vocab#dateEstablished>      "1970-01-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+# <http://id.nlm.nih.gov/mesh/D000785>    <http://id.nlm.nih.gov/mesh/vocab#dateRevised>  "2019-06-17"^^<http://www.w3.org/2001/XMLSchema#date> .
+# <http://id.nlm.nih.gov/mesh/D000785>    <http://id.nlm.nih.gov/mesh/vocab#historyNote>  "87; was ANEURYSM, MYCOTIC 1964-86 (Prov 1964-69)"@en .
+# <http://id.nlm.nih.gov/mesh/D000785>    <http://id.nlm.nih.gov/mesh/vocab#identifier>   "D000785" .
+# <http://id.nlm.nih.gov/mesh/D000785>    <http://id.nlm.nih.gov/mesh/vocab#nlmClassificationNumber>      "WG 580" .
+# <http://id.nlm.nih.gov/mesh/D000785>    <http://id.nlm.nih.gov/mesh/vocab#onlineNote>   "use ANEURYSM, INFECTED to search ANEURYSM, MYCOTIC 1966-86 (as Prov 1966-69)"@en .
+# <http://id.nlm.nih.gov/mesh/D000785>    <http://id.nlm.nih.gov/mesh/vocab#preferredConcept>     <http://id.nlm.nih.gov/mesh/M0001176> .
+# <http://id.nlm.nih.gov/mesh/D000785>    <http://id.nlm.nih.gov/mesh/vocab#preferredTerm>        <http://id.nlm.nih.gov/mesh/T002331> .
+# <http://id.nlm.nih.gov/mesh/D000785>    <http://id.nlm.nih.gov/mesh/vocab#publicMeSHNote>       "87; was ANEURYSM, MYCOTIC 1970-86"@en .
+# <http://id.nlm.nih.gov/mesh/D000785>    <http://id.nlm.nih.gov/mesh/vocab#treeNumber>   <http://id.nlm.nih.gov/mesh/C01.069> .
+# <http://id.nlm.nih.gov/mesh/D000785>    <http://id.nlm.nih.gov/mesh/vocab#treeNumber>   <http://id.nlm.nih.gov/mesh/C14.907.055.131> .
+# <http://id.nlm.nih.gov/mesh/D000785>    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>       <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> .
+# <http://id.nlm.nih.gov/mesh/D000785>    <http://www.w3.org/2000/01/rdf-schema#label>    "Aneurysm, Infected"@en .
