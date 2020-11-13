@@ -157,6 +157,8 @@ RDF データモデルは基本的に YAML に準拠した下記の構造で（�
   - my:predicate3:
     - float_value: 123.45
   - my:predicate4:
+    - date_value: 2020-11-13
+  - my:predicate5:
     - curie: my:sample123
   - rdfs:seeAlso:
     - xref: <http://example.org/sample/uri>
@@ -205,8 +207,6 @@ RDF データモデルは基本的に YAML に準拠した下記の構造で（�
 
 複数の SPARQL クエリを設定できるファイルで、下記の YAML 形式で記述する。
 
-RDF-config では、対象となる目的語の名前から、必要となる property paths を同定し SPARQL クエリを自動生成するため、結果として得たい変数名を variables に列挙するだけでよい。ID や名前など、値の一部を引数として与えるクエリを作成する場合は、parameters に値をセットする変数名とそのデフォルト値を指定する。
-
 ```
 クエリ名:
   description: 何をする SPARQL クエリなのか説明
@@ -219,9 +219,11 @@ RDF-config では、対象となる目的語の名前から、必要となる pr
     目的語の名前: デフォルト値
 ```
 
+RDF-config では、対象となる目的語の名前から、必要となる property paths を同定し SPARQL クエリを自動生成するため、結果として得たい変数名を variables に列挙するだけでよい。ID や名前など、値の一部を引数として与えるクエリを作成する場合は、parameters に値をセットする変数名とそのデフォルト値を指定する。
+
 ## stanza.yaml
 
-TogoStanza を生成する際に必要な metadata.json ファイルのための情報を記述する。
+[TogoStanza](http://togostanza.org/) を生成する際に必要な metadata.json ファイルのための情報を記述する。
 
 ```
 スタンザ名:
