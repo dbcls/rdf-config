@@ -150,10 +150,9 @@ Since RDF data is based on the Open world assumption, we cannot guarantee that t
 
 ### Object
 
-An object hanging from a predicate describes the object name and an example of the object. 
-The object name is used as the name of a variable in SPARQL queries, so it should be unique and set in snake_case in the model.yaml file.
+An object hanging from a predicate describes the object name and an example of the object. The object name is used as the name of a variable in SPARQL queries, so it should be unique and denoted in snake_case in the model.yaml file.
 
-Example of objects is optional, but we strongly recommended to add it to make the schema diagram clearer. Because the YAML parser estimates the type of the value, you can write strings  (it doesn't matter for YAML in the case of without quote), numbers, dates, etc. as they are. Because URI is treated as strings in YAML, RDF-config specially interprets the strings enclosed in `<>` and CURIE/QName (whose prefix is defined in prefix.yaml) as URIs.
+Example of each object is optional, but we strongly recommend you to add it to make the schema diagram clearer and to generate the ShEx validation. As the YAML parser estimates the type of the value, you can write strings, numbers, dates, etc. as they are. Note that, URIs are treated as strings in YAML, RDF-config specially interprets the strings enclosed in `<>` and CURIE/QName (whose prefix is defined in prefix.yaml) as URIs.
 
 ```
 - Subject my:subject:
@@ -165,23 +164,24 @@ Example of objects is optional, but we strongly recommended to add it to make th
   - my:predicate3:
     - float_value: 123.45
   - my:predicate4:
+    - date_value: 2020-11-13
+  - my:predicate5:
     - curie: my:sample123
   - rdfs:seeAlso:
     - xref: <http://example.org/sample/uri>
 ```
 
-When the object refers to another RDF model, the subject name of the reference should be described as the object.
-(TODO: Extend it to allow external references to commonly used data models such as FALDO.)
+When the object refers to another RDF model, put the subject name at the object example.
 
 ```
 - Subject my:subject:
   - my:refer:
-    - other_subject: OtherSubject  # Subject names used as subjects in the same model.yaml
+    - other_subject: OtherSubject  # Subject name defined in the same model.yaml
 - OtherSubject my:other_subject:
   - a: my:OtherClass
 ```
 
-If the object example is described in more than one line, the indented part is treated as a multi-line literal by using `|` in YAML notation. Note that if it is too long, it may not be displayed in the schema diagram or may be broken.
+If the object example is described in more than one line, the indented part is treated as a multi-line literal by using `|` in YAML notation. Note that if it is too long, it may not be fully displayed in the schema diagram or may be broken.
 
 ```
 - Subject my:subject:
@@ -192,8 +192,7 @@ If the object example is described in more than one line, the indented part is t
         in detail
 ```
 
-The language tags (such as `"hoge"@en`) can be specified like as follows. 
-(it will be an error for YAML without `"`)
+The language tags (such as `"hoge"@en`) can be specified as follows.
 
 ```
 - Subject my:subject:
@@ -201,8 +200,7 @@ The language tags (such as `"hoge"@en`) can be specified like as follows.
     - name: '"hoge"@en'
 ```
 
-For literal type specification by `^^` (e.g., `"123"^^xsd:string`), you can specify as follows.
-(it will be an error for YAML without `"`)
+For literal type specification by the `^^` notation (e.g., `"123"^^xsd:string`), you can specify it as follows.
 
 ```
 - Subject my:subject:
@@ -214,28 +212,27 @@ For literal type specification by `^^` (e.g., `"123"^^xsd:string`), you can spec
 
 A file that can configure multiple SPARQL queries. It is written in the following YAML format.
 
-In RDF-config, it identifies the necessary property paths from the names of target objects and generates SPARQL queries automatically. So all you have to do is list the name of the variable that you want to get as a result in the variables.
-When creating a query that takes a partial value as an argument, such as an ID or a name, specify in parameters the name of the variable to be set as a value and its default value.
-
 ```
 Query name:
   description: explanation about SPARQL query 
-  variables: [ foo, bar, ... ]  # Enumerates the object names  (variable names) to be targeted for SELECT in SPARQL
+  variables: [ foo, bar, ... ]  # Enumerates the object names (variable names) to be targeted for SELECT in SPARQL
 
 Another query name:
   description: explanation about SPAQRL query
-  variables: [ foo, bar, ... ]  # Enumerates the object names  (variable names) to be targeted for SELECT in SPARQL
+  variables: [ bar, ... ]  # Enumerates the object names (variable names) to be targeted for SELECT in SPARQL
   parameters:
-    Object name: default value
+    foo: "default value"
 ```
+
+In RDF-config, the necessary property paths are identified from the names of target objects. So all you need is to define a list of variable names to retrieve in the generated SPARQL query. You can specify values for variables which to be used in the VALUES clause in the parameters.
 
 ## stanza.yaml
 
-A file describing information for the metadata.json file, which is necessary to generate TogoStanza.
+A file describing information for the metadata.json file, which is necessary to generate [TogoStanza](http://togostanza.org/).
 
 ```
 Stanza name:
-  output_dir: /path/to/output/dir     # Output directory name (TODO: should I be able to change it on the command line instead of writing it here?)
+  output_dir: /path/to/output/dir     # Output directory name
   label: "Stanza name"
   definition: "Explanation of stanza"
   sparql: pair_stanza                 # The name of the corresponding SPARQL query defined in sparql.yaml
