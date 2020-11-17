@@ -1,0 +1,72 @@
+- SNV hco:7/GRCh37#127254587-G-A:
+    - a: obo:SO_0001483 # SNV
+
+    - rdfs:label:
+        - variant_label: 7-127254587-G-A
+
+    - dct:identifier:
+        - variant_identifier: tgv30913364
+
+    - rdfs:seeAlso*:
+        - dbsnp: dbsnp:rs114202595
+
+    - faldo:location:
+        - []:
+          # - a: faldo:ExactPosition TODO: missing triple on endpoint
+            - faldo:position:
+                - position: 127254587
+            - faldo:reference:
+                - reference: hco:7/GRCh37
+
+    - tgvo:hasConsequence+:
+        - []:
+            - a+: obo:SO_0001583 # missense_variant
+            - rdfs:label:
+                - hgvs_g: 7:g.127254587G>A
+            - rdfs:label:
+                - hgvs_p: ENSP00000344297.3:p.Arg129Trp
+            - rdfs:label:
+                - hgvs_c: ENST00000338516.3:c.385C>T
+            - tgvo:gene:
+                - hgnc: hgnc:8618
+                - ensembl_gene: Gene
+            - tgvo:transcript:
+                - ensembl_transcript: enst:ENST00000338516
+            - tgvo:sift?:
+                - sift: 0.0
+            - tgvo:polyphen?:
+                - polyphen: 0.997
+
+    - m2r:reference_allele:
+        - reference_allele: G
+
+    - m2r:alternative_allele:
+        - alternative_allele: G
+
+    - m2r:referece_allele_vcf:
+        - referece_allele_vcf: A
+
+    - m2r:alternative_allele_vcf:
+        - alternative_allele_vcf: A
+
+    - tgvo:condition*:
+        - []:
+            - a: tgvo:Annotation
+            - rdfs:seeAlso:
+                - clinvar: clinvar:13790
+            - dc:source:
+                - annotation_source: ClinVar
+
+- Gene ensg:ENSG00000106331:
+    - a:
+        - obo:SO_0001217
+        - ensembl:protein_coding
+
+    - dct:identifier:
+        - gene_identifier: "ENSG00000106331"
+
+    - rdfs:seeAlso:
+        - gene_xref: ensembl_id:ENSG00000106331
+
+    - rdfs:label:
+        - gene_label: "PAX4"
