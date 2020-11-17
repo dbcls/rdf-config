@@ -13,24 +13,37 @@
 
 - YJCode yjc:2590014F1021:
   - a: ifo:YJCode
+  # 名称
   - ifo:if_0_8:
-    - drug_name: "ベタニス錠 25mg"
+    - if_0_8_name: '"ベタニス錠 25mg"@ja'
+  # 剤形
   - ifo:if_0_9:
-    - drug_shape: "フィルムコーティング錠"
+    - if_0_9: '"フィルムコーティング錠"@ja'
+  # 規格・含量
   - ifo:if_0_11:
-    - drug_規格・含量: "1 錠中にミラベグロン 25mg を含有する。"
+    - if_0_11: '"1 錠中にミラベグロン 25mg を含有する。"@ja'
+  # 製造販売承認年月日
   - ifo:if_0_13:
-    - drug_製造販売承認年月日: '"2011-07-01"^^xsd:date'
+    - if_0_13: '"2011-07-01"^^xsd:date'
+  # 薬価基準収載年月日
   - ifo:if_0_14:
-    - drug_薬価基準収載年月日: '"2011-09-12"^^xsd:date'
+    - if_0_14: '"2011-09-12"^^xsd:date'
+  # 販売開始年月日
   - ifo:if_0_15:
-    - drug_販売開始年月日: '"2011-09-16"^^xsd:date'
+    - if_0_15: '"2011-09-16"^^xsd:date'
+  # 承認番号
+  - ifo:if_10_8:
+    - if_10_8: "22300AMX00592"
+  # 厚生労働省薬価基準収載医薬品コード
   - ifo:yakka_code:
     - yakka_code: "2590014F2028"
+  # 個別医薬品コード(YJコード)
   - ifo:yj_code:
     - yj_code: "2590014F2028"
+  # HOT番号
   - ifo:hot_code:
     - hot_code: "120933401"
+  # レセプト電算処理システム用コード
   - ifo:resept_code:
     - resept_code: "622093301"
 
@@ -44,50 +57,75 @@
   - pav:version:
     - if_version: 15
 
+# 日本標準商品分類番号
 - IF_0_4 if:IF_0_4:
   - a: ifo:IF_0_4
+  - ifo:package_insert:
+    - if_0_4_pi: pi:PI_0_2
   - rdf:value:
-    - if_日本標準商品分類番号: 87259
+    - if_0_4: 87259
 
+# 記載要領
 - IF_0_6 if:IF_0_6:
   - a: ifo:IF_0_6
   - rdf:value:
-    - if_記載要領: '"2018"^^xsd:gYear'
+    - if_0_6: '"2018"^^xsd:gYear'
 
+# 薬効分類名
 - IF_0_7 if:IF_0_7:
   - a: ifo:IF_0_7
+  - ifo:package_insert:
+    - if_0_7_pi: pi:PI_0_5
   - rdf:value:
-    - if_薬効分類名: "選択的β_3アドレナリン受容体作動性過活動膀胱治療剤"
+    - if_0_7: '"選択的β_3アドレナリン受容体作動性過活動膀胱治療剤@ja'
 
+# 名称
 - IF_0_8 if:IF_0_8:
   - a: ifo:IF_0_8
+  - ifo:package_insert:
+    - if_0_8_pi: pi:PI_0_7
   - rdf:value:
-    - if_名称: "ミラベグロン錠"
+    - if_0_8: '"ミラベグロン錠"@ja'
 
+# 製剤の規制区分
 - IF_0_10 if:IF_0_10:
   - a: ifo:IF_0_10
+  - ifo:package_insert:
+    - if_0_10_pi: pi:PI_0_6
   - rdf:value:
-    - if_製剤の規制区分: "劇薬、処方箋医薬品(注意-医師等の処方箋により使用すること)"
+    - if_0_10: '"劇薬、処方箋医薬品(注意-医師等の処方箋により使用すること)"@ja'
 
+# 一般名：和名・洋名
 - IF_0_12 if:IF_0_12:
   - a: ifo:IF_0_12
+  - ifo:package_insert:
+    - if_0_12_pi: pi:PI_0_7
   - rdf:value:
-    - if_一般名：和名・洋名: [ "ミラベグロン(JAN)", "Mirabegron(JAN)" ]
+    - if_0_12: [ '"ミラベグロン(JAN)"@ja', "Mirabegron(JAN)" ]
 
+# 製造販売
 - IF_0_16 if:IF_0_16:
   - a: ifo:IF_0_16
+  - ifo:package_insert:
+    - if_0_16_pi: pi:PI_26
   - rdf:value:
-    - if_製造販売: "アステラス製薬株式会社"
+    - if_0_16: '"アステラス製薬株式会社"@ja'
 
+# 問い合わせ窓口
 - IF_0_18 if:IF_0_18:
   - a: ifo:IF_0_18
+  - ifo:package_insert:
+    - if_0_18_pi: pi:PI_24
   - rdf:value:
-    - if_問い合わせ窓口: "アステラス製薬株式会社"
+    - if_0_18: '"アステラス製薬株式会社\nメディカル..."@ja'
 
+# 作成又は改訂年月
 - IF_0_19 if:IF_0_19:
   - a: ifo:IF_0_19
+  - ifo:package_insert:
+    - if_0_19_pi: pi:PI_0_1
   - rdf:value:
-    - if_作成又は改訂年月: '"2019-07"^^xsd:gYearMonth'
+    - if_0_19: '"2019-07"^^xsd:gYearMonth'
 
 - IF_1 if:IF_1:
   - a: ifo:IF_1
@@ -95,32 +133,25 @@
 - IF_1_1 if:IF_1_1:
   - a: ifo:IF_1_1
   - rdf:value:
-    - if_1_1: "過活動膀胱(Overactive Bladder;OAB)について..."
+    - if_1_1: '"過活動膀胱(Overactive Bladder;OAB)について..."@ja'
   - dct:references*:
-    - if_1_1_ref:
-      - if:ref1
-      - if:ref2
-      - if:ref3
-      - if:ref4
-      - if:ref5
-      - if:ref6
-      - if:ref7
+    - if_1_1_ref: if:ref1
 
 - IF_1_2 if:IF_1_2:
   - a: ifo:IF_1_2
+  - ifo:package_insert:
+    - if_1_2_pi: pi:PI_11_1
   - rdf:value:
-    - if_1_2: "1. 日本で開発された世界初の選択的..."
+    - if_1_2: '"1. 日本で開発された世界初の選択的..."@ja'
   - rdfs:seeAlso*:
-    - if_1_2_xref:
-      - if:IF_2_1_1,
-      - if:IF_6_2_2_5
-      - if:IF_5_5_4_1
-      - if:IF_8_8_1
+    - if_1_2_xref: if:IF_2_1_1
+  - dct:references*:
+    - if_1_2_ref: if:ref1
 
 - IF_1_3 if:IF_1_3:
   - a: ifo:IF_1_3
   - rdf:value:
-    - if_1_3: "本剤は徐放性製剤であるため、..."
+    - if_1_3: '"本剤は徐放性製剤であるため、..."@ja'
   - rdfs:seeAlso*:
     - if_1_3_xref: if:IF_8_11
 
@@ -130,29 +161,708 @@
 - IF_1_4_1 if:IF_1_4_1:
   - a: ifo:IF_1_4_1
   - rdf:value:
-    - if_1_4_1: "無"
+    - if_1_4_1: '"無"@ja'
+  - rdfs:comment?:
+    - if_1_4_1_comment: '"(「I.6.RMP」の項参照)"@ja'
+  - rdfs:seeAlso*:
+    - if_1_4_1_xref: if:IF_1_6_1
 
 - IF_1_4_2 if:IF_1_4_2:
   - a: ifo:IF_1_4_2
   - rdf:value:
-    - if_1_4_2: "無"
+    - if_1_4_2: '"無"@ja'
   - rdfs:comment?:
-    - if_1_4_2_comment: "医療従事者向け..."
+    - if_1_4_2_comment: '"医療従事者向け..."@ja'
   - rdfs:seeAlso*:
-    - if_1_4_2_see_also: if:IF_13
+    - if_1_4_2_xref: if:IF_13
 
+- IF_1_4_3 if:IF_1_4_3:
+  - a: ifo:IF_1_4_3
+  - rdf:value:
+    - if_1_4_3: '"無"@ja'
+  - rdfs:comment?:
+    - if_1_4_3_comment: '"「平成29年2月14日付 保医発0214第4号..."@ja'
+  - rdfs:seeAlso*:
+    - if_1_4_3_xref: if:IF_10_14
+
+- IF_1_4_4 if:IF_1_4_4:
+  - a: ifo:IF_1_4_4
+  - rdf:value:
+    - if_1_4_4: '"無"@ja'
+  - rdfs:comment?:
+    - if_1_4_4_comment: '"本剤は予定される効能・効果..."@ja'
+
+- IF_1_5 if:IF_1_5:
+  - a: ifo:IF_1_5
+
+- IF_1_5_1 if:IF_1_5_1:
+  - a: ifo:IF_1_5_1
+  - ifo:package_insert:
+    - if_1_5_1_pi: pi:PI_21
+  - rdf:value:
+    - if_1_5_1: '"該当しない"@ja'
+  - rdfs:seeAlso*:
+    - if_1_5_1_xref: if:IF_1_6
+
+- IF_1_5_2 if:IF_1_5_2:
+  - a: ifo:IF_1_5_2
+  - ifo:package_insert:
+    - if_1_5_2_pi: pi:PI_21
+  - rdf:value:
+    - if_1_5_2: '"該当しない"@ja'
+  - rdfs:seeAlso*:
+    - if_1_5_2_xref: <http://www.pmda.go.jp/review-services/drug-reviews/review-information/p-drugs/0028.html>
+
+- IF_1_6 if:IF_1_6:
+  - a: ifo:IF_1_6
+  - ifo:package_insert:
+    - if_1_6_pi: pi:PI_1
+  - rdf:value:
+    - if_1_6: '"該当しない"@ja'
+  - rdfs:seeAlso*:
+    - if_1_6_xref: <http://www.pmda.go.jp/safety/info-services/drugs/items-information/rmp/0001.html>
+
+- IF_2 if:IF_2:
+  - a: ifo:IF_2
+
+- IF_2_1 if:IF_2_1:
+  - a: ifo:IF_2_1
 
 - IF_2_1_1 if:IF_2_1_1:
   - a: ifo:IF_2_1_1
+  - ifo:package_insert:
+    - if_2_1_1_pi: pi:PI_0_7
   - rdf:value:
-    - if_drug_name: '"ベタニス錠 25mg, べタニス錠 50mg"@ja'
+    - if_2_1_1: '"ベタニス錠 25mg, べタニス錠 50mg"@ja'
+
+- IF_2_1_2 if:IF_2_1_2:
+  - a: ifo:IF_2_1_2
+  - ifo:package_insert:
+    - if_2_1_2_pi: pi:PI_0_7
+  - rdf:value:
+    - if_2_1_2: "Betanis Tablets 25mg, Betanis Tablets 50mg"
 
 - IF_2_1_3 if:IF_2_1_3:
   - a: ifo:IF_2_1_3
   - rdf:value:
-    - derivation: '"Beta 3 agonist より命名した。"@ja'
+    - if_2_1_3: '"Beta 3 agonist より命名した。"@ja'
 
-# <http://med2rdf.org/if/800126_2590014F1021_1_015_1F#IF_8_2.item1> ifo:package_insert <http://med2rdf.org/pi/800126_2590014F1021_1_12#PI_2.item1>
+- IF_2_2 if:IF_2_2:
+  - a: ifo:IF_2_2
+
+- IF_2_2_1 if:IF_2_2_1:
+  - a: ifo:IF_2_2_1
+  - ifo:package_insert:
+    - if_2_2_1_pi: pi:PI_19
+  - rdf:value:
+    - if_2_2_1: '"ミラベグロン(JAN)"@ja'
+
+- IF_2_2_2 if:IF_2_2_2:
+  - a: ifo:IF_2_2_2
+  - ifo:package_insert:
+    - if_2_2_2_pi: pi:PI_19
+  - rdf:value:
+    - if_2_2_2: "Mirabegron(JAN), mirabegron(INN)"
+
+- IF_2_2_3 if:IF_2_2_3:
+  - a: ifo:IF_2_2_3
+  - rdf:value:
+    - if_2_2_3: '"β3 アドレナリン受容体作動薬:-begron"@ja'
+
+- IF_2_3 if:IF_2_3:
+  - a: ifo:IF_2_3
+  - rdf:value:
+    - if_2_3: '"440個のアミノ酸残基からなる..."@ja'
+
+- IF_2_4 if:IF_2_4:
+  - a: ifo:IF_2_4
+  - ifo:package_insert:
+    - if_2_4_pi: pi:PI_19
+  - rdf:value:
+    - if_2_4: '"分子式:C21H24N4O2S\n分子量:396.51"@ja'
+
+- IF_2_5 if:IF_2_5:
+  - a: ifo:IF_2_5
+  - ifo:package_insert:
+    - if_2_5_pi: pi:PI_19
+  - rdf:value:
+    - if_2_5: "2-(2-Amino-1,3-thiazol-4-yl)-N-[4-(2-{[(2R)-2-hydroxy-2-phenylethyl]amino}ethyl)phenyl]acetamide"
+
+- IF_2_6 if:IF_2_6:
+  - a: ifo:IF_2_6
+  - ifo:package_insert:
+    - if_2_6_pi: pi:PI_19
+  - rdf:value:
+    - if_2_6: '"YM178(治験番号)"@ja'
+
+- IF_3 if:IF_3:
+  - a: ifo:IF_3
+
+- IF_3_1 if:IF_3_1:
+  - a: ifo:IF_3_1
+
+- IF_3_1_1 if:IF_3_1_1:
+  - a: ifo:IF_3_1_1
+  - ifo:package_insert:
+    - if_3_1_1_pi: pi:PI_19
+  - rdf:value:
+    - if_3_1_1: '"白色〜微帯褐白色の結晶又は粉末である。"@ja'
+
+- IF_3_1_2 if:IF_3_1_2:
+  - a: ifo:IF_3_1_2
+  - ifo:package_insert:
+    - if_3_1_2_pi: pi:PI_19
+  - rdf:value:
+    - if_3_1_2: '"該当しない"@ja'
+
+- IF_3_1_3 if:IF_3_1_3:
+  - a: ifo:IF_3_1_3
+  - ifo:package_insert:
+    - if_3_1_3_pi: pi:PI_19
+  - rdf:value:
+    - if_3_1_3: '"吸湿性は認められない。"@ja'
+
+- IF_3_1_4 if:IF_3_1_4:
+  - a: ifo:IF_3_1_4
+  - ifo:package_insert:
+    - if_3_1_4_pi: pi:PI_19
+  - rdf:value:
+    - if_3_1_4: '"融解：約144℃"@ja'
+
+- IF_3_1_5 if:IF_3_1_5:
+  - a: ifo:IF_3_1_5
+  - ifo:package_insert:
+    - if_3_1_5_pi: pi:PI_19
+  - rdf:value:
+    - if_3_1_5: '"pKa=4.5 及び 8.0"@ja'
+
+- IF_3_1_6 if:IF_3_1_6:
+  - a: ifo:IF_3_1_6
+  - ifo:package_insert:
+    - if_3_1_6_pi: pi:PI_19
+  - rdf:value:
+    - if_3_1_6: '"ミラベグロンは酸性域で水に分配されやすく、弱酸性~塩基性域でオクタノール相に分配されやすい。"@ja'
+  - rdfs:comment?:
+    - if_3_1_6_comment: '"(測定温度:37°C)"@ja'
+
+- IF_3_1_7 if:IF_3_1_7:
+  - a: ifo:IF_3_1_7
+  - ifo:package_insert:
+    - if_3_1_7_pi: pi:PI_19
+  - rdf:value:
+    - if_3_1_7: '"旋光度(エタノール(99.5)中) $\\[\\alpha\\]_D^{20}:-19.8^\\circ$"@ja'
+
+- IF_3_2 if:IF_3_2:
+  - a: ifo:IF_3_2
+  - rdf:value:
+    - if_3_2: '"測定項目:性状、pH、確認試験、純度試験、PD-1 結合活性、力価及び定量法(タンパク質濃度)、等"@ja'
+
+- IF_3_3 if:IF_3_3:
+  - a: ifo:IF_3_3
+  - rdf:value:
+    - if_3_3: '"確認試験法\n(1)紫外可視吸光度測定法..."@ja'
+
+- IF_4 if:IF_4:
+  - a: ifo:IF_4
+
+- IF_4_1 if:IF_4_1:
+  - a: ifo:IF_4_1
+
+- IF_4_1_1 if:IF_4_1_1:
+  - a: ifo:IF_4_1_1
+  - ifo:package_insert:
+    - if_4_1_1_pi: pi:PI_3_2
+  - rdf:value:
+    - if_4_1_1: '"フィルムコーティング錠"@ja'
+
+- IF_4_1_2 if:IF_4_1_2:
+  - a: ifo:IF_4_1_2
+  - ifo:package_insert:
+    - if_4_1_2_pi: pi:PI_3_2
+  - rdf:value:
+    - if_4_1_2: '"本品は定量するとき、..."@ja'
+
+- IF_4_1_3 if:IF_4_1_3:
+  - a: ifo:IF_4_1_3
+  - ifo:package_insert:
+    - if_4_1_3_pi: pi:PI_3_2
+  - rdf:value:
+    - if_4_1_3: '"該当しない"@ja'
+
+- IF_4_1_4 if:IF_4_1_4:
+  - a: ifo:IF_4_1_4
+  - ifo:package_insert:
+    - if_4_1_4_pi: pi:PI_3_2
+  - rdf:value:
+    - if_4_1_4: '"該当しない"@ja'
+  - rdfs:seeAlso*:
+    - if_4_1_4_xref: if:IF_4_9
+
+- IF_4_1_5 if:IF_4_1_5:
+  - a: ifo:IF_4_1_5
+  - ifo:package_insert:
+    - if_4_1_5_pi: pi:PI_3_2
+  - rdf:value:
+    - if_4_1_5: '"該当しない"@ja'
+
+- IF_4_2 if:IF_4_2:
+  - a: ifo:IF_4_2
+
+- IF_4_2_1 if:IF_4_2_1:
+  - a: ifo:IF_4_2_1
+  - ifo:package_insert:
+    - if_4_2_1_pi: pi:PI_3_1
+  - rdf:value:
+    - if_4_2_1: '"「医薬品添加物の記載に関する..."@ja'
+
+- IF_4_2_2 if:IF_4_2_2:
+  - a: ifo:IF_4_2_2
+  - ifo:package_insert:
+    - if_4_2_2_pi: pi:PI_3_2
+  - rdf:value:
+    - if_4_2_2: '"該当しない"@ja'
+
+- IF_4_2_3 if:IF_4_2_3:
+  - a: ifo:IF_4_2_3
+  - ifo:package_insert:
+    - if_4_2_3_pi: pi:PI_3_2
+  - rdf:value:
+    - if_4_2_3: '"該当しない"@ja'
+
+- IF_4_3 if:IF_4_3:
+  - a: ifo:IF_4_3
+  - ifo:package_insert:
+    - if_4_3_pi: pi:PI_3_2
+  - rdf:value:
+    - if_4_3: '"該当しない"@ja'
+
+- IF_4_4 if:IF_4_4:
+  - a: ifo:IF_4_4
+  - ifo:package_insert:
+    - if_4_4_pi: pi:PI_3_1
+  - rdf:value:
+    - if_4_4: '"該当しない"@ja'
+
+- IF_4_5 if:IF_4_5:
+  - a: ifo:IF_4_5
+  - rdf:value:
+    - if_4_5: '"原薬由来の類縁物質は製剤中では増加しない..."@ja'
+
+- IF_4_6 if:IF_4_6:
+  - a: ifo:IF_4_6
+  - rdf:value:
+    - if_4_6: '"(1)長期保存試験 5°C、無色ガラスバイアル..."@ja'
+
+- IF_4_7 if:IF_4_7:
+  - a: ifo:IF_4_7
+  - rdf:value:
+    - if_4_7: '"調整法\n「VIII. 11. 適用上の注意」の項参照..."@ja'
+  - rdfs:seeAlso*:
+    - if_4_7_xref: if:IF_8_11
+
+- IF_4_8 if:IF_4_8:
+  - a: ifo:IF_4_8
+  - rdf:value:
+    - if_4_8: '"該当しない"@ja'
+
+- IF_4_9 if:IF_4_9:
+  - a: ifo:IF_4_9
+  - rdf:value:
+    - if_4_9: '"日本薬局方パドル法を用いて、..."@ja'
+  - dct:references*:
+    - if_4_9_ref: if:ref11
+
+- IF_4_10 if:IF_4_10:
+  - a: ifo:IF_4_10
+
+- IF_4_10_1 if:IF_4_10_1:
+  - a: ifo:IF_4_10_1
+  - rdf:value:
+    - if_4_10_1: '"該当資料なし"@ja'
+
+- IF_4_10_2 if:IF_4_10_2:
+  - a: ifo:IF_4_10_2
+  - ifo:package_insert:
+    - if_4_10_2_pi: pi:PI_22
+  - rdf:value:
+    - if_4_10_2: '"＜ベタニス錠25mg＞100錠(10錠×10、乾燥剤入り)..."@ja'
+
+- IF_4_10_3 if:IF_4_10_3:
+  - a: ifo:IF_4_10_3
+  - rdf:value:
+    - if_4_10_3: '"該当しない"@ja'
+
+- IF_4_10_4 if:IF_4_10_4:
+  - a: ifo:IF_4_10_4
+  - rdf:value:
+    - if_4_10_4: '"〔PTP包装〕\nPTP ：表－ポリ塩化ビニル..."@ja'
+
+- IF_4_11 if:IF_4_11:
+  - a: ifo:IF_4_11
+  - rdf:value:
+    - if_4_11: '"該当しない"@ja'
+
+- IF_4_12 if:IF_4_12:
+  - a: ifo:IF_4_12
+  - rdf:value:
+    - if_4_12: '"該当資料なし"@ja'
+  - dct:references*:
+    - if_4_12_ref: if:ref12
+
+- IF_5 if:IF_5:
+  - a: ifo:IF_5
+
+- IF_5_1 if:IF_5_1:
+  - a: ifo:IF_5_1
+  - ifo:package_insert:
+    - if_5_1_pi: pi:PI_4
+  - rdf:value:
+    - if_5_1: '"過活動膀胱における尿意切迫感、頻尿及び切迫性尿失禁"@ja'
+
+- IF_5_2 if:IF_5_2:
+  - a: ifo:IF_5_2
+  - ifo:package_insert:
+    - if_5_2_pi: pi:PI_5
+  - ifo:item+:
+    - if_5_2_item: IF_5_2_item
+
+- IF_5_2_item if:IF_5_2.item1:
+  - a: ifo:Item
+  - ifo:package_insert:
+    - if_5_2_item_pi: pi:PI_5.item1
+  - dct:identifier:
+    - if_5_2_item_id: "5.2.item1"
+  - rdf:value:
+    - if_5_2_item: '"5.1 過活動膀胱とは..."@ja'
+  - dct:references*:
+    - if_5_2_item_ref: if:ref8
+
+- IF_5_3 if:IF_5_3:
+  - a: ifo:IF_5_3
+
+- IF_5_3_1 if:IF_5_3_1:
+  - a: ifo:IF_5_3_1
+  - ifo:package_insert:
+    - if_5_3_1_pi: pi:PI_6
+  - rdf:value:
+    - if_5_3_1: '"空腹時投与したときの Cmax は..."@ja'
+  - rdfs:seeAlso*:
+    - if_5_3_1_xref: if:IF_7_1_4
+
+- IF_5_3_2 if:IF_5_3_2:
+  - a: ifo:IF_5_3_2
+  - rdf:value:
+    - if_5_3_2: '"過活動膀胱患者を対象に本剤 ..."@ja'
+  - rdfs:seeAlso*:
+    - if_5_3_2_xref: if:IF_5_5_3
+
+- IF_5_4 if:IF_5_4:
+  - a: ifo:IF_5_4
+  - ifo:package_insert:
+    - if_5_4_pi: pi:PI_7
+  - ifo:item+:
+    - if_5_4_item: IF_5_4_item
+
+- IF_5_4_item if:IF_5_4.item1:
+  - a: ifo:Item
+  - ifo:package_insert:
+    - if_5_4_item_pi: pi:PI_7.item1
+  - dct:identifier:
+    - if_5_4_item_id: "5.4.item1"
+  - rdf:value:
+    - if_5_4_item: '"7.1 肝機能障害患者に対する..."@ja'
+  - rdfs:seeAlso*:
+    - if_5_4_item_xref: if:IF_5_5_3
+
+- IF_5_5 if:IF_5_5:
+  - a: ifo:IF_5_5
+
+- IF_5_5_1 if:IF_5_5_1:
+  - a: ifo:IF_5_5_1
+  - rdf:value:
+    - if_5_5_1: '"1)臨床データパッケージ..."@ja'
+
+- IF_5_5_2 if:IF_5_5_2:
+  - a: ifo:IF_5_5_2
+  - ifo:package_insert:
+    - if_5_5_2_pi: pi:PI_17_3
+  - rdf:value:
+    - if_5_5_2: '"1)忍容性試験..."@ja'
+  - dct:references*:
+    - if_5_5_2_ref: if:ref11
+  - rdfs:seeAlso*:
+    - if_5_5_2_xref: if:IF_5_1
+
+- IF_5_5_3 if:IF_5_5_3:
+  - a: ifo:IF_5_5_3
+  - rdf:value:
+    - if_5_5_3: '"1)過活動膀胱における諸症状に対する効果..."@ja'
+  - dct:references*:
+    - if_5_5_3_ref: if:ref15
+  - rdfs:seeAlso*:
+    - if_5_5_3_xref: if:IF_7_1_2
+
+- IF_5_5_4 if:IF_5_5_4:
+  - a: ifo:IF_5_5_4
+
+- IF_5_5_4_1 if:IF_5_5_4_1:
+  - a: ifo:IF_5_5_4_1
+  - ifo:package_insert:
+    - if_5_5_4_1_pi: pi:PI_17_1
+  - rdf:value:
+    - if_5_5_4_1: '"比較試験\n  〔国内第Ⅲ相試験〕17,18)..."@ja'
+  - dct:references*:
+    - if_5_5_4_1_ref: if:ref17
+  - rdfs:seeAlso*:
+    - if_5_5_4_1_xref: if:IF_5_5_7
+
+- IF_5_5_4_2 if:IF_5_5_4_2:
+  - a: ifo:IF_5_5_4_2
+  - ifo:package_insert:
+    - if_5_5_4_2_pi: pi:PI_17_1
+  - rdf:value:
+    - if_5_5_4_2: '"安全性試験\n〔国内長期投与試験〕19,20)..."@ja'
+  - dct:references*:
+    - if_5_5_4_2_ref: if:ref19
+  - rdfs:seeAlso*:
+    - if_5_5_4_2_xref: if:IF_5_5_7
+
+##### TODO #####
+
+- IF_5_5_5 if:IF_5_5_5:
+  - a: ifo:IF_5_5_5
+  - rdf:value:
+    - if_5_5_5: ""
+
+- IF_5_5_6 if:IF_5_5_6:
+  - a: ifo:IF_5_5_6
+  - rdf:value:
+    - if_5_5_6: ""
+
+- IF_5_5_6_1 if:IF_5_5_6_1:
+  - a: ifo:IF_5_5_6_1
+  - rdf:value:
+    - if_5_5_6_1: ""
+
+- IF_5_5_6_2 if:IF_5_5_6_2:
+  - a: ifo:IF_5_5_6_2
+  - rdf:value:
+    - if_5_5_6_2: ""
+
+- IF_5_5_7 if:IF_5_5_7:
+  - a: ifo:IF_5_5_7
+  - rdf:value:
+    - if_5_5_7: ""
+
+- IF_6 if:IF_6:
+  - a: ifo:IF_6
+  - rdf:value:
+    - if_6: ""
+
+- IF_6_1 if:IF_6_1:
+  - a: ifo:IF_6_1
+  - rdf:value:
+    - if_6_1: ""
+
+- IF_6_2 if:IF_6_2:
+  - a: ifo:IF_6_2
+  - rdf:value:
+    - if_6_2: ""
+
+- IF_6_2_1 if:IF_6_2_1:
+  - a: ifo:IF_6_2_1
+  - rdf:value:
+    - if_6_2_1: ""
+
+- IF_6_2_2 if:IF_6_2_2:
+  - a: ifo:IF_6_2_2
+  - rdf:value:
+    - if_6_2_2: ""
+
+- IF_6_2_3 if:IF_6_2_3:
+  - a: ifo:IF_6_2_3
+  - rdf:value:
+    - if_6_2_3: ""
+
+- IF_7 if:IF_7:
+  - a: ifo:IF_7
+  - rdf:value:
+    - if_7: ""
+
+- IF_7_1 if:IF_7_1:
+  - a: ifo:IF_7_1
+  - rdf:value:
+    - if_7_1: ""
+
+- IF_7_1_1 if:IF_7_1_1:
+  - a: ifo:IF_7_1_1
+  - rdf:value:
+    - if_7_1_1: ""
+
+- IF_7_1_2 if:IF_7_1_2:
+  - a: ifo:IF_7_1_2
+  - rdf:value:
+    - if_7_1_2: ""
+
+- IF_7_1_3 if:IF_7_1_3:
+  - a: ifo:IF_7_1_3
+  - rdf:value:
+    - if_7_1_3: ""
+
+- IF_7_1_4 if:IF_7_1_4:
+  - a: ifo:IF_7_1_4
+  - rdf:value:
+    - if_7_1_4: ""
+
+- IF_7_2 if:IF_7_2:
+  - a: ifo:IF_7_2
+  - rdf:value:
+    - if_7_2: ""
+
+- IF_7_2_1 if:IF_7_2_1:
+  - a: ifo:IF_7_2_1
+  - rdf:value:
+    - if_7_2_1: ""
+
+- IF_7_2_2 if:IF_7_2_2:
+  - a: ifo:IF_7_2_2
+  - rdf:value:
+    - if_7_2_2: ""
+
+- IF_7_2_3 if:IF_7_2_3:
+  - a: ifo:IF_7_2_3
+  - rdf:value:
+    - if_7_2_3: ""
+
+- IF_7_2_4 if:IF_7_2_4:
+  - a: ifo:IF_7_2_4
+  - rdf:value:
+    - if_7_2_4: ""
+
+- IF_7_2_5 if:IF_7_2_5:
+  - a: ifo:IF_7_2_5
+  - rdf:value:
+    - if_7_2_5: ""
+
+- IF_7_2_6 if:IF_7_2_6:
+  - a: ifo:IF_7_2_6
+  - rdf:value:
+    - if_7_2_6: ""
+
+- IF_7_3 if:IF_7_3:
+  - a: ifo:IF_7_3
+  - rdf:value:
+    - if_7_3: ""
+
+- IF_7_3_1 if:IF_7_3_1:
+  - a: ifo:IF_7_3_1
+  - rdf:value:
+    - if_7_3_1: ""
+
+- IF_7_3_2 if:IF_7_3_2:
+  - a: ifo:IF_7_3_2
+  - rdf:value:
+    - if_7_3_2: ""
+
+- IF_7_4 if:IF_7_4:
+  - a: ifo:IF_7_4
+  - rdf:value:
+    - if_7_4: ""
+
+- IF_7_5 if:IF_7_5:
+  - a: ifo:IF_7_5
+  - rdf:value:
+    - if_7_5: ""
+
+- IF_7_5_1 if:IF_7_5_1:
+  - a: ifo:IF_7_5_1
+  - rdf:value:
+    - if_7_5_1: ""
+
+- IF_7_5_2 if:IF_7_5_2:
+  - a: ifo:IF_7_5_2
+  - rdf:value:
+    - if_7_5_2: ""
+
+- IF_7_5_3 if:IF_7_5_3:
+  - a: ifo:IF_7_5_3
+  - rdf:value:
+    - if_7_5_3: ""
+
+- IF_7_5_4 if:IF_7_5_4:
+  - a: ifo:IF_7_5_4
+  - rdf:value:
+    - if_7_5_4: ""
+
+- IF_7_5_5 if:IF_7_5_5:
+  - a: ifo:IF_7_5_5
+  - rdf:value:
+    - if_7_5_5: ""
+
+- IF_7_5_6 if:IF_7_5_6:
+  - a: ifo:IF_7_5_6
+  - rdf:value:
+    - if_7_5_6: ""
+
+- IF_7_6 if:IF_7_6:
+  - a: ifo:IF_7_6
+  - rdf:value:
+    - if_7_6: ""
+
+- IF_7_6_1 if:IF_7_6_1:
+  - a: ifo:IF_7_6_1
+  - rdf:value:
+    - if_7_6_1: ""
+
+- IF_7_6_2 if:IF_7_6_2:
+  - a: ifo:IF_7_6_2
+  - rdf:value:
+    - if_7_6_2: ""
+
+- IF_7_6_3 if:IF_7_6_3:
+  - a: ifo:IF_7_6_3
+  - rdf:value:
+    - if_7_6_3: ""
+
+- IF_7_6_4 if:IF_7_6_4:
+  - a: ifo:IF_7_6_4
+  - rdf:value:
+    - if_7_6_4: ""
+
+- IF_7_7 if:IF_7_7:
+  - a: ifo:IF_7_7
+  - rdf:value:
+    - if_7_7: ""
+
+- IF_7_8 if:IF_7_8:
+  - a: ifo:IF_7_8
+  - rdf:value:
+    - if_7_8: ""
+
+- IF_7_9 if:IF_7_9:
+  - a: ifo:IF_7_9
+  - rdf:value:
+    - if_7_9: ""
+
+- IF_7_10 if:IF_7_10:
+  - a: ifo:IF_7_10
+  - rdf:value:
+    - if_7_10: ""
+
+- IF_7_11 if:IF_7_11:
+  - a: ifo:IF_7_11
+  - rdf:value:
+    - if_7_11: ""
+
+- IF_8 if:IF_8:
+  - a: ifo:IF_8
+  - rdf:value:
+    - if_8: ""
+
+- IF_8_1 if:IF_8_1:
+  - a: ifo:IF_8_1
+  - rdf:value:
+    - if_8_1: ""
 
 - IF_8_2 if:IF_8_2:
   - a: ifo:IF_8_2
@@ -161,12 +871,306 @@
 
 - IF_8_2_item if:IF_8_2.item1:
   - a: owl:Class
-  - rdf:value:
-    - if_8_2_item: "2.2 国内の臨床試験において、..."
-  - dct:identifier:
-    - if_8_2_id: "8.2.item2"
   - ifo:package_insert:
-    - if_8_2_pi: pi:PI_2.item2
+    - if_8_2_item_pi: pi:PI_2.item2
+  - dct:identifier:
+    - if_8_2_item_id: "8.2.item2"
+  - rdf:value:
+    - if_8_2_item: '"2.2 国内の臨床試験において、..."@ja'
   - dct:references*:
-    - if_8_2_ref: if:ref15
+    - if_8_2_item_ref: if:ref15
 
+- IF_8_3 if:IF_8_3:
+  - a: ifo:IF_8_3
+  - rdf:value:
+    - if_8_3: ""
+
+- IF_8_4 if:IF_8_4:
+  - a: ifo:IF_8_4
+  - rdf:value:
+    - if_8_4: ""
+
+- IF_8_5 if:IF_8_5:
+  - a: ifo:IF_8_5
+  - rdf:value:
+    - if_8_5: ""
+
+- IF_8_6 if:IF_8_6:
+  - a: ifo:IF_8_6
+  - rdf:value:
+    - if_8_6: ""
+
+- IF_8_6_1 if:IF_8_6_1:
+  - a: ifo:IF_8_6_1
+  - rdf:value:
+    - if_8_6_1: ""
+
+- IF_8_6_2 if:IF_8_6_2:
+  - a: ifo:IF_8_6_2
+  - rdf:value:
+    - if_8_6_2: ""
+
+- IF_8_6_3 if:IF_8_6_3:
+  - a: ifo:IF_8_6_3
+  - rdf:value:
+    - if_8_6_3: ""
+
+- IF_8_6_4 if:IF_8_6_4:
+  - a: ifo:IF_8_6_4
+  - rdf:value:
+    - if_8_6_4: ""
+
+- IF_8_6_5 if:IF_8_6_5:
+  - a: ifo:IF_8_6_5
+  - rdf:value:
+    - if_8_6_5: ""
+
+- IF_8_6_6 if:IF_8_6_6:
+  - a: ifo:IF_8_6_6
+  - rdf:value:
+    - if_8_6_6: ""
+
+- IF_8_6_7 if:IF_8_6_7:
+  - a: ifo:IF_8_6_7
+  - rdf:value:
+    - if_8_6_7: ""
+
+- IF_8_6_8 if:IF_8_6_8:
+  - a: ifo:IF_8_6_8
+  - rdf:value:
+    - if_8_6_8: ""
+
+- IF_8_7 if:IF_8_7:
+  - a: ifo:IF_8_7
+  - rdf:value:
+    - if_8_7: ""
+
+- IF_8_7_1 if:IF_8_7_1:
+  - a: ifo:IF_8_7_1
+  - rdf:value:
+    - if_8_7_1: ""
+
+- IF_8_7_2 if:IF_8_7_2:
+  - a: ifo:IF_8_7_2
+  - rdf:value:
+    - if_8_7_2: ""
+
+- IF_8_8 if:IF_8_8:
+  - a: ifo:IF_8_8
+  - rdf:value:
+    - if_8_8: ""
+
+- IF_8_8_1 if:IF_8_8_1:
+  - a: ifo:IF_8_8_1
+  - rdf:value:
+    - if_8_8_1: ""
+
+- IF_8_8_2 if:IF_8_8_2:
+  - a: ifo:IF_8_8_2
+  - rdf:value:
+    - if_8_8_2: ""
+
+- IF_8_9 if:IF_8_9:
+  - a: ifo:IF_8_9
+  - rdf:value:
+    - if_8_9: ""
+
+- IF_8_10 if:IF_8_10:
+  - a: ifo:IF_8_10
+  - rdf:value:
+    - if_8_10: ""
+
+- IF_8_11 if:IF_8_11:
+  - a: ifo:IF_8_11
+  - rdf:value:
+    - if_8_11: ""
+
+- IF_8_12 if:IF_8_12:
+  - a: ifo:IF_8_12
+  - rdf:value:
+    - if_8_12: ""
+
+- IF_8_12_1 if:IF_8_12_1:
+  - a: ifo:IF_8_12_1
+  - rdf:value:
+    - if_8_12_1: ""
+
+- IF_8_12_2 if:IF_8_12_2:
+  - a: ifo:IF_8_12_2
+  - rdf:value:
+    - if_8_12_2: ""
+
+- IF_9 if:IF_9:
+  - a: ifo:IF_9
+  - rdf:value:
+    - if_9: ""
+
+- IF_9_1 if:IF_9_1:
+  - a: ifo:IF_9_1
+  - rdf:value:
+    - if_9_1: ""
+
+- IF_9_1_1 if:IF_9_1_1:
+  - a: ifo:IF_9_1_1
+  - rdf:value:
+    - if_9_1_1: ""
+
+- IF_9_1_2 if:IF_9_1_2:
+  - a: ifo:IF_9_1_2
+  - rdf:value:
+    - if_9_1_2: ""
+
+- IF_9_1_3 if:IF_9_1_3:
+  - a: ifo:IF_9_1_3
+  - rdf:value:
+    - if_9_1_3: ""
+
+- IF_9_2 if:IF_9_2:
+  - a: ifo:IF_9_2
+  - rdf:value:
+    - if_9_2: ""
+
+- IF_9_2_1 if:IF_9_2_1:
+  - a: ifo:IF_9_2_1
+  - rdf:value:
+    - if_9_2_1: ""
+
+- IF_9_2_2 if:IF_9_2_2:
+  - a: ifo:IF_9_2_2
+  - rdf:value:
+    - if_9_2_2: ""
+
+- IF_9_2_3 if:IF_9_2_3:
+  - a: ifo:IF_9_2_3
+  - rdf:value:
+    - if_9_2_3: ""
+
+- IF_9_2_4 if:IF_9_2_4:
+  - a: ifo:IF_9_2_4
+  - rdf:value:
+    - if_9_2_4: ""
+
+- IF_9_2_5 if:IF_9_2_5:
+  - a: ifo:IF_9_2_5
+  - rdf:value:
+    - if_9_2_5: ""
+
+- IF_9_2_6 if:IF_9_2_6:
+  - a: ifo:IF_9_2_6
+  - rdf:value:
+    - if_9_2_6: ""
+
+- IF_9_2_7 if:IF_9_2_7:
+  - a: ifo:IF_9_2_7
+  - rdf:value:
+    - if_9_2_7: ""
+
+- IF_10 if:IF_10:
+  - a: ifo:IF_10
+  - rdf:value:
+    - if_10: ""
+
+- IF_10_1 if:IF_10_1:
+  - a: ifo:IF_10_1
+  - rdf:value:
+    - if_10_1: ""
+
+- IF_10_2 if:IF_10_2:
+  - a: ifo:IF_10_2
+  - rdf:value:
+    - if_10_2: ""
+
+- IF_10_3 if:IF_10_3:
+  - a: ifo:IF_10_3
+  - rdf:value:
+    - if_10_3: ""
+
+- IF_10_4 if:IF_10_4:
+  - a: ifo:IF_10_4
+  - rdf:value:
+    - if_10_4: ""
+
+- IF_10_5 if:IF_10_5:
+  - a: ifo:IF_10_5
+  - rdf:value:
+    - if_10_5: ""
+
+- IF_10_6 if:IF_10_6:
+  - a: ifo:IF_10_6
+  - rdf:value:
+    - if_10_6: ""
+
+- IF_10_7 if:IF_10_7:
+  - a: ifo:IF_10_7
+  - rdf:value:
+    - if_10_7: ""
+
+#- IF_10_8 if:IF_10_8:
+#  - a: ifo:IF_10_8
+#  - rdf:value:
+#    - if_10_8: ""
+
+- IF_10_9 if:IF_10_9:
+  - a: ifo:IF_10_9
+  - rdf:value:
+    - if_10_9: ""
+
+- IF_10_10 if:IF_10_10:
+  - a: ifo:IF_10_10
+  - rdf:value:
+    - if_10_10: ""
+
+- IF_10_11 if:IF_10_11:
+  - a: ifo:IF_10_11
+  - rdf:value:
+    - if_10_11: ""
+
+- IF_10_12 if:IF_10_12:
+  - a: ifo:IF_10_12
+  - rdf:value:
+    - if_10_12: ""
+
+- IF_10_13 if:IF_10_13:
+  - a: ifo:IF_10_13
+  - rdf:value:
+    - if_10_13: ""
+
+- IF_10_14 if:IF_10_14:
+  - a: ifo:IF_10_14
+  - rdf:value:
+    - if_10_14: ""
+
+- IF_11 if:IF_11:
+  - a: ifo:IF_11
+  - rdf:value:
+    - if_11: ""
+
+- IF_11_1 if:IF_11_1:
+  - a: ifo:IF_11_1
+  - rdf:value:
+    - if_11_1: ""
+
+- IF_11_2 if:IF_11_2:
+  - a: ifo:IF_11_2
+  - rdf:value:
+    - if_11_2: ""
+
+- IF_12 if:IF_12:
+  - a: ifo:IF_12
+  - rdf:value:
+    - if_12: ""
+
+- IF_12_1 if:IF_12_1:
+  - a: ifo:IF_12_1
+  - rdf:value:
+    - if_12_1: ""
+
+- IF_12_2 if:IF_12_2:
+  - a: ifo:IF_12_2
+  - rdf:value:
+    - if_12_2: ""
+
+- IF_13 if:IF_13:
+  - a: ifo:IF_13
+  - rdf:value:
+    - if_13: ""
