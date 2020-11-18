@@ -1,16 +1,16 @@
 require 'rdf-config/model/triple'
+require 'rdf-config/model/validator'
 
 class RDFConfig
   class Model
     include Enumerable
 
-    attr_reader :subjects
-
     def initialize(config)
       @config = config
-      @subjects = []
-
+      @graph = Graph.new(@config)
+      @graph.generate
       generate_triples
+      validate
     end
 
     def each
@@ -18,7 +18,7 @@ class RDFConfig
     end
 
     def find_subject(subject_name)
-      @subjects.select { |subject| subject.name == subject_name }.first
+      subjects.select { |subject| subject.name == subject_name }.first
     end
 
     def subject?(variable_name)
@@ -42,16 +42,18 @@ class RDFConfig
         if rdf_type_triples.empty?
           rdf_types << nil
         else
+          types = []
           rdf_type_triples.each do |t|
             @bnode_subjects.select { |bn_subj| bn_subj.predicates.include?(t.predicate) }.each do |s|
               bn_obj = s.objects.select { |o| o.blank_node? }.first
               if bn_obj
-                rdf_types << s.types
+                types << t.object_name
               else
-                rdf_types << s.types if s.objects.include?(triple.object)
+                types << t.object_name if s.objects.include?(triple.object)
               end
             end
           end
+          rdf_types << types
         end
       end
 
@@ -59,7 +61,12 @@ class RDFConfig
     end
 
     def find_object(object_name)
-      @triples.map(&:object).select { |object| object.name == object_name }.first
+      object = @triples.map(&:object).select { |object| object.name == object_name }.first
+      if object.nil?
+        object = find_subject(object_value[object_name])
+      end
+
+      object
     end
 
     def find_by_object_name(object_name)
@@ -74,12 +81,60 @@ class RDFConfig
       @bnode_subjects.select { |s| s.objects.map(&:name) == object_name }.first
     end
 
+    def object_names
+      names = []
+
+      @triples.each do |triple|
+        next if triple.predicate.rdf_type?
+
+        names << triple.object_name
+      end
+
+      names
+    end
+
+    def subjects
+      @graph.subjects
+    end
+
+    def object_value
+      @graph.object_value
+    end
+
+    def parent_variable(object_name)
+      triple = find_by_object_name(object_name)
+      return nil if triple.nil? || !triple.subject.used_as_object?
+
+      triple.subject.as_object.values.map(&:name).uniq.first
+    end
+
+    def parent_variables(object_name)
+      variables = []
+      loop do
+        variable_name = parent_variable(object_name)
+        break if variable_name.nil?
+
+        variables << variable_name
+        object_name = variable_name
+        parent_variable(object_name)
+      end
+
+      variables
+    end
+
     def [](idx)
       @triples[idx]
     end
 
     def size
       @size ||= @triples.size
+    end
+
+    def validate
+      validator = Validator.new(self, @config)
+      validator.validate
+
+      raise Config::InvalidConfig, validator.error_message if validator.error?
     end
 
     private
@@ -89,11 +144,7 @@ class RDFConfig
       @predicates = []
       @bnode_subjects = []
 
-      @config.model.each do |subject_hash|
-        @subjects << Model::Subject.new(subject_hash, @config.prefix)
-      end
-
-      @subjects.each do |subject|
+      subjects.each do |subject|
         @subject = subject
         proc_subject(subject)
       end
@@ -108,24 +159,17 @@ class RDFConfig
     end
 
     def proc_predicate(predicate)
-      predicate.objects.each_with_index do |object, i|
-        proc_object(predicate, object, i)
+      predicate.objects.each do |object|
+        proc_object(object)
       end
     end
 
-    def proc_object(predicate, object, idx)
+    def proc_object(object)
       if object.blank_node?
         @bnode_subjects << object.value
         proc_subject(object.value)
       else
-        subject_as_object = find_subject(object.value)
-        if subject_as_object.nil?
-          add_triple(Triple.new(@subject, Array.new(@predicates), object))
-        else
-          subject_as_object.add_as_object(@subject.name, object)
-          add_triple(Triple.new(@subject, Array.new(@predicates), subject_as_object))
-          predicate.objects[idx] = subject_as_object
-        end
+        add_triple(Triple.new(@subject, Array.new(@predicates), object))
       end
     end
 

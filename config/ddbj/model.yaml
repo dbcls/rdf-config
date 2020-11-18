@@ -1,25 +1,124 @@
-- Ddbjentry insdc:AP014957.1:
-  - a: nucleotide:Entry
-  - nucleotide:comment:
-    - nucleotide_comment: ""
-  - nucleotide:definition:
+- DdbjEntry insdc:AP014957.1:
+  - a: insdc_ontology:Entry
+  - insdc_ontology:dbxref+:
+    - bioproject: bioproject:PRJDB1747
+    - biosample: biosample:SAMD00000397
+  - insdc_ontology:comment:
+    - entry_insdc_comment: ""
+  - insdc_ontology:definition:
     - definition: "Oryza sativa Japonica Group DNA, chromosome 1, cultivar: Nipponbare, complete sequence."
-  - nucleotide:division:
+  - insdc_ontology:division:
     - division: insdcdiv:PLN
-  - nucleotide:organism:
-    - organism: "Oryza sativa Japonica Group"
-  - nucleotide:reference+:
-    - insdc: entry:reference.1
-  - nucleotide:sequence:
-    - insdc: entry:sequence
-  - nucleotide:sequence_date:
+  - insdc_ontology:organism:
+    - sequence_organism: "Oryza sativa Japonica Group"
+  - insdc_ontology:reference+:
+    - reference1: Reference
+    - reference2: Reference
+  - insdc_ontology:sequence:
+    - insdc: Sequence
+  - insdc_ontology:sequence_date:
     - registered_date: 2015-10-10
-  - nucleotide:sequence_version:
+  - insdc_ontology:sequence_version:
     - sequence_version: "AP014957.1"
-  - nucleotide:source:
+  - insdc_ontology:source:
     - source: "Oryza sativa Japonica Group (Japanese rice)"
-  - nucleotide:taxonomy:
-    - taxonomy: "Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta; Spermatophyta; Magnoliophyta; Liliopsida; Poales; Poaceae; BOP clade; Oryzoideae; Oryzeae; Oryzinae; Oryza."
+  - insdc_ontology:taxonomy:
+    - entry_taxonomy: "Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta; Spermatophyta; Magnoliophyta; Liliopsida; Poales; Poaceae; BOP clade; Oryzoideae; Oryzeae; Oryzinae; Oryza."
   - rdfs:comment:
-    - comment: "Oryza sativa Japonica Group DNA, chromosome 1, cultivar: Nipponbare, complete sequence."
+    - entry_comment: "Oryza sativa Japonica Group DNA, chromosome 1, cultivar: Nipponbare, complete sequence."
+  - rdfs:seeAlso:
+    - entry_pubmed: pubmed:24280374
+
+- Reference entry:reference.1:
+  - a: insdc_ontology:Entry
+  - insdcref:author+:
+    - author: "Itoh, T."
+  - insdcref:journal:
+    - journal: "Submitted (09-OCT-2015) to the DDBJ/EMBL/GenBank databases. Contact:Takeshi Itoh National Institute of Agrobiological Sciences; Kannondai 2-1-2, Tsukuba 305-8602, Japan"
+  - insdcref:title:
+    - title: "Direct Submission"
+  - insdcref:pubmed:
+    - reference_pubmed: pubmed:24280374
+  - insdcref:comments:
+    - reference_comment: ""
+  - sio:SIO_000300:
+    - value: 1
+
+- Sequence entry:sequence:
+  - a: rdfs:Resource
+  - faldo:location:
+    - region: Region
+  - insdc_ontology:location:
+    - sequence_location: "1..43270923"
+  - insdc_ontology:sequence_length:
+    - length: 43270923
+  - insdc_ontology:topology:
+    - topology: insdc_ontology:linear
+  - obo:RO_0002162+:
+    - sequence_taxonomy: taxonomy:39947 # 39947
+  - obo:so_has_quality:
+    - quality: obo:SO_0000987
+  - obo:so_part_of+:
+    - feature: Feature
+    - source_feature: SourceFeature
+  - rdfs:seeAlso+:
+    - ddbj: ddbj:AP014957.1?format=fasta
+    - ena: ena:AP014957.1&amp;display=fasta
+    - genbank: genbank:AP014957.1?report=fasta
+  - rdfs:subClassOf:
+    - sequence_upper_class: obo:SO_0000001
+
+- Feature feature:3449-10297:1:gene.1:
+  - a: insdc_ontology:Gene
+  - rdfs:subClassOf:
+    - feature_upper_class: obo:SO_0000704
+  - rdfs:label:
+    - feature_label: "OSNPB_010100100"
+  - dc:identifier:
+    - id: "OSNPB_010100100"
+  - skos:prefLabel:
+    - feature_preflabel: "OSNPB_010100100"
+  - insdc_ontology:gene:
+    - gene: "Os01g0100100"
+  - insdc_ontology:locus_tag:
+    - locus_tag: "OSNPB_010100100"
+  - insdc_ontology:location:
+    - feature_location: "3449..10297"
+  - obo:RO_0002162+:
+    - feature_taxonomy: taxonomy:39947 # 39947
+  - faldo:location:
+    - region: Region
+
+- SourceFeature feature:1-43270923:1:source:
+  - a: rdfs:Resource
+  - insdc_ontology:chromosome:
+    - chromosome: 1
+  - insdc_ontology:cultivar:
+    - cultivar: "Nipponbare"
+  - insdc_ontology:mol_type:
+    - mol_type: "genomic DNA"
+  - insdc_ontology:organism:
+    - source_feature_organism: "Oryza sativa Japonica Group"
+  - obo:so_part_of:
+    - insdc: entry:sequence
+  - rdfs:seeAlso+:
+    - source_feature_taxonomy: taxonomy:39947 # 39947
+
+- Region region:3449-10297:1:
+  - a: faldo:Region
+  - rdfs:subClassOf:
+    - region_upper_class: obo:SO_0000001
+  - rdfs:label:
+    - region_label: "OSNPB_010100100"
+  - faldo:begin:
+    - begin: Position
+  - faldo:end:
+    - end: Position
+
+- Position position:3449:1:
+  - a:
+    - faldo:ForwardStrandPosition
+    - faldo:ExactPosition
+  - faldo:position:
+    - position: "3449"
 

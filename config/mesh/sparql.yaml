@@ -1,0 +1,15 @@
+sparql:
+  description: Descriptor -> Concept -> Term, Descriptor -> Qualifier, Descriptor -> Term, Descriptor -> TreeNumber
+  variables: [ descriptor_id, descriptor_label, concept_id, concept_label, term_id, term_label, qualifier_id, qualifier_label, tree_number_label ]
+
+tree_pair:
+  variables: [ TreeNumber, parent_tree_number ]
+  parameters:
+    parent_tree_number: mesh:C01
+
+list_qual_for_desc:
+  variables: [ AllowedDescriptorQualifierPair, Qualifier, qualifier_label ]
+  parameters:
+    qualifier_active: true
+    allowed_descriptor_qualifier_pair_active: true
+

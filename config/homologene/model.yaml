@@ -1,0 +1,27 @@
+- ClusterOfOrthologs homologene:3:
+  - a: orth:OrthologsCluster
+  - orth:inDataset:
+    - dataset: Dataset
+  - orth:hasHomologousMember+:
+    - gene: Gene
+
+- Dataset <https://ncbi.nlm.nih.gov/homologene/>:
+  - a:
+    - orth:OrthologyDataset
+  - dct:title:
+    - dataset_title: "HomoloGene"
+
+- Gene ncbigene:34:
+  - a: orth:Gene
+  - rdfs:label:
+    - gene_label: "ACADM"
+  - orth:taxon:
+    - taxon: Taxon
+  - orth:protein:
+    - ncbiprotein: Protein
+
+- Taxon taxid:9606:
+  - a: taxon:Taxon
+
+- Protein ncbiprotein:NP_000007.1:
+  - a: orth:Protein

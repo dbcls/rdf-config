@@ -35,7 +35,7 @@ class RDFConfig
     end
 
     class ConfigNotFound < StandardError; end
-
     class SyntaxError < StandardError; end
+    class InvalidConfig < StandardError; end
   end
 end

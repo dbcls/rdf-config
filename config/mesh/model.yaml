@@ -1,0 +1,429 @@
+## MeSH Concepts M####### or M######### (2014.5-)
+# * https://hhs.github.io/meshrdf/concepts
+# A MeSH Concept represents a unit of meaning.
+# Each MeSH record consists of one or more Concepts.
+
+- Concept mesh:M0000001:
+  - a: meshv:Concept
+  - rdfs:label:
+    - concept_label: "Calcimycin"
+  - meshv:identifier:
+    - concept_id: "M0000001"
+  - meshv:registryNumber: # One of FDA, CAS, EC, or 0 (no match)
+    - concept_registry_number: "37H9VM9WZL"
+  - meshv:relatedRegistryNumber:
+    - concept_related_registry_number: "52665-69-7 (Calcimycin)"
+  - meshv:scopeNote:
+    - concept_scope_note: "An ionophorous, polyether antibiotic from Streptomyces chartreusensis..."
+  - meshv:casn1_label:
+    - cas_label: "4-Benzoxazolecarboxylic acid, 5-(methylamino)-2-((3,9,11-trimethyl-8-(1-methyl..."
+  - meshv:preferredTerm:
+    - concept_term: Term
+  - meshv:narrowerConcept:
+    - narrower_concept: Concept
+  - meshv:active:
+    - concept_active: true
+
+## MeSH Terms T####### or T######### (2014.5-)
+# * https://hhs.github.io/meshrdf/terms
+# A MeSH Term is a human readable name used by a MeSH Concept.
+
+- Term mesh:T000002:
+  - a: meshv:Term
+  - meshv:prefLabel:
+    - term_label: "Calcimycin"
+  - meshv:identifier:
+    - term_id: "T000002"
+  - meshv:thesaurusID*:
+    - term_thesaurus_id: "FDA SRS (2014)"
+  - meshv:dateCreated:
+    - term_date_created: 1999-01-01
+  - meshv:lexicalTag:
+    - term_lexical_tag: "NON"
+  - meshv:active:
+    - term_active: true
+
+# MeSH Descriptors (D###### or D#########)
+# * https://hhs.github.io/meshrdf/descriptors
+# Also known as Main Headings or MeSH Headings, Descriptors are used to index citations in the NLM MEDLINE database and to describe the subjects for NLM Catalog records.
+
+- Descriptor mesh:D000785:
+  - a: meshv:TopicalDescriptor
+  - rdfs:label:
+    - descriptor_label: "Aneurysm, Infected"
+  - meshv:identifier:
+    - descriptor_id: "D000785"
+  - meshv:annotation:
+    - descriptor_annotation: "coordinate IM with specific bacteria or fungal infection (IM) ..."
+  - meshv:nlmClassificationNumber:
+    - descriptor_nlm_classification_number: "WG 580"
+  - meshv:concept+:
+    - descriptor_concept: Concept
+  - meshv:preferredConcept:
+    - descriptor_preferred_concept: Concept
+  - meshv:preferredTerm:
+    - descriptor_preferred_term: Term
+  - meshv:broaderDescriptor:
+    - broader_descriptor: Descriptor
+  - meshv:allowableQualifier:
+    - descriptor_allowable_qualifier: Qualifier
+  - meshv:treeNumber+:
+    - descriptor_tree_number: TreeNumber
+  - meshv:dateEstablished:
+    - descriptor_date_established: 1970-01-01
+  - meshv:dateCreated:
+    - descriptor_date_created: 1999-01-01
+  - meshv:dateRevised:
+    - descriptor_date_revised: 2019-06-17
+  - meshv:historyNote:
+    - descriptor_history_note: "87; was ANEURYSM, MYCOTIC 1964-86 (Prov 1964-69)"
+  - meshv:publicMeSHNote:
+    - descriptor_public_mesh_note: "87; was ANEURYSM, MYCOTIC 1970-86"
+  - meshv:onlineNote:
+    - descriptor_online_note: "use ANEURYSM, INFECTED to search ANEURYSM, MYCOTIC 1966-86 (as Prov 1966-69)"
+  - meshv:active:
+    - descriptor_active: true
+
+- PublicationType mesh:D016430:
+  - a: meshv:PublicationType
+  - rdfs:label:
+    - publication_type_label: "Clinical Trial"
+  - meshv:identifier:
+    - publication_type_id: "D016430"
+  - meshv:annotation:
+    - publication_type_annotation: "this heading is used as a Publication Type; for original report ..."
+  - meshv:preferredConcept:
+    - publication_type_preferred_concept: Concept
+  - meshv:preferredTerm:
+    - publication_type_preferred_term: Term
+  - meshv:broaderDescriptor:
+    - publication_type_broader_descriptor: Descriptor
+  - meshv:treeNumber:
+    - publication_type_tree_number: TreeNumber
+  - meshv:seeAlso*:
+    - publication_type_see_also: mesh:D023361
+  - meshv:dateEstablished:
+    - publication_type_date_established: 1996-01-01
+  - meshv:dateCreated:
+    - publication_type_date_created: 1995-06-23
+  - meshv:dateRevised:
+    - publication_type_date_revised: 2019-07-11
+  - meshv:historyNote:
+    - publication_type_history_note: "2008(1991)"
+  - meshv:active:
+    - publication_type_active: true
+
+- CheckTag mesh:D008297 mesh:D005260:  # Note: only two instances in CheckTag (Male or Female)
+  - a: meshv:CheckTag
+  - rdfs:label:
+    - check_tag_label: "Male"
+  - meshv:identifier:
+    - check_tag_id: "D008297"
+  - meshv:annotation:
+    - check_tag_annotation: "check tag only for male organs, diseases, physiol processes, genetics, etc."
+  - meshv:preferredConcept:
+    - check_tag_preferred_concept: Concept
+  - meshv:preferredTerm:
+    - check_tag_preferred_term: Term
+  - meshv:dateEstablished:
+    - check_tag_date_established: 1966-01-01
+  - meshv:dateCreated:
+    - check_tag_date_created: 1999-01-01
+  - meshv:dateRevised:
+    - check_tag_date_revised: 2018-07-09
+  - meshv:historyNote:
+    - check_tag_history_note: "1966"
+  - meshv:active:
+    - check_tag_active: true
+
+- Geographic mesh:D001208:
+  - a: meshv:GeographicalDescriptor
+  - rdfs:label:
+    - geographic_label: "Asia"
+  - meshv:identifier:
+    - geographic_id: "D001208"
+  - meshv:annotation:
+    - geographic_annotation: "several geog subdivisions & all Asiatic countries are available as headings"
+  - meshv:concept:
+    - geographic_concept: Concept
+  - meshv:preferredConcept:
+    - geographic_preferred_concept: Concept
+  - meshv:preferredTerm:
+    - geographic_preferred_term: Term
+  - meshv:broaderDescriptor:
+    - geographic_broader_desciptor: Descriptor
+  - meshv:allowableQualifier:
+    - geographic_allowable_qualifier: Qualifier
+  - meshv:treeNumber:
+    - geographic_tree_number: TreeNumber
+  - meshv:dateEstablished:
+    - geographic_date_established: 1966-01-01
+  - meshv:dateCreated:
+    - geographic_date_created: 1999-01-01
+  - meshv:dateRevised:
+    - geographic_date_revised: 1996-06-10
+  - meshv:active:
+    - geographic_active: true
+
+## MeSH Qualifiers (Q###### or Q#########)
+# * https://hhs.github.io/meshrdf/qualifiers
+# Qualifiers are used to give additional context to a Descriptor.
+
+- Qualifier mesh:Q000633:
+  - a: meshv:Qualifier
+  - rdfs:label:
+    - qualifier_label: "toxicity"
+  - meshv:identifier:
+    - qualifier_id: "Q000633"
+  - meshv:annotation:
+    - qualifier_annotation: "subheading only; for experimental human & animal studies; includes margin of safety ..."
+  - meshv:concept:
+    - qualifier_concept: Concept
+  - meshv:preferredConcept:
+    - qualifier_preferred_concept: Concept
+  - meshv:preferredTerm:
+    - qualifier_preferred_term: Term
+  - meshv:broaderQualifier:
+    - qualifier_broader_qualifier: Qualifier
+  - meshv:treeNumber:
+    - qualifier_tree_number: TreeNumber
+  - meshv:dateEstablished:
+    - qualifier_date_established: 1966-01-01
+  - meshv:dateCreated:
+    - qualifier_date_created: 1973-12-27
+  - meshv:dateRevised:
+    - qualifier_date_revised: 2017-07-05
+  - meshv:historyNote:
+    - qualifier_history_note: "66; used with Category D 1966-67; D & J 1968 forward"
+  - meshv:onlineNote:
+    - qualifier_online_note: "search policy: Online Manual; use: main heading/TO or TO (SH) or SUBS APPLY TO"
+  - meshv:active:
+    - qualifier_active: true
+
+## MeSH Tree Numbers ([A-Z]##.###.###..)
+# * https://hhs.github.io/meshrdf/tree-numbers
+# MeSH descriptors are organized into 16 categories, each of which is further divided into sub-categories.
+#
+# A: Anatomy
+# B: Organisms
+# C: Diseases
+# D: Chemicals and Drugs
+# E: Analytical, Diagnostic and Therapeutic Techniques and Equipment
+# F: Psychiatry and Psychology
+# G: Biological Sciences
+# H: Physical Sciences
+# I: Anthropology, Education, Sociology and Social Phenomena
+# J: Technology and Food and Beverages
+# K: Humanities
+# L: Information Science
+# M: Persons
+# N: Health Care
+# V: Publication Characteristics
+# Z: Geographic Locations
+
+- TreeNumber mesh:C01.069:
+  - a: meshv:TreeNumber
+  - rdfs:label:
+    - tree_number_label: '"C01.069"@en'
+  - meshv:parentTreeNumber:
+    - parent_tree_number: TreeNumber
+  - meshv:active:
+    - tree_number_active: true
+
+## Supplementary Concept Record (C###### or C#########)
+# * https://hhs.github.io/meshrdf/scrs
+# SCRs are created to account for the large volume of chemical names that are found in biomedical literature.
+
+- Chemical mesh:C000002:
+  - a: meshv:SCR_Chemical
+  - rdfs:label:
+    - chemical_label: '"bevonium"@en'
+  - meshv:identifier:
+    - chemical_id: "C000002"
+  - meshv:frequency:
+    - chemical_frequency: 1
+  - meshv:note:
+    - chemical_note: '"structure given in first source"@en'
+  - meshv:previousIndexing:
+    - chemical_previous_indexing: '"PIPERIDINES (71-81)"@en'
+  - meshv:source:
+    - chemical_source: '"S Afr Med J 50(1):4;1976"@en'
+  - meshv:concept:
+    - concept: Concept
+  - meshv:preferredConcept: 
+    - chemical_preferred_concept: Concept
+  - meshv:preferredTerm:
+    - chemical_preferred_term: Term 
+  - meshv:pharmacologicalAction:
+    - chemical_descriptor: Descriptor
+  - meshv:preferredMappedTo:
+    - chemical_preferred_mapped_to: [ Descriptor, AllowedDescriptorQualifierPair ]
+  - meshv:active:
+    - chemical_active: true
+
+- Disease mesh:C000591739:
+  - a: meshv:SCR_Disease
+  - rdfs:label:
+    - disease_label: '"Familial gynecomastia, due to increased aromatase activity"@en'
+  - meshv:identifier:
+    - disease_id: "C000591739"
+  - meshv:frequency:
+    - disease_frequency: 1
+  - meshv:preferredConcept:
+    - disease_preferred_concept: Concept
+  - meshv:preferredMappedTo:
+    - disease_preferred_mapped_to: [ Descriptor, AllowedDescriptorQualifierPair, DisallowedDescriptorQualifierPair ]
+  - meshv:preferredTerm:
+    - disease_preferred_term: Term
+  - meshv:active:
+    - disease_active: true
+
+- Protocol mesh:C010306:
+  - a: meshv:SCR_Protocol
+  - rdfs:label:
+    - protocol_label: '"VAC protocol"@en'
+  - meshv:identifier:
+    - protocol_id: "C010306"
+  - meshv:frequency:
+    - protocol_frequency: 268
+  - meshv:note:
+    - protocol_note: '"chemotherapy protocol consisting of above cpds; used in gynecologic neoplasms"@en'
+  - meshv:previousIndexing:
+    - protocol_previous_indexing: '"*CYCLOPHOSPHAMIDE (77-82)"@en'
+  - meshv:source:
+    - protocol_source: '"Drug Therapy 6(2):28;1976"@en'
+  - meshv:concept:
+    - protocol_concept: Concept
+  - meshv:preferredConcept:
+    - protocol_preferred_concept: Concept
+  - meshv:preferredTerm:
+    - protocol_preferred_term: Term
+  - meshv:mappedTo:
+    - protocol_mapped_to: [ Descriptor, AllowedDescriptorQualifierPair ]
+  - meshv:preferredMappedTo:
+    - protocol_preferred_mapped_to: [ Descriptor, AllowedDescriptorQualifierPair ]
+  - meshv:active:
+    - protocol_active: true
+
+- Organism mesh:C000612320:
+  - a: meshv:SCR_Organism
+  - rdfs:label:
+    - organism_label: '"UR2 sarcoma virus"@en'
+  - meshv:identifier:
+    - organism_id: "C000612320"
+  - meshv:frequency:
+    - organism_frequency: 0
+  - meshv:preferredConcept:
+    - organism_preferred_concept: Concept
+  - meshv:preferredTerm:
+    - organism_preferred_term: Term
+  - meshv:preferredMappedTo:
+    - organism_preferred_mapped_to: Descriptor
+  - meshv:indexerConsiderAlso:
+    - organism_indexer_consider_also: Descriptor
+  - meshv:active:
+    - organism_active: true
+
+# DescriptorQualifierPair (D######Q######)
+# * https://hhs.github.io/meshrdf/descriptor-qualifier-pairs
+# Qualifiers comprise a set of 83 terms used to add more specificity to descriptors.
+#
+# mesh:Q000002	"abnormalities"
+# mesh:Q000008	"administration & dosage"
+# mesh:Q000009	"adverse effects"
+# mesh:Q000819	"agonists"
+# mesh:Q000031	"analogs & derivatives"
+# mesh:Q000032	"analysis"
+# mesh:Q000033	"anatomy & histology"
+# mesh:Q000037	"antagonists & inhibitors"
+# mesh:Q000096	"biosynthesis"
+# mesh:Q000097	"blood"
+# mesh:Q000098	"blood supply"
+# mesh:Q000134	"cerebrospinal fluid"
+# mesh:Q000138	"chemical synthesis"
+# mesh:Q000139	"chemically induced"
+# mesh:Q000737	"chemistry"
+# mesh:Q000145	"classification"
+# mesh:Q000150	"complications"
+# mesh:Q000151	"congenital"
+# mesh:Q000166	"cytology"
+# mesh:Q000172	"deficiency"
+# mesh:Q000175	"diagnosis"
+# mesh:Q000000981	"diagnostic imaging"
+# mesh:Q000178	"diet therapy"
+# mesh:Q000187	"drug effects"
+# mesh:Q000188	"drug therapy"
+# mesh:Q000191	"economics"
+# mesh:Q000193	"education"
+# mesh:Q000196	"embryology"
+# mesh:Q000201	"enzymology"
+# mesh:Q000453	"epidemiology"
+# mesh:Q000941	"ethics"
+# mesh:Q000208	"ethnology"
+# mesh:Q000209	"etiology"
+# mesh:Q000235	"genetics"
+# mesh:Q000254	"growth & development"
+# mesh:Q000266	"history"
+# mesh:Q000276	"immunology"
+# mesh:Q000293	"injuries"
+# mesh:Q000294	"innervation"
+# mesh:Q000295	"instrumentation"
+# mesh:Q000302	"isolation & purification"
+# mesh:Q000331	"legislation & jurisprudence"
+# mesh:Q000378	"metabolism"
+# mesh:Q000379	"methods"
+# mesh:Q000382	"microbiology"
+# mesh:Q000401	"mortality"
+# mesh:Q000451	"nursing"
+# mesh:Q000458	"organization & administration"
+# mesh:Q000469	"parasitology"
+# mesh:Q000472	"pathogenicity"
+# mesh:Q000473	"pathology"
+# mesh:Q000493	"pharmacokinetics"
+# mesh:Q000494	"pharmacology"
+# mesh:Q000502	"physiology"
+# mesh:Q000503	"physiopathology"
+# mesh:Q000506	"poisoning"
+# mesh:Q000517	"prevention & control"
+# mesh:Q000523	"psychology"
+# mesh:Q000528	"radiation effects"
+# mesh:Q000532	"radiotherapy"
+# mesh:Q000534	"rehabilitation"
+# mesh:Q000556	"secondary"
+# mesh:Q000592	"standards"
+# mesh:Q000706	"statistics & numerical data"
+# mesh:Q000600	"supply & distribution"
+# mesh:Q000601	"surgery"
+# mesh:Q000627	"therapeutic use"
+# mesh:Q000628	"therapy"
+# mesh:Q000633	"toxicity"
+# mesh:Q000635	"transmission"
+# mesh:Q000637	"transplantation"
+# mesh:Q000639	"trends"
+# mesh:Q000648	"ultrastructure"
+# mesh:Q000652	"urine"
+# mesh:Q000662	"veterinary"
+# mesh:Q000821	"virology"
+
+- AllowedDescriptorQualifierPair mesh:D000086Q000031:
+  - a: meshv:AllowedDescriptorQualifierPair
+  - rdfs:label:
+    - allowed_descriptor_qualifier_pair_label: "Acetazolamide/analogs & derivatives"
+  - meshv:hasDescriptor:
+    - allowed_descriptor_qualifier_pair_descriptor: Descriptor
+  - meshv:hasQualifier:
+    - allowed_descriptor_qualifier_pair_qualifier: Qualifier
+  - meshv:active:
+    - allowed_descriptor_qualifier_pair_active: true
+
+- DisallowedDescriptorQualifierPair mesh:D019216Q000506:
+  - a: meshv:DisallowedDescriptorQualifierPair
+  - rdfs:label:
+    - disallowed_descriptor_qualifier_pair_label: "Metals, Heavy/poisoning"
+  - meshv:hasDescriptor:
+    - disallowed_descriptor_qualifier_pair_descriptor: Descriptor
+  - meshv:hasQualifier:
+    - disallowed_descriptor_qualifier_pair_qualifier: Qualifier
+  - meshv:active:
+    - disallowed_descriptor_qualifier_pair_active: true
+

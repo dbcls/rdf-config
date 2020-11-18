@@ -1,0 +1,13 @@
+get_approved_reactions:
+  description: Select all Rhea reactions (unspecified direction), with "Approved" status
+  variables: [Reaction, status, equation]
+  parameters:
+    status: rhea:Approved
+
+get_reactions_with_molecule:
+  description: Select all approved reactions using CHEBI:29985 (L-glutamate) as small molecule participant
+  variables: [Reaction, status, sub_class_of, equation, chebi]
+  parameters:
+    sub_class_of: rhea:Reaction
+    status: rhea:Approved
+    chebi: obo:CHEBI_29985

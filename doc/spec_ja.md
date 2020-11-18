@@ -8,12 +8,21 @@ SPARQL エンドポイントを下記の記法で記述する。
 endpoint: http://example.org/sparql
 ```
 
-同じデータを持つ複数のエンドポイントを記述しておきたい場合は下記の記法を用いる。
+同じデータを持つ複数のエンドポイントを記述しておきたい場合は下記の記法を用いる。各エンドポイントでデータの含まれるグラフ名を記述しておけば、生成される SPARQL クエリの FROM 句で使われる。
 
 ```
 endpoint:
   - http://example.org/sparql  # プライマリの SPARQL エンドポイント
+  - graph:
+    - http://example.org/graph/1
+    - http://example.org/graph/2
+    - http://example.org/graph/3
+
+another_endpoint:
   - http://another.org/sparql  # 予備の SPARQL エンドポイント
+  - graph:
+    - http://another.org/graph/A
+    - http://another.org/graph/B
 ```
 
 ## prefix.yaml
@@ -113,7 +122,7 @@ RDF データモデルは基本的に YAML に準拠した下記の構造で（�
 * `{n}`: n個（対応する値が「n個」に限られる場合）
 * `{n,m}`: n個からm個（対応する値が「n個」以上「m個」以下に限られる場合）
 
-この指定は RDF のバリデーションに用いられるほか、SPARQL 検索結果を利用する際に参考とする。
+この指定は SPARQL クエリを OPTIONAL 句にするかどうかと、ShEx による RDF のバリデーションに用いられる。
 
 ```
 - Subject my:subject:
@@ -148,6 +157,8 @@ RDF データモデルは基本的に YAML に準拠した下記の構造で（�
   - my:predicate3:
     - float_value: 123.45
   - my:predicate4:
+    - date_value: 2020-11-13
+  - my:predicate5:
     - curie: my:sample123
   - rdfs:seeAlso:
     - xref: <http://example.org/sample/uri>
@@ -196,8 +207,6 @@ RDF データモデルは基本的に YAML に準拠した下記の構造で（�
 
 複数の SPARQL クエリを設定できるファイルで、下記の YAML 形式で記述する。
 
-RDF-config では、対象となる目的語の名前から、必要となる property paths を同定し SPARQL クエリを自動生成するため、結果として得たい変数名を variables に列挙するだけでよい。ID や名前など、値の一部を引数として与えるクエリを作成する場合は、parameters に値をセットする変数名とそのデフォルト値を指定する。
-
 ```
 クエリ名:
   description: 何をする SPARQL クエリなのか説明
@@ -210,9 +219,11 @@ RDF-config では、対象となる目的語の名前から、必要となる pr
     目的語の名前: デフォルト値
 ```
 
+RDF-config では、対象となる目的語の名前から、必要となる property paths を同定し SPARQL クエリを自動生成するため、結果として得たい変数名を variables に列挙するだけでよい。ID や名前など、値の一部を引数として与えるクエリを作成する場合は、parameters に値をセットする変数名とそのデフォルト値を指定する。
+
 ## stanza.yaml
 
-TogoStanza を生成する際に必要な metadata.json ファイルのための情報を記述する。
+[TogoStanza](http://togostanza.org/) を生成する際に必要な metadata.json ファイルのための情報を記述する。
 
 ```
 スタンザ名:

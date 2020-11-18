@@ -1,41 +1,133 @@
-- Concept ggdonto:CON00634:
+- DiseaseConcept ggdonto:CON00634:
   - a:
     - skos:Concept
     - ggdonto_schema:DiseaseDescriptionGGDonto
-  - gdgdb_schema:omimPhenoMIMnumber+:
+  - dct:identifier:
+    - identifier: "CON00634"
+  - dct:references+:
+    - references: ggdonto:REF60, ggdonto:REF61
+  - gdgdb_schema:conceptType:
+    - conceptType: gdgdb_schema:SingleDisease
+  - gdgdb_schema:conceptUI:
+    - conceptUI: "CON00634"
+  - gdgdb_schema:diseasePreferredTerm:
+    - diseasePreferredTerm: '"EHLERS-DANLOS SYNDROME, MUSCULOCONTRACTURAL TYPE"@en'
+  - gdgdb_schema:diseasePreferredTermAbbr:
+    - diseasePreferredTermAbbr: '"EDSMC"@en'
+  - gdgdb_schema:diseaseSynonyms+:
+    - diseaseSynonyms: ['"ADDUCTED THUMB, CLUBFOOT, AND PROGRESSIVE JOINT AND SKIN LAXITY SYNDROME"@en','"ADDUCTED THUMB-CLUBFOOT SYNDROME"@en','"ARTHROGRYPOSIS, DISTAL, WITH PECULIAR FACIES AND HYDRONEPHROSIS"@en','"ATCS"@en','"DUNDAR SYNDROME"@en','"EDS6B, FORMERLY"@en','"EHLERS-DANLOS SYNDROME, TYPE VIB, FORMERLY"@en']
+  - gdgdb_schema:diseaseType:
+    - diseaseType: gdgdb_schema:CDG
+  - gdgdb_schema:geneSymbolGGDB:
+    - geneSymbolGGDB: "D4ST1"
+  - gdgdb_schema:omimGene:
+    - omimGene: "CHST14"
+  - gdgdb_schema:omimGeneMIMnumber:
+    - "608429"
+  - gdgdb_schema:omimPhenoMIMnumber:
     - omim_id: "601776"
-  - ggdonto_schema:brArthrogryposisGD+:
-    - clinical_findings_description: ggdonto:CON00443 # Arthrogryposis
-  - ggdonto_schema:brCleftPalateMouthAbnormGD+:
-    - concept: ggdonto:CON00458 # Cleft Palate
-  - ggdonto_schema:brCleftPalateMusculoskeletalAbnormGD+:
-    - concept: ggdonto:CON00458 # Cleft Palate
-  - ggdonto_schema:brCleftPalateStomatognathicAbnormGD+:
-    - concept: ggdonto:CON00458 # Cleft Palate
-  - ggdonto_schema:brClubfootGD+:
-    - concept: ggdonto:CON00459 # Clubfoot
-  - ggdonto_schema:brConnectiveTissueDisGD+:
-    - concept: ggdonto:CON00139 # Connective Tissue Diseases
-  - ggdonto_schema:brContractureGD+:
-    - concept: ggdonto:CON00141 # Contracture
-  - ggdonto_schema:brCornealDystrophHeredCornealDisGD+:
-    - clinical_findings_description: ggdonto:CON00464 # Corneal Dystrophies, Hereditary
-  - ggdonto_schema:brCornealDystrophHeredGD+:
-    - clinical_findings_description: ggdonto:CON00464 # Corneal Dystrophies, Hereditary
-  - ggdonto_schema:brCraniofacialAbnormGD+:
-    - concept: ggdonto:CON00147 # Craniofacial Abnormalities
-  - ggdonto_schema:brCryptorchidismGD+:
-    - concept: ggdonto:CON00466 # Cryptorchidism
-  - ggdonto_schema:brDwarfismGD+:
-    - concept: ggdonto:CON00158 # Dwarfism
-  - ggdonto_schema:brEyeDisHereditaryGD+:
-    - clinical_findings_description: ggdonto:CON00487 # Eye Diseases, Hereditary
-  - ggdonto_schema:brFootDeformCongenitalGD+:
-    - clinical_findings_description: ggdonto:CON00495 # Foot Deformities, Congenital
-  - ggdonto_schema:brGastrointestinalDisGD+:
-    - clinical_findings_description: ggdonto:CON00175 # Gastrointestinal Diseases
-  - ggdonto_schema:brGlaucomaGD+:
-    - concept: ggdonto:CON00180 # Glaucoma
-  - ggdonto_schema:brHandDeformCongenitalGD+:
-    - concept: ggdonto:CON00503 # Hand Deformities, Congenital
+  - gdgdb_schema:referencesInfo:
+    - referencesInfo: '"Hennet T (2012) Diseases of glycosylation beyond classical congenital disorders of glycosylation. Biochim Biophys Acta 1820(9):1306-1317."@en, "Hennet T (2012) Diseases of glycosylation beyond classical congenital disorders of glycosylation. Biochim Biophys Acta 1820(9):1306-1317. Table 1 Diseases of glycosylation."@en'
+  - gdgdb_schema:umlsCODE:
+    - umlsCODE: "C538226"
+  - gdgdb_schema:umlsCUI:
+    - umlsCUI: "C1866294"
+  - gdgdb_schema:umlsSAB:
+    - umlsSAB: "MeSH (SCR)"
+  - ggdonto_schema:brArthrogryposisGD*:
+    - brArthrogryposisGD: ggdonto:CON00443 # Arthrogryposis
+  - ggdonto_schema:brCleftPalateMouthAbnormGD*:
+    - brCleftPalateMouthAbnormGD: ggdonto:CON00458 # Cleft Palate
+  - ggdonto_schema:brCleftPalateMusculoskeletalAbnormGD*:
+    - brCleftPalateMusculoskeletalAbnormGD: ggdonto:CON00458 # Cleft Palate
+  - ggdonto_schema:brCleftPalateStomatognathicAbnormGD*:
+    - brCleftPalateStomatognathicAbnormGD: ggdonto:CON00458 # Cleft Palate
+  - ggdonto_schema:brClubfootGD*:
+    - brClubfootGD: ggdonto:CON00459 # Clubfoot
+  - ggdonto_schema:brConnectiveTissueDisGD*:
+    - brConnectiveTissueDisGD: ggdonto:CON00139 # Connective Tissue Diseases
+  - ggdonto_schema:brContractureGD*:
+    - brContractureGD: ggdonto:CON00141 # Contracture
+  - ggdonto_schema:brCornealDystrophHeredCornealDisGD*:
+    - brCornealDystrophHeredCornealDisGD: ggdonto:CON00464 # Corneal Dystrophies, Hereditary
+  - ggdonto_schema:brCornealDystrophHeredGD*:
+    - brCornealDystrophHeredGD: ggdonto:CON00464 # Corneal Dystrophies, Hereditary
+  - ggdonto_schema:brCraniofacialAbnormGD*:
+    - brCraniofacialAbnormGD: ggdonto:CON00147 # Craniofacial Abnormalities
+  - ggdonto_schema:brCryptorchidismGD*:
+    - brCryptorchidismGD: ggdonto:CON00466 # Cryptorchidism
+  - ggdonto_schema:brDwarfismGD*:
+    - brDwarfismGD: ggdonto:CON00158 # Dwarfism
+  - ggdonto_schema:brEyeDisHereditaryGD*:
+    - brEyeDisHereditaryGD: ggdonto:CON00487 # Eye Diseases, Hereditary
+  - ggdonto_schema:brFootDeformCongenitalGD*:
+    - brFootDeformCongenitalGD: ggdonto:CON00495 # Foot Deformities, Congenital
+  - ggdonto_schema:brGastrointestinalDisGD*:
+    - brGastrointestinalDisGD: ggdonto:CON00175 # Gastrointestinal Diseases
+  - ggdonto_schema:brGlaucomaGD*:
+    - brGlaucomaGD: ggdonto:CON00180 # Glaucoma
+  - ggdonto_schema:brHandDeformCongenitalGD*:
+    - brHandDeformCongenitalGD: ggdonto:CON00503 # Hand Deformities, Congenital
+  - ggdonto_schema:brHeartDisGD*:
+    - brHeartDisGD: ggdonto:CON00186
+  - ggdonto_schema:brHemorrhageGD*:
+    - brHemorrhageGD: ggdonto:CON00507
+  - ggdonto_schema:brHerniaInguinalGD*:
+    - brHerniaInguinalG: ggdonto:CON00198
+  - ggdonto_schema:brHypertelorismGD*:
+    - brHypertelorismGD: ggdonto:CON00519
+  - ggdonto_schema:brJointInstabilityGD*:
+    - brJointInstabilityGD: ggdonto:CON00537
+  - ggdonto_schema:brKyphosisGD*:
+    - brKyphosisGD: ggdonto:CON00215
+  - ggdonto_schema:brMaxillofacialAbnormMusculoskeletalAbnormGD*:
+    - brMaxillofacialAbnormMusculoskeletalAbnormGD: ggdonto:CON00230
+  - ggdonto_schema:brMotorSkillsDisordGD*:
+    - brMotorSkillsDisordGD: ggdonto:CON00239
+  - ggdonto_schema:brMuscleHypotoniaGD*:
+    - brMuscleHypotoniaGD: ggdonto:CON00245
+  - ggdonto_schema:brMuscleWeaknessMuscularDisGD*:
+    - brMuscleWeaknessMuscularDisGD: ggdonto:CON00248
+  - ggdonto_schema:brMuscleWeaknessNSDisGD*:
+    - brMuscleWeaknessNSDisGD: ggdonto:CON00248
+  - ggdonto_schema:brMyopiaGD*:
+    - brMyopiaGD: ggdonto:CON00554
+  - ggdonto_schema:brNephrosisFemaleUrogenDisGD*:
+    - brNephrosisFemaleUrogenDisGD: ggdonto:CON00559
+  - ggdonto_schema:brNephrosisMaleUrogenDisGD*:
+    - brNephrosisMaleUrogenDisGD: ggdonto:CON00559
+  - ggdonto_schema:brPathwayGDnew*:
+    - brPathwayGDnew: ggdonto:CON00390
+  - ggdonto_schema:brRespiratoryTractDisGD*:
+    - brRespiratoryTractDisGD: ggdonto:CON00291
+  - ggdonto_schema:brRetinalDetachmentGD*:
+    - brRetinalDetachmentGD: ggdonto:CON00589
+  - ggdonto_schema:brScoliosisGD*:
+    - brScoliosisGD: ggdonto:CON00594
+  - ggdonto_schema:brSkinAbnormGD*:
+    - brSkinAbnormGD: ggdonto:CON00299
+  - ggdonto_schema:brSkinDisGeneticGD*:
+    - brSkinDisGeneticGD: ggdonto:CON00619
+  - ggdonto_schema:brUrogenitalAbnormFemaleUrogenDisGD*:
+    - brUrogenitalAbnormFemaleUrogenDisGD ggdonto:CON00604
+  - ggdonto_schema:brUrogenitalAbnormMaleUrogenDisGD*:
+    - brUrogenitalAbnormMaleUrogenDisGD: ggdonto:CON00604
+  - gmncbi_schema:causedBy+:
+    - causedBy: <http://identifiers.org/ncbigene/113189>, <http://jcggdb.jp/rcmg/ggdb/Homolog?cat=symbol&symbol=D4ST1>, <http://jcggdb.jp/rdf/diseases/dgncbi#mim608429_gene113189>, <http://jcggdb.jp/rdf/diseases/gincbi#NGI113189>
+  - gmncbi_schema:hasManifestation+:
+    - hasManifestation: ggdonto:CON00123, ggdonto:CON00130, ggdonto:CON00139, ggdonto:CON00141, ggdonto:CON00142, ggdonto:CON00147, ggdonto:CON00156, ggdonto:CON00158, ggdonto:CON00167, ggdonto:CON00171, ggdonto:CON00175, ggdonto:CON00180, ggdonto:CON00186, ggdonto:CON00197, ggdonto:CON00198, ggdonto:CON00213, ggdonto:CON00214, ggdonto:CON00215, ggdonto:CON00228, ggdonto:CON00230, ggdonto:CON00233, ggdonto:CON00239, ggdonto:CON00245, ggdonto:CON00248, ggdonto:CON00250, ggdonto:CON00251, ggdonto:CON00267, ggdonto:CON00268, ggdonto:CON00279, ggdonto:CON00291, ggdonto:CON00294, ggdonto:CON00299, ggdonto:CON00300, ggdonto:CON00301, ggdonto:CON00309, ggdonto:CON00314, ggdonto:CON00443, ggdonto:CON00457, ggdonto:CON00458, ggdonto:CON00459, ggdonto:CON00464, ggdonto:CON00466, ggdonto:CON00487, ggdonto:CON00495, ggdonto:CON00503, ggdonto:CON00507, ggdonto:CON00519, ggdonto:CON00536, ggdonto:CON00537, ggdonto:CON00547, ggdonto:CON00554, ggdonto:CON00559, ggdonto:CON00587, ggdonto:CON00589, ggdonto:CON00594, ggdonto:CON00603, ggdonto:CON00604, ggdonto:CON00613, ggdonto:CON00619
+  - rdfs:label:
+    - label: '"Ehlers-Danlos syndrome, musculocontractural type"@en'
+  - rdfs:seeAlso+:
+    - links: <http://id.nlm.nih.gov/mesh/C538226>, <http://identifiers.org/mesh/C538226>, <http://identifiers.org/ncbigene/113189>, <http://identifiers.org/omim/601776>, <http://identifiers.org/omim/608429>
+  - skos:altLabel*:
+    - altLabel: '"Adducted thumb and clubfoot syndrome"@en'
+  - skos:closeMatch*:
+    - closeMatch: <http://jcggdb.jp/rdf/diseases/dgncbi#cuiC1866294_ncbiCur>, <http://jcggdb.jp/rdf/diseases/dgncbi#mim601776_gene113189>, <http://jcggdb.jp/rdf/diseases/gmncbi#MGE106>, <http://jcggdb.jp/rdf/diseases/pmncbi#MGE106>
+  - skos:inScheme+:
+    - inScheme: gdgdb_schema:ConceptSchemePathwayGDnew, gdgdb_schema:ConceptSchemePhenotypeGD
+  - skos:prefLabel*:
+    - prefLabel: '"Ehlers-Danlos syndrome, musculocontractural type"@en'
+  - skos:related+:
+    - related: <http://identifiers.org/ncbigene/113189>, <http://jcggdb.jp/rcmg/ggdb/Homolog?cat=symbol&symbol=D4ST1>, <http://jcggdb.jp/rdf/diseases/dgncbi#mim608429_gene113189>, <http://jcggdb.jp/rdf/diseases/gincbi#NGI113189>, <http://purl.uniprot.org/enzyme/2.8.2.35>, <http://purl.uniprot.org/uniprot/Q8NCH0>
 

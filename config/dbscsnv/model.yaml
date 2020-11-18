@@ -1,0 +1,33 @@
+- DbscsnvVariation dbscsnv_variation:grch38_1_924946_A_C:
+  - a: med2rdf:Variation
+  - faldo:location:
+    - grch38_location: dbscsnv_faldo:grch38_1_924946
+  - dcmiterms:identifier:
+    - variation_id: "grch38_1_924946_A_C"
+  - med2rdf:alternative_allele:
+    - alt_allele: "C"
+  - med2rdf:gene:
+    - gene_symbol: dbscsnv_gene:SAMD11 # SAMD11
+  - med2rdf:reference_allele:
+    - ref_allele: "A"
+  - dbscsnv:function:
+    - dbscsnv_function: "."
+  - dbscsnv:grch37:
+    - grch37_location: dbscsnv_variation:grch37_1_860326_A_C
+  - dbscsnv:hasPrediction+:
+    - damage_prediction: DamagePrediction
+  - dbscsnv:region:
+    - gene_region: "UTR5"
+
+- DamagePrediction dbscsnv_variation:grch38_1_924946_A_C_RandomForest:
+  - a: dbscsnv:DamagePrediction
+  - dbscsnv:algorithm:
+    - dbscsnv_algorithm: dbscsnv_algorithm:RandomForest
+  - sio:SIO_000216:
+    - random_forest_rankscore: RandomForestRankscore
+
+- RandomForestRankscore dbscsnv_variation:grch38_1_924946_A_C_RandomForest_rankscore:
+  - a: dbscsnv:PredictionRankScore
+  - rdf:value:
+    - score: 0.03
+

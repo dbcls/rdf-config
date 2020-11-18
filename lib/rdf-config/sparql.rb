@@ -3,6 +3,7 @@ require 'rdf-config/sparql/sparql_generator'
 require 'rdf-config/sparql/comment_generator'
 require 'rdf-config/sparql/prefix_generator'
 require 'rdf-config/sparql/select_generator'
+require 'rdf-config/sparql/dataset_generator'
 require 'rdf-config/sparql/where_generator'
 
 class RDFConfig
@@ -15,7 +16,15 @@ class RDFConfig
       @config = config
       @opts = opts
 
-      raise SPARQLConfigNotFound, "No SPARQL config found: sparql query name '#{name}'" unless @config.sparql.key?(name)
+      sparql_query_name, endpoint_name = @opts[:sparql_query_name].to_s.split(':')
+      @opts[:sparql_query_name] = sparql_query_name.nil? ? DEFAULT_NAME : sparql_query_name
+      @opts[:endpoint_name] = endpoint_name unless endpoint_name.nil?
+
+      @variables = opts[:variables] if opts.key?(:variables)
+      @parameters = opts[:parameters] if opts.key?(:parameters)
+      if !opts.key?(:check_query_name) || opts[:check_query_name] == true
+        raise SPARQLConfigNotFound, "No SPARQL config found: sparql query name '#{name}'" unless @config.sparql.key?(name)
+      end
     end
 
     def generate
@@ -24,6 +33,7 @@ class RDFConfig
       sparql_generator.add_generator(CommentGenerator.new(@config, @opts))
       sparql_generator.add_generator(PrefixGenerator.new(@config, @opts))
       sparql_generator.add_generator(SelectGenerator.new(@config, @opts))
+      sparql_generator.add_generator(DatasetGenerator.new(@config, @opts))
       sparql_generator.add_generator(WhereGenerator.new(@config, @opts))
 
       sparql_generator.generate.join("\n")
@@ -53,12 +63,15 @@ class RDFConfig
     end
 
     def endpoints
-      case @config.endpoint['endpoint']
-      when String
-        [@config.endpoint['endpoint']]
-      when Array
-        @config.endpoint['endpoint']
-      else
+      begin
+        if @opts.key?(:endpoint_name)
+          endpoint_opts = { name: @opts[:endpoint_name] }
+        else
+          endpoint_opts = {}
+        end
+        @endpoint ||= Endpoint.new(@config, endpoint_opts)
+        @endpoint.endpoints
+      rescue
         []
       end
     end
@@ -73,6 +86,35 @@ class RDFConfig
 
     def model
       @model ||= Model.new(@config)
+    end
+
+    def variable_name_for_sparql(variable_name, add_question_mark = false)
+      triple = model.find_by_object_name(variable_name)
+      if triple.nil?
+        if model.subject?(variable_name)
+          sparql_variable_name = variable_name
+        else
+          sparql_variable_name = ''
+        end
+      else
+        case triple.object
+        when Model::Subject
+          object_names = triple.object.objects.map(&:name)
+          sparql_variable_name = if object_names.include?(variable_name)
+                                   triple.subject.name
+                                 else
+                                   triple.object.as_object_name(triple.subject.name)
+                                 end
+        else
+          sparql_variable_name = triple.object.name
+        end
+      end
+
+      if !sparql_variable_name.empty? && add_question_mark
+        "?#{sparql_variable_name}"
+      else
+        sparql_variable_name
+      end
     end
 
     def run

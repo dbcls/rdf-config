@@ -1,21 +1,21 @@
 - UniProt <http://rdf.uniprot.org/protein/P06493>:
     - a: core:Protein
     - core:recommendedName:
-        - structured_recommended_name: up:P06493\#SIP5A4FD37A407EF4B7
+        - structured_recommended_name: StructuredRecommendedName
     - core:alternativeName:
-        - structured_alternative_name: up:P06493\#SIP00349E63D97E99F2
+        - structured_alternative_name: StructuredAlternativeName
     - core:mnemonic:
         - mnemonic: "CDK1_HUMAN"
     - core:oldMnemonic:
-        - mnemonic: ["CC2_HUMAN", "CDC2_HUMAN"]
+        - old_mnemonic: ["CC2_HUMAN", "CDC2_HUMAN"]
     - core:reviewed:
         - reviewed: true
     - core:existence:
         - existence: core:Evidence_at_Protein_Level_Existence
     - core:sequence:
-        - sequence: ["isoform:P06493-1", "isoform:P06493-2"]
+        - sequence: Sequence
     - core:conflictingSequence:
-        - confilicting_sequence: <http://purl.uniprot.org/uniprot/P06493\#SIP57DD48EE8AF6F997>
+        - conflicting_sequence: ConflictingSequence
     - core:created:
         - created: 1988-01-01
     - core:modified:
@@ -25,7 +25,7 @@
     - core:organism:
         - organism: taxonomy:9606
     - core:encodedBy:
-        - encoded_by: up:P06493#gene-MD5066A21D78DD806AEF8C6D2D66E098AF8
+        - encoded_by: EncodedBy
     - core:enzyme:
         - enzyme: ["enzyme:2.7.11.22", "enzyme:2.7.11.23"]
     - core:proteome:
@@ -33,11 +33,11 @@
     - core:classifiedWith:
         - classified_with: ["obo:GO_0000086", "keywords:1017"]
     - core:annotation:
-        - activity_regulation_annotation: up:P06493#SIPBD7EB44EAA4E6471
+        - activity_regulation_annotation: ActivityRegulationAnnotation
     - core:annotation:
         - allergen_annotation: 
     - core:annotation:
-        - alternative_sequence_annotation: annotation:VSP_021375
+        - alternative_sequence_annotation: AlternativeSequenceAnnotation
     - core:annotation:
         - natural_variant_annotation: 
     - core:annotation:
@@ -45,9 +45,9 @@
     - core:annotation:
         - alternative_promoter_usage_annotation: 
     - core:annotation:
-        - alternative_splicing_annotation: up:P06493#SIPDE7757750C226E88
+        - alternative_splicing_annotation: AlternativeSplicingAnnotation
     - core:annotation:
-        - ribosomal_frameshifting: up:P06710#SIPFCC4F752FDF91CCD
+        - ribosomal_frameshifting: RibosomalFrameshifting
     - core:annotation:
         - absorption_annotation: 
     - core:annotation:
@@ -61,7 +61,7 @@
     - core:annotation:
         - biotechnology_annotation: 
     - core:annotation:
-        - catalitic_activity_annotation: up:P06493#SIP11972EF825D39FC9
+        - catalitic_activity_annotation: CataliticActivityAnnotation
     - core:annotation:
         - caution_annotation: 
     - core:annotation:
@@ -75,9 +75,9 @@
     - core:annotation:
         - domain_annotation: 
     - core:annotation:
-        - function_annotation: up:P06493#SIP6117914ED102E3B4
+        - function_annotation: FunctionAnnotation
     - core:annotation:
-        - induction_annotation: up:P06493#SIP60D3BB366B1B62FD
+        - induction_annotation: InductionAnnotation
     - core:annotation:
         - pathway_annotation:
     - core:annotation:
@@ -85,25 +85,25 @@
     - core:annotation:
         - polymorphism_annotation: 
     - core:annotation:
-        - ptm_annotation: up:P06493#SIP5F0B9E399D9A0ED0
+        - ptm_annotation: PtmAnnotation
     - core:annotation:
         - rna_editing_annotation: 
     - core:annotation:
-        - beta_strand_annotation: up:P06493#SIP1448A8D6AB07AC9C
+        - beta_strand_annotation: BetaStrandAnnotation
     - core:annotation:
-        - helix_annotation: up:P06493#SIP04650F2717A2389F
+        - helix_annotation: HelixAnnotation
     - core:annotation:
-        - turn_annotation: up:P06493#SIP15A2B5D13031AF2F
+        - turn_annotation: TurnAnnotation
     - core:annotation:
-        - active_site_annotation: up:P06493#SIPFC95A5358FA31F92
+        - active_site_annotation: ActiveSiteAnnotation
     - core:annotation:
-        - binding_site_annotation: up:P06493#SIP1BFF64E6E353741A
+        - binding_site_annotation: BindingSiteAnnotation
     - core:annotation:
         - metal_binding_annotation: 
     - core:annotation:
-        - chain_annotation: annotation:PRO_0000085724
+        - chain_annotation: ChainAnnotation
     - core:annotation:
-        - initiator_methionine_annotation: up:P06710#SIP1A9E0754F14CA9D9
+        - initiator_methionine_annotation: InitiatorMethionineAnnotation
     - core:annotation:
         - peptide_annotation: 
     - core:annotation:
@@ -113,7 +113,7 @@
     - core:annotation:
         - transit_peptide_annotation: 
     - core:annotation:
-        - cross-link_annotation: up:P06493#SIP5ADD2238697D7EC1
+        - cross-link_annotation: CrossLinkAnnotation
     - core:annotation:
         - disulfide_bond_annotation: 
     - core:annotation:
@@ -121,7 +121,7 @@
     - core:annotation:
         - lipidation_annotation: 
     - core:annotation:
-        - modified_residue_annotation: up:P06493#SIP1D4CE85C9D16B1C6
+        - modified_residue_annotation: ModifiedResidueAnnotation
     - core:annotation:
         - non-standard_residue_annotation: 
     - core:annotation:
@@ -131,17 +131,15 @@
     - core:annotation:
         - compositional_bias_annotation:
     - core:annotation:
-        - domain_extent_annotation: up:P06493#SIP5D2AA8085B997591
+        - domain_extent_annotation: DomainExtentAnnotation
     - core:annotation:
         - intramembrane_annotation:
     - core:annotation:
         - motif_annotation:
     - core:annotation:
-        - np_binding_annotation: up:P06493#SIPFB79E981CA8AFD16
+        - np_binding_annotation: NpBindingAnnotation
     - core:annotation:
         - nucleotide_binding_annotation:
-    - core:annotation:
-        - repeat_annotation:
     - core:annotation:
         - repeat_annotation:
     - core:annotation:
@@ -151,7 +149,7 @@
     - core:annotation:
         - zinc_finger_annotation:
     - core:annotation:
-        - erroneous_gene_model_prediction_annotation: up:P06493#SIPD13D69F1F4CD4A8C
+        - erroneous_gene_model_prediction_annotation: ErroneousGeneModelPredictionAnnotation
     - core:annotation:
         - erroneous_initiation_annotation:
     - core:annotation:
@@ -161,13 +159,9 @@
     - core:annotation:
         - frameshift_annotation:
     - core:annotation:
-        - function_annotation: up:P06493#SIP6117914ED102E3B4
-    - core:annotation:
-        - induction_annotation: up:P06493#SIP60D3BB366B1B62FD
-    - core:annotation:
         - mass_spectrometry_annotation:
     - core:annotation:
-        - mutagenesis_annotation: up:P06493#SIP17E8382E82A8BDCF
+        - mutagenesis_annotation: MutagenesisAnnotation
     - core:annotation:
         - non-adjacent_residues_annotation:
     - core:annotation:
@@ -177,32 +171,31 @@
     - core:annotation:
         - sequence_uncertainty_annotation:
     - core:annotation:
-        - similarity_annotation: up:P06493#SIP5D84D02C743C70EC
+        - similarity_annotation: SimilarityAnnotation
     - core:annotation:
-        - subcellular_location_annotation: up:P06493#SIPBDDAAC56DB8E1DC1
+        - subcellular_location_annotation: SubcellularLocationAnnotation
     - core:annotation:
-        - subunit_annotation: up:P06493#SIP66A719E19256ABED
+        - subunit_annotation: SubunitAnnotation
     - core:annotation:
-        - tissue_specificity_annotation: up:P06493#SIP0AAA804FAD004C35
+        - tissue_specificity_annotation: TissueSpecificityAnnotation
     - core:annotation:
         - toxic_dose_annotation: 
     - core:interaction:
-        - self_interaction: ["intact:297353-444308", "intact:347640-444308"]
+        - self_interaction: SelfInteraction
     - core:interaction:
         - non_self_interaction: 
     - core:attribution:
-        - attribution: 
-            - up:P06493#attribution-7E665CB8C69D9461711A57FE630BA789
+        - attribution: Attribution
     - core:citation:
         - book_citation: 
     - core:citation:
         - electronic_citation: 
     - core:citation:
-        - journal_citation: ["citation:12775724", "citation:14654843"]
+        - journal_citation: JournalCitation
     - core:citation:
         - patent_citation: 
     - core:citation:
-        - submission_citation: ["citation:SIPFBEFD2D28C06C51B", "citation:SIPBD8C26D9D54E5891"]
+        - submission_citation: SubmissionCitation
     - core:citation:
         - thesis_citation: 
     - core:citation:
@@ -212,7 +205,7 @@
             - <http://egp.gs.washington.edu/data/cdc2/>
             - <http://identifiers.org/ncbigene/983>
 
-- structured_recommended_name:
+- StructuredRecommendedName up:P06493\#SIP5A4FD37A407EF4B7:
     - a: core:Structured_Name
     - core:ecName:
         - ec_name: "2.7.11.22"
@@ -221,26 +214,26 @@
     - core:shortName:
         - short_name: "CDK1"
 
-- structured_alternative_name:
+- StructuredAlternativeName up:P06493\#SIP00349E63D97E99F2:
     - a: core:Structured_Name
     - core:fullName:
         - alternative_name: "p34 protein kinase"
 
-- encoded_by:
+- EncodedBy up:P06493#gene-MD5066A21D78DD806AEF8C6D2D66E098AF8:
     - a: core:Gene
     - skos:altLabel:
         - alt_label: ["CDC2", "CDC28A", "CDKN1", "P34CDC2"]
     - skos:prefLabel:
         - pref_label: "CDK1"
 
-- sequence:
+- Sequence isoform:P06493-1:
     - a: core:Simple_Sequence
     - core:mass:
         - mass: 34095
     - core:md5Checksum:
         - md5_checksum: "c5f024db8fdfc09c76e40635fc0aa6f1"
     - core:modified:
-        - isoform_modified: 2011-05-31
+        - isoform_modified: "2011-05-31"
     - core:name:
         - isoform_name: "1"
     - core:version:
@@ -249,12 +242,12 @@
         - isoform_sequence: "MEDYTKIEKIGEGTYGVVYKGRHKTTGQVVAMKKIRLESEEEGVPSTAIREISLLKELRHPNIVSLQDVLMQDSRLYLIFEFLSMDLKKYLDSIPPGQYMDSSLVKSYLYQILQGIVFCHSRRVLHRDLKPQNLLIDDKGTIKLADFGLARAFGIPIRVYTHEVVTLWYRSPEVLLGSARYSTPVDIWSIGTIFAELATKKPLFHGDSEIDQLFRIFRALGTPNNEVWPEVESLQDYKNTFPKWKPGSLASHVKNLDENGLDLLSKMLIYDPAKRISGKMALNHPYFNDLDNQIKKM"
 
 
-- confilicting_sequence:
+- ConflictingSequence up:P06493\#SIP57DD48EE8AF6F997:
     - a: core:External_Sequence
     - core:translatedFrom:
         - translated_from: up:P06493#SIP57DD48EE8AF6F997
 
-- self_interaction:
+- SelfInteraction intact:297353-444308 intact:347640-444308:
     - a: ["core:Interaction", "core:Non_Self_Interaction"]
     - core:experiments:
         - experiments: 3
@@ -263,205 +256,203 @@
     - core:xeno:
         - xeno: false
 
-- active_site_annotation:
+- ActiveSiteAnnotation up:P06493#SIPFC95A5358FA31F92:
     - a: core:Active_Site_Annotation
     - core:range:
-        - range: range:22571007499383598tt128tt128
+        - active_site_annotation_range: Range
     - rdfs:comment:
         - active_site_annotation_comment: "Proton acceptor"
 
-- activity_regulation_annotation:
+- ActivityRegulationAnnotation up:P06493#SIPBD7EB44EAA4E6471:
     - a: core:Activity_Regulation_Annotation
     - rdfs:comment:
         - activity_regulation_annotation_comment: ""
 
-- alternative_sequence_annotation:
+- AlternativeSequenceAnnotation annotation:VSP_021375:
     - a: core:Activity_Sequence_Annotation
     - core:substitution: ""
     - rdfs:comment:
         - alternative_sequence_annotation_comment: "In isoform 2."
 
-- alternative_splicing_annotation:
+- AlternativeSplicingAnnotation up:P06493#SIPDE7757750C226E88:
     - a: core:Alternative_Splicing_Annotation
     - core:sequence:
-        - sequence: ["isoform:P06493-1", "isoform:P06493-2"]
+        - alternative_splicing_annotation_sequence: Sequence
     - alternative_splicing_annotation_comment: ""
 
-- ribosomal_frameshifting:
+- RibosomalFrameshifting up:P06710#SIPFCC4F752FDF91CCD:
     - a: core:Ribosomal_Frameshifting
     - core:sequence:
-        - sequence: ["isoform:P06710-1", "isoform:P06710-2"]
+        - ribosomal_frameshifting_sequence: Sequence
     - rdfs:comment:
         - ribosomal_frameshifting_comment: "The production of the two protein products from this region is due to programmed ribosomal frameshifting. Frameshifting is about 40% efficient."
 
-- beta_strand_annotation:
+- BetaStrandAnnotation up:P06493#SIP1448A8D6AB07AC9C:
     - a: core:Beta_Strand_Annotation
     - core:range:
-        - range: range:22571007499383598tt29tt35
+        - beta_strand_annotation_range: Range
 
-- binding_site_annotation:
+- BindingSiteAnnotation up:P06493#SIP1BFF64E6E353741A:
     - a: core:Binding_Site_Annotation
     - core:range:
-        - range: range:22571007499383598tt33tt33
+        - binding_site_annotation_range: Range
     - rdfs:comment:
         - binding_site_annotation: "ATP"
 
-- catalitic_activity_annotation:
+- CataliticActivityAnnotation up:P06493#SIP11972EF825D39FC9:
     - a: core:Catalytic_Activity_Annotation
     - core:catalyticActivity:
-        - catalytic_activity: core:P06493#SIP33DD9A7A16603D04
+        - catalytic_activity: CatalyticActivity
 
-- chain_annotation:
+- ChainAnnotation annotation:PRO_0000085724:
     - a: core:Chain_Annotation
     - core:range:
-        - range: 22571007499383598tt1tt297
+        - chain_annotation_range: Range
     - rdfs:comment:
         - chain_annotation_comment: "Cyclin-dependent kinase 1"
 
-- initiator_methionine_annotation:
+- InitiatorMethionineAnnotation up:P06710#SIP1A9E0754F14CA9D9:
     - a: core:Initiator_Methionine_Annotation
     - core:range:
-        - range: range:22571007549190190tt1tt1
+        - initiator_methionine_annotation_range: Range
     - rdfs:comment:
         - initiator_methionine_comment: "Removed"
 
-- cross-link_annotation:
+- CrossLinkAnnotation up:P06493#SIP5ADD2238697D7EC1:
     - a: core:Cross-link_Annotation
     - core:range:
-        - range: range:22571007499383598tt6tt6
+        - cross_link_annotation_range: Range
     - rdfs:comment:
         - cross-link_annotation_comment: "Glycyl lysine isopeptide (Lys-Gly) (interchain with G-Cter in SUMO2); alternate"
 
-- domain_extent_annotation:
+- DomainExtentAnnotation up:P06493#SIP5D2AA8085B997591:
     - a: core:Domain_Extent_Annotation
     - core:range:
-        - range: range:22571007499383598tt4tt287
+        - domain_extent_annotation_range: Range
     - rdfs:comment:
         - domain_extent_annotation_comment: "Protein kinase"
 
-- erroneous_gene_model_prediction_annotation:
+- ErroneousGeneModelPredictionAnnotation up:P06493#SIPD13D69F1F4CD4A8C:
     - a: core:Erroneous_Gene_Model_Prediction_Annotation
     - core:confilictingSequence:
-        - conflicting_sequence: up:P06493#SIP57DD48EE8AF6F997
+        - erroneous_gene_model_prediction_annotation_conflicting_sequence: ConflictingSequence
 
-- erroneous_initiation_annotation:
+- Erroneous_initiation_annotation:
     - a: core:Erroneous_Initiation_Annotation
     - core:confilictingSequence:
-        - conflicting_sequence: up:P06710#SIP5B121DCACC8D3D21
+        - erroneous_initiation_annotation_conflicting_sequence: ConflictingSequence
     - rdfs:comment:
         - erroneous_initiation_annotation_comment: "Truncated N-terminus."
 
-- function_annotation:
+- FunctionAnnotation up:P06493#SIP6117914ED102E3B4:
     - a: core:Function_Annotation
     - rdfs:comment:
         - function_annotation_comment: "(Microbial infection) Acts as a receptor for hepatitis C virus (HCV) in hepatocytes and facilitates its cell entry."
 
-- helix_annotation:
+- HelixAnnotation up:P06493#SIP04650F2717A2389F:
     - a: core:Helix_Annotation
     - core:range:
-        - range: range:22571007499383598tt285tt287
+        - helix_annotation_range: Range
 
-- induction_annotation:
+- InductionAnnotation up:P06493#SIP60D3BB366B1B62FD:
     - a: core:Induction_Annotation
     - rdfs:comment:
         - induction_annotation_comment: ""
 
-- modified_residue_annotation:
+- ModifiedResidueAnnotation up:P06493#SIP1D4CE85C9D16B1C6:
     - a: core:Modified_Residue_Annotation
     - core:range:
-        - range: range:22571007499383598tt1tt1
+        - modified_residue_annotation_range: Range
     - rdfs:commnet:
         - modified_residue_annotation_comment: "N-acetylmethionine"
 
-- mutagenesis_annotation:
+- MutagenesisAnnotation up:P06493#SIP17E8382E82A8BDCF:
     - a: core:Mutagenesis_Annotation
     - core:range:
-        - range: range:22571007499383598tt14tt15
+        - mutagenesis_annotation_range: Range
     - core:substitution:
         - substitution: "AF" 
     - rdfs:comment:
-        - mutagenesis_annotation: "Abnormal cell cycle exhibiting only M-phase without completing either karyokinesis or cytokinesis."
+        - mutagenesis_annotation_comment: "Abnormal cell cycle exhibiting only M-phase without completing either karyokinesis or cytokinesis."
 
-- np_binding_annotation:
+- NpBindingAnnotation up:P06493#SIPFB79E981CA8AFD16:
     - a: core:NP_Binding_Annotation
     - core:range:
-        - range: range:22571007499383598tt10tt18
+        - np_binding_annotation_range: Range
     - rdfs:comment:
         - np_binding_annotation_comment: "ATP"
 
-- ptm_annotation:
+- PtmAnnotation up:P06493#SIP5F0B9E399D9A0ED0:
     - a: core:PTM_Annotation
     - rdfs:comment:
         - ptm_annotation_comment: "Polyubiquitinated upon genotoxic stress."
 
-- similarity_annotation:
+- SimilarityAnnotation up:P06493#SIP5D84D02C743C70EC:
     - a: core:Similarity_Annotation
     - rdfs:comment:
         - similarity_annotation_comment: "Belongs to the protein kinase superfamily. CMGC Ser/Thr protein kinase family. CDC2/CDKX subfamily."
 
-- subcellular_location_annotation:
+- SubcellularLocationAnnotation up:P06493#SIPBDDAAC56DB8E1DC1:
     - a: core:Subcellular_Location_Annotation
     - core:locatedIn:
-        - located_in: up:P06493#SIP299AB8A3C68F818C
+        - located_in: LocatedIn
     - rdfs:comment:
         - subcellular_location_annotation_comment: ""
 
-- located_in:
+- LocatedIn up:P06493#SIP299AB8A3C68F818C:
+    - a: rdfs:Resource
     - core:cellularComponent:
         - cellular_component: location:48
 
-- subunit_annotation:
+- SubunitAnnotation up:P06493#SIP66A719E19256ABED:
     - a: core:Subunit_Annotation
     - rdfs:comment:
         - subunit_annotation_comment: "" 
 
-- tissue_specificity_annotation:
+- TissueSpecificityAnnotation up:P06493#SIP0AAA804FAD004C35:
     - a: core:Tissue_Specificity_Annotation
     - rdfs:comment:
         - tissue_specificity_annotation_comment: "Isoform 2 is found in breast cancer tissues."
 
-- turn_annotation:
+- TurnAnnotation up:P06493#SIP15A2B5D13031AF2F:
     - a: core:Turn_Annotation
     - core:range:
-        - range: range:22571007499383598tt121tt123
+        - turn_annotation_range: Range
 
-- catalytic_activity:
+- CatalyticActivity core:P06493#SIP33DD9A7A16603D04:
     - a: core:Catalytic_Activity
     - core:catalyticReaction:
         - catalytic_reaction: <http://rdf.rhea-db.org/10216>
     - core:enzymeClass:
         - enzyme_class: enzyme:2.7.11.23
 
-- helix_annotation:
-    - a: core:Helix_Annotation
-    - core:range:
-        - range: range:22571007499383598tt285tt287
-
-- range:
+- Range range:22571007499383598tt128tt128:
     - a: faldo:Region
     - faldo:begin:
-        - begin: position:22571007499383598tt285
+        - begin: Begin
     - faldo:end:
-        - end: position:22571007499383598tt287
+        - end: End
 
-- begin:
-    - a: ["faldo:ExactPosition", "faldo:Position"]
+- Begin position:22571007499383598tt285:
+    - a: faldo:ExactPosition
+    - a: faldo:Position
     - faldo:position:
         - begin_position: 285
     - faldo:reference:
-        - reference: isoform:P06493-1
+        - begin_reference: isoform:P06493-1
 
-- end:
-    - a: ["faldo:ExactPosition", "faldo:Position"]
+- End position:22571007499383598tt287:
+    - a: faldo:ExactPosition
+    - a: faldo:Position
     - faldo:position:
         - end_position: 287
     - faldo:reference:
-        - reference: isoform:P06493-1
+        - end_reference: isoform:P06493-1
    
 - annotation_statement:
     - a: rdf:Statement
     - core:attribution:
-
+        - annotation_statement_attribution: Attribution
     - rdf:subject:
         - annotation_subject: sp:P06493#SIP04650F2717A2389F
     - rdf:predicate:
@@ -469,7 +460,8 @@
     - rdf:object:
         - annotation_object: up:P06493
 
-- attribution:
+- Attribution:
+    - a: rdfs:Resource
     - core:evidence:
         - evidence: obo:ECO_0000244
     - core:manual:
@@ -480,7 +472,7 @@
 - classified_with_statement:
     - a: core:Statement
     - core:attribution: 
-        - classified_with_attribution: up:P06493#attribution-9EB47BD232F33339DA82C00F0D8F8AF6
+        - classified_with_attribution: ClassifiedWithAttribution
     - rdf:subject:
         - classified_with_subject: up:P06493
     - rdf:predicate:
@@ -488,17 +480,18 @@
     - rdf:object:
         - classified_with_object: obo:GO_009715
 
-- classified_with_attribution:
+- ClassifiedWithAttribution up:P06493#attribution-9EB47BD232F33339DA82C00F0D8F8AF6:
+    - a: rdfs:Resource
     - dct:creator:
         - classified_with_creator: <http://purl.uniprot.org/goa-projects/CAFA>
     - core:evidence:
         - classified_with_evedence: obo:ECO_0000315
     - core:manual:
-        - manual: true
+        - classified_with_attribution_manual: true
     - core:source:
         - classified_with_source: citation:24746669
 
-- journal_citation:
+- JournalCitation citation:12775724 citation:14654843:
     - a: core:Journal_Citation
     - dct:identifier:
         - citation_identifier: "doi:10.1074/jbc.m302191200"
@@ -518,7 +511,7 @@
     - foaf:primaryTopicOf:
         - citation_primary_topic_of: pubmed:12775724
 
-- submission_citation:
+- SubmissionCitation citation:SIPFBEFD2D28C06C51B citation:SIPBD8C26D9D54E5891:
     - a: core:Submission_Citation
     - core:date:
         - submission_citation_date: 2002-05
@@ -528,5 +521,4 @@
         - submission_citation_group: "NIEHS SNPs program"
     - core:submittedTo:
         - submitted_to:
-
 

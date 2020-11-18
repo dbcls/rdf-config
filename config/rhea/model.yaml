@@ -1,0 +1,61 @@
+- Reaction rhea:13973:
+  - a: rdfs:Class
+  - rhea:accession:
+    - accession_id: "RHEA:13973"
+  - rhea:bidirectionalReaction:
+    - bidirectional_reaction: rhea:13976 # diphosphate + H(+)(in) + H2O <=> 2 H(+)(out) + 2 phosphate
+  - rhea:citation+:
+    - citation: pubmed:16664761
+  - rhea:directionalReaction+:
+    - directional_reaction: rhea:13974 # diphosphate + H(+)(in) + H2O => 2 H(+)(out) + 2 phosphate
+  - rhea:ec:
+    - ec_number: uniprot_enzyme:7.1.3.1
+  - rhea:equation:
+    - equation: "diphosphate + H(+)(in) + H2O = 2 H(+)(out) + 2 phosphate"
+  - rhea:htmlEquation:
+    - equation_html: "diphosphate + H<small><sup>+</sup></small>(in) + H<small><sub>2</sub></small>O = 2 H<small><sup>+</sup></small>(out) + 2 phosphate"
+  - rhea:id:
+    - id: 13973
+  - rhea:isChemicallyBalanced:
+    - is_chemically_balanced: 1
+  - rhea:isTransport:
+    - is_transport: 1
+  - rhea:side+:
+    - side: rhea:13973_L
+  - rhea:status:
+    - status: rhea:Approved
+  - rdfs:label:
+    - label: "diphosphate + H(+)(in) + H2O = 2 H(+)(out) + 2 phosphate"
+  - rdfs:subClassOf:
+    - sub_class_of: rhea:Reaction
+
+- Side rhea:13973_L:
+  - a: rdfs:Class
+  - rhea:contains+:
+    - contains: rhea:Participant_13973_compound_1283
+  - rhea:curatedOrder:
+    - curated_order: 1
+  - rhea:transformableTo:
+    - transformable_to: rhea:13973_R
+  - rdfs:subClassOf:
+    - sub_class_of: rhea:ReactionSide
+
+- Compound rhea:Compound_1283:
+  - a: rdfs:Class
+  - rhea:accession:
+    - accession_id: "CHEBI:15377"
+  - rhea:charge:
+    - charge: 0
+  - rhea:chebi:
+    - chebi: obo:CHEBI_15377 # water
+  - rhea:formula:
+    - formula: "H2O"
+  - rhea:htmlName:
+    - name_html: "H2O"
+  - rhea:id:
+    - id: 1283
+  - rhea:name:
+    - name: "H2O"
+  - rdfs:subClassOf+:
+    - chebi: obo:CHEBI_15377 # water
+    - sub_class_of: rhea:SmallMolecule

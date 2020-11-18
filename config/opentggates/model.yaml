@@ -1,27 +1,204 @@
-- ProbeEntry probe:1367452_at:
+- Probe probe:1367452_at:
   - a: ontology:Probe
   - ontology:geneSymbol:
     - gene_symbol: "Sumo2"
   - ontology:taxon+:
-    - taxon: taxonomy:10116 # taxonomy:10116
-  - dct:identifier+:
+    - probe_taxon: taxonomy:10116 # taxonomy:10116
+  - dct:identifier:
     - probe_id: "1367452_at"
-  - rdfs:label+:
-    - name1: "small ubiquitin-like modifier 2"
-    - name2: "small ubiquitin-like modifier 2"
+  - rdfs:label:
+    - probe_label: "small ubiquitin-like modifier 2"
   - rdfs:seeAlso+:
-    - links: uniprot:P61959 # info:uniprot/P61959
+    - probe_links1: affymetrix:1367452_at
+    - probe_links2: uniprot:P61959 # info:uniprot/P61959
 
-- ChipEntry chip:003017645018:
+- Chip chip:003017645018:
   - a: array:Rat230_2
   - ontology:digitizedBy:
-    - algorithm: "MAS5.0"
+    - digitized_by: "MAS5.0"
   - ontology:normalizationMethod:
     - method: "MedianNormalization"
-  - dct:identifier+:
+  - dct:identifier:
     - chip_id: "003017645018"
   - sio:SIO_000216+: # has measurement value
     - []:
       - a: ontology:NormalizedSignalIntensity
-      - signal_intensity: {{expand blank node}}
+      - rdf:value:
+        - value: 36.2451261995548
+      - ontology:pacall:
+        - pacall: "P"
+      - ontology:probe:
+        - probe: Probe
+
+- UnitSet unitset:004018_004003_LV:
+  - a: ontology:UnitSet
+  - dct:identifier:
+    - unitset_id: "004018_004003_LV"
+  - ontology:hasControlSample:
+    - control_sample: Sample
+  - ontology:hasTestSample:
+    - test_sample: Sample
+  - ontology:hasUnitSetProfile:
+    - profile: UnitSetProfile
+
+- UnitSetProfile unitsetprofile:004018_004003_LV:
+  - a: ontology:UnitSetProfile
+  - dct:identifier:
+    - unitsetprofile_id: "004018_004003_LV"
+  - ontology:isDerivedFrom:
+    - derived_from: UnitSet
+  - sio:SIO_000216+: # has measurement value
+    - []:
+      - a: ontology:Log2Ratio
+      - rdf:value:
+        - value: 0.21632469530408177
+      - ontology:probe:
+        - probe: Probe
+    - []:
+      - a: ontology:PValue
+      - rdf:value:
+        - value: 0.0029567241802541675
+      - ontology:probe:
+        - probe: Probe
+    - []:
+      - a: ontology:CustomizedPACall
+      - rdf:value:
+        - value: 1
+      - ontology:probe:
+        - probe: Probe
+
+- ExperimentSet experimentset:0040:
+  - a: ontology:ExperimentSet
+  - dct:identifier:
+    - experimentset_id: "0040"
+  - ontology:hasSample+:
+    - sample: Sample
+
+- ExperimentalCondition condition:004018:
+  - a: ontology:ExperimentalCondition
+  - dct:identifier:
+    - condition_id: "004018"
+  - ontology:testType:
+    - test_type: "in vivo"
+  - ontology:sinRepType:
+    - sin_rep_type: "Single"
+  - ontology:admRoute:
+    - adm_route: "Gavage"
+  - ontology:doseLevel:
+    - dose_level: "Middle"
+  - ontology:exposedCompound:
+    - exposed_compound: ChemicalCompound
+  - sio:SIO_000216+: # has measurement value
+    - []:
+      - a: ontology:Dosage
+      - rdf:value:
+        - value: 600
+      - sio:SIO_000221:
+        - unit: obo:UO_0000308 #mg/kg
+    - []:
+      - a: ontology:SacrificePeriod
+      - rdf:value:
+        - value: 9
+      - sio:SIO_000221:
+        - unit: obo:UO_0000032 #hour
+
+- Sample sample:0040011LV:
+  - a: ontology:Sample
+  - dct:identifier:
+    - sample_id: "0040181LV"
+  - dct:isPartOf:
+    - is_part_of: IndividualAnimal
+  - ontology:organ:
+    - sample_organ: obo:UBERON_0002107 #liver
+  - ontology:chip:
+    - chip: Chip
+  - ontology:experimentalCondition:
+    - experimental_condition: ExperimentalCondition
+
+- IndividualAnimal animal:0040181:
+  - a: ontology:IndividualAnimal
+  - dct:identifier:
+    - amimal_id: "0040181"
+  - ontology:taxon:
+    - amimal_taxon: taxon:10116 #Rattus norvegicus
+  - ontology:sample+:
+    - sample: Sample
+  - sio:SIO_000216+: # has measurement value
+    - []:
+      - a: obo:CMO_0000025 #red blood cell count
+      - rdf:value:
+        - value: 5.81e+06
+      - sio:SIO_000221:
+        - unit: ncit:C67254 #/uL
+    - []:
+      - a: obo:CMO_0000027 #white blood cell count
+      - rdf:value:
+        - value: 1.64e+03
+      - sio:SIO_000221:
+        - unit: ncit:C67254 #/uL
+
+- ChemicalCompound compound:00001:
+  - a: ontology:ChemicalCompound
+  - dct:identifier:
+    - compound_id: "00001"
+  - rdfs:label:
+    - compound_label: "acetaminophen"
+  - skos:prefLabel:
+    - compound_pref_label: "acetaminophen"
+  - skos:altLabel:
+    - compound_alt_label: "APAP"
+  - rdfs:seeAlso+:
+    - compound_links1: pubchem:1983
+    - compound_links2: kegg:D00217
+    - compound_links3: cas:103-90-2
+
+- Pathology pathology:81:
+  - a: ontology:Pathology
+  - dct:identifier:
+    - pathology_id: "81"
+  - ontology:hasSample+:
+    - sample: Sample
+  - foaf:depiction:
+    - depiction: slide:27104
+  - ontology:grade:
+    - grade: PathologicalGrade
+  - ontology:findings:
+    - findings: PathologicalFindings
+  - ontology:topography:
+    - topography: PathologicalTopography
+
+- PathologicalGrade grade:GRAD0060:
+  - a: ontology:PathologicalGrade
+  - dct:identifier:
+    - grade_id: "GRAD0060"
+  - rdfs:label+:
+    - label_en: '"Minimal"@en'
+    - label_ja: '"軽微"@ja'
+  - ontology:gradeLabel:
+    - grade_label: ontology:Minimal
+  - dct:created:
+    - created: "2007-02-28"
+
+- PathologicalFindings findings:FI-L0340:
+  - a: ontology:PathologicalFindings
+  - dct:identifier:
+    - findings_id: "FI-L0340"
+  - rdfs:label+:
+    - findings_label_en: '"Change, eosinophilic"@en'
+    - findings_label_ja: '"エオジン好性変化"@ja'
+  - ontology:lesion+:
+    - lesion_en: '"on-neoplastic lesion"@en'
+    - lesion_ja: '"非腫瘍性病変"@ja'
+  - ontology:organ:
+    - findings_organ: obo:UBERON_0002107 #liver
+
+- PathologicalTopography topography:TO-L0180:
+  - a: ontology:PathologicalTopography
+  - dct:identifier:
+    - topography_id: "TO-L0180"
+  - rdfs:label+:
+    - topography_label_en: '"Centrilobular"@en'
+    - topography_label_ja: '"小葉中心性"@ja'
+  - ontology:organ:
+    - topography_organ: obo:UBERON_0002107 #liver
 

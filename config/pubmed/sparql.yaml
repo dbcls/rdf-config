@@ -1,9 +1,9 @@
 sparql:
-  description: Obrain article records from the PubMed data.
-  variables: [pubmed]
+  description: Obtain article records from the PubMed data.
+  variables: [pubmed_id, journal_volume_page, full_name, article_title, issued]
 
 stanza_sparql:
   description: Obtain an article record from the PubMed data
   parameters:
-    pubmed: pubmed:10075408  
-  variables: [bibo:pmid, dct:source, dct:creator, dct:title, dct:issued]
+    pubmed_id: pubmed:10075408  
+  variables: [pubmed_id, journal_volume_page, full_name, article_title, issued]
