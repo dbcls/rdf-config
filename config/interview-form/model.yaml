@@ -524,7 +524,7 @@
   - ifo:package_insert:
     - if_5_2_pi: pi:PI_5
   - ifo:item+:
-    - if_5_2_item: IF_5_2_item
+    - if_5_2: IF_5_2_item
 
 - IF_5_2_item if:IF_5_2.item1:
   - a: ifo:Item
@@ -561,7 +561,7 @@
   - ifo:package_insert:
     - if_5_4_pi: pi:PI_7
   - ifo:item+:
-    - if_5_4_item: IF_5_4_item
+    - if_5_4: IF_5_4_item
 
 - IF_5_4_item if:IF_5_4.item1:
   - a: ifo:Item
@@ -627,252 +627,468 @@
   - rdfs:seeAlso*:
     - if_5_5_4_2_xref: if:IF_5_5_7
 
-##### TODO #####
-
 - IF_5_5_5 if:IF_5_5_5:
   - a: ifo:IF_5_5_5
+  - ifo:package_insert:
+    - if_5_5_5_pi: pi:PI_17_1
   - rdf:value:
-    - if_5_5_5: ""
+    - if_5_5_5: '"該当資料なし"@ja'
 
 - IF_5_5_6 if:IF_5_5_6:
   - a: ifo:IF_5_5_6
-  - rdf:value:
-    - if_5_5_6: ""
 
 - IF_5_5_6_1 if:IF_5_5_6_1:
   - a: ifo:IF_5_5_6_1
+  - ifo:package_insert:
+    - if_5_5_6_1_pi: pi:PI_17_2
   - rdf:value:
-    - if_5_5_6_1: ""
+    - if_5_5_6_1: '"① 一般使用成績調査 23)\n日常診療における..."@ja'
+  - dct:references*:
+    - if_5_5_6_1_ref: if:ref23
 
 - IF_5_5_6_2 if:IF_5_5_6_2:
   - a: ifo:IF_5_5_6_2
+  - ifo:package_insert:
+    - if_5_5_6_2_pi: pi:PI_21
   - rdf:value:
-    - if_5_5_6_2: ""
+    - if_5_5_6_2: '"該当資料なし"@ja'
+  - rdfs:seeAlso*:
+    - if_5_5_6_2_xref: if:IF_1_5_1
 
 - IF_5_5_7 if:IF_5_5_7:
   - a: ifo:IF_5_5_7
+  - ifo:package_insert:
+    - if_5_5_7_pi: pi:PI_17_1
   - rdf:value:
-    - if_5_5_7: ""
+    - if_5_5_7: '"該当資料なし"@ja'
+  - dct:references*:
+    - if_5_5_7_ref: if:ref6
 
 - IF_6 if:IF_6:
   - a: ifo:IF_6
-  - rdf:value:
-    - if_6: ""
 
 - IF_6_1 if:IF_6_1:
   - a: ifo:IF_6_1
   - rdf:value:
-    - if_6_1: ""
+    - if_6_1: '"該当資料なし"@ja'
 
 - IF_6_2 if:IF_6_2:
   - a: ifo:IF_6_2
-  - rdf:value:
-    - if_6_2: ""
 
 - IF_6_2_1 if:IF_6_2_1:
   - a: ifo:IF_6_2_1
+  - ifo:package_insert:
+    - if_6_2_1_pi: pi:PI_18_1
   - rdf:value:
-    - if_6_2_1: ""
+    - if_6_2_1: '"1)作用機序 6,29)\nベタニスは膀胱の β3 受容体に結合して..."@ja'
+  - dct:references*:
+    - if_6_2_1_ref: if:ref6
 
 - IF_6_2_2 if:IF_6_2_2:
   - a: ifo:IF_6_2_2
+  - ifo:package_insert:
+    - if_6_2_2_pi: pi:PI_18
   - rdf:value:
-    - if_6_2_2: ""
+    - if_6_2_2: '"1)β3 アドレナリン受容体に対する刺激作用..."@ja'
+  - dct:references*:
+    - if_6_2_2_ref: if:ref6
 
 - IF_6_2_3 if:IF_6_2_3:
   - a: ifo:IF_6_2_3
+  - ifo:package_insert:
+    - if_6_2_3_pi: pi:PI_18_1
   - rdf:value:
-    - if_6_2_3: ""
+    - if_6_2_3: '"該当資料なし"@ja'
+  - dct:references*:
+    - if_6_2_3_ref: if:ref34
 
 - IF_7 if:IF_7:
   - a: ifo:IF_7
-  - rdf:value:
-    - if_7: ""
 
 - IF_7_1 if:IF_7_1:
   - a: ifo:IF_7_1
-  - rdf:value:
-    - if_7_1: ""
 
 - IF_7_1_1 if:IF_7_1_1:
   - a: ifo:IF_7_1_1
+  - ifo:package_insert:
+    - if_7_1_1_pi: pi:PI_16_1
   - rdf:value:
-    - if_7_1_1: ""
+    - if_7_1_1: '"該当資料なし"@ja'
 
 - IF_7_1_2 if:IF_7_1_2:
   - a: ifo:IF_7_1_2
+  - ifo:package_insert:
+    - if_7_1_2_pi: pi:PI_16_1
+  - ifo:item+:
+    - if_7_1_2: IF_7_1_2_item
+
+- IF_7_1_2_item if:IF_7_1_2.item1:
+  - a: ifo:Item
+  - ifo:package_insert:
+    - if_7_1_2_item_pi: pi:PI_16_1.item1
+  - dct:identifier:
+    - if_7_1_2_item_id: "7.1.2.item1"
   - rdf:value:
-    - if_7_1_2: ""
+    - if_7_1_2_item: '"① 単回投与試験 11,37)\n健康成人男性各 6 例に..."@ja'
+  - dct:references*:
+    - if_7_1_2_item_ref: if:ref11
 
 - IF_7_1_3 if:IF_7_1_3:
   - a: ifo:IF_7_1_3
   - rdf:value:
-    - if_7_1_3: ""
+    - if_7_1_3: '"該当資料なし"@ja'
 
 - IF_7_1_4 if:IF_7_1_4:
   - a: ifo:IF_7_1_4
+  - ifo:item+:
+    - if_7_1_4_item: IF_7_1_4_item
+
+- IF_7_1_4_item if:IF_7_1_4.item1:
+  - a: ifo:Item
+  - ifo:package_insert:
+    - if_7_1_4_item_pi: pi:PI_16_7.item1
+  - dct:identifier:
+    - if_7_1_4_item_id: "7.1.4.item1"
   - rdf:value:
-    - if_7_1_4: ""
+    - if_7_1_4_item: '"食事の影響 38)\n健康成人男女 72 例を対象に..."@ja'
+  - dct:references*:
+    - if_7_1_4_item_ref: if:ref38
+  - rdfs:seeAlso*:
+    - if_7_1_4_xref: if:IF_7
 
 - IF_7_2 if:IF_7_2:
   - a: ifo:IF_7_2
-  - rdf:value:
-    - if_7_2: ""
 
 - IF_7_2_1 if:IF_7_2_1:
   - a: ifo:IF_7_2_1
+  - ifo:package_insert:
+    - if_7_2_1_pi: pi:PI_16_1
   - rdf:value:
-    - if_7_2_1: ""
+    - if_7_2_1: '"該当資料なし"@ja'
+  - dct:references*:
+    - if_7_2_1_ref: if:ref2
 
 - IF_7_2_2 if:IF_7_2_2:
   - a: ifo:IF_7_2_2
+  - ifo:package_insert:
+    - if_7_2_2_pi: pi:PI_16_1
   - rdf:value:
-    - if_7_2_2: ""
+    - if_7_2_2: '"該当資料なし"@ja'
 
 - IF_7_2_3 if:IF_7_2_3:
   - a: ifo:IF_7_2_3
+  - ifo:package_insert:
+    - if_7_2_3_pi: pi:PI_16_1
   - rdf:value:
-    - if_7_2_3: ""
+    - if_7_2_3: '"該当資料なし"@ja'
+  - dct:references*:
+    - if_7_1_3_ref: if:ref43
 
 - IF_7_2_4 if:IF_7_2_4:
   - a: ifo:IF_7_2_4
+  - ifo:package_insert:
+    - if_7_2_4_pi: pi:PI_16_1
   - rdf:value:
-    - if_7_2_4: ""
+    - if_7_2_4: '"CL_F(経口クリアランス)11)：\nミラベグロンを50～400mgの範囲で..."@ja'
+  - dct:references*:
+    - if_7_2_4_item_ref: if:ref11
+  - rdfs:seeAlso*:
+    - if_7_2_4_xref: if:IF_7_1
 
 - IF_7_2_5 if:IF_7_2_5:
   - a: ifo:IF_7_2_5
+  - ifo:package_insert:
+    - if_7_2_5_pi: pi:PI_16_1
   - rdf:value:
-    - if_7_2_5: ""
+    - if_7_2_5: '"(外国人データ) 39)\n健康成人にミラベグロン15mgを..."@ja'
+  - dct:references*:
+    - if_7_2_5_item_ref: if:ref39
+  - rdfs:seeAlso*:
+    - if_7_2_5_xref: if:IF_7_1
 
 - IF_7_2_6 if:IF_7_2_6:
   - a: ifo:IF_7_2_6
+  - ifo:package_insert:
+    - if_7_2_6_pi: pi:PI_16_3
   - rdf:value:
-    - if_7_2_6: ""
+    - if_7_2_6: '"該当資料なし"@ja'
+
+##### TODO #####
 
 - IF_7_3 if:IF_7_3:
   - a: ifo:IF_7_3
+  - ifo:package_insert:
+    - if_7_3_pi: pi:PI_
   - rdf:value:
     - if_7_3: ""
+  - rdfs:seeAlso*:
+    - if_7_3_xref: if:IF_
+  - dct:references*:
+    - if_7_3_ref: if:ref
 
 - IF_7_3_1 if:IF_7_3_1:
   - a: ifo:IF_7_3_1
+  - ifo:package_insert:
+    - if_7_3_1_pi: pi:PI_
   - rdf:value:
     - if_7_3_1: ""
+  - rdfs:seeAlso*:
+    - if_7_3_1_xref: if:IF_
+  - dct:references*:
+    - if_7_3_1_ref: if:ref
 
 - IF_7_3_2 if:IF_7_3_2:
   - a: ifo:IF_7_3_2
+  - ifo:package_insert:
+    - if_7_3_2_pi: pi:PI_
   - rdf:value:
     - if_7_3_2: ""
+  - rdfs:seeAlso*:
+    - if_7_3_2_xref: if:IF_
+  - dct:references*:
+    - if_7_3_2_ref: if:ref
 
 - IF_7_4 if:IF_7_4:
   - a: ifo:IF_7_4
+  - ifo:package_insert:
+    - if_7_4_pi: pi:PI_
   - rdf:value:
     - if_7_4: ""
+  - rdfs:seeAlso*:
+    - if_7_4_xref: if:IF_
+  - dct:references*:
+    - if_7_4_ref: if:ref
 
 - IF_7_5 if:IF_7_5:
   - a: ifo:IF_7_5
+  - ifo:package_insert:
+    - if_7_5_pi: pi:PI_
   - rdf:value:
     - if_7_5: ""
+  - rdfs:seeAlso*:
+    - if_7_5_xref: if:IF_
+  - dct:references*:
+    - if_7_5_ref: if:ref
 
 - IF_7_5_1 if:IF_7_5_1:
   - a: ifo:IF_7_5_1
+  - ifo:package_insert:
+    - if_7_5_1_pi: pi:PI_
   - rdf:value:
     - if_7_5_1: ""
+  - rdfs:seeAlso*:
+    - if_7_5_1_xref: if:IF_
+  - dct:references*:
+    - if_7_5_1_ref: if:ref
 
 - IF_7_5_2 if:IF_7_5_2:
   - a: ifo:IF_7_5_2
+  - ifo:package_insert:
+    - if_7_5_2_pi: pi:PI_
   - rdf:value:
     - if_7_5_2: ""
+  - rdfs:seeAlso*:
+    - if_7_5_2_xref: if:IF_
+  - dct:references*:
+    - if_7_5_2_ref: if:ref
 
 - IF_7_5_3 if:IF_7_5_3:
   - a: ifo:IF_7_5_3
+  - ifo:package_insert:
+    - if_7_5_3_pi: pi:PI_
   - rdf:value:
     - if_7_5_3: ""
+  - rdfs:seeAlso*:
+    - if_7_5_3_xref: if:IF_
+  - dct:references*:
+    - if_7_5_3_ref: if:ref
 
 - IF_7_5_4 if:IF_7_5_4:
   - a: ifo:IF_7_5_4
+  - ifo:package_insert:
+    - if_7_5_4_pi: pi:PI_
   - rdf:value:
     - if_7_5_4: ""
+  - rdfs:seeAlso*:
+    - if_7_5_4_xref: if:IF_
+  - dct:references*:
+    - if_7_5_4_ref: if:ref
 
 - IF_7_5_5 if:IF_7_5_5:
   - a: ifo:IF_7_5_5
+  - ifo:package_insert:
+    - if_7_5_5_pi: pi:PI_
   - rdf:value:
     - if_7_5_5: ""
+  - rdfs:seeAlso*:
+    - if_7_5_5_xref: if:IF_
+  - dct:references*:
+    - if_7_5_5_ref: if:ref
 
 - IF_7_5_6 if:IF_7_5_6:
   - a: ifo:IF_7_5_6
+  - ifo:package_insert:
+    - if_7_5_6_pi: pi:PI_
   - rdf:value:
     - if_7_5_6: ""
+  - rdfs:seeAlso*:
+    - if_7_5_6_xref: if:IF_
+  - dct:references*:
+    - if_7_5_6_ref: if:ref
 
 - IF_7_6 if:IF_7_6:
   - a: ifo:IF_7_6
+  - ifo:package_insert:
+    - if_7_6_pi: pi:PI_
   - rdf:value:
     - if_7_6: ""
+  - rdfs:seeAlso*:
+    - if_7_6_xref: if:IF_
+  - dct:references*:
+    - if_7_6_ref: if:ref
 
 - IF_7_6_1 if:IF_7_6_1:
   - a: ifo:IF_7_6_1
+  - ifo:package_insert:
+    - if_7_6_1_pi: pi:PI_
   - rdf:value:
     - if_7_6_1: ""
+  - rdfs:seeAlso*:
+    - if_7_6_1_xref: if:IF_
+  - dct:references*:
+    - if_7_6_1_ref: if:ref
 
 - IF_7_6_2 if:IF_7_6_2:
   - a: ifo:IF_7_6_2
+  - ifo:package_insert:
+    - if_7_6_2_pi: pi:PI_
   - rdf:value:
     - if_7_6_2: ""
+  - rdfs:seeAlso*:
+    - if_7_6_2_xref: if:IF_
+  - dct:references*:
+    - if_7_6_2_ref: if:ref
 
 - IF_7_6_3 if:IF_7_6_3:
   - a: ifo:IF_7_6_3
+  - ifo:package_insert:
+    - if_7_6_3_pi: pi:PI_
   - rdf:value:
     - if_7_6_3: ""
+  - rdfs:seeAlso*:
+    - if_7_6_3_xref: if:IF_
+  - dct:references*:
+    - if_7_6_3_ref: if:ref
 
 - IF_7_6_4 if:IF_7_6_4:
   - a: ifo:IF_7_6_4
+  - ifo:package_insert:
+    - if_7_6_4_pi: pi:PI_
   - rdf:value:
     - if_7_6_4: ""
+  - rdfs:seeAlso*:
+    - if_7_6_4_xref: if:IF_
+  - dct:references*:
+    - if_7_6_4_ref: if:ref
 
 - IF_7_7 if:IF_7_7:
   - a: ifo:IF_7_7
+  - ifo:package_insert:
+    - if_7_7_pi: pi:PI_
   - rdf:value:
     - if_7_7: ""
+  - rdfs:seeAlso*:
+    - if_7_7_xref: if:IF_
+  - dct:references*:
+    - if_7_7_ref: if:ref
 
 - IF_7_8 if:IF_7_8:
   - a: ifo:IF_7_8
+  - ifo:package_insert:
+    - if_7_8_pi: pi:PI_
   - rdf:value:
     - if_7_8: ""
+  - rdfs:seeAlso*:
+    - if_7_8_xref: if:IF_
+  - dct:references*:
+    - if_7_8_ref: if:ref
 
 - IF_7_9 if:IF_7_9:
   - a: ifo:IF_7_9
+  - ifo:package_insert:
+    - if_7_9_pi: pi:PI_
   - rdf:value:
     - if_7_9: ""
+  - rdfs:seeAlso*:
+    - if_7_9_xref: if:IF_
+  - dct:references*:
+    - if_7_9_ref: if:ref
 
 - IF_7_10 if:IF_7_10:
   - a: ifo:IF_7_10
+  - ifo:package_insert:
+    - if_7_10_pi: pi:PI_
   - rdf:value:
     - if_7_10: ""
+  - rdfs:seeAlso*:
+    - if_7_10_xref: if:IF_
+  - dct:references*:
+    - if_7_10_ref: if:ref
 
 - IF_7_11 if:IF_7_11:
   - a: ifo:IF_7_11
+  - ifo:package_insert:
+    - if_7_11_pi: pi:PI_
   - rdf:value:
     - if_7_11: ""
+  - rdfs:seeAlso*:
+    - if_7_11_xref: if:IF_
+  - dct:references*:
+    - if_7_11_ref: if:ref
 
 - IF_8 if:IF_8:
   - a: ifo:IF_8
+  - ifo:package_insert:
+    - if_8_pi: pi:PI_
   - rdf:value:
     - if_8: ""
+  - rdfs:seeAlso*:
+    - if_8_xref: if:IF_
+  - dct:references*:
+    - if_8_ref: if:ref
 
 - IF_8_1 if:IF_8_1:
   - a: ifo:IF_8_1
+  - ifo:package_insert:
+    - if_8_1_pi: pi:PI_
   - rdf:value:
     - if_8_1: ""
+  - rdfs:seeAlso*:
+    - if_8_1_xref: if:IF_
+  - dct:references*:
+    - if_8_1_ref: if:ref
 
 - IF_8_2 if:IF_8_2:
   - a: ifo:IF_8_2
+  - ifo:package_insert:
+    - if_8_2_pi: pi:PI_
   - ifo:item+:
-    - if_8_2_item: IF_8_2_item
+    - if_8_2: IF_
+  - rdfs:seeAlso*:
+    - if_8_2_xref: if:IF_
+  - dct:references*:
+    - if_8_28_2_item_ref: if:ref
 
 - IF_8_2_item if:IF_8_2.item1:
   - a: owl:Class
   - ifo:package_insert:
-    - if_8_2_item_pi: pi:PI_2.item2
+    - class_pi: pi:PI_
+  - ifo:package_insert:
+    - if_8_2__piitem_pi:
+  - rdfs:seeAlso*:
+        - class_xref: if:IF_
+  - dct:references*:
+    - classpi:PI_2.item2_ref: if:ref
   - dct:identifier:
     - if_8_2_item_id: "8.2.item2"
   - rdf:value:
@@ -882,295 +1098,649 @@
 
 - IF_8_3 if:IF_8_3:
   - a: ifo:IF_8_3
+  - ifo:package_insert:
+    - if_8_3_pi: pi:PI_
   - rdf:value:
     - if_8_3: ""
+  - rdfs:seeAlso*:
+    - if_8_3_xref: if:IF_
+  - dct:references*:
+    - if_8_3_ref: if:ref
 
 - IF_8_4 if:IF_8_4:
   - a: ifo:IF_8_4
+  - ifo:package_insert:
+    - if_8_4_pi: pi:PI_
   - rdf:value:
     - if_8_4: ""
+  - rdfs:seeAlso*:
+    - if_8_4_xref: if:IF_
+  - dct:references*:
+    - if_8_4_ref: if:ref
 
 - IF_8_5 if:IF_8_5:
   - a: ifo:IF_8_5
+  - ifo:package_insert:
+    - if_8_5_pi: pi:PI_
   - rdf:value:
     - if_8_5: ""
+  - rdfs:seeAlso*:
+    - if_8_5_xref: if:IF_
+  - dct:references*:
+    - if_8_5_ref: if:ref
 
 - IF_8_6 if:IF_8_6:
   - a: ifo:IF_8_6
+  - ifo:package_insert:
+    - if_8_6_pi: pi:PI_
   - rdf:value:
     - if_8_6: ""
+  - rdfs:seeAlso*:
+    - if_8_6_xref: if:IF_
+  - dct:references*:
+    - if_8_6_ref: if:ref
 
 - IF_8_6_1 if:IF_8_6_1:
   - a: ifo:IF_8_6_1
+  - ifo:package_insert:
+    - if_8_6_1_pi: pi:PI_
   - rdf:value:
     - if_8_6_1: ""
+  - rdfs:seeAlso*:
+    - if_8_6_1_xref: if:IF_
+  - dct:references*:
+    - if_8_6_1_ref: if:ref
 
 - IF_8_6_2 if:IF_8_6_2:
   - a: ifo:IF_8_6_2
+  - ifo:package_insert:
+    - if_8_6_2_pi: pi:PI_
   - rdf:value:
     - if_8_6_2: ""
+  - rdfs:seeAlso*:
+    - if_8_6_2_xref: if:IF_
+  - dct:references*:
+    - if_8_6_2_ref: if:ref
 
 - IF_8_6_3 if:IF_8_6_3:
   - a: ifo:IF_8_6_3
+  - ifo:package_insert:
+    - if_8_6_3_pi: pi:PI_
   - rdf:value:
     - if_8_6_3: ""
+  - rdfs:seeAlso*:
+    - if_8_6_3_xref: if:IF_
+  - dct:references*:
+    - if_8_6_3_ref: if:ref
 
 - IF_8_6_4 if:IF_8_6_4:
   - a: ifo:IF_8_6_4
+  - ifo:package_insert:
+    - if_8_6_4_pi: pi:PI_
   - rdf:value:
     - if_8_6_4: ""
+  - rdfs:seeAlso*:
+    - if_8_6_4_xref: if:IF_
+  - dct:references*:
+    - if_8_6_4_ref: if:ref
 
 - IF_8_6_5 if:IF_8_6_5:
   - a: ifo:IF_8_6_5
+  - ifo:package_insert:
+    - if_8_6_5_pi: pi:PI_
   - rdf:value:
     - if_8_6_5: ""
+  - rdfs:seeAlso*:
+    - if_8_6_5_xref: if:IF_
+  - dct:references*:
+    - if_8_6_5_ref: if:ref
 
 - IF_8_6_6 if:IF_8_6_6:
   - a: ifo:IF_8_6_6
+  - ifo:package_insert:
+    - if_8_6_6_pi: pi:PI_
   - rdf:value:
     - if_8_6_6: ""
+  - rdfs:seeAlso*:
+    - if_8_6_6_xref: if:IF_
+  - dct:references*:
+    - if_8_6_6_ref: if:ref
 
 - IF_8_6_7 if:IF_8_6_7:
   - a: ifo:IF_8_6_7
+  - ifo:package_insert:
+    - if_8_6_7_pi: pi:PI_
   - rdf:value:
     - if_8_6_7: ""
+  - rdfs:seeAlso*:
+    - if_8_6_7_xref: if:IF_
+  - dct:references*:
+    - if_8_6_7_ref: if:ref
 
 - IF_8_6_8 if:IF_8_6_8:
   - a: ifo:IF_8_6_8
+  - ifo:package_insert:
+    - if_8_6_8_pi: pi:PI_
   - rdf:value:
     - if_8_6_8: ""
+  - rdfs:seeAlso*:
+    - if_8_6_8_xref: if:IF_
+  - dct:references*:
+    - if_8_6_8_ref: if:ref
 
 - IF_8_7 if:IF_8_7:
   - a: ifo:IF_8_7
+  - ifo:package_insert:
+    - if_8_7_pi: pi:PI_
   - rdf:value:
     - if_8_7: ""
+  - rdfs:seeAlso*:
+    - if_8_7_xref: if:IF_
+  - dct:references*:
+    - if_8_7_ref: if:ref
 
 - IF_8_7_1 if:IF_8_7_1:
   - a: ifo:IF_8_7_1
+  - ifo:package_insert:
+    - if_8_7_1_pi: pi:PI_
   - rdf:value:
     - if_8_7_1: ""
+  - rdfs:seeAlso*:
+    - if_8_7_1_xref: if:IF_
+  - dct:references*:
+    - if_8_7_1_ref: if:ref
 
 - IF_8_7_2 if:IF_8_7_2:
   - a: ifo:IF_8_7_2
+  - ifo:package_insert:
+    - if_8_7_2_pi: pi:PI_
   - rdf:value:
     - if_8_7_2: ""
+  - rdfs:seeAlso*:
+    - if_8_7_2_xref: if:IF_
+  - dct:references*:
+    - if_8_7_2_ref: if:ref
 
 - IF_8_8 if:IF_8_8:
   - a: ifo:IF_8_8
+  - ifo:package_insert:
+    - if_8_8_pi: pi:PI_
   - rdf:value:
     - if_8_8: ""
+  - rdfs:seeAlso*:
+    - if_8_8_xref: if:IF_
+  - dct:references*:
+    - if_8_8_ref: if:ref
 
 - IF_8_8_1 if:IF_8_8_1:
   - a: ifo:IF_8_8_1
+  - ifo:package_insert:
+    - if_8_8_1_pi: pi:PI_
   - rdf:value:
     - if_8_8_1: ""
+  - rdfs:seeAlso*:
+    - if_8_8_1_xref: if:IF_
+  - dct:references*:
+    - if_8_8_1_ref: if:ref
 
 - IF_8_8_2 if:IF_8_8_2:
   - a: ifo:IF_8_8_2
+  - ifo:package_insert:
+    - if_8_8_2_pi: pi:PI_
   - rdf:value:
     - if_8_8_2: ""
+  - rdfs:seeAlso*:
+    - if_8_8_2_xref: if:IF_
+  - dct:references*:
+    - if_8_8_2_ref: if:ref
 
 - IF_8_9 if:IF_8_9:
   - a: ifo:IF_8_9
+  - ifo:package_insert:
+    - if_8_9_pi: pi:PI_
   - rdf:value:
     - if_8_9: ""
+  - rdfs:seeAlso*:
+    - if_8_9_xref: if:IF_
+  - dct:references*:
+    - if_8_9_ref: if:ref
 
 - IF_8_10 if:IF_8_10:
   - a: ifo:IF_8_10
+  - ifo:package_insert:
+    - if_8_10_pi: pi:PI_
   - rdf:value:
     - if_8_10: ""
+  - rdfs:seeAlso*:
+    - if_8_10_xref: if:IF_
+  - dct:references*:
+    - if_8_10_ref: if:ref
 
 - IF_8_11 if:IF_8_11:
   - a: ifo:IF_8_11
+  - ifo:package_insert:
+    - if_8_11_pi: pi:PI_
   - rdf:value:
     - if_8_11: ""
+  - rdfs:seeAlso*:
+    - if_8_11_xref: if:IF_
+  - dct:references*:
+    - if_8_11_ref: if:ref
 
 - IF_8_12 if:IF_8_12:
   - a: ifo:IF_8_12
+  - ifo:package_insert:
+    - if_8_12_pi: pi:PI_
   - rdf:value:
     - if_8_12: ""
+  - rdfs:seeAlso*:
+    - if_8_12_xref: if:IF_
+  - dct:references*:
+    - if_8_12_ref: if:ref
 
 - IF_8_12_1 if:IF_8_12_1:
   - a: ifo:IF_8_12_1
+  - ifo:package_insert:
+    - if_8_12_1_pi: pi:PI_
   - rdf:value:
     - if_8_12_1: ""
+  - rdfs:seeAlso*:
+    - if_8_12_1_xref: if:IF_
+  - dct:references*:
+    - if_8_12_1_ref: if:ref
 
 - IF_8_12_2 if:IF_8_12_2:
   - a: ifo:IF_8_12_2
+  - ifo:package_insert:
+    - if_8_12_2_pi: pi:PI_
   - rdf:value:
     - if_8_12_2: ""
+  - rdfs:seeAlso*:
+    - if_8_12_2_xref: if:IF_
+  - dct:references*:
+    - if_8_12_2_ref: if:ref
 
 - IF_9 if:IF_9:
   - a: ifo:IF_9
+  - ifo:package_insert:
+    - if_9_pi: pi:PI_
   - rdf:value:
     - if_9: ""
+  - rdfs:seeAlso*:
+    - if_9_xref: if:IF_
+  - dct:references*:
+    - if_9_ref: if:ref
 
 - IF_9_1 if:IF_9_1:
   - a: ifo:IF_9_1
+  - ifo:package_insert:
+    - if_9_1_pi: pi:PI_
   - rdf:value:
     - if_9_1: ""
+  - rdfs:seeAlso*:
+    - if_9_1_xref: if:IF_
+  - dct:references*:
+    - if_9_1_ref: if:ref
 
 - IF_9_1_1 if:IF_9_1_1:
   - a: ifo:IF_9_1_1
+  - ifo:package_insert:
+    - if_9_1_1_pi: pi:PI_
   - rdf:value:
     - if_9_1_1: ""
+  - rdfs:seeAlso*:
+    - if_9_1_1_xref: if:IF_
+  - dct:references*:
+    - if_9_1_1_ref: if:ref
 
 - IF_9_1_2 if:IF_9_1_2:
   - a: ifo:IF_9_1_2
+  - ifo:package_insert:
+    - if_9_1_2_pi: pi:PI_
   - rdf:value:
     - if_9_1_2: ""
+  - rdfs:seeAlso*:
+    - if_9_1_2_xref: if:IF_
+  - dct:references*:
+    - if_9_1_2_ref: if:ref
 
 - IF_9_1_3 if:IF_9_1_3:
   - a: ifo:IF_9_1_3
+  - ifo:package_insert:
+    - if_9_1_3_pi: pi:PI_
   - rdf:value:
     - if_9_1_3: ""
+  - rdfs:seeAlso*:
+    - if_9_1_3_xref: if:IF_
+  - dct:references*:
+    - if_9_1_3_ref: if:ref
 
 - IF_9_2 if:IF_9_2:
   - a: ifo:IF_9_2
+  - ifo:package_insert:
+    - if_9_2_pi: pi:PI_
   - rdf:value:
     - if_9_2: ""
+  - rdfs:seeAlso*:
+    - if_9_2_xref: if:IF_
+  - dct:references*:
+    - if_9_2_ref: if:ref
 
 - IF_9_2_1 if:IF_9_2_1:
   - a: ifo:IF_9_2_1
+  - ifo:package_insert:
+    - if_9_2_1_pi: pi:PI_
   - rdf:value:
     - if_9_2_1: ""
+  - rdfs:seeAlso*:
+    - if_9_2_1_xref: if:IF_
+  - dct:references*:
+    - if_9_2_1_ref: if:ref
 
 - IF_9_2_2 if:IF_9_2_2:
   - a: ifo:IF_9_2_2
+  - ifo:package_insert:
+    - if_9_2_2_pi: pi:PI_
   - rdf:value:
     - if_9_2_2: ""
+  - rdfs:seeAlso*:
+    - if_9_2_2_xref: if:IF_
+  - dct:references*:
+    - if_9_2_2_ref: if:ref
 
 - IF_9_2_3 if:IF_9_2_3:
   - a: ifo:IF_9_2_3
+  - ifo:package_insert:
+    - if_9_2_3_pi: pi:PI_
   - rdf:value:
     - if_9_2_3: ""
+  - rdfs:seeAlso*:
+    - if_9_2_3_xref: if:IF_
+  - dct:references*:
+    - if_9_2_3_ref: if:ref
 
 - IF_9_2_4 if:IF_9_2_4:
   - a: ifo:IF_9_2_4
+  - ifo:package_insert:
+    - if_9_2_4_pi: pi:PI_
   - rdf:value:
     - if_9_2_4: ""
+  - rdfs:seeAlso*:
+    - if_9_2_4_xref: if:IF_
+  - dct:references*:
+    - if_9_2_4_ref: if:ref
 
 - IF_9_2_5 if:IF_9_2_5:
   - a: ifo:IF_9_2_5
+  - ifo:package_insert:
+    - if_9_2_5_pi: pi:PI_
   - rdf:value:
     - if_9_2_5: ""
+  - rdfs:seeAlso*:
+    - if_9_2_5_xref: if:IF_
+  - dct:references*:
+    - if_9_2_5_ref: if:ref
 
 - IF_9_2_6 if:IF_9_2_6:
   - a: ifo:IF_9_2_6
+  - ifo:package_insert:
+    - if_9_2_6_pi: pi:PI_
   - rdf:value:
     - if_9_2_6: ""
+  - rdfs:seeAlso*:
+    - if_9_2_6_xref: if:IF_
+  - dct:references*:
+    - if_9_2_6_ref: if:ref
 
 - IF_9_2_7 if:IF_9_2_7:
   - a: ifo:IF_9_2_7
+  - ifo:package_insert:
+    - if_9_2_7_pi: pi:PI_
   - rdf:value:
     - if_9_2_7: ""
+  - rdfs:seeAlso*:
+    - if_9_2_7_xref: if:IF_
+  - dct:references*:
+    - if_9_2_7_ref: if:ref
 
 - IF_10 if:IF_10:
   - a: ifo:IF_10
+  - ifo:package_insert:
+    - if_10_pi: pi:PI_
   - rdf:value:
     - if_10: ""
+  - rdfs:seeAlso*:
+    - if_10_xref: if:IF_
+  - dct:references*:
+    - if_10_ref: if:ref
 
 - IF_10_1 if:IF_10_1:
   - a: ifo:IF_10_1
+  - ifo:package_insert:
+    - if_10_1_pi: pi:PI_
   - rdf:value:
     - if_10_1: ""
+  - rdfs:seeAlso*:
+    - if_10_1_xref: if:IF_
+  - dct:references*:
+    - if_10_1_ref: if:ref
 
 - IF_10_2 if:IF_10_2:
   - a: ifo:IF_10_2
+  - ifo:package_insert:
+    - if_10_2_pi: pi:PI_
   - rdf:value:
     - if_10_2: ""
+  - rdfs:seeAlso*:
+    - if_10_2_xref: if:IF_
+  - dct:references*:
+    - if_10_2_ref: if:ref
 
 - IF_10_3 if:IF_10_3:
   - a: ifo:IF_10_3
+  - ifo:package_insert:
+    - if_10_3_pi: pi:PI_
   - rdf:value:
     - if_10_3: ""
+  - rdfs:seeAlso*:
+    - if_10_3_xref: if:IF_
+  - dct:references*:
+    - if_10_3_ref: if:ref
 
 - IF_10_4 if:IF_10_4:
   - a: ifo:IF_10_4
+  - ifo:package_insert:
+    - if_10_4_pi: pi:PI_
   - rdf:value:
     - if_10_4: ""
+  - rdfs:seeAlso*:
+    - if_10_4_xref: if:IF_
+  - dct:references*:
+    - if_10_4_ref: if:ref
 
 - IF_10_5 if:IF_10_5:
   - a: ifo:IF_10_5
+  - ifo:package_insert:
+    - if_10_5_pi: pi:PI_
   - rdf:value:
     - if_10_5: ""
+  - rdfs:seeAlso*:
+    - if_10_5_xref: if:IF_
+  - dct:references*:
+    - if_10_5_ref: if:ref
 
 - IF_10_6 if:IF_10_6:
   - a: ifo:IF_10_6
+  - ifo:package_insert:
+    - if_10_6_pi: pi:PI_
   - rdf:value:
     - if_10_6: ""
+  - rdfs:seeAlso*:
+    - if_10_6_xref: if:IF_
+  - dct:references*:
+    - if_10_6_ref: if:ref
 
 - IF_10_7 if:IF_10_7:
   - a: ifo:IF_10_7
+  - ifo:package_insert:
+    - if_10_7_pi: pi:PI_
   - rdf:value:
     - if_10_7: ""
+  - rdfs:seeAlso*:
+    - if_10_7_xref: if:IF_
+  - dct:references*:
+    - if_10_7_ref: if:ref
 
-#- IF_10_8 if:IF_10_8:
-#  - a: ifo:IF_10_8
-#  - rdf:value:
-#    - if_10_8: ""
+# - IF_10_8 if:IF_10_8:
+#   - a: ifo:IF_10_8
+#   - ifo:package_insert:
+#     - if_10_8_pi: pi:PI_
+#   - rdf:value:
+#     - if_10_8: ""
+#   - rdfs:seeAlso*:
+#     - if_10_8_xref: if:IF_
+#   - dct:references*:
+#     - if_10_8_ref: if:ref
 
 - IF_10_9 if:IF_10_9:
   - a: ifo:IF_10_9
+  - ifo:package_insert:
+    - if_10_9_pi: pi:PI_
   - rdf:value:
     - if_10_9: ""
+  - rdfs:seeAlso*:
+    - if_10_9_xref: if:IF_
+  - dct:references*:
+    - if_10_9_ref: if:ref
 
 - IF_10_10 if:IF_10_10:
   - a: ifo:IF_10_10
+  - ifo:package_insert:
+    - if_10_10_pi: pi:PI_
   - rdf:value:
     - if_10_10: ""
+  - rdfs:seeAlso*:
+    - if_10_10_xref: if:IF_
+  - dct:references*:
+    - if_10_10_ref: if:ref
 
 - IF_10_11 if:IF_10_11:
   - a: ifo:IF_10_11
+  - ifo:package_insert:
+    - if_10_11_pi: pi:PI_
   - rdf:value:
     - if_10_11: ""
+  - rdfs:seeAlso*:
+    - if_10_11_xref: if:IF_
+  - dct:references*:
+    - if_10_11_ref: if:ref
 
 - IF_10_12 if:IF_10_12:
   - a: ifo:IF_10_12
+  - ifo:package_insert:
+    - if_10_12_pi: pi:PI_
   - rdf:value:
     - if_10_12: ""
+  - rdfs:seeAlso*:
+    - if_10_12_xref: if:IF_
+  - dct:references*:
+    - if_10_12_ref: if:ref
 
 - IF_10_13 if:IF_10_13:
   - a: ifo:IF_10_13
+  - ifo:package_insert:
+    - if_10_13_pi: pi:PI_
   - rdf:value:
     - if_10_13: ""
+  - rdfs:seeAlso*:
+    - if_10_13_xref: if:IF_
+  - dct:references*:
+    - if_10_13_ref: if:ref
 
 - IF_10_14 if:IF_10_14:
   - a: ifo:IF_10_14
+  - ifo:package_insert:
+    - if_10_14_pi: pi:PI_
   - rdf:value:
     - if_10_14: ""
+  - rdfs:seeAlso*:
+    - if_10_14_xref: if:IF_
+  - dct:references*:
+    - if_10_14_ref: if:ref
 
 - IF_11 if:IF_11:
   - a: ifo:IF_11
+  - ifo:package_insert:
+    - if_11_pi: pi:PI_
   - rdf:value:
     - if_11: ""
+  - rdfs:seeAlso*:
+    - if_11_xref: if:IF_
+  - dct:references*:
+    - if_11_ref: if:ref
 
 - IF_11_1 if:IF_11_1:
   - a: ifo:IF_11_1
+  - ifo:package_insert:
+    - if_11_1_pi: pi:PI_
   - rdf:value:
     - if_11_1: ""
+  - rdfs:seeAlso*:
+    - if_11_1_xref: if:IF_
+  - dct:references*:
+    - if_11_1_ref: if:ref
 
 - IF_11_2 if:IF_11_2:
   - a: ifo:IF_11_2
+  - ifo:package_insert:
+    - if_11_2_pi: pi:PI_
   - rdf:value:
     - if_11_2: ""
+  - rdfs:seeAlso*:
+    - if_11_2_xref: if:IF_
+  - dct:references*:
+    - if_11_2_ref: if:ref
 
 - IF_12 if:IF_12:
   - a: ifo:IF_12
+  - ifo:package_insert:
+    - if_12_pi: pi:PI_
   - rdf:value:
     - if_12: ""
+  - rdfs:seeAlso*:
+    - if_12_xref: if:IF_
+  - dct:references*:
+    - if_12_ref: if:ref
 
 - IF_12_1 if:IF_12_1:
   - a: ifo:IF_12_1
+  - ifo:package_insert:
+    - if_12_1_pi: pi:PI_
   - rdf:value:
     - if_12_1: ""
+  - rdfs:seeAlso*:
+    - if_12_1_xref: if:IF_
+  - dct:references*:
+    - if_12_1_ref: if:ref
 
 - IF_12_2 if:IF_12_2:
   - a: ifo:IF_12_2
+  - ifo:package_insert:
+    - if_12_2_pi: pi:PI_
   - rdf:value:
     - if_12_2: ""
+  - rdfs:seeAlso*:
+    - if_12_2_xref: if:IF_
+  - dct:references*:
+    - if_12_2_ref: if:ref
 
 - IF_13 if:IF_13:
   - a: ifo:IF_13
+  - ifo:package_insert:
+    - if_13_pi: pi:PI_
   - rdf:value:
     - if_13: ""
+  - rdfs:seeAlso*:
+    - if_13_xref: if:IF_
+  - dct:references*:
+    - if_13_ref: if:ref
