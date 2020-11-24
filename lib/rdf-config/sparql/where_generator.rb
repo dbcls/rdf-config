@@ -1,7 +1,7 @@
 class RDFConfig
   class SPARQL
     class WhereGenerator < SPARQL
-      INDENT_TEXT = '    '.freeze
+      @@indent_text = '    '
       PROPERTY_PATH_SEP = ' / '.freeze
 
       class Triple
@@ -137,6 +137,16 @@ class RDFConfig
       def initialize(config, opts = {})
         super
 
+        if opts.key?(:output_values_line) && opts[:output_values_line] == false
+          @output_values_line = false
+        else
+          @output_values_line = true
+        end
+
+        if opts.key?(:indent_text)
+          @@indent_text = opts[:indent_text]
+        end
+
         @values_lines = []
         @required_triples = []
         @optional_triples = []
@@ -150,7 +160,7 @@ class RDFConfig
 
       def generate
         generate_triples
-        add_values_lines
+        add_values_lines if @output_values_line
 
         lines = required_lines
         lines += optional_lines
@@ -317,7 +327,7 @@ class RDFConfig
       end
 
       def values_line(variavale_name, value)
-        "#{INDENT_TEXT}VALUES #{variavale_name} { #{value} }"
+        "#{@@indent_text}VALUES #{variavale_name} { #{value} }"
       end
 
       def use_property_path?(bnode_rdf_types)
@@ -389,7 +399,7 @@ class RDFConfig
       end
 
       def indent(depth_increment = 0)
-        "#{INDENT_TEXT * (@depth + depth_increment)}"
+        "#{@@indent_text * (@depth + depth_increment)}"
       end
     end
   end

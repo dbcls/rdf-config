@@ -14,6 +14,7 @@ class RDFConfig
   require 'rdf-config/stanza'
   require 'rdf-config/schema/senbero'
   require 'rdf-config/schema/chart'
+  require 'rdf-config/grasp'
 
   def initialize(opts = {})
     @config = Config.new(opts[:config_dir])
@@ -34,6 +35,8 @@ class RDFConfig
       generate_senbero
     when :chart
       generate_chart
+    when :grasp
+      generate_grasp
     end
   end
 
@@ -69,5 +72,10 @@ class RDFConfig
   def generate_chart
     schema = Schema::Chart.new(@config)
     schema.generate
+  end
+
+  def generate_grasp
+    grasp = Grasp.new(@config)
+    grasp.generate
   end
 end
