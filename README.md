@@ -1,5 +1,7 @@
 # RDF config (senbero)
 
+RDF-config is a tool to generate SPARQL queries, a schema diagram, and files required for [Grasp](https://github.com/dbcls/grasp), [TogoStanza](http://togostanza.org/) and ShEx varidator from simple YAML-based configuration files.
+
 ![](assets/senbero-logo.png)
 
 ## TODO
