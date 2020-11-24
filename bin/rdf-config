@@ -24,6 +24,7 @@ args = GetoptLong.new(
   [ '--grasp',           GetoptLong::OPTIONAL_ARGUMENT ],
   [ '--stanza',          GetoptLong::OPTIONAL_ARGUMENT ],
   [ '--stanza_rb',       GetoptLong::OPTIONAL_ARGUMENT ],
+  [ '--shex',            GetoptLong::OPTIONAL_ARGUMENT ]
 )
 
 begin
@@ -51,6 +52,8 @@ begin
     when /--stanza/
       opts[:mode] = :stanza_js
       opts[:stanza_name] = value
+    when /--shex/
+      opts[:mode] = :shex
     end
   end
 rescue
@@ -80,8 +83,10 @@ SYNOPSIS
     rdf-config --config path/to/config/name --sparql     [queryname]
     rdf-config --config path/to/config/name --schema
     rdf-config --config path/to/config/name --senbero
+    rdf-config --config path/to/config/name --grasp
     rdf-config --config path/to/config/name --stanza     [stanzaname]
     rdf-config --config path/to/config/name --stanza_rb  [stanzaname]
+    rdf-config --config path/to/config/name --shex
 
 DESCRIPTION
 
@@ -97,7 +102,6 @@ DESCRIPTION
     * config/name/prefix.yaml: URI prefixes
     * config/name/sparql.yaml: SPARQL definition
     * config/name/stanza.yaml: TogoStanza definition
-    * config/name/grasp.yaml: GraphQL definition
     * config/name/metadata.yaml: Metadata compatible with NBRC RDF portal
     * config/name/metadata_ja.yaml: Japanese version of Metadata
 

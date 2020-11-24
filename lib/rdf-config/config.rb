@@ -18,6 +18,8 @@ class RDFConfig
       end
     end
 
+    attr_reader :config_dir
+
     def initialize(config_dir, opts = {})
       raise ConfigNotFound, "Config directory (#{config_dir}) does not exist." unless File.exist?(config_dir)
 
