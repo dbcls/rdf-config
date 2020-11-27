@@ -1,21 +1,23 @@
-- Class obo:GO_0044255:
-  - a: owl:Class
-  - obo:IAO_0000115+: # definition
-    - node_2: "The chemical reactions and pathways involving lipids, as carried out by individual cells."
-    - node_3: "The chemical reactions and pathways involving lipids, as carried out by individual cells."
-  - oboinowl:hasDbXref+:
-    - node_4: "Reactome:REACT_28392"
-  - oboinowl:hasExactSynonym+:
-    - node_5: "cellular lipid metabolism"
-  - oboinowl:hasOBONamespace+:
-    - node_6: "biological_process"
-  - oboinowl:id+:
-    - node_7: "GO:0044255"
-  - oboinowl:inSubset+:
-    - annotationproperty: p1:goslim_pir
-  - rdfs:label+:
-    - class_label: "cellular lipid metabolic process"
-    - class_label: "cellular lipid metabolic process"
-  - rdfs:subClassOf+:
-    - node_11: obo:GO_0044237 # cellular metabolic process
-
+- GO <http://purl.obolibrary.org/obo/GO_0000001>:
+    - a: owl:Class:
+    	- obo:definition:
+	    - definition: '"The distribution of mitochondria, including the mitochondrial genome, into daughter cells after mitosis or meiosis, mediated by interactions between mitochondria and the cytoskeleton."^^xsd:string'
+    	- oboInOwl:hasExactSynonym:
+	    - hasExactSynonym: '"mitochondrial inheritance"^^xsd:string'
+    	- oboInOwl:hasOBONamespace:
+	    - hasOBONamespace: '"biological_process"^^string'
+    	- oboInOwl:id:
+	    - id: '"GO:0000001"^^string'
+    	- rdfs:label:
+	    - label: '"mitochondrion inheritance"^^string'
+    - a: owl:Axiom:
+    	- owl:annotatedSource:
+	    - resource: <http://purl.obolibrary.org/obo/GO_0000001>
+	- owl:annotatedProperty:
+	    - resource: <http://purl.obolibrary.org/obo/IAO_0000115>
+	- owl:annotatedTarget:
+	    - annotatedTarget: '"The distribution of mitochondria, including the mitochondrial genome, into daughter cells after mitosis or meiosis, mediated by interactions between mitochondria and the cytoskeleton."^^xsd:string'
+	- oboInOwl:hasDbXref*:
+	    - hasDbXref: '"GOC:mcc"^^xsd:string'
+	    - hasDbXref: '"PMID:10873824"^^xsd:string'
+	    - hasDbXref: '"PMID:11389764"^^xsd:string'
