@@ -1,0 +1,38 @@
+- OrthologGroup group:1:
+  - a: orth:OrthologsCluster
+  - dct:identifier:
+    - group_id: 1
+  - rdfs:label:
+    - group_label: "MTRNR2L7-1"
+  - orth:inDataset:
+    - dataset: Dataset
+  - orth:hasHomologousMember:
+    - gene: HumanGene
+  - orth:organism+:
+    - organism: Organism
+
+- Dataset <http://purl.org/net/orthordf/hOP/>:
+  - a:
+    - orth:OrthologyDataset
+  - dct:title:
+    - dataset_title: "hOP"
+
+- HumanGene ncbigene:100288485:
+  - a: orth:Gene
+  - rdfs:label:
+    - gene_label: "MTRNR2L7"
+  - dct:identifier:
+    - gene_id: 100288485
+
+- Organism organism:2:
+  - a: orth:Organism
+  - dct:identifier:
+    - organism_id: 2
+  - rdfs:label:
+    - organism_label: "Pan troglodytes"
+  - dct:description:
+    - organism_description: "Chimpanzee"
+  - rdfs:comment:
+    - organism_comment: "Mammals"
+  - hop:branchTimeMya:
+    - branch_time: 6.6
