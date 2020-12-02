@@ -1,7 +1,7 @@
 - Reaction rhea:13973:
   - a: rdfs:Class
   - rhea:accession:
-    - accession_id: "RHEA:13973"
+    - reaction_accession_id: "RHEA:13973"
   - rhea:bidirectionalReaction:
     - bidirectional_reaction: rhea:13976 # diphosphate + H(+)(in) + H2O <=> 2 H(+)(out) + 2 phosphate
   - rhea:citation+:
@@ -27,7 +27,7 @@
   - rdfs:label:
     - label: "diphosphate + H(+)(in) + H2O = 2 H(+)(out) + 2 phosphate"
   - rdfs:subClassOf:
-    - sub_class_of: rhea:Reaction
+    - sub_class_of_reaction: rhea:Reaction
 
 - Side rhea:13973_L:
   - a: rdfs:Class
@@ -38,12 +38,12 @@
   - rhea:transformableTo:
     - transformable_to: rhea:13973_R
   - rdfs:subClassOf:
-    - sub_class_of: rhea:ReactionSide
+    - sub_class_of_reactionside: rhea:ReactionSide
 
 - Compound rhea:Compound_1283:
   - a: rdfs:Class
   - rhea:accession:
-    - accession_id: "CHEBI:15377"
+    - compound_accession_id: "CHEBI:15377"
   - rhea:charge:
     - charge: 0
   - rhea:chebi:
@@ -53,9 +53,9 @@
   - rhea:htmlName:
     - name_html: "H2O"
   - rhea:id:
-    - id: 1283
+    - rhea_id: 1283
   - rhea:name:
     - name: "H2O"
   - rdfs:subClassOf+:
-    - chebi: obo:CHEBI_15377 # water
-    - sub_class_of: rhea:SmallMolecule
+    - sub_class_of_chebi: obo:CHEBI_15377 # water
+    - sub_class_of_smallmolecule: rhea:SmallMolecule
