@@ -21,6 +21,7 @@ class RDFConfig
 
         validate_subject_name
         validate_variable
+        validate_objects
       end
 
       def error?
@@ -34,6 +35,12 @@ class RDFConfig
       private
 
       def validate_subject(subject)
+        unless subject.blank_node?
+          if /\A\w+\z/ !~ subject.name
+            add_error(%/Invalid subject name (#{subject.name}) in model.yaml file. Only alphanumeric characters and underscores can be used in subject name./)
+          end
+        end
+
         validate_resource_class(subject)
         validate_prefix(subject.value)
         subject.predicates.each do |predicate|
@@ -65,15 +72,24 @@ class RDFConfig
             else
               validate_prefix(object.name.to_s)
             end
-          else
-            validate_object(object)
           end
         end
       end
 
-      def validate_object(object)
-        add_variable_name(object.name) if !object.is_a?(BlankNode) && !object.is_a?(Subject)
-        validate_prefix(object.value) if object.is_a?(URI)
+      def validate_objects
+        @model.each do |triple|
+          next if triple.predicate.rdf_type?
+
+          object = triple.object
+          if !object.is_a?(BlankNode) && !object.is_a?(Subject) && object.name.to_s.size > 0
+            if /\A\w+\z/ !~ object.name
+              add_error(%/Invalid object name (#{object.name}) in model.yaml file. Only alphanumeric characters and underscores can be used in object name./)
+            end
+            add_variable_name(object.name)
+          end
+
+          validate_prefix(object.value) if object.is_a?(URI)
+        end
       end
 
       def validate_resource_class(subject)
