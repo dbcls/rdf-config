@@ -71,10 +71,38 @@ class RDFConfig
 
     def find_by_object_name(object_name)
       if subject?(object_name)
-        @triples.select { |triple| triple.object.name == object_name }.first
+        @triples.select do |triple|
+          case triple.object
+          when Subject
+            triple.object.name == object_name && triple.subject.name != object_name
+          when ValueList
+            subject_names = triple.object.value.select { |v| v.is_a?(Subject) }.map(&:name)
+            if subject_names.include?(triple.subject.name)
+              false
+            else
+              subject_names.include?(object_name)
+            end
+          else
+            false
+          end
+        end.first
       else
         @triples.select { |triple| triple.object_name == object_name }.first
       end
+    end
+
+    def triples_by_object_name(object_name, start_subject = nil)
+      triples = []
+
+      triple = find_by_object_name(object_name)
+      while triple
+        triples << triple
+        break if !start_subject.nil? && triple.subject.name == start_subject
+
+        triple = find_by_object_name(triple.subject.name)
+      end
+
+      triples.reverse
     end
 
     def find_bnode_subject(object_name)
@@ -101,6 +129,28 @@ class RDFConfig
       @graph.object_value
     end
 
+    def parent_subject_name(object_name)
+      if subject?(object_name)
+        subject = find_subject(object_name)
+        if subject.used_as_object?
+          subject.as_object.keys.include?(object_name) ? nil : subject.as_object.keys.first
+        else
+          nil
+        end
+      else
+        triple = find_by_object_name(object_name)
+        if triple.nil?
+          nil
+        else
+          triple.subject.name
+        end
+      end
+    end
+
+    def parent_subject_names(object_name)
+      triples_by_object_name(object_name).map(&:subject).map(&:name)
+    end
+
     def parent_variable(object_name)
       triple = find_by_object_name(object_name)
       return nil if triple.nil? || !triple.subject.used_as_object?
@@ -112,14 +162,28 @@ class RDFConfig
       variables = []
       loop do
         variable_name = parent_variable(object_name)
-        break if variable_name.nil?
+        break if variable_name.nil? || variable_name == object_name
 
         variables << variable_name
         object_name = variable_name
-        parent_variable(object_name)
       end
 
-      variables
+      variables.reverse
+    end
+
+    def predicate_path(object_name, start_subject = nil)
+      triples = triples_by_object_name(object_name, start_subject)
+      return [] if triples.nil?
+
+      triples.map(&:predicates).flatten
+    end
+
+    def property_path(object_name, start_subject = nil)
+      predicate_path(object_name, start_subject).map(&:uri).flatten
+    end
+
+    def same_property_path_exist?(object_name)
+      property_path_map.select { |obj_name, prop_path| prop_path == property_path(object_name) }.size > 1
     end
 
     def [](idx)
@@ -175,6 +239,17 @@ class RDFConfig
 
     def add_triple(triple)
       @triples << triple
+    end
+
+    def property_path_map
+      return @property_path_map unless @property_path_map.nil?
+
+      @property_path_map = {}
+      object_names.each do |object_name|
+        @property_path_map[object_name] = property_path(object_name)
+      end
+
+      @property_path_map
     end
   end
 end
