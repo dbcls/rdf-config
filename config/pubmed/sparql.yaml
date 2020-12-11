@@ -1,9 +1,9 @@
 sparql:
   description: Obtain article records from the PubMed data.
-  variables: [pubmed_id, journal_volume_page, full_name, article_title, issued]
+  variables: [pmid, journal_name, full_name, title, date_issued]
 
 stanza_sparql:
   description: Obtain an article record from the PubMed data
   parameters:
     pubmed_id: pubmed:10075408  
-  variables: [pubmed_id, journal_volume_page, full_name, article_title, issued]
+  variables: [pmid, journal_name, full_name, title, date_issued]
