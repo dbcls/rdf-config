@@ -15,9 +15,9 @@
       - label: '"カフェイン"@ja'
   - jst:chem-formula+:
       - chem_formula: '"C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub>"^^rdfs:Literal'
-      - chem-formula_in_plain_text: "C8-H10-N4-O2"
+      - chem_formula_in_plain_text: "C8-H10-N4-O2"
   - jst:molar-weight:
-      - molar-weight: '"194.194"^^xsd.float'
+      - molar_weight: '"194.194"^^xsd.float'
   - jst:regulation-number+:
       - rtecs_number: "EV6475000"
       - miti_number: "(9)-419"
@@ -56,10 +56,10 @@
   - dct:identifier+:
     - nikkaji_id_jglobal: "J2.330B"
   - sio:CHEMINF_000200+: # has attribute
-    - inchikey_generated_by_software_version_1.0.4: nikkaji:J2.330B_standard_InChIKey
-    - inchi_calculated_by_library_version_1.0.4: nikkaji:J2.330B_standard_InChI
-    - average_molecular_weight_descriptor: nikkaji:J2.330B_Molecular_Weight
-    - canonical_smiles_descriptor: nikkaji:J2.330B_canonical_SMILES
+    - inchikey: nikkaji:J2.330B_standard_InChIKey
+    - inchi: nikkaji:J2.330B_standard_InChI
+    - average_molecular_weight: nikkaji:J2.330B_Molecular_Weight
+    - canonical_smiles: nikkaji:J2.330B_canonical_SMILES
     - molecular_formula: nikkaji:J2.330B_Molecular_Formula
   - jst:InChI:
     - inchi: "InChI=1S/C8H10N4O2/c1-10-4-9-6-5(10)7(13)12(3)8(14)11(6)2/h4H,1-3H3"
@@ -73,5 +73,5 @@
     - label_jglobal: "Caffeine"
   - skos:closeMatch+:
      - id_other_db: knapsack:information.jsp?word=C00001492
-  - skos:exactMatch+:
+  - skos:exactMatch?:
     - pubchem_substance: pubchem_substance:275793704
