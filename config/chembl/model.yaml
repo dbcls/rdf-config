@@ -24,6 +24,7 @@
     - pubchem_cross_reference: PubchemCrossReference # CHEMBL6939 PubChem Reference: 3047492
     - nikkaji_cross_reference: NikkajiCrossReference
     - ibm_patent_structures_cross_reference: IbmPatentStructuresCrossReference
+    - drug_bank_cross_reference: DrugBankCrossReference
   - cco:substanceType:
     - substance_type: "Small molecule"
   - cheminf:SIO_000008:
@@ -765,3 +766,7 @@
   - a: cco:WikipediaMolRef
   - rdfs:label:
     - wikipedia_cross_reference_label: "CHEMBL502097 Wikipedia Reference: Mipomersen"
+- DrugBankCrossReference <http://www.drugbank.ca/drugs/DB13246>:
+  - a: cco:DrugbankRef
+  - rdfs:label:
+    - drug_bank_cross_reference_label: "CHEMBL107360 DrugBank Reference: DB13246"
