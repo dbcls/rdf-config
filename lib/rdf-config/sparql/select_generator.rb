@@ -3,30 +3,12 @@ class RDFConfig
     class SelectGenerator < SPARQL
       def initialize(config, opts = {})
         super
+
+        prepare_sparql_variable_name
       end
 
       def generate
-        [%(SELECT #{variables.map { |name| sparql_varname(name) }.join(' ')})]
-      end
-
-      private
-
-      def sparql_varname(variable_name)
-        triple = model.find_by_object_name(variable_name)
-        if triple.nil?
-          if model.subject?(variable_name)
-            "?#{variable_name}"
-          else
-            ''
-          end
-        else
-          case triple.object
-          when Model::Subject
-            "?#{triple.object.as_object_value(triple.subject.name)}"
-          else
-            "?#{triple.object.name}"
-          end
-        end
+        [%(SELECT #{variables.map { |name| variable_name_for_sparql(name, true) }.join(' ')})]
       end
     end
   end

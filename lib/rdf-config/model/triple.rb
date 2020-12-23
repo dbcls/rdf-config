@@ -35,19 +35,19 @@ class RDFConfig
         @subject.name
       end
 
-      def object_name
+      def object_name(predicate_uri = nil)
         case @object
         when Model::Subject
-          @object.as_object_name(subject.name)
+          @object.as_object_name(@subject.name, predicate_uri)
         else
           @object.name
         end
       end
 
-      def object_value
+      def object_value(predicate_uri = nil)
         case @object
         when Model::Subject
-          @object.as_object_value(subject.name)
+          @object.as_object_value(@subject.name, predicate_uri)
         else
           @object.value
         end
@@ -59,7 +59,7 @@ class RDFConfig
     end
 
     class Graph
-      attr_reader :subjects, :object_value
+      attr_reader :subjects, :object_names, :object_value
 
       def initialize(config, opts = {})
         @config = config
@@ -67,9 +67,11 @@ class RDFConfig
         @subject_names = config.model.map { |hash| hash.keys }.flatten
 
         @subjects = []
+        @object_names = []
         @object_value = {}
 
         @target_subject = nil
+        @current_predicate_uri = nil
       end
 
       def generate
@@ -87,7 +89,8 @@ class RDFConfig
       def setup_subject(subject, subject_hash)
         subject_hash.each do |subject_name, predicate_object_hashes|
           predicate_object_hashes.each do |predicate_object_hash|
-            subject.add_predicate(predicate_instance(predicate_object_hash))
+            @target_predicate = predicate_instance(predicate_object_hash)
+            subject.add_predicate(@target_predicate)
           end
         end
       end
@@ -95,12 +98,21 @@ class RDFConfig
       def predicate_instance(predicate_object_hash)
         predicate_uri = predicate_object_hash.keys.first
         predicate = Predicate.new(predicate_uri, prefix_hash)
+        @current_predicate_uri = predicate.uri
         object_data = predicate_object_hash[predicate_uri]
         case object_data
-        when String, Hash
+        when Hash, String
+          if object_data.is_a?(Hash)
+            object_name = object_data.keys.first
+            add_object_name(object_name) if object_name.is_a?(String) && object_name != 'a' && object_name != 'rdf:type'
+          end
           predicate.add_object(object_instance(object_data))
         when Array
           object_data.each do |obj_data|
+            if obj_data.is_a?(Hash)
+              object_name = obj_data.keys.first
+              add_object_name(object_name) if object_name.is_a?(String)
+            end
             predicate.add_object(object_instance(obj_data))
           end
         end
@@ -122,7 +134,7 @@ class RDFConfig
 
         subject = @subjects.select { |subject| subject.name == value }.first
         unless subject.nil?
-          subject.add_as_object(@target_subject.name, Literal.new(name => value))
+          subject.add_as_object(@target_subject.name, @current_predicate_uri, Literal.new(name => value))
           return subject
         end
 
@@ -149,9 +161,14 @@ class RDFConfig
       def prefix_hash
         @config.prefix
       end
+
+      def add_object_name(object_name)
+        @object_names << object_name unless object_name.to_s.empty?
+      end
     end
 
     class Subject
+      attr_accessor :sparql_varname
       attr_reader :name, :value, :predicates, :as_object
 
       def initialize(subject_hash, prefix_hash = {})
@@ -167,6 +184,8 @@ class RDFConfig
         end
 
         @predicates = []
+
+        @sparql_varname = @name
       end
 
       def types
@@ -196,16 +215,50 @@ class RDFConfig
         @predicates << predicate
       end
 
-      def add_as_object(subject_name, object)
-        @as_object[subject_name] = object
+      def add_as_object(subject_name, predicate_uri, object)
+        unless @as_object.key?(subject_name)
+          @as_object[subject_name] = []
+        end
+
+        @as_object[subject_name] << { predicate_uri: predicate_uri, object: object }
       end
 
-      def as_object_name(subject_name)
-        @as_object.key?(subject_name) ? @as_object[subject_name].name : nil
+      def parent_subject_names
+        if used_as_object?
+          @as_object.keys
+        else
+          []
+        end
       end
 
-      def as_object_value(subject_name)
-        @as_object.key?(subject_name) ? @as_object[subject_name].value : nil
+      def as_object_hash(subject_name, predicate_uri = nil)
+        if @as_object.key?(subject_name)
+          if predicate_uri.nil?
+            @as_object[subject_name].last
+          else
+            @as_object[subject_name].select { |hash| hash[:predicate_uri] == predicate_uri }.first
+          end
+        else
+          nil
+        end
+      end
+
+      def as_object_name(subject_name, predicate_uri = nil)
+        hash = as_object_hash(subject_name, predicate_uri)
+        if hash.nil?
+          nil
+        else
+          hash[:object].name
+        end
+      end
+
+      def as_object_value(subject_name, predicate_uri = nil)
+        hash = as_object_hash(subject_name, predicate_uri)
+        if hash.nil?
+          nil
+        else
+          hash[:object].value
+        end
       end
 
       def used_as_object?
@@ -282,7 +335,7 @@ class RDFConfig
     end
 
     class Object
-      attr_reader :name, :value
+      attr_reader :name, :value, :sparql_varname
 
       def initialize(object, prefix_hash = {})
         case object
@@ -293,6 +346,8 @@ class RDFConfig
           @name = object
           @value = nil
         end
+
+        @sparql_varname = @name
       end
 
       def type

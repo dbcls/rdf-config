@@ -8,6 +8,7 @@ class RDFConfig
         @config = config
 
         @errors = []
+        @warnings = []
         @undefined_prefixes = []
         @num_subject_name = {}
         @num_variable = {}
@@ -20,8 +21,9 @@ class RDFConfig
         end
 
         validate_subject_name
+        validate_by_triples
+        validate_by_object_names
         validate_variable
-        validate_objects
       end
 
       def error?
@@ -32,12 +34,21 @@ class RDFConfig
         %Q/ERROR: Invalid configuration\n#{errors.map { |msg| "  #{msg}" }.join("\n")}/
       end
 
+      def warn?
+        !@warnings.empty?
+      end
+
+      def warn_message
+        @warnings.map { |msg| "WARNING: #{msg}" }.join("\n")
+      end
+
       private
 
       def validate_subject(subject)
         unless subject.blank_node?
-          if /\A\w+\z/ !~ subject.name
-            add_error(%/Invalid subject name (#{subject.name}) in model.yaml file. Only alphanumeric characters and underscores can be used in subject name./)
+          # Subject name must be CamelCase
+          if /\A[A-Z][A-Za-z0-9]*\z/ !~ subject.name
+            add_error(%/Invalid subject name (#{subject.name}) in model.yaml file. Subject name must start with a capital letter and only alphanumeric characters can be used in subject name./)
           end
         end
 
@@ -76,26 +87,55 @@ class RDFConfig
         end
       end
 
-      def validate_objects
+      def validate_by_triples
         @model.each do |triple|
           next if triple.predicate.rdf_type?
 
           object = triple.object
-          if !object.is_a?(BlankNode) && !object.is_a?(Subject) && object.name.to_s.size > 0
-            if /\A\w+\z/ !~ object.name
-              add_error(%/Invalid object name (#{object.name}) in model.yaml file. Only alphanumeric characters and underscores can be used in object name./)
-            end
-            add_variable_name(object.name)
+          validate_prefix(object.value) if object.is_a?(URI)
+        end
+      end
+
+      def validate_by_object_names
+        property_path = {}
+        @model.object_names.each do |object_name|
+          validate_object_name(object_name)
+
+          path = @model.property_path(object_name).join(' / ')
+          triple = @model.find_by_object_name(object_name)
+          next if triple.nil?
+
+          key = [triple.subject.name, path]
+          if property_path.key?(key)
+            property_path[key] << object_name
+          else
+            property_path[key] = [object_name]
+          end
+        end
+
+        property_path.each do |key, names|
+          next if names.size < 2
+
+          rdf_type_hash = {}
+          names.each do |name|
+            triple = @model.find_by_object_name(name)
+            k = @model.bnode_rdf_types(triple)
+            rdf_type_hash[k] = [] unless rdf_type_hash.key?(k)
+            rdf_type_hash[k] << name
           end
 
-          validate_prefix(object.value) if object.is_a?(URI)
+          rdf_type_hash.each do |k, ns|
+            next if ns.size < 2
+
+            add_warning(%Q/Multiple object names (#{ns.join(', ')}) are set in the same property path (#{key[1]})./)
+          end
         end
       end
 
       def validate_resource_class(subject)
         return if subject.blank_node?
 
-        add_error(%/Subject (#{subject.name}) has no rdf:type./) if subject.types.empty?
+        add_warning(%/Subject (#{subject.name}) has no rdf:type./) if subject.types.empty?
       end
 
       def validate_prefix(uri)
@@ -109,6 +149,15 @@ class RDFConfig
         end
       end
 
+      def validate_object_name(object_name)
+        # object name must be snake_case
+        if /\A[a-z0-9_]+\z/ !~ object_name
+          add_error(%/Invalid object name (#{object_name}) in model.yaml file. Only lowercase letters, numbers and underscores can be used in object name./)
+        end
+
+        add_variable_name(object_name)
+      end
+
       def validate_variable
         @num_variable.select { |k, v| v > 1 }.each do |variable_name, num_variable|
           add_error(%/Duplicate variable name (#{variable_name}) in model.yaml file./)
@@ -117,6 +166,10 @@ class RDFConfig
 
       def add_error(error_message)
         @errors << error_message
+      end
+
+      def add_warning(warn_message)
+        @warnings << warn_message
       end
 
       def add_subject_name(subject_name)

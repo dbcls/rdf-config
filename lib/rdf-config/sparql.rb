@@ -25,9 +25,22 @@ class RDFConfig
       if !opts.key?(:check_query_name) || opts[:check_query_name] == true
         raise SPARQLConfigNotFound, "No SPARQL config found: sparql query name '#{name}'" unless @config.sparql.key?(name)
       end
+
+      @subjects_by_variables = []
+      variables.each do |variable_name|
+        object = model.find_object(variable_name)
+        if object.is_a?(Model::Subject)
+          @subjects_by_variables << object.name
+        end
+      end
+
+      @warnings = []
     end
 
     def generate
+      validate
+      output_warning_messages
+
       sparql_generator = SPARQLGenerator.new
 
       sparql_generator.add_generator(CommentGenerator.new(@config, @opts))
@@ -97,17 +110,7 @@ class RDFConfig
           sparql_variable_name = ''
         end
       else
-        case triple.object
-        when Model::Subject
-          object_names = triple.object.objects.map(&:name)
-          sparql_variable_name = if object_names.include?(variable_name)
-                                   triple.subject.name
-                                 else
-                                   triple.object.as_object_name(triple.subject.name)
-                                 end
-        else
-          sparql_variable_name = triple.object.name
-        end
+        sparql_variable_name = triple.object.sparql_varname
       end
 
       if !sparql_variable_name.empty? && add_question_mark
@@ -117,8 +120,74 @@ class RDFConfig
       end
     end
 
+    def prepare_sparql_variable_name
+      variables.each do |variable_name|
+        next if model.subject?(variable_name)
+
+        triple = model.find_by_object_name(variable_name)
+        if triple.nil?
+          next
+        end
+
+        if triple.object.is_a?(Model::Subject)
+          triple.object.sparql_varname = variable_name
+        end
+      end
+    end
+
+    def subject_by_object_name(object_name)
+      parent_subject_names = model.parent_subject_names(object_name)
+      object_name_for_subject = nil
+      parent_subject_names.reverse.each do |subject_name|
+        if @subjects_by_variables.include?(subject_name)
+          object_name_for_subject = subject_name
+          break
+        end
+      end
+
+      if object_name_for_subject.nil?
+        model.find_subject(parent_subject_names.first)
+      else
+        model.find_subject(object_name_for_subject)
+      end
+    end
+
+    def hidden_variables
+      variable_names = []
+      variables.each do |variable_name|
+        next if model.subject?(variable_name)
+
+        subject = subject_by_object_name(variable_name)
+        variable_names << subject.name unless subject.nil?
+      end
+
+      variable_names.flatten.uniq
+    end
+
+    def variables_for_where
+      (variables + hidden_variables).uniq
+    end
+
+    def validate
+      variables.each do |variable_name|
+        next if model.subject?(variable_name) || !model.find_object(variable_name).nil?
+
+        add_warning(%Q/Variable name (#{variable_name}) is set in sparql.yaml file, but not in model.yaml file./)
+      end
+    end
+
+    def add_warning(warn_message)
+      @warnings << warn_message
+    end
+
+    def output_warning_messages
+      unless @warnings.empty?
+        STDERR.puts @warnings.map { |msg| "WARNING: #{msg}" }.join("\n")
+      end
+    end
+
     def run
-      endpoint_uri = URI.parse(@endpoint)
+      endpoint_uri = URI.parse(endpoint)
 
       sparql_query = generate
       puts sparql_query

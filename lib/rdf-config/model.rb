@@ -5,12 +5,18 @@ class RDFConfig
   class Model
     include Enumerable
 
+    @@validate_done = false
+    @@output_warning = false
+
     def initialize(config)
       @config = config
       @graph = Graph.new(@config)
       @graph.generate
       generate_triples
-      validate
+      unless @@validate_done
+        validate
+        @@validate_done = true
+      end
     end
 
     def each
@@ -100,6 +106,7 @@ class RDFConfig
         break if !start_subject.nil? && triple.subject.name == start_subject
 
         triple = find_by_object_name(triple.subject.name)
+        break if !triple.nil? && triples.include?(triple)
       end
 
       triples.reverse
@@ -110,15 +117,7 @@ class RDFConfig
     end
 
     def object_names
-      names = []
-
-      @triples.each do |triple|
-        next if triple.predicate.rdf_type?
-
-        names << triple.object_name
-      end
-
-      names
+      @graph.object_names
     end
 
     def subjects
@@ -155,7 +154,7 @@ class RDFConfig
       triple = find_by_object_name(object_name)
       return nil if triple.nil? || !triple.subject.used_as_object?
 
-      triple.subject.as_object.values.map(&:name).uniq.first
+      triple.subject.as_object.values.flatten.map { |hash| hash[:object].name }.uniq.first
     end
 
     def parent_variables(object_name)
@@ -199,6 +198,11 @@ class RDFConfig
       validator.validate
 
       raise Config::InvalidConfig, validator.error_message if validator.error?
+
+      if validator.warn? && !@@output_warning
+        STDERR.puts validator.warn_message
+        @@output_warning = true
+      end
     end
 
     private
