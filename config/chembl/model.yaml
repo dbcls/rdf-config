@@ -25,6 +25,11 @@
     - nikkaji_cross_reference: NikkajiCrossReference
     - ibm_patent_structures_cross_reference: IbmPatentStructuresCrossReference
     - drug_bank_cross_reference: DrugBankCrossReference
+    - zink_cross_reference: ZinkCrossReference
+    - emolecules_cross_reference: EmoleculesCrossReference
+    - pdbe_cross_reference: PDBeCrossReference
+    - mcule_cross_reference: MculeCrossReference
+    - molport_cross_reference: MolPortCrossReference
   - cco:substanceType:
     - substance_type: "Small molecule"
   - cheminf:SIO_000008:
@@ -682,6 +687,12 @@
     - uniprot_cross_reference: UniprotCrossReference # CHEMBL_TC_1573 UniProt Reference: P18090
     - interpro_cross_reference: InterproCrossReference # CHEMBL_TC_17840 InterPro Reference: IPR000276
     - intact_cross_reference: IntactCrossReference # CHEMBL_TC_1573 IntAct Reference: P18090
+    - pdb_cross_reference: PDBCrossReference  # http://identifiers.org/pdb/1M17
+    - ensembl_cross_reference: EnsemblCrossReference
+    - ec_cross_reference: <http://identifiers.org/ec-code/2.7.10.2>
+    - pharmgkb_cross_reference: <http://www.pharmgkb.org/gene/PA30075> #pharmgkb薬物応答におけるヒトの遺伝的変異の影響に関する知識を蓄積しているデータベース
+    - cgd_cross_reference: <http://research.nhgri.nih.gov/CGD/view/?g=ATR> #Clinical Genomic Database
+    - timbal_cross_reference: <http://mordred.bioc.cam.ac.uk/timbal/K-Ras> #a database containing small molecules that modulate protein-protein interactions
   - cco:taxonomy*:
     - taxonomy_id: <http://identifiers.org/taxonomy/10116>
     - taxonomy_ncbi: <http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id=10116>
@@ -749,9 +760,17 @@
   - rdfs:label+:
     - pfam_cross_reference_label: "CHEMBL_TC_10 Pfam Reference: PF00001"
 - UniprotCrossReference uniprot:P18090:
-  - a: cco:UniprotRef
+  - a: 
+    - cco:UniprotRef
+    - <http://rdf.ebi.ac.uk/terms/ensembl/EnsemblDBEntry>
   - rdfs:label+:
-    - uniprot_cross_reference_label: "CHEMBL_TC_1573 UniProt Reference: P18090"
+    - uniprot_cross_reference_label: "CHEMBL_TC_4004 UniProt Reference: Q9HC35"
+    - uniprot_label: "Q9HC35"
+    - ensembl_ensg_label: "EML4"
+  - dc:identifier:
+    - uniprot_id: "Q9HC35"
+  - dc:description:
+    - uniprot_crossref_description: "Echinoderm microtubule-associated protein-like 4 "
   - owl:sameAs:
     - uniprot: <http://identifiers.org/uniprot/P18090>
 - InterproCrossReference <http://identifiers.org/interpro/IPR000276>:
@@ -770,3 +789,41 @@
   - a: cco:DrugbankRef
   - rdfs:label:
     - drug_bank_cross_reference_label: "CHEMBL107360 DrugBank Reference: DB13246"
+- ZinkCrossReference <http://zinc15.docking.org/substances/ZINC000040862485>:
+  - a: cco:ZincRef
+  - rdfs:label:
+    - zink_cross_reference_label: "CHEMBL516957 Zinc Reference: ZINC000040862485"
+- EmoleculesCrossReference <https://www.emolecules.com/cgi-bin/more?vid=31802297>:
+  - a: cco:EmoleculesRef
+  - rdfs:label:
+    - emolecules_cross_reference_label: "CHEMBL3187543 eMolecules Reference: 31802297"
+- PDBCrossReference <http://identifiers.org/pdb/1M17>:
+  - a:
+    - <http://identifiers.org/pdb>
+    - <http://rdf.ebi.ac.uk/terms/ensembl/EnsemblDBEntry>
+    - cco:ProteinDataBankRef
+  - rdfs:label:
+    - pdb_cross_reference_label: "CHEMBL_TC_147 PDBe Reference: 1M17"
+    - pdb_id: "1M17"
+- PDBeCrossReference <http://www.ebi.ac.uk/pdbe-srv/pdbechem/chemicalCompound/show/9WS>:
+  - a: cco:PdbeRef
+  - rdfs:label:
+    - pdbe_cross_reference_label: "CHEMBL1078785 PDBe Reference: 9WS"
+- MculeCrossReference <https://mcule.com/MCULE-3956868404>:
+  - a: cco:MculeRef
+  - rdfs:label:
+    - mcule_cross_reference_label: "CHEMBL1616930 Mcule Reference: MCULE-3956868404"
+- MolPortCrossReference <https://www.molport.com/shop/molecule-link/MolPort-007-727-652>:
+  - a: cco:MolportRef
+  - rdfs:label:
+    - molport_cross_reference_label: "CHEMBL1565424 MolPort Reference: MolPort-007-727-652"
+- EnsemblCrossReference <http://identifiers.org/ensembl/ENSG00000173207>:
+  - a:
+    - <http://identifiers.org/ensembl>
+    - cco:EnsemblGeneRef
+    - <http://rdf.ebi.ac.uk/terms/expressionatlas/EnsemblDatabaseReference>
+  - rdfs:label:
+    - ensembl_cross_reference_label: "CHEMBL_TC_10091 ENSEMBL Reference: ENSG00000173207"
+    - ensembl_label: "CKS1B"
+  - dcterm:identifier:
+    - ensembl_identifier: "ENSG00000173207"
