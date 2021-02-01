@@ -15,7 +15,7 @@
     - reference1: Reference
     - reference2: Reference
   - insdc_ontology:sequence:
-    - insdc: Sequence
+    - insdc_sequence: Sequence
   - insdc_ontology:sequence_date:
     - registered_date: 2015-10-10
   - insdc_ontology:sequence_version:
@@ -47,7 +47,7 @@
 - Sequence entry:sequence:
   - a: rdfs:Resource
   - faldo:location:
-    - region: Region
+    - sequence_region: Region
   - insdc_ontology:location:
     - sequence_location: "1..43270923"
   - insdc_ontology:sequence_length:
@@ -87,7 +87,7 @@
   - obo:RO_0002162+:
     - feature_taxonomy: taxonomy:39947 # 39947
   - faldo:location:
-    - region: Region
+    - feature_region: Region
 
 - SourceFeature feature:1-43270923:1:source:
   - a: rdfs:Resource
@@ -100,7 +100,7 @@
   - insdc_ontology:organism:
     - source_feature_organism: "Oryza sativa Japonica Group"
   - obo:so_part_of:
-    - insdc: entry:sequence
+    - insdc_entry: entry:sequence
   - rdfs:seeAlso+:
     - source_feature_taxonomy: taxonomy:39947 # 39947
 
