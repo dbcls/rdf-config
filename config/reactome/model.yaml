@@ -20,7 +20,7 @@
 - PathwayStep reactome:PathwayStep5135:
   - a: biopax:PathwayStep
   - biopax:nextStep:
-    - pathway_step: PathwayStep
+    - nested_pathway_step: PathwayStep
   - biopax:stepProcess:
     - pathway_step_process: [Catalysis, Control]
 
@@ -153,7 +153,7 @@
   - biopax:component*:
     - left_complex_component: [LeftComplex, LeftSmallMolecule, LeftProtein, LeftDna, LeftPhysicalEntity]
   - biopax:xref+:
-    - left-complex_xref: reactome:UnificationXref59003
+    - left_complex_xref: reactome:UnificationXref59003
     
 - LeftSmallMolecule reactome:SmallMolecule1314:
   - a: biopax:SmallMolecule
@@ -193,7 +193,7 @@
   - biopax:entityReference:
     - left_protein_reference: LeftProteinReference
   - biopax:feature:
-    - left_fragmentFeature: reactome:FragmentFeature10266
+    - left_fragment_feature: reactome:FragmentFeature10266
   - biopax:name*:
     - left_protein_name: "Phosphoglucomutase-2"
   - biopax:xref+:
@@ -206,7 +206,7 @@
   - biopax:name*:
     - left_protein_reference_name: "PGM2"
   - biopax:organism:
-    organism: Organism
+    left_protein_reference_organism: Organism
   - biopax:xref:
     - left_protein_ref_xref: LeftProteinRefXref
 
@@ -231,7 +231,7 @@
   - biopax:name*:
     - left_dna_reference_name: "ENSEMBL:ENSMUSG00000002992 Apoc2"
   - biopax:organism:
-    - organism: Organism
+    - left_dna_reference_organism: Organism
 
 - LeftRna reactome:Rna100:
   - a: biopax:Dna
@@ -247,7 +247,7 @@
   - biopax:name*:
     - left_rna_reference_name: "ENSEMBL:ENSMUST00000042105 Ppp1r15a"
   - biopax:organism:
-    - organism: Organism
+    - left_rna_reference_organism: Organism
 
 - LeftPhysicalEntity reactome:PhysicalEntity267:
   - a: biopax:PhysicalEntity
@@ -318,7 +318,7 @@
   - biopax:entityReference:
     - right_protein_reference: RightProteinReference
   - biopax:feature:
-    - right_fragmentFeature: reactome:FragmentFeature10266
+    - right_fragment_feature: reactome:FragmentFeature10266
   - biopax:name*:
     - right_protein_name: "Phosphoglucomutase-2"
   - biopax:xref+:
@@ -331,7 +331,7 @@
   - biopax:name*:
     - right_protein_reference_name: "PGM2"
   - biopax:organism:
-    organism: Organism
+    right_protein_reference_organism: Organism
   - biopax:xref:
     - right_protein_ref_xref: RightProteinRefXref
 
@@ -356,7 +356,7 @@
   - biopax:name*:
     - right_dna_reference_name: "ENSEMBL:ENSMUSG00000002992 Apoc2"
   - biopax:organism:
-    - organism: Organism
+    - right_dna_reference_organism: Organism
 
 - RightRna reactome:Rna100:
   - a: biopax:Dna
@@ -372,7 +372,7 @@
   - biopax:name*:
     - right_rna_reference_name: "ENSEMBL:ENSMUST00000042105 Ppp1r15a"
   - biopax:organism:
-    - organism: Organism
+    - right_rna_reference_organism: Organism
 
 - RightPhysicalEntity reactome:PhysicalEntity267:
   - a: biopax:PhysicalEntity
@@ -443,7 +443,7 @@
   - biopax:entityReference:
     - temp_protein_reference: TempProteinReference
   - biopax:feature:
-    - temp_fragmentFeature: reactome:FragmentFeature10266
+    - temp_fragnemt_feature: reactome:FragmentFeature10266
   - biopax:name*:
     - temp_protein_name: "Phosphoglucomutase-2"
   - biopax:xref+:
@@ -456,7 +456,7 @@
   - biopax:name*:
     - temp_protein_reference_name: "PGM2"
   - biopax:organism:
-    organism: Organism
+    temp_protein_reference_organism: Organism
   - biopax:xref:
     - temp_protein_ref_xref: TempProteinRefXref
 
@@ -481,7 +481,7 @@
   - biopax:name*:
     - temp_dna_reference_name: "ENSEMBL:ENSMUSG00000002992 Apoc2"
   - biopax:organism:
-    - organism: Organism
+    - temp_dna_reference_organism: Organism
 
 - TempRna reactome:Rna100:
   - a: biopax:Dna
@@ -497,7 +497,7 @@
   - biopax:name*:
     - temp_rna_reference_name: "ENSEMBL:ENSMUST00000042105 Ppp1r15a"
   - biopax:organism:
-    - organism: Organism
+    - temp_rna_reference_organism: Organism
 
 - TempPhysicalEntity reactome:PhysicalEntity267:
   - a: biopax:PhysicalEntity
@@ -568,7 +568,7 @@
   - biopax:entityReference:
     - degradation_protein_reference: DegradationProteinReference
   - biopax:feature:
-    - degradation_fragmentFeature: reactome:FragmentFeature10266
+    - degradation_fragnemt_feature: reactome:FragmentFeature10266
   - biopax:name*:
     - degradation_protein_name: "Phosphoglucomutase-2"
   - biopax:xref+:
@@ -581,7 +581,7 @@
   - biopax:name*:
     - degradation_protein_reference_name: "PGM2"
   - biopax:organism:
-    organism: Organism
+    degradation_protein_reference_organism: Organism
   - biopax:xref:
     - degradation_protein_ref_xref: DegradationProteinRefXref
 
@@ -606,7 +606,7 @@
   - biopax:name*:
     - degradation_dna_reference_name: "ENSEMBL:ENSMUSG00000002992 Apoc2"
   - biopax:organism:
-    - organism: Organism
+    - degradation_dna_reference_organism: Organism
 
 - DegradationRna reactome:Rna100:
   - a: biopax:Dna
@@ -622,7 +622,7 @@
   - biopax:name*:
     - degradation_rna_reference_name: "ENSEMBL:ENSMUST00000042105 Ppp1r15a"
   - biopax:organism:
-    - organism: Organism
+    - degradation_rna_reference_organism: Organism
 
 - DegradationPhysicalEntity reactome:PhysicalEntity267:
   - a: biopax:PhysicalEntity
@@ -693,7 +693,7 @@
   - biopax:entityReference:
     - catalysis_protein_reference: CatalysisProteinReference
   - biopax:feature:
-    - catalysis_fragmentFeature: reactome:FragmentFeature10266
+    - catalysis_fragnemt_feature: reactome:FragmentFeature10266
   - biopax:name*:
     - catalysis_protein_name: "Phosphoglucomutase-2"
   - biopax:xref+:
@@ -706,7 +706,7 @@
   - biopax:name*:
     - catalysis_protein_reference_name: "PGM2"
   - biopax:organism:
-    organism: Organism
+    catalysis_protein_reference_organism: Organism
   - biopax:xref:
     - catalysis_protein_ref_xref: CatalysisProteinRefXref
 
@@ -731,7 +731,7 @@
   - biopax:name*:
     - catalysis_dna_reference_name: "ENSEMBL:ENSMUSG00000002992 Apoc2"
   - biopax:organism:
-    - organism: Organism
+    - catalysis_dna_reference_organism: Organism
 
 - CatalysisRna reactome:Rna100:
   - a: biopax:Dna
@@ -747,7 +747,7 @@
   - biopax:name*:
     - catalysis_rna_reference_name: "ENSEMBL:ENSMUST00000042105 Ppp1r15a"
   - biopax:organism:
-    - organism: Organism
+    - catalysis_rna_reference_organism: Organism
 
 - CatalysisPhysicalEntity reactome:PhysicalEntity267:
   - a: biopax:PhysicalEntity
@@ -818,7 +818,7 @@
   - biopax:entityReference:
     - control_protein_reference: ControlProteinReference
   - biopax:feature:
-    - control_fragmentFeature: reactome:FragmentFeature10266
+    - control_fragnemt_feature: reactome:FragmentFeature10266
   - biopax:name*:
     - control_protein_name: "Phosphoglucomutase-2"
   - biopax:xref+:
@@ -831,7 +831,7 @@
   - biopax:name*:
     - control_protein_reference_name: "PGM2"
   - biopax:organism:
-    organism: Organism
+    control_protein_reference_organism: Organism
   - biopax:xref:
     - control_protein_ref_xref: ControlProteinRefXref
 
@@ -856,7 +856,7 @@
   - biopax:name*:
     - control_dna_reference_name: "ENSEMBL:ENSMUSG00000002992 Apoc2"
   - biopax:organism:
-    - organism: Organism
+    - control_dna_reference_organism: Organism
 
 - ControlRna reactome:Rna100:
   - a: biopax:Dna
@@ -872,7 +872,7 @@
   - biopax:name*:
     - control_rna_reference_name: "ENSEMBL:ENSMUST00000042105 Ppp1r15a"
   - biopax:organism:
-    - organism: Organism
+    - control_rna_reference_organism: Organism
 
 - ControlPhysicalEntity reactome:PhysicalEntity267:
   - a: biopax:PhysicalEntity
