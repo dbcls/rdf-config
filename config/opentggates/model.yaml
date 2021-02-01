@@ -24,11 +24,11 @@
     - []:
       - a: ontology:NormalizedSignalIntensity
       - rdf:value:
-        - value: 36.2451261995548
+        - normalized_value: 36.2451261995548
       - ontology:pacall:
         - pacall: "P"
       - ontology:probe:
-        - probe: Probe
+        - chip_probe: Probe
 
 - UnitSet unitset:004018_004003_LV:
   - a: ontology:UnitSet
@@ -51,28 +51,28 @@
     - []:
       - a: ontology:Log2Ratio
       - rdf:value:
-        - value: 0.21632469530408177
+        - log2_value: 0.21632469530408177
       - ontology:probe:
-        - probe: Probe
+        - log2_probe: Probe
     - []:
       - a: ontology:PValue
       - rdf:value:
-        - value: 0.0029567241802541675
+        - pvalue: 0.0029567241802541675
       - ontology:probe:
-        - probe: Probe
+        - pvalue_probe: Probe
     - []:
       - a: ontology:CustomizedPACall
       - rdf:value:
-        - value: 1
+        - pacall_value: 1
       - ontology:probe:
-        - probe: Probe
+        - pacall_probe: Probe
 
 - ExperimentSet experimentset:0040:
   - a: ontology:ExperimentSet
   - dct:identifier:
     - experimentset_id: "0040"
   - ontology:hasSample+:
-    - sample: Sample
+    - ex_sample: Sample
 
 - ExperimentalCondition condition:004018:
   - a: ontology:ExperimentalCondition
@@ -92,15 +92,15 @@
     - []:
       - a: ontology:Dosage
       - rdf:value:
-        - value: 600
+        - dosage_value: 600
       - sio:SIO_000221:
-        - unit: obo:UO_0000308 #mg/kg
+        - dosage_unit: obo:UO_0000308 #mg/kg
     - []:
       - a: ontology:SacrificePeriod
       - rdf:value:
-        - value: 9
+        - period_value: 9
       - sio:SIO_000221:
-        - unit: obo:UO_0000032 #hour
+        - period_unit: obo:UO_0000032 #hour
 
 - Sample sample:0040011LV:
   - a: ontology:Sample
@@ -122,20 +122,20 @@
   - ontology:taxon:
     - amimal_taxon: taxon:10116 #Rattus norvegicus
   - ontology:sample+:
-    - sample: Sample
+    - animal_sample: Sample
   - sio:SIO_000216+: # has measurement value
     - []:
       - a: obo:CMO_0000025 #red blood cell count
       - rdf:value:
-        - value: 5.81e+06
+        - red_value: 5.81e+06
       - sio:SIO_000221:
-        - unit: ncit:C67254 #/uL
+        - red_unit: ncit:C67254 #/uL
     - []:
       - a: obo:CMO_0000027 #white blood cell count
       - rdf:value:
-        - value: 1.64e+03
+        - white_value: 1.64e+03
       - sio:SIO_000221:
-        - unit: ncit:C67254 #/uL
+        - white_unit: ncit:C67254 #/uL
 
 - ChemicalCompound compound:00001:
   - a: ontology:ChemicalCompound
@@ -157,7 +157,7 @@
   - dct:identifier:
     - pathology_id: "81"
   - ontology:hasSample+:
-    - sample: Sample
+    - pathology_sample: Sample
   - foaf:depiction:
     - depiction: slide:27104
   - ontology:grade:
