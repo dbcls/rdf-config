@@ -142,11 +142,11 @@
     - []:
       - a: jpost:NumOfPsms
       - sio:SIO_000300: # has value
-        - number_of_psms: 6
+        - number_of_peptide_psms: 6
     - []:
       - a: jpost:JpostScore
       - sio:SIO_000300: # has value
-        - jpost_score: 39
+        - max_jpost_score: 39
     - []:
       - a: obo:MS_1001364 # peptide sequence-level global FDR
       - sio:SIO_000300: # has value
@@ -196,7 +196,7 @@
       - faldo:position:
         - phospho_position: 5
       - faldo:reference:
-        - peptide: jpostdb:PEP810_1_15421
+        - phospho_ref_peptide: jpostdb:PEP810_1_15421
 
 - Acetyl:
   - a: unimod:UNIMOD_1
@@ -208,7 +208,7 @@
       - faldo:position:
         - acetyle_position: 5
       - faldo:reference:
-        - peptide: jpostdb:PEP810_1_15421
+        - acetyl_ref_peptide: jpostdb:PEP810_1_15421
 
 - Oxidation:
   - a: unimod:UNIMOD_35
@@ -220,12 +220,12 @@
       - faldo:position:
         - oxidation_position: 5
       - faldo:reference:
-        - peptide: jpostdb:PEP810_1_15421
+        - oxidation_ref_peptide: jpostdb:PEP810_1_15421
 
 - Spectrum bid:SPC810_1_3_1.1.2188.10:
   - a: jpost:Spectrum
   - jpost:inRawData:
-    - raw_data: bid:RAW810_1_3
+    - in_raw_data: bid:RAW810_1_3
   - rdfs:label:
     - spectrum_label: "1.1.2188.10"
 
@@ -278,9 +278,9 @@
     - []:
       - a: jpost:SubcellularFractionation
       - jpost:fractions:
-        - subcellular_fractionation: 1
+        - subcellular_fractions: 1
       - jpost:replicates:
-        - subcellular_fractionation: 1
+        - subcellular_replicates: 1
       - rdfs:label:
         - subcellular_fractionation_bnode_label: "Whole"
 
