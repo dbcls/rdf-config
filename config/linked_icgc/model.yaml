@@ -27,7 +27,6 @@
     - identifier_label: "MU10064858"
   - rdfs:label+:
     - rdfs_label: "MU10064858"
-    - rdfs_label: "MU10064858"
 
 - Effect effect:MU10064858_ENST00000322810:
   - a: icgc:Effect
@@ -51,9 +50,7 @@
   - vocab:biological_validation_status:
     - validation_status: "not tested"
   - vocab:donor:
-    - doner_id: DonerId # DO50505
-  - vocab:donor_id:
-    - donor_id: "DO50505"
+    - detected_donor_id: DonorId # DO50505
   - vocab:experimental_protocol:
     - experimental_protocol: "Paired-End http://technology.illumina.com/technology/next-generation-sequencing/paired-end-sequencing_assay.html"
   - vocab:mutant_allele_read_count:
@@ -64,14 +61,10 @@
     - platform: "Illumina HiSeq"
   - vocab:project:
     - project: Project
-  - vocab:project_code:
-    - project_code: "BOCA-FR"
   - vocab:raw_data_accession:
     - accession_id: "EGAS00001000855"
   - vocab:raw_data_repository:
     - data_repository: "EGA"
-  - vocab:sample_id:
-    - sample_id: "SA529246"
   - vocab:seq_coverage:
     - sequence_coverage: "35.0"
   - vocab:sequencing_strategy:
@@ -89,7 +82,7 @@
   - vocab:verification_status:
     - verification_status: "not tested"
 
-- DonerId doner:DO50505:
+- DonorID donor:DO50505:
   - a: icgc:Donor
   - vocab:age_at_diagnosis:
     - age_at_diagnosis: "9"
@@ -117,7 +110,6 @@
     - donor_dct_identifier: "DO50505"
   - rdfs:label+:
     - donor_rdfs_label: "DO50505"
-    - donor_rdfs_label: "DO50505"
 
 - Project project:BOCA-FR:
   - a: icgc:Project
@@ -133,14 +125,12 @@
     - project_dct_identifer: "BOCA-FR"
   - rdfs:label+:
     - project_rdfs_label: "BOCA-FR"
-    - project_rdfs_label: "BOCA-FR"
 
 - AffectedGene gene:ENSG00000178209:
   - a: icgc:Gene
   - dct:identifier+:
     - ensemble_gene_id: "ENSG00000178209"
   - rdfs:label+:
-    - ensembl_gene_id: "ENSG00000178209"
     - ensembl_gene_id: "ENSG00000178209"
   - rdfs:seeAlso+:
     - ensembl: Ensembl
