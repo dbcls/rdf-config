@@ -28,11 +28,11 @@
 - Region hg38:1:11210-11210:
   - a: faldo:Region
   - faldo:begin:
-    - position: Position
+    - position_begin: Position
   - faldo:end:
-    - position: Position
+    - position_end: Position
   - faldo:reference:
-    - reference: Reference
+    - region_reference: Reference
   - rdfs:label:
     - region_label: "hg38 chromosome 1:11210-11210"
   - skos:exactMatch+:
@@ -50,7 +50,7 @@
     - faldo:ExactPosition
     - faldo:StrandedPosition
   - faldo:reference:
-    - reference: Reference
+    - position_reference: Reference
   - rdfs:label:
     - position_label: "hg38 chromosome 1:11210"
   - faldo:position:
@@ -58,22 +58,22 @@
   - skos:exactMatch:
     - position_exact_match: grch38:1:11210:1
 
-- Bs-seqDataset bsseqdataset:bs_data_9606_LC2ad:
+- BsSeqDataset bsseqdataset:bs_data_9606_LC2ad:
   - a: kero:MethylseqDataset
   - kero:hasMethylationSite+:
     - methylated_dna_base_feature: Bs-seqData
   - kero:sample:
-    - sample: Sample # LC2/AD
+    - bs_sample: Sample # LC2/AD
   - rdfs:label:
     - bsseq_dataset_label: "kero BS-seq dataset of LC2/AD"
   - dcat:theme:
     - species: species:9606 # Homo sapiens
 
-- Bs-seqData bsseqdata:bs_data_9606_LC2ad_1:
+- BsSeqData bsseqdata:bs_data_9606_LC2ad_1:
   - a: obo:SO_0000306
   - faldo:location+:
-    - region: Region
-    - position: Position
+    - bs_region: Region
+    - bs_location_position: Position
   - kero:bin:
     - bsseq_data_bin: 1
   - kero:caNum:
@@ -85,23 +85,23 @@
   - rdfs:label:
     - bsseq_data_label: "Methylation site of LC2ad on chromosome 1:11210"
 
-- Chip-seqDataset chipseqdataset:chip_inf_9606_LC2ad_H3K4me3:
+- ChipSeqDataset chipseqdataset:chip_inf_9606_LC2ad_H3K4me3:
   - a: kero:ChIPseqDataset
   - kero:antibodyFor:
     - antibodyfor: "H3K4me3"
   - kero:hasBindingSite+:
     - chipseqdata: Chip-seqData
   - kero:sample:
-    - sample: Sample
+    - chip_sample: Sample
   - rdfs:label:
     - chipseq_dataset_label: "kero BS-seq dataset of LC2/AD (H3K4me3)"
   - dcat:theme:
     - chipseq_dataset_species_type: species:9606 # Homo sapiens
 
-- Chip-seqData chipseqdata:chip_inf_9606_chr22_LC2ad_H3K4me3_1:
+- ChipSeqData chipseqdata:chip_inf_9606_chr22_LC2ad_H3K4me3_1:
   - a: obo:SO_0001697
   - faldo:location:
-    - region: Region
+    - chip_region: Region
   - kero:bin:
     - chipseq_data_bin: 3
   - kero:count:
@@ -123,7 +123,7 @@
     - transcriptional_elongation: TranscriptionalElongation
     - inactive_region_or_heterochroma: InactiveRegionOrHeterochroma
   - kero:sample:
-    - sample: Sample
+    - chrom_sample: Sample
   - rdfs:label:
     - label: "kero ChromHMM dataset of LC2/AD"
   - dcat:theme:
@@ -132,7 +132,7 @@
 - StrongEnhancer chromhmmdata:chromhmm_inf_9606_LC2ad_495479:
   - a: kero:StrongEnhancer
   - faldo:location:
-    - region: Region
+    - s_enhancer_region: Region
   - kero:bin:
     - strong_enhancer_bin: 10
   - dct:identifier:
@@ -143,7 +143,7 @@
 - WeakEnhancer chromhmmdata:chromhmm_inf_9606_LC2ad_495480:
   - a: kero:WeakEnhancer
   - faldo:location:
-    - region: Region
+    - w_enhancer_region: Region
   - kero:bin:
     - weak_enhancer_bin: 10
   - dct:identifier:
@@ -154,7 +154,7 @@
 - InactiveRegion chromhmmdata:chromhmm_inf_9606_LC2ad_495600:
   - a: kero:InactiveRegion
   - faldo:location:
-    - region: Region
+    - inactive_location_region: Region
   - kero:bin:
     - inactive_region_bin: 10
   - dct:identifier:
@@ -165,7 +165,7 @@
 - ActivePromoter chromhmmdata:chromhmm_inf_9606_LC2ad_495517:
   - a: kero:ActivePromoter
   - faldo:location:
-    - region: Region
+    - active_location_region: Region
   - kero:bin:
     - active_promoter_bin: 10
   - dct:identifier:
@@ -176,7 +176,7 @@
 - WeakOrPoisedPromoter chromhmmdata:chromhmm_inf_9606_LC2ad_495509:
   - a: kero:WeakOrPoisedPromoter
   - faldo:location:
-    - region: Region
+    - weak_location_region: Region
   - kero:bin:
     - weak_or_poised_promoter_bin: 10
   - dct:identifier:
@@ -187,7 +187,7 @@
 - LowOrNoSignal chromhmmdata:chromhmm_inf_9606_LC2ad_495487:
   - a: kero:LowOrNoSignal
   - faldo:location:
-    - region: Region
+    - low_location_region: Region
   - kero:bin:
     - low_or_no_signal_bin: 10
   - dct:identifier:
@@ -198,7 +198,7 @@
 - TranscriptionalElongation chromhmmdata:chromhmm_inf_9606_LC2ad_495489:
   - a: kero:TranscriptionalElongation
   - faldo:location:
-    - region: Region
+    - te_location_region: Region
   - kero:bin:
     - transcriptional_elongation_bin: 10
   - dct:identifier:
@@ -209,7 +209,7 @@
 - InactiveRegionOrHeterochroma chromhmmdata:chromhmm_inf_9606_LC2ad_495576:
   - a: kero:InactiveRegionOrHeterochroma
   - faldo:location:
-    - region: Region
+    - hetero_location_region: Region
   - kero:bin:
     - inactive_region_or_heterochroma_bin: 10
   - dct:identifier:
@@ -217,18 +217,18 @@
   - rdfs:label:
     - inactive_region_or_heterochroma_label: "ChromHMM site of LC2ad on chromosome 1:265249-265649"
 
-- Rna-seqDataset rnaseqdataset:rnaseq_qty_9606_LC2ad:
+- RnaSeqDataset rnaseqdataset:rnaseq_qty_9606_LC2ad:
   - a: kero:RNAseqDataset
   - kero:hasExpressionData+:
     - rna_seq_data: Rna-seqData
   - kero:sample:
-    - sample: Sample
+    - rna_sample: Sample
   - rdfs:label:
     - rnaseq_dataset_label: "kero RNA-seq dataset of LC2/AD"
   - dcat:theme:
     - rnaseq_dataset_species_type: species:9606 # Homo sapiens
 
-- Rna-seqData rnaseqdata:rnaseq_qty_9606_LC2ad_1:
+- RnaSeqData rnaseqdata:rnaseq_qty_9606_LC2ad_1:
   - a: obo:SO_0000673
   - faldo:location:
     - location: Region
@@ -253,7 +253,7 @@
   - kero:hasVariationSite+:
     - snvdata: SnvData
   - kero:sample:
-    - sample: Sample
+    - snv_sample: Sample
   - rdfs:label:
     - snv_dataset_label: "kero SNV dataset of LC2/AD"
   - dcat:theme:
@@ -263,7 +263,7 @@
   - a: obo:SO_0001483
   - faldo:location+:
     - region: Region
-    - position: Position
+    - snv_location_position: Position
   - kero:additionalInformation:
     - additional_information: "AC=1;AF=0.50;AN=2;BaseQRankSum=1.056;DB;DP=32;Dels=0.00;FS=5.969;HRun=5;HaplotypeScore=0.0000;MQ=37.26;MQ0=3;MQRankSum=-0.427;QD=6.85;ReadPosRankSum=0.607;SB=-54.16"
   - kero:alleleFrequency:
@@ -286,22 +286,22 @@
   - rdfs:label:
     - snv_data_label: "Variation site of LC2ad on chromosome 22:15282081"
 
-- Tss-seqDataset tssseqdataset:tss_bincount_9606_LC2ad:
+- TssSeqDataset tssseqdataset:tss_bincount_9606_LC2ad:
   - a: kero:TSSseqDataset
   - kero:hasTranscriptionStartSite+:
     - tss: tssseqdata:tss_bincount_9606_chr2_LC2ad_29457 # TSS site of LC2ad on chromosome 2:174248527
   - kero:sample:
-    - sample: Sample
+    - tss_sample: Sample
   - rdfs:label:
     - tssseq_dataset_label: "kero TSS-seq dataset of LC2/AD"
   - dcat:theme:
     - tssseq_dataset_species_type: species:9606 # Homo sapiens
 
-- Tss-seqData tssseqdata:tss_bincount_9606_chr22_LC2ad_1:
+- TssSeqData tssseqdata:tss_bincount_9606_chr22_LC2ad_1:
   - a: obo:SO_0000315
   - faldo:location+:
-    - region: Region
-    - position: Position
+    - tss_region: Region
+    - tss_location_position: Position
   - kero:bin:
     - tssseq_data_bin: 1
   - kero:count:
