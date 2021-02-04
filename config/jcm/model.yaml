@@ -1,0 +1,78 @@
+- CultureJcm jcm:JCM_10004:
+  - a: mccv:MCCV_000001
+  - mccv:MCCV_000010+:
+    - culture_collection_number: "JCM 10004"
+  - mccv:MCCV_000011+:
+    - species_name: "Bacteroides pneumosintes"
+  - mccv:MCCV_000012+:
+    - qualified_species_name: "Dialister pneumosintes (Olitsky and Gates 1921) Moore and Moore 1994"
+  - mccv:MCCV_000017*:
+    - type_strain: 1
+  - mccv:MCCV_000023*:
+    - taxonomy: ncbitaxnomy:39950 # Dialister pneumosintes
+  - mccv:MCCV_000024+:
+    - []:
+      - a: mccv:MCCV_000001
+      - mccv:MCCV_000026*:
+        - other_culture_collection_number: "ATCC 33048"
+      - rdfs:seeAlso*:
+        - other_culture_collection_hp: atcc:33048
+  - mccv:MCCV_000027*:
+    - history: "<-- STAFF 1130 <-- ATCC 33048 <-- E. P. Cato VPI 9415 <-- G. Nygaard Cal 4692-1-74."
+  - mccv:MCCV_000038+:
+    - organism_category_by_brc: mccv:MCCV_000040
+  - mccv:MCCV_000073:
+    - []:
+      - a: mccv:MCCV_000005
+      - mccv:MCCV_000018*:
+        - growth_medium: gm:JCM_M14 # EG MEDIUM
+      - mccv:MCCV_000019*:
+        - rehydration_fluid: gm:JCM_M663 # NUTRIENT BROTH
+      - sio:SIO_000216*: # has measurement value
+        - []:
+          - a: mpo:MPO_00102
+          - sio:SIO_000211*: # is positionally after
+            - unit: obo:UO_0000027 # degree Celsius
+          - sio:SIO_000300*: # has value
+            - value: 37      
+  - mccv:MCCV_000076+:
+    - culture_collection: wfcc:567
+  - mccv:MCCV_000077*:
+    - insdc_id: insdc:LC037225
+  - dct:identifier+:
+    - jcm_id: "JCM_10004"
+  - dct:references+:
+    - pubmed_id: pubmed:7001198
+  - rdfs:label+:
+    - jcm_label: "JCM 10004"
+  - rdfs:seeAlso+:
+    - homepage: rikenJCM:jcm_number?JCM=10004
+  - rdfs:subClassOf+:
+    - class: jcm:mic_1
+  - foaf:depiction*:
+    - picture: rikenJCMimage:JCM10004B.jpg
+  - mccv:MCCV_000033*:
+    - application: "×××"
+  - mccv:MCCV_000034*:
+     - biosafety_level: "×××"
+  - mccv:MCCV_000028*:
+    - isolated_from: jcm:mic_6_9006662 # Sample from Nasal passage abscess
+- IsolatedFrom jcm:mic_6_9006662:
+  - a: 
+    - jcm:mic_000006
+    - mccv:MCCV_000006
+    - sio:SIO_001050
+  - rdfs:label:
+    - sample_name: 'Sample from Nasal passage abscess'
+  - mccv:MCCV_0000072*:
+    - []:
+      - a: 
+        - mccv:MCCV_000007
+        - jcm:mic_000007
+      - mccv:MCCV_000071*:
+        - meo_environmental_feature: meo:MEO_000000
+      - mccv:MCCV_000071*:
+        - pdo_environmental_feature: pdo:PDO_000000
+      - rdfs:label*:
+        - isolation_label: "Habitat of JCM 10004"
+
