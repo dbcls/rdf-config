@@ -4,9 +4,9 @@
   - sos:encoding:
     - encoding: "Sanger / Illumina 1.9"
   - sos:fastqcVersion:
-    - fastqcVersion: "0.10.0"
+    - fastqc_version: "0.10.0"
   - sos:fileType:
-    - fileType: "Conventional base calls"
+    - file_type: "Conventional base calls"
   - sos:filename:
     - filename: "ERR026579_1.fastq"
   - sos:filteredSequences:
@@ -18,53 +18,53 @@
     - []:
       - a: sos:SequenceReadLength
       - rdf:value+:
-        - maxSequenceLength: 62
+        - max_sequence_length: 62
   - sos:meanSequenceLength:
     - []:
       - a: sos:SequenceReadLength
       - sos:hasUnit+:
         - basepair: obo:UO_0000244 # base pair
       - rdf:value+:
-        - meanSequenceLength: 62.0
+        - mean_sequence_length: 62.0
   - sos:medianSequenceLength:
     - []:
       - a: sos:SequenceReadLength
       - rdf:value+:
-        - medianSequenceLength: 62.0
+        - median_sequence_length: 62.0
   - sos:minSequenceLength:
     - []:
       - a: sos:SequenceReadLength
       - rdf:value+:
-        - minSequenceLength: 62
+        - min_sequence_length: 62
   - sos:overallMeanBaseCallQuality:
     - []:
       - a: sos:PhredQualityScore
       - sos:hasUnit+:
-        - countunit: obo:UO_0000189 # count unit
+        - count_unit: obo:UO_0000189 # count unit
       - rdf:value+:
-        - overallMeanBaseCallQuality: 33.1428
+        - overall_mean_base_call_quality: 33.1428
   - sos:overallMedianBaseCallQuality:
     - []:
       - a: sos:PhredQualityScore
       - rdf:value+:
-        - overallMedianBaseCallQuality: 33.909
+        - overall_median_base_call_quality: 33.909
   - sos:overallNContent:
     - []:
       - a: sos:BaseRatio
       - sos:hasUnit+:
         - percent: obo:UO_0000187 # percent
       - rdf:value+:
-        - overallNContent: 0.00158011
+        - overall_n_content: 0.00158011
   - sos:percentGC:
     - []:
       - a: sos:BaseRatio
       - rdf:value+:
-        - percentGC: 40.0
+        - percent_gc: 40.0
   - sos:totalSequences:
     - []:
       - a: sos:SequenceReadAmount
       - rdf:value+:
-        - totalSequences: 4254262
+        - total_sequences: 4254262
   - dct:contributor+:
     - contributor: "Tazro Ohta"
   - dct:created+:
@@ -78,6 +78,6 @@
   - pav:version+:
     - version: "0.1.2"
   - rdfs:seeAlso+:
-    - insdc.sra: sra:ERR026579
+    - insdc_sra: sra:ERR026579
   - foaf:page+:
     - page: base:quanto.dbcls.jp
