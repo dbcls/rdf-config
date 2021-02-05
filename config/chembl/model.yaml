@@ -7,17 +7,17 @@
   - skos:altLabel:
     - chembl_molecule_altlabel: "1-(4-Cyclopropylmethoxymethyl-phenoxy)-3-isopropylamino-propan-2-ol"
   - cco:chemblId:
-    - chembl_id: "CHEMBL6939"
+    - chembl_id_sm: "CHEMBL6939"
   - cco:hasParentMolecule:
-    - parent_molecule: ChemblSmallmolecule # CHEMBL1194583
+    - parent_molecule_sm: ChemblSmallmolecule # CHEMBL1194583
   - cco:hasChildMolecule:
-    - child_molecule: ChemblSmallmolecule # CHEMBL542536
+    - child_molecule_sm: ChemblSmallmolecule # CHEMBL542536
   - cco:highestDevelopmentPhase:
-    - highest_development_phase: "0"
+    - highest_development_phase_sm: "0"
   - cco:hasDocument:
-    - chembl_document: ChemblDocument # CHEMBL1123868
+    - chembl_document_sm: ChemblDocument # CHEMBL1123868
   - cco:hasActivity+:
-    - chembl_activity: ChemblActivity # CHEMBL_ACT_1013015
+    - chembl_activity_sm: ChemblActivity # CHEMBL_ACT_1013015
   - cco:moleculeXref+:
     - surechembl_cross_reference: SurechemblCrossReference # CHEMBL6939 SureChEMBL Reference: SCHEMBL11250625
     - actor_cross_reference: ActorCrossReference
@@ -31,13 +31,13 @@
     - mcule_cross_reference: MculeCrossReference
     - molport_cross_reference: MolPortCrossReference
   - cco:substanceType:
-    - substance_type: "Small molecule"
+    - substance_type_sm: "Small molecule"
   - cheminf:SIO_000008:
-    - standard_inchi: StandardInchi
-    - standard_inchi_key: StandardInchiKey
-    - canonical_smiles: CanonicalSmiles
+    - standard_inchi_sm: StandardInchi
+    - standard_inchi_key_sm: StandardInchiKey
+    - canonical_smiles_sm: CanonicalSmiles
     - alogp: ALogP
-    - mw_freebase: MolecularWeightOfTheCorrespondingFreeBase
+    - mw_freebase_sm: MolecularWeightOfTheCorrespondingFreeBase
     - hba: HydrogenBondAcceptors
     - hbd: HydrogenBondDonors
     - psa: PolarSurfaceArea
@@ -48,14 +48,14 @@
     - cx_logp: ChemAxonLogP
     - cx_logd: ChemAxonLogD
     - molecular_species: MolecularSpecies
-    - full_mwt: FullMolecularWeight
+    - full_mwt_sm: FullMolecularWeight
     - aromatic_rings: AromaticRingsCount
     - heavy_atoms: HeavyAtoms
     - qed_weighted: QEDWeightedScore
-    - full_molformula: FullMolFormula
-    - mw_monoisotopic: MonoisotopicMass
+    - full_molformula_sm: FullMolFormula
+    - mw_monoisotopic_sm: MonoisotopicMass
   - foaf:depiction:
-    - image: Image
+    - image_sm: Image
 
 - Image <https://www.ebi.ac.uk/chembl/api/data/image/CHEMBL6939.svg>:
   - a: foaf:Image
@@ -208,28 +208,28 @@
   - bibo:volume:
     - chembl_document_volume: "30"
   - cco:chemblId:
-    - chembl_id: "CHEMBL1123868"
+    - chembl_id_doc: "CHEMBL1123868"
   - cco:documentType:
     - document_type: "PUBLICATION"
   - cco:hasActivity+:
-    - chembl_activity: ChemblActivity # CHEMBL_ACT_1008043
+    - chembl_activity_doc: ChemblActivity # CHEMBL_ACT_1008043
   - cco:hasAssay+:
-    - chembl_assay: ChemblAssay # CHEMBL630849
+    - chembl_assay_doc: ChemblAssay # CHEMBL630849
   - cco:hasJournal:
     - chembl_journal: ChemblJournal # J Med Chem
   - cco:hasMolecule+:
-    - chembl_molecule: [ChemblSmallMolecule, ChemblOligonucleotide] # CHEMBL267375
+    - chembl_molecule_doc: [ChemblSmallMolecule, ChemblOligonucleotide] # CHEMBL267375
   - rdfs:label+:
     - chembl_document_label: "CHEMBL1123868"
 
 - ChemblActivity chembl_activity:CHEMBL_ACT_1013015:
   - a: cco:Activity
   - cco:chemblId:
-    - chembl_id: "CHEMBL_ACT_1013015"
+    - chembl_id_activity: "CHEMBL_ACT_1013015"
   - cco:hasMolecule:
-    - chembl_molecule: [ChemblSmallMolecule, ChemblOligonucleotide] # CHEMBL552898
+    - chembl_molecule_activity: [ChemblSmallMolecule, ChemblOligonucleotide] # CHEMBL552898
   - cco:hasAssay:
-    - chembl_assay: ChemblAssay # CHEMBL647633
+    - chembl_assay_activity: ChemblAssay # CHEMBL647633
   - cco:hasQUDT:
     - concentration_unit_qudt: ops:Nanomolar
   - cco:hasUnitOnto+:
@@ -264,24 +264,24 @@
   - cco:assayType:
     - assay_type: "Physicochemical"
   - cco:chemblId:
-    - chembl_id: "CHEMBL630849"
+    - chembl_id_assay: "CHEMBL630849"
   - cco:organismName*:
-    - organism_name: "Rattus norvegicus"
+    - organism_name_assay: "Rattus norvegicus"
   - cco:taxonomy*:
-    - taxonomy_id: <http://identifiers.org/taxonomy/10116> # Rattus norvegicus (Identifiers.org)
-    - taxonomy_ncbi: <http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id=10116>
+    - taxonomy_id_assay: <http://identifiers.org/taxonomy/10116> # Rattus norvegicus (Identifiers.org)
+    - taxonomy_ncbi_assay: <http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id=10116>
   - cco:assayStrain*:
     - assay_strain: "Sprague-Dawley"
   - cco:assayTissue*:
     - assay_tissue: "Artery"
   - cco:hasActivity*:
-    - chembl_activity: ChemblActivity # CHEMBL_ACT_987343
+    - chembl_activity_assay: ChemblActivity # CHEMBL_ACT_987343
   - cco:hasDocument*:
-    - chembl_document: ChemblDocument # CHEMBL1811827
+    - chembl_document_assay: ChemblDocument # CHEMBL1811827
   - cco:hasSource:
     - chembl_source: ChemblSource
   - cco:hasTarget*:
-    - chembl_target: [ChemblOrganism, ChemblUnclassifiedtarget, ChemblSingleprotein, ChemblProteinComplex, ProteinSelectivityGroup, ChemblNucleicacid, ProteinProteinInteraction, ChimericProtein, ProteinNucleicAcidComplex, ChemblProteinfamily]
+    - chembl_target_assay: [ChemblOrganism, ChemblUnclassifiedtarget, ChemblSingleprotein, ChemblProteinComplex, ProteinSelectivityGroup, ChemblNucleicacid, ProteinProteinInteraction, ChimericProtein, ProteinNucleicAcidComplex, ChemblProteinfamily]
   - cco:targetConfDesc*:
     - target_conf_desc: "Default value - Target unknown or has yet to be assigned"
   - cco:targetConfScore*:
@@ -300,9 +300,9 @@
   - rdfs:label+:
     - chembl_journal_label: "J Med Chem"
   - cco:chemblId:
-    - chembl_id: "CHEMBL_JRN_30"
+    - chembl_id_journal: "CHEMBL_JRN_30"
   - cco:hasDocument+:
-    - chembl_document: ChemblDocument # CHEMBL1121382
+    - chembl_document_journal: ChemblDocument # CHEMBL1121382
   - dcterms:title:
     - chembl_journal_title: "Journal of medicinal chemistry."
   - bibo:eissn:
@@ -317,7 +317,7 @@
   - rdfs:label+:
     - chembl_source_label: "LITERATURE"
   - cco:chemblId:
-    - chembl_id: "CHEMBL_SRC_1"
+    - chembl_id_source: "CHEMBL_SRC_1"
   - dcterms:description:
     - chembl_source_description: "Scientific Literature"
   - cco:hasAssay+:
@@ -328,16 +328,16 @@
   - rdfs:label+:
     - chembl_target_organism_label: "Rattus norvegicus"
   - cco:chemblId:
-    - chembl_id: "CHEMBL376"
+    - chembl_id_organism: "CHEMBL376"
   - cco:hasAssay*:
-    - chembl_assay: ChemblAssay
+    - chembl_assay_organism: ChemblAssay
   - cco:organismName:
-    - chembl_target_organism_name: "Rattus norvegicus"
+    - chembl_target_organism_name_organism: "Rattus norvegicus"
   - cco:targetType:
-    - target_type: "ORGANISM"
+    - target_type_organism: "ORGANISM"
   - cco:taxonomy:
-    - taxonomy_id: <http://identifiers.org/taxonomy/10116>
-    - taxonomy_ncbi: <http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id=10116>
+    - taxonomy_id_organism: <http://identifiers.org/taxonomy/10116>
+    - taxonomy_ncbi_organism: <http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id=10116>
   - dcterms:title:
     - chembl_target_organism_title: "Rattus norvegicus"
 
@@ -346,11 +346,11 @@
   - rdfs:label+:
     - chembl_unclassifiedtarget_label: "No relevant target"
   - cco:chemblId:
-    - chembl_id: "CHEMBL2362975"
+    - chembl_id_unclassifi: "CHEMBL2362975"
   - cco:hasAssay+:
-    - chembl_assay: ChemblAssay # CHEMBL1815979
+    - chembl_assay_unclassifi: ChemblAssay # CHEMBL1815979
   - cco:targetType:
-    - target_type: "NO TARGET"
+    - target_type_unclassifi: "NO TARGET"
   - dcterms:title:
     - chembl_unclassifiedtarget_title: "No relevant target"
 
@@ -359,35 +359,35 @@
   - rdfs:label+:
     - chembl_singleprotein_label: "Beta-1 adrenergic receptor"
   - cco:chemblId:
-    - chembl_id: "CHEMBL3252"
+    - chembl_id_singlprot: "CHEMBL3252"
   - cco:hasAssay+:
-    - chembl_assay: ChemblAssay # CHEMBL787778
+    - chembl_assay_singlprot: ChemblAssay # CHEMBL787778
   - cco:hasBindingSite*:
-    - chembl_binding_site: ChemblBindingSite # CHEMBL_BS_903
+    - chembl_binding_site_singlprot: ChemblBindingSite # CHEMBL_BS_903
   - cco:hasProteinClassification+:
-    - chembl_proteinclassification: ChemblProteinclassification
+    - chembl_proteinclassification_singlprot: ChemblProteinclassification
   - cco:hasTargetComponent:
-    - chembl_targetcomponent: ChemblTargetcomponent # CHEMBL_TC_1573
+    - chembl_targetcomponent_singlprot: ChemblTargetcomponent # CHEMBL_TC_1573
   - cco:organismName:
-    - organism_name: "Rattus norvegicus"
+    - organism_name_singlprot: "Rattus norvegicus"
   - cco:relSubsetOf:
-    - chembl_proteinfamily: ChemblProteinfamily # Adrenergic receptor beta
+    - chembl_proteinfamily_singlprot: ChemblProteinfamily # Adrenergic receptor beta
   - cco:targetType:
-    - target_type: "SINGLE PROTEIN"
+    - target_type_singlprot: "SINGLE PROTEIN"
   - cco:taxonomy:
-    - taxonomy_id: <http://identifiers.org/taxonomy/10116>
-    - taxonomy_ncbi: <http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id=10116>
+    - taxonomy_id_singlprot: <http://identifiers.org/taxonomy/10116>
+    - taxonomy_ncbi_singlprot: <http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id=10116>
   - dcterms:title:
     - chembl_singleprotein_title: "Beta-1 adrenergic receptor"
   - skos:exactMatch:
-    - chembl_targetcomponent: ChemblTargetcomponent # CHEMBL_TC_1573
+    - exmatch_chembl_targetcomponent_singlprot: ChemblTargetcomponent # CHEMBL_TC_1573
 
 - ChemblBindingSite chembl_binding_site:CHEMBL_BS_903:
   - a: cco:BindingSite
   - cco:bindingSiteName:
     - chembl_binding_site_name: "Beta-1 adrenergic receptor, 7tm_1 domain"
   - cco:chemblId:
-    - chembl_id: "CHEMBL_BS_903"
+    - chembl_id_bindsite: "CHEMBL_BS_903"
   - rdfs:label+:
     - chembl_binding_site_label: "CHEMBL_BS_903"
 
@@ -398,13 +398,13 @@
   - skos:prefLabel*:
     - chembl_protclass_preflabel: "Protein class"
   - cco:chemblId:
-    - chembl_id: "CHEMBL_PC_0"
+    - chembl_id_protclassifi: "CHEMBL_PC_0"
   - cco:classLevel:
     - chembl_protclass_level: "L0"
   - cco:classPath:
     - chembl_protclass_path: "/Protein class"
   - cco:hasTargetComponentDescendant+:
-    - chembl_targetcomponent: ChemblTargetcomponent # CHEMBL_TC_10015
+    - chembl_targetcomponent_protclassifi: ChemblTargetcomponent # CHEMBL_TC_10015
   - cco:hasTargetDescendant+:
     - chembl_proteincomplex: ChemblProteinComplex #chembl_target:CHEMBL3988628 # Casein kinase 2
     - chembl_singleprotein: ChemblSingleprotein #chembl_target:CHEMBL2321624 # Probable nuclear hormone receptor HR3
@@ -414,85 +414,85 @@
     - chembl_proteinproteininteraction: ProteinProteinInteraction #chembl_target:CHEMBL3301383 # CREB-binding protein/p53
     - chembl_chimericprotein: ChimericProtein #chembl_target:CHEMBL3038516 # TPR/MET fusion protein
     - chembl_proteinnucleicacidcomplex: ProteinNucleicAcidComplex #chembl_target:CHEMBL2363135 # Bacterial 70S ribosome
-    - chembl_proteinfamily: ChemblProteinfamily #chembl_target:CHEMBL3833905 # Hyaluronidase
+    - chembl_proteinfamily_protclassifi: ChemblProteinfamily #chembl_target:CHEMBL3833905 # Hyaluronidase
   - skos:narrower+:
-    - chembl_protclass: ChemblProteinclassification #CHEMBL_PC_1
+    - narrow_chembl_protclass_protclassifi: ChemblProteinclassification #CHEMBL_PC_1
 
 - ChemblProteinComplex chembl_target:CHEMBL3988628:
   - a: cco:ProteinComplex
   - rdfs:label:
     - chembl_proteincomplex_label: "Casein kinase 2"
   - cco:chemblId:
-    - chembl_id: "CHEMBL3988628"
+    - chembl_id_protcomplex: "CHEMBL3988628"
   - cco:hasAssay:
-    - chembl_assay: ChemblAssay
+    - chembl_assay_protcomplex: ChemblAssay
   - cco:hasBindingSite:
-    - chembl_binding_site: ChemblBindingSite
+    - chembl_binding_site_protcomplex: ChemblBindingSite
   - cco:hasProteinClassification:
-    - chembl_protclass: ChemblProteinclassification
+    - chembl_protclass_protcomplex: ChemblProteinclassification
   - cco:hasTargetComponent:
-    - chembl_target_cmpt: ChemblTargetcomponent
+    - chembl_target_cmpt_protcomplex: ChemblTargetcomponent
   - cco:organismName:
-    - chembl_target_organism_name: "Bos taurus"
+    - chembl_target_organism_name_protcomplex: "Bos taurus"
   - cco:targetType:
-    - target_type: "PROTEIN COMPLEX"
+    - target_type_protcomplex: "PROTEIN COMPLEX"
   - cco:taxonomy:
-    - taxonomy_id: <http://identifiers.org/taxonomy/9913>
-    - taxonomy_ncbi: <http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id=9913>
+    - taxonomy_id_protcomplex: <http://identifiers.org/taxonomy/9913>
+    - taxonomy_ncbi_protcomplex: <http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id=9913>
   - dcterms:title:
     - chembl_proteincomplex_title: "Casein kinase 2"
   - skos:relatedMatch*:
-    - chembl_target_cmpt: ChemblTargetcomponent #chembl:targetcomponent/CHEMBL_TC_17438
+    - relmatch_chembl_target_cmpt_protcomplex: ChemblTargetcomponent #chembl:targetcomponent/CHEMBL_TC_17438
 
 - ProteinSelectivityGroup chembl_target:CHEMBL2095213:
   - a: cco:ProteinSelectivityGroup
   - rdfs:label:
     - chembl_proteinselectivitygroup_label: "Adenosine receptors; A2a & A3"
   - cco:chemblId:
-    - chembl_id: "CHEMBL2095213"
+    - chembl_id_protselectgroup: "CHEMBL2095213"
   - cco:hasAssay:
-    - chembl_assay: ChemblAssay
+    - chembl_assay_protselectgroup: ChemblAssay
   - cco:hasProteinClassification:
-    - chembl_protclass: ChemblProteinclassification
+    - chembl_protclass_protselectgroup: ChemblProteinclassification
   - cco:hasTargetComponent:
-    - chembl_target_cmpt: ChemblTargetcomponent
+    - chembl_target_cmpt_protselectgroup: ChemblTargetcomponent
   - cco:organismName:
-    - chembl_target_organism_name: "Homo sapiens"
+    - chembl_target_organism_name_protselectgroup: "Homo sapiens"
   - cco:relHasSubset:
-    - chembl_target: [ChemblOrganism, ChemblUnclassifiedtarget, ChemblSingleprotein, ChemblProteinComplex, ProteinSelectivityGroup, ChemblNucleicacid, ProteinProteinInteraction, ChimericProtein, ProteinNucleicAcidComplex, ChemblProteinfamily]
+    - chembl_target_hassubset: [ChemblOrganism, ChemblUnclassifiedtarget, ChemblSingleprotein, ChemblProteinComplex, ProteinSelectivityGroup, ChemblNucleicacid, ProteinProteinInteraction, ChimericProtein, ProteinNucleicAcidComplex, ChemblProteinfamily]
   - cco:relOverlapsWith:
-    - chembl_target: [ChemblOrganism, ChemblUnclassifiedtarget, ChemblSingleprotein, ChemblProteinComplex, ProteinSelectivityGroup, ChemblNucleicacid, ProteinProteinInteraction, ChimericProtein, ProteinNucleicAcidComplex, ChemblProteinfamily]
+    - chembl_target_overlap: [ChemblOrganism, ChemblUnclassifiedtarget, ChemblSingleprotein, ChemblProteinComplex, ProteinSelectivityGroup, ChemblNucleicacid, ProteinProteinInteraction, ChimericProtein, ProteinNucleicAcidComplex, ChemblProteinfamily]
   - cco:relSubsetOf: 
-    - chembl_target: [ChemblOrganism, ChemblUnclassifiedtarget, ChemblSingleprotein, ChemblProteinComplex, ProteinSelectivityGroup, ChemblNucleicacid, ProteinProteinInteraction, ChimericProtein, ProteinNucleicAcidComplex, ChemblProteinfamily]
+    - chembl_target_subset: [ChemblOrganism, ChemblUnclassifiedtarget, ChemblSingleprotein, ChemblProteinComplex, ProteinSelectivityGroup, ChemblNucleicacid, ProteinProteinInteraction, ChimericProtein, ProteinNucleicAcidComplex, ChemblProteinfamily]
   - cco:targetType:
-    - target_type: "SELECTIVITY GROUP"
+    - target_type_protselectgroup: "SELECTIVITY GROUP"
   - cco:taxonomy:
-    - taxonomy_id: <http://identifiers.org/taxonomy/9606>
-    - taxonomy_ncbi: <http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id=9606>
+    - taxonomy_id_protselectgroup: <http://identifiers.org/taxonomy/9606>
+    - taxonomy_ncbi_protselectgroup: <http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id=9606>
   - dcterms:title:
     - chembl_proteinselectivitygroup_title: "Adenosine receptors; A2a & A3"
   - skos:relatedMatch:
-    - chembl_target_cmpt: ChemblTargetcomponent
+    - relmatch_chembl_target_cmpt_protselectgroup: ChemblTargetcomponent
 
 - ChemblNucleicacid chembl_target:CHEMBL2364185:
   - a: cco:NucleicAcid
   - rdfs:label:
     - chembl_nucleicacid_label: "Apo-B 100 mRNA"
   - cco:chemblId:
-    - chembl_id: "CHEMBL2364185"
+    - chembl_id_nuc: "CHEMBL2364185"
   - cco:hasProteinClassification:
-    - chembl_protclass: ChemblProteinclassification
+    - chembl_protclass_nuc: ChemblProteinclassification
   - cco:hasTargetComponent:
-    - chembl_target_cmpt: ChemblTargetcomponent
+    - chembl_target_cmpt_nuc: ChemblTargetcomponent
   - cco:isTargetForMechanism:
-    - chembl_drug_mechanism: DrugMechanism # chembl:drug_mechanism/CHEMBL_MEC_2094
+    - chembl_drug_mechanism_nuc: DrugMechanism # chembl:drug_mechanism/CHEMBL_MEC_2094
   - cco:organismName:
-    - chembl_target_organism_name: "Homo sapiens"
+    - chembl_target_organism_name_nuc: "Homo sapiens"
   - cco:targetType:
-    - target_type: "NUCLEIC-ACID"
+    - target_type_nuc: "NUCLEIC-ACID"
   - cco:taxonomy:
-    - taxonomy_id: <http://identifiers.org/taxonomy/9606>
-    - taxonomy_ncbi: <http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id=9606>
+    - taxonomy_id_nuc: <http://identifiers.org/taxonomy/9606>
+    - taxonomy_ncbi_nuc: <http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id=9606>
   - dcterms:title:
     - chembl_nucleicacid_title: "Apo-B 100 mRNA"
 
@@ -501,11 +501,11 @@
   - rdfs:label:
     - chembl_drug_mechanism_label: "CHEMBL_MEC_2094"
   - cco:chemblId:
-    - chembl_id: "CHEMBL_MEC_2094"
+    - chembl_id_drugmechanism: "CHEMBL_MEC_2094"
   - cco:hasMolecule:
-    - chembl_molecule: [ChemblSmallMolecule, ChemblOligonucleotide] # chembl:molecule/CHEMBL502097
+    - chembl_molecule_drugmechanism: [ChemblSmallMolecule, ChemblOligonucleotide] # chembl:molecule/CHEMBL502097
   - cco:hasTarget:
-    - chembl_target: [ChemblOrganism, ChemblUnclassifiedtarget, ChemblSingleprotein, ChemblProteinComplex, ProteinSelectivityGroup, ChemblNucleicacid, ProteinProteinInteraction, ChimericProtein, ProteinNucleicAcidComplex, ChemblProteinfamily] # chembl:target/CHEMBL2364185
+    - chembl_target_drugmechanism: [ChemblOrganism, ChemblUnclassifiedtarget, ChemblSingleprotein, ChemblProteinComplex, ProteinSelectivityGroup, ChemblNucleicacid, ProteinProteinInteraction, ChimericProtein, ProteinNucleicAcidComplex, ChemblProteinfamily] # chembl:target/CHEMBL2364185
   - cco:mechanismActionType:
     - mechanism_action_type: "ANTISENSE INHIBITOR"
   - cco:mechanismDescription:
@@ -522,143 +522,143 @@
   - cco:atcClassification:
     - chembl_oligonucleotide_atcclass: "C10AX11"
   - cco:chemblId:
-    - chembl_id: "CHEMBL502097"
+    - chembl_id_oligonuc: "CHEMBL502097"
   - cco:hasActivity:
-    - chembl_activity: ChemblActivity
+    - chembl_activity_oligonuc: ChemblActivity
   - cco:hasDocument:
-    - chembl_document: ChemblDocument
+    - chembl_document_oligonuc: ChemblDocument
   - cco:hasDrugIndication:
     - chembl_drug_indication: ChemblDrugIndication
   - cco:hasMechanism:
-    - chembl_drug_mechanism: DrugMechanism #chembl:drug_mechanism/CHEMBL_MEC_2094
+    - chembl_drug_mechanism_oligonuc: DrugMechanism #chembl:drug_mechanism/CHEMBL_MEC_2094
   - cco:hasParentMolecule:
-    - parent_molecule: ChemblOligonucleotide # chembl:molecule/CHEMBL2219536
+    - parent_molecule_oligonuc: ChemblOligonucleotide # chembl:molecule/CHEMBL2219536
   - cco:hasChildMolecule:
-    - child_molecule: ChemblOligonucleotide #chembl:molecule/CHEMBL502097
+    - child_molecule_oligonuc: ChemblOligonucleotide #chembl:molecule/CHEMBL502097
   - cco:highestDevelopmentPhase:
-    - highest_development_phase: "4"
+    - highest_development_phase_oligonuc: "4"
   - cco:moleculeXref:
     - wikipedia_cross_reference: WikipediaCrossReference # http://en.wikipedia.org/wiki/Mipomersen
   - cco:substanceType:
-    - substance_type: "Oligonucleotide"
+    - substance_type_oligonuc: "Oligonucleotide"
   - cheminf:SIO_000008:
-    - full_mwt: FullMolecularWeight #chembl:molecule/CHEMBL502097 #full_mwt
-    - canonical_smiles: CanonicalSmiles #chembl:molecule/CHEMBL502097 #canonical_smiles
-    - full_molformula: FullMolFormula #chembl:molecule/CHEMBL502097 #full_molformula
-    - mw_freebase: MolecularWeightOfTheCorrespondingFreeBase #chembl:molecule/CHEMBL502097 #mw_freebase
-    - mw_monoisotopic: MonoisotopicMass #chembl:molecule/CHEMBL502097 #mw_monoisotopic
-    - standard_inchi: StandardInchi #chembl:molecule/CHEMBL502097 #standard_inchi
-    - standard_inchi_key: StandardInchiKey #chembl:molecule/CHEMBL502097 #standard_inchi_key
+    - full_mwt_oligonuc: FullMolecularWeight #chembl:molecule/CHEMBL502097 #full_mwt
+    - canonical_smiles_oligonuc: CanonicalSmiles #chembl:molecule/CHEMBL502097 #canonical_smiles
+    - full_molformula_oligonuc: FullMolFormula #chembl:molecule/CHEMBL502097 #full_molformula
+    - mw_freebase_oligonuc: MolecularWeightOfTheCorrespondingFreeBase #chembl:molecule/CHEMBL502097 #mw_freebase
+    - mw_monoisotopic_oligonuc: MonoisotopicMass #chembl:molecule/CHEMBL502097 #mw_monoisotopic
+    - standard_inchi_oligonuc: StandardInchi #chembl:molecule/CHEMBL502097 #standard_inchi
+    - standard_inchi_key_oligonuc: StandardInchiKey #chembl:molecule/CHEMBL502097 #standard_inchi_key
   - foaf:depiction:
-    - image: Image
+    - image_oligonuc: Image
 
 - ProteinProteinInteraction chembl_target:CHEMBL3301383:
   - a: cco:ProteinProteinInteraction
   - rdfs:label:
     - proteinprotein_interaction_label: "CREB-binding protein/p53"
   - cco:chemblId:
-    - chembl_id: "CHEMBL3301383"
+    - chembl_id_proprointeract: "CHEMBL3301383"
   - cco:hasAssay:
-    - chembl_assay: ChemblAssay
+    - chembl_assay_proprointeract: ChemblAssay
   - cco:hasProteinClassification:
-    - chembl_protclass: ChemblProteinclassification
+    - chembl_protclass_proprointeract: ChemblProteinclassification
   - cco:hasTargetComponent:
-    - chembl_target_cmpt: ChemblTargetcomponent # chembl:targetcomponent/CHEMBL_TC_3
+    - chembl_target_cmpt_proprointeract: ChemblTargetcomponent # chembl:targetcomponent/CHEMBL_TC_3
   - cco:organismName:
-    - chembl_target_organism_name: "Homo sapiens"
+    - chembl_target_organism_name_proprointeract: "Homo sapiens"
   - cco:relHasSubset:
-    - chembl_target: [ChemblOrganism, ChemblUnclassifiedtarget, ChemblSingleprotein, ChemblProteinComplex, ProteinSelectivityGroup, ChemblNucleicacid, ProteinProteinInteraction, ChimericProtein, ProteinNucleicAcidComplex, ChemblProteinfamily] #chembl:target/CHEMBL4096
+    - chembl_target_hassubset_ppi: [ChemblOrganism, ChemblUnclassifiedtarget, ChemblSingleprotein, ChemblProteinComplex, ProteinSelectivityGroup, ChemblNucleicacid, ProteinProteinInteraction, ChimericProtein, ProteinNucleicAcidComplex, ChemblProteinfamily] #chembl:target/CHEMBL4096
   - cco:relOverlapsWith:
-    - chembl_target: [ChemblOrganism, ChemblUnclassifiedtarget, ChemblSingleprotein, ChemblProteinComplex, ProteinSelectivityGroup, ChemblNucleicacid, ProteinProteinInteraction, ChimericProtein, ProteinNucleicAcidComplex, ChemblProteinfamily] #chembl:target/CHEMBL3885545
+    - chembl_target_overlap_ppi: [ChemblOrganism, ChemblUnclassifiedtarget, ChemblSingleprotein, ChemblProteinComplex, ProteinSelectivityGroup, ChemblNucleicacid, ProteinProteinInteraction, ChimericProtein, ProteinNucleicAcidComplex, ChemblProteinfamily] #chembl:target/CHEMBL3885545
   - cco:targetType:
-    - target_type: "PROTEIN-PROTEIN INTERACTION"
+    - target_type_proprointeract: "PROTEIN-PROTEIN INTERACTION"
   - cco:taxonomy:
-    - taxonomy_id: <http://identifiers.org/taxonomy/9606>
-    - taxonomy_ncbi: <http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id=9606>
+    - taxonomy_id_proprointeract: <http://identifiers.org/taxonomy/9606>
+    - taxonomy_ncbi_proprointeract: <http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id=9606>
   - dcterms:title:
     - proteinprotein_interaction_title: "CREB-binding protein/p53"
   - skos:relatedMatch:
-    - chembl_target_cmpt: ChemblTargetcomponent #chembl:targetcomponent/CHEMBL_TC_3
+    - relmatch_chembl_target_cmpt_proprointeract: ChemblTargetcomponent #chembl:targetcomponent/CHEMBL_TC_3
 
 - ChimericProtein chembl_target:CHEMBL3038516:
   - a: cco:ChimericProtein
   - rdfs:label:
     - chembl_chimericprotein_label: "TPR/MET fusion protein"
   - cco:chemblId:
-    - chembl_id: "CHEMBL3038516"
+    - chembl_id_chimerprot: "CHEMBL3038516"
   - cco:hasAssay:
-    - chembl_assay: ChemblAssay
+    - chembl_assay_chimerprot: ChemblAssay
   - cco:hasProteinClassification:
-    - chembl_protclass: ChemblProteinclassification #chembl:protclass/CHEMBL_PC_0
+    - chembl_protclass_chimerprot: ChemblProteinclassification #chembl:protclass/CHEMBL_PC_0
   - cco:hasTargetComponent:
-    - chembl_target_cmpt: ChemblTargetcomponent #chembl:targetcomponent/CHEMBL_TC_3876
+    - chembl_target_cmpt_chimerprot: ChemblTargetcomponent #chembl:targetcomponent/CHEMBL_TC_3876
   - cco:organismName:
-    - chembl_target_organism_name: "Mus musculus"
+    - chembl_target_organism_name_chimerprot: "Mus musculus"
   - cco:relHasSubset:
-    - chembl_target: [ChemblOrganism, ChemblUnclassifiedtarget, ChemblSingleprotein, ChemblProteinComplex, ProteinSelectivityGroup, ChemblNucleicacid, ProteinProteinInteraction, ChimericProtein, ProteinNucleicAcidComplex, ChemblProteinfamily] #chembl:target/CHEMBL5585
+    - chembl_target_hassubset_chimerprot: [ChemblOrganism, ChemblUnclassifiedtarget, ChemblSingleprotein, ChemblProteinComplex, ProteinSelectivityGroup, ChemblNucleicacid, ProteinProteinInteraction, ChimericProtein, ProteinNucleicAcidComplex, ChemblProteinfamily] #chembl:target/CHEMBL5585
   - cco:targetType:
-    - target_type: "CHIMERIC PROTEIN"
+    - target_type_chimerprot: "CHIMERIC PROTEIN"
   - cco:taxonomy:
-    - taxonomy_id: <http://identifiers.org/taxonomy/10090>
-    - taxonomy_ncbi: <http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id=10090>
+    - taxonomy_id_chimerprot: <http://identifiers.org/taxonomy/10090>
+    - taxonomy_ncbi_chimerprot: <http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id=10090>
   - dcterms:title:
     - chembl_chimericprotein_title: "TPR/MET fusion protein"
   - skos:relatedMatch:
-    - chembl_target_cmpt: ChemblTargetcomponent #chembl:targetcomponent/CHEMBL_TC_3876
+    - relmatch_chembl_target_cmpt_chimerprot: ChemblTargetcomponent #chembl:targetcomponent/CHEMBL_TC_3876
 
 - ProteinNucleicAcidComplex chembl_target:CHEMBL2363135:
   - a: cco:ProteinNucleicAcidComplex
   - rdfs:label:
     - chembl_proteinnucleicacidcomplex_label: "Bacterial 70S ribosome"
   - cco:chemblId:
-    - chembl_id: "CHEMBL2363135"
+    - chembl_id_protnuccomplex: "CHEMBL2363135"
   - cco:hasBindingSite:
-    - chembl_binding_site: ChemblBindingSite #chembl:binding_site/CHEMBL_BS_2620
+    - chembl_binding_site_protnuccomplex: ChemblBindingSite #chembl:binding_site/CHEMBL_BS_2620
   - cco:hasProteinClassification:
-    - chembl_protclass: ChemblProteinclassification
+    - chembl_protclass_protnuccomplex: ChemblProteinclassification
   - cco:hasTargetComponent:
-    - chembl_target_cmpt: ChemblTargetcomponent
+    - chembl_target_cmpt_protnuccomplex: ChemblTargetcomponent
   - cco:isSpeciesGroup:
     - chembl_target_species_group: "1"
   - cco:isTargetForMechanism:
-    - chembl_drug_mechanism: DrugMechanism #chembl:drug_mechanism/CHEMBL_MEC_1751
+    - chembl_drug_mechanism_protnuccomplex: DrugMechanism #chembl:drug_mechanism/CHEMBL_MEC_1751
   - cco:organismName:
-    - chembl_target_organism_name: "Bacteria"
+    - chembl_target_organism_name_protnuccomplex: "Bacteria"
   - cco:targetType:
-    - target_type: "PROTEIN NUCLEIC-ACID COMPLEX"
+    - target_type_protnuccomplex: "PROTEIN NUCLEIC-ACID COMPLEX"
   - cco:taxonomy:
-    - taxonomy_id: <http://identifiers.org/taxonomy/2>
-    - taxonomy_ncbi: <http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id=2>
+    - taxonomy_id_protnuccomplex: <http://identifiers.org/taxonomy/2>
+    - taxonomy_ncbi_protnuccomplex: <http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id=2>
   - dcterms:title:
-    - chembl_proteinnucleicacidcomplex_label: "Bacterial 70S ribosome"
+    - chembl_protnuclcomplex_label: "Bacterial 70S ribosome"
   - skos:relatedMatch:
-    - chembl_target_cmpt: ChemblTargetcomponent # chembl:targetcomponent/CHEMBL_TC_238
+    - relmatch_chembl_target_cmpt_protnuccomplex: ChemblTargetcomponent # chembl:targetcomponent/CHEMBL_TC_238
 
 - ChemblProteinfamily chembl_target:CHEMBL2095166:
   - a: cco:ProteinFamily
   - dcterms:title:
     - chembl_proteinfamily_title: "Adrenergic receptor beta"
   - cco:chemblId:
-    - chembl_id: "CHEMBL2095166"
+    - chembl_id_protfamily: "CHEMBL2095166"
   - cco:hasAssay+:
-    - chembl_assay: ChemblAssay # CHEMBL819746
+    - chembl_assay_protfamily: ChemblAssay # CHEMBL819746
   - cco:hasProteinClassification:
-    - chembl_proteinclassification: ChemblProteinclassification
+    - chembl_proteinclassification_protfamily: ChemblProteinclassification
   - cco:hasTargetComponent:
-    - chembl_targetcomponent: ChemblTargetcomponent
+    - chembl_targetcomponent_protfamily: ChemblTargetcomponent
   - cco:organismName:
-    - organism_name: "Rattus norvegicus"
+    - organism_name_protfamily: "Rattus norvegicus"
   - cco:relHasSubset*:
-    - chembl_target: [ChemblOrganism, ChemblUnclassifiedtarget, ChemblSingleprotein, ChemblProteinComplex, ProteinSelectivityGroup, ChemblNucleicacid, ProteinProteinInteraction, ChimericProtein, ProteinNucleicAcidComplex, ChemblProteinfamily] #CHEMBL4031 # Beta-3 adrenergic receptor
+    - chembl_target_hassubset_protfamily: [ChemblOrganism, ChemblUnclassifiedtarget, ChemblSingleprotein, ChemblProteinComplex, ProteinSelectivityGroup, ChemblNucleicacid, ProteinProteinInteraction, ChimericProtein, ProteinNucleicAcidComplex, ChemblProteinfamily] #CHEMBL4031 # Beta-3 adrenergic receptor
   - cco:targetType:
-    - target_type: "PROTEIN FAMILY"
+    - target_type_protfamily: "PROTEIN FAMILY"
   - cco:taxonomy:
-    - taxonomy_id: <http://identifiers.org/taxonomy/10116>
-    - taxonomy_ncbi: <http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id=10116>
+    - taxonomy_id_protfamily: <http://identifiers.org/taxonomy/10116>
+    - taxonomy_ncbi_protfamily: <http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id=10116>
   - rdfs:label+:
     - chembl_proteinfamily_label: "Adrenergic receptor beta"
   - skos:relatedMatch:
-    - chembl_target_cmpt: ChemblTargetcomponent # CHEMBL_TC_1573
+    - relmatch_chembl_target_cmpt_protfamily: ChemblTargetcomponent # CHEMBL_TC_1573
 
 - ChemblTargetcomponent chembl_target_cmpt:CHEMBL_TC_1573:
   - a: cco:TargetComponent
@@ -667,15 +667,15 @@
   - skos:altLabel*:
     - chembl_targetcomponent_altlabel: "Adrb1"
   - cco:chemblId:
-    - chembl_id: "CHEMBL_TC_1573"
+    - chembl_id_targetcompo: "CHEMBL_TC_1573"
   - cco:componentType:
     - chembl_targetcomponent_type: "PROTEIN"
   - cco:hasProteinClassification:
-    - chembl_proteinclassification: ChemblProteinclassification
+    - chembl_proteinclassification_targetcompo: ChemblProteinclassification
   - cco:hasTarget:
-    - chembl_target: [ChemblOrganism, ChemblUnclassifiedtarget, ChemblSingleprotein, ChemblProteinComplex, ProteinSelectivityGroup, ChemblNucleicacid, ProteinProteinInteraction, ChimericProtein, ProteinNucleicAcidComplex, ChemblProteinfamily] #chembl:target/CHEMBL3252
+    - chembl_target_hastarget_targetcompo: [ChemblOrganism, ChemblUnclassifiedtarget, ChemblSingleprotein, ChemblProteinComplex, ProteinSelectivityGroup, ChemblNucleicacid, ProteinProteinInteraction, ChimericProtein, ProteinNucleicAcidComplex, ChemblProteinfamily] #chembl:target/CHEMBL3252
   - cco:organismName:
-    - chembl_target_organism_name: "Rattus norvegicus"
+    - chembl_target_organism_name_targetcompo: "Rattus norvegicus"
   - cco:proteinSequence:
     - protein_sequence: "MGAGALALGASEPCNLSSAAPLPDGAATAARLLVLASPPASLLPPASEGSAPLSQQWTAGMGLLLALIVLLIVVGNVLVIVAIAKTPRLQTLTNLFIMSLASADLVMGLLVVPFGATIVVWGRWEYGSFFCELWTSVDVLCVTASIETLCVIALDRYLAITLPFRYQSLLTRARARALVCTVWAISALVSFLPILMHWWRAESDEARRCYNDPKCCDFVTNRAYAIASSVVSFYVPLCIMAFVYLRVFREAQKQVKKIDSCERRFLTGPPRPPSPAPSPSPGPPRPADSLANGRSSKRRPSRLVALREQKALKTLGIIMGVFTLCWLPFFLANVVKAFHRDLVPDRLFVFFNWLGYANSAFNPIIYCRSPDFRKAFQRLLCCARRAACRRRAAHGDRPRASGCLARAGPPPSPGAPSDDDDDDAGATPPARLLEPWAGCNGGTTTVDSDSSLDEPGRQGFSSESKV"
   - cco:targetCmptXref+:
@@ -694,19 +694,19 @@
     - cgd_cross_reference: <http://research.nhgri.nih.gov/CGD/view/?g=ATR> #Clinical Genomic Database
     - timbal_cross_reference: <http://mordred.bioc.cam.ac.uk/timbal/K-Ras> #a database containing small molecules that modulate protein-protein interactions
   - cco:taxonomy*:
-    - taxonomy_id: <http://identifiers.org/taxonomy/10116>
-    - taxonomy_ncbi: <http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id=10116>
+    - taxonomy_id_targetcompo: <http://identifiers.org/taxonomy/10116>
+    - taxonomy_ncbi_targetcompo: <http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id=10116>
   - dcterms:description:
     - chembl_targetcomponent_description: "Beta-1 adrenergic receptor"
   - skos:exactMatch:
-    - uniprot_cross_reference: UniprotCrossReference # CHEMBL_TC_1573 UniProt Reference: P18090
+    - exacmatch_uniprot_cross_reference: UniprotCrossReference # CHEMBL_TC_1573 UniProt Reference: P18090
 
 - ChemblDrugIndication chembl_drug_indication:CHEMBL_IND_41696:
   - a: cco:DrugIndication
   - rdfs:label:
     - chembl_drug_indication_label: "CHEMBL_IND_41696"
   - cco:chemblId:
-    - chembl_id: "CHEMBL_IND_41696"
+    - chembl_id_drugindicat: "CHEMBL_IND_41696"
   - cco:hasEFO:
     - experimental_factor_ontology: <http://www.ebi.ac.uk/efo/EFO_0000319>
   - cco:hasEFOName:
@@ -716,9 +716,9 @@
   - cco:hasMeshHeading:
     - mesh_heading: "Cardiovascular Diseases"
   - cco:hasMolecule:
-    - chembl_molecule: [ChemblSmallMolecule, ChemblOligonucleotide] #chembl:molecule/CHEMBL502097
+    - chembl_molecule_drugindicat: [ChemblSmallMolecule, ChemblOligonucleotide] #chembl:molecule/CHEMBL502097
   - cco:highestDevelopmentPhase:
-    - highest_development_phase: "4"
+    - highest_development_phase_drugindicat: "4"
 - SurechemblCrossReference <https://www.surechembl.org/chemical/SCHEMBL11250625>:
   - a: cco:SureChemblRef
   - rdfs:label+:
@@ -825,5 +825,5 @@
   - rdfs:label:
     - ensembl_cross_reference_label: "CHEMBL_TC_10091 ENSEMBL Reference: ENSG00000173207"
     - ensembl_label: "CKS1B"
-  - dcterm:identifier:
+  - dcterms:identifier:
     - ensembl_identifier: "ENSG00000173207"
