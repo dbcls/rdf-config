@@ -65,6 +65,20 @@ class RDFConfig
         @config.sparql[name].key?('variables') ? @config.sparql[name]['variables'] : []
     end
 
+    def valid_variables
+      valid_vs = []
+      variables.each do |variable_name|
+        if model.subject?(variable_name)
+          valid_vs << variable_name
+        else
+          triple = model.find_by_object_name(variable_name)
+          valid_vs << variable_name unless triple.nil?
+        end
+      end
+
+      valid_vs
+    end
+
     def parameters
       @parameters ||=
         @config.sparql[name].key?('parameters') ? @config.sparql[name]['parameters'] : {}
@@ -102,36 +116,10 @@ class RDFConfig
     end
 
     def variable_name_for_sparql(variable_name, add_question_mark = false)
-      triple = model.find_by_object_name(variable_name)
-      if triple.nil?
-        if model.subject?(variable_name)
-          sparql_variable_name = variable_name
-        else
-          sparql_variable_name = ''
-        end
+      if !variable_name.empty? && add_question_mark
+        "?#{variable_name}"
       else
-        sparql_variable_name = triple.object.sparql_varname
-      end
-
-      if !sparql_variable_name.empty? && add_question_mark
-        "?#{sparql_variable_name}"
-      else
-        sparql_variable_name
-      end
-    end
-
-    def prepare_sparql_variable_name
-      variables.each do |variable_name|
-        next if model.subject?(variable_name)
-
-        triple = model.find_by_object_name(variable_name)
-        if triple.nil?
-          next
-        end
-
-        if triple.object.is_a?(Model::Subject)
-          triple.object.sparql_varname = variable_name
-        end
+        variable_name.to_s
       end
     end
 
@@ -159,6 +147,10 @@ class RDFConfig
 
         subject = subject_by_object_name(variable_name)
         variable_names << subject.name unless subject.nil?
+      end
+
+      parameters.keys.each do |variable_name|
+        variable_names << variable_name
       end
 
       variable_names.flatten.uniq

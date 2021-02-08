@@ -11,7 +11,7 @@ class RDFConfig
           instance_varname = "@#{name}"
 
           instance_variable_get(instance_varname) ||
-              instance_variable_set(instance_varname, YAML.load_file(config_file_path(name)))
+            instance_variable_set(instance_varname, YAML.load_file(config_file_path(name)))
         rescue Psych::SyntaxError => e
           raise SyntaxError, "Invalid YAML format #{e.message}"
         end

@@ -4,11 +4,11 @@ class RDFConfig
       def initialize(config, opts = {})
         super
 
-        prepare_sparql_variable_name
+        #prepare_sparql_variable_name
       end
 
       def generate
-        [%(SELECT #{variables.map { |name| variable_name_for_sparql(name, true) }.join(' ')})]
+        [%(SELECT #{valid_variables.map { |name| variable_name_for_sparql(name, true) }.join(' ')})]
       end
     end
   end

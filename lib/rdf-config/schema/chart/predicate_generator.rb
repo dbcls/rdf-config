@@ -38,9 +38,15 @@ class RDFConfig
         end
 
         def generate_text
+          predicate_text = if @predicate.cardinality
+                             "#{@predicate.uri} #{@predicate.cardinality.label}"
+                           else
+                             @predicate.uri
+                           end
+
           text = REXML::Element.new('text')
           text.add_attribute_by_hash(text_opts)
-          text.add_text(@predicate.uri)
+          text.add_text(predicate_text)
 
           [text]
         end
