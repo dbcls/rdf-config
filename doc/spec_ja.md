@@ -212,11 +212,23 @@ RDF-config では、対象となる目的語の名前から、必要となる pr
   description: 何をする SPARQL クエリなのか説明
   variables: [ foo, bar, ... ]  # SPARQL で SELECT の対象とする目的語の名前（変数名）を列挙
 
-別のクエリ名:
+引数を取る別のクエリ名:
   description: 何をする SPARQL クエリなのか説明
   variables: [ foo, bar, ... ]  # SPARQL で SELECT の対象とする目的語の名前（変数名）を列挙
   parameters:
     目的語の名前: デフォルト値
+
+オプションを取る別のクエリ名:
+  description: 何をする SPARQL クエリなのか説明
+  variables: [ foo, bar, ... ]  # SPARQL で SELECT の対象とする目的語の名前（変数名）を列挙
+  options:
+    distinct: true   # SELECT DISTINCT ...
+    limit: 500       # LIMIT 句を消すには false を指定
+	offset: 200
+	order_by:        # ORDER BY ?var1 DESC(?var2) ?var3
+	  - var1: asc    # 昇順ソート
+	  - var2: desc   # 降順ソート
+	  - var3         # asc は省略可能
 ```
 
 注意点として、変数名を持つ主語が、目的語名として複数の主語にぶら下がる形で再利用されている場合、その変数が全ての出現箇所で同じ値をもつことを前提とした SPARQL が生成されるので、必要に応じて意図した SPARQL になるよう手作業で変数名を修正する必要がある。

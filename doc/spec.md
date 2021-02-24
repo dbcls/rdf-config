@@ -218,15 +218,27 @@ In RDF-config, it identifies the necessary property paths from the names of targ
 When creating a query that takes a partial value as an argument, such as an ID or a name, specify in parameters the name of the variable to be set as a value and its default value.
 
 ```
-Query name:
+query_name:
   description: explanation about SPARQL query 
   variables: [ foo, bar, ... ]  # Enumerates the object names  (variable names) to be targeted for SELECT in SPARQL
 
-Another query name:
+query_with_parameters:
   description: explanation about SPAQRL query
   variables: [ foo, bar, ... ]  # Enumerates the object names  (variable names) to be targeted for SELECT in SPARQL
   parameters:
-    Object name: default value
+    object_name: default_value
+
+query_with_options:
+  description: explanation about SPAQRL query
+  variables: [ foo, bar, ... ]  # Enumerates the object names  (variable names) to be targeted for SELECT in SPARQL
+  options:
+    distinct: true   # SELECT DISTINCT ...
+    limit: 500       # set false to disable LIMIT clause
+	offset: 200
+	order_by:        # ORDER BY ?var1 DESC(?var2) ?var3
+	  - var1: asc    # ascending order
+	  - var2: desc   # descending order
+	  - var3         # asc by default (optional)
 ```
 
 Note that, if a subject of the given variable appears as an nested object of multiple subjects, a generated SPARQL query assumes the value of the variable is same in all occurences, therefore, you might want to manually rename variable names in the SPARQL query depending on your intention.
