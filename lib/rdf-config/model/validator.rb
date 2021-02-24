@@ -9,7 +9,6 @@ class RDFConfig
 
         @errors = []
         @warnings = []
-        @undefined_prefixes = []
         @num_subject_name = {}
         @num_variable = {}
       end
@@ -21,7 +20,6 @@ class RDFConfig
         end
 
         validate_subject_name
-        validate_by_triples
         validate_by_object_names
         validate_variable
       end
@@ -45,18 +43,7 @@ class RDFConfig
       private
 
       def validate_subject(subject)
-        unless subject.blank_node?
-          # Subject name must be CamelCase
-          if /\A[A-Z][A-Za-z0-9]*\z/ !~ subject.name
-            add_error(%/Invalid subject name (#{subject.name}) in model.yaml file. Subject name must start with a capital letter and only alphanumeric characters can be used in subject name./)
-          end
-        end
-
         validate_resource_class(subject)
-        validate_prefix(subject.value)
-        subject.predicates.each do |predicate|
-          validate_predicate(predicate)
-        end
       end
 
       def validate_subject_name
@@ -71,35 +58,10 @@ class RDFConfig
         end
       end
 
-      def validate_predicate(predicate)
-        validate_prefix(predicate.name)
-        predicate.objects.each do |object|
-          if predicate.rdf_type?
-            case object.name
-            when Array
-              object.name.each do |rdf_type|
-                validate_prefix(rdf_type.to_s)
-              end
-            else
-              validate_prefix(object.name.to_s)
-            end
-          end
-        end
-      end
-
-      def validate_by_triples
-        @model.each do |triple|
-          next if triple.predicate.rdf_type?
-
-          object = triple.object
-          validate_prefix(object.value) if object.is_a?(URI)
-        end
-      end
-
       def validate_by_object_names
         property_path = {}
         @model.object_names.each do |object_name|
-          validate_object_name(object_name)
+          add_variable_name(object_name)
 
           path = @model.property_path(object_name).join(' / ')
           triple = @model.find_by_object_name(object_name)
@@ -138,26 +100,6 @@ class RDFConfig
         add_warning(%/Subject (#{subject.name}) has no rdf:type./) if subject.types.empty?
       end
 
-      def validate_prefix(uri)
-        return if /\A<.+>\z/ =~ uri.to_s
-
-        if /\A(?<prefix>\w+)\:/ =~ uri.to_s
-          return if @config.prefix.key?(prefix) || @undefined_prefixes.include?(prefix)
-
-          add_undefined_prefixes(prefix)
-          add_error(%/Prefix (#{prefix}) used but not defined in prefix.yaml file./)
-        end
-      end
-
-      def validate_object_name(object_name)
-        # object name must be snake_case
-        if /\A[a-z0-9_]+\z/ !~ object_name
-          add_error(%/Invalid object name (#{object_name}) in model.yaml file. Only lowercase letters, numbers and underscores can be used in object name./)
-        end
-
-        add_variable_name(object_name)
-      end
-
       def validate_variable
         @num_variable.select { |k, v| v > 1 }.each do |variable_name, num_variable|
           add_error(%/Duplicate variable name (#{variable_name}) in model.yaml file./)
@@ -178,10 +120,6 @@ class RDFConfig
         else
           @num_subject_name[subject_name] = 1
         end
-      end
-
-      def add_undefined_prefixes(prefix)
-        @undefined_prefixes << prefix unless @undefined_prefixes.include?(prefix)
       end
 
       def add_variable_name(variable_name)

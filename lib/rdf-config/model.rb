@@ -7,12 +7,24 @@ class RDFConfig
 
     @@validate_done = false
     @@output_warning = false
+    @@instance = {}
+
+    class << self
+      def instance(config)
+        unless @@instance.key?(config.object_id)
+          @@instance[config.object_id] = Model.new(config)
+        end
+
+        @@instance[config.object_id]
+      end
+    end
 
     def initialize(config)
       @config = config
       @graph = Graph.new(@config)
       @graph.generate
       generate_triples
+
       unless @@validate_done
         validate
         @@validate_done = true
@@ -193,7 +205,11 @@ class RDFConfig
       validator = Validator.new(self, @config)
       validator.validate
 
-      raise Config::InvalidConfig, validator.error_message if validator.error?
+      errors = @graph.errors + validator.errors
+      unless errors.empty?
+        error_msg = %Q/ERROR: Invalid configuration\n#{errors.map { |msg| "  #{msg}" }.join("\n")}/
+        raise Config::InvalidConfig, error_msg
+      end
 
       if validator.warn? && !@@output_warning
         STDERR.puts validator.warn_message
