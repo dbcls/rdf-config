@@ -207,7 +207,7 @@ class RDFConfig
 
       errors = @graph.errors + validator.errors
       unless errors.empty?
-        error_msg = %Q/ERROR: Invalid configuration\n#{errors.map { |msg| "  #{msg}" }.join("\n")}/
+        error_msg = %Q/ERROR: Invalid configuration. Please check the setting in model.yaml file.\n#{errors.map { |msg| "  #{msg}" }.join("\n")}/
         raise Config::InvalidConfig, error_msg
       end
 

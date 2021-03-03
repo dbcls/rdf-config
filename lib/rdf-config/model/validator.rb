@@ -29,7 +29,7 @@ class RDFConfig
       end
 
       def error_message
-        %Q/ERROR: Invalid configuration\n#{errors.map { |msg| "  #{msg}" }.join("\n")}/
+        %Q/ERROR: Invalid configuration. Please check the setting in model.yaml file.\n#{errors.map { |msg| "  #{msg}" }.join("\n")}/
       end
 
       def warn?

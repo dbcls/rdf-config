@@ -108,7 +108,7 @@ class RDFConfig
         subject_hash.each do |subject_name, predicate_object_hashes|
           predicate_object_hashes.each do |predicate_object_hash|
             unless predicate_object_hash.is_a?(Hash)
-              add_error("It seems that the predicate and object settings in subject (#{subject_name}) are incorrect in the model.yaml file. Please check the configuration in model.yaml file.")
+              add_error("It seems that the predicate and object settings in subject (#{subject_name}) are incorrect in the model.yaml file.")
               next
             end
 
@@ -121,7 +121,7 @@ class RDFConfig
 
       def setup_predicate(subject, predicate, object)
         if object.nil?
-          add_error("Predicate (#{predicate}) has no RDF object setting. Please check the setting in model.yaml file.")
+          add_error("Predicate (#{predicate}) has no RDF object setting.")
         else
           pred_inst = predicate_instance({ predicate => object })
           unless pred_inst.nil?
