@@ -1,5 +1,6 @@
 require 'rexml/document'
 require 'rdf-config/schema/chart/constant'
+require 'rdf-config/schema/chart/title_generator'
 require 'rdf-config/schema/chart/subject_generator'
 require 'rdf-config/schema/chart/predicate_generator'
 require 'rdf-config/schema/chart/loop_predicate_generator'
@@ -8,6 +9,7 @@ require 'rdf-config/schema/chart/uri_node_generator'
 require 'rdf-config/schema/chart/literal_node_generator'
 require 'rdf-config/schema/chart/blank_node_generator'
 require 'rdf-config/schema/chart/unknown_node_generator'
+require 'rdf-config/schema/chart/prefix_generator'
 
 class REXML::Element
   def add_attribute_by_hash(attr_hash)
@@ -20,6 +22,9 @@ end
 class RDFConfig
   class Schema
     class Chart
+      class SchemaConfigNotFound < StandardError; end
+      class InvalidSchemaOption < StandardError; end
+
       include Constant
 
       Position = Struct.new(:x, :y)
@@ -28,12 +33,13 @@ class RDFConfig
       START_X = 50.freeze
       START_Y = 10.freeze
 
-      def initialize(config)
+      def initialize(config, opts = {})
+        @config = config
         @model = Model.new(config)
         @prefix = config.prefix
+        @opts = opts
 
-        generate_svg_element
-        add_to_svg(style_element)
+        interpret_opt(opts[:schema_opt].to_s) if opts.key?(:schema_opt)
 
         @current_pos = Position.new(START_X, START_Y)
         @subjects = []
@@ -42,16 +48,96 @@ class RDFConfig
       end
 
       def generate
-        @model.subjects.each do |subject|
-          generate_subject_graph(subject)
-        end
+        generate_svg_element
+        add_to_svg(style_element)
+
+        # Display the title in the upper left
+        generate_title
+
+        # Display schema chart
+        generate_schema
+
+        # Display the prefixes at the bottom left
+        generate_prefixes
 
         output_svg
       end
 
+      def generate_title
+        if !@schema_name.nil? && @config.schema[@schema_name].key?('description')
+          description = @config.schema[@schema_name]['description']
+          generator = TitleGenerator.new(description, @current_pos)
+          add_to_svg(generator.generate)
+          @current_pos.y += TITLE_FONT_SIZE[0 .. 3].to_i * 2
+        end
+      end
+
+      def generate_schema
+        if variables.empty?
+          generate_all
+        else
+          generate_by_variables
+        end
+      end
+
+      def generate_prefixes
+        @prefix_generator = PrefixGenerator.new(@prefix, Position.new(START_X, max_ypos))
+        add_to_svg(@prefix_generator.generate)
+      end
+
+      def generate_all
+        @model.subjects.each do |subject|
+          generate_subject_graph(subject)
+        end
+      end
+
+      def generate_by_variables
+        @schema_subject_names = []
+        @schema_object_names = {}
+        variables.each do |variable_name|
+          if @model.subject?(variable_name)
+            unless @schema_subject_names.include?(variable_name)
+              @schema_subject_names << variable_name
+              @schema_object_names[variable_name] = []
+              subject = @model.find_subject(variable_name)
+              subject.predicates.each do |predicate|
+                next if predicate.rdf_type?
+
+                predicate.objects.each do |object|
+                  case object
+                  when Model::Subject
+                    object_name = object.as_object_name
+                  else
+                    object_name = object.name
+                  end
+                  @schema_object_names[variable_name] << object_name unless @schema_object_names[variable_name].include?(object_name)
+                end
+              end
+            end
+          else
+            triple = @model.find_by_object_name(variable_name)
+            next if triple.nil?
+
+            unless @schema_subject_names.include?(triple.subject.name)
+              @schema_subject_names << triple.subject.name
+              @schema_object_names[triple.subject.name] = []
+            end
+
+            unless @schema_object_names[triple.subject.name].include?(variable_name)
+              @schema_object_names[triple.subject.name] << variable_name
+            end
+          end
+        end
+
+        @schema_subject_names.each do |subject_name|
+          subject = @model.find_subject(subject_name)
+          generate_subject_graph(subject)
+        end
+      end
+
       def output_svg
-        width = @element_pos.values.flatten.map(&:x).max + RECT_WIDTH + 100
-        height = @element_pos.values.flatten.map(&:y).max + RECT_HEIGHT + MARGIN_RECT + 100
+        width = max_xpos + 100
+        height = max_ypos + @prefix_generator.height + START_Y
         svg_opts = {
           width: "#{width}px",
           height: "#{height}px",
@@ -75,7 +161,20 @@ class RDFConfig
 
         subject.predicates.each do |predicate|
           predicate.objects.each do |object|
-            generate_predicate_object(predicate, object)
+            if variables.empty?
+              generate_predicate_object(predicate, object)
+            else
+              next unless @schema_subject_names.include?(subject.name)
+
+              object_name = if object.is_a?(Model::Subject)
+                              object.as_object_name
+                            else
+                              object.name
+                            end
+              if predicate.rdf_type? || @schema_object_names[subject.name].include?(object_name)
+                generate_predicate_object(predicate, object)
+              end
+            end
           end
         end
 
@@ -92,7 +191,12 @@ class RDFConfig
         @subjects.push(subject)
         add_element_position
 
-        generator = SubjectGenerator.new(subject, @current_pos)
+        disp_mode = if @subjects.size > 1 && @nest
+                      :object
+                    else
+                      :subject
+                    end
+        generator = SubjectGenerator.new(subject, @current_pos, disp_mode: disp_mode)
         add_to_svg(generator.generate)
       end
 
@@ -161,7 +265,11 @@ class RDFConfig
       end
 
       def draw_predicate_object?(object)
-        !@subjects.map(&:name).include?(object.name)
+        if @nest
+          !@subjects.map(&:name).include?(object.name)
+        else
+          false
+        end
       end
 
       def subject_position(subject)
@@ -274,7 +382,83 @@ class RDFConfig
 
         Math.sqrt(dx**2 + dy**2)
       end
-    end
 
+      private
+
+      def interpret_opt(schema_opt)
+        errors = []
+        valid_options = %w[nest arc table]
+        table_types = %w[arc table]
+
+        @schema_name = nil
+        @nest = false
+        @display_type = :tree # :tree | :arc | :table
+        @display_title = true
+        @display_prefix = true
+
+        option_names = schema_opt.strip.split(/\s*:\s*/)
+        return if option_names.empty?
+
+        schema_name = option_names.shift
+        unless schema_name.empty?
+          if @config.schema.key?(schema_name)
+            @schema_name = schema_name
+          else
+            errors << "Schema name '#{schema_name}' is specified but not found in schema.yaml file."
+          end
+        end
+
+        if (table_types & option_names).size == table_types.size
+          errors << "Both 'arc' option and 'table' option cannot be specified."
+        end
+
+        option_names.each do |name|
+          next if name.empty?
+
+          if valid_options.include?(name)
+            @nest = true if name == 'nest'
+            @display_type = name.to_sym if table_types.include?(name)
+            @display_title = false if name == 'no_title'
+            @display_prefix = false if name == 'no_prefix'
+          else
+            errors << "Invalid option '#{name}' is specified."
+          end
+        end
+
+        unless errors.empty?
+          error_msg = "ERROR:\n#{errors.map { |msg| "  #{msg}" }.join("\n")}"
+          raise InvalidSchemaOption, error_msg
+        end
+      end
+
+      def variables
+        @variables ||= interpret_variables
+      end
+
+      def interpret_variables
+        if !@schema_name.nil? && @config.schema[@schema_name].key?('variables')
+          vars = @config.schema[@schema_name]['variables'].clone
+          @config.schema[@schema_name]['variables'].each do |variable_name|
+            next if @model.subject?(variable_name)
+
+            triple = @model.find_by_object_name(variable_name)
+            if vars.include?(triple.subject.name)
+              vars.delete(triple.subject.name)
+            end
+          end
+          vars
+        else
+          []
+        end
+      end
+
+      def max_xpos
+        @element_pos.values.flatten.map(&:x).max + RECT_WIDTH
+      end
+
+      def max_ypos
+        @element_pos.values.flatten.map(&:y).max + RECT_HEIGHT + MARGIN_RECT
+      end
+    end
   end
 end

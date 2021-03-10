@@ -38,6 +38,7 @@ begin
       opts[:mode] = :senbero
     when /--schema/
       opts[:mode] = :chart
+      opts[:schema_opt] = value
     when /--sparqlist/
       opts[:mode] = :sparqlist
     when /--sparql/

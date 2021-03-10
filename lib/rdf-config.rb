@@ -73,7 +73,7 @@ class RDFConfig
   end
 
   def generate_chart
-    schema = Schema::Chart.new(@config)
+    schema = Schema::Chart.new(@config, @opts)
     schema.generate
   end
 

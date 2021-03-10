@@ -19,9 +19,11 @@ class RDFConfig
         MARGIN_LEFT = 8.freeze
         MARGIN_RIGHT = 8.freeze
 
-        def initialize(node, pos)
+        def initialize(node, pos, opts = {})
           @node = node
           @pos = pos
+
+          @disp_mode = opts.key?(:disp_mode) ? opts[:disp_mode] : :subject
         end
 
         def generate
@@ -90,7 +92,13 @@ class RDFConfig
             y: @pos.y + NAME_AREA_HEIGHT + VALUE_MARGIN_TOP,
             class: 'st3 st4'
           )
-          value.add_text(@node.value)
+
+          if @node.is_a?(Model::Subject) && @disp_mode == :object
+            # value.add_text(@node.as_object_value)
+            value.add_text(@node.value)
+          else
+            value.add_text(@node.value)
+          end
 
           wrapper = REXML::Element.new('g')
           wrapper.add_attribute_by_hash(transform: 'translate(-0.5 -0.5)')
@@ -107,7 +115,13 @@ class RDFConfig
             class: 'st5 st6 st7',
             'dominant-baseline' => 'middle'
           )
-          name.add_text(@node.name)
+
+          if @node.is_a?(Model::Subject) && @disp_mode == :object
+            # name.add_text(@node.as_object_name)
+            name.add_text(@node.name)
+          else
+            name.add_text(@node.name)
+          end
 
           wrapper = REXML::Element.new('g')
           wrapper.add_attribute_by_hash(transform: 'translate(-0.5 -0.5)')

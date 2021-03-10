@@ -31,6 +31,8 @@ class RDFConfig
 
         STROKE_WIDTH = 2.freeze
         STROKE_COLOR = '#000000'.freeze
+
+        TITLE_FONT_SIZE = '18px'.freeze
       end
     end
   end
