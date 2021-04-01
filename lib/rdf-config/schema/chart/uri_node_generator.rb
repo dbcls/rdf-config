@@ -157,7 +157,7 @@ class RDFConfig
           if @node.is_a?(Model::Subject)
             'st0'
           else
-            'st9'
+            'st9uri'
           end
         end
 

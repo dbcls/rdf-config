@@ -295,7 +295,8 @@ class RDFConfig
 	.st6 {font-family:'Helvetica-Bold';}
 	.st7 {font-size:12px;}
 	.st8 {opacity:0.7;fill:#FFFFFF;}
-	.st9 {fill:#CCF8F8;stroke:#000000;stroke-width:2;}
+	.st9 {fill:#F8CECC;stroke:#000000;stroke-width:2;}
+	.st9uri {fill:#CCF8F8;stroke:#000000;stroke-width:2;}
 	.st10 {fill:#FFF4C3;}
 	.st11 {fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;stroke-dasharray:4,4;}
 	.st12 {fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
