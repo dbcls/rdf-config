@@ -9,14 +9,18 @@ class RDFConfig
           @subject = subject
           @pos = pos
 
-          @disp_mode = opts.key?(:disp_mode) ? opts[:disp_mode] : :subject
+          @drawing_mode = opts.key?(:drawing_mode) ? opts[:drawing_mode] : :subject
+          @nest = opts.key?(:nest) ? opts[:nest] : false
+          @model = opts.key?(:model) ? opts[:model] : nil
         end
 
         def generate
           generator = if @subject.blank_node?
                         BlankNodeGenerator.new(@pos)
                       else
-                        URINodeGenerator.new(@subject, @pos, disp_mode: @disp_mode)
+                        URINodeGenerator.new(
+                          @subject, @pos, drawing_mode: @drawing_mode, nest: @nest, model: @model
+                        )
                       end
 
           generator.generate

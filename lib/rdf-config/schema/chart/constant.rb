@@ -2,6 +2,7 @@ class RDFConfig
   class Schema
     class Chart
       module Constant
+        SUBJECT_NAME_FONT_FAMILY = 'Helvetica-bold'
         FONT_FAMILY = 'Helvetica'.freeze
         FONT_SIZE = '12px'.freeze
         RECT_WIDTH = 180.freeze
