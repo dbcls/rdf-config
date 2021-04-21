@@ -42,6 +42,9 @@ class RDFConfig
         object = model.find_object(variable_name)
         @subjects_by_variables << object.name if object.is_a?(Model::Subject)
       end
+
+      @variables_for_where = nil
+      @common_subject_names = nil
     end
 
     def generate
@@ -135,6 +138,40 @@ class RDFConfig
     end
 
     def subject_by_object_name(object_name)
+      model.triples_by_object_name(object_name).reverse.each_with_index do |triple, idx|
+        begin
+          as_object_name = triple.object.as_object_name
+        rescue
+          as_object_name = ''
+        end
+
+        if idx > 0 && variables.include?(as_object_name)
+          return triple.object
+        elsif variables.include?(triple.subject.name)
+          return triple.subject
+        end
+      end
+
+      triple = model.find_by_object_name(object_name)
+      if triple.nil? || common_subject_names.nil? || common_subject_names.empty?
+        model.subjects.first
+      else
+        parent_subject_names = model.parent_subject_names(object_name)
+        commons_by_variables = parent_subject_names & variables
+        if commons_by_variables.empty?
+          subject_names = parent_subject_names & common_subject_names
+          if subject_names.empty?
+            model.subjects.first
+          else
+            model.find_subject(subject_names.last)
+          end
+        else
+          model.find_subject(commons_by_variables.last)
+        end
+      end
+    end
+
+    def closest_subject(object_name)
       parent_subject_names = model.parent_subject_names(object_name)
       object_name_for_subject = nil
       parent_subject_names.reverse.each do |subject_name|
@@ -151,13 +188,35 @@ class RDFConfig
       end
     end
 
+    def common_subject_names
+      if @common_subject_names.nil?
+        variables_for_where.each do |variable_name|
+          next if model.subject?(variable_name)
+
+          triple = model.find_by_object_name(variable_name)
+          next if triple.nil? || variables.include?(triple.subject.name)
+
+          if @common_subject_names.nil?
+            @common_subject_names = model.parent_subject_names(variable_name)
+          else
+            @common_subject_names &= model.parent_subject_names(variable_name)
+          end
+        end
+
+        @common_subject_names = [] if @common_subject_names.nil?
+      end
+
+      @common_subject_names
+    end
+
     def hidden_variables
       variable_names = []
+
       variables.each do |variable_name|
         next if model.subject?(variable_name)
 
-        subject = subject_by_object_name(variable_name)
-        variable_names << subject.name unless subject.nil?
+        subject = closest_subject(variable_name)
+        variable_names << subject.name if !subject.nil? && !variables.include?(subject.name)
       end
 
       parameters.keys.each do |variable_name|
@@ -168,7 +227,7 @@ class RDFConfig
     end
 
     def variables_for_where
-      (variables + hidden_variables).uniq
+      @variables_for_where ||= (variables + hidden_variables).uniq
     end
 
     def validate

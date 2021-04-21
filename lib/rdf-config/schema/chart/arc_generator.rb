@@ -44,20 +44,27 @@ class RDFConfig
         private
 
         def subjects
-          model.subjects
-          # @subjects ||= if @variables.is_a?(Array) && !@variables.empty?
-          #                subjects_by_variables(@variables).uniq
-          #               else
-          #                 model.subjects
-          #               end
+          @subjects ||= if @variables.is_a?(Array) && !@variables.empty?
+                          model.subjects & subjects_by_variables(@variables)
+                        else
+                          model.subjects
+                        end
         end
 
         def subjects_by_variables(variables)
           subject_names = []
-          variables.each do |variable|
-            next unless model.subject?(variable)
+          variables.each do |variable_name|
+            if model.subject?(variable_name)
+              subject_name = variable_name
+            else
+              triple = model.find_by_object_name(variable_name)
+              next if triple.nil?
 
-            subject_names += related_subjects(model.find_subject(variable)).map(&:name)
+              subject_name = triple.subject.name
+            end
+
+            subject_names << subject_name
+            # subject_names += related_subjects(model.find_subject(subject_name)).map(&:name)
           end
 
           subject_names.uniq.map { |subject_name| model.find_subject(subject_name) }
@@ -135,10 +142,11 @@ class RDFConfig
 
         def generate_relations_by_subject(subject)
           related_subjects(subject).each do |subject_as_object|
+            next unless subjects.include?(subject_as_object)
+
             generate_relation(subject, subject_as_object)
           end
         end
-
 
         def generate_relation(subject, subject_as_object)
           return if subject.name == subject_as_object.name

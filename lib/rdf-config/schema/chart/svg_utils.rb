@@ -43,6 +43,16 @@ class RDFConfig
         def model
           @model ||= Model.instance(@config)
         end
+
+        def sort_subjects(subjects)
+          subj_names = model.subjects.map(&:name)
+          subjects.sort { |a, b| subj_names.index(a.name) <=> subj_names.index(b.name) }
+        end
+
+        def sort_object_names(subject, object_names)
+          obj_names = subject.object_names
+          object_names.sort { |a, b| obj_names.index(a) <=> obj_names.index(b) }
+        end
       end
     end
   end

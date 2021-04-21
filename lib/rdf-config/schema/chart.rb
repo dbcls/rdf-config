@@ -13,6 +13,7 @@ require 'rdf-config/schema/chart/blank_node_generator'
 require 'rdf-config/schema/chart/unknown_node_generator'
 require 'rdf-config/schema/chart/prefix_generator'
 require 'rdf-config/schema/chart/arc_generator'
+require 'rdf-config/schema/chart/table_generator'
 
 class REXML::Element
   def add_attribute_by_hash(attr_hash)
@@ -46,21 +47,21 @@ class RDFConfig
       end
 
       def generate
+        opts = {
+          schema_name: @schema_name,
+          variables: interpret_variables
+        }
+
         case @display_type
         when :tree
-          opts = {
-            schema_name: @schema_name,
-            nest: @nest,
-            variables: interpret_variables
-          }
+          opts = opts.merge(nest: @nest)
           generator = TreeGenerator.new(@config, opts)
           generator.generate
         when :arc
-          opts = {
-            schema_name: @schema_name,
-            variables: interpret_variables
-          }
           generator = ArcGenerator.new(@config, opts)
+          generator.generate
+        when :table
+          generator = TableGenerator.new(@config, opts)
           generator.generate
         else
           # unsupported chart type
