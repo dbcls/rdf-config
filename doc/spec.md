@@ -4,14 +4,14 @@
 
 The SPARQL endpoint can be specified using the following notation.
 
-```
+```yaml
 endpoint: http://example.org/sparql
 ```
 
 If you want to specify multiple endpoints for the same data, use the following notation.
 Each endpoint can contain graph names which are used in the FROM clause in the generated SPARQL query.
 
-```
+```yaml
 endpoint:
   - http://example.org/sparql  # Primary SPARQL endpoint
   - graph:
@@ -30,7 +30,7 @@ another_endpoint:
 
 The CURIE/QName prefix used in the RDF data model must be defined using the following notation.
 
-```
+```yaml
 rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -43,7 +43,7 @@ skos: <http://www.w3.org/2004/02/skos/core#>
 
 The RDF data model is described in the YAML format with the following structure containing nested arrays (to preserve order and allow for duplicate occurrences). Note that a mismatched indentation causes an error (don't mix spaces and a tab at the beginning of a line), and the subject, predicate, and object must end with `:` because each is a key of the hash.
 
-```
+```yaml
 - Subject1 subject_example1 subject_example2:
   - predicate1:
     - object1: object_example1
@@ -73,7 +73,7 @@ The most important point here is to assign appropriate variable names to represe
 Define a subject name followed by example URIs (optional). Be sure to specify `rdf:type` (`a`) for the subject. Moreover, it is strongly recommended to include `rdfs:label` or `dct:identifier` for the subject.
 
 In the case of the subject example is specified as a URI:
-```
+```yaml
 - Entry <http://example.org/mydb/entry/1>:
   # for a subject having a single type
   - a: mydb:Entry
@@ -94,14 +94,14 @@ In the case of the subject example is specified as a URI:
 ```
 
 In the case of the subject example is specified as a CURIE/QName:
-```
+```yaml
 - Entry mydb:1:
   - a: mydb:Entry
  :
 ```
 
 In the case of the subject is a blank node:
-```
+```yaml
 - []:
   - a: mydb:Entry
  :
@@ -109,7 +109,7 @@ In the case of the subject is a blank node:
 
 Multiple example URIs for a subject can be specified with a space delimited list next to the subject name. 
 
-```
+```yaml
 - Entry mydb:1 mydb:2:
   - a: mydb:Entry
  :
@@ -131,7 +131,7 @@ You can clarify the constraints on the number of occurrences of a predicate (car
 
 This information is also used to make OPTIONAL clause in the generated SPARQL query and is also used by genrated ShEx for RDF validation and 
 
-```
+```yaml
 - Subject my:subject:
   - a: my:Class
   - my:predicate1?:
@@ -155,7 +155,7 @@ The object name is used as the name of a variable in SPARQL queries, so it shoul
 
 Example of objects is optional, but we strongly recommended to add it to make the schema diagram clearer. Because the YAML parser estimates the type of the value, you can write strings  (it doesn't matter for YAML in the case of without quote), numbers, dates, etc. as they are. Because URI is treated as strings in YAML, RDF-config specially interprets the strings enclosed in `<>` and CURIE/QName (whose prefix is defined in prefix.yaml) as URIs.
 
-```
+```yaml
 - Subject my:subject:
   - a: my:Class
   - my:predicate1:
@@ -173,7 +173,7 @@ Example of objects is optional, but we strongly recommended to add it to make th
 When the object refers to another RDF model, the subject name of the reference should be described as the object.
 (TODO: Extend it to allow external references to commonly used data models such as FALDO.)
 
-```
+```yaml
 - Subject my:subject:
   - my:refer:
     - other_subject: OtherSubject  # Subject names used as subjects in the same model.yaml
@@ -183,7 +183,7 @@ When the object refers to another RDF model, the subject name of the reference s
 
 If the object example is described in more than one line, the indented part is treated as a multi-line literal by using `|` in YAML notation. Note that if it is too long, it may not be displayed in the schema diagram or may be broken.
 
-```
+```yaml
 - Subject my:subject:
   - my:predicate:
     - value: |
@@ -195,7 +195,7 @@ If the object example is described in more than one line, the indented part is t
 The language tags (such as `"hoge"@en`) can be specified like as follows. 
 (it will be an error for YAML without `"`)
 
-```
+```yaml
 - Subject my:subject:
   - my:predicate:
     - name: '"hoge"@en'
@@ -204,10 +204,31 @@ The language tags (such as `"hoge"@en`) can be specified like as follows.
 For literal type specification by `^^` (e.g., `"123"^^xsd:string`), you can specify as follows.
 (it will be an error for YAML without `"`)
 
-```
+```yaml
 - Subject my:subject:
   - my:predicate:
     - myvalue: '"123"^^xsd:integer'
+```
+
+## schema.yaml
+
+In case of drawing a schema only with the selected subset of Subjects and/or Objects, especially when the model.yaml became too complex, specify a name and variables of schemas in the following YAML format:
+
+```yaml
+schema_name1:
+  description: A list of subjects and objects which will be drawn on the schema diagram.
+  variables: [ Subject1, Subject2, object_name1, object_name2, object_name3 ]
+
+schema_name2:
+  description: A list of selected objects. Other objects will be ommitted from the schema diagram.
+  variables: [ object_name1, object_name2, object_name3 ]
+
+schema_name3:
+  description: A list of selected subjects. All objects belong to the subjects will be drawn on the schema diagram.
+  variables: [ Subject1, Subject2 ]
+
+schema_name4:
+  description: Specify a title of the schema only.
 ```
 
 ## sparql.yaml
@@ -217,7 +238,7 @@ A file that can configure multiple SPARQL queries. It is written in the followin
 In RDF-config, it identifies the necessary property paths from the names of target objects and generates SPARQL queries automatically. So all you have to do is list the name of the variable that you want to get as a result in the variables.
 When creating a query that takes a partial value as an argument, such as an ID or a name, specify in parameters the name of the variable to be set as a value and its default value.
 
-```
+```yaml
 query_name:
   description: explanation about SPARQL query 
   variables: [ foo, bar, ... ]  # Enumerates the object names  (variable names) to be targeted for SELECT in SPARQL
@@ -247,7 +268,7 @@ Note that, if a subject of the given variable appears as an nested object of mul
 
 A file describing information for the metadata.json file, which is necessary to generate TogoStanza.
 
-```
+```yaml
 Stanza name:
   output_dir: /path/to/output/dir     # Output directory name (TODO: should I be able to change it on the command line instead of writing it here?)
   label: "Stanza name"
