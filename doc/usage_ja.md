@@ -181,7 +181,7 @@ $ rdf-config --config config/mesh --schema :table > mesh_table.svg
 ```
 $ rdf-config --config config/mesh --schema title > mesh_title.svg
 ```
-![MeSH schema](./figure/mesh_title.svg)
+* [mesh_title.svg](./figure/mesh_title.svg)
 
 例：一部の主語だけを抜き出したスキーマ図を生成
 
@@ -190,9 +190,9 @@ $ rdf-config --config config/mesh --schema main_subjects > mesh_main_subjects.sv
 $ rdf-config --config config/mesh --schema main_subjects:arc > mesh_main_subjects_arc.svg
 $ rdf-config --config config/mesh --schema main_subjects:table > mesh_main_subjects_table.svg
 ```
-![MeSH schema](./figure/mesh_main_subjects.svg)
-![MeSH schema](./figure/mesh_main_subjects_arc.svg)
-![MeSH schema](./figure/mesh_main_subjects_table.svg)
+* [mesh_main_subjects.svg](./figure/mesh_main_subjects.svg)
+* [mesh_main_subjects_arc.svg](./figure/mesh_main_subjects_arc.svg)
+* [mesh_main_subjects_table.svg](./figure/mesh_main_subjects_table.svg)
 
 例：一部の目的語だけを抜き出したスキーマ図を生成
 
