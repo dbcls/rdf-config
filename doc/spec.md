@@ -255,11 +255,11 @@ query_with_options:
   options:
     distinct: true   # SELECT DISTINCT ...
     limit: 500       # set false to disable LIMIT clause
-	offset: 200
-	order_by:        # ORDER BY ?var1 DESC(?var2) ?var3
-	  - var1: asc    # ascending order
-	  - var2: desc   # descending order
-	  - var3         # asc by default (optional)
+    offset: 200
+    order_by:        # ORDER BY ?var1 DESC(?var2) ?var3
+    - var1: asc      # ascending order
+    - var2: desc     # descending order
+    - var3           # asc by default (optional)
 ```
 
 Note that, if a subject of the given variable appears as an nested object of multiple subjects, a generated SPARQL query assumes the value of the variable is same in all occurences, therefore, you might want to manually rename variable names in the SPARQL query depending on your intention.
