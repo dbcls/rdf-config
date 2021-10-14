@@ -113,7 +113,7 @@
     - core:annotation:
         - transit_peptide_annotation: 
     - core:annotation:
-        - cross-link_annotation: CrossLinkAnnotation
+        - cross_link_annotation: CrossLinkAnnotation
     - core:annotation:
         - disulfide_bond_annotation: 
     - core:annotation:
@@ -123,7 +123,7 @@
     - core:annotation:
         - modified_residue_annotation: ModifiedResidueAnnotation
     - core:annotation:
-        - non-standard_residue_annotation: 
+        - non_standard_residue_annotation:
     - core:annotation:
         - calcium_binding_annotation:
     - core:annotation:
@@ -163,9 +163,9 @@
     - core:annotation:
         - mutagenesis_annotation: MutagenesisAnnotation
     - core:annotation:
-        - non-adjacent_residues_annotation:
+        - non_adjacent_residues_annotation:
     - core:annotation:
-        - non-terminal_residues_annotation:
+        - non_terminal_residues_annotation:
     - core:annotation:
         - sequence_confilict_annotation:
     - core:annotation:
@@ -219,7 +219,7 @@
     - core:fullName:
         - alternative_name: "p34 protein kinase"
 
-- EncodedBy up:P06493#gene-MD5066A21D78DD806AEF8C6D2D66E098AF8:
+- EncodedBy up:P06493\#gene-MD5066A21D78DD806AEF8C6D2D66E098AF8:
     - a: core:Gene
     - skos:altLabel:
         - alt_label: ["CDC2", "CDC28A", "CDKN1", "P34CDC2"]
@@ -245,7 +245,7 @@
 - ConflictingSequence up:P06493\#SIP57DD48EE8AF6F997:
     - a: core:External_Sequence
     - core:translatedFrom:
-        - translated_from: up:P06493#SIP57DD48EE8AF6F997
+        - translated_from: up:P06493\#SIP57DD48EE8AF6F997
 
 - SelfInteraction intact:297353-444308 intact:347640-444308:
     - a: ["core:Interaction", "core:Non_Self_Interaction"]
@@ -256,50 +256,52 @@
     - core:xeno:
         - xeno: false
 
-- ActiveSiteAnnotation up:P06493#SIPFC95A5358FA31F92:
+- ActiveSiteAnnotation up:P06493\#SIPFC95A5358FA31F92:
     - a: core:Active_Site_Annotation
     - core:range:
         - active_site_annotation_range: Range
     - rdfs:comment:
         - active_site_annotation_comment: "Proton acceptor"
 
-- ActivityRegulationAnnotation up:P06493#SIPBD7EB44EAA4E6471:
+- ActivityRegulationAnnotation up:P06493\#SIPBD7EB44EAA4E6471:
     - a: core:Activity_Regulation_Annotation
     - rdfs:comment:
         - activity_regulation_annotation_comment: ""
 
 - AlternativeSequenceAnnotation annotation:VSP_021375:
     - a: core:Activity_Sequence_Annotation
-    - core:substitution: ""
+    - core:substitution:
+        - alternative_sequence_annotation_substitution: ""
     - rdfs:comment:
         - alternative_sequence_annotation_comment: "In isoform 2."
 
-- AlternativeSplicingAnnotation up:P06493#SIPDE7757750C226E88:
+- AlternativeSplicingAnnotation up:P06493\#SIPDE7757750C226E88:
     - a: core:Alternative_Splicing_Annotation
     - core:sequence:
         - alternative_splicing_annotation_sequence: Sequence
-    - alternative_splicing_annotation_comment: ""
+    - rdfs:comment:
+        - alternative_splicing_annotation_comment: ""
 
-- RibosomalFrameshifting up:P06710#SIPFCC4F752FDF91CCD:
+- RibosomalFrameshifting up:P06710\#SIPFCC4F752FDF91CCD:
     - a: core:Ribosomal_Frameshifting
     - core:sequence:
         - ribosomal_frameshifting_sequence: Sequence
     - rdfs:comment:
         - ribosomal_frameshifting_comment: "The production of the two protein products from this region is due to programmed ribosomal frameshifting. Frameshifting is about 40% efficient."
 
-- BetaStrandAnnotation up:P06493#SIP1448A8D6AB07AC9C:
+- BetaStrandAnnotation up:P06493\#SIP1448A8D6AB07AC9C:
     - a: core:Beta_Strand_Annotation
     - core:range:
         - beta_strand_annotation_range: Range
 
-- BindingSiteAnnotation up:P06493#SIP1BFF64E6E353741A:
+- BindingSiteAnnotation up:P06493\#SIP1BFF64E6E353741A:
     - a: core:Binding_Site_Annotation
     - core:range:
         - binding_site_annotation_range: Range
     - rdfs:comment:
-        - binding_site_annotation: "ATP"
+        - binding_site_annotation_comment: "ATP"
 
-- CataliticActivityAnnotation up:P06493#SIP11972EF825D39FC9:
+- CataliticActivityAnnotation up:P06493\#SIP11972EF825D39FC9:
     - a: core:Catalytic_Activity_Annotation
     - core:catalyticActivity:
         - catalytic_activity: CatalyticActivity
@@ -311,62 +313,62 @@
     - rdfs:comment:
         - chain_annotation_comment: "Cyclin-dependent kinase 1"
 
-- InitiatorMethionineAnnotation up:P06710#SIP1A9E0754F14CA9D9:
+- InitiatorMethionineAnnotation up:P06710\#SIP1A9E0754F14CA9D9:
     - a: core:Initiator_Methionine_Annotation
     - core:range:
         - initiator_methionine_annotation_range: Range
     - rdfs:comment:
         - initiator_methionine_comment: "Removed"
 
-- CrossLinkAnnotation up:P06493#SIP5ADD2238697D7EC1:
+- CrossLinkAnnotation up:P06493\#SIP5ADD2238697D7EC1:
     - a: core:Cross-link_Annotation
     - core:range:
         - cross_link_annotation_range: Range
     - rdfs:comment:
-        - cross-link_annotation_comment: "Glycyl lysine isopeptide (Lys-Gly) (interchain with G-Cter in SUMO2); alternate"
+        - cross_link_annotation_comment: "Glycyl lysine isopeptide (Lys-Gly) (interchain with G-Cter in SUMO2); alternate"
 
-- DomainExtentAnnotation up:P06493#SIP5D2AA8085B997591:
+- DomainExtentAnnotation up:P06493\#SIP5D2AA8085B997591:
     - a: core:Domain_Extent_Annotation
     - core:range:
         - domain_extent_annotation_range: Range
     - rdfs:comment:
         - domain_extent_annotation_comment: "Protein kinase"
 
-- ErroneousGeneModelPredictionAnnotation up:P06493#SIPD13D69F1F4CD4A8C:
+- ErroneousGeneModelPredictionAnnotation up:P06493\#SIPD13D69F1F4CD4A8C:
     - a: core:Erroneous_Gene_Model_Prediction_Annotation
     - core:confilictingSequence:
         - erroneous_gene_model_prediction_annotation_conflicting_sequence: ConflictingSequence
 
-- Erroneous_initiation_annotation:
+- ErroneousInitiationAnnotation:
     - a: core:Erroneous_Initiation_Annotation
     - core:confilictingSequence:
         - erroneous_initiation_annotation_conflicting_sequence: ConflictingSequence
     - rdfs:comment:
         - erroneous_initiation_annotation_comment: "Truncated N-terminus."
 
-- FunctionAnnotation up:P06493#SIP6117914ED102E3B4:
+- FunctionAnnotation up:P06493\#SIP6117914ED102E3B4:
     - a: core:Function_Annotation
     - rdfs:comment:
         - function_annotation_comment: "(Microbial infection) Acts as a receptor for hepatitis C virus (HCV) in hepatocytes and facilitates its cell entry."
 
-- HelixAnnotation up:P06493#SIP04650F2717A2389F:
+- HelixAnnotation up:P06493\#SIP04650F2717A2389F:
     - a: core:Helix_Annotation
     - core:range:
         - helix_annotation_range: Range
 
-- InductionAnnotation up:P06493#SIP60D3BB366B1B62FD:
+- InductionAnnotation up:P06493\#SIP60D3BB366B1B62FD:
     - a: core:Induction_Annotation
     - rdfs:comment:
         - induction_annotation_comment: ""
 
-- ModifiedResidueAnnotation up:P06493#SIP1D4CE85C9D16B1C6:
+- ModifiedResidueAnnotation up:P06493\#SIP1D4CE85C9D16B1C6:
     - a: core:Modified_Residue_Annotation
     - core:range:
         - modified_residue_annotation_range: Range
     - rdfs:commnet:
         - modified_residue_annotation_comment: "N-acetylmethionine"
 
-- MutagenesisAnnotation up:P06493#SIP17E8382E82A8BDCF:
+- MutagenesisAnnotation up:P06493\#SIP17E8382E82A8BDCF:
     - a: core:Mutagenesis_Annotation
     - core:range:
         - mutagenesis_annotation_range: Range
@@ -375,51 +377,51 @@
     - rdfs:comment:
         - mutagenesis_annotation_comment: "Abnormal cell cycle exhibiting only M-phase without completing either karyokinesis or cytokinesis."
 
-- NpBindingAnnotation up:P06493#SIPFB79E981CA8AFD16:
+- NpBindingAnnotation up:P06493\#SIPFB79E981CA8AFD16:
     - a: core:NP_Binding_Annotation
     - core:range:
         - np_binding_annotation_range: Range
     - rdfs:comment:
         - np_binding_annotation_comment: "ATP"
 
-- PtmAnnotation up:P06493#SIP5F0B9E399D9A0ED0:
+- PtmAnnotation up:P06493\#SIP5F0B9E399D9A0ED0:
     - a: core:PTM_Annotation
     - rdfs:comment:
         - ptm_annotation_comment: "Polyubiquitinated upon genotoxic stress."
 
-- SimilarityAnnotation up:P06493#SIP5D84D02C743C70EC:
+- SimilarityAnnotation up:P06493\#SIP5D84D02C743C70EC:
     - a: core:Similarity_Annotation
     - rdfs:comment:
         - similarity_annotation_comment: "Belongs to the protein kinase superfamily. CMGC Ser/Thr protein kinase family. CDC2/CDKX subfamily."
 
-- SubcellularLocationAnnotation up:P06493#SIPBDDAAC56DB8E1DC1:
+- SubcellularLocationAnnotation up:P06493\#SIPBDDAAC56DB8E1DC1:
     - a: core:Subcellular_Location_Annotation
     - core:locatedIn:
         - located_in: LocatedIn
     - rdfs:comment:
         - subcellular_location_annotation_comment: ""
 
-- LocatedIn up:P06493#SIP299AB8A3C68F818C:
+- LocatedIn up:P06493\#SIP299AB8A3C68F818C:
     - a: rdfs:Resource
     - core:cellularComponent:
         - cellular_component: location:48
 
-- SubunitAnnotation up:P06493#SIP66A719E19256ABED:
+- SubunitAnnotation up:P06493\#SIP66A719E19256ABED:
     - a: core:Subunit_Annotation
     - rdfs:comment:
         - subunit_annotation_comment: "" 
 
-- TissueSpecificityAnnotation up:P06493#SIP0AAA804FAD004C35:
+- TissueSpecificityAnnotation up:P06493\#SIP0AAA804FAD004C35:
     - a: core:Tissue_Specificity_Annotation
     - rdfs:comment:
         - tissue_specificity_annotation_comment: "Isoform 2 is found in breast cancer tissues."
 
-- TurnAnnotation up:P06493#SIP15A2B5D13031AF2F:
+- TurnAnnotation up:P06493\#SIP15A2B5D13031AF2F:
     - a: core:Turn_Annotation
     - core:range:
         - turn_annotation_range: Range
 
-- CatalyticActivity core:P06493#SIP33DD9A7A16603D04:
+- CatalyticActivity core:P06493\#SIP33DD9A7A16603D04:
     - a: core:Catalytic_Activity
     - core:catalyticReaction:
         - catalytic_reaction: <http://rdf.rhea-db.org/10216>
@@ -448,13 +450,13 @@
         - end_position: 287
     - faldo:reference:
         - end_reference: isoform:P06493-1
-   
-- annotation_statement:
+
+- AnnotationStatement:
     - a: rdf:Statement
     - core:attribution:
         - annotation_statement_attribution: Attribution
     - rdf:subject:
-        - annotation_subject: sp:P06493#SIP04650F2717A2389F
+        - annotation_subject: up:P06493\#SIP04650F2717A2389F
     - rdf:predicate:
         - annotation_predicate: core:annotation
     - rdf:object:
@@ -469,7 +471,7 @@
     - core:source:
         - source: <http://rdf.wwpdb.org/pdb/6GU2>
 
-- classified_with_statement:
+- ClassifiedWithStatement:
     - a: core:Statement
     - core:attribution: 
         - classified_with_attribution: ClassifiedWithAttribution
@@ -480,7 +482,7 @@
     - rdf:object:
         - classified_with_object: obo:GO_009715
 
-- ClassifiedWithAttribution up:P06493#attribution-9EB47BD232F33339DA82C00F0D8F8AF6:
+- ClassifiedWithAttribution up:P06493\#attribution-9EB47BD232F33339DA82C00F0D8F8AF6:
     - a: rdfs:Resource
     - dct:creator:
         - classified_with_creator: <http://purl.uniprot.org/goa-projects/CAFA>
@@ -503,7 +505,8 @@
         - citation_name: "J. Biol. Chem."
     - core:pages:
         - citation_pages: "30597-30604"
-    - core:title: "RLIP, an effector of the Ral GTPases, is a platform for Cdk1 to phosphorylate epsin during the switch off of endocytosis in mitosis."
+    - core:title:
+        - citation_title: "RLIP, an effector of the Ral GTPases, is a platform for Cdk1 to phosphorylate epsin during the switch off of endocytosis in mitosis."
     - core:volume:
         - citation_volume: "278"
     - skos:exactMatch:
