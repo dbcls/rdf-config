@@ -1,0 +1,89 @@
+- ChebiMolecule obo:CHEBI_17232:
+  - a: owl:Class
+  - rdfs:subClassOf:
+    - subclassof: obo:CHEBI_24313
+    - []:
+      - a: owl:Restriction
+      - owl:onProperty*:
+        - on_property: obo:RO_0000087, obo:chebi#is_tautomer_of, obo:chebi#is_conjugate_acid_of      #RO_0000087:has role
+      - owl:someValuesFrom:
+        - some_values_from: obo:CHEBI_75771
+  - oboinowl:hasOBONamespace:
+    - has_obo_namespace: "chebi_ontology"
+  - oboinowl:hasAlternativeId*:
+    - has_alternative_id: "CHEBI:13109"
+  - oboinowl:hasDbXref*:
+    - has_db_xref: "KEGG:C01165"      
+  - oboinowl:hasExactSynonym:
+    - has_exact_synonym: "(2S)-2-amino-5-oxopentanoic acid"
+  - oboinowl:hasRelatedSynonym*:
+    - has_related_synonym: "5-oxo-L-norvaline"
+  - oboinowl:id:
+    - id: "CHEBI:17232"
+  - oboinowl:inSubset:
+    - in_subset: obo:chebi#3_STAR     #3_STAR: manually curated by ChEBI
+  - obo:IAO_0000115:
+    - definition: "A glutamic semialdehyde arising from formal reduction of the side-chain carboxy group of L-glutamic acid."
+  - obo:chebi/charge:
+    - charge: "0"
+  - obo:chebi/formula:
+    - formula: "C5H9NO3"
+  - obo:chebi/inchi:
+    - inchi: "InChI=1S/C5H9NO3/c6-4(5(8)9)2-1-3-7/h3-4H,1-2,6H2,(H,8,9)/t4-/m0/s1"
+  - obo:chebi/inchikey:
+    - inchikey: "KABXUUFDPUOJMW-BYPYZUCNSA-N"
+  - obo:chebi/mass:
+    - mass: "131.12990"
+  - obo:chebi/monoisotopicmass:
+    - monoisotopicmass: "131.05824"
+  - obo:chebi/smiles:
+    - smiles: "[H]C(=O)CC[C@H](N)C(O)=O"
+  - rdfs:label:
+    - label: "L-glutamic 5-semialdehyde"
+
+
+#DbXrefについて
+#"AGR"
+#"BFO"
+#"BPDB"
+#"Beilstein"
+#"CAS"
+#"CBA"
+#"Chemspider"
+#"DrugBank"
+#"Drug_Central"
+#"FooDB"
+#"Gmelin"
+#"HMDB"
+#"KEGG"
+#"KNApSAcK"
+#"LINCS"
+#"LIPID_MAPS_instance"
+#"MetaCyc"
+#"PDBeChem"
+#"PMID"
+#"Patent"
+#"RO"
+#"Reaxys"
+#"VSDB"
+#"Wikipedia"
+#"GlyGen"
+#"GlyTouCan"
+#"YMDB"
+#"COMe"
+#"PPDB"
+#"Pesticides"
+#"UM-BBD_compID"
+#"PMCID"
+#"Pubchem"
+#"ChemIDplus"
+#"LIPID_MAPS_class"
+#"PDB"
+#"RESID"
+#"ECMDB"
+#"MolBase"
+#"WebElements"
+#"FAO/WHO_standards"
+#"PPR"
+#"CTX"
+#"SMID"

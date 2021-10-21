@@ -227,11 +227,11 @@
   - cco:chemblId:
     - chembl_id_activity: "CHEMBL_ACT_1013015"
   - cco:hasMolecule:
-    - chembl_molecule_activity: [ChemblSmallMolecule, ChemblOligonucleotide] # CHEMBL552898
+    - activity_has_molecule: [ChemblSmallMolecule, ChemblOligonucleotide] # CHEMBL552898
   - cco:hasAssay:
-    - chembl_assay_activity: ChemblAssay # CHEMBL647633
+    - activity_has_assay: ChemblAssay # CHEMBL647633
   - cco:hasQUDT:
-    - concentration_unit_qudt: ops:Nanomolar
+    - activity_has_qudt: ops:Nanomolar　　　# QUDT（Quantity, Unit, Dimension and Type）
   - cco:hasUnitOnto+:
     - unit_onto: uo:UO_0000065 # nanomolar
   - cco:pChembl:
@@ -241,21 +241,27 @@
   - cco:standardRelation:
     - standardised_version_of_publishedrelation: "="
   - cco:standardType:
-    - standardised_version_of_publishedtype: "Kd"
+    - standardised_version_of_publishedtype: "Kd", "IC50", "Ratio IC50"
   - cco:standardUnits:
     - standardised_version_of_publishedunits: "nM"
   - cco:standardValue:
     - standardised_version_of_publishedvalue: "9.772"
   - cco:type:
-    - type_of_endpoint_measurement: "pA2"
+    - type_of_endpoint_measurement: "pA2", "IC50", "Ratio IC50"
   - cco:units:
-    - units: "%"
+    - units: "%", "uM"
   - cco:value:
     - datapoint_value: "8.01"
   - bao:BAO_0000208:
     - has_endpoint: bao:BAO_0000034 # Kd
   - rdfs:label+:
     - chembl_activity_label: "CHEMBL_ACT_1013015"
+  - cco:dataValidityComment*:
+    - data_validity_comment: "Outside typical range"
+  - cco:dataValidityIssue*:
+    - data_validity_issue: 1
+  - cco:hasDocument*:
+    - chembl_activity_has_document: <http://rdf.ebi.ac.uk/resource/chembl/document/CHEMBL2331289>
 
 - ChemblAssay chembl_assay:CHEMBL630849:
   - a: cco:Assay
