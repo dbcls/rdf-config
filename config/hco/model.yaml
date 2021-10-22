@@ -53,7 +53,8 @@
     - chromosome_label: "Human chromosome 1"
 
 - Chromosome hco:1\/GRCh37:
-  - a: hco:1
+  - rdfs:subClassOf:
+    - subclassof: hco:HumanChromosome
   - hco:build:
     - build: hco:GRCh37
   - hco:length:
