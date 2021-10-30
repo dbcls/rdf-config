@@ -1,0 +1,100 @@
+- Glycan info:G67988RO:
+  - a:
+    - glycan:Saccharide
+  - glycan:has_glycosequence+:
+    - iupac_condensed: IUPACcondensed
+    - glycam_condensed: info:G67988RO_glycam_condensed
+    - wurcs: Wurcs
+  - glycan:has_resource_entry+:
+    - resent: resent:G67988RO
+    - jcggdb: <http://rdf.glycoinfo.org/glycan/resource-entry/G67988RO/jcggdb_aist/JCGG-STR026896>
+  - glycan:is_from_source+:
+    - src: Source
+  - dct:identifier:
+    - identifier: "G67988RO"
+  - dct:references+:
+    - reference: ref:8978086
+  - glytoucan:has_primary_id:
+    - primary_id: "G67988RO"
+  - rdfs:label:
+    - label: "GlyCosmos Glycans: G67988RO"
+  - skos:altLabel:
+    - altlabel: "Gal(a1-4)Gal(b1-"
+
+- Wurcs <http://rdf.glycoinfo.org/glycan/G67988RO/wurcs/2.0>:
+  - a: glycan:glycosequence
+  - glycan:has_sequence:
+    - sequence: "WURCS=2.0/2,2,1/[a2112h-1b_1-5][a2112h-1a_1-5]/1-2/a4-b1"
+  - glycan:in_carbohydrate_format:
+    - format: glycan:carbohydrate_format_wurcs
+  - wurcs:LIN_count:
+    - lin_coun: 1
+  - wurcs:RES_count:
+    - res_count: 2
+  - wurcs:count_LIN:
+    - count_lin: 1
+  - wurcs:count_RES:
+    - count_res: 2
+  - wurcs:count_uniqueRES:
+    - unique_res: 2
+  - wurcs:has_GRES+:
+    - gres: <http://rdf.glycoinfo.org/glycan/G67988RO/wurcs/2.0/GRES/1>
+  - wurcs:has_LIN:
+    - lin: <http://rdf.glycoinfo.org/glycan/G67988RO/wurcs/2.0/LIN/a4-b1>
+  - wurcs:has_basetype+:
+    - by: <http://rdf.glycoinfo.org/glycan/wurcs/2.0/Basetype/u2112h>
+  - wurcs:has_monosaccharide+:
+    - ms: <http://rdf.glycoinfo.org/glycan/wurcs/2.0/Monosaccharide/a2112h-1a_1-5>
+  - wurcs:has_root_GRES:
+    - root_gres: <http://rdf.glycoinfo.org/glycan/G67988RO/wurcs/2.0/GRES/1>
+  - wurcs:has_root_RES:
+    - root_res: <http://rdf.glycoinfo.org/glycan/G67988RO/wurcs/2.0/RES/a>
+  - wurcs:has_uniqueRES+:
+    - unique_resp: <http://rdf.glycoinfo.org/glycan/G67988RO/wurcs/2.0/UniqueRES/1>
+  - wurcs:uniqueRES_count:
+    - uniqueres_count: 2
+  - owl:sameAs:
+    - sameas: <http://rdf.glycoinfo.org/glycan/wurcs/2.0/WURCS%3D2.0%2F2%2C2%2C1%2F%5Ba2112h-1b_1-5%5D%5Ba2112h-1a_1-5%5D%2F1-2%2Fa4-b1>
+
+- WurcsURI <http://rdf.glycoinfo.org/glycan/WURCS%3D2.0%2F1%2C2%2C1%2F%5Bhxm%5D%2F1-1%2Fa1-b2>:
+  - <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>:
+    - wurcs_type: sbsmpt:Monosaccharide_composition_with_linkage
+  - mass:WURCSMassCalculator:
+    - mass: "400.12169083"
+  - rdfs:label:
+    - wurcs_sequence: "WURCS=2.0/1,2,1/[hxm]/1-1/a1-b2"
+  - sbsmpt:subsumes*:
+    - subsumed_wurcs:
+  - sbsmpt:has_composition_with_linkage*:
+    - wurcs_composition_with_linkage:
+  - sbsmpt:has_base_composition*:
+    - wurcs_base_composition:
+  - sbsmpt:subsumed_by*:
+    - subsuming_wurcs:
+  - sbsmpt:has_topology*:
+    - wurcs_topology: <http://rdf.glycoinfo.org/glycan/WURCS%3D2.0%2F1%2C2%2C1%2F%5Bhxm%5D%2F1-1%2Fa%3F-b%3F>
+  - dcterms:source+:
+    - wurcs_src: <http://rdf.glycoinfo.org/glycan/G55393QM>
+  - rdfs:seeAlso+:
+    - wurcs_seealso: <https://glytoucan.org/Structures/Glycans/G55393QM>
+
+- IUPACcondensed <http://rdf.glycoinfo.org/glycan/G67988RO/iupac_condensed>:
+  - glycan:has_sequence:
+    - has_sequence: "Gal(a1-4)Gal(b1-"
+  - glycan:in_carbohydrate_format:
+    - ch_format: glycan:carbohydrate_format_iupac_condensed
+  - rdfs:label:
+    - iupac_label: "Gal(a1-4)Gal(b1-"
+
+- Source src:485:
+  - a: glycan:Source
+  - dct:identifier+:
+    - src_id: "485"
+  - rdfs:label:
+    - src_label: "Neisseria gonorrhoeae"
+  - rdfs:seeAlso+:
+    - taxon: <http://identifiers.org/taxonomy/485> # Neisseria gonorrhoeae
+  - skos:prefLabel:
+    - src_pref: "Neisseria gonorrhoeae"
+  - skos:exactMatch:
+    - glyco_src: <http://rdf.glycoinfo.org/source/485>
