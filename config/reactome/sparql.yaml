@@ -1,3 +1,12 @@
 sparql:
-  description: SPARQL description.
-  variables: [pathway_display_name, biochemical_reaction_display_name, left_chebi_id, right_chebi_id, catalysis_uniprot_accession]
+  description: Pathway 
+  variables: [pathway_display_name, pathway_db, pathway_id, biochemical_reaction_display_name, left_molecule_db, right_molecule_db, left_molecule_id, right_molecule_id, left_protein_db, right_protein_db, left_protein_id, right_protein_id]
+
+pathway_protein:
+  variables: [pathway_display_name, pathway_db, pathway_id, left_protein_db, left_protein_id, right_protein_db, right_protein_id]
+
+pathway_compound:
+  variables: [pathway_display_name, pathway_db, pathway_id, left_molecule_db, left_molecule_id, right_molecule_db, right_molecule_id]
+
+
+    
