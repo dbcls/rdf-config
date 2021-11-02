@@ -19,9 +19,11 @@
     - molecule_description: "Alacizumab pegol (humanized F(ab')2)"   #chembl_molecule:CHEMBL1742983
   - cco:atcClassification*:
     - molecule_atc_classification: "L03AX17"   #chembl_molecule:CHEMBL1237024
+  - cco:fracClassification*:
+    - molecule_frac_classification: "A1"
   - cco:chemblId:
     - molecule_chemblid: "CHEMBL2068513"
-  - cco:hasActivity+:
+  - cco:hasActivity*:
     - molecule_has_activity: ChemblActivity   # chembl_activity:CHEMBL_ACT_684755
   - cco:hasParentMolecule*:
     - molecule_has_parent_molecule: Molecule   # CHEMBL2373428のparent
@@ -41,6 +43,10 @@
     - molecule_highest_development_phase: 0
   - cco:isBiotherapeutic*:
     - molecule_is_biotherapeutic: true   #chembl_molecule:CHEMBL103817
+  - cco:hracClassification*:
+    - molecule_hrac_classification: "K1"
+  - cco:iracClassification*:
+    - molecule_irac_classification: "C10"
   - cco:moleculeXref*:
     - molecule_xref: MoleculeXref
   - cco:substanceType:
@@ -120,8 +126,11 @@
     - biocomponent_has_molecule: Molecule   # chembl_molecule:CHEMBL3707227
   - cco:proteinSequence:
     - biocomponent_protein_sequence: "QVQLQESGPGLVKPSQTLSLTCTVSGYSISSDFAWNWIRQPPGKGLEWMGYISYSGNTRYQPSLKSRITISRDTSKNQFFLKLNSVTAADTATYYCVTAGRGFPYWGQGTLVTVSSASTKGPSVFPLAPSSKSTSGGTAALGCLVKDYFPEPVTVSWNSGALTSGVHTFPAVLQSSGLYSLSSVVTVPSSSLGTQTYICNVNHKPSNTKVDKKVEPKSCDKTHTCPPCPAPELLGGPSVFLFPPKPKDTLMISRTPEVTCVVVDVSHEDPEVKFNWYVDGVEVHNAKTKPREEQYNSTYRVVSVLTVLHQDWLNGKEYKCKVSNKALPAPIEKTISKAKGQPREPQVYTLPPSRDELTKNQVSLTCLVKGFYPSDIAVEWESNGQPENNYKTTPPVLDSDGSFFLYSKLTVDKSRWQQGNVFSCSVMHEALHNHYTQKSLSLSPGK"
-    
-    
+  - cco:organismName*:
+    - biocomponent_organism_name: "Homo sapiens"
+  - cco:taxonomy*:
+    - biocomponent_taxonomy_id: <http://identifiers.org/taxonomy/9606>   # <http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id=9606>
+
 - Target chembl_target:CHEMBL612558:
   - a: cco:ADMET
   - a: cco:ProteinComplexGroup   #chembl_target:CHEMBL1907607
@@ -161,6 +170,8 @@
     - target_has_binding_site: ChemblBindingSite # CHEMBL_BS_903
   - cco:isTargetForMechanism*:
     - target_is_target_for_mechanism: DrugMechanism # chembl:drug_mechanism/CHEMBL_MEC_2094
+  - cco:isTargetForCellLine*:
+    - target_is target for cell_line: CellLine
   - cco:isSpeciesGroup*:
     - target_is_species_group: true
   - cco:organismName*:
@@ -171,6 +182,8 @@
     - target_rel_subset_of: Target   # chembl_target:CHEMBL2096683   #SingleProtein_relSubsetOf_ChemblProteinfamily
   - cco:relOverlapsWith*:
     - target_rel_overlaps_with: Target   # chembl_target:CHEMBL4296111
+  - cco:relEquivalentTo*:
+    - target_rel_equivalent_to: Target
   - cco:targetType:
     - target_type: "ADMET"   # "PROTEIN COMPLEX GROUP", "SELECTIVITY GROUP", "PHENOTYPE", "SINGLE PROTEIN", "NUCLEIC-ACID", "ORGANISM", "METAL", "MACROMOLECULE"
   - cco:taxonomy*: 
@@ -205,10 +218,12 @@
   - dcterms:description:
     - chembl_targetcomponent_description: "Beta-1 adrenergic receptor"
   - skos:exactMatch:
-    - exacmatch_uniprot_cross_reference: UniprotCrossReference # CHEMBL_TC_1573 UniProt Reference: P18090
+    - exacmatch_uniprot_cross_reference: TargetCmptXref   # <http://purl.uniprot.org/uniprot/Q6NT55>
     
 - ChemblProteinclassification chembl_protclass:CHEMBL_PC_0:
   - a: cco:ProteinClassification
+  - rdfs:subClassOf*:
+    - protclass_subclassof: ChemblProteinclassification
   - rdfs:label+:
     - chembl_protclass_label: "Protein class"
   - skos:prefLabel*:
@@ -223,7 +238,9 @@
     - chembl_targetcomponent_protclassifi: ChemblTargetcomponent   # CHEMBL_TC_10015
   - cco:hasTargetDescendant+:
     - protein_classification_has target_descendant: Target   #chembl_target:CHEMBL3988628
-  - skos:narrower+:
+  - skos:broader*:
+    - broader_chembl_protclass_protclassifi: ChemblProteinclassification
+  - skos:narrower*:
     - narrow_chembl_protclass_protclassifi: ChemblProteinclassification   #CHEMBL_PC_1
     
 - ChemblBindingSite chembl_binding_site:CHEMBL_BS_903:
@@ -236,11 +253,15 @@
     - chembl_binding_site_label: "CHEMBL_BS_903"
   - cco:hasTarget*:
     - chembl_binding_site_has_target: Target   # chembl_target:CHEMBL4106141
+  - cco:isBindingSiteForMechanism*:
+    - binding_site is bindingsite_for mechanism: DrugMechanism
     
 - ChemblActivity chembl_activity:CHEMBL_ACT_1013015:
   - a: cco:Activity
   - cco:chemblId:
     - chembl_id_activity: "CHEMBL_ACT_1013015"
+  - cco:activityComment*:
+    - activity_comment: "Not Determined"
   - cco:hasMolecule:
     - activity_has_molecule: Molecule   # SmallMolecule, Oligonucleotide
   - cco:hasAssay:
@@ -267,7 +288,7 @@
     - units: "%"   # "uM"
   - cco:value:
     - datapoint_value: "8.01"
-  - bao:BAO_0000208:
+  - bao:BAO_0000208*:   # has_endpoint
     - has_endpoint: bao:BAO_0000034   # Kd
   - rdfs:label+:
     - chembl_activity_label: "CHEMBL_ACT_1013015"
@@ -277,6 +298,8 @@
     - data_validity_issue: 1
   - cco:hasDocument*:
     - chembl_activity_has_document: ChemblDocument   # <http://rdf.ebi.ac.uk/resource/chembl/document/CHEMBL2331289>
+  - cco:potentialDuplicate*:
+    - activity_potential_duplicate: 1
 
 - ChemblAssay chembl_assay:CHEMBL630849:
   - a: cco:Assay
@@ -284,14 +307,22 @@
     - chembl_assay_label: "CHEMBL630849"
   - cco:assayType:
     - assay_type: "Physicochemical"
+  - cco:assayTestType*:
+    - assay_test_type: "In vivo"   # "In vitro", "Ex vivo"
   - cco:chemblId:
     - chembl_id_assay: "CHEMBL630849"
+  - cco:assayCategory*:
+    - assay_category: "confirmatory"   # "summary", "screening", "other"
   - cco:organismName*:
     - organism_name_assay: "Rattus norvegicus"
   - cco:taxonomy*:
     - assay_taxonomy_id: <http://identifiers.org/taxonomy/10116>   # Rattus norvegicus (Identifiers.org)   # <http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id=10116>
+  - cco:assayCellType*:
+    - assay_cell_type: "Mo7e"
   - cco:assayStrain*:
     - assay_strain: "Sprague-Dawley"
+  - cco:assaySubCellFrac*:
+    - assay_sub_cellfraction: "Microsome"
   - cco:assayTissue*:
     - assay_tissue: "Artery"
   - cco:hasActivity*:
@@ -316,6 +347,8 @@
     - chembl_assay_class_description: "Lipophilicity for the compound was determined"
   - bao:BAO_0000205:
     - has_assay_format: bao:BAO_0000100   # small-molecule physicochemical format
+  - cco:assayXref*:
+    - assay_xref: AssayXref
 
 - ChemblSource chembl_source:CHEMBL_SRC_1:
   - a: cco:Source
@@ -340,6 +373,8 @@
     - cell_line_chemblid: "CHEMBL3307278"
   - cco:hasCLO:
     - cell_line_has_clo: obo:CLO_0002333
+  - cco:hasEFO*:
+    - cell_has_efo: <http://www.ebi.ac.uk/efo/EFO_0006355>   # Experimental Factor Ontology 
   - cco:isCellLineForAssay:
     - is_cell_line_for_assay: ChemblAssay   # chembl_assay:CHEMBL1811673
   - cco:isCellLineForTarget:
@@ -348,17 +383,21 @@
     - cell_line_organism_name: "Mus musculus"
   - cco:taxonomy*:
     - cell_line_taxonomy_id: <http://identifiers.org/taxonomy/10116>   # <http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id=10116>
+  - cco:cellXref*:
+    - cell_xref: CellXref
 
 - DrugMechanism chembl_drug_mechanism:CHEMBL_MEC_2094:
   - a: cco:Mechanism
   - rdfs:label:
-    - chembl_drug_mechanism_label: "CHEMBL_MEC_2094"
+    - drug_mechanism_label: "CHEMBL_MEC_2094"
   - cco:chemblId:
-    - chembl_id_drugmechanism: "CHEMBL_MEC_2094"
+    - drug_mechanism_chembl_id: "CHEMBL_MEC_2094"
   - cco:hasMolecule:
-    - chembl_molecule_drugmechanism: Molecule   # SmallMolecule, Oligonucleotide
+    - drug_mechanism_has_molecule: Molecule   # SmallMolecule, Oligonucleotide
   - cco:hasTarget:
-    - chembl_target_drugmechanism: Target   # Organism, Unclassifiedtarget, Singleprotein, ProteinComplex, ProteinSelectivityGroup, Nucleicacid, ProteinProteinInteraction, ChimericProtein, ProteinNucleicAcidComplex, Proteinfamily
+    - drug_mechanism_has_target: Target   # Organism, Unclassifiedtarget, Singleprotein, ProteinComplex, ProteinSelectivityGroup, Nucleicacid, ProteinProteinInteraction, ChimericProtein, ProteinNucleicAcidComplex, Proteinfamily
+  - cco:hasBindingSite*:
+    - drug_mechanism_has_bindingsite: ChemblBindingSite
   - cco:mechanismActionType:
     - mechanism_action_type: "ANTISENSE INHIBITOR"
   - cco:mechanismDescription:
@@ -367,21 +406,21 @@
 - ChemblDrugIndication chembl_drug_indication:CHEMBL_IND_41696:
   - a: cco:DrugIndication
   - rdfs:label:
-    - chembl_drug_indication_label: "CHEMBL_IND_41696"
+    - drug_indication_label: "CHEMBL_IND_41696"
   - cco:chemblId:
-    - chembl_id_drugindicat: "CHEMBL_IND_41696"
+    - drug_indication_chembl_id: "CHEMBL_IND_41696"
   - cco:hasEFO:
-    - experimental_factor_ontology: <http://www.ebi.ac.uk/efo/EFO_0000319>
+    - drug_indication_has_efo: <http://www.ebi.ac.uk/efo/EFO_0000319>   # experimental_factor_ontology
   - cco:hasEFOName:
-    - experimental_factor_ontology_name: "cardiovascular disease"
+    - drug_indication_has_efo_name: "cardiovascular disease"   # EFO_0000319
   - cco:hasMesh:
     - mesh: <http://identifiers.org/mesh/D002318>
   - cco:hasMeshHeading:
     - mesh_heading: "Cardiovascular Diseases"
   - cco:hasMolecule:
-    - chembl_molecule_drugindicat: Molecule   # SmallMolecule, Oligonucleotide
+    - drug_indication_has_molecule: Molecule   # SmallMolecule, Oligonucleotide
   - cco:highestDevelopmentPhase:
-    - highest_development_phase_drugindicat: 4
+    - drug_indication_highest_development_phase: 4
 
 - ChemblDocument chembl_document:CHEMBL1123868:
   - a: cco:Document
@@ -479,3 +518,13 @@
   - a: cco:ReactomeRef   # <http://identifiers.org/reactome/R-RNO-390696>
   - rdfs:label:
     - target_cmpt_xref_label: "CHEMBL_TC_141 EC Reference: 2.7.10.2"
+
+- CellXref <http://life.ccs.miami.edu/life/summary?mode=CellLine&source=LINCS&input=LCL-1417>:
+  - a: cco:LincsCellRef
+  - rdfs:label:
+    - cell_xref_label: "CHEMBL3307382 LINCS Project Reference: LCL-1417"
+
+- AssayXref <http://pubchem.ncbi.nlm.nih.gov/assay/assay.cgi?aid=1228>:
+  - a: cco:PubchemBioassayRef
+  - rdfs:label:
+    - assay_xref_label: "CHEMBL2114736 PubChem BioAssay Reference: 624351"
