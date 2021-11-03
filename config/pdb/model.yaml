@@ -1,4 +1,4 @@
-- PDBDatablock <https://rdf.wwpdb.org/pdb/5KE7/entry/5KE7>:
+- PDBDatablock <https://rdf.wwpdb.org/pdb/5KE7>:
     - a: pdbo:datablock
     - dc:title :
         - title: "mouse Klf4 ZnF1-3 and TpG/MpA sequence DNA complex structure"
@@ -11,85 +11,98 @@
     - pdbo:databalockName:
         - datablock_name: "5KE7-noatom"
     - pdbo:has_entityCategory:
-        - EntityCategory <https://pdbj.org/pdb/5KE7/entityCategory>:
+        - entity_category: EntityCategory
+    - pdbo:has_struct_confCategory*:
+        - struct_conf_category: StructConfCategory
+    - pdbo:has_struct_sheetCategory*:
+        - struct_sheet_category: StructSheetCategory
+    - pdbo:has_exptlCategory:
+        - exptl_category: ExptlCategory
 
 - EntityCategory <https://pdbj.org/pdb/5KE7/entityCategory>:
     - a: pdbo:entityCategory
     - pdbo:has_entity:
-        - Entity:
+        - etity: Entity
 
 - Entity <https://rdf.wwpdb.org/pdb/5KE7/entity/1>:
     - a: pdbo:entity
     - pdbo:entity.formula_weight:
-        - entity.formula_weight: "10840.261"
+        - entity_formula_weight: "10840.261"
     - pdbo:entity.id:
-        - entity.id: "1"
+        - entity_id: "1"
     - pdbo:entity.pdbx_description:
-        - entity.pdbx_description: "Krueppel-like factor 4"
+        - entity_pdbx_description: "Krueppel-like factor 4"
     - pdbo:entity.pdbx_fragment:
-        - entity.pdbx_fragment: "unp residues 396-483"
+        - entity_pdbx_fragment: "unp residues 396-483"
     - pdbo:entity.pdbx_number_of_molecules:
-        - entity.pdbx_number_of_molecules: "1"
+        - entity_pdbx_number_of_molecules: "1"
     - pdbo:entity.src_method:
-        - entity.src_method: "man"
+        - entity_src_method: "man"
     - pdbo:entity.type:
-        - entity.type: "polymer"
+        - entity_type: "polymer"
     - pdbo:referenced_by_entity_poly:
-        - EntityPoly:
+        - entity_poly*: EntityPoly
     - pdbo:referenced_by_entity_src_gen:
-        - EntitySrcGen:
+        - entity_src_gen: EntitySrcGen
     - pdbo:referenced_by_struct_ref:
-        - StructRef:
+        - struct_ref: StructRef
+    - pdbo:referenced_by_struct_asym:
+        - []:
+            - a: pdbo:struct_asym
+            - pdbo:struct_asym.id:
+                - chain_id: "A"
 
 - EntityPoly <https://rdf.wwpdb.org/pdb/5KE7/entity_poly/1>:
     - a: pdbo:entity_poly
+    - pdbo:entity_poly.type:
+        - entity_poly_type: "polypeptide(L)"    #  "polypeptide(L)", "peptide nucleic acid", "polyribonucleotide", "polydeoxyribonucleotide", "polypeptide(D)", "polydeoxyribonucleotide/polyribonucleotide hybrid", "other"
     - pdbo:entity_poly.pdbx_seq_one_letter_code:
         - pdbx_seq_one_letter_code: "GPLGSRTATHTCDYAGCGKTYTKSSHLKAHLRTHTGEKPYHCDWDGCGWKFARSDELTRHYRKHTGHRPFQCQKCDRAFSRSDHLALHMKRHF"
     - pdbo:entity_poly.pdbx_seq_one_letter_code_can:
         - pdbx_seq_one_letter_code_can: "GPLGSRTATHTCDYAGCGKTYTKSSHLKAHLRTHTGEKPYHCDWDGCGWKFARSDELTRHYRKHTGHRPFQCQKCDRAFSRSDHLALHMKRHF"
     - pdbo:referenced_by_entity_poly_seq: 
-        - PDBxPolySeqScheme:
+        - pdb_poly_seq_scheme: PDBxPolySeqScheme
 
 - PDBxPolySeqScheme <https://rdf.wwpdb.org/pdb/5KE7/pdbx_poly_seq_scheme/A,1,ALA,15>:
-    - a: PDBo:pdbx_poly_seq_scheme
+    - a: pdbo:pdbx_poly_seq_scheme
     - pdbo:reference_to_entity_poly_seq:
-        - EntityPolySeq:
+        - entity_poly_seq: EntityPolySeq
 
 - EntityPolySeq <https://rdf.wwpdb.org/pdb/5KE7/entity_poly_seq/1,ALA,15>:
-    - a: PDBo:entity_poly_seq
+    - a: pdbo:entity_poly_seq
     - pdbo:reference_to_chem_comp:
-        - ChemComp:
+        - chem_comp: ChemComp
 
 - ChemComp <https://rdf.wwpdb.org/pdb/5KE7/chem_comp/ALA>:
-    - a: PDBo:chem_comp <https://rdf.wwpdb.org/pdb/5KE7/chem_comp/ALA>
+    - a: pdbo:chem_comp <https://rdf.wwpdb.org/pdb/5KE7/chem_comp/ALA>
     - pdbo:chem_comp.formula:
-        - chem_comp.formula: "C3 H7 N O2"
+        - chem_comp_formula: "C3 H7 N O2"
     - pdbo:chem_comp.formula_weight:
-        - chem_comp.formula_weight: "89.093"
+        - chem_comp_formula_weight: "89.093"
     - pdbo:chem_comp.id:
-        - chem_comp.id: "ALA"
+        - chem_comp_id: "ALA"
     - pdbo:chem_comp.name:
-        - chem_comp.name: "ALANINE"
+        - chem_comp_name: "ALANINE"
     - pdbo:chem_comp.type:
-        - chem_comp.type: "L-peptide linking"
+        - chem_comp_type: "L-peptide linking"
     - pdbo:link_to_chem_comp:
         - link_to_chem_comp: <https://rdf.wwpdb.org/cc/ALA>
     - pdbo:of_datablock:
-        - PDBDatablock:
+        - pdb_datablock: PDBDatablock
 
 
 - EntitySrcGen <https://rdf.wwpdb.org/pdb/5KE7/entity_src_gen/1,1>:
     - a: pdbo:entity_src_gen
-    - rdfs:seeAlso: 
-        - src_gen_seeAlso: <http://identifiers.org/taxonomy/10090>
+    - pdbo:link_to_taxonomy_source:
+        - taxonomy: <http://identifiers.org/taxonomy/10090>
     - pdbo:entity_src_gen.gene_src_common_name:
-        - src_common_name: "Mouse"
+        - org_common_name: "Mouse"
     - pdbo:entity_src_gen.pdbx_gene_src_scientific_name:
-        - src_scientific_name: "Mus musculus"
-    - pdbo:entity_src_gen.pdbx_host_org_ncbi_taxonomy_id:
-        - host_org_ncbi_taxonomy_id: "469008"
+        - org_name: "Mus musculus"
+    - pdbo:link_to_taxonomy_host:
+        - host_taxonomy: <http://purl.uniprot.org/taxonomy/469008>
     - pdbo:entity_src_gen.pdbx_host_org_scientific_name:
-        - host_org_scientific_name: "Escherichia coli"
+        - host_or_name: "Escherichia coli"
     - pdbo:entity_src_gen.pdbx_host_org_strain:
         - host_org_strain: "BL21 (DE3) codon plus"
     - pdbo:entity_src_gen.pdbx_host_org_vector_type:
@@ -100,12 +113,74 @@
 - SructRef <https://rdf.wwpdb.org/pdb/5KE7/struct_ref/1>:
     - a: pdbo:struct_ref
     - rdfs:seeAlso:
-        - struct_ref_seeAlso: <http://identifiers.org/uniprot/Q60793>
+        - struct_ref_seealso: <http://identifiers.org/uniprot/Q60793>
     - pdbo:link_to_uniprot:
         - link_to_uniprot: <http://purl.uniprot.org/uniprot/Q60793>
     - pdbo:struct_ref.pdbx_align_begin:
-        - struct_ref.pdbx_align_begin: "396"
+        - struct_ref_pdbx_align_begin: "396"
     - pdbo:struct_ref.pdbx_seq_one_letter_code:
-        - struct_ref.pdbx_seq_one_letter_code: "RTATHTCDYAGCGKTYTKSSHLKAHLRTHTGEKPYHCDWDALHMKRHF"
+        - struct_ref_pdbx_seq_one_letter_code: "RTATHTCDYAGCGKTYTKSSHLKAHLRTHTGEKPYHCDWDALHMKRHF"
 
 
+- StructConfCategory <https://rdf.wwpdb.org/pdb/5KE7/struct_confCategory>:
+    - a: pdbo:struct_confCategory
+    - pdbo:has_struct_conf:
+        - []:
+            - a: pdbo:struct_conf
+            - pdbo:struct_conf.conf_type_id:
+                - conf_type: "HELX_P"       # HELX_P or TURN_P
+            - pdbo:struct_conf.beg_label_asym_id:
+                - conf_begin_chain_id: "A"     # correspond to ?chain_id
+            - pdbo:struct_conf.beg_label_comp_id:
+                - conf_begin_residue: "LYS"
+            - pdbo:struct_conf.beg_label_seq_id:
+                - conf_begin: "23"
+            - pdbo:struct_conf.end_label_asym_id:
+                - conf_end_chain_id: "A"
+            - pdbo:struct_conf.end_label_comp_id:
+                - conf_end_residue: "GLY"
+            - pdbo:struct_conf.end_label_seq_id:
+                - onf_end: "36"
+            - pdbo:struct_conf.id:
+                - conf_id: "HELX_P1"
+            - pdbo:struct_conf.pdbx_PDB_helix_id:
+                - conf_helix_id: "AA1"
+            - pdbo:struct_conf.pdbx_PDB_helix_length*:
+                - conf_length: "14"
+            - pdbo:struct_conf.pdbx_PDB_helix_class*:
+                - conf_helix_class: "1"
+            - pdbo:struct_conf.details*:
+                - conf_turn_class: "TYPE II"
+
+- StructSheetCategory <https://rdf.wwpdb.org/pdb/5KE7/struct_sheetCategory>:
+    - a: pdbo:struct_sheetCategory
+    - pdbo:has_struct_sheet:
+        - []:
+            - a: pdbo:struct_sheet
+            - pdbo:struct_sheet.id:
+                - sheet_id: "AA1"
+            - pdbo:struct_sheet.number_strands:
+                - sheet_strands: "2"
+            - pdbo:referenced_by_struct_sheet_range+:
+                - []:
+                    - a: pdbo:struct_sheet_range
+                    - pdbo:struct_sheet_range.beg_label_asym_id:
+                        - sheet_strand_begin_chain_id: "A"     # correspond to ?chain_id
+                    - pdbo:struct_sheet_range.beg_label_comp_id:
+                        - sheet_strand_begin_residue: "HIS"
+                    - pdbo:struct_sheet_range.beg_label_seq_id:
+                        - sheet_strand_begin: "10"
+                    - pdbo:struct_sheet_range.end_label_asym_id:
+                        - sheet_strand_end_chain_id: "A"
+                    - pdbo:struct_sheet_range.end_label_comp_id:
+                        - sheet_strand_end_residue: "THR"
+                    - pdbo:struct_sheet_range.end_label_seq_id:
+                        - sheet_strand_end: "11"
+
+- ExptlCategory <https://rdf.wwpdb.org/pdb/5KE7/exptlCategory>:
+    - a: pdbo:exptlCategory
+    - pdbo:has_exptl:
+        - []:
+            - a: pdbo:exptl
+            - pdbo:exptl.method:
+                - experimental_method: "X-RAY DIFFRACTION"
