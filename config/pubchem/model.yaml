@@ -1,0 +1,48 @@
+- PubChemBioAssay bioassay:AID610:
+  - a: bao:BAO_0000015                # bioassay
+  - dct:source:
+    - source: source:The_Scripps_Research_Institute_Molecular_Screening_Center
+  - dct:title:
+    - title: "Dose-response cell-based assay"
+  - bao:BAO_0000209*:                 # has measure group
+    - measure_group: PubChemMeasureGroup
+  - bao:BAO_0000210*:                 # has assay stage
+    - assay_stage: bao:BAO_0000030    # confirmatory assay
+  - bao:BAO_0000808*:                 # has primary assay
+    - primary_assay: bioassay:AID561
+  - bao:BAO_0001067*:                 # is primary assay of
+    - primary_assay_of: bioassay:AID2139
+  - bao:BAO_0000809*:                 # has confirmatory assay
+    - confirmatory_assay: bioassay:AID610
+  - bao:BAO_0000540*:                 # is confirmatory assay of
+    - confirmatory_assay_of: bioassay:AID561
+  - bao:BAO_0000812*:                 # has summary assay
+    - summary_assay: bioassay:AID2139
+  - bao:BAO_0001094*:                 # is summary assay of
+    - summary_assay_of: bioassay:AID2117
+  - biopax:organism:
+    - organism: taxonomy:TAXID9606
+  
+- PubChemMeasureGroup measuregroup:AID1788_29:
+  - a: bao:BAO_0000040
+  - obo:OBI_0000299:                  # has specified output
+    - endpoint: PubChemEndpoint
+  - dct:title:
+    - measure_group_title: "Glutamate, Kainate (rat)"
+  - obo:RO_0000057:
+    - participant: protein:ACCNP_058937
+
+- PubChemEndpoint endpoint:SID103164874_AID443491:
+#  - a: bao:BAO_0000190               # IC50
+  - obo:IAO_0000136:                  # is about
+    - about: substance:SID103164874
+  - sio:has-unit:
+    - unit: obo:UO_0000064            # cubic meter
+  - sio:has-value:
+    - value: 0.162
+  - rdfs:label:
+    - label: "IC50"
+  - pubchemv:PubChemAssayOutcome:
+    - assay_outcome: pubchemv:active
+  - cito:citesAsDataSource:
+    - data_source: reference:PMID19880317
