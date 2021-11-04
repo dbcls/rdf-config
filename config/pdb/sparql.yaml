@@ -1,3 +1,24 @@
 sparql:
-  description: RDFized reference gene expresson dataset derived from CAGE and GeneChip experiments in the RefEx database.
-  variables: [pdb_id, entity_id, chain_id, taxonomy, conf_type, conf_begin_chain_id, sheet_strand_begin_chain_id]
+  description: Reference UniProt
+  variables: [pdb_id, entity, entity_id, uniprot, align_begin, oligomeric_count]
+
+experiment:
+  description: Experimental method
+  variables: [pdb_id, experimental_method]
+  
+helicies:
+  description: Helix list in a polypeptide chain
+  variables: [entity, entity_id, uniprot, conformation, conf_id]
+  parameters:
+    pdb_id: "5KE7"
+    chain_id: "A"
+    conf_begin_chain_id: "A"
+    conf_type: "HELX_P"
+
+sheet_strands:
+  description: Sheet strand list in a polypeptide chain
+  variables: [entity, entity_id, uniprot, sheet, sheet_strand, sheet_id, sheet_strand_id]
+  parameters:
+    pdb_id: "5KE7"
+    chain_id: "A"
+    sheet_strand_begin_chain_id: "A"

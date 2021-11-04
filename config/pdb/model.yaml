@@ -18,11 +18,13 @@
         - struct_sheet_category: StructSheetCategory
     - pdbo:has_exptlCategory:
         - exptl_category: ExptlCategory
+    - pdbo:has_pdbx_struct_assemblyCategory:
+        - assembly_category: AssemblyCategory
 
 - EntityCategory <https://pdbj.org/pdb/5KE7/entityCategory>:
     - a: pdbo:entityCategory
     - pdbo:has_entity:
-        - etity: Entity
+        - entity: Entity
 
 - Entity <https://rdf.wwpdb.org/pdb/5KE7/entity/1>:
     - a: pdbo:entity
@@ -57,21 +59,19 @@
     - pdbo:entity_poly.type:
         - entity_poly_type: "polypeptide(L)"    #  "polypeptide(L)", "peptide nucleic acid", "polyribonucleotide", "polydeoxyribonucleotide", "polypeptide(D)", "polydeoxyribonucleotide/polyribonucleotide hybrid", "other"
     - pdbo:entity_poly.pdbx_seq_one_letter_code:
-        - pdbx_seq_one_letter_code: "GPLGSRTATHTCDYAGCGKTYTKSSHLKAHLRTHTGEKPYHCDWDGCGWKFARSDELTRHYRKHTGHRPFQCQKCDRAFSRSDHLALHMKRHF"
+        - entity_poly_seq: "GPLGSRTATHTCDYAGCGKTYTKSSHLKAHLRTHTGEKPYHCDWDGCGWKFARSDELTRHYRKHTGHRPFQCQKCDRAFSRSDHLALHMKRHF"
     - pdbo:entity_poly.pdbx_seq_one_letter_code_can:
-        - pdbx_seq_one_letter_code_can: "GPLGSRTATHTCDYAGCGKTYTKSSHLKAHLRTHTGEKPYHCDWDGCGWKFARSDELTRHYRKHTGHRPFQCQKCDRAFSRSDHLALHMKRHF"
+        - entity_poly_canonical_seq: "GPLGSRTATHTCDYAGCGKTYTKSSHLKAHLRTHTGEKPYHCDWDGCGWKFARSDELTRHYRKHTGHRPFQCQKCDRAFSRSDHLALHMKRHF"
     - pdbo:referenced_by_entity_poly_seq: 
         - pdb_poly_seq_scheme: PDBxPolySeqScheme
 
 - PDBxPolySeqScheme <https://rdf.wwpdb.org/pdb/5KE7/pdbx_poly_seq_scheme/A,1,ALA,15>:
     - a: pdbo:pdbx_poly_seq_scheme
     - pdbo:reference_to_entity_poly_seq:
-        - entity_poly_seq: EntityPolySeq
-
-- EntityPolySeq <https://rdf.wwpdb.org/pdb/5KE7/entity_poly_seq/1,ALA,15>:
-    - a: pdbo:entity_poly_seq
-    - pdbo:reference_to_chem_comp:
-        - chem_comp: ChemComp
+        - []:
+            - a: pdbo:entity_poly_seq
+            - pdbo:reference_to_chem_comp:
+                - chem_comp: ChemComp
 
 - ChemComp <https://rdf.wwpdb.org/pdb/5KE7/chem_comp/ALA>:
     - a: pdbo:chem_comp <https://rdf.wwpdb.org/pdb/5KE7/chem_comp/ALA>
@@ -87,9 +87,6 @@
         - chem_comp_type: "L-peptide linking"
     - pdbo:link_to_chem_comp:
         - link_to_chem_comp: <https://rdf.wwpdb.org/cc/ALA>
-    - pdbo:of_datablock:
-        - pdb_datablock: PDBDatablock
-
 
 - EntitySrcGen <https://rdf.wwpdb.org/pdb/5KE7/entity_src_gen/1,1>:
     - a: pdbo:entity_src_gen
@@ -112,72 +109,80 @@
     - pdbo:entity_src_gen.pdbx_seq_type:
         - pdbx_seq_type: "Biological sequence"
 
-- SructRef <https://rdf.wwpdb.org/pdb/5KE7/struct_ref/1>:
+- StructRef <https://rdf.wwpdb.org/pdb/5KE7/struct_ref/1>:
     - a: pdbo:struct_ref
     - rdfs:seeAlso:
-        - struct_ref_seealso: <http://identifiers.org/uniprot/Q60793>
+        - ref_seealso: <http://identifiers.org/uniprot/Q60793>
     - pdbo:link_to_uniprot:
-        - link_to_uniprot: <http://purl.uniprot.org/uniprot/Q60793>
+        - uniprot: <http://purl.uniprot.org/uniprot/Q60793>
     - pdbo:struct_ref.pdbx_align_begin:
-        - struct_ref_pdbx_align_begin: "396"
+        - align_begin: "396"
     - pdbo:struct_ref.pdbx_seq_one_letter_code:
-        - struct_ref_pdbx_seq_one_letter_code: "RTATHTCDYAGCGKTYTKSSHLKAHLRTHTGEKPYHCDWDALHMKRHF"
+        - refarence_seq: "RTATHTCDYAGCGKTYTKSSHLKAHLRTHTGEKPYHCDWDALHMKRHF"
 
 
 - StructConfCategory <https://rdf.wwpdb.org/pdb/5KE7/struct_confCategory>:
     - a: pdbo:struct_confCategory
     - pdbo:has_struct_conf:
-        - []:
-            - a: pdbo:struct_conf
-            - pdbo:struct_conf.conf_type_id:
-                - conf_type: "HELX_P"       # HELX_P or TURN_P
-            - pdbo:struct_conf.beg_label_asym_id:
-                - conf_begin_chain_id: "A"     # correspond to ?chain_id
-            - pdbo:struct_conf.beg_label_comp_id:
-                - conf_begin_residue: "LYS"
-            - pdbo:struct_conf.beg_label_seq_id:
-                - conf_begin: "23"
-            - pdbo:struct_conf.end_label_asym_id:
-                - conf_end_chain_id: "A"
-            - pdbo:struct_conf.end_label_comp_id:
-                - conf_end_residue: "GLY"
-            - pdbo:struct_conf.end_label_seq_id:
-                - onf_end: "36"
-            - pdbo:struct_conf.id:
-                - conf_id: "HELX_P1"
-            - pdbo:struct_conf.pdbx_PDB_helix_id:
-                - conf_helix_id: "AA1"
-            - pdbo:struct_conf.pdbx_PDB_helix_length*:
-                - conf_length: "14"
-            - pdbo:struct_conf.pdbx_PDB_helix_class*:
-                - conf_helix_class: "1"
-            - pdbo:struct_conf.details*:
-                - conf_turn_class: "TYPE II"
+        - conformation: Conformation
+
+- Conformation <https://rdf.wwpdb.org/pdb/5KE7/struct_conf/HELX_P1>:
+    - a: pdbo:struct_conf
+    - pdbo:struct_conf.conf_type_id:
+        - conf_type: "HELX_P"       # HELX_P or TURN_P
+    - pdbo:struct_conf.beg_label_asym_id:
+        - conf_begin_chain_id: "A"     # correspond to ?chain_id
+    - pdbo:struct_conf.beg_label_comp_id:
+        - conf_begin_residue: "LYS"
+    - pdbo:struct_conf.beg_label_seq_id:
+        - conf_begin: "23"
+    - pdbo:struct_conf.end_label_asym_id:
+        - conf_end_chain_id: "A"
+    - pdbo:struct_conf.end_label_comp_id:
+        - conf_end_residue: "GLY"
+    - pdbo:struct_conf.end_label_seq_id:
+        - onf_end: "36"
+    - pdbo:struct_conf.id:
+        - conf_id: "HELX_P1"
+    - pdbo:struct_conf.pdbx_PDB_helix_id:
+        - conf_helix_id: "AA1"
+    - pdbo:struct_conf.pdbx_PDB_helix_length*:
+        - conf_length: "14"
+    - pdbo:struct_conf.pdbx_PDB_helix_class*:
+        - conf_helix_class: "1"
+    - pdbo:struct_conf.details*:
+        - conf_turn_class: "TYPE II"
 
 - StructSheetCategory <https://rdf.wwpdb.org/pdb/5KE7/struct_sheetCategory>:
     - a: pdbo:struct_sheetCategory
     - pdbo:has_struct_sheet:
-        - []:
-            - a: pdbo:struct_sheet
-            - pdbo:struct_sheet.id:
-                - sheet_id: "AA1"
-            - pdbo:struct_sheet.number_strands:
-                - sheet_strands: "2"
-            - pdbo:referenced_by_struct_sheet_range+:
-                - []:
-                    - a: pdbo:struct_sheet_range
-                    - pdbo:struct_sheet_range.beg_label_asym_id:
-                        - sheet_strand_begin_chain_id: "A"     # correspond to ?chain_id
-                    - pdbo:struct_sheet_range.beg_label_comp_id:
-                        - sheet_strand_begin_residue: "HIS"
-                    - pdbo:struct_sheet_range.beg_label_seq_id:
-                        - sheet_strand_begin: "10"
-                    - pdbo:struct_sheet_range.end_label_asym_id:
-                        - sheet_strand_end_chain_id: "A"
-                    - pdbo:struct_sheet_range.end_label_comp_id:
-                        - sheet_strand_end_residue: "THR"
-                    - pdbo:struct_sheet_range.end_label_seq_id:
-                        - sheet_strand_end: "11"
+        - sheet: Sheet
+
+- Sheet <https://rdf.wwpdb.org/pdb/5KE7/struct_sheet/AA1>:
+    - a: pdbo:struct_sheet
+    - pdbo:struct_sheet.id:
+        - sheet_id: "AA1"
+    - pdbo:struct_sheet.number_strands:
+        - sheet_strands: "2"
+    - pdbo:referenced_by_struct_sheet_range+:
+        - sheet_strand: SheetStrand
+
+- SheetStrand <https://rdf.wwpdb.org/pdb/5KE7/struct_sheet_range/1,AA1>:
+    - a: pdbo:struct_sheet_range
+    - pdbo:struct_sheet_range.id:
+        - sheet_strand_id: "1"
+    - pdbo:struct_sheet_range.beg_label_asym_id:
+       - sheet_strand_begin_chain_id: "A"     # correspond to ?chain_id
+    - pdbo:struct_sheet_range.beg_label_comp_id:
+        - sheet_strand_begin_residue: "HIS"
+    - pdbo:struct_sheet_range.beg_label_seq_id:
+        - sheet_strand_begin: "10"
+    - pdbo:struct_sheet_range.end_label_asym_id:
+        - sheet_strand_end_chain_id: "A"
+    - pdbo:struct_sheet_range.end_label_comp_id:
+        - sheet_strand_end_residue: "THR"
+    - pdbo:struct_sheet_range.end_label_seq_id:
+        - sheet_strand_end: "11"
 
 - ExptlCategory <https://rdf.wwpdb.org/pdb/5KE7/exptlCategory>:
     - a: pdbo:exptlCategory
@@ -186,3 +191,17 @@
             - a: pdbo:exptl
             - pdbo:exptl.method:
                 - experimental_method: "X-RAY DIFFRACTION"
+
+- AssemblyCategory <https://rdf.wwpdb.org/pdb/5KE7/pdbx_struct_assemblyCategory>:
+    - a: pdbo:pdbx_struct_assemblyCategory
+    - pdbo:has_pdbx_struct_assembly:
+        - assembly: Assembly
+
+- Assembly <https://rdf.wwpdb.org/pdb/5KE7/pdbx_struct_assembly/1>:
+    - a: pdbo:pdbx_struct_assembly
+    - pdbo:pdbx_struct_assembly.id:
+        - assembly_id: "1"
+    - pdbo:pdbx_struct_assembly.oligomeric_count:
+        - oligomeric_count: "3"               # The number of polymer molecules in the assembly.
+    - pdbo:pdbx_struct_assembly.oligomeric_details:
+        - oligomeric_details: "trimeric"      # Provides the details of the oligomeric state of the assembly.
