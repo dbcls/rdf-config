@@ -1,48 +1,150 @@
 # ENSG
-- EnsemblGene ensg:ENSG00000000003:
+- EnsemblGene ens_resource:ENSG00000000003:
   - a:
-    - obo:SO_0001217       # can be one of alternatives (see the comment list below)
-    - enso:protein_coding  # can be one of alternatives (see the comment list below)
+    - obo:SO_0001217   # protein_coding_gene
+    - ens_terms:protein_coding
+    - ens_terms:miRNA
+    - ens_terms:pseudogene
+    - ens_terms:scaRNA
+    - ens_terms:snoRNA
+    - obo:SO_0000336   # pseudogene
+    - ens_terms:processed_pseudogene
+    - ens_terms:IG_J_gene
+    - ens_terms:snRNA
+    - obo:SO_0001263   # ncRNA_gene
+    - ens_terms:TR_V_gene
+    - ens_terms:IG_V_gene
+    - ens_terms:misc_RNA
+    - ens_terms:Mt_tRNA
+    - ens_terms:Mt_rRNA
+    - ens_terms:ribozyme
+    - ens_terms:rRNA
+    - ens_terms:TR_J_gene
+    - ens_terms:vault_RNA
+    - ens_terms:lncRNA
+    - ens_terms:sRNA
+    - ens_terms:IG_V_pseudogene
+    - ens_terms:TR_C_gene
+    - ens_terms:IG_C_gene
+    - ens_terms:rRNA_pseudogene
+    - ens_terms:TR_D_gene
+    - ens_terms:unprocessed_pseudogene
+    - ens_terms:TEC
+    - ens_terms:IG_C_pseudogene
+    - ens_terms:IG_pseudogene
+    - ens_terms:polymorphic_pseudogene
+    - ens_terms:transcribed_unprocessed_pseudogene
+    - ens_terms:IG_J_pseudogene
+    - ens_terms:TR_V_pseudogene
+    - ens_terms:transcribed_processed_pseudogene
+    - ens_terms:transcribed_unitary_pseudogene
+    - ens_terms:translated_processed_pseudogene
+    - ens_terms:unitary_pseudogene
+    - ens_terms:TR_J_pseudogene
+    - ens_terms:translated_unprocessed_pseudogene
+    - ens_terms:scRNA
+    - ens_terms:IG_D_gene
   - rdfs:label:
     - ensg_label: "TSPAN6"
   - rdfs:seeAlso+:
-    - ensg_xref: ensi:ENSG00000000003, hgnc:HGNC:11858, ncbigene:7105, omim:300191, uniprot:A0A087WYV6, wikigenes:7105
+    - ensg_xref: EnsemblDBEntry   #ensi:ENSG00000000003, # hgnc:HGNC:11858, ncbigene:7105, omim:300191, uniprot:A0A087WYV6, wikigenes:7105
   - dc:description:
     - ensg_description: "tetraspanin 6 [Source:HGNC Symbol;Acc:HGNC:11858]"
   - dc:identifier:
     - ensg_id: "ENSG00000000003"
-  - enso:DEPENDENT:
-    - ensg_dependent: ncbigene:7105, omim:300191, wikigenes:7105, uniprot:A0A087WYV6
-  - enso:DIRECT:
-    - ensg_direct: hgnc:HGNC:11858, ensg:ArrayExpress/ENSG00000000003, ensg:Reactome_gene/R-HSA-1640170
+  - ens_terms:DEPENDENT:
+    - ensg_dependent: EnsemblDBEntry   # ncbigene:7105, omim:300191, wikigenes:7105, uniprot:A0A087WYV6
+  - ens_terms:DIRECT:
+    - ensg_direct: EnsemblDBEntry   # hgnc:HGNC:11858, ens_resource:ArrayExpress/ENSG00000000003, ens_resource:Reactome_gene/R-HSA-1640170
+  - ens_terms:MISC:
+    - ensg_misc: EnsemblDBEntry   # <http://identifiers.org/mirbase/MI0000289>, ens_resource:Clone_based_ensembl_gene/AC068775.1
   - obo:RO_0002162:
     - ensg_taxonomy: taxonomy:9606
   - sio:SIO_000558:
-    - ensg_orthlogous_to: ensg:ENSG00000064201, ensg:ENSANIG00000015960, ensg:ENSAPOG00000011926, ensg:ENSAMEG00000002204  #その他多数
+    - ensg_orthlogous_to: EnsemblGene   # ens_resource:ENSG00000064201   # ens_resource:ENSANIG00000015960, ens_resource:ENSAPOG00000011926, ens_resource:ENSAMEG00000002204  #その他多数
   - faldo:location:
-    - ensg_location: ensg:102/homo_sapiens/GRCh38/X:100627108-100639991:-1
+    - ensg_location: ens_resource:102/homo_sapiens/GRCh38/X:100627108-100639991:-1
   - skos:altlabel:
     - ensg_altlabel: "TM4SF6"
-
-
+    
 # ENST
-- EnsemblTranscript enst:ENST00000560724:
+- EnsemblTranscript enst:ENST00000207457:
   - a:
-    - obo:SO_0000466        # can be one of alternatives (see the comment list below)
-    - enso:IG_V_gene        # can be one of alternatives (see the comment list below)
+    - obo:SO_0000234   # mRNA
+    - ens_terms:protein_coding
+    - ens_terms:miRNA
+    - ens_terms:pseudogene
+    - ens_terms:scaRNA
+    - ens_terms:snoRNA
+    - obo:SO_0000013   # scRNA
+    - obo:SO_0000275   # snoRNA
+    - obo:SO_0000276   # miRNA
+    - obo:SO_0000516   # pseudogenic_transcript
+    - ens_terms:processed_pseudogene
+    - ens_terms:IG_J_gene
+    - ens_terms:snRNA
+    - obo:SO_0000274   # snRNA
+    - ens_terms:TR_V_gene
+    - ens_terms:IG_V_gene
+    - obo:SO_0000466   # V_gene_segment
+    - ens_terms:misc_RNA
+    - obo:SO_0000655   # ncRNA
+    - ens_terms:Mt_tRNA
+    - obo:SO_0000253   # tRNA
+    - ens_terms:Mt_rRNA
+    - ens_terms:ribozyme
+    - ens_terms:rRNA
+    - obo:SO_0000252   # rRNA
+    - ens_terms:TR_J_gene
+    - obo:SO_0000470   # J_gene_segment
+    - ens_terms:vault_RNA
+    - ens_terms:lncRNA
+    - obo:SO_0001877   # lncRNA
+    - ens_terms:sRNA
+    - ens_terms:IG_V_pseudogene
+    - ens_terms:TR_C_gene
+    - ens_terms:IG_C_gene
+    - obo:SO_0000478   # C_gene_segment
+    - ens_terms:rRNA_pseudogene
+    - ens_terms:TR_D_gene
+    - obo:SO_0000458   # D_gene_segment
+    - ens_terms:unprocessed_pseudogene
+    - ens_terms:TEC
+    - obo:SO_0002139   # unconfirmed_transcript
+    - ens_terms:non_stop_decay
+    - ens_terms:nonsense_mediated_decay
+    - ens_terms:processed_transcript
+    - ens_terms:retained_intron
+    - ens_terms:IG_C_pseudogene
+    - ens_terms:IG_pseudogene
+    - ens_terms:polymorphic_pseudogene
+    - ens_terms:transcribed_unprocessed_pseudogene
+    - ens_terms:IG_J_pseudogene
+    - ens_terms:TR_V_pseudogene
+    - ens_terms:LRG_gene
+    - ens_terms:transcribed_processed_pseudogene
+    - ens_terms:transcribed_unitary_pseudogene
+    - ens_terms:translated_processed_pseudogene
+    - ens_terms:unitary_pseudogene
+    - ens_terms:TR_J_pseudogene
+    - ens_terms:translated_unprocessed_pseudogene
+    - ens_terms:scRNA
+    - ens_terms:IG_D_gene
   - rdfs:label:
-    - enst_label: "AC244226.1-201"
+    - enst_label: "TEKT2-201"
   - rdfs:seeAlso+:
-    - enst_xref: go:GO:0038096, ensi:ENST00000560724
+    - enst_xref: EnsemblDBEntry   # http://identifiers.org/go/GO:0005634
   - dc:identifier:
-    - enst_id: "ENST00000560724"
-  - enso:DIRECT:
-    - enst_direct: ensg:Reactome_transcript/R-HSA-2871837
-  - enso:INFERRED_FROM_TRANSCRIPT:
-    - enst_inferred_from_transcript: go:GO:0038096
-  - enso:MISC:
-    - enst_misc: ensg:Clone_based_ensembl_transcript/AC244226.1-201
-  - obo:RO_0002162:
+    - enst_id: "ENST00000207457"
+  - ens_terms:DIRECT:
+    - enst_direct: EnsemblDBEntry   # <http://identifiers.org/ccds/CCDS401>
+  - ens_terms:INFERRED_FROM_TRANSCRIPT:
+    - enst_inferred_from_transcript: EnsemblDBEntry   # go:GO:0038096
+  - ens_terms:CHECKSUM:
+    - enst_checksum: EnsemblDBEntry   # <http://identifiers.org/rnacentral/URS0000255F92>
+  - ens_terms:MISC:
+    - enst_misc: EnsemblDBEntry   # ens_resource:HGNC_trans_name/TEKT2-201
+  - obo:RO_0002162:   # in taxon
     - enst_taxonomy: taxonomy:9606
   - obo:SO_has_part+:
     - enst_has_exon: EnsemblExon
@@ -51,105 +153,150 @@
   - obo:SO_translates_to+:
     - enst_translates_to: EnsemblProtein
   - sio:SIO_000974+:
-    - enst_has_ordered_exon: enst:\/Exon_1
+    - enst_has_ordered_exon: EnsemblExon
   - faldo:location:
-    - enst_location: ensg:102/homo_sapiens/GRCh38/CHR_HSCHR14_3_CTG1:106038673-106039136:-1
-  - enso:COORDINATE_OVERLAP:
-    - enst_coordinate_overlap: ensg:UCSC/uc059lwc.1    #enst:ENST00000560726
+    - enst_location: ens_resource:102/homo_sapiens/GRCh38/1:36084094-36088275:1
+  - ens_terms:COORDINATE_OVERLAP:
+    - enst_coordinate_overlap: ens_resource:UCSC/uc001bzr.4    # enst:ENST00000560726
+  - ens_terms:SEQUENCE_MATCH:
+    - enst_sequence_match: EnsemblDBEntry   # <http://identifiers.org/refseq/XR_243165>
 
-
-# ENSE
+# EnsemblExon
 - EnsemblExon ense:ENSE00002619687:
-  - a: obo:SO_0000147
+  - a: obo:SO_0000147   # exon
   - rdfs:label:
     - ense_label: "ENSE00002619687"
   - rdfs:seeAlso+:
-    - ense_xref: ensi:ENSE00002619687
+    - ense_xref: EnsemblDBEntry
   - dc:identifier:
     - ense_id: "ENSE00002619687"
-  - obo:RO_0002162:
+  - obo:RO_0002162:   # in taxon
     - ense_taxonomy: taxonomy:9606
   - faldo:location:
-    - ense_location: ensg:102/homo_sapiens/GRCh38/16:18792879-18793370:-1
-
-
+    - ense_location: ens_resource:102/homo_sapiens/GRCh38/16:18792879-18793370:-1
+    
 #ENSP
 - EnsemblProtein ensp:ENSP00000473889:
-  - a: enso:protein
+  - a: ens_terms:protein
   - rdfs:seeAlso:
-    - ensp_xref: ena:AC244226, uniparc:UPI00034F23B3, uniprot:P01817, reactome:R-HSA-2871837, ensi:ENSP00000473889
+    - ensp_xref: EnsemblDBEntry   # ena:AC244226, uniparc:UPI00034F23B3, uniprot:P01817, reactome:R-HSA-2871837, ensi:ENSP00000473889
   - dc:identifier:
     - ensp_id: "ENSP00000473889"
-  - enso:CHECKSUM:
-    - ensp_checksum: uniparc:UPI00034F23B3
-  - enso:DEPENDENT:
-    - ensp_dependent: ena:AC244226, reactome:R-HSA-2871837
-  - enso:DIRECT:
-    - ensp_direct: uniprot:P01817
-  - obo:RO_0002162:
-    - ensp_taxonomy: taxonomy:9606
+  - ens_terms:CHECKSUM:
+    - ensp_checksum: EnsemblDBEntry   # uniparc:UPI00034F23B3
+  - ens_terms:DEPENDENT:
+    - ensp_dependent: EnsemblDBEntry   # ena:AC244226   # reactome:R-HSA-2871837
+  - ens_terms:DIRECT:
+    - ensp_direct: EnsemblDBEntry   # uniprot:P01817
+  - ens_terms:INFERRED_PAIR:
+    - ensp_inferred_pair: EnsemblDBEntry   # http://identifiers.org/refseq/XP_011523843
+  - ens_terms:SEQUENCE_MATCH:
+    - ensp_sequence_match: uniprot:A0A024R1S2   # http://purl.uniprot.org/uniprot/A0A024R1S2
+  - obo:RO_0002162:   # in taxon
+    - ensp_taxonomy: taxonomy:9606 
+    
+# ENST_Exon
+- ENSTExon enst:ENST00000207457#Exon_2:
+  - a: sio:SIO_001261   # ordered list item
+  - sio:SIO_000628:   # is related to
+    - enst_exon_related_to: EnsemblExon
+  - sio:SIO_000300:   # has value
+    - enst_exon_has_value: 2
+    
+# LRG
+- LRG ens_resource:LRG_1076:
+  - a: ens_terms:LRG_gene
+  - obo:RO_0002162:   # in taxon
+    - lrg_taxon: taxonomy:9606
+  - rdfs:label:
+    - lrg_label: "HMBS"
+  - rdfs:seeAlso+:
+    - lrg_xref: EnsemblDBEntry   # hgnc:HGNC:4982
+  - dc:description:
+    - lrg_description: "hydroxymethylbilane synthase [Source:HGNC Symbol;Acc:HGNC:4982]"
+  - dc:identifier:
+    - lrg_identifier: "LRG_1076"
+  - ens_terms:DEPENDENT:
+    - lrg_dependent: EnsemblDBEntry   # ncbigene:3145
+  - ens_terms:DIRECT:
+    - lrg_direct: EnsemblDBEntry   # hgnc:HGNC:4982
+  - faldo:location:
+    - lrg_location: ens_resource:102/homo_sapiens/LRG_1076:5005-13673:1
+  - skos:altlabel*:
+    - lrg_altlabel: "PORC"
 
-
-# ENSGとENSTのtype一覧
-# (ENSG,ENST) enso:IG_C_gene
-# (ENSG,ENST) enso:IG_C_pseudogene
-# (ENSG,ENST) enso:IG_D_gene
-# (ENSG,ENST) enso:IG_J_gene
-# (ENSG,ENST) enso:IG_J_pseudogene
-# (ENSG,ENST) enso:IG_V_gene
-# (ENSG,ENST) enso:IG_V_pseudogene
-# (ENSG,ENST) enso:IG_pseudogene
-# (ENSG,ENST) enso:Mt_rRNA
-# (ENSG,ENST) enso:Mt_tRNA
-# (ENSG,ENST) enso:TEC
-# (ENSG,ENST) enso:TR_C_gene
-# (ENSG,ENST) enso:TR_D_gene
-# (ENSG,ENST) enso:TR_J_gene
-# (ENSG,ENST) enso:TR_J_pseudogene
-# (ENSG,ENST) enso:TR_V_gene
-# (ENSG,ENST) enso:TR_V_pseudogene
-# (ENSG,ENST) enso:lncRNA
-# (ENSG,ENST) enso:miRNA
-# (ENSG,ENST) enso:misc_RNA
-# (ENSG,ENST) enso:polymorphic_pseudogene
-# (ENSG,ENST) enso:processed_pseudogene
-# (ENSG,ENST) enso:protein_coding
-# (ENSG,ENST) enso:pseudogene
-# (ENSG,ENST) enso:rRNA
-# (ENSG,ENST) enso:rRNA_pseudogene
-# (ENSG,ENST) enso:ribozyme
-# (ENSG,ENST) enso:sRNA
-# (ENSG,ENST) enso:scRNA
-# (ENSG,ENST) enso:scaRNA
-# (ENSG,ENST) enso:snRNA
-# (ENSG,ENST) enso:snoRNA
-# (ENSG,ENST) enso:transcribed_processed_pseudogene
-# (ENSG,ENST) enso:transcribed_unitary_pseudogene
-# (ENSG,ENST) enso:transcribed_unprocessed_pseudogene
-# (ENSG,ENST) enso:translated_processed_pseudogene
-# (ENSG,ENST) enso:translated_unprocessed_pseudogene
-# (ENSG,ENST) enso:unitary_pseudogene
-# (ENSG,ENST) enso:unprocessed_pseudogene
-# (ENSG,ENST) enso:vault_RNA
-# (ENST) enso:non_stop_decay
-# (ENST) enso:nonsense_mediated_decay
-# (ENST) enso:processed_transcript
-# (ENST) enso:retained_intron
-# (ENSG) obo:SO_0000336
-# (ENSG) obo:SO_0001217
-# (ENSG) obo:SO_0001263
-# (ENST) obo:SO_0000013
-# (ENST) obo:SO_0000234
-# (ENST) obo:SO_0000252
-# (ENST) obo:SO_0000253
-# (ENST) obo:SO_0000274
-# (ENST) obo:SO_0000275
-# (ENST) obo:SO_0000276
-# (ENST) obo:SO_0000458
-# (ENST) obo:SO_0000466
-# (ENST) obo:SO_0000470
-# (ENST) obo:SO_0000478
-# (ENST) obo:SO_0000516
-# (ENST) obo:SO_0000655
-# (ENST) obo:SO_0001877
-# (ENST) obo:SO_0002139
+- EnsemblDBEntry <http://identifiers.org/go/GO:0045944>:
+  - a:
+    - ens_terms:EnsemblDBEntry
+    - <http://identifiers.org/ensembl>
+    - <http://identifiers.org/uniprot>
+    - <http://identifiers.org/uniparc>
+    - <http://identifiers.org/go>
+    - <http://identifiers.org/hgnc>
+    - <http://identifiers.org/rfam>
+    - <http://identifiers.org/merops>
+    - <http://identifiers.org/rnacentral>
+    - <http://identifiers.org/pdb>
+    - <http://identifiers.org/ccds>
+    - <http://identifiers.org/ena.embl>
+    - <http://identifiers.org/hpa>
+    - <http://identifiers.org/insdc>
+    - <http://identifiers.org/lrg>
+    - <http://identifiers.org/mirbase>
+    - <http://identifiers.org/ncbigene>
+    - <http://identifiers.org/omim>
+    - <http://identifiers.org/reactome>
+    - <http://identifiers.org/refseq>
+    - <http://identifiers.org/wikigenes>
+    - <http://identifiers.org/genedb>
+    - <http://identifiers.org/chembl.target>
+    - ens_resource:HGNC_trans_name
+    - ens_resource:KEGG_Enzyme
+    - ens_resource:RFAM_trans_name
+    - ens_resource:EntrezGene_trans_name
+    - ens_resource:ArrayExpress
+    - ens_resource:Clone_based_ensembl_gene
+    - ens_resource:Clone_based_ensembl_transcript
+    - ens_resource:DBASS3
+    - ens_resource:DBASS5
+    - ens_resource:Reactome_gene
+    - ens_resource:Reactome_transcript
+    - ens_resource:UCSC
+    - ens_resource:Uniprot_isoform
+    - ens_resource:miRBase_trans_name
+  - sio:SIO_000671:
+    - has_identifier:
+      - []:
+        - a:
+          - <http://idtype.identifiers.org/ensembl>
+          - <http://idtype.identifiers.org/uniprot>
+          - <http://idtype.identifiers.org/uniparc>
+          - <http://idtype.identifiers.org/go>
+          - <http://idtype.identifiers.org/hgnc>
+          - <http://idtype.identifiers.org/rfam>
+          - <http://idtype.identifiers.org/rnacentral>
+          - <http://idtype.identifiers.org/merops>
+          - <http://idtype.identifiers.org/pdb>
+          - <http://idtype.identifiers.org/ccds>
+          - <http://idtype.identifiers.org/ena.embl>
+          - <http://idtype.identifiers.org/hpa>
+          - <http://idtype.identifiers.org/insdc>
+          - <http://idtype.identifiers.org/ncbigene>
+          - <http://idtype.identifiers.org/lrg>
+          - <http://idtype.identifiers.org/mirbase>
+          - <http://idtype.identifiers.org/omim>
+          - <http://idtype.identifiers.org/reactome>
+          - <http://idtype.identifiers.org/refseq>
+          - <http://idtype.identifiers.org/wikigenes>
+          - <http://idtype.identifiers.org/genedb>
+          - <http://idtype.identifiers.org/chembl.target>
+        - sio:SIO_000300:
+          - has_value: "GO:0007417"
+  - rdfs:label:
+    - db_entry_label: "TSPAN6"
+  - dc:description:
+    - db_entry_description: "tetraspanin 6"   # "Generated via ensembl_manual"
+  - dc:identifier:
+    - db_entry_identifier: "HGNC:11858"
+  - owl:sameAs:
+    - same_as: EnsemblDBEntry   # obo:GO_0045944
