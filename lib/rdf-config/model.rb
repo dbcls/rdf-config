@@ -7,12 +7,24 @@ class RDFConfig
 
     @@validate_done = false
     @@output_warning = false
+    @@instance = {}
+
+    class << self
+      def instance(config)
+        unless @@instance.key?(config.object_id)
+          @@instance[config.object_id] = Model.new(config)
+        end
+
+        @@instance[config.object_id]
+      end
+    end
 
     def initialize(config)
       @config = config
       @graph = Graph.new(@config)
       @graph.generate
       generate_triples
+
       unless @@validate_done
         validate
         @@validate_done = true
@@ -67,33 +79,45 @@ class RDFConfig
     end
 
     def find_object(object_name)
-      object = @triples.map(&:object).select { |object| object.name == object_name }.first
-      if object.nil?
-        object = find_subject(object_value[object_name])
+      triple = find_by_object_name(object_name)
+      if triple.nil?
+        nil
+      else
+        if subject?(object_name) && triple.object.is_a?(ValueList)
+          triple.object.value.select { |value| value.name == object_name }.first
+        else
+          triple.object
+        end
       end
-
-      object
     end
 
-    def find_by_object_name(object_name)
-      if subject?(object_name)
-        @triples.select do |triple|
-          case triple.object
-          when Subject
-            triple.object.name == object_name && triple.subject.name != object_name
-          when ValueList
-            subject_names = triple.object.value.select { |v| v.is_a?(Subject) }.map(&:name)
-            if subject_names.include?(triple.subject.name)
-              false
-            else
-              subject_names.include?(object_name)
-            end
-          else
-            false
-          end
-        end.first
+    def find_by_object_name(object_name, opts = { only_first_triple: true })
+      triples = if subject?(object_name)
+                  @triples.select do |triple|
+                    case triple.object
+                    when Subject
+                      # reject triple with the same subject name and object value
+                      triple.subject.name != triple.object.as_object_value &&
+                        triple.object.as_object_value == object_name
+                    when ValueList
+                      triple.object.value.select do |obj|
+                        # reject triple with the same subject name and object value
+                        obj.is_a?(Subject) && triple.subject.name != obj.as_object_value
+                      end.map do |obj|
+                        obj.is_a?(Subject) && obj.as_object_value == object_name
+                      end.include?(true)
+                    else
+                      false
+                    end
+                  end
+                else
+                  @triples.select { |triple| triple.object_name == object_name }
+                end
+
+      if opts[:only_first_triple]
+        triples.first
       else
-        @triples.select { |triple| triple.object_name == object_name }.first
+        triples
       end
     end
 
@@ -124,6 +148,10 @@ class RDFConfig
       @graph.subjects
     end
 
+    def subject_names
+      subjects.map(&:name)
+    end
+
     def object_value
       @graph.object_value
     end
@@ -148,26 +176,6 @@ class RDFConfig
 
     def parent_subject_names(object_name)
       triples_by_object_name(object_name).map(&:subject).map(&:name)
-    end
-
-    def parent_variable(object_name)
-      triple = find_by_object_name(object_name)
-      return nil if triple.nil? || !triple.subject.used_as_object?
-
-      triple.subject.as_object.values.flatten.map { |hash| hash[:object].name }.uniq.first
-    end
-
-    def parent_variables(object_name)
-      variables = []
-      loop do
-        variable_name = parent_variable(object_name)
-        break if variable_name.nil? || variable_name == object_name
-
-        variables << variable_name
-        object_name = variable_name
-      end
-
-      variables.reverse
     end
 
     def predicate_path(object_name, start_subject = nil)
@@ -197,7 +205,11 @@ class RDFConfig
       validator = Validator.new(self, @config)
       validator.validate
 
-      raise Config::InvalidConfig, validator.error_message if validator.error?
+      errors = @graph.errors + validator.errors
+      unless errors.empty?
+        error_msg = %Q/ERROR: Invalid configuration. Please check the setting in model.yaml file.\n#{errors.map { |msg| "  #{msg}" }.join("\n")}/
+        raise Config::InvalidConfig, error_msg
+      end
 
       if validator.warn? && !@@output_warning
         STDERR.puts validator.warn_message

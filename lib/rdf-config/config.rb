@@ -3,7 +3,7 @@ require 'pathname'
 
 class RDFConfig
   class Config
-    CONFIG_NAMES = %i[model sparql prefix endpoint stanza metadata].freeze
+    CONFIG_NAMES = %i[model sparql prefix endpoint stanza metadata schema].freeze
 
     CONFIG_NAMES.each do |name|
       define_method name do
@@ -11,7 +11,7 @@ class RDFConfig
           instance_varname = "@#{name}"
 
           instance_variable_get(instance_varname) ||
-              instance_variable_set(instance_varname, YAML.load_file(config_file_path(name)))
+            instance_variable_set(instance_varname, YAML.load_file(config_file_path(name)))
         rescue Psych::SyntaxError => e
           raise SyntaxError, "Invalid YAML format #{e.message}"
         end

@@ -38,7 +38,7 @@ class RDFConfig
       def object_name(predicate_uri = nil)
         case @object
         when Model::Subject
-          @object.as_object_name(@subject.name, predicate_uri)
+          @object.as_object_name
         else
           @object.name
         end
@@ -47,7 +47,7 @@ class RDFConfig
       def object_value(predicate_uri = nil)
         case @object
         when Model::Subject
-          @object.as_object_value(@subject.name, predicate_uri)
+          @object.as_object_value
         else
           @object.value
         end
@@ -56,10 +56,20 @@ class RDFConfig
       def bnode_connecting?
         @predicates.size > 1
       end
+
+      def ==(other)
+        self.subject.name == other.subject.name &&
+          self.property_path == other.property_path &&
+          self.object_name == other.object_name
+      end
+
+      def to_s
+        "#{subject.name} #{property_path} #{object_name}"
+      end
     end
 
     class Graph
-      attr_reader :subjects, :object_names, :object_value
+      attr_reader :subjects, :object_names, :object_value, :errors, :warnings
 
       def initialize(config, opts = {})
         @config = config
@@ -72,6 +82,9 @@ class RDFConfig
 
         @target_subject = nil
         @current_predicate_uri = nil
+
+        @errors = []
+        @warnings = []
       end
 
       def generate
@@ -84,29 +97,56 @@ class RDFConfig
         @subjects
       end
 
+      def error?
+        !@errors.empty?
+      end
+
       private
 
       def setup_subject(subject, subject_hash)
+        validate_subject(subject)
         subject_hash.each do |subject_name, predicate_object_hashes|
           predicate_object_hashes.each do |predicate_object_hash|
-            @target_predicate = predicate_instance(predicate_object_hash)
-            subject.add_predicate(@target_predicate)
+            unless predicate_object_hash.is_a?(Hash)
+              add_error("It seems that the predicate and object settings in subject (#{subject_name}) are incorrect in the model.yaml file.")
+              next
+            end
+
+            predicate_object_hash.each do |predicate, object|
+              setup_predicate(subject, predicate, object)
+            end
+          end
+        end
+      end
+
+      def setup_predicate(subject, predicate, object)
+        if object.nil?
+          add_error("Predicate (#{predicate}) has no RDF object setting.")
+        else
+          pred_inst = predicate_instance({ predicate => object })
+          unless pred_inst.nil?
+            @target_predicate = pred_inst
+            validate_predicate(pred_inst)
+            subject.add_predicate(pred_inst)
           end
         end
       end
 
       def predicate_instance(predicate_object_hash)
         predicate_uri = predicate_object_hash.keys.first
+        predicate_uri = predicate_uri.strip if predicate_uri.is_a?(String)
+        object_data = predicate_object_hash[predicate_uri]
+        if object_data.nil?
+          return nil
+        end
+
         predicate = Predicate.new(predicate_uri, prefix_hash)
         @current_predicate_uri = predicate.uri
-        object_data = predicate_object_hash[predicate_uri]
         case object_data
-        when Hash, String
-          if object_data.is_a?(Hash)
-            object_name = object_data.keys.first
-            add_object_name(object_name) if object_name.is_a?(String) && object_name != 'a' && object_name != 'rdf:type'
-          end
+        when String
           predicate.add_object(object_instance(object_data))
+        when Hash
+          add_error("RDF object data (predicate is '#{predicate.uri}') in model.yaml is not an array. Please specify the RDF object data as an array.")
         when Array
           object_data.each do |obj_data|
             if obj_data.is_a?(Hash)
@@ -134,8 +174,10 @@ class RDFConfig
 
         subject = @subjects.select { |subject| subject.name == value }.first
         unless subject.nil?
-          subject.add_as_object(@target_subject.name, @current_predicate_uri, Literal.new(name => value))
-          return subject
+          subject_as_object = subject.clone
+          # name is object_name in model.yaml, value is object_value == subject_name in model.yaml
+          subject_as_object.add_as_object(@target_subject.name, @current_predicate_uri, Literal.new(name => value))
+          return subject_as_object
         end
 
         if Object.blank_node?(name)
@@ -158,17 +200,124 @@ class RDFConfig
         end
       end
 
+      def validate_subject(subject)
+        return if subject.blank_node?
+
+        # Subject name must be CamelCase
+        if /\A[A-Z][A-Za-z0-9]*\z/ !~ subject.name
+          add_error(%/Invalid subject name (#{subject.name}) in model.yaml file. Subject name must start with a capital letter and only alphanumeric characters can be used in subject name./)
+        end
+
+        subject_value = subject.value.to_s.strip
+        return if subject_value.empty?
+
+        # Subject value must be valid URI
+        validate_result, prefix = validate_uri(subject_value)
+        case validate_result
+        when 'NOT_URI'
+          add_error("Subject (#{subject.name}), value (#{subject_value}) is not valid URI.")
+        when 'NO_PREFIX'
+          add_error("Prefix (#{prefix}) used in subject (#{subject.name}), value (#{subject_value}) but not defined in prefix.yaml file.")
+        end
+      end
+
+      def validate_predicate(predicate)
+        if predicate.rdf_type?
+          validate_rdf_type_predicate(predicate)
+        else
+          validate_non_rdf_type_predicate(predicate)
+        end
+      end
+
+      def validate_rdf_type_predicate(predicate)
+        predicate.objects.each do |object|
+          # object.name is URI of rdf:type
+          uri = object.name
+          validate_result, prefix = validate_uri(uri)
+          case validate_result
+          when 'NOT_URI'
+            add_error("rdf:type (#{uri}) is not valid URI.")
+          when 'NO_PREFIX'
+            add_error("Prefix (#{prefix}) used in rdf:type (#{uri}) but not defined in prefix.yaml file.")
+          end
+        end
+      end
+
+      def validate_non_rdf_type_predicate(predicate)
+        predicate.objects.each do |object|
+          uri = predicate.uri
+          validate_result, prefix = validate_uri(uri)
+          case validate_result
+          when 'NOT_URI'
+            add_error("Predicate (#{uri}) is not valid URI.")
+          when 'NO_PREFIX'
+            add_error("Prefix (#{prefix}) used in predicate (#{uri}) but not defined in prefix.yaml file.")
+          end
+
+          return if object.is_a?(Subject) || object.is_a?(BlankNode)
+
+          object_name = object.name
+          if object_name.is_a?(String)
+            validate_object_name(object_name)
+          end
+        end
+      end
+
+      def validate_object(object)
+        if object.is_a?(Model::URI)
+          uri = object.value.to_s.strip
+          unless uri.empty?
+            validate_result, prefix = validate_uri(uri)
+            case validate_result
+            when 'NOT_URI'
+              add_error("Object (#{object.name}, value (#{uri}) is not valid URI.")
+            when 'NO_PREFIX'
+              add_error("Prefix (#{prefix}) used in object (#{object.name}, value (#{uri}) but not defined in prefix.yaml file.")
+            end
+          end
+        end
+      end
+
+      def validate_object_name(object_name)
+        # object name must be snake_case
+        if /\A[a-z0-9_]+\z/ !~ object_name
+          add_error("Invalid object name (#{object_name}) in model.yaml file. Only lowercase letters, numbers and underscores can be used in object name.")
+        end
+      end
+
+      def validate_uri(uri)
+        if /\A<.+>\z/ =~ uri
+          ['VALID']
+        else
+          prefix, local_part = uri.split(':', 2)
+          if local_part.nil?
+            ['NOT_URI']
+          elsif !prefix_hash.keys.include?(prefix)
+            ['NO_PREFIX', prefix]
+          end
+        end
+      end
+
       def prefix_hash
         @config.prefix
       end
 
       def add_object_name(object_name)
-        @object_names << object_name unless object_name.to_s.empty?
+        return if object_name.to_s.empty?
+
+        @object_names << object_name
+      end
+
+      def add_error(message)
+        @errors << message unless @errors.include?(message)
+      end
+
+      def add_warning(message)
+        @warnings << message unless @warnings.include?(message)
       end
     end
 
     class Subject
-      attr_accessor :sparql_varname
       attr_reader :name, :value, :predicates, :as_object
 
       def initialize(subject_hash, prefix_hash = {})
@@ -184,8 +333,6 @@ class RDFConfig
         end
 
         @predicates = []
-
-        @sparql_varname = @name
       end
 
       def types
@@ -205,6 +352,16 @@ class RDFConfig
         @predicates.map(&:objects).flatten
       end
 
+      def object_names
+        @predicates.reject(&:rdf_type?).map(&:objects).flatten.map do |object|
+          if object.is_a?(Subject)
+            object.as_object_name
+          else
+            object.name
+          end
+        end
+      end
+
       def add_predicates(predicate_object_hashes)
         predicate_object_hashes.each do |predicate_object_hash|
           add_predicate(predicate_object_hash)
@@ -216,11 +373,11 @@ class RDFConfig
       end
 
       def add_as_object(subject_name, predicate_uri, object)
-        unless @as_object.key?(subject_name)
-          @as_object[subject_name] = []
-        end
-
-        @as_object[subject_name] << { predicate_uri: predicate_uri, object: object }
+        @as_object = {
+          subject_name: subject_name,
+          predicate_uri: predicate_uri,
+          object: object
+        }
       end
 
       def parent_subject_names
@@ -231,38 +388,20 @@ class RDFConfig
         end
       end
 
-      def as_object_hash(subject_name, predicate_uri = nil)
-        if @as_object.key?(subject_name)
-          if predicate_uri.nil?
-            @as_object[subject_name].last
-          else
-            @as_object[subject_name].select { |hash| hash[:predicate_uri] == predicate_uri }.first
-          end
-        else
-          nil
-        end
+      def as_object_name
+        @as_object[:object].name
       end
 
-      def as_object_name(subject_name, predicate_uri = nil)
-        hash = as_object_hash(subject_name, predicate_uri)
-        if hash.nil?
-          nil
-        else
-          hash[:object].name
-        end
-      end
-
-      def as_object_value(subject_name, predicate_uri = nil)
-        hash = as_object_hash(subject_name, predicate_uri)
-        if hash.nil?
-          nil
-        else
-          hash[:object].value
-        end
+      def as_object_value
+        @as_object[:object].value
       end
 
       def used_as_object?
         !@as_object.empty?
+      end
+
+      def ==(other)
+        self.name == other.name
       end
     end
 
@@ -335,7 +474,7 @@ class RDFConfig
     end
 
     class Object
-      attr_reader :name, :value, :sparql_varname
+      attr_reader :name, :value
 
       def initialize(object, prefix_hash = {})
         case object
@@ -346,8 +485,6 @@ class RDFConfig
           @name = object
           @value = nil
         end
-
-        @sparql_varname = @name
       end
 
       def type

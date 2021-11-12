@@ -37,18 +37,15 @@ RDF-config is a tool to generate SPARQL queries, a schema diagram, and files req
 % git clone https://github.com/dbcls/rdf-config.git
 
 % cd rdf-config
-
-% export PATH="./bin:$PATH"
-% export RUBYLIB="./lib"
 ```
 
 * TODO:
-  * Installer will be provided soon!
+  * Installer will be provided soon! (add ./bin to your $PATH until then)
 
 ### Generate schema ascii art
 
 ```
-% rdf-config --config config/refex --senbero
+% bin/rdf-config --config config/refex --senbero
 RefExEntry [refexo:RefExEntry] (<http://purl.jp/bio/01/refex/RFX0016539731>)
     |-- refexo:expValue
     |       `-- ex_value ("Ex value")
@@ -94,7 +91,7 @@ RefExSample [refexo:RefExSample] (<http://refex.dbcls.jp/sample/RES00000100>)
 ### Generate schema diagram
 
 ```
-% rdf-config --config config/refex --schema > refex.svg
+% bin/rdf-config --config config/refex --schema > refex.svg
 ```
 
 ![RefEx schema](./doc/figure/refex.svg)
@@ -102,7 +99,7 @@ RefExSample [refexo:RefExSample] (<http://refex.dbcls.jp/sample/RES00000100>)
 ### Generate SPARQL query
 
 ```
-% rdf-config --config config/refex --sparql
+% bin/rdf-config --config config/refex --sparql
 # Endpoint: https://integbio.jp/rdf/sparql
 # Description: RDFized reference gene expresson dataset derived from CAGE and GeneChip experiments in the RefEx database.
 
@@ -133,20 +130,20 @@ LIMIT 100
 If multiple sparql configs are provided in the `sparql.yaml` file, the config (sparql) name can be specified as `--sparql sparql_name` (default sparql_name is `sparql`).
 
 ```
-% rdf-config --config config/mesh --sparql tree_pair
+% bin/rdf-config --config config/mesh --sparql tree_pair
 ```
 
 If multiple sparql endpoints are provided in the `endpoint.yaml` file, the config (endpoint) name can be specified as `--sparql :endpoint_name` (default endpoint_name is `endpoint`) or in combination with the sparql name as `--sparql sparql_name:endpoint_name`.
 
 ```
-% rdf-config --config config/mesh --sparql :med2rdf
-% rdf-config --config config/mesh --sparql tree_pair:med2rdf
+% bin/rdf-config --config config/mesh --sparql :med2rdf
+% bin/rdf-config --config config/mesh --sparql tree_pair:med2rdf
 ```
 
 ### Generate ShEx
 
 ```
-% rdf-config --config config/nbrc --shex
+% bin/rdf-config --config config/nbrc --shex
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
@@ -181,7 +178,7 @@ PREFIX refexo: <http://purl.jp/bio/01/refexo#>
 ### Generate [Grasp](https://github.com/dbcls/grasp) config
 
 ```
-% rdf-config --config config/refex --grasp
+% bin/rdf-config --config config/refex --grasp
 Grasp files have been created successfully.
 % ls grasp/refex/
 query.graphql  schema/
@@ -192,7 +189,7 @@ query.graphql  schema/
 JavaScript version
 
 ```
-% rdf-config --config config/hint --stanza hint_pair
+% bin/rdf-config --config config/hint --stanza hint_pair
 Stanza template has been generated successfully.
 To view the stanza, run (cd stanza/javascript; ts server) and open http://localhost:8080/
 ```
@@ -200,7 +197,7 @@ To view the stanza, run (cd stanza/javascript; ts server) and open http://localh
 Ruby version (it may take a while for the first time to install dependencies)
 
 ```
-% rdf-config --config config/hint --stanza_rb hint_pair
+% bin/rdf-config --config config/hint --stanza_rb hint_pair
 Stanza template has been generated successfully.
 To view the stanza, run (cd stanza/ruby; bundle exec rackup) and open http://localhost:9292/
 ```

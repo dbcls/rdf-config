@@ -1,0 +1,40 @@
+- Step <x-region-1>:
+  - a: [ vg:Step, faldo:Region ]
+  - vg:rank:
+    - rank: 1
+  - vg:path:
+    - path: Path
+  - vg:node:
+    - node: Node
+  - faldo:begin:
+    - begin: Position
+  - faldo:end:
+    - end: Position
+
+- Path path:x:
+  - a: vg:Path
+  - rdfs:label:
+    - path_label: "x"
+
+- Node node:1:
+  - a: vg:Node
+  - rdf:value:
+    - seq: "CAAATAAG"
+  - vg:linksForwardToForward*:
+    - ff: Node
+  - vg:linksForwardToReverse*:
+    - fr: Node
+  - vg:linksReverseToReverse*:
+    - rr: Node
+  - vg:linksReverseToForward*:
+    - rf: Node
+  
+- Position <x-pos-8>:
+  - a: faldo:ExactPosition
+  - faldo:position:
+    - position: 8
+  - faldo:reference:
+    - reference: <x>
+
+
+

@@ -1,0 +1,29 @@
+- PutativeRegulation ca:SRX2493169-ENSG00000275700:
+  - a: cao:PutativeRegulation
+  - cao:hasTF:
+    - tg_tf: ensg:ENSG00000275700
+  - cao:hasTargetGene:
+    - tg_target: ensg:ENSG00000275700
+  - cao:score10k:
+    - tg_macs2_score_10k: 947
+  - cao:hasExperiment:
+    - tg_experiment: srx:SRX2493169
+  - cao:hasCellLine:
+    - tg_cell_line: "NALM-6"
+
+- Colocalization ca:SRX2493169-SRX7135367:
+  - a: cao:Colocalization
+  - cao:hasTF:
+    - colo_tf: ensg:ENSG00000275700
+  - cao:hasPartnerTF:
+    - colo_partner_tf: ensg:ENSG00000116478
+  - cao:hasExperiment:
+    - colo_experiment: srx:SRX2493169
+  - cao:hasPartnerExperiment:
+    - colo_partner_experiment: srx:SRX7135367
+  - cao:coloScore:
+    - colo_score: 0
+  - cao:hasCellLine:
+    - colo_cell_line: "NALM-6"
+  - cao:hasPartnerCellLine:
+    - colo_partner_cell_line: "K-562"

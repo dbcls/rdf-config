@@ -6,7 +6,7 @@
   - gdgsch:diseaseName:
     - disease_name: "Cystitis"
   - ggdsch:conceptType:
-    - concept_type: DiseasNameConceptType
+    - concept_type_diseas_name: DiseasNameConceptType 
   - gmsch:causedBy+:
     - upec: Upec # UPEC
     - ecoli: Ecoli # Escherichia coli
@@ -48,7 +48,6 @@
     - skos:Concept
     - up:Strain
   - ggdsch:conceptType:
-   #- concept_type: ConceptType 
     - conceptpathogenic: Conceptpathogenic
   - gmsch:causes+:
     - causes_upec: paconto:DIS043 # Sepsis
@@ -78,7 +77,7 @@
   - pacsch:ncbiTaxonomyId:
     - ncbi_taxonomy_id: "562"
   - pacsch:tropismInReference+:
-    - tropism_in_reference: TropismInReference
+    - tropism_in_reference_ecoli: TropismInReference
   - glycan:has_strain+:
     - strain: "DS17"
   - dct:identifier:
@@ -101,13 +100,13 @@
   - gdgsch:diseaseName:
     - disease_class_name: "Cystitis"
   - ggdsch:conceptType:
-    - concept_type: DiseaseClassConceptType  
+    - concept_type_disease_class: DiseaseClassConceptType
   - ggdsch:meshUniqueID:
     - mesh_id_disease_class: "D003556"
   - ggdsch:umlsCUI:
     - umls_cui_disease_class: "C0010692"
   - pacsch:broaderInDisClassifSystems:
-    - pacdb_diseases: PacdbDiseases # Urinary Bladder Diseases
+    - pacdb_diseases_class: PacdbDiseases # Urinary Bladder Diseases
   - dct:identifier:
     - diseases_classification_systems_identifier: "DIC111"
   - rdfs:label:
@@ -147,7 +146,6 @@
   - rdfs:seeAlso+:
     - mesh_id_pacdb_link: mesh:D001745
 
-#- ConceptType pacsch:PathogenicMicroorganisms:
 - Conceptpathogenic pacsch:PathogenicMicroorganisms:
   - a:
     - owl:Thing
@@ -182,7 +180,7 @@
     - skos:Concept
     - pacsch:TargetTissuesAndCells
   - ggdsch:conceptType:
-    - concept_type: pacsch:SourcesInHost
+    - concept_type_source_host: pacsch:SourcesInHost
   - pacsch:bioSourceName:
     - bio_source_name: "Eukaryotic cells"
   - pacsch:targetClassification+:

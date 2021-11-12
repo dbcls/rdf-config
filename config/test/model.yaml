@@ -1,0 +1,34 @@
+#①	SubjectA ⇒ SubjectB ⇒ SubjectC (object_c)
+#②	SubjectA ⇒ SubjectD ⇒ SubjectC (object_c)
+#③	              SubjectB ⇒ SubjectE (object_e) 
+
+- SubjectA:
+  - a: ex:ClassA
+  - ex:pred_ab:
+    - link_ab: SubjectB
+  - ex:pred_ad:
+    - link_ad: SubjectD
+  - ex:prop_a:
+    - object_a: a123
+- SubjectB:
+  - a: ex:ClassB
+  - ex:pred_bc:
+    - link_bc: SubjectC
+  - ex:pred_be:
+    - link_be: SubjectE
+  - ex:prop_b:
+    - object_b: b123
+- SubjectC:
+  - a: ex:ClassC
+  - ex:prop_c:
+    - object_c: c123
+- SubjectD:
+  - a: ex:ClassD
+  - ex:pred_dc:
+    - link_ec: SubjectC
+  - ex:prop_d:
+    - object_d: d123
+- SubjectE:
+  - a: ex:ClassE
+  - ex:prop_e:
+    - object_e: e123

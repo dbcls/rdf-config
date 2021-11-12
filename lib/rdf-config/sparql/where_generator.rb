@@ -45,7 +45,13 @@ class RDFConfig
         end
 
         def ==(other)
-          @subject == other.subject && @predicate == other.predicate && @object == other.object
+          @subject.to_sparql == other.subject.to_sparql &&
+            @predicate == other.predicate &&
+            @object.to_sparql == other.object.to_sparql
+        end
+
+        def to_s
+          "#{subject.to_sparql} #{predicate} #{object.to_sparql}"
         end
       end
 
@@ -161,15 +167,11 @@ class RDFConfig
         @depth = 1
 
         @target_triple = nil
-
-        prepare_sparql_variable_name
+        @optional_triples_buf = []
       end
 
       def generate
         generate_triples
-        @required_triples.uniq!
-        @optional_triples.uniq!
-
         add_values_lines if @output_values_line
 
         lines = required_lines
@@ -190,13 +192,18 @@ class RDFConfig
       def generate_triples
         variables_for_where.each do |variable_name|
           generate_triple_by_variable(variable_name_for_sparql(variable_name))
+          unless @optional_triples_buf.empty?
+            @optional_triples << @optional_triples_buf.uniq
+            @optional_triples_buf = []
+          end
         end
+
+        @required_triples.uniq!
       end
 
       def generate_triple_by_variable(variable_name)
         @target_triple = model.find_by_object_name(variable_name)
         return if @target_triple.nil? || @target_triple.subject.name == variable_name
-        return if @target_triple.object.is_a?(Model::ValueList) && !@target_triple.object.value.select { |v| v.is_a?(Model::Subject) }.empty?
 
         if @target_triple.bnode_connecting? && model.same_property_path_exist?(variable_name)
           generate_triples_with_bnode
@@ -213,20 +220,23 @@ class RDFConfig
           triple_in_model = model.find_by_object_name(object_name)
           subject = model.subjects.first
           property_paths = model.property_path(triple_in_model.subject.name)
+
+          # If there is the same property path, it is necessary to output the rdf:type of the subject
+          # in which the object is hanging in order to distinguish the target object.
           add_triple(Triple.new(subject_instance(subject, subject.types, true),
                                 property_paths.join(PROPERTY_PATH_SEP),
                                 variable_instance(triple_in_model.subject.name)),
                      is_optional)
           add_triple(Triple.new(subject_instance(triple_in_model.subject, triple_in_model.subject.types, true),
                                 model.property_path(object_name, @target_triple.subject.name).join(PROPERTY_PATH_SEP),
-                                variable_instance(@target_triple.object.sparql_varname)),
+                                variable_instance(object_name(@target_triple))),
                      is_optional)
         else
           subject = subject_by_object_name(object_name)
           property_paths = model.property_path(object_name, subject.name)
           add_triple(Triple.new(subject_instance(subject, subject.types),
                                 property_paths.join(PROPERTY_PATH_SEP),
-                                variable_instance(@target_triple.object.sparql_varname)),
+                                variable_instance(object_name(@target_triple))),
                      is_optional)
         end
       end
@@ -246,12 +256,12 @@ class RDFConfig
 
         if use_property_path?(bnode_rdf_types)
           subject = subject_by_object_name(object_name)
-          return if !variables_for_where.include?(subject.name)
+          return unless variables_for_where.include?(subject.name)
 
           property_paths = model.property_path(object_name, subject.name)
           add_triple(Triple.new(subject_instance(subject, subject.types),
                                 property_paths.join(PROPERTY_PATH_SEP),
-                                variable_instance(@target_triple.object.sparql_varname)),
+                                variable_instance(object_name(@target_triple))),
                      optional?(object_name, subject.name))
         else
           generate_triples_with_bnode_rdf_types(bnode_rdf_types)
@@ -306,72 +316,6 @@ class RDFConfig
                    optional_phrase?(predicates.last))
       end
 
-      def generate_rdf_type_triples
-        triples = rdf_type_triples_by_subjects
-        subjects = (@required_triples + @optional_triples).map(&:subject).uniq
-
-        (variables - subjects.map(&:name)).each do |variable_name|
-          triple = rdf_type_triple_by_variable(variable_name)
-          triples << triple if triple.is_a?(Triple)
-        end
-
-        triples
-      end
-
-      def rdf_type_triples_by_subjects
-        triples = []
-
-        subjects = (@required_triples + @optional_triples).map(&:subject).uniq
-        subjects.each do |subject|
-          triples << Triple.new(subject, 'a', subject) if subject.has_rdf_type?
-        end
-
-        triples
-      end
-
-      def rdf_type_triple_by_variable(variable_name)
-        triple_in_model = model.find_by_object_name(variable_name)
-        return if triple_in_model.nil?
-
-        rdf_type_triple_by_object(triple_in_model.object, variable_name)
-      end
-
-      def rdf_type_triple_by_object(object_in_model, variable_name)
-        case object_in_model
-        when Model::Subject
-          rdf_type_triple_by_subject(object_in_model, variable_name)
-        when Model::ValueList
-          rdf_type_triple_by_value_list(object_in_model.value, variable_name)
-        end
-      end
-
-      def rdf_type_triple_by_subject(subject_in_model, variable_name)
-        if subject_in_model.types.nil?
-          nil
-        else
-          variable = variable_instance(variable_name)
-          variable.rdf_types = subject_in_model.types
-          Triple.new(variable, 'rdf:type', variable)
-        end
-      end
-
-      def rdf_type_triple_by_value_list(value_list, variable_name)
-        rdf_types = []
-        value_list.each do |v|
-          next if !v.is_a?(Model::Subject) || v.types.empty?
-
-          rdf_types << v.types
-        end
-
-        if rdf_types.empty?
-          nil
-        else
-          variable = variable_instance(variable_name)
-          variable.rdf_types = rdf_types.flatten
-          Triple.new(variable, 'rdf:type', variable)
-        end
-      end
-
       def add_values_lines
         add_values_lines_by_parameters
         add_values_lines_for_rdf_type
@@ -383,10 +327,15 @@ class RDFConfig
           next if object.nil?
 
           value = "{{#{variable_name}}}" if template?
-          value = %("#{value}") if object.is_a?(RDFConfig::Model::Literal) && !object.has_lang_tag? && !object.has_data_type?
+          value = %("#{value}") if double_quote_value?(object)
 
           add_values_line(values_line("?#{variable_name}", value))
         end
+      end
+
+      def double_quote_value?(object)
+        (object.is_a?(RDFConfig::Model::Literal) && !object.value.is_a?(TrueClass) && !object.value.is_a?(FalseClass)) &&
+          !object.has_lang_tag? && !object.has_data_type?
       end
 
       def add_values_lines_for_rdf_type
@@ -401,11 +350,10 @@ class RDFConfig
         lines = []
 
         [Variable, BlankNode].each do |subject_class|
-          @required_triples.map(&:subject).select { |subject| subject.is_a?(subject_class) }.uniq.each do |subject|
+          sort_triples(@required_triples).map(&:subject).select { |subject| subject.is_a?(subject_class) }.uniq.each do |subject|
             case subject
             when Variable
               triples = filter_triples_by_subject(subject)
-              #puts triples.size
               lines += lines_by_subject(subject) unless triples.empty?
             else
               lines += lines_by_subject(subject)
@@ -417,8 +365,8 @@ class RDFConfig
       end
 
       def filter_triples_by_subject(subject)
-        subject_names = @required_triples.map(&:subject).select do |s|
-          s.is_a?(Variable)
+        subject_names = @required_triples.map(&:subject).select do |subject|
+          subject.is_a?(Variable)
         end.map(&:name).uniq
 
         @required_triples.select do |triple|
@@ -448,25 +396,25 @@ class RDFConfig
       def optional_lines
         lines = []
 
-        variables.each do |variable_name|
-          next if model.find_by_object_name(variable_name).nil?
+        @optional_triples.each do |optional_triples|
+          next if optional_triples.empty?
 
-          lines += optional_lines_by_variable_name(variable_name)
+          optional_triples.reject! { |triple| @required_triples.include?(triple) }
+          lines += generate_optional_lines(sort_triples(optional_triples))
         end
 
         lines
       end
 
-      def optional_lines_by_variable_name(variable_name)
-        optional_triples = optional_triple_by_variable_name(variable_name)
-        return [] if optional_triples.values.flatten.empty?
+      def generate_optional_lines(optional_triples)
+        return [] if optional_triples.empty?
 
         left_indent = ' ' * 4
         lines = ["#{left_indent}OPTIONAL {"]
-        optional_triples.each do |subject_name, triples|
-          next if triples.empty?
-
-          optional_triples[subject_name].each do |triple|
+        subject_names = optional_triples.map(&:subject).map(&:name).uniq
+        subject_names.each do |subject_name|
+          triples = optional_triples.select { |triple| triple.subject.name == subject_name }
+          triples.each do |triple|
             lines << triple.to_sparql(' ' * 4,
                                       triple.object == triples.first.object,
                                       triple.object == triples.last.object,
@@ -500,33 +448,47 @@ class RDFConfig
             add_triple(t, is_optional)
           end
         else
+          more_triples = []
           triple_for_subject_rdf_type = Triple.new(triple.subject, 'a', triple.subject)
-          object = model.find_object(triple.object.name)
-          triple_for_object_rdf_type = if object.is_a?(Model::Subject)
-                                         subject = subject_instance(object, object.types)
-                                         Triple.new(subject, 'a', subject)
-                                       else
-                                         nil
-                                       end
+          if model.subject?(triple.object.name)
+            object = model.find_subject(triple.object.name)
+            subject = subject_instance(object, object.types, true)
+            triple_for_object_rdf_type = Triple.new(subject, 'a', subject)
+          else
+            object = model.find_object(triple.object.name)
+            if object.is_a?(Model::Subject)
+              subject = subject_instance(object, object.types)
+              triple_for_object_rdf_type = Triple.new(subject, 'a', subject)
+              (variables & object.object_names).each do |variable_name|
+                next if variable_name == object.as_object_name
+
+                triple_in_model = model.find_by_object_name(variable_name)
+                next if triple_in_model.nil?
+
+                more_triples << Triple.new(subject_instance(object, triple_in_model.subject.types),
+                                           model.property_path(variable_name, object.as_object_value).join(PROPERTY_PATH_SEP),
+                                           variable_instance(variable_name))
+              end
+            else
+              triple_for_object_rdf_type = nil
+            end
+          end
           if is_optional
-            @optional_triples << triple_for_subject_rdf_type unless @optional_triples.include?(triple_for_subject_rdf_type)
-            @optional_triples << triple_for_object_rdf_type if !triple_for_object_rdf_type.nil? && !@optional_triples.include?(triple_for_object_rdf_type)
-            @optional_triples << triple unless @optional_triples.include?(triple)
+            @optional_triples_buf << triple_for_subject_rdf_type unless @optional_triples_buf.include?(triple_for_subject_rdf_type)
+            @optional_triples_buf << triple_for_object_rdf_type if !triple_for_object_rdf_type.nil? && !@optional_triples_buf.include?(triple_for_object_rdf_type)
+            @optional_triples_buf << triple unless @optional_triples_buf.include?(triple)
+            more_triples.each do |triple|
+              @optional_triples_buf << triple unless @optional_triples_buf.include?(triple)
+            end
           else
             @required_triples << triple_for_subject_rdf_type unless @required_triples.include?(triple_for_subject_rdf_type)
             @required_triples << triple_for_object_rdf_type if !triple_for_object_rdf_type.nil? && !@required_triples.include?(triple_for_object_rdf_type)
             @required_triples << triple unless @required_triples.include?(triple)
+            more_triples.each do |triple|
+              @required_triples << triple unless @required_triples.include?(triple)
+            end
           end
         end
-      end
-
-      def subject_in_model_by_variable_instance(variable)
-          @model.find_subject(variable.name) ||
-            @model.subjects.select { |subject| subject.as_object.values.map(&:name).include?(variable.name) }.first
-      end
-
-      def triples_has_subject?(triples, subject)
-        !triples.map(&:subject).select { |subj| subj == subject }.empty?
       end
 
       def subject_instance(subject, rdf_types = nil, use_subject_name = false)
@@ -541,9 +503,17 @@ class RDFConfig
           if use_subject_name
             v_inst = variable_instance(subject.name)
           else
-            v_inst = variable_instance(variable_name_for_sparql(subject.name))
+            if subject.used_as_object?
+              triple = model.find_by_object_name(subject.as_object_name)
+            else
+              triple = model.find_by_object_name(subject.name)
+            end
+            if triple.nil?
+              v_inst = variable_instance(subject.name)
+            else
+              v_inst = variable_instance(object_name(triple))
+            end
           end
-
           v_inst.rdf_types = rdf_types if !rdf_types.nil?
 
           v_inst
@@ -585,7 +555,7 @@ class RDFConfig
       end
 
       def all_triples
-        @required_triples + @optional_triples
+        @required_triples + @optional_triples.flatten
       end
 
       def template?
@@ -596,46 +566,69 @@ class RDFConfig
         "#{@@indent_text * (@depth + depth_increment)}"
       end
 
-      def hidden_variables_bak
-        []
-      end
-
       def optional?(object_name, start_subject = nil)
         model.predicate_path(object_name, start_subject).select { |p| !p.required? }.size > 0
       end
 
-      def optional_triple_by_variable_name(variable_name)
-        optional_triple = {}
-
-        triples_in_model = model.triples_by_object_name(variable_name)
-        subject_names = triples_in_model.map(&:subject).map(&:name)
-        triples_in_model.each do |triple_in_model|
-          unless optional_triple.key?(triple_in_model.subject.name)
-            optional_triple[triple_in_model.subject.name] = []
+      def object_name(triple)
+        case triple.object
+        when Model::Subject
+          if variables.include?(triple.object.as_object_name)
+            triple.object.as_object_name
+          else
+            triple.object.as_object_value
           end
-          @optional_triples.each do |ot|
-            next if @required_triples.include?(ot)
-
-            if ot.rdf_type?
-              if subject_names.include?(ot.subject.name) && triple_in_model.subject.name == ot.subject.name
-                optional_triple[triple_in_model.subject.name] << ot
-              end
+        when Model::ValueList
+          names = variables & triple.object.value.select { |v| v.is_a?(Model::Subject) }.map(&:as_object_name)
+          if names.empty?
+            names = variables & triple.object.value.select { |v| v.is_a?(Model::Subject) }.map(&:as_object_value)
+            if names.empty?
+              triple.object.name
             else
-              case triple_in_model.object
-              when Model::Subject
-                optional_triple[triple_in_model.subject.name] << ot if triple_in_model.object.name == ot.object.name
-              when Model::ValueList
-                if triple_in_model.object.value.map(&:name).include?(ot.object.name) && subject_names.include?(ot.object.name)
-                  optional_triple[triple_in_model.subject.name] << ot
-                end
+              names.first
+            end
+          else
+            names.first
+          end
+        else
+          triple.object.name
+        end
+      end
+
+      def sort_triples(triples)
+        subject_names = model.subject_names
+        triples.sort do |t1, t2|
+          if model.subject?(t1.subject.name) && model.subject?(t2.subject.name)
+            subject_names.index(t1.subject.name) <=> subject_names.index(t2.subject.name)
+          elsif model.subject?(t1.subject.name)
+            # t2.object is not subject, pure object
+            triple = model.find_by_object_name(t2.object.name)
+            if triple.nil?
+              0
+            else
+              if t1.subject.name == triple.subject.name
+                -1
               else
-                optional_triple[triple_in_model.subject.name] << ot if triple_in_model.object.name == ot.object.name
+                subject_names.index(t1.subject.name) <=> subject_names.index(triple.subject.name)
               end
             end
+          elsif model.subject?(t2.subject.name)
+            # t1.object is not subject, pure object
+            triple = model.find_by_object_name(t1.object.name)
+            if triple.nil?
+              0
+            else
+              if triple.subject.name == t2.subject.name
+                1
+              else
+                subject_names.index(triple.subject.name) <=> subject_names.index(t2.subject.name)
+              end
+            end
+          else
+            # both t1.object and t2.object is not subject, pure object
+            0
           end
         end
-
-        optional_triple
       end
     end
   end

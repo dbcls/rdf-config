@@ -53,12 +53,13 @@
         - x_pixels_quantity_unit: ssbdo:Pixel
       - sio:SIO_000300:
         - x_pixels_quantity_value: "600"
-      - []:
-        - a: ssbdo:LengthQuantity
-        - sio:SIO_000300:
-          - x_length_quantity_value: "0.105"
-        - sio:SIO_000221:
-          - x_length_quantity_unit: obo:UO_0000017 #um
+      - ssbdo:lengthPerPixel:
+        - []:
+          - a: ssbdo:LengthQuantity
+          - sio:SIO_000300:
+            - x_length_quantity_value: "0.105"
+          - sio:SIO_000221:
+            - x_length_quantity_unit: obo:UO_0000017 #um
   - ssbdo:pixelsSizeYOfMember:
     - []:
       - a: ssbdo:PixelsQuantity
@@ -66,12 +67,13 @@
         - y_pixels_quantity_unit: ssbdo:Pixel
       - sio:SIO_000300:
         - y_pixels_quantity_value: "600"
-      - []:
-        - a: ssbdo:LengthQuantity
-        - sio:SIO_000300:
-          - y_length_quantity_value: "0.105"
-        - sio:SIO_000221:
-          - y_length_quantity_unit: obo:UO_0000017 #um
+      - ssbdo:lengthPerPixel:
+        - []:
+          - a: ssbdo:LengthQuantity
+          - sio:SIO_000300:
+            - y_length_quantity_value: "0.105"
+          - sio:SIO_000221:
+            - y_length_quantity_unit: obo:UO_0000017 #um
   - ssbdo:pixelsSizeZOfMember:
     - []:
       - a: ssbdo:PixelsQuantity
@@ -79,23 +81,25 @@
         - z_pixels_quantity_unit: ssbdo:Pixel
       - sio:SIO_000300:
         - z_pixels_quantity_value: "600"
-      - []:
-        - a: ssbdo:LengthQuantity
-        - sio:SIO_000300:
-          - z_length_quantity_value: "0.105"
-        - sio:SIO_000221:
-          - z_length_quantity_unit: obo:UO_0000017 #um
+      - ssbdo:lengthPerPixel:
+        - []:
+          - a: ssbdo:LengthQuantity
+          - sio:SIO_000300:
+            - z_length_quantity_value: "0.105"
+          - sio:SIO_000221:
+            - z_length_quantity_unit: obo:UO_0000017 #um
   - ssbdo:pixelsSizeTOfMember:
     - []:
       - a: ssbdo:TimeslicesQuantity
       - sio:SIO_000300:
         - timeslices_quantity_value: "180"
-      - []:
-        - a: ssbdo:TimeintervalQuantity
-        - sio:SIO_000300:
-          - timeslices_quantity_value: "40"
-        - sio:SIO_000221:
-          - timeslices_quantity_unit: obo:UO_0000029 #second
+      - ssbdo:intervalPerSlice:
+        - []:
+          - a: ssbdo:TimeintervalQuantity
+          - sio:SIO_000300:
+            - interval_quantity_value: "40"
+          - sio:SIO_000221:
+            - interval_quantity_unit: obo:UO_0000029 #second
   - ssbdo:pixelsType:
     - pixels_type: "uint16"
   - obo:RO_0002162: # in taxon
