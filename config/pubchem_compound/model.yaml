@@ -1,0 +1,251 @@
+# 4.1 PubChem Compound
+
+
+- Compound compound:CID2519:
+  #  - a:  #different from molecule to molecule
+  #    - obo:CHEBI_27732
+  - obo:has_role*:
+    - role: vocab:FDAApprovedDrugs
+  - vocab:is_active_ingredient_of*:
+    - product: ndfrt:N0000145919
+  - cheminf:CHEMINF_000461*: # is stereoisomer of
+    - stereoisomer: Compound
+  - cheminf:CHEMINF_000455*: # is isotopologue of
+      - isotopomer:  Compound
+  - vocab:has_parent?: #object example is from caffeine monohydrate
+    - parent_compound:  Compound
+  - cheminf:CHEMINF_000478*: # has_component
+    - component_compound:  Compound
+  - cheminf:CHEMINF_000462*: # has same connectivity as (object example is from L-Glutamic Acid)
+    - compound_with_same_connectivity:  Compound
+  # Attributes : See # 4.3 Descriptor
+  - sio:has-attribute+:
+    - compound_identifier: CompoundIdentifier
+    - preferred_iupac_name: PreferredIUPACName
+    - molecular_formula: MolecularFormula
+    - molecular_weight: MolecularWeight
+    - mono_isotopic_weight: MonoIsotopicWeight
+    - exact_mass: ExactMass
+    - iupac_inchi: IUPACInChI
+    - isomeric_smiles: IsomericSMILES
+    - canonical_smiles: CanonicalSMILES
+    - non_hydrogen_atom_count: NonHydrogenAtomCount
+    - isotope_atom_count: IsotopeAtomCount
+    - defined_atom_stereo_count: DefinedAtomStereoCount
+    - undefined_atom_stereo_count: UndefinedAtomStereoCount
+    - defined_bond_stereo_count: DefinedBondStereoCount
+    - undefined_bond_stereo_count: UndefinedBondStereoCount
+    - hydrogen_bond_acceptor_count: HydrogenBondAcceptorCount
+    - hydrogen_bond_donor_count: HydrogenBondDonorCount
+    - rotatable_bond_count: RotatableBondCount
+    - covalent_unit_count: CovalentUnitCount
+    - structure_complexity: StructureComplexity
+    - xlogp3: XLogP3
+    - tpsa: TPSA
+    - total_formal_charge: TotalFormalCharge
+  # link to wikidata
+  - skos:closeMatch*:
+    - wikidata: wikidata:Q60235
+
+# 4.3 PubChem Descriptors
+## cheminf:CHEMINF_000140 (Compound Identifier)
+- CompoundIdentifier descr:CID2519_Compound_Identifier:
+  - a: cheminf:CHEMINF_000140
+  - sio:has-value:
+    - compound_identifier_value: 2519
+
+## cheminf:CHEMINF_000382 (Preferred IUPAC Name)
+- PreferredIUPACName descr:CID2519_Preferred_IUPAC_Name:
+  - a: cheminf:CHEMINF_000382
+  - sio:has-value:
+    - iupac_name: "1,3,7-trimethylpurine-2,6-dione"
+
+## cheminf:CHEMINF_000335 (Molecular Formula)
+- MolecularFormula descr:CID2519_Molecular_Formula:
+  - a: cheminf:CHEMINF_000335
+  - sio:has-value:
+    - formula: "C8H10N4O2"
+
+## cheminf:CHEMINF_000334 (Molecular Weight)
+- MolecularWeight descr:CID32775_Molecular_Weight:
+  - a: cheminf:CHEMINF_000334
+  - sio:has-unit:
+    - molecular_weight_unit: obo:UO_0000055 # molar mass unit
+  - sio:has-value:
+    - molecular_weight_value: '"111.14"^^xsd:float'
+
+## cheminf:CHEMINF_000337 (Mono Isotopic Weight)
+- MonoIsotopicWeight descr:CID32775_Mono_Isotopic_Weight:
+  - a: cheminf:CHEMINF_000337
+  - sio:has-unit:
+    - mono_isotopic_weight_unit: obo:UO_0000055 # molar mass unit
+  - sio:has-value:
+    - mono_isotopic_weight_value: '"111.068"^^xsd:float'
+
+## cheminf:CHEMINF_000338 (Exact Mass)
+- ExactMass descr:CID32775_Exact_Mass:
+  - a: cheminf:CHEMINF_000338
+  - sio:has-unit:
+    - exact_mass_unit: obo:UO_0000055 # molar mass unit
+  - sio:has-value:
+    - exact_mass_value: '"111.068"^^xsd:float'
+
+## cheminf:CHEMINF_000396 (IUPAC InChI)
+- IUPACInChI descr:CID2519_IUPAC_InChI:
+  - a: cheminf:CHEMINF_000396
+  - sio:has-value:
+    - inchi: "InChI=1S/C8H10N4O2/c1-10-4-9-6-5(10)7(13)12(3)8(14)11(6)2/h4H,1-3H3"
+
+## cheminf:CHEMINF_000376 (Canonical SMILES)
+- CanonicalSMILES descr:CID2519_Canonical_SMILES:
+  - a: cheminf:CHEMINF_000376
+  - sio:has-value:
+    - canonical_smiles_value: "CN1C=NC2=C1C(=O)N(C(=O)N2C)C"
+
+## cheminf:CHEMINF_000379 (Isomeric SMILES)
+- IsomericSMILES descr:CID2519_Isomeric_SMILES:
+  - a: cheminf:CHEMINF_000379
+  - sio:has-value:
+    - isomeric_smiles_value: "CN1C=NC2=C1C(=O)N(C(=O)N2C)C"
+
+## cheminf:CHEMINF_000373 (Heavy (Non-hydrogen) Atom Count)
+- NonHydrogenAtomCount descr:CID2519_Non-hydrogen_Atom_Count:
+  - a: cheminf:CHEMINF_000373
+  - sio:has-value:
+    - non_hydrogen_atom_count_value: '"14"^^xsd:int'
+
+## cheminf:CHEMINF_000372 (Isotope Atom Count)
+- IsotopeAtomCount descr:CID2519_Isotope_Atom_Count:
+  - a: cheminf:CHEMINF_000372
+  - sio:has-value:
+    - isotope_atom_count_value: '"0"^^xsd:int'
+
+## cheminf:CHEMINF_000370 (Defined Atom Stereocenter Count)
+- DefinedAtomStereoCount descr:CID2519_Defined_Atom_Stereo_Count:
+  - a: cheminf:CHEMINF_000370
+  - sio:has-value:
+    - defined_atom_stereo_count_value: '"0"^^xsd:int'
+
+## cheminf:CHEMINF_000374 (Undefined Atom Stereocenter Count)
+- UndefinedAtomStereoCount descr:CID2519_Undefined_Atom_Stereo_Count:
+  - a: cheminf:CHEMINF_000374
+  - sio:has-value:
+    - undefined_atom_stereo_count_value: '"0"^^xsd:int'
+
+## cheminf:CHEMINF_000371 (Defined Bond Stereocenter Count)
+- DefinedBondStereoCount descr:CID2519_Defined_Bond_Stereo_Count:
+  - a: cheminf:CHEMINF_000371
+  - sio:has-value:
+    - defined_bond_stereo_count_value: '"0"^^xsd:int'
+
+## cheminf:CHEMINF_000375 (Undefined Bond Stereocenter Count)
+- UndefinedBondStereoCount descr:CID2519_Undefined_Bond_Stereo_Count:
+  - a: cheminf:CHEMINF_000375
+  - sio:has-value:
+    - undefined_bond_stereo_count_value: '"0"^^xsd:int'
+
+## cheminf:CHEMINF_000388 (Hydrogen Bond Acceptor Count)
+- HydrogenBondAcceptorCount descr:CID2519_Hydrogen_Bond_Acceptor_Count:
+  - a: cheminf:CHEMINF_000388
+  - sio:has-value:
+    - hydrogen_bond_acceptor_count_value: '"1"^^xsd:int'
+
+## cheminf:CHEMINF_000387 (Hydrogen Bond Donor Count)
+- HydrogenBondDonorCount descr:CID2519_Hydrogen_Bond_Donor_Count:
+  - a: cheminf:CHEMINF_000387
+  - sio:has-value:
+    - hydrogen_bond_donor_count_value: '"0"^^xsd:int'
+
+## cheminf:CHEMINF_000389 (Rotatable Bond Count)
+- RotatableBondCount descr:CID2519_Rotatable_Bond_Count:
+  - a: cheminf:CHEMINF_000389
+  - sio:has-value:
+    - rotatable_bond_count_value: '"0"^^xsd:int'
+
+## cheminf:CHEMINF_000369 (Covalent Unit Count)
+- CovalentUnitCount:
+  - a: cheminf:CHEMINF_000369
+  - sio:has-value:
+    - covalent_unit_count_value: '"1"^^xsd:int'
+
+## cheminf:CHEMINF_000390 (Structure Complexity)
+- StructureComplexity:
+  - a: cheminf:CHEMINF_000390
+  - sio:has-value:
+    - structure_complexity_value: '"293"^^xsd:float'
+
+## cheminf:CHEMINF_000392 (TPSA)
+- TPSA descr:CID32775_TPSA:
+  - a: cheminf:CHEMINF_000392
+  - sio:has-unit:
+    - tpsa_unit: obo:UO_0000324 # square angstrom
+  - sio:has-value:
+    - tpsa_value: '"18.1"^^xsd.float'
+
+## cheminf:CHEMINF_000395 (XLogP3)
+- XLogP3 descr:CID2519_XLogP3:
+  - a: cheminf:CHEMINF_000395
+  - sio:has-value:
+    - xlogp3_value: '"-0.1"^^xsd:float'
+
+## cheminf:CHEMINF_000336 (Total Formal Charge)
+- TotalFormalCharge descr:CID2519_Total_Formal_Charge:
+    - a: cheminf:CHEMINF_000336 # Total Formal Charge
+    - sio:has-value:
+      - total_formal_charge_value: '"0"^^xsd:int'
+
+# 4.4 PubChem InChIKey
+## cheminf:CHEMINF_000399 (IUPAC InChIKey)
+- InChIKey  inchikey:RYYVLZVUVIJVGH-UHFFFAOYSA-N:
+  - a: cheminf:CHEMINF_000399
+  - dcterms:subject*:
+    - mesh_concept_with_inchikey: mesh:M0003138
+  - sio:has-value+:
+      - inchikey_value: "RYYVLZVUVIJVGH-UHFFFAOYSA-N"
+  - sio:is-attribute-of:
+    - compound_with_inchikey: Compound
+
+# 4.5 PubChem Synonym
+## cheminf:CHEMINF_000412 (ChEMBL identifier)
+- ChEMBLID:
+  - a: cheminf:CHEMINF_000412
+  - dcterms:subject*:
+    - mesh_concept_with_chembl_id: mesh:M0003138
+  - sio:is-attribute-of:
+    - compound_with_chembl_id: Compound
+  - sio:has-value+:
+    - chembl_id_value: "CHEMBL113"
+
+## cheminf:CHEMINF_000407 (ChEBI identifier) "CHEBI:27732"
+- ChEBIID:
+  - a: cheminf:CHEMINF_000407
+  - dcterms:subject*:
+    - mesh_concept_with_chebi_id: mesh:M0003138
+  - sio:is-attribute-of:
+    - compound_with_chebi_id: Compound
+  - sio:has-value+:
+    - chebi_id_value: "CHEBI:27732"
+
+## cheminf:CHEMINF_000562 (International nonproprietary name, INN)
+## used for obtaining WHO ATC code
+- INN :
+  - a: cheminf:CHEMINF_000562
+  - sio:is-attribute-of:
+    - compound_with_inn: Compound
+  - dcterms:subject*:
+    - atc_code: ATC
+    - mesh_concept_with_inn: mesh:M0000115
+  - sio:has-value+:
+    - international_nonproprietary_name: "paracetamol"
+
+# ATC code
+- ATC concept:ATC_N02BE01:
+  - a: skos:concept
+  - skos:prefLabel:
+    - atc_label: '"paracetamol"@en'
+  - skos:broader?:
+    - parent_atc: ATC
+  - pav:importedFrom:
+    - atc_source: source:WHO
+  - skos:inScheme:
+    - atc_scheme: concept:ATC
