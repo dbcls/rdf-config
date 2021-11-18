@@ -20,29 +20,30 @@
     - compound_with_same_connectivity:  Compound
   # Attributes : See # 4.3 Descriptor
   - sio:has-attribute+:
-    - compound_identifier: CompoundIdentifier
-    - preferred_iupac_name: PreferredIUPACName
-    - molecular_formula: MolecularFormula
-    - molecular_weight: MolecularWeight
-    - mono_isotopic_weight: MonoIsotopicWeight
-    - exact_mass: ExactMass
-    - iupac_inchi: IUPACInChI
-    - isomeric_smiles: IsomericSMILES
-    - canonical_smiles: CanonicalSMILES
-    - non_hydrogen_atom_count: NonHydrogenAtomCount
-    - isotope_atom_count: IsotopeAtomCount
-    - defined_atom_stereo_count: DefinedAtomStereoCount
-    - undefined_atom_stereo_count: UndefinedAtomStereoCount
-    - defined_bond_stereo_count: DefinedBondStereoCount
-    - undefined_bond_stereo_count: UndefinedBondStereoCount
-    - hydrogen_bond_acceptor_count: HydrogenBondAcceptorCount
-    - hydrogen_bond_donor_count: HydrogenBondDonorCount
-    - rotatable_bond_count: RotatableBondCount
-    - covalent_unit_count: CovalentUnitCount
-    - structure_complexity: StructureComplexity
-    - xlogp3: XLogP3
-    - tpsa: TPSA
-    - total_formal_charge: TotalFormalCharge
+    - molecule_attribute: [
+        CompoundIdentifier,
+        PreferredIUPACName,
+        MolecularFormula,
+        MolecularWeight,
+        MonoIsotopicWeight,
+        ExactMass,
+        Inchi,
+        IsomericSMILES,
+        CanonicalSMILES,
+        NonHydrogenAtomCount,
+        IsotopeAtomCount,
+        DefinedAtomStereoCount,
+        UndefinedAtomStereoCount,
+        DefinedBondStereoCount,
+        UndefinedBondStereoCount,
+        HydrogenBondAcceptorCount,
+        HydrogenBondDonorCount,
+        RotatableBondCount,
+        CovalentUnitCount,
+        StructureComplexity,
+        XLogP3,
+        TPSA,
+        TotalFormalCharge]
   # link to wikidata
   - skos:closeMatch*:
     - wikidata: wikidata:Q60235
@@ -91,10 +92,10 @@
     - exact_mass_value: '"111.068"^^xsd:float'
 
 ## sio:CHEMINF_000396 (IUPAC InChI)
-- IUPACInChI descr:CID2519_IUPAC_InChI:
+- Inchi descr:CID2519_IUPAC_InChI:
   - a: sio:CHEMINF_000396
   - sio:has-value:
-    - inchi: "InChI=1S/C8H10N4O2/c1-10-4-9-6-5(10)7(13)12(3)8(14)11(6)2/h4H,1-3H3"
+    - inchi_value: "InChI=1S/C8H10N4O2/c1-10-4-9-6-5(10)7(13)12(3)8(14)11(6)2/h4H,1-3H3"
 
 ## sio:CHEMINF_000376 (Canonical SMILES)
 - CanonicalSMILES descr:CID2519_Canonical_SMILES:
@@ -198,7 +199,7 @@
 ## sio:CHEMINF_000399 (IUPAC InChIKey)
 - InChIKey  inchikey:RYYVLZVUVIJVGH-UHFFFAOYSA-N:
   - a: sio:CHEMINF_000399
-  - dcterms:subject*:
+  - dcterms:subject+:
     - mesh_concept_with_inchikey: mesh:M0003138
   - sio:has-value+:
       - inchikey_value: "RYYVLZVUVIJVGH-UHFFFAOYSA-N"
@@ -209,7 +210,7 @@
 ## sio:CHEMINF_000412 (ChEMBL identifier)
 - ChEMBLID:
   - a: sio:CHEMINF_000412
-  - dcterms:subject*:
+  - dcterms:subject+:
     - mesh_concept_with_chembl_id: mesh:M0003138
   - sio:is-attribute-of:
     - compound_with_chembl_id: Compound
@@ -219,7 +220,7 @@
 ## sio:CHEMINF_000407 (ChEBI identifier) "CHEBI:27732"
 - ChEBIID:
   - a: sio:CHEMINF_000407
-  - dcterms:subject*:
+  - dcterms:subject+:
     - mesh_concept_with_chebi_id: mesh:M0003138
   - sio:is-attribute-of:
     - compound_with_chebi_id: Compound
@@ -232,9 +233,10 @@
   - a: sio:CHEMINF_000562
   - sio:is-attribute-of:
     - compound_with_inn: Compound
-  - dcterms:subject*:
-    - atc_code: ATC
-    - mesh_concept_with_inn: mesh:M0000115
+  - dcterms:subject+:
+    - inn_subject: [ATC, MeshConcept]
+    #- atc_code: ATC
+    #- mesh_concept_with_inn: mesh:M0000115
   - sio:has-value+:
     - international_nonproprietary_name: "paracetamol"
 
@@ -249,3 +251,7 @@
     - atc_source: source:WHO
   - skos:inScheme:
     - atc_scheme: concept:ATC
+
+# MeSH Concept
+- MeshConcept:
+  - a: meshv:Concept
