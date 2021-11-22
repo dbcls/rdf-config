@@ -247,7 +247,7 @@ LIMIT 100
 
 生成されるスタンザは stanza.yaml で指定した `output_dir` に出力される。
 
-例： HGNC のスタンザを生成
+例： RefEx のスタンザを生成
 
 ```
 % rdf-config --config config/refex --stanza refex_entry
@@ -265,12 +265,14 @@ Stanza template has been generated successfully.
 To view the stanza, run (cd stanza; npx togostanza serve) and open http://localhost:8080/
 ```
 
-このあと、表示されている通りコマンドを実行し、ブラウザで http://localhost:8080/ 表示して確認する。
+このあと、表示されている通りコマンドを実行し、
 
 ```
 % cd stanza
 % npx togostanza serve
 ```
+
+ブラウザで http://localhost:8080/ 表示して確認する。
 
 ![RefEx stanza](./figure/refex_stanza.png)
 
