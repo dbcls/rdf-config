@@ -18,6 +18,53 @@ $ rdf-config --config 設定ファイルのディレクトリ 実行オプショ
 | --grasp | Graspの設定ファイル（GraphQLのスキーマファイルとクエリファイル）を生成する。<br />Graspの設定ファイルは、カレントディレクトリ配下の「grasp/設定ファイルディレクトリ名」というディレクトリに生成される。 |
 | --shex | ShExを標準出力に出力する。 |
 
+### オプションごとの設定名の表示
+
+#### `--sparql`
+
+```
+% rdf-config --config config/db --sparql
+```
+
+のようにオプションを省略することで、下記のように設定可能なクエリ名のリストおよびエンドポイント名のリストが標準エラー出力に表示される。
+
+```
+Usage: --sparql query_name[:endpoint_name]
+Available SPARQL query names: sparqlクエリ名1, sparqlクエリ名2
+Available SPARQL endpoint names: endpoint名1, endpoint名2
+```
+
+#### `--schema`
+
+schema.yaml が作られている場合、
+
+```
+% rdf-config --config config/db --schema
+```
+
+のようにオプションを省略することで、設定可能なスキーマ名のリストおよび指定可能な図の種類のリストが標準エラー出力に表示される。
+
+```
+Usage: --schema schema_name[:type]
+Available schema names: schema名1, schema名2, schema名3
+Avanlable schema types: nest, table, arc
+```
+
+schema.yaml がない場合、デフォルトのスキーマ図が生成される。
+
+
+#### `--stanza`
+
+```
+% rdf-config --config config/db --stanza
+```
+
+のようにオプションを省略することで、下記のように設定可能なスタンザ名のリストが標準エラー出力に表示される。
+
+```
+Usage: --stanza stanza_name
+Available stanza names: stanza名1, stanza名2
+```
 
 ### SPARQLの生成について
 
