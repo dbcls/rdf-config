@@ -48,13 +48,13 @@
   - cco:iracClassification*:
     - molecule_irac_classification: "C10"
   - cco:moleculeXref*:
-    - molecule_xref: MoleculeXref
+    - molecule_xref: [SurechemblCrossReference, ActorCrossReference, PubchemCrossReference, NikkajiCrossReference, IbmPatentStructuresCrossReference, ReactomeCrossReference, GoProcessCrossReference, GoFunctionCrossReference, GoComponentCrossReference, PfamCrossReference, UniprotCrossReference, InterproCrossReference, IntactCrossReference, WikipediaCrossReference, DrugBankCrossReference, ZinkCrossReference, EmoleculesCrossReference, PDBCrossReference, PDBeCrossReference, MculeCrossReference, MolPortCrossReference, EnsemblCrossReference, FdaSrsRef, NmrShiftDb2Ref, PubchemThomPharmRef, ChebiRef, AtlasRef, KeggLigandRef, IupharRef, HmdbRef, SelleckRef, ReconRef, PharmGkbRef, PubchemDotfRef, LincsRef, TimbalRef, CGDRef, PharmgkbRef, EnzymeClassRef]
   - cco:substanceType:
     - molecule_substance_type: "Small molecule"
   - skos:exactMatch*:
     - molecule_exact_match: obo:CHEBI_8417   # chembl_molecule:CHEMBL1256399
   - sio:SIO_000008*:
-    - molecule_has_attribute: MoleculeAttribute
+    - molecule_has_attribute: [StandardInchi, StandardInchiKey, CanonicalSmiles, ALogP, MolecularWeightOfTheCorrespondingFreeBase, HydrogenBondAcceptors, HydrogenBondDonors, PolarSurfaceArea, RotatableBonds, RuleOfThreePassesDescriptor, RuleOfFiveViolations, ChemAxonMostBasicPka, ChemAxonLogP, ChemAxonLogD, MolecularSpecies, FullMolecularWeight, AromaticRingsCount, HeavyAtoms, QEDWeightedScore, FullMolFormula, MonoisotopicMass, ChemAxonMostAcidicPka]
   - foaf:depiction:
     - molecule_image: Image
 
@@ -62,55 +62,138 @@
   - a: foaf:Image
   - rdfs:label:
     - image_label: "SVG Image Depiction of CHEMBL6939"
-    
-- MoleculeAttribute <http://rdf.ebi.ac.uk/resource/chembl/molecule/CHEMBL6939#standard_inchi>:
-  - a: cheminf:CHEMINF_000113   # standard_inchi
-  - a: cheminf:CHEMINF_000059   # standard_inchi_key
-  - a: cheminf:CHEMINF_000018   # canonical_smiles
-  - a: cheminf:CHEMINF_000251   # ALogP
-  - a: cheminf:CHEMINF_000350   # molecular weight of the corresponding free base
-  - a: cheminf:CHEMINF_000245   # hydrogen_bond_acceptors
-  - a: cheminf:CHEMINF_000244   # hydrogen_bond_donors
-  - a: cheminf:CHEMINF_000307   # polar surface area descriptor
-  - a: cheminf:CHEMINF_000254   # rotatable_bonds
-  - a: cheminf:CHEMINF_000315   # rule of three passes descriptor
-  - a: cheminf:CHEMINF_000312   # rule of five violations descriptor
-  - a: cheminf:CHEMINF_000195   # ChemAxonMostBasicPka
-  - a: cheminf:CHEMINF_000251   # ChemAxonLogP
-  - a: cheminf:CHEMINF_000322   # ChemAxonLogD
-  - a: cheminf:CHEMINF_000326   # molecular species at pH 7.4 descriptor
-  - a: cheminf:CHEMINF_000216   # FullMolecularWeight
-  - a: cheminf:CHEMINF_000381   # AromaticRingsCount
-  - a: cheminf:CHEMINF_000300   # HeavyAtoms
-  - a: cheminf:CHEMINF_000431   # weighted quantitative estimate of drug-likeness
-  - a: cheminf:CHEMINF_000042   # FullMolFormula
-  - a: cheminf:CHEMINF_000218   # MonoisotopicMass
-  - a: sio:CHEMINF_000195   # ChemAxonMostAcidicPka
+- StandardInchi <http://rdf.ebi.ac.uk/resource/chembl/molecule/CHEMBL6939#standard_inchi>:
+  - a: cheminf:CHEMINF_000113
   - cheminf:SIO_000300:   # has value
-    - molecule_has_value: "InChI=1S/C17H27NO3/c1-13(2)18-9-16(19)12-21-17-7-5-15(6-8-17)11-20-10-14-3-4-14/h5-8,13-14,16,18-19H,3-4,9-12H2,1-2H3"
-        # "UOKWVICUCYNXFO-UHFFFAOYSA-N"
-        # "CC(C)NCC(O)COc1ccc(COCC2CC2)cc1"
-        # "2.35"
-        # "293.41"
-        # "4.0"
-        # "2.0"
-        # "50.72"
-        # "10.0"
-        # "N"
-        # "0.0"
-        # "9.67"
-        # "2.25"
-        # "0.03"
-        # "BASE"
-        # "293.41"
-        # "1.0"
-        # "21.0"
-        # "0.7"
-        # "C17H27NO3"
-        # "293.1991"
-        # "13.67"
-  - rdfs:label*:
-    - molecule_value_label: "CHEMBL6939 Standard InChi"
+    - inchi_value: "InChI=1S/C17H27NO3/c1-13(2)18-9-16(19)12-21-17-7-5-15(6-8-17)11-20-10-14-3-4-14/h5-8,13-14,16,18-19H,3-4,9-12H2,1-2H3"
+  - rdfs:label+:
+    - inchi_label: "CHEMBL6939 Standard InChi"
+- StandardInchiKey <http://rdf.ebi.ac.uk/resource/chembl/molecule/CHEMBL6939#standard_inchi_key>:
+  - a: cheminf:CHEMINF_000059
+  - cheminf:SIO_000300: # has value
+    - inchi_key_value: "UOKWVICUCYNXFO-UHFFFAOYSA-N"
+  - rdfs:label+:
+    - inchi_key_label: "CHEMBL6939 Standard InChi Key: UOKWVICUCYNXFO-UHFFFAOYSA-N"
+- CanonicalSmiles <http://rdf.ebi.ac.uk/resource/chembl/molecule/CHEMBL6939#canonical_smiles>:
+  - a: cheminf:CHEMINF_000018
+  - cheminf:SIO_000300: # has value
+    - canonical_smiles_value: "CC(C)NCC(O)COc1ccc(COCC2CC2)cc1"
+  - rdfs:label+:
+    - canonical_smiles_label: "CHEMBL6939 Canonical Smiles"
+- ALogP <http://rdf.ebi.ac.uk/resource/chembl/molecule/CHEMBL6939#alogp>:
+  - a: cheminf:CHEMINF_000251
+  - cheminf:SIO_000300: # has value
+    - logp_value: "2.35"
+  - rdfs:label+:
+    - logp_label: "CHEMBL6939 ALogP:2.35"
+- MolecularWeightOfTheCorrespondingFreeBase <http://rdf.ebi.ac.uk/resource/chembl/molecule/CHEMBL6939#mw_freebase>:
+  - a: cheminf:CHEMINF_000350 # molecular weight of the corresponding free base
+  - cheminf:SIO_000300: # has value
+    - molecular_weight_freebase_value: "293.41"
+  - rdfs:label+:
+    - molecular_weight_freebase_label: "CHEMBL6939 Freebase Molecular Weight: 293.41"
+- HydrogenBondAcceptors <http://rdf.ebi.ac.uk/resource/chembl/molecule/CHEMBL6939#hba>:
+  - a: cheminf:CHEMINF_000245
+  - cheminf:SIO_000300: # has value
+    - hydrogen_bond_acceptors_value: "4.0"
+  - rdfs:label+:
+    - hydrogen_bond_acceptors_label: "CHEMBL6939 Hydrogen Bond Acceptors: 4"
+- HydrogenBondDonors <http://rdf.ebi.ac.uk/resource/chembl/molecule/CHEMBL6939#hbd>:
+  - a: cheminf:CHEMINF_000244
+  - cheminf:SIO_000300: # has value
+    - hydrogen_bond_donors_value: "2.0"
+  - rdfs:label+:
+    - hydrogen_bond_donors_label: "CHEMBL6939 Hydrogen Bond Donors: 2"
+- PolarSurfaceArea <http://rdf.ebi.ac.uk/resource/chembl/molecule/CHEMBL6939#psa>:
+  - a: cheminf:CHEMINF_000307 # polar surface area descriptor
+  - cheminf:SIO_000300: # has value
+    - polar_surface_area_value: "50.72"
+  - rdfs:label+:
+    - polar_surface_area_label: "CHEMBL6939 Polar Surface Area: 50.72"
+- RotatableBonds <http://rdf.ebi.ac.uk/resource/chembl/molecule/CHEMBL6939#rtb>:
+  - a: cheminf:CHEMINF_000254
+  - cheminf:SIO_000300: # has value
+    - rotatable_bonds_value: "10.0"
+  - rdfs:label+:
+    - rotatable_bonds_label: "CHEMBL6939 Rotatable Bonds: 10"
+- RuleOfThreePassesDescriptor <http://rdf.ebi.ac.uk/resource/chembl/molecule/CHEMBL6939#ro3_pass>:
+  - a: cheminf:CHEMINF_000315 # rule of three passes descriptor
+  - cheminf:SIO_000300: # has value
+    - rule_of_three_passes_value: "N"
+  - rdfs:label+:
+    - rule_of_three_passes_label: "CHEMBL6939 RO3 Pass: N"
+- RuleOfFiveViolations <http://rdf.ebi.ac.uk/resource/chembl/molecule/CHEMBL6939#num_ro5_violations>:
+  - a: cheminf:CHEMINF_000312 # rule of five violations descriptor
+  - cheminf:SIO_000300: # has value
+    - rule_of_five_violations_value: "0.0"
+  - rdfs:label+:
+    - rule_of_five_violations_label: "CHEMBL6939 RO5 Violations: 0"
+- ChemAxonMostBasicPka <http://rdf.ebi.ac.uk/resource/chembl/molecule/CHEMBL6939#cx_most_bpka>:
+  - a: cheminf:CHEMINF_000195
+  - cheminf:SIO_000300: # has value
+    - cx_most_bpka_value: "9.67"
+  - rdfs:label+:
+    - cx_most_bpka_label: "CHEMBL6939 ChemAxon Most Basic pKa: 9.67"
+- ChemAxonLogP <http://rdf.ebi.ac.uk/resource/chembl/molecule/CHEMBL6939#cx_logp>:
+  - a: cheminf:CHEMINF_000251
+  - cheminf:SIO_000300:
+    - cx_logp_value: "2.25"
+  - rdfs:label+:
+    - cx_logp_label: "CHEMBL6939 ChemAxon LogP: 2.25"
+- ChemAxonLogD <http://rdf.ebi.ac.uk/resource/chembl/molecule/CHEMBL6939#cx_logd>:
+  - a: cheminf:CHEMINF_000322 # logD descriptor
+  - cheminf:SIO_000300: # has value
+    - cx_logd_value: "0.03"
+  - rdfs:label+:
+    - cx_logd_label: "CHEMBL6939 ChemAxon LogD: 0.03"
+- MolecularSpecies <http://rdf.ebi.ac.uk/resource/chembl/molecule/CHEMBL6939#molecular_species>:
+  - a: cheminf:CHEMINF_000326 # molecular species at pH 7.4 descriptor
+  - cheminf:SIO_000300: # has value
+    - molecular_species_value: "BASE"
+  - rdfs:label+:
+    - molecular_species_label: "CHEMBL6939 Molecular Species: BASE"
+- FullMolecularWeight <http://rdf.ebi.ac.uk/resource/chembl/molecule/CHEMBL6939#full_mwt>:
+  - a: cheminf:CHEMINF_000216
+  - cheminf:SIO_000300: # has value
+    - full_mwt_value: "293.41"
+  - rdfs:label+:
+    - full_mwt_label: "CHEMBL6939 Full Molecular Weight: 293.41"
+- AromaticRingsCount <http://rdf.ebi.ac.uk/resource/chembl/molecule/CHEMBL6939#aromatic_rings>:
+  - a: cheminf:CHEMINF_000381 # aromatic cycle count
+  - cheminf:SIO_000300: # has value
+    - aromatic_rings_count_value: "1.0"
+  - rdfs:label+:
+    - aromatic_rings_count_label: "CHEMBL6939 Aromatic Rings: 1"
+- HeavyAtoms <http://rdf.ebi.ac.uk/resource/chembl/molecule/CHEMBL6939#heavy_atoms>:
+  - a: cheminf:CHEMINF_000300
+  - cheminf:SIO_000300: # has value
+    - heavy_atoms_value: "21.0"
+  - rdfs:label+:
+    - heavy_atoms_label: "CHEMBL6939 Heavy Atoms: 21"
+- QEDWeightedScore <http://rdf.ebi.ac.uk/resource/chembl/molecule/CHEMBL6939#qed_weighted>:
+  - a: cheminf:CHEMINF_000431 # weighted quantitative estimate of drug-likeness
+  - cheminf:SIO_000300: # has value
+    - qed_weighted_score: "0.7"
+  - rdfs:label+:
+    - qed_weighted_score_label: "CHEMBL6939 QED Weighted Score: 0.7"
+- FullMolFormula <http://rdf.ebi.ac.uk/resource/chembl/molecule/CHEMBL6939#full_molformula>:
+  - a: cheminf:CHEMINF_000042
+  - cheminf:SIO_000300: # has value
+    - molecular_formula_value: "C17H27NO3"
+  - rdfs:label+:
+    - molecular_formula_label: "CHEMBL6939 Molecular Formula: C17H27NO3"
+- MonoisotopicMass <http://rdf.ebi.ac.uk/resource/chembl/molecule/CHEMBL6939#mw_monoisotopic>:
+  - a: cheminf:CHEMINF_000218
+  - cheminf:SIO_000300: # has value
+    - mw_monoisotopic_mass_value: "293.1991"
+  - rdfs:label+:
+    - mw_monoisotopic_mass_label: "CHEMBL6939 Monoisotopic Mass: 293.1991"
+- ChemAxonMostAcidicPka <http://rdf.ebi.ac.uk/resource/chembl/molecule/CHEMBL10010#cx_most_apka>:
+  - a: sio:CHEMINF_000195
+  - rdfs:label:
+    - cx_most_apka_label: "CHEMBL10010 ChemAxon Most Acidic pKa: 13.67"
+  - sio:SIO_000300: # has value
+    - cx_most_apka_value: "13.67"
     
 - BioComponent chembl_biocomponent:CHEMBL_BC_10151:
   - a: cco:BioComponent
@@ -212,13 +295,13 @@
   - cco:proteinSequence:
     - protein_sequence: "MGAGALALGASEPCNLSSAAPLPDGAATAARLLVLASPPASLLPPASEGSAPLSQQWTAGMGLLLALIVLLIVVGNVLVIVAIAKTPRLQTLTNLFIMSLASADLVMGLLVVPFGATIVVWGRWEYGSFFCELWTSVDVLCVTASIETLCVIALDRYLAITLPFRYQSLLTRARARALVCTVWAISALVSFLPILMHWWRAESDEARRCYNDPKCCDFVTNRAYAIASSVVSFYVPLCIMAFVYLRVFREAQKQVKKIDSCERRFLTGPPRPPSPAPSPSPGPPRPADSLANGRSSKRRPSRLVALREQKALKTLGIIMGVFTLCWLPFFLANVVKAFHRDLVPDRLFVFFNWLGYANSAFNPIIYCRSPDFRKAFQRLLCCARRAACRRRAAHGDRPRASGCLARAGPPPSPGAPSDDDDDDAGATPPARLLEPWAGCNGGTTTVDSDSSLDEPGRQGFSSESKV"
   - cco:targetCmptXref*:
-    - target_cmpt_xref: TargetCmptXref
+    - target_cmpt_xref: [TimbalRef, UniprotCrossReference, CGDRef, PharmgkbRef, EnzymeClassRef, EnsemblCrossReference, IntactCrossReference, InterproCrossReference, GoProcessCrossReference, GoFunctionCrossReference, GoComponentCrossReference, PDBCrossReference, PfamCrossReference, ReactomeCrossReference]
   - cco:taxonomy*:
     - target_cmpt_taxonomy_id: <http://identifiers.org/taxonomy/10116>   # <http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id=10116>
   - dcterms:description:
     - chembl_targetcomponent_description: "Beta-1 adrenergic receptor"
   - skos:exactMatch:
-    - exacmatch_uniprot_cross_reference: TargetCmptXref   # <http://purl.uniprot.org/uniprot/Q6NT55>
+    - exacmatch_uniprot_cross_reference: UniprotCrossReference   # <http://purl.uniprot.org/uniprot/Q6NT55>
     
 - ChemblProteinclassification chembl_protclass:CHEMBL_PC_0:
   - a: cco:ProteinClassification
@@ -472,52 +555,178 @@
   - bibo:shortTitle:
     - chembl_journal_short_title: "J Med Chem"
 
-- MoleculeXref <https://www.surechembl.org/chemical/SCHEMBL11250625>:
-  - a: cco:WikipediaMolRef   # <http://en.wikipedia.org/wiki/Mipomersen>
-  - a: cco:ActorRef   # <http://actor.epa.gov/actor/chemical.xhtml?casrn=63659-22-3>
-  - a: cco:FdaSrsRef   # <http://fdasis.nlm.nih.gov/srs/ProxyServlet?mergeData=true&objectHandle=DBMaint&APPLICATION_NAME=fdasrs&actionHandle=default&nextPage=jsp/srs/ResultScreen.jsp&TXTSUPERLISTID=ZTI6C33Q2Q>
-  - a: cco:NikkajiRef   # <http://jglobal.jst.go.jp/en/redirect?Nikkaji_No=J153.517J>
-  - a: cco:NmrShiftDb2Ref   # <http://nmrshiftdb.org/molecule/20026017>
-  - a: cco:PubchemThomPharmRef   # <http://pubchem.ncbi.nlm.nih.gov/substance/163634915>
-  - a: cco:IbmPatentStructureRef   # <http://www-935.ibm.com/services/us/gbs/bao/siip/nih/?sid=C5954E2B020D435D78834C606C257634>
-  - a: cco:DrugbankRef   # <http://www.drugbank.ca/drugs/DB13246>
-  - a: cco:ChebiRef   # <http://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI%3A5693>
-  - a: cco:AtlasRef   # <http://www.ebi.ac.uk/gxa/query?conditionQuery=4-hydroxyphenylretinamide>
-  - a: cco:KeggLigandRef   # <http://www.genome.jp/dbget-bin/www_bget?C07587>
-  - a: cco:IupharRef   # <http://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId=8554>
-  - a: cco:HmdbRef   # <http://www.hmdb.ca/metabolites/HMDB0015301>
-  - a: cco:SelleckRef   # <http://www.selleckchem.com/products/Sophocarpine.html>
-  - a: cco:ZincRef   # <http://zinc15.docking.org/substances/ZINC000040862485>
-  - a: cco:MculeRef   # <https://mcule.com/MCULE-3956868404>
-  - a: cco:ReconRef   # <https://vmh.uni.lu/#metabolite/C06948>
-  - a: cco:EmoleculesRef   # <https://www.emolecules.com/cgi-bin/more?vid=25782575>
-  - a: cco:MolportRef   # <https://www.molport.com/shop/molecule-link/MolPort-007-727-652>
-  - a: cco:PharmGkbRef   # <https://www.pharmgkb.org/drug/PA166179867>
-  - a: cco:SureChemblRef   # <https://www.surechembl.org/chemical/SCHEMBL11250625>
-  - a: cco:PubchemRef   # <http://pubchem.ncbi.nlm.nih.gov/compound/3047492>
-  - a: cco:PubchemDotfRef   # <http://pubchem.ncbi.nlm.nih.gov/substance/12013043>
-  - a: cco:LincsRef   # <http://identifiers.org/lincs.smallmolecule/LSM-10216>
-  - a: cco:PdbeRef   # <http://www.ebi.ac.uk/pdbe-srv/pdbechem/chemicalCompound/show/9WS>
+- SurechemblCrossReference <https://www.surechembl.org/chemical/SCHEMBL11250625>:
+  - a: cco:SureChemblRef
   - rdfs:label+:
-    - mol_xref_label: "CHEMBL6939 SureChEMBL Reference: SCHEMBL11250625"
-    
-- TargetCmptXref <https://www.surechembl.org/chemical/SCHEMBL11250625>:
-  - a: cco:TimbalRef   <http://mordred.bioc.cam.ac.uk/timbal/K-Ras> #a database containing small molecules that modulate protein-protein interactions
-  - a: cco:UniprotRef   # uniprot:P18090
-  - a: cco:CGDRef   # <http://research.nhgri.nih.gov/CGD/view/?g=ATR> #Clinical Genomic Database
-  - a: cco:PharmgkbRef   # <http://www.pharmgkb.org/gene/PA36979> #pharmgkb薬物応答におけるヒトの遺伝的変異の影響に関する知識を蓄積しているデータベース
-  - a: cco:EnzymeClassRef   # <http://identifiers.org/ec-code/2.7.10.2>
-  - a: cco:EnsemblGeneRef   # <http://identifiers.org/ensembl/ENSG00000173207>
-  - a: cco:IntactRef   # <http://identifiers.org/intact/P18090>
-  - a: cco:InterproRef   # <http://identifiers.org/interpro/IPR000276>
-  - a: cco:GoProcessRef   # <http://identifiers.org/obo.go/GO:0007188>
-  - a: cco:GoFunctionRef   # <http://identifiers.org/obo.go/GO:0005515>
-  - a: cco:GoComponentRef   # <http://identifiers.org/obo.go/GO:0005886>
-  - a: cco:ProteinDataBankRef   # <http://identifiers.org/pdb/1M17>
-  - a: cco:PfamRef   # <http://identifiers.org/pfam/PF00001>
-  - a: cco:ReactomeRef   # <http://identifiers.org/reactome/R-RNO-390696>
+    - surechembl_cross_reference_label: "CHEMBL6939 SureChEMBL Reference: SCHEMBL11250625"
+- ActorCrossReference <http://actor.epa.gov/actor/chemical.xhtml?casrn=63659-22-3>:
+  - a: cco:ActorRef
+  - rdfs:label+:
+    - actor_cross_reference_label: "CHEMBL6939 ACToR Reference: 63659-22-3"
+- PubchemCrossReference <http://pubchem.ncbi.nlm.nih.gov/compound/3047492>:
+  - a: cco:PubchemRef
+  - rdfs:label+:
+    - pubchem_cross_reference_label: "CHEMBL6939 PubChem Reference: 3047492"
+- NikkajiCrossReference <http://jglobal.jst.go.jp/en/redirect?Nikkaji_No=J153.517J>:
+  - a: cco:NikkajiRef
+  - rdfs:label+:
+    - nikkaji_cross_reference_label: "CHEMBL6939 Nikkaji Reference: J153.517J"
+- IbmPatentStructuresCrossReference <http://www-935.ibm.com/services/us/gbs/bao/siip/nih/?sid=C5954E2B020D435D78834C606C257634>:
+  - a: cco:IbmPatentStructureRef
+  - rdfs:label+:
+    - ibm_patent_structures_cross_reference_label: "CHEMBL6939 IBM Patent Structure Reference: C5954E2B020D435D78834C606C257634"
+- ReactomeCrossReference <http://identifiers.org/reactome/R-RNO-390696>:
+  - a: cco:ReactomeRef
+  - rdfs:label+:
+    - reactome_cross_reference_label: "CHEMBL_TC_2350 Reactome Reference: R-RNO-390696"
+- GoProcessCrossReference <http://identifiers.org/obo.go/GO:0007188>:
+  - a: cco:GoProcessRef
+  - rdfs:label+:
+    - go_process_cross_reference_label: "CHEMBL_TC_129 GO Function Process: GO:0007188"
+- GoFunctionCrossReference <http://identifiers.org/obo.go/GO:0005515>:
+  - a: cco:GoFunctionRef
+  - rdfs:label+:
+    - go_function_cross_reference_label: "CHEMBL_TC_100 GO Function Reference: GO:0005515"
+- GoComponentCrossReference <http://identifiers.org/obo.go/GO:0005886>:
+  - a: cco:GoComponentRef
+  - rdfs:label+:
+    - go_component_cross_reference_label: "CHEMBL_TC_1 GO Component Reference: GO:0005886"
+- PfamCrossReference <http://identifiers.org/pfam/PF00001>:
+  - a: cco:PfamRef
+  - rdfs:label+:
+    - pfam_cross_reference_label: "CHEMBL_TC_10 Pfam Reference: PF00001"
+- UniprotCrossReference uniprot:P18090:
+  - a: 
+    - cco:UniprotRef
+    - <http://rdf.ebi.ac.uk/terms/ensembl/EnsemblDBEntry>
+  - rdfs:label+:
+    - uniprot_cross_reference_label: "Q9HC35"   # "CHEMBL_TC_4004 UniProt Reference: Q9HC35", "EML4"
+  - dc:identifier:
+    - uniprot_id: "Q9HC35"
+  - dc:description:
+    - uniprot_crossref_description: "Echinoderm microtubule-associated protein-like 4 "
+  - owl:sameAs:
+    - uniprot: <http://identifiers.org/uniprot/P18090>
+- InterproCrossReference <http://identifiers.org/interpro/IPR000276>:
+  - a: cco:InterproRef
+  - rdfs:label+:
+    - interpro_cross_reference_label: "CHEMBL_TC_10 InterPro Reference: IPR000276"
+- IntactCrossReference <http://identifiers.org/intact/P18090>:
+  - a: cco:IntactRef
+  - rdfs:label+:
+    - intact_cross_reference_label: "CHEMBL_TC_1573 IntAct Reference: P18090"
+- WikipediaCrossReference <http://en.wikipedia.org/wiki/Mipomersen>:
+  - a: cco:WikipediaMolRef
   - rdfs:label:
-    - target_cmpt_xref_label: "CHEMBL_TC_141 EC Reference: 2.7.10.2"
+    - wikipedia_cross_reference_label: "CHEMBL502097 Wikipedia Reference: Mipomersen"
+- DrugBankCrossReference <http://www.drugbank.ca/drugs/DB13246>:
+  - a: cco:DrugbankRef
+  - rdfs:label:
+    - drug_bank_cross_reference_label: "CHEMBL107360 DrugBank Reference: DB13246"
+- ZinkCrossReference <http://zinc15.docking.org/substances/ZINC000040862485>:
+  - a: cco:ZincRef
+  - rdfs:label:
+    - zink_cross_reference_label: "CHEMBL516957 Zinc Reference: ZINC000040862485"
+- EmoleculesCrossReference <https://www.emolecules.com/cgi-bin/more?vid=31802297>:
+  - a: cco:EmoleculesRef
+  - rdfs:label:
+    - emolecules_cross_reference_label: "CHEMBL3187543 eMolecules Reference: 31802297"
+- PDBCrossReference <http://identifiers.org/pdb/1M17>:
+  - a:
+    - <http://identifiers.org/pdb>
+    - <http://rdf.ebi.ac.uk/terms/ensembl/EnsemblDBEntry>
+    - cco:ProteinDataBankRef
+  - rdfs:label:
+    - pdb_cross_reference_label: "1M17"   # "CHEMBL_TC_147 PDBe Reference: 1M17"
+- PDBeCrossReference <http://www.ebi.ac.uk/pdbe-srv/pdbechem/chemicalCompound/show/9WS>:
+  - a: cco:PdbeRef
+  - rdfs:label:
+    - pdbe_cross_reference_label: "CHEMBL1078785 PDBe Reference: 9WS"
+- MculeCrossReference <https://mcule.com/MCULE-3956868404>:
+  - a: cco:MculeRef
+  - rdfs:label:
+    - mcule_cross_reference_label: "CHEMBL1616930 Mcule Reference: MCULE-3956868404"
+- MolPortCrossReference <https://www.molport.com/shop/molecule-link/MolPort-007-727-652>:
+  - a: cco:MolportRef
+  - rdfs:label:
+    - molport_cross_reference_label: "CHEMBL1565424 MolPort Reference: MolPort-007-727-652"
+- EnsemblCrossReference <http://identifiers.org/ensembl/ENSG00000173207>:
+  - a:
+    - <http://identifiers.org/ensembl>
+    - cco:EnsemblGeneRef
+    - <http://rdf.ebi.ac.uk/terms/expressionatlas/EnsemblDatabaseReference>
+  - rdfs:label:
+    - ensembl_cross_reference_label: "CKS1B"   # "CHEMBL_TC_10091 ENSEMBL Reference: ENSG00000173207"
+  - dcterms:identifier:
+    - ensembl_identifier: "ENSG00000173207"
+- FdaSrsRef <http://fdasis.nlm.nih.gov/srs/ProxyServlet?mergeData=true&objectHandle=DBMaint&APPLICATION_NAME=fdasrs&actionHandle=default&nextPage=jsp/srs/ResultScreen.jsp&TXTSUPERLISTID=02YX82IHZ5>:
+  - a: cco:FdaSrsRef
+  - rdfs:label:
+    - fda_srs_ref_label: "CHEMBL73237 FDA/USP SRS Reference: 02YX82IHZ5"
+- NmrShiftDb2Ref <http://nmrshiftdb.org/molecule/10005695>:
+  - a: cco:NmrShiftDb2Ref
+  - rdfs:label:
+    - nmr_shift_db2_ref_label: "CHEMBL70582 NMRShiftDB Reference: 10005695"
+- PubchemThomPharmRef <http://pubchem.ncbi.nlm.nih.gov/substance/103802525>:
+  - a: cco:PubchemThomPharmRef
+  - rdfs:label:
+    - pubchem_thom_pharm_ref_label: "CHEMBL69905 PubChem Thomson Pharma Subset Reference: 103802525"
+- ChebiRef <http://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI%3A104129>:
+  - a: cco:ChebiRef
+  - rdfs:label:
+    - chebi_ref_label: "CHEMBL66089 ChEBI Reference: 104129"
+- AtlasRef <http://www.ebi.ac.uk/gxa/query?conditionQuery=AM580>:
+  - a: cco:AtlasRef
+  - rdfs:label:
+    - atlas_ref_label: "CHEMBL69367 Gene Expression Atlas Reference: AM580"
+- KeggLigandRef <http://www.genome.jp/dbget-bin/www_bget?C00027>:
+  - a: cco:KeggLigandRef
+  - rdfs:label:
+    - kegg_ligand_ref_label: "CHEMBL71595 Kegg Ligand Reference: C00027"
+- IupharRef <http://www.guidetopharmacology.org/GRAC/LigandDisplayForward?ligandId=1053>:
+  - a: cco:IupharRef
+  - rdfs:label:
+    - iuphar_ref_label: "CHEMBL63829 IUPHAR Reference: 1053"
+- HmdbRef <http://www.hmdb.ca/metabolites/HMDB0000014>:
+  - a: cco:HmdbRef
+  - rdfs:label:
+    - hmdb_ref_label: "CHEMBL66115 The Human Metabolome Database Reference: HMDB0000014"
+- SelleckRef <http://www.selleckchem.com/products/AG14361.html>:
+  - a: cco:SelleckRef
+  - rdfs:label:
+    - selleck_ref_label: "CHEMBL65892 Selleck Chemicals Reference: AG14361"
+- ReconRef <https://vmh.uni.lu/#metabolite/1mncam>:
+  - a: cco:ReconRef
+  - rdfs:label:
+    - recon_ref_label: "CHEMBL71733 Recon Reference: 1mncam"
+- PharmGkbRef <https://www.pharmgkb.org/drug/PA10888>:
+  - a: cco:PharmGkbRef
+  - rdfs:label:
+    - pharm_gkb_ref_label: "CHEMBL70418 PharmGKB Reference: PA10888"
+- PubchemDotfRef <http://pubchem.ncbi.nlm.nih.gov/substance/12012575>:
+  - a: cco:PubchemDotfRef
+  - rdfs:label:
+    - pubchem_dotf_ref_label: "CHEMBL1010 PubChem Drugs of the Future Subset Reference: 12012575"
+- LincsRef <http://identifiers.org/lincs.smallmolecule/LSM-1107>:
+  - a: cco:LincsRef
+  - rdfs:label:
+    - lincs_ref_label: "CHEMBL64925 Library of Integrated Network-based Cellular Signatures Reference: LSM-1107"
+- TimbalRef <http://mordred.bioc.cam.ac.uk/timbal/Beta-catenin>:
+  - a: cco:TimbalRef   #a database containing small molecules that modulate protein-protein interactions
+  - rdfs:label:
+    - timbal_ref_label: "CHEMBL_TC_5589 TIMBAL Reference: Beta-catenin"
+- CGDRef <http://research.nhgri.nih.gov/CGD/view/?g=ABCG2>:   #Clinical Genomic Database
+  - a: cco:CGDRef
+  - rdfs:label:
+    - cgd_ref_label: "CHEMBL_TC_3688 CGD: ABCG2"
+- PharmgkbRef <http://www.pharmgkb.org/gene/PA128394572>:   #pharmgkb薬物応答におけるヒトの遺伝的変異の影響に関する知識を蓄積しているデータベース
+  - a : cco:PharmgkbRef
+  - rdfs:label:
+    - pharmgkb_ref_label: "CHEMBL_TC_4532 PharmGKB Reference: PA128394572"
+- EnzymeClassRef <http://identifiers.org/ec-code/1.11.1.12>:
+  - a: cco:EnzymeClassRef
+  - rdfs:label:
+    - ec_ref_label: "CHEMBL_TC_18174 EC Reference: 1.11.1.12"
 
 - CellXref <http://life.ccs.miami.edu/life/summary?mode=CellLine&source=LINCS&input=LCL-1417>:
   - a: cco:LincsCellRef
