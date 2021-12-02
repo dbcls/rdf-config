@@ -37,6 +37,7 @@ class RDFConfig
 
       def initialize(config, opts = {})
         @config = config
+        @schema_opt = opts[:schema_opt].to_s.strip
         @schema_name = nil
         @nest = false
         @display_type = :tree # :tree | :arc | :table
@@ -46,7 +47,18 @@ class RDFConfig
         interpret_opt(opts[:schema_opt].to_s) if opts.key?(:schema_opt)
       end
 
+      def print_usage
+        STDERR.puts 'Usage: --schema schema_name[:type]'
+        STDERR.puts "Available schema names: #{@config.schema.keys.join(', ')}"
+        STDERR.puts 'Avanlable schema types: nest, table, arc'
+      end
+
       def generate
+        if @schema_opt.empty? && @config.exist?('schema')
+          print_usage
+          return
+        end
+
         opts = {
           schema_name: @schema_name,
           variables: interpret_variables

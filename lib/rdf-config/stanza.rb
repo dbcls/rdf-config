@@ -8,16 +8,27 @@ class RDFConfig
     def initialize(config, opts = {})
       @config = config
 
-      stanza_name = opts[:stanza_name].to_s
-      if stanza_name.empty?
+      @stanza_name = opts[:stanza_name].to_s
+      if @stanza_name.empty?
         @targets = config.stanza.keys
       else
-        raise StanzaConfigNotFound, "No stanza config found: stanza name '#{stanza_name}'" unless config.stanza.key?(stanza_name)
-        @targets = [stanza_name]
+        raise StanzaConfigNotFound, "No stanza config found: stanza name '#{@stanza_name}'" unless config.stanza.key?(@stanza_name)
+        @name = @stanza_name
+        @targets = [@stanza_name]
       end
     end
 
+    def print_usage
+      STDERR.puts 'Usage: --stanza stanza_name'
+      STDERR.puts "Available stanza names: #{@config.stanza.keys.join(', ')}"
+    end
+
     def generate
+      if @stanza_name.empty?
+        print_usage
+        return
+      end
+
       before_generate
       @targets.each do |stanza_name|
         @name = stanza_name
@@ -89,14 +100,21 @@ class RDFConfig
     end
 
     def sparql_result_html(suffix = '', indent_chars = '  ')
-      lines = []
+      lines = ["{{#each #{@name}}}"]
 
-      lines << "{{#each #{@name}}}"
-      lines << %(#{indent_chars}<dl class="dl-horizontal">)
-      sparql.variables.each do |var_name|
-        lines << "#{indent_chars * 2}<dt>#{var_name}</dt><dd>{{#{var_name}#{suffix}}}</dd>"
+      unless parameters.empty?
+        first_parameter_name = parameters.keys.first
+        lines << '<p class="greeting">'
+        lines << "#{first_parameter_name}: {{#{first_parameter_name}.value}}"
+        lines << '</p>'
       end
-      lines << "#{indent_chars}</dl>"
+
+      sparql.variables.each do |var_name|
+        lines << '<dl>'
+        lines << "#{indent_chars}<dt>#{var_name}</dt>"
+        lines << "#{indent_chars}<dd>{{#{var_name}.value}}</dd>"
+        lines << '</dl>'
+      end
       lines << '{{/each}}'
 
       lines.join("\n")
@@ -131,25 +149,33 @@ class RDFConfig
     end
 
     def stanza_conf
-      @stanza ||= @config.stanza[@name]
+      @stanza_conf ||= @config.stanza[@name]
+    end
+
+    def sparql_name
+      stanza_conf['sparql']
+    end
+
+    def sparql_conf
+      @sparql_conf ||= @config.sparql[sparql_name]
     end
 
     def sparql_prefix_generator
       @sparql_prefix_generator = SPARQL::PrefixGenerator.new(
-          @config, sparql_query_name: stanza_conf['sparql']
+          @config, sparql_query_name: sparql_name
       )
     end
 
     def sparql_select_generator
       @sparql_select_generator = SPARQL::SelectGenerator.new(
-          @config, sparql_query_name: stanza_conf['sparql']
+          @config, sparql_query_name: sparql_name
       )
     end
 
     def sparql_where_generator
       @sparql_select_generator = SPARQL::WhereGenerator.new(
           @config,
-          sparql_query_name: stanza_conf['sparql'], template: true
+          sparql_query_name: sparql_name, template: true
       )
     end
 

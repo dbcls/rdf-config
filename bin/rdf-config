@@ -44,6 +44,12 @@ begin
     when /--sparql/
       opts[:mode] = :sparql
       opts[:sparql_query_name] = value
+      values = {}
+      ARGV.each do |var_val|
+        var, val = var_val.split('=', 2)
+        values[var] = val
+      end
+      opts[:values] = values
     when /--query/
       # pipe to https://gist.github.com/ktym/3385134 ?
       opts[:mode] = :query

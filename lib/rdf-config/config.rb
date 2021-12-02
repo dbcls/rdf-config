@@ -27,6 +27,13 @@ class RDFConfig
       @opts = opts
     end
 
+    def exist?(name)
+      config_file_path(name)
+      true
+    rescue ConfigNotFound
+      false
+    end
+
     private
 
     def config_file_path(name)

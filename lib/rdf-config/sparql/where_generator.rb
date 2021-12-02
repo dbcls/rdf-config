@@ -322,7 +322,7 @@ class RDFConfig
       end
 
       def add_values_lines_by_parameters
-        parameters.each do |variable_name, value|
+        parameters.merge(@values).each do |variable_name, value|
           object = model.find_object(variable_name)
           next if object.nil?
 
