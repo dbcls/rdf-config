@@ -12,14 +12,25 @@
     - src: Source
   - dct:identifier:
     - identifier: "G67988RO"
-  - dct:references+:
-    - reference: ref:8978086
   - glytoucan:has_primary_id:
     - primary_id: "G67988RO"
   - rdfs:label:
     - label: "GlyCosmos Glycans: G67988RO"
   - skos:altLabel:
     - altlabel: "Gal(a1-4)Gal(b1-"
+  - rdfs:seeAlso:
+    - []:
+      - glycan:has_taxon:
+        - taxon: <http://rdf.glycoinfo.org/source/9606>
+      - glycan:has_tissue:
+        - uberon: Uberon
+      - dcterms:references+:
+        - doi: <http://doi.org/10.1371/journal.pone.0102129>
+        - pubmed: <http://identifiers.org/pubmed/25006806>
+
+- Uberon <http://purl.obolibrary.org/obo/UBERON_0001977>:
+  - rdfs:label:
+    - uberon_label: "blood serum"
 
 - Wurcs <http://rdf.glycoinfo.org/glycan/G67988RO/wurcs/2.0>:
   - a: glycan:glycosequence
@@ -93,7 +104,7 @@
   - rdfs:label:
     - src_label: "Neisseria gonorrhoeae"
   - rdfs:seeAlso+:
-    - taxon: <http://identifiers.org/taxonomy/485> # Neisseria gonorrhoeae
+    - taxon_id: <http://identifiers.org/taxonomy/485> # Neisseria gonorrhoeae
   - skos:prefLabel:
     - src_pref: "Neisseria gonorrhoeae"
   - skos:exactMatch:
