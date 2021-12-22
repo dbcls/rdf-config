@@ -20,7 +20,8 @@ class RDFConfig
       @errors = []
       @warnings = []
 
-      @query_name = opts[:sparql_query_name].to_s
+      @query_name = opts[:sparql_query_name].to_s.strip
+      return if @query_name.empty?
 
       sparql_query_name, endpoint_name = @opts[:sparql_query_name].to_s.split(':')
       @opts[:sparql_query_name] = sparql_query_name.nil? ? DEFAULT_NAME : sparql_query_name
@@ -52,7 +53,22 @@ class RDFConfig
 
     def print_usage
       STDERR.puts 'Usage: --sparql query_name[:endpoint_name]'
-      STDERR.puts "Available SPARQL query names: #{@config.sparql.keys.join(', ')}"
+      STDERR.puts "Available SPARQL query names: #{query_names.join(', ')}"
+      with_parameter_configs = configs_having_parameters
+      unless with_parameter_configs.empty?
+        STDERR.puts "Available SPARQL query parameters:"
+        with_parameter_configs.each do |query_name, config|
+          case config['parameters']
+          when Hash
+            parameters = config['parameters'].keys.join(', ')
+          when Array
+            parameters = config['parameters'].join(', ')
+          else
+            parameters = config['parameters'].to_s
+          end
+          STDERR.puts "  #{query_name}: #{parameters}"
+        end
+      end
       STDERR.puts "Available SPARQL endpoint names: #{@config.endpoint.keys.join(', ')}"
     end
 
@@ -422,6 +438,20 @@ class RDFConfig
         'offset' => nil,
         'order_by' => nil
       }
+    end
+
+    def query_names
+      if @config.sparql.is_a?(Hash)
+        @config.sparql.keys
+      else
+        []
+      end
+    end
+
+    def configs_having_parameters
+      @config.sparql.select do |query_name, config_hash|
+        config_hash.is_a?(Hash) && config_hash.key?('parameters')
+      end
     end
   end
 end
