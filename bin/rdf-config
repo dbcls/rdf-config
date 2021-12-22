@@ -21,6 +21,7 @@ args = GetoptLong.new(
   [ '--senbero',         GetoptLong::NO_ARGUMENT ],
   [ '--schema',          GetoptLong::OPTIONAL_ARGUMENT ],
   [ '--sparql',          GetoptLong::OPTIONAL_ARGUMENT ],
+  [ '--sparql-url',      GetoptLong::OPTIONAL_ARGUMENT ],
   [ '--query',           GetoptLong::OPTIONAL_ARGUMENT ],
   [ '--sparqlist',       GetoptLong::OPTIONAL_ARGUMENT ],
   [ '--grasp',           GetoptLong::OPTIONAL_ARGUMENT ],
@@ -41,8 +42,13 @@ begin
       opts[:schema_opt] = value
     when /--sparqlist/
       opts[:mode] = :sparqlist
-    when /--sparql/
-      opts[:mode] = :sparql
+    when /--sparql(-\w+)*/
+      case $1.to_s
+      when '-url'
+        opts[:mode] = :sparql_url
+      else
+        opts[:mode] = :sparql
+      end
       opts[:sparql_query_name] = value
       values = {}
       ARGV.each do |var_val|

@@ -26,6 +26,8 @@ class RDFConfig
     case opts[:mode]
     when :sparql
       puts generate_sparql
+    when :sparql_url
+      puts generate_sparql_url
     when :query
       run_sparql
     when :stanza_rb
@@ -46,6 +48,11 @@ class RDFConfig
   def generate_sparql
     sparql = SPARQL.new(@config, @opts)
     sparql.generate
+  end
+
+  def generate_sparql_url
+    sparql = SPARQL.new(@config, @opts)
+    sparql.generate(url_encode: true)
   end
 
   def run_sparql
