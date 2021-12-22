@@ -45,7 +45,7 @@ class RDFConfig
 
     def read_config(config_file_path)
       config = YAML.load_file(config_file_path)
-      raise InvalidConfig, "Config file (#{config_file_path}) is not a valid YAML file." unless config.is_a?(Hash)
+      raise InvalidConfig, "Config file (#{config_file_path}) is not a valid YAML file." if !config.is_a?(Hash) && !config.is_a?(Array)
 
       config
     end
