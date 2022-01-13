@@ -14,8 +14,7 @@
 | --sparql \[クエリ名:エンドポイント名\] | SPARQLクエリを標準出力に出力する。 |
 | --schema \[スキーマ名:図の種類\] | RDFモデルのスキーマ図をSVG形式で標準出力に出力する。 |
 | --senbero | RDFモデルの構造をテキスト形式で標準出力に出力する。 |
-| --stanza \[Stanza ID\] | JavaScript版のStanzaファイル一式を生成する。<br />tsコマンドがインストールされており、<br />tsコマンドがあるディレクトリがPATH環境変数に設定されている必要がある。 |
-| --stanza_rb \[Stanza ID\] | Ruby版のTogoStanzaをセットアップし、Stanzaファイル一式を生成する。<br />TogoStanzaのgemがインストールされている必要がある。<br />また、togostanzaコマンドがあるディレクトリがPATH環境変数に設定されている必要がある。 |
+| --stanza \[Stanza ID\] | JavaScript版のStanzaファイル一式を生成する。<br />Node.jsがインストールされており、<br />npxコマンドのディレクトリがPATH環境変数に設定されている必要がある。 |
 | --grasp | Graspの設定ファイル（GraphQLのスキーマファイルとクエリファイル）を生成する。<br />Graspの設定ファイルは、カレントディレクトリ配下の「grasp/設定ファイルディレクトリ名」というディレクトリに生成される。 |
 | --shex | ShExを標準出力に出力する。 |
 
