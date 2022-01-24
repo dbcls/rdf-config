@@ -72,7 +72,7 @@ class RDFConfig
       STDERR.puts "Available SPARQL endpoint names: #{@config.endpoint.keys.join(', ')}"
     end
 
-    def generate
+    def generate(opts = {})
       if @query_name.empty?
         print_usage
         return
@@ -83,14 +83,21 @@ class RDFConfig
 
       sparql_generator = SPARQLGenerator.new
 
-      sparql_generator.add_generator(CommentGenerator.new(@config, @opts))
+      unless  opts[:url_encode]
+        sparql_generator.add_generator(CommentGenerator.new(@config, @opts))
+      end
       sparql_generator.add_generator(PrefixGenerator.new(@config, @opts))
       sparql_generator.add_generator(SelectGenerator.new(@config, @opts))
       sparql_generator.add_generator(DatasetGenerator.new(@config, @opts))
       sparql_generator.add_generator(WhereGenerator.new(@config, @opts))
       sparql_generator.add_generator(SolutionModifierGenerator.new(@config, @opts))
 
-      sparql_generator.generate.join("\n")
+      if  opts[:url_encode]
+        require 'uri'
+        [endpoint, '?', URI.encode_www_form(query: sparql_generator.generate.join("\n"))].join
+      else
+        sparql_generator.generate.join("\n")
+      end
     end
 
     def name
