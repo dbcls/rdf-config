@@ -1,4 +1,4 @@
-- UniProt <http://rdf.uniprot.org/protein/P06493>:
+- UniProt <http://rdf.uniprot.org/protein/P06493> <http://rdf.uniprot.org/protein/P37899>:
     - a: core:Protein
     - core:recommendedName:
         - structured_recommended_name: StructuredRecommendedName
@@ -180,6 +180,8 @@
         - tissue_specificity_annotation: TissueSpecificityAnnotation
     - core:annotation:
         - toxic_dose_annotation: 
+    - core:annotation*:
+        - region_annotation: RegionAnnotation
     - core:interaction:
         - self_interaction: SelfInteraction
     - core:interaction:
@@ -415,6 +417,13 @@
     - a: core:Tissue_Specificity_Annotation
     - rdfs:comment:
         - tissue_specificity_annotation_comment: "Isoform 2 is found in breast cancer tissues."
+
+- RegionAnnotation up:P37899\#SIPD4DA7A588AADFD48:
+    - a: core:Region_Annotation
+    - rdfs:comment*:
+        - region_annotation_comment: “Disordered” 
+    - core:range:
+        - region_annotation_range: Range
 
 - TurnAnnotation up:P06493\#SIP15A2B5D13031AF2F:
     - a: core:Turn_Annotation
