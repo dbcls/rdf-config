@@ -1,0 +1,31 @@
+default:
+  description: Retrieve attributes not in MGDEF, MGSAT, MGCONSO of C0023467 (Acute myeloid leukemia)
+  variables: [Medgen, sty, identifier,label, definition, disease_has_associated_gene, expanded_form_of, 
+  has_alias, has_expanded_form, has_manifestation, has_permuted_term, inverse_isa, isa, 
+  manifestation_of, undefined_relationship, name_label]
+  parameters:
+    identifier: C0023467
+
+mgdef:
+  description: Retrieve MGDEF and MGSAT of C0023467 (Acute myeloid leukemia)
+  variables: [identifier, mgdef_source, definition, mgdef_definition]
+  parameters:
+    identifier: C0023467
+
+mgconso:
+  description: Retrieve MGCONSO (link to external databases) of C0023467 (Acute myeloid leukemia)
+  variables: [identifier, mgconso_aui, mgconso_ispref, mgconso_stt, mgconso_ts, mgconso_label, mgconso_source]
+  parameters:
+    identifier: C0023467
+
+mgsat:
+  description: Retrieve MGSAT of C0023467 (Acute myeloid leukemia)
+  variables: [identifier, metaui, stype, mgsat_identifier, mgsat_source, mgsat_value, metaui_label]
+  parameters:
+    identifier: C0023467
+
+references:
+  description: Retrieve PMIDs linked from C0023467 (Acute myeloid leukemia)
+  variables: [mengen_cid, pubmed, medgen_uid_label]
+  parameters:
+    mengen_cid: medgen:C0023467 
