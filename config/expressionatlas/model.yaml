@@ -1,0 +1,103 @@
+- DataSet gxa:E-GEOD-56087:
+    - a:
+        - gxaterms:microarray_1colour_mrna_differential
+        - gxaterms:microarray_1colour_microrna_differential
+        - gxaterms:microarray_2colour_mrna_differential
+        - gxaterms:rnaseq_mrna_baseline
+        - gxaterms:rnaseq_mrna_differential
+        - gxaterms:proteomics_baseline
+    - dct:identifier:
+        - dataset_id: E-GEOD-56087
+    - dct:description:
+        - dataset_desc: "Next Generation Sequencing identifying the dosage compensation state in human endometrial carcinoma and adjacent tissues"
+    - obo:RO_0002162:
+        - taxon: obo:NCBITaxon_9606
+    - foaf:page:
+        - dataset_page: <http://www.ebi.ac.uk/gxa/experiments/E-GEOD-56087>
+    - gxaterms:hasPart+:
+        - dataset_part:
+            - DifferentialAnalysis
+            - BaselineAnalysis
+            - Assay
+- DifferentialAnalysis gxa:E-GEOD-56087#analysis-05E9336DD034DD285691388914E5B56D:
+    - a:
+        - gxaterms:RNASeqDifferentialAnalysis
+        - gxaterms:MicroarrayDifferentialExpressionAnalysis
+    - rdfs:label:
+        - diff_analysis_label: "Analysis of 'endometrial carcinoma' vs 'normal'"
+    - gxaterms:hasFactorValue+:
+        - diff_analysis_factor: Factor
+    - gxaterms:hasOutput+:
+        - diff_analysis_expression: DifferentialExpression
+    - gxaterms:hasReferenceAssay+:
+        - diff_analysis_ref_assay: Assay
+    - gxaterms:hasTestAssay+:
+        - diff_analysis_test_assay: Assay
+- BaselineAnalysis gxa:E-GEOD-26284#analysis-2016A09DDE60EE59799945563C64D3D5:
+    - a: gxaterms:BaselineExpressionAnalysis
+    - gxaterms:hasFactorValue+:
+        - base_analysis_factor: Factor
+    - gxaterms:hasOutput+:
+        - base_analysis_expression: BaselineExpression
+    - gxaterms:hasReferenceAssay+:
+        - base_analysis_ref_assay: Assay
+- Assay gxa:E-GEOD-56087#assay-61FF448F7A1B3C0BBABB356C77082752:
+    - a: gxaterms:Assay
+    - rdfs:label:
+        - assay_label: "(Assay) SRR1200879"
+    - dct:identifier:
+        - assay_id: "SRR1200879"
+    - gxaterms:hasFactorValue+:
+        - factor: Factor
+    - gxaterms:hasInputSampleCharacteristic+:
+        - sample: Sample
+- DifferentialExpression gxa:E-GEOD-56087#expression-FCED54288826983AFC759FA4A4BD0C18:
+    - a:
+        - gxaterms:IncreasedDifferentialExpressionRatio
+        - gxaterms:DecreasedDifferentialExpressionRatio
+    - rdfs:label:
+        - diff_expression_label: "JSRP1 UP in 'endometrial carcinoma' vs 'normal'"
+    - gxaterms:foldChange:
+        - diff_expression_fold_change: 1.5
+    - gxaterms:isOutputOf:
+        - diff_expression_analysis: DifferentialAnalysis
+    - gxaterms:pValue:
+        - diff_expression_pvalue: 0.02421369125
+    - gxaterms:refersTo+:
+        - diff_expression_gene:
+            - ido:ensembl/ENSG00000167476
+            - ensembl:ENSG00000167476
+- BaselineExpression gxa:E-GEOD-26284#analysis-2016A09DDE60EE59799945563C64D3D5:
+    - a: gxaterms:BaselineExpressionValue
+    - rdfs:label:
+        - base_expression_label: "RP3-508I15.9 expressed in NHLF cell line"
+    - gxaterms:refersTo+:
+        - base_expression_gene:
+            - ido:ensembl/ENSG00000228274
+            - ensembl:ENSG00000228274
+    - gxaterms:fpkm:
+        - base_expression_fpkm: 1
+- Factor gxa:E-GEOD-56087#factor-40EA3327BFCCBB34E3ACA740B6D0E0D8:
+    ### In the actual RDF data provided by EBI, a type of Factor is a variable, which is a class defined in EFO, Orphanet, etc.
+    ### However, since using a variable for an objective of 'rdf:type' is not allowed under the current specification of RDF-config, here I assigned EFO_0000001 as a makeshift.
+    # - a:
+    #     - factor_type: <http://www.ebi.ac.uk/efo/EFO_0000205>
+    - a: <http://www.ebi.ac.uk/efo/EFO_0000001>
+    - rdfs:label:
+        - factor_label: "(Factor value) DISEASE/endometrial carcinoma"
+    - gxaterms:propertyType:
+        - factor_property_type: "DISEASE"
+    - gxaterms:propertyValue:
+        - factor_property_value: "endometrial carcinoma"
+- Sample gxa:E-GEOD-56087#sample-40EA3327BFCCBB34E3ACA740B6D0E0D8:
+    ### A type of Sample is also a variable, just like a type of Factor.
+    ### I assigned UBERON_0000001 as a makeshift.
+    # - a:
+    #     - sample_type: obo:UBERON_0001295
+    - a: obo:UBERON_0000001
+    - rdfs:label:
+        - sample_label: "(Sample) organism part/endometrium"
+    - gxaterms:propertyType:
+        - sample_property_type: "organism part"
+    - gxaterms:propertyValue:
+        - sample_property_value: "endometrium"
