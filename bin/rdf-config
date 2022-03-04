@@ -20,69 +20,93 @@ args = GetoptLong.new(
   [ '--help',     '-h',  GetoptLong::NO_ARGUMENT ],
   [ '--senbero',         GetoptLong::NO_ARGUMENT ],
   [ '--schema',          GetoptLong::OPTIONAL_ARGUMENT ],
+  [ '--endpoint',        GetoptLong::OPTIONAL_ARGUMENT ],
   [ '--sparql',          GetoptLong::OPTIONAL_ARGUMENT ],
-  [ '--sparql-url',      GetoptLong::OPTIONAL_ARGUMENT ],
+  [ '--url',             GetoptLong::NO_ARGUMENT ],
   [ '--query',           GetoptLong::OPTIONAL_ARGUMENT ],
+  [ '--join',            GetoptLong::OPTIONAL_ARGUMENT ],
   [ '--sparqlist',       GetoptLong::OPTIONAL_ARGUMENT ],
   [ '--grasp',           GetoptLong::OPTIONAL_ARGUMENT ],
   [ '--stanza',          GetoptLong::OPTIONAL_ARGUMENT ],
   [ '--stanza_rb',       GetoptLong::OPTIONAL_ARGUMENT ],
-  [ '--shex',            GetoptLong::OPTIONAL_ARGUMENT ]
+  [ '--shex',            GetoptLong::OPTIONAL_ARGUMENT ],
+  [ '--debug',           GetoptLong::OPTIONAL_ARGUMENT ]
 )
+args.ordering = GetoptLong::RETURN_IN_ORDER
 
+debug_mode = false
+target_opt_name = ''
+opt_values = {}
 begin
   args.each_option do |name, value|
-    case name
-    when /--config/
-      opts[:config_dir] = value
-    when /--senbero/
-      opts[:mode] = :senbero
-    when /--schema/
-      opts[:mode] = :chart
-      opts[:schema_opt] = value
-    when /--sparqlist/
-      opts[:mode] = :sparqlist
-    when /--sparql(-\w+)*/
-      case $1.to_s
-      when '-url'
-        opts[:mode] = :sparql_url
-      else
-        opts[:mode] = :sparql
-      end
-      opts[:sparql_query_name] = value
-      values = {}
-      ARGV.each do |var_val|
-        var, val = var_val.split('=', 2)
-        values[var] = val
-      end
-      opts[:values] = values
-    when /--query/
-      # pipe to https://gist.github.com/ktym/3385134 ?
-      opts[:mode] = :query
-    when /--grasp/
-      opts[:mode] = :grasp
-    when /--stanza_rb/
-      opts[:mode] = :stanza_rb
-      opts[:stanza_name] = value
-    when /--stanza/
-      opts[:mode] = :stanza_js
-      opts[:stanza_name] = value
-    when /--shex/
-      opts[:mode] = :shex
+    name = name.to_s.strip
+    target_opt_name = name unless name.empty?
+    if opt_values.key?(target_opt_name)
+      opt_values[target_opt_name] << value
+    else
+      opt_values[target_opt_name] = [value]
     end
   end
-rescue
+rescue StandardError
   puts
   help
   exit(1)
 end
 
-if opts[:config_dir] and opts[:mode]
+opt_values.each do |opt_name, values|
+  next if values.empty?
+
+  value = if values.size > 1
+            values
+          else
+            values.first
+          end
+  case opt_name
+  when /--config/
+    opts[:config_dir] = value
+  when /--senbero/
+    opts[:mode] = :senbero
+  when /--schema/
+    opts[:mode] = :chart
+    opts[:schema_opt] = value
+  when /--sparqlist/
+    opts[:mode] = :sparqlist
+  when /--sparql/
+    opts[:mode] = :sparql
+    opts[:sparql] = value
+  when /--url/
+    opts[:mode] = :sparql_url
+  when /--query/
+    opts[:mode] = :sparql
+    opts[:query] = value
+  when /--endpoint/
+    opts[:mode] = :sparql
+    opts[:endpoint_name] = value
+  when /--join/
+    opts[:mode] = :sparql
+    opts[:join] = value
+  when /--grasp/
+    opts[:mode] = :grasp
+  when /--stanza_rb/
+    opts[:mode] = :stanza_rb
+    opts[:stanza_name] = value
+  when /--stanza/
+    opts[:mode] = :stanza_js
+    opts[:stanza_name] = value
+  when /--shex/
+    opts[:mode] = :shex
+  when /--debug/
+    debug_mode = true
+  end
+end
+
+if opts[:config_dir] && opts[:mode]
   begin
     rdf_config = RDFConfig.new(opts)
     rdf_config.exec(opts)
-  rescue => e
-    STDERR.puts e.message
+  rescue StandardError => e
+    warn e.message
+    warn e.backtrace if debug_mode
     exit(1)
   end
 else

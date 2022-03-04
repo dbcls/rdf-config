@@ -1,4 +1,5 @@
 require 'rdf-config/model'
+require 'rdf-config/sparql/validator'
 require 'rdf-config/sparql/sparql_generator'
 require 'rdf-config/sparql/comment_generator'
 require 'rdf-config/sparql/prefix_generator'
@@ -6,140 +7,141 @@ require 'rdf-config/sparql/select_generator'
 require 'rdf-config/sparql/dataset_generator'
 require 'rdf-config/sparql/where_generator'
 require 'rdf-config/sparql/solution_modifier_generator'
+require 'rdf-config/sparql/variables_handler'
 
 class RDFConfig
+  class SPARQLConfigNotFound < StandardError; end
+  class InvalidSPARQLConfig < StandardError; end
+
   class SPARQL
-    DEFAULT_NAME = 'sparql'.freeze
     OPTIONS_VALID_KEYS = %w[distinct order_by offset limit].freeze
     @@validate_done = false
 
     def initialize(config, opts = {})
-      @config = config
-      @opts = opts.merge(default_option)
+      if config.is_a?(Array)
+        @configs = config
+        @config = config.first
+      else
+        @configs = [config]
+        @config = config
+      end
+      @opts = default_option.merge(opts)
+      @opts[:query_name] = opts[:sparql]
+      @opts[:join] = [@opts[:join]] if @opts.key?(:join) && @opts[:join].is_a?(String)
 
-      @errors = []
-      @warnings = []
+      @values = {}
+      @namespaces = {}
+      @variables_handler = VariablesHandler.instance(config, name, opts)
 
-      @query_name = opts[:sparql_query_name].to_s.strip
-      return if @query_name.empty?
+      parse_opts
 
-      sparql_query_name, endpoint_name = @opts[:sparql_query_name].to_s.split(':')
-      @opts[:sparql_query_name] = sparql_query_name.nil? ? DEFAULT_NAME : sparql_query_name
-      @opts[:endpoint_name] = endpoint_name unless endpoint_name.nil?
+      return if print_usage?
 
-      @values = opts[:values] || {}
-      @variables = opts[:variables] if opts.key?(:variables)
-      # @parameters = opts[:parameters] if opts.key?(:parameters)
-      if !opts.key?(:check_query_name) || opts[:check_query_name] == true
-        raise SPARQLConfigNotFound, "No SPARQL config found: sparql query name '#{name}'" unless @config.sparql.key?(name)
+      if (!@opts.key?(:check_query_name) || @opts[:check_query_name]) && sparql? && !@config.sparql.key?(name)
+        raise SPARQLConfigNotFound, "ERROR: SPARQL config not found: sparql query name '#{name}'"
       end
 
-      validate
-      raise InvalidSPARQLConfig, %(ERROR:\n#{@errors.map { |msg| "  #{msg}" }.join("\n")}) if error?
-
-      if @config.sparql[name].key?('options')
-        @opts = @opts.merge(@config.sparql[name]['options'])
-      end
-
-      @subjects_by_variables = []
-      variables.each do |variable_name|
-        object = model.find_object(variable_name)
-        @subjects_by_variables << object.name if object.is_a?(Model::Subject)
-      end
-
-      @variables_for_where = nil
-      @common_subject_names = nil
-    end
-
-    def print_usage
-      STDERR.puts 'Usage: --sparql query_name[:endpoint_name]'
-      STDERR.puts "Available SPARQL query names: #{query_names.join(', ')}"
-      with_parameter_configs = configs_having_parameters
-      unless with_parameter_configs.empty?
-        STDERR.puts "Available SPARQL query parameters:"
-        with_parameter_configs.each do |query_name, config|
-          case config['parameters']
-          when Hash
-            parameters = config['parameters'].keys.join(', ')
-          when Array
-            parameters = config['parameters'].join(', ')
-          else
-            parameters = config['parameters'].to_s
-          end
-          STDERR.puts "  #{query_name}: #{parameters}"
-        end
-      end
-      STDERR.puts "Available SPARQL endpoint names: #{@config.endpoint.keys.join(', ')}"
+      merge_options_config
     end
 
     def generate(opts = {})
-      if @query_name.empty?
-        print_usage
-        return
+      validator = RDFConfig::SPARQL::Validator.instance(@config, @opts)
+      validator.validate
+      validator.output_warning_messages
+
+      sparql_lines = generate_sparql_lines(opts)
+      if opts[:url_encode]
+        require 'uri'
+        [endpoint, '?', URI.encode_www_form(query: sparql_lines.join("\n"))].join
+      else
+        sparql_lines.join("\n")
       end
+    end
 
-      validate
-      output_warning_messages
-
+    def generate_sparql_lines(opts = {})
       sparql_generator = SPARQLGenerator.new
 
-      unless  opts[:url_encode]
-        sparql_generator.add_generator(CommentGenerator.new(@config, @opts))
-      end
-      sparql_generator.add_generator(PrefixGenerator.new(@config, @opts))
-      sparql_generator.add_generator(SelectGenerator.new(@config, @opts))
-      sparql_generator.add_generator(DatasetGenerator.new(@config, @opts))
-      sparql_generator.add_generator(WhereGenerator.new(@config, @opts))
+      sparql_generator.add_generator(CommentGenerator.new(@config, @opts))
+      sparql_generator.add_generator(PrefixGenerator.new(@configs, @opts))
+      sparql_generator.add_generator(SelectGenerator.new(@configs, @opts))
+      sparql_generator.add_generator(DatasetGenerator.new(@configs, @opts))
+      sparql_generator.add_generator(WhereGenerator.new(@configs, @opts))
       sparql_generator.add_generator(SolutionModifierGenerator.new(@config, @opts))
 
-      if  opts[:url_encode]
-        require 'uri'
-        [endpoint, '?', URI.encode_www_form(query: sparql_generator.generate.join("\n"))].join
-      else
-        sparql_generator.generate.join("\n")
+      sparql_generator.generate
+    end
+
+    def print_usage?
+      (name.to_s.empty? && !@opts.key?(:query)) ||
+        (@opts.key?(:endpoint_name) && @opts[:endpoint_name].to_s.strip.empty?)
+    end
+
+    def print_usage
+      warn 'Usage: --sparql query_name [--endpoint endpoint_name]'
+      warn "Available SPARQL query names: #{query_names.join(', ')}"
+      with_parameter_configs = configs_having_parameters
+      unless with_parameter_configs.empty?
+        warn 'Available SPARQL query parameters:'
+        with_parameter_configs.each do |query_name, config|
+          parameters = case config['parameters']
+                       when Hash
+                         config['parameters'].keys.join(', ')
+                       when Array
+                         config['parameters'].join(', ')
+                       else
+                         config['parameters'].to_s
+                       end
+          warn "  #{query_name}: #{parameters}"
+        end
       end
+      warn "Available SPARQL endpoint names: #{@config.endpoint.keys.join(', ')}"
+    end
+
+    def config_name
+      @config.name
     end
 
     def name
-      @name = if @opts[:sparql_query_name].to_s.empty?
-                DEFAULT_NAME
-              else
-                @opts[:sparql_query_name]
-              end
+      @opts[:query_name]
     end
 
     def variables
-      @variables ||=
-        ((@config.sparql[name].key?('variables') ? @config.sparql[name]['variables'] : []) + parameters.keys).uniq
+      @variables_handler.variables(config_name)
     end
 
-    def options_hash
-      @options ||=
-        @config.sparql[name].key?('options') ? @config.sparql[name]['options'] : {}
-    end
-
+=begin
     def valid_variables
       valid_vs = []
       variables.each do |variable_name|
-        if model.subject?(variable_name)
-          valid_vs << variable_name
-        else
-          triple = model.find_by_object_name(variable_name)
-          valid_vs << variable_name unless triple.nil?
-        end
+        valid_vs << valid_variable(variable_name)
       end
 
-      valid_vs
+      valid_vs.reject(&:nil?)
+    end
+=end
+
+    def valid_variable(variable_name)
+      @variables_handler.valid_variable(variable_name)
     end
 
     def parameters
-      @parameters ||=
-        @config.sparql[name].key?('parameters') ? @config.sparql[name]['parameters'] : {}
+      @parameters ||= @variables_handler.parameters
     end
 
     def description
-      @description ||=
-        @config.sparql[name].key?('description') ? @config.sparql[name]['description'] : ''
+      @description ||= if sparql?
+                         @config.sparql[name].key?('description') ? @config.sparql[name]['description'] : ''
+                       else
+                         ''
+                       end
+    end
+
+    def options
+      @options ||= if sparql?
+                     @config.sparql[name].key?('options') ? @config.sparql[name]['options'] : {}
+                   else
+                     {}
+                   end
     end
 
     def endpoints
@@ -150,7 +152,7 @@ class RDFConfig
                       end
       @endpoint ||= Endpoint.new(@config, endpoint_opts)
       @endpoint.endpoints
-    rescue
+    rescue StandardError
       []
     end
 
@@ -159,30 +161,37 @@ class RDFConfig
     end
 
     def namespace
-      @namespace ||= @config.prefix
-    end
+      @namespaces[@config.name] = @config.prefix unless @namespaces.key?(@config.name)
 
-    def model
-      @model ||= Model.new(@config)
+      @namespaces[@config.name]
     end
 
     def variable_name_for_sparql(variable_name, add_question_mark = false)
-      if !variable_name.empty? && add_question_mark
-        "?#{variable_name}"
-      else
-        variable_name.to_s
-      end
+      return '' if variable_name.empty?
+
+      name = if join?
+               "#{config_name}__#{variable_name}"
+             else
+               variable_name
+             end
+      name = "?#{name}" if add_question_mark
+
+      name
+    end
+
+    def subject_by_object_name_new(object_name)
+      @variables_handler.subject_by_object_name(object_name)
     end
 
     def subject_by_object_name(object_name)
       model.triples_by_object_name(object_name).reverse.each_with_index do |triple, idx|
         begin
           as_object_name = triple.object.as_object_name
-        rescue
+        rescue StandardError
           as_object_name = ''
         end
 
-        if idx > 0 && variables.include?(as_object_name)
+        if idx.positive? && variables.include?(as_object_name)
           return triple.object
         elsif variables.include?(triple.subject.name)
           return triple.subject
@@ -208,89 +217,20 @@ class RDFConfig
       end
     end
 
-    def closest_subject(object_name)
-      parent_subject_names = model.parent_subject_names(object_name)
-      object_name_for_subject = nil
-      parent_subject_names.reverse.each do |subject_name|
-        if @subjects_by_variables.include?(subject_name)
-          object_name_for_subject = subject_name
-          break
-        end
-      end
-
-      if object_name_for_subject.nil?
-        model.find_subject(parent_subject_names.first)
-      else
-        model.find_subject(object_name_for_subject)
-      end
-    end
-
     def common_subject_names
-      if @common_subject_names.nil?
-        variables_for_where.each do |variable_name|
-          next if model.subject?(variable_name)
-
-          triple = model.find_by_object_name(variable_name)
-          next if triple.nil? || variables.include?(triple.subject.name)
-
-          if @common_subject_names.nil?
-            @common_subject_names = model.parent_subject_names(variable_name)
-          else
-            @common_subject_names &= model.parent_subject_names(variable_name)
-          end
-        end
-
-        @common_subject_names = [] if @common_subject_names.nil?
-      end
-
-      @common_subject_names
-    end
-
-    def hidden_variables
-      variable_names = []
-
-      variables.each do |variable_name|
-        next if model.subject?(variable_name)
-
-        subject = closest_subject(variable_name)
-        variable_names << subject.name if !subject.nil? && !variables.include?(subject.name)
-      end
-
-      parameters.keys.each do |variable_name|
-        variable_names << variable_name
-      end
-
-      variable_names.flatten.uniq
+      @variables_handler.common_subject_names
     end
 
     def variables_for_where
-      @variables_for_where ||= (variables + hidden_variables).uniq
+      @variables_handler.variables_for_where
     end
 
-    def validate
-      return if @@validate_done
-
-      validate_options
-      validate_variables
-      @@validate_done = true
-    end
-
-    def add_error(error_message)
-      @errors << error_message
-    end
-
-    def error?
-      !@errors.empty?
-    end
-
-    def add_warning(warn_message)
-      @warnings << warn_message
-    end
-
-    def output_warning_messages
-      unless @warnings.empty?
-        STDERR.puts @warnings.map { |msg| "WARNING: #{msg}" }.join("\n")
+    def variables_for_where_bak
+      unless @variables_for_where.key?(config_name)
+        @variables_for_where[config_name] = @variables_handler.variables_for_where
       end
+
+      @variables_for_where[config_name]
     end
 
     def distinct?
@@ -302,27 +242,15 @@ class RDFConfig
     end
 
     def limit
-      if @opts.key?('limit') && @opts['limit']
-        @opts['limit']
-      else
-        nil
-      end
+      @opts['limit'] if @opts.key?('limit') && @opts['limit']
     end
 
     def offset
-      if @opts.key?('offset') && @opts['offset'].is_a?(Integer) && @opts['offset'] > 0
-        @opts['offset']
-      else
-        nil
-      end
+      @opts['offset'] if @opts.key?('offset') && @opts['offset'].is_a?(Integer) && (@opts['offset']).positive?
     end
 
     def order_by
-      if @opts.key?('order_by') && @opts['order_by']
-        @opts['order_by']
-      else
-        nil
-      end
+      @opts['order_by'] if @opts.key?('order_by') && @opts['order_by']
     end
 
     def run
@@ -334,8 +262,8 @@ class RDFConfig
       http = Net::HTTP.new(endpoint_uri.host, endpoint_uri.port)
       http.use_ssl = endpoint_uri.scheme == 'https'
       headers = {
-          'Accept' => 'application/sparql-results+json',
-          'Content-Type' => 'application/x-www-form-urlencoded'
+        'Accept' => 'application/sparql-results+json',
+        'Content-Type' => 'application/x-www-form-urlencoded'
       }
 
       url_path = endpoint_uri.path
@@ -349,92 +277,51 @@ class RDFConfig
       end
     end
 
-    class SPARQLConfigNotFound < StandardError; end
-    class InvalidSPARQLConfig < StandardError; end
-
     private
 
-    def validate_variables
-      variables.each do |variable_name|
-        next if model.subject?(variable_name) || !model.find_object(variable_name).nil?
+    def init_instance_variables
+      @variables_hash = nil
+      @parameters = nil
+      @description = nil
+      @options = nil
+      @endpoint = nil
+    end
 
-        add_warning("Variable name (#{variable_name}) is set in sparql.yaml file, but not in model.yaml file.")
+    def parse_opts
+      sparql_argv = if @opts[:sparql].is_a?(Array)
+                      @opts[:sparql].first
+                    else
+                      @opts[:sparql]
+                    end
+      sparql_argv = sparql_argv.to_s.strip
+
+      @opts[:query_name] = sparql_argv
+      set_query_opts if @opts.key?(:query)
+    end
+
+    def set_query_opts
+      @opts[:query] = [@opts[:query]] unless @opts[:query].is_a?(Array)
+      @opts[:query].each do |var_val|
+        variable_name, value = var_val.split('=', 2)
+        @values[variable_name] = value if value
       end
     end
 
-    def validate_options
-      return if options_hash.empty?
-
-      validate_options_key
-      validate_distinct
-      validate_order_by
-      validate_offset
-      validate_limit
+    def variables_by_parameters_config
+      parameters.keys
     end
 
-    def validate_options_key
-      invalid_keys = options_hash.keys - OPTIONS_VALID_KEYS
-      unless invalid_keys.empty?
-        add_error(%(Invalid options #{invalid_keys.map { |key| "'#{key}'" }.join(', ')} in sparql.yaml file. Valid options are #{OPTIONS_VALID_KEYS.join(', ')}.))
-      end
+    def variables_by_variables_config
+      @config.sparql[name].key?('variables') ? @config.sparql[name]['variables'] : []
     end
 
-    def validate_order_by
-      case options_hash['order_by']
-      when String
-        validate_order_by_variable_name(options_hash['order_by'])
-      when Hash
-        options_hash['order_by'].keys.each do |variable_name|
-          validate_order_by_variable_name(variable_name)
-        end
-        options_hash['order_by'].each do |variable_name, value|
-          next if %w[ASC DESC].include?(value.upcase)
-
-          add_error("The value of order_by '#{variable_name}' in sparql.yaml file must be either asc or desc.")
-        end
-      when Array
-        options_hash['order_by'].each do |item|
-          case item
-          when String
-            validate_order_by_variable_name(item)
-          when Hash
-            validate_order_by_variable_name(item.keys.first)
-          end
-        end
-      end
+    def variables_by_sparql_args
+      @values.keys
     end
 
-    def validate_order_by_variable_name(variable_name)
-      unless variables.include?(variable_name)
-        add_error(invalid_order_by_message(variable_name))
-      end
-    end
-
-    def invalid_order_by_message(variable_name)
-      "Variable name '#{variable_name}' is set order_by option, but it is not contained in the variables."
-    end
-
-    def validate_distinct
-      return unless options_hash.key?('distinct')
-
-      unless [TrueClass, FalseClass].include?(options_hash['distinct'].class)
-        add_error("The value of option 'distinct' in sparql.yaml file must be either true or false.")
-      end
-    end
-
-    def validate_offset
-      return unless options_hash.key?('offset')
-
-      unless options_hash['offset'].is_a?(Integer)
-        add_error("The value of option 'offset' in sparql.yaml file must be an integer.")
-      end
-    end
-
-    def validate_limit
-      return if options_hash.key?('limit')
-
-      if options_hash['limit'] != false && options_hash['limit'].is_a?(Integer)
-        add_error("The value of option 'limit' in sparql.yaml file must be an integer.")
+    def subjects_by_variables
+      @variables_handler.visible_variables.select do |variable_name|
+        model.find_object(variable_name).is_a?(Model::Subject)
       end
     end
 
@@ -445,6 +332,10 @@ class RDFConfig
         'offset' => nil,
         'order_by' => nil
       }
+    end
+
+    def merge_options_config
+      @opts = @opts.merge(@config.sparql[name]['options']) if sparql? && @config.sparql[name].key?('options')
     end
 
     def query_names
@@ -459,6 +350,26 @@ class RDFConfig
       @config.sparql.select do |query_name, config_hash|
         config_hash.is_a?(Hash) && config_hash.key?('parameters')
       end
+    end
+
+    def sparql?
+      @opts.key?(:sparql)
+    end
+
+    def query?
+      @opts.key?(:query)
+    end
+
+    def join?
+      @opts.key?(:join)
+    end
+
+    def config_by_name(config_name)
+      @configs.select { |config| config.name == config_name }.first
+    end
+
+    def model
+      Model.instance(@config)
     end
   end
 end

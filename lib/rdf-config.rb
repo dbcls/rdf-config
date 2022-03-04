@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 require 'yaml'
 require 'json'
@@ -18,7 +19,11 @@ class RDFConfig
   require 'rdf-config/shex'
 
   def initialize(opts = {})
-    @config = Config.new(opts[:config_dir])
+    @config = if opts[:config_dir].is_a?(Array)
+                opts[:config_dir].map { |config_dir| Config.new(config_dir) }
+              else
+                Config.new(opts[:config_dir])
+              end
     @opts = opts
   end
 
@@ -47,7 +52,11 @@ class RDFConfig
 
   def generate_sparql
     sparql = SPARQL.new(@config, @opts)
-    sparql.generate
+    if sparql.print_usage?
+      sparql.print_usage
+    else
+      sparql.generate
+    end
   end
 
   def generate_sparql_url
@@ -64,14 +73,14 @@ class RDFConfig
     stanza = Stanza::Ruby.new(@config, @opts)
     stanza.generate
   rescue Stanza::StanzaConfigNotFound, Stanza::StanzaExecutionFailure => e
-    STDERR.puts e
+    warn e
   end
 
   def generate_stanza_js
     stanza = Stanza::JavaScript.new(@config, @opts)
     stanza.generate
   rescue Stanza::StanzaConfigNotFound, Stanza::StanzaExecutionFailure => e
-    STDERR.puts e
+    warn e
   end
 
   def generate_senbero
