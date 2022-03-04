@@ -118,17 +118,19 @@ NAME
     rdf-config -- RDF model to SPARQL, Schema, Stanza converter
 
 SYNOPSIS
-    rdf-config --help
-    rdf-config --config path/to/config/name --endpoint   [endpointname]
     rdf-config --config path/to/config/name --sparql     [queryname]
     rdf-config --config path/to/config/name --query      var1 var2=value var3 ...
-    rdf-config --config path/to/config/name --url        (use with --sparql or --query) 
+
+    Use with --sparql or --query options:
+    rdf-config --config path/to/config/name --endpoint   [endpointname]
+    rdf-config --config path/to/config/name --url        
+
     rdf-config --config path/to/config/name --schema
     rdf-config --config path/to/config/name --senbero
     rdf-config --config path/to/config/name --grasp
-    rdf-config --config path/to/config/name --stanza     [stanzaname]
-    rdf-config --config path/to/config/name --stanza_rb  [stanzaname]
+    rdf-config --config path/to/config/name --stanza
     rdf-config --config path/to/config/name --shex
+    rdf-config --help
 
 DESCRIPTION
 
