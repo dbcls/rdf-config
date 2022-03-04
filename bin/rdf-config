@@ -119,7 +119,10 @@ NAME
 
 SYNOPSIS
     rdf-config --help
+    rdf-config --config path/to/config/name --endpoint   [endpointname]
     rdf-config --config path/to/config/name --sparql     [queryname]
+    rdf-config --config path/to/config/name --query      var1 var2=value var3 ...
+    rdf-config --config path/to/config/name --url        (use with --sparql or --query) 
     rdf-config --config path/to/config/name --schema
     rdf-config --config path/to/config/name --senbero
     rdf-config --config path/to/config/name --grasp
@@ -137,7 +140,7 @@ DESCRIPTION
     in the YAML format.
 
     * config/name/model.yaml: RDF deta model structure and variable names
-    * config/name/endpoint.yaml: SPARQL endpoint
+    * config/name/endpoint.yaml: SPARQL endpoint (default endpoint:)
     * config/name/prefix.yaml: URI prefixes
     * config/name/sparql.yaml: SPARQL definition
     * config/name/stanza.yaml: TogoStanza definition
