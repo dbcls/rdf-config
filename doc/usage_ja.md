@@ -11,7 +11,10 @@
 ## 実行オプション
 | オプション | 実行される処理 |
 ----|----
-| --sparql \[クエリ名:エンドポイント名\] | SPARQLクエリを標準出力に出力する。 |
+| --sparql \[クエリ名\] | SPARQLクエリを標準出力に出力する。 |
+| --query \[変数名 変数名=値\] | 出力する変数およびVALUESの値のリストを指定してSPARQLクエリを標準出力に出力する。 |
+| --endpoint \[エンドポイント名\] | `--sparql`や`--query`で使用するエンドポイントを指定する。 |
+| --url | `--sparql`や`--query`で生成したSPARQLをURLエンコードして出力する。 |
 | --schema \[スキーマ名:図の種類\] | RDFモデルのスキーマ図をSVG形式で標準出力に出力する。 |
 | --senbero | RDFモデルの構造をテキスト形式で標準出力に出力する。 |
 | --stanza \[Stanza ID\] | JavaScript版のStanzaファイル一式を生成する。<br />Node.jsがインストールされており、<br />npxコマンドのディレクトリがPATH環境変数に設定されている必要がある。 |
@@ -26,17 +29,61 @@
 % rdf-config --config config/db --sparql
 ```
 
-のようにオプションを省略することで、下記のように設定可能なクエリ名のリストおよびエンドポイント名のリストが標準エラー出力に表示される。
+のようにオプションを省略することで、下記のように設定可能なクエリ名のリスト、デフォルト値の指定されている変数、およびエンドポイント名のリストが標準エラー出力に表示される。
 
 ```
-Usage: --sparql query_name[:endpoint_name]
-Available SPARQL query names: sparqlクエリ名1, sparqlクエリ名2
-Available SPARQL endpoint names: endpoint名1, endpoint名2
+Usage: --sparql query_name [--query var=value] [--endpoint endpoint_name]
+Available SPARQL query names: SPARQLクエリ名1, SPARQLクエリ名2
+Preset SPARQL query parameters (use --query to override):
+  クエリ名1: 変数名1
+  クエリ名2: 変数名2, 変数名3
+Available SPARQL endpoint names: エンドポイント名1, エンドポイント名2
+```
+
+#### `--query`
+
+```
+% rdf-config --config config/db --query
+```
+
+のようにオプションを省略することで、ヘルプとエンドポイント名のリストが標準エラー出力に表示される。
+
+```
+Usage: --query var1 var2=value var3 [--endpoint endpoint_name]
+  var: Specify a list of variable names (defined in the model.yaml file).
+  var=value: Specify variable name and its value to be assigned.
+Available SPARQL endpoint names: エンドポイント名1, エンドポイント名2
+```
+
+`--query` オプションには、`model.yaml` で定義されている任意の変数名のリストを渡すことができ、それらを出力するSPARQLクエリを生成する。変数名に `var=value` の形で値を指定すると、VALUES句で使用する値を指定（デフォルト値が `sparql.yaml` で定義されている場合は上書き）できる。
+
+#### `--endpoint`
+
+エンドポイントを指定する `--endpoint` オプションは `--sparql`, `--query`, `--stanza` と組み合わせて使用する。
+
+```
+% rdf-config --config config/db --endpoint
+```
+
+のようにオプションを省略することで、指定可能なエンドポイント名のリストが標準エラー出力に表示される（デフォルトは `endpoint`）。
+
+```
+Usage: --endpoint endpoint_name
+Available SPARQL endpoint names: エンドポイント名1, エンドポイント名2
+```
+
+#### `--url`
+
+URLエンコードしたSPARQLの出力を指定する `--url` オプションは `--sparql`, `--query`, `--stanza` と組み合わせて使用する。
+
+```
+% rdf-config --config config/db --sparql クエリ名 [--endpoint エンドポイント名] --url
+% rdf-config --config config/db --query 変数名のリスト [--endpoint エンドポイント名] --url
 ```
 
 #### `--schema`
 
-schema.yaml が作られている場合、
+`schema.yaml` が作られている場合、
 
 ```
 % rdf-config --config config/db --schema
@@ -46,11 +93,11 @@ schema.yaml が作られている場合、
 
 ```
 Usage: --schema schema_name[:type]
-Available schema names: schema名1, schema名2, schema名3
+Available schema names: スキーマ名1, スキーマ名2, スキーマ名3
 Avanlable schema types: nest, table, arc
 ```
 
-schema.yaml がない場合、デフォルトのスキーマ図が生成される。
+`schema.yaml` がない場合、デフォルトのスキーマ図が生成される。
 
 #### `--stanza`
 
@@ -62,7 +109,7 @@ schema.yaml がない場合、デフォルトのスキーマ図が生成され�
 
 ```
 Usage: --stanza stanza_name
-Available stanza names: stanza名1, stanza名2
+Available stanza names: スタンザ名1, スタンザ名2
 ```
 
 ### SPARQLの生成について
@@ -70,19 +117,19 @@ Available stanza names: stanza名1, stanza名2
 SPARQL を生成するには、rdf-config に --sparql オプションを付けて実行する。
 
 ```
-% rdf-config --config 設定ファイルのディレクトリ名 --sparql クエリ名:エンドポイント名
+% rdf-config --config 設定ファイルのディレクトリ名 --sparql クエリ名 [--endpoint エンドポイント名]
 ```
 
-クエリ名には、sparql.yaml ファイルで設定したクエリを１つ選んで指定する。
+クエリ名には、`sparql.yaml` ファイルで設定したクエリを１つ選んで指定する。
 
-エンドポイント名には、endpoint.yaml ファイルで設定したエンドポイントを１つ選んで指定する。
+エンドポイント名には、`endpoint.yaml` ファイルで設定したエンドポイントを１つ選んで指定する。
 
 以下では、MeSH の [model.yaml](../config/mesh/model.yaml), [sparql.yaml](../config/mesh/sparql.yaml), [endpoint.yaml](../config/mesh/endpoint.yaml) を用いて実行例を示す。
 
-例： MeSH の SPARQL 生成で、クエリ名 `sparql` とエンドポイント名 `endpoint` を使用
+例：MeSH の SPARQL 生成で、クエリ名 `sparql` を使用
 
 ```
-% rdf-config --config config/mesh --sparql sparql:endpoint
+% rdf-config --config config/mesh --sparql sparql
 # Endpoint: https://id.nlm.nih.gov/mesh/sparql
 # Description: Descriptor -> Concept -> Term, Descriptor -> Qualifier, Descriptor -> Term, Descriptor -> TreeNumber
 
@@ -105,10 +152,10 @@ WHERE {
 LIMIT 100
 ```
 
-例： クエリ名を `tree_pair` に、エンドポイント名を `med2rdf` に変更
+例：クエリ名を `tree_pair` に、エンドポイント名を `med2rdf` に変更
 
 ```
-% rdf-config --config config/mesh --sparql tree_pair:med2rdf
+% rdf-config --config config/mesh --sparql tree_pair --endpoint med2rdf
 # Endpoint: http://sparql.med2rdf.org/sparql
 # Description: 
 # Parameter: parent_tree_number: (example: mesh:C01)
@@ -129,16 +176,16 @@ LIMIT 100
 
 #### 変数に値を指定した SPARQL を生成する
 
-sparql.yaml の parameters に指定されている変数に、デフォルト値以外の値を与えて SPARQL を生成する場合、「変数名=値」を追加する。
+`sparql.yaml` の parameters に指定されている変数に、デフォルト値以外の値を与えて SPARQL を生成する場合、`--query` オプションに「変数名=値」を追加する。
 
 ```
-% rdf-config --config 設定ファイルのディレクトリ名 --sparql クエリ名:エンドポイント名 変数名=値 変数名2=値2
+% rdf-config --config 設定ファイルのディレクトリ名 --sparql クエリ名 --endpoint エンドポイント名 --query 変数名=値 変数名2=値2
 ```
 
-例： Ensembl で taxonomy ID をヒト (taxonomy:9606) からマウス (taxonomy:10090) に変更した SPARQL を生成
+例：Ensembl で taxonomy ID をヒト (taxonomy:9606) からマウス (taxonomy:10090) に変更した SPARQL を生成
 
 ```
-% rdf-config --config config/ensembl --sparql sparql ensg_taxonomy=taxonomy:10090
+% rdf-config --config config/ensembl --sparql sparql --query ensg_taxonomy=taxonomy:10090
 # Endpoint: https://integbio.jp/rdf/mirror/ebi/sparql
 # Description: Ensembl gene and chromosome
 # Parameter: ensg_taxonomy: (example: taxonomy:9606)
@@ -164,6 +211,56 @@ WHERE {
 LIMIT 100
 ```
 
+#### 任意の変数を指定した SPARQL を生成する
+
+`sparql.yaml` を利用せず、`model.yaml` に定義されている任意の変数名を列挙して SPARQL を生成する場合、`--query` オプションに「変数名1 変数名2」のようなリストを指定する。変数名に VALUES 句でバインドする値は「変数名=値」の形で指定する。
+
+```
+% rdf-config --config 設定ファイルのディレクトリ名 --query 変数名1 変数名2=値 変数名3 --endpoint エンドポイント名
+```
+
+例：HGNC で gene_id を指定し、hgnc_id, description, ensembl_id を取得する SPARQL を生成
+
+```
+% rdf-config --config config/hgnc --query gene_id=ACE2 hgnc_id description ensembl_id
+# Endpoint: http://sparql.med2rdf.org/sparql
+# Description: 
+# Parameter: gene_id: (example: ACE2)
+
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX m2r: <http://med2rdf.org/ontology/med2rdf#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX idt: <http://identifiers.org/>
+
+SELECT ?hgnc_id ?description ?ensembl_id
+WHERE {
+    VALUES ?gene_id { "ACE2" }
+    VALUES ?HGNC__class { obo:SO_0000704 m2r:Gene }
+    ?HGNC a ?HGNC__class ;
+        dct:identifier ?hgnc_id ;
+        dct:description ?description ;
+        rdfs:label ?gene_id .
+    OPTIONAL {
+        ?HGNC rdfs:seeAlso ?Ensembl .
+        ?Ensembl a idt:ensembl ;
+            dct:identifier ?ensembl_id .
+    }
+}
+LIMIT 100
+```
+
+#### 生成したSPARQL を URL エンコードして結果を取得する
+
+利用したい SPARQL が生成できることを確認したら、`--url` オプションを付けることで SPARQL 検索が実行可能な API の URL が出よくされるため、アプリケーションや `curl` コマンドなどで結果を取得する。
+
+```
+% curl -H 'Accept: application/sparql-results+json' `bin/rdf-config --config config/hgnc --query gene_id=ACE2 hgnc_id description ensembl_id --url`
+{ "head": { "link": [], "vars": ["hgnc_id", "description", "ensembl_id"] },
+  "results": { "distinct": false, "ordered": true, "bindings": [
+    { "hgnc_id": { "type": "literal", "value": "13557" }	, "description": { "type": "literal", "value": "angiotensin converting enzyme 2" }	, "ensembl_id": { "type": "literal", "value": "ENSG00000130234" }},
+    { "hgnc_id": { "type": "literal", "value": "13557" }	, "description": { "type": "literal", "value": "angiotensin converting enzyme 2" }	, "ensembl_id": { "type": "literal", "value": "ENSG00000130234" }} ] } }
+```
 
 ### スキーマ図の生成について
 
@@ -180,40 +277,40 @@ LIMIT 100
 
 図の種類が指定されていない場合は、各主語が1列に並んだ図が生成される。
 
-スキーマ名には、schema.yaml ファイルで設定したスキーマ名を指定する。
-スキーマ図に出力したい主語名、目的語名を schema.yaml ファイルに設定しておくことで、model.yaml ファイルに設定された全ての RDF トリプルではなく、スキーマ図のサブセットを生成することができる。
+スキーマ名には、`schema.yaml` ファイルで設定したスキーマ名を指定する。
+スキーマ図に出力したい主語名、目的語名を `schema.yaml` ファイルに設定しておくことで、`model.yaml` ファイルに設定された全ての RDF トリプルではなく、スキーマ図のサブセットを生成することができる。
 
 以下では、MeSH の [model.yaml](../config/mesh/model.yaml) と [schema.yaml](../config/mesh/schema.yaml) を用いて実行例を示す。
 
-例： デフォルトで全ての主語と目的語を出力（タイトルは無し）
+例：デフォルトで全ての主語と目的語を出力（タイトルは無し）
 
 ```
 % rdf-config --config config/mesh --schema > mesh.svg
 ```
 ![MeSH schema](./figure/mesh.svg)
 
-例： 主語間の関係を arc で表示
+例：主語間の関係を arc で表示
 
 ```
 % rdf-config --config config/mesh --schema :arc > mesh_arc.svg
 ```
 ![MeSH schema](./figure/mesh_arc.svg)
 
-例： 各主語の目的語を表形式でコンパクトに表示
+例：各主語の目的語を表形式でコンパクトに表示
 
 ```
 % rdf-config --config config/mesh --schema :table > mesh_table.svg
 ```
 ![MeSH schema](./figure/mesh_table.svg)
 
-例：　タイトルだけ追加したスキーマ図を生成
+例：タイトルだけ追加したスキーマ図を生成
 
 ```
 % rdf-config --config config/mesh --schema title > mesh_title.svg
 ```
 * [mesh_title.svg](./figure/mesh_title.svg)
 
-例：　一部の主語だけを抜き出したスキーマ図を生成
+例：一部の主語だけを抜き出したスキーマ図を生成
 
 ```
 % rdf-config --config config/mesh --schema main_subjects > mesh_main_subjects.svg
@@ -224,7 +321,7 @@ LIMIT 100
 * [mesh_main_subjects_arc.svg](./figure/mesh_main_subjects_arc.svg)
 * [mesh_main_subjects_table.svg](./figure/mesh_main_subjects_table.svg)
 
-例：　一部の目的語だけを抜き出したスキーマ図を生成
+例：一部の目的語だけを抜き出したスキーマ図を生成
 
 ```
 % rdf-config --config config/mesh --schema main_objects > mesh_main_objectss.svg
@@ -244,9 +341,9 @@ LIMIT 100
 % rdf-config --config 設定ファイルのディレクトリ名 --stanza スタンザ名
 ```
 
-生成されるスタンザは stanza.yaml で指定した `output_dir` に出力される。
+生成されるスタンザは `stanza.yaml` で指定した `output_dir` に出力される。
 
-例： RefEx のスタンザを生成
+例：RefEx のスタンザを生成
 
 ```
 % rdf-config --config config/refex --stanza refex_entry

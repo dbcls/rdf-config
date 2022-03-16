@@ -1,18 +1,21 @@
 class RDFConfig
   class Endpoint
-    DEFAULT_NAME = 'endpoint'
+    DEFAULT_NAME = 'endpoint'.freeze
 
     attr_reader :endpoints, :graphs
 
     def initialize(config, opts = {})
+      @config = config
       @endpoint = config.endpoint
 
-      endpoint_name = opts[:name] || opts['name']
-      unless endpoint_name.nil?
-        @target = config_by_name(endpoint_name)
-        raise Config::InvalidConfig, %Q(ERROR: Endpoint "#{endpoint_name}" is not specified in endpoint.yaml file.) if @target.nil?
-      else
-        @target = config_by_name(DEFAULT_NAME)
+      endpoint_name = opts[:name] || DEFAULT_NAME
+      @target = if endpoint_name.nil?
+                  config_by_name(DEFAULT_NAME)
+                else
+                  config_by_name(endpoint_name)
+                end
+      if @target.nil?
+        raise Config::InvalidConfig, %(ERROR: Endpoint "#{endpoint_name}" is not specified in endpoint.yaml file.)
       end
 
       @endpoints = []
@@ -23,6 +26,18 @@ class RDFConfig
 
     def primary_endpoint
       @endpoints.first
+    end
+
+    def all_endpoints
+      endpoints = []
+      return endpoints unless @config.endpoint.is_a?(Hash)
+
+      @config.endpoint.each_key do |endpoint_name|
+        endpoint = Endpoint.new(@config, name: endpoint_name)
+        endpoints += endpoint.endpoints
+      end
+
+      endpoints
     end
 
     private

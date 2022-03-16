@@ -8,6 +8,7 @@ The SPARQL endpoint can be specified using the following notation.
 endpoint: http://example.org/sparql
 ```
 
+Default endpoint must be specified by the `endpoit:` key.
 If you want to specify multiple endpoints for the same data, use the following notation.
 Each endpoint can contain graph names which are used in the FROM clause in the generated SPARQL query.
 

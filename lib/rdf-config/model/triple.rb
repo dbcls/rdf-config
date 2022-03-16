@@ -319,6 +319,7 @@ class RDFConfig
 
     class Subject
       attr_reader :name, :value, :predicates, :as_object
+      attr_accessor :bnode_name
 
       def initialize(subject_hash, prefix_hash = {})
         @prefix_hash = prefix_hash
@@ -348,8 +349,14 @@ class RDFConfig
         @name.is_a?(Array)
       end
 
-      def objects
-        @predicates.map(&:objects).flatten
+      def objects(opts = {})
+        if opts[:reject_rdf_type]
+          predicates = @predicates.reject(&:rdf_type?)
+        else
+          predicates = @predicates
+        end
+
+        predicates.map(&:objects).flatten
       end
 
       def object_names
@@ -632,6 +639,10 @@ class RDFConfig
 
       def rdf_type_uri
         @name
+      end
+
+      def as_subject
+        @value
       end
     end
 

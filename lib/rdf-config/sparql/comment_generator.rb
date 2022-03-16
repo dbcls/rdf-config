@@ -7,6 +7,7 @@ class RDFConfig
 
       def generate
         lines = generate_endpoint_lines
+        return lines if join?
 
         lines << "# Description: #{description}"
 
@@ -30,9 +31,14 @@ class RDFConfig
       def generate_endpoint_lines
         return generate_no_endpoint_lines if endpoints.empty?
 
+        endps = if join?
+                  common_endpoints
+                else
+                  endpoints
+                end
         lines = []
         lines << "# Endpoint: #{endpoints.first}"
-        (1 ... endpoints.size).each do |i|
+        (1...endps.size).each do |i|
           lines << "#           #{endpoints[i]}"
         end
 
@@ -41,6 +47,20 @@ class RDFConfig
 
       def generate_no_endpoint_lines
         ['# Endpoint: Please define a SPARQL endpoint in the endpoint.yaml file.']
+      end
+
+      def common_endpoints
+        common_ep = nil
+        @configs.each do |config|
+          endpoint = Endpoint.new(config)
+          if common_ep.nil?
+            common_ep = endpoint.all_endpoints
+          else
+            common_ep &= endpoint.all_endpoints
+          end
+        end
+
+        common_ep
       end
     end
   end
