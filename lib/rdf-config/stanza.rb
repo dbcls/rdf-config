@@ -7,7 +7,6 @@ require 'rdf-config/stanza/ruby'
 class RDFConfig
   class Stanza
     YAML_SPARQL_KEY = 'sparql'.freeze
-    attr_reader :sparql
 
     def initialize(config, opts = {})
       @config = config
@@ -24,18 +23,16 @@ class RDFConfig
         @name = @stanza_name
         @targets = [@stanza_name]
       end
-
-      @sparql ||= SPARQL.new(@config, opts_for_initialize_sparql)
     end
 
     def print_usage
       print_stanza_usage if @stanza_name.empty?
-      @sparql.print_usage if @sparql.print_usage?
+      sparql.print_usage if sparql.print_usage?
       warn ''
     end
 
     def print_usage?
-      @stanza_name.empty? || @sparql.print_usage?
+      @stanza_name.empty? || sparql.print_usage?
     end
 
     def generate
@@ -107,6 +104,27 @@ class RDFConfig
     end
 
     def sparql_result_html(suffix = '', indent_chars = '  ')
+      lines = ['<table>']
+
+      lines << "#{indent_chars}<tr>"
+      sparql.variables.each do |var_name|
+        lines << "#{indent_chars * 2}<th>#{var_name}</th>"
+      end
+      lines << "#{indent_chars}</tr>"
+
+      lines << "{{#each #{@name}}}"
+      lines << "#{indent_chars}<tr>"
+      sparql.variables.each do |var_name|
+        lines << "#{indent_chars * 2}<td>{{#{var_name}.value}}</td>"
+      end
+      lines << "#{indent_chars}</tr>"
+      lines << '{{/each}}'
+      lines << '</table>'
+
+      lines.join("\n")
+    end
+
+    def sparql_result_html_dd(suffix = '', indent_chars = '  ')
       lines = ["{{#each #{@name}}}"]
 
       unless parameters.empty?
@@ -143,6 +161,10 @@ class RDFConfig
       stanza_conf['parameters']
     end
 
+    def sparql
+      @sparql ||= SPARQL.new(@config, opts_for_initialize_sparql)
+    end
+
     private
 
     def before_generate; end
@@ -156,10 +178,10 @@ class RDFConfig
     end
 
     def sparql_name
-      begin
+      if stanza_conf.is_a?(Hash) && stanza_conf.key?(YAML_SPARQL_KEY)
         stanza_conf[YAML_SPARQL_KEY]
-      rescue
-        'sparql'
+      else
+        @config.sparql.keys.first
       end
     end
 
@@ -201,14 +223,14 @@ class RDFConfig
       warn 'Usage: --stanza stanza_name [--query var=value] [--endpoint endpoint_name]'
       warn "Available stanza names: #{@config.stanza.keys.join(', ')}"
       lines = []
-      @config.stanza.keys.each do |stanza_name|
+      @config.stanza.each_key do |stanza_name|
         sparql_name = @config.stanza[stanza_name]['sparql']
-        next unless sparql_name
+        next if !@config.sparql.key?(sparql_name) || !@config.sparql[sparql_name].key?('parameters')
 
         parameters = @config.sparql[sparql_name]['parameters']
         next unless parameters.is_a?(Hash)
 
-        lines << "  stanza_name: #{stanza_name},  sparql_name: #{sparql_name}, parameters: #{parameters.keys.join(', ')}"
+        lines << "  stanza_name: #{stanza_name}, sparql_name: #{sparql_name}, parameters: #{parameters.keys.join(', ')}"
       end
 
       return if lines.empty?
