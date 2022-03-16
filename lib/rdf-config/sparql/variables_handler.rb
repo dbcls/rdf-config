@@ -3,10 +3,16 @@ require 'rdf-config/model'
 class RDFConfig
   class SPARQL
     class VariablesHandler
-      @@instance = nil
+      @@instance = {}
       class << self
-        def instance(config, sparql_name, opts)
-          @@instance ||= new(config, sparql_name, opts)
+        def instance(config, opts)
+          key = {
+            config_name: config.name,
+            opts: opts.to_s
+          }
+          @@instance[key] = new(config, opts) unless @@instance.key?(key)
+
+          @@instance[key]
         end
       end
 
@@ -15,9 +21,7 @@ class RDFConfig
       end
 
       def variables_for_select
-        variables = (@variables_by_config + variables_by_query_opts).uniq
-
-        refine_variables(variables)
+        refine_variables(visible_variables)
       end
 
       def variables_for_where
@@ -195,7 +199,7 @@ class RDFConfig
         @config = config
       end
 
-      def initialize(config, sparql_name, opts)
+      def initialize(config, opts)
         if config.is_a?(Array)
           @configs = config
           @config = config.first
@@ -203,18 +207,18 @@ class RDFConfig
           @configs = [config]
           @config = config
         end
-        @sparql_name = sparql_name
+        @sparql_name = opts[:query_name]
         @opts = opts
 
         begin
-          @variables_by_config = @config.sparql[sparql_name]['variables']
+          @variables_by_config = @config.sparql[@sparql_name]['variables']
           @variables_by_config = [] if @variables_by_config.nil?
         rescue StandardError
           @variables_by_config = []
         end
 
         begin
-          @parameters_by_config = @config.sparql[sparql_name]['parameters']
+          @parameters_by_config = @config.sparql[@sparql_name]['parameters']
           @parameters_by_config = {} if @parameters_by_config.nil?
         rescue StandardError
           @parameters_by_config = {}

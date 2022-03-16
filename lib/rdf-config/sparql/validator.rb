@@ -23,6 +23,7 @@ class RDFConfig
         else
           validate_variables
         end
+        validate_endpoint
         validate_options
 
         @validate_done = true
@@ -38,11 +39,18 @@ class RDFConfig
       end
 
       def validate_variables_by_config
-        @variables_handler.visible_variables.each do |variable_name|
+        variables_handler.visible_variables.each do |variable_name|
           next if model.subject?(variable_name) || !model.find_object(variable_name).nil?
 
           add_warning("Variable name (#{variable_name}) not found in model.yaml file.")
         end
+      end
+
+      def validate_endpoint
+        return unless @opts.key?(:endpoint_name)
+        return if @config.endpoint.keys.include?(@opts[:endpoint_name])
+
+        add_error(%(Endpoint "#{@opts[:endpoint_name]}" is not specified in endpoint.yaml file.))
       end
 
       def validate_options

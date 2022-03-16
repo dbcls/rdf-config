@@ -31,7 +31,6 @@ class RDFConfig
 
       @values = {}
       @namespaces = {}
-      @variables_handler = VariablesHandler.instance(config, name, opts)
 
       parse_opts
 
@@ -61,40 +60,25 @@ class RDFConfig
     def generate_sparql_lines(opts = {})
       sparql_generator = SPARQLGenerator.new
 
-      sparql_generator.add_generator(CommentGenerator.new(@config, @opts))
+      sparql_generator.add_generator(CommentGenerator.new(@config, @opts)) if sparql_comment?
       sparql_generator.add_generator(PrefixGenerator.new(@configs, @opts))
       sparql_generator.add_generator(SelectGenerator.new(@configs, @opts))
       sparql_generator.add_generator(DatasetGenerator.new(@configs, @opts))
       sparql_generator.add_generator(WhereGenerator.new(@configs, @opts))
-      sparql_generator.add_generator(SolutionModifierGenerator.new(@config, @opts))
+      sparql_generator.add_generator(SolutionModifierGenerator.new(@config, @opts)) unless template?
 
       sparql_generator.generate
     end
 
     def print_usage?
-      (name.to_s.empty? && !@opts.key?(:query)) ||
-        (@opts.key?(:endpoint_name) && @opts[:endpoint_name].to_s.strip.empty?)
+      empty_sparql_option? || empty_query_option? || empty_endpoint_option?
     end
 
     def print_usage
-      warn 'Usage: --sparql query_name [--endpoint endpoint_name]'
-      warn "Available SPARQL query names: #{query_names.join(', ')}"
-      with_parameter_configs = configs_having_parameters
-      unless with_parameter_configs.empty?
-        warn 'Available SPARQL query parameters:'
-        with_parameter_configs.each do |query_name, config|
-          parameters = case config['parameters']
-                       when Hash
-                         config['parameters'].keys.join(', ')
-                       when Array
-                         config['parameters'].join(', ')
-                       else
-                         config['parameters'].to_s
-                       end
-          warn "  #{query_name}: #{parameters}"
-        end
-      end
-      warn "Available SPARQL endpoint names: #{@config.endpoint.keys.join(', ')}"
+      print_sparql_usage if empty_sparql_option?
+      print_query_usage if empty_query_option?
+      print_endpoint_usage if empty_endpoint_option?
+      warn_available_endpoint_names
     end
 
     def config_name
@@ -106,7 +90,7 @@ class RDFConfig
     end
 
     def variables
-      @variables_handler.variables(config_name)
+      variables_handler.variables(config_name)
     end
 
 =begin
@@ -121,11 +105,11 @@ class RDFConfig
 =end
 
     def valid_variable(variable_name)
-      @variables_handler.valid_variable(variable_name)
+      variables_handler.valid_variable(variable_name)
     end
 
     def parameters
-      @parameters ||= @variables_handler.parameters
+      @parameters ||= variables_handler.parameters
     end
 
     def description
@@ -180,7 +164,7 @@ class RDFConfig
     end
 
     def subject_by_object_name_new(object_name)
-      @variables_handler.subject_by_object_name(object_name)
+      variables_handler.subject_by_object_name(object_name)
     end
 
     def subject_by_object_name(object_name)
@@ -218,16 +202,16 @@ class RDFConfig
     end
 
     def common_subject_names
-      @variables_handler.common_subject_names
+      variables_handler.common_subject_names
     end
 
     def variables_for_where
-      @variables_handler.variables_for_where
+      variables_handler.variables_for_where
     end
 
     def variables_for_where_bak
       unless @variables_for_where.key?(config_name)
-        @variables_for_where[config_name] = @variables_handler.variables_for_where
+        @variables_for_where[config_name] = variables_handler.variables_for_where
       end
 
       @variables_for_where[config_name]
@@ -300,7 +284,14 @@ class RDFConfig
     end
 
     def set_query_opts
-      @opts[:query] = [@opts[:query]] unless @opts[:query].is_a?(Array)
+      if @opts[:query].is_a?(String)
+        @opts[:query] = if @opts[:query].strip.empty?
+                          []
+                        else
+                          [@opts[:query]]
+                        end
+      end
+
       @opts[:query].each do |var_val|
         variable_name, value = var_val.split('=', 2)
         @values[variable_name] = value if value
@@ -320,7 +311,7 @@ class RDFConfig
     end
 
     def subjects_by_variables
-      @variables_handler.visible_variables.select do |variable_name|
+      variables_handler.visible_variables.select do |variable_name|
         model.find_object(variable_name).is_a?(Model::Subject)
       end
     end
@@ -370,6 +361,77 @@ class RDFConfig
 
     def model
       Model.instance(@config)
+    end
+
+    def variables_handler
+      VariablesHandler.instance(@config, @opts)
+    end
+
+    def print_sparql_usage
+      warn 'Usage: --sparql query_name [--query var=value] [--endpoint endpoint_name]'
+      warn "Available SPARQL query names: #{query_names.join(', ')}"
+      with_parameter_configs = configs_having_parameters
+      unless with_parameter_configs.empty?
+        warn 'Preset SPARQL query parameters (use --query to override):'
+        with_parameter_configs.each do |query_name, config|
+          parameters = case config['parameters']
+                       when Hash
+                         config['parameters'].keys.join(', ')
+                       when Array
+                         config['parameters'].join(', ')
+                       else
+                         config['parameters'].to_s
+                       end
+          warn "  #{query_name}: #{parameters}"
+        end
+      end
+    end
+
+    def print_query_usage
+      warn 'Usage: --query var1 var2=value var3 [--endpoint endpoint_name]'
+      warn '  var: Specify a list of variable names (defined in the model.yaml file).'
+      warn '  var=value: Specify variable name and its value to be assigned.'
+    end
+
+    def print_endpoint_usage
+      warn 'Usage: --endpoint endpoint_name'
+    end
+
+    def warn_available_endpoint_names
+      warn "Available SPARQL endpoint names: #{@config.endpoint.keys.join(', ')}"
+    end
+
+    def sparql_name?
+      (name.to_s.empty? && !@opts.key?(:query)) ||
+        (@opts.key?(:endpoint_name) && @opts[:endpoint_name].to_s.strip.empty?)
+    end
+
+    def empty_sparql_option?
+      @opts.key?(:sparql) && @opts[:sparql].to_s.strip.empty?
+    end
+
+    def empty_query_option?
+      @opts.key?(:query) && @opts[:query].empty?
+    end
+
+    def empty_endpoint_option?
+      @opts.key?(:endpoint_name) && @opts[:endpoint_name].to_s.strip.empty?
+    end
+
+    def sparql_comment?
+      if @opts.key?(:sparql_comment)
+        @opts[:sparql_comment]
+      else
+        true
+      end
+    end
+
+    def template?
+      if @opts.key?(:template)
+        @opts[:template]
+      else
+        false
+      end
     end
   end
 end

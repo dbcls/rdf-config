@@ -117,7 +117,7 @@ class RDFConfig
 
         def rdf_type_varname
           "#{to_sparql}__class"
-          #--> "#{to_sparql}Class"
+          # "#{to_sparql}Class"
         end
 
         def ==(other)
@@ -167,7 +167,7 @@ class RDFConfig
       end
 
       def triples
-        @variables_handler.visible_variables
+        variables_handler.visible_variables
       end
 
       def generate
@@ -215,7 +215,7 @@ class RDFConfig
       end
 
       def generate_triples
-        @variables_handler.visible_variables.each do |variable_name|
+        variables_handler.visible_variables.each do |variable_name|
         # variables_for_where.each do |variable_name|
           # generate_triple_by_variable(variable_name_for_sparql(variable_name))
           generate_triple_by_variable(variable_name)
@@ -229,7 +229,7 @@ class RDFConfig
       end
 
       def generate_triple_by_variable(variable_name)
-        # if @variables_handler.visible_variables.include?(variable_name)
+        # if variables_handler.visible_variables.include?(variable_name)
         #   subject_name = @variables_handler.closest_subject_name(variable_name)
         #   puts "#{subject_name} #{model.property_path(variable_name, subject_name)} #{variable_name}"
         # end

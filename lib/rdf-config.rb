@@ -78,7 +78,11 @@ class RDFConfig
 
   def generate_stanza_js
     stanza = Stanza::JavaScript.new(@config, @opts)
-    stanza.generate
+    if stanza.sparql.print_usage?
+      stanza.sparql.print_usage
+    else
+      stanza.generate
+    end
   rescue Stanza::StanzaConfigNotFound, Stanza::StanzaExecutionFailure => e
     warn e
   end

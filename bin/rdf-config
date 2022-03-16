@@ -77,10 +77,8 @@ opt_values.each do |opt_name, values|
   when /--url/
     opts[:mode] = :sparql_url
   when /--query/
-    opts[:mode] = :sparql
     opts[:query] = value
   when /--endpoint/
-    opts[:mode] = :sparql
     opts[:endpoint_name] = value
   when /--join/
     opts[:mode] = :sparql
@@ -99,6 +97,8 @@ opt_values.each do |opt_name, values|
     debug_mode = true
   end
 end
+
+opts[:mode] = :sparql if opts[:mode].nil? && (opts.key?(:query) || opts.key?(:endpoint_name))
 
 if opts[:config_dir] && opts[:mode]
   begin
@@ -123,12 +123,12 @@ SYNOPSIS
 
     Use with --sparql or --query options:
     rdf-config --config path/to/config/name --endpoint   [endpointname]
-    rdf-config --config path/to/config/name --url        
+    rdf-config --config path/to/config/name --url
 
     rdf-config --config path/to/config/name --schema
     rdf-config --config path/to/config/name --senbero
     rdf-config --config path/to/config/name --grasp
-    rdf-config --config path/to/config/name --stanza
+    rdf-config --config path/to/config/name --stanza     [stanzaname]
     rdf-config --config path/to/config/name --shex
     rdf-config --help
 

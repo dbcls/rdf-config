@@ -1,3 +1,4 @@
+require 'English'
 require 'open3'
 require 'pty'
 require 'expect'
@@ -14,7 +15,7 @@ module SafePty
       end
     end
 
-    $?.exitstatus
+    $CHILD_STATUS.exitstatus
   end
 end
 
@@ -151,15 +152,7 @@ class RDFConfig
       end
 
       def metadata_hash
-        stanza_usages = []
-        parameters.each do |key, parameter|
-          stanza_usages << { key => parameter['example'] }
-        end
-        stanza_usage_attr = stanza_usages.map do |usage|
-          key = usage.keys.first
-          %(#{key}="#{usage[key]}")
-        end.join(' ')
-
+        stanza_usage_attr = parameters.map { |name, value| %(#{name}="#{value}") }.join(' ')
         metadata = JSON.parse(File.read(metadata_json_fpath))
         metadata['stanza:usage'] = "<togostanza-#{@name} #{stanza_usage_attr}></togostanza-#{@name}>"
 
@@ -240,11 +233,13 @@ EOS
 
         parameters.each do |name, value|
           triple = model.find_by_object_name(name)
+          next if triple.nil?
+
           params << {
             "#{prefix}key" => name,
             "#{prefix}example" => value,
             "#{prefix}description" => "#{triple.subject.name} / #{triple.property_path(' / ')} (FIXME: in metadata.json)",
-            "#{prefix}required" => triple.predicates.last.required?,
+            "#{prefix}required" => triple.predicates.last.required?
           }
         end
 
@@ -252,7 +247,15 @@ EOS
       end
 
       def parameters
-        sparql_conf['parameters'] || {}
+        sparql_parameters = sparql_conf['parameters'] || {}
+        sparql_queries.each do |query|
+          variable_name, value = query.to_s.split('=', 2)
+          next if value.nil?
+
+          sparql_parameters[variable_name] = value
+        end
+
+        sparql_parameters
       end
 
       def model
@@ -271,6 +274,14 @@ EOS
 
       def escape_js_string(string)
         string.to_s.gsub('"', %Q(\\"))
+      end
+
+      def sparql_queries
+        if @opts.key?(:query)
+          @opts[:query].is_a?(Array) ? @opts[:query] : [@opts[:query].to_s]
+        else
+          []
+        end
       end
     end
   end

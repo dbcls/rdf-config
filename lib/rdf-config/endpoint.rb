@@ -8,14 +8,14 @@ class RDFConfig
       @config = config
       @endpoint = config.endpoint
 
-      endpoint_name = opts[:name] || opts['name']
+      endpoint_name = opts[:name] || DEFAULT_NAME
       @target = if endpoint_name.nil?
                   config_by_name(DEFAULT_NAME)
                 else
                   config_by_name(endpoint_name)
                 end
       if @target.nil?
-        raise Config::InvalidConfig, %Q(ERROR: Endpoint "#{endpoint_name}" is not specified in endpoint.yaml file.)
+        raise Config::InvalidConfig, %(ERROR: Endpoint "#{endpoint_name}" is not specified in endpoint.yaml file.)
       end
 
       @endpoints = []

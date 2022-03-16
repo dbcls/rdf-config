@@ -1,26 +1,38 @@
 require 'fileutils'
-require 'rdf-config/sparql/sparql_generator'
+require 'rdf-config/sparql'
+require 'rdf-config/sparql/validator'
 require 'rdf-config/stanza/javascript'
 require 'rdf-config/stanza/ruby'
 
 class RDFConfig
   class Stanza
+    YAML_SPARQL_KEY = 'sparql'.freeze
+    attr_reader :sparql
+
     def initialize(config, opts = {})
       @config = config
+      @opts = opts
 
       @stanza_name = opts[:stanza_name].to_s
       if @stanza_name.empty?
         @targets = config.stanza.keys
       else
-        raise StanzaConfigNotFound, "No stanza config found: stanza name '#{@stanza_name}'" unless config.stanza.key?(@stanza_name)
+        unless config.stanza.key?(@stanza_name)
+          raise StanzaConfigNotFound, "ERROR: No stanza config found: stanza name '#{@stanza_name}'"
+        end
+
         @name = @stanza_name
         @targets = [@stanza_name]
       end
+
+      @sparql ||= SPARQL.new(@config, opts_for_initialize_sparql)
+      validator = RDFConfig::SPARQL::Validator.instance(@config, opts_for_initialize_sparql)
+      validator.validate
     end
 
     def print_usage
-      STDERR.puts 'Usage: --stanza stanza_name'
-      STDERR.puts "Available stanza names: #{@config.stanza.keys.join(', ')}"
+      warn 'Usage: --stanza stanza_name'
+      warn "Available stanza names: #{@config.stanza.keys.join(', ')}"
     end
 
     def generate
@@ -39,7 +51,7 @@ class RDFConfig
 
     def generate_one_stanza
       mkdir(stanza_base_dir) unless File.exist?(stanza_base_dir)
-      STDERR.puts "Generate stanza: #{@name}"
+      warn "Generate stanza: #{@name}"
 
       generate_template
       update_metadata_json
@@ -79,10 +91,10 @@ class RDFConfig
 
       parameters.each do |key, parameter|
         params << {
-            "#{prefix}key" => key,
-            "#{prefix}example" => parameter['example'],
-            "#{prefix}description" => parameter['description'],
-            "#{prefix}required" => parameter['required'],
+          "#{prefix}key" => key,
+          "#{prefix}example" => parameter['example'],
+          "#{prefix}description" => parameter['description'],
+          "#{prefix}required" => parameter['required']
         }
       end
 
@@ -90,13 +102,7 @@ class RDFConfig
     end
 
     def sparql_query
-      sparql_generator = SPARQL::SPARQLGenerator.new
-
-      sparql_generator.add_generator(sparql_prefix_generator)
-      sparql_generator.add_generator(sparql_select_generator)
-      sparql_generator.add_generator(sparql_where_generator)
-
-      sparql_generator.generate.join("\n")
+      sparql.generate
     end
 
     def sparql_result_html(suffix = '', indent_chars = '  ')
@@ -120,10 +126,6 @@ class RDFConfig
       lines.join("\n")
     end
 
-    def sparql
-      @sparql ||= SPARQL.new(@config, sparql_query_name: stanza_conf['sparql'])
-    end
-
     def output_dir
       stanza_conf['output_dir']
     end
@@ -145,7 +147,7 @@ class RDFConfig
     def before_generate; end
 
     def after_generate
-      STDERR.puts 'Stanza template has been generated successfully.'
+      warn 'Stanza template has been generated successfully.'
     end
 
     def stanza_conf
@@ -153,30 +155,11 @@ class RDFConfig
     end
 
     def sparql_name
-      stanza_conf['sparql']
+      stanza_conf[YAML_SPARQL_KEY]
     end
 
     def sparql_conf
       @sparql_conf ||= @config.sparql[sparql_name]
-    end
-
-    def sparql_prefix_generator
-      @sparql_prefix_generator = SPARQL::PrefixGenerator.new(
-          @config, sparql_query_name: sparql_name
-      )
-    end
-
-    def sparql_select_generator
-      @sparql_select_generator = SPARQL::SelectGenerator.new(
-          @config, sparql_query_name: sparql_name
-      )
-    end
-
-    def sparql_where_generator
-      @sparql_select_generator = SPARQL::WhereGenerator.new(
-          @config,
-          sparql_query_name: sparql_name, template: true
-      )
     end
 
     def mkdir(dir)
@@ -199,6 +182,14 @@ class RDFConfig
 
     def metadata_json_fpath
       "#{stanza_dir}/metadata.json"
+    end
+
+    def opts_for_initialize_sparql
+      @opts.merge(
+        sparql: sparql_name,
+        template: true,
+        sparql_comment: false
+      )
     end
 
     class StanzaConfigNotFound < StandardError; end
