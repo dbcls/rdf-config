@@ -26,20 +26,21 @@ class RDFConfig
       end
 
       @sparql ||= SPARQL.new(@config, opts_for_initialize_sparql)
-      validator = RDFConfig::SPARQL::Validator.instance(@config, opts_for_initialize_sparql)
-      validator.validate
     end
 
     def print_usage
-      warn 'Usage: --stanza stanza_name'
-      warn "Available stanza names: #{@config.stanza.keys.join(', ')}"
+      print_stanza_usage if @stanza_name.empty?
+      @sparql.print_usage if @sparql.print_usage?
+      warn ''
+    end
+
+    def print_usage?
+      @stanza_name.empty? || @sparql.print_usage?
     end
 
     def generate
-      if @stanza_name.empty?
-        print_usage
-        return
-      end
+      validator = RDFConfig::SPARQL::Validator.instance(@config, opts_for_initialize_sparql)
+      validator.validate
 
       before_generate
       @targets.each do |stanza_name|
@@ -151,11 +152,15 @@ class RDFConfig
     end
 
     def stanza_conf
-      @stanza_conf ||= @config.stanza[@name]
+      @stanza_conf ||= @config.stanza[@stanza_name]
     end
 
     def sparql_name
-      stanza_conf[YAML_SPARQL_KEY]
+      begin
+        stanza_conf[YAML_SPARQL_KEY]
+      rescue
+        'sparql'
+      end
     end
 
     def sparql_conf
@@ -190,6 +195,28 @@ class RDFConfig
         template: true,
         sparql_comment: false
       )
+    end
+
+    def print_stanza_usage
+      warn 'Usage: --stanza stanza_name [--query var=value] [--endpoint endpoint_name]'
+      warn "Available stanza names: #{@config.stanza.keys.join(', ')}"
+      lines = []
+      @config.stanza.keys.each do |stanza_name|
+        sparql_name = @config.stanza[stanza_name]['sparql']
+        next unless sparql_name
+
+        parameters = @config.sparql[sparql_name]['parameters']
+        next unless parameters.is_a?(Hash)
+
+        lines << "  stanza_name: #{stanza_name},  sparql_name: #{sparql_name}, parameters: #{parameters.keys.join(', ')}"
+      end
+
+      return if lines.empty?
+
+      warn 'Preset SPARQL query parameters (use --query to override):'
+      lines.each do |line|
+        warn line
+      end
     end
 
     class StanzaConfigNotFound < StandardError; end

@@ -78,8 +78,8 @@ class RDFConfig
 
   def generate_stanza_js
     stanza = Stanza::JavaScript.new(@config, @opts)
-    if stanza.sparql.print_usage?
-      stanza.sparql.print_usage
+    if stanza.print_usage?
+      stanza.print_usage
     else
       stanza.generate
     end
