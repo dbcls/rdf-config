@@ -19,9 +19,12 @@ class RDFConfig
                   stroke: #000;
               }
 
+              .subject {
+                  /* do not delete */
+              }
+
               .subject-area {
-                  fill: #000;
-                  opacity: 0.6;
+                  fill: #5a4838;
               }
 
               .subject-text {
@@ -52,7 +55,7 @@ class RDFConfig
               }
 
               .black-stroke {
-                  stroke: #000;
+                  stroke: #0000;
               }
 
               .blank-node {
