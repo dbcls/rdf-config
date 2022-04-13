@@ -69,7 +69,7 @@ class RDFConfig
           end
 
           def text_css_class
-            'subject-text subject'
+            'subject-text'
           end
         end
       end

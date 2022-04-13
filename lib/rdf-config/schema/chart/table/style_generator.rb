@@ -25,12 +25,13 @@ class RDFConfig
               }
 
               .subject-text {
+                  fill: #fff;
                   font-size: #{FONT_SIZE}px;
                   font-family: HelveticaLTStd-Bold, Helvetica LT Std;
               }
 
-              .subject {
-                  fill: #fff;
+              .subject-link {
+                  fill: #ffce9f;
               }
 
               .resource {

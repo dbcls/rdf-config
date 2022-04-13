@@ -66,7 +66,7 @@ class RDFConfig
           end
 
           def area_css_class
-            return 'subject-area black-stroke' if subject?
+            return 'subject-link black-stroke' if subject?
 
             case @object
             when Model::Subject
