@@ -50,7 +50,7 @@ class RDFConfig
               x: @table_xpos + @table_width - TABLE_PADDING_RIGHT,
               y: text_y_position(SUBJECT_HEIGHT, FONT_SIZE),
               'text-anchor' => 'end',
-              class: text_css_class
+              class: 'subject-type'
             )
             text.add_text(subject_rdf_type_text(@subject))
 

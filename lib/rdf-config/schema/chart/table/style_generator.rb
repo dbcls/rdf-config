@@ -23,10 +23,18 @@ class RDFConfig
                   fill: #5a4838;
               }
 
-              .subject-text {
+              .subject-type {
                   fill: #fff;
                   font-size: #{FONT_SIZE}px;
-                  font-family: HelveticaLTStd-Bold, Helvetica LT Std;
+                  font-family: Helvetica, Arial, sans-serif;
+              }
+
+              .subject-text {
+                  font-weight: bold;
+                  opacity: 0.8;
+                  fill: #fff;
+                  font-size: #{FONT_SIZE}px;
+                  font-family: Helvetica, Arial, sans-serif;
               }
 
               .uri-object {
@@ -51,9 +59,17 @@ class RDFConfig
                   fill: #e0e0e0;
               }
 
+              .object-type {
+                  font-weight: bold;
+                  opacity: 0.8;
+                  fill: #666;
+                  font-size: #{FONT_SIZE}px;
+                  font-family: Helvetica, Arial, sans-serif;
+              }
+
               .object-text {
                   font-size: #{FONT_SIZE}px;
-                  font-family: "Helvetica Neue", Arial, sans-serif;
+                  font-family: Helvetica, Arial, sans-serif;
               }
             STYLE
 

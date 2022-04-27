@@ -49,7 +49,7 @@ class RDFConfig
               x: @xpos + width - TABLE_PADDING_RIGHT,
               y: text_y_position(OBJECT_HEIGHT, FONT_SIZE),
               'text-anchor' => 'end',
-              class: text_css_class
+              class: 'object-type'
             )
             text.add_text(type_text)
 
