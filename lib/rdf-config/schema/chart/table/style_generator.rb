@@ -13,17 +13,13 @@ class RDFConfig
             style = REXML::Element.new('style')
             style.add_attribute('type', 'text/css')
             style.add_text(<<~STYLE)
-              .subject-wrapper {
+              .table-container {
                   fill: #fff;
                   stroke-width: 2px;
                   stroke: #000;
               }
 
-              .subject {
-                  /* do not delete */
-              }
-
-              .subject-area {
+              .subject-container {
                   fill: #5a4838;
               }
 
@@ -33,35 +29,31 @@ class RDFConfig
                   font-family: HelveticaLTStd-Bold, Helvetica LT Std;
               }
 
-              .subject-link {
-                  fill: #ffce9f;
-              }
-
-              .resource {
+              .uri-object {
                   fill: #ccf8f8;
               }
 
-              .literal {
+              .literal-object {
                   fill: #f8cecc;
               }
 
-              .unknown {
-                  fill: #e0e0e0;
-              }
-
-              .text {
-                  font-size: #{FONT_SIZE}px;
-                  font-family: "Helvetica Neue", Arial, sans-serif;
-              }
-
-              .black-stroke {
-                  stroke: #0000;
-              }
-
-              .blank-node {
+              .blank-node-object {
                   fill: #f2f2e9;
                   stroke: #000;
                   stroke-dasharray: 0 0 2.5 2.5;
+              }
+
+              .subject-object {
+                  fill: #ffce9f;
+              }
+
+              .unknown-object {
+                  fill: #e0e0e0;
+              }
+
+              .object-text {
+                  font-size: #{FONT_SIZE}px;
+                  font-family: "Helvetica Neue", Arial, sans-serif;
               }
             STYLE
 

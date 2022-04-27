@@ -56,17 +56,51 @@ class RDFConfig
           end
 
           def generate_outer_frame
+            rounded_corners_outer_frame
+          end
+
+          def rounded_corners_outer_frame
+            x2 = @table_x + @table_width
+            y2 = @table_y + table_height
+
+            path = REXML::Element.new('path')
+            d_attrs = [
+              "M #{@table_x},#{@table_y + SUBJECT_HEIGHT}",
+              "V #{@table_y + SUBJECT_HEIGHT - BEZIER_ADJ}",
+              "Q #{@table_x},#{@table_y} #{@table_x + SUBJECT_HEIGHT - BEZIER_ADJ},#{@table_y}",
+              "H #{x2 - SUBJECT_HEIGHT + BEZIER_ADJ}",
+              "Q #{x2},#{@table_y} #{x2},#{@table_y + SUBJECT_HEIGHT - BEZIER_ADJ}",
+              "V #{y2 - SUBJECT_HEIGHT + BEZIER_ADJ}",
+              "Q #{x2},#{y2} #{x2 - SUBJECT_HEIGHT + BEZIER_ADJ},#{y2}",
+              "H #{@table_x + SUBJECT_HEIGHT - BEZIER_ADJ}",
+              "Q #{@table_x},#{y2} #{@table_x},#{y2 - SUBJECT_HEIGHT + BEZIER_ADJ}",
+              "V #{@table_y + SUBJECT_HEIGHT}"
+            ]
+
+            path.add_attribute_by_hash(
+              d: d_attrs.join(' '),
+              class: 'table-container'
+            )
+
+            path
+          end
+
+          def rectangle_outer_frame
             rect = REXML::Element.new('rect')
             attrs = {
               x: @table_x,
               y: @table_y,
               width: @table_width,
-              height: SvgGenerator.current_y - @table_y - OBJECT_MARGIN + SUBJECT_WRAPPER_PADDING,
-              class: 'subject-wrapper'
+              height: table_height,
+              class: 'table-container'
             }
             rect.add_attribute_by_hash(attrs)
 
             rect
+          end
+
+          def table_height
+            SvgGenerator.current_y - @table_y - OBJECT_MARGIN + SUBJECT_WRAPPER_PADDING
           end
         end
       end

@@ -48,7 +48,7 @@ class RDFConfig
             path = REXML::Element.new('path')
             path.add_attribute_by_hash(
               d: outer_frame_path_d_attrs.join(' '),
-              class: 'blank-node'
+              class: 'blank-node-object'
             )
 
             path
@@ -76,7 +76,7 @@ class RDFConfig
           end
 
           def text_element_class
-            'text'
+            'object-text'
           end
 
           def name

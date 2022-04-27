@@ -14,26 +14,19 @@ class RDFConfig
 
           def generate
             g = REXML::Element.new('g')
-            g.add_element(generate_area)
+            g.add_element(generate_container)
             g.add_element(generate_name)
             g.add_element(generate_rdf_type)
 
             g
           end
 
-          def generate_area
+          def generate_container
             path = REXML::Element.new('path')
-            d_attrs = [
-              "M #{@xpos},#{@ypos}",
-              "h #{@table_width}",
-              "v #{SUBJECT_HEIGHT}",
-              "h -#{@table_width}",
-              "v -#{SUBJECT_HEIGHT}"
-            ]
 
             path.add_attribute_by_hash(
-              d: d_attrs.join(' '),
-              class: 'subject-area'
+              d: rounded_corners_d_attrs.join(' '),
+              class: 'subject-container'
             )
 
             path
@@ -70,6 +63,27 @@ class RDFConfig
 
           def text_css_class
             'subject-text'
+          end
+
+          def rounded_corners_d_attrs
+            [
+              "M #{@xpos},#{@ypos + SUBJECT_HEIGHT}",
+              "v -#{BEZIER_ADJ}",
+              "q 0,-#{SUBJECT_HEIGHT - BEZIER_ADJ} #{SUBJECT_HEIGHT - BEZIER_ADJ},-#{SUBJECT_HEIGHT - BEZIER_ADJ}",
+              "h #{@table_width - (SUBJECT_HEIGHT - BEZIER_ADJ) * 2}",
+              "q #{SUBJECT_HEIGHT - BEZIER_ADJ},0 #{SUBJECT_HEIGHT - BEZIER_ADJ},#{SUBJECT_HEIGHT - BEZIER_ADJ}",
+              "v #{BEZIER_ADJ}"
+            ]
+          end
+
+          def rectangle_d_attrs
+            [
+              "M #{@xpos},#{@ypos}",
+              "h #{@table_width}",
+              "v #{SUBJECT_HEIGHT}",
+              "h -#{@table_width}",
+              "v -#{SUBJECT_HEIGHT}"
+            ]
           end
         end
       end

@@ -26,6 +26,7 @@ class RDFConfig
             )
             g.add_element(rect)
             g.add_element(generate_name)
+            g.add_element(generate_type)
 
             g
           end
@@ -42,21 +43,33 @@ class RDFConfig
             text
           end
 
+          def generate_type
+            text = REXML::Element.new('text')
+            text.add_attribute_by_hash(
+              x: @xpos + width - TABLE_PADDING_RIGHT,
+              y: text_y_position(OBJECT_HEIGHT, FONT_SIZE),
+              'text-anchor' => 'end',
+              class: text_css_class
+            )
+            text.add_text(type_text)
+
+            text
+          end
+
           def element_text
             if @object.blank_node?
               @object.value.bnode_name
             elsif subject?
               case @object
               when Model::Subject
-                subject = @object
-                subject_name = subject.name
+                @object.as_object_name
               when Model::ValueList
                 subject = @object.value.select { |value| value.is_a?(Model::Subject) }.first
-                subject_name = @object.value[0..1].map(&:name).join(', ')
-                subject_name = "#{subject_name}, ..." if @object.value.size > 2
-              end
-              if subject
-                "#{subject.as_object_name} (#{subject_name})"
+                if subject
+                  subject.as_object_name
+                else
+                  ''
+                end
               else
                 ''
               end
@@ -65,35 +78,57 @@ class RDFConfig
             end
           end
 
-          def area_css_class
-            return 'subject-link black-stroke' if subject?
-
+          def type_text
             case @object
             when Model::Subject
-              'resource black-stroke'
-            when Model::URI
-              'resource black-stroke'
-            when Model::Literal
-              'literal black-stroke'
-            when Model::BlankNode
-              'blank-node'
+              @object.name
             when Model::ValueList
-              if @object.value.first.is_a?(Model::URI)
-                'resource black-stroke'
+              type_text_by_value_list
+            else
+              @object.type.to_s
+            end
+          end
+
+          def type_text_by_value_list
+            first_value = @object.value.first
+            if first_value.is_a?(Model::Subject)
+              subjects = @object.value.select { |value| value.is_a?(Model::Subject) }
+              case subjects.size
+              when 0
+                ''
+              when 1
+                subjects.first.name
               else
-                'literal black-stroke'
+                "#{subjects.first.name}, ..."
               end
             else
-              'unknown black-stroke'
+              first_value.type.to_s
+            end
+          end
+
+          def area_css_class
+            return 'subject-object' if subject?
+
+            case @object
+            when Model::URI
+              'uri-object'
+            when Model::Literal
+              'literal-object'
+            when Model::BlankNode
+              'blank-node-object'
+            when Model::ValueList
+              if @object.value.first.is_a?(Model::URI)
+                'uri-object'
+              else
+                'literal-object'
+              end
+            else
+              'unknown-object'
             end
           end
 
           def text_css_class
-            if subject?
-              'text subject'
-            else
-              'text'
-            end
+            'object-text'
           end
 
           def width
