@@ -584,6 +584,10 @@ class RDFConfig
         case @value
         when Integer
           'Int'
+        when TrueClass
+          'Boolean'
+        when FalseClass
+          'Boolean'
         when String
           data_type_by_string_value(@value)
         else
