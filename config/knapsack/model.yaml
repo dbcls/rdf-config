@@ -1,21 +1,3 @@
-#<C00000001>
-#  rdf:type mb:KNApSAcKCoreRecord ;
-#  dc:identifier "C00000001" ;
-#  rdfs:label "Gibberellin A1;GA1" ;
-#  mb:fid "C19H24O6_C00000001" ;
-#  foaf:homepage <https://mb.metabolomics.jp/wiki/Compound:C00000001> ;
-#  rdfs:seeAlso <http://www.knapsackfamily.com/knapsack_core/info.php?sname=C_ID&word=C00000001> ;
-#  sio:SIO_000008 <C00000001#molecular_formula> ;         #sio:has-attribute
-#  sio:SIO_000008 <C00000001#names> ;
-#  sio:SIO_000008 <C00000001#molecular_weight> ;
-#  cheminf:CHEMINF_000200 <C00000001#smiles> ;            #cheminf:has-attribute
-#  cheminf:CHEMINF_000200 <C00000001#standard_inchikey> ;
-#  cheminf:CHEMINF_000200 <C00000001#standard_inchi> ;
-#  cheminf:CHEMINF_000200 <C00000001#cas> ;
-#  cheminf:CHEMINF_000200 <C00000001#start_substance> ;
-#  dcterms:hasPart <C00000001#x-mdl-molfile> ;  
-#  dcterms:hasPart <C00000001#x-chemdraw> ;  
-#  dcterms:hasPart <C00000001#gif> .
 
 - KNApSAcKCoreRecord <http://purl.jp/knapsack/C00000001>:
   - a: mb:KNApSAcKCoreRecord
@@ -30,49 +12,79 @@
   - rdfs:seeAlso:
     - rdfs_seealso: <http://www.knapsackfamily.com/knapsack_core/info.php?sname=C_ID&word=C00000001>
   - sio:SIO_000008+: #sio:has-attribute
-    - molecular_formula: <C00000001#molecular_formula>
-    - names: <C00000001#names>
-    - molecular_weight: <C00000001#molecular_weight>
-  - dc:hasPart:
-    - molfile: 
-      - a: cheminf:CHEMINF_000058
-    - x_mdl_molfile: <C00000001#x-mdl-molfile> 
-    - x_chemdraw: <C00000001#x-chemdraw>
-    - gif: <C00000001#gif>
+    - MolecularFormula
+    - Names
+    - MolecularWeight     
+  - dc:hasPart+:
+    - MolFile
+    - ChemDraw
+    - Gif
   - cheminf:CHEMINF_000200+: #cheminf:has-attribute
-    - start_substance: 
-      - a: mb:Start_substance
-    - smiles: <C00000001#smiles> 
-    - standard_inchikey: <C00000001#standard_inchikey>
-    - standard_inchi: <C00000001#standard_inchi>
-    - cas: <C00000001#cas>
-#    - start_substance: <C00000001#start_substance>    
-  - sio:SIO_000255:
-#    - has_annotation: <annotation#18b24176c038147be449f9dc8b9f27aa>
+    - StartSubstance 
+    - Smiles 
+    - StandardInchikey
+    - StandardInchi
+    - cas: <C00000001#cas> 
+  - sio:SIO_000255*:
     - has_annotation: Annotation
-  - dcterms:isReferencedBy:
-#    - core_is_referenced_by: <reference#8428ae5b90797efd5f9d76ef145f1f6f>            
-    - core_is_referenced_by: Reference            
-
-# <C00000001> sio:SIO_000255 <annotation#18b24176c038147be449f9dc8b9f27aa> .
-# <C00000001> dcterms:isReferencedBy <reference#8428ae5b90797efd5f9d76ef145f1f6f> .
-
-
-# <annotation#18b24176c038147be449f9dc8b9f27aa> rdf:type mb:KNApSAcKCoreAnnotation ;
-#   mb:organism "Thlaspi arvense" ;
-#   mb:references "Metzger,Plant Physiol.,80,(1985),396" ;
-#   mb:sp1 "" ;
-#   mb:family "Cruciferae" ;
-#   mb:kingdom "Plantae" ;
-#   dcterms:isReferencedBy <reference#8428ae5b90797efd5f9d76ef145f1f6f> ;
-#   rdfs:seeAlso <http://identifiers.org/taxonomy/13288> ;
-#   foaf:homepage <https://mb.metabolomics.jp/wiki/Species:Thlaspi_arvense> ; 
-#   sio:SIO_000254 <C00000001> . #sio:is annotation of
-
+  - dcterms:isReferencedBy*:          
+    - core_is_referenced_by: Reference
+- MolFile <C00000001#x-mdl-molfile>:
+  - rdf:type: cheminf:CHEMINF_000058
+  - dcterms:format:
+    - format_molfile: <nrn:mimetype:chemical/x-mdl-molfile>
+  - rdfs:seeAlso:
+    - xref_molfile: <https://mb.metabolomics.jp/wiki/Mol:C00000001>
+- CDXfile <C00000001#x-chemdraw>:
+  - rdf:type: mb:CDXfile
+  - dcterms:format:
+    - format_cdxfile: <nrn:mimetype:chemical/x-chemdraw>
+  - rdfs:seeAlso:
+    - xref_cdxfile: <https://mb.metabolomics.jp/wiki/File:C00000001.cdx>
+- Gif <C00000001#gif>: 
+  - rdf:type: mb:SDfile
+  - dcterms:format:
+    - format_gif: <nrn:mimetype:image/gif>
+  - rdfs:seeAlso:
+    - xref_gif: <https://mb.metabolomics.jp/wiki/File:C00000001.gif>
+- MolecularFormula <C00000001#molecular_formula>:
+  - rdf:type: cheminf:CHEMINF_000042
+  - sio:SIO_000300:
+    - molecular_formula2: "C19H24O6"
+- Names <C00000001#names>:
+  - rdf:type: cheminf:CHEMINF_000043
+  - sio:SIO_000300:
+    - names2: "Gibberellin A1;GA1"
+- MolecularWeight <C00000001#molecular_weight>: 
+  - rdf:type: cheminf:CHEMINF_000334
+  - sio:SIO_000300:
+    - value_mw: '"348.15728849094"^^xsd:double'
+  - sio:SIO_000221:
+    - unit_mw: obo:UO_0000055 # has unit
+- Smiles <C00000001#smiles>:
+  - rdf:type: cheminf:CHEMINF_000018
+  - sio:SIO_000300:
+    - value_smiles: "C1[C@@H]([C@@]2([C@@H]3[C@@](C1)([C@H]1[C@@]4([C@H]3C(=O)O)C[C@@](CC1)(C(=C)C4)O)OC2=O)C)O"
+- StandardInchikey <C00000001#standard_inchikey>:
+  - rdf:type: cheminf:CHEMINF_000059
+  - sio:SIO_000300:
+    - value_inchikey: "JLJLRLWOEMWYQK-BKYUDGNBNA-N"
+  - rdfs:seeAlso:
+    - xref_inchikey: <http://identifiers.org/inchikey/JLJLRLWOEMWYQK-BKYUDGNBNA-N>
+- StandardInchi <C00000001#standard_inchi>:
+  - rdf:type: cheminf:CHEMINF_000113
+  - sio:SIO_000300:
+    - value_inchi: "InChI=1S/C19H24O6/c1-9-7-17-8-18(9,24)5-3-10(17)19-6-4-11(20)16(2,15(23)25-19)13(19)12(17)14(21)22/h10-13,20,24H,1,3-8H2,2H3,(H,21,22)/t10-,11+,12-,13-,16-,17+,18+,19-/m1/s1"
+  - rdfs:seeAlso:
+    - xref_inchi: <http://identifiers.org/inchi/InChI=1S/C19H24O6/c1-9-7-17-8-18(9,24)5-3-10(17)19-6-4-11(20)16(2,15(23)25-19)13(19)12(17)14(21)22/h10-13,20,24H,1,3-8H2,2H3,(H,21,22)/t10-,11+,12-,13-,16-,17+,18+,19-/m1/s1>
+- StartSubstance <C00000001#start_substance>: 
+  - rdf:type: mb:Start_substance
+  - sio:SIO_000300:
+    - start_substance: ""
 - Annotation <annotation#18b24176c038147be449f9dc8b9f27aa>:
   - a: mb:KNApSAcKCoreAnnotation
-  - mb:organism:
-    - organism: "Thlaspi arvense"
+  - mb:sp:
+    - sp: "Thlaspi arvense"
   - mb:references:
     - references: "Metzger,Plant Physiol.,80,(1985),396"
   - mb:sp1:
@@ -82,21 +94,13 @@
   - mb:kingdom:
     - kingdom: "Plantae"
   - dcterms:isReferencedBy:
-    - is_referenced_by: <reference#8428ae5b90797efd5f9d76ef145f1f6f>   
+    - is_referenced_by: Reference  
   - rdfs:seeAlso:
     - xref_taxid: <http://identifiers.org/taxonomy/13288>   
   - foaf:homepage:
-    - mbwiki_species: <https://mb.metabolomics.jp/wiki/Species:Thlaspi_arvense>
+    - mbwiki_species: https://mb.metabolomics.jp/wiki/Species:Thlaspi_arvense
   - sio:SIO_000254:
-    - is_annotation_of: <http://purl.jp/knapsack/C00000001>  
-
-
-# <reference#8428ae5b90797efd5f9d76ef145f1f6f> rdf:type mb:KNApSAcKReference ;
-#   dc:identifier "16664632" ;
-#   dcterms:references  <http://identifiers.org/pubmed/16664632> ;
-#   dc:title "Metzger, Plant Physiol. , 80, (1985), 396" ;
-#   foaf:homepage <https://mb.metabolomics.jp/wiki/Reference:Metzger,_Plant_Physiol._,_80,_(1985),_396> . 
-
+    - is_annotation_of: KNApSAcKCoreRecord  
 - Reference <reference#8428ae5b90797efd5f9d76ef145f1f6f>:
   - a: mb:KNApSAcKReference
   - dc:identifier:
@@ -107,51 +111,3 @@
     - dc_title: "Metzger,Plant Physiol.,80,(1985),396"
   - foaf:homepage:
     - mb_wiki_species: <https://mb.metabolomics.jp/wiki/Reference:Metzger,_Plant_Physiol._,_80,_(1985),_396>
-
-
-
-# <C00000001#x-mdl-molfile> 
-#   rdf:type cheminf:CHEMINF_000058 ;
-#   dcterms:format <nrn:mimetype:chemical/x-mdl-molfile> ; 
-#   rdfs:seeAlso <https://mb.metabolomics.jp/wiki/Mol:C00000001> .
-# 
-# <C00000001#x-chemdraw> 
-#   rdf:type mb:CDXfile ;
-#   dcterms:format <nrn:mimetype:chemical/x-chemdraw> ; 
-#   rdfs:seeAlso <https://mb.metabolomics.jp/wiki/File:C00000001.cdx> .
-# 
-# <C00000001#gif> 
-#   rdf:type mb:SDfile ;
-#   dcterms:format <nrn:mimetype:image/gif> ; 
-#   rdfs:seeAlso <https://mb.metabolomics.jp/wiki/File:C00000001.gif> .
-# 
-# <C00000001#molecular_formula>
-#   rdf:type cheminf:CHEMINF_000042 ;
-#   sio:SIO_000300 "C19H24O6" .
-# 
-# <C00000001#names>
-#   rdf:type cheminf:CHEMINF_000043 ;
-#   sio:SIO_000300 "Gibberellin A1;GA1" .
-# 
-# <C00000001#molecular_weight>
-#   rdf:type cheminf:CHEMINF_000334 ;
-#   sio:SIO_000300 "348.15728849094"^^xsd:double ;
-#   sio:SIO_000221 obo:UO_0000055 . # has unit
-# 
-# <C00000001#smiles>
-#   rdf:type cheminf:CHEMINF_000018 ;
-#   sio:SIO_000300 "C1[C@@H]([C@@]2([C@@H]3[C@@](C1)([C@H]1[C@@]4([C@H]3C(=O)O)C[C@@](CC1)(C(=C)C4)O)OC2=O)C)O" .
-# 
-# <C00000001#standard_inchikey>
-#   rdf:type cheminf:CHEMINF_000059 ;
-#   sio:SIO_000300 "JLJLRLWOEMWYQK-BKYUDGNBNA-N";
-#   rdfs:seeAlso <http://identifiers.org/inchikey/JLJLRLWOEMWYQK-BKYUDGNBNA-N>.
-#   
-# <C00000001#standard_inchi>
-#   rdf:type cheminf:CHEMINF_000113 ;
-#   sio:SIO_000300 "InChI=1S/C19H24O6/c1-9-7-17-8-18(9,24)5-3-10(17)19-6-4-11(20)16(2,15(23)25-19)13(19)12(17)14(21)22/h10-13,20,24H,1,3-8H2,2H3,(H,21,22)/t10-,11+,12-,13-,16-,17+,18+,19-/m1/s1";
-#   rdfs:seeAlso <http://identifiers.org/inchi/InChI=1S/C19H24O6/c1-9-7-17-8-18(9,24)5-3-10(17)19-6-4-11(20)16(2,15(23)25-19)13(19)12(17)14(21)22/h10-13,20,24H,1,3-8H2,2H3,(H,21,22)/t10-,11+,12-,13-,16-,17+,18+,19-/m1/s1>.
-#   
-# <C00000001#start_substance>
-#   rdf:type mb:Start_substance ;
-#   sio:SIO_000300 "" .
