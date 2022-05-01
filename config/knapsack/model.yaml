@@ -1,6 +1,40 @@
-
+- KnapsackMetaboliteActivity mb:KnapsackMetaboliteActivity:
+  - rdf:type: owl:Class
+  - rdfs:label: 
+    - label_ma_activity: '"(Obsolete)KnapsackMetaboliteActivity"@en'
+  - sio:SIO_001278:
+    - refers_to_ma_dict: <http://www.knapsackfamily.com/MetaboliteActivity/MA_dictionary.pdf>
+- MetaboliteActivity <activity#e6114a598fe889c30e545c94477e309c>:
+  - rdf:type: owl:Class
+  - rdfs:subClassOf:
+    - activity_subclassof: mb:KnapsackMetaboliteActivity
+  - rdfs:label:
+    - label_activity: '"exhibit alpha-amylase activity in aleurone"@en'
+  - sio:SIO_000255:
+    - AnnotationMA
+  - sio:SIO_001278:
+    - refers_to: <http://www.knapsackfamily.com/MetaboliteActivity/MA_dictionary.pdf>
+- ReferenceMA <reference#0ed21477f86f5a0e270b3fccc668904a>:
+  - rdf:type: mb:KNApSAcKReference
+  - dc:title:
+    - reference_ma_title: "Reeve,J.Exp.Bot.,25,(1974),431-445"
+- AnnotationMA <annotation#d0a06d1c3e50afefc2a4136e3ad0001a>:
+  - rdf:type: mb:KNApSAcKMetaboliteActivityAnnotation
+  - mb:sp:
+    - mb_sp: "Hordeum vulgare"
+  - dcterms:isReferencedBy*:
+    - annotation2_is_referenced_by: <reference#0ed21477f86f5a0e270b3fccc668904a>
 - KNApSAcKCoreRecord <http://purl.jp/knapsack/C00000001>:
-  - a: mb:KNApSAcKCoreRecord
+  - rdf:type:
+    - mb:KNApSAcKCoreRecord
+    - mb:KNApSAcKMetaboliteRecord
+  - mb:category:
+    - mb_category: "Enhance plant growth"
+  - mb:function:
+    - mb_function: "exhibit alpha-amylase activity in aleurone"
+  - mb:targetsp:
+    - mb_targetsp: "Hordeum vulgare"
+  - mb:has-activity: MetaboliteActivity
   - dc:identifier:
     - knapsack_id: "C00000001"
   - rdfs:label:
@@ -26,9 +60,11 @@
     - StandardInchi
     - cas: <C00000001#cas> 
   - sio:SIO_000255*:
-    - has_annotation: Annotation
+    - Annotation
+    - AnnotationMA
   - dcterms:isReferencedBy*:          
-    - core_is_referenced_by: Reference
+    - Reference
+    - ReferenceMA
 - MolFile <C00000001#x-mdl-molfile>:
   - rdf:type: cheminf:CHEMINF_000058
   - dcterms:format:
