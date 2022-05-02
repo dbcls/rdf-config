@@ -84,25 +84,30 @@
   - rdfs:seeAlso:
     - rdfs_seealso: <http://www.knapsackfamily.com/knapsack_core/info.php?sname=C_ID&word=C00000001>
   - sio:SIO_000008+: #sio:has-attribute
-    - MolecularFormula
-    - Names
-    - MolecularWeight     
+    - knapsack_core_sio_attribute:
+      - MolecularFormula
+      - MolecularEntityName
+      - MolecularWeight     
   - dc:hasPart+:
-    - MolFile
-    - ChemDraw
-    - Gif
+    - knapsack_core_haspart:
+      - MolFile
+      - ChemDraw
+      - Gif
   - cheminf:CHEMINF_000200+: #cheminf:has-attribute
-    - StartSubstance 
-    - Smiles 
-    - StandardInchikey
-    - StandardInchi
-    - cas: <C00000001#cas> 
+    - knapsack_core_cheminf_attribute:
+      - StartSubstance 
+      - Smiles 
+      - StandardInchikey
+      - StandardInchi
+      - cas: <C00000001#cas> 
   - sio:SIO_000255*:
-    - Annotation
-    - AnnotationMA
-  - dcterms:isReferencedBy*:          
-    - Reference
-    - ReferenceMA
+    - knapsack_core_annotation:
+      - Annotation
+      - AnnotationMA
+  - dcterms:isReferencedBy*:
+    - knapsack_core_reference:         
+      - Reference
+      - ReferenceMA
 - MolFile <C00000001#x-mdl-molfile>:
   - rdf:type: cheminf:CHEMINF_000058
   - dcterms:format:
@@ -124,11 +129,11 @@
 - MolecularFormula <C00000001#molecular_formula>:
   - rdf:type: cheminf:CHEMINF_000042
   - sio:SIO_000300:
-    - molecular_formula2: "C19H24O6"
-- Names <C00000001#names>:
+    - molecular_formula: "C19H24O6"
+- MolecularEntityName <C00000001#molecular_entity_name>:
   - rdf:type: cheminf:CHEMINF_000043
   - sio:SIO_000300:
-    - names2: "Gibberellin A1;GA1"
+    - molecular_entity_name: "Gibberellin A1;GA1"
 - MolecularWeight <C00000001#molecular_weight>: 
   - rdf:type: cheminf:CHEMINF_000334
   - sio:SIO_000300:
