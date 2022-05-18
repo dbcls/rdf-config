@@ -11,8 +11,8 @@
     - km_function: "exhibit alpha-amylase activity in aleurone"
   - knapsack:targetsp:
     - km_targetsp: "Hordeum vulgare"
-  - knapsack:has-activity*:
-    - activity_core: MetaboliteActivity
+  - sio:SIO_000225*:
+    - has_function: MetaboliteActivity
   - dc:identifier:
     - knapsack_id: "C00000001"
   - rdfs:label:
@@ -49,8 +49,10 @@
       - CoreReference
       - MetaboliteReference
   - skos:closeMatch*:
-    - skos_close_match:
+    - skos_close_match_chebi:
       - obo:CHEBI_33276
+    - skos_close_match_pubchem:
+      -  <http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID5280379>      
 - MolFile <C00000001#x-mdl-molfile>:
   - rdf:type: cheminf:CHEMINF_000058
   - dcterms:format:
