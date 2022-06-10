@@ -43,7 +43,7 @@ class RDFConfig
 
     def node_constraint(predicate, object)
       if predicate.rdf_type?
-        "[#{object.name}]"
+        "[#{object.value}]"
       else
         case object
         when Model::Subject

@@ -153,6 +153,11 @@ class RDFConfig
               object_name = obj_data.keys.first
               add_object_name(object_name) if object_name.is_a?(String)
             end
+
+            if !predicate.rdf_type? && obj_data.is_a?(String)
+              add_warning(%/The variable name for the value "#{obj_data}" may not be set./)
+            end
+
             predicate.add_object(object_instance(obj_data))
           end
         end
@@ -231,8 +236,8 @@ class RDFConfig
 
       def validate_rdf_type_predicate(predicate)
         predicate.objects.each do |object|
-          # object.name is URI of rdf:type
-          uri = object.name
+          # object.value is URI of rdf:type
+          uri = object.value
           validate_result, prefix = validate_uri(uri)
           case validate_result
           when 'NOT_URI'
@@ -256,8 +261,10 @@ class RDFConfig
 
           return if object.is_a?(Subject) || object.is_a?(BlankNode)
 
+          next if predicate.rdf_type? || object.value.to_s.empty?
+
           object_name = object.name
-          if object_name.is_a?(String)
+          if object_name.is_a?(String) && !object_name.empty?
             validate_object_name(object_name)
           end
         end
@@ -338,7 +345,7 @@ class RDFConfig
 
       def types
         rdf_type_predicates = @predicates.select(&:rdf_type?)
-        rdf_type_predicates.map { |predicate| predicate.objects.map(&:name) }.flatten
+        rdf_type_predicates.map { |predicate| predicate.objects.map(&:value) }.flatten
       end
 
       def type(separator = ', ')
@@ -489,8 +496,8 @@ class RDFConfig
           @name = object.keys.first
           @value = object[@name]
         else
-          @name = object
-          @value = nil
+          @name = ''
+          @value = object
         end
       end
 
