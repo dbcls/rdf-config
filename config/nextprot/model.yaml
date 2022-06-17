@@ -1,0 +1,1788 @@
+- Nextprot nxp_entry:NX_Q04760:
+  - a: nxp:Entry
+  - nxp:recommendedName+:
+    - []:
+      - a: nxp:Name
+      - nxp:fullName:
+        - name: "Lactoylglutathione lyase"
+  - nxp:alternativeName*:
+    - []:
+      - a: nxp:Name
+      - nxp:fullName:
+        - alt_name: "Aldoketomutase"
+  - nxp:existence:
+    - existence: nxp:Evidence_at_protein_level
+  - skos:exactMatch:
+    - uniprot: uniprot:Q04760
+  - nxp:swissprotPage:
+    - page: up_page:Q04760
+  - nxp:gene:
+    - ensembl_gene: EnsemblGene
+  - nxp:isoform+:
+    - isoform: Isoform
+  - nxp:isoformCount:
+    - isoforn_count: 2
+  - nxp:classifiedWith*:
+    - nextrprot_ec: EcTerm
+  - nxp:family:
+    - []:
+      - a: nxp:FamilyInfo
+      - nxp:description:
+        - family_desc: "Belongs to the glyoxalase I family."
+      - nxp:term:
+        - nextprot_family: NextprotFamily
+  - nxp:reference+: [ Identifier, Xref, Publication ]
+  - nxp:history+:
+    - []:
+      - a: nxp:History
+      - nxp:integrated:
+        - integrated_date: "2010-03-01"
+      - nxp:name:
+        - database: "neXtProt"
+      - nxp:updated:
+        - updated_date: "2021-02-04"
+
+- EnsenblGene nxp_gene:ENSG00000124767:
+  - a: nxp:Gene
+  - nxp:band:
+    - gene_band: "p21.2"
+  - nxp:begin:
+    - gene_begin: 38675925
+  - nxp:chromosome:
+    - gene_chr: "6"
+  - nxp:end:
+    - gene_end: 38703145
+  - nxp:length:
+    - gene_len: 27220
+  - nxp:name:
+    - gene_name: "GLO1"
+  - nxp:strand:
+    - gene_strand: "-1"
+
+- Isoform nxp_iso:NX_Q04760-1:
+  - a: nxp:Isoform
+  - nxp:absorptionMax*:
+    - absorption_max: AbsorptionMax
+  - nxp:activeSite*:
+    - active_site: ActiveSite
+  - nxp:activityRegulation*:
+    - activity_regulation: ActivityRegulation
+  - nxp:antibodyMapping*:
+    - antibody_mapping: AntibodyMapping
+  - nxp:allergen*:
+    - allergen: Allergen
+  - nxp:betaStrand*:
+    - beta_strand: BetaStrand
+  - nxp:binaryInteraction*:
+    - binary_interaction: BinaryInteraction
+  - nxp:bindingSite*:
+    - binding_site: BindingSite
+  - nxp:calciumBindingRegion*:
+    - calcium_binding_region: CalciumBindingRegion
+  - nxp:canonicalIsoform:
+    - cannonical_isoform: 1
+  - nxp:catalyticActivity*:
+    - catalytic_activity: CatalyticActivity
+  - nxp:caution:
+    - caution: Caution
+  - nxp:cleavageSite*:
+    - cleavage_site: CleavageSite
+  - nxp:cofactor*:
+    - cofactor: Cofactor
+  - nxp:cofactorInfo*:
+    - cofactor_info: CofactorInfo
+  - nxp:coiledCoilRegion*:
+    - coiled_coil_region: CoiledCoilRegion
+  - nxp:compositionallyBiasedRegion*:
+    - compositionally_biased_region: CompositionallyBiasedRegion
+  - nxp:crossLink*:
+    - cross_link: CrossLink
+  - nxp:detectedExpression*:
+    - detected_expression: ExpressionProfile
+  - nxp:developmentalStageInfo*:
+    - developmental_stage: DevelopmentalStage
+  - nxp:disease*:
+    - disease: Disease
+  - nxp:disulfideBond*:
+    - disulfide_bond: DisulfideBond
+  - nxp:dnaBindingRegion*:
+    - dna_binding_region: DnaBindingRegion
+  - nxp:domain*:
+    - domain: Domain
+  - nxp:domainInfo*:
+    - domain_info: DomainInfo
+  - nxp:electrophysiologicalParameter*:
+    - electrophysiological_parameter: ElectrophysiologicalParameter
+  - nxp:enzymeClassification*:
+    - enzyme_classification: EnzymeClassification
+  - nxp:expressionInfo*:
+    - expression_info: ExpressionInfo
+  - nxp:expressionProfile*:
+    - expression_profile: ExpressionProfile
+  - nxp:functionInfo*:
+    - function_info: FunctionInfo
+  - nxp:glycosylationSite*:
+    - glycosylation_site: GlycosylationSite
+  - nxp:goBiologicalProcess*:
+    - go_biological_process: GoBiologicalProcess
+  - nxp:goCellularComponent*:
+    - go_cellular_component: GoCellularComponent
+  - nxp:goMolecularFunction*:
+    - go_molecular_function: GoMolecularFunction
+  - nxp:helix*:
+    - helix: Helix
+  - nxp:highExpression*:
+    - high_expression_profile: ExpressionProfile
+  - nxp:induction*:
+    - induction: Induction
+  - nxp:initiatorMethionine*:
+    - initiator_methionine: InitiatorMethionine
+  - nxp:interactingRegion*:
+    - interacting_region: InteractingRegion
+  - nxp:interactionInfo*:
+    - interaction_info: InteractionInfo
+  - nxp:interactionMapping*:
+    - interaction_mapping: InteractionMapping
+  - nxp:intramembraneRegion*:
+    - intramembrane_region: IntramembraneRegion
+  - nxp:kineticKM*:
+    - kinetic_km: KineticKM
+  - nxp:kineticNote*:
+    - kinetic_note: KineticNote
+  - nxp:kineticVmax*:
+    - kinetic_vmax: KineticVmax
+  - nxp:lipidationSite*:
+    - lipidation_site: LipidationSite
+  - nxp:lowExpression*:
+    - low_expression_profile: ExpressionProfile
+  - nxp:matureProtein*:
+    - mature_protein: MatureProtein
+  - nxp:mediumExpression*:
+    - medium_expression_profile: ExpressionProfile
+  - nxp:metalBindingSite*:
+    - metal_binding_site: MetalBindingSite
+  - nxp:miscellaneous*:
+    - miscellaneous: Miscellaneous
+  - nxp:miscellaneousRegion*:
+    - miscellaneous_region: MiscellaneousRegion
+  - nxp:miscellaneousSite*:
+    - miscellaneous_site: MiscellaneousSite
+  - nxp:mitochondrialTransitPeptide*:
+    - mitochondrial_transit_peptide: MitochondrialTransitPeptide
+  - nxp:modifiedResidue*:
+    - modified_residue: ModifiedResidue
+  - nxp:mutagenesis*:
+    - mutagenesis: Mutagenesis
+  - nxp:nonConsecutiveResidue*:
+    - non_consecutive_residue: NonConsecutiveResidue
+  - nxp:nonTerminalResidue*:
+    - non_terminal_residue: NonTerminalResidue
+  - nxp:nucleotidePhosphateBindingRegion*:
+    - nucleotide_phosphate_binding_region: NucleotidePhosphateBindingRegion
+  - nxp:pathway*:
+    - pathway: Pathway
+  - nxp:pdbMapping*:
+    - pdb_mapping: PdbMapping
+  - nxp:peptideMapping*:
+    - peptide_mapping: PeptideMapping
+  - nxp:peroxisomeTransitPeptide*:
+    - peroxisome_transit_peptide: PeroxisomeTransitPeptide
+  - nxp:phDependence*:
+    - ph_dependence: PhDependence
+  - nxp:pharmaceutical*:
+    - pharmaceutical: Pharmaceutical
+  - nxp:propeptide*:
+    - propeptide: Propeptide
+  - nxp:ptmInfo*:
+    - ptm_info: PtmInfo
+  - nxp:redoxPotential*:
+    - redox_potential: RedoxPotential
+  - nxp:repeat*:
+    - repeat: Repeat
+  - nxp:selenocysteine*:
+    - selenocysteine: Selenocysteine
+  - nxp:sequence:
+    - []:
+      - a: nxp:ProteinSequence
+      - nxp:chain:
+        - sequence: "MAEPQPPSGGLTDEAALSCCSDADPSTKDFLLQQTMLRVKDPKKSLDFYTRVLGMTLIQKCDFPIMKFSLYFLAYEDKNDIPKEKDEKIAWALSRKATLELTHNWGTEDDETQSYHNGNSDPRGFGHIGIAVPDVYSACKRFEELGVKFVKKPDDGKMKGLAFIQDPDGYWIEILNPNKMATLM"
+      - nxp:isoelectricPoint:
+        - isoelectric_point: 5.12
+      - nxp:length:
+        - sequence_length: 184
+      - nxp:molecularWeight:
+        - molecular_weight: 20778.0
+  - nxp:sequenceCaution*:
+    - sequence_caution: SequenceCaution
+  - nxp:sequenceConflict*:
+    - sequence_conflict: SequenceConflict
+  - nxp:shortSequenceMotif*:
+    - short_sequence_motif: ShortSequenceMotif
+  - nxp:signalPeptide*:
+    - signal_peptide: SignalPeptide
+  - nxp:smallMoleculeInteraction*:
+    - small_molecule_interaction: SmallMoleculeInteraction
+  - nxp:srmPeptideMapping*:
+    - srm_peptide_mapping: SrmPeptideMapping
+  - nxp:subcellularLocation*:
+    - subcellular_location: SubcellularLocation
+  - nxp:subcellularLocationNote*:
+    - subcellular_location_info: SubcellularLocationInfo
+  - nxp:swissprotDisplayed:
+    - swissprot_displayed: 1
+  - nxp:temperatureDependence*:
+    - temperature_dependence: TemperatureDependence
+  - nxp:topologicalDomain*:
+    - topological_domain: TopologicalDomain
+  - nxp:transmembraneRegion*:
+    - transmembrane_region: TransmembraneRegion
+  - nxp:transportActivity*:
+    - transport_activity: TransportActivity
+  - nxp:turn*:
+    - turn: Turn
+  - nxp:undetectedExpression*:
+    - undetected_expression_profile: ExpressionProfile
+  - nxp:uniprotKeyword*:
+    - uniprot_keyword: UniprotKeyword
+  - nxp:variant*:
+    - variant: Variant
+  - nxp:variantInfo*:
+    - variant_info: VariantInfo
+  - nxp:zincFingerRegion*:
+    - zinc_finger_region: ZincFingerRegion
+### classified annotation properties
+  - nxp:biophysicochemicalProperty*: [ AbsorptionMax, KineticKm, KineticNote, KineticVmax, PhDependence, RedoxPotential, TemperatureDependence ]
+  - nxp:cellularComponent*: [ GoCellularComponent, SubcellularLocation, SubcellularLocationInfo ]
+  - nxp:expression*: [ DevelopmentalStage, ExpressionInfo, ExpressionProfile ]
+  - nxp:function*: [ CatalyticActivity, FunctionInfo, GoBiologicalProcess, GoMolecularFunction, Pathway, TransportActivity ]
+  - nxp:generalAnnotation*: [ ActivityRegulation, Allergen, BinaryInteraction, CatalyticActivity, Caution, Cofactor, CofactorInfo, DevelopmentalStage, DomainInfo, ElectrophysiologicalParameter, ExpressionInfo, ExpressionProfile, FunctionInfo, GoBiologicalProcess, GoCellularComponent, GoMolecularFunction, Induction, InteractionInfo, KineticKM, KineticNote, Miscellaneous, Pathway, PhDependence, Pharmaceutical, PtmInfo, RedoxPotential, SequenceCaution, SmallMoleculeInteraction, SubcellularLocation, SubcellularLocationInfo, TemperatureDependence, TransportActivity, UniprotKeyword ]
+  - nxp:interaction*: [ Cofactor, InteractionInfo, ActivityRegulation, SmallMoleculeInteraction, BinaryInteraction, CofactorInfo ]
+  - nxp:keyword*: UniprotKeyword
+  - nxp:mapping*: [ AntibodyMapping, InteractionMapping, PdbMapping, PeptideMapping, SrmPeptideMapping ]
+  - nxp:medical*: [ Disease, Pharmaceutical ]
+  - nxp:positionalAnnotation+: [ ActiveSite, AntibodyMapping, BetaStrand, BindingSite, CalciumBindingRegion, CleavageSite, CoiledCoilRegion, CompositionallyBiasedRegion, CrossLink, DisulfideBond, DnaBindingRegion, Domain, GlycosylationSite, Helix, InitiatorMethionine, InteractingRegion, InteractionMapping, IntramembraneRegion, LipidationSite, MatureProtein, MetalBindingSite, MiscellaneousRegion, MiscellaneousSite, MitochondrialTransitPeptide, ModifiedResidue, Mutagenesis, NonConsecutiveResidue, NonTerminalResidue, NucleotidePhosphateBindingRegion, PdbMapping, PeptideMapping, PeroxisomeTransitPeptide, Propeptide, Repeat, Selenocysteine, SequenceConflict, ShortSequenceMotif, SignalPeptide, SrmPeptideMapping, TopologicalDomain, Turn, Variant, ZincFingerRegion ]
+  - nxp:processingProduct+: [ InitiatorMethionine, MatureProtein, MitochondrialTransitPeptide, PeroxisomeTransitPeptide, Propeptide, SignalPeptide, TransmembraneRegion ]
+  - nxp:ptm*: [ CrossLink, DisulfideBond, GlycosylationSite, LipidationSite, ModifiedResidue, Selenocysteine ]
+  - nxp:region*: [ CalciumBindingRegion, CoiledCoilRegion, CompositionallyBiasedRegion, DnaBindingRegion, Domain, InteractingRegion, MiscellaneousRegion, NucleotidePhosphateBindingRegion, Repeat, ShortSequenceMotif, ZincFingerRegion ]
+  - nxp:secondaryStructure*: [ BetaStrand, Helix, Turn ]
+  - nxp:site*: [ ActiveSite, BindingSite, CleavageSite, MetalBindingSite, MiscellaneousSite ]
+  - nxp:topology*: [ IntramembraneRegion, TopologicalDomain, TransmembraneRegion ]
+
+- Evidence npx_evidence:150245819:
+  - a: nxp:Evidence
+  - nxp:isoformSpecificity?:
+    - evidence_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - evidence_quality: nxp:GOLD
+  - nxp:assignedBy:
+    - evidence_source: npx_source:Uniprot
+  - nxp:assocType:
+    - evidence_asssoc_type: "evidence"
+  - nxp:evidenceCode:
+    - evidence_code: EvidenceCodeTerm
+  - nxp:negative:
+    - evidence_navigate: 0
+  - nxp:reference:
+    - ebidence_pub: Publication
+
+- Identifier :
+  - a: nxp:Identifier
+  - nxp:accession:
+    - identifier_accession: "200681_at"
+  - nxp:provenance:
+    - identifier_provenance: Provenance
+
+- Provenance nxp_db:ChEBI:
+  - a: nxp:Database
+  - nxp:category:
+    - provenance_category: "Other"
+  - rdfs:comment*:
+    - provenance_comment: "Chemical Entities of Biological Interest"
+  - rdfs:seeAlso:
+    - provenance_see_also: <http://www.ebi.ac.uk/chebi/>
+
+- Publication nxp_pub:733575:
+  - a: [ nxp:Publication nxp:LargeScalePublication ]
+  - nxp:author+:
+    - []:
+      - a: nxp:Person
+      - nxp:name:
+        - pub_author_name: "A D Cameron"
+  - nxp:firstPage:
+    - pub_page: "13480"
+  - nxp:from:
+    - pubmed: "PubMed:10521255"
+  - nxp:issue:
+    - pub_issue: "41"
+  - nxp:journal:
+    - pub_journal: "Biochemistry"
+  - nxp:lastPage:
+    - node_84: "13490"
+  - nxp:pubType:
+    - pub_type: "ARTICLE"
+  - nxp:title:
+    - pub_title: "Reaction mechanism of glyoxalase I explored by an X-ray crystallographic analysis of the human enzyme in complex with a transition state analogue."
+  - nxp:volume:
+    - pub_volume: "38"
+  - nxp:year:
+    - pub_year: "1999"
+
+- Xref :
+  - a: nxp:Xref
+  - nxp:accession:
+    - xref_id: "CHEBI:29105"
+  - rdfs:label:
+    - xref_label: "Zn(2+)"
+  - nxp:provenance:
+    - xref_provenance: Provenance
+  - skos:exactMatch:
+    - xref_exact_match: obo:CHEBI_29105
+
+
+#### annotation
+
+
+- AbsorptionMax nxp_annotation:NX_P03999-1-NX_P03999_AbsorptionMax:
+  - a: nxp:AbsorptionMax
+  - nxp:entryAnnotationId:
+    - absorption_max_id: "NX_P03999_AbsorptionMax"
+  - nxp:isoformSpecificity?:
+    - absorption_max_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - absorption_max_quality: nxp:GOLD
+  - rdfs:comment*:
+    - absorption_max_comment: "420 nm"
+
+- ActiveSite nxp_annotation:NX_Q04760-1-AN_Q04760_001090:
+  - a: nxp:ActiveSite
+  - nxp:entryAnnotationId:
+    - active_site_annotation_id: "AN_Q04760_001090"
+  - nxp:isoformSpecificity?:
+    - active_site_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - active_site_quality: nxp:GOLD
+  - nxp:start:
+    - active_site_start: 173
+  - nxp:end:
+    - active_site_end: 173
+  - nxp:evidence+:
+    - active_site_evidence: Evidence
+  - rdfs:comment*:
+    - active_site_comment: "Proton donor/acceptor"
+
+- ActivityRegulation nxp_annotation:NX_Q04760-1-AN_Q04760_0384:
+  - a: nxp:ActivityRegulation
+  - nxp:entryAnnotationId:
+    - activity_regulation_id: "AN_Q04760_0384"
+  - nxp:isoformSpecificity?:
+    - activity_regulation_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - activity_regulation_quality: nxp:GOLD
+  - nxp:evidence+:
+    - activity_reguration_evidence: Evidence
+  - rdfs:comment*:
+    - activity_regulation_comment: "Regulated by oxidation of Cys-139 in response to the redox state of the cell. Results in the alternative formation of cystine or glutathione-bound cysteine, the latter modification leading to reduced enzyme activity."
+
+- AntibodyMapping nxp_annotation:NX_Q04760-1-AN_HPA059791_1100014352511:
+  - a: nxp:AntibodyMapping
+  - nxp:entryAnnotationId:
+    - antibody_id: "AN_HPA059791_1100014352511"
+  - nxp:isoformSpecificity?:
+    - antibody_isoform_specificity: nxp:SPECIFIC
+  - nxp:quality?:
+    - antibody_mapping_quality: nxp:GOLD
+  - nxp:antibodyName:
+    - antibody_name: "NX_HPA059791"
+  - nxp:antibodyUnicity:
+    - antibody_unicity: "UNIQUE"
+  - nxp:start:
+    - antibody_start: 1
+  - nxp:end:
+    - antibody_end: 78
+  - nxp:evidence+:
+    - antibody_evidence: Evidence
+  - rdfs:comment*:
+    - antibody_comment: ""
+
+- Allergen nxp_annotation:NX_Q9BPX6-2-AN_Q9BPX6_0220:
+  - a: nxp:Allergen
+  - nxp:entryAnnotationId:
+    - allergen_id: "AN_Q9BPX6_0220"
+  - nxp:isoformSpecificity?:
+    - allergen_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - allergen_quarity: nxp:GOLD
+  - nxp:evidence+:
+    - allergen_evidence: Evidence
+  - rdfs:comment*:
+    - allergen_comment: "Causes an allergic reaction in human. Binds to IgE from atopic dermatitis (AD) patients. Identified as an IgE autoantigen in atopic dermatitis (AD) patients with severe skin manifestations."
+
+- BetaStrand nxp_annotation:NX_Q04760-1-AN_Q04760_001123:
+  - a: nxp:BetaStrand
+  - nxp:entryAnnotationId:
+    - beta_strand_id: "AN_Q04760_001123"
+  - nxp:isoformSpecificity?:
+    - beta_strand_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - bet_strand_quality: nxp:GOLD
+  - nxp:start:
+    - beta_strand_start: 31
+  - nxp:end:
+    - beta_strand_end: 38
+  - nxp:evidence+:
+    - beta_strand_evidence: Evidence
+  - rdfs:comment*:
+    - beta_strand_comment: ""
+    
+- BinaryInteraction nxp_annotation:NX_Q04760-1-015776108457247bfbb606b504dfb6b8:
+  - a: nxp:BinaryInteraction
+  - nxp:entryAnnotationId:
+    - binary_interaction_id: "015776108457247bfbb606b504dfb6b8"
+  - nxp:isoformSpecificity?:
+    - binary_interaction_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - binary_interaction_quality: nxp:SILVER
+  - nxp:interactant:
+    - binary_interaction_interactant: Nextprot #nxp_entry:NX_P00441
+  - nxp:selfInteraction:
+    - binary_interaction_self_interaction: 0
+  - nxp:evidence+:
+    - binary_interaction_evidence: Evidence
+  - rdfs:comment*:
+    - binary_interaction_comment: ""
+
+- BindingSite nxp_annotation:NX_Q04760-1-AN_Q04760_001095:
+  - a: nxp:BindingSite
+  - nxp:entryAnnotationId:
+    - binding_site_id: "AN_Q04760_001095"
+  - nxp:isoformSpecificity?:
+    -  binding_site_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - binding_site_quality: nxp:GOLD
+  - nxp:start:
+    - binding_site_start: 34
+  - nxp:end:
+    - binding_site_end: 34
+  - nxp:evidence+:
+    - binding_site_evidence: Evidence
+  - rdfs:comment*:
+    - binding_site_comment: "Substrate; shared with dimeric partner"
+
+- CalciumBindingRegion nxp_annotation:NX_A0PJX0-1-AN_A0PJX0_000800:
+  - a: nxp:CalciumBindingRegion
+  - nxp:entryAnnotationId:
+    - calcium_binding_region_id: "AN_A0PJX0_000800"
+  - nxp:isoformSpecificity?:
+    - calcium_binding_region_isoform_specificty: nxp:UNKNOWN
+  - nxp:quality?:
+    - calcium_binding_region_quality: nxp:GOLD
+  - nxp:start:
+    - calcium_binding_region_start: 110
+  - nxp:end:
+    - calcium_binding_region_end: 121
+  - nxp:evidence+:
+    - calcium_binding_region_evidence: Evidence
+  - rdfs:comment*:
+    - calcium_binding_region_comment: "1"
+
+- CatalyticActivity nxp_annotation:NX_Q04760-1-AN_Q04760_001086:
+  - a: nxp:CatalyticActivity
+  - nxp:entryAnnotationId:
+    - catalytic_activity_id: "AN_Q04760_001086"
+  - nxp:isoformSpecificity?:
+    - catalytic_activity_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - catalytic_activity_quality: nxp:GOLD
+  - nxp:evidence*:
+    - catalytic_activity_evidence: Evidence
+  - nxp:term:
+    - catalytic_activity_ec: EcTerm
+  - rdfs:comment*:
+    - catalytic_activity_comment: "(R)-S-lactoylglutathione = glutathione + methylglyoxal"
+
+- Caution nxp_annotation:NX_A2NJV5-1-AN_A2NJV5_000027:
+  - a: nxp:Caution
+  - nxp:entryAnnotationId:
+    - caution_id: "AN_A2NJV5_000027"
+  - nxp:isoformSpecificity?:
+    - caution_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - caution_quality: nxp:GOLD
+  - nxp:evidence+:
+    - caution_evidence: Evidence
+  - rdfs:comment:
+    - caution_comment: "For an example of a full-length immunoglobulin kappa light chain see AC P0DOX7."
+
+- CleavageSite nxp_annotation:NX_O60566-3-AN_O60566_0032:
+  - a: nxp:CleavageSite
+  - nxp:entryAnnotationId:
+    - cleavage_site_id: "AN_O60566_0032"
+  - nxp:isoformSpecificity?:
+    - cleavage_site_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - cleavage_site_quality: nxp:GOLD
+  - nxp:start:
+    - cleavage_site_start: 593
+  - nxp:end:
+    - cleavage_site_end: 594
+  - nxp:evidence+:
+    - cleavage_site_evidence: Evidence
+  - rdfs:comment*:
+    - cleavage_site_comment: "Cleavage; by caspase-3"
+
+- Cofactor nxp_annotation:NX_Q04760-1-AN_Q04760_000949:
+  - a: nxp:Cofactor
+  - nxp:entryAnnotationId:
+    - cofactor_id: "AN_Q04760_000949"
+  - nxp:isoformSpecificity?:
+    - cofactor_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - cofactor_quality: nxp:GOLD
+  - nxp:interactant:
+    - cofactor_xref: Xref
+  - nxp:evidence*:
+    - cofactor_evidence: Evidence
+  - rdfs:comment*:
+    - cofactor_comment: ""
+
+- CofactorInfo nxp_annotation:NX_Q04760-1-AN_Q04760_000948:
+  - a: nxp:CofactorInfo
+  - nxp:entryAnnotationId:
+    - cofactor_info_id: "AN_Q04760_000948"
+  - nxp:isoformSpecificity?:
+    - cofactor_info_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - cofactor_info_quality: nxp:GOLD
+  - nxp:evidence+:
+    - cofactor_info_evidence: Evidence
+  - rdfs:comment:
+    - cofactor_info_comment: "Binds 1 zinc ion per subunit. In the homodimer, two zinc ions are bound between subunits."
+
+- CoiledCoilRegion nxp_annotation:NX_A2CJ06-1-AN_A2CJ06_001070:
+  - a: nxp:CoiledCoilRegion
+  - nxp:entryAnnotationId:
+    - coiled_coil_region_id: "AN_A2CJ06_001070"
+  - nxp:isoformSpecificity?:
+    - coiled_coil_region_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - coiled_coil_region_quality: nxp:GOLD
+  - nxp:start:
+    - coiled_coil_region_start: 322
+  - nxp:end:
+    - coiled_coil_region_end: 351
+  - nxp:evidence+:
+    - coiled_coil_region_evidence: Evidence
+  - rdfs:comment*:
+    - coiled_coil_region_comment: ""
+
+- CompositionallyBiasedRegion nxp_annotation:NX_A2A3L6-1-AN_A2A3L6_0063:
+  - a: nxp:CompositionallyBiasedRegion
+  - nxp:entryAnnotationId:
+    - compositionally_biased_region_id: "AN_A2A3L6_0063"
+  - nxp:isoformSpecificity?:
+    - compositionally_biased_region_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - compositionally_biased_region_quality: nxp:GOLD
+  - nxp:start:
+    - compositionally_biased_region_start: 22
+  - nxp:end:
+    - compositionally_biased_region_end: 28
+  - nxp:evidence+:
+    - compositionally_biased_region_evidence: Evidence
+  - rdfs:comment*:
+    - compositionally_biased_region_comment: "Poly-Lys"
+
+- CrossLink nxp_annotation:NX_Q04760-1-AN_Q04760_001307:
+  - a: nxp:CrossLink
+  - nxp:entryAnnotationId:
+    - cross_link_id: "AN_Q04760_001307"
+  - nxp:isoformSpecificity?:
+    - cross_link_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - cross_link_quality: nxp:GOLD
+  - nxp:start:
+    - cross_link_start: 44
+  - nxp:end:
+    - cross_link_end: 44
+  - nxp:term:
+    - cross_link_uniprot_keyword: UniprotKeyword
+  - nxp:evidence+:
+    - cross_link_evidence: Evidence
+  - rdfs:comment*:
+    - cross_link_comment: "Glycyl lysine isopeptide (Lys-Gly) (interchain with G-Cter in ubiquitin)"
+
+- DevelopmentalStage nxp_annotation:NX_P32243-2-AN_P32243_000996:
+  - a: nxp:DevelopmentalStageInfo
+  - nxp:entryAnnotationId:
+    - developmental_stage_info_id: "AN_P32243_000996"
+  - nxp:isoformSpecificity?:
+    - developmental_stage_info_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - developmental_stage_info_quality: nxp:GOLD
+  - nxp:evidence+:
+    - developmental_stage_info_evidence: Evidence
+  - rdfs:comment*:
+    - developmental_stage_info_comment: "At Carnegie stage (CS) 14, widely expressed throughout the telencephalon and mesencephalon, with a sharp cutoff at the midbrain-hindbrain boundary. At CS16, found in the lamina terminalis and the floor of the telencephalon. At CS16-CS19, in the developing eye, strongly expressed in the retinal pigment epithelium layer and more weakly in the neural retina, not expressed in the optic nerve itself (at protein level). Retinal expression peaks between CS19 and CS21 and decline in older fetuses. At CS22, detected in the choroid plexus, the dorsal thalamus, and the roof of the mesencephalon. In the developing nasal structures, expressed in the olfactory epithelium of the nasal pits at CS18."
+
+- Disease nxp_annotation:NX_A2PYH4-1-AN_A2PYH4_000880:
+  - a: nxp:Disease
+  - nxp:entryAnnotationId:
+    - disease_id: "AN_A2PYH4_000880"
+  - nxp:isoformSpecificity?:
+    - disease_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - disease_quality: nxp:GOLD
+  - nxp:term:
+    - disease_term: DiseaseTerm
+  - nxp:evidence+:
+    - disease_evidence: Evidence
+  - rdfs:comment?:
+    - disease_comment: "Premature ovarian failure 9 (POF9) [MIM:615724]: An ovarian disorder defined as the cessation of ovarian function under the age of 40 years. It is characterized by oligomenorrhea or amenorrhea, in the presence of elevated levels of serum gonadotropins and low estradiol. The disease may be caused by mutations affecting the gene represented in this entry."
+
+- DisulfideBond nxp_annotation:NX_Q04760-1-AN_Q04760_001106:
+  - a: nxp:DisulfideBond
+  - nxp:entryAnnotationId:
+    - disulfide_bond_id: "AN_Q04760_001106"
+  - nxp:isoformSpecificity?:
+    - disulfide_bond_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - disulfide_bond_quality: nxp:GOLD
+  - nxp:start:
+    - disulfide_bond_start: 19
+  - nxp:end:
+    - disulfide_bond_end: 20
+  - nxp:evidence+:
+    - disulfide_bond_evidence: Evidence
+  - rdfs:comment*:
+    - disulfide_bond_comment: ""
+
+- DnaBindingRegion nxp_annotation:NX_Q9ULV5-2-AN_Q9ULV5_000446:
+  - a: nxp:DnaBindingRegion
+  - nxp:entryAnnotationId:
+    - dna_binding_region_id: "AN_Q9ULV5_000446"
+  - nxp:isoformSpecificity?:
+    - dna_binding_region_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - dna_binding_region_quality: nxp:GOLD
+  - nxp:start:
+    - dna_binding_region_start: 17
+  - nxp:end:
+    - dna_binding_region_end: 121
+  - nxp:evidence+:
+    - dna_binding_region_evidence: Evidence
+  - rdfs:comment*:
+    - dna_binding_region_comment: ""
+
+- Domain nxp_annotation:NX_Q04760-1-AN_Q04760_001088:
+  - a: nxp:Domain
+  - nxp:entryAnnotationId:
+    - domain_id: "AN_Q04760_001088"
+  - nxp:isoformSpecificity?:
+    - domain_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - domain_quality: nxp:GOLD
+  - nxp:start:
+    - domain_start: 31
+  - nxp:end:
+    - domain_end: 177
+  - nxp:term:
+    - domain_term: DomainTerm
+  - nxp:evidence+:
+    - domain_evidence: Evidence
+  - rdfs:comment*:
+    - domain_comment: "VOC"
+
+- DomainInfo nxp_annotation:NX_Q08117-2-AN_Q08117_0101:
+  - a: nxp:DomainInfo
+  - nxp:entryAnnotationId:
+    - domain_info_id: "AN_Q08117_0101"
+  - nxp:isoformSpecificity?:
+    - domain_info_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - domain_info_quality: nxp:GOLD
+  - nxp:evidence:
+    - domain_info_evidence: Evidence
+  - rdfs:comment:
+    - domain_info_comment: "Lacks the C-terminal WD repeats."
+
+- ElectrophysiologicalParameter nxp_annotation:NX_Q9NY46-2-03ee95af13277135a7de9009c81366e9:
+  - a: nxp:ElectrophysiologicalParameter
+  - nxp:entryAnnotationId:
+    - electrophysiological_parameter_id: "03ee95af13277135a7de9009c81366e9"
+  - nxp:isoformSpecificity?:
+    - electrophysiological_parameter_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - electrophysiological_parameter_quality: nxp:GOLD
+  - nxp:term:
+    - ion_channel_electrophysiology_term: IonChannelElectrophysiologyTerm # voltage dependence of slow inactivation
+  - nxp:evidence+:
+    - electrophysiological_parameter_evidence: Evidence
+  - rdfs:comment*:
+    - electrophysiological_parameter_comment: ""
+
+- EnzymeClassification nxp_annotation:NX_Q04760-1-AN_Q04760_0037:
+  - a: nxp:EnzymeClassification
+  - nxp:entryAnnotationId:
+    - ec_id: "AN_Q04760_0037"
+  - nxp:isoformSpecificity?:
+    - ec_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - ec_quality: nxp:GOLD
+  - nxp:term:
+    - isoform_ec: EcTerm
+  - nxp:evidence:
+    - ec_evidence+: Evidence
+  - rdfs:comment*:
+    - ec_comment: "EC 4.4.1.5"
+
+- ExpressionInfo nxp_annotation:NX_Q04760-1-AN_Q04760_001384:
+  - a: nxp:ExpressionInfo
+  - nxp:entryAnnotationId:
+    - expression_info_id: "AN_Q04760_001384"
+  - nxp:isoformSpecificity?:
+    - expression_info_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - expression_info_quality: nxp:GOLD
+  - nxp:evidence+:
+    - expression_info_evidence: Evidence
+  - rdfs:comment*:
+    - expression_info_comment: "RNA tissue specificity: Low tissue specificity. RNA tissue distribution: Detected in all."
+
+- ExpressionProfile nxp_annotation:NX_Q04760-1-AN_Q04760_000765:
+  - a: nxp:ExpressionProfile
+  - nxp:entryAnnotationId:
+    - expression_profile_id: "AN_Q04760_000765"
+  - nxp:isoformSpecificity?:
+    - expression_profile_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - expression_profile_quality: nxp:GOLD
+  - nxp:evidence+:
+    - expression_profile_evidence: Evidence
+  - nxp:term:
+    - expression_profile_anatomy: Anatomy
+  - rdfs:comment*:
+    - expression_profile_comment: "Cerebellum molecular layer"
+
+- FunctionInfo nxp_annotation:NX_Q04760-1-AN_Q04760_000731:
+  - a: nxp:FunctionInfo
+  - nxp:entryAnnotationId:
+    - function_info_id: "AN_Q04760_000731"
+  - nxp:isoformSpecificity?:
+    - function_info_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - function_info_quality: nxp:GOLD
+  - nxp:evidence+:
+    - function_info_evidence: Evidencenpx_evidence:85243649
+  - rdfs:comment*:
+    - function_info_comment: "Catalyzes the conversion of hemimercaptal, formed from methylglyoxal and glutathione, to S-lactoylglutathione. Involved in the regulation of TNF-induced transcriptional activity of NF-kappa-B. Required for normal osteoclastogenesis."
+
+- GlycosylationSite nxp_annotation:NX_Q7Z3C6-3-AN_Q7Z3C6_001776:
+  - a: nxp:GlycosylationSite
+  - nxp:entryAnnotationId:
+    - glycosylation_site_id: "AN_Q7Z3C6_001776"
+  - nxp:isoformSpecificity?:
+    - glycosylation_site_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - glycosylation_site_quality: nxp:GOLD
+  - nxp:start:
+    - glycosylation_site_start: 99
+  - nxp:end:
+    - glycosylation_site_end: 99
+  - nxp:term:
+    - glycosylation: PtmTerm
+  - nxp:evidence+:
+    - glycosylation_site_evidence: Evidence
+  - rdfs:comment*:
+    - glycosylation_site_comment: "N-linked (GlcNAc...) asparagine"
+
+- GoBiologicalProcess nxp_annotation:NX_Q04760-1-AN_Q04760_000859:
+  - a: nxp:GoBiologicalProcess
+  - nxp:entryAnnotationId:
+    - go_biological_process_id: "AN_Q04760_000859"
+  - nxp:isoformSpecificity?:
+    - go_biological_process_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - go_biological_process_quality: nxp:GOLD
+  - nxp:term:
+    - go_termbiological_process: GoTerm
+  - nxp:evidence+:
+    - go_biological_process_evidence: npx_evidence:91669590
+  - rdfs:comment:
+    - go_biological_process_comment: "osteoclast differentiation"
+
+- GoCellularComponent nxp_annotation:NX_Q04760-1-AN_Q04760_000861:
+  - a: nxp:GoCellularComponent
+  - nxp:entryAnnotationId:
+    - go_cellulat_component_id: "AN_Q04760_000861"
+  - nxp:isoformSpecificity?:
+    - go_cellulat_component_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - go_cellulat_component_quality: nxp:GOLD
+  - nxp:term:
+    - go_term_cellulat_component: GoTerm
+  - nxp:evidence*:
+    - go_cellular_component_evidence: npx_evidence:143649283
+  - rdfs:comment*:
+    - go_cellular_component_comment: "extracellular exosome"
+
+- GoMolecularFunction nxp_annotation:NX_Q04760-1-AN_Q04760_000857:
+  - a: nxp:GoMolecularFunction
+  - nxp:entryAnnotationId:
+    - go_molecular_function_id: "AN_Q04760_000857"
+  - nxp:isoformSpecificity?:
+    - go_molecular_function_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - go_molecular_function_quality: nxp:GOLD
+  - nxp:term:
+    - go_term_molecular_function: GoTerm
+  - nxp:evidence+:
+    - go_molecular_function_evidence: Evidence
+  - rdfs:comment*:
+    - go_molecular_function_comment: "lactoylglutathione lyase activity"
+
+- Helix nxp_annotation:NX_Q04760-1-AN_Q04760_001121:
+  - a: nxp:Helix
+  - nxp:entryAnnotationId:
+    - helix_id: "AN_Q04760_001121"
+  - nxp:isoformSpecificity?:
+    - helix_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - helix_quality: nxp:GOLD
+  - nxp:start:
+    - helix_start: 13
+  - nxp:end:
+    - helix_end: 18
+  - nxp:evidence:
+    - helix_evidence: Evidence
+  - rdfs:comment*:
+    - helix_xomment: ""
+
+- Induction nxp_annotation:NX_Q14511-2-AN_Q14511_0251:
+  - a: nxp:Induction
+  - nxp:entryAnnotationId:
+    - induction_id: "AN_Q14511_0251"
+  - nxp:isoformSpecificity?:
+    - induction_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - induction_quality: nxp:GOLD
+  - nxp:evidence+:
+    - induction_evidence: Evidence
+  - rdfs:comment:
+    - induction_comment: "Activated upon induction of cell growth."
+
+- InitiatorMethionine nxp_annotation:NX_Q04760-1-AN_Q04760_001087:
+  - a: nxp:InitiatorMethionine
+  - nxp:entryAnnotationId:
+    - initiator_methionine_id: "AN_Q04760_001087"
+  - nxp:isoformSpecificity?:
+    - initiator_methionine_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - initiator_methionine_quality: nxp:GOLD
+  - nxp:start:
+    - initiator_methionine_start: 1
+  - nxp:end:
+    - initiator_methionine_end: 1
+  - nxp:evidence+:
+    - initiator_methionine_evidence: Evidence
+  - rdfs:comment*:
+    - initiator_methionine_comment: "Removed"
+
+- InteractingRegion nxp_annotation:NX_O43151-1-AN_O43151_000488:
+  - a: nxp:InteractingRegion
+  - nxp:entryAnnotationId:
+    - interacting_region_id: "AN_O43151_000488"
+  - nxp:isoformSpecificity?:
+    - interacting_region_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - interacting_region_quality: nxp:GOLD
+  - nxp:start:
+    - interacting_region_start: 985
+  - nxp:end:
+    - interacting_region_end: 998
+  - nxp:evidence+:
+    - interacting_region_evidence: Evidence
+  - rdfs:comment*:
+    - interacting_region_comment: "Interaction with DNA"
+
+- InteractionInfo nxp_annotation:NX_Q04760-1-AN_Q04760_0386:
+  - a: nxp:InteractionInfo
+  - nxp:entryAnnotationId:
+    - interaction_info_id: "AN_Q04760_0386"
+  - nxp:isoformSpecificity?:
+    - interaction_info_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - interaction_info_quality: nxp:GOLD
+  - nxp:evidence+:
+    - interaction_info_evidence: Evidence
+  - rdfs:comment:
+    - interaction_info_comment: "Homodimer."
+
+- InteractionMapping nxp_annotation:NX_Q02930-3-06b405e4095bd2a33b63386c111ebd41:
+  - a: nxp:InteractionMapping
+  - nxp:entryAnnotationId:
+    - interaction_mapping_id: "06b405e4095bd2a33b63386c111ebd41"
+  - nxp:interactant:
+    - interactant: Nextprot
+  - nxp:isoformSpecificity?:
+    - interaction_mapping_isoform_specificity: nxp:SPECIFIC
+  - nxp:quality?:
+    - interaction_mapping_quality: nxp:GOLD
+  - nxp:start:
+    - interaction_mapping_start: 361
+  - nxp:end:
+    - interaction_mapping_end: 417
+  - nxp:evidence+:
+    - interaction_mapping_evidence: Evidence
+  - rdfs:comment*:
+    - interaction_mapping_comment: "Interaction with JUN"
+
+- IntramembraneRegion nxp_annotation:NX_O95197-1-AN_O95197_0897:
+  - a: nxp:IntramembraneRegion
+  - nxp:entryAnnotationId:
+    - intramembrane_region_id: "AN_O95197_0897"
+  - nxp:isoformSpecificity?:
+    - intramembrane_region_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - intramembrane_region_quality: nxp:GOLD
+  - nxp:start:
+    - intramembrane_region_start: 864
+  - nxp:end:
+    - intramembrane_region_end: 887
+  - nxp:term:
+    - intramembrane: TopologyTerm # In membrane
+  - nxp:evidence+:
+    - intramembrane_region_evidence: Evidence
+  - rdfs:comment*:
+    - intramembrane_region_comment: "In membrane"
+
+- KineticKm nxp_annotation:NX_Q04760-1-NX_Q04760_KineticKM:
+  - a: nxp:KineticKM
+  - nxp:entryAnnotationId:
+    - kinetic_km_id: "NX_Q04760_KineticKM"
+  - nxp:isoformSpecificity?:
+    - kinetic_km_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - kinetic_km_quality: nxp:GOLD
+  - rdfs:comment+:
+    - kinetic_km_comment: "1.3 mM for methylglyoxal/glutathione (native form)"
+
+- KineticNote nxp_annotation:NX_Q04760-1-NX_Q04760_KineticNote:
+  - a: nxp:KineticNote
+  - nxp:entryAnnotationId:
+    - kinetic_note_id: "NX_Q04760_KineticNote"
+  - nxp:isoformSpecificity?:
+    - kinetic_note_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - kinetic_note_quality: nxp:GOLD
+  - rdfs:comment+:
+    - kinetic_note_comment: "Reduction of GLO1 was carried out by incubation with 20 mM betamercaptoethanol prior to kinetic analysis."
+
+- KineticVmax nxp_annotation:NX_Q04760-1-NX_Q04760_KineticVmax:
+  - a: nxp:KineticVmax
+  - nxp:entryAnnotationId:
+    - kinetic_vmax_id: "NX_Q04760_KineticVmax"
+  - nxp:isoformSpecificity?:
+    - kinetic_vmax_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - kinetic_vmax_quality: nxp:GOLD
+  - rdfs:comment+:
+    - kinetic_vmax_comment: "0.335 umol/min/mg enzyme with methylglyoxal/glutathione as substrate (native form)"
+
+- LipidationSite nxp_annotation:NX_A6NGG8-1-AN_A6NGG8_002176:
+  - a: nxp:LipidationSite
+  - nxp:entryAnnotationId:
+    - lipidation_site_id: "AN_A6NGG8_002176"
+  - nxp:isoformSpecificity?:
+    - lipidation_site_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - lipidation_site_quality: nxp:GOLD
+  - nxp:start:
+    - lipidation_site_start: 2
+  - nxp:end:
+    - lipidation_site_end: 2
+  - nxp:term:
+    - lipidation: PtmTerm
+  - nxp:evidence+:
+    - lipidation_site_evidence: Evidence
+  - rdfs:comment*:
+    - lipidation_site_comment: "N-myristoyl glycine"
+
+- MatureProtein nxp_annotation:NX_Q04760-1-AN_Q04760_0009:
+  - a: nxp:MatureProtein
+  - nxp:entryAnnotationId:
+    - mature_protein_id: "AN_Q04760_0009"
+  - nxp:isoformSpecificity?:
+    - mature_protein_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - mature_protein_quality: nxp:GOLD
+  - nxp:start:
+    - mature_protein_start: 2
+  - nxp:end:
+    - mature_protein_end: 184
+  - nxp:evidence+:
+    - mature_protein_evidence: Evidence
+  - rdfs:comment*:
+    - mature_protein_comment: "Lactoylglutathione lyase"
+
+- MetalBindingSite nxp_annotation:NX_Q04760-1-AN_Q04760_001091:
+  - a: nxp:MetalBindingSite
+  - nxp:entryAnnotationId:
+    - metal_binding_site_id: "AN_Q04760_001091"
+  - nxp:isoformSpecificity?:
+    - metal_binding_site_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - metal_binding_site_quality: nxp:GOLD
+  - nxp:start:
+    - metal_binding_site_start: 34
+  - nxp:end:
+    - metal_binding_site_end: 34
+  - nxp:term:
+    - binding_metal: MetalTerm # Zinc
+  - nxp:evidence+:
+    - metal_binding_site_evidence: Evidence
+  - rdfs:comment*:
+    - metal_binding_site_comment: "Zinc; shared with dimeric partner"
+
+- Miscellaneous nxp_annotation:NX_A0PJX0-1-AN_A0PJX0_000470:
+  - a: nxp:Miscellaneous
+  - nxp:entryAnnotationId:
+    - miscellaneous_id: "AN_A0PJX0_000470"
+  - nxp:isoformSpecificity?:
+    - miscellaneous_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - miscellaneous_quality: nxp:GOLD
+  - nxp:evidence+:
+    - miscellaneous_evidence: Evidence
+  - rdfs:comment:
+    - miscellaneous_comment: "The binding of either calcium or magnesium may significantly increases the structural stability of the protein in comparison to apo-CIB (calcium- and magnesium-free form)."
+
+- MiscellaneousRegion nxp_annotation:NX_Q04760-1-AN_Q04760_001089:
+  - a: nxp:MiscellaneousRegion
+  - nxp:entryAnnotationId:
+    - miscellaneous_region_id: "AN_Q04760_001089"
+  - nxp:isoformSpecificity?:
+    - miscellaneous_region_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - miscellaneous_region_quality: nxp:GOLD
+  - nxp:start:
+    - miscellaneous_region_start: 157
+  - nxp:end:
+    - miscellaneous_region_end: 158
+  - nxp:evidence+:
+    - miscellaneous_region_evidence: Evidence
+  - rdfs:comment*:
+    - miscellaneous_region_comment: "Substrate binding"
+
+- MiscellaneousSite nxp_annotation:NX_O43251-10-AN_O43251_0008:
+  - a: nxp:MiscellaneousSite
+  - nxp:entryAnnotationId:
+    - miscellaneous_site_id: "AN_O43251_0008"
+  - nxp:isoformSpecificity?:
+    - miscellaneous_site_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - miscellaneous_site_quality: nxp:GOLD
+  - nxp:start:
+    - miscellaneous_site_start: 112
+  - nxp:end:
+    - miscellaneous_site_end: 112
+  - nxp:evidence+:
+    - miscellaneous_site_evidence: Evidence
+  - rdfs:comment*:
+    - miscellaneous_site_comment: "Interaction with RNA"
+
+- MitochondrialTransitPeptide nxp_annotation:NX_A6NK58-1-AN_A6NK58_000419:
+  - a: nxp:MitochondrialTransitPeptide
+  - nxp:entryAnnotationId:
+    - mitochondrial_transit_peptide_id: "AN_A6NK58_000419"
+  - nxp:isoformSpecificity?:
+    - mitochondrial_transit_peptide_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - mitochondrial_transit_peptide_qualaity: nxp:GOLD
+  - nxp:start:
+    - mitochondrial_transit_peptide_start: 1
+  - nxp:end:
+    - mitochondrial_transit_peptide_end: 31
+  - nxp:term:
+    - mitochondrion: OrganelleTerm # Mitochondrion
+  - nxp:evidence+:
+    - mitochondrial_transit_peptide_evidence: Evidence
+  - rdfs:comment*:
+    - mitochondrial_transit_peptide_comment: "Mitochondrion"
+
+- ModifiedResidue nxp_annotation:NX_Q04760-1-AN_Q04760_001100:
+  - a: nxp:ModifiedResidue
+  - nxp:entryAnnotationId:
+    - modified_residue_id: "AN_Q04760_001100"
+  - nxp:isoformSpecificity?:
+    - modified_residue_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - modified_residue_quality: nxp:GOLD
+  - nxp:start:
+    - modified_residue_start: 2
+  - nxp:end:
+    - modified_residue_end: 2
+  - nxp:term:
+    - modification: PtmTerm
+  - nxp:evidence+:
+    - modified_residue_evidence: Evidence
+  - rdfs:comment*:
+    - modified_residue_comment: "N-acetylalanine"
+
+- Mutagenesis nxp_annotation:NX_Q04760-1-AN_Q04760_001108:
+  - a: nxp:Mutagenesis
+  - nxp:entryAnnotationId:
+    - mutagenesis_id: "AN_Q04760_001108"
+  - nxp:isoformSpecificity?:
+    - mutagenesis_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - mutagenesis_quality: nxp:GOLD
+  - nxp:start:
+    - mutagenesis_start: 19
+  - nxp:end:
+    - mutagenesis_end: 19
+  - nxp:original:
+    - mutagenesis_original: "C"
+  - nxp:variation:
+    - mutagenesis_variation: "A"
+  - nxp:evidence+:
+    - mutagenesis_evidence: Evidence
+  - rdfs:comment*:
+    - mutagenesis_comment: "No effect on NO-mediated modification. Impaired NO-mediated modification; when associated with A-20. Loss of NO-mediated modification; when associated with A-139."
+
+- NonConsecutiveResidue nxp_annotation:NX_Q9H195-1-AN_Q9H195_0110:
+  - a: nxp:NonConsecutiveResidue
+  - nxp:entryAnnotationId:
+    - non_consecutive_residue_id: "AN_Q9H195_0110"
+  - nxp:isoformSpecificity?:
+    - non_consecutive_residue_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - non_consecutive_residue_quality: nxp:GOLD
+  - nxp:start:
+    - non_consecutive_residue_start: 336
+  - nxp:end:
+    - non_consecutive_residue_end: 337
+  - nxp:evidence+:
+    - non_consecutive_residue_evidence: Evidence
+  - rdfs:comment*:
+    - non_consecutive_residue_comment: ""
+
+- NonTerminalResidue nxp_annotation:NX_A2NJV5-1-AN_A2NJV5_000012:
+  - a: nxp:NonTerminalResidue
+  - nxp:entryAnnotationId:
+    - non_terminal_residue_id: "AN_A2NJV5_000012"
+  - nxp:isoformSpecificity?:
+    - non_terminal_residue_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - non_terminal_residue_quality: nxp:GOLD
+  - nxp:start:
+    - non_terminal_residue_start: 120
+  - nxp:end:
+    - non_terminal_residue_end: 120
+  - nxp:evidence+:
+    - non_terminal_residue_evidence: Evidence
+  - rdfs:comment*:
+    - non_terminal_residue_comment: ""
+
+- NucleotidePhosphateBindingRegion nxp_annotation:NX_A2PYH4-1-AN_A2PYH4_003609:
+  - a: nxp:NucleotidePhosphateBindingRegion
+  - nxp:entryAnnotationId:
+    - nucleotide_phosphate_binding_region_id: "AN_A2PYH4_003609"
+  - nxp:isoformSpecificity?:
+    - nucleotide_phosphate_binding_region_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - nucleotide_phosphate_binding_region_quality: nxp:GOLD
+  - nxp:start:
+    - nucleotide_phosphate_binding_region_start: 303
+  - nxp:end:
+    - nucleotide_phosphate_binding_region_end: 310
+  - nxp:evidence:
+    - nucleotide_phosphate_binding_region_evidence: Evidence
+  - rdfs:comment*:
+    - nucleotide_phosphate_binding_region_comment: "ATP"
+
+- Pathway nxp_annotation:NX_Q04760-1-AN_Q04760_0385:
+  - a: nxp:Pathway
+  - nxp:entryAnnotationId:
+    - pathway_id: "AN_Q04760_0385"
+  - nxp:isoformSpecificity?:
+    - pathway_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - pathway_quality: nxp:GOLD
+  - nxp:term:
+    - unipathway: UniPathwayTrem
+  - nxp:evidence+:
+    - pathway_evidence: Evidence
+  - rdfs:comment*:
+    - pathway_comment: "Secondary metabolite metabolism; methylglyoxal degradation; (R)-lactate from methylglyoxal: step 1/2."
+
+- PdbMapping nxp_annotation:NX_Q04760-1-AN_Q04760_001141:
+  - a: nxp:PdbMapping
+  - nxp:entryAnnotationId:
+    - pdb_mapping_id: "AN_Q04760_001141"
+  - nxp:isoformSpecificity?:
+    - pdb_mapping_peptide_isoform_specificity: nxp:SPECIFIC
+  - nxp:quality?:
+    - pdb_mapping__quality: nxp:GOLD
+  - nxp:method:
+    - pdb_mapping_method: "X-ray"
+  - nxp:resolution:
+    - pdb_mapping_resolution: 2.2
+  - nxp:start:
+    - pdb_mapping_start: 2
+  - nxp:end:
+    - pdb_mapping_end: 184
+  - nxp:evidence+:
+    - pdb_mapping_evidence: Evidence
+  - rdfs:comment*:
+    - pdb_mapping_comment: "1BH5; chain=A/B/C/D"
+
+- PeptideMapping nxp_annotation:NX_Q04760-1-AN_NX_Q04760_700018901506_NATUR:
+  - a: nxp:PeptideMapping
+  - nxp:entryAnnotationId:
+    - peptide_id: "AN_NX_Q04760_700018901506_NATUR"
+  - nxp:isoformSpecificity?:
+    - peptide_isoform_specificity: nxp:SPECIFIC
+  - nxp:quality?:
+    - peptide_quality: nxp:GOLD
+  - nxp:peptideName:
+    - peptide_name: "NX_PEPT00980819"
+  - nxp:start:
+    - peptide_start: 149
+  - nxp:end:
+    - peptide_end: 157
+  - nxp:peptideSet+:
+    - peptide_set: "MassIVE"
+  - nxp:peptideUnicity:
+    - peptide_unicity: "UNIQUE"
+  - nxp:proteotypic:
+    - peptide_proteotypic: 1
+  - nxp:evidence+:
+    - peptide_evidence: Evidence
+  - nxp:comment*:
+    - peptide_comment: ""
+
+- PeroxisomeTransitPeptide nxp_annotation:NX_O14832-1-AN_O14832_0011:
+  - a: nxp:PeroxisomeTransitPeptide
+  - nxp:entryAnnotationId:
+    - peroxisome_transit_peptide_id: "AN_O14832_0011"
+  - nxp:isoformSpecificity?:
+    - peroxisome_transit_peptide_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - peroxisome_transit_peptide_quality: nxp:GOLD
+  - nxp:start:
+    - peroxisome_transit_peptide_start: 1
+  - nxp:end:
+    - peroxisome_transit_peptide_end: 30
+  - nxp:term:
+    - peroxisome: OrganelleTerm # Peroxisome
+  - nxp:evidence+:
+    - peroxisome_transit_peptide_evidence: Evidence
+  - rdfs:comment*:
+    - peroxisome_transit_peptide_comment: "Peroxisome"
+
+- PhDependence nxp_annotation:NX_O00763-1-NX_O00763_PhDependence:
+  - a: nxp:PhDependence
+  - nxp:entryAnnotationId:
+    - ph_dependence_id: "NX_O00763_PhDependence"
+  - nxp:isoformSpecificity?:
+    - ph_dependence_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - ph_dependence_quality: nxp:GOLD
+  - rdfs:comment:
+    - ph_dependence_comment: "Optimum pH is 7.5."
+
+- Pharmaceutical nxp_annotation:NX_P00734-1-AN_P00734_0988:
+  - a: nxp:Pharmaceutical
+  - nxp:entryAnnotationId:
+    - pharmaceutical_id: "AN_P00734_0988"
+  - nxp:isoformSpecificity?:
+    - pharmaceutical_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - pharmaceutical_quality: nxp:GOLD
+  - nxp:evidence+:
+    - pharmaceutical_evidence: Evidence
+  - rdfs:comment:
+    - pharmaceutical_comment: "The peptide TP508 also known as Chrysalin (Orthologic) could be used to accelerate repair of both soft and hard tissues."
+
+- Propeptide nxp_annotation:NX_O14944-1-AN_O14944_0008:
+  - a: nxp:Propeptide
+  - nxp:entryAnnotationId:
+    - propeptide_id: "AN_O14944_0008"
+  - nxp:isoformSpecificity?:
+    - propeptide_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - propeptide_quality: nxp:GOLD
+  - nxp:start:
+    - propeptide_start: 30
+  - nxp:end:
+    - propeptide_end: 62
+  - nxp:evidence+:
+    - propeptide_evidence: Evidence
+  - rdfs:comment*:
+    - propeptide_comment: ""
+
+- PtmInfo nxp_annotation:NX_Q04760-1-AN_Q04760_0387:
+  - a: nxp:PtmInfo
+  - nxp:entryAnnotationId:
+    - ptm_info_id: "AN_Q04760_0387"
+  - nxp:isoformSpecificity?:
+    - ptm_info_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - ptm_info_quality: nxp:GOLD
+  - nxp:evidence+:
+    - ptm_info_evidence: Evidence
+  - rdfs:comment*:
+    - ptm_info_comment: "Glutathionylation at Cys-139 inhibits enzyme activity."
+
+- RedoxPotential nxp_annotation:NX_O14569-1-NX_O14569_RedoxPotential:
+  - a: nxp:RedoxPotential
+  - nxp:entryAnnotationId:
+    - redox_potential_id: "NX_O14569_RedoxPotential"
+  - nxp:isoformSpecificity?:
+    - redox_potential_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - redox_potential_quality: nxp:GOLD
+  - rdfs:comment:
+    - redox_potential_comment: "E(0) is +89.5 mV for the high potential heme and +13.1 mV for the low potential heme (PubMed:19734123). E(0) is +109 mV for the high potential heme and +26 mV for the low potential heme (PubMed:23235316)."
+
+- Repeat nxp_annotation:NX_A2A3L6-1-AN_A2A3L6_0108:
+  - a: nxp:Repeat
+  - nxp:entryAnnotationId:
+    - repeat_id: "AN_A2A3L6_0108"
+  - nxp:isoformSpecificity?:
+    - repeat_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - repeat_quality: nxp:GOLD
+  - nxp:start:
+    - repeat_start: 313
+  - nxp:end:
+    - repeat_end: 346
+  - nxp:term:
+    - repeat_term: DomainTerm
+  - nxp:evidence:
+    - repeat_evidence: Evidence
+  - rdfs:comment*:
+    - repeat_comment: "TPR 7"
+
+- Selenocysteine nxp_annotation:NX_P18283-1-AN_P18283_000689:
+  - a: nxp:Selenocysteine
+  - nxp:entryAnnotationId:
+    - selenocysteine_id: "AN_P18283_000689"
+  - nxp:isoformSpecificity?:
+    - selenocysteine_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - selenocysteine_quality: nxp:GOLD
+  - nxp:start:
+    - selenocysteine_start: 40
+  - nxp:end:
+    - selenocysteine_end: 40
+  - nxp:term:
+    - selenocysteine_term: NonStandardAminoAcidTerm # Selenocysteine
+  - nxp:evidence:
+    - selenocysteine_evidence: Evidence
+  - rdfs:comment*:
+    - selenocysteine_comment: "Selenocysteine"
+
+- SequenceCaution nxp_annotation:NX_Q04760-1-AN_Q04760_001310:
+  - a: nxp:SequenceCaution
+  - nxp:entryAnnotationId:
+    - sequence_caution_id: "AN_Q04760_001310"
+  - nxp:isoformSpecificity?:
+    - sequence_caution_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - sequence_caution_quality: nxp:GOLD
+  - nxp:evidence+:
+    - sequence_caution_evidence: Evidence
+  - rdfs:comment:
+    - sequence_caution_comment: "The sequence BAD93038 differs from that shown. Reason: erroneous initiation. Extended N-terminus."
+
+- SequenceConflict nxp_annotation:NX_A2PYH4-1-AN_A2PYH4_003611:
+  - a: nxp:SequenceConflict
+  - nxp:entryAnnotationId:
+    - sequence_conflict_id: "AN_A2PYH4_003611"
+  - nxp:isoformSpecificity?:
+    - sequence_conflict_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - sequence_conflict_quality: nxp:SILVER
+  - nxp:original:
+    - sequence_conflict_original: "F"
+  - nxp:variation:
+    - sequence_conflict_variation: "L"
+  - nxp:start:
+    - sequence_conflict_start: 408
+  - nxp:end:
+    - sequence_conflict_end: 408
+  - nxp:evidence+:
+    - sequence_conflict_evidence: Evidence
+  - rdfs:comment:
+    - sequence_conflict_comment: "In Ref. 1; BAF45466."
+
+- ShortSequenceMotif nxp_annotation:NX_A2PYH4-1-AN_A2PYH4_003610:
+  - a: nxp:ShortSequenceMotif
+  - nxp:entryAnnotationId:
+    - short_sequence_motif_id: "AN_A2PYH4_003610"
+  - nxp:isoformSpecificity?:
+    - short_sequence_motif_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - short_sequence_motif_quality: nxp:GOLD
+  - nxp:start:
+    - short_sequence_motif_start: 411
+  - nxp:end:
+    - short_sequence_motif_end: 414
+  - nxp:evidence+:
+    - short_sequence_motif_evidence: Evidence
+  - rdfs:comment:
+    - short_sequence_motif_comment: "DEAH box"
+
+- SignalPeptide nxp_annotation:NX_A2NJV5-1-AN_A2NJV5_000008:
+  - a: nxp:SignalPeptide
+  - nxp:entryAnnotationId:
+    - signal_peptide_id: "AN_A2NJV5_000008"
+  - nxp:isoformSpecificity?:
+    - signal_peptide_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - signal_peptide_quality: nxp:GOLD
+  - nxp:start:
+    - signal_peptide_start: 1
+  - nxp:end:
+    - signal_peptide_end: 20
+  - nxp:evidence+:
+    - signal_peptide_evidence: Evidence
+  - rdfs:comment*:
+    - signal_peptide_comment: ""
+
+- SmallMoleculeInteraction nxp_annotation:NX_Q04760-1-AN_Q04760_SMI_2300000016734:
+  - a: nxp:SmallMoleculeInteraction
+  - nxp:entryAnnotationId:
+    - small_molecule_interaction_id: "AN_Q04760_SMI_2300000016734"
+  - nxp:interactant:
+    - small_molecule_interaction_xref: Xref
+  - nxp:evidence:
+    - small_molecule_interaction_evidence: Evidence
+  - rdfs:comment*:
+    - small_molecule_interaction_comment: ""
+
+- SrmPeptideMapping nxp_annotation:NX_Q04760-1-AN_NX_Q04760_700018901539_SYNTH:
+  - a: nxp:SrmPeptideMapping
+  - nxp:entryAnnotationId:
+    - srm_peptide_mapping_id: "AN_NX_Q04760_700018901539_SYNTH"
+  - nxp:isoformSpecificity?:
+    - srm_peptide_mapping_isoform_specificity: nxp:SPECIFIC
+  - nxp:quality?:
+    - srm_peptide_mapping_quality: nxp:GOLD
+  - nxp:peptideName:
+    - srm_peptide_mapping_name: "NX_PEPT00036798"
+  - nxp:peptideUnicity:
+    - srm_peptide_mapping_unicity: "UNIQUE"
+  - nxp:proteotypic:
+    - srm_peptide_mapping_proteotypic: 1
+  - nxp:start:
+    - srm_peptide_mapping_start: 89
+  - nxp:end:
+    - srm_peptide_mapping_end: 95
+  - nxp:evidence+:
+    - srm_peptide_mapping_evidence: Evidence
+  - rdfs:comment*:
+    - srm_peptide_mapping_comment: ""
+    
+- SubcellularLocation nxp_annotation:NX_Q04760-1-AN_Q04760_000937:
+  - a: nxp:SubcellularLocation
+  - nxp:entryAnnotationId:
+    - subcellular_location_id: "AN_Q04760_000937"
+  - nxp:isoformSpecificity?:
+    - subcellular_location_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - subcellular_location_quality: nxp:GOLD
+  - nxp:term:
+    - subcellular_location_term: SubcellularLocationTerm
+  - nxp:evidence+:
+    - subcellular_location_evidence: Evidence
+  - rdfs:comment*:
+    - subcellular_location_comment: "Main location."
+
+- SubcellularLocationInfo nxp_annotation:NX_Q96CW1-2-AN_Q96CW1_000724:
+  - a: nxp:SubcellularLocationNote
+  - nxp:entryAnnotationId:
+    - subcellular_location_info_id: "AN_Q96CW1_000724"
+  - nxp:isoformSpecificity?:
+    - subcellular_location_info_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - subcellular_location_info_quality: nxp:GOLD
+  - nxp:evidence+:
+    - subcellular_location_info_evidence: Evidence
+  - rdfs:comment:
+    - subcellular_location_info_comment: "AP-2 appears to be excluded from internalizing CCVs and to disengage from sites of endocytosis seconds before internalization of the nascent CCV."
+
+- TemperatureDependence nxp_annotation:NX_P08910-1-NX_P08910_TemperatureDependence:
+  - a: nxp:TemperatureDependence
+  - nxp:entryAnnotationId:
+    - temperature_dependence_id: "NX_P08910_TemperatureDependence"
+  - nxp:isoformSpecificity?:
+    - temperature_dependence_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - _temperature_dependence_quality: nxp:GOLD
+  - rdfs:comment:
+    - temperature_dependence_comment: "Optimum temperature is 45 degrees Celsius with p-nitrophenyl palmitate and 30 degrees Celsius with p-nitrophenyl acetate and p-nitrophenyl butyrate."
+
+- TopologicalDomain nxp_annotation:NX_Q7Z3C6-3-AN_Q7Z3C6_000260:
+  - a: nxp:TopologicalDomain
+  - nxp:entryAnnotationId:
+    - topological_domain_id: "AN_Q7Z3C6_000260"
+  - nxp:isoformSpecificity?:
+    - topological_domain_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - topological_domain_quality: nxp:GOLD
+  - nxp:start:
+    - topological_domain_start: 2
+  - nxp:end:
+    - topological_domain_end: 66
+  - nxp:term:
+    - topological_domain_term: TopologyTerm # Cytoplasmic
+  - nxp:evidence+:
+    - topological_domain_evidence: Evidence
+  - rdfs:comment*:
+    - topological_domain_comment: "Cytoplasmic"
+
+- TransmembraneRegion nxp_annotation:NX_Q7Z3C6-3-AN_Q7Z3C6_0104:
+  - a: nxp:TransmembraneRegion
+  - nxp:entryAnnotationId:
+    - transmembrane_region_id: "AN_Q7Z3C6_0104"
+  - nxp:isoformSpecificity?:
+    - transmembrane_region_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - transmembrane_region_quality: nxp:GOLD
+  - nxp:start:
+    - transmembrane_region_start: 67
+  - nxp:end:
+    - transmembrane_region_end: 87
+  - nxp:term:
+    - transmembrane_region_term: TopologyTerm # Transmembrane region
+  - nxp:evidence+:
+    - transmembrane_region_evidence: Evidence
+  - rdfs:comment*:
+    - transmembrane_region_comment: "Transmembrane region"
+
+- TransportActivity nxp_annotation:NX_Q7Z3C6-3-AN_Q7Z3C6_XR_50075315:
+  - a: nxp:TransportActivity
+  - nxp:entryAnnotationId:
+    - transport_activity_id: "AN_Q7Z3C6_XR_50075315"
+  - nxp:isoformSpecificity?:
+    - transport_activity_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - transport_activity_quality: nxp:GOLD
+  - nxp:evidence+:
+    - transport_activity_evidence: npx_evidence:300050075315
+  - rdfs:comment*:
+    - transport_activity_comment: "the autophagy-related phagophore-formation transporter (apt) family"
+
+- Turn nxp_annotation:NX_Q04760-1-AN_Q04760_001126:
+  - a: nxp:Turn
+  - nxp:entryAnnotationId:
+    - turn_id: "AN_Q04760_001126"
+  - nxp:isoformSpecificity?:
+    - turn_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - turn_quality: nxp:GOLD
+  - nxp:start:
+    - turn_start: 64
+  - nxp:end:
+    - turn_end: 67
+  - nxp:evidence+:
+    - turn_evidence: Evidence
+  - rdfs:comment*:
+    - turn_comment: "Main location."
+
+- UniprotKeyword nxp_annotation:NX_Q04760-1-AN_Q04760_000569:
+  - a: nxp:UniprotKeyword
+  - nxp:entryAnnotationId:
+    - uniprot_keyword_id: "AN_Q04760_000569"
+  - nxp:isoformSpecificity?:
+    - uniprot_keyword_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - uniprot_keyword_quality: nxp:GOLD
+  - nxp:term:
+    - uniprotkb_keyword: UniprotKeywordTerm
+  - nxp:evidence*:
+    - uniprot_keyword_evidence: Evidence
+  - rdfs:comment*:
+    - uniprot_keyword_comment: "Isopeptide bond"
+
+- Variant nxp_annotation:NX_Q04760-1-AN_Q04760_001148:
+  - a: nxp:Variant
+  - nxp:entryAnnotationId:
+    - variant_id: "AN_Q04760_001148"
+  - nxp:isoformSpecificity?:
+    - variant_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - variant_quality: nxp:GOLD
+  - nxp:original:
+    - variant_original: "I"
+  - nxp:variation:
+    - variant_variation: "T"
+  - nxp:start:
+    - variant_start: 128
+  - nxp:end:
+    - variant_end: 128
+  - nxp:evidence+:
+    - variant_evidence: Evidence
+  - rdfs:comment*:
+    - variant_comment: "Isopeptide bond"
+
+- VariantInfo nxp_annotation:NX_Q04760-1-AN_Q04760_0390:
+  - a: nxp:VariantInfo
+  - nxp:entryAnnotationId:
+    - variant_info_id: "AN_Q04760_0390"
+  - nxp:isoformSpecificity?:
+    - variant_info_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - variant_info_quality: nxp:GOLD
+  - nxp:evidence+:
+    - varinant_info_evidence: Evidence
+  - rdfs:comment*:
+    - varinat_info_comment: "Exists in three separable isoforms which originate from two alleles in the genome. These correspond to two homodimers and one heterodimer composed of two subunits showing different electrophoretic properties."
+
+- ZincFingerRegion nxp_annotation:NX_A2CJ06-1-AN_A2CJ06_001069:
+  - a: nxp:ZincFingerRegion
+  - nxp:entryAnnotationId:
+    - zinc_finger_region_id: "AN_A2CJ06_001069"
+  - nxp:isoformSpecificity?:
+    - zinc_finger_region_isoform_specificity: nxp:UNKNOWN
+  - nxp:quality?:
+    - zinc_finger_region_quality: nxp:GOLD
+  - nxp:start:
+    - zinc_finger_region_start: 222
+  - nxp:end:
+    - zinc_finger_region_end: 269
+  - nxp:term:
+    - zinc_finger_domain: DoaminTerm
+  - nxp:evidence+:
+    - zinc_finger_region_evidence: Evidence
+  - rdfs:comment*:
+    - zinc_finger_region_comment: "ZZ-type"
+
+
+#### term
+
+
+- AnatomyTerm nxp_term:TS-1248:
+  - a: nxp:NextprotAnatomyCv
+  - rdfs:label:
+    - expression_profile_human_anatomy_label: "Cerebellum molecular layer"
+  - nxp:childOf+:
+    - parent_anatomy: AnatomyTerm
+
+- DiseaseTerm nxp_term:DI-04070:
+  - a: nxp:UniprotDiseaseCv
+  - rdfs:label:
+    - disease_label: "Premature ovarian failure 9"
+  - nxp:related+: [ MeshTerm, UniprotKeywordTerm ]
+
+- DomainTerm nxp_term:DO-00907:
+  - a: nxp:NextprotDomainCv
+  - rdfs:label:
+    - domain_term_label: "VOC domain"
+  - nxp:related*:
+    - related_domain_term: DomainTerm
+
+- EcTerm nxp_term:4_4_1_5:
+  - a: nxp:EnzymeClassificationCv
+  - rdfs:label:
+    - ec_label: "EC 4.4.1.5"
+  - nxp:childOf*:
+    - parent_ec: EcTermXS
+  - nxp:related*: [ UnipathwayTerm, GoTerm ]
+
+- IonChannelElectrophysiologyTerm nxp_term:ICEPO_0000013:
+  - a: nxp:NextprotIcepoCv
+  - nxp:childOf*:
+    - paent_ion_channel_electrophysiology: IonChannelElectrophysiologyTerm
+  - rdfs:label:
+    - ion_channel_electrophysiology_label: "voltage dependence of slow inactivation"
+
+- EvidenceCodeTerm nxp_term:ECO_0001053:
+  - a: nxp:EvidenceCodeOntologyCv
+  - rdfs:label:
+    - evidence_code_label: "immunocytochemistry evidence"
+  - nxp:childOf*:
+    - parent_evidence_code: EvidenceCodeTerm
+  - nxp:related*:
+    - related_evidence_code: EvidenceCodeTerm
+
+- GoTerm nxp_term:GO_0004462:
+  - a: [ nxp:GoBiologicalProcessCv, nxp:GoCellularComponentCv, nxp:GoMolecularFunctionCv ]
+  - rdfs:label:
+    - go_label: "lactoylglutathione lyase activity"
+  - nxp:childOf*:
+    - parent_go: GoTerm
+  - nxp:related:
+    - go: nxp_term:GO_0004462 # lactoylglutathione lyase activity
+
+- MeshTerm nxp_term:D016649:
+  - a: nxp:MeshCv
+  - nxp:childOf*:
+    - parent_mesh: nxp_term:D004700 # Endocrine System Diseases
+  - rdfs:label:
+    - mesh_label: "Primary Ovarian Insufficiency"
+
+- MetalTerm nxp_term:CVME_0028:
+  - a: nxp:NextprotMetalCv
+  - nxp:related*:
+    - metal_related_uniprot_keyword: UniprotKeywordTerm
+  - rdfs:label:
+    - metal_label: "Zinc"
+
+- NextprotFamilyTerm nxp_term:FA-01626:
+  - a: nxp:NextprotFamilyCv
+  - rdfs:label:
+    - nextprot_family_label: "Glyoxalase I family"
+  - nxp:childOf*:
+    - parent_nextprot_family: NextprotFamilyTerm
+
+- NonStandardAminoAcidTerm nxp_term:CVAA_0001:
+  - a: nxp:NonStandardAminoAcidCv
+  - rdfs:label:
+    - non_standard_amino_acid_label: "Selenocysteine"
+  - nxp:related*: NonStandardAminoAcidTerm
+
+- OrganelleTerm nxp_term:CVOR_0001:
+  - a: nxp:OrganelleCv
+  - rdfs:label:
+    - organelle_label: "Mitochondrion"
+  - nxp:related*: OrganelleTerm
+
+- PtmTerm nxp_term:PTM-0199:
+  - a: nxp:UniprotPtmCv
+  - nxp:related+:
+    - ptm_related_uniprotkb_keyword: UniprotKeywordTerm
+  - rdfs:label:
+    - ptm_label: "N-acetylalanine"
+    
+- SubcellularLocationTerm nxp_term:SL-0039:
+  - a: nxp:UniprotSubcellularLocationCv
+  - rdfs:label:
+    - subcellular_location_label: "Cell membrane"
+  - nxp:childOf*:
+    - subcellular_location_parent: SubcellularLocationTerm
+  - nxp:related+: [ UniprotKeywordTerm, GoTerm ]
+
+- TopologyTerm nxp_term:CVTO_0004:
+  - a: nxp:NextprotTopologyCv
+  - rdfs:label:
+    - topology_label: "In membrane"
+  - nxp:related*: TopologyTerm
+
+- UnipathwayTerm nxp_term:UER00675:
+  - a: nxp:UnipathwayCv
+  - rdfs:label:
+    - unipathway_label: "(R)-lactate from methylglyoxal: step 1/2"
+  - nxp:childOf*:
+    - parent_unipathway: UnipathwayTerm
+  - nxp:related*:
+    - unipathway_related_go: GoTerm
+
+- UniprotKeywordTerm nxp_term:KW-1003:
+  - a: nxp:UniprotKeywordCv
+  - rdfs:label:
+    - uniprot_keyward_label: "Cell membrane"
+  - nxp:childOf*:
+    - parent_uniprot_keyword: UniprotKeywordTerm

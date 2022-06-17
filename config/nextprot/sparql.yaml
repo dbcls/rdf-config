@@ -1,0 +1,11 @@
+isoform:
+  description: isoform list
+  variables: [Nextprot, ensembl_gene, isoform]
+modification:
+  description: PTM
+  variables: [Nextprot, modified_residue_comment]
+disease:
+  description: isoform related disease
+  parameters:
+    disease_isoform_specificity: <http://nextprot.org/rdf#SPECIFIC>
+  variables: [isoform, disease_label]
