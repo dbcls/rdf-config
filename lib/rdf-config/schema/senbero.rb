@@ -36,7 +36,12 @@ class RDFConfig
         when Model::ValueList
           "[#{object.value.map { |obj| label_object(obj) }.join(', ')}]"
         else
-          'N/A'
+          label = object.value.to_s
+          if label.empty?
+            'N/A'
+          else
+            label
+          end
         end
       end
 

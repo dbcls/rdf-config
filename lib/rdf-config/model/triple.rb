@@ -154,8 +154,8 @@ class RDFConfig
               add_object_name(object_name) if object_name.is_a?(String)
             end
 
-            if !predicate.rdf_type? && obj_data.is_a?(String)
-              add_warning(%/The variable name for the value "#{obj_data}" may not be set./)
+            if !predicate.rdf_type? && !obj_data.is_a?(Hash)
+              add_warning(%|The object variable name for #{@target_subject.name}/#{predicate_uri} needs to be set.|)
             end
 
             predicate.add_object(object_instance(obj_data))
