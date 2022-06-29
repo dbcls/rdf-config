@@ -7,11 +7,13 @@ class RDFConfig
 
     CONFIG_NAMES.each do |name|
       define_method name do
-        instance_varname = "@#{name}"
-        instance_variable_get(instance_varname) ||
-          instance_variable_set(instance_varname, read_config(config_file_path(name)))
-      rescue Psych::SyntaxError => e
-        raise SyntaxError, "Invalid YAML format #{e.message}"
+        begin
+          instance_varname = "@#{name}"
+          instance_variable_get(instance_varname) ||
+            instance_variable_set(instance_varname, read_config(config_file_path(name)))
+        rescue Psych::SyntaxError => e
+          raise SyntaxError, "Invalid YAML format #{e.message}"
+        end
       end
     end
 
