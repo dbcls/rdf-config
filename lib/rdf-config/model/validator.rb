@@ -1,7 +1,7 @@
 class RDFConfig
   class Model
     class Validator
-      attr_reader :errors
+      attr_reader :errors, :warnings
 
       def initialize(model, config)
         @model = model

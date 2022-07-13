@@ -174,7 +174,7 @@ class RDFConfig
             @current_pos.y = @element_pos[object.object_id].last.y + (RECT_HEIGHT + MARGIN_RECT)
           end
 
-          value = predicate.rdf_type? ? object.name : object.value
+          value = object.value
 
           case value
           when Array

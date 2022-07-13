@@ -18,11 +18,11 @@ class RDFConfig
         private
 
         def inner_texts
-          case @node.name
+          case @node.value
           when Array
-            @node.name
+            @node.value
           else
-            [@node.name]
+            [@node.value]
           end
         end
       end

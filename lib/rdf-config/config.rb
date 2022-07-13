@@ -7,11 +7,13 @@ class RDFConfig
 
     CONFIG_NAMES.each do |name|
       define_method name do
-        instance_varname = "@#{name}"
-        instance_variable_get(instance_varname) ||
-          instance_variable_set(instance_varname, read_config(config_file_path(name)))
-      rescue Psych::SyntaxError => e
-        raise SyntaxError, "Invalid YAML format #{e.message}"
+        begin
+          instance_varname = "@#{name}"
+          instance_variable_get(instance_varname) ||
+            instance_variable_set(instance_varname, read_config(config_file_path(name)))
+        rescue Psych::SyntaxError => e
+          raise SyntaxError, "Invalid YAML format #{e.message}"
+        end
       end
     end
 
@@ -59,7 +61,7 @@ class RDFConfig
     def read_config(config_file_path)
       config = if Gem::Version.create(RUBY_VERSION) >= Gem::Version.create('3.1')
                  require 'date'
-                 YAML.load_file(config_file_path, permitted_classes: [Date])
+                 YAML.load_file(config_file_path, permitted_classes: [Date, Time])
                else
                  YAML.load_file(config_file_path)
                end

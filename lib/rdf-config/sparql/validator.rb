@@ -152,7 +152,6 @@ class RDFConfig
         return unless warning?
 
         warn @warnings.map { |msg| "WARNING: #{msg}" }.join("\n")
-        warn ''
       end
 
       private

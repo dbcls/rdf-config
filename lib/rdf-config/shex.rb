@@ -26,6 +26,10 @@ class RDFConfig
       lines.join("\n")
     end
 
+    def print_warnings
+      @model.print_warnings
+    end
+
     private
 
     def prefix_lines
@@ -43,7 +47,7 @@ class RDFConfig
 
     def node_constraint(predicate, object)
       if predicate.rdf_type?
-        "[#{object.name}]"
+        "[#{object.value}]"
       else
         case object
         when Model::Subject

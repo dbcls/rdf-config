@@ -31,6 +31,7 @@ class RDFConfig
 
       @values = {}
       @namespaces = {}
+      @validator = nil
 
       parse_opts
 
@@ -44,9 +45,8 @@ class RDFConfig
     end
 
     def generate(opts = {})
-      validator = RDFConfig::SPARQL::Validator.instance(@config, @opts)
-      validator.validate
-      validator.output_warning_messages
+      @validator = RDFConfig::SPARQL::Validator.instance(@config, @opts)
+      @validator.validate
 
       sparql_lines = generate_sparql_lines(opts)
       if opts[:url_encode]
@@ -79,6 +79,11 @@ class RDFConfig
       print_query_usage if empty_query_option?
       print_endpoint_usage if empty_endpoint_option?
       warn_available_endpoint_names
+    end
+
+    def print_warnings
+      model.print_warnings
+      @validator.output_warning_messages
     end
 
     def config_name

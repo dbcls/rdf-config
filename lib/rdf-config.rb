@@ -30,9 +30,9 @@ class RDFConfig
   def exec(opts)
     case opts[:mode]
     when :sparql
-      puts generate_sparql
+      generate_sparql
     when :sparql_url
-      puts generate_sparql_url
+      generate_sparql_url
     when :query
       run_sparql
     when :stanza_rb
@@ -46,7 +46,7 @@ class RDFConfig
     when :grasp
       generate_grasp
     when :shex
-      puts generate_shex
+      generate_shex
     end
   end
 
@@ -55,13 +55,15 @@ class RDFConfig
     if sparql.print_usage?
       sparql.print_usage
     else
-      sparql.generate
+      puts sparql.generate
+      sparql.print_warnings
     end
   end
 
   def generate_sparql_url
     sparql = SPARQL.new(@config, @opts)
-    sparql.generate(url_encode: true)
+    puts sparql.generate(url_encode: true)
+    sparql.print_warnings
   end
 
   def run_sparql
@@ -104,6 +106,7 @@ class RDFConfig
 
   def generate_shex
     shex = Shex.new(@config)
-    shex.generate
+    puts shex.generate
+    shex.print_warnings
   end
 end
