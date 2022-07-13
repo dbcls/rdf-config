@@ -19,6 +19,8 @@ class RDFConfig
 
     def initialize(config)
       @config = config
+      @warnings = []
+
       @graph = Graph.new(@config)
       @graph.generate
       generate_triples
@@ -217,7 +219,7 @@ class RDFConfig
       validator.validate
 
       errors = @graph.errors + validator.errors
-      warnings = @graph.warnings + validator.warnings
+      @warnings = @graph.warnings + validator.warnings
 
       unless errors.empty?
         error_msg = %(ERROR: Invalid configuration. Please check the setting in model.yaml file.\n#{errors.map { |msg|
@@ -226,9 +228,14 @@ class RDFConfig
         raise Config::InvalidConfig, error_msg
       end
 
-      return if warnings.empty? || @@output_warning[@config.name]
+      return if @warnings.empty? || @@output_warning[@config.name]
+    end
 
-      warn warnings.map { |msg| "WARNING: #{msg}" }.join("\n")
+    def print_warnings
+      return if @warnings.empty?
+
+      warn ''
+      warn @warnings.map { |msg| "WARNING: #{msg}" }.join("\n")
       @@output_warning[@config.name] = true
     end
 

@@ -97,6 +97,8 @@ class RDFConfig
             end
           end
         end
+
+        @model.print_warnings
       end
     end
   end

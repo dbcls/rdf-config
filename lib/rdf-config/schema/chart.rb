@@ -79,6 +79,8 @@ class RDFConfig
           # unsupported chart type
           raise StandardError, "ERROR: Unsupported chart type '#{@display_type}'."
         end
+
+        model.print_warnings
       end
 
       private

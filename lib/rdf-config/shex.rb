@@ -26,6 +26,10 @@ class RDFConfig
       lines.join("\n")
     end
 
+    def print_warnings
+      @model.print_warnings
+    end
+
     private
 
     def prefix_lines
