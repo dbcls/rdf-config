@@ -352,6 +352,10 @@ class RDFConfig
         types.join(separator)
       end
 
+      def has_rdf_type?
+        !types.empty?
+      end
+
       def blank_node?
         @name.is_a?(Array)
       end

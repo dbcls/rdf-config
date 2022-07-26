@@ -311,9 +311,9 @@ class RDFConfig
         end
 
         start_subject = if start_subject_name.nil?
-          model.subjects.first
-        else
-          model.find_subject(start_subject_name)
+                          model.subjects.first
+                        else
+                          model.find_subject(start_subject_name)
                         end
 
         add_triple(Triple.new(subject_instance(model.find_subject(start_subject.name), start_subject.types),
@@ -370,7 +370,7 @@ class RDFConfig
       end
 
       def add_values_lines_for_rdf_type
-        all_triples.map(&:subject).uniq.each do |subject|
+        all_triples.reject(&:nil?).map(&:subject).uniq.each do |subject|
           next unless subject.has_multiple_rdf_types?
 
           add_values_line(values_line(subject.rdf_type_varname, subject.rdf_types.join(' ')))
@@ -484,7 +484,10 @@ class RDFConfig
           end
         else
           more_triples = []
-          triple_for_subject_rdf_type = Triple.new(triple.subject, 'a', triple.subject)
+          triple_for_subject_rdf_type = if triple.subject.has_rdf_type?
+                                          Triple.new(triple.subject, 'a', triple.subject)
+                                        end
+
           if model.subject?(triple.object.name)
             object = model.find_subject(triple.object.name)
             subject = subject_instance(object, object.types, true)
@@ -502,15 +505,16 @@ class RDFConfig
 
                 more_triples << Triple.new(subject_instance(object, triple_in_model.subject.types),
                                            model.property_path(variable_name,
-object.as_object_value).join(PROPERTY_PATH_SEP),
+                                                               object.as_object_value).join(PROPERTY_PATH_SEP),
                                            variable_instance(variable_name))
               end
             else
               triple_for_object_rdf_type = nil
             end
           end
+
           if is_optional
-            unless @optional_triples_buf.include?(triple_for_subject_rdf_type)
+            if triple_for_subject_rdf_type && !@optional_triples_buf.include?(triple_for_subject_rdf_type)
               @optional_triples_buf << triple_for_subject_rdf_type
             end
             if !triple_for_object_rdf_type.nil? && !@optional_triples_buf.include?(triple_for_object_rdf_type)
@@ -521,7 +525,7 @@ object.as_object_value).join(PROPERTY_PATH_SEP),
               @optional_triples_buf << triple unless @optional_triples_buf.include?(triple)
             end
           else
-            unless @required_triples.include?(triple_for_subject_rdf_type)
+            if triple_for_subject_rdf_type && !@required_triples.include?(triple_for_subject_rdf_type)
               @required_triples << triple_for_subject_rdf_type
             end
             if !triple_for_object_rdf_type.nil? && !@required_triples.include?(triple_for_object_rdf_type)
@@ -548,17 +552,17 @@ object.as_object_value).join(PROPERTY_PATH_SEP),
             v_inst = variable_instance(subject.name)
           else
             triple = if subject.used_as_object?
-              model.find_by_object_name(subject.as_object_name)
-            else
-              model.find_by_object_name(subject.name)
+                       model.find_by_object_name(subject.as_object_name)
+                     else
+                       model.find_by_object_name(subject.name)
                      end
             v_inst = if triple.nil?
-              variable_instance(subject.name)
-            else
-              variable_instance(object_name(triple))
+                       variable_instance(subject.name)
+                     else
+                       variable_instance(object_name(triple))
                      end
           end
-          v_inst.rdf_types = rdf_types if !rdf_types.nil?
+          v_inst.rdf_types = rdf_types unless rdf_types.nil?
 
           v_inst
         end
