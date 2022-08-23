@@ -16,11 +16,9 @@ class RDFConfig
       end
 
       def valid_variables
-        #--> if query?
         if join?
           valid_variables_by_query
         else
-          #--> super.map { |name| variable_name_for_sparql(name, true) }
           variables_handler.variables_for_select.map { |name| variable_name_for_sparql(name, true) }
         end
       end

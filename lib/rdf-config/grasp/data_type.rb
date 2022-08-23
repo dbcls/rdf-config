@@ -41,9 +41,7 @@ class RDFConfig
 
       def dataset_subject(model)
         subject = model.subjects.reject(&:used_as_object?).first
-        if subject.nil?
-          subject = model.subjects.first
-        end
+        subject = model.subjects.first if subject.nil?
 
         subject
       end

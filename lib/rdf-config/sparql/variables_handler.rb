@@ -3,16 +3,16 @@ require 'rdf-config/model'
 class RDFConfig
   class SPARQL
     class VariablesHandler
-      @@instance = {}
+      @instance = {}
+
       class << self
         def instance(config, opts)
           key = {
             config_name: config.name,
             opts: opts.to_s
           }
-          @@instance[key] = new(config, opts) unless @@instance.key?(key)
 
-          @@instance[key]
+          @instance[key] ||= new(config, opts)
         end
       end
 
@@ -235,11 +235,6 @@ class RDFConfig
         @variables_for_where = {}
 
         parse_query_opts(opts[:query])
-        # puts "@variables_by_config: #{@variables_by_config}"
-        # puts "@parameters_by_config: #{@parameters_by_config}"
-        # puts "@variables_by_query_opts: #{@variables_by_query_opts}"
-        # puts "@parameters_by_query_opts: #{@parameters_by_query_opts}"
-
         set_variables
       end
     end

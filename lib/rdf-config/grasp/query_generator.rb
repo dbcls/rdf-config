@@ -8,14 +8,14 @@ class RDFConfig
 
       def initialize(config)
         @prefix = config.prefix
-        @model = Model.new(config)
+        @model = Model.instance(config)
       end
 
       def generate
         ds_subject = dataset_subject(@model)
 
         lines = ['query {']
-        lines << %Q/#{INDENT}dataset(#{ds_subject.name}: "#{subject_value(ds_subject)}") {/
+        lines << %/#{INDENT}dataset(#{ds_subject.name}: "#{subject_value(ds_subject)}") {/
         lines << "#{INDENT * 2}#{ds_subject.name}"
         @model.select { |triple| triple.subject.name == ds_subject.name }.each do |triple|
           next if triple.predicate.rdf_type?

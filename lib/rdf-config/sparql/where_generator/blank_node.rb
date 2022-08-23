@@ -1,0 +1,32 @@
+class RDFConfig
+  class SPARQL
+    class WhereGenerator
+      class BlankNode
+        include RDFType
+
+        attr_reader :predicate_routes, :rdf_types
+
+        def initialize(bnode_id, predicate_routes)
+          @bnode_id = bnode_id
+          @predicate_routes = predicate_routes
+        end
+
+        def name
+          "_b#{@bnode_id}"
+        end
+
+        def to_sparql
+          "_:b#{@bnode_id}"
+        end
+
+        def rdf_type_varname
+          "?#{name}Class"
+        end
+
+        def ==(other)
+          name == other.name
+        end
+      end
+    end
+  end
+end

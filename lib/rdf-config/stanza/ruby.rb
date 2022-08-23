@@ -1,5 +1,7 @@
 require 'open3'
 
+require_relative '../stanza'
+
 class RDFConfig
   class Stanza
     class Ruby < RDFConfig::Stanza

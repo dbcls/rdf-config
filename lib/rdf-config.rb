@@ -8,16 +8,16 @@ require 'net/http'
 require 'fileutils'
 require 'open3'
 
-class RDFConfig
-  require 'rdf-config/config'
-  require 'rdf-config/model'
-  require 'rdf-config/sparql'
-  require 'rdf-config/stanza'
-  require 'rdf-config/schema/senbero'
-  require 'rdf-config/schema/chart'
-  require 'rdf-config/grasp'
-  require 'rdf-config/shex'
+require_relative 'rdf-config/config'
+require_relative 'rdf-config/sparql'
+require_relative 'rdf-config/stanza/javascript'
+require_relative 'rdf-config/stanza/ruby'
+require_relative 'rdf-config/schema/senbero'
+require_relative 'rdf-config/schema/chart'
+require_relative 'rdf-config/grasp'
+require_relative 'rdf-config/shex'
 
+class RDFConfig
   def initialize(opts = {})
     @config = if opts[:config_dir].is_a?(Array)
                 opts[:config_dir].map { |config_dir| Config.new(config_dir) }
@@ -100,7 +100,7 @@ class RDFConfig
   end
 
   def generate_grasp
-    grasp = Grasp.new(@config)
+    grasp = Grasp.new(@config, @opts)
     grasp.generate
   end
 

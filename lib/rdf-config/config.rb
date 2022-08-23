@@ -3,9 +3,10 @@ require 'pathname'
 
 class RDFConfig
   class Config
-    CONFIG_NAMES = %i[model sparql prefix endpoint stanza metadata schema].freeze
+    CONFIG_ROOT_DIR = 'config'.freeze
+    CONFIG_TYPES = %i[model sparql prefix endpoint stanza metadata schema].freeze
 
-    CONFIG_NAMES.each do |name|
+    CONFIG_TYPES.each do |name|
       define_method name do
         begin
           instance_varname = "@#{name}"
@@ -17,13 +18,21 @@ class RDFConfig
       end
     end
 
+    class << self
+      def config_names(config_root_dir = CONFIG_ROOT_DIR)
+        Dir.entries(config_root_dir).reject { |name| name.length.positive? && name[0] == '.' }
+           .select { |name| File.directory?(File.join(config_root_dir, name)) }
+           .sort
+      end
+    end
+
     attr_reader :config_dir
 
     def initialize(config_dir, opts = {})
       config_dirs = if config_dir.is_a?(Array)
-                      config_dir
+                      config_dir.map { |dir_name| File.expand_path(dir_name) }
                     else
-                      [config_dir.to_s]
+                      [File.expand_path(config_dir)]
                     end
 
       not_found_config_dirs = []
@@ -34,7 +43,7 @@ class RDFConfig
         raise ConfigNotFound, "Config directory (#{not_found_config_dirs.join(', ')}) does not exist."
       end
 
-      @config_dir = config_dir
+      @config_dir = config_dirs.size == 1 ? config_dirs.first : config_dirs
       @opts = opts
     end
 

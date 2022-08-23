@@ -28,16 +28,8 @@ class RDFConfig
         !@errors.empty?
       end
 
-      def error_message
-        %Q/ERROR: Invalid configuration. Please check the setting in model.yaml file.\n#{errors.map { |msg| "  #{msg}" }.join("\n")}/
-      end
-
       def warn?
         !@warnings.empty?
-      end
-
-      def warn_message
-        @warnings.map { |msg| "WARNING: #{msg}" }.join("\n")
       end
 
       private
@@ -47,11 +39,11 @@ class RDFConfig
       end
 
       def validate_subject_name
-        @num_subject_name.select { |subject_name, num_subject_name| num_subject_name > 1 }.keys.each do |subject_name|
+        @num_subject_name.select { |subject_name, num_subject_name| num_subject_name > 1 }.each_key do |subject_name|
           add_error(%/Duplicate subject name (#{subject_name}) in model.yaml file./)
         end
 
-        @num_subject_name.keys.each do |subject_name|
+        @num_subject_name.each_key do |subject_name|
           if @num_variable.key?(subject_name) && @num_variable[subject_name] == 1
             add_error(%/Duplicate variable name (#{subject_name}) in model.yaml file./)
           end
@@ -89,7 +81,7 @@ class RDFConfig
           rdf_type_hash.each do |k, ns|
             next if ns.size < 2
 
-            add_warning(%Q/Multiple object names (#{ns.join(', ')}) are set in the same property path (#{key[1]})./)
+            add_warning("Multiple object names (#{ns.join(', ')}) are set in the same property path (#{key[1]}).")
           end
         end
       end

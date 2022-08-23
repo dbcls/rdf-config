@@ -1,8 +1,7 @@
 require 'fileutils'
-require 'rdf-config/sparql'
-require 'rdf-config/sparql/validator'
-require 'rdf-config/stanza/javascript'
-require 'rdf-config/stanza/ruby'
+
+require_relative 'sparql'
+require_relative 'sparql/validator'
 
 class RDFConfig
   class Stanza

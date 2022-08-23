@@ -24,13 +24,13 @@ class RDFConfig
           switch = REXML::Element.new('switch')
 
           div_opts = {
-              width: "#{RECT_WIDTH - 2}px",
-              padding_top: "#{pos.y + RECT_HEIGHT / 2}px",
-              margin_left: "#{pos.x + 1}px"
+            width: "#{RECT_WIDTH - 2}px",
+            padding_top: "#{pos.y + RECT_HEIGHT / 2}px",
+            margin_left: "#{pos.x + 1}px"
           }
           text_opts = {}
           switch.add_element(
-              foreign_object_element(inner_texts, div_opts, text_opts)
+            foreign_object_element(inner_texts, div_opts, text_opts)
           )
           switch.add_element(rect_text_element(pos, inner_texts))
 
@@ -50,47 +50,47 @@ class RDFConfig
           end
 
           {
-              x: pos.x,
-              y: pos.y,
-              width: RECT_WIDTH,
-              height: RECT_HEIGHT,
-              rx: URI_RECT_RADIUS,
-              ry: URI_RECT_RADIUS,
-              fill: fill,
-              stroke: STROKE_COLOR,
-              'stroke-width' => STROKE_WIDTH,
-              'pointer-events' => 'all'
+            x: pos.x,
+            y: pos.y,
+            width: RECT_WIDTH,
+            height: RECT_HEIGHT,
+            rx: URI_RECT_RADIUS,
+            ry: URI_RECT_RADIUS,
+            fill: fill,
+            stroke: STROKE_COLOR,
+            'stroke-width' => STROKE_WIDTH,
+            'pointer-events' => 'all'
           }
         end
 
         def foreign_object_element(inner_texts, div_opts = {}, text_opts = {})
           foreign_object = REXML::Element.new('foreignObject')
           foreign_object_style = {
-              overflow: 'visible',
-              'text-align' => 'left'
+            overflow: 'visible',
+            'text-align' => 'left'
           }
           foreign_object_opts = {
-              style: style_value_by_hash(foreign_object_style),
-              'pointer-events' => 'none',
-              width: '100%',
-              height: '100%',
-              requiredFeatures: 'http://www.w3.org/TR/SVG11/feature#Extensibility'
+            style: style_value_by_hash(foreign_object_style),
+            'pointer-events' => 'none',
+            width: '100%',
+            height: '100%',
+            requiredFeatures: 'http://www.w3.org/TR/SVG11/feature#Extensibility'
           }
           foreign_object.add_attribute_by_hash(foreign_object_opts)
 
           div_f_element = REXML::Element.new('div')
           div_f_style_opts = {
-              display: 'flex',
-              'align-items' => 'unsafe center',
-              'justify-content' => 'unsafe center',
-              width: div_opts[:width],
-              height: '1px',
-              'padding-top' => div_opts[:padding_top],
-              'margin-left' => div_opts[:margin_left]
+            display: 'flex',
+            'align-items' => 'unsafe center',
+            'justify-content' => 'unsafe center',
+            width: div_opts[:width],
+            height: '1px',
+            'padding-top' => div_opts[:padding_top],
+            'margin-left' => div_opts[:margin_left]
           }
           div_f_elem_opts = {
-              xmlns: 'http://www.w3.org/1999/xhtml',
-              style: style_value_by_hash(div_f_style_opts)
+            xmlns: 'http://www.w3.org/1999/xhtml',
+            style: style_value_by_hash(div_f_style_opts)
           }
           div_f_element.add_attribute_by_hash(div_f_elem_opts)
 
@@ -99,14 +99,14 @@ class RDFConfig
 
           div_t_element = REXML::Element.new('div')
           div_t_style_opts = {
-              display: 'inline-block',
-              'font-size' => FONT_SIZE,
-              'font-family' => FONT_FAMILY,
-              color: '#000000',
-              'line-height' => '1.2',
-              'pointer-events' => 'all',
-              'white-space' => 'normal',
-              'word-wrap' => 'normal'
+            display: 'inline-block',
+            'font-size' => FONT_SIZE,
+            'font-family' => FONT_FAMILY,
+            color: '#000000',
+            'line-height' => '1.2',
+            'pointer-events' => 'all',
+            'white-space' => 'normal',
+            'word-wrap' => 'normal'
           }
           text_opts.each do |name, value|
             div_t_style_opts[name.to_s] = value
@@ -135,12 +135,12 @@ class RDFConfig
         def rect_text_element(pos, inner_texts)
           element = REXML::Element.new('text')
           elem_opts = {
-              x: pos.x + RECT_WIDTH / 2,
-              y: pos.y + MARGIN_RECT - 1,
-              fill: '#000000',
-              'font-family' => FONT_FAMILY,
-              'font-size' => FONT_SIZE,
-              'text-anchor' => 'middle'
+            x: pos.x + RECT_WIDTH / 2,
+            y: pos.y + MARGIN_RECT - 1,
+            fill: '#000000',
+            'font-family' => FONT_FAMILY,
+            'font-size' => FONT_SIZE,
+            'text-anchor' => 'middle'
           }
           element.add_attribute_by_hash(elem_opts)
 
