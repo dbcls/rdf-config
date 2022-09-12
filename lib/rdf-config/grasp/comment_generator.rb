@@ -31,10 +31,8 @@ class RDFConfig
       private
 
       def endpoint_lines
-        endpoint = Endpoint.new(@config)
-
         lines = ['--- endpoint ---']
-        lines << endpoint.primary_endpoint
+        lines << endpoint_url
 
         lines
       end

@@ -1,10 +1,12 @@
-require 'rdf-config/model'
-require 'rdf-config/grasp/common_methods'
+require_relative '../model'
+require_relative 'common_methods'
+require_relative 'data_type'
 
 class RDFConfig
   class Grasp
     class QueryTypeGenerator
       include CommonMethods
+      include DataType
 
       DEFAULT_TYPE_NAME = 'Query'.freeze
 

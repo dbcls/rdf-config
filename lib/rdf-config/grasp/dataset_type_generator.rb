@@ -1,13 +1,15 @@
-require 'rdf-config/model'
-require 'rdf-config/model/subject'
-require 'rdf-config/model/value_list'
-require 'rdf-config/grasp/base'
-require 'rdf-config/grasp/common_methods'
+require_relative '../model'
+require_relative '../model/subject'
+require_relative '../model/value_list'
+require_relative 'base'
+require_relative 'common_methods'
+require_relative 'data_type'
 
 class RDFConfig
   class Grasp
     class DatasetTypeGenerator < Base
       include CommonMethods
+      include DataType
 
       DEFAULT_TYPE_NAME = 'Dataset'.freeze
 

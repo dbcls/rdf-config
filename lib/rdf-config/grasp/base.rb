@@ -1,6 +1,6 @@
-require_relative '../../rdf-config/model'
-require_relative '../../rdf-config/model/subject'
-require_relative '../../rdf-config/service'
+require_relative '../model'
+require_relative '../model/subject'
+require_relative '../service'
 
 class RDFConfig
   class Grasp

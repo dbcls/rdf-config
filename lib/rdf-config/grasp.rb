@@ -1,5 +1,6 @@
 require 'fileutils'
 
+require_relative 'grasp/data_type'
 require_relative 'grasp/comment_generator'
 require_relative 'grasp/dataset_type_generator'
 require_relative 'grasp/union_generator'
@@ -14,6 +15,7 @@ class RDFConfig
     class OutputDirExist < StandardError; end
 
     include CommonMethods
+    include DataType
 
     DEFAULT_OUTPUT_DIR = 'grasp'.freeze
     QUERY_TYPE_FILE_NAME = 'index.graphql'.freeze

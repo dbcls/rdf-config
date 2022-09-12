@@ -1,12 +1,14 @@
-require 'rdf-config/grasp/common_methods'
-require 'rdf-config/grasp/base'
-require 'rdf-config/model/subject'
-require 'rdf-config/model/value_list'
+require_relative 'base'
+require_relative 'common_methods'
+require_relative 'data_type'
+require_relative '../model/subject'
+require_relative '../model/value_list'
 
 class RDFConfig
   class Grasp
     class UnionGenerator < Base
       include CommonMethods
+      include DataType
 
       UNION_TYPE_SEPARATOR = ' | '.freeze
 

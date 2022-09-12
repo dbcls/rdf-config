@@ -1,3 +1,5 @@
+require_relative '../endpoint'
+
 class RDFConfig
   class Grasp
     module CommonMethods
@@ -11,18 +13,10 @@ class RDFConfig
         triples.map(&:object_name).reject { |name| name.to_s.strip.empty? }
       end
 
-      # TODO: config -> config_name, subject -> subject_nameにする？
-      def subject_type_name(config, subject)
-        "#{to_camel_case(config.name)}#{subject.name}"
-      end
+      def endpoint_url
+        endpoint = Endpoint.new(@config)
 
-      # TODO: config -> config_name, object -> object_nameにする？
-      def union_type_name(config, object)
-        "#{to_camel_case(config.name)}#{object.name.capitalize}"
-      end
-
-      def to_camel_case(s)
-        s.split(/[_-]/).map(&:capitalize).join
+        endpoint.primary_endpoint
       end
     end
   end
