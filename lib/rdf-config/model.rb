@@ -43,6 +43,10 @@ class RDFConfig
       !find_subject(variable_name).nil?
     end
 
+    def triples_by_subject_name(subject_name)
+      @triples.select { |triple| triple.subject.name == subject_name }
+    end
+
     def find_by_predicates(predicates)
       @triples.select { |triple| triple.predicates == predicates }
     end

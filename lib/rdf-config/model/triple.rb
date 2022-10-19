@@ -259,14 +259,18 @@ class RDFConfig
             add_error("Prefix (#{prefix}) used in predicate (#{uri}) but not defined in prefix.yaml file.")
           end
 
-          return if object.is_a?(Subject) || object.is_a?(BlankNode)
-
           next if predicate.rdf_type? || object.value.to_s.empty?
 
-          object_name = object.name
-          if object_name.is_a?(String) && !object_name.empty?
-            validate_object_name(object_name)
-          end
+          object_name = if object.is_a?(Subject)
+                          begin
+                            object.as_object[:object].name
+                          rescue StandardError
+                            ''
+                          end
+                        else
+                          object.name
+                        end
+          validate_object_name(object_name) if object_name.is_a?(String) && !object_name.empty?
         end
       end
 
