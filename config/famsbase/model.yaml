@@ -1,70 +1,70 @@
-- FAMSBASEEntry famsbase:2RH1_A_ref_NP_000673.2:
+- FAMSBASEEntry fams:2RH1_A_ref_NP_000673.2:
     - a: famso:Protein3DModel
-    - dcterms:identifier:
+    - dct:identifier:
         - identifier: "2RH1_A_ref_NP_000673.2"
-    - famsbase:hasModel:
-        - protein_structure: <http://fams.bio.chuo-u.ac.jp/storage/famsbase/GPCR/INs/2RH1_A/ref_NP_000673.2/ref_NP_000673.2.pdb>
-    - famsbaseo:hasTemplateForAlignedRegion:
+    - fams:hasModel:
+        - protein_structure: ProteinStructure
+    - famso:hasTemplateForAlignedRegion:
         - template: <http://fams.bio.chuo-u.ac.jp/storage/famsbase/GPCR/INs/2RH1_A/ref_NP_000673.2/2RH1_A_cut>
 
-- protein_structure:
+- ProteinStructure <http://fams.bio.chuo-u.ac.jp/storage/famsbase/GPCR/INs/2RH1_A/ref_NP_000673.2/ref_NP_000673.2.pdb>:
     - a: edam:data_1460
     - edam:is_output_of:
-        - protein_modelling: []
+        - protein_modelling: ProteinModelling
 
-- protein_modelling:
+- ProteinModelling:
     - a: edam:operation_0477
     - edam:hasInput:
         - input_template: <http://fams.bio.chuo-u.ac.jp/storage/famsbase/GPCR/CHAINs/2RH1_A.pdb>
-        - input_alignment: <http://fams.bio.chuo-u.ac.jp/storage/famsbase/GPCR/INs/2RH1_A/ref_NP_000673.2/ref_NP_000673.2.in>
+        - input_alignment: InputAlignment
 
-- input_alignment:
+- InputAlignment <http://fams.bio.chuo-u.ac.jp/storage/famsbase/GPCR/INs/2RH1_A/ref_NP_000673.2/ref_NP_000673.2.in>:
     - a: edam:data_0863
-    - famsbaseo:evalue:
+    - famso:evalue:
         - evalue: 1.0e-143
-    - famsbaseo:identity:
+    - famso:identity:
         - identity: 23
-    - famsbaseo:hasRegion:
-        - pdb_region: []
-        - refseq_region: []
+    - famso:hasRegion:
+        - pdb_region: PDBRegion
+        - refseq_region: RefSeqRegion
     - edam:is_output_of:
-        - local_alignment: []
+        - local_alignment: LocalAlignment
 
-- pdb_region:
+- PDBRegion:
     - a: faldo:Region
     - faldo:begin:
-        - begin: []
+        - pdb_region_begin: FaldoBegin
     - faldo:end:
-        - end: []
+        - pdb_region_end: FaldoEnd
 
-- refseq_region:
+- RefSeqRegion:
     - a: faldo:Region
     - faldo:begin:
-        - begin: []
+        - refseq_region_begin: FaldoBegin
     - faldo:end:
-        - end: []
+        - refseq_region_end: FaldoEnd
 
-- begin:
+- FaldoBegin:
     - a: ["faldo:Position", "faldo:ExactPosition"]
     - faldo:position:
         - begin_position: 8
     - faldo:reference: 
-        - reference: refseq:NP_000673.2
+        - begin_reference: refseq:NP_000673.2
 
-- end:
+- FaldoEnd:
     - a: ["faldo:Position", "faldo:ExactPosition"]
     - faldo:position:
-        - begin_position: 442 
+        - end_position: 442 
     - faldo:reference: 
-        - reference: refseq:NP_000673.2
+        - end_reference: refseq:NP_000673.2
 
-- local_alignment:
+- LocalAlignment:
     - a: edam:operation_0495
     - edam:hasInput:
         - pdb_chain: <http://fams.bio.chuo-u.ac.jp/storage/famsbase/GPCR/CHAINs/2RH1_A.pdb>
-        - na_sequence: []
+        - na_sequence: NASequence
 
-- na_sequence:
+- NASequence:
     - a: edam:data_2976
     - rdfs:seeAlso:
         - uniprot: up:P18089
