@@ -1,18 +1,20 @@
 require 'rdf-config/model'
+require 'rdf-config/sparql/variable'
 
 class RDFConfig
   class SPARQL
     class VariablesHandler
-      @@instance = {}
+      @instance = {}
+
       class << self
         def instance(config, opts)
           key = {
             config_name: config.name,
             opts: opts.to_s
           }
-          @@instance[key] = new(config, opts) unless @@instance.key?(key)
+          @instance[key] = new(config, opts) unless @instance.key?(key)
 
-          @@instance[key]
+          @instance[key]
         end
       end
 
@@ -32,21 +34,21 @@ class RDFConfig
 
       def visible_variables
         (
-          @variables_by_config + @parameters_by_config.keys + variables_by_query_opts + parameters_by_query_opts.keys
-        ).uniq
+          @variables_by_config + @parameters_by_config + variables_by_query_opts + parameters_by_query_opts
+        ).uniq { |variable| variable.name }
       end
 
       def hidden_variables
-        variable_names = []
+        variables = []
 
-        visible_variables.each do |variable_name|
-          next if model.subject?(variable_name)
-          next unless (model.parent_subject_names(variable_name) & subjects_by_variables).empty?
+        visible_variables.each do |variable|
+          next if model.subject?(variable.name)
+          next unless (model.parent_subject_names(variable.name) & subjects_by_variables).empty?
 
-          variable_names << closest_subject_name(variable_name)
+          variables << Variable.new(@config, closest_subject_name(variable.name))
         end
 
-        variable_names.uniq
+        variables.uniq { |variable| variable.name }
       end
 
       def subject_by_object_name(object_name)
@@ -65,8 +67,11 @@ class RDFConfig
         return @common_subject_names if @common_subject_names
 
         @common_subject_names = model.subjects.map(&:name)
-        visible_variables.reject { |variable_name| model.subject?(variable_name) }.each do |object_name|
-          @common_subject_names &= model.parent_subject_names(object_name)
+        visible_variables.reject { |variable| model.subject?(variable.name) }.each do |variable|
+          subject_names = model.parent_subject_names(variable.name)
+          # subject_names =
+          #   model.routes_by_object_name(variable.name).flatten.map { |triple| triple.subject.name }.uniq
+          @common_subject_names &= subject_names
         end
 
         @common_subject_names
@@ -86,11 +91,11 @@ class RDFConfig
       end
 
       def subjects_by_variables
-        @subjects_by_variables ||= visible_variables.select { |variable_name| model.subject?(variable_name) }
+        @subjects_by_variables ||= visible_variables.select { |variable| model.subject?(variable.name) }
       end
 
       def objects_by_variables
-        @objects_by_variables ||= visible_variables.reject { |variable_name| model.subject?(variable_name) }
+        @objects_by_variables ||= visible_variables.reject { |variable| model.subject?(variable.name) }
       end
 
       def valid_variable(variable_name)
@@ -103,7 +108,17 @@ class RDFConfig
       end
 
       def parameters
-        @parameters_by_config.merge(parameters_by_query_opts)
+        # TODO 正常に動作するかどうかテストすること！
+        parameters_by_query_opts.each do |parameter|
+          idx = @parameters_by_config.index(parameter)
+          if idx.nil?
+            @parameters_by_config << parameter
+          else
+            @parameters_by_config[idx] = parameter
+          end
+        end
+
+        @parameters_by_config
       end
 
       def variables_by_query_opts
@@ -126,21 +141,13 @@ class RDFConfig
                         end
 
         @opts[:query].each do |var_val|
-          variable, value = var_val.split('=', 2)
-          config_name, variable_name = variable.split(':')
-          if variable_name.nil?
-            # No config name: config name is @config.name
-            config_name = @config.name
-          else
-            variable = variable_name
-          end
-
-          if value.nil?
-            @variables_by_query_opts[config_name] = [] unless @variables_by_query_opts.key?(config_name)
-            @variables_by_query_opts[config_name] << variable
-          else
-            @parameters_by_query_opts[config_name] = {} unless @parameters_by_query_opts.key?(config_name)
-            @parameters_by_query_opts[config_name][variable] = value
+          variable = Variable.new(@config, var_val)
+          if variable.variable?
+            @variables_by_query_opts[variable.config_name] = [] unless @variables_by_query_opts.key?(variable.config_name)
+            @variables_by_query_opts[variable.config_name] << variable
+          elsif variable.parameter?
+            @parameters_by_query_opts[variable.config_name] = [] unless @parameters_by_query_opts.key?(variable.config_name)
+            @parameters_by_query_opts[variable.config_name] << variable
           end
         end
       end
@@ -164,8 +171,8 @@ class RDFConfig
         end
       end
 
-      def refine_variables(variable_names)
-        variable_names.select { |variable_name| valid_variable?(variable_name) }
+      def refine_variables(variables)
+        variables.select { |variable| valid_variable?(variable.name) }
       end
 
       def valid_variable?(variable_name)
@@ -207,28 +214,30 @@ class RDFConfig
           @configs = [config]
           @config = config
         end
-        @sparql_name = opts[:query_name]
+        @sparql_name = opts[:sparql]
         @opts = opts
 
         begin
-          @variables_by_config = @config.sparql[@sparql_name]['variables']
+          @variables_by_config =
+            @config.sparql[@sparql_name]['variables'].map { |variable| Variable.new(@config, variable) }
           @variables_by_config = [] if @variables_by_config.nil?
         rescue StandardError
           @variables_by_config = []
         end
 
         begin
-          @parameters_by_config = @config.sparql[@sparql_name]['parameters']
-          @parameters_by_config = {} if @parameters_by_config.nil?
+          @parameters_by_config =
+            @config.sparql[@sparql_name]['parameters'].map { |name, value| Variable.new(@config, "#{name}=#{value}") }
+          @parameters_by_config = [] if @parameters_by_config.nil?
         rescue StandardError
-          @parameters_by_config = {}
+          @parameters_by_config = []
         end
 
         @variables_by_query_opts = {}
         @parameters_by_query_opts = {}
-        @configs.each do |config|
-          @variables_by_query_opts[config.name] = []
-          @parameters_by_query_opts[config.name] = {}
+        @configs.each do |conf|
+          @variables_by_query_opts[conf.name] = []
+          @parameters_by_query_opts[conf.name] = []
         end
 
         @variables = {}

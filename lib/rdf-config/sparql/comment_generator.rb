@@ -12,14 +12,14 @@ class RDFConfig
         lines << "# Description: #{description}"
 
         first_parameter = true
-        parameters.each do |variable_name, value|
+        parameters.each do |parameter|
           if first_parameter
             first_parameter = false
             s = '# Parameter: '
           else
             s = '#            '
           end
-          lines << "#{s}#{variable_name}: (example: #{value})"
+          lines << "#{s}#{parameter.name}: (example: #{parameter.value})"
         end
         lines << ''
 

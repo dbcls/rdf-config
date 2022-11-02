@@ -37,8 +37,8 @@ class RDFConfig
       def used_prefixes_by_variable
         prefixes = []
 
-        variables.each do |variable_name|
-          triples = model.triples_by_object_name(variable_name)
+        variables.each do |variable|
+          triples = model.route_by_object_name(variable.name)
           # triples = model.triples_by_subject_name(variable_name) if triples.empty?
 
           triples.each do |triple|
@@ -69,11 +69,11 @@ class RDFConfig
       def used_prefixes_by_parameter
         prefixes = []
 
-        parameters.each do |var_name, value|
-          object = model.find_object(var_name)
-          next if !object.is_a?(Model::URI) && !object.is_a?(Model::Subject) && !model.subject?(var_name)
+        parameters.each do |parameter|
+          object = model.find_object(parameter.name)
+          next if !object.is_a?(Model::URI) && !object.is_a?(Model::Subject) && !model.subject?(parameter.name)
 
-          prefixes << Regexp.last_match(1) if /\A(\w+):(.+)/ =~ value && !prefixes.include?(Regexp.last_match(1))
+          prefixes << Regexp.last_match(1) if /\A(\w+):(.+)/ =~ parameter.value && !prefixes.include?(Regexp.last_match(1))
         end
 
         prefixes

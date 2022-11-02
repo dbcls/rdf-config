@@ -1,13 +1,11 @@
 class RDFConfig
   class SPARQL
     class Validator < SPARQL
-      @@instance = nil
+      @instance = nil
+
       class << self
         def instance(config, opts)
-          return @@instance if @@instance
-
-          @@instance = new(config, opts)
-          @@instance
+          @instance ||= new(config, opts)
         end
       end
 
@@ -39,10 +37,10 @@ class RDFConfig
       end
 
       def validate_variables_by_config
-        variables_handler.visible_variables.each do |variable_name|
-          next if model.subject?(variable_name) || !model.find_object(variable_name).nil?
+        variables_handler.visible_variables.each do |variable|
+          next if model.subject?(variable.name) || !model.find_object(variable.name).nil?
 
-          add_warning("Variable name (#{variable_name}) not found in model.yaml file.")
+          add_warning("Variable name (#{variable.name}) not found in model.yaml file.")
         end
       end
 
@@ -97,7 +95,7 @@ class RDFConfig
       end
 
       def validate_order_by_variable_name(variable_name)
-        add_error(invalid_order_by_message(variable_name)) unless variables.include?(variable_name)
+        add_error(invalid_order_by_message(variable_name)) unless variables.map(&:name).include?(variable_name)
       end
 
       def invalid_order_by_message(variable_name)

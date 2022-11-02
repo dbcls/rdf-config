@@ -29,7 +29,7 @@ class RDFConfig
       @opts[:query_name] = opts[:sparql]
       @opts[:join] = [@opts[:join]] if @opts.key?(:join) && @opts[:join].is_a?(String)
 
-      @values = {}
+      # @query_options = []
       @namespaces = {}
       @validator = nil
 
@@ -98,17 +98,6 @@ class RDFConfig
       variables_handler.variables(config_name)
     end
 
-=begin
-    def valid_variables
-      valid_vs = []
-      variables.each do |variable_name|
-        valid_vs << valid_variable(variable_name)
-      end
-
-      valid_vs.reject(&:nil?)
-    end
-=end
-
     def valid_variable(variable_name)
       variables_handler.valid_variable(variable_name)
     end
@@ -173,16 +162,16 @@ class RDFConfig
     end
 
     def subject_by_object_name(object_name)
-      model.triples_by_object_name(object_name).reverse.each_with_index do |triple, idx|
+      model.route_by_object_name(object_name).reverse.each_with_index do |triple, idx|
         begin
           as_object_name = triple.object.as_object_name
         rescue StandardError
           as_object_name = ''
         end
 
-        if idx.positive? && variables.include?(as_object_name)
+        if idx.positive? && variables.map(&:name).include?(as_object_name)
           return triple.object
-        elsif variables.include?(triple.subject.name)
+        elsif variables.map(&:name).include?(triple.subject.name)
           return triple.subject
         end
       end
@@ -192,7 +181,7 @@ class RDFConfig
         model.subjects.first
       else
         parent_subject_names = model.parent_subject_names(object_name)
-        commons_by_variables = parent_subject_names & variables
+        commons_by_variables = parent_subject_names & variables.map(&:name)
         if commons_by_variables.empty?
           subject_names = parent_subject_names & common_subject_names
           if subject_names.empty?
@@ -285,22 +274,6 @@ class RDFConfig
       sparql_argv = sparql_argv.to_s.strip
 
       @opts[:query_name] = sparql_argv
-      set_query_opts if @opts.key?(:query)
-    end
-
-    def set_query_opts
-      if @opts[:query].is_a?(String)
-        @opts[:query] = if @opts[:query].strip.empty?
-                          []
-                        else
-                          [@opts[:query]]
-                        end
-      end
-
-      @opts[:query].each do |var_val|
-        variable_name, value = var_val.split('=', 2)
-        @values[variable_name] = value if value
-      end
     end
 
     def variables_by_parameters_config
@@ -311,13 +284,9 @@ class RDFConfig
       @config.sparql[name].key?('variables') ? @config.sparql[name]['variables'] : []
     end
 
-    def variables_by_sparql_args
-      @values.keys
-    end
-
     def subjects_by_variables
-      variables_handler.visible_variables.select do |variable_name|
-        model.find_object(variable_name).is_a?(Model::Subject)
+      variables_handler.visible_variables.select do |variable|
+        model.find_object(variable.name).is_a?(Model::Subject)
       end
     end
 

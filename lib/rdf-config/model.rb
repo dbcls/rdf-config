@@ -131,7 +131,7 @@ class RDFConfig
       end
     end
 
-    def triples_by_object_name(object_name, start_subject = nil)
+    def route_by_object_name(object_name, start_subject = nil)
       triples = []
 
       triple = find_by_object_name(object_name)
@@ -151,6 +151,22 @@ class RDFConfig
       end
 
       triples.reverse
+    end
+
+    def routes_by_object_name(object_name)
+      last_triple = find_by_object_name(object_name)
+      parent_subject = parent_subject_name(object_name)
+      triples = find_by_object_name(parent_subject, only_first_triple: false)
+      return [[last_triple]] if triples.empty?
+
+      routes = []
+      triples.each do |triple|
+        second_last_triple = find_by_object_name(triple.object_name)
+        routes <<
+          route_by_object_name(triple.subject.name).push(second_last_triple).push(last_triple)
+      end
+
+      routes
     end
 
     def find_bnode_subject(object_name)
@@ -192,14 +208,18 @@ class RDFConfig
     end
 
     def parent_subject_names(object_name)
-      triples_by_object_name(object_name).map(&:subject).map(&:name)
+      route_by_object_name(object_name).map(&:subject).map(&:name)
     end
 
     def predicate_path(object_name, start_subject = nil)
-      triples = triples_by_object_name(object_name, start_subject)
+      triples = route_by_object_name(object_name, start_subject)
       return [] if triples.nil?
 
       triples.map(&:predicates).flatten
+    end
+
+    def property_paths(object_name)
+      property_path_map[object_name]
     end
 
     def property_path(object_name, start_subject = nil)
