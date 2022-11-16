@@ -157,23 +157,18 @@ class RDFConfig
       name
     end
 
-    def subject_by_object_name_new(object_name)
+    def subject_by_object_name(object_name)
       variables_handler.subject_by_object_name(object_name)
     end
 
-    def subject_by_object_name(object_name)
+    def subject_by_object_name_old(object_name)
       model.route_by_object_name(object_name).reverse.each_with_index do |triple, idx|
-        begin
+        if triple.object.is_a?(Model::Subject)
           as_object_name = triple.object.as_object_name
-        rescue StandardError
-          as_object_name = ''
+          triple.object if idx.positive? && variables.map(&:name).include?(as_object_name)
         end
 
-        if idx.positive? && variables.map(&:name).include?(as_object_name)
-          return triple.object
-        elsif variables.map(&:name).include?(triple.subject.name)
-          return triple.subject
-        end
+        return triple.subject if variables.map(&:name).include?(triple.subject.name)
       end
 
       triple = model.find_by_object_name(object_name)
@@ -338,7 +333,7 @@ class RDFConfig
     end
 
     def variables_handler
-      VariablesHandler.instance(@config, @opts)
+      @variables_handler ||= VariablesHandler.instance(@config, @opts)
     end
 
     def print_sparql_usage

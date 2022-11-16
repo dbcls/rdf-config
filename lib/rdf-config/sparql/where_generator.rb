@@ -216,8 +216,8 @@ class RDFConfig
 
       def generate_triples
         variables_handler.visible_variables.each do |variable|
-        # variables_for_where.each do |variable_name|
-          # generate_triple_by_variable(variable_name_for_sparql(variable_name))
+          next if variable.subject_of_property_path?
+
           generate_triple_by_variable(variable)
           unless @optional_triples_buf.empty?
             @optional_triples << @optional_triples_buf.uniq
@@ -237,32 +237,37 @@ class RDFConfig
         return if @target_triple.nil? || @target_triple.subject.name == variable.name
 
         @target_variable = variable
-        if @target_variable.property_path.nil?
-          if @target_triple.bnode_connecting? && model.same_property_path_exist?(variable.name)
-            generate_triples_with_bnode
-          else
-            generate_triple_without_bnode
-          end
-        else
+        if @target_variable.property_path_exist?
           generate_triple_with_property_path
+        elsif @target_triple.bnode_connecting? && model.same_property_path_exist?(variable.name)
+          generate_triples_with_bnode
+        else
+          generate_triple_without_bnode
         end
       end
 
       def generate_triple_with_property_path
         subject = model.find_subject(@target_variable.property_path.subject)
+        if subject.nil?
+          subject = model.find_subject_by_as_object_name(@target_variable.property_path.subject)
+          use_subject_name = false
+        else
+          use_subject_name = true
+        end
+
         is_optinal = if @target_variable.required?
                        true
                      else
                        optional?(@target_variable.name)
                      end
-        add_triple(Triple.new(subject_instance(subject, subject.types, true),
+        add_triple(Triple.new(subject_instance(subject, subject.types, use_subject_name),
                               @target_variable.property_path.path,
                               value_node_instance(@target_variable.name)),
-                   @target_variable.required?)
+                   is_optinal)
       end
 
       def generate_triple_without_bnode
-        object_name = @target_triple.object_name
+        object_name = @target_variable.name
         is_optional = optional?(object_name)
 
         if model.same_property_path_exist?(object_name)
@@ -280,7 +285,7 @@ class RDFConfig
                                 value_node_instance(object_name(@target_triple))),
                      is_optional)
         else
-          subject = subject_by_object_name(object_name)
+          subject = variables_handler.subject_by_variable(@target_variable)
           add_triple(Triple.new(subject_instance(subject, subject.types),
                                 property_path(object_name, subject.name),
                                 value_node_instance(object_name(@target_triple))),
@@ -302,7 +307,7 @@ class RDFConfig
         bnode_rdf_types = model.bnode_rdf_types(@target_triple)
 
         if use_property_path?(bnode_rdf_types)
-          subject = subject_by_object_name(object_name)
+          subject = variables_handler.subject_by_variable(@target_variable)
           return unless variables_for_where.map(&:name).include?(subject.name)
 
           add_triple(Triple.new(subject_instance(subject, subject.types),
@@ -504,7 +509,9 @@ class RDFConfig
       end
 
       def add_triple(triple, is_optional)
-        return if (triple.predicate.is_a?(String) && triple.predicate.strip.to_s.size.zero?) || (triple.subject.name == triple.object.name)
+        if (triple.predicate.is_a?(String) && triple.predicate.strip.to_s.size.zero?) || (triple.subject.name == triple.object.name)
+          return
+        end
 
         case triple
         when Array
@@ -559,6 +566,7 @@ class RDFConfig
             if !triple_for_object_rdf_type.nil? && !@required_triples.include?(triple_for_object_rdf_type)
               @required_triples << triple_for_object_rdf_type
             end
+
             @required_triples << triple unless @required_triples.include?(triple)
             more_triples.each do |triple|
               @required_triples << triple unless @required_triples.include?(triple)
@@ -688,24 +696,20 @@ class RDFConfig
             triple = model.find_by_object_name(t2.object.name)
             if triple.nil?
               0
+            elsif t1.subject.name == triple.subject.name
+              -1
             else
-              if t1.subject.name == triple.subject.name
-                -1
-              else
-                subject_names.index(t1.subject.name) <=> subject_names.index(triple.subject.name)
-              end
+              subject_names.index(t1.subject.name) <=> subject_names.index(triple.subject.name)
             end
           elsif model.subject?(t2.subject.name)
             # t1.object is not subject, pure object
             triple = model.find_by_object_name(t1.object.name)
             if triple.nil?
               0
+            elsif triple.subject.name == t2.subject.name
+              1
             else
-              if triple.subject.name == t2.subject.name
-                1
-              else
-                subject_names.index(triple.subject.name) <=> subject_names.index(t2.subject.name)
-              end
+              subject_names.index(triple.subject.name) <=> subject_names.index(t2.subject.name)
             end
           else
             # both t1.object and t2.object is not subject, pure object

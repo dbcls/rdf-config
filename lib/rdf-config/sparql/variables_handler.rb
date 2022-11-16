@@ -34,8 +34,8 @@ class RDFConfig
 
       def visible_variables
         (
-          @variables_by_config + @parameters_by_config + variables_by_query_opts + parameters_by_query_opts
-        ).uniq { |variable| variable.name }
+          variables_by_config + parameters_by_config + variables_by_query_opts + parameters_by_query_opts
+        ).uniq(&:name)
       end
 
       def hidden_variables
@@ -48,26 +48,73 @@ class RDFConfig
           variables << Variable.new(@config, closest_subject_name(variable.name))
         end
 
-        variables.uniq { |variable| variable.name }
+        variables.uniq(&:name)
       end
 
-      def subject_by_object_name(object_name)
-        object = model.find_object(object_name)
+      def subject_by_variable(variable)
+        if variable.property_path_exist?
+          subject_by_property_path_variable(variable)
+        else
+          subject_by_object_name_normal(variable.name)
+        end
+      end
+
+      def subject_by_property_path_variable(variable)
+        object = model.find_object(variable.name)
         if object.is_a?(Model::Subject)
           subject = object
-        else
-          subject_name = (model.parent_subject_names(object_name) & variables_for_where).last
+        elsif model.subject?(variable.name)
+          subject_name = (model.parent_subject_names(object_name) & variables_for_where.map(&:name)).last
           subject = model.find_subject(subject_name)
+        else
+          object_names =
+            (model.route_by_object_name(variable.name)[0..-2].map { |triple| triple.object.as_object_name } & visible_variables.map(&:name))
+          subject = if object_names.empty?
+                      model.find_one_by_object_name(variable.name).subject
+                    else
+                      model.find_object(object_names.last)
+                    end
         end
 
         subject
+      end
+
+      def subject_by_object_name_normal(object_name)
+        model.route_by_object_name(object_name).reverse.each_with_index do |triple, idx|
+          if triple.object.is_a?(Model::Subject)
+            as_object_name = triple.object.as_object_name
+            return triple.object if idx.positive? && variables(@config.name).map(&:name).include?(as_object_name)
+          end
+
+          return triple.subject if variables(@config.name).map(&:name).include?(triple.subject.name)
+        end
+
+        triple = model.find_by_object_name(object_name)
+        if triple.nil? || common_subject_names.nil? || common_subject_names.empty?
+          model.subjects.first
+        else
+          parent_subject_names = model.parent_subject_names(object_name)
+          commons_by_variables = parent_subject_names & variables(@config.name).map(&:name)
+          if commons_by_variables.empty?
+            subject_names = parent_subject_names & common_subject_names
+            if subject_names.empty?
+              model.subjects.first
+            else
+              model.find_subject(subject_names.last)
+            end
+          else
+            model.find_subject(commons_by_variables.last)
+          end
+        end
       end
 
       def common_subject_names
         return @common_subject_names if @common_subject_names
 
         @common_subject_names = model.subjects.map(&:name)
-        visible_variables.reject { |variable| model.subject?(variable.name) }.each do |variable|
+        visible_variables.reject do |variable|
+          model.subject?(variable.name) || variable.property_path_exist? || variable.subject_of_property_path?
+        end.each do |variable|
           subject_names = model.parent_subject_names(variable.name)
           # subject_names =
           #   model.routes_by_object_name(variable.name).flatten.map { |triple| triple.subject.name }.uniq
@@ -116,6 +163,34 @@ class RDFConfig
           else
             @parameters_by_config[idx] = parameter
           end
+        end
+
+        @parameters_by_config
+      end
+
+      def variables_by_config
+        return @variables_by_config unless @variables_by_config.nil?
+
+        @variables_by_config = @config.sparql_variables(@sparql_name).map do |variable|
+          variable_inst = Variable.new(@config, variable)
+          if variable_inst.property_path_exist?
+            [Variable.new(@config, variable_inst.property_path.subject, as_subject: true), variable_inst]
+          else
+            variable_inst
+          end
+        end.flatten
+      end
+
+      def parameters_by_config
+        return @parameters_by_config unless @parameters_by_config.nil?
+
+        begin
+          @parameters_by_config = @config.sparql_parameters(@sparql_name).map do |name, value|
+            Variable.new(@config, "#{name}=#{value}")
+          end
+          @parameters_by_config = [] if @parameters_by_config.nil?
+        rescue StandardError
+          @parameters_by_config = []
         end
 
         @parameters_by_config
@@ -217,21 +292,8 @@ class RDFConfig
         @sparql_name = opts[:sparql]
         @opts = opts
 
-        begin
-          @variables_by_config =
-            @config.sparql[@sparql_name]['variables'].map { |variable| Variable.new(@config, variable) }
-          @variables_by_config = [] if @variables_by_config.nil?
-        rescue StandardError
-          @variables_by_config = []
-        end
-
-        begin
-          @parameters_by_config =
-            @config.sparql[@sparql_name]['parameters'].map { |name, value| Variable.new(@config, "#{name}=#{value}") }
-          @parameters_by_config = [] if @parameters_by_config.nil?
-        rescue StandardError
-          @parameters_by_config = []
-        end
+        @variables_by_config = nil
+        @parameters_by_config = nil
 
         @variables_by_query_opts = {}
         @parameters_by_query_opts = {}
@@ -244,11 +306,6 @@ class RDFConfig
         @variables_for_where = {}
 
         parse_query_opts(opts[:query])
-        # puts "@variables_by_config: #{@variables_by_config}"
-        # puts "@parameters_by_config: #{@parameters_by_config}"
-        # puts "@variables_by_query_opts: #{@variables_by_query_opts}"
-        # puts "@parameters_by_query_opts: #{@parameters_by_query_opts}"
-
         set_variables
       end
     end

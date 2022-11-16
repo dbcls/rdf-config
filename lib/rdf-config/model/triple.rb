@@ -262,11 +262,7 @@ class RDFConfig
           next if predicate.rdf_type? || object.value.to_s.empty?
 
           object_name = if object.is_a?(Subject)
-                          begin
-                            object.as_object[:object].name
-                          rescue StandardError
-                            ''
-                          end
+                          object.as_object_name
                         else
                           object.name
                         end
@@ -412,10 +408,14 @@ class RDFConfig
 
       def as_object_name
         @as_object[:object].name
+      rescue
+        nil
       end
 
       def as_object_value
         @as_object[:object].value
+      rescue
+        nil
       end
 
       def used_as_object?

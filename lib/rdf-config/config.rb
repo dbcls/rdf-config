@@ -49,6 +49,27 @@ class RDFConfig
       File.basename(@config_dir)
     end
 
+    def sparql_variables(sparql_name)
+      if sparql[sparql_name].key?('variables')
+        case sparql[sparql_name]['variables']
+        when Array
+          sparql[sparql_name]['variables']
+        else
+          [sparql[sparql_name]['variables']]
+        end
+      else
+        []
+      end
+    end
+
+    def sparql_parameters(sparql_name)
+      if sparql[sparql_name].key?('parameters')
+        sparql[sparql_name]['parameters']
+      else
+        {}
+      end
+    end
+
     private
 
     def config_file_path(name)

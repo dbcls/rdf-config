@@ -5,16 +5,30 @@ class RDFConfig
 
       attr_reader :config_name, :name, :value, :property_path
 
-      def initialize(config, variable)
+      def initialize(config, variable, as_subject: false)
         @config = config
+        @as_subject = as_subject
 
         @config_name = ''
         @name = ''
         @value = nil
+
         @required = false
         @property_path = nil
 
         parse_variable(variable.to_s)
+      end
+
+      def visible_variables
+        if property_path_exist?
+          [@property_path.subject, @name]
+        else
+          [@name]
+        end
+      end
+
+      def subject_of_property_path?
+        @as_subject
       end
 
       def variable?
@@ -29,20 +43,27 @@ class RDFConfig
         @required
       end
 
+      def property_path_exist?
+        !@property_path.nil?
+      end
+
       def eql?(other)
-        self.name == other.name
+        name == other.name
       end
 
       def ==(other)
-        self.name == other.name
+        name == other.name
       end
 
       private
 
       def parse_variable(variable)
-        conf_var_val, subject, path = variable.to_s.split(/\s+/, 3)
-
-        # TODO !subject.nil? && path.nil? の場合、property pathの設定エラー
+        if /\A(?<subject>\w+)\s+(?<property_path>.+)\s+(?<conf_var_val>.+)/ =~ variable
+          # variable includes property path
+          @property_path = PropertyPath.new(subject, property_path)
+        else
+          conf_var_val = variable
+        end
 
         conf_var, @value = conf_var_val.split('=', 2)
         @value = nil if @value.is_a?(String) && @value.strip.empty?
@@ -56,30 +77,6 @@ class RDFConfig
         if @name[-1] == '!'
           @name = @name[0..-2]
           @required = true
-        end
-
-        if subject && path
-          @property_path = PropertyPath.new(subject, path)
-        end
-      end
-
-      def parse_variable_old(variable)
-        conf_var_name, @value = variable.split('=', 2)
-        @value = nil if @value.is_a?(String) && @value.strip.empty?
-
-        @config_name, variable_name = conf_var_name.split(':')
-        if variable_name.nil?
-          @config_name = @config.name
-          variable_name = conf_var_name
-        end
-        matched = /\A(?<name>\w+)(?<required>!?)(\s+(?<property_path>.+))?\z/.match(variable_name)
-
-        if matched.nil?
-          @name = variable
-        else
-          @name = matched[:name]
-          @required = matched[:required].to_s == '!'
-          @property_path = matched[:property_path]
         end
       end
     end

@@ -39,6 +39,19 @@ class RDFConfig
       subjects.select { |subject| subject.name == subject_name }.first
     end
 
+    def find_subject_by_as_object_name(as_object_name)
+      triples = @triples.select do |triple|
+        object = triple.object
+        object.is_a?(Subject) && object.as_object_name == as_object_name
+      end
+
+      if triples.empty?
+        nil
+      else
+        triples.first.object
+      end
+    end
+
     def subject?(variable_name)
       !find_subject(variable_name).nil?
     end
@@ -138,6 +151,7 @@ class RDFConfig
       while triple
         triples << triple
         break if !start_subject.nil? && triple.subject.name == start_subject
+        break if triple.subject.name == triple.object.name
 
         triple = find_by_object_name(triple.subject.name)
         break if triple.nil?
