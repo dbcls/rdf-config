@@ -5,4 +5,5 @@ source "https://rubygems.org"
 gemspec
 
 gem "rexml"
-
+gem "rdf"
+gem "rdf-turtle"

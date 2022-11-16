@@ -3,8 +3,7 @@ require 'pathname'
 
 class RDFConfig
   class Config
-    CONFIG_ROOT_DIR = 'config'.freeze
-    CONFIG_TYPES = %i[model sparql prefix endpoint stanza metadata schema].freeze
+    CONFIG_NAMES = %i[model sparql prefix endpoint stanza metadata schema convert].freeze
 
     CONFIG_TYPES.each do |name|
       define_method name do
