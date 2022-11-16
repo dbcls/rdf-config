@@ -17,6 +17,7 @@ class RDFConfig
   require 'rdf-config/schema/chart'
   require 'rdf-config/grasp'
   require 'rdf-config/shex'
+  require 'rdf-config/converter'
 
   def initialize(opts = {})
     @config = if opts[:config_dir].is_a?(Array)
@@ -47,6 +48,8 @@ class RDFConfig
       generate_grasp
     when :shex
       generate_shex
+    when :convert
+      convert
     end
   end
 
@@ -108,5 +111,10 @@ class RDFConfig
     shex = Shex.new(@config)
     puts shex.generate
     shex.print_warnings
+  end
+
+  def convert
+    converter = Converter.new(@config, @opts)
+    converter.convert
   end
 end
