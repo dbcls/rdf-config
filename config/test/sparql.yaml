@@ -18,20 +18,20 @@ sparql4:
   variables: [ object_c, object_e ]
 
 sparql5-1:
-  description: Test5-2
+  description: Test5-1
   variables:
     - object_b
     - SubjectB ex:pred_be / ex:pred_ef / ex:pred_fc / ex:prop_c object_c
     - object_d
 
 sparql5-2:
-  description: Test5-3
+  description: Test5-2
   variables: [link_be ex:pred_ef / ex:pred_fc / ex:prop_c object_c, object_d]
   parameters:
     object_c: object_c_value
 
 sparql5-3:
-  description: Test5-4
+  description: Test5-3
   variables: ["link_ad ex:pred_dc/ex:prop_c object_c", object_d]
   parameters:
     object_d: object_d_value
