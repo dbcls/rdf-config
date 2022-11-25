@@ -1,0 +1,23 @@
+test_attribute:
+  description: "Get attribute information for C00000001 in KNApSAcK Core"
+  variables: [ KNApSAcKCoreRecord, knapsack_id, molecular_entity_name, molecular_formula, value_mw, value_smiles, value_inchikey, value_inchi, rdfs_seealso ]
+  parameters:
+    knapsack_id: C00000001
+
+test_mw:
+  description: "Get KNApSAcK Core compounds with molecular weights greater than 3000"
+  variables: [ KNApSAcKCoreRecord, knapsack_id, molecular_entity_name, molecular_formula, value_mw, rdfs_seealso ]
+  #parameters:
+  #  FILTER("100"^^xsd:double <= ?value_mw && ?value_mw < "110"^^xsd:double).
+  #  FILTER("3000"^^xsd:double <= ?value_mw ).  
+  options:
+    limit: false
+    order_by:
+    - value_mw: asc
+
+test_xrefs:
+  description: "Get related resources for C00000001 in KNApSAcK Core"
+  variables: [ knapsack_id, skos_close_match]
+  parameters:
+    knapsack_id: C00000001
+
