@@ -17,7 +17,7 @@ class RDFConfig
   require 'rdf-config/schema/chart'
   require 'rdf-config/grasp'
   require 'rdf-config/shex'
-  require 'rdf-config/converter'
+  require 'rdf-config/convert'
 
   def initialize(opts = {})
     @config = if opts[:config_dir].is_a?(Array)
@@ -114,7 +114,7 @@ class RDFConfig
   end
 
   def convert
-    converter = Converter.new(@config, @opts)
-    converter.convert
+    convert = Convert.new(@config, @opts)
+    convert.generate
   end
 end

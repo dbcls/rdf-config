@@ -1,28 +1,30 @@
 HGNC:
-  - $table("hgnc_id")
-  - $downcase
+  - tsv("hgnc_id")
+  - downcase
 
-gene_id: $table("symbol")
+gene_id: tsv("symbol")
 
 hgnc_id:
-  - $table("hgnc_id")
-  - $delete(/^HGNC:/)
+  - tsv("hgnc_id")
+  - delete(/^HGNC:/)
+  - to_int
 
-description: $table("name")
+description: tsv("name")
 
-location: $table("location")
+location: tsv("location")
 
 UniProt:
-  - $table("uniprot_ids")
-  - $prepend("http://identifiers.org/uniprot/")
+  - tsv("uniprot_ids")
+  - prepend("http://identifiers.org/uniprot/")
 
-uniprot_id: $table("uniprot_ids")
+uniprot_id: tsv("uniprot_ids")
 
 PubMed:
-  - $table("pubmed_id")
-  - $split("|")
-  - $prepend("http://identifiers.org/pubmed/")
+  - tsv("pubmed_id")
+  - split("|")
+  - prepend("http://identifiers.org/pubmed/")
 
 pubmed_id:
-  - $table("pubmed_id")
-  - $split("|")
+  - tsv("pubmed_id")
+  - split("|")
+  - to_int
