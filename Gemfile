@@ -7,3 +7,4 @@ gemspec
 gem "rexml"
 gem "rdf"
 gem "rdf-turtle"
+gem "parslet"

@@ -114,7 +114,7 @@ class RDFConfig
   end
 
   def convert
-    converter = Converter.new(@config, @opts)
-    converter.convert
+    convert = Convert.new(@config, @opts)
+    convert.generate
   end
 end
