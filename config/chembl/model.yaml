@@ -254,7 +254,7 @@
   - cco:isTargetForMechanism*:
     - target_is_target_for_mechanism: DrugMechanism # chembl:drug_mechanism/CHEMBL_MEC_2094
   - cco:isTargetForCellLine*:
-    - target_is target for cell_line: CellLine
+    - target_is_target_for_cell_line: CellLine
   - cco:isSpeciesGroup*:
     - target_is_species_group: true
   - cco:organismName*:
@@ -320,11 +320,11 @@
   - cco:hasTargetComponentDescendant+:
     - chembl_targetcomponent_protclassifi: ChemblTargetcomponent   # CHEMBL_TC_10015
   - cco:hasTargetDescendant+:
-    - protein_classification_has target_descendant: Target   #chembl_target:CHEMBL3988628
+    - protein_classification_has_target_descendant: Target   #chembl_target:CHEMBL3988628
   - skos:broader*:
-    - broader_chembl_protclass_protclassifi: ChemblProteinclassification
+    - broader_chembl_protclass_protclassification: ChemblProteinclassification
   - skos:narrower*:
-    - narrow_chembl_protclass_protclassifi: ChemblProteinclassification   #CHEMBL_PC_1
+    - narrow_chembl_protclass_protclassification: ChemblProteinclassification   #CHEMBL_PC_1
     
 - ChemblBindingSite chembl_binding_site:CHEMBL_BS_903:
   - a: cco:BindingSite
@@ -337,7 +337,7 @@
   - cco:hasTarget*:
     - chembl_binding_site_has_target: Target   # chembl_target:CHEMBL4106141
   - cco:isBindingSiteForMechanism*:
-    - binding_site is bindingsite_for mechanism: DrugMechanism
+    - binding_site_is_bindingsite_for_mechanism: DrugMechanism
     
 - ChemblActivity chembl_activity:CHEMBL_ACT_1013015:
   - a: cco:Activity

@@ -14,6 +14,10 @@ class RDFConfig
       end
 
       def validate
+        unless @model.subjects.select(&:blank_node?).empty?
+          add_error('Blank node subject exists in the model.yaml file. Blank node subjects are not allowed.')
+        end
+
         @model.subjects.each do |subject|
           add_subject_name(subject.name)
           validate_subject(subject)

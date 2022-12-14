@@ -110,13 +110,13 @@ class RDFConfig
       end
 
       def validate_offset
-        return if !options.key?('offset') || options['offset'].is_a?(Integer)
+        return if !options.key?('offset') || options['offset'].is_a?(Integer) || options['offset'].is_a?(TrueClass) || options['offset'].is_a?(FalseClass)
 
         add_error("The value of option 'offset' in sparql.yaml file must be an integer.")
       end
 
       def validate_limit
-        return if !options.key?('limit') || options['limit'].is_a?(Integer)
+        return if !options.key?('limit') || options['limit'].is_a?(Integer) || options['limit'].is_a?(TrueClass) || options['limit'].is_a?(FalseClass)
 
         add_error("The value of option 'limit' in sparql.yaml file must be an integer.")
       end

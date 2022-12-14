@@ -1,0 +1,211 @@
+# KNApSAcK Core
+# https://github.com/ddbj/mb_knapsack/blob/main/C00000001v0.2.ttl  
+## KNApSAcK Core/Compound
+- KNApSAcKCoreRecord <http://purl.jp/knapsack/C00000001>:
+  - rdf:type:
+    - knapsack:KNApSAcKCoreRecord
+    - knapsack:KNApSAcKMetaboliteRecord
+  - knapsack:category:
+    - km_category: "Enhance plant growth"
+  - knapsack:function:
+    - km_function: "exhibit alpha-amylase activity in aleurone"
+  - knapsack:targetsp:
+    - km_targetsp: "Hordeum vulgare"
+  - sio:SIO_000225*:
+    - has_function: MetaboliteActivity
+  - dc:identifier:
+    - knapsack_id: "C00000001"
+  - rdfs:label:
+    - rdfs_label: "Gibberellin A1;GA1"
+  - knapsack:fid:
+    - knapsack_fid: "C19H24O6_C00000001"
+  - foaf:homepage:
+    - foaf_homepage: <https://mb.metabolomics.jp/wiki/Compound:C00000001>
+  - rdfs:seeAlso:
+    - rdfs_seealso: <http://www.knapsackfamily.com/knapsack_core/info.php?sname=C_ID&word=C00000001>
+  - sio:SIO_000008+: #sio:has-attribute
+    - sio_attribute_core:
+      - MolecularFormula
+      - MolecularEntityName
+      - MolecularWeight     
+  - dc:hasPart+:
+    - dc_haspart:
+      - MolFile
+      - CDXfile
+      - GIFFile
+  - cheminf:CHEMINF_000200+: #cheminf:has-attribute
+    - cheminf_attribute_core:
+      - StartSubstance 
+      - Smiles 
+      - StandardInchikey
+      - StandardInchi
+      - cas: <C00000001#cas> 
+  - sio:SIO_000255*:
+    - has_annotation_core:
+      - CoreAnnotation
+      - MetaboliteAnnotation
+  - dcterms:references*:
+    - dcterms_references_core:         
+      - CoreReference
+      - MetaboliteReference
+  - skos:closeMatch*:
+    - skos_close_match:
+      - obo:CHEBI_33276
+      -  <http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID5280379>  
+- MolFile <C00000001#x-mdl-molfile>:
+  - rdf:type: cheminf:CHEMINF_000058
+  - dcterms:format:
+    - format_molfile: <nrn:mimetype:chemical/x-mdl-molfile>
+  - rdfs:seeAlso:
+    - xref_molfile: <https://mb.metabolomics.jp/wiki/Mol:C00000001>
+- CDXfile <C00000001#x-chemdraw>:
+  - rdf:type: knapsack:CDXfile
+  - dcterms:format:
+    - format_cdxfile: <nrn:mimetype:chemical/x-chemdraw>
+  - rdfs:seeAlso:
+    - xref_cdxfile: <https://mb.metabolomics.jp/wiki/File:C00000001.cdx>
+- GIFFile <C00000001#gif>: 
+  - rdf:type: knapsack:SDfile
+  - dcterms:format:
+    - format_gif: <nrn:mimetype:image/gif>
+  - rdfs:seeAlso:
+    - xref_gif: <https://mb.metabolomics.jp/wiki/File:C00000001.gif>
+- MolecularFormula <C00000001#molecular_formula>:
+  - rdf:type: cheminf:CHEMINF_000042
+  - sio:SIO_000300:
+    - molecular_formula: "C19H24O6"
+- MolecularEntityName <C00000001#molecular_entity_name>:
+  - rdf:type: cheminf:CHEMINF_000043
+  - sio:SIO_000300:
+    - molecular_entity_name: "Gibberellin A1;GA1"
+- MolecularWeight <C00000001#molecular_weight>: 
+  - rdf:type: cheminf:CHEMINF_000334
+  - sio:SIO_000300:
+    - value_mw: '"348.15728849094"^^xsd:double'
+  - sio:SIO_000221:
+    - unit_mw: obo:UO_0000055 # has unit
+- Smiles <C00000001#smiles>:
+  - rdf:type: cheminf:CHEMINF_000018
+  - sio:SIO_000300:
+    - value_smiles: "C1[C@@H]([C@@]2([C@@H]3[C@@](C1)([C@H]1[C@@]4([C@H]3C(=O)O)C[C@@](CC1)(C(=C)C4)O)OC2=O)C)O"
+- StandardInchikey <C00000001#standard_inchikey>:
+  - rdf:type: cheminf:CHEMINF_000059
+  - sio:SIO_000300:
+    - value_inchikey: "JLJLRLWOEMWYQK-BKYUDGNBNA-N"
+  - rdfs:seeAlso:
+    - xref_inchikey: <http://identifiers.org/inchikey/JLJLRLWOEMWYQK-BKYUDGNBNA-N>
+- StandardInchi <C00000001#standard_inchi>:
+  - rdf:type: cheminf:CHEMINF_000113
+  - sio:SIO_000300:
+    - value_inchi: "InChI=1S/C19H24O6/c1-9-7-17-8-18(9,24)5-3-10(17)19-6-4-11(20)16(2,15(23)25-19)13(19)12(17)14(21)22/h10-13,20,24H,1,3-8H2,2H3,(H,21,22)/t10-,11+,12-,13-,16-,17+,18+,19-/m1/s1"
+  - rdfs:seeAlso:
+    - xref_inchi: <http://identifiers.org/inchi/InChI=1S/C19H24O6/c1-9-7-17-8-18(9,24)5-3-10(17)19-6-4-11(20)16(2,15(23)25-19)13(19)12(17)14(21)22/h10-13,20,24H,1,3-8H2,2H3,(H,21,22)/t10-,11+,12-,13-,16-,17+,18+,19-/m1/s1>
+- StartSubstance <C00000001#start_substance>: 
+  - rdf:type: knapsack:Start_substance
+  - sio:SIO_000300:
+    - start_substance: ""
+## KNApSAcK Core/Annotation  
+- CoreAnnotation <annotation#18b24176c038147be449f9dc8b9f27aa>:
+  - a: knapsack:KNApSAcKCoreAnnotation
+  - knapsack:sp:
+    - sp: "Thlaspi arvense"
+  - knapsack:references:
+    - references: "Metzger,Plant Physiol.,80,(1985),396"
+  - knapsack:sp1:
+    - sp1: ""
+  - knapsack:family:
+    - family: "Cruciferae"
+  - knapsack:kingdom:
+    - kingdom: "Plantae"
+  - dcterms:references:
+    - dcterms_references: CoreReference  
+  - rdfs:seeAlso:
+    - xref_taxid: <http://identifiers.org/taxonomy/13288>   
+  - foaf:homepage:
+    - mbwiki_species: https://mb.metabolomics.jp/wiki/Species:Thlaspi_arvense
+  - sio:SIO_000254:
+    - is_annotation_of: KNApSAcKCoreRecord
+## KNApSAcK Core/Reference     
+- CoreReference <reference#d200d05e27d6a3c6b667c917f9b05c43>:
+  - rdf:type:
+    - knapsack:KNApSAcKReference
+    - bibo:Article 
+  - dc:title:
+    - dc_title: "Metzger,Plant Physiol.,80,(1985),396"
+  - dcterms:isReferencedBy:
+    - dcterms_is_referenced_by: <annotation#18b24176c038147be449f9dc8b9f27aa>      
+  - foaf:homepage:
+    - mb_wiki_species: <https://mb.metabolomics.jp/wiki/Reference:Metzger,_Plant_Physiol._,_80,_(1985),_396>
+  - rdfs:seeAlso*:
+    - xref_pubmed: <http://identifiers.org/pubmed/16664632>
+  - foaf:primaryTopic*:
+    - foaf_primary_topic: <http://rdf.ncbi.nlm.nih.gov/pubmed/16664632>
+# KNApSAcK Biological Activity
+# https://github.com/ddbj/mb_knapsack/blob/main/rdf/knapsack-owl.ttl    
+- KnapsackBiologicalActivity knapsack:KnapsackBiologicalActivity:
+  - rdf:type: owl:Class
+  - rdfs:label: 
+    - label_biological_activity: '"(Obsolete)KnapsackBiologicalActivity"@en'  
+- KnapsackNaturalActivity knapsack:KnapsackNaturalActivity:
+  - rdf:type: owl:Class
+  - rdfs:label: 
+    - label_natural_activity_root: '"(Obsolete)KnapsackNaturalActivity"@en'
+  - sio:SIO_001278:
+    - refers_to_na_dict: <http://www.knapsackfamily.com/MetaboliteActivity/MA_dictionary.pdf>    
+- KnapsackMetaboliteActivity knapsack:KnapsackMetaboliteActivity:
+  - rdf:type: owl:Class
+  - rdfs:label: 
+    - label_metabolite_activity_root: '"(Obsolete)KnapsackMetaboliteActivity"@en'
+  - sio:SIO_001278:
+    - refers_to_ma_dict: <http://www.knapsackfamily.com/MetaboliteActivity/MA_dictionary.pdf>
+# KNApSAcK Natural Activity
+# https://github.com/ddbj/mb_knapsack/blob/main/C00000001_na.ttl     
+- NaturalActivity <http://purl.jp/knapsack/activity#2f98ef62f48d811287e63a0bf140b37f>:
+  - rdf:type: knapsack:KnapsackNaturalActivity
+  - rdfs:label:
+    - label_natural_activity: '"Fragility", "Fragility"@en'
+  - skos:altLabel:
+    - label_natural_activity_ja: '"虚弱"@ja'
+  - dcterms:references*:
+    - dcterms_references_natural:
+  - sio:SIO_000255*:
+    - NaturalAnnotation
+  - sio:SIO_001278:
+    - refers_to_na: <http://www.knapsackfamily.com/MetaboliteActivity/MA_dictionary.pdf>
+- NaturalAnnotation <http://purl.jp/knapsack/annotation#b877c85460137f060ebabcbfb01b6a9a>:
+  - rdf:type: knapsack:KnapsackNaturalActivityAnnotation
+  - knapsack:sp2: 
+    - label_na_anntation: "Vitis vinifera"
+- NaturalReference <http://purl.jp/knapsack/reference#9498058f7b9a417fa009c8dbc7ce48c3>:
+  - dc:title:
+    - dc_title_natural: 'James A. Duke,Handbook of Medicinal Herbs 2nd Ed.,CRC Press(2002)'
+  - dcterms:isReferencedBy:
+    - dcterms_is_referenced_by_natural: <http://purl.jp/knapsack/activity#2f98ef62f48d811287e63a0bf140b37f>
+  - rdf:type: 
+    - knapsack:KNApSAcKReference
+    - bibo:Article
+# KNApSAcK Metabolite Activity
+# https://github.com/ddbj/mb_knapsack/blob/main/C00000001_ma.ttl    
+- MetaboliteActivity <activity#e6114a598fe889c30e545c94477e309c>:
+  - rdf:type: knapsack:KnapsackMetaboliteActivity
+  - rdfs:label:
+    - label_metabolite_activity: '"exhibit alpha-amylase activity in aleurone"@en'
+  - sio:SIO_000255:
+    - MetaboliteAnnotation
+  - sio:SIO_001278:
+    - refers_to: <http://www.knapsackfamily.com/MetaboliteActivity/MA_dictionary.pdf>
+- MetaboliteAnnotation <annotation#d0a06d1c3e50afefc2a4136e3ad0001a>:
+  - rdf:type: knapsack:KNApSAcKMetaboliteActivityAnnotation
+  - knapsack:sp:
+    - mb_sp: "Hordeum vulgare"
+  - dcterms:references*:
+    - dcterms_references_metabolite: MetaboliteReference
+- MetaboliteReference <reference#0ed21477f86f5a0e270b3fccc668904a>:
+  - rdf:type:
+    - knapsack:KNApSAcKReference
+    - bibo:Article
+  - dcterms:isReferencedBy:
+    - MetaboliteAnnotation
+    - MetaboliteActivity
+  - dc:title:
+    - dc_title_reference_metabolite: "Reeve,J.Exp.Bot.,25,(1974),431-445"    

@@ -17,7 +17,7 @@ class RDFConfig
         @indent_text = if opts.key?(:indent_text)
                          opts[:indent_text]
                        else
-                         ' ' * 2
+                         ' ' * 4
                        end
 
         init_instance_variables
@@ -206,7 +206,10 @@ class RDFConfig
       def add_values_lines_by_parameters
         parameters.merge(@values).each do |variable_name, value|
           object = model.find_object(variable_name)
-          next if object.nil?
+          if object.nil?
+            subject = model.find_subject(variable_name)
+            next if subject.nil?
+          end
 
           value = "{{#{variable_name}}}" if template?
           value = %("#{value}") if double_quote_value?(object)
