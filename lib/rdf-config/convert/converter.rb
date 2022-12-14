@@ -20,7 +20,7 @@ class RDFConfig
       def exec_convert_process(methods)
         methods.each do |method|
           unless respond_to?(method[:method_name_])
-            require_relative "../converters/#{method[:method_name_]}.rb"
+            require_relative "macros/#{method[:method_name_]}.rb"
             self.class.define_method(
               method[:method_name_].to_sym, self.class.instance_method(method[:method_name_].to_sym)
             )

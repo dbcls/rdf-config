@@ -1,5 +1,6 @@
 require_relative 'convert/method_parser'
 require_relative 'convert/converter'
+require_relative 'convert/json_converter'
 require_relative 'convert/rdf_generator'
 
 class RDFConfig
@@ -38,7 +39,7 @@ class RDFConfig
           @convert_method[variable_name] << method
 
           if method[:method_name_] == 'json'
-            @json_paths << method[:args_][:arg_].to_str[1..-2].split(%r{\s*/\s*})[0..-2].join('/')
+            @json_paths << method[:args_][:arg_].to_str[1..-2].split(/\s*\.\s*/)[0..-2].join('.')
           end
         end
       end
@@ -60,8 +61,14 @@ class RDFConfig
     end
 
     def generate_rdf
+      converter = case @source_file_format
+                  when 'json'
+                    JSONConverter.new(@convert_method)
+                  else
+                    Converter.new(@convert_method)
+                  end
       generator = RDFGenerator.new(
-        Converter.new(@convert_method), @rows, Model.instance(@config), @config.prefix
+        converter, @rows, Model.instance(@config), @config.prefix
       )
       generator.generate
     end

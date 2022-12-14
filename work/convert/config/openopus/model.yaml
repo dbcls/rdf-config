@@ -1,21 +1,23 @@
-- Composer hoge:Beethoven:
-  - a: hoge:Composer
-  - hoge:complete_name:
+- Composer composer:Beethoven:
+  - a: openopus:Composer
+  - composer:complete_name:
     - complete_name: Ludwig van Beethoven
-  - hoge:epoch:
+  - composer:epoch:
     - epoch: Early Romantic
-  - hoge:birth:
+  - composer:birth:
     - birth: 1770-01-01
-  - hoge:death:
+  - composer:death:
     - death: 1827-01-01
-  - hoge:work:
+  - composer:work:
     - work: Work
 
-- Work hoge:work1:
-  - a: hoge:Work
-  - hoge:title:
+- Work work:Beethoven00001:
+  - a: openopus:Work
+  - work:title:
     - title: "Abschiendsgesang an Wiens Burger, WoO 121"
-  - hoge:subtitle?:
+  - work:subtitle?:
     - subtitle: ""
-  - hoge:genre:
+  - work:genre:
     - genre: "Vocal"
+  - work:recommended:
+    - recommended: true
