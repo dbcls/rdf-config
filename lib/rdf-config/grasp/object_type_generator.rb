@@ -7,7 +7,7 @@ class RDFConfig
       include DataType
 
       def initialize(config)
-        @model = RDFConfig::Model.new(config)
+        @model = Model.instance(config)
       end
 
       def generate(object_type)

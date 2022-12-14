@@ -1,21 +1,46 @@
-require 'rdf-config/model'
+require_relative '../model'
+require_relative 'common_methods'
+require_relative 'data_type'
 
 class RDFConfig
   class Grasp
     class QueryTypeGenerator
-      def initialize(config)
-        @model = RDFConfig::Model.new(config)
+      include CommonMethods
+      include DataType
+
+      DEFAULT_TYPE_NAME = 'Query'.freeze
+
+      def initialize
+        @query_lines = []
       end
 
       def generate
         lines = ['directive @embedded on OBJECT']
         lines << ''
-        lines << 'type Query {'
-        lines << "#{INDENT}dataset(#{@model.subjects.first.name}: String): Dataset"
-        @model.subjects.select(&:used_as_object?).each do |subject|
-          lines << "#{INDENT}#{subject.name}(#{subject.name}: String): #{subject.name}"
+        lines << "type #{type_name} {"
+        @query_lines.each do |line|
+          lines << line
         end
         lines << '}'
+
+        lines
+      end
+
+      def generate_by_config(config)
+        Model.instance(config).subjects.each do |subject|
+          add(config, subject)
+        end
+      end
+
+      def add(config, subject)
+        type = subject_type_name(config, subject)
+        @query_lines << "#{INDENT}#{type}(#{IRI_ARG_NAME}: String): #{type}"
+      end
+
+      private
+
+      def type_name
+        DEFAULT_TYPE_NAME
       end
     end
   end

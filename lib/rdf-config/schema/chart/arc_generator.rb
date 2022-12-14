@@ -18,14 +18,8 @@ class RDFConfig
           @config = config
           @opts = opts
 
-          if opts.key?(:variables)
-            @variables = opts[:variables]
-          else
-            @variables = nil
-          end
-
+          @variables = (opts[:variables] if opts.key?(:variables))
           @num_subjects = subjects.size
-
           @width, @height = calc_size
         end
 
@@ -64,7 +58,6 @@ class RDFConfig
             end
 
             subject_names << subject_name
-            # subject_names += related_subjects(model.find_subject(subject_name)).map(&:name)
           end
 
           subject_names.uniq.map { |subject_name| model.find_subject(subject_name) }
@@ -193,10 +186,10 @@ class RDFConfig
         def style_element
           style = REXML::Element.new('style')
           style.add_attribute('type', 'text/css')
-          style.add_text(<<-STYLE)
-.subject-name { font-family:'#{SUBJECT_FONT_FAMILY}'; font-size:#{SUBJECT_FONT_SIZE}px; }
-.relation { fill:none; stroke:#000000; }
-.grid { stroke:#CCCCCC; stroke-width:1px;}
+          style.add_text(<<~STYLE)
+            .subject-name { font-family:'#{SUBJECT_FONT_FAMILY}'; font-size:#{SUBJECT_FONT_SIZE}px; }
+            .relation { fill:none; stroke:#000000; }
+            .grid { stroke:#CCCCCC; stroke-width:1px;}
           STYLE
 
           style
@@ -215,7 +208,7 @@ class RDFConfig
         end
 
         def subject_idx(subject)
-          if !@subject_idx.is_a?(Hash)
+          unless @subject_idx.is_a?(Hash)
             @subject_idx = {}
             subjects.each_with_index do |subj, idx|
               @subject_idx[subj.name] = idx

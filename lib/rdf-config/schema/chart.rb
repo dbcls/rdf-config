@@ -48,9 +48,9 @@ class RDFConfig
       end
 
       def print_usage
-        STDERR.puts 'Usage: --schema schema_name[:type]'
-        STDERR.puts "Available schema names: #{@config.schema.keys.join(', ')}"
-        STDERR.puts 'Avanlable schema types: nest, table, arc'
+        warn 'Usage: --schema schema_name[:type]'
+        warn "Available schema names: #{@config.schema.keys.join(', ')}"
+        warn 'Avanlable schema types: nest, table, arc'
       end
 
       def generate
@@ -119,10 +119,10 @@ class RDFConfig
           end
         end
 
-        unless errors.empty?
-          error_msg = "ERROR:\n#{errors.map { |msg| "  #{msg}" }.join("\n")}"
-          raise InvalidSchemaOption, error_msg
-        end
+        return if errors.empty?
+
+        error_message = "ERROR:\n#{errors.map { |msg| "  #{msg}" }.join("\n")}"
+        raise InvalidSchemaOption, error_message
       end
 
       def interpret_variables

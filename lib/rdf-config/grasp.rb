@@ -1,74 +1,119 @@
-require 'rdf-config/grasp/comment_generator'
-require 'rdf-config/grasp/dataset_type_generator'
-require 'rdf-config/grasp/object_type_generator'
-require 'rdf-config/grasp/query_type_generator'
-require 'rdf-config/grasp/query_generator'
+require 'fileutils'
+
+require_relative 'grasp/data_type'
+require_relative 'grasp/comment_generator'
+require_relative 'grasp/dataset_type_generator'
+require_relative 'grasp/union_generator'
+require_relative 'grasp/object_type_generator'
+require_relative 'grasp/query_type_generator'
+require_relative 'grasp/query_generator'
 
 class RDFConfig
   class Grasp
-    INDENT = '  '
+    class GraspError < StandardError; end
+    class GraspConfigNotFound < StandardError; end
+    class OutputDirExist < StandardError; end
 
-    def initialize(config)
+    include CommonMethods
+    include DataType
+
+    DEFAULT_OUTPUT_DIR = 'grasp'.freeze
+    QUERY_TYPE_FILE_NAME = 'index.graphql'.freeze
+    GRASP_RESOURCES_DIR = File.expand_path(File.join(__dir__, '..', '..', 'grasp'))
+    INDENT = '  '.freeze
+
+    def initialize(config, opts)
       @config = config
-      @model = Model.new(config)
+      @opts = opts
+      @output_dir = if opts[:output_dir].to_s.length.positive?
+                      File.expand_path(opts[:output_dir])
+                    else
+                      DEFAULT_OUTPUT_DIR
+                    end
+      raise OutputDirExist, "Output directory '#{@output_dir}' already exists." if File.exist?(@output_dir)
 
-      @target = File.basename(config.config_dir)
-      @query_file_dir = "grasp/#{@target}"
-      @schema_file_dir = "grasp/#{@target}/schema"
+      FileUtils.mkdir_p(@output_dir)
+
+      @query_type_generator = QueryTypeGenerator.new
     end
 
     def generate
-      setup
-      generate_dataset_file
-      generate_object_type_files
+      process_all_configs
       generate_query_type_file
-      generate_query_file
 
-      STDERR.puts 'Grasp files have been created successfully.'
+      warn 'Grasp files have been generated successfully.'
+    end
+
+    def process_all_configs
+      configs.each do |config|
+        warn "-- Generate Grasp files by config: #{config.config_dir} --"
+        process_config(config)
+      end
+    end
+
+    def process_config(config)
+      setup_by_config(config)
+      generate_by_config
+    rescue Config::InvalidConfig, Config::ConfigNotFound, OutputDirExist => e
+      warn e.message
+    end
+
+    def generate_by_config
+      @model.subjects.each do |subject|
+        if subject.name.to_s == '[]'
+          # warn '      Skip this subject'
+          next
+        end
+        warn "  * Subject: #{subject.name}"
+
+        @subject = subject
+        process_subject
+      end
     end
 
     def generate_dataset_file
-      comment_generator = CommentGenerator.new(@config)
-      dataset_type_generator = DatasetTypeGenerator.new(@config)
-      File.open("#{@schema_file_dir}/dataset.graphql", 'w') do |f|
+      comment_generator = CommentGenerator.new(@config, @opts.merge(subject: @subject))
+      dataset_type_generator = DatasetTypeGenerator.new(@config, subject: @subject)
+      union_generator = UnionGenerator.new(@config, subject: @subject)
+      File.open(File.join(@output_dir, dataset_filename), 'w') do |f|
         f.puts comment_generator.generate
         f.puts dataset_type_generator.generate
-      end
-    end
-
-    def generate_object_type_files
-      @model.subjects.select(&:used_as_object?).each do |subject|
-        generate_object_type_file(subject.name)
-      end
-    end
-
-    def generate_object_type_file(object_type)
-      generator = ObjectTypeGenerator.new(@config)
-      File.open("#{@schema_file_dir}/#{object_type}.graphql", 'w') do |f|
-        f.puts generator.generate(object_type)
+        f.puts union_generator.generate
       end
     end
 
     def generate_query_type_file
-      generator = QueryTypeGenerator.new(@config)
-      File.open("#{@schema_file_dir}/index.graphql", 'w') do |f|
-        f.puts generator.generate
-      end
-    end
-
-    def generate_query_file
-      generator = QueryGenerator.new(@config)
-      File.open("#{@query_file_dir}/query.graphql", 'w') do |f|
-        f.puts generator.generate
+      File.open(File.join(@output_dir, QUERY_TYPE_FILE_NAME), 'w') do |f|
+        f.puts @query_type_generator.generate.join("\n")
       end
     end
 
     private
 
-    def setup
-      unless File.exist?(@schema_file_dir)
-        require 'fileutils'
-        FileUtils.mkdir_p(@schema_file_dir)
+    def process_subject
+      generate_dataset_file
+      @query_type_generator.add(@config, @subject)
+    end
+
+    def dataset_filename
+      "#{subject_type_name(@config, @subject)}.graphql"
+    end
+
+    def setup_by_config(config)
+      @config = config
+
+      # Check if the endpoint.yaml file exists.
+      # If the endpoint.yaml file does not exist, @config.endpoint throws an exception
+      @config.endpoint
+
+      @model = Model.instance(@config)
+    end
+
+    def configs
+      if @config.is_a?(Array)
+        @config
+      else
+        [@config]
       end
     end
   end

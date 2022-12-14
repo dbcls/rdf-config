@@ -1,13 +1,11 @@
 class RDFConfig
   class SPARQL
     class Validator < SPARQL
-      @@instance = nil
+      @instance = nil
+
       class << self
         def instance(config, opts)
-          return @@instance if @@instance
-
-          @@instance = new(config, opts)
-          @@instance
+          @instance ||= new(config, opts)
         end
       end
 
@@ -65,10 +63,10 @@ class RDFConfig
 
       def validate_options_key
         invalid_keys = options.keys - OPTIONS_VALID_KEYS
-        unless invalid_keys.empty?
-          add_error(%(Invalid options #{invalid_keys.map { |key|
-            "'#{key}'" }.join(', ')} in sparql.yaml file. Valid options are #{OPTIONS_VALID_KEYS.join(', ')}.))
-        end
+        return if invalid_keys.empty?
+
+        add_error(%(Invalid options #{invalid_keys.map { |key|
+          "'#{key}'" }.join(', ')} in sparql.yaml file. Valid options are #{OPTIONS_VALID_KEYS.join(', ')}.))
       end
 
       def validate_order_by
@@ -105,32 +103,25 @@ class RDFConfig
       end
 
       def validate_distinct
-        return unless options.key?('distinct')
+        return if !options.key?('distinct') ||
+                  [TrueClass, FalseClass].include?(options['distinct'].class)
 
-        unless [TrueClass, FalseClass].include?(options['distinct'].class)
-          add_error("The value of option 'distinct' in sparql.yaml file must be either true or false.")
-        end
+        add_error("The value of option 'distinct' in sparql.yaml file must be either true or false.")
       end
 
       def validate_offset
-        return unless options.key?('offset')
+        return if !options.key?('offset') || options['offset'].is_a?(Integer) || options['offset'].is_a?(TrueClass) || options['offset'].is_a?(FalseClass)
 
-        unless options['offset'].is_a?(Integer)
-          add_error("The value of option 'offset' in sparql.yaml file must be an integer.")
-        end
+        add_error("The value of option 'offset' in sparql.yaml file must be an integer.")
       end
 
       def validate_limit
-        return if options.key?('limit')
+        return if !options.key?('limit') || options['limit'].is_a?(Integer) || options['limit'].is_a?(TrueClass) || options['limit'].is_a?(FalseClass)
 
-        if options['limit'] != false && options['limit'].is_a?(Integer)
-          add_error("The value of option 'limit' in sparql.yaml file must be an integer.")
-        end
+        add_error("The value of option 'limit' in sparql.yaml file must be an integer.")
       end
 
-      def validate_join
-
-      end
+      def validate_join; end
 
       def add_error(error_message)
         @errors << error_message

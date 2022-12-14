@@ -15,7 +15,6 @@ class RDFConfig
 
   class SPARQL
     OPTIONS_VALID_KEYS = %w[distinct order_by offset limit].freeze
-    @@validate_done = false
 
     def initialize(config, opts = {})
       if config.is_a?(Array)
@@ -31,7 +30,6 @@ class RDFConfig
 
       @values = {}
       @namespaces = {}
-      @validator = nil
 
       parse_opts
 
@@ -48,7 +46,7 @@ class RDFConfig
       @validator = RDFConfig::SPARQL::Validator.instance(@config, @opts)
       @validator.validate
 
-      sparql_lines = generate_sparql_lines(opts)
+      sparql_lines = generate_sparql_lines
       if opts[:url_encode]
         require 'uri'
         [endpoint, '?', URI.encode_www_form(query: sparql_lines.join("\n"))].join
@@ -57,7 +55,7 @@ class RDFConfig
       end
     end
 
-    def generate_sparql_lines(opts = {})
+    def generate_sparql_lines
       sparql_generator = SPARQLGenerator.new
 
       sparql_generator.add_generator(CommentGenerator.new(@config, @opts)) if sparql_comment?
@@ -97,17 +95,6 @@ class RDFConfig
     def variables
       variables_handler.variables(config_name)
     end
-
-=begin
-    def valid_variables
-      valid_vs = []
-      variables.each do |variable_name|
-        valid_vs << valid_variable(variable_name)
-      end
-
-      valid_vs.reject(&:nil?)
-    end
-=end
 
     def valid_variable(variable_name)
       variables_handler.valid_variable(variable_name)

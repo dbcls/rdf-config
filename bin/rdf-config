@@ -11,26 +11,26 @@ def help
 end
 
 opts = {
-  :config_dir => nil,
-  :mode => nil,
+  config_dir: nil,
+  mode: nil
 }
 
 args = GetoptLong.new(
-  [ '--config',   '-c',  GetoptLong::REQUIRED_ARGUMENT ],
-  [ '--help',     '-h',  GetoptLong::NO_ARGUMENT ],
-  [ '--senbero',         GetoptLong::NO_ARGUMENT ],
-  [ '--schema',          GetoptLong::OPTIONAL_ARGUMENT ],
-  [ '--endpoint',        GetoptLong::OPTIONAL_ARGUMENT ],
-  [ '--sparql',          GetoptLong::OPTIONAL_ARGUMENT ],
-  [ '--url',             GetoptLong::NO_ARGUMENT ],
-  [ '--query',           GetoptLong::OPTIONAL_ARGUMENT ],
-  [ '--join',            GetoptLong::OPTIONAL_ARGUMENT ],
-  [ '--sparqlist',       GetoptLong::OPTIONAL_ARGUMENT ],
-  [ '--grasp',           GetoptLong::OPTIONAL_ARGUMENT ],
-  [ '--stanza',          GetoptLong::OPTIONAL_ARGUMENT ],
-  [ '--stanza_rb',       GetoptLong::OPTIONAL_ARGUMENT ],
-  [ '--shex',            GetoptLong::OPTIONAL_ARGUMENT ],
-  [ '--debug',           GetoptLong::OPTIONAL_ARGUMENT ]
+  ['--config',   '-c',  GetoptLong::REQUIRED_ARGUMENT],
+  ['--help',     '-h',  GetoptLong::NO_ARGUMENT],
+  ['--senbero',         GetoptLong::NO_ARGUMENT],
+  ['--schema',          GetoptLong::OPTIONAL_ARGUMENT],
+  ['--endpoint',        GetoptLong::OPTIONAL_ARGUMENT],
+  ['--sparql',          GetoptLong::OPTIONAL_ARGUMENT],
+  ['--url',             GetoptLong::NO_ARGUMENT],
+  ['--query',           GetoptLong::OPTIONAL_ARGUMENT],
+  ['--join',            GetoptLong::OPTIONAL_ARGUMENT],
+  ['--sparqlist',       GetoptLong::OPTIONAL_ARGUMENT],
+  ['--grasp',           GetoptLong::OPTIONAL_ARGUMENT],
+  ['--stanza',          GetoptLong::OPTIONAL_ARGUMENT],
+  ['--stanza_rb',       GetoptLong::OPTIONAL_ARGUMENT],
+  ['--shex',            GetoptLong::OPTIONAL_ARGUMENT],
+  ['--debug',           GetoptLong::OPTIONAL_ARGUMENT]
 )
 args.ordering = GetoptLong::RETURN_IN_ORDER
 
@@ -85,6 +85,7 @@ opt_values.each do |opt_name, values|
     opts[:join] = value
   when /--grasp/
     opts[:mode] = :grasp
+    opts[:output_dir] = value
   when /--stanza_rb/
     opts[:mode] = :stanza_rb
     opts[:stanza_name] = value

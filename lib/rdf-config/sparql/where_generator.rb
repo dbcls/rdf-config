@@ -3,154 +3,7 @@ require 'rdf-config/sparql'
 class RDFConfig
   class SPARQL
     class WhereGenerator < SPARQL
-      @@indent_text = '    '
       PROPERTY_PATH_SEP = ' / '.freeze
-
-      class Triple
-        attr_reader :subject, :predicate, :object
-
-        def initialize(subject, predicate, object)
-          @subject = subject
-          @predicate = predicate
-
-          @object = if object.is_a?(Array) && object.size == 1
-                      object.first
-                    else
-                      object
-                    end
-        end
-
-        def rdf_type?
-          %w[a rdf:type].include?(@predicate)
-        end
-
-        def to_sparql(opts = {})
-          indent = opts.key?(:indent) ? opts[:indent] : ''
-          is_first_triple = opts.key?(:is_first_triple) ? opts[:is_first_triple] : true
-          is_last_triple = opts.key?(:is_last_triple) ? opts[:is_last_triple] : true
-          left_indent = opts.key?(:left_indent) ? opts[:left_indent] : ''
-          variable_name_prefix = opts.key?(:variable_name_prefix) ? opts[:variable_name_prefix] : ''
-          # def to_sparql(indent = '', is_first_triple = true, is_last_triple = true, left_indent = '')
-          line = if is_first_triple
-                   "#{left_indent}#{indent}#{subject.to_sparql} "
-                 else
-                   "#{left_indent}#{indent * 2}"
-                 end
-          line = if rdf_type?
-                   if object.has_one_rdf_type?
-                     "#{line}a #{object.rdf_type}"
-                   else
-                     "#{line}a #{object.rdf_type_varname}"
-                   end
-                 else
-                   "#{line}#{predicate} #{object.to_sparql}"
-                 end
-
-          "#{line} #{is_last_triple ? '.' : ';'}"
-        end
-
-        def ==(other)
-          @subject.to_sparql == other.subject.to_sparql &&
-            @predicate == other.predicate &&
-            @object.to_sparql == other.object.to_sparql
-        end
-
-        def to_s
-          "#{subject.to_sparql} #{predicate} #{object.to_sparql}"
-        end
-      end
-
-      module RDFType
-        def has_rdf_type?
-          case rdf_types
-          when String
-            !rdf_types.strip.empty?
-          when Array
-            !rdf_types.flatten.uniq.first.nil?
-          else
-            false
-          end
-        end
-
-        def has_one_rdf_type?
-          has_rdf_type? && (rdf_types.instance_of?(String) || rdf_types.size == 1)
-        end
-
-        def has_multiple_rdf_types?
-          has_rdf_type? && rdf_types.size > 1
-        end
-
-        def rdf_types=(rdf_types)
-          @rdf_types = case rdf_types
-                       when Array
-                         rdf_types
-                       when String
-                         [rdf_types]
-                       end
-        end
-
-        def rdf_type
-          @rdf_types.first
-        end
-      end
-
-      class Variable
-        include RDFType
-
-        attr_reader :name, :rdf_types
-
-        def initialize(name, opts = {})
-          @name = name
-          @variable_name_prefix = opts.key?(:variable_name_prefix) ? opts[:variable_name_prefix] : ''
-          @sparql_variable_name =
-            opts.key?(:sparql_variable_name) ? opts[:sparql_variable_name] : "?#{@variable_name_prefix}#{name}"
-        end
-
-        def to_sparql
-          case name
-          when Array
-            name.to_s
-          else
-            @sparql_variable_name
-          end
-        end
-
-        def rdf_type_varname
-          "#{to_sparql}__class"
-          # "#{to_sparql}Class"
-        end
-
-        def ==(other)
-          @name == other.name
-        end
-      end
-
-      class BlankNode
-        include RDFType
-
-        attr_reader :predicate_routes, :rdf_types
-
-        def initialize(bnode_id, predicate_routes)
-          @bnode_id = bnode_id
-          @predicate_routes = predicate_routes
-        end
-
-        def name
-          "_b#{@bnode_id}"
-        end
-
-        def to_sparql
-          "_:b#{@bnode_id}"
-        end
-
-        def rdf_type_varname
-          "?#{name}Class"
-        end
-
-        def ==(other)
-          name == other.name
-        end
-      end
 
       def initialize(config, opts = {})
         super
@@ -161,7 +14,11 @@ class RDFConfig
                                 true
                               end
 
-        @@indent_text = opts[:indent_text] if opts.key?(:indent_text)
+        @indent_text = if opts.key?(:indent_text)
+                         opts[:indent_text]
+                       else
+                         ' ' * 4
+                       end
 
         init_instance_variables
       end
@@ -216,8 +73,6 @@ class RDFConfig
 
       def generate_triples
         variables_handler.visible_variables.each do |variable_name|
-        # variables_for_where.each do |variable_name|
-          # generate_triple_by_variable(variable_name_for_sparql(variable_name))
           generate_triple_by_variable(variable_name)
           unless @optional_triples_buf.empty?
             @optional_triples << @optional_triples_buf.uniq
@@ -229,10 +84,6 @@ class RDFConfig
       end
 
       def generate_triple_by_variable(variable_name)
-        # if variables_handler.visible_variables.include?(variable_name)
-        #   subject_name = @variables_handler.closest_subject_name(variable_name)
-        #   puts "#{subject_name} #{model.property_path(variable_name, subject_name)} #{variable_name}"
-        # end
         @target_triple = model.find_by_object_name(variable_name)
         return if @target_triple.nil? || @target_triple.subject.name == variable_name
 
@@ -421,7 +272,7 @@ class RDFConfig
         return [] if triples.empty?
 
         triples.each do |triple|
-          lines << triple.to_sparql(indent: indent,
+          lines << triple.to_sparql(indent:,
                                     is_first_triple: triple.object == triples.first.object,
                                     is_last_triple: triple.object == triples.last.object,
                                     variable_name_prefix: join? ? "#{config_name}__" : '')
@@ -446,16 +297,16 @@ class RDFConfig
       def generate_optional_lines(optional_triples)
         return [] if optional_triples.empty?
 
-        left_indent = ' ' * 4
+        left_indent = @indent_text
         lines = ["#{left_indent}OPTIONAL {"]
         subject_names = optional_triples.map(&:subject).map(&:name).uniq
         subject_names.each do |subject_name|
           triples = optional_triples.select { |triple| triple.subject.name == subject_name }
           triples.each do |triple|
-            lines << triple.to_sparql(indent: ' ' * 4,
+            lines << triple.to_sparql(indent: @indent_text,
                                       is_first_triple: triple.object == triples.first.object,
                                       is_last_triple: triple.object == triples.last.object,
-                                      left_indent: left_indent,
+                                      left_indent:,
                                       variable_name_prefix: join? ? "#{config_name}__" : '')
           end
         end
@@ -469,7 +320,7 @@ class RDFConfig
       end
 
       def values_line(variavale_name, value)
-        "#{@@indent_text}VALUES #{variavale_name} { #{value} }"
+        "#{@indent_text}VALUES #{variavale_name} { #{value} }"
       end
 
       def use_property_path?(bnode_rdf_types)
@@ -478,7 +329,7 @@ class RDFConfig
       end
 
       def add_triple(triple, is_optional)
-        return if (triple.predicate.strip.to_s.size.zero?) || (triple.subject.name == triple.object.name)
+        return if triple.predicate.strip.to_s.size.zero? || triple.subject.name == triple.object.name
 
         case triple
         when Array
@@ -619,7 +470,7 @@ class RDFConfig
       end
 
       def indent(depth_increment = 0)
-        (@@indent_text * (@depth + depth_increment)).to_s
+        (@indent_text * (@depth + depth_increment)).to_s
       end
 
       def optional?(object_name, start_subject = nil)
@@ -692,7 +543,7 @@ class RDFConfig
         @opts[:join].each do |join|
           left, right = join.split('=')
           lines <<
-            "#{@@indent_text}FILTER(?#{left.gsub(':', '__')} = ?#{right.gsub(':', '__')})"
+            "#{@indent_text}FILTER(?#{left.gsub(':', '__')} = ?#{right.gsub(':', '__')})"
         end
 
         lines
@@ -700,3 +551,8 @@ class RDFConfig
     end
   end
 end
+
+require 'rdf-config/sparql/where_generator/triple'
+require 'rdf-config/sparql/where_generator/rdf_type'
+require 'rdf-config/sparql/where_generator/variable'
+require 'rdf-config/sparql/where_generator/blank_node'

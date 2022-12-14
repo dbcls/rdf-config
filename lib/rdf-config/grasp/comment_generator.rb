@@ -1,18 +1,21 @@
 require 'rdf-config/model'
 require 'rdf-config/endpoint'
 require 'rdf-config/sparql/prefix_generator'
-require 'rdf-config/sparql/where_generator'
+require 'rdf-config/grasp/common_methods'
+require 'rdf-config/grasp/base'
+require 'rdf-config/grasp/construct_generator'
+require 'rdf-config/grasp/where_generator'
 
 class RDFConfig
   class Grasp
-    class CommentGenerator
-      BLOCK_START = '"""'
-      BLOCK_END = '"""'
+    class CommentGenerator < Base
+      include CommonMethods
 
-      def initialize(config)
-        @config = config
+      BLOCK_START = '"""'.freeze
+      BLOCK_END = '"""'.freeze
 
-        @model = RDFConfig::Model.new(config)
+      def initialize(config, opts = {})
+        super
       end
 
       def generate
@@ -28,10 +31,8 @@ class RDFConfig
       private
 
       def endpoint_lines
-        endpoint = Endpoint.new(@config)
-
         lines = ['--- endpoint ---']
-        lines << endpoint.primary_endpoint
+        lines << endpoint_url
 
         lines
       end
@@ -47,7 +48,10 @@ class RDFConfig
       end
 
       def prefix_lines
-        prefix_generator = SPARQL::PrefixGenerator.new(@config, variables: @model.object_names, parameters: {}, check_query_name: false)
+        opts = {
+          query: object_names
+        }
+        prefix_generator = SPARQL::PrefixGenerator.new(@config, opts)
 
         lines = ['PREFIX : <https://github.com/dbcls/grasp/ns/>']
         lines += prefix_generator.generate
@@ -57,52 +61,11 @@ class RDFConfig
       end
 
       def construct_lines
-        subject_names = []
-
-        lines = ['CONSTRUCT {']
-        @model.each do |triple|
-          next if triple.predicate.rdf_type?
-
-          subject = triple.subject
-          unless subject_names.include?(subject.name)
-            subject_names << subject.name
-            unless subject.used_as_object?
-              lines << "#{INDENT}?#{subject.name} :#{subject.name} ?#{subject.name} ."
-            end
-          end
-
-          if subject.used_as_object?
-            subject.as_object.values.each do |object|
-              lines << "#{INDENT}?#{object.name} :#{triple.object_name} ?#{triple.object_name} ."
-            end
-          else
-            lines << "#{INDENT}?#{subject.name} :#{triple.object_name} ?#{triple.object_name} ."
-          end
-        end
-        lines << '}'
-
-        lines
+        ConstructGenerator.new(@config, @opts).generate
       end
 
       def where_lines
-        where_generator_opts = {
-          variables: @model.object_names,
-          parameters: {},
-          #output_values_line: false,
-          indent_text: INDENT,
-          check_query_name: false
-        }
-
-        where_generator = SPARQL::WhereGenerator.new(@config, where_generator_opts)
-        lines = where_generator.generate
-        last_line = lines.pop
-        lines << ''
-        @model.subjects.reject(&:used_as_object?).each do |subject|
-          lines << %Q(#{INDENT}{{#if #{subject.name}}}VALUES ?#{subject.name} { {{join " " (as-iriref #{subject.name})}} }{{/if}})
-        end
-        lines << last_line
-
-        lines
+        WhereGenerator.new(@config, @opts).generate
       end
     end
   end

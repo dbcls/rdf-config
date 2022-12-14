@@ -2,7 +2,7 @@ class RDFConfig
   class Schema
     class Senbero
       def initialize(config)
-        @model = Model.new(config)
+        @model = Model.instance(config)
       end
 
       def color_subject(str)
@@ -20,7 +20,7 @@ class RDFConfig
       def color_property_path(predicates, separator = ' / ')
         predicates.map { |x|
           predicate = color_predicate(x.uri)
-          cardinality = x.cardinality ? ' ' + x.cardinality.label : ''
+          cardinality = x.cardinality ? " #{x.cardinality.label}" : ''
           "#{predicate}#{cardinality}"
         }.join(separator)
       end
@@ -63,7 +63,7 @@ class RDFConfig
             subject_color = color_subject(subject.name)
             subject_str   = subject_color
             subject_str  += " [#{subject_class}]" unless subject_class.empty?
-            subject_str  += subject.name == [] ? " (blank_node)" : " (#{subject.value})"
+            subject_str  += subject.name == [] ? ' (blank_node)' : " (#{subject.value})"
             puts subject_str
           end
 

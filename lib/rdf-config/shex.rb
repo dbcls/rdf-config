@@ -6,7 +6,7 @@ class RDFConfig
       @config = config
       @opts = opts
 
-      @model = Model.new(config)
+      @model = Model.instance(config)
     end
 
     def generate

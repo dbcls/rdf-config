@@ -21,7 +21,7 @@ class RDFConfig
           @current_pos = Position.new(START_X, START_Y)
           @subjects = []
           @generated_subjects = []
-          @element_pos = {}
+          @element_pos = {}.compare_by_identity
         end
 
         def generate
@@ -149,7 +149,7 @@ class RDFConfig
         end
 
         def generate_subject(subject)
-          @element_pos[subject.object_id] = [] unless @element_pos.key?(subject.object_id)
+          @element_pos[subject] = [] unless @element_pos.key?(subject)
 
           move_to_subject
           @subjects.push(subject)
@@ -170,9 +170,7 @@ class RDFConfig
         end
 
         def generate_predicate_object(predicate, object)
-          if loop_to_subject?(object)
-            @current_pos.y = @element_pos[object.object_id].last.y + (RECT_HEIGHT + MARGIN_RECT)
-          end
+          @current_pos.y = @element_pos[object].last.y + (RECT_HEIGHT + MARGIN_RECT) if loop_to_subject?(object)
 
           value = object.value
 
@@ -241,7 +239,7 @@ class RDFConfig
         end
 
         def subject_position(subject)
-          @element_pos[subject.object_id].first
+          @element_pos[subject].first
         end
 
         def move_to_predicate
@@ -261,7 +259,7 @@ class RDFConfig
         end
 
         def loop_to_subject?(object)
-          #current_subject == object
+          # current_subject == object
           false
         end
 
@@ -279,7 +277,7 @@ class RDFConfig
 
         def num_objects
           # notice @element_pos include subject position
-          @element_pos[current_subject.object_id].size - 1
+          @element_pos[current_subject].size - 1
         end
 
         def style_element
@@ -317,7 +315,7 @@ class RDFConfig
         end
 
         def add_element_position
-          @element_pos[current_subject.object_id] << @current_pos.dup
+          @element_pos[current_subject] << @current_pos.dup
         end
 
         private
@@ -326,7 +324,7 @@ class RDFConfig
           dx = (x2 - x1).abs.to_f
           dy = (y2 - y1).abs.to_f
 
-          Math.sqrt(dx ** 2 + dy ** 2)
+          Math.sqrt(dx**2 + dy**2)
         end
 
         def max_xpos

@@ -2,10 +2,10 @@ class RDFConfig
   class Schema
     class Chart
       class PredicateGenerator
-        VLINE_INTERVAL = 20.freeze
-        ARROW_END_MARGIN = 5.freeze
-        TEXT_MARGIN_X = 10.freeze
-        TEXT_MARGIN_Y = 5.freeze
+        VLINE_INTERVAL = 20
+        ARROW_END_MARGIN = 5
+        TEXT_MARGIN_X = 10
+        TEXT_MARGIN_Y = 5
 
         def initialize(predicate, pos)
           @predicate = predicate

@@ -4,6 +4,8 @@ require 'pty'
 require 'expect'
 require 'io/console'
 
+require_relative '../stanza'
+
 module SafePty
   def self.spawn(command, &block)
     PTY.spawn(command) do |read, write, pid|
@@ -30,13 +32,10 @@ class RDFConfig
         unless @stanza_name.empty?
           if File.exist?(stanza_base_dir) && !File.exist?("#{stanza_base_dir}/package-lock.json")
             raise StanzaExecutionFailure,
-                  "Stanza repository directory: #{stanza_base_dir} exists, but it seems that stanza repository initialization fails, " +
-                    "so please delete the #{stanza_base_dir} directory."
+                  "Stanza repository directory: #{stanza_base_dir} exists, but it seems that stanza repository initialization fails, so please delete the #{stanza_base_dir} directory."
           end
 
-          if File.exist?(stanza_dir)
-            raise StanzaExecutionFailure, "Stanza directory: #{stanza_dir} already exists."
-          end
+          raise StanzaExecutionFailure, "Stanza directory: #{stanza_dir} already exists." if File.exist?(stanza_dir)
         end
       end
 
@@ -48,29 +47,43 @@ class RDFConfig
 
         basename = File.basename(stanza_base_dir)
 
-        $stderr.puts "Initialize a togostanza repository."
+        warn 'Initialize a togostanza repository.'
         cmd = "npx togostanza init --name #{basename} --package-manager npm"
-        $stderr.puts "Execute command: #{cmd}"
+        warn "Execute command: #{cmd}"
 
-        $expect_verbose = true
+        $expect_verbose = false
+        ok_to_procees_message = 'Ok to proceed\\? \\(y\\)\\s*'
+        git_repository_message = "Git repository URL \\(leave blank if you don't need to push to a remote Git repo"
         git_repository = ''
         Dir.chdir(dirname) do
           exit_status = SafePty.spawn(cmd) do |read, write, pid|
             write.sync = true
 
-            read.expect(/Git repository URL \(leave blank if you don't need to push to a remote Git repo/) do |line|
-              $expect_verbose = false
+            line = read.readline
+            if line.include?('Need to install the following packages')
+              puts line
+              $expect_verbose = true
+              read.expect(/#{ok_to_procees_message}/) do
+                ok_to_proceed = $stdin.gets.strip
+                write.puts ok_to_proceed
+              end
+              read.expect(/#{git_repository_message}/) do
+                $expect_verbose = false
+              end
+            else
+              print line.rstrip
             end
 
-            read.expect(/sitory\):.*\z/) do |line|
-              print "sitory): "
-              git_repository = STDIN.gets.strip
+            read.expect(/sitory\):.*\z/) do
+              # print "\e[32m?\e[0m \e[1m#{git_repository_message.gsub('\(', '(')}sitory): "
+              print 'sitory): '
+              git_repository = $stdin.gets.strip
               write.puts git_repository
             end
 
             read.expect(/license:.*\(.*\).+\z/) do |line|
               print "\e[32m?\e[0m \e[1mlicense\e[m \e[2m(MIT)\e[0m: "
-              license = STDIN.gets
+              license = $stdin.gets.strip
               license = 'MIT' if license.empty?
               write.puts license
             end
@@ -79,11 +92,11 @@ class RDFConfig
 
             unless git_repository.empty?
               read.expect(/Username for (.+): /) do |line|
-                write.puts STDIN.gets
+                write.puts $stdin.gets
               end
 
               read.expect(/Password for (.+): /) do |line|
-                password = STDIN.noecho(&:gets)
+                password = $stdin.noecho(&:gets)
                 write.puts password
               end
             end
@@ -92,9 +105,7 @@ class RDFConfig
               # puts line
             end
 
-            until read.eof? do
-              read.readline
-            end
+            read.readline until read.eof?
           end
         end
 
@@ -106,20 +117,20 @@ class RDFConfig
 
       def generate_template
         $expect_verbose = false
-        cmd = %Q/npx togostanza generate stanza #{@name} --label "#{label}" --definition "#{definition}"/
-        $stderr.puts "Execute command: #{cmd}"
+        cmd = %Q(npx togostanza generate stanza #{@name} --label "#{label}" --definition "#{definition}")
+        warn "Execute command: #{cmd}"
         Dir.chdir(stanza_base_dir) do
           exit_status = SafePty.spawn(cmd) do |read, write, pid|
             write.sync = true
 
             read.expect(/license:.*\(.*\).+\z/) do |line|
               print "\e[32m?\e[0m \e[1mlicense\e[m \e[2m(MIT)\e[0m: "
-              write.puts STDIN.gets
+              write.puts $stdin.gets
             end
 
             read.expect(/author:.*\((.*)\).+\z/) do |line|
               print "\e[32m?\e[0m \e[1mauthor\e[0m \e[2m(#{line[1]})\e[0m: "
-              write.puts STDIN.gets
+              write.puts $stdin.gets
             end
             line = read.readline
 
@@ -128,14 +139,12 @@ class RDFConfig
               puts line
               $expect_verbose = true
               read.expect(/Overwrite.+\z/) do |line|
-                write.puts STDIN.gets
+                write.puts $stdin.gets
               end
               $expect_verbose = false
             end
 
-            until read.eof? do
-              puts read.readline
-            end
+            puts read.readline until read.eof?
           end
         end
         puts
@@ -166,37 +175,37 @@ class RDFConfig
       def index_js
         parameter_lines = []
         parameters.each do |name, value|
-          parameter_lines << %Q/#{' ' * 10}#{name}: this.params['#{name}'],/
+          parameter_lines << %Q(#{' ' * 10}#{name}: this.params['#{name}'],)
         end
 
-        <<-EOS
-import Stanza from 'togostanza/stanza';
+        <<~EOS
+          import Stanza from 'togostanza/stanza';
 
-export default class #{@name.split('_').map(&:capitalize).join} extends Stanza {
-  async render() {
-    try {
-      const results = await this.query({
-        endpoint: '#{sparql.endpoint}',
-        template: 'stanza.rq.hbs',
-        parameters: {
-#{parameter_lines.join("\n")}
-        }
-      });
+          export default class #{@name.split('_').map(&:capitalize).join} extends Stanza {
+            async render() {
+              try {
+                const results = await this.query({
+                  endpoint: '#{sparql.endpoint}',
+                  template: 'stanza.rq.hbs',
+                  parameters: {
+                    #{parameter_lines.join("\n")}
+                  }
+                });
 
-      this.renderTemplate(
-        {
-          template: 'stanza.html.hbs',
-          parameters: {
-            #{@name}: results.results.bindings
+                this.renderTemplate(
+                  {
+                    template: 'stanza.html.hbs',
+                    parameters: {
+                      #{@name}: results.results.bindings
+                    }
+                  }
+                );
+              } catch (e) {
+                console.error(e);
+              }
+            }
           }
-        }
-      );
-    } catch (e) {
-      console.error(e);
-    }
-  }
-}
-EOS
+        EOS
       end
 
       def before_generate
@@ -205,7 +214,7 @@ EOS
 
       def after_generate
         super
-        STDERR.puts "To view the stanza, run (cd #{stanza_base_dir}; npx togostanza serve) and open http://localhost:8080/"
+        warn "To view the stanza, run (cd #{stanza_base_dir}; npx togostanza serve) and open http://localhost:8080/"
       end
 
       def stanza_base_dir
@@ -259,7 +268,7 @@ EOS
       end
 
       def model
-        @model ||= RDFConfig::Model.new(@config)
+        @model ||= RDFConfig::Model.instance(@config)
       end
 
       def to_kebab_case(str)

@@ -1,34 +1,20 @@
-require 'rdf-config/model/triple'
-require 'rdf-config/model/validator'
+require_relative 'model/graph'
+require_relative 'model/triple'
+require_relative 'model/subject'
+require_relative 'model/predicate'
+require_relative 'model/object'
+require_relative 'model/validator'
 
 class RDFConfig
   class Model
     include Enumerable
 
-    @@validate_done = {}
-    @@output_warning = {}
-    @@instance = {}
+    @instance = {}.compare_by_identity
 
     class << self
       def instance(config)
-        @@instance[config.object_id] = Model.new(config) unless @@instance.key?(config.object_id)
-
-        @@instance[config.object_id]
+        @instance[config] ||= Model.new(config)
       end
-    end
-
-    def initialize(config)
-      @config = config
-      @warnings = []
-
-      @graph = Graph.new(@config)
-      @graph.generate
-      generate_triples
-
-      return if @@validate_done[@config.name]
-
-      validate
-      @@validate_done[@config.name] = true
     end
 
     def each(&block)
@@ -131,6 +117,10 @@ class RDFConfig
       end
     end
 
+    def triples_by_subject_name(subject_name)
+      @triples.select { |triple| triple.subject.name == subject_name }
+    end
+
     def triples_by_object_name(object_name, start_subject = nil)
       triples = []
 
@@ -210,12 +200,51 @@ class RDFConfig
       property_path_map.select { |obj_name, prop_path| prop_path == property_path(object_name) }.size > 1
     end
 
+    def subjects_as_object
+      triples = @triples.select { |triple| triple.object.is_a?(Model::Subject) || triple.object.is_a?(Model::ValueList) }
+      triples.map do |triple|
+        case triple.object
+        when Model::Subject
+          triple.object
+        when Model::ValueList
+          triple.object.value.select { |object| object.is_a?(Model::Subject) }
+        else
+          []
+        end
+      end.flatten
+    end
+
+    def subjects_not_object
+      subjects.reject { |subject| subjects_as_object.map(&:name).include?(subject.name) }
+    end
+
     def [](idx)
       @triples[idx]
     end
 
     def size
       @size ||= @triples.size
+    end
+
+    def print_warnings
+      return if @warnings.empty?
+
+      warn ''
+      warn @warnings.map { |msg| "WARNING: #{msg}" }.join("\n")
+    end
+
+    private
+
+    def initialize(config)
+      @config = config
+
+      @warnings = []
+
+      @graph = Graph.new(@config)
+      @graph.generate
+      generate_triples
+
+      validate
     end
 
     def validate
@@ -225,25 +254,14 @@ class RDFConfig
       errors = @graph.errors + validator.errors
       @warnings = @graph.warnings + validator.warnings
 
-      unless errors.empty?
-        error_msg = %(ERROR: Invalid configuration. Please check the setting in model.yaml file.\n#{errors.map { |msg|
-                                                                                                      "  #{msg}"
-                                                                                                    }.join("\n")})
-        raise Config::InvalidConfig, error_msg
-      end
+      return if errors.empty?
 
-      return if @warnings.empty? || @@output_warning[@config.name]
+      error_messages = errors.map { |msg| "  #{msg}" }.unshift(
+        'ERROR: Invalid configuration. Please check the setting in model.yaml file.'
+      )
+
+      raise Config::InvalidConfig, error_messages.join("\n")
     end
-
-    def print_warnings
-      return if @warnings.empty?
-
-      warn ''
-      warn @warnings.map { |msg| "WARNING: #{msg}" }.join("\n")
-      @@output_warning[@config.name] = true
-    end
-
-    private
 
     def generate_triples
       @triples = []
