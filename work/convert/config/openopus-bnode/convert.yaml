@@ -6,10 +6,9 @@ epoch: json("composers.epoch")
 birth: json("composers.birth")
 death: json("composers.death")
 
-Work:
-  - json("composers.works.id")
-  # - json("composers.works.title")
-  - prepend("http://hoge.org/openopus/work/")
+# Work:
+#   - json("composers.works.id")
+#   - prepend("http://hoge.org/openopus/work/")
 title: json("composers.works.title")
 subtitle: json("composers.works.subtitle")
 genre: json("composers.works.genre")

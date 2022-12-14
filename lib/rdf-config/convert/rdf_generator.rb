@@ -74,7 +74,7 @@ class RDFConfig
                      [converted_value[object_name]]
                    end
 
-          values.each do |value|
+          values.each_with_index do |value, i|
             next if value.to_s.empty?
 
             triple = @model.find_by_object_name(object_name)
@@ -90,16 +90,21 @@ class RDFConfig
 
             case triple.object
             when Model::Literal
-              object_node = literal_node(value, triple.object)
+              object_node = literal_node(values[i], triple.object)
             when Model::URI
-              object_node = uri_node(value)
+              object_node = uri_node(values[i])
             when Model::ValueList
-              object_node = uri_node(value)
+              object_node = uri_node(values[i])
             end
 
-            @subject_node_map[subject_name].each do |subject_node|
-              writer << RDF::Statement.new(subject_node, predicate_node, object_node)
-            end
+            # @subject_node_map[subject_name].each do |subject_node|
+            #   writer << RDF::Statement.new(subject_node, predicate_node, object_node)
+            # end
+            writer << RDF::Statement.new(
+              @subject_node_map[subject_name][i],
+              predicate_node,
+              object_node
+            )
           end
         end
       end
