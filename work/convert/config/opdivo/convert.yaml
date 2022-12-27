@@ -1,0 +1,12 @@
+# PackageInsert:
+#   - xml("/PackIns/PackageInsertNo/text()")
+#   - prepend("http://med2rdf.org/pi/")
+
+# company_identifier: xml("/PackIns/CompanyIdentifier/text()")
+# sccj_no: xml("/PackIns/Sccj/SccjNo/text()")
+
+Item:
+  - xml("/PackIns/AdverseEvents/SeriousAdverseEvents/SeriousAdverse/OrderedList/Item/@id")
+  - prepend("http://med2rdf.org/pi/")
+description: xml("/PackIns/AdverseEvents/SeriousAdverseEvents/SeriousAdverse/OrderedList/Item/Detail/Lang/text()")
+title: xml("/PackIns/AdverseEvents/SeriousAdverseEvents/SeriousAdverse/OrderedList/Item/Header/Lang/text()")

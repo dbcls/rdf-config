@@ -1,0 +1,17 @@
+Composer:
+  - xml("/openopus/composer/name/text()")
+  - prepend("http://hoge.org/openopus/composer/")
+complete_name: xml("/openopus/composer/complete_name/text()")
+epoch: xml("/openopus/composer/epoch/text()")
+birth: xml("/openopus/composer/birth/text()")
+death: xml("/openopus/composer/death/text()")
+
+Work:
+  - xml("/openopus/composer/work/@id")
+  - prepend("http://hoge.org/openopus/work/")
+title: xml("/openopus/composer/work/title/text()")
+subtitle: xml("/openopus/composer/work/subtitle/text()")
+genre: xml("/openopus/composer/work/genre/text()")
+recommended:
+  - xml("/openopus/composer/work/recommended/text()")
+  - to_bool

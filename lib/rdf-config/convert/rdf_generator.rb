@@ -1,111 +1,135 @@
+# frozen_string_literal: true
 require 'rdf/turtle'
 
 class RDFConfig
   class Convert
     class RDFGenerator
-      def initialize(converter, rows, model, prefixes)
+      def initialize(config, reader, converter)
+        @config = config
+        @reader = reader
         @converter = converter
-        @rows = rows
-        @model = model
-        @prefixes = prefixes.transform_values { |uri| RDF::URI.new(uri[1..-2]) }
+
+        @model = Model.instance(@config)
+        @prefixes = @config.prefix.transform_values { |uri| RDF::URI.new(uri[1..-2]) }
         @prefixes[:xsd] = RDF::URI.new('http://www.w3.org/2001/XMLSchema#')
 
-        @subject_node_map = {}
+        @statements = []
+        @subject_node = {}
       end
 
       def generate
-        RDF::Writer.for(:turtle).new(prefixes: @prefixes, canonicalize: true) do |writer|
-          @rows.each do |row|
-            generate_rdf_by_row(writer, row)
-          end
-        end
+        generate_statements
+        output_rdf
       end
 
-      def generate_rdf_by_row(writer, row)
-        @subject_node_map = {}
+      def generate_statements
+        @converter.root_paths.each do |path|
+          @reader.each_row(path) do |row|
+            parent_subject_node = generate_statements_by_row(row, nil, *@converter.path_variable_map[path])
+            next unless @converter.path_relation.key?(path)
 
-        converted_value = @converter.convert_row(row)
-        generate_rdf_by_subject_names(writer, converted_value)
-        generate_subj_pred_subj_rdf(writer)
-        generate_rdf_by_object_names(writer, converted_value)
-      end
-
-      def generate_rdf_by_subject_names(writer, converted_value)
-        subject_names(converted_value).each do |subject_name|
-          values = converted_value[subject_name]
-          next if values.empty?
-
-          @subject_node_map[subject_name] = [] unless @subject_node_map.key?(subject_name)
-
-          values = [values] unless values.is_a?(Array)
-          values.each do |subject_value|
-            node = uri_node(subject_value)
-            @subject_node_map[subject_name] << node
-            @model.find_subject(subject_name).types.each do |rdf_type|
-              writer << RDF::Statement.new(node, RDF.type, uri_node(rdf_type))
-            end
-          end
-        end
-      end
-
-      def generate_subj_pred_subj_rdf(writer)
-        @subject_node_map.each do |subject_name, subject_nodes|
-          subject_nodes.each do |as_object_node|
-            @model.find_all_by_object_name(subject_name).each do |triple|
-              next unless @subject_node_map.key?(triple.subject.name)
-
-              @subject_node_map[triple.subject.name].each do |subject_node|
-                writer << RDF::Statement.new(
-                  subject_node, uri_node(triple.predicate.uri), as_object_node
-                )
+            @converter.path_relation[path].each do |child_path|
+              @reader.each_row(relative_path(path, child_path)) do |child_row|
+                generate_statements_by_row(child_row, parent_subject_node, *@converter.path_variable_map[child_path])
               end
             end
           end
         end
       end
 
-      def generate_rdf_by_object_names(writer, converted_value)
-        object_names(converted_value).each do |object_name|
-          next unless converted_value.key?(object_name)
-
-          values = if converted_value[object_name].is_a?(Array)
-                     converted_value[object_name]
-                   else
-                     [converted_value[object_name]]
-                   end
-
-          values.each_with_index do |value, i|
-            next if value.to_s.empty?
-
-            triple = @model.find_by_object_name(object_name)
-            next if triple.nil? || triple.object.is_a?(Model::Subject)
-
-            subject_name = triple.subject.name
-            next unless converted_value.key?(subject_name)
-
-            predicate_uri = triple.predicate.uri
-            prefix, local_part = predicate_uri.split(':', 2)
-            predicate_uri = "#{@prefixes[prefix].to_s}#{local_part}" if @prefixes.key?(prefix)
-            predicate_node = RDF::URI.new(predicate_uri)
-
-            case triple.object
-            when Model::Literal
-              object_node = literal_node(values[i], triple.object)
-            when Model::URI
-              object_node = uri_node(values[i])
-            when Model::ValueList
-              object_node = uri_node(values[i])
-            end
-
-            # @subject_node_map[subject_name].each do |subject_node|
-            #   writer << RDF::Statement.new(subject_node, predicate_node, object_node)
-            # end
-            writer << RDF::Statement.new(
-              @subject_node_map[subject_name][i],
-              predicate_node,
-              object_node
-            )
+      def output_rdf
+        RDF::Writer.for(:turtle).new(prefixes: @prefixes, canonicalize: true) do |writer|
+          @statements.each do |statement|
+            writer << statement
           end
+        end
+      end
+
+      private
+
+      def generate_statements_by_row(row, parent, *variable_names)
+        subject_name, subject = subject_node(row, *variable_names)
+
+        variable_names.each do |variable_name|
+          next if variable_name == subject_name
+
+          triple = @model.find_by_object_name(variable_name)
+          if triple.subject.name != subject_name && triple.predicates.size == 1
+            subject = subject_node_by_subject_name(row, triple.subject.name)
+            parent = nil
+          end
+
+          @converter.clear_value
+          converted_value = @converter.convert_value(row, variable_name)
+          triple = @model.find_by_object_name(variable_name)
+          object_node = object_node_by_triple(triple, converted_value)
+          next if object_node.nil?
+          
+          @statements << RDF::Statement.new(
+            subject,
+            predicate_node(triple.predicates.last.uri),
+            object_node_by_triple(triple, converted_value)
+          )
+        end
+
+        if parent
+          triple = @model.find_by_object_name(subject_name || variable_names.first)
+          @statements << RDF::Statement.new(
+            parent,
+            predicate_node(triple.predicates.last.uri),
+            subject
+          )
+        end
+
+        subject
+      end
+
+      def subject_node(row, *variable_names)
+        @converter.clear_value
+
+        subject_name = variable_names.select { |name| @model.subject?(name) }.first
+        if subject_name
+          subject = subject_node_by_subject_name(row, subject_name)
+          @subject_node[subject_name] = subject
+          [subject_name, subject]
+        else
+          [nil, RDF::Node.new]
+        end
+      end
+
+      def subject_node_by_subject_name(row, subject_name)
+        # return @subject_node[subject_name] if @subject_node.key?(subject_name)
+
+        converted_value = @converter.convert_value(row, subject_name)
+        subject = uri_node(converted_value)
+        # @subject_node[subject_name] = subject
+
+        @model.find_subject(subject_name).types.each do |rdf_type|
+          @statements << RDF::Statement.new(subject, RDF.type, uri_node(rdf_type))
+        end
+
+        subject
+      end
+
+      def predicate_node(predicate_uri)
+        prefix, local_part = predicate_uri.split(':', 2)
+        predicate_uri = "#{@prefixes[prefix].to_s}#{local_part}" if @prefixes.key?(prefix)
+
+        RDF::URI.new(predicate_uri)
+      end
+
+      def object_node_by_triple(triple, object_value)
+        return nil if object_value.to_s.empty?
+        
+        case triple.object
+        when Model::Literal
+          literal_node(object_value, triple.object)
+        when Model::URI
+          uri_node(object_value)
+        when Model::ValueList
+          uri_node(object_value)
+        else
+          nil
         end
       end
 
@@ -134,12 +158,16 @@ class RDFConfig
         end
       end
 
-      def subject_names(converted_value)
-        converted_value.keys.select { |variable_name| @model.subject?(variable_name) }
+      def relative_path(parent_path, child_path)
+        child_path[(parent_path.length + 1)..]
       end
 
-      def object_names(converted_value)
-        converted_value.keys.reject { |variable_name| @model.subject?(variable_name) }
+      def subject_names
+        @converter.variable_names.select { |variable_name| @model.subject?(variable_name) }
+      end
+
+      def object_names
+        @converter.variable_names.reject { |variable_name| @model.subject?(variable_name) }
       end
     end
   end
