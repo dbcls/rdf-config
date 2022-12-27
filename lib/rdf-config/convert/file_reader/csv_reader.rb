@@ -2,7 +2,7 @@ require 'csv'
 
 class RDFConfig
   class Convert
-    class CsvReader
+    class CSVReader
       def initialize(source_file, file_format)
         @source_file = source_file
         case file_format
@@ -15,15 +15,10 @@ class RDFConfig
         @line_no = 1
       end
 
-      def read
-        rows = []
+      def each_row(&block)
         CSV.foreach(@source_file, col_sep: @col_sep, headers: :first_row) do |row|
-          rows << row
-          @line_no += 1
-          break if @line_no > 10
+          block.call(row)
         end
-
-        rows
       end
     end
   end

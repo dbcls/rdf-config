@@ -1,0 +1,9 @@
+Book:
+  - xml("/catalog/book/@id")
+  - prepend("http://example.org/")
+id: xml("/catalog/book/@id")
+title: xml("/catalog/book/title/text()")
+genre: xml("/catalog/book/genre/text()")
+price: xml("/catalog/book/price/text()")
+publish_date: xml("/catalog/book/publish_date/text()")
+description: xml("/catalog/book/description/text()")

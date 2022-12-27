@@ -1,21 +1,37 @@
-require 'csv'
+require 'json'
 
 class RDFConfig
   class Convert
     class JSONReader
       def initialize(source_file)
         @source_file = source_file
-        @data = JSON.parse(File.read(@source_file))
+        @json_hash = JSON.parse(File.read(@source_file))
+
+        @rows_stack = []
+        @row = nil
       end
 
-      def read(key)
-        keys = key.split(/\s*\.\s*/)
-        if keys.size == 1
-          @data[key]
+      def each_row(path, &block)
+        if @rows_stack.empty?
+          @rows_stack.push(@json_hash[path])
         else
-          key_path = keys.map { |k| "['#{k}']" }
-          eval "@data#{key_path[0..-2].join}"
+          @rows_stack.push(@row[path])
         end
+
+        block.call(fetch_row) until rows.empty?
+        delete_rows
+      end
+
+      def rows
+        @rows_stack.last
+      end
+
+      def fetch_row
+        @row = rows.shift
+      end
+
+      def delete_rows
+        @rows_stack.pop
       end
     end
   end

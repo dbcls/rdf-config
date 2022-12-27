@@ -1,6 +1,4 @@
 require_relative 'convert/method_parser'
-require_relative 'convert/converter'
-require_relative 'convert/json_converter'
 require_relative 'convert/rdf_generator'
 
 class RDFConfig
@@ -13,14 +11,10 @@ class RDFConfig
 
       @source_file_format = nil
       @convert_method = {}
-      @rows = []
-
-      @json_paths = []
     end
 
     def generate
       parse_convert_config
-      read_source_file
       generate_rdf
     end
 
@@ -37,40 +31,43 @@ class RDFConfig
             @source_file_format = method[:method_name_]
           end
           @convert_method[variable_name] << method
-
-          if method[:method_name_] == 'json'
-            @json_paths << method[:args_][:arg_].to_str[1..-2].split(/\s*\.\s*/)[0..-2].join('.')
-          end
         end
-      end
-
-      @json_paths.uniq!
-    end
-
-    def read_source_file(**opts)
-      case @source_file_format
-      when 'csv', 'tsv'
-        require_relative 'convert/file_reader/csv_reader'
-        @rows = CsvReader.new(@source, @source_file_format).read
-      when 'json'
-        require_relative 'convert/file_reader/json_reader'
-        reader = JSONReader.new(@source)
-        @rows = reader.read(@json_paths.first)
-      when 'xml'
       end
     end
 
     def generate_rdf
-      converter = case @source_file_format
-                  when 'json'
-                    JSONConverter.new(@convert_method)
-                  else
-                    Converter.new(@convert_method)
-                  end
-      generator = RDFGenerator.new(
-        converter, @rows, Model.instance(@config), @config.prefix
-      )
-      generator.generate
+      rdf_generator.generate
+    end
+
+    def file_reader
+      case @source_file_format
+      when 'csv', 'tsv'
+        require_relative 'convert/file_reader/csv_reader'
+        CSVReader.new(@source, @source_file_format)
+      when 'json'
+        require_relative 'convert/file_reader/json_reader'
+        JSONReader.new(@source)
+      when 'xml'
+        require_relative 'convert/file_reader/xml_reader'
+        XMLReader.new(@source)
+      end
+    end
+
+    def rdf_generator
+      case @source_file_format
+      when 'csv', 'tsv'
+        require_relative 'convert/converter/csv_converter'
+        require_relative 'convert/rdf_generator/csv2rdf'
+        CSV2RDF.new(@config, file_reader, CSVConverter.new(@convert_method))
+      when 'json'
+        require_relative 'convert/converter/json_converter'
+        require_relative 'convert/rdf_generator/json2rdf'
+        JSON2RDF.new(@config, file_reader, JSONConverter.new(@convert_method))
+      when 'xml'
+        require_relative 'convert/converter/xml_converter'
+        require_relative 'convert/rdf_generator/xml2rdf'
+        XML2RDF.new(@config, file_reader, XMLConverter.new(@convert_method))
+      end
     end
   end
 end
