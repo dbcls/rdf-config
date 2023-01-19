@@ -10,6 +10,8 @@ class RDFConfig
 
         @subject = opts[:subject]
         @subject = @model.subjects.first unless @subject.is_a?(Model::Subject)
+
+        @add_namespace = opts[:add_namespace]
       end
     end
   end

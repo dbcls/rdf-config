@@ -10,7 +10,9 @@ class RDFConfig
 
       DEFAULT_TYPE_NAME = 'Query'.freeze
 
-      def initialize
+      def initialize(opts = {})
+        @add_namespace = opts[:add_namespace]
+
         @query_lines = []
       end
 
@@ -33,7 +35,7 @@ class RDFConfig
       end
 
       def add(config, subject)
-        type = subject_type_name(config, subject)
+        type = subject_type_name(config, subject, add_namespace: @add_namespace)
         @query_lines << "#{INDENT}#{type}(#{IRI_ARG_NAME}: String): #{type}"
       end
 
