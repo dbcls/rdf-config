@@ -272,7 +272,7 @@ class RDFConfig
         return [] if triples.empty?
 
         triples.each do |triple|
-          lines << triple.to_sparql(indent:,
+          lines << triple.to_sparql(indent: indent,
                                     is_first_triple: triple.object == triples.first.object,
                                     is_last_triple: triple.object == triples.last.object,
                                     variable_name_prefix: join? ? "#{config_name}__" : '')
@@ -306,7 +306,7 @@ class RDFConfig
             lines << triple.to_sparql(indent: @indent_text,
                                       is_first_triple: triple.object == triples.first.object,
                                       is_last_triple: triple.object == triples.last.object,
-                                      left_indent:,
+                                      left_indent: left_indent,
                                       variable_name_prefix: join? ? "#{config_name}__" : '')
           end
         end

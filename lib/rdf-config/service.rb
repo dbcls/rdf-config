@@ -5,17 +5,17 @@ class RDFConfig
   class Service
     class VersionNotSupported < StandardError; end
 
-    LEAST_SUPPORT_VERSION = '2.5'.freeze
+    TRANSFORM_KEYS_SUPPORT_VERSION = '2.5'.freeze
 
     def initialize(config, opts)
-      # TODO: Hash#transform_keys is supported from version 2.5
-      if Gem::Version.create(RUBY_VERSION) < Gem::Version.create(LEAST_SUPPORT_VERSION)
-        raise VersionNotSupported, "This program supported over Ruby version #{LEAST_SUPPORT_VERSION}"
-      end
-
       @config = config
       @model = Model.instance(config)
-      @opts = opts.transform_keys(&:to_sym)
+
+      if Gem::Version.create(RUBY_VERSION) < Gem::Version.create(TRANSFORM_KEYS_SUPPORT_VERSION)
+        @opts = opts.map { |k,v| [k.to_sym, v] }.to_h
+      else
+        @opts = opts.transform_keys(&:to_sym)
+      end
     end
 
     def [](opts_key)
