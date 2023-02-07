@@ -54,8 +54,8 @@ class RDFConfig
 
       def data_type_desc(triple)
         desc = data_type_by_triple(triple)
-        desc = "[#{desc}]" if triple.predicate.plural?
         desc = "#{desc}!" if triple.predicate.required?
+        desc = "[#{desc}]" unless triple.predicates.select(&:plural?).empty?
 
         desc
       end
