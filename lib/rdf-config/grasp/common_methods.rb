@@ -4,6 +4,7 @@ class RDFConfig
   class Grasp
     module CommonMethods
       IRI_ARG_NAME = 'iri'.freeze
+      ID_ARG_NAME = 'id'.freeze
 
       def triples
         @model.triples_by_subject_name(@subject.name).reject { |triple| triple.predicate.rdf_type? }
