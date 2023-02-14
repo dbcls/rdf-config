@@ -23,6 +23,7 @@ class RDFConfig
         last_line = lines.pop
         lines << ''
         lines << iri_values_line
+        lines << id_values_line
         lines << last_line
 
         lines
@@ -30,6 +31,10 @@ class RDFConfig
 
       def iri_values_line
         %(#{INDENT}{{#if #{IRI_ARG_NAME}}}VALUES ?#{@subject.name} { {{join " " (as-iriref #{IRI_ARG_NAME})}} }{{/if}})
+      end
+
+      def id_values_line
+        %(#{INDENT}{{#if #{ID_ARG_NAME}}}VALUES ?#{ID_ARG_NAME} { {{join " " (as-string #{ID_ARG_NAME})}} }{{/if}})
       end
     end
   end

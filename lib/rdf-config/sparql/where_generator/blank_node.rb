@@ -15,7 +15,7 @@ class RDFConfig
           "_b#{@bnode_id}"
         end
 
-        def to_sparql
+        def to_sparql(**opts)
           "_:b#{@bnode_id}"
         end
 

@@ -41,7 +41,7 @@ class RDFConfig
         when Model::Subject
           @subjects.push(subject)
           lines << if depth == 1
-                     %!#{indent}#{subject_type_name(@config, subject)}(#{IRI_ARG_NAME}: "#{subject_value(subject)}") {!
+                     %!#{indent}#{subject_type_name(@config, subject, add_namespace: @add_namespace)}(#{IRI_ARG_NAME}: "#{subject_value(subject)}") {!
                    else
                      "#{indent}#{subject.as_object_name} {"
                    end

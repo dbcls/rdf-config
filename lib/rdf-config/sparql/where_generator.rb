@@ -266,16 +266,55 @@ class RDFConfig
       end
 
       def lines_by_subject(subject)
-        lines = []
+        return [] if subject.is_a?(RDFConfig::SPARQL::WhereGenerator::BlankNode)
 
         triples = @required_triples.select { |triple| triple.subject == subject }
         return [] if triples.empty?
 
-        triples.each do |triple|
-          lines << triple.to_sparql(indent: indent,
+        lines = lines_by_triples(triples)
+        if lines.size.positive? && lines.last[-1] == ';'
+          line = lines.pop
+          lines << line.gsub(/;\z/, '.')
+        end
+
+        lines
+      end
+
+      def lines_by_triples(triples, depth_indent = 0)
+        lines = []
+        return lines if triples.size.zero?
+
+        if triples.first.subject.is_a?(RDFConfig::SPARQL::WhereGenerator::BlankNode)
+          triples.each do |triple|
+            line = triple.to_sparql(indent: indent,
+                                    is_first_triple: false,
+                                    is_last_triple: false,
+                                    variable_name_prefix: join? ? "#{config_name}__" : '')
+            if line =~ /(_:b\d+)/
+              subject_name = $1
+              lines << "#{indent(depth_indent)}#{line.gsub(/_:b\d+.*/, '[')}"
+              object_triples = @required_triples.select { |t| t.subject.to_sparql == subject_name }
+              lines += lines_by_triples(object_triples, depth_indent + 1)
+            else
+              lines << "#{indent(depth_indent)}#{line}"
+            end
+          end
+          lines << "#{indent(depth_indent + 1)}] ;"
+        else
+          triples.each do |triple|
+            line = triple.to_sparql(indent: indent,
                                     is_first_triple: triple.object == triples.first.object,
                                     is_last_triple: triple.object == triples.last.object,
                                     variable_name_prefix: join? ? "#{config_name}__" : '')
+            if line =~ /(_:b\d+)/
+              subject_name = $1
+              lines << line.gsub(/_:b\d+.*/, '[')
+              object_triples = @required_triples.select { |t| t.subject.to_sparql == subject_name }
+              lines += lines_by_triples(object_triples, depth_indent)
+            else
+              lines << line
+            end
+          end
         end
 
         lines

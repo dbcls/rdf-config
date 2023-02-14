@@ -54,12 +54,14 @@ class RDFConfig
         desc
       end
 
-      # TODO: config -> config_name, subject -> subject_nameにする？
-      def subject_type_name(config, subject)
-        "#{to_camel_case(config.name)}#{subject.name}"
+      def subject_type_name(config, subject, add_namespace: false)
+        if add_namespace
+          "#{to_camel_case(config.name)}#{subject.name}"
+        else
+          subject.name
+        end
       end
 
-      # TODO: config -> config_name, object -> object_nameにする？
       def union_type_name(config, object)
         "#{to_camel_case(config.name)}#{object.name.capitalize}"
       end

@@ -9,8 +9,14 @@ class RDFConfig
       include DataType
 
       DEFAULT_TYPE_NAME = 'Query'.freeze
+      QUERY_ARGS = [
+        { name: IRI_ARG_NAME, type: '[String]' },
+        { name: ID_ARG_NAME, type: '[String]'}
+      ]
 
-      def initialize
+      def initialize(opts = {})
+        @add_namespace = opts[:add_namespace]
+
         @query_lines = []
       end
 
@@ -33,11 +39,15 @@ class RDFConfig
       end
 
       def add(config, subject)
-        type = subject_type_name(config, subject)
-        @query_lines << "#{INDENT}#{type}(#{IRI_ARG_NAME}: String): #{type}"
+        type = subject_type_name(config, subject, add_namespace: @add_namespace)
+        @query_lines << "#{INDENT}#{type}(#{arg_string}): [#{type}]!"
       end
 
       private
+
+      def arg_string
+        QUERY_ARGS.map { |arg| "#{arg[:name]}: #{arg[:type] } "}.join(', ')
+      end
 
       def type_name
         DEFAULT_TYPE_NAME

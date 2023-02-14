@@ -13,7 +13,7 @@ class RDFConfig
             opts.key?(:sparql_variable_name) ? opts[:sparql_variable_name] : "?#{@variable_name_prefix}#{name}"
         end
 
-        def to_sparql
+        def to_sparql(**opts)
           case name
           when Array
             name.to_s

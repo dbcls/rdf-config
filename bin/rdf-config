@@ -27,6 +27,7 @@ args = GetoptLong.new(
   ['--join',            GetoptLong::OPTIONAL_ARGUMENT],
   ['--sparqlist',       GetoptLong::OPTIONAL_ARGUMENT],
   ['--grasp',           GetoptLong::OPTIONAL_ARGUMENT],
+  ['--grasp-ns',        GetoptLong::OPTIONAL_ARGUMENT],
   ['--stanza',          GetoptLong::OPTIONAL_ARGUMENT],
   ['--stanza_rb',       GetoptLong::OPTIONAL_ARGUMENT],
   ['--shex',            GetoptLong::OPTIONAL_ARGUMENT],
@@ -83,9 +84,14 @@ opt_values.each do |opt_name, values|
   when /--join/
     opts[:mode] = :sparql
     opts[:join] = value
-  when /--grasp/
+  when '--grasp'
     opts[:mode] = :grasp
     opts[:output_dir] = value
+    opts[:add_namespace] = false
+  when '--grasp-ns'
+    opts[:mode] = :grasp
+    opts[:output_dir] = value
+    opts[:add_namespace] = true
   when /--stanza_rb/
     opts[:mode] = :stanza_rb
     opts[:stanza_name] = value
@@ -128,7 +134,8 @@ SYNOPSIS
 
     rdf-config --config path/to/config/name --schema
     rdf-config --config path/to/config/name --senbero
-    rdf-config --config path/to/config/name --grasp
+    rdf-config --config path/to/config/name --grasp      [output_directory]
+    rdf-config --config path/to/config/name --grasp-ns   [output_directory]
     rdf-config --config path/to/config/name --stanza     [stanzaname]
     rdf-config --config path/to/config/name --shex
     rdf-config --help
