@@ -18,7 +18,7 @@ class RDFConfig
           %w[a rdf:type].include?(@predicate)
         end
 
-        def to_sparql(opts = {})
+        def to_sparql(**opts)
           indent = opts.key?(:indent) ? opts[:indent] : ''
           is_first_triple = opts.key?(:is_first_triple) ? opts[:is_first_triple] : true
           is_last_triple = opts.key?(:is_last_triple) ? opts[:is_last_triple] : true
@@ -35,7 +35,7 @@ class RDFConfig
                      "#{line}a #{object.rdf_type_varname}"
                    end
                  else
-                   "#{line}#{predicate} #{object.to_sparql}"
+                   "#{line}#{predicate} #{object.to_sparql(**opts)}"
                  end
 
           "#{line} #{is_last_triple ? '.' : ';'}"
