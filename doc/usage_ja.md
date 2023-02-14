@@ -6,20 +6,23 @@
 % rdf-config --config 設定ファイルのディレクトリ 実行オプション
 ```
 
---configオプションには、設定ファイルが保存されているディレクトリを指定する
+`--config`オプションには、設定ファイルが保存されているディレクトリを指定する。
+
+`--grasp`オプションを使う場合は複数ディレクトリを列挙できる。
 
 ## 実行オプション
 | オプション | 実行される処理 |
 ----|----
-| --sparql \[クエリ名\] | SPARQLクエリを標準出力に出力する。 |
-| --query \[変数名 変数名=値\] | 出力する変数およびVALUESの値のリストを指定してSPARQLクエリを標準出力に出力する。 |
-| --endpoint \[エンドポイント名\] | `--sparql`や`--query`で使用するエンドポイントを指定する。 |
-| --url | `--sparql`や`--query`で生成したSPARQLをURLエンコードして出力する。 |
-| --schema \[スキーマ名:図の種類\] | RDFモデルのスキーマ図をSVG形式で標準出力に出力する。 |
-| --senbero | RDFモデルの構造をテキスト形式で標準出力に出力する。 |
-| --stanza \[Stanza ID\] | JavaScript版のStanzaファイル一式を生成する。<br />Node.jsがインストールされており、<br />npxコマンドのディレクトリがPATH環境変数に設定されている必要がある。 |
-| --grasp | Graspの設定ファイル（GraphQLのスキーマファイルとクエリファイル）を生成する。<br />Graspの設定ファイルは、カレントディレクトリ配下の「grasp/設定ファイルディレクトリ名」というディレクトリに生成される。 |
-| --shex | ShExを標準出力に出力する。 |
+| `--sparql [クエリ名]` | `sparql.yaml`で設定したクエリ名のSPARQLクエリを標準出力に出力する。 |
+| `--query [変数名 変数名=値]` | 出力する変数およびVALUESの値のリストを指定して標準出力にSPARQLクエリを表示する。 |
+| `--endpoint [エンドポイント名]` | `endpoint.yaml`で設定したエンドポイント名を`--sparql`や`--query`に使用する。 |
+| `--url` | `--sparql`や`--query`で生成したSPARQLをURLエンコードして出力する。 |
+| `--schema [スキーマ名:図の種類]` | `model.yaml`で設定したRDFモデルのスキーマ図をSVG形式で標準出力に出力する。<br/>図の種類はデフォルト（指定なし）、`:nest`、`:nest`、`:arc`、`:table`で、<br/>サブセットの図を描きたい場合などは`schema.yaml`で設定したスキーマ名を指定できる。 |
+| `--senbero` | `model.yaml`で設定したRDFモデルの構造を標準出力にテキスト形式で表示する。 |
+| `--stanza [スタンザID]` | `stanza.yaml`で指定したIDのJavaScript版TogoStanzaファイル一式を生成する。<br/>[TogoStanza](https://github.com/togostanza/togostanza)が生成できる環境として、Node.jsがインストールされており、<br/>npxコマンドのディレクトリがPATH環境変数に設定されている必要がある。 |
+| `--grasp [出力ディレクトリ]` | Graspの設定ファイル（GraphQLのスキーマファイルとクエリファイル）を生成する。<br/>Graspの設定ファイルは、`grasp/`以下か、指定した出力ディレクトリに生成される。 |
+| `--grasp-ns [出力ディレクトリ]` | `--grasp`で出力されるGraphQLのtype名は`model.yaml`の主語名となるが、<br/>名前衝突を避けるため`--config`で指定したディレクトリ名を<br/>Capitalizeした文字列を主語のプレフィックスにつける。 |
+| `--shex` | ShExを標準出力に表示する。 |
 
 ### オプションごとの設定名の表示
 
