@@ -9,20 +9,28 @@
     - concept_label: "Calcimycin"
   - meshv:identifier:
     - concept_id: "M0000001"
-  - meshv:registryNumber: # One of FDA, CAS, EC, or 0 (no match)
+  - meshv:registryNumber?: # One of FDA, CAS, EC, or 0 (no match)
     - concept_registry_number: "37H9VM9WZL"
-  - meshv:relatedRegistryNumber:
+  - meshv:relatedRegistryNumber*:
     - concept_related_registry_number: "52665-69-7 (Calcimycin)"
-  - meshv:scopeNote:
+  - meshv:scopeNote?:
     - concept_scope_note: "An ionophorous, polyether antibiotic from Streptomyces chartreusensis..."
-  - meshv:casn1_label:
+  - meshv:casn1_label?:
     - cas_label: "4-Benzoxazolecarboxylic acid, 5-(methylamino)-2-((3,9,11-trimethyl-8-(1-methyl..."
+  - meshv:term*:
+    - concept_term: Term
   - meshv:preferredTerm:
     - concept_preferred_term: Term
-  - meshv:narrowerConcept:
-    - narrower_concept: Concept
+  - meshv:narrowerConcept*:
+    - concept_narrower_concept: Concept
+  - meshv:broaderConcept*:
+    - concept_broader_concept: Concept
+  - meshv:relatedConcept*:
+    - concept_related_concept: Concept
   - meshv:active:
     - concept_active: true
+  - meshv:lastActiveYear?:
+    - concept_last_active_year: "2018"
 
 ## MeSH Terms T####### or T######### (2014.5-)
 # * https://hhs.github.io/meshrdf/terms
@@ -32,6 +40,8 @@
   - a: meshv:Term
   - meshv:prefLabel:
     - term_label: "Calcimycin"
+  - meshv:altLabel*:
+    - term_alt_label: "Calcimycin"
   - meshv:identifier:
     - term_id: "T000002"
   - meshv:thesaurusID*:
@@ -42,6 +52,14 @@
     - term_lexical_tag: "NON"
   - meshv:active:
     - term_active: true
+  - meshv:lastActiveYear?:
+    - term_last_active_year: "2018"
+  - meshv:entryVersion?:
+    - term_entry_version: "RECEPT V1"
+  - meshv:sortVersion?:
+    - term_sort_version: "RECEPTORS V 01"
+  - meshv:abbreviation?:
+    - term_abbreviation: "AB"
 
 # MeSH Descriptors (D###### or D#########)
 # * https://hhs.github.io/meshrdf/descriptors
@@ -49,23 +67,23 @@
 
 - Descriptor mesh:D000785:
   - a: meshv:TopicalDescriptor
-  - rdfs:label:
+  - rdfs:label+:
     - descriptor_label: "Aneurysm, Infected"
   - meshv:identifier:
     - descriptor_id: "D000785"
-  - meshv:annotation:
+  - meshv:annotation?:
     - descriptor_annotation: "coordinate IM with specific bacteria or fungal infection (IM) ..."
-  - meshv:nlmClassificationNumber:
+  - meshv:nlmClassificationNumber?:
     - descriptor_nlm_classification_number: "WG 580"
-  - meshv:concept+:
+  - meshv:concept*:
     - descriptor_concept: Concept
   - meshv:preferredConcept:
     - descriptor_preferred_concept: Concept
   - meshv:preferredTerm:
     - descriptor_preferred_term: Term
-  - meshv:broaderDescriptor:
+  - meshv:broaderDescriptor*:
     - broader_descriptor: Descriptor
-  - meshv:allowableQualifier:
+  - meshv:allowableQualifier*:
     - descriptor_allowable_qualifier: Qualifier
   - meshv:treeNumber+:
     - descriptor_tree_number: TreeNumber
@@ -73,16 +91,26 @@
     - descriptor_date_established: 1970-01-01
   - meshv:dateCreated:
     - descriptor_date_created: 1999-01-01
-  - meshv:dateRevised:
+  - meshv:dateRevised?:
     - descriptor_date_revised: 2019-06-17
-  - meshv:historyNote:
+  - meshv:historyNote?:
     - descriptor_history_note: "87; was ANEURYSM, MYCOTIC 1964-86 (Prov 1964-69)"
-  - meshv:publicMeSHNote:
+  - meshv:publicMeSHNote?:
     - descriptor_public_mesh_note: "87; was ANEURYSM, MYCOTIC 1970-86"
-  - meshv:onlineNote:
+  - meshv:onlineNote?:
     - descriptor_online_note: "use ANEURYSM, INFECTED to search ANEURYSM, MYCOTIC 1966-86 (as Prov 1966-69)"
   - meshv:active:
     - descriptor_active: true
+  - meshv:lastActiveYear?:
+    - descriptor_last_active_year: "2018"
+  - meshv:pharmacologicalAction*:
+    - descriptor_pharmacological_action: Descriptor
+  - meshv:previousIndexing*:
+    - descriptor_previous_indexing: "Nerve Tissue Proteins (1995-2015)"
+  - meshv:considerAlso?:
+    - descriptor_consider_also: "consider also terms at MYEL-"
+  - meshv:seeAlso*:
+    - descriptor_see_also: [ Descriptor, PublicationType ]
 
 - PublicationType mesh:D016430:
   - a: meshv:PublicationType
@@ -90,15 +118,15 @@
     - publication_type_label: "Clinical Trial"
   - meshv:identifier:
     - publication_type_id: "D016430"
-  - meshv:annotation:
+  - meshv:annotation?:
     - publication_type_annotation: "this heading is used as a Publication Type; for original report ..."
   - meshv:preferredConcept:
     - publication_type_preferred_concept: Concept
   - meshv:preferredTerm:
     - publication_type_preferred_term: Term
-  - meshv:broaderDescriptor:
+  - meshv:broaderDescriptor*:
     - publication_type_broader_descriptor: Descriptor
-  - meshv:treeNumber:
+  - meshv:treeNumber+:
     - publication_type_tree_number: TreeNumber
   - meshv:seeAlso*:
     - publication_type_see_also: mesh:D023361
@@ -106,12 +134,18 @@
     - publication_type_date_established: 1996-01-01
   - meshv:dateCreated:
     - publication_type_date_created: 1995-06-23
-  - meshv:dateRevised:
+  - meshv:dateRevised?:
     - publication_type_date_revised: 2019-07-11
-  - meshv:historyNote:
+  - meshv:historyNote?:
     - publication_type_history_note: "2008(1991)"
   - meshv:active:
     - publication_type_active: true
+  - meshv:concept*:
+    - publication_type_concept: Concept
+  - meshv:previousIndexing*:
+    - publication_type_previous_indexing: "Randomized Controlled Trial (2006-2017)"
+  - meshv:nlmClassificationNumber?:
+    - publication_type_nlm_classification_number: "Z 240.4"
 
 - CheckTag mesh:D008297 mesh:D005260:  # Note: only two instances in CheckTag (Male or Female)
   - a: meshv:CheckTag
@@ -129,7 +163,7 @@
     - check_tag_date_established: 1966-01-01
   - meshv:dateCreated:
     - check_tag_date_created: 1999-01-01
-  - meshv:dateRevised:
+  - meshv:dateRevised?:
     - check_tag_date_revised: 2018-07-09
   - meshv:historyNote:
     - check_tag_history_note: "1966"
@@ -142,28 +176,34 @@
     - geographic_label: "Asia"
   - meshv:identifier:
     - geographic_id: "D001208"
-  - meshv:annotation:
+  - meshv:annotation?:
     - geographic_annotation: "several geog subdivisions & all Asiatic countries are available as headings"
-  - meshv:concept:
+  - meshv:concept*:
     - geographic_concept: Concept
   - meshv:preferredConcept:
     - geographic_preferred_concept: Concept
   - meshv:preferredTerm:
     - geographic_preferred_term: Term
-  - meshv:broaderDescriptor:
+  - meshv:broaderDescriptor*:
     - geographic_broader_desciptor: Descriptor
-  - meshv:allowableQualifier:
+  - meshv:allowableQualifier*:
     - geographic_allowable_qualifier: Qualifier
-  - meshv:treeNumber:
+  - meshv:treeNumber+:
     - geographic_tree_number: TreeNumber
   - meshv:dateEstablished:
     - geographic_date_established: 1966-01-01
   - meshv:dateCreated:
     - geographic_date_created: 1999-01-01
-  - meshv:dateRevised:
+  - meshv:dateRevised?:
     - geographic_date_revised: 1996-06-10
   - meshv:active:
     - geographic_active: true
+  - meshv:historyNote?:
+    - geographical_descriptor_history_note: "95; was see CHINA 1975-94"
+  - meshv:onlineNote?:
+    - geographical_descriptor_online_note: "use CHINA to search TIBET 1975-94"
+  - meshv:previousIndexing*:
+    - geographical_descriptor_previous_indexing: "China (1970-1994)"
 
 ## MeSH Qualifiers (Q###### or Q#########)
 # * https://hhs.github.io/meshrdf/qualifiers
@@ -177,28 +217,30 @@
     - qualifier_id: "Q000633"
   - meshv:annotation:
     - qualifier_annotation: "subheading only; for experimental human & animal studies; includes margin of safety ..."
-  - meshv:concept:
+  - meshv:concept*:
     - qualifier_concept: Concept
   - meshv:preferredConcept:
     - qualifier_preferred_concept: Concept
   - meshv:preferredTerm:
     - qualifier_preferred_term: Term
-  - meshv:broaderQualifier:
+  - meshv:broaderQualifier*:
     - qualifier_broader_qualifier: Qualifier
-  - meshv:treeNumber:
+  - meshv:treeNumber+:
     - qualifier_tree_number: TreeNumber
   - meshv:dateEstablished:
     - qualifier_date_established: 1966-01-01
   - meshv:dateCreated:
     - qualifier_date_created: 1973-12-27
-  - meshv:dateRevised:
+  - meshv:dateRevised?:
     - qualifier_date_revised: 2017-07-05
-  - meshv:historyNote:
+  - meshv:historyNote?:
     - qualifier_history_note: "66; used with Category D 1966-67; D & J 1968 forward"
-  - meshv:onlineNote:
+  - meshv:onlineNote?:
     - qualifier_online_note: "search policy: Online Manual; use: main heading/TO or TO (SH) or SUBS APPLY TO"
   - meshv:active:
     - qualifier_active: true
+  - meshv:lastActiveYear?:
+    - qualifier_last_active_year: "2018"
 
 ## MeSH Tree Numbers ([A-Z]##.###.###..)
 # * https://hhs.github.io/meshrdf/tree-numbers
@@ -225,10 +267,12 @@
   - a: meshv:TreeNumber
   - rdfs:label:
     - tree_number_label: '"C01.069"@en'
-  - meshv:parentTreeNumber:
+  - meshv:parentTreeNumber?:
     - parent_tree_number: TreeNumber
   - meshv:active:
     - tree_number_active: true
+  - meshv:lastActiveYear?:
+    - tree_number_last_active_year: "2018"
 
 ## Supplementary Concept Record (C###### or C#########)
 # * https://hhs.github.io/meshrdf/scrs
@@ -240,26 +284,36 @@
     - chemical_label: '"bevonium"@en'
   - meshv:identifier:
     - chemical_id: "C000002"
-  - meshv:frequency:
+  - meshv:frequency?:
     - chemical_frequency: 1
-  - meshv:note:
+  - meshv:note?:
     - chemical_note: '"structure given in first source"@en'
-  - meshv:previousIndexing:
+  - meshv:previousIndexing*:
     - chemical_previous_indexing: '"PIPERIDINES (71-81)"@en'
-  - meshv:source:
+  - meshv:source*:
     - chemical_source: '"S Afr Med J 50(1):4;1976"@en'
-  - meshv:concept:
+  - meshv:concept*:
     - concept: Concept
-  - meshv:preferredConcept: 
+  - meshv:preferredConcept:
     - chemical_preferred_concept: Concept
   - meshv:preferredTerm:
-    - chemical_preferred_term: Term 
-  - meshv:pharmacologicalAction:
+    - chemical_preferred_term: Term
+  - meshv:pharmacologicalAction*:
     - chemical_descriptor: Descriptor
-  - meshv:preferredMappedTo:
+  - meshv:preferredMappedTo*:
     - chemical_preferred_mapped_to: [ Descriptor, AllowedDescriptorQualifierPair ]
   - meshv:active:
     - chemical_active: true
+  - meshv:dateCreated:
+    - chemical_date_created: 1972-01-01
+  - meshv:dateRevised?:
+    - chemical_date_revised: 1988-11-30
+  - meshv:indexerConsiderAlso*:
+    - chemical_indexer_consider_also: [ Descriptor, AllowedDescriptorQualifierPair, DisallowedDescriptorQualifierPair ]
+  - meshv:lastActiveYear?:
+    - chemical_last_active_year: "2018"
+  - meshv:mappedTo*:
+    - chemical_mapped_to: [ Descriptor, DescriptorQualifierPair, DisallowedDescriptorQualifierPair ]
 
 - Disease mesh:C000591739:
   - a: meshv:SCR_Disease
@@ -267,16 +321,34 @@
     - disease_label: '"Familial gynecomastia, due to increased aromatase activity"@en'
   - meshv:identifier:
     - disease_id: "C000591739"
-  - meshv:frequency:
+  - meshv:frequency?:
     - disease_frequency: 1
   - meshv:preferredConcept:
     - disease_preferred_concept: Concept
-  - meshv:preferredMappedTo:
+  - meshv:preferredMappedTo*:
     - disease_preferred_mapped_to: [ Descriptor, AllowedDescriptorQualifierPair, DisallowedDescriptorQualifierPair ]
   - meshv:preferredTerm:
     - disease_preferred_term: Term
   - meshv:active:
     - disease_active: true
+  - meshv:concept*:
+    - disease_concept: Concept
+  - meshv:dateCreated:
+    - disease_date_created: 2010-08-25
+  - meshv:dateRevised?:
+    - disease_date_revised: 2016-07-13
+  - meshv:indexerConsiderAlso*:
+    - disease_indexer_consider_also: [ Descriptor, AllowedDescriptorQualifierPair, DisallowedDescriptorQualifierPair ]
+  - meshv:lastActiveYear?:
+    - disease_last_active_year: "2018"
+  - meshv:mappedTo*:
+    - disease_mapped_to: [ Descriptor, AllowedDescriptorQualifierPair, DisallowedDescriptorQualifierPair ]
+  - meshv:note?:
+    - disease_note: "A rare distinct clinical subtype of dystrophic EB in which skin fragility, ..."
+  - meshv:previousIndexing*:
+    - disease_previous_indexing: "IMMUNOLOGIC DEFICIENCY SYNDROMES (2014-2019)"
+  - meshv:source*:
+    - disease_source: "Z Kinderheilkd. 117(1):1-18"
 
 - Protocol mesh:C010306:
   - a: meshv:SCR_Protocol
@@ -284,26 +356,36 @@
     - protocol_label: '"VAC protocol"@en'
   - meshv:identifier:
     - protocol_id: "C010306"
-  - meshv:frequency:
+  - meshv:frequency?:
     - protocol_frequency: 268
-  - meshv:note:
+  - meshv:note?:
     - protocol_note: '"chemotherapy protocol consisting of above cpds; used in gynecologic neoplasms"@en'
-  - meshv:previousIndexing:
+  - meshv:previousIndexing*:
     - protocol_previous_indexing: '"*CYCLOPHOSPHAMIDE (77-82)"@en'
-  - meshv:source:
+  - meshv:source*:
     - protocol_source: '"Drug Therapy 6(2):28;1976"@en'
-  - meshv:concept:
+  - meshv:concept*:
     - protocol_concept: Concept
   - meshv:preferredConcept:
     - protocol_preferred_concept: Concept
   - meshv:preferredTerm:
     - protocol_preferred_term: Term
-  - meshv:mappedTo:
+  - meshv:mappedTo*:
     - protocol_mapped_to: [ Descriptor, AllowedDescriptorQualifierPair ]
-  - meshv:preferredMappedTo:
+  - meshv:preferredMappedTo*:
     - protocol_preferred_mapped_to: [ Descriptor, AllowedDescriptorQualifierPair ]
   - meshv:active:
     - protocol_active: true
+  - meshv:dateCreated:
+    - protocol_date_created: 1977-01-01
+  - meshv:dateRevised?:
+    - protocol_date_revised: 2000-11-30
+  - meshv:indexerConsiderAlso*:
+    - protocol_indexer_consider_also: [ Descriptor, AllowedDescriptorQualifierPair, DisallowedDescriptorQualifierPair ]
+  - meshv:lastActiveYear?:
+    - protocol_last_active_year: "2018"
+  - meshv:pharmacologicalAction*:
+    - protocol_pharmacological_action: Descriptor
 
 - Organism mesh:C000612320:
   - a: meshv:SCR_Organism
@@ -311,7 +393,7 @@
     - organism_label: '"UR2 sarcoma virus"@en'
   - meshv:identifier:
     - organism_id: "C000612320"
-  - meshv:frequency:
+  - meshv:frequency?:
     - organism_frequency: 0
   - meshv:preferredConcept:
     - organism_preferred_concept: Concept
@@ -319,10 +401,22 @@
     - organism_preferred_term: Term
   - meshv:preferredMappedTo:
     - organism_preferred_mapped_to: Descriptor
-  - meshv:indexerConsiderAlso:
+  - meshv:indexerConsiderAlso*:
     - organism_indexer_consider_also: Descriptor
   - meshv:active:
     - organism_active: true
+  - meshv:concept*:
+    - organism_concept: Concept
+  - meshv:dateCreated:
+    - organism_date_created: 2017-10-18
+  - meshv:dateRevised?:
+    - organism_date_revised: 2018-11-28
+  - meshv:lastActiveYear?:
+    - organism_last_active_year: "2018"
+  - meshv:note?:
+    - organism_note: "term \"SARS2\" deleted as it sometimes refers to mitochondrial seryl-tRNA synthetase gene, SARS2"
+  - meshv:previousIndexing*:
+    - organism_previous_indexing: "Chloroflexi (2020)"
 
 # DescriptorQualifierPair (D######Q######)
 # * https://hhs.github.io/meshrdf/descriptor-qualifier-pairs
@@ -415,6 +509,8 @@
     - allowed_descriptor_qualifier_pair_qualifier: Qualifier
   - meshv:active:
     - allowed_descriptor_qualifier_pair_active: true
+  - meshv:lastActiveYear?:
+    - allowed_descriptor_qualifier_pair_last_active_year: "2018"
 
 - DisallowedDescriptorQualifierPair mesh:D019216Q000506:
   - a: meshv:DisallowedDescriptorQualifierPair
@@ -426,4 +522,7 @@
     - disallowed_descriptor_qualifier_pair_qualifier: Qualifier
   - meshv:active:
     - disallowed_descriptor_qualifier_pair_active: true
-
+  - meshv:lastActiveYear?:
+    - disallowed_descriptor_qualifier_pair_last_active_year: "2018"
+  - meshv:useInstead:
+    - disallowed_descriptor_qualifier_pair_use_instead: [ Descriptor, AllowedDescriptorQualifierPair ]
