@@ -1,12 +1,27 @@
-# PackageInsert:
-#   - xml("/PackIns/PackageInsertNo/text()")
-#   - prepend("http://med2rdf.org/pi/")
-
-# company_identifier: xml("/PackIns/CompanyIdentifier/text()")
-# sccj_no: xml("/PackIns/Sccj/SccjNo/text()")
+PackageInsert:
+  - root("/PackIns")
+  - xml("PackageInsertNo/text()")
+  - prepend("http://med2rdf.org/pi/")
+  - variables:
+    - company_identifier: xml("CompanyIdentifier/text()")
+    - date_of_preparation_or_revision:
+      - xml('DateOfPreparationOrRevision/PreparationOrRevision[@id="今回"]/YearMonth/text()')
+      - datatype("xsd:gYearMonth")
+    - sccj_no: xml("Sccj/SccjNo/text()")
+    - []:
+      - root("ApprovalEtc/DetailBrandName")
+      - variables:
+        - approval_brand_name:
+          - xml("ApprovalBrandName/Lang/text()")
+          - $lang: xml("@xml:lang")
+          - lang($lang)
+        - approval_no:
+          - xml("BrandCode/YJCode/text()")
 
 Item:
-  - xml("/PackIns/AdverseEvents/SeriousAdverseEvents/SeriousAdverse/OrderedList/Item/@id")
+  - root("/PackIns/AdverseEvents/SeriousAdverseEvents/SeriousAdverse/OrderedList/Item")
+  - xml("@id")
   - prepend("http://med2rdf.org/pi/")
-description: xml("/PackIns/AdverseEvents/SeriousAdverseEvents/SeriousAdverse/OrderedList/Item/Detail/Lang/text()")
-title: xml("/PackIns/AdverseEvents/SeriousAdverseEvents/SeriousAdverse/OrderedList/Item/Header/Lang/text()")
+  - variables:
+    - title: xml("Header/Lang/text()")
+    - description: xml("Detail/Lang/text()")

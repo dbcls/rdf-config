@@ -11,7 +11,7 @@ class RDFConfig
         @row = nil
       end
 
-      def each_row(path, &block)
+      def each_row(path, is_subject_node: false, &block)
         if @rows_stack.empty?
           @rows_stack.push(@json_hash[path])
         else

@@ -4,29 +4,26 @@ require_relative '../converter'
 class RDFConfig
   class Convert
     class JSONConverter < Converter
-      MACRO_NAME = 'json'.freeze
-      PATH_SEPARATOR = '.'.freeze
+      MACRO_NAME = 'json'
+      PATH_SEPARATOR = '.'
 
-      def exec_converter(name, *args)
-        target_value = @target_value
-        if name == 'json'
+      def exec_converter(method_def, *args)
+        name = method_def[:method_name_]
+        if name == MACRO_NAME
           keys = args[0].split(PATH_SEPARATOR)
           args = [keys.last]
         end
 
-        @target_value = if target_value.is_a?(Array)
-                          target_value.map { |v| call_convert_method(name, v, *args) }
-                        else
-                          call_convert_method(name, target_value, *args)
-                        end
-      end
+        if method_def[:variable_name].nil?
+          target_value = @target_value
 
-      def extract_path(path)
-        last_dot_pos = path.rindex(path_separator)
-        if last_dot_pos
-          path[0..last_dot_pos - 1]
+          @target_value = if target_value.is_a?(Array)
+                            target_value.map { |v| call_convert_method(name, v, *args) }
+                          else
+                            call_convert_method(name, target_value, *args)
+                          end
         else
-          path
+          @variable[method_def[:variable_name]] = call_convert_method(name, target_row, *args)
         end
       end
 

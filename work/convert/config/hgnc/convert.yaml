@@ -1,0 +1,25 @@
+HGNC:
+  - tsv("hgnc_id")
+  - downcase
+  - variables:
+    - gene_id: tsv("symbol")
+    - hgnc_id:
+      - tsv("hgnc_id")
+      - delete(/^HGNC:/)
+      - to_int
+    - description: tsv("name")
+    - location: tsv("location")
+    - UniProt:
+      - tsv("uniprot_ids")
+      - prepend("http://identifiers.org/uniprot/")
+      - variables:
+        - uniprot_id: tsv("uniprot_ids")
+    - PubMed:
+      - tsv("pubmed_id")
+      - split("|")
+      - prepend("http://identifiers.org/pubmed/")
+      - variables:
+        - pubmed_id:
+          - tsv("pubmed_id")
+          - split("|")
+          - to_int

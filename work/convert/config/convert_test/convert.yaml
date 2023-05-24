@@ -2,30 +2,23 @@ ConvertTest:
   - csv("id")
   - delete(/^ID/)
   - prepend("http://example.org/")
-
-ex_ids:
-  - csv("ex_ids")
-  - split(',')
-
-label:
-  - csv("label")
-  - upcase
-
-int_value: csv("int_value")
-
-float_value: csv("float_value")
-
-kebab:
-  - csv("kebab")
-  - replace(/(\w{2})-(\w{2})-(\w{2})/, "\2-\3-\1")
-
-repeat:
-  - csv("repeat")
-  - replace(/[ab]/, "z")
-  # - replace(/[ab]/i, "z")
-  # - replace(/[ab]/g, "z")
-  # - replace(/[ab]/ig, "z")
-
-published: csv("published")
-
-bool: csv("bool")
+  - variables:
+    - ex_ids:
+      - csv("ex_ids")
+      - split(',')
+    - label:
+      - csv("label")
+      - upcase
+    - int_value: csv("int_value")
+    - float_value: csv("float_value")
+    - kebab:
+      - csv("kebab")
+      - replace(/(\w{2})-(\w{2})-(\w{2})/, "\2-\3-\1")
+    - repeat:
+      - csv("repeat")
+      - replace(/[ab]/, "z")
+      # - replace(/[ab]/i, "z")
+      # - replace(/[ab]/g, "z")
+      # - replace(/[ab]/ig, "z")
+    - published: csv("published")
+    - bool: csv("bool")
