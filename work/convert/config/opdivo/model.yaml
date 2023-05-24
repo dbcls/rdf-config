@@ -1,9 +1,5 @@
 - PackageInsert pi:180188_4291427A1024_1_39:
     - a: pio:PackageInsert
-    - pio:approval_brand_name:
-        - approval_brand_name: "オプジーボ点滴静注20mg"
-    - pio:approval_no:
-        - approval_no: "22600AMX00768"
     - pio:company_identifier:
         - company_identifier: "180188"
     - pio:date_of_preparation_or_revision:
@@ -12,6 +8,12 @@
         - sccj_no: "874291"
     - pio:section:
         - section: Section
+    - pio:approval:
+        - []:
+            - pio:approval_brand_name:
+                - approval_brand_name: "オプジーボ点滴静注20mg"
+            - pio:approval_no:
+                - approval_no: "22600AMX00768"
 
 - Section pi:PI_1:
     - a: pio:PI_1
@@ -21,6 +23,6 @@
 - Item <http://med2rdf.org/pi/180188_4291427A1024_1_39#PI_11_1.item1>:
     - a: pio:Item
     - rdfs:title:
-          - title: '"腎障害"@ja'
+        - title: '"腎障害"@ja'
     - dct:description:
-        - description: '"腎不全（0.5％、1.8％）..."@ja'
+        - description: '"腎不全（0.6％、2.0％）、尿細管間質性腎炎（0.1％、0.1％）、糸球体腎炎（頻度不明、0.1％未満）等の腎障害があらわれることがある。"@ja'

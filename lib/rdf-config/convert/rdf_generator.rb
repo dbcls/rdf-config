@@ -1,20 +1,22 @@
 # frozen_string_literal: true
+
 require 'rdf/turtle'
 
 class RDFConfig
   class Convert
     class RDFGenerator
-      def initialize(config, reader, converter)
+      def initialize(config, convert)
         @config = config
-        @reader = reader
-        @converter = converter
+        @convert = convert
+        @reader = convert.file_reader
+        @converter = convert.rdf_converter
 
         @model = Model.instance(@config)
         @prefixes = @config.prefix.transform_values { |uri| RDF::URI.new(uri[1..-2]) }
         @prefixes[:xsd] = RDF::URI.new('http://www.w3.org/2001/XMLSchema#')
 
         @statements = []
-        @subject_node = {}
+        @subject_stack = []
       end
 
       def generate
@@ -23,17 +25,8 @@ class RDFConfig
       end
 
       def generate_statements
-        @converter.root_paths.each do |path|
-          @reader.each_row(path) do |row|
-            parent_subject_node = generate_statements_by_row(row, nil, *@converter.path_variable_map[path])
-            next unless @converter.path_relation.key?(path)
-
-            @converter.path_relation[path].each do |child_path|
-              @reader.each_row(relative_path(path, child_path)) do |child_row|
-                generate_statements_by_row(child_row, parent_subject_node, *@converter.path_variable_map[child_path])
-              end
-            end
-          end
+        @convert.root_subjects.each do |subject_name|
+          generate_statements_by_subject_name(subject_name, root: true)
         end
       end
 
@@ -47,62 +40,81 @@ class RDFConfig
 
       private
 
-      def generate_statements_by_row(row, parent, *variable_names)
-        subject_name, subject = subject_node(row, *variable_names)
+      def generate_statements_by_subject_name(subject_name, root: false)
+        @reader.each_row(path_by_convert_def(subject_name), is_subject_node: true) do |row|
+          @converter.push_target_row(row)
 
-        variable_names.each do |variable_name|
-          next if variable_name == subject_name
+          process_convert_variable(row)
 
-          triple = @model.find_by_object_name(variable_name)
-          if triple.subject.name != subject_name && triple.predicates.size == 1
-            subject = subject_node_by_subject_name(row, triple.subject.name)
-            parent = nil
+          subject = subject_node(row, subject_name)
+          @subject_stack.push(subject)
+
+          subject_names = @convert.subject_object_map[subject_name].select { |name| @model.subject?(name) || @convert.bnode_name?(name) }
+          object_names = @convert.subject_object_map[subject_name] - subject_names
+          generate_statements_by_row(row, subject, *object_names)
+
+          subject_names.each do |subj_name|
+            generate_statements_by_subject_name(subj_name)
           end
 
-          @converter.clear_value
-          converted_value = @converter.convert_value(row, variable_name)
-          triple = @model.find_by_object_name(variable_name)
-          object_node = object_node_by_triple(triple, converted_value)
-          next if object_node.nil?
-          
-          @statements << RDF::Statement.new(
-            subject,
-            predicate_node(triple.predicates.last.uri),
-            object_node_by_triple(triple, converted_value)
-          )
-        end
+          generate_relation_statement(subject_name) unless root
 
-        if parent
-          triple = @model.find_by_object_name(subject_name || variable_names.first)
-          @statements << RDF::Statement.new(
-            parent,
-            predicate_node(triple.predicates.last.uri),
-            subject
-          )
+          @subject_stack.pop
+          @converter.pop_target_row
         end
-
-        subject
       end
 
-      def subject_node(row, *variable_names)
+      def generate_statements_by_row(row, subject, *variable_names)
+        variable_names.each do |variable_name|
+          generate_statement_by_variable_name(row, subject, variable_name)
+        end
+      end
+
+      def generate_relation_statement(object_name)
+        predicate_uri = if @convert.bnode_name?(object_name)
+                          triple = @model.find_by_object_name(@convert.subject_object_map[object_name].first)
+                          triple.predicates.first.uri
+                        else
+                          triple = @model.find_by_object_name(object_name)
+                          triple.predicates.last.uri
+                        end
+        @statements << RDF::Statement.new(
+          @subject_stack[-2], predicate_node(predicate_uri), @subject_stack.last
+        )
+      end
+
+      def generate_statement_by_variable_name(row, subject, variable_name)
+        @converter.clear_value
+        converted_value = @converter.convert_value(row, variable_name)
+        return if converted_value.is_a?(String) && converted_value.strip.empty?
+
+        triple = @model.find_by_object_name(variable_name)
+        @statements << RDF::Statement.new(
+          subject,
+          predicate_node(triple.predicates.last.uri),
+          object_node_by_triple(triple, converted_value)
+        )
+      end
+
+      def process_convert_variable(row)
+        @converter.convert_variable_names.each do |variable_name|
+          @converter.convert_value(row, variable_name)
+        end
+      end
+
+      def subject_node(row, subject_name)
         @converter.clear_value
 
-        subject_name = variable_names.select { |name| @model.subject?(name) }.first
-        if subject_name
-          subject = subject_node_by_subject_name(row, subject_name)
-          @subject_node[subject_name] = subject
-          [subject_name, subject]
+        if @convert.bnode_name?(subject_name)
+          RDF::Node.new
         else
-          [nil, RDF::Node.new]
+          subject_node_by_subject_name(row, subject_name)
         end
       end
 
       def subject_node_by_subject_name(row, subject_name)
-        # return @subject_node[subject_name] if @subject_node.key?(subject_name)
-
         converted_value = @converter.convert_value(row, subject_name)
         subject = uri_node(converted_value)
-        # @subject_node[subject_name] = subject
 
         @model.find_subject(subject_name).types.each do |rdf_type|
           @statements << RDF::Statement.new(subject, RDF.type, uri_node(rdf_type))
@@ -112,15 +124,10 @@ class RDFConfig
       end
 
       def predicate_node(predicate_uri)
-        prefix, local_part = predicate_uri.split(':', 2)
-        predicate_uri = "#{@prefixes[prefix].to_s}#{local_part}" if @prefixes.key?(prefix)
-
-        RDF::URI.new(predicate_uri)
+        uri_node(predicate_uri)
       end
 
       def object_node_by_triple(triple, object_value)
-        return nil if object_value.to_s.empty?
-        
         case triple.object
         when Model::Literal
           literal_node(object_value, triple.object)
@@ -128,26 +135,25 @@ class RDFConfig
           uri_node(object_value)
         when Model::ValueList
           uri_node(object_value)
-        else
-          nil
         end
       end
 
       def uri_node(uri)
         prefix, local_part = uri.split(':', 2)
         if @prefixes.key?(prefix)
-          RDF::URI.new("#{@prefixes[prefix].to_s}#{local_part}")
+          RDF::URI.new("#{@prefixes[prefix]}#{local_part}")
         else
           RDF::URI.new(uri)
         end
       end
 
       def literal_node(value, literal_object)
+        return value if value.is_a?(RDF::Literal)
+
         case literal_object.value
         when Integer
           RDF::Literal::Integer.new(value)
         when Float
-          # RDF::Literal.new(value.to_f)
           RDF::Literal::Decimal.new(value)
         when Date
           RDF::Literal::Date.new(value)
@@ -156,18 +162,6 @@ class RDFConfig
         else
           RDF::Literal.new(value)
         end
-      end
-
-      def relative_path(parent_path, child_path)
-        child_path[(parent_path.length + 1)..]
-      end
-
-      def subject_names
-        @converter.variable_names.select { |variable_name| @model.subject?(variable_name) }
-      end
-
-      def object_names
-        @converter.variable_names.reject { |variable_name| @model.subject?(variable_name) }
       end
     end
   end

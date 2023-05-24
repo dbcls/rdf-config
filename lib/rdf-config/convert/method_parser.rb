@@ -31,7 +31,11 @@ class RDFConfig
           str('/') >> (match('[a-z]').repeat)
       }
 
-      rule(:arg) { (dquot_string | squot_string | regexp).as(:arg_) }
+      rule(:variable_name) do
+        str('$') >> (match('[a-z_0-9]').repeat)
+      end
+
+      rule(:arg) { (dquot_string | squot_string | regexp | variable_name).as(:arg_) }
       rule(:args) {
         str('(') >>
           (

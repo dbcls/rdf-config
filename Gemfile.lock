@@ -6,28 +6,50 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    amazing_print (1.4.0)
-    ebnf (2.3.1)
-      amazing_print (~> 1.4)
+    ast (2.4.2)
+    ebnf (2.3.2)
       htmlentities (~> 4.3)
       rdf (~> 3.2)
       scanf (~> 1.0)
       sxp (~> 1.2)
-      unicode-types (~> 1.7)
+      unicode-types (~> 1.8)
     htmlentities (4.3.4)
+    json (2.6.3)
     link_header (0.0.8)
     matrix (0.4.2)
+    parallel (1.23.0)
+    parser (3.2.2.1)
+      ast (~> 2.4.1)
     parslet (2.0.0)
-    rdf (3.2.9)
+    rainbow (3.1.1)
+    rdf (3.2.10)
       link_header (~> 0.0, >= 0.0.8)
     rdf-turtle (3.2.1)
       ebnf (~> 2.3)
       rdf (~> 3.2)
+    rdf-xsd (3.2.1)
+      rdf (~> 3.2)
+      rexml (~> 3.2)
+    regexp_parser (2.8.0)
     rexml (3.2.5)
+    rubocop (1.51.0)
+      json (~> 2.3)
+      parallel (~> 1.10)
+      parser (>= 3.2.0.0)
+      rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 1.8, < 3.0)
+      rexml (>= 3.2.5, < 4.0)
+      rubocop-ast (>= 1.28.0, < 2.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 2.4.0, < 3.0)
+    rubocop-ast (1.28.1)
+      parser (>= 3.2.1.0)
+    ruby-progressbar (1.13.0)
     scanf (1.0.0)
-    sxp (1.2.3)
+    sxp (1.2.4)
       matrix (~> 0.4)
       rdf (~> 3.2)
+    unicode-display_width (2.4.2)
     unicode-types (1.8.0)
 
 PLATFORMS
@@ -38,7 +60,9 @@ DEPENDENCIES
   rdf
   rdf-config!
   rdf-turtle
+  rdf-xsd
   rexml
+  rubocop
 
 BUNDLED WITH
-   2.3.7
+   2.4.10

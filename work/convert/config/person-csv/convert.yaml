@@ -1,0 +1,9 @@
+Person:
+  - $id: csv("id")
+  - "http://example.org/ontology/person/$id"
+  - variables:
+    - id: $id
+    - name:
+      - $first_name: csv("first name")
+      - $last_name: csv("last name")
+      - "$first_name $last_name"
