@@ -3,7 +3,7 @@
   - biopax:comment:
     - pathway_description: "Metabolic processes in human cells generate energy through ..."
   - biopax:dataSource:
-    - provenance: reactome:Provenance1
+    - provenance: Provenance
   - biopax:displayName:
     - pathway_display_name: "Metabolism"
   - biopax:name*:
@@ -258,7 +258,7 @@
   - biopax:name*:
     - left_physical_entity_name: "K6polyUb,K11polyUb,K27polyUb,K29polyUb,K33polyUb,K48polyUb,K63polyUb"
   - biopax:dataSource:
-    - left_data_source: reactome:Provenance1
+    - left_data_source: Provenance
   - biopax:cellularLocation:
     - left_celllular_location: reactome:CellularLocationVocabulary36
   - biopax:memberPhysicalEntity:
@@ -383,7 +383,7 @@
   - biopax:name*:
     - right_physical_entity_name: "K6polyUb,K11polyUb,K27polyUb,K29polyUb,K33polyUb,K48polyUb,K63polyUb"
   - biopax:dataSource:
-    - right_data_source: reactome:Provenance1
+    - right_data_source: Provenance
   - biopax:cellularLocation:
     - right_celllular_location: reactome:CellularLocationVocabulary36
   - biopax:memberPhysicalEntity:
@@ -508,7 +508,7 @@
   - biopax:name*:
     - temp_physical_entity_name: "K6polyUb,K11polyUb,K27polyUb,K29polyUb,K33polyUb,K48polyUb,K63polyUb"
   - biopax:dataSource:
-    - temp_data_source: reactome:Provenance1
+    - temp_data_source: Provenance
   - biopax:cellularLocation:
     - temp_celllular_location: reactome:CellularLocationVocabulary36
   - biopax:memberPhysicalEntity:
@@ -633,7 +633,7 @@
   - biopax:name*:
     - degradation_physical_entity_name: "K6polyUb,K11polyUb,K27polyUb,K29polyUb,K33polyUb,K48polyUb,K63polyUb"
   - biopax:dataSource:
-    - degradation_data_source: reactome:Provenance1
+    - degradation_data_source: Provenance
   - biopax:cellularLocation:
     - degradation_celllular_location: reactome:CellularLocationVocabulary36
   - biopax:memberPhysicalEntity:
@@ -758,7 +758,7 @@
   - biopax:name*:
     - catalysis_physical_entity_name: "K6polyUb,K11polyUb,K27polyUb,K29polyUb,K33polyUb,K48polyUb,K63polyUb"
   - biopax:dataSource:
-    - catalysis_data_source: reactome:Provenance1
+    - catalysis_data_source: Provenance
   - biopax:cellularLocation:
     - catalysis_celllular_location: reactome:CellularLocationVocabulary36
   - biopax:memberPhysicalEntity:
@@ -883,8 +883,16 @@
   - biopax:name*:
     - control_physical_entity_name: "K6polyUb,K11polyUb,K27polyUb,K29polyUb,K33polyUb,K48polyUb,K63polyUb"
   - biopax:dataSource:
-    - control_data_source: reactome:Provenance1
+    - control_data_source: Provenance
   - biopax:cellularLocation:
     - control_celllular_location: reactome:CellularLocationVocabulary36
   - biopax:memberPhysicalEntity:
     - control_member_physical_entity: [ControlComplex, ControlSmallMolecule, LefProtein, ControlDna, ControlRna, ControlPhysicalEntity]
+
+- Provenance reactome:Provenance1:
+  - a: biopax:Provenance
+  - biopax:comment:
+    - provenance_comment: "http://www.reactome.org"
+  - biopax:name:
+    - provenance_name: "Reactome"
+
