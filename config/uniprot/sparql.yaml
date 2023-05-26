@@ -10,3 +10,9 @@ ptms:
   variable: [UniProt, modified_residue_annotation, mod_desc, mod_begin, mod_end]
   parameters:
     UniProt: up:Q9BYF8
+hgnc:
+  description: HGNC ID
+  variables: [UniProt, db_resource, database]
+  parameters:
+    database: database:HGNC
+    taxonomy: taxonomy:9606
