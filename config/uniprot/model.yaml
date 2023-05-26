@@ -35,8 +35,18 @@
     - mnemonic: "ACE2_HUMAN"
   - core:oldMnemonic*:
     - old_mnemonic: "CQ066_HUMAN"
+  - core:replaces*:
+    - second_id: up:Q9UFZ6
+  - rdfs:label:
+    - label: "uniprot:Q9BYF1"
   - core:reviewed:
     - reviewed: 1
+  - core:created:
+    - created_date: 2005-08-02
+  - core:modified:
+    - modified_date: 2022-12-14
+  - core:version:
+    - version: 192
   - core:encodedBy?:
     - []:
       - a: core:Gene
@@ -81,6 +91,8 @@
     - external_sequence: ExternalSequence
   - core:sequence*:
     - unknown_sequence: UnknownSequence
+  - core:potentialSequence*:
+    - potential_seq: isoforms:A0A7I2V2E9-1
   - rdfs:seeAlso*:
     - db_resource: DbResource
   - rdfs:seeAlso*:
@@ -100,6 +112,8 @@
     - keyword: Keyword
   - core:interaction*:
     - intact: Intact
+  - core:isolatedFrom*:
+    - tissue: tissue:1030
   - core:annotation*:
     - absorption_annotation: AbsorptionAnnotation
   - core:annotation*:
@@ -1236,17 +1250,18 @@
 
 - Citation citations:14504186:
   - a:
+    - core:Journal_Citation
     - core:Submission_Citation
     - core:Thesis_Citation
     - core:Observation_Citation
     - core:Patent_Citation
     - core:Book_Citation
     - core:Electronic_Citation
-  - dct:identifier:
+  - dct:identifier?:
     - citation_doi: "doi:10.1161/01.cir.0000094734.67990.99"
-  - core:title:
+  - core:title?:
     - citation_title: "Increased angiotensin-(1-7)-forming activity ..."
-  - core:date:
+  - core:date?:
     - ciattion_date: 2003
   - core:name*:
     - ciattion_name: "Circulation"
@@ -1258,7 +1273,7 @@
     - citation_author: "Zisman L.S."
   - core:editor*:
     - citation_editor: "Shugar D."
-  - foaf:primaryTopicOf:
+  - foaf:primaryTopicOf?:
     - pubmed: pubmed:14504186
   - core:institution?:
     - citation_institution: "Faculty of Biological Sciences / Goettingen"
@@ -1268,4 +1283,6 @@
     - citation_publisher: "Academic Press"
   - core:submittedTo*:
     - submit_to: "UniProtKB"
+  - core:group?:
+    - citation_group: "Alzheimer's Disease Genetics Consortium"
 
