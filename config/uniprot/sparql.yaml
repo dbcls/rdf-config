@@ -1,0 +1,12 @@
+names:
+  description: protein name, mnemonic, gene name
+  variables: [UniProt, recommended_name, submited_name, mnemonic, gene_name, taxonomy]
+  parameters:
+    taxonomy: taxonomy:9606
+  options:
+    distinct: true
+ptms:
+  description: PTM site
+  variable: [UniProt, modified_residue_annotation, mod_desc, mod_begin, mod_end]
+  parameters:
+    UniProt: up:Q9BYF8
