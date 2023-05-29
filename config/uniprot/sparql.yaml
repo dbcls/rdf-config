@@ -1,17 +1,17 @@
 names:
-  description: protein name, mnemonic, gene name
+  description: protein name, mnemonic and gene name of human
   variables: [UniProt, recommended_name, submited_name, mnemonic, gene_name, taxonomy]
   parameters:
     taxonomy: taxonomy:9606
   options:
     distinct: true
 ptms:
-  description: PTM site
-  variables: [UniProt, modified_residue_annotation, mod_desc, mod_begin, mod_end]
+  description: PTM sites and descriptions of an UniProt
+  variables: [UniProt, mod_desc, mod_begin, mod_end]
   parameters:
     UniProt: up:Q9BYF8
 hgnc:
-  description: HGNC ID
+  description: corresponding HGNC ID of human
   variables: [UniProt, db_resource, database]
   parameters:
     database: database:HGNC
