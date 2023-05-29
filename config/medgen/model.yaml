@@ -30,10 +30,18 @@
     - mapped_from: MedGen                  # medgen:C1857225 Dohle bodies and leukemia
   - mo:undefined_relationship+:
     - undefined_relationship: MedGen       # medgen:C0023465 Acute monocytic leukemia
+  - mo:alias_of:
+      - alias_of: MedGen                   # medgen:C0023467 Acute myeloid leukemia
+  - mo:permuted_term_of:
+      - permuted_term_of: MedGen           # medgen:C0023467 Acute myeloid leukemia
   - mo:name:
     - []:
       - rdfs:label+:
         - name_label: "Acute myeloid leukemia"
+      - dct:source:
+        - name_source: mo:GTR
+      - mo:supress:
+        - name_supress: mo:N
   - mo:mgdef:
     - []:
       - mo:supress:
@@ -56,6 +64,8 @@
         - mgconso_label: "acute myeloid leukemia"
       - dct:source:
         - mgconso_source: mo:MONDO
+      - mo:supress:
+        - mgconso_supress: mo:N
   - mo:mgsat+:
     - []:
       - a: mo:MGSAT
@@ -71,6 +81,8 @@
         - mgsat_value: "CN004254"
       - rdfs:label+:
         - metaui_label: "NCBI_ALTERNATE_ID"
+      - mo:supress:
+        - mgconso_supress: mo:N
 
 - Mgrel:
   - a: mo:MGREL
@@ -88,6 +100,8 @@
     - mgrel_source: mo:MSH
   - mo:supress:
     - mgrel_supress: mo:N
+  - mo:rela:
+    - mgrel_rela: "manifestation_of"
 
 - MedGenUid medgen:9730:
   - dct:references+:
