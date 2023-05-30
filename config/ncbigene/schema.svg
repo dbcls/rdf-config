@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns='http://www.w3.org/2000/svg' style='background-color: rgb(255, 255, 255);' width='750px' height='1074px' viewBox='-0.5 -0.5 750 1074'>
+<svg xmlns='http://www.w3.org/2000/svg' style='background-color: rgb(255, 255, 255);' width='750px' height='1494px' viewBox='-0.5 -0.5 750 1494'>
   <style type='text/css'>
      .st0 {fill:#FFCE9F;} .st1 {fill:none;stroke:#000000;stroke-width:2;} .st2
     {opacity:0.6;} .st3 {font-family:&apos;Helvetica&apos;;} .st4
@@ -49,7 +49,7 @@
             <div style='box-sizing: border-box; font-size: 0; text-align: center;'>
               <div style='display: inline-block; font-size: 12px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal'>
                 <div>
-                  nuc:Gene
+                  insdc:Gene
                   <br/>
                 </div>
               </div>
@@ -57,7 +57,7 @@
           </div>
         </foreignObject>
         <text x='560' y='29' fill='#000000' font-family='Helvetica' font-size='12px' text-anchor='middle'>
-          nuc:Gene
+          insdc:Gene
         </text>
       </switch>
     </g>
@@ -65,31 +65,31 @@
   <polyline class='st12' points='230,35 250,35 250,105 465,105'/>
   <polygon points='460.3,110.7 459.4,109.7 464.4,105.0 459.4,100.3 460.3,99.3 466.5,105.0'/>
   <text class='st6 st4' transform='matrix(1 0 0 1 260 100)'>
-    rdfs:label
+    dct:identifier
   </text>
   <g>
     <rect x='470' y='80' width='180' height='50' class='st9'/>
     <polyline points='470,100 470,80 650,80 650,100' class='st2'/>
     <g>
       <text x='478' y='115' class='st3 st4' dominant-baseline='middle'>
-        ACADM
+        34
       </text>
     </g>
     <g>
       <text x='478' y='90' class='st5 st6 st7' dominant-baseline='middle'>
-        gene_label
+        id
       </text>
     </g>
     <g>
       <text x='642' y='90' class='st8 st6 st7' text-anchor='end' dominant-baseline='middle'>
-        String
+        Int
       </text>
     </g>
   </g>
   <polyline class='st12' points='230,35 250,35 250,175 465,175'/>
   <polygon points='460.3,180.7 459.4,179.7 464.4,175.0 459.4,170.3 460.3,169.3 466.5,175.0'/>
   <text class='st6 st4' transform='matrix(1 0 0 1 260 170)'>
-    nuc:standard_name
+    rdfs:label
   </text>
   <g>
     <rect x='470' y='150' width='180' height='50' class='st9'/>
@@ -101,7 +101,7 @@
     </g>
     <g>
       <text x='478' y='160' class='st5 st6 st7' dominant-baseline='middle'>
-        standard_name
+        label
       </text>
     </g>
     <g>
@@ -113,19 +113,19 @@
   <polyline class='st12' points='230,35 250,35 250,245 465,245'/>
   <polygon points='460.3,250.7 459.4,249.7 464.4,245.0 459.4,240.3 460.3,239.3 466.5,245.0'/>
   <text class='st6 st4' transform='matrix(1 0 0 1 260 240)'>
-    nuc:gene_synonym +
+    insdc:standard_name ?
   </text>
   <g>
     <rect x='470' y='220' width='180' height='50' class='st9'/>
     <polyline points='470,240 470,220 650,220 650,240' class='st2'/>
     <g>
       <text x='478' y='255' class='st3 st4' dominant-baseline='middle'>
-        ACAD1
+        ACADM
       </text>
     </g>
     <g>
       <text x='478' y='230' class='st5 st6 st7' dominant-baseline='middle'>
-        gene_synonym
+        standard_name
       </text>
     </g>
     <g>
@@ -137,19 +137,18 @@
   <polyline class='st12' points='230,35 250,35 250,315 465,315'/>
   <polygon points='460.3,320.7 459.4,319.7 464.4,315.0 459.4,310.3 460.3,309.3 466.5,315.0'/>
   <text class='st6 st4' transform='matrix(1 0 0 1 260 310)'>
-    dct:description
+    insdc:locus_tag ?
   </text>
   <g>
     <rect x='470' y='290' width='180' height='50' class='st9'/>
     <polyline points='470,310 470,290 650,290 650,310' class='st2'/>
     <g>
       <text x='478' y='325' class='st3 st4' dominant-baseline='middle'>
-        acyl-CoA dehydrogenase medium chain
       </text>
     </g>
     <g>
       <text x='478' y='300' class='st5 st6 st7' dominant-baseline='middle'>
-        gene_description
+        locus_tag
       </text>
     </g>
     <g>
@@ -161,19 +160,19 @@
   <polyline class='st12' points='230,35 250,35 250,385 465,385'/>
   <polygon points='460.3,390.7 459.4,389.7 464.4,385.0 459.4,380.3 460.3,379.3 466.5,385.0'/>
   <text class='st6 st4' transform='matrix(1 0 0 1 260 380)'>
-    dct:alternative
+    insdc:gene_synonym *
   </text>
   <g>
     <rect x='470' y='360' width='180' height='50' class='st9'/>
     <polyline points='470,380 470,360 650,360 650,380' class='st2'/>
     <g>
       <text x='478' y='395' class='st3 st4' dominant-baseline='middle'>
-        medium-chain specific acyl-CoA dehydrogenase, mitochondrial
+        ACAD1
       </text>
     </g>
     <g>
       <text x='478' y='370' class='st5 st6 st7' dominant-baseline='middle'>
-        alternative
+        gene_synonym
       </text>
     </g>
     <g>
@@ -185,43 +184,43 @@
   <polyline class='st12' points='230,35 250,35 250,455 465,455'/>
   <polygon points='460.3,460.7 459.4,459.7 464.4,455.0 459.4,450.3 460.3,449.3 466.5,455.0'/>
   <text class='st6 st4' transform='matrix(1 0 0 1 260 450)'>
-    nuc:dblink
+    dct:description ?
   </text>
   <g>
     <rect x='470' y='430' width='180' height='50' class='st9'/>
     <polyline points='470,450 470,430 650,430 650,450' class='st2'/>
     <g>
       <text x='478' y='465' class='st3 st4' dominant-baseline='middle'>
-        607008
+        acyl-CoA dehydrogenase medium chain
       </text>
     </g>
     <g>
       <text x='478' y='440' class='st5 st6 st7' dominant-baseline='middle'>
-        dblink
+        gene_description
       </text>
     </g>
     <g>
       <text x='642' y='440' class='st8 st6 st7' text-anchor='end' dominant-baseline='middle'>
-        Int
+        String
       </text>
     </g>
   </g>
   <polyline class='st12' points='230,35 250,35 250,525 465,525'/>
   <polygon points='460.3,530.7 459.4,529.7 464.4,525.0 459.4,520.3 460.3,519.3 466.5,525.0'/>
   <text class='st6 st4' transform='matrix(1 0 0 1 260 520)'>
-    hop:typeOfGene
+    dct:alternative *
   </text>
   <g>
     <rect x='470' y='500' width='180' height='50' class='st9'/>
     <polyline points='470,520 470,500 650,500 650,520' class='st2'/>
     <g>
       <text x='478' y='535' class='st3 st4' dominant-baseline='middle'>
-        protein-coding
+        medium-chain specific acyl-CoA dehydrogenase, mitochondrial
       </text>
     </g>
     <g>
       <text x='478' y='510' class='st5 st6 st7' dominant-baseline='middle'>
-        type_of_gene
+        alternative
       </text>
     </g>
     <g>
@@ -233,67 +232,72 @@
   <polyline class='st12' points='230,35 250,35 250,595 465,595'/>
   <polygon points='460.3,600.7 459.4,599.7 464.4,595.0 459.4,590.3 460.3,589.3 466.5,595.0'/>
   <text class='st6 st4' transform='matrix(1 0 0 1 260 590)'>
-    hop:nomenclatureStatus
+    insdc:dblink *
   </text>
   <g>
-    <rect x='470' y='570' width='180' height='50' class='st9'/>
-    <polyline points='470,590 470,570 650,570 650,590' class='st2'/>
     <g>
-      <text x='478' y='605' class='st3 st4' dominant-baseline='middle'>
-        official
+      <path d='M650,612 c0,4.4 -3.6,8 -8,8 h-164 c-4.4,0 -8,-3.6 -8,-8 v-34 c0,-4.4 3.6,-8 8,-8 h164 c4.4,0 8,3.6 8,8 v34 z' class='st9uri'/>
+      <path d='M650,612 c0,4.4 -3.6,8 -8,8 h-164 c-4.4,0 -8,-3.6 -8,-8 v-34 c0,-4.4 3.6,-8 8,-8 h164 c4.4,0 8,3.6 8,8 v34 z' class='st1'/>
+    </g>
+    <g class='st2'>
+      <path d='M470,590 v-12 c0,-4.4 3.6,-8 8,-8 h164 c4.4,0 8,3.6 8,8 v12'/>
+    </g>
+    <g transform='translate(-0.5 -0.5)'>
+      <text x='478' y='608' class='st3 st4'>
+        hgnc:89
       </text>
     </g>
-    <g>
+    <g transform='translate(-0.5 -0.5)'>
       <text x='478' y='580' class='st5 st6 st7' dominant-baseline='middle'>
-        nomenclature_status
+        dblink
       </text>
     </g>
-    <g>
+    <g transform='translate(-0.5 -0.5)'>
       <text x='642' y='580' class='st8 st6 st7' text-anchor='end' dominant-baseline='middle'>
-        String
+        URI
       </text>
     </g>
   </g>
   <polyline class='st12' points='230,35 250,35 250,665 465,665'/>
   <polygon points='460.3,670.7 459.4,669.7 464.4,665.0 459.4,660.3 460.3,659.3 466.5,665.0'/>
   <text class='st6 st4' transform='matrix(1 0 0 1 260 660)'>
-    nuc:chromosome
+    insdc:db_xref *
   </text>
   <g>
     <rect x='470' y='640' width='180' height='50' class='st9'/>
     <polyline points='470,660 470,640 650,640 650,660' class='st2'/>
     <g>
       <text x='478' y='675' class='st3 st4' dominant-baseline='middle'>
-        1
+        AllianceGenome:HGNC:89
       </text>
     </g>
     <g>
       <text x='478' y='650' class='st5 st6 st7' dominant-baseline='middle'>
-        chromosome
+        db_xref
       </text>
     </g>
     <g>
       <text x='642' y='650' class='st8 st6 st7' text-anchor='end' dominant-baseline='middle'>
-        Int
+        String
       </text>
     </g>
   </g>
   <polyline class='st12' points='230,35 250,35 250,735 465,735'/>
   <polygon points='460.3,740.7 459.4,739.7 464.4,735.0 459.4,730.3 460.3,729.3 466.5,735.0'/>
   <text class='st6 st4' transform='matrix(1 0 0 1 260 730)'>
-    nuc:map
+    hop:typeOfGene
   </text>
   <g>
     <rect x='470' y='710' width='180' height='50' class='st9'/>
     <polyline points='470,730 470,710 650,710 650,730' class='st2'/>
     <g>
       <text x='478' y='745' class='st3 st4' dominant-baseline='middle'>
-        1p31.1
+        protein-coding
       </text>
     </g>
     <g>
       <text x='478' y='720' class='st5 st6 st7' dominant-baseline='middle'>
-        map
+        type_of_gene
       </text>
     </g>
     <g>
@@ -305,19 +309,19 @@
   <polyline class='st12' points='230,35 250,35 250,805 465,805'/>
   <polygon points='460.3,810.7 459.4,809.7 464.4,805.0 459.4,800.3 460.3,799.3 466.5,805.0'/>
   <text class='st6 st4' transform='matrix(1 0 0 1 260 800)'>
-    dct:modified
+    hop:nomenclatureStatus ?
   </text>
   <g>
     <rect x='470' y='780' width='180' height='50' class='st9'/>
     <polyline points='470,800 470,780 650,780 650,800' class='st2'/>
     <g>
       <text x='478' y='815' class='st3 st4' dominant-baseline='middle'>
-        2021-02-07
+        official
       </text>
     </g>
     <g>
       <text x='478' y='790' class='st5 st6 st7' dominant-baseline='middle'>
-        modified
+        nomenclature_status
       </text>
     </g>
     <g>
@@ -326,43 +330,191 @@
       </text>
     </g>
   </g>
+  <polyline class='st12' points='230,35 250,35 250,875 465,875'/>
+  <polygon points='460.3,880.7 459.4,879.7 464.4,875.0 459.4,870.3 460.3,869.3 466.5,875.0'/>
+  <text class='st6 st4' transform='matrix(1 0 0 1 260 870)'>
+    hop:fullName ?
+  </text>
   <g>
-    <text x='60' y='874' font-size='14px' class='st6'>
+    <rect x='470' y='850' width='180' height='50' class='st9'/>
+    <polyline points='470,870 470,850 650,850 650,870' class='st2'/>
+    <g>
+      <text x='478' y='885' class='st3 st4' dominant-baseline='middle'>
+        acyl-CoA dehydrogenase medium chain
+      </text>
+    </g>
+    <g>
+      <text x='478' y='860' class='st5 st6 st7' dominant-baseline='middle'>
+        full_name
+      </text>
+    </g>
+    <g>
+      <text x='642' y='860' class='st8 st6 st7' text-anchor='end' dominant-baseline='middle'>
+        String
+      </text>
+    </g>
+  </g>
+  <polyline class='st12' points='230,35 250,35 250,945 465,945'/>
+  <polygon points='460.3,950.7 459.4,949.7 464.4,945.0 459.4,940.3 460.3,939.3 466.5,945.0'/>
+  <text class='st6 st4' transform='matrix(1 0 0 1 260 940)'>
+    hop:featureType *
+  </text>
+  <g>
+    <rect x='470' y='920' width='180' height='50' class='st9'/>
+    <polyline points='470,940 470,920 650,920 650,940' class='st2'/>
+    <g>
+      <text x='478' y='955' class='st3 st4' dominant-baseline='middle'>
+      </text>
+    </g>
+    <g>
+      <text x='478' y='930' class='st5 st6 st7' dominant-baseline='middle'>
+        feature_type
+      </text>
+    </g>
+    <g>
+      <text x='642' y='930' class='st8 st6 st7' text-anchor='end' dominant-baseline='middle'>
+        String
+      </text>
+    </g>
+  </g>
+  <polyline class='st12' points='230,35 250,35 250,1015 465,1015'/>
+  <polygon points='460.3,1020.7 459.4,1019.7 464.4,1015.0 459.4,1010.3 460.3,1009.3 466.5,1015.0'/>
+  <text class='st6 st4' transform='matrix(1 0 0 1 260 1010)'>
+    hop:taxid
+  </text>
+  <g>
+    <g>
+      <path d='M650,1032 c0,4.4 -3.6,8 -8,8 h-164 c-4.4,0 -8,-3.6 -8,-8 v-34 c0,-4.4 3.6,-8 8,-8 h164 c4.4,0 8,3.6 8,8 v34 z' class='st9uri'/>
+      <path d='M650,1032 c0,4.4 -3.6,8 -8,8 h-164 c-4.4,0 -8,-3.6 -8,-8 v-34 c0,-4.4 3.6,-8 8,-8 h164 c4.4,0 8,3.6 8,8 v34 z' class='st1'/>
+    </g>
+    <g class='st2'>
+      <path d='M470,1010 v-12 c0,-4.4 3.6,-8 8,-8 h164 c4.4,0 8,3.6 8,8 v12'/>
+    </g>
+    <g transform='translate(-0.5 -0.5)'>
+      <text x='478' y='1028' class='st3 st4'>
+        taxid:9606
+      </text>
+    </g>
+    <g transform='translate(-0.5 -0.5)'>
+      <text x='478' y='1000' class='st5 st6 st7' dominant-baseline='middle'>
+        taxid
+      </text>
+    </g>
+    <g transform='translate(-0.5 -0.5)'>
+      <text x='642' y='1000' class='st8 st6 st7' text-anchor='end' dominant-baseline='middle'>
+        URI
+      </text>
+    </g>
+  </g>
+  <polyline class='st12' points='230,35 250,35 250,1085 465,1085'/>
+  <polygon points='460.3,1090.7 459.4,1089.7 464.4,1085.0 459.4,1080.3 460.3,1079.3 466.5,1085.0'/>
+  <text class='st6 st4' transform='matrix(1 0 0 1 260 1080)'>
+    insdc:chromosome *
+  </text>
+  <g>
+    <rect x='470' y='1060' width='180' height='50' class='st9'/>
+    <polyline points='470,1080 470,1060 650,1060 650,1080' class='st2'/>
+    <g>
+      <text x='478' y='1095' class='st3 st4' dominant-baseline='middle'>
+        1
+      </text>
+    </g>
+    <g>
+      <text x='478' y='1070' class='st5 st6 st7' dominant-baseline='middle'>
+        chromosome
+      </text>
+    </g>
+    <g>
+      <text x='642' y='1070' class='st8 st6 st7' text-anchor='end' dominant-baseline='middle'>
+        String
+      </text>
+    </g>
+  </g>
+  <polyline class='st12' points='230,35 250,35 250,1155 465,1155'/>
+  <polygon points='460.3,1160.7 459.4,1159.7 464.4,1155.0 459.4,1150.3 460.3,1149.3 466.5,1155.0'/>
+  <text class='st6 st4' transform='matrix(1 0 0 1 260 1150)'>
+    insdc:map *
+  </text>
+  <g>
+    <rect x='470' y='1130' width='180' height='50' class='st9'/>
+    <polyline points='470,1150 470,1130 650,1130 650,1150' class='st2'/>
+    <g>
+      <text x='478' y='1165' class='st3 st4' dominant-baseline='middle'>
+        1p31.1
+      </text>
+    </g>
+    <g>
+      <text x='478' y='1140' class='st5 st6 st7' dominant-baseline='middle'>
+        map
+      </text>
+    </g>
+    <g>
+      <text x='642' y='1140' class='st8 st6 st7' text-anchor='end' dominant-baseline='middle'>
+        String
+      </text>
+    </g>
+  </g>
+  <polyline class='st12' points='230,35 250,35 250,1225 465,1225'/>
+  <polygon points='460.3,1230.7 459.4,1229.7 464.4,1225.0 459.4,1220.3 460.3,1219.3 466.5,1225.0'/>
+  <text class='st6 st4' transform='matrix(1 0 0 1 260 1220)'>
+    dct:modified
+  </text>
+  <g>
+    <rect x='470' y='1200' width='180' height='50' class='st9'/>
+    <polyline points='470,1220 470,1200 650,1200 650,1220' class='st2'/>
+    <g>
+      <text x='478' y='1235' class='st3 st4' dominant-baseline='middle'>
+        2021-02-07
+      </text>
+    </g>
+    <g>
+      <text x='478' y='1210' class='st5 st6 st7' dominant-baseline='middle'>
+        modified
+      </text>
+    </g>
+    <g>
+      <text x='642' y='1210' class='st8 st6 st7' text-anchor='end' dominant-baseline='middle'>
+        String
+      </text>
+    </g>
+  </g>
+  <g>
+    <text x='60' y='1294' font-size='14px' class='st6'>
       Namespaces
     </text>
-    <text x='60' y='890' font-size='12px' class='st3'>
+    <text x='60' y='1310' font-size='12px' class='st3'>
       rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
     </text>
-    <text x='60' y='906' font-size='12px' class='st3'>
+    <text x='60' y='1326' font-size='12px' class='st3'>
       dct: &lt;http://purl.org/dc/terms/&gt;
     </text>
-    <text x='60' y='922' font-size='12px' class='st3'>
+    <text x='60' y='1342' font-size='12px' class='st3'>
       xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
     </text>
-    <text x='60' y='938' font-size='12px' class='st3'>
+    <text x='60' y='1358' font-size='12px' class='st3'>
       ncbigene: &lt;http://identifiers.org/ncbigene/&gt;
     </text>
-    <text x='60' y='954' font-size='12px' class='st3'>
+    <text x='60' y='1374' font-size='12px' class='st3'>
       taxid: &lt;http://identifiers.org/taxonomy/&gt;
     </text>
-    <text x='60' y='970' font-size='12px' class='st3'>
+    <text x='60' y='1390' font-size='12px' class='st3'>
       hgnc: &lt;http://identifiers.org/hgnc/&gt;
     </text>
-    <text x='60' y='986' font-size='12px' class='st3'>
+    <text x='60' y='1406' font-size='12px' class='st3'>
       mim: &lt;http://identifiers.org/mim/&gt;
     </text>
-    <text x='60' y='1002' font-size='12px' class='st3'>
+    <text x='60' y='1422' font-size='12px' class='st3'>
       mirbase: &lt;http://identifiers.org/mirbase/&gt;
     </text>
-    <text x='60' y='1018' font-size='12px' class='st3'>
+    <text x='60' y='1438' font-size='12px' class='st3'>
       ensembl: &lt;http://identifiers.org/ensembl/&gt;
     </text>
-    <text x='60' y='1034' font-size='12px' class='st3'>
-      nuc: &lt;http://ddbj.nig.ac.jp/ontologies/nucleotide/&gt;
+    <text x='60' y='1454' font-size='12px' class='st3'>
+      insdc: &lt;http://ddbj.nig.ac.jp/ontologies/nucleotide/&gt;
     </text>
-    <text x='60' y='1050' font-size='12px' class='st3'>
+    <text x='60' y='1470' font-size='12px' class='st3'>
       hop: &lt;http://purl.org/net/orthordf/hOP/ontology#&gt;
     </text>
-    <rect x='50' y='850' width='326' height='214' fill='none' stroke='#000000' stroke-width='1'/>
+    <rect x='50' y='1270' width='338' height='214' fill='none' stroke='#000000' stroke-width='1'/>
   </g>
 </svg>
