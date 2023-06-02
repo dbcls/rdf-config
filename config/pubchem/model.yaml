@@ -1,48 +1,174 @@
+- PubChemCompound compound:CID3835861:
+  - a*:
+    - compound_class: obo:CHEBI_121361
+  - sio:has-attribute*:  # 正しくは SIO_000008
+    - compound_attribute: [PubChemDescriptor, PubChemSynonym]
+  - sio:CHEMINF_000461*:              # is_stereoisomer_of
+    - compound_stereoisomer: PubChemCompound
+  - skos:closeMatch*:
+    - compound_close_match: <http://www.wikidata.org/entity/Q27209899>
+
+- PubChemSubstance substance:SID3712803:
+  - a*:
+    - substance_class: obo:CHEBI_121361
+  - dcterms:modified:
+    - substance_modified: 2012-03-01-04:00
+  - sio:has-attribute*:
+    - substance_attribute: [PubChemDescriptor, PubChemSynonym]
+  - dcterms:source:
+    - substance_source: PubChemSource
+  - obo:RO_0000056*:                  # participates in
+    - substance_participates_in: PubChemMeasureGroup
+  - sio:CHEMINF_000477*:              # has PubChem normalized counterpart
+    - substance_normalized_counterpart: PubChemCompound
+  - dcterms:available:
+    - substance_available: 2005-07-30-04:00
+
 - PubChemBioAssay bioassay:AID610:
   - a: bao:BAO_0000015                # bioassay
-  - dct:source:
-    - source: source:The_Scripps_Research_Institute_Molecular_Screening_Center
-  - dct:title:
-    - title: "Dose-response cell-based assay"
+  - dcterms:source:
+    #- source: source:The_Scripps_Research_Institute_Molecular_Screening_Center
+    - bioassay_source: PubChemSource
+  - dcterms:title:
+    - bioassay_title: "Dose-response cell-based assay"
   - bao:BAO_0000209*:                 # has measure group
-    - measure_group: PubChemMeasureGroup
+    - bioassay_measure_group: PubChemMeasureGroup
   - bao:BAO_0000210*:                 # has assay stage
-    - assay_stage: bao:BAO_0000030    # confirmatory assay
-  - bao:BAO_0000808*:                 # has primary assay
-    - primary_assay: bioassay:AID561
-  - bao:BAO_0001067*:                 # is primary assay of
-    - primary_assay_of: bioassay:AID2139
-  - bao:BAO_0000809*:                 # has confirmatory assay
-    - confirmatory_assay: bioassay:AID610
+    - bioassay_assay_stage: bao:BAO_0000030    # confirmatory assay
   - bao:BAO_0000540*:                 # is confirmatory assay of
-    - confirmatory_assay_of: bioassay:AID561
-  - bao:BAO_0000812*:                 # has summary assay
-    - summary_assay: bioassay:AID2139
+    - bioassay_confirmatory_assay_of: bioassay:AID561
+  # - bao:BAO_0000808*:                 # has primary assay
+  #   - primary_assay: bioassay:AID561
+  # - bao:BAO_0000809*:                 # has confirmatory assay
+  #   - confirmatory_assay: bioassay:AID610
+  # - bao:BAO_0000812*:                 # has summary assay
+  #   - summary_assay: bioassay:AID2139
+  - bao:BAO_0001067*:                 # is primary assay of
+    - bioassay_primary_assay_of: bioassay:AID2139
   - bao:BAO_0001094*:                 # is summary assay of
-    - summary_assay_of: bioassay:AID2117
+    - bioassay_summary_assay_of: bioassay:AID2117
   - biopax:organism:
-    - organism: taxonomy:TAXID9606
-  
+    - bioassay_organism: taxonomy:TAXID9606
+
+- PubChemConcept concept:ATC_A01AA:
+  - a: skos:concept
+  - pav:importedFrom:
+    - concept_imported_from: PubChemSource
+  - skos:broader:
+    - concept_broader: PubChemConcept
+  - skos:inScheme:
+    - concept_in_scheme: PubChemConcept
+  - skos:prefLabel:
+    - concept_label: "stomatological preparations"
+
+- PubChemConservedDomain conserveddomain:PSSMID100030:
+  - a:
+    - conserveddomain_type: obo:SO_0000417  # polypeptide_domain
+  - dcterms:title:
+    - conserveddomain_title: '"ThiL"@en'
+  - cito:isDiscussedBy:
+    - conserveddomain_is_discussed_by: PubChemReference
+  - dcterms:abstract:
+    - conserveddomain_abstract: '"ThiL (Thiamine-monophosphate kinase) plays a dual role in ..."@en'
+
+- PubChemDescriptor descriptor:CID3835107_Covalent_Unit_Count:
+  - a:
+    - descriptor_type: sio:CHEMINF_000369
+  - sio:has-value:  # 正しくは SIO_000300
+    - descriptor_value: 1
+
+- PubChemGene gene:GID10000:
+  - a: biopax:Gene
+  - dcterms:title:
+    - gene_name: '"AKT serine/threonine kinase 3"@en'
+  - biopax:organism:
+    - gene_organism: PubChemTaxonomy
+  - skos:closeMatch*:
+    - gene_close_match: <http://rdf.ebi.ac.uk/resource/ensembl/ENSG00000117020>
+  - dcterms:alternative*:
+    - gene_alternative_name: '"MPPH"@en'
+  - sio:gene-symbol:  # SIO_001383 だと思われるが、だとしてもこれはクラスなので誤り。
+    - gene_symbol: '"AKT3"@en'
+  - obo:RO_0000056*:    # participates in
+    - gene_participates_in: obo:GO_1905653  # GO BP
+  - obo:RO_0000085*:    # has function
+    - gene_has_function: obo:GO_0005524     # GO MF
+  - obo:RO_0001025*:    # located in
+    - gene_located_in: obo:GO_0016020       # GO CC
+  - cito:isDiscussedBy*:
+    - gene_is_discussed_by: PubChemReference
+
+- PubChemEndpoint endpoint:SID103164874_AID443491:
+  - a:
+    - endpoint_type: bao:BAO_0000190  # IC50
+  # - a: bao:BAO_0000190               # IC50
+  - obo:IAO_0000136:                  # is about
+    - endpoint_is_about: PubChemSubstance
+  - sio:has-unit:  # SIO_000221
+    - endpoint_has_unit: obo:UO_0000064            # cubic meter
+  - sio:has-value: # SIO_000300
+    - endpoint_has_value: 0.162
+  - rdfs:label:
+    - endpoint_label: '"IC50"@en'
+  - pubchemv:PubChemAssayOutcome:
+    - endpoint_assay_outcome: pubchemv:active
+  - cito:citesAsDataSource:
+    - endpoint_cites_as_data_source: PubChemReference
+
+- PubChemInchiKey inchikey:AAAHDTMMJGSHKG-UHFFFAOYSA-N:
+  - a: sio:CHEMINF_000399 # InChIKey generated by software version 1.0.4
+  - sio:has-value:
+    - inchikey_has_value: '"AAAHDTMMJGSHKG-UHFFFAOYSA-N"@en'
+  - sio:is-attribute-of:
+    - inchikey_is_attribute_of: PubChemCompound
+
+- PubChemPatent patent:hoge:
+  - a: patent:Publication
+  - epo_patent:classificationCPCAdditional:
+    - patent_classification_cpc_additional: pubchem:patentcpc/A61K38-00
+
+# rdf:type
+# dcterm:abstract
+# epo_patent:classificationIPCAdditional
+# epo_patent:classificationCPCAdditional
+# epo_patent:applicantVC
+# epo_patent:inventorVC
+# epo_patent:classificationIPCInventive
+# cito:isCitedBy
+# epo_patent:classificationCPCInventive
+# epo_patent:filingDate
+# epo_patent:publicationNumber
+
+# pubchem:patent/EP-0954519-B1	rdf:type	epo_patent:Publication
+# pubchem:patent/EP-0954519-B1	epo_patent:classificationCPCAdditional	pubchem:patentcpc/A61K38-00
+# pubchem:patent/EP-0954519-B1	epo_patent:applicantVC	pubchem:patentassignee/MD5_bb54e0dd9573d32316a490e981fe014f
+# pubchem:patent/EP-0954519-B1	epo_patent:inventorVC	pubchem:patentinventor/MD5_58712598039750b2077085eb564b5a92
+# pubchem:patent/EP-0954519-B1	epo_patent:inventorVC	pubchem:patentinventor/MD5_93948dd35c2962449d30207b27a912ca
+# pubchem:patent/EP-0954519-B1	epo_patent:classificationIPCInventive	pubchem:patentipc/A61K31-18
+# pubchem:patent/EP-0954519-B1	epo_patent:classificationIPCInventive	pubchem:patentipc/A61K38-00
+# pubchem:patent/EP-0954519-B1	epo_patent:classificationCPCInventive	pubchem:patentcpc/A61P1-00
+# pubchem:patent/EP-0954519-B1	epo_patent:classificationCPCInventive	pubchem:patentcpc/A61P1-04
+# pubchem:patent/EP-0954519-B1	epo_patent:filingDate	1998-07-31-04:00
+# pubchem:patent/EP-0954519-B1	epo_patent:filingDate	2003-04-02-04:00
+# pubchem:patent/EP-0954519-B1	epo_patent:publicationNumber	"EP-0954519-B1"@en
+# pubchem:patent/EP-0954519-B1	epo_patent:publicationDate	2003-04-02-04:00
+# pubchem:patent/EP-0954519-B1	epo_patent:titleOfInvention	"Alpha-9 integrin antagonists and anti-inflammatory compositions therof"@en
+# pubchem:patent/EP-0954519-B1	pubchem:vocabulary#priorityDate	1997-07-31-04:00
+
 - PubChemMeasureGroup measuregroup:AID1788_29:
   - a: bao:BAO_0000040
   - obo:OBI_0000299:                  # has specified output
     - endpoint: PubChemEndpoint
-  - dct:title:
+  - dcterms:title:
     - measure_group_title: "Glutamate, Kainate (rat)"
-  - obo:RO_0000057:
-    - participant: protein:ACCNP_058937
+  - obo:RO_0000057*:
+    - participant: [PubChemProtein, PubChemGene]
 
-- PubChemEndpoint endpoint:SID103164874_AID443491:
-#  - a: bao:BAO_0000190               # IC50
-  - obo:IAO_0000136:                  # is about
-    - about: substance:SID103164874
-  - sio:has-unit:
-    - unit: obo:UO_0000064            # cubic meter
-  - sio:has-value:
-    - value: 0.162
-  - rdfs:label:
-    - label: "IC50"
-  - pubchemv:PubChemAssayOutcome:
-    - assay_outcome: pubchemv:active
-  - cito:citesAsDataSource:
-    - data_source: reference:PMID19880317
+
+# - PubChemPathway pathway:hoge:
+# - PubChemProtein protein:hoge:
+# - PubChemReference reference:hoge:
+# - PubChemSource source:hoge:
+# - PubChemTaxonomy taxonomy:hoge:
+# - PubChemSynonym synonym:hoge:
+
