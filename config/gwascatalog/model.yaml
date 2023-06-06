@@ -1,38 +1,99 @@
-- GwasSnp gwas_snp:7827:
-  - a:
-    - owl:NamedIndividual
-    - gwas:SingleNucleotidePolymorphism
-  - oban:is_subject_of+:
-    - gwas_assosiation: GwasAssosiation # "21044949"^^xsd:string
-  - gwas:has_basepair_position:
-    - bp_position: 13764310
-  - gwas:has_snp_reference_id:
-    - refsnp_id: "rs2896103"
-  - ro:located_in:
-    - gwas_cytogenetic_region: gwas_cytogenetic_region:5p15.2
-  - rdfs:label:
-    - label: "rs2896103"
-
-- GwasAssosiation gwas_trackable:6012:
-  - a:
-    - owl:NamedIndividual
-    - gwas:TraitAssociation
-    - gwas:Study
-  - oban:has_object+:
-    - efo_trait: efo:EFO_0003912 # ankle brachial index
-    - cardiovascular_disease_biomarker_measurement: efo:EFO_0005278 # cardiovascular disease biomarker measurement
-  - gwas:has_author:
-    - author: "Yang J"
-  - gwas:has_gwas_trait_name:
-    - gwas_trait_name: "Subclinical atherosclerosis traits (other)"
-  - gwas:has_p_value:
-    - p_value: 5e-06
-  - gwas:has_publication_date:
-    - publication_date: 2010-11-02T00:00:00Z
+- []:
+  - a gwas:Association:
+  - terms:region:
+    - region: "18q21.32"
+  - terms:chr_id:
+    - chr_id: "18"
+  - terms:chr_pos:
+    - chr_pos: "60161902"
+  - terms:reported_genes*:
+    - reported_genes: "MC4R"
+  - terms:mapped_genes*:
+    - mapped_genes: "MC4R"
+  - terms:upstream_gene_id: 
+    - upstream_gene_id: ensg:ENSG00000242060
+  - terms:downstream_gene_id: 
+    - downstream_gene_id: ensg:ENSG00000202468
+  - terms:snp_gene_ids:
+    - snp_gene_ids: "" 
+  - terms:upstream_gene_distance:
+    - upstream_gene_distance: 11537
+  - terms:downstream_gene_distance:
+    - downstream_gene_distance: 1665
+  - terms:strongest_snp_risk_allele:
+    - strongest_snp_risk_allele: "rs6567160-T"
+  - terms:snps:
+    - snps: "rs6567160"
+  - rdfs:seeAlso: 
+    - see_also: dbsnp:rs6567160
+  - terms:merged:
+    - merged_: "0"
+  - terms:snp_id_current:
+    - snp_id_current: "6567160"
+  - terms:context:
+    - "upstream_gene_variant"
+  - terms:intergenic:
+    - inetergenic: "1"
+  - terms:risk_allele_frequency:
+    - risk_allele_frequency: 0.7603
+  - terms:p_value:
+    - p_value: 1E-28
+  - terms:p_value_mlog:
+    - p_value_mlog: 28.0
+  - terms:p_value_text:
+    - p_value_text: "(women)"
+  - terms:odds_ratio:
+    - odds_ratio: "NA"
+  - terms:beta:
+    - beta: 0.0542
+  - terms:beta_unit:
+    - beta_unit: "kg/m2 decrease"
+  - terms:ci_text:
+    - ci_text: "[0.045-0.064]"
+  - terms:platform_snp_passing_qc:
+    - platform_snp_passing_qc: ""
+  - terms:cnv:
+    - cnv: "N"
+  - terms:mapped_trait:
+    - mapped_trait_text: "smoking behavior, body mass index"
+  - terms:mapped_trait_uri:
+    - mapped_trait_uri:
+      - <http://www.ebi.ac.uk/efo/EFO_0004318>
+      - <http://www.ebi.ac.uk/efo/EFO_0004340>
+  - terms:study:
+    - study: GCST004495
+  - terms:genotyping_technology:
+    - genotyping_technology_assoc: "Genome-wide genotyping array"
+  - dct:date:
+    - date: "2017-08-10"
+  - dct:references:
+    - refpubmed: 28443625
   - gwas:has_pubmed_id:
-    - pubmed_id: "21044949"
-  - ro:has_part:
-    - gwas_association: gwas_trackable:16617 # Association between rs7329174 and Systemic lupus erythematosus
-  - rdfs:label+:
-    - asoosication_description: "Association between rs2896103 and Subclinical atherosclerosis traits (other)"
+    - has_pubmed_id_association: "28443625"
 
+- GWASStudy study:GCST004495:
+  - a gwas:Study:
+  - dct:identifier:
+    - study_identifier: "GCST004495"
+  - dct:date:
+    - study_date: "2017-08-10"
+  - dct:references:
+    - study_references: pubmed:28443625
+  - gwas:has_pubmed_id: 
+    - has_pubmed_id_study: "28443625"
+  - dct:description:
+    - description: "BMI (adjusted for smoking behaviour)"
+  - terms:initial_sample_size:
+    - initial_sample_size: "98,173 European ancestry women, 64,373 European ancestry men, 5,829 European ancestry individuals, 10,500 African American/Afro-Caribbean ancestry women, 2,706 African American/Afro-Caribbean ancestry men, 1,030 Indian Asian ancestry women, 7,648 Indian Asian ancestry men, 1,793 Filipino ancestry women, 2,944 Hispanic/Latino ancestry women, 1,764 Hispanic/Latino ancestry men"
+  - terms:replication_sample_size:
+    - replication_sample_size: "21,496 European ancestry women, 24,385 European ancestry men, 118,364 European ancestry individuals, 2,326 African American/Afro-Caribbean ancestry women, 855 African American/Afro-Caribbean ancestry men"
+  - terms:platform_snps_passing_qc:
+    - platform_snps_passing_qc: "Affymetrix, Illumina, Perlegen [up to 2800000] (imputed)"
+  - terms:association_count:
+    - association_count: 145
+  - terms:mapped_trait+:
+    - mapped_trait: 
+      - <http://www.ebi.ac.uk/efo/EFO_0004318>
+      - <http://www.ebi.ac.uk/efo/EFO_0004340>
+  - terms:genotyping_technology:
+    - genotyping_technology_study: "Genome-wide genotyping array"
