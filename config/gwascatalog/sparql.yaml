@@ -1,9 +1,6 @@
-sparql:
-  description: Obtain SNP and GWAS association records from the GWAS-Catalog data. 
-  variables: [GwasSnp, gwas_assosiation]
-
-stanza_sparql:
-  description: Obtain a SNP and GWAS association record from the GWAS-Catalog data. 
+association:
+  description: GWAS Catalog association and study record for dbsnp rs671 variant
   parameters:
-    rs: "rs2896103"  
-  variables: [rs, bp_position, gwas_cytogenetic_region, gwas_trait_name, p_value, pubmed_id, gwas_association_parent, gwas_association_child, association_description]
+    snps: "rs671"
+  variables: [strongest_snp_risk_allele, p_value, beta, beta_unit, ci_text, mapped_trait_text,
+              mapped_trait_uri, refpubmed, study, study_description, initial_sample_size, replication_sample_size]

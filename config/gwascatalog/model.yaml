@@ -6,9 +6,9 @@
     - chr_id: "18"
   - terms:chr_pos:
     - chr_pos: "60161902"
-  - terms:reported_genes*:
+  - terms:reported_genes:
     - reported_genes: "MC4R"
-  - terms:mapped_genes*:
+  - terms:mapped_genes:
     - mapped_genes: "MC4R"
   - terms:upstream_gene_id: 
     - upstream_gene_id: ensg:ENSG00000242060
@@ -56,12 +56,12 @@
     - cnv: "N"
   - terms:mapped_trait:
     - mapped_trait_text: "smoking behavior, body mass index"
-  - terms:mapped_trait_uri:
+  - terms:mapped_trait_uri+:
     - mapped_trait_uri:
       - <http://www.ebi.ac.uk/efo/EFO_0004318>
       - <http://www.ebi.ac.uk/efo/EFO_0004340>
   - terms:study:
-    - study: GCST004495
+    - study: GWASStudy
   - terms:genotyping_technology:
     - genotyping_technology_assoc: "Genome-wide genotyping array"
   - dct:date:
@@ -82,7 +82,7 @@
   - gwas:has_pubmed_id: 
     - has_pubmed_id_study: "28443625"
   - dct:description:
-    - description: "BMI (adjusted for smoking behaviour)"
+    - study_description: "BMI (adjusted for smoking behaviour)"
   - terms:initial_sample_size:
     - initial_sample_size: "98,173 European ancestry women, 64,373 European ancestry men, 5,829 European ancestry individuals, 10,500 African American/Afro-Caribbean ancestry women, 2,706 African American/Afro-Caribbean ancestry men, 1,030 Indian Asian ancestry women, 7,648 Indian Asian ancestry men, 1,793 Filipino ancestry women, 2,944 Hispanic/Latino ancestry women, 1,764 Hispanic/Latino ancestry men"
   - terms:replication_sample_size:
