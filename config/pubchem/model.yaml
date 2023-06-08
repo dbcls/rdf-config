@@ -271,3 +271,111 @@
   - dcterms:subject*:
     - synonym_subject: <http://id.nlm.nih.gov/mesh/M0517923>
 
+- PubChemCompoundCompoundCooccurrence cooccurrence:CID135391179_CID10112:
+  - a: sio:SIO_001435  # chemical-chemical association
+  - rdf:subject:
+    - compound_compound_cooccurrence_subject: PubChemCompound
+  - rdf:object:
+    - compound_compound_cooccurrence_object: PubChemCompound
+  - sio:SIO_001157:    # is result of
+    - compound_compound_cooccurrence_operation: edam:operation_0306  # Text mining
+  - sio:SIO_000300:    # has value
+    - compound_compound_cooccurrence_score: 16
+
+- PubChemCompoundGeneCooccurrence cooccurrence:CID10009279_ASE1:
+  - a: sio:SIO_001257  # chemical-gene association
+  - rdf:subject:
+    - compound_gene_cooccurrence_subject: [PubChemCompound, PubChemGene]  # subject が compound で object が gene の場合だけでなく逆向きもある。
+  - rdf:object:
+    - compound_gene_cooccurrence_object: [PubChemCompound, PubChemGene]
+  - sio:SIO_001157:    # is result of
+    - compound_gene_cooccurrence_operation: edam:operation_0306  # Text mining
+  - sio:SIO_000300:    # has value
+    - compound_gene_cooccurrence_score: 16
+
+- PubChemCompoundDiseaseCooccurrence cooccurrence:CID10007406_DZID7548:
+  - a: sio:SIO_000993  # chemical-disease association
+  - rdf:subject:
+    - compound_disease_cooccurrence_subject: [PubChemCompound, PubChemDisease]
+  - rdf:object:
+    - compound_disease_cooccurrence_object: [PubChemCompound, PubChemDisease]
+  - sio:SIO_001157:    # is result of
+    - compound_disease_cooccurrence_operation: edam:operation_0306  # Text mining
+  - sio:SIO_000300:    # has value
+    - compound_disease_cooccurrence_score: 16
+
+- PubChemDiseaseDiseaseCooccurrence cooccurrence:DZID11429_DZID10258:
+  - a: sio:SIO_001436  # disease-disease association
+  - rdf:subject:
+    - disease_disease_cooccurrence_subject: PubChemDisease
+  - rdf:object:
+    - disease_disease_cooccurrence_object: PubChemDisease
+  - sio:SIO_001157:    # is result of
+    - disease_disease_cooccurrence_operation: edam:operation_0306  # Text mining
+  - sio:SIO_000300:    # has value
+    - disease_disease_cooccurrence_score: 16
+
+- PubChemDiseaseGeneCooccurrence cooccurrence:APOA2_DZID7001:
+  - a: sio:SIO_000983  # gene-disease association
+  - rdf:subject:
+    - disease_gene_cooccurrence_subject: [PubChemDisease, PubChemGene]
+  - rdf:object:
+    - disease_gene_cooccurrence_object: [PubChemDisease, PubChemGene]
+  - sio:SIO_001157:    # is result of
+    - disease_gene_cooccurrence_operation: edam:operation_0306  # Text mining
+  - sio:SIO_000300:    # has value
+    - disease_gene_cooccurrence_score: 16
+
+- PubChemGeneGeneCooccurrence cooccurrence:GTF2B_ABCC2:
+  - a: sio:SIO_001437  # gene-gene association
+  - rdf:subject:
+    - gene_gene_cooccurrence_subject: PubChemGene
+  - rdf:object:
+    - gene_gene_cooccurrence_object: PubChemGene
+  - sio:SIO_001157:    # is result of
+    - gene_gene_cooccurrence_operation: edam:operation_0306  # Text mining
+  - sio:SIO_000300:    # has value
+    - gene_gene_cooccurrence_score: 16
+
+- PubChemAuthor author:MD5_8b1fbee829d0da8e2dbfabfad65d6338:
+  # - a:  # クラスがない
+  - vcard2006:family-name:
+    - author_family_name: "Velders"
+  - vcard2006:given-name+:  # "Aldrik H" と "Aldrik H." がある
+    - author_given_name: "Aldrik H"
+  - vcard2006:fn+:
+    - author_full_name: "Aldrik H Velders"
+  - vcard2006:organization-name*:
+    - author_organization: "Leiden Institute of Chemistry, ..."
+
+- PubChemAuthorOrcid author:ORCID_0000-0000-0000-0001:
+  # - a:  # クラスがない
+  - vcard2006:hasUID?:
+    - author_uid: <https://orcid.org/0000-0000-0000-0001>
+  - dcterms:source?:
+    - author_source: <https://orcid.org>
+
+- PubChemBook book:NBK10310:
+  - a: fabio:Book
+  - dcterms:creator:
+    - book_creator: PubChemAuthor
+  - dcterms:date:
+    - book_date: "2006"
+  - dcterms:publisher:
+    - book_publisher: "Oregon Health & Science University"
+  - dcterms:title:
+    - book_title: "Drug Class Review: Alzheimer's Drugs"
+  - prism:location:
+    - book_location: "Portland (OR)"
+  - skos:exactMatch:
+    - book_exact_match: <https://www.ncbi.nlm.nih.gov/books/NBK10310>
+  - prism:subtitle?:
+    - book_subtitle: "Final Report"
+  - prism:isbn?:
+    - book_isbn: "0-8153-3642-X"
+
+# - PubChemCell cell:id:
+# - PubChemDisease disease:id:
+# - PubChemGrant grant:id:
+# - PubChemJournal journal:id:
+# - PubChemOrganization organizaion:id:
