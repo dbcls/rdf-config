@@ -271,6 +271,7 @@
   - dcterms:subject*:
     - synonym_subject: <http://id.nlm.nih.gov/mesh/M0517923>
 
+### 以下、20230612 時点ではまだロードされておらず、https://integbio.jp/rdf/pubchem/sparql からアクセスできない。最近追加されたものであり、rdfp03 上にファイルは既にある。RDF Portal の次回更新時にロードされる予定。
 - PubChemCompoundCompoundCooccurrence cooccurrence:CID135391179_CID10112:
   - a: sio:SIO_001435  # chemical-chemical association
   - rdf:subject:
@@ -374,8 +375,63 @@
   - prism:isbn?:
     - book_isbn: "0-8153-3642-X"
 
-# - PubChemCell cell:id:
-# - PubChemDisease disease:id:
-# - PubChemGrant grant:id:
-# - PubChemJournal journal:id:
-# - PubChemOrganization organizaion:id:
+- PubChemCell cell:CELLID1:
+  - a: obo:CLO_0000031  # cell line
+  - a: obo:SIO_010054   # cell line  ## この 2 つが両方付いている
+  - up:organism:
+    - cell_organism: PubChemTaxonomy
+  - skos:prefLabel:
+    - cell_pref_label: "A-375"
+  - skos:altLabel*:
+    - cell_alt_label: "A 375"
+  - obo:BFO_0000050*:    # part of
+    - cell_part_of: "skin"
+  - skos:closeMatch*:
+    - cell_close_match: <https://web.expasy.org/cellosaurus/CVCL_0132>
+  - cito:isDiscussedBy*:
+    - cell_reference: PubChemReference
+
+- PubChemDisease disease:DZID2725:
+  - a: obo:DOID_4         # Disease
+  - a: obo:MONDO_0000001  # disease or disorder  ## この 2 つが両方付いている
+  - skos:prefLabel:
+    - disease_pref_label: "Chromosome 18 ring"
+  - skos:altLabel*:
+    - disease_alt_label: "ring 18 chromosome syndrome"
+  - skos:closeMatch*:
+    # UMLS, OMIM, Orphanet, MedGen, MeSH, GARD, NCIT, Mondo, DOID, HP
+    - disease_close_match: <https://uts.nlm.nih.gov/uts/umls/concept/C0265475>
+  - skos:relatedMatch*:
+    # UMLS, OMIM, Orphanet, MedGen, MeSH, GARD, NCIT, Mondo, DOID, HP
+    - disease_related_match: <https://uts.nlm.nih.gov/uts/umls/concept/C2931809>
+
+- PubChemGrant grant:MD5_20ac7448bc58fb27a4b7ee91ed141799:
+  - a: frapo:Grant
+  - frapo:hasFundingAgency: PubChemOrganization
+  - frapo:hasGrantNumber:
+    - grant_number: "5MO1RR42"
+
+- PubChemJournal journal:3:
+  - a: fabio:Journal
+  - prism:eissn?:
+    - journal_eissn: "1095-6808"
+  - prism:issn:
+    - journal_issn: "0001-0197"
+  - dcterms:title:
+    - journal_title: "AARN news letter"
+  - fabio:hasNLMJournalTitleAbbreviation:
+    - journal_title_abbrev: "AARN News Lett"
+  - fabio:hasNationalLibraryOfMedicineJournalId:
+    - journal_nlm_id: "1251052"
+  - skos:exactMatch*:
+    - journal_exact_match: <https://www.ncbi.nlm.nih.gov/nlmcatalog/1251052>
+
+- PubChemOrganization organization:MD5_02dbd117ccafdaa94809693a5d1d279d:
+  - a: frapo:FundingAgency
+  - a: vcard2006:Organization
+  - skos:closeMatch*:
+    - organization_close_match: <https://data.crossref.org/fundingdata/funder/10.13039/100000002>
+  - vcard2006:country-name:
+    - organization_country: "United States"
+  - vcard2006:fn+:
+    - organization_full_name: "National Institutes of Health"
