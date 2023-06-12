@@ -1,5 +1,12 @@
-sparql:
-  description: labels
-  variables: [molecule_chemblid, molecule_label, inchi_key_value]
+labels:
+  description: "List the pairs of ChEMBL compound ID and its label"
+  variables: [molecule_chemblid, molecule_label]
   options:
     distinct: true
+
+approved_drugs:
+  description: "List compounds targeting Tyrosine-protein kinase ABL (CHEMBL1862) and approved as a drug"
+  variables: [molecule_chemblid, molecule_label, molecule_highest_development_phase, molecule_has_mechanism, drug_mechanism_has_target]
+  parameters:
+    drug_mechanism_has_target: chembl_target:CHEMBL1862
+    molecule_highest_development_phase: 4
