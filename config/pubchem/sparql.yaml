@@ -1,2 +1,19 @@
-test_types:
-  variables: [ PubChemEndpoint, value, unit ]
+substance_compound_pair:
+  description: "List the pairs of PubChem substance and its counterpart in PubChem Compound"
+  variables: [ PubChemSubstance, substance_normalized_counterpart ]
+  options:
+    distinct: true
+
+cooccurrence_compound_disease:
+  description: "What are the top five diseases commonly mentioned with indomethacin (CID3715)?  (cf. https://pubchem.ncbi.nlm.nih.gov/docs/rdf-use-cases#section=Case-11-What-are-the-top-five-diseases-commonly-mentioned-with-indomethacin-CID3715)"
+  variables: [ PubChemCompoundDiseaseCooccurrence,
+  compound_disease_cooccurrence_subject,
+  compound_disease_cooccurrence_object,
+  compound_disease_cooccurrence_score,
+  disease_pref_label]
+  parameters:
+    compound_disease_cooccurrence_subject: compound:CID3715
+  options:
+    order_by:
+      - compound_disease_cooccurrence_score: desc
+    limit: 5
