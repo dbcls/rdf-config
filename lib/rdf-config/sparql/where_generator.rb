@@ -219,7 +219,9 @@ class RDFConfig
       end
 
       def double_quote_value?(object)
-        (object.is_a?(RDFConfig::Model::Literal) && !object.value.is_a?(TrueClass) && !object.value.is_a?(FalseClass)) &&
+        (object.is_a?(RDFConfig::Model::Literal) &&
+          !object.value.is_a?(Numeric) &&
+          !object.value.is_a?(TrueClass) && !object.value.is_a?(FalseClass)) &&
           !object.has_lang_tag? && !object.has_data_type?
       end
 
