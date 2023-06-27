@@ -1,5 +1,5 @@
 - PubChemCompound compound:CID3835861:
-  # - a*:
+  # - a: pco:Compound
   #   - compound_class: obo:CHEBI_121361
   - sio:has-attribute*:  # 正しくは SIO_000008
     - compound_attribute: [PubChemDescriptor, PubChemSynonym]
@@ -14,7 +14,7 @@
   - sio:CHEMINF_000480*:  # has component with uncharged counterpart
     - compound_uncharged_counterpart: PubChemCompound
   - sio:CHEMINF_000462*:  # has_same_connectivity_as
-    - compound_same_connectivity*: PubChemCompound
+    - compound_same_connectivity: PubChemCompound
   - pubchemv:has_parent*:
     - compound_parent: PubChemCompound
   - obo:has-role?:        # 正しくは RO_0000087 あるいは SIO_000228
