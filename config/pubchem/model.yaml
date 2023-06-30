@@ -27,7 +27,7 @@
     - compound_parent: PubChemCompound
   ## pc_compound_role.ttl
   - obo:RO_0000087?:      # has role
-    - compound_role: pubchemv:FDAApprovedDrugs
+    - compound_role: vocab:FDAApprovedDrugs
 
 - PubChemSubstance substance:SID3712803:
   ## pc_substance_type.ttl
@@ -130,7 +130,7 @@
   - a:  # vocab:Gene (needs to be defined)
     - sio:SIO_010035      # gene
     - sio:SIO_001383      # gene symbol
-  - bao:BAO_0002870       # has gene symbol
+  - bao:BAO_0002870:      # has gene symbol
     - gene_symbol: gene:ACP7
   - skos:prefLabel:
     - gene_name: "AKT serine/threonine kinase 3"
@@ -175,8 +175,8 @@
     - endpoint_has_value: 0.162
   - rdfs:label:
     - endpoint_label: '"IC50"@en'
-  - pubchemv:PubChemAssayOutcome:
-    - endpoint_assay_outcome: pubchemv:active
+  - vocab:PubChemAssayOutcome:
+    - endpoint_assay_outcome: vocab:active
   - cito:citesAsDataSource:
     - endpoint_cites_as_data_source: PubChemReference
 
@@ -255,7 +255,7 @@
     - protein_close_match: <https://www.ncbi.nlm.nih.gov/protein/WP_011228848.1>  # あるいは UniProt
   - up:encodedBy:
     - protein_encoded_by: PubChemGene
-  - pubchemv:hasSimilarProtein:
+  - vocab:hasSimilarProtein:
     - protein_similar_protein: PubChemProtein
   - obo:RO_0002180:  # has component
     - protein_has_component: PubChemConservedDomain
