@@ -29,6 +29,10 @@ class RDFConfig
         def ==(other)
           @name == other.name
         end
+
+        def bnode?
+          false
+        end
       end
     end
   end
