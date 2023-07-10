@@ -1,72 +1,62 @@
-- SNV hco:7/GRCh37#127254587-G-A:
-    - a: obo:SO_0001483 # SNV
-
-    - rdfs:label:
-        - variant_label: 7-127254587-G-A
-
-    - dct:identifier:
-        - variant_identifier: tgv30913364
-
-    - rdfs:seeAlso*:
-        - dbsnp: dbsnp:rs114202595
-
-    - faldo:location:
-        - []:
-          # - a: faldo:ExactPosition TODO: missing triple on endpoint
-            - faldo:position:
-                - position: 127254587
-            - faldo:reference:
-                - reference: hco:7/GRCh37
-
-    - tgvo:hasConsequence+:
-        - []:
-            - a+: obo:SO_0001583 # missense_variant
-            - rdfs:label:
-                - hgvs_g: 7:g.127254587G>A
-            - rdfs:label:
-                - hgvs_p: ENSP00000344297.3:p.Arg129Trp
-            - rdfs:label:
-                - hgvs_c: ENST00000338516.3:c.385C>T
-            - tgvo:gene:
-                - hgnc: hgnc:8618
-                - ensembl_gene: Gene
-            - tgvo:transcript:
-                - ensembl_transcript: enst:ENST00000338516
-            - tgvo:sift?:
-                - sift: 0.0
-            - tgvo:polyphen?:
-                - polyphen: 0.997
-
-    - m2r:reference_allele:
-        - reference_allele: G
-
-    - m2r:alternative_allele:
-        - alternative_allele: G
-
-    - m2r:referece_allele_vcf:
-        - referece_allele_vcf: A
-
-    - m2r:alternative_allele_vcf:
-        - alternative_allele_vcf: A
-
-    - tgvo:condition*:
-        - []:
-            - a: tgvo:Annotation
-            - rdfs:seeAlso:
-                - clinvar: clinvar:13790
-            - dct:source:
-                - annotation_source: ClinVar
-
-- Gene ensg:ENSG00000106331:
-    - a:
-        - obo:SO_0001217
-        - ensembl:protein_coding
-
-    - dct:identifier:
-        - gene_identifier: "ENSG00000106331"
-
-    - rdfs:seeAlso:
-        - gene_xref: ensembl_id:ENSG00000106331
-
-    - rdfs:label:
-        - gene_label: "PAX4"
+- SNV hco_grch38:111803962-G-A:
+  - a: gvo:SNV
+  - dct:identifier?:
+    - tgvid: "tgv47264307"
+  - rdfs:seeAlso*:
+    - dbsnp: dbsnp:rs671
+  - faldo:location+:
+    - []:
+      - a: faldo:ExactPosition
+      - faldo:position:
+        - position: 111803962
+      - faldo:reference:
+        - hco: hco:GRCh38
+  - gvo:ref:
+    - reference_allele: "G"
+  - gvo:alt:
+    - alternative_allele: "A"
+  - gvo:filter*:
+    - filter: "PASS"
+  - gvo:qual*:
+    - quality_value: 451.77    
+  - gvo:info+:
+    - []:
+      - rdf:value:
+        - allele_count: 52
+      - rdfs:label:
+        - allele_count_label: "AC"
+      - rdf:value:
+        - allele_frequency: 0.208
+      - rdfs:label:
+        - allele_frequency_label: "AF"
+      - rdf:value:
+        - allele_number: 250
+      - rdfs:label:
+        - allele_number_label: "AN"
+  - tgv:hasConsequence*:
+    - []:
+      - a: obo:SO_0001583 # missense_variant
+      - tgv:gene_symbol:
+        - hgnc: "ALDH2"
+      - tgv:gene_symbol_source:
+        - gene_symbol_source: "HGNC"
+      - tgv:hgvsc:
+        - hgvsc: "ENST00000261733.2:c.1510G>A"
+      - tgv:hgvsg:
+        - hgvsg: "12:g.111803962G>A"
+      - tgv:hgvsp:
+        - hgvsp: "ENSP00000261733.2:p.Glu504Lys"
+      - tgv:impact:
+        - impact: "MODERATE"
+      - tgv:polyphen:
+        - polyphen_score: 0.874
+      - tgv:polyphen_prediction:
+        - polyphen_prediction: "possibly_damaging"
+      - tgv:sift:
+        - sift_score: 0
+      - tgv:sift_prediction:
+        - sift_prediction: "deleterious"
+      - tgv:transcript:
+        - mrna: enst:ENST00000261733 # ALDH2-001
+  - tgv:most_severe_consequence:
+    - most_severe_consequence: obo:SO_0001583 # missense_variant
