@@ -425,5 +425,25 @@ class RDFConfig
         false
       end
     end
+
+    def select_variables(add_question_mark: false)
+      if join?
+        valid_variables_by_query(add_question_mark)
+      else
+        variables_handler.variables_for_select.map { |name| variable_name_for_sparql(name, add_question_mark) }
+      end
+    end
+
+    def valid_variables_by_query(add_question_mark: false)
+      variable_names = []
+      @opts[:query].each do |query|
+        config_name, variable_name = query.split(':')
+        @config = @configs.select { |config| config.name == config_name }.first
+        name = valid_variable(variable_name)
+        variable_names << variable_name_for_sparql(name, add_question_mark) unless name.nil?
+      end
+
+      variable_names.uniq
+    end
   end
 end
