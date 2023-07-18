@@ -6,13 +6,13 @@
     - ensg_biotype: ensgloss:ENSGLOSSARY_0000026  # protein coding
   - rdfs:label:
     - ensg_label: "TSPAN6"
-  - dcterms:description?:
+  - dcterms:description:
     - ensg_description: "tetraspanin 6 [Source:HGNC Symbol;Acc:HGNC:11858]"
   - dcterms:identifier:
     - ensg_id: "ENSG00000000003"
   - obo:RO_0002162:
     - ensg_taxonomy: taxonomy:9606
-  - so:part_of:
+  - so:part_of+:
     - ensg_chromosome: <http://rdf.ebi.ac.uk/resource/ensembl/110/homo_sapiens/GRCh38/X>
     ## In addition, human genes have an HCO term.
   - faldo:location:
@@ -56,7 +56,7 @@
     - enst_id: "ENST00000207457"
   - so:transcribed_from:
     - enst_transcribed_from: EnsemblGene
-  - so:translates_to:
+  - so:translates_to?:
     - enst_translates_to: EnsemblProtein
   # flag
   ## https://asia.ensembl.org/info/genome/genebuild/transcript_quality_tags.html
