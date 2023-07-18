@@ -715,8 +715,8 @@ class RDFConfig
           lna_parts = lna.strip.split(/\s+/)
           lnb_parts = lnb.strip.split(/\s+/)
           if lna_parts[1].end_with?('__class') && lnb_parts[1].end_with?('__class')
-            lna_varname = lna_parts[1][..-8]
-            lnb_varname = lnb_parts[1][..-8]
+            lna_varname = lna_parts[1][0..-8]
+            lnb_varname = lnb_parts[1][0..-8]
             if select_variable_names.include?(lna_varname) && select_variable_names.include?(lnb_varname)
               select_variable_names.index(lna_varname) <=> select_variable_names.index(lnb_varname)
             elsif select_variable_names.include?(lna_varname)
