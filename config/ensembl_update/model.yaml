@@ -1,26 +1,20 @@
 ## gene.ttl
 - EnsemblGene ensg:ENSG00000000003:
   - a: terms:EnsemblGene
-  # gene.biotype
   ## Biotypes are set as objects of both rdf:type and terms:has_biotype.
   - terms:has_biotype:
     - ensg_biotype: ensgloss:ENSGLOSSARY_0000026  # protein coding
-  # xref.select(display_label WHERE (xref_id=gene.display_xref_id))
   - rdfs:label:
     - ensg_label: "TSPAN6"
-  # gene.description
   - dcterms:description?:
     - ensg_description: "tetraspanin 6 [Source:HGNC Symbol;Acc:HGNC:11858]"
-  # gene.gene_id
   - dcterms:identifier:
     - ensg_id: "ENSG00000000003"
-  # meta.select(meta_value WHERE (meta_key=species.taxonomy_id))
   - obo:RO_0002162:
     - ensg_taxonomy: taxonomy:9606
   - so:part_of:
     - ensg_chromosome: <http://rdf.ebi.ac.uk/resource/ensembl/110/homo_sapiens/GRCh38/X>
     ## In addition, human genes have an HCO term.
-  # gene.select(seq_region_start, seq_region_end, seq_region_strand)
   - faldo:location:
     - []:
       - a: faldo:Region
@@ -45,10 +39,8 @@
             - faldo:ReverseStrandPosition
           - faldo:position:
             - ensg_end: 100639991
-  # gene_attrib.select(value WHERE (gene_id=gene.gene_id, attrib_type_id=attrib_type.select(attrib_type_id WHERE(code="synonym"))))
   - skos:altLabel*:
     - ensg_altlabel: "TM4SF6"
-  # object_xref
   ## xref.ttl
   - rdfs:seeAlso*:
     - ensg_xref: <http://identifiers.org/hgnc/HGNC:11858>
@@ -56,26 +48,20 @@
 ## transcript.ttl
 - EnsemblTranscript enst:ENST00000207457:
   - a: terms:EnsemblTranscript
-  # transcript.biotype
   - terms:has_biotype:
     - enst_biotype: ensgloss:ENSGLOSSARY_0000026
-  # transcirpt_attrib.select(value WHERE (transcript_id=transcript.transcript_id, attrib_type_id=4))
   - rdfs:label:
     - enst_label: "TEKT2-201"
-  # transcript.transcript_id
   - dcterms:identifier:
     - enst_id: "ENST00000207457"
-  # transcript.gene_id
   - so:transcribed_from:
     - enst_transcribed_from: EnsemblGene
-  # transcript.canonical_translation_id
   - so:translates_to:
     - enst_translates_to: EnsemblProtein
   # flag
   ## https://asia.ensembl.org/info/genome/genebuild/transcript_quality_tags.html
   - terms:has_transcript_flag*:
     - enst_flag: ensgloss:ENSGLOSSARY_0000006
-  # transcript.select(seq_region_start, seq_region_end, seq_region_strand)
   - faldo:location:
     - []:
       - a: faldo:Region
@@ -97,15 +83,12 @@
             - faldo:ReverseStrandPosition
           - faldo:position:
             - enst_end: 36088275
-  # exon.select(stable_id WHERE (exon_id=exon_transcript.select(exon_id WHERE (transcript_id=transcript.transcript_id))))
   ## exon_transcript.ttl
   - so:has_part+:
     - enst_has_exon: EnsemblExon
-  # exon_transcript.select(rank WHERE (transcript_id=transcript.transcript_id))
   ## exon_transcript.ttl
   - sio:SIO_000974+:
     - enst_has_ordered_exon: EnsemblOrderedExon
-  # object_xref
   ## xref.ttl
   - rdfs:seeAlso*:
     - enst_xref: <http://identifiers.org/refseq/NM_014466>
@@ -125,10 +108,8 @@
 - EnsemblExon ense:ENSE00002619687:
   - a: terms:EnsemblExon
   - a: obo:SO_0000147   # exon
-  # exon.stable_id
   - dcterms:identifier:
     - ense_id: "ENSE00002619687"
-  # exon.select(seq_region_start, seq_region_end, seq_region_strand)
   - faldo:location:
     - []:
       - a: faldo:Region
@@ -154,20 +135,16 @@
   - a: sio:SIO_001261 # ordered list item
   - sio:SIO_000628: # refers to
     - ensembl_ordered_exon_refers_to: EnsemblExon
-  # exon_transcript.select(rank WHERE (transcript_id=transcript.transcript_id))
   - sio:SIO_000300: # has value
     - ensembl_ordered_exon_index: 7
 
 ## translation.ttl
 - EnsemblProtein ensp:ENSP00000473889:
   - a: terms:EnsemblProtein
-  # translation.stable_id
   - dcterms:identifier:
     - ensp_id: "ENSP00000473889"
-  # transcript.select(stable_id WHERE (transcript_id=translation.transcript_id))
   - so:translation_of:
     - ensp_translation_of: EnsemblTranscript
-  # object_xref
   ## xref.ttl
   - rdfs:seeAlso*:
     - ensp_xref: uniprot:P01817
