@@ -20,11 +20,15 @@ class RDFConfig
         end
 
         def rdf_type_varname
-          "?#{name}Class"
+          "?#{name}__class"
         end
 
         def ==(other)
           name == other.name
+        end
+
+        def bnode?
+          true
         end
       end
     end
