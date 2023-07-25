@@ -46,7 +46,7 @@
 - BioProject idorg_bioproject:PRJDB9772:
   - a: bioproject_ont:BioProjectRecord
 
-- OriginalSampleProperty ddbj:SAMD00222921#cell+line:
+- OriginalSampleProperty biosample:SAMD00222921#cell+line:
   - a: schema:PropertyValue
   - schema:name:
     - name: "cell_line"
@@ -57,15 +57,15 @@
   - prov:wasAttributedTo:
     - software: biosample_ont:BioSamplePlusPipeline
 
-- AnnotatedSampleType ddbj:SAMD00222921#AnnotatedSampleType:
+- AnnotatedSampleType biosample:SAMD00222921#AnnotatedSampleType:
   - a: schema:PropertyValue
   - schema:name:
     - name: "annotated sample type"
   - schema:value:
     - value: "cell_line"
   - schema:valueReference+:
-    - ontology: ddbjont:CellLine
+    - ontology: biosample_ont:CellLine
   - prov:wasAttributedTo:
     - software: biosample_ont:BioSamplePlusPipeline
-  - ddbjont:annotationConfidence:
+  - biosample_ont:annotationConfidence:
     - confidence: 1.0
