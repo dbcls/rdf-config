@@ -10,7 +10,7 @@
     - publication_date: 2020-05-10T00:00:00.000
   - dct:modified:
     - modified_date: 2020-08-23T09:25:30.630
-  - schema:additionalProperty:
+  - schema:additionalProperty*:
     - sample_attribute: OriginalSampleProperty
     - assigned_sample_attribute: AnnotatedSampleType
   - rdfs:label:
@@ -46,26 +46,26 @@
 - BioProject idorg_bioproject:PRJDB9772:
   - a: bioproject_ont:BioProjectRecord
 
-- OriginalSampleProperty ddbj:SAMD00222921#cell+line:
+- OriginalSampleProperty biosample:SAMD00222921#cell+line:
   - a: schema:PropertyValue
   - schema:name:
-    - name: "cell_line"
+    - original_property_name: "cell_line"
   - schema:value:
-    - value: "Huh-7.5"
+    - original_property_value: "Huh-7.5"
   - schema:valueReference+:
-    - ontology: cellosaurus:CVCL_7927
+    - original_property_ontology: cellosaurus:CVCL_7927
   - prov:wasAttributedTo:
-    - software: biosample_ont:BioSamplePlusPipeline
+    - original_property_software: biosample_ont:BioSamplePlusPipeline
 
-- AnnotatedSampleType ddbj:SAMD00222921#AnnotatedSampleType:
+- AnnotatedSampleType biosample:SAMD00222921#AnnotatedSampleType:
   - a: schema:PropertyValue
   - schema:name:
-    - name: "annotated sample type"
+    - annotated_type_name: "annotated sample type"
   - schema:value:
-    - value: "cell_line"
+    - annotated_type_value: "cell_line"
   - schema:valueReference+:
-    - ontology: ddbjont:CellLine
+    - annotated_type_ontology: biosample_ont:CellLine
   - prov:wasAttributedTo:
-    - software: biosample_ont:BioSamplePlusPipeline
-  - ddbjont:annotationConfidence:
-    - confidence: 1.0
+    - annotated_type_software: biosample_ont:BioSamplePlusPipeline
+  - biosample_ont:annotationConfidence:
+    - annotated_type_confidence: 1.0

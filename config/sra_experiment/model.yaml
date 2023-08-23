@@ -1,0 +1,47 @@
+- SRAExperiment idorg_sra:ERX556144:
+  - a: dra_ont:Experiment
+  - rdfs:label:
+    - experiment_label: "ERX556144: PacBio RS sequencing"
+  - dct:identifier:
+    - experiment_id: "ERX556144"
+  - dra_ont:designDescription:
+    - experiment_description: "Whole genome sequencing of Y. ruckeri str. CSF007-82. Sequencing was done using a PacBio RSII instrument with DNA/Polymerase Binding Kit P5 and movie lengths of 10800 seconds."
+  - dra_ont:title:
+    - experiment_title: "PacBio RS sequencing"
+  - dra_ont:platform:
+    - []:
+      - a:
+        - dra_ont:ABI_SOLID
+        - dra_ont:BGISEQ
+        - dra_ont:CAPILLARY
+        - dra_ont:COMPLETE_GENOMICS
+        - dra_ont:HELICOS
+        - dra_ont:ILLUMINA
+        - dra_ont:ION_TORRENT
+        - dra_ont:LS454
+        - dra_ont:OXFORD_NANOPORE
+        - dra_ont:PACBIO_SMRT
+      - dra_ont:instrumentModel:
+        - instrument_model: dra_ont:PacBio_RS
+  - dra_ont:design:
+    - []:
+      - a: dra_ont:ExperimentDesign
+      - dra_ont:libraryName:
+        - library_name: "YruckeriPB"
+      - dra_ont:libraryStrategy:
+        - library_strategy: dra_ont:WGS
+      - dra_ont:librarySource:
+        - library_source: dra_ont:GENOMIC
+      - dra_ont:librarySelection:
+        - library_selection: dra_ont:RANDOM
+      - dra_ont:libraryConstructionProtocol:
+        - library_construction_protocol: "Large insert libraries were prepared using the DNA Template Prep Kit 3.0 (10Kbp - 20Kbp) by Pacific Biosciences."
+      - dra_ont:libraryLayout:
+        - []:
+          - a:
+            - dra_ont:PAIRED
+            - dra_ont:SINGLE
+          - dra_ont:nominalLength?:  # only for PAIRED
+            - nominal_length: 500
+          - dra_ont:nominalSdev?:  # only for PAIRED
+            - nominal_sdev: 15
