@@ -1,0 +1,13 @@
+DruMAPCrossReference:
+  - $id: csv("id")
+  - "https://drumap.nibiohn.go.jp/rdf/cross_reference/$id"
+  - variables:
+    - drumap_cross_reference_id: $id
+    - drumap_cross_reference: "drumapCrossReference:$id"
+    - drumap_cross_reference_compound:
+      - csv("compound_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/compound/")
+    - drumap_crossref_id: csv("identifier")
+    - drumap_cross_referenced_database_type:
+      - csv("database_type_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/database_type/")

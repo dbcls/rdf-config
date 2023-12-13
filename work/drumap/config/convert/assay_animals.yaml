@@ -1,0 +1,10 @@
+DruMAPAssayAnimal:
+  - $id: csv("id")
+  - "https://drumap.nibiohn.go.jp/rdf/assay_animal/$id"
+  - variables:
+    - drumap_assay_animal_id: $id
+    - drumap_assay_animal_label: csv("name")
+    - drumap_assay_animal_assay_organism:
+      - csv("assay_organism_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/assay_organism/")
+    - drumap_assay_animal_gender: csv("gender")

@@ -1,0 +1,10 @@
+DruMAPAssayParameter:
+  - $id: csv("id")
+  - "https://drumap.nibiohn.go.jp/rdf/assay_parameter/$id"
+  - variables:
+    - drumap_assay_parameter_id: $id
+    - drumap_assay_parameter_label: csv("name")
+    - drumap_assay_parameter_assay:
+      - csv("assay_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/assay/")
+    - drumap_assay_parameter_unit: csv("value")

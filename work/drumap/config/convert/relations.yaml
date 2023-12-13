@@ -1,0 +1,12 @@
+DruMAPRelation:
+  - $id: csv("id")
+  - "https://drumap.nibiohn.go.jp/rdf/relation/$id"
+  - variables:
+    - drumap_relation_id: $id
+    - drumap_relation: csv("relation_type")
+    - drumap_relation_compound:
+      - csv("compound_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/compound/")
+    - drumap_relation_related_with:
+      - csv("related_with_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/compound/")

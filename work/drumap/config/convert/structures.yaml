@@ -1,0 +1,16 @@
+DruMAPStructure:
+  - $id: csv("id")
+  - "https://drumap.nibiohn.go.jp/rdf/structure/$id"
+  - variables:
+    - drumap_strucure_id: $id
+    - drumap_structure: csv("structure")
+    - drumap_structure_compound:
+      - csv("compound_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/compound/")
+    - drumap_structure_structure_type:
+      - csv("structure_type_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/structure_type/")
+    - drumap_structure_structure_source:
+      - csv("structure_source_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/structure_source/")
+    - drumap_structure_tautomer_id: csv("tautomer_id")
