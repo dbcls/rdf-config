@@ -1,0 +1,19 @@
+DruMAPCompoundProperty:
+  - $id: csv("id")
+  - "https://drumap.nibiohn.go.jp/rdf/compound_property/$id"
+  - variables:
+    - drumap_compound_property_id: $id
+    - drumap_compound_property_label: $id
+    - drumap_compound_property_mol_weight_freebase: csv("mol_weight_freebase")
+    - drumap_compound_property_mass: csv("mass")
+    - drumap_compound_property_logp: csv("logp")
+    - drumap_compound_property_hba: csv("hba")
+    - drumap_compound_property_hbd: csv("hbd")
+    - drumap_compound_property_psa: csv("psa")
+    - drumap_compound_property_rtb: csv("rtb")
+    - drumap_compound_property_aring: csv("aring")
+    - drumap_compound_property_hatom: csv("hatom")
+    - drumap_compound_property_qed: csv("qed")
+    - drumap_compound_property_hba_lipinski: csv("hba_lipinski")
+    - drumap_compound_property_hbd_lipinski: csv("hbd_lipinski")
+    - drumap_compound_property_mol_weight_freebase_precision: csv("mol_weight_freebase_precision")

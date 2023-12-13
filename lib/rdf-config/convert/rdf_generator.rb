@@ -129,12 +129,18 @@ class RDFConfig
 
       def object_node_by_triple(triple, object_value)
         case triple.object
+        when Model::Subject
+          uri_node(object_value)
         when Model::Literal
           literal_node(object_value, triple.object)
         when Model::URI
           uri_node(object_value)
         when Model::ValueList
-          uri_node(object_value)
+          if triple.object.value.first.is_a?(Model::Literal)
+            literal_node(object_value, triple.object)
+          else
+            uri_node(object_value)
+          end
         end
       end
 
@@ -151,6 +157,8 @@ class RDFConfig
         return value if value.is_a?(RDF::Literal)
 
         case literal_object.value
+        when String
+          literal_node_by_string_value(value, literal_object)
         when Integer
           RDF::Literal::Integer.new(value)
         when Float
@@ -158,10 +166,28 @@ class RDFConfig
         when Date
           RDF::Literal::Date.new(value)
         when TrueClass, FalseClass
-          RDF::Literal::Boolean.new(value)
+          RDF::Literal::Boolean.new(to_bool(value))
         else
           RDF::Literal.new(value)
         end
+      end
+
+      def literal_node_by_string_value(value, literal_object)
+        if /.+\^\^(.+)\z/ =~ literal_object.value
+          prefix, local_part = $1.split(':', 2)
+          if prefix == 'xsd'
+            RDF::Literal.new(value, datatype: eval("RDF::XSD.#{local_part}"))
+          else
+            # TODO Other datatype or lang tag
+            RDF::Literal.new(value)
+          end
+        else
+          RDF::Literal.new(value)
+        end
+      end
+
+      def to_bool(value)
+        !['0', 'f', 'false', ''].include?(value.to_s.strip.downcase)
       end
     end
   end

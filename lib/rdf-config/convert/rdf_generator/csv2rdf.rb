@@ -59,7 +59,8 @@ class RDFConfig
           next if value.to_s.empty?
 
           triple = @model.find_by_object_name(object_name)
-          next if triple.nil? || triple.object.is_a?(Model::Subject)
+          # next if triple.nil? || triple.object.is_a?(Model::Subject)
+          next if triple.nil?
 
           subject_name = triple.subject.name
           next unless @subject_node.key?(subject_name)

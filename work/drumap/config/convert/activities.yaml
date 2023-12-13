@@ -1,0 +1,30 @@
+DruMAPActivity:
+  - $id: csv("id")
+  - "https://drumap.nibiohn.go.jp/rdf/activity/$id"
+  - variables:
+    - drumap_activity_id: $id
+    - drumap_activity_label: "Activity:$id"
+    - drumap_activity_assay_id:
+      - csv("assay_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/assay/")
+    - drumap_activity_activity_group_id:
+      - csv("activity_group_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/activity_group/")
+    - drumap_activity_experiment_id:
+      - csv("experiment_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/experiment/")
+    - drumap_activity_compound_id:
+      - csv("compound_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/compound/")
+    - drumap_activity_value: csv("value")
+    - drumap_activity_string_value: csv("string_value")
+    - drumap_activity_lower_value: csv("lower_value")
+    - drumap_activity_upper_value: csv("upper_value")
+    - drumap_activity_stdev: csv("stdev")
+    - drumap_activity_rank:
+      - csv("rank_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/rank/")
+    - drumap_activity_visible: csv("visible")
+    - drumap_activity_comment: csv("comment")
+    - drumap_activity_ambiguous: csv("ambiguous")
+    - drumap_activity_chembl: csv("chembl_activity_id")
