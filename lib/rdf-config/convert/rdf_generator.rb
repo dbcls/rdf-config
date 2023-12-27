@@ -8,7 +8,7 @@ class RDFConfig
       def initialize(config, convert)
         @config = config
         @convert = convert
-        @reader = convert.file_reader
+        @reader = nil
         @converter = convert.rdf_converter
 
         @model = Model.instance(@config)
@@ -31,7 +31,7 @@ class RDFConfig
       end
 
       def output_rdf
-        RDF::Writer.for(:turtle).new(prefixes: @prefixes, canonicalize: true) do |writer|
+        RDF::Writer.for(:turtle).new(**rdf_writer_opts) do |writer|
           @statements.each do |statement|
             writer << statement
           end
@@ -145,7 +145,7 @@ class RDFConfig
       end
 
       def uri_node(uri)
-        prefix, local_part = uri.split(':', 2)
+        prefix, local_part = uri.to_s.split(':', 2)
         if @prefixes.key?(prefix)
           RDF::URI.new("#{@prefixes[prefix]}#{local_part}")
         else
@@ -188,6 +188,13 @@ class RDFConfig
 
       def to_bool(value)
         !['0', 'f', 'false', ''].include?(value.to_s.strip.downcase)
+      end
+
+      def rdf_writer_opts
+        {
+          prefixes: @prefixes,
+          canonicalize: false
+        }
       end
     end
   end

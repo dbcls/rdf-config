@@ -57,6 +57,10 @@ class RDFConfig
       File.basename(@config_dir)
     end
 
+    def absolute_path(config_file_path)
+      File.expand_path(config_file_path, @config_dir)
+    end
+
     private
 
     def config_file_path(name)

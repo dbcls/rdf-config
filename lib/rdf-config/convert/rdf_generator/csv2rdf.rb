@@ -9,6 +9,18 @@ class RDFConfig
         super
 
         @subject_node = {}
+        @subject_names = []
+        @object_names = []
+      end
+
+      def generate
+        @convert.source_subject_map.each do |source, subject_names|
+          @reader = @convert.file_reader(source: source)
+          @subject_names = subject_names
+          generate_statements
+        end
+
+        output_rdf
       end
 
       def generate_statements
@@ -27,11 +39,10 @@ class RDFConfig
         process_convert_variable(row)
         generate_rdf_by_subject_names(row)
         generate_subject_relation_statement
-        generate_rdf_by_object_names(row)
       end
 
       def generate_rdf_by_subject_names(row)
-        subject_names.each do |subject_name|
+        @subject_names.each do |subject_name|
           values = @converter.convert_value(row, subject_name)
           next if values.empty?
 
@@ -43,11 +54,12 @@ class RDFConfig
               @statements << RDF::Statement.new(node, RDF.type, uri_node(rdf_type))
             end
           end
+          generate_rdf_by_object_names(subject_name, row)
         end
       end
 
-      def generate_rdf_by_object_names(row)
-        object_names.each do |object_name|
+      def generate_rdf_by_object_names(subject_name, row)
+        object_names(subject_name).each do |object_name|
           generate_statement_by_object_name(row, object_name)
         end
       end
@@ -95,12 +107,8 @@ class RDFConfig
         end
       end
 
-      def subject_names
-        @convert.subject_names
-      end
-
-      def object_names
-        @convert.object_names
+      def object_names(subject_name)
+        @convert.subject_object_map[subject_name]
       end
 
       def add_subject_node(subject_name, subject_node)

@@ -16,7 +16,7 @@ class RDFConfig
         @target_value = row
         @converted_values << row
         @convert_method[variable_name].each do |method_def|
-          next if method_def[:method_name_] == ROOT_MACRO_NAME
+          next if SYSTEM_MACRO_NAMES.include?(method_def[:method_name_])
 
           exec_method(method_def)
         end

@@ -1,0 +1,382 @@
+config_files:
+  - convert/activities.yaml
+  - convert/activity_groups.yaml
+  - convert/assay_animals.yaml
+  - convert/assay_molecules.yaml
+  - convert/assay_organisms.yaml
+  - convert/assay_parameters.yaml
+  - convert/assay_tissues.yaml
+  - convert/assay_types.yaml
+  - convert/compound_names.yaml
+  - convert/compound_properties.yaml
+  - convert/compounds.yaml
+  - convert/cross_references.yaml
+  - convert/database_types.yaml
+  - convert/document_types.yaml
+  - convert/documents.yaml
+  - convert/experiments.yaml
+  - convert/metabolic_sites.yaml
+  - convert/name_types.yaml
+  - convert/parameter_types.yaml
+  - convert/ranks.yaml
+  - convert/relations.yaml
+  - convert/structure_sources.yaml
+  - convert/structure_types.yaml
+  - convert/structures.yaml
+  - convert/toxicities.yaml
+
+---
+
+DruMAPActivity:
+  - source("~/workspace/rdf-config-convert/drumap/csv_files/activities_subset.csv")
+  - $id: csv("id")
+  - "https://drumap.nibiohn.go.jp/rdf/activity/$id"
+  - variables:
+    - drumap_activity_id: $id
+    - drumap_activity_label: "Activity:$id"
+    - drumap_activity_assay_id:
+      - csv("assay_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/assay/")
+    - drumap_activity_activity_group_id:
+      - csv("activity_group_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/activity_group/")
+    - drumap_activity_experiment_id:
+      - csv("experiment_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/experiment/")
+    - drumap_activity_compound_id:
+      - csv("compound_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/compound/")
+    - drumap_activity_value: csv("value")
+    - drumap_activity_string_value: csv("string_value")
+    - drumap_activity_lower_value: csv("lower_value")
+    - drumap_activity_upper_value: csv("upper_value")
+    - drumap_activity_stdev: csv("stdev")
+    - drumap_activity_rank:
+      - csv("rank_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/rank/")
+    - drumap_activity_visible: csv("visible")
+    - drumap_activity_comment: csv("comment")
+    - drumap_activity_ambiguous: csv("ambiguous")
+    - drumap_activity_chembl: csv("chembl_activity_id")
+
+DruMAPActivityGroup:
+  - source("~/workspace/rdf-config-convert/drumap/csv_files/activity_groups.csv")
+  - $id: csv("id")
+  - "https://drumap.nibiohn.go.jp/rdf/activity_group/$id"
+  - variables:
+    - drumap_activity_group_id: $id
+    - drumap_activity_group_label: "ActivityGroup:$id"
+    - drumap_activity_group_description: csv("description")
+
+DruMAPAssayAnimal:
+  - source("~/workspace/rdf-config-convert/drumap/csv_files/assay_animals.csv")
+  - $id: csv("id")
+  - "https://drumap.nibiohn.go.jp/rdf/assay_animal/$id"
+  - variables:
+    - drumap_assay_animal_id: $id
+    - drumap_assay_animal_label: csv("name")
+    - drumap_assay_animal_assay_organism:
+      - csv("assay_organism_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/assay_organism/")
+    - drumap_assay_animal_gender: csv("gender")
+
+DruMAPAssayMolecule:
+  - source("~/workspace/rdf-config-convert/drumap/csv_files/assay_molecules.csv")
+  - $id: csv("id")
+  - "https://drumap.nibiohn.go.jp/rdf/assay_molecule/$id"
+  - variables:
+    - drumap_assay_molecule_id: $id
+    - drumap_assay_molecule_label: csv("name")
+    - drumap_assay_molecule_gene_symbol: csv("gene_symbol")
+    - drumap_assay_molecule_gene_id: csv("gene_id")
+    - drumap_assay_molecule_species: csv("species")
+    - drumap_assay_molecule_description: csv("description")
+    - drumap_assay_molecule_assay_organism:
+      - csv("assay_organism_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/assay_organism/")
+
+DruMAPAssayOrganism:
+  - source("~/workspace/rdf-config-convert/drumap/csv_files/assay_organisms.csv")
+  - $id: csv("id")
+  - "https://drumap.nibiohn.go.jp/rdf/assay_organism/$id"
+  - variables:
+    - drumap_assay_organism_id: $id
+    - drumap_assay_organism_label: csv("name")
+    - drumap_assay_organism_taxonomy:
+      - $tax_id: csv("tax_id")
+      - "http://identifiers.org/taxonomy/$tax_id"
+    - drumap_assay_organism_description: csv("description")
+
+DruMAPAssayParameter:
+  - source("~/workspace/rdf-config-convert/drumap/csv_files/assay_parameters.csv")
+  - $id: csv("id")
+  - "https://drumap.nibiohn.go.jp/rdf/assay_parameter/$id"
+  - variables:
+    - drumap_assay_parameter_id: $id
+    - drumap_assay_parameter_label: csv("name")
+    - drumap_assay_parameter_assay:
+      - csv("assay_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/assay/")
+    - drumap_assay_parameter_unit: csv("value")
+
+DruMAPAssayTissue:
+  - source("~/workspace/rdf-config-convert/drumap/csv_files/assay_tissues.csv")
+  - $id: csv("id")
+  - "https://drumap.nibiohn.go.jp/rdf/assay_tissue/$id"
+  - variables:
+    - drumap_assay_tissue_id: $id
+    - drumap_assay_tissue_label: csv("name")
+    - drumap_assay_tissue_label:
+      - csv("jname")
+      - lang("ja")
+    - drumap_assay_tissue_description: csv("description")
+
+DruMAPAssayType:
+  - source("~/workspace/rdf-config-convert/drumap/csv_files/assay_types.csv")
+  - $id: csv("id")
+  - "https://drumap.nibiohn.go.jp/rdf/assay_type/$id"
+  - variables:
+    - drumap_assay_type_id: $id
+    - drumap_assay_type_label: csv("name")
+
+DruMAPAssay:
+  - source("~/workspace/rdf-config-convert/drumap/csv_files/assays_subset.csv")
+  - $id: csv("id")
+  - "https://drumap.nibiohn.go.jp/rdf/assay/$id"
+  - variables:
+    - drumap_assay_id: $id
+    - drumap_assay: "Assay:$id"
+    - drumap_assay_paramater_type:
+      - csv("parameter_type_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/parameter_type/")
+    - drumap_assay_type:
+      - csv("assay_type_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/assay_type/")
+    - drumap_assay_animal:
+      - csv("assay_animal_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/assay_animal/")
+    - drumap_assay_tissue:
+      - csv("assay_tissue_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/assay_tissue/")
+    - drumap_assay_molecule:
+      - csv("assay_molecule_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/assay_molecule/")
+    - drumap_assay_source: csv("source")
+    - drumap_assay_description: csv("description")
+
+DruMAPCompoundName:
+  - source("~/workspace/rdf-config-convert/drumap/csv_files/compound_names_subset.csv")
+  - $id: csv("id")
+  - "https://drumap.nibiohn.go.jp/rdf/compound_name/$id"
+  - variables:
+    - drumap_compound_name_id: $id
+    - drumap_compound_name_label: csv("name")
+    - drumap_compound_name_compound:
+      - csv("compound_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/compound/")
+    - drumap_compound_name_language: csv("language")
+    - drumap_compound_name_name_type:
+      - csv("name_type_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/name_type/")
+
+DruMAPCompoundProperty:
+  - source("~/workspace/rdf-config-convert/drumap/csv_files/compound_properties.csv")
+  - $id: csv("id")
+  - "https://drumap.nibiohn.go.jp/rdf/compound_property/$id"
+  - variables:
+    - drumap_compound_property_id: $id
+    - drumap_compound_property_label: $id
+    - drumap_compound_property_mol_weight_freebase: csv("mol_weight_freebase")
+    - drumap_compound_property_mass: csv("mass")
+    - drumap_compound_property_logp: csv("logp")
+    - drumap_compound_property_hba: csv("hba")
+    - drumap_compound_property_hbd: csv("hbd")
+    - drumap_compound_property_psa: csv("psa")
+    - drumap_compound_property_rtb: csv("rtb")
+    - drumap_compound_property_aring: csv("aring")
+    - drumap_compound_property_hatom: csv("hatom")
+    - drumap_compound_property_qed: csv("qed")
+    - drumap_compound_property_hba_lipinski: csv("hba_lipinski")
+    - drumap_compound_property_hbd_lipinski: csv("hbd_lipinski")
+    - drumap_compound_property_mol_weight_freebase_precision: csv("mol_weight_freebase_precision")
+
+DruMAPCompound:
+  - source("~/workspace/rdf-config-convert/drumap/csv_files/compounds_subset.csv")
+  - $id: csv("id")
+  - "https://drumap.nibiohn.go.jp/rdf/compound/$id"
+  - variables:
+    - drumap_compound_id: $id
+    - drumap_compound_label: $id
+    - drumap_compound_property:
+      - csv("compound_property_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/compound_property/")
+    - drumap_compound_formula: csv("formula")
+    - drumap_compound_salt: csv("salt")
+    - drumap_compound_charge: csv("charge")
+    - drumap_compound_enantiomer: csv("enantiomer")
+    - drumap_compound_mol_weight: csv("mol_weight")
+    - drumap_compound_mol_weight_precision: csv("mol_weight_precision")
+    - drumap_compound_visible: csv("visible")
+    - drumap_compound_smiles: csv("smiles")
+    - drumap_compound_mol: csv("mol")
+    - drumap_compound_torsionbv: csv("torsionbv")
+    - drumap_compound_mfp2: csv("mfp2")
+    - drumap_compound_ffp2: csv("ffp2")
+
+DruMAPCrossReference:
+  - source("~/workspace/rdf-config-convert/drumap/csv_files/cross_references_subset.csv")
+  - $id: csv("id")
+  - "https://drumap.nibiohn.go.jp/rdf/cross_reference/$id"
+  - variables:
+    - drumap_cross_reference_id: $id
+    - drumap_cross_reference: "drumapCrossReference:$id"
+    - drumap_cross_reference_compound:
+      - csv("compound_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/compound/")
+    - drumap_crossref_id: csv("identifier")
+    - drumap_cross_referenced_database_type:
+      - csv("database_type_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/database_type/")
+
+DruMAPDatabaseType:
+  - source("~/workspace/rdf-config-convert/drumap/csv_files/database_types.csv")
+  - $id: csv("id")
+  - "https://drumap.nibiohn.go.jp/rdf/database_type/$id"
+  - variables:
+    - drumap_database_type_id: $id
+    - drumap_database_type: csv("name")
+    - drumap_database_url_pattern: csv("url_pattern")
+
+DruMAPDocumentType:
+  - source("~/workspace/rdf-config-convert/drumap/csv_files/document_types.csv")
+  - $id: csv("id")
+  - "https://drumap.nibiohn.go.jp/rdf/document_type/$id"
+  - variables:
+    - drumap_document_type_id: $id
+    - drumap_document_type_label: csv("name")
+    - drumap_document_type_description: csv("description")
+
+DruMAPDocument:
+  - source("~/workspace/rdf-config-convert/drumap/csv_files/documents.csv")
+  - $id: csv("id")
+  - "https://drumap.nibiohn.go.jp/rdf/document/$id"
+  - variables:
+    - drumap_document_id: $id
+    - drumap_document_label: csv("document")
+    - drumap_document_document_type_id:
+      - csv("document_type_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/document_type/")
+
+DruMAPExperiment:
+  - source("~/workspace/rdf-config-convert/drumap/csv_files/experiments.csv")
+  - $id: csv("id")
+  - "https://drumap.nibiohn.go.jp/rdf/experiment/$id"
+  - variables:
+    - drumap_experiment_id: $id
+    - drumap_experiment_label: csv("description")
+    - drumap_experiment_date: csv("date")
+
+DruMAPMetabolicSite:
+  - source("~/workspace/rdf-config-convert/drumap/csv_files/metabolic_sites_subset.csv")
+  - $id: csv("id")
+  - "https://drumap.nibiohn.go.jp/rdf/metabolic_site/$id"
+  - variables:
+    - drumap_metabolic_site_id: $id
+    - drumap_metabolic_site: "drumapMetabolicSite:$id"
+    - drumap_metabolic_site_assay:
+      - csv("assay_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/assay/")
+    - drumap_metabolic_site_compound:
+      - csv("compound_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/compound/")
+    - drumap_metabolic_site_order: csv("order")
+    - drumap_metabolic_site_position: csv("position")
+    - drumap_metabolic_site_score: csv("score")
+
+DruMAPNameType:
+  - source("~/workspace/rdf-config-convert/drumap/csv_files/name_types.csv")
+  - $id: csv("id")
+  - "https://drumap.nibiohn.go.jp/rdf/name_type/$id"
+  - variables:
+    - drumap_name_type_id: $id
+    - drumap_name_type: csv("name")
+    - drumap_name_type_description: csv("description")
+
+DruMAPParameterType:
+  - source("~/workspace/rdf-config-convert/drumap/csv_files/parameter_types.csv")
+  - $id: csv("id")
+  - "https://drumap.nibiohn.go.jp/rdf/parameter_type/$id"
+  - variables:
+    - drumap_parameter_type_id: $id
+    - drumap_parameter_type: csv("description")
+    - drumap_parameter_type_name: csv("name")
+    - drumap_parameter_type_unit: csv("unit")
+
+DruMAPRank:
+  - source("~/workspace/rdf-config-convert/drumap/csv_files/ranks.csv")
+  - $id: csv("id")
+  - "https://drumap.nibiohn.go.jp/rdf/rank/$id"
+  - variables:
+    - drumap_rank_id: $id
+    - drumap_rank_label: csv("description")
+
+DruMAPRelation:
+  - source("~/workspace/rdf-config-convert/drumap/csv_files/relations.csv")
+  - $id: csv("id")
+  - "https://drumap.nibiohn.go.jp/rdf/relation/$id"
+  - variables:
+    - drumap_relation_id: $id
+    - drumap_relation: csv("relation_type")
+    - drumap_relation_compound:
+      - csv("compound_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/compound/")
+    - drumap_relation_related_with:
+      - csv("related_with_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/compound/")
+
+DruMAPStructureSource:
+  - source("~/workspace/rdf-config-convert/drumap/csv_files/structure_sources.csv")
+  - $id: csv("id")
+  - "https://drumap.nibiohn.go.jp/rdf/structure_source/$id"
+  - variables:
+    - drumap_structure_source_id: $id
+    - drumap_structure_source: csv("name")
+
+DruMAPStructureType:
+  - source("~/workspace/rdf-config-convert/drumap/csv_files/structure_types.csv")
+  - $id: csv("id")
+  - "https://drumap.nibiohn.go.jp/rdf/structure_type/$id"
+  - variables:
+    - drumap_structure_type_id: $id
+    - drumap_structure_type: csv("name")
+
+DruMAPStructure:
+  - source("~/workspace/rdf-config-convert/drumap/csv_files/structures_subset.csv")
+  - $id: csv("id")
+  - "https://drumap.nibiohn.go.jp/rdf/structure/$id"
+  - variables:
+    - drumap_strucure_id: $id
+    - drumap_structure: csv("structure")
+    - drumap_structure_compound:
+      - csv("compound_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/compound/")
+    - drumap_structure_structure_type:
+      - csv("structure_type_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/structure_type/")
+    - drumap_structure_structure_source:
+      - csv("structure_source_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/structure_source/")
+    - drumap_structure_tautomer_id: csv("tautomer_id")
+
+DruMAPToxicity:
+  - source("~/workspace/rdf-config-convert/drumap/csv_files/toxicities.csv")
+  - $id: csv("id")
+  - "https://drumap.nibiohn.go.jp/rdf/toxicity/$id"
+  - variables:
+    - drumap_toxicity_id: $id
+    - drumap_toxicity: csv("name")
+    - drumap_toxicity_compound:
+      - csv("compound_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/compound/")
+    - drumap_toxicity_type: csv("type")
+    - drumap_toxicity_url: csv("url")

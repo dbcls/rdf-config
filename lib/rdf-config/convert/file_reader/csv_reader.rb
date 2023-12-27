@@ -16,9 +16,18 @@ class RDFConfig
       end
 
       def each_row(&block)
-        CSV.foreach(@source_file, col_sep: @col_sep, headers: :first_row) do |row|
+        CSV.foreach(@source_file, **csv_opts) do |row|
           block.call(row)
         end
+      end
+
+      private
+
+      def csv_opts
+        {
+          col_sep: @col_sep,
+          headers: :first_row
+        }
       end
     end
   end
