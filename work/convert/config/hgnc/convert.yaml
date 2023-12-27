@@ -1,4 +1,5 @@
 HGNC:
+  - source("work/convert/hgnc-subset.tsv")
   - tsv("hgnc_id")
   - downcase
   - variables:
@@ -9,17 +10,21 @@ HGNC:
       - to_int
     - description: tsv("name")
     - location: tsv("location")
-    - UniProt:
-      - tsv("uniprot_ids")
-      - prepend("http://identifiers.org/uniprot/")
-      - variables:
-        - uniprot_id: tsv("uniprot_ids")
-    - PubMed:
+
+UniProt:
+  - source("work/convert/hgnc-subset.tsv")
+  - tsv("uniprot_ids")
+  - prepend("http://identifiers.org/uniprot/")
+  - variables:
+    - uniprot_id: tsv("uniprot_ids")
+
+PubMed:
+  - source("work/convert/hgnc-subset.tsv")
+  - tsv("pubmed_id")
+  - split("|")
+  - prepend("http://identifiers.org/pubmed/")
+  - variables:
+    - pubmed_id:
       - tsv("pubmed_id")
       - split("|")
-      - prepend("http://identifiers.org/pubmed/")
-      - variables:
-        - pubmed_id:
-          - tsv("pubmed_id")
-          - split("|")
-          - to_int
+      - to_int
