@@ -38,6 +38,8 @@ class RDFConfig
       @query_type_generator = QueryTypeGenerator.new(opts)
 
       @subject_name_configs = {}
+
+      @config_is_error = false
     end
 
     def generate
@@ -48,6 +50,7 @@ class RDFConfig
 
     def process_all_configs
       configs.each do |config|
+        @config_is_error = false
         warn "-- Generate Grasp files by config: #{config.config_dir} --"
         process_config(config)
         warn ''
@@ -57,7 +60,8 @@ class RDFConfig
     def process_config(config)
       setup_by_config(config)
       generate_by_config
-    rescue Config::InvalidConfig, Config::ConfigNotFound, OutputDirExist => e
+    rescue Config::SyntaxError, Config::InvalidConfig, Config::ConfigNotFound, OutputDirExist => e
+      @config_is_error = true
       warn e.message
     end
 
@@ -139,7 +143,7 @@ class RDFConfig
         end
       end
 
-      warn "Grasp files have been generated successfully."
+      warn "Grasp files have been generated successfully." unless @config_is_error
     end
   end
 end
