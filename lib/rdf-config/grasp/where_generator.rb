@@ -9,6 +9,9 @@ class RDFConfig
 
       def initialize(config, opts = nil)
         super
+
+        @endpoint = Endpoint.new(config)
+        @graphs = @endpoint.graphs
       end
 
       def generate
@@ -26,7 +29,11 @@ class RDFConfig
         lines << id_values_line
         lines << last_line
 
-        lines
+        if has_graph?
+          add_graph_phrase(lines)
+        else
+          lines
+        end
       end
 
       def iri_values_line
@@ -35,6 +42,24 @@ class RDFConfig
 
       def id_values_line
         %(#{INDENT}{{#if #{ID_ARG_NAME}}}VALUES ?#{ID_ARG_NAME} { {{join " " (as-string #{ID_ARG_NAME})}} }{{/if}})
+      end
+
+      def add_graph_phrase(where_lines)
+        return lines unless has_graph?
+
+        graph_added_lines = [where_lines.first]
+        if @graphs.size == 1
+          graph_added_lines << "#{INDENT}GRAPH <#{@graphs.first}> {"
+        else
+          graph_added_lines << "#{INDENT}VALUES ?g { #{@graphs.map { |graph| "<#{graph}>" }.join(' ')} }"
+          graph_added_lines << "#{INDENT}GRAPH ?g {"
+        end
+        graph_added_lines += where_lines[1..-2].map { |line| "#{INDENT}#{line}" }
+        graph_added_lines + ["#{INDENT}}", where_lines.last]
+      end
+
+      def has_graph?
+        !@graphs.empty?
       end
     end
   end
