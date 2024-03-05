@@ -1,9 +1,36 @@
 sparql:
-  description: Obtain article records from the PubMed data.
-  variables: [pmid, journal_name, full_name, title, date_issued]
-
-stanza_sparql:
-  description: Obtain an article record from the PubMed data
+  description: Obtain a PubMed record specified by PMID:31558841
   parameters:
-    pubmed_id: pubmed:10075408  
-  variables: [pmid, journal_name, full_name, title, date_issued]
+    pmid: 31558841
+  variables: [
+    doi_prism,
+    eissn,
+    ending_page,
+    publication_name,
+    starting_page,
+    publication_date,
+    created_date,
+    creator,
+    date_issued,
+    lang,
+    journal_name,
+    title,
+    abstract,
+    issue_no,
+    pmid,
+    volume_num,
+    derived_from,
+    date_last_updated,
+    issn,
+    title_abbrev,
+    nlm_id,
+    doi,
+    place_of_publication,
+    mesh_descriptorqualifierpair,
+    mesh_geographicaldescriptor,
+    mesh_checktag,
+    mesh_topicaldescriptor_1,
+    mesh_topicaldescriptor_2,
+    mesh_publicationtype,
+    mesh_scr_chemical
+  ]
