@@ -1,7 +1,6 @@
 sparql:
-  # Use 'BIND (strbefore(strafter(str(?ensg_location), "GRCh38/"), ":") AS ?chromosome)' to extract chromosome number.
-  # You may also want to add 'FILTER (strlen(?chromosome) < 3)' for eliminating abnormal chromosome numbers.
+  # To exclude chromosomes such as patches or haplotypes, add 'FILTER (strlen(?ensg_chromosome) < 3)'.
   description: Ensembl gene and chromosome
-  variables: [ ensg_id, ensg_label, ensg_location ]
+  variables: [ ensg_id, ensg_label, ensg_chromosome ]
   parameters:
     ensg_taxonomy: taxonomy:9606
