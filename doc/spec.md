@@ -1,5 +1,8 @@
 # RDF-config specification
 
+The configuration requires a small number of independant yaml files.
+
+
 ## endpoint.yaml
 
 The SPARQL endpoint can be specified using the following notation.
