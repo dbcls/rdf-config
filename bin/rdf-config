@@ -6,7 +6,7 @@ require 'getoptlong'
 require 'rdf-config'
 
 def help
-  puts DATA.read
+  puts ::DATA.read
   exit
 end
 
@@ -31,6 +31,7 @@ args = GetoptLong.new(
   [ '--stanza_rb',       GetoptLong::OPTIONAL_ARGUMENT ],
   [ '--shex',            GetoptLong::OPTIONAL_ARGUMENT ],
   [ '--convert',         GetoptLong::OPTIONAL_ARGUMENT ],
+  [ '--format',          GetoptLong::OPTIONAL_ARGUMENT ],
   [ '--debug',           GetoptLong::OPTIONAL_ARGUMENT ]
 )
 args.ordering = GetoptLong::RETURN_IN_ORDER
@@ -97,6 +98,8 @@ opt_values.each do |opt_name, values|
   when /--convert/
     opts[:mode] = :convert
     opts[:input_file] = value
+  when /--format/
+    opts[:format] = value
   when /--debug/
     debug_mode = true
   end

@@ -3,12 +3,16 @@ DruMAPCompoundName:
   - $id: csv("id")
   - "https://drumap.nibiohn.go.jp/rdf/compound_name/$id"
   - variables:
+    - $lang:
+      - csv("language")
+      - change_value(["E", "en"], ["J", "ja"])
     - drumap_compound_name_id: $id
-    - drumap_compound_name_label: csv("name")
     - drumap_compound_name_compound:
       - csv("compound_id")
       - prepend("https://drumap.nibiohn.go.jp/rdf/compound/")
-    - drumap_compound_name_language: csv("language")
+    - drumap_compound_name_label:
+      - csv("name")
+      - lang($lang)
     - drumap_compound_name_name_type:
       - csv("name_type_id")
       - prepend("https://drumap.nibiohn.go.jp/rdf/name_type/")

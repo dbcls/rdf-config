@@ -1,19 +1,13 @@
 # frozen_string_literal: true
 
 require 'rdf/turtle'
+require_relative 'generator'
 
 class RDFConfig
   class Convert
-    class RDFGenerator
+    class RDFGenerator < Generator
       def initialize(config, convert)
-        @config = config
-        @convert = convert
-        @reader = nil
-        @converter = convert.rdf_converter
-
-        @model = Model.instance(@config)
-        @prefixes = @config.prefix.transform_values { |uri| RDF::URI.new(uri[1..-2]) }
-        @prefixes[:xsd] = RDF::URI.new('http://www.w3.org/2001/XMLSchema#')
+        super
 
         @statements = []
         @subject_stack = []
@@ -25,8 +19,8 @@ class RDFConfig
       end
 
       def generate_statements
-        @convert.root_subjects.each do |subject_name|
-          generate_statements_by_subject_name(subject_name, root: true)
+        @convert.subject_converts.each do |subject_convert|
+          generate_statements_by_subject(subject_convert, root: true)
         end
       end
 
@@ -40,7 +34,8 @@ class RDFConfig
 
       private
 
-      def generate_statements_by_subject_name(subject_name, root: false)
+      def generate_statements_by_subject(subject_convert, root: false)
+        subject_name = subject_convert.keys.first
         @reader.each_row(path_by_convert_def(subject_name), is_subject_node: true) do |row|
           @converter.push_target_row(row)
 
@@ -54,7 +49,7 @@ class RDFConfig
           generate_statements_by_row(row, subject, *object_names)
 
           subject_names.each do |subj_name|
-            generate_statements_by_subject_name(subj_name)
+            generate_statements_by_subject(subj_name)
           end
 
           generate_relation_statement(subject_name) unless root
@@ -94,12 +89,6 @@ class RDFConfig
           predicate_node(triple.predicates.last.uri),
           object_node_by_triple(triple, converted_value)
         )
-      end
-
-      def process_convert_variable(row)
-        @converter.convert_variable_names.each do |variable_name|
-          @converter.convert_value(row, variable_name)
-        end
       end
 
       def subject_node(row, subject_name)

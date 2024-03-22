@@ -6,20 +6,24 @@
 % rdf-config --config 設定ファイルのディレクトリ 実行オプション
 ```
 
---configオプションには、設定ファイルが保存されているディレクトリを指定する
+`--config`オプションには、設定ファイルが保存されているディレクトリを指定する。
+
+`--grasp`オプションを使う場合は複数ディレクトリを列挙できる。
 
 ## 実行オプション
-| オプション | 実行される処理 |
-----|----
-| --sparql \[クエリ名\] | SPARQLクエリを標準出力に出力する。 |
-| --query \[変数名 変数名=値\] | 出力する変数およびVALUESの値のリストを指定してSPARQLクエリを標準出力に出力する。 |
-| --endpoint \[エンドポイント名\] | `--sparql`や`--query`で使用するエンドポイントを指定する。 |
-| --url | `--sparql`や`--query`で生成したSPARQLをURLエンコードして出力する。 |
-| --schema \[スキーマ名:図の種類\] | RDFモデルのスキーマ図をSVG形式で標準出力に出力する。 |
-| --senbero | RDFモデルの構造をテキスト形式で標準出力に出力する。 |
-| --stanza \[Stanza ID\] | JavaScript版のStanzaファイル一式を生成する。<br />Node.jsがインストールされており、<br />npxコマンドのディレクトリがPATH環境変数に設定されている必要がある。 |
-| --grasp | Graspの設定ファイル（GraphQLのスキーマファイルとクエリファイル）を生成する。<br />Graspの設定ファイルは、カレントディレクトリ配下の「grasp/設定ファイルディレクトリ名」というディレクトリに生成される。 |
-| --shex | ShExを標準出力に出力する。 |
+| オプション                           | 実行される処理 |
+---------------------------------|----
+| `--sparql [クエリ名]`               | `sparql.yaml`で設定したクエリ名のSPARQLクエリを標準出力に出力する。 |
+| `--query [変数名 変数名=値]`           | 出力する変数およびVALUESの値のリストを指定して標準出力にSPARQLクエリを表示する。 |
+| `--endpoint [エンドポイント名]`         | `endpoint.yaml`で設定したエンドポイント名を`--sparql`や`--query`に使用する。 |
+| `--url`                         | `--sparql`や`--query`で生成したSPARQLをURLエンコードして出力する。 |
+| `--schema [スキーマ名:図の種類]`         | `model.yaml`で設定したRDFモデルのスキーマ図をSVG形式で標準出力に出力する。<br/>図の種類はデフォルト（指定なし）、`:nest`、`:nest`、`:arc`、`:table`で、<br/>サブセットの図を描きたい場合などは`schema.yaml`で設定したスキーマ名を指定できる。 |
+| `--senbero`                     | `model.yaml`で設定したRDFモデルの構造を標準出力にテキスト形式で表示する。 |
+| `--stanza [スタンザID]`             | `stanza.yaml`で指定したIDのJavaScript版TogoStanzaファイル一式を生成する。<br/>[TogoStanza](https://github.com/togostanza/togostanza)が生成できる環境として、Node.jsがインストールされており、<br/>npxコマンドのディレクトリがPATH環境変数に設定されている必要がある。 |
+| `--grasp [出力ディレクトリ]`            | Graspの設定ファイル（GraphQLのスキーマファイルとクエリファイル）を生成する。<br/>Graspの設定ファイルは、`grasp/`以下か、指定した出力ディレクトリに生成される。 |
+| `--grasp-ns [出力ディレクトリ]`         | `--grasp`で出力されるGraphQLのtype名は`model.yaml`の主語名となるが、<br/>名前衝突を避けるため`--config`で指定したディレクトリ名を<br/>Capitalizeした文字列を主語のプレフィックスにつける。 |
+| `--shex`                        | ShExを標準出力に表示する。 |
+| `--convert [--format 出力フォーマット]` | CSVファイル、XMLファイル、JSONファイルからRDFやJSON-LDを生成する。| 
 
 ### オプションごとの設定名の表示
 
@@ -386,6 +390,261 @@ stanza/stanzas/refex-entry
     `-- stanza.rq.hbs      # ← クエリの改訂は SPARQL ファイルを修正
 ```
 
+### RDF, JSON-LDの生成について
+
+CSVファイル、XMLファイル、JSONファイルからRDFやJSON-LDを生成するには、rdf-config に --convert オプションを付けて実行する。
+```
+% rdf-config --config 設定ファイルのディレクトリ名 --convert [--format 出力フォーマット]
+```
+生成されたRDFやJSON-LDは標準出力に出力される。
+
+`--fomart`オプションには生成するファイルフォーマットを指定する。出力フォーマットには以下の値を指定することができる。
+* `turtle` Turtleを生成する。
+* `json-ld` JSON-LDを生成する。
+* `jsonl` JSON-LDをJSON Linesで生成する。
+
+`--format`オプションが指定されない場合はTurtleが生成される。
+
+#### 実行例
+RDF, JSON-LD, JSON Linesの生成の例として、以下のTSVファイルと`convert.yaml`から生成するとする。
+
+`hgnc.tsv`
+
+| hgnc_id | symbol | name | location | uniprot_ids | pubmed_id |
+| ------- | ------ | ---- | -------- | ----------- | ----------|
+| HGNC:5 | A1BG | alpha-1-B glycoprotein | 19q13.43 | P04217 | 2591067 |
+| HGNC:37133 | A1BG-AS1 | A1BG antisense RNA 1 | 19q13.43 |  |  |
+| HGNC:24086 | A1CF | APOBEC1 complementation factor | 10q11.23 | Q9NQ94 | 11815617\|11072063 |
+| HGNC:7 | A2M | alpha-2-macroglobulin | 12p13.31 | P01023 | 2408344\|9697696 |
 
 
+`convert.yaml`
+```yaml
+HGNC:
+  # HGNCのリソースURIの生成ルール
+  - source("work/convert/hgnc-subset.tsv") # 入力とするTSVファイルを指定する
+  - tsv("hgnc_id") # TSVのhgnc_idカラムの値を取得する
+  - downcase # 全ての大文字を小文字に変換する
 
+  # HGNCに結びつくオブジェクトの生成ルール
+  - variables:
+    # gene_idのプロパティ値の生成ルール
+    - gene_id: tsv("symbol") # TSVのsymbolカラムの値を取得する
+
+    # gene_idのプロパティ値の生成ルール
+    - hgnc_id:
+      - tsv("hgnc_id") # TSVのhgnc_idカラムの値を取得する
+      - delete(/^HGNC:/) # 正規表現 /^HGNC:/ にマッチする部分を削除する
+      - to_int # 値を整数に変換する
+
+    # descriptionのプロパティ値の生成ルール
+    - description: tsv("name") # TSVのnameカラムの値を取得する
+
+    # locationのプロパティ値の生成ルール
+    - location: tsv("location") # TSVのlocationカラムの値を取得する
+
+UniProt:
+  # UniProtのリソースURIの生成ルール
+  - source("work/convert/hgnc-subset.tsv") # 入力とするTSVファイルを指定する
+  - tsv("uniprot_ids") # TSVのuniprot_idsカラムの値を取得する
+  - prepend("http://identifiers.org/uniprot/") # 値の先頭に引数の文字列を追加する
+
+  # UniProtに結びつくオブジェクトの生成ルール
+  - variables:
+    # locationのプロパティ値の生成ルール
+    - uniprot_id: tsv("uniprot_ids") # TSVのuniprot_idsカラムの値を取得する
+
+PubMed:
+  # PubMedのリソースURIの生成ルール
+  - source("work/convert/hgnc-subset.tsv") # 入力とするTSVファイルを指定する
+  - tsv("pubmed_id") # TSVのpubmed_idカラムの値を取得する
+  - split("|") # 値を "|" で分割する
+  - prepend("http://identifiers.org/pubmed/") # 値の先頭に引数の文字列を追加する
+
+  # PubMedに結びつくオブジェクトの生成ルール
+  - variables:
+    # pubmed_idのプロパティ値の生成ルール
+    - pubmed_id:
+      - tsv("pubmed_id") # TSVのpubmed_idカラムの値を取得
+      - split("|") # 値を "|" で分割する
+      - to_int # 値を整数に変換する
+```
+
+生成されるRDFは以下のようになる。
+```rdf
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix hgnc: <http://identifiers.org/hgnc/> .
+@prefix idt: <http://identifiers.org/> .
+@prefix m2r: <http://med2rdf.org/ontology/med2rdf#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+hgnc:24086 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "A1CF";
+  obo:so_part_of "10q11.23";
+  dct:description "APOBEC1 complementation factor";
+  dct:identifier 24086;
+  dct:references idt:pubmed\/11815617,
+    idt:pubmed\/11072063;
+  rdfs:seeAlso idt:uniprot\/Q9NQ94 .
+
+hgnc:37133 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "A1BG-AS1";
+  obo:so_part_of "19q13.43";
+  dct:description "A1BG antisense RNA 1";
+  dct:identifier 37133 .
+
+hgnc:5 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "A1BG";
+  obo:so_part_of "19q13.43";
+  dct:description "alpha-1-B glycoprotein";
+  dct:identifier 5;
+  dct:references idt:pubmed\/2591067;
+  rdfs:seeAlso idt:uniprot\/P04217 .
+
+idt:pubmed\/11072063 a idt:pubmed;
+  dct:identifier 11072063 .
+
+idt:pubmed\/11815617 a idt:pubmed;
+  dct:identifier 11815617 .
+
+idt:pubmed\/2591067 a idt:pubmed;
+  dct:identifier 2591067 .
+
+idt:uniprot\/P04217 a idt:uniprot;
+  dct:identifier "P04217" .
+
+idt:uniprot\/Q9NQ94 a idt:uniprot;
+  dct:identifier "Q9NQ94" .
+```
+
+生成されるJSON-LDは以下のようになる。
+```json
+{
+  "@context": {
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "dct": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "hgnc": "http://identifiers.org/hgnc/",
+    "ido": "http://rdf.identifiers.org/ontology/",
+    "idt": "http://identifiers.org/",
+    "m2r": "http://med2rdf.org/ontology/med2rdf#",
+    "obo": "http://purl.obolibrary.org/obo/",
+    "HGNC": "@id",
+    "UniProt": "@id",
+    "PubMed": "@id",
+    "data": "@graph",
+    "gene_id": {
+      "@id": "rdfs:label"
+    },
+    "hgnc_id": {
+      "@id": "dct:identifier"
+    },
+    "description": {
+      "@id": "dct:description"
+    },
+    "location": {
+      "@id": "obo:so_part_of"
+    },
+    "uniprot_id": {
+      "@id": "dct:identifier"
+    },
+    "pubmed_id": {
+      "@id": "dct:identifier"
+    },
+    "see_also": {
+      "@id": "rdfs:seeAlso",
+      "@type": "@id"
+    },
+    "reference": {
+      "@id": "dct:references",
+      "@type": "@id"
+    }
+  },
+  "data": [
+    {
+      "HGNC": "hgnc:5",
+      "@type": [
+        "obo:SO_0000704",
+        "m2r:Gene"
+      ],
+      "gene_id": "A1BG",
+      "hgnc_id": 5,
+      "description": "alpha-1-B glycoprotein",
+      "location": "19q13.43",
+      "see_also": "http://identifiers.org/uniprot/P04217",
+      "reference": "http://identifiers.org/pubmed/2591067"
+    },
+    {
+      "UniProt": "http://identifiers.org/uniprot/P04217",
+      "@type": "idt:uniprot",
+      "uniprot_id": "P04217"
+    },
+    {
+      "PubMed": "http://identifiers.org/pubmed/2591067",
+      "@type": "idt:pubmed",
+      "pubmed_id": 2591067
+    },
+    {
+      "HGNC": "hgnc:37133",
+      "@type": [
+        "obo:SO_0000704",
+        "m2r:Gene"
+      ],
+      "gene_id": "A1BG-AS1",
+      "hgnc_id": 37133,
+      "description": "A1BG antisense RNA 1",
+      "location": "19q13.43"
+    },
+    {
+      "HGNC": "hgnc:24086",
+      "@type": [
+        "obo:SO_0000704",
+        "m2r:Gene"
+      ],
+      "gene_id": "A1CF",
+      "hgnc_id": 24086,
+      "description": "APOBEC1 complementation factor",
+      "location": "10q11.23",
+      "see_also": "http://identifiers.org/uniprot/Q9NQ94",
+      "reference": [
+        "http://identifiers.org/pubmed/11815617",
+        "http://identifiers.org/pubmed/11072063"
+      ]
+    },
+    {
+      "UniProt": "http://identifiers.org/uniprot/Q9NQ94",
+      "@type": "idt:uniprot",
+      "uniprot_id": "Q9NQ94"
+    },
+    {
+      "PubMed": "http://identifiers.org/pubmed/11815617",
+      "@type": "idt:pubmed",
+      "pubmed_id": 11815617
+    },
+    {
+      "PubMed": "http://identifiers.org/pubmed/11072063",
+      "@type": "idt:pubmed",
+      "pubmed_id": 11072063
+    }
+  ]
+}
+```
+
+生成されるJSON Linesは以下のようになる。
+```json lines
+{"@context":{"rdf":"http://www.w3.org/1999/02/22-rdf-syntax-ns#","rdfs":"http://www.w3.org/2000/01/rdf-schema#","dct":"http://purl.org/dc/terms/","skos":"http://www.w3.org/2004/02/skos/core#","hgnc":"http://identifiers.org/hgnc/","m2r":"http://med2rdf.org/ontology/med2rdf#","obo":"http://purl.obolibrary.org/obo/","HGNC":"@id","gene_id":{"@id":"rdfs:label"},"hgnc_id":{"@id":"dct:identifier"},"description":{"@id":"dct:description"},"location":{"@id":"obo:so_part_of"},"see_also":{"@id":"rdfs:seeAlso","@type":"@id"},"reference":{"@id":"dct:references","@type":"@id"}},"HGNC":"hgnc:5","@type":["obo:SO_0000704","m2r:Gene"],"gene_id":"A1BG","hgnc_id":5,"description":"alpha-1-B glycoprotein","location":"19q13.43","see_also":"http://identifiers.org/uniprot/P04217","reference":"http://identifiers.org/pubmed/2591067"}
+{"@context":{"rdf":"http://www.w3.org/1999/02/22-rdf-syntax-ns#","dct":"http://purl.org/dc/terms/","idt":"http://identifiers.org/","UniProt":"@id","uniprot_id":{"@id":"dct:identifier"}},"UniProt":"http://identifiers.org/uniprot/P04217","@type":"idt:uniprot","uniprot_id":"P04217"}
+{"@context":{"rdf":"http://www.w3.org/1999/02/22-rdf-syntax-ns#","dct":"http://purl.org/dc/terms/","idt":"http://identifiers.org/","PubMed":"@id","pubmed_id":{"@id":"dct:identifier"}},"PubMed":"http://identifiers.org/pubmed/2591067","@type":"idt:pubmed","pubmed_id":2591067}
+{"@context":{"rdf":"http://www.w3.org/1999/02/22-rdf-syntax-ns#","rdfs":"http://www.w3.org/2000/01/rdf-schema#","dct":"http://purl.org/dc/terms/","skos":"http://www.w3.org/2004/02/skos/core#","hgnc":"http://identifiers.org/hgnc/","m2r":"http://med2rdf.org/ontology/med2rdf#","obo":"http://purl.obolibrary.org/obo/","HGNC":"@id","gene_id":{"@id":"rdfs:label"},"hgnc_id":{"@id":"dct:identifier"},"description":{"@id":"dct:description"},"location":{"@id":"obo:so_part_of"}},"HGNC":"hgnc:37133","@type":["obo:SO_0000704","m2r:Gene"],"gene_id":"A1BG-AS1","hgnc_id":37133,"description":"A1BG antisense RNA 1","location":"19q13.43"}
+{"@context":{"rdf":"http://www.w3.org/1999/02/22-rdf-syntax-ns#","rdfs":"http://www.w3.org/2000/01/rdf-schema#","dct":"http://purl.org/dc/terms/","skos":"http://www.w3.org/2004/02/skos/core#","hgnc":"http://identifiers.org/hgnc/","m2r":"http://med2rdf.org/ontology/med2rdf#","obo":"http://purl.obolibrary.org/obo/","HGNC":"@id","gene_id":{"@id":"rdfs:label"},"hgnc_id":{"@id":"dct:identifier"},"description":{"@id":"dct:description"},"location":{"@id":"obo:so_part_of"},"see_also":{"@id":"rdfs:seeAlso","@type":"@id"},"reference":{"@id":"dct:references","@type":"@id"}},"HGNC":"hgnc:24086","@type":["obo:SO_0000704","m2r:Gene"],"gene_id":"A1CF","hgnc_id":24086,"description":"APOBEC1 complementation factor","location":"10q11.23","see_also":"http://identifiers.org/uniprot/Q9NQ94","reference":["http://identifiers.org/pubmed/11815617","http://identifiers.org/pubmed/11072063"]}
+{"@context":{"rdf":"http://www.w3.org/1999/02/22-rdf-syntax-ns#","dct":"http://purl.org/dc/terms/","idt":"http://identifiers.org/","UniProt":"@id","uniprot_id":{"@id":"dct:identifier"}},"UniProt":"http://identifiers.org/uniprot/Q9NQ94","@type":"idt:uniprot","uniprot_id":"Q9NQ94"}
+{"@context":{"rdf":"http://www.w3.org/1999/02/22-rdf-syntax-ns#","dct":"http://purl.org/dc/terms/","idt":"http://identifiers.org/","PubMed":"@id","pubmed_id":{"@id":"dct:identifier"}},"PubMed":"http://identifiers.org/pubmed/11815617","@type":"idt:pubmed","pubmed_id":11815617}
+{"@context":{"rdf":"http://www.w3.org/1999/02/22-rdf-syntax-ns#","dct":"http://purl.org/dc/terms/","idt":"http://identifiers.org/","PubMed":"@id","pubmed_id":{"@id":"dct:identifier"}},"PubMed":"http://identifiers.org/pubmed/11072063","@type":"idt:pubmed","pubmed_id":11072063}
+```

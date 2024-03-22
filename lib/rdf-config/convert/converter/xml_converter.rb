@@ -8,7 +8,7 @@ class RDFConfig
       MACRO_NAME = 'xml'
       PATH_SEPARATOR = '/'
 
-      def initialize(convert_method)
+      def initialize(convert_method, macro)
         super
 
         @element = nil
