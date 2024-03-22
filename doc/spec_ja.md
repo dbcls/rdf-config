@@ -128,15 +128,15 @@ RDF データモデルは基本的に YAML に準拠した下記の構造で（�
 - Subject my:subject:
   - a: my:Class
   - my:predicate1?:
-    - string_label: "This is my value"
+    - my_string_label: "This is my value"
   - my:predicate2*:
-    - integer_value: 123
+    - my_integer_value1: 123
   - my:predicate3+:
-    - date_value: 2020-05-21
+    - my_date_value: 2020-05-21
   - my:predicate4{2}:
-    - integer_value: 123, 456
+    - my_integer_value2: 123, 456
   - my:predicate5{3,5}:
-    - integer_value: 123, 456, 789
+    - my_integer_value3: 123, 456, 789
 ```
 
 ただし、RDF データは開世界仮説 (Open world assumption) なので、述語に対応する値が必ず１つである（複数存在しない）ことを保証できないため、「`predicate`と`predicate+`」および「`predicate?`と`predicate*`」の区別は SPARQL のレベルでは生じないことに注意。
