@@ -1,7 +1,6 @@
+require 'rbconfig'
 require 'English'
 require 'open3'
-require 'pty'
-require 'expect'
 require 'io/console'
 
 require_relative '../stanza'
@@ -25,18 +24,28 @@ class RDFConfig
   class Stanza
     class JavaScript < Stanza
       def initialize(config, opts = {})
+        if %w[mswin msys mingw mingw32 cygwin bccwin wince emc].include?(RbConfig::CONFIG['host_os'])
+          raise StanzaExecutionFailure, 'If the OS is Windows, Stanza cannot be generated.'
+        end
+
+        require 'pty'
+        require 'expect'
+
         @stanza_type = 'javascript'
 
         super
 
-        unless @stanza_name.empty?
-          if File.exist?(stanza_base_dir) && !File.exist?("#{stanza_base_dir}/package-lock.json")
-            raise StanzaExecutionFailure,
-                  "Stanza repository directory: #{stanza_base_dir} exists, but it seems that stanza repository initialization fails, so please delete the #{stanza_base_dir} directory."
-          end
+        return if @stanza_name.empty?
 
-          raise StanzaExecutionFailure, "Stanza directory: #{stanza_dir} already exists." if File.exist?(stanza_dir)
+        if File.exist?(stanza_base_dir) && !File.exist?("#{stanza_base_dir}/package-lock.json")
+          raise StanzaExecutionFailure,
+                "Stanza repository directory: #{stanza_base_dir} exists, but it seems that stanza repository initialization fails, " +
+                "so please delete the #{stanza_base_dir} directory."
         end
+
+        return unless File.exist?(stanza_dir)
+
+        raise StanzaExecutionFailure, "Stanza directory: #{stanza_dir} already exists."
       end
 
       def init_stanza

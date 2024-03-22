@@ -5,6 +5,10 @@ class RDFConfig
     class MethodParser < Parslet::Parser
       rule(:space) { match('\s').repeat(1) }
       rule(:space?) { space.maybe }
+      rule(:comma) { str(',') }
+      rule(:array_left) { space.repeat >> str('[') >> space.repeat }
+      rule(:array_sep) { space.repeat >> comma >> space.repeat }
+      rule(:array_right) { space.repeat >> str(']') >> space.repeat }
 
       rule(:method_name) {
         (
@@ -25,6 +29,14 @@ class RDFConfig
           str("'") >> space?
       }
 
+      rule(:element) { (dquot_string | squot_string) >> space.maybe }
+
+      rule(:array) do
+        array_left >>
+          element >> (array_sep >> element).repeat >>
+        array_right
+      end
+
       rule(:regexp) {
         str('/') >>
           (str('/').absent? >> any).repeat(1) >>
@@ -35,7 +47,7 @@ class RDFConfig
         str('$') >> (match('[a-z_0-9]').repeat)
       end
 
-      rule(:arg) { (dquot_string | squot_string | regexp | variable_name).as(:arg_) }
+      rule(:arg) { (dquot_string | squot_string | array | regexp | variable_name).as(:arg_) }
       rule(:args) {
         str('(') >>
           (

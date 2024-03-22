@@ -23,7 +23,7 @@ class RDFConfig
       private
 
       def validate_variable_name
-        @convert.convert_method.each_key do |variable_name|
+        @convert.variable_names.each do |variable_name|
           if !variable_name.is_a?(String) || @convert.bnode_name?(variable_name) || variable_name[0] == '$' || model_variable_names.include?(variable_name)
             next
           end
@@ -33,10 +33,12 @@ class RDFConfig
       end
 
       def validate_exist_source
-        @convert.subject_config.each do |subject_name, subject_configs|
-          next if subject_configs.first.start_with?(SOURCE_MACRO_NAME)
+        @convert.subject_converts.each do |subject_convert|
+          subject_convert.each do |subject_name, subject_configs|
+            next if subject_configs.first[:method_name_].start_with?(SOURCE_MACRO_NAME)
 
-          add_error(%(The source must be set for the subject "#{subject_name}".))
+            add_error(%(The source must be set for the subject "#{subject_name}".))
+          end
         end
       end
 

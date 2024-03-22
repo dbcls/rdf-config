@@ -3,19 +3,27 @@
 class RDFConfig
   class Convert
     class Converter
-      def initialize(convert_method)
+      ROW_TARGET_METHODS = %w[csv json xml].freeze
+
+      attr_accessor :convert_variable_names
+
+      def initialize(convert_method, macro)
         @convert_method = convert_method
+        @macro = macro
+
         @target_value = []
         @converted_values = []
         @target_rows = []
         @variable = {}
       end
 
-      def convert_value(row, variable_name)
+      def convert_value(row, converts)
         @element = row
         @target_value = row
-        @converted_values << row
-        @convert_method[variable_name].each do |method_def|
+        @converted_values.clear
+
+        variable_name = converts.keys.first
+        converts[variable_name].each do |method_def|
           next if SYSTEM_MACRO_NAMES.include?(method_def[:method_name_])
 
           exec_method(method_def)
@@ -68,23 +76,29 @@ class RDFConfig
           else
             call_convert_method(method_name, @target_value, *args)
           end
+        elsif @variable.key?(variable_name)
+          call_convert_method(method_name, @variable[variable_name], *args)
         else
           call_convert_method(method_name, target_row, *args)
         end
       end
 
       def call_convert_method(method_name, target_value, *args)
-        unless respond_to?(method_name.to_sym)
-          require_relative "#{MACRO_DIR_NAME}/#{method_name}"
-          self.class.define_method(
-            method_name.to_sym, self.class.instance_method(method_name.to_sym)
-          )
-        end
+        #--> unless respond_to?(method_name.to_sym)
+        #-->   require_relative "#{MACRO_DIR_NAME}/#{method_name}"
+        #-->   self.class.define_method(
+        #-->     method_name.to_sym, self.class.instance_method(method_name.to_sym)
+        #-->   )
+        #--> end
 
         if target_value.to_s.empty?
           ''
         else
-          send(method_name, target_value, *args)
+          if ROW_TARGET_METHODS.include?(method_name)
+            @macro.send(method_name, target_row, *args)
+          else
+            @macro.send(method_name, target_value, *args)
+          end
         end
       end
 
@@ -113,7 +127,13 @@ class RDFConfig
         @target_value = nil
       end
 
-      def push_target_row(row)
+      def clear_target_rows
+        @target_rows.clear
+      end
+
+      def push_target_row(row, clear_variable: false)
+        @variable.clear if clear_variable
+
         @target_rows.push(row)
       end
 
@@ -121,8 +141,8 @@ class RDFConfig
         @target_rows.pop
       end
 
-      def convert_variable_names
-        @convert_variable_names ||= @convert_method.keys.select { |name| name[0][0] == '$' }
+      def converter_variable?(variable_name)
+        variable_name.to_s.start_with?('$')
       end
 
       def target_row
