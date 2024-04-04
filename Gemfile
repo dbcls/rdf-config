@@ -10,4 +10,4 @@ gem 'rdf-turtle'
 gem 'rdf-xsd'
 gem 'rexml'
 
-gem 'rubocop'
+#gem 'rubocop'
