@@ -47,11 +47,16 @@ class RDFConfig
           generate_graph
         end
 
+        json_ld_ctx = {}
         @node.values.each do |data_hash|
           subject_name = data_hash.keys.select { |key| @model.subject?(key) }.first
-          jsonld_ctx =
-            @context_generator.context_for_data_hash(subject_name, data_hash)
-          puts JSON.generate({'@context' => jsonld_ctx }.merge(data_hash))
+          json_ld_ctx =
+            json_ld_ctx.merge(@context_generator.context_for_data_hash(subject_name, data_hash))
+          puts JSON.generate({'@context' => context_url}.merge(data_hash))
+        end
+
+        File.open(context_file, 'w') do |f|
+          f.puts JSON.generate({'@context' => json_ld_ctx})
         end
       end
 
@@ -189,6 +194,14 @@ class RDFConfig
         else
           '@type'
         end
+      end
+
+      def context_file
+        'context.jsonld'
+      end
+
+      def context_url
+        context_file
       end
     end
   end
