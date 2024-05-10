@@ -38,7 +38,7 @@ config_files_all:
 ---
 
 DruMAPActivity:
-  - source("~/workspace/rdf-config-convert/drumap/csv_files/activities_subset.csv")
+  - source("activities_subset.csv")
   - $id: csv("id")
   - "https://drumap.nibiohn.go.jp/rdf/activity/$id"
   - variables:
@@ -70,7 +70,7 @@ DruMAPActivity:
     - drumap_activity_chembl: csv("chembl_activity_id")
 
 DruMAPActivityGroup:
-  - source("~/workspace/rdf-config-convert/drumap/csv_files/activity_groups.csv")
+  - source("activity_groups.csv")
   - $id: csv("id")
   - "https://drumap.nibiohn.go.jp/rdf/activity_group/$id"
   - variables:
@@ -79,7 +79,7 @@ DruMAPActivityGroup:
     - drumap_activity_group_description: csv("description")
 
 DruMAPAssayAnimal:
-  - source("~/workspace/rdf-config-convert/drumap/csv_files/assay_animals.csv")
+  - source("assay_animals.csv")
   - $id: csv("id")
   - "https://drumap.nibiohn.go.jp/rdf/assay_animal/$id"
   - variables:
@@ -91,7 +91,7 @@ DruMAPAssayAnimal:
     - drumap_assay_animal_gender: csv("gender")
 
 DruMAPAssayMolecule:
-  - source("~/workspace/rdf-config-convert/drumap/csv_files/assay_molecules.csv")
+  - source("assay_molecules.csv")
   - $id: csv("id")
   - "https://drumap.nibiohn.go.jp/rdf/assay_molecule/$id"
   - variables:
@@ -106,7 +106,7 @@ DruMAPAssayMolecule:
       - prepend("https://drumap.nibiohn.go.jp/rdf/assay_organism/")
 
 DruMAPAssayOrganism:
-  - source("~/workspace/rdf-config-convert/drumap/csv_files/assay_organisms.csv")
+  - source("assay_organisms.csv")
   - $id: csv("id")
   - "https://drumap.nibiohn.go.jp/rdf/assay_organism/$id"
   - variables:
@@ -118,7 +118,7 @@ DruMAPAssayOrganism:
     - drumap_assay_organism_description: csv("description")
 
 DruMAPAssayParameter:
-  - source("~/workspace/rdf-config-convert/drumap/csv_files/assay_parameters.csv")
+  - source("assay_parameters.csv")
   - $id: csv("id")
   - "https://drumap.nibiohn.go.jp/rdf/assay_parameter/$id"
   - variables:
@@ -130,7 +130,7 @@ DruMAPAssayParameter:
     - drumap_assay_parameter_unit: csv("value")
 
 DruMAPAssayTissue:
-  - source("~/workspace/rdf-config-convert/drumap/csv_files/assay_tissues.csv")
+  - source("assay_tissues.csv")
   - $id: csv("id")
   - "https://drumap.nibiohn.go.jp/rdf/assay_tissue/$id"
   - variables:
@@ -142,7 +142,7 @@ DruMAPAssayTissue:
     - drumap_assay_tissue_description: csv("description")
 
 DruMAPAssayType:
-  - source("~/workspace/rdf-config-convert/drumap/csv_files/assay_types.csv")
+  - source("assay_types.csv")
   - $id: csv("id")
   - "https://drumap.nibiohn.go.jp/rdf/assay_type/$id"
   - variables:
@@ -150,7 +150,7 @@ DruMAPAssayType:
     - drumap_assay_type_label: csv("name")
 
 DruMAPAssay:
-  - source("~/workspace/rdf-config-convert/drumap/csv_files/assays_subset.csv")
+  - source("assays_subset.csv")
   - $id: csv("id")
   - "https://drumap.nibiohn.go.jp/rdf/assay/$id"
   - variables:
@@ -175,7 +175,7 @@ DruMAPAssay:
     - drumap_assay_description: csv("description")
 
 DruMAPCompoundName:
-  - source("~/workspace/rdf-config-convert/drumap/csv_files/compound_names_subset.csv")
+  - source("compound_names_subset.csv")
   - $id: csv("id")
   - "https://drumap.nibiohn.go.jp/rdf/compound_name/$id"
   - variables:
@@ -190,7 +190,7 @@ DruMAPCompoundName:
       - prepend("https://drumap.nibiohn.go.jp/rdf/name_type/")
 
 DruMAPCompoundProperty:
-  - source("~/workspace/rdf-config-convert/drumap/csv_files/compound_properties.csv")
+  - source("compound_properties.csv")
   - $id: csv("id")
   - "https://drumap.nibiohn.go.jp/rdf/compound_property/$id"
   - variables:
@@ -211,7 +211,7 @@ DruMAPCompoundProperty:
     - drumap_compound_property_mol_weight_freebase_precision: csv("mol_weight_freebase_precision")
 
 DruMAPCompound:
-  - source("~/workspace/rdf-config-convert/drumap/csv_files/compounds_subset.csv")
+  - source("compounds_subset.csv")
   - $id: csv("id")
   - "https://drumap.nibiohn.go.jp/rdf/compound/$id"
   - variables:
@@ -234,7 +234,7 @@ DruMAPCompound:
     - drumap_compound_ffp2: csv("ffp2")
 
 DruMAPCrossReference:
-  - source("~/workspace/rdf-config-convert/drumap/csv_files/cross_references_subset.csv")
+  - source("cross_references_subset.csv")
   - $id: csv("id")
   - "https://drumap.nibiohn.go.jp/rdf/cross_reference/$id"
   - variables:
@@ -249,7 +249,7 @@ DruMAPCrossReference:
       - prepend("https://drumap.nibiohn.go.jp/rdf/database_type/")
 
 DruMAPDatabaseType:
-  - source("~/workspace/rdf-config-convert/drumap/csv_files/database_types.csv")
+  - source("database_types.csv")
   - $id: csv("id")
   - "https://drumap.nibiohn.go.jp/rdf/database_type/$id"
   - variables:
@@ -258,7 +258,7 @@ DruMAPDatabaseType:
     - drumap_database_url_pattern: csv("url_pattern")
 
 DruMAPDocumentType:
-  - source("~/workspace/rdf-config-convert/drumap/csv_files/document_types.csv")
+  - source("document_types.csv")
   - $id: csv("id")
   - "https://drumap.nibiohn.go.jp/rdf/document_type/$id"
   - variables:
@@ -267,7 +267,7 @@ DruMAPDocumentType:
     - drumap_document_type_description: csv("description")
 
 DruMAPDocument:
-  - source("~/workspace/rdf-config-convert/drumap/csv_files/documents.csv")
+  - source("documents.csv")
   - $id: csv("id")
   - "https://drumap.nibiohn.go.jp/rdf/document/$id"
   - variables:
@@ -278,7 +278,7 @@ DruMAPDocument:
       - prepend("https://drumap.nibiohn.go.jp/rdf/document_type/")
 
 DruMAPExperiment:
-  - source("~/workspace/rdf-config-convert/drumap/csv_files/experiments.csv")
+  - source("experiments.csv")
   - $id: csv("id")
   - "https://drumap.nibiohn.go.jp/rdf/experiment/$id"
   - variables:
@@ -287,7 +287,7 @@ DruMAPExperiment:
     - drumap_experiment_date: csv("date")
 
 DruMAPMetabolicSite:
-  - source("~/workspace/rdf-config-convert/drumap/csv_files/metabolic_sites_subset.csv")
+  - source("metabolic_sites_subset.csv")
   - $id: csv("id")
   - "https://drumap.nibiohn.go.jp/rdf/metabolic_site/$id"
   - variables:
@@ -304,7 +304,7 @@ DruMAPMetabolicSite:
     - drumap_metabolic_site_score: csv("score")
 
 DruMAPNameType:
-  - source("~/workspace/rdf-config-convert/drumap/csv_files/name_types.csv")
+  - source("name_types.csv")
   - $id: csv("id")
   - "https://drumap.nibiohn.go.jp/rdf/name_type/$id"
   - variables:
@@ -313,7 +313,7 @@ DruMAPNameType:
     - drumap_name_type_description: csv("description")
 
 DruMAPParameterType:
-  - source("~/workspace/rdf-config-convert/drumap/csv_files/parameter_types.csv")
+  - source("parameter_types.csv")
   - $id: csv("id")
   - "https://drumap.nibiohn.go.jp/rdf/parameter_type/$id"
   - variables:
@@ -323,7 +323,7 @@ DruMAPParameterType:
     - drumap_parameter_type_unit: csv("unit")
 
 DruMAPRank:
-  - source("~/workspace/rdf-config-convert/drumap/csv_files/ranks.csv")
+  - source("ranks.csv")
   - $id: csv("id")
   - "https://drumap.nibiohn.go.jp/rdf/rank/$id"
   - variables:
@@ -331,7 +331,7 @@ DruMAPRank:
     - drumap_rank_label: csv("description")
 
 DruMAPRelation:
-  - source("~/workspace/rdf-config-convert/drumap/csv_files/relations.csv")
+  - source("relations.csv")
   - $id: csv("id")
   - "https://drumap.nibiohn.go.jp/rdf/relation/$id"
   - variables:
@@ -345,7 +345,7 @@ DruMAPRelation:
       - prepend("https://drumap.nibiohn.go.jp/rdf/compound/")
 
 DruMAPStructureSource:
-  - source("~/workspace/rdf-config-convert/drumap/csv_files/structure_sources.csv")
+  - source("structure_sources.csv")
   - $id: csv("id")
   - "https://drumap.nibiohn.go.jp/rdf/structure_source/$id"
   - variables:
@@ -353,7 +353,7 @@ DruMAPStructureSource:
     - drumap_structure_source: csv("name")
 
 DruMAPStructureType:
-  - source("~/workspace/rdf-config-convert/drumap/csv_files/structure_types.csv")
+  - source("structure_types.csv")
   - $id: csv("id")
   - "https://drumap.nibiohn.go.jp/rdf/structure_type/$id"
   - variables:
@@ -361,7 +361,7 @@ DruMAPStructureType:
     - drumap_structure_type: csv("name")
 
 DruMAPStructure:
-  - source("~/workspace/rdf-config-convert/drumap/csv_files/structures_subset.csv")
+  - source("structures_subset.csv")
   - $id: csv("id")
   - "https://drumap.nibiohn.go.jp/rdf/structure/$id"
   - variables:
@@ -379,7 +379,7 @@ DruMAPStructure:
     - drumap_structure_tautomer_id: csv("tautomer_id")
 
 DruMAPToxicity:
-  - source("~/workspace/rdf-config-convert/drumap/csv_files/toxicities.csv")
+  - source("toxicities.csv")
   - $id: csv("id")
   - "https://drumap.nibiohn.go.jp/rdf/toxicity/$id"
   - variables:

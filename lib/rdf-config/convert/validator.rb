@@ -12,7 +12,7 @@ class RDFConfig
 
       def validate
         validate_variable_name
-        validate_exist_source
+        # validate_exist_source
         validate_source_file_path
         validate_macro_name
         validate_convert_variable_name
@@ -44,7 +44,11 @@ class RDFConfig
 
       def validate_source_file_path
         @convert.source_subject_map.each_key do |file_path|
-          add_error(%(Source file "#{file_path}" does not exist.)) unless File.exist?(file_path)
+          if file_path.nil?
+            add_error(%(#{@convert.source_subject_map[nil].join(', ')}: Since source file is not specified in convert.yaml, please specify the source file in the --convert option.))
+          elsif !File.exist?(file_path)
+            add_error(%(Source file "#{file_path}" does not exist.))
+          end
         end
       end
 

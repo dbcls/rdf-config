@@ -35,7 +35,7 @@ class RDFConfig
 
       @root_subjects = config.convert.keys
 
-      @config_parser = ConfigParser.new(config)
+      @config_parser = ConfigParser.new(config, convert_source: opts[:convert_source])
       @config_parser.parse
       @convert_method = {
         subject_converts: @config_parser.subject_converts,

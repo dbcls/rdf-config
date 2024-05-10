@@ -1,5 +1,5 @@
 HGNC:
-  - source("work/convert/hgnc-subset.tsv")
+  - source("hgnc-subset.tsv")
   - tsv("hgnc_id")
   - downcase
   - variables:
@@ -12,14 +12,14 @@ HGNC:
     - location: tsv("location")
 
 UniProt:
-  - source("work/convert/hgnc-subset.tsv")
+  - source("hgnc-subset.tsv")
   - tsv("uniprot_ids")
   - prepend("http://identifiers.org/uniprot/")
   - variables:
     - uniprot_id: tsv("uniprot_ids")
 
 PubMed:
-  - source("work/convert/hgnc-subset.tsv")
+  - source("hgnc-subset.tsv")
   - tsv("pubmed_id")
   - split("|")
   - prepend("http://identifiers.org/pubmed/")

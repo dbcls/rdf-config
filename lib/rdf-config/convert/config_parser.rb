@@ -35,6 +35,11 @@ class RDFConfig
 
         @macro_names = []
         @convert_variable_names = []
+
+        @convert_source = opts[:convert_source]
+        @convert_source_file = if !@convert_source.nil? && File.file?(@convert_source)
+                                 @convert_source
+                               end
       end
 
       def parse
@@ -104,6 +109,10 @@ class RDFConfig
         end
 
         add_subject_convert(subject_name, subject_converts)
+        unless @subject_config[subject_name].first.start_with?(SOURCE_MACRO_NAME)
+          @subject_config[subject_name].unshift(%/#{SOURCE_MACRO_NAME}("#{@convert_source_file}")/)
+          add_source_subject_map(@convert_source_file, subject_name)
+        end
         @subject_name_stack.pop
       end
 
@@ -169,8 +178,8 @@ class RDFConfig
         add_macro_name(macro_name)
 
         if macro_name == SOURCE_MACRO_NAME
-          source = File.expand_path(method_def[:args_][:arg_][1..-2])
-          add_source_subject_map(source, variable_name)
+          source_by_config = method_def[:args_][:arg_][1..-2]
+          add_source_subject_map(source_file_path(source_by_config), variable_name)
         end
 
         if @source_file_format.nil? && SOURCE_FORMATS.include?(method[:method_name_])
@@ -184,6 +193,18 @@ class RDFConfig
         @source_subject_map[source] = [] unless @source_subject_map.key?(source)
 
         @source_subject_map[source] << subject_name
+      end
+
+      def source_file_path(source_by_config)
+        return @convert_source_file if @convert_source_file
+
+        if File.absolute_path?(source_by_config)
+          source_by_config
+        elsif source_by_config.start_with?('~')
+          File.expand_path(source_by_config)
+        else
+          File.expand_path(source_by_config, @convert_source)
+        end
       end
 
       def add_subject_convert(subject_name, convert)

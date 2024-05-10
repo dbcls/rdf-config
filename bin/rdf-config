@@ -6,7 +6,12 @@ require 'getoptlong'
 require 'rdf-config'
 
 def help
-  puts ::DATA.read
+  if __FILE__ == $PROGRAM_NAME
+    puts DATA.read
+  else
+    usage = File.read(File.expand_path(__FILE__)).split("__END__\n").last
+    puts usage
+  end
   exit
 end
 
@@ -103,7 +108,7 @@ opt_values.each do |opt_name, values|
     opts[:mode] = :shex
   when /--convert/
     opts[:mode] = :convert
-    opts[:input_file] = value
+    opts[:convert_source] = value
   when /--format/
     opts[:format] = value
   when /--debug/
