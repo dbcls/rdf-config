@@ -100,6 +100,12 @@ class RDFConfig
         subject_key = subject_value.dup
         add_subject_node(subject_name, subject_key)
         add_node(subject_key, { subject_name => subject_value })
+
+        subject = @model.find_subject(subject_name)
+        return if subject.nil?
+
+        json_object_type = type_value_by_subject(subject)
+        add_node(subject_key, { subject_type_key(subject_name) => json_object_type }) unless json_object_type.nil?
       end
 
       def generate_by_triple(triple, values, value_idx)
@@ -107,9 +113,6 @@ class RDFConfig
 
         subject_iri = @subject_node[subject_name][value_idx]
         subject_iri = @subject_node[subject_name].first if subject_iri.nil?
-
-        json_object_type = type_value_by_subject(triple.subject)
-        add_node(subject_iri, { subject_type_key(subject_name) => json_object_type }) unless json_object_type.nil?
 
         add_node(subject_iri,
                  object_hash_by_triple(triple, cast_data_type(values[value_idx], triple.object)))
@@ -139,8 +142,6 @@ class RDFConfig
           subject.types
         end
       end
-
-      def add_node_t(key, object_hash); end
 
       def add_node(key, object_hash)
         object_key = object_hash.keys.first
@@ -176,12 +177,12 @@ class RDFConfig
                    triple_object
                  end
 
-        return target_value unless object.is_a?(Model::Literal)
+        return target_value if !target_value.is_a?(String) || !object.is_a?(Model::Literal)
 
         case object.value
-        when 'Integer'
+        when Integer
           target_value.to_s.to_i
-        when 'Float'
+        when Float
           target_value.to_s.to_f
         else
           target_value
