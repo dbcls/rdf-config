@@ -109,7 +109,7 @@ class RDFConfig
         end
 
         add_subject_convert(subject_name, subject_converts)
-        unless @subject_config[subject_name].first.start_with?(SOURCE_MACRO_NAME)
+        if @subject_config[subject_name].select { |v| v.is_a?(String) && v.start_with?(SOURCE_MACRO_NAME) }.empty?
           @subject_config[subject_name].unshift(%/#{SOURCE_MACRO_NAME}("#{@convert_source_file}")/)
           add_source_subject_map(@convert_source_file, subject_name)
         end
