@@ -230,6 +230,8 @@ class RDFConfig
       end
 
       def validate_uri(uri)
+        return ['BNODE'] if uri.to_s == '[]'
+
         if /\A<.+>\z/ =~ uri
           ['VALID']
         else

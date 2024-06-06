@@ -33,7 +33,7 @@ class RDFConfig
       end
 
       def blank_node?
-        @name.is_a?(Array)
+        @name.is_a?(Array) || @value.to_s == '[]'
       end
 
       def objects(opts = {})

@@ -34,6 +34,23 @@ class RDFConfig
 
       private
 
+      def generate_subject(subject_name, subject_value = nil)
+        subject = @model.find_subject(subject_name)
+        node = if subject_value.nil?
+                 RDF::Node.new
+               elsif subject&.blank_node?
+                 RDF::Node.new(subject_value)
+               else
+                 uri_node(subject_value)
+               end
+        add_subject_node(subject_name, node)
+        add_subject_type_node(subject_name, node)
+      end
+
+      def generate_bnode_subject(subject_name)
+        generate_subject(subject_name)
+      end
+
       def generate_statements_by_subject(subject_convert, root: false)
         subject_name = subject_convert.keys.first
         @reader.each_row(path_by_convert_def(subject_name), is_subject_node: true) do |row|
@@ -101,15 +118,15 @@ class RDFConfig
         end
       end
 
-      def subject_node_by_subject_name(row, subject_name)
-        converted_value = @converter.convert_value(row, subject_name)
-        subject = uri_node(converted_value)
-
+      def add_subject_type_node(subject_name, subject)
         @model.find_subject(subject_name).types.each do |rdf_type|
           @statements << RDF::Statement.new(subject, RDF.type, uri_node(rdf_type))
         end
+      end
 
-        subject
+      def subject_node_by_subject_name(row, subject_name)
+        converted_value = @converter.convert_value(row, subject_name)
+        uri_node(converted_value)
       end
 
       def predicate_node(predicate_uri)
@@ -182,7 +199,9 @@ class RDFConfig
       def rdf_writer_opts
         {
           prefixes: @prefixes,
-          canonicalize: false
+          canonicalize: false,
+          unique_bnodes: true,
+          stream: false
         }
       end
     end

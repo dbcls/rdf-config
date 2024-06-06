@@ -1,0 +1,29 @@
+{
+  "@context": {
+    "ex": "http://example.org/",
+    "SubjectBN": "@id",
+    "data": "@graph",
+    "members": {
+      "@id": "ex:has_member",
+      "@type": "@id"
+    }
+  },
+  "data": [
+    {
+      "SubjectBN": "_:b1",
+      "@type": "ex:Relation",
+      "members": [
+        "ex:A",
+        "ex:B"
+      ]
+    },
+    {
+      "SubjectBN": "_:b2",
+      "@type": "ex:Relation",
+      "members": [
+        "ex:C",
+        "ex:D"
+      ]
+    }
+  ]
+}

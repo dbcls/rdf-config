@@ -182,7 +182,7 @@ class RDFConfig
           add_source_subject_map(source_file_path(source_by_config), variable_name)
         end
 
-        if @source_file_format.nil? && SOURCE_FORMATS.include?(method[:method_name_])
+        if @source_file_format.nil? && !method.nil? && SOURCE_FORMATS.include?(method[:method_name_])
           @source_file_format = method[:method_name_]
         end
 

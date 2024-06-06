@@ -17,6 +17,8 @@ class RDFConfig
         @subject_names = []
         @object_names = []
         @object_triple_map = {}
+
+        @bnode_id = 0
       end
 
       private
@@ -37,20 +39,29 @@ class RDFConfig
 
       def generate_by_subjects(row)
         @subject_names.each do |subject_name|
-          subject_convert = @convert.subject_convert_by_name(subject_name)
-          values = @converter.convert_value(row, subject_convert)
-          next if values.empty?
-
-          subject_name = subject_convert.keys.first
-          values = [values] unless values.is_a?(Array)
-          values.each do |subject_value|
-            generate_subject(subject_name, subject_value)
-          end
-          generate_by_objects(subject_name, row)
+          generate_by_subject(row, subject_name)
         end
       end
 
-      def generate_subject(subject_name, subject_value); end
+      def generate_by_subject(row, subject_name)
+        subject_convert = @convert.subject_convert_by_name(subject_name)
+        if subject_convert[subject_name].empty?
+          subject = @model.find_subject(subject_name)
+          return unless subject.blank_node?
+
+          generate_bnode_subject(subject_name)
+        else
+          subject_uris = @converter.convert_value(row, subject_convert)
+          return if subject_uris.empty?
+
+          subject_uris = [subject_uris] unless subject_uris.is_a?(Array)
+          subject_uris.each do |subject_uri|
+            generate_subject(subject_name, subject_uri)
+          end
+        end
+
+        generate_by_objects(subject_name, row)
+      end
 
       def generate_by_objects(subject_name, row)
         object_converts(subject_name).each do |object_convert|
@@ -74,7 +85,7 @@ class RDFConfig
         values = @converter.convert_value(row, object_convert)
         if values.is_a?(Array)
           if @subject_node[subject_name].size > values.size
-            (@subject_node[subject_name].size - values.size).times { values << "" }
+            (@subject_node[subject_name].size - values.size).times { values << '' }
           end
         else
           values = Array.new(@subject_node[subject_name].size, values)
@@ -96,7 +107,7 @@ class RDFConfig
       end
 
       def generate_subject_relation
-        @subject_node.each do |subject_name, subject_nodes|
+        @subject_node.each_key do |subject_name|
           @model.find_all_by_object_name(subject_name).each do |triple|
             next unless @subject_node.key?(triple.subject.name)
 
@@ -134,6 +145,14 @@ class RDFConfig
 
       def clear_subject_node
         @subject_node.clear
+      end
+
+      def generate_bnode_id
+        @bnode_id += 1
+      end
+
+      def bnode_uri
+        "_:b#{@bnode_id}"
       end
     end
   end
