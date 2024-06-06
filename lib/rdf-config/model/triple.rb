@@ -297,6 +297,8 @@ class RDFConfig
       end
 
       def validate_uri(uri)
+        return ['BNODE'] if uri.to_s == '[]'
+
         if /\A<.+>\z/ =~ uri
           ['VALID']
         else
@@ -361,15 +363,15 @@ class RDFConfig
       end
 
       def blank_node?
-        @name.is_a?(Array)
+        @name.is_a?(Array) || @value.to_s == '[]'
       end
 
       def objects(opts = {})
-        if opts[:reject_rdf_type]
-          predicates = @predicates.reject(&:rdf_type?)
-        else
-          predicates = @predicates
-        end
+        predicates = if opts[:reject_rdf_type]
+                       @predicates.reject(&:rdf_type?)
+                     else
+                       @predicates
+                     end
 
         predicates.map(&:objects).flatten
       end

@@ -97,15 +97,15 @@ class RDFConfig
       end
 
       def generate_subject(subject_name, subject_value)
-        subject_key = subject_value.dup
-        add_subject_node(subject_name, subject_key)
-        add_node(subject_key, { subject_name => subject_value })
+        subject_uri = subject_value.dup
+        add_subject_node(subject_name, subject_uri)
+        add_node(subject_uri, { subject_name => subject_uri })
+        add_subject_type_node(subject_name, subject_uri)
+      end
 
-        subject = @model.find_subject(subject_name)
-        return if subject.nil?
-
-        json_object_type = type_value_by_subject(subject)
-        add_node(subject_key, { subject_type_key(subject_name) => json_object_type }) unless json_object_type.nil?
+      def generate_bnode_subject(subject_name)
+        generate_bnode_id
+        generate_subject(subject_name, bnode_uri)
       end
 
       def generate_by_triple(triple, values, value_idx)
@@ -166,6 +166,20 @@ class RDFConfig
         else
           @node[key] = { object_key => node_value }
         end
+      end
+
+      def add_subject_type_node(subject_name, subject_uri)
+        subject = @model.find_subject(subject_name)
+        return if subject.nil?
+
+        json_object_type = type_value_by_subject(subject)
+        return if json_object_type.nil?
+
+        add_node(subject_uri, { subject_type_key(subject_name) => json_object_type })
+      end
+
+      def bnode_uri?(uri)
+        uri =~ /\A_:.*/
       end
 
       def cast_data_type(target_value, triple_object)

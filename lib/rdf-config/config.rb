@@ -65,7 +65,7 @@ class RDFConfig
     def read_config(config_file_path)
       config = if Gem::Version.create(RUBY_VERSION) >= Gem::Version.create('3.1')
                  require 'date'
-                 YAML.load_file(config_file_path, permitted_classes: [Date, Time])
+                 YAML.load_file(config_file_path, permitted_classes: [Date, Time, Symbol])
                else
                  YAML.load_file(config_file_path)
                end
@@ -74,7 +74,34 @@ class RDFConfig
         raise InvalidConfig, "Config file (#{config_file_path}) is not a valid YAML file."
       end
 
-      config
+      case config
+      when Hash
+        convert_symbol_to_string(config)
+      when Array
+        config.map { |subject_config| convert_symbol_to_string(subject_config) }
+      else
+        config
+      end
+    end
+
+    def convert_symbol_to_string(src_hash)
+      return src_hash unless src_hash.is_a?(Hash)
+
+      to_hash = src_hash.transform_keys { |key| key.is_a?(Symbol) ? ":#{key}" : key }
+      to_hash.each do |key, value|
+        case value
+        when Hash
+          convert_symbol_to_string(value)
+        when Array
+          value.map! { |v| convert_symbol_to_string(v) }
+        when Symbol
+          to_hash[key] = ":#{value}"
+        else
+          value
+        end
+      end
+
+      to_hash
     end
 
     class ConfigNotFound < StandardError; end

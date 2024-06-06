@@ -5,10 +5,6 @@ require_relative '../macros/csv'
 class RDFConfig
   class Convert
     class CSV2RDF < RDFGenerator
-      def initialize(config, convert)
-        super
-      end
-
       def generate
         @convert.source_subject_map.each do |source, subject_names|
           @reader = @convert.file_reader(source: source)
@@ -26,14 +22,6 @@ class RDFConfig
           @converter.push_target_row(row, clear_variable: true)
           generate_by_row(row)
           @converter.pop_target_row
-        end
-      end
-
-      def generate_subject(subject_name, subject_value)
-        node = uri_node(subject_value)
-        add_subject_node(subject_name, node)
-        @model.find_subject(subject_name).types.each do |rdf_type|
-          @statements << RDF::Statement.new(node, RDF.type, uri_node(rdf_type))
         end
       end
 

@@ -4,6 +4,8 @@ class RDFConfig
   class Convert
     class Converter
       ROW_TARGET_METHODS = %w[csv json xml].freeze
+      # VARIABLE_REGEXP = /\$\{([a-zA-Z]\w*)\}|\$([a-z_]\w+)\W*/
+      VARIABLE_REGEXP = /\$[a-z_]\w+/
 
       attr_accessor :convert_variable_names
 
@@ -103,7 +105,7 @@ class RDFConfig
       end
 
       def expand_variable(str)
-        str.gsub(/\$[a-z_]\w+/) do |matched|
+        str.gsub(VARIABLE_REGEXP) do |matched|
           if @variable.keys.include?(matched)
             @variable[matched]
           else
