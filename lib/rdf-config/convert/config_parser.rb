@@ -8,7 +8,8 @@ class RDFConfig
     class ConfigParser
       include MixIn::ConvertUtil
 
-      attr_reader :subject_converts, :object_converts, :variable_converts, :source_subject_map, :macro_names
+      attr_reader :subject_converts, :object_converts, :variable_converts, :source_subject_map, :source_format_map,
+                  :macro_names
 
       CONFIG_FILES_KEY = 'config_files'
       VARIABLES_KEY = 'variables'
@@ -24,6 +25,9 @@ class RDFConfig
         @variable_converts = {}
         @source_subject_map = {}
 
+        @source_format_map = {}
+        @target_source_file_path = nil
+
         @subject_config = {}
         @object_config = {}
 
@@ -37,9 +41,7 @@ class RDFConfig
         @convert_variable_names = []
 
         @convert_source = opts[:convert_source]
-        @convert_source_file = if !@convert_source.nil? && File.file?(@convert_source)
-                                 @convert_source
-                               end
+        @convert_source_file = (@convert_source if !@convert_source.nil? && File.file?(@convert_source))
       end
 
       def parse
@@ -179,7 +181,11 @@ class RDFConfig
 
         if macro_name == SOURCE_MACRO_NAME
           source_by_config = method_def[:args_][:arg_][1..-2]
-          add_source_subject_map(source_file_path(source_by_config), variable_name)
+          @target_source_file_path = source_file_path(source_by_config)
+          add_source_subject_map(@target_source_file_path, variable_name)
+          @source_format_map[@target_source_file_path] = [] unless @source_format_map.key?(@target_source_file_path)
+        elsif Convert::SOURCE_FORMATS.include?(macro_name)
+          add_source_format_map(@target_source_file_path, macro_name)
         end
 
         if @source_file_format.nil? && !method.nil? && SOURCE_FORMATS.include?(method[:method_name_])
@@ -195,10 +201,17 @@ class RDFConfig
         @source_subject_map[source] << subject_name
       end
 
+      def add_source_format_map(source, macro_name)
+        source = @convert_source_file unless @convert_source_file.nil?
+        @source_format_map[source] = [] unless @source_format_map.key?(source)
+
+        @source_format_map[source] << macro_name unless @source_format_map[source].include?(macro_name)
+      end
+
       def source_file_path(source_by_config)
         return @convert_source_file if @convert_source_file
 
-        if File.absolute_path?(source_by_config)
+        if absolute_path?(source_by_config)
           source_by_config
         elsif source_by_config.start_with?('~')
           File.expand_path(source_by_config)
@@ -271,6 +284,16 @@ class RDFConfig
           obj
         else
           [obj.to_s]
+        end
+      end
+
+      def absolute_path?(path)
+        if File.respond_to?(:absolute_path?)
+          File.absolute_path?(path)
+        elsif File::ALT_SEPARATOR
+          path =~ /\A[a-zA-Z]:\\/ || path.start_with?('\\')
+        else
+          path.start_with?('/')
         end
       end
     end
