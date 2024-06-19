@@ -147,6 +147,8 @@ class RDFConfig
           else
             uri_node(object_value)
           end
+        when Model::Unknown
+          literal_node(object_value, triple.object)
         end
       end
 

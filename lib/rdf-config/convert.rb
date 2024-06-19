@@ -27,7 +27,8 @@ class RDFConfig
     attr_reader :source_subject_map, :root_subjects, :subject_config, :object_config, :subject_object_map,
                 :convert_method, :macro_names, :convert_variable_names
 
-    def_delegators :@config_parser, :subject_converts, :object_converts, :source_subject_map, :macro_names
+    def_delegators :@config_parser,
+                   :subject_converts, :object_converts, :source_subject_map, :source_format_map, :macro_names
 
     def initialize(config, opts)
       @config = config
@@ -51,11 +52,7 @@ class RDFConfig
         nil
       end
 
-      @source_file_format = if @source.nil?
-                              nil
-                            else
-                              ext_by_file_path(@source)
-                            end
+      @source_file_format = source_format_map[@source].first
     end
 
     def generate

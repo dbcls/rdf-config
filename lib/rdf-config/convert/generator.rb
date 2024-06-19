@@ -1,8 +1,12 @@
 # frozen_string_literal: true
 
+require_relative 'mix_in/convert_util'
+
 class RDFConfig
   class Convert
     class Generator
+      include RDFConfig::Convert::MixIn::ConvertUtil
+
       def initialize(config, convert)
         @config = config
         @convert = convert
@@ -45,15 +49,27 @@ class RDFConfig
 
       def generate_by_subject(row, subject_name)
         subject_convert = @convert.subject_convert_by_name(subject_name)
-        if subject_convert[subject_name].empty?
-          subject = @model.find_subject(subject_name)
-          return unless subject.blank_node?
-
-          generate_bnode_subject(subject_name)
+        subject = @model.find_subject(subject_name)
+        if subject.blank_node?
+          generate_by_bnode_subject(subject_name, row, subject_convert)
         else
           subject_uris = @converter.convert_value(row, subject_convert)
-          return if subject_uris.empty?
+          return if subject_uris.to_s.empty?
 
+          subject_uris = [subject_uris] unless subject_uris.is_a?(Array)
+          subject_uris.each do |subject_uri|
+            generate_subject(subject_name, subject_uri)
+          end
+
+          generate_by_objects(subject_name, row)
+        end
+      end
+
+      def generate_by_bnode_subject(subject_name, row, subject_convert)
+        subject_uris = @converter.convert_value(row, subject_convert)
+        if subject_uris.to_s.empty?
+          generate_bnode_subject(subject_name)
+        else
           subject_uris = [subject_uris] unless subject_uris.is_a?(Array)
           subject_uris.each do |subject_uri|
             generate_subject(subject_name, subject_uri)
@@ -76,7 +92,13 @@ class RDFConfig
       end
 
       def generate_by_object_convert(row, object_convert)
-        triple = triple_by_object(object_convert.keys.first)
+        object_name = object_convert.keys.first
+        if convert_variable?(object_name)
+          @converter.convert_value(row, object_convert)
+          return
+        end
+
+        triple = triple_by_object(object_name)
         return if triple.nil?
 
         subject_name = triple.subject.name
