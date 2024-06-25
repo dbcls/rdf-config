@@ -1,0 +1,40 @@
+HsSNV:
+  - source("togovar_mogplus.tsv") 
+  - csv("#url")
+  - variables:
+    - variant_label:
+      - csv()
+    - variant_identifier: 
+      - csv(tgv30913364)
+    - dbsnp: 
+      - csv(dbsnp:rs114202595)
+    - position: 
+      - csv(127254587)
+    - reference:
+      - csv(hco:7/GRCh37)
+#        - a+: obo:SO_0001583 # missense_variant
+        - rdfs:label:
+          - hgvs_g: 7:g.127254587G>A
+        - rdfs:label:
+          - hgvs_p: ENSP00000344297.3:p.Arg129Trp
+        - rdfs:label:
+          - hgvs_c: ENST00000338516.3:c.385C>T
+        - tgvo:gene:
+          - hgnc: hgnc:8618
+          - ensembl_gene: Gene
+        - tgvo:transcript:
+          - ensembl_transcript: enst:ENST00000338516
+        - tgvo:sift?:
+          - sift: 0.0
+        - tgvo:polyphen?:
+          - polyphen: 0.997
+    - gvo:ref:
+      - ref: G
+    - gvo:alt:
+      - alt: G
+    - gvo:ref_vcf:
+      - ref_vcf: A
+    - gvo:alt_vcf:
+      - alt_vcf: A
+    - tgvo:orthologous_variants*:
+        - mogplus_variant: MmSNV

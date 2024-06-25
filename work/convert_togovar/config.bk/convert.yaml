@@ -1,0 +1,10 @@
+LDRelation:
+  - source("PASS.autosome_PAR_ploidy_2.biallelic.chr22.tsv") 
+  - csv("SNPA")
+  - variables:
+    - snv: 
+      - csv("SNPB")
+    - r2_value:
+      - csv("R2")
+    - dprime_value:
+      - csv("Dprime")
