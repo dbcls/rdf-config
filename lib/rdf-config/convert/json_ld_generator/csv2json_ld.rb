@@ -47,7 +47,8 @@ class RDFConfig
           generate_graph
         end
 
-        json_ld_ctx = {}
+        # json_ld_ctx = {}
+        json_ld_ctx = @config.prefix.transform_values { |uri| uri[1..-2] }
         @node.values.each do |data_hash|
           subject_name = data_hash.keys.select { |key| @model.subject?(key) }.first
           json_ld_ctx =
