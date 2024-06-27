@@ -31,6 +31,7 @@ class RDFConfig
       @values = {}
       @namespaces = {}
 
+      parse_parameters
       parse_opts
 
       return if print_usage?
@@ -261,6 +262,14 @@ class RDFConfig
       @description = nil
       @options = nil
       @endpoint = nil
+    end
+
+    def parse_parameters
+      parameters.each do |variable_name, value|
+        next if value.to_s.strip.empty?
+
+        @values[variable_name] = value
+      end
     end
 
     def parse_opts
