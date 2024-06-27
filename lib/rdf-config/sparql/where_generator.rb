@@ -519,7 +519,13 @@ class RDFConfig
 
       def add_optional_triples(triples)
         triples.each do |triple|
-          add_optional_triple(triple)
+          if @values.key?(triple.subject.name)
+            add_required_triples([triple])
+          elsif triple.object.bnode? || optional?(triple.object.name)
+            add_optional_triple(triple)
+          else
+            add_required_triples([triple])
+          end
         end
       end
 
@@ -630,6 +636,8 @@ class RDFConfig
       end
 
       def optional?(object_name, start_subject = nil)
+        return false if @values.key?(object_name)
+
         model.predicate_path(object_name, start_subject).reject(&:required?).size.positive?
       end
 
