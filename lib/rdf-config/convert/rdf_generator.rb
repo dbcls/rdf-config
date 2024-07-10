@@ -26,7 +26,7 @@ class RDFConfig
 
       def output_rdf
         RDF::Writer.for(:turtle).new(**rdf_writer_opts) do |writer|
-          @statements.each do |statement|
+          refined_statements.each do |statement|
             writer << statement
           end
         end
@@ -205,6 +205,17 @@ class RDFConfig
           unique_bnodes: true,
           stream: false
         }
+      end
+
+      def refined_statements
+        subject_uris = @statements.map(&:subject).map(&:to_s).uniq
+        subject_uris_for_output = subject_uris.select do |subject_uri|
+          statements = @statements.select { |statement| statement.subject.to_s == subject_uri }
+          statements.select { |statement| statement.subject.to_s == subject_uri }
+                    .reject { |statement| statement.predicate == RDF.type }.size.positive?
+        end
+
+        @statements.select { |statement| subject_uris_for_output.include?(statement.subject.to_s) }
       end
     end
   end

@@ -33,7 +33,7 @@ class RDFConfig
         end
 
         # json_data = @node.map { |id, hash| { '@id' => id }.merge(hash) }
-        @json_ld.merge!(data: @node.values)
+        @json_ld.merge!(data: refined_nodes)
 
         # puts JSON.pretty_generate(@json_ld)
         puts JSON.generate(@json_ld)
@@ -49,15 +49,15 @@ class RDFConfig
 
         # json_ld_ctx = {}
         json_ld_ctx = @config.prefix.transform_values { |uri| uri[1..-2] }
-        @node.values.each do |data_hash|
+        refined_nodes.each do |data_hash|
           subject_name = data_hash.keys.select { |key| @model.subject?(key) }.first
           json_ld_ctx =
             json_ld_ctx.merge(@context_generator.context_for_data_hash(subject_name, data_hash))
-          puts JSON.generate({'@context' => context_url}.merge(data_hash))
+          puts JSON.generate({ '@context' => context_url }.merge(data_hash))
         end
 
         File.open(context_file, 'w') do |f|
-          f.puts JSON.generate({'@context' => json_ld_ctx})
+          f.puts JSON.generate({ '@context' => json_ld_ctx })
         end
       end
 
@@ -218,6 +218,16 @@ class RDFConfig
 
       def context_url
         context_file
+      end
+
+      def refined_nodes
+        @node.values.select do |hash|
+          hash.size > if hash.keys.include?('@type')
+                        2
+                      else
+                        1
+                      end
+        end
       end
     end
   end
