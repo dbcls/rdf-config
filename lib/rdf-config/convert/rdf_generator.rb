@@ -26,8 +26,8 @@ class RDFConfig
 
       def output_rdf
         RDF::Writer.for(:turtle).new(**rdf_writer_opts) do |writer|
-          refined_statements.each do |statement|
-            writer << statement
+          @statements.each do |statement|
+            writer << statement[:statement]
           end
         end
       end
@@ -120,7 +120,10 @@ class RDFConfig
 
       def add_subject_type_node(subject_name, subject)
         @model.find_subject(subject_name).types.each do |rdf_type|
-          @statements << RDF::Statement.new(subject, RDF.type, uri_node(rdf_type))
+          @statements << {
+            statement: RDF::Statement.new(subject, RDF.type, uri_node(rdf_type)),
+            triple: nil
+          }
         end
       end
 
@@ -207,15 +210,49 @@ class RDFConfig
         }
       end
 
-      def refined_statements
-        subject_uris = @statements.map(&:subject).map(&:to_s).uniq
-        subject_uris_for_output = subject_uris.select do |subject_uri|
-          statements = @statements.select { |statement| statement.subject.to_s == subject_uri }
-          statements.select { |statement| statement.subject.to_s == subject_uri }
-                    .reject { |statement| statement.predicate == RDF.type }.size.positive?
+      def refine_statements
+        remove_subject_uris = rdftype_only_subject_uris
+        until rdftype_only_subject_uris.empty?
+          remove_rdftype_only_statemtns(remove_subject_uris)
+          remove_no_connection_statements(subject_uris)
+          remove_subject_uris = rdftype_only_subject_uris
         end
+      end
 
-        @statements.select { |statement| subject_uris_for_output.include?(statement.subject.to_s) }
+      def rdftype_only_subject_uris
+        subject_uris.select do |subject_uri|
+          @statements.select { |statement| statement[:statement].subject.to_s == subject_uri }
+                     .reject { |statement| statement[:statement].predicate == RDF.type }
+                     .empty?
+        end
+      end
+
+      def remove_rdftype_only_statemtns(remove_subject_uris)
+        @statements.reject! { |statement| remove_subject_uris.include?(statement[:statement].subject.to_s) }
+      end
+
+      def remove_no_connection_statements(valid_subject_uris)
+        @statements.reject! { |statement| remove_statement?(statement, valid_subject_uris) }
+      end
+
+      def remove_statement?(statement, valid_subject_uris)
+        return false if statement[:triple].nil?
+
+        triple_object = if statement[:triple].object.is_a?(Model::ValueList)
+                          statement[:triple].object.value.first
+                        else
+                          statement[:triple].object
+                        end
+        return false unless triple_object.is_a?(Model::Subject)
+
+        object = statement[:statement].object
+        statement[:statement].predicate != RDF.type &&
+          (object.is_a?(RDF::URI) || object.is_a?(RDF::Node)) &&
+          !valid_subject_uris.include?(object.to_s)
+      end
+
+      def subject_uris
+        @statements.map { |statement| statement[:statement].subject }.map(&:to_s).uniq
       end
     end
   end

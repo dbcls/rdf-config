@@ -12,6 +12,7 @@ class RDFConfig
           generate_statements
         end
 
+        refine_statements
         output_rdf
       end
 
@@ -28,17 +29,26 @@ class RDFConfig
       def generate_by_triple(triple, values, value_idx)
         subject = @subject_node[triple.subject.name][value_idx]
         subject = @subject_node[triple.subject.name].first if subject.nil?
-        @statements << RDF::Statement.new(
+        statement = RDF::Statement.new(
           subject,
           predicate_node(triple.predicate.uri),
           object_node_by_triple(triple, values[value_idx])
         )
+        @statements << {
+          statement: statement,
+          triple: triple
+        }
       end
 
       def add_subject_relation(triple, subject_node, object_node)
-        @statements << RDF::Statement.new(
+        statement = RDF::Statement.new(
           subject_node, predicate_node(triple.predicate.uri), object_node
         )
+
+        @statements << {
+          statement: statement,
+          triple: triple
+        }
       end
     end
   end
