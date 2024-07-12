@@ -10,6 +10,8 @@ class RDFConfig
     class CSV2JSON_LD < Generator
       include MixIn::ConvertUtil
 
+      TYPE_KEY = '@type'
+
       def initialize(config, convert)
         super
 
@@ -32,8 +34,10 @@ class RDFConfig
           generate_context
         end
 
+        refine_nodes
+
         # json_data = @node.map { |id, hash| { '@id' => id }.merge(hash) }
-        @json_ld.merge!(data: refined_nodes)
+        @json_ld.merge!(data: @node.values)
 
         # puts JSON.pretty_generate(@json_ld)
         puts JSON.generate(@json_ld)
@@ -47,9 +51,10 @@ class RDFConfig
           generate_graph
         end
 
-        # json_ld_ctx = {}
+        refine_nodes
+
         json_ld_ctx = @config.prefix.transform_values { |uri| uri[1..-2] }
-        refined_nodes.each do |data_hash|
+        @node.each_value do |data_hash|
           subject_name = data_hash.keys.select { |key| @model.subject?(key) }.first
           json_ld_ctx =
             json_ld_ctx.merge(@context_generator.context_for_data_hash(subject_name, data_hash))
@@ -68,7 +73,7 @@ class RDFConfig
 
         @subject_node.each_key do |subject_name|
           @json_ld['@context'][subject_name] = '@id'
-          @json_ld['@context'][subject_type_key(subject_name)] = '@type' if @type_in_context
+          @json_ld['@context'][subject_type_key(subject_name)] = TYPE_KEY if @type_in_context
         end
 
         @json_ld['@context']['data'] = '@graph'
@@ -80,10 +85,10 @@ class RDFConfig
           object = triple.object.is_a?(Model::ValueList) ? triple.object.value.first : triple.object
           case object
           when Model::URI, Model::Subject
-            hash['@type'] = '@id'
+            hash[TYPE_KEY] = '@id'
           when Model::Literal
             datatype = extract_rdf_datatype(object.value)
-            hash['@type'] = datatype unless datatype.nil?
+            hash[TYPE_KEY] = datatype unless datatype.nil?
           end
           @json_ld['@context'][object_name] = hash
         end
@@ -208,7 +213,7 @@ class RDFConfig
         if @type_in_context
           "#{subject_name}_type"
         else
-          '@type'
+          TYPE_KEY
         end
       end
 
@@ -220,13 +225,77 @@ class RDFConfig
         context_file
       end
 
-      def refined_nodes
-        @node.values.select do |hash|
-          hash.size > if hash.keys.include?('@type')
-                        2
-                      else
-                        1
-                      end
+      def refine_nodes
+        remove_subject_uris = rdftype_only_subject_uris
+        until remove_subject_uris.empty?
+          remove_rdftype_only_subjects(remove_subject_uris)
+          remove_no_connection_nodes
+
+          remove_subject_uris = rdftype_only_subject_uris
+        end
+      end
+
+      def rdftype_only_subject_uris
+        @node.keys.select { |subject_uri| rdftype_only?(subject_uri) }
+      end
+
+      def rdftype_only?(subject_uri)
+        return false unless @node.key?(subject_uri)
+
+        node_hash = @node[subject_uri]
+        node_hash.size <= if node_hash.key?(TYPE_KEY)
+                            2
+                          else
+                            1
+                          end
+      end
+
+      def remove_rdftype_only_subjects(remove_subject_uris)
+        @node.reject! { |subject_uri, node_hash| remove_subject_uris.include?(subject_uri) }
+      end
+
+      def remove_no_connection_nodes
+        @node.each do |subject_uri, node_hash|
+          @node[subject_uri] = no_connection_removed_node(node_hash)
+        end
+      end
+
+      def no_connection_removed_node(node_hash)
+        valid_subject_uris = @node.keys
+        node_array = node_hash.map do |variable_name, value|
+          if variable_name == TYPE_KEY || @model.subject?(variable_name)
+            [variable_name, value]
+          else
+            triple = @model.find_by_object_name(variable_name)
+            if triple.nil?
+              [variable_name, value]
+            else
+              object = triple.object.is_a?(Model::ValueList) ? triple.object.value.first : triple.object
+              if object.is_a?(Model::Subject)
+                node_value = refined_node_value(value, valid_subject_uris)
+                [variable_name, node_value] unless node_value.nil?
+              else
+                [variable_name, value]
+              end
+            end
+          end
+        end
+
+        node_array.reject(&:nil?).to_h
+      end
+
+      def refined_node_value(value, valid_subject_uris)
+        valid_values = []
+        if value.is_a?(Array)
+          valid_values = value.select { |v| valid_subject_uris.include?(v) }
+        elsif valid_subject_uris.include?(value)
+          valid_values << value
+        end
+
+        if valid_values.size == 1
+          valid_values.first
+        elsif valid_values.size > 1
+          valid_values
         end
       end
     end
