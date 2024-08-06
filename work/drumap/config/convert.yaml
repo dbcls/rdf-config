@@ -40,8 +40,9 @@ config_files_all:
 DruMAPActivity:
   - source("activities_subset.csv")
   - $id: csv("id")
-  - "https://drumap.nibiohn.go.jp/rdf/activity/$id"
-  - variables:
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/activity/$id"
+  - objects:
     - drumap_activity_id: $id
     - drumap_activity_label: "Activity:$id"
     - drumap_activity_assay_id:
@@ -72,8 +73,9 @@ DruMAPActivity:
 DruMAPActivityGroup:
   - source("activity_groups.csv")
   - $id: csv("id")
-  - "https://drumap.nibiohn.go.jp/rdf/activity_group/$id"
-  - variables:
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/activity_group/$id"
+  - objects:
     - drumap_activity_group_id: $id
     - drumap_activity_group_label: "ActivityGroup:$id"
     - drumap_activity_group_description: csv("description")
@@ -81,8 +83,9 @@ DruMAPActivityGroup:
 DruMAPAssayAnimal:
   - source("assay_animals.csv")
   - $id: csv("id")
-  - "https://drumap.nibiohn.go.jp/rdf/assay_animal/$id"
-  - variables:
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/assay_animal/$id"
+  - objects:
     - drumap_assay_animal_id: $id
     - drumap_assay_animal_label: csv("name")
     - drumap_assay_animal_assay_organism:
@@ -93,8 +96,9 @@ DruMAPAssayAnimal:
 DruMAPAssayMolecule:
   - source("assay_molecules.csv")
   - $id: csv("id")
-  - "https://drumap.nibiohn.go.jp/rdf/assay_molecule/$id"
-  - variables:
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/assay_molecule/$id"
+  - objects:
     - drumap_assay_molecule_id: $id
     - drumap_assay_molecule_label: csv("name")
     - drumap_assay_molecule_gene_symbol: csv("gene_symbol")
@@ -108,8 +112,9 @@ DruMAPAssayMolecule:
 DruMAPAssayOrganism:
   - source("assay_organisms.csv")
   - $id: csv("id")
-  - "https://drumap.nibiohn.go.jp/rdf/assay_organism/$id"
-  - variables:
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/assay_organism/$id"
+  - objects:
     - drumap_assay_organism_id: $id
     - drumap_assay_organism_label: csv("name")
     - drumap_assay_organism_taxonomy:
@@ -120,8 +125,9 @@ DruMAPAssayOrganism:
 DruMAPAssayParameter:
   - source("assay_parameters.csv")
   - $id: csv("id")
-  - "https://drumap.nibiohn.go.jp/rdf/assay_parameter/$id"
-  - variables:
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/assay_parameter/$id"
+  - objects:
     - drumap_assay_parameter_id: $id
     - drumap_assay_parameter_label: csv("name")
     - drumap_assay_parameter_assay:
@@ -132,8 +138,9 @@ DruMAPAssayParameter:
 DruMAPAssayTissue:
   - source("assay_tissues.csv")
   - $id: csv("id")
-  - "https://drumap.nibiohn.go.jp/rdf/assay_tissue/$id"
-  - variables:
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/assay_tissue/$id"
+  - objects:
     - drumap_assay_tissue_id: $id
     - drumap_assay_tissue_label: csv("name")
     - drumap_assay_tissue_label:
@@ -144,16 +151,18 @@ DruMAPAssayTissue:
 DruMAPAssayType:
   - source("assay_types.csv")
   - $id: csv("id")
-  - "https://drumap.nibiohn.go.jp/rdf/assay_type/$id"
-  - variables:
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/assay_type/$id"
+  - objects:
     - drumap_assay_type_id: $id
     - drumap_assay_type_label: csv("name")
 
 DruMAPAssay:
   - source("assays_subset.csv")
   - $id: csv("id")
-  - "https://drumap.nibiohn.go.jp/rdf/assay/$id"
-  - variables:
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/assay/$id"
+  - objects:
     - drumap_assay_id: $id
     - drumap_assay: "Assay:$id"
     - drumap_assay_paramater_type:
@@ -177,8 +186,9 @@ DruMAPAssay:
 DruMAPCompoundName:
   - source("compound_names_subset.csv")
   - $id: csv("id")
-  - "https://drumap.nibiohn.go.jp/rdf/compound_name/$id"
-  - variables:
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/compound_name/$id"
+  - objects:
     - drumap_compound_name_id: $id
     - drumap_compound_name_label: csv("name")
     - drumap_compound_name_compound:
@@ -192,8 +202,9 @@ DruMAPCompoundName:
 DruMAPCompoundProperty:
   - source("compound_properties.csv")
   - $id: csv("id")
-  - "https://drumap.nibiohn.go.jp/rdf/compound_property/$id"
-  - variables:
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/compound_property/$id"
+  - objects:
     - drumap_compound_property_id: $id
     - drumap_compound_property_label: $id
     - drumap_compound_property_mol_weight_freebase: csv("mol_weight_freebase")
@@ -213,8 +224,9 @@ DruMAPCompoundProperty:
 DruMAPCompound:
   - source("compounds_subset.csv")
   - $id: csv("id")
-  - "https://drumap.nibiohn.go.jp/rdf/compound/$id"
-  - variables:
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/compound/$id"
+  - objects:
     - drumap_compound_id: $id
     - drumap_compound_label: $id
     - drumap_compound_property:
@@ -236,8 +248,9 @@ DruMAPCompound:
 DruMAPCrossReference:
   - source("cross_references_subset.csv")
   - $id: csv("id")
-  - "https://drumap.nibiohn.go.jp/rdf/cross_reference/$id"
-  - variables:
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/cross_reference/$id"
+  - objects:
     - drumap_cross_reference_id: $id
     - drumap_cross_reference: "drumapCrossReference:$id"
     - drumap_cross_reference_compound:
@@ -251,8 +264,9 @@ DruMAPCrossReference:
 DruMAPDatabaseType:
   - source("database_types.csv")
   - $id: csv("id")
-  - "https://drumap.nibiohn.go.jp/rdf/database_type/$id"
-  - variables:
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/database_type/$id"
+  - objects:
     - drumap_database_type_id: $id
     - drumap_database_type: csv("name")
     - drumap_database_url_pattern: csv("url_pattern")
@@ -260,8 +274,9 @@ DruMAPDatabaseType:
 DruMAPDocumentType:
   - source("document_types.csv")
   - $id: csv("id")
-  - "https://drumap.nibiohn.go.jp/rdf/document_type/$id"
-  - variables:
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/document_type/$id"
+  - objects:
     - drumap_document_type_id: $id
     - drumap_document_type_label: csv("name")
     - drumap_document_type_description: csv("description")
@@ -269,8 +284,9 @@ DruMAPDocumentType:
 DruMAPDocument:
   - source("documents.csv")
   - $id: csv("id")
-  - "https://drumap.nibiohn.go.jp/rdf/document/$id"
-  - variables:
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/document/$id"
+  - objects:
     - drumap_document_id: $id
     - drumap_document_label: csv("document")
     - drumap_document_document_type_id:
@@ -280,8 +296,9 @@ DruMAPDocument:
 DruMAPExperiment:
   - source("experiments.csv")
   - $id: csv("id")
-  - "https://drumap.nibiohn.go.jp/rdf/experiment/$id"
-  - variables:
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/experiment/$id"
+  - objects:
     - drumap_experiment_id: $id
     - drumap_experiment_label: csv("description")
     - drumap_experiment_date: csv("date")
@@ -289,8 +306,9 @@ DruMAPExperiment:
 DruMAPMetabolicSite:
   - source("metabolic_sites_subset.csv")
   - $id: csv("id")
-  - "https://drumap.nibiohn.go.jp/rdf/metabolic_site/$id"
-  - variables:
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/metabolic_site/$id"
+  - objects:
     - drumap_metabolic_site_id: $id
     - drumap_metabolic_site: "drumapMetabolicSite:$id"
     - drumap_metabolic_site_assay:
@@ -306,8 +324,9 @@ DruMAPMetabolicSite:
 DruMAPNameType:
   - source("name_types.csv")
   - $id: csv("id")
-  - "https://drumap.nibiohn.go.jp/rdf/name_type/$id"
-  - variables:
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/name_type/$id"
+  - objects:
     - drumap_name_type_id: $id
     - drumap_name_type: csv("name")
     - drumap_name_type_description: csv("description")
@@ -315,8 +334,9 @@ DruMAPNameType:
 DruMAPParameterType:
   - source("parameter_types.csv")
   - $id: csv("id")
-  - "https://drumap.nibiohn.go.jp/rdf/parameter_type/$id"
-  - variables:
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/parameter_type/$id"
+  - objects:
     - drumap_parameter_type_id: $id
     - drumap_parameter_type: csv("description")
     - drumap_parameter_type_name: csv("name")
@@ -325,16 +345,18 @@ DruMAPParameterType:
 DruMAPRank:
   - source("ranks.csv")
   - $id: csv("id")
-  - "https://drumap.nibiohn.go.jp/rdf/rank/$id"
-  - variables:
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/rank/$id"
+  - objects:
     - drumap_rank_id: $id
     - drumap_rank_label: csv("description")
 
 DruMAPRelation:
   - source("relations.csv")
   - $id: csv("id")
-  - "https://drumap.nibiohn.go.jp/rdf/relation/$id"
-  - variables:
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/relation/$id"
+  - objects:
     - drumap_relation_id: $id
     - drumap_relation: csv("relation_type")
     - drumap_relation_compound:
@@ -347,24 +369,27 @@ DruMAPRelation:
 DruMAPStructureSource:
   - source("structure_sources.csv")
   - $id: csv("id")
-  - "https://drumap.nibiohn.go.jp/rdf/structure_source/$id"
-  - variables:
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/structure_source/$id"
+  - objects:
     - drumap_structure_source_id: $id
     - drumap_structure_source: csv("name")
 
 DruMAPStructureType:
   - source("structure_types.csv")
   - $id: csv("id")
-  - "https://drumap.nibiohn.go.jp/rdf/structure_type/$id"
-  - variables:
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/structure_type/$id"
+  - objects:
     - drumap_structure_type_id: $id
     - drumap_structure_type: csv("name")
 
 DruMAPStructure:
   - source("structures_subset.csv")
   - $id: csv("id")
-  - "https://drumap.nibiohn.go.jp/rdf/structure/$id"
-  - variables:
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/structure/$id"
+  - objects:
     - drumap_strucure_id: $id
     - drumap_structure: csv("structure")
     - drumap_structure_compound:
@@ -381,8 +406,9 @@ DruMAPStructure:
 DruMAPToxicity:
   - source("toxicities.csv")
   - $id: csv("id")
-  - "https://drumap.nibiohn.go.jp/rdf/toxicity/$id"
-  - variables:
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/toxicity/$id"
+  - objects:
     - drumap_toxicity_id: $id
     - drumap_toxicity: csv("name")
     - drumap_toxicity_compound:

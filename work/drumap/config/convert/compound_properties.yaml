@@ -1,8 +1,9 @@
 DruMAPCompoundProperty:
   - source("compound_properties_subset.csv")
   - $id: csv("id")
-  - "https://drumap.nibiohn.go.jp/rdf/compound_property/$id"
-  - variables:
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/compound_property/$id"
+  - objects:
     - drumap_compound_property_id: $id
     - drumap_compound_property_label: $id
     - drumap_compound_property_mol_weight_freebase: csv("mol_weight_freebase")

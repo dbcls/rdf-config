@@ -1,8 +1,9 @@
 DruMAPRelation:
   - source("relations.csv")
   - $id: csv("id")
-  - "https://drumap.nibiohn.go.jp/rdf/relation/$id"
-  - variables:
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/relation/$id"
+  - objects:
     - drumap_relation_id: $id
     - drumap_relation: csv("relation_type")
     - drumap_relation_compound:

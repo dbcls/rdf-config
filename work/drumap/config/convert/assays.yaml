@@ -1,8 +1,9 @@
 DruMAPAssay:
   - source("assays_subset.csv")
   - $id: csv("id")
-  - "https://drumap.nibiohn.go.jp/rdf/assay/$id"
-  - variables:
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/assay/$id"
+  - objects:
     - drumap_assay_id: $id
     - drumap_assay: "Assay:$id"
     - drumap_assay_paramater_type:

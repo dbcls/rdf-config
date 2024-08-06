@@ -1,8 +1,9 @@
 DruMAPExperiment:
   - source("experiments_subset.csv")
   - $id: csv("id")
-  - "https://drumap.nibiohn.go.jp/rdf/experiment/$id"
-  - variables:
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/experiment/$id"
+  - objects:
     - drumap_experiment_id: $id
     - drumap_experiment_label: csv("description")
     - drumap_experiment_date: csv("date")

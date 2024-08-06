@@ -1,7 +1,8 @@
 DruMAPRank:
   - source("ranks.csv")
   - $id: csv("id")
-  - "https://drumap.nibiohn.go.jp/rdf/rank/$id"
-  - variables:
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/rank/$id"
+  - objects:
     - drumap_rank_id: $id
     - drumap_rank_label: csv("description")

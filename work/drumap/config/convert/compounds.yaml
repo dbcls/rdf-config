@@ -1,8 +1,9 @@
 DruMAPCompound:
   - source("compounds_subset.csv")
   - $id: csv("id")
-  - "https://drumap.nibiohn.go.jp/rdf/compound/$id"
-  - variables:
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/compound/$id"
+  - objects:
     - drumap_compound_id: $id
     - drumap_compound_label: $id
     - drumap_compound_property:

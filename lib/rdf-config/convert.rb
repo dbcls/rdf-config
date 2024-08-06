@@ -25,10 +25,11 @@ class RDFConfig
     JSON_LD_SYMBOLS = %w[jsonld json-ld json_ld jsonl].freeze
 
     attr_reader :source_subject_map, :root_subjects, :subject_config, :object_config, :subject_object_map,
-                :convert_method, :macro_names, :convert_variable_names
+                :convert_method, :macro_names
 
     def_delegators :@config_parser,
-                   :subject_converts, :object_converts, :source_subject_map, :source_format_map, :macro_names
+                   :subject_converts, :object_converts, :source_subject_map, :source_format_map, :macro_names,
+                   :variable_convert, :convert_variable_names
 
     def initialize(config, opts)
       @config = config
@@ -139,10 +140,6 @@ class RDFConfig
 
     def variable_names
       subject_names + object_names
-    end
-
-    def convert_variable_names
-      object_names.select { |variable_name| convert_variable?(variable_name) }
     end
   end
 end

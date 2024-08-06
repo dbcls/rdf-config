@@ -1,8 +1,9 @@
 DruMAPNameType:
   - source("name_types.csv")
   - $id: csv("id")
-  - "https://drumap.nibiohn.go.jp/rdf/name_type/$id"
-  - variables:
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/name_type/$id"
+  - objects:
     - drumap_name_type_id: $id
     - drumap_name_type: csv("name")
     - drumap_name_type_description: csv("description")

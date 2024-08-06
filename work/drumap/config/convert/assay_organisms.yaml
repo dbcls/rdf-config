@@ -2,8 +2,9 @@ DruMAPAssayOrganism:
   - source("assay_organisms.csv")
   - $id: csv("id")
   - $tax_id: csv("tax_id")
-  - "https://drumap.nibiohn.go.jp/rdf/assay_organism/$id"
-  - variables:
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/assay_organism/$id"
+  - objects:
     - drumap_assay_organism_id: $id
     - drumap_assay_organism_label: csv("name")
     - drumap_assay_organism_taxonomy: "http://identifiers.org/taxonomy/$tax_id"

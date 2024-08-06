@@ -1,8 +1,9 @@
 DruMAPCompoundName:
   - source("compound_names_subset.csv")
   - $id: csv("id")
-  - "https://drumap.nibiohn.go.jp/rdf/compound_name/$id"
-  - variables:
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/compound_name/$id"
+  - objects:
     - $lang:
       - csv("language")
       - change_value(["E", "en"], ["J", "ja"])

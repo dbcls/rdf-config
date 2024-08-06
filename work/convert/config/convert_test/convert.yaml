@@ -1,8 +1,9 @@
 ConvertTest:
-  - csv("id")
-  - delete(/^ID/)
-  - prepend("http://example.org/")
-  - variables:
+  - subject:
+    - csv("id")
+    - delete(/^ID/)
+    - prepend("http://example.org/")
+  - objects:
     - ex_ids:
       - csv("ex_ids")
       - split(',')

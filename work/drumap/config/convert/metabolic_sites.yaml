@@ -1,8 +1,9 @@
 DruMAPMetabolicSite:
   - source("metabolic_sites_subset.csv")
   - $id: csv("id")
-  - "https://drumap.nibiohn.go.jp/rdf/metabolic_site/$id"
-  - variables:
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/metabolic_site/$id"
+  - objects:
     - drumap_metabolic_site_id: $id
     - drumap_metabolic_site: "drumapMetabolicSite:$id"
     - drumap_metabolic_site_assay:

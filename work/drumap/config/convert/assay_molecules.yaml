@@ -1,8 +1,9 @@
 DruMAPAssayMolecule:
   - source("assay_molecules.csv")
   - $id: csv("id")
-  - "https://drumap.nibiohn.go.jp/rdf/assay_molecule/$id"
-  - variables:
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/assay_molecule/$id"
+  - objects:
     - drumap_assay_molecule_id: $id
     - drumap_assay_molecule_label: csv("name")
     - drumap_assay_molecule_gene_symbol: csv("gene_symbol")

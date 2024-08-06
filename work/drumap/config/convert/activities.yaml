@@ -1,8 +1,9 @@
 DruMAPActivity:
   - source("activities_subset.csv")
   - $id: csv("id")
-  - "https://drumap.nibiohn.go.jp/rdf/activity/$id"
-  - variables:
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/activity/$id"
+  - objects:
     - drumap_activity_id: $id
     - drumap_activity_label: "Activity:$id"
     - drumap_activity_assay_id:

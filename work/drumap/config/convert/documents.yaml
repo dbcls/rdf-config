@@ -1,8 +1,9 @@
 DruMAPDocument:
   - source("documents.csv")
   - $id: csv("id")
-  - "https://drumap.nibiohn.go.jp/rdf/document/$id"
-  - variables:
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/document/$id"
+  - objects:
     - drumap_document_id: $id
     - drumap_document_label: csv("document")
     - drumap_document_document_type_id:

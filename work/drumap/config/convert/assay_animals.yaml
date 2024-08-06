@@ -1,8 +1,9 @@
 DruMAPAssayAnimal:
   - source("assay_animals.csv")
   - $id: csv("id")
-  - "https://drumap.nibiohn.go.jp/rdf/assay_animal/$id"
-  - variables:
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/assay_animal/$id"
+  - objects:
     - drumap_assay_animal_id: $id
     - drumap_assay_animal_label: csv("name")
     - drumap_assay_animal_assay_organism:

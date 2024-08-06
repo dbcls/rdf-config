@@ -1,8 +1,9 @@
 DruMAPDatabaseType:
   - source("database_types.csv")
   - $id: csv("id")
-  - "https://drumap.nibiohn.go.jp/rdf/database_type/$id"
-  - variables:
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/database_type/$id"
+  - objects:
     - drumap_database_type_id: $id
     - drumap_database_type: csv("name")
     - drumap_database_url_pattern: csv("url_pattern")

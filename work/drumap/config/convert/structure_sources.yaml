@@ -1,7 +1,8 @@
 DruMAPStructureSource:
   - source("structure_sources.csv")
   - $id: csv("id")
-  - "https://drumap.nibiohn.go.jp/rdf/structure_source/$id"
-  - variables:
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/structure_source/$id"
+  - objects:
     - drumap_structure_source_id: $id
     - drumap_structure_source: csv("name")

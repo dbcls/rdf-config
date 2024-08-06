@@ -6,13 +6,16 @@ require_relative 'mix_in/convert_util'
 class RDFConfig
   class Convert
     class ConfigParser
+      class ParseError < StandardError; end
+
       include MixIn::ConvertUtil
 
       attr_reader :subject_converts, :object_converts, :variable_converts, :source_subject_map, :source_format_map,
-                  :macro_names
+                  :macro_names, :variable_convert, :convert_variable_names
 
       CONFIG_FILES_KEY = 'config_files'
-      VARIABLES_KEY = 'variables'
+      SUBJECT_KEY = 'subject'
+      OBJECTS_KEY = 'objects'
 
       def initialize(config, **opts)
         @config = config
@@ -22,8 +25,10 @@ class RDFConfig
 
         @subject_converts = []
         @object_converts = {}
-        @variable_converts = {}
         @source_subject_map = {}
+
+        @variable_convert = {}
+        @convert_variable_names = []
 
         @source_format_map = {}
         @target_source_file_path = nil
@@ -35,10 +40,7 @@ class RDFConfig
         @subject_object_map = {}
         @bnode_no = 0
 
-        # @convert_method = {}
-
         @macro_names = []
-        @convert_variable_names = []
 
         @convert_source = opts[:convert_source]
         @convert_source_file = (@convert_source if !@convert_source.nil? && File.file?(@convert_source))
@@ -88,40 +90,74 @@ class RDFConfig
         @subject_name_stack.push(subject_name)
         @subject_object_map[subject_name] = []
         @subject_config[subject_name] = []
-        subject_converts = []
-        to_array(subject_configs).each do |config|
-          if config.is_a?(Hash) && config.key?(VARIABLES_KEY)
-            config[VARIABLES_KEY].each do |object_config|
-              object_name = object_config.keys.first
-              if @model.subject?(object_name)
-                parse_subject_config(object_name, object_config[object_name], child: true)
-                @subject_object_map[subject_name] << object_name
-              elsif object_name.to_s == '[]'
-                parse_bnode_config(object_config[object_name])
-              else
-                add_object_convert(subject_name, object_name, parse_object_config(object_name, object_config))
-              end
-            end
-          else
-            # add_convert_method(subject_name, parse_converter(subject_name, config))
-            subject_converts << parse_converter(subject_name, config)
-            @subject_config[subject_name] << config
-            add_convert_variable_name(config.keys.first) if config.is_a?(Hash)
-          end
+
+        to_array(subject_configs).each do |convert_step|
+          parse_subject_convert_step(subject_name, convert_step)
         end
 
-        add_subject_convert(subject_name, subject_converts)
-        if @subject_config[subject_name].select { |v| v.is_a?(String) && v.start_with?(SOURCE_MACRO_NAME) }.empty?
-          @subject_config[subject_name].unshift(%/#{SOURCE_MACRO_NAME}("#{@convert_source_file}")/)
-          add_source_subject_map(@convert_source_file, subject_name)
+        unless @source_subject_map.values.flatten.include?(subject_name)
+          add_source_subject_map(@convert_source_file, subject_name) unless @source_subject_map.value?(subject_name)
         end
+
         @subject_name_stack.pop
+      end
+
+      def parse_subject_convert_step(subject_name, convert_step)
+        case convert_step
+        when Hash
+          parse_hash_convert_step(subject_name, convert_step)
+        when String
+          unless convert_step.start_with?(SOURCE_MACRO_NAME)
+            raise ParseError, "ERROR: Unexpected convert setting: #{subject_name}, #{convert_step}"
+          end
+
+          parse_converter(subject_name, convert_step)
+        else
+          raise ParseError, "ERROR: Unexpected convert setting: #{subject_name}, #{convert_step}"
+        end
+      end
+
+      def parse_hash_convert_step(subject_name, convert_step)
+        if convert_step.key?(SUBJECT_KEY)
+          subject_converts = parse_subject_converts(subject_name, convert_step[SUBJECT_KEY])
+          add_subject_convert(subject_name, subject_converts)
+        elsif convert_step.key?(OBJECTS_KEY)
+          parse_objects_config(subject_name, convert_step[OBJECTS_KEY])
+        elsif convert_variable?(convert_step.keys.first)
+          parse_variable_config(convert_step)
+        else
+          raise ParseError, "ERROR: Unexpected convert setting: #{subject_name}, #{convert_step}"
+        end
+      end
+
+      def parse_subject_converts(subject_name, subject_convert_steps)
+        subject_converts = []
+        subject_convert_steps.each do |subject_convert|
+          subject_converts << parse_converter(subject_name, subject_convert)
+          @subject_config[subject_name] << subject_convert
+        end
+
+        subject_converts
       end
 
       def parse_bnode_config(bnode_config)
         subject_name = bnode_name
         @subject_object_map[@subject_name_stack.last] << subject_name
         parse_subject_config(subject_name, bnode_config)
+      end
+
+      def parse_objects_config(subject_name, objects_config)
+        objects_config.each do |object_config|
+          object_name = object_config.keys.first
+          if @model.subject?(object_name)
+            parse_subject_config(object_name, object_config[object_name], child: true)
+            @subject_object_map[subject_name] << object_name
+          elsif object_name.to_s == '[]'
+            parse_bnode_config(object_config[object_name])
+          else
+            add_object_convert(subject_name, object_name, parse_object_config(object_name, object_config))
+          end
+        end
       end
 
       def parse_object_config(object_name, object_config)
@@ -135,9 +171,7 @@ class RDFConfig
                                       end
 
         @object_config[object_name].each do |obj_conf|
-          # add_convert_method(object_name, parse_converter(object_name, obj_conf))
           converts << parse_converter(object_name, obj_conf)
-          add_convert_variable_name(obj_conf.keys.first) if obj_conf.is_a?(Hash)
         end
 
         @object_config[object_name].unshift({ _subject_name: @subject_name_stack.last })
@@ -145,11 +179,18 @@ class RDFConfig
         converts
       end
 
+      def parse_variable_config(variable_convert)
+        variable_name = variable_convert.keys.first
+        convert_def = parse_converter(variable_name, variable_convert[variable_name])
+        add_variable_convert(variable_name, convert_def)
+        add_convert_variable_name(variable_name)
+      end
+
       def parse_converter(variable_name, converter)
         if converter.is_a?(Hash)
           convert_variable_name = converter.keys.first
           converter = converter[convert_variable_name]
-        elsif variable_name[0] == '$'
+        elsif convert_variable?(variable_name)
           convert_variable_name = variable_name
         else
           convert_variable_name = nil
@@ -180,10 +221,7 @@ class RDFConfig
         add_macro_name(macro_name)
 
         if macro_name == SOURCE_MACRO_NAME
-          source_by_config = method_def[:args_][:arg_][1..-2]
-          @target_source_file_path = source_file_path(source_by_config)
-          add_source_subject_map(@target_source_file_path, variable_name)
-          @source_format_map[@target_source_file_path] = [] unless @source_format_map.key?(@target_source_file_path)
+          process_source_macro(method_def[:args_][:arg_][1..-2], variable_name)
         elsif Convert::SOURCE_FORMATS.include?(macro_name)
           add_source_format_map(@target_source_file_path, macro_name)
         end
@@ -193,6 +231,12 @@ class RDFConfig
         end
 
         method_def
+      end
+
+      def process_source_macro(source_by_config, variable_name)
+        @target_source_file_path = source_file_path(source_by_config)
+        add_source_subject_map(@target_source_file_path, variable_name)
+        @source_format_map[@target_source_file_path] = [] unless @source_format_map.key?(@target_source_file_path)
       end
 
       def add_source_subject_map(source, subject_name)
@@ -218,6 +262,11 @@ class RDFConfig
         else
           File.expand_path(source_by_config, @convert_source)
         end
+      end
+
+      def add_variable_convert(variable_name, convert)
+        @variable_convert[variable_name] = [] unless @variable_convert.key?(variable_name)
+        @variable_convert[variable_name] << convert
       end
 
       def add_subject_convert(subject_name, convert)

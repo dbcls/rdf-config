@@ -1,9 +1,12 @@
 Person:
   - $id: csv("id")
-  - "http://example.org/ontology/person/$id"
-  - variables:
+  - subject:
+    - "http://example.org/ontology/person/$id"
+  - objects:
     - id: $id
     - name:
       - $first_name: csv("first name")
       - $last_name: csv("last name")
-      - "$first_name $last_name"
+      - $lang: csv("lang")
+      - "$last_name $first_name"
+      - lang($lang)
