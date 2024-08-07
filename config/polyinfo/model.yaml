@@ -1,0 +1,94 @@
+- BioDegradation biodg:BDG000001: 
+  - a: pobi:BioDegradation
+  - rdfs:label:
+    - bio_degradation_label: "Bio-degradation of polyethene using Nitrosomonas sp."
+  - obo:RO_0000057:
+    - has_participant: Homopolymer
+  - dcterms:identifier:
+    - bio_degradation_id: "BDG000001"
+  - dcterms:referecens:
+    - bio_degradation_ref: Reference
+
+
+- Homopolymer homo:P010001:
+  - a: [ pli:Homopolymer, obo:CHEBI_33839 ]
+  - rdfs:label:
+    - homopolymer_label: '"polyethene"@en'
+  - dcterms:identifier: 
+    - homopolymer_id: "P010001"
+  - sio:SIO_000008?:
+    - constitutional_unit: ConstitutionalUnit
+    - abbreviation: Abbreviation
+    - japanese_name: JapaneseName
+    - monomer_based_name: MonomerBasedName
+    - other_name: OtherName
+    - structure_based_name: StructureBasedName
+
+- ConstitutionalUnit cu:CU010001:
+  - a: pli:ConstitutionalUnit
+  - rdfs:label: '"ConstitutionalUnit CU010001"@en'
+  - obo:BFO_0000051:
+    - molecular_formula: MolecularFormula
+    - molecular_weight: MolecularWeight
+    - reaction_formula: RationalFormula
+    - smiles: Smiles
+  - dcterms:identifier:
+    - constitutional_unit_id: "CU010001"
+
+- MolecularFormula cu:CU010001_MolecularFormula:
+  - a: pli:MolecularFormula
+  - sio:SIO_000300: "CH2"
+
+- MolecularWeight cu:CU010001_MolecularWeight:
+  - a: pli:MolecularWeight
+  - sio:SIO_000300: 1.403e+01
+
+- RationalFormula cu:CU010001_RationalFormula:
+  - a: pli:RationalFormula
+  - sio:SIO_000300: "-CH2-"
+
+- Smiles cu:CU010001_Smiles:
+  - a: pli:Smiles
+  - sio:SIO_000300: "*C*"
+
+
+- Abbreviation homo:P010001-1_Abbreviation:
+  - a: pli:Abbreviation
+  - sio:SIO_000300: '"PE"@en'
+
+- JapaneseName homo:P010001-1_JapaneseName:
+  - a: pli:JapaneseName
+  - sio:SIO_000300: '"ポリ(メチレン)"@ja'
+
+- MonomerBasedName homo:P010001-1_MonomerBasedName:
+  - a: pli:MonomerBasedName
+  - sio:SIO_000300: '"poly(methylene)"@en'
+
+- OtherName homo:P010001-1_OtherName:
+  - a: pli:OtherName
+  - sio:SIO_000300: '"polyethylene"@en'
+
+- StructureBasedName homo:P010001-1_StructureBasedName:
+  - a: pli:StructureBasedName
+  - sio:SIO_000300: '"polyethene"@en'
+
+
+- Reference ref:L000001:
+  - a: bibo:Article
+  - prism:doi?:
+    - doi: "https://doi.org/10.1039/C5RA25128A"
+  - dcterms:identifier:
+    - bio_reference_id: "L000001"
+  - prism:pageRange?:
+    - page_range: "68-79"
+  - prism:publicationDate?:
+    - publication_date: "2013"
+  - prism:publicationName?:
+    - publication_name: '"Nigerian Journal of Biotechnology"@en'
+  - prism:volume?:
+    - volume: "26"
+  - dcterms:title?:
+    - title: '"Biodegradation of Polyethylene by Bacillus sp. Indigenous to the Niger Delta Mangrove Swamp"@en'
+  - dcterms:creator?:
+    - creator: '"Ibiene, A. A., Stanley, H. O., Immanuel, O. M."@en'
+

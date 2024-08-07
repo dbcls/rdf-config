@@ -1,0 +1,40 @@
+- IMethyl:
+  - a: imo:CDMVStat
+  - imo:sample: IMethylDataset
+  - faldo:location:
+    - []:
+      - a: faldo:Region
+      - faldo:begin:
+        - []:
+          - a: faldo:ExactPosition
+          - faldo:position:
+            - begin: 117
+          - faldo:reference: hco:1/GRCh38
+      - faldo:end:
+        - []:
+          - a: faldo:ExactPosition
+          - faldo:position:
+            - end: 117
+          - faldo:reference: hco:1/GRCh38
+  - sio:SIO_000216:
+    - []:
+      - a: sio:SIO_000070
+      - sio:SIO_000221: imo:RI
+      - sio:SIO_000300: 0.2
+    - []:
+      - a: sio:SIO_000070
+      - sio:SIO_000221: sio:SIO_001110
+      - sio:SIO_000300: 29.0476
+    - []:
+      - a: sio:SIO_000070
+      - sio:SIO_000221: sio:SIO_001109
+      - sio:SIO_000300: 77.8571
+    - []:
+      - a: sio:SIO_000070
+      - sio:SIO_000221: sio:SIO_000770
+      - sio:SIO_000300: 16.883
+
+
+- IMethylDataset imd:1:
+  - rdfs:label: "DNA methylation summary-data for monocytes"
+
