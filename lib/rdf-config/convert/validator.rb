@@ -21,6 +21,10 @@ class RDFConfig
         raise InvalidConfig, format_error_message if error?
       end
 
+      def format_error_message
+        @errors.map { |error| "  * #{error}" }.unshift('ERROR:').join("\n")
+      end
+
       private
 
       def validate_variable_name
@@ -86,10 +90,6 @@ class RDFConfig
 
       def valid_variable_name?(variable_name)
         /\A\$[a-z]\w+\z/ =~ variable_name
-      end
-
-      def format_error_message
-        @errors.map { |error| "  * #{error}" }.unshift('ERROR:').join("\n")
       end
     end
   end

@@ -24,7 +24,7 @@ class RDFConfig
     SYSTEM_MACRO_NAMES = [SOURCE_MACRO_NAME, ROOT_MACRO_NAME].freeze
     JSON_LD_SYMBOLS = %w[jsonld json-ld json_ld jsonl].freeze
 
-    attr_reader :source_subject_map, :root_subjects, :subject_config, :object_config, :subject_object_map,
+    attr_reader :source_subject_map, :subject_config, :object_config, :subject_object_map,
                 :convert_method, :macro_names
 
     def_delegators :@config_parser,
@@ -34,8 +34,6 @@ class RDFConfig
     def initialize(config, opts)
       @config = config
       @format = opts[:format] || 'rdf'
-
-      @root_subjects = config.convert.keys
 
       @config_parser = ConfigParser.new(config, convert_source: opts[:convert_source])
       @config_parser.parse

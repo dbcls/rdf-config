@@ -20,6 +20,8 @@ class RDFConfig
       def initialize(config, **opts)
         @config = config
 
+        @validator = Validator.new(config)
+
         @model = Model.instance(config)
         @method_parser = MethodParser.new
 
@@ -47,18 +49,23 @@ class RDFConfig
       end
 
       def parse
-        @config.convert.each do |key, convert_config|
+        validate_config(@config.convert)
+        raise InvalidConfig, @validator.format_error_message if @validator.error?
+
+        @config.convert.each do |convert_config|
+          key = convert_config.keys.first
           if key == CONFIG_FILES_KEY
             # convert_config is array of convert config file path
-            config_files = if convert_config.is_a?(Array)
-                             convert_config.map { |path| @config.absolute_path(path) }
+            config_files = if convert_config[key].is_a?(Array)
+                             convert_config[key].map { |path| @config.absolute_path(path) }
                            else
                              [@config.absolute_path(convert_config.to_s)]
                            end
             load_config_files(config_files)
+            raise InvalidConfig, @validator.format_error_message if @validator.error?
           else
             # key is subject name
-            parse_subject_config(key, convert_config)
+            parse_subject_config(key, convert_config[key])
           end
         end
       end
@@ -79,21 +86,26 @@ class RDFConfig
       def load_config_files(config_files)
         config_files = [config_files.to_s] unless config_files.is_a?(Array)
 
-        errors = []
         config_files.each do |config_file|
           if File.exist?(config_file)
             load_config_file(config_file)
           else
-            errors << %(  * Config file "#{config_file}" does not found.)
+            @validator.add_error(%(Config file "#{config_file}" does not found.))
           end
         end
-
-        raise InvalidConfig, errors.unshift('ERROR:').join("\n") unless errors.empty?
       end
 
       def load_config_file(config_file_path)
-        YAML.load_file(config_file_path).each do |subject_name, convert_config|
-          parse_subject_config(subject_name, convert_config)
+        convert_config = YAML.load_file(config_file_path)
+        if validate_config(convert_config, convert_config_file_path: config_file_path)
+          load_config(convert_config)
+        end
+      end
+
+      def load_config(convert_configs)
+        convert_configs.each do |subject_config|
+          subject_name = subject_config.keys.first
+          parse_subject_config(subject_name, subject_config[subject_name])
         end
       end
 
@@ -354,6 +366,26 @@ class RDFConfig
           path =~ /\A[a-zA-Z]:\\/ || path.start_with?('\\')
         else
           path.start_with?('/')
+        end
+      end
+
+      def validate_config(convert_config, convert_config_file_path: 'convert.yaml')
+        unless convert_config.is_a?(Array)
+          @validator.add_error("#{convert_config_file_path} must be an array of conversion settings for each subject.")
+          return false
+        end
+
+        validate_subjects(convert_config)
+      end
+
+      def validate_subjects(convert_config)
+        subject_names = convert_config.map { |subject_convert| subject_convert.keys.first }
+        duplicate_subject_names = subject_names.select { |subject_name|  subject_names.count(subject_name) > 1 }.uniq
+        if duplicate_subject_names.empty?
+          true
+        else
+          @validator.add_error("Duplicate subject name in convert.yaml: #{duplicate_subject_names.join(', ')}")
+          false
         end
       end
     end

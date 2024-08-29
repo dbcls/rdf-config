@@ -1,4 +1,4 @@
-HGNC:
+- HGNC:
   - subject:
     - tsv("hgnc_id")
     - downcase
@@ -11,14 +11,14 @@ HGNC:
     - description: tsv("name")
     - location: tsv("location")
 
-UniProt:
+- UniProt:
   - subject:
     - tsv("uniprot_ids")
     - prepend("http://identifiers.org/uniprot/")
   - objects:
     - uniprot_id: tsv("uniprot_ids")
 
-PubMed:
+- PubMed:
   - subject:
     - tsv("pubmed_id")
     - split("|")
