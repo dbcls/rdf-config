@@ -63,6 +63,17 @@ class RDFConfig
         end
       end
 
+      def has_rdf_type_object?
+        object_names.select do |object_name|
+          triple = @model.find_by_object_name(object_name)
+          triple.predicates.select(&:rdf_type?).count > 0
+        end.count > 0
+      end
+
+      def object_names
+        @object_config.keys
+      end
+
       private
 
       def load_config_files(config_files)

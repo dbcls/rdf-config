@@ -159,7 +159,7 @@ class RDFConfig
       end
 
       def validate_predicate(predicate)
-        if predicate.rdf_type?
+        if predicate.rdf_type? && predicate.objects.first.is_a?(RDF::URI)
           validate_rdf_type_predicate(predicate)
         else
           validate_non_rdf_type_predicate(predicate)

@@ -21,11 +21,20 @@ class RDFConfig
 
       def types
         rdf_type_predicates = @predicates.select(&:rdf_type?)
-        rdf_type_predicates.map { |predicate| predicate.objects.map(&:value) }.flatten
+        return [] if rdf_type_predicates.empty?
+
+        rdf_type_predicates.map do |predicate|
+          case predicate.objects.first
+          when ValueList
+            predicate.objects.first.value.map(&:value)
+          else
+            predicate.objects.map(&:value)
+          end
+        end.flatten
       end
 
       def type(separator = ', ')
-        types.join(separator)
+        types.uniq.join(separator)
       end
 
       def has_rdf_type?

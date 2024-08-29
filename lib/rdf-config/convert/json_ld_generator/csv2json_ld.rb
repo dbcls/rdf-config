@@ -106,7 +106,7 @@ class RDFConfig
         subject_uri = subject_value.dup
         add_subject_node(subject_name, subject_uri)
         add_node(subject_uri, { subject_name => subject_uri })
-        add_subject_type_node(subject_name, subject_uri)
+        add_subject_type_node(subject_name, subject_uri) unless @convert.has_rdf_type_object?
       end
 
       def generate_bnode_subject(subject_name)

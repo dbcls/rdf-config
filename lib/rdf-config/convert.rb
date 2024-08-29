@@ -29,7 +29,7 @@ class RDFConfig
 
     def_delegators :@config_parser,
                    :subject_converts, :object_converts, :source_subject_map, :source_format_map, :macro_names,
-                   :variable_convert, :convert_variable_names
+                   :variable_convert, :convert_variable_names, :has_rdf_type_object?
 
     def initialize(config, opts)
       @config = config

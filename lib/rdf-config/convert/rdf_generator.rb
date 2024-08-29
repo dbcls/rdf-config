@@ -44,7 +44,7 @@ class RDFConfig
                  uri_node(subject_value)
                end
         add_subject_node(subject_name, node)
-        add_subject_type_node(subject_name, node)
+        add_subject_type_node(subject_name, node) unless @convert.has_rdf_type_object?
       end
 
       def generate_bnode_subject(subject_name)
