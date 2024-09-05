@@ -3,34 +3,11 @@
     - core:Protein
     - chembl:UniprotRef
   - core:recommendedName*:
-    - []:
-      - a: core:Structured_Name
-      - core:fullName:
-        - recommended_name: "Angiotensin-converting enzyme 2"
-      - core:shortName?:
-        - recommended_short_name: "hVps37A"
-      - core:ecName?:
-        - recommended_ec: "3.4.17.23"
+    - recommended_name_node: RecommendedNameNode
   - core:submittedName*:
-    - []:
-      - a: core:Structured_Name
-      - core:fullName+:
-        - submited_name: "Aldoketomutase"
-      - core:ecName?:
-        - submitted_ec: "5.2.1.8"
+    - submitted_name_node: SubmitedNameNode
   - core:alternativeName*:
-    - []:
-      - a: core:Structured_Name
-      - core:fullName?:
-        - altanative_name: "Homeobox protein Uncx4.1"
-      - core:shortName?:
-        - altanative_short_name: "tRNA(m1A58)MTase subunit TRMT61A"
-      - core:ecName?:
-        - altanative_ec: "2.1.1.-"
-      - core:cdAntigenName?:
-        - altanative_antigen: "CD312"
-      - core:allergenName?:
-        - altanative_allergen: "Hom s 3"
+    - alternative_name_node: AlternativeNameNode
   - core:mnemonic:
     - mnemonic: "ACE2_HUMAN"
   - core:oldMnemonic*:
@@ -48,14 +25,7 @@
   - core:version:
     - version: 192
   - core:encodedBy?:
-    - []:
-      - a: core:Gene
-      - skos:prefLabel?:
-        - gene_name: "ACE2"
-      - skos:altLabel?:
-        - gene_alt_name: "UNCX4.1"
-      - core:orfName?:
-        - orf_name: "UNQ868/PRO1885"
+    - gene: Gene
   - core:organism:
     - taxonomy: taxonomy:9606
   - core:proteome:
@@ -65,24 +35,7 @@
   - core:enzyme*:
     - ec: enzyme:3.4.17.23
   - core:component*:
-    - []:
-      - a: core:Part
-      - core:recommendedName+:
-        - []:
-          - core:fullName+:
-            - component_name: "Cathepsin H"
-          - core:shortName*:
-            - component_short_name: "Dyn-B"
-          - core:ecName?:
-            - component_ec_name: "3.4.22.16"
-      - core:alternativeName*:
-        - []:
-          - core:fullName+:
-            - component_alt_name: "Dynorphin B"
-          - core:shortName*:
-            - component_alt_short_name: "Dyn-B"
-      - core:enzyme*:
-        - component_ec: enzyme:1.1.1.n12
+    - component: Component
   - core:sequence:
     - simple_sequence: SimpleSequence
   - core:sequence*:
@@ -262,6 +215,69 @@
     - turn_annotation: TurnAnnotation
   - core:annotation*:
     - zinc_finger_annotation: ZincFingerAnnotation
+
+- RecommendedNameNode up:Q9BYF1#SIPDBB502D4006F752D:
+  - a: core:Structured_Name
+  - core:fullName:
+    - recommended_name: "Angiotensin-converting enzyme 2"
+  - core:shortName?:
+    - recommended_short_name: "hVps37A"
+  - core:ecName?:
+    - recommended_ec: "3.4.17.23"
+
+- SubmitedNameNode up:A0A2R3N0P2#SIPE4C7423F69FEF7A2:
+  - a: core:Structured_Name
+  - core:fullName+:
+    - submited_name: "Aldoketomutase"
+  - core:ecName?:
+    - submitted_ec: "5.2.1.8"
+
+- AlternativeNameNode up:A6NJT0#SIPA55C636CCF9151AA:
+  - a: core:Structured_Name
+  - core:fullName?:
+    - altanative_name: "Homeobox protein Uncx4.1"
+  - core:shortName?:
+    - altanative_short_name: "tRNA(m1A58)MTase subunit TRMT61A"
+  - core:ecName?:
+    - altanative_ec: "2.1.1.-"
+  - core:cdAntigenName?:
+    - altanative_antigen: "CD312"
+  - core:allergenName?:
+    - altanative_allergen: "Hom s 3"
+
+- Gene up:Q9BYF1#gene-MD59FDF2659357792822CB85F383B26B8FE:
+  - a: core:Gene
+  - skos:prefLabel?:
+    - gene_name: "ACE2"
+  - skos:altLabel?:
+    - gene_alt_name: "UNCX4.1"
+  - core:orfName?:
+    - orf_name: "UNQ868/PRO1885"
+
+- Component up:Q9BYF1#SIPDFC0265AEF6A17B9:
+  - a: core:Part
+  - core:recommendedName+:
+    - component_name_node: ComponentNameNode
+  - core:alternativeName*:
+    - component_alt_name_node: ComponentAltNameNode
+  - core:enzyme*:
+    - component_ec: enzyme:1.1.1.n12
+
+- ComponentNameNode up:Q9BYF1#SIP0AFB38383A51AFB7:
+  - a: core:Structured_Name
+  - core:fullName+:
+    - component_name: "Cathepsin H"
+  - core:shortName*:
+    - component_short_name: "Dyn-B"
+  - core:ecName?:
+    - component_ec_name: "3.4.22.16"
+
+- ComponentAltNameNode up:P04535#SIP946A7DAB764CBC03:
+  - a: core:Structured_Name
+  - core:fullName+:
+    - component_alt_name: "Dynorphin B"
+  - core:shortName*:
+    - component_alt_short_name: "Dyn-B"
 
 - SimpleSequence isoforms:Q9NYF8-1:
   - a: core:Simple_Sequence
@@ -596,46 +612,56 @@
 - ErroneousGeneModelPredictionAnnotation <http://purl.uniprot.org/uniprot/Q8WUQ7#SIPCAC0CFFDFD09C79B>>:
   - a: core:Erroneous_Gene_Model_Prediction_Annotation
   - core:conflictingSequence:
-    - []:
-      - a: core:External_Sequence
-      - core:translatedFrom:
-        - err_gene_model_predication_conflict_seq: <http://purl.uniprot.org/embl-cds/EAW69298.1>
+    - err_gene_model_predication_conflict_seq_node: ErrGeneModelPredicationConflictSeqNode
 
-- ErroneousInitiationAnnotation <http://purl.uniprot.org/uniprot/Q9NYF8#SIPE5597FD28F20E839>:
+- ErrGeneModelPredicationConflictSeqNode up:Q8WUQ7#SIP9FB4852469FB0692:
+  - a: core:External_Sequence
+  - core:translatedFrom:
+    - err_gene_model_predication_conflict_seq: <http://purl.uniprot.org/embl-cds/EAW69298.1>
+
+- ErroneousInitiationAnnotation up:Q9NYF8#SIPE5597FD28F20E839:
   - a: core:Erroneous_Initiation_Annotation
   - core:conflictingSequence:
-    - []:
-      - a: core:External_Sequence
-      - core:translatedFrom:
-        - err_init_conflict_seq: <http://purl.uniprot.org/embl-cds/BAA11481.2>
+    - err_init_conflict_seq_node: ErrInitConflictSeqNode
 
-- ErroneousTerminationAnnotation <http://purl.uniprot.org/uniprot/O94979#SIPB2950A91FA076FE3>:
+- ErrInitConflictSeqNode up:Q9NYF8#SIP51CDE913E7CBBB2F:
+  - a: core:External_Sequence
+  - core:translatedFrom:
+    - err_init_conflict_seq: <http://purl.uniprot.org/embl-cds/BAA11481.2>
+
+- ErroneousTerminationAnnotation up:O94979#SIPB2950A91FA076FE3:
   - a: core:Erroneous_Termination_Annotation
   - core:conflictingSequence:
-    - []:
-      - a: core:External_Sequence
-      - core:translatedFrom:
-        - err_term_conflict_seq: <http://purl.uniprot.org/embl-cds/CAI45995.1>
+    - err_term_conflict_seq_node: ErrTermConflictSeqNode
   - rdfs:comment:
     - err_term_conflict_desc: "Truncated C-terminus."
 
-- ErroneousTranslationAnnotation <http://purl.uniprot.org/uniprot/P36544#SIP2002BB2EF2E9FF2C>:
+- ErrTermConflictSeqNode up:O94979#SIP72DF09D3E7C27B0D:
+  - a: core:External_Sequence
+  - core:translatedFrom:
+    - err_term_conflict_seq: <http://purl.uniprot.org/embl-cds/CAI45995.1>
+
+- ErroneousTranslationAnnotation up:P36544#SIP2002BB2EF2E9FF2C:
   - a: core:Erroneous_Translation_Annotation
   - core:conflictingSequence:
-    - []:
-      - a: core:External_Sequence
-      - core:translatedFrom:
-        - err_translate_conflict_seq: <http://purl.uniprot.org/embl-cds/AAH37571.1>
+    - err_translate_conflict_seq_node: ErrTranslateConflictSeqNode
   - rdfs:comment?:
     - err_translate_conflict_desc: "Wrong choice of frame."
 
-- FrameshiftAnnotation <http://purl.uniprot.org/uniprot/Q9NY61#SIP6C126E7063CC03D8>:
+- ErrTranslateConflictSeqNode up:P36544#SIP1AA4C077BB4475D3:
+  - a: core:External_Sequence
+  - core:translatedFrom:
+    - err_translate_conflict_seq: <http://purl.uniprot.org/embl-cds/AAH37571.1>
+
+- FrameshiftAnnotation up:Q9NY61#SIP6C126E7063CC03D8:
   - a: core:Frameshift_Annotation
   - core:conflictingSequence:
-    - []:
-      - a: core:External_Sequence
-      - core:translatedFrom:
-        - frameshift_seq: <http://purl.uniprot.org/embl-cds/AAQ13610.1>
+    - frameshift_seq_node: FrameshiftSeqNode
+
+- FrameshiftSeqNode up:Q9NY61#SIP05DE5164AF85D03E:
+  - a: core:External_Sequence
+  - core:translatedFrom:
+    - frameshift_seq: <http://purl.uniprot.org/embl-cds/AAQ13610.1>
 
 - FunctionAnnotation <http://purl.uniprot.org/uniprot/Q9BYF1#SIP376F906C1FC9BAE4>:
   - a: core:Function_Annotation
@@ -1049,20 +1075,19 @@
 - SequenceCautionAnnotation <http://purl.uniprot.org/uniprot/Q9BYF1#SIP0DD00D6781008A7E>:
   - a: core:Sequence_Caution_Annotation
   - core:conflictingSequence:
-    - []:
-      - a: core:External_Sequence
-      - core:translatedFrom:
-        - caution_seq: <http://purl.uniprot.org/embl-cds/AAQ89076.1>
+    - caution_seq_node: CautionSeqNode
 
-- SequenceConflictAnnotation <http://purl.uniprot.org/uniprot/Q9BYF1#SIP7DA2AEFD56F5CC8F>:
+- CautionSeqNode up:Q9BYF1#SIP88F6482138F28E84:
+  - a: core:External_Sequence
+  - core:translatedFrom:
+    - caution_seq: <http://purl.uniprot.org/embl-cds/AAQ89076.1>
+
+- SequenceConflictAnnotation up:Q9BYF1#SIP7DA2AEFD56F5CC8F:
   - a: core:Sequence_Conflict_Annotation
   - core:substitution:
     - conflict_range_seq: "H"
   - core:conflictingSequence:
-    - []:
-      - a: core:External_Sequence
-      - core:translatedFrom:
-        - conflict_seq: <http://purl.uniprot.org/embl-cds/CAB53682.1>
+    - conflict_seq_node: ConflictSeqNode
   - core:range:
     - []:
       - a: faldo:Region
@@ -1076,7 +1101,12 @@
           - a: faldo:Position
           - faldo:position:
             - conflict_end: 18
-        
+
+- ConflictSeqNode up:Q9BYF1#SIP32276D8B1949959D:
+  - a: core:External_Sequence
+  - core:translatedFrom:
+    - conflict_seq: <http://purl.uniprot.org/embl-cds/CAB53682.1>
+
 - SequenceUncertaintyAnnotation <http://purl.uniprot.org/uniprot/F4MHP3#SIP1892436ABD7EE556>:
   - a: core:Sequence_Uncertainty_Annotation
   - rdfs:comment:
