@@ -1,0 +1,37 @@
+- Genotype <http://purl.jp/bio/ncgm/g1>:
+    - a: med2rdf:Genotype
+    - med2rdf:sample:
+        - sample: Sample
+    - med2rdf:reference:
+        - reference: ReferenceVariation
+    - med2rdf:gt:
+        - gt: "0/1"
+    - med2rdf:ad:
+        - ad: "35,35"
+    - med2rdf:dp:
+        - dp: 70
+    - med2rdf:gq:
+        - gq: 99
+    - med2rdf:pl:
+        - pl: "1215,0,1370"
+
+- Sample <http://purl.jp/bio/ncgm/HG00096>:
+    - a: sio:SIO_001050
+    - dct:identifier:
+        - sample_id: HG00096
+
+- Variation <http://purl.jp/bio/ncgm/v1>:
+    - a: med2rdf:Variation
+    - dct:identifier:
+        - variation_id: "v1"
+    - gvo:chromosome:
+        - chr: hco:12\/GRCh38
+    - gvo:pos:
+        - pos: 111761941
+    - med2rdf:reference_allele:
+        - ref: a
+    - med2rdf:alternative_allele:
+        - alt: c
+    - med2rdf:siginificance:
+        - significance: "benign"
+
