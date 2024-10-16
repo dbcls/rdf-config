@@ -7,12 +7,20 @@ class RDFConfig
         super
       end
 
-      def type
+      def instance_type
         'URI'
+      end
+
+      def shex_data_type
+        'IRI'
       end
 
       def uri?
         true
+      end
+
+      def literal?
+        false
       end
     end
   end

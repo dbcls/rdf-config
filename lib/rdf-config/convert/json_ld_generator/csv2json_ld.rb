@@ -82,7 +82,7 @@ class RDFConfig
           next if triple.nil?
 
           hash = { '@id' => triple.predicates.last.uri }
-          object = triple.object.is_a?(Model::ValueList) ? triple.object.value.first : triple.object
+          object = triple.object.first_instance
           case object
           when Model::URI, Model::Subject
             hash[TYPE_KEY] = '@id'
@@ -191,11 +191,7 @@ class RDFConfig
       def cast_data_type(target_value, triple_object)
         return nil if target_value.nil?
 
-        object = if triple_object.is_a?(Model::ValueList)
-                   triple_object.value.first
-                 else
-                   triple_object
-                 end
+        object = triple_object.first_instance
 
         return target_value if !target_value.is_a?(String) || !object.is_a?(Model::Literal)
 
@@ -270,7 +266,7 @@ class RDFConfig
             if triple.nil?
               [variable_name, value]
             else
-              object = triple.object.is_a?(Model::ValueList) ? triple.object.value.first : triple.object
+              object = triple.object.is_a?(Model::ValueList) ? triple.object.first_instance : triple.object
               if object.is_a?(Model::Subject)
                 node_value = refined_node_value(value, valid_subject_uris)
                 [variable_name, node_value] unless node_value.nil?

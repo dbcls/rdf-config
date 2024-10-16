@@ -26,11 +26,11 @@ class RDFConfig
           object.name
         else
           # Scalar type
-          case object.type
+          case object.instance_type
           when 'URI'
             'String'
           when 'Int', 'Float'
-            object.type
+            object.instance_type
           when 'TrueClass', 'FalseClass'
             'Boolean'
           else

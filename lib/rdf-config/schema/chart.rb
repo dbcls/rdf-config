@@ -50,7 +50,7 @@ class RDFConfig
       def print_usage
         warn 'Usage: --schema schema_name[:type]'
         warn "Available schema names: #{@config.schema.keys.join(', ')}"
-        warn 'Avanlable schema types: nest, table, arc'
+        warn 'Available schema types: nest, table, arc'
       end
 
       def generate

@@ -1,7 +1,7 @@
 class RDFConfig
   class Model
     class Subject
-      attr_reader :name, :value, :predicates, :as_object
+      attr_reader :name, :value, :as_object
       attr_accessor :bnode_name
 
       def initialize(subject_hash, prefix_hash = {})
@@ -19,11 +19,21 @@ class RDFConfig
         @predicates = []
       end
 
-      def types
-        rdf_type_predicates = @predicates.select(&:rdf_type?)
-        return [] if rdf_type_predicates.empty?
+      def predicates(reject_rdf_type_variable: false)
+        if reject_rdf_type_variable
+          @predicates.reject do |predicate|
+            predicate.rdf_type? &&
+              predicate.objects
+                       .map(&:name).map(&:to_s).map(&:strip)
+                       .select { |object_name| object_name.length > 0 }.size > 0
+          end
+        else
+          @predicates
+        end
+      end
 
-        rdf_type_predicates.map do |predicate|
+      def types
+        predicates(reject_rdf_type_variable: true).select(&:rdf_type?).map do |predicate|
           case predicate.objects.first
           when ValueList
             predicate.objects.first.value.map(&:value)
@@ -103,8 +113,44 @@ class RDFConfig
         !@as_object.empty?
       end
 
+      def instance_type
+        'Subject'
+      end
+
+      def shex_data_type
+        'IRI'
+      end
+
       def ==(other)
         name == other.name
+      end
+
+      def subject?
+        true
+      end
+
+      def uri?
+        true
+      end
+
+      def literal?
+        false
+      end
+
+      def value_list?
+        false
+      end
+
+      def instances
+        [self]
+      end
+
+      def first_instance
+        self
+      end
+
+      def last_instance
+        self
       end
     end
   end

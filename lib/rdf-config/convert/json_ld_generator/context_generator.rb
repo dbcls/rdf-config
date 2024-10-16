@@ -48,7 +48,7 @@ class RDFConfig
         jsonld_context =  { subject_name => '@id' }
         @model.triples_by_subject_name(subject_name).each do |triple|
           hash = { '@id' => triple.predicates.last.uri }
-          object = triple.object.is_a?(Model::ValueList) ? triple.object.value.first : triple.object
+          object = triple.object.first_instance
           case object
           when Model::URI, Model::Subject
             hash['@type'] = '@id'

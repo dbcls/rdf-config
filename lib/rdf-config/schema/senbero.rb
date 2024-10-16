@@ -18,11 +18,11 @@ class RDFConfig
       end
 
       def color_property_path(predicates, separator = ' / ')
-        predicates.map { |x|
+        predicates.map do |x|
           predicate = color_predicate(x.uri)
-          cardinality = x.cardinality ? " #{x.cardinality.label}" : ''
+          cardinality = x.quantifier.to_s.empty? ? '' : " #{x.cardinality.quantifier}"
           "#{predicate}#{cardinality}"
-        }.join(separator)
+        end.join(separator)
       end
 
       def label_object(object)
@@ -34,7 +34,7 @@ class RDFConfig
         when Model::Subject
           color_subject(object.name)
         when Model::ValueList
-          "[#{object.value.map { |obj| label_object(obj) }.join(', ')}]"
+          "[#{object.instances.map { |obj| label_object(obj) }.join(', ')}]"
         else
           label = object.value.to_s
           if label.empty?

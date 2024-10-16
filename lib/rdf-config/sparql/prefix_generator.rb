@@ -39,8 +39,6 @@ class RDFConfig
 
         variables.each do |variable_name|
           triples = model.triples_by_object_name(variable_name)
-          # triples = model.triples_by_subject_name(variable_name) if triples.empty?
-
           triples.each do |triple|
             uris = triple.subject.types.flatten +
                    triple.predicates.map(&:uri).flatten +
@@ -49,7 +47,7 @@ class RDFConfig
             when Model::Subject
               uris += triple.object.types.flatten
             when Model::ValueList
-              triple.object.value.each do |v|
+              triple.object.instances.each do |v|
                 uris += v.types.flatten if v.is_a?(Model::Subject)
               end
             end
@@ -71,9 +69,11 @@ class RDFConfig
 
         parameters.each do |var_name, value|
           object = model.find_object(var_name)
-          next if !object.is_a?(Model::URI) && !object.is_a?(Model::Subject) && !model.subject?(var_name)
+          next if !object.nil? && !object.uri? && !object.is_a?(Model::Subject) && !model.subject?(var_name)
 
-          prefixes << Regexp.last_match(1) if /\A(\w+):(.+)/ =~ value && !prefixes.include?(Regexp.last_match(1))
+          Array(value).each do |v|
+            prefixes << Regexp.last_match(1) if /\A(\w+):(.+)/ =~ v && !prefixes.include?(Regexp.last_match(1))
+          end
         end
 
         prefixes

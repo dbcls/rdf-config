@@ -28,10 +28,9 @@ class RDFConfig
       @opts[:query_name] = opts[:sparql]
       @opts[:join] = [@opts[:join]] if @opts.key?(:join) && @opts[:join].is_a?(String)
 
-      @values = {}
+      @values = parameters.reject { |model_variable, value| value.to_s.empty? }
       @namespaces = {}
 
-      parse_parameters
       parse_opts
 
       return if print_usage?
@@ -264,14 +263,6 @@ class RDFConfig
       @endpoint = nil
     end
 
-    def parse_parameters
-      parameters.each do |variable_name, value|
-        next if value.to_s.strip.empty?
-
-        @values[variable_name] = value
-      end
-    end
-
     def parse_opts
       sparql_argv = if @opts[:sparql].is_a?(Array)
                       @opts[:sparql].first
@@ -281,22 +272,6 @@ class RDFConfig
       sparql_argv = sparql_argv.to_s.strip
 
       @opts[:query_name] = sparql_argv
-      set_query_opts if @opts.key?(:query)
-    end
-
-    def set_query_opts
-      if @opts[:query].is_a?(String)
-        @opts[:query] = if @opts[:query].strip.empty?
-                          []
-                        else
-                          [@opts[:query]]
-                        end
-      end
-
-      @opts[:query].each do |var_val|
-        variable_name, value = var_val.split('=', 2)
-        @values[variable_name] = value if value
-      end
     end
 
     def variables_by_parameters_config
@@ -437,7 +412,7 @@ class RDFConfig
 
     def select_variables(add_question_mark: false)
       if join?
-        valid_variables_by_query(add_question_mark)
+        valid_variables_by_query(add_question_mark: add_question_mark)
       else
         variables_handler.variables_for_select.map { |name| variable_name_for_sparql(name, add_question_mark) }
       end

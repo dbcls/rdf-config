@@ -79,7 +79,7 @@ class RDFConfig
       end
 
       def data_type_by_value_list(triple)
-        subjects = triple.object.value.select { |value| value.is_a?(Model::Subject) }
+        subjects = triple.object.instances.select { |value| value.is_a?(Model::Subject) }
         num_subjects = subjects.size
         if num_subjects > 1
           # type is union
@@ -91,16 +91,16 @@ class RDFConfig
             triple.predicate.plural?
           )
         else
-          data_type_by_normal_object(triple.object.value.first)
+          data_type_by_normal_object(triple.object.first_instance)
         end
       end
 
       def data_type_by_normal_object(object)
-        case object.type
+        case object.instance_type
         when 'URI'
           'String'
         when 'Int', 'Float'
-          object.type
+          object.instance_type
         when 'TrueClass', 'FalseClass'
           'Boolean'
         else

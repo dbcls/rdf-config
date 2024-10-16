@@ -145,7 +145,7 @@ class RDFConfig
         when Model::URI
           uri_node(object_value)
         when Model::ValueList
-          if triple.object.value.first.is_a?(Model::Literal)
+          if triple.object.first_instance.is_a?(Model::Literal)
             literal_node(object_value, triple.object)
           else
             uri_node(object_value)
@@ -239,7 +239,7 @@ class RDFConfig
         return false if statement[:triple].nil?
 
         triple_object = if statement[:triple].object.is_a?(Model::ValueList)
-                          statement[:triple].object.value.first
+                          statement[:triple].object.first_instance
                         else
                           statement[:triple].object
                         end

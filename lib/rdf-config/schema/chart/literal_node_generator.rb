@@ -98,7 +98,7 @@ class RDFConfig
             'text-anchor' => 'end',
             'dominant-baseline' => 'middle'
           )
-          type.add_text(@node.type.to_s)
+          type.add_text(@node.instance_type.to_s)
 
           wrapper = REXML::Element.new('g')
           wrapper.add_element(type)

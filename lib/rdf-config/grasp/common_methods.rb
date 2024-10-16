@@ -7,7 +7,9 @@ class RDFConfig
       ID_ARG_NAME = 'id'.freeze
 
       def triples
-        @model.triples_by_subject_name(@subject.name).reject { |triple| triple.predicate.rdf_type? }
+        @model.triples_by_subject_name(@subject.name).reject do |triple|
+          triple.predicate.rdf_type? && triple.object_name.to_s.strip.empty?
+        end
       end
 
       def object_names

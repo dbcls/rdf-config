@@ -1,6 +1,14 @@
 class RDFConfig
   class Model
     class Predicate
+      RDF_TYPES = %(a rdf:type).freeze
+
+      class << self
+        def rdf_type?(uri)
+          RDF_TYPES.include?(uri.to_s)
+        end
+      end
+
       attr_reader :name, :uri, :objects, :cardinality
 
       def initialize(predicate, prefix_hash = {})
@@ -19,15 +27,19 @@ class RDFConfig
       end
 
       def rdf_type?
-        %w[a rdf:type].include?(@uri)
+        @name == 'a' || self.class.rdf_type?(@uri)
       end
 
       def required?
-        @cardinality.nil? || !@cardinality.min.nil? && @cardinality.min.positive?
+        @cardinality.nil? || @cardinality.required?
       end
 
       def plural?
         !@cardinality.nil? && (@cardinality.max.nil? || @cardinality.max > 1)
+      end
+
+      def quantifier
+        @cardinality&.quantifier
       end
 
       private
@@ -39,32 +51,24 @@ class RDFConfig
           proc_char_cardinality(last_char)
         when '}'
           proc_range_cardinality
+        else
+          @cardinality = Cardinality.new('')
         end
+
+        @uri == 'rdf:type' if @uri == 'a'
       end
 
-      def proc_char_cardinality(cardinality)
+      def proc_char_cardinality(quantifier)
         @uri = @uri[0..-2]
 
-        case cardinality
-        when '?'
-          @cardinality = Cardinality.new(cardinality, 0, 1)
-        when '*'
-          @cardinality = Cardinality.new(cardinality, 0, nil)
-        when '+'
-          @cardinality = Cardinality.new(cardinality, 1, nil)
-        end
+        @cardinality = Cardinality.new(quantifier)
       end
 
       def proc_range_cardinality
         pos = @uri.rindex('{')
-        range = @uri[pos + 1..-2]
+        quantifier = @uri[pos..-1]
         @uri = @uri[0..pos - 1]
-        if range.index(',')
-          min, max = range.split(/\s*,\s*/)
-          @cardinality = Cardinality.new("{#{range}}", min.to_s == '' ? nil : min.to_i, max.to_s == '' ? nil : max.to_i)
-        else
-          @cardinality = Cardinality.new("{#{range}}", range.to_i, range.to_i)
-        end
+        @cardinality = Cardinality.new(quantifier)
       end
     end
   end

@@ -70,8 +70,8 @@ class RDFConfig
             when Model::Subject
               subjects << object
             when Model::ValueList
-              object.value.each do |obj|
-                subjects << obj if obj.is_a?(Model::Subject)
+              object.instances.each do |obj|
+                subjects << obj if obj.subject?
               end
             end
           end

@@ -1,7 +1,7 @@
 class RDFConfig
   class Model
     class Object
-      attr_reader :name, :value
+      attr_reader :name, :value, :values
 
       class << self
         def object_type(value, prefix_hash = {})
@@ -43,6 +43,7 @@ class RDFConfig
           @name = ''
           @value = object
         end
+        @values = [@value]
       end
 
       def type
@@ -68,6 +69,10 @@ class RDFConfig
         end
       end
 
+      def subject?
+        false
+      end
+
       def uri?
         false
       end
@@ -78,6 +83,22 @@ class RDFConfig
 
       def blank_node?
         false
+      end
+
+      def value_list?
+        false
+      end
+
+      def instances
+        [self]
+      end
+
+      def first_instance
+        self
+      end
+
+      def last_instance
+        self
       end
     end
   end

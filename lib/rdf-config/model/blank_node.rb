@@ -8,8 +8,12 @@ class RDFConfig
         @value = Subject.new({ @name => @value }, prefixe_hash)
       end
 
-      def type
+      def instance_type
         'BNODE'
+      end
+
+      def shex_data_type
+        'BNode'
       end
 
       def blank_node?
@@ -22,6 +26,14 @@ class RDFConfig
 
       def as_subject
         @value
+      end
+
+      def uri?
+        true
+      end
+
+      def literal?
+        false
       end
     end
   end

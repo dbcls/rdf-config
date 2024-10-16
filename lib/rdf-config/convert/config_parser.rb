@@ -71,10 +71,10 @@ class RDFConfig
       end
 
       def has_rdf_type_object?
-        object_names.select do |object_name|
+        object_names.reject { |object_name| convert_variable?(object_name) }.select do |object_name|
           triple = @model.find_by_object_name(object_name)
-          triple.predicates.select(&:rdf_type?).count > 0
-        end.count > 0
+          triple&.predicates&.select(&:rdf_type?)&.count&.positive?
+        end.count.positive?
       end
 
       def object_names

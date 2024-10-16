@@ -33,7 +33,8 @@ class RDFConfig
       end
 
       def union_types(triple)
-        triple.object.value.select { |value| value.is_a?(Model::Subject) }.map { |subject| subject_type_name(@config, subject, add_namespace: @add_namespace) }
+        triple.object.instances.select { |value| value.is_a?(Model::Subject) }
+              .map { |subject| subject_type_name(@config, subject, add_namespace: @add_namespace) }
       end
     end
   end

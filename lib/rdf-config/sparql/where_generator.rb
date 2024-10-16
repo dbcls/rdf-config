@@ -84,7 +84,16 @@ class RDFConfig
         refine_optional_triple
       end
 
-      def refine_rdf_type_triple; end
+      def refine_rdf_type_triple
+        rdf_type_triple = @required_triples.select do |triple|
+          model.rdf_type_variable_name(triple.subject.name) == triple.object.name
+        end.first
+
+        return if rdf_type_triple.nil?
+
+        @rdf_type_triple[rdf_type_triple.subject.name] = rdf_type_triple
+        @required_triples.reject! { |triple| rdf_type_triple.object.name == triple.object.name }
+      end
 
       def refine_required_triple; end
 
@@ -266,10 +275,14 @@ class RDFConfig
             next if subject.nil?
           end
 
-          value = "{{#{variable_name}}}" if template?
-          value = %("#{value}") if double_quote_value?(object)
+          output_value = if template?
+                           double_quote_value?(object) ? %("{{#{variable_name}}}") : "{{#{variable_name}}}"
+                         else
+                           Array(value).map { |v| double_quote_value?(object) ? %("#{v}") : v }
+                                       .join(' ')
+                         end
 
-          add_values_line(values_line("?#{variable_name}", value))
+          add_values_line(values_line("?#{variable_name}", output_value))
         end
       end
 
@@ -281,7 +294,7 @@ class RDFConfig
       end
 
       def add_values_line_for_rdf_type(subject)
-        return if subject.rdf_types.size < 2
+        return if subject.rdf_types.size < 2 || rdf_type_variable?(subject.name)
 
         add_values_line(values_line(subject.rdf_type_varname, subject.rdf_types.join(' ')))
       end
@@ -297,7 +310,7 @@ class RDFConfig
               triples = filter_triples_by_subject(subject)
               unless triples.empty?
                 triples = sort_triples_by_object(triples)
-                triples = rdf_type_added_triples(triples, required: true)
+                triples = rdf_type_added_triples(triples, required: true) # unless rdf_type_variable?(subject.name)
                 lines += lines_by_triples(triples)
                 if lines.size.positive? && lines.last[-1] == ';'
                   line = lines.pop
@@ -500,7 +513,7 @@ class RDFConfig
       end
 
       def add_rdf_type_triple(triple)
-        return if triple.subject.rdf_types.empty?
+        return if triple.subject.rdf_types.empty? || rdf_type_variable?(triple.subject.name)
 
         subject_name = triple.subject.name
         return if @rdf_type_triple.key?(subject_name)
@@ -650,9 +663,9 @@ class RDFConfig
             triple.object.as_object_value
           end
         when Model::ValueList
-          names = variables & triple.object.value.select { |v| v.is_a?(Model::Subject) }.map(&:as_object_name)
+          names = variables & triple.object.instances.select { |v| v.is_a?(Model::Subject) }.map(&:as_object_name)
           if names.empty?
-            names = variables & triple.object.value.select { |v| v.is_a?(Model::Subject) }.map(&:as_object_value)
+            names = variables & triple.object.instances.select { |v| v.is_a?(Model::Subject) }.map(&:as_object_value)
             if names.empty?
               triple.object.name
             else
@@ -705,7 +718,11 @@ class RDFConfig
       def sort_triples_by_object(triples)
         select_variable_names = select_variables(add_question_mark: false)
         triples.sort do |ta, tb|
-          if select_variable_names.include?(ta.object.name) && select_variable_names.include?(tb.object.name)
+          if ta.predicates.last.rdf_type?
+            -1
+          elsif tb.predicates.last.rdf_type?
+            1
+          elsif select_variable_names.include?(ta.object.name) && select_variable_names.include?(tb.object.name)
             select_variable_names.index(ta.object.name) <=> select_variable_names.index(tb.object.name)
           elsif select_variable_names.include?(ta.object.name)
             -1
@@ -784,6 +801,13 @@ class RDFConfig
         else
           false
         end
+      end
+
+      def rdf_type_variable?(subject_name)
+        rdf_type_variable = model.rdf_type_variable_name(subject_name)
+
+        !rdf_type_variable.nil? &&
+          variables_handler.visible_variables.include?(rdf_type_variable)
       end
     end
   end
