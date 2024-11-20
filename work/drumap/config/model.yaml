@@ -1,0 +1,608 @@
+# 20231122
+#
+# * active_admin_comments.csv -> No data
+# * admins.csv
+# * ar_internal_metadata.csv
+# * cross_references.csv
+# * database_types.csv
+# * metabolic_sites.csv
+# * name_types.csv
+# * references.csv
+# * relations.csv
+# * schema_migrations.csv
+# * structure_sources.csv
+# * structure_types.csv
+# * structures.csv
+# * toxicities.csv
+
+# activities.csv
+#   id,assay_id,activity_group_id,experiment_id,compound_id,value,string_value,lower_value,upper_value,stdev,rank_id,visible,comment,ambiguous,chembl_activity_id
+#   1,401,,,DIJ0002563900-00,12589.3,,,,,1,t,,,
+#   11,8,,13,DIJ0000036900-00,,,,2.0,,1,t,Stable,,
+#   13,12,18,81,DIJ0000036900-00,2754.3333,,,,138.74557,1,t,,,
+#   31283,506,,,DIJ0001014701-00,11.0,,,,,1,t,The order of value was corrected.,,CHEMBL932403
+
+- DruMAPActivity <https://drumap.nibiohn.go.jp/rdf/activity/1>:
+  - a: drumap:Activity
+  - dct:identifier:
+    - drumap_activity_id: 1
+  - rdfs:label:
+    - drumap_activity_label: "Activity:1"
+  - drumap:hasAssay:
+    - drumap_activity_assay_id: DruMAPAssay
+  - drumap:hasActivityGroup?:
+    - drumap_activity_activity_group_id: DruMAPActivityGroup
+  - drumap:hasExperiment?:
+    - drumap_activity_experiment_id: DruMAPExperiment
+  - drumap:hasCompound:
+    - drumap_activity_compound_id: DruMAPCompound
+  - drumap:activity_value?:
+    - drumap_activity_value: 2754.3333
+  - drumap:activity_string_value?:
+    - drumap_activity_string_value: "50.0"
+  - drumap:activity_lower_value?:
+    - drumap_activity_lower_value: 50.0
+  - drumap:activity_upper_value?:
+    - drumap_activity_upper_value: 100.0
+  - drumap:activity_stdev:
+    - drumap_activity_stdev: 138.74557
+  - drumap:hasRank:
+    - drumap_activity_rank: DruMAPRank
+  - drumap:activity_visible:
+    - drumap_activity_visible: true
+  - rdfs:comment?:
+    - drumap_activity_comment: "measured by LC-MS/MS"
+  - drumap:activity_ambiguous:
+    - drumap_activity_ambiguous: true
+  - drumap:activity_chembl:
+    - drumap_activity_chembl: "CHEMBL1043175"
+
+# activity_groups.csv
+#   id,description
+#   1,
+#   2,
+
+- DruMAPActivityGroup <https://drumap.nibiohn.go.jp/rdf/activity_group/1>:
+  - a: drumap:ActivityGroup
+  - dct:identifier:
+    - drumap_activity_group_id: 1
+  - rdfs:label:
+    - drumap_activity_group_label: "ActivityGroup:1"
+  - dct:description?:
+    - drumap_activity_group_description: ""
+
+# assays.csv
+#   id,parameter_type_id,assay_type_id,assay_animal_id,assay_tissue_id,assay_molecule_id,source,description
+#   1,1,1,1,1,,NIBIOHN,The solubility at pH 7.4 using dried DMSO method.
+#   4,4,2,2,8,,NIBIOHN,The fraction unbound in human plasma.
+
+- DruMAPAssay <https://drumap.nibiohn.go.jp/rdf/assay/1>:
+  - a: drumap:Assay
+  - dct:identifier:
+    - drumap_assay_id: 1
+  - rdfs:label:
+    - drumap_assay: "Assay:1"
+  - drumap:hasParameterType:
+    - drumap_assay_paramater_type: DruMAPParameterType
+  - drumap:hasAssayType:
+    - drumap_assay_type: DruMAPAssayType
+  - drumap:hasAssayAnimal:
+    - drumap_assay_animal: DruMAPAssayAnimal
+  - drumap:hasAssayTissue:
+    - drumap_assay_tissue: DruMAPAssayTissue
+  - drumap:hasAssayMolecule?:
+    - drumap_assay_molecule: DruMAPAssayMolecule
+  - dc:source:
+    - drumap_assay_source: "NIBIOHN"
+  - dct:description:
+    - drumap_assay_description: "The solubility at pH 7.4 using dried DMSO method."
+
+# parameter_types.csv
+#   id,name,unit,description
+#   1,Sol(7.4),μg/mL,solubility at pH 7.4
+#   2,Sol(1.2),μg/mL,solubility at pH 1.2
+
+- DruMAPParameterType <https://drumap.nibiohn.go.jp/rdf/parameter_type/1>:
+  - a: drumap:ParameterType
+  - dct:identifier: 
+    - drumap_parameter_type_id: 1
+  - rdfs:label:
+    - drumap_parameter_type: "solubility at pH 7.4"
+  - drumap:parameter_type_name: 
+    - drumap_parameter_type_name: "Sol(7.4)"
+  - drumap:parameter_type_unit: 
+    - drumap_parameter_type_unit: "μg/m"
+
+# assay_types.csv
+#   id,name
+#   1,physicochemical
+#   2,in vitro
+#   3,in vivo
+
+- DruMAPAssayType <https://drumap.nibiohn.go.jp/rdf/assay_type/1>:
+  - a: drumap:AssayType
+  - dct:identifier:
+    - drumap_assay_type_id: 1
+  - rdfs:label:
+    - drumap_assay_type_label: "in vitro"
+
+# assay_animals.csv
+#   id,assay_organism_id,name,gender
+#   1,1,none,
+#   2,2,human,
+#   3,2,male human,male
+
+- DruMAPAssayAnimal <https://drumap.nibiohn.go.jp/rdf/assay_animal/1>:
+  - a: drumap:AssayAnimal
+  - dct:identifier:
+    - drumap_assay_animal_id: 3
+  - rdfs:label:
+    - drumap_assay_animal_label: "male human"
+  - drumap:hasAssayOrganism:
+    - drumap_assay_animal_assay_organism: DruMAPAssayOrganism
+  - drumap:assay_animal_gender?:
+    - drumap_assay_animal_gender: "male"
+
+# assay_molecules.csv
+#   id,name,gene_symbol,gene_id,species,description,assay_organism_id
+#   1,P-gp,ABCB1,5243,human,,
+#   2,P-gp,,,rat,Abcb1a (170913) and Abcb1b (24646),
+#   3,CYP1A2,CYP1A2,1544,human,,
+#   4,CYP2C9,CYP2C9,1559,human,,
+
+- DruMAPAssayMolecule <https://drumap.nibiohn.go.jp/rdf/assay_molecule/1>:
+  - a: drumap:AssayMolecule
+  - dct:identifier:
+    - drumap_assay_molecule_id: 1
+  - rdfs:label:
+    - drumap_assay_molecule_label: "P-gp"
+  - drumap:assay_molecule_gene_symbol:
+    - drumap_assay_molecule_gene_symbol: "CYP1A2"
+  - drumap:assay_molecule_gene_id:
+    - drumap_assay_molecule_gene_id: 5243
+  - drumap:assay_molecule_species:
+    - drumap_assay_molecule_species: "human"
+  - dct:description:
+    - drumap_assay_molecule_description: "Abcb1a (170913) and Abcb1b (24646)"
+  - drumap:hasAssayOrganism?:
+    - drumap_assay_molecule_assay_organism: DruMAPAssayOrganism
+
+# assay_organisms.csv
+#   id,name,tax_id,description
+#   1,none,,no biological samples
+#   2,human,,Homo sapiens
+#   3,monkey,,Macaca
+
+- DruMAPAssayOrganism <https://drumap.nibiohn.go.jp/rdf/assay_organism/1>:
+  - a: drumap:AssayOrganism
+  - dct:identifier:
+    - drumap_assay_organism_id: 1
+  - rdfs:label:
+    - drumap_assay_organism_label: "human"
+  - drumap:assay_organism_taxonomy?:
+     - drumap_assay_organism_taxonomy: <http://identifiers.org/taxonomy/9606>
+  - dct:description:
+    - drumap_assay_organism_description: "Homo sapiens"
+
+# assay_parameters.csv
+#   id,assay_id,name,value
+#   1,12,route,iv
+#   2,12,dose,1
+#   3,12,dose_unit,mg/kg
+
+- DruMAPAssayParameter <https://drumap.nibiohn.go.jp/rdf/assay_parameter/1>:
+  - a: drumap:AssayParameter
+  - dct:identifier:
+    - drumap_assay_parameter_id: 1
+  - rdfs:label:
+    - drumap_assay_parameter_label: "dose_unit"
+  - drumap:hasAssay:
+    - drumap_assay_parameter_assay: DruMAPAssay
+  - drumap:assay_parameter_unit:
+    - drumap_assay_parameter_unit: "mg/kg"
+
+# assay_tissues.csv
+#  id,name,description,jname
+#  1,none,,無
+#  2,whole body,,全身
+#  3,blood,,血液
+#  205,Caco-2 cell,human epithelial colorectal adenocarcinoma cell,Caco-2細胞
+
+- DruMAPAssayTissue <https://drumap.nibiohn.go.jp/rdf/assay_tissue/1>:
+  - a: drumap:AssayTissue
+  - dct:identifier:
+    - drumap_assay_tissue_id: 1
+  - rdfs:label:
+    - drumap_assay_tissue_label: ["blood", '"血液"@ja']
+  - dct:description:
+    - drumap_assay_tissue_description: "human epithelial colorectal adenocarcinoma cell"
+
+# compounds.csv
+#   id,compound_property_id,formula,salt,charge,enantiomer,mol_weight,mol_weight_precision,visible,smiles,mol,torsionbv,mfp2,ffp2
+#   DIJ0000000100-00,DIJ0000000100,CH2N2,,,f,42.041,3,t,N#CN,N#CN,\x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,\x00000000000000000000000000000000000008000440000000000000000000000000400000000000000000000001080000000000000000000000000000000000,\x05000800000000000000000000000000000000000000000001000000000000000000000000000000000000000000000020000000000000000000000100000000
+
+- DruMAPCompound <https://drumap.nibiohn.go.jp/rdf/compound/DIJ0000000100-00>:
+  - a: drumap:Compound
+  - dct:identifier:
+    - drumap_compound_id: "DIJ0000000100-00"
+  - rdfs:label:
+    - drumap_compound_label: "DIJ0000000100-00"
+  - drumap:hasCompoundProperty:
+    - drumap_compound_property: DruMAPCompoundProperty
+  - drumap:compound_formula:
+    - drumap_compound_formula: CH2N2
+  - drumap:compound_salt?:
+    - drumap_compound_salt: "2Na"
+  - drumap:compound_charge?:
+    - drumap_compound_charge: "+3"
+  - drumap:compound_enantiomer:
+    - drumap_compound_enantiomer: false
+  - drumap:compound_mol_weight:
+    - drumap_compound_mol_weight: 42.041
+  - drumap:compound_mol_weight_precision:
+    - drumap_compound_mol_weight_precision: 3
+  - drumap:compound_visible:
+    - drumap_compound_visible: true
+  - drumap:compound_smiles:
+    - drumap_compound_smiles: "N#CN"
+  - drumap:compound_mol:
+    - drumap_compound_mol: "N#CN"
+  - drumap:compound_torsionbv:
+    - drumap_compound_torsionbv: "\x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+  - drumap:compound_mfp2:
+    - drumap_compound_mfp2: "\x00000000000000000000000000000000000008000440000000000000000000000000400000000000000000000001080000000000000000000000000000000000"
+  - drumap:compound_ffp2:
+    - drumap_compound_ffp2: "\x05000800000000000000000000000000000000000000000001000000000000000000000000000000000000000000000020000000000000000000000100000000"
+
+# compound_properties.csv
+#   id,mol_weight_freebase,mass,logp,hba,hbd,psa,rtb,aring,hatom,qed,hba_lipinski,hbd_lipinski,mol_weight_freebase_precision
+#   DIJ0000000100,42.041,42.02180,-0.57382,2,1,49.81,0,0,3,0.29117,2,2,3
+#   DIJ0000000200,76.055,76.02728,-0.75170,2,3,78.84,0,0,5,0.15357,4,4,3
+#   DIJ0000000300,244.880,243.88602,0.43070,2,4,115.06,2,0,11,0.41379,6,4,2
+
+- DruMAPCompoundProperty <https://drumap.nibiohn.go.jp/rdf/compound_property/DIJ0000000100>:
+  - a: drumap:CompondProperty
+  - dct:identifier:
+    - drumap_compound_property_id: "DIJ0000000100"
+  - rdfs:label:
+    - drumap_compound_property_label: "DIJ0000000100"
+  - drumap:compound_property_mol_weight_freebase:
+    - drumap_compound_property_mol_weight_freebase: 42.041
+  - drumap:compound_property_mass:
+    - drumap_compound_property_mass: 42.02180
+  - drumap:compound_property_logp:
+    - drumap_compound_property_logp: -0.57382
+  - drumap:compound_property_hba:
+    - drumap_compound_property_hba: 2
+  - drumap:compound_property_hbd:
+    - drumap_compound_property_hbd: 1
+  - drumap:compound_property_psa:
+    - drumap_compound_property_psa: 49.81
+  - drumap:compound_property_rtb:
+    - drumap_compound_property_rtb: 0
+  - drumap:compound_property_aring:
+    - drumap_compound_property_aring: 0
+  - drumap:compound_property_hatom:
+    - drumap_compound_property_hatom: 3
+  - drumap:compound_property_qed:
+    - drumap_compound_property_qed: 0.29117
+  - drumap:compound_property_hba_lipinski:
+    - drumap_compound_property_hba_lipinski: 2
+  - drumap:compound_property_hbd_lipinski:
+    - drumap_compound_property_hbd_lipinski: 2
+  - drumap:compound_property_mol_weight_freebase_precision:
+    - drumap_compound_property_mol_weight_freebase_precision: 3
+
+# compound_names.csv
+#   id,compound_id,name,language,name_type_id
+#   1,DIJ0000000100-00,Cyanamide,E,1
+#   2,DIJ0000000100-00,シアナミド,J,1
+
+- DruMAPCompoundName <https://drumap.nibiohn.go.jp/rdf/compound_name/1>:
+  - a: drumap:CompoundName
+  - dct:identifier:
+    - drumap_compound_name_id: 1
+  - rdfs:label:
+    - drumap_compound_name_label: ["Cyanamide", '"シアナミド"@ja']
+  - drumap:hasCompound:
+    - drumap_compound_name_compound: DruMAPCompound
+  - drumap:compound_name_language:
+    - drumap_compound_name_language: "E"
+  - drumap:hasNameType:
+    - drumap_compound_name_name_type: DruMAPNameType
+
+# experiments.csv
+#   id,description,date
+#   1,The solubility at pH 7.4 using dried DMSO method.,2016-03-23
+#   2,The solubility at pH 1.2 using dried DMSO method.,2016-03-23
+#   3,The distribution coefficient at pH 7.4.,2016-03-23
+
+- DruMAPExperiment <https://drumap.nibiohn.go.jp/rdf/experiment/1>:
+  - a: drumap:Experiment
+  - dct:identifier:
+    - drumap_experiment_id: 1
+  - rdfs:label:
+    - drumap_experiment_label: "The solubility at pH 7.4 using dried DMSO method."
+  - drumap:experiment_date: 
+    - drumap_experiment_date: '"2016-03-23"^^xsd:date'
+
+# ranks.csv
+#   id,description
+#   1,individual data with single data
+#   2,geometric mean of individual data
+#   3,individual data used for calculation of geometric mean
+#   4,individual data not used for the representative value
+
+- DruMAPRank <https://drumap.nibiohn.go.jp/rdf/rank/1>:
+  - a: drumap:Rank
+  - dct:identifier:
+    - drumap_rank_id: 1
+  - rdfs:label:
+    - drumap_rank_label: "individual data with single data"
+
+# documents.csv
+#   id,document,document_type_id
+#   1,100461_1319751Q1038_3_005_1F.pdf,2
+#   2,100888_2190026F1022_5_1F.pdf,2
+#   3,100888_2190026X1028_3_1F.pdf,2
+
+- DruMAPDocument <https://drumap.nibiohn.go.jp/rdf/document/1>:
+  - a: drumap:Document
+  - dct:identifier:
+    - drumap_document_id: 1
+  - rdfs:label:
+    - drumap_document_label: "100461_1319751Q1038_3_005_1F.pdf"
+  - drumap:hasDocumentType:
+    - drumap_document_document_type_id: DruMAPDocumentType
+
+# document_types.csv
+#   id,name,description
+#   1,CTD,Common Technical Document
+#   2,IF,Interview Form
+
+- DruMAPDocumentType <https://drumap.nibiohn.go.jp/rdf/document_type/1>:
+  - a: drumap:DocumentType
+  - dct:identifier:
+    - drumap_document_type_id: 1
+  - rdfs:label:
+    - drumap_document_type_label: "CTD"
+  - rdfs:comment:
+    - drumap_document_type_description: "Common Technical Document"
+
+
+
+## CONTINUE
+
+# cross_references.csv: database_typeとcompounds
+#   id,compound_id,identifier,database_type_id
+#   1,DIJ0000000100-00,CHEMBL56279,1
+#   2,DIJ0000000200-00,CHEMBL467,1
+
+- DruMAPCrossReference <https://drumap.nibiohn.go.jp/rdf/cross_reference/1>: 
+  - a: drumap:CrossReference
+  - dct:identifier:
+    - drumap_cross_reference_id: 1
+  - rdfs:label:
+    - drumap_cross_reference: "drumapCrossReference:1"
+
+  # compound_idカラム
+  - drumap:hasCompound:
+    - drumap_cross_reference_compound:  DruMAPCompound
+
+  # CSVのidentifierカラム 何のidentifierか不明
+  - drumap:crossref:
+    - drumap_crossref_id: '"CHEMBL56279"^^xsd:ID'
+
+  # database_type_idカラム
+  - drumap:hasDatabaseType:
+    - drumap_cross_referenced_database_type: DruMAPDatabaseType
+
+# database_types.csv
+#   id,name,url_pattern
+#   1,ChEMBL,https://www.ebi.ac.uk/chembl/compound_report_card/%s/
+#   2,PubChem,https://pubchem.ncbi.nlm.nih.gov/compound/%s
+
+- DruMAPDatabaseType <https://drumap.nibiohn.go.jp/rdf/database_type/1>: 
+  - a: drumap:DatabaseType
+  - dct:identifier: 
+    - drumap_database_type_id: 1
+
+  # nameカラムはrdfs:labelで良い？
+  - rdfs:label:
+    - drumap_database_type: "ChEMBL"
+  # - drumap:name:
+  #   - drumap_database_name: '"Ex.) database name"^^xsd:name'
+
+  # url_patternカラム
+  - drumap:urlPattern: 
+    - drumap_database_url_pattern: "https://www.ebi.ac.uk/chembl/compound_report_card/%s/"
+
+# metabolic_sites.csv
+#  id,assay_id,compound_id,order,position,score
+#  1,615,DIJ0000003000-00,1,3,70
+#  2,615,DIJ0000003700-00,1,3-4,79
+
+- DruMAPMetabolicSite <https://drumap.nibiohn.go.jp/rdf/metabolic_site/1>: 
+  - a: drumap:MetabolicSite
+  - dct:identifier: 
+    - drumap_metabolic_site_id: 1
+  - rdfs:label:
+    - drumap_metabolic_site: "drumapMetabolicSite:1"
+
+  # assay_id
+  - drumap:hasAssay: 
+    - drumap_metabolic_site_assay: DruMAPAssay
+
+  # compound_id
+  - drumap:hasCompound: 
+    - drumap_metabolic_site_compound: DruMAPCompound
+
+  - drumap:order: 
+    - drumap_metabolic_site_order: 1
+  - drumap:position: 
+    - drumap_metabolic_site_position: "3-4"
+  - drumap:score: 
+    - drumap_metabolic_site_score: '"70"^^xsd:float'
+
+# structures.csv
+#  id,compound_id,structure,structure_type_id,structure_source_id,tautomer_id
+#  1,DIJ0000000100-00,InChI=1S/CH2N2/c2-1-3/h2H2,1,1,1
+#  2,DIJ0000000200-00,"InChI=1S/CH4N2O2/c2-1(4)3-5/h5H,(H3,2,3,4)",1,1,1
+
+- DruMAPStructure <https://drumap.nibiohn.go.jp/rdf/structure/1>: 
+  - a: drumap:Structure
+  - dct:identifier: 
+    - drumap_strucure_id: 1
+
+  # structureカラムをlabelにする
+  - rdfs:label:
+    - drumap_structure: "InChI=1S/CH2N2/c2-1-3/h2H2"
+
+  # compound_id
+  - drumap:hasCompound:
+    - drumap_structure_compound: DruMAPCompound
+
+  # structure_type_id
+  - drumap:hasStructureType: 
+    - drumap_structure_structure_type: DruMAPStructureType
+
+  # structure_source_id
+  - drumap:hasStructureSource:
+    - drumap_structure_structure_source: DruMAPStructureSource
+
+  # tautomer_id
+  - drumap:tautomerNo:
+    - drumap_structure_tautomer_id: 1
+
+# structure_sources.csv
+#  id,name
+#  1,DruMAP
+#  2,ChEMBL
+
+- DruMAPStructureSource <https://drumap.nibiohn.go.jp/rdf/structure_source/1>:
+  - a: drumap:StructureSource
+  - dct:identifier: 
+    - drumap_structure_source_id: 1
+
+  # nameカラムをlabelとする
+  - rdfs:label:
+    - drumap_structure_source: "DruMAP"
+
+# structure_types.csv
+#  id,name
+#  1,InChI
+#  2,InChIkey
+
+- DruMAPStructureType <https://drumap.nibiohn.go.jp/rdf/structure_type/1>: 
+  - a: drumap:StructureType
+  - dct:identifier: 
+    - drumap_structure_type_id: 1
+
+  # nameカラムをlabelとする
+  - rdfs:label:
+    - drumap_structure_type: "InChI"
+
+# toxicities.csv
+#  id,compound_id,name,type,url
+#  1,DIJ0000000800-00,HG-0305501,cardiac,https://drugdesign.riken.jp/hERGdb/compound.php?HGID=HG-0305501
+#  2,DIJ0000002700-00,HG-0305492,cardiac,https://drugdesign.riken.jp/hERGdb/compound.php?HGID=HG-0305492
+
+- DruMAPToxicity <https://drumap.nibiohn.go.jp/rdf/toxicity/1>: 
+  - a: drumap:Toxicity
+  - dct:identifier:
+    - drumap_toxicity_id: 1
+
+  # nameカラムをlabelとする
+  - rdfs:label:
+    - drumap_toxicity: "HG-0305501"
+
+  # compound_idカラム
+  - drumap:hasCompound:
+    - drumap_toxicity_compound: DruMAPCompound
+
+  # typeカラム
+  - dct:type:
+    - drumap_toxicity_type: '"cardiac"^^xsd:Name'
+
+  # urlカラム dct:urlは正しいプロパティ？（dctermsにurlある？）
+  - dct:url:
+    - drumap_toxicity_url: '"https://drugdesign.riken.jp/hERGdb/compound.php?HGID=HG-0305501"^^xsd:anyURI'
+
+# name_types.csv
+#  id,name,description
+#  1,PRI,Primary
+#  2,IUPAC,International Union of Pure and Applied Chemistry Nomenclature of Chemistry
+- DruMAPNameType <https://drumap.nibiohn.go.jp/rdf/name_type/1>:
+  - a: drumap:NameType
+  - dct:identifier:
+    - drumap_name_type_id: 1
+
+  # nameカラムをlabelとする
+  - rdfs:label:
+    - drumap_name_type: "PRI"
+
+  # descriptionカラム
+  - dct:description:
+    - drumap_name_type_description: "Primary"
+
+# relations.csv
+#  id,compound_id,related_with_id,relation_type
+#  1,DIJ0000049900-00,DIJ0000010000-00,active metabolite
+#  2,DIJ0000010000-00,DIJ0000049900-00,precursor
+- DruMAPRelation <https://drumap.nibiohn.go.jp/rdf/relation/1>:
+  - a: drumap:Relation
+  - dct:identifier:
+    - drumap_relation_id: 1
+
+  # relation_typeカラムをlabelとする
+  - rdfs:label:
+    - drumap_relation: "active metabolite"
+
+  # compound_idカラム
+  - drumap:hasCompound:
+    - drumap_relation_compound: DruMAPCompound
+
+  # related_with_idカラム: 値は compound_id で良いか？
+  # プロパティは drumap:hasCompound で良いか？
+  - drumap:hasCompound:
+    - drumap_relation_related_with: DruMAPCompound
+
+---
+
+- DruMAPName:
+  # Primary
+  - drumap:namePRI*:
+    - drumap_name_pri: ['"Cyanamide"@en', '"シアナミド"@jp']
+  # IUPAC) International Union of Pure and Applied Chemistry Nomenclature of Chemisty"
+  - drumap:nameIUPAC*:
+    - drumap_name_iupac: '"Currently none"^^xsd:string'
+  # INN) International Nonproprietary Name
+  - drumap:nameINN*:
+    - drumap_name_inn: ['"Hydroxycarbamide"@en', '" ヒドロキシカルバミド"@jp'] 
+  # JAN) Japanese Accepted Names for Pharmaceuticals
+  - drumap:nameJAN*:
+    - drumap_name_jan: '"Hydroxycarbamide"@en' 
+  # JP17) The Japanese Pharmacopoeia the 17th Edition
+  - drumap:nameJP17*:
+    - drumap_name_jp17: ['"Cyanamide"@en', '"シアナミド"@jp']
+  # USAN) United States Adopted Name
+  - drumap:nameUSAN*:
+    - drumap_name_usan: ['"Clodronic acid"@en', '"Clodronate disodium"@en']
+  # USP) The United States Pharmacopeia
+  - drumap:nameUSP*:
+    - drumap_name_usp: '"Hydroxyurea"@en'
+  # BAN) British Approved Name
+  - drumap:nameBAN*:
+    - drumap_name_ban: '"Deanol"@en'
+  # DCF) Dénomination commune française",
+  - drumap:nameDCF*:
+    - drumap_name_dcf: 'Troclosene2@en'
+  # NF) National Formulary drug name
+  - drumap:nameNF*:
+    - drumap_name_nf: '"Monoethanolamine"@en'
+  # TN) Trade Name
+  - drumap:nameTN*:
+    - drumap_name_tn: ['"Cyanamide"@en', '"シアナミド"@jp']
+  # JP18) The Japanese Pharmacopoeia the 18th Edition
+  - drumap:nameJP18*:
+    - drumap_name_jp18: '"Currently none"^^xsd:string'

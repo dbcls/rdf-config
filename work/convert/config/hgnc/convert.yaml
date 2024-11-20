@@ -1,0 +1,33 @@
+HGNC:
+  - source("hgnc-subset.tsv")
+  - subject:
+    - tsv("hgnc_id")
+    - downcase
+  - objects:
+    - gene_id: tsv("symbol")
+    - hgnc_id:
+      - tsv("hgnc_id")
+      - delete(/^HGNC:/)
+      - to_int
+    - description: tsv("name")
+    - location: tsv("location")
+
+UniProt:
+  - source("hgnc-subset.tsv")
+  - subject:
+    - tsv("uniprot_ids")
+    - prepend("http://identifiers.org/uniprot/")
+  - objects:
+    - uniprot_id: tsv("uniprot_ids")
+
+PubMed:
+  - source("hgnc-subset.tsv")
+  - subject:
+    - tsv("pubmed_id")
+    - split("|")
+    - prepend("http://identifiers.org/pubmed/")
+  - objects:
+    - pubmed_id:
+      - tsv("pubmed_id")
+      - split("|")
+      - to_int

@@ -64,7 +64,7 @@ class RDFConfig
               when Model::Subject
                 @object.as_object_name
               when Model::ValueList
-                subject = @object.value.select { |value| value.is_a?(Model::Subject) }.first
+                subject = @object.instances.select(&:subject?).first
                 if subject
                   subject.as_object_name
                 else
@@ -85,14 +85,14 @@ class RDFConfig
             when Model::ValueList
               type_text_by_value_list
             else
-              @object.type.to_s
+              @object.instance_type.to_s
             end
           end
 
           def type_text_by_value_list
-            first_value = @object.value.first
+            first_value = @object.first_instance
             if first_value.is_a?(Model::Subject)
-              subjects = @object.value.select { |value| value.is_a?(Model::Subject) }
+              subjects = @object.instances.select(&:subject?)
               case subjects.size
               when 0
                 ''
@@ -102,7 +102,7 @@ class RDFConfig
                 "#{subjects.first.name}, ..."
               end
             else
-              first_value.type.to_s
+              first_value.instance_type.to_s
             end
           end
 
@@ -117,7 +117,7 @@ class RDFConfig
             when Model::BlankNode
               'blank-node-object'
             when Model::ValueList
-              if @object.value.first.is_a?(Model::URI)
+              if @object.first_instance.is_a?(Model::URI)
                 'uri-object'
               else
                 'literal-object'
@@ -143,8 +143,7 @@ class RDFConfig
           end
 
           def subject?
-            @object.is_a?(Model::Subject) ||
-              (@object.is_a?(Model::ValueList) && !@object.value.select { |value| value.is_a?(Model::Subject) }.empty?)
+            @object.instances.select(&:subject?).any?
           end
         end
       end

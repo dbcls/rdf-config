@@ -1,0 +1,10 @@
+Person:
+  - root("persons")
+  - $id: json(".id")
+  - "http://example.org/ontology/person/$id"
+  - variables:
+    - id: $id
+    - name:
+      - $first_name: json(".first_name")
+      - $last_name: json(".last_name")
+      - "$first_name $last_name"

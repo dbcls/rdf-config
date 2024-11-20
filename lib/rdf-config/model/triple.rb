@@ -1,7 +1,5 @@
 class RDFConfig
   class Model
-    Cardinality = Struct.new(:label, :min, :max)
-
     class Triple
       attr_reader :subject, :predicates, :object
 

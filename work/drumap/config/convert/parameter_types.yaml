@@ -1,0 +1,10 @@
+DruMAPParameterType:
+  - source("parameter_types.csv")
+  - $id: csv("id")
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/parameter_type/$id"
+  - objects:
+    - drumap_parameter_type_id: $id
+    - drumap_parameter_type: csv("description")
+    - drumap_parameter_type_name: csv("name")
+    - drumap_parameter_type_unit: csv("unit")

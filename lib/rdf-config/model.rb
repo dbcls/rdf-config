@@ -1,3 +1,4 @@
+require_relative 'model/cardinality'
 require_relative 'model/graph'
 require_relative 'model/triple'
 require_relative 'model/subject'
@@ -31,6 +32,19 @@ class RDFConfig
 
     def find_by_predicates(predicates)
       @triples.select { |triple| triple.predicates == predicates }
+    end
+
+    def rdf_type_triples_by_subject_name(subject_name)
+      triples_by_subject_name(subject_name).select do |triple|
+        triple.predicates.size == 1 && triple.predicates.first.rdf_type?
+      end
+    end
+
+    def rdf_type_variable_name(subject_name)
+      rdf_type_triples_by_subject_name(subject_name)
+        .map { |triple| triple.object.name }
+        .reject { |object_name| object_name.to_s.empty? }
+        .first
     end
 
     def bnode_rdf_types(triple)
@@ -90,7 +104,7 @@ class RDFConfig
             triple.subject.name != triple.object.as_object_value &&
               triple.object.as_object_value == object_name
           when ValueList
-            triple.object.value.select do |obj|
+            triple.object.values.select do |obj|
               # reject triple with the same subject name and object value
               obj.is_a?(Subject) && triple.subject.name != obj.as_object_value
             end.map do |obj|

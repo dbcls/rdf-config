@@ -7,7 +7,7 @@ class RDFConfig
         super
       end
 
-      def type
+      def instance_type
         'N/A'
       end
     end

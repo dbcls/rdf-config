@@ -1,0 +1,23 @@
+DruMAPCompound:
+  - source("compounds_subset.csv")
+  - $id: csv("id")
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/compound/$id"
+  - objects:
+    - drumap_compound_id: $id
+    - drumap_compound_label: $id
+    - drumap_compound_property:
+      - csv("compound_property_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/compound_property/")
+    - drumap_compound_formula: csv("formula")
+    - drumap_compound_salt: csv("salt")
+    - drumap_compound_charge: csv("charge")
+    - drumap_compound_enantiomer: csv("enantiomer")
+    - drumap_compound_mol_weight: csv("mol_weight")
+    - drumap_compound_mol_weight_precision: csv("mol_weight_precision")
+    - drumap_compound_visible: csv("visible")
+    - drumap_compound_smiles: csv("smiles")
+    - drumap_compound_mol: csv("mol")
+    - drumap_compound_torsionbv: csv("torsionbv")
+    - drumap_compound_mfp2: csv("mfp2")
+    - drumap_compound_ffp2: csv("ffp2")

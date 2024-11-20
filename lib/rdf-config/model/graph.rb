@@ -159,7 +159,7 @@ class RDFConfig
       end
 
       def validate_predicate(predicate)
-        if predicate.rdf_type?
+        if predicate.rdf_type? && predicate.objects.first.is_a?(Model::URI)
           validate_rdf_type_predicate(predicate)
         else
           validate_non_rdf_type_predicate(predicate)
@@ -177,6 +177,8 @@ class RDFConfig
           when 'NO_PREFIX'
             add_error("Prefix (#{prefix}) used in rdf:type (#{uri}) but not defined in prefix.yaml file.")
           end
+
+          validate_object_example(object)
         end
       end
 
@@ -204,6 +206,7 @@ class RDFConfig
                           object.name
                         end
           validate_object_name(object_name) if object_name.is_a?(String) && !object_name.empty?
+          validate_object_example(object)
         end
       end
 
@@ -229,7 +232,25 @@ class RDFConfig
         end
       end
 
+      def validate_object_example(object)
+        return unless object.is_a?(Model::ValueList)
+
+        uris = object.values.select(&:uri?)
+        literals = object.values.select(&:literal?)
+        return if uris.empty? || literals.empty?
+
+        message = [
+          "Example values of different data types are set for object (#{object.name}) in model.yaml.",
+          "  * URI:     #{uris.map { |uri| uri.subject? ? uri.name : uri.value }.join(', ')}",
+          "  * Literal: #{literals.map(&:value).join(', ')}"
+        ]
+        add_warning(message.join("\n"))
+      end
+
       def validate_uri(uri)
+        return ['BNODE'] if uri.to_s == '[]'
+        return ['VALID'] if uri.to_s == 'a'
+
         if /\A<.+>\z/ =~ uri
           ['VALID']
         else

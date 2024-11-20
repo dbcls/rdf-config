@@ -1,0 +1,25 @@
+DruMAPAssay:
+  - source("assays_subset.csv")
+  - $id: csv("id")
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/assay/$id"
+  - objects:
+    - drumap_assay_id: $id
+    - drumap_assay: "Assay:$id"
+    - drumap_assay_paramater_type:
+      - csv("parameter_type_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/parameter_type/")
+    - drumap_assay_type:
+      - csv("assay_type_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/assay_type/")
+    - drumap_assay_animal:
+      - csv("assay_animal_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/assay_animal/")
+    - drumap_assay_tissue:
+      - csv("assay_tissue_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/assay_tissue/")
+    - drumap_assay_molecule:
+      - csv("assay_molecule_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/assay_molecule/")
+    - drumap_assay_source: csv("source")
+    - drumap_assay_description: csv("description")

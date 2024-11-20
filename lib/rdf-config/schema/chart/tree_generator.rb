@@ -79,7 +79,7 @@ class RDFConfig
                 @schema_subject_names << variable_name
                 @schema_object_names[variable_name] = []
                 subject = @model.find_subject(variable_name)
-                subject.predicates.each do |predicate|
+                subject.predicates(reject_rdf_type_variable: true).each do |predicate|
                   next if predicate.rdf_type?
 
                   predicate.objects.each do |object|
@@ -125,10 +125,10 @@ class RDFConfig
             return
           end
 
-          subject.predicates.each do |predicate|
+          subject.predicates(reject_rdf_type_variable: true).each do |predicate|
             predicate.objects.each do |object|
               if @variables.empty?
-                generate_predicate_object(predicate, object)
+                generate_predicate_objects(predicate, object)
               else
                 next unless @schema_subject_names.include?(subject.name)
 
@@ -138,7 +138,7 @@ class RDFConfig
                                 object.name
                               end
                 if predicate.rdf_type? || @schema_object_names[subject.name].include?(object_name)
-                  generate_predicate_object(predicate, object)
+                  generate_predicate_objects(predicate, object)
                 end
               end
             end
@@ -169,12 +169,29 @@ class RDFConfig
           end
         end
 
+        def generate_predicate_objects(predicate, object)
+          object.instances.each do |object_instance|
+            generate_predicate_object(predicate, object_instance)
+          end
+        end
+
         def generate_predicate_object(predicate, object)
           @current_pos.y = @element_pos[object].last.y + (RECT_HEIGHT + MARGIN_RECT) if loop_to_subject?(object)
+          move_to_predicate
+          generate_predicate(predicate, loop_to_subject?(object))
 
-          value = object.value
+          # move object position after generating predicate
+          @current_pos.x += PREDICATE_AREA_WIDTH
+          generate_object(predicate, object)
+          # end
 
-          case value
+          move_to_next_object
+        end
+
+        def generate_predicate_object_old(predicate, object)
+          @current_pos.y = @element_pos[object].last.y + (RECT_HEIGHT + MARGIN_RECT) if loop_to_subject?(object)
+
+          case instances
           when Array
             value.each do |object_value|
               generate_predicate_object(predicate, object_value)

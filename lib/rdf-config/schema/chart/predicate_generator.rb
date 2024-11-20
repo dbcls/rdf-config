@@ -38,10 +38,10 @@ class RDFConfig
         end
 
         def generate_text
-          predicate_text = if @predicate.cardinality
-                             "#{@predicate.uri} #{@predicate.cardinality.label}"
-                           else
+          predicate_text = if @predicate.quantifier.empty?
                              @predicate.uri
+                           else
+                             "#{@predicate.uri} #{@predicate.cardinality.quantifier}"
                            end
 
           text = REXML::Element.new('text')

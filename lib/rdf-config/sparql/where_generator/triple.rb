@@ -15,7 +15,7 @@ class RDFConfig
         end
 
         def rdf_type?
-          %w[a rdf:type].include?(@predicates.first.uri)
+          Model::Predicate.rdf_type?(@predicates.last.uri)
         end
 
         def to_sparql(**opts)
@@ -29,16 +29,21 @@ class RDFConfig
                    "#{left_indent}#{indent * 2}"
                  end
           line = if rdf_type?
-                   if object.has_one_rdf_type?
-                     "#{line}a #{object.rdf_type}"
-                   else
-                     "#{line}a #{object.rdf_type_varname}"
-                   end
+                   rdf_type_line(line, **opts)
                  else
                    "#{line}#{property_path} #{object.to_sparql(**opts)}"
                  end
 
           "#{line} #{is_last_triple ? '.' : ';'}"
+        end
+
+        def rdf_type_line(line, **opts)
+          sparql_variable = subject.name == object.name ? object.rdf_type_varname : object.to_sparql(**opts)
+          if object.has_one_rdf_type?
+            "#{line}a #{object.rdf_type}"
+          else
+            "#{line}a #{sparql_variable}"
+          end
         end
 
         def required?

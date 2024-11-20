@@ -1,8 +1,13 @@
 # frozen_string_literal: true
 
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
 gemspec
 
-gem "rexml"
+gem 'parslet'
+gem 'rdf'
+gem 'rdf-turtle'
+gem 'rdf-xsd'
+gem 'rexml'
 
+#gem 'rubocop'

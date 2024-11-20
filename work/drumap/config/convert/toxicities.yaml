@@ -1,0 +1,13 @@
+DruMAPToxicity:
+  - source("toxicities_subset.csv")
+  - $id: csv("id")
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/toxicity/$id"
+  - objects:
+    - drumap_toxicity_id: $id
+    - drumap_toxicity: csv("name")
+    - drumap_toxicity_compound:
+      - csv("compound_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/compound/")
+    - drumap_toxicity_type: csv("type")
+    - drumap_toxicity_url: csv("url")

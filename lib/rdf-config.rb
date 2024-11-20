@@ -16,6 +16,7 @@ require_relative 'rdf-config/schema/senbero'
 require_relative 'rdf-config/schema/chart'
 require_relative 'rdf-config/grasp'
 require_relative 'rdf-config/shex'
+require_relative 'rdf-config/convert'
 
 class RDFConfig
   def initialize(opts = {})
@@ -47,6 +48,8 @@ class RDFConfig
       generate_grasp
     when :shex
       generate_shex
+    when :convert
+      convert
     end
   end
 
@@ -108,5 +111,10 @@ class RDFConfig
     shex = Shex.new(@config)
     puts shex.generate
     shex.print_warnings
+  end
+
+  def convert
+    convert = Convert.new(@config, @opts)
+    convert.generate
   end
 end

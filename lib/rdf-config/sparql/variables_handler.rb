@@ -21,7 +21,11 @@ class RDFConfig
       end
 
       def variables_for_select
-        refine_variables(visible_variables)
+        if query?
+          sort_variable_names_by_query_opts(refine_variables(visible_variables))
+        else
+          refine_variables(visible_variables)
+        end
       end
 
       def variables_for_where
@@ -117,15 +121,7 @@ class RDFConfig
       private
 
       def parse_query_opts(query_opts)
-        return if query_opts.nil?
-
-        @opts[:query] = if query_opts.is_a?(Array)
-                          query_opts
-                        else
-                          [query_opts]
-                        end
-
-        @opts[:query].each do |var_val|
+        Array(query_opts).each do |var_val|
           variable, value = var_val.split('=', 2)
           config_name, variable_name = variable.split(':')
           if variable_name.nil?
@@ -135,13 +131,21 @@ class RDFConfig
             variable = variable_name
           end
 
+          @variable_names_by_query_opts << [config_name, variable].join(':')
           if value.nil?
             @variables_by_query_opts[config_name] = [] unless @variables_by_query_opts.key?(config_name)
             @variables_by_query_opts[config_name] << variable
           else
             @parameters_by_query_opts[config_name] = {} unless @parameters_by_query_opts.key?(config_name)
-            @parameters_by_query_opts[config_name][variable] = value
+            @parameters_by_query_opts[config_name][variable] = [] unless @parameters_by_query_opts[config_name].key?(variable)
+            @parameters_by_query_opts[config_name][variable] << value
           end
+        end
+
+        @variable_names_by_query_opts.uniq!
+        @variables_by_query_opts.each_key.map { |config_name| @variables_by_query_opts[config_name].uniq! }
+        @parameters_by_query_opts.each_key.map do |config_name|
+          @parameters_by_query_opts[config_name].each_key { |variable| @parameters_by_query_opts[config_name][variable].uniq! }
         end
       end
 
@@ -181,6 +185,29 @@ class RDFConfig
         prefix = "#{config.name}:"
 
         @opts[:query].select { |query| query.start_with?(prefix) }.map { |query| query[prefix.length..-1] }
+      end
+
+      def sort_variable_names_by_query_opts(variable_names, config_name: nil)
+        if config_name.nil?
+          config_name = @config.name
+        end
+
+        config_name_prefix = "#{config_name}:"
+        query_option_variable_names = @variable_names_by_query_opts.select do |variable_name|
+          variable_name.start_with?(config_name_prefix)
+        end.map { |variable_name| variable_name[config_name_prefix.length..-1] }
+
+        variable_names.sort do |v1, v2|
+          v1_index = query_option_variable_names.index(v1)
+          v2_index = query_option_variable_names.index(v2)
+          if v1_index.nil?
+            1
+          elsif v2_index.nil?
+            -1
+          else
+            v1_index <=> v2_index
+          end
+        end
       end
 
       def join?
@@ -224,6 +251,7 @@ class RDFConfig
           @parameters_by_config = {}
         end
 
+        @variable_names_by_query_opts = []
         @variables_by_query_opts = {}
         @parameters_by_query_opts = {}
         @configs.each do |config|
@@ -234,7 +262,7 @@ class RDFConfig
         @variables = {}
         @variables_for_where = {}
 
-        parse_query_opts(opts[:query])
+        parse_query_opts(opts[:query]) if query?
         set_variables
       end
     end

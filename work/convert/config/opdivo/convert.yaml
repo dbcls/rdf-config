@@ -1,0 +1,27 @@
+PackageInsert:
+  - root("/PackIns")
+  - xml("PackageInsertNo/text()")
+  - prepend("http://med2rdf.org/pi/")
+  - variables:
+    - company_identifier: xml("CompanyIdentifier/text()")
+    - date_of_preparation_or_revision:
+      - xml('DateOfPreparationOrRevision/PreparationOrRevision[@id="今回"]/YearMonth/text()')
+      - datatype("xsd:gYearMonth")
+    - sccj_no: xml("Sccj/SccjNo/text()")
+    - []:
+      - root("ApprovalEtc/DetailBrandName")
+      - variables:
+        - approval_brand_name:
+          - xml("ApprovalBrandName/Lang/text()")
+          - $lang: xml("@xml:lang")
+          - lang($lang)
+        - approval_no:
+          - xml("BrandCode/YJCode/text()")
+
+Item:
+  - root("/PackIns/AdverseEvents/SeriousAdverseEvents/SeriousAdverse/OrderedList/Item")
+  - xml("@id")
+  - prepend("http://med2rdf.org/pi/")
+  - variables:
+    - title: xml("Header/Lang/text()")
+    - description: xml("Detail/Lang/text()")

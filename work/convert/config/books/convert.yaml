@@ -1,0 +1,12 @@
+Book:
+  - root("/catalog/book")
+  - xml("@id")
+  - prepend("http://example.org/")
+  - variables:
+    - id: xml("@id")
+    - title: xml("title/text()")
+    - author: xml("author/text()")
+    - genre: xml("genre/text()")
+    - price: xml("price/text()")
+    - publish_date: xml("publish_date/text()")
+    - description: xml("description/text()")

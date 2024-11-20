@@ -1,0 +1,8 @@
+DruMAPAssayType:
+  - source("assay_types.csv")
+  - $id: csv("id")
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/assay_type/$id"
+  - objects:
+    - drumap_assay_type_id: $id
+    - drumap_assay_type_label: csv("name")

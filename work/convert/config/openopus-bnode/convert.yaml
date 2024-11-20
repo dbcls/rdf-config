@@ -1,0 +1,18 @@
+Composer:
+  - root("composers")
+  - json(".name")
+  - prepend("http://hoge.org/openopus/composer/")
+  - variables:
+    - complete_name: json(".complete_name")
+    - epoch: json(".epoch")
+    - birth: json(".birth")
+    - death: json(".death")
+    - []:
+      - root(".works")
+      - variables:
+        - title: json(".title")
+        - subtitle: json(".subtitle")
+        - genre: json(".genre")
+        - recommended:
+          - json(".recommended")
+          - to_bool

@@ -7,7 +7,7 @@ class RDFConfig
         super
       end
 
-      def type
+      def instance_type
         case @value
         when Integer
           'Int'
@@ -22,6 +22,10 @@ class RDFConfig
         end
       end
 
+      def uri?
+        false
+      end
+
       def literal?
         true
       end
@@ -34,7 +38,7 @@ class RDFConfig
         /\A".*"\^\^.+\z/ =~ @value.to_s.strip
       end
 
-      def rdf_data_type
+      def shex_data_type
         case @value
         when String
           if /\^\^(?<prefix>\w+)\:(?<local_part>.+)\z/ =~ value

@@ -19,7 +19,7 @@ class RDFConfig
           else
             s = '#            '
           end
-          lines << "#{s}#{variable_name}: (example: #{value})"
+          lines << "#{s}#{variable_name}: (example: #{Array(value).join(' ')})"
         end
         lines << ''
 

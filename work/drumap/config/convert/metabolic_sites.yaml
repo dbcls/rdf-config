@@ -1,0 +1,17 @@
+DruMAPMetabolicSite:
+  - source("metabolic_sites_subset.csv")
+  - $id: csv("id")
+  - subject:
+    - "https://drumap.nibiohn.go.jp/rdf/metabolic_site/$id"
+  - objects:
+    - drumap_metabolic_site_id: $id
+    - drumap_metabolic_site: "drumapMetabolicSite:$id"
+    - drumap_metabolic_site_assay:
+      - csv("assay_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/assay/")
+    - drumap_metabolic_site_compound:
+      - csv("compound_id")
+      - prepend("https://drumap.nibiohn.go.jp/rdf/compound/")
+    - drumap_metabolic_site_order: csv("order")
+    - drumap_metabolic_site_position: csv("position")
+    - drumap_metabolic_site_score: csv("score")
