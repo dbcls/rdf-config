@@ -1,37 +1,175 @@
-- ClinVarAnnotaions clinvar:209597:
+- Clinvar clinvar:209597:
   - a: cvo:VariationArchiveType
-  - rdfs:label:
-    - title: NM_000059.3(BRCA2):c.-764A>G
   - cvo:accession:
-    - vcv: VCV000209597
-  - cvo:interpreted_record:
+    - vcv: "VCV000209597"
+  - cvo:classified_record?:
     - []:
-      - cvo:review_status:
-        - review_status: reviewed by expert panel
+      - a: cvo:ClassifiedRecord
       - cvo:rcv_list:
         - []:
-          - cvo:rcv_accession:
+          - a: cvo:RCVList
+          - cvo:rcv_accession+:
             - []:
-              - cvo:interpretation:
-                - interpretation: Benign
-              - cvo:date_last_evaluated:
-                - last_evaluated: 2015-01-12
-              - cvo:interpreted_condition:
+              - a: cvo:TypeRCV
+              - cvo:accession:
+                - rcv_accession: "RCV000191543"
+              - cvo:classified_condition_list:
                 - []:
-                  - cvo:type_rcv_interpreted_condition:
-                    - condition: Breast-ovarian cancer, familial 2
-                  - cvo:db*:
-                    - db: MedGen
-                  - cvo:id*:
-                    - id: C2675520
-      - cvo:simple_allele:
+                  - a: cvo:ClassifiedConditionList
+                  - cvo:classified_condition+:
+                    - []:
+                      - a: med2rdf:Disease
+                      - dct:identifier?:
+                        - disease_id: "C2675520"
+                      - dct:references*:
+                        - disease_reference: medgen:C2675520
+                      - dct:source?:
+                        - disease_source: "MedGen"
+                      - rdfs:label?:
+                        - disease_label: "Breast-ovarian cancer, familial, susceptibility to, 2"
+                  - cvo:trait_set_id:
+                    - trait_set_id: 2560
+              - cvo:rcv_classifications:
+                - []:
+                  - a: cvo:RCVClassifications
+                  - cvo:germline_classification?:
+                    - []:
+                      - a: cvo:GermlineClassification
+                      - cvo:description?:
+                        - []:
+                          - a: cvo:Description
+                          - cvo:date_last_evaluated?:
+                            - rcv_date_last_evaluated: 2015-01-12
+                          - cvo:description:
+                            - interpretation: "Benign"
+                          - cvo:submission_count:
+                            - rcv_submission_count: 1
+                      - cvo:review_status?:
+                        - rcv_review_status: "reviewed by expert panel"
+              - cvo:title:
+                - rcv_title: "NM_000059.3(BRCA2):c.-764A>G AND Breast-ovarian cancer, familial, susceptibility to, 2"
+              - cvo:version:
+                - rcv_version: 10
+              - dct:identifier:
+                - rcv_id: "RCV000191543"
+      - sio:SIO_000628*: # refers to
         - []:
-          - cvo:location:
+          - a: cvo:TypeAllele
+          - faldo:location*:
             - []:
-              - faldo:location:
-                - []:
-                  - a: ["faldo:ExactPosition", "cvo:SequenceLocation"]
-                  - faldo:position:
-                    - position: "32889080"
-                  - faldo:reference:
-                    - reference: <http://identifiers.org/hco/13#GRCh37>, <http://identifiers.org/refseq/NC_000013.10>
+              - a: faldo:ExactPosition
+              - faldo:position?:
+                - position: 32889080
+              - faldo:reference*:
+                - reference: hco:13\#GRCh37
+              - cvo:accession?:
+                - refseq: "NC_000013.10"
+              - cvo:assembly?:
+                - assembly: "GRCh37"
+              - cvo:assembly_accession_version?:
+                - assembly_accession_version: "GCF_000001405.25"
+              - cvo:assembly_status?:
+                - assembly_status: "previous"
+              - cvo:chr?:
+                - chromosome: "13"
+              - cvo:variant_length?:
+                - variant_length: 1
+              - rdfs:label?:
+                - exact_position_bnode_label: "13:32889080:GRCh37"
+          - med2rdf:alternative_allele*:
+            - alternative_allele: "G"
+          - med2rdf:gene*:
+            - ncbigene: Ncbigene
+          - med2rdf:reference_allele*:
+            - reference_allele: "A"
+          - cvo:allele_frequency*:
+            - []:
+              - a: cvo:AlleleFrequency
+          - cvo:allele_id?:
+            - allele_id: 205807
+          - cvo:canonical_spdi?:
+            - spdi: "NC_000013.11:32314942:A:G"
+          - cvo:cytogenetic_location*:
+            - variant_location: "13q13.1"
+          - cvo:global_minor_allele_frequency?:
+            - []:
+              - a: cvo:GlobalMinorAlleleFrequency
+              - cvo:minor_allele?:
+                - minor_allele: "G"
+              - cvo:source:
+                - frequency_source: "1000 Genomes Project"
+              - cvo:value:
+                - frequency: "+0.04014"
+  - cvo:date_created:
+    - date_created: 2015-09-29
+  - cvo:date_last_updated:
+    - date_last_updated: 2024-11-03
+  - cvo:most_recent_submission?:
+    - most_recent_submission: 2015-09-29
+  - cvo:number_of_submissions:
+    - number_of_submissions: 1
+  - cvo:number_of_submitters:
+    - number_of_submitters: 1
+  - cvo:record_status:
+    - recode_status: "current"
+  - cvo:record_type:
+    - record_type: "classified"
+  - cvo:species:
+    - species: "Homo sapiens"
+  - cvo:variation_id:
+    - id: 209597
+  - cvo:variation_name:
+    - name: "NM_000059.3(BRCA2):c.-764A>G"
+  - cvo:variation_type:
+    - type: "single nucleotide variant"
+  - cvo:version:
+    - version: 3
+  - dct:created:
+    - create_date: "2015-09-29"
+  - dct:modified:
+    - midified_date: "2024-11-03"
+  - rdfs:label:
+    - label: "NM_000059.3(BRCA2):c.-764A>G"
+
+- Ncbigene ncbigene:106721785:
+  - a: cvo:Gene
+  - faldo:location*:
+    - []:
+      - a: faldo:Region
+      - faldo:begin*:
+        - []:
+          - a: faldo:ExactPosition
+          - faldo:position?:
+            - gene_begin: 32314559
+      - faldo:end*:
+        - []:
+          - a: faldo:ExactPosition
+          - faldo:position?:
+            - gene_end: 32315789
+      - cvo:accession*:
+        - chromosome_accession: "NC_000013.11"
+      - cvo:assembly:
+        - gene_assembly: "GRCh38"
+      - cvo:assembly_accession_version?:
+        - gene_assembly_accession: "GCF_000001405.38"
+      - cvo:assembly_status?:
+        - gene_assembly_status: "current"
+      - cvo:chr:
+        - gene_chromosome: "13"
+      - cvo:strand?:
+        - gene_strand: "+"
+  - cvo:cytogenetic_location*:
+    - gene_location: "13q13.1"
+  - cvo:full_name*:
+    - gene_name: "BRCA2 promoter/silencer region"
+  - cvo:gene_id?:
+    - ncbigene_id: 106721785
+  - cvo:relationship_type*:
+    - relationship_type: "genes overlapped by variant"
+  - cvo:source*:
+    - source: "calculated"
+  - cvo:symbol*:
+    - symbol: "LOC106721785"
+  - rdfs:seeAlso:
+    - hgnc hgnc:20444
+

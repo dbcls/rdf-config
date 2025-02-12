@@ -1,4 +1,4 @@
-- ChebiMolecule obo:CHEBI_17232:
+- ChebiMolecule obo:CHEBI_35213:
   - a: owl:Class
   - rdfs:subClassOf+:
     - subclassof: ChebiMolecule
@@ -22,25 +22,25 @@
 #      - owl:annotatedTarget:
 #        - axiom_annotated_target: "CAS:21008-67-3"   # "(+)-Atherospermoline", "PMID:25111086"
   - rdfs:label:
-    - label: "L-glutamic 5-semialdehyde"
+    - label: "PG(14:1(9Z)/18:3(9Z,12Z,15Z))"
   - oboinowl:hasOBONamespace:
     - has_obo_namespace: "chebi_ontology"
   - oboinowl:hasAlternativeId*:
     - has_alternative_id: "CHEBI:13109"
   - oboinowl:hasDbXref*:
-    - molecule_has_db_xref: "KEGG:C01165"
+    - molecule_has_db_xref: "LIPID_MAPS_instance:LMST03010014"
   - oboinowl:hasExactSynonym*:
     - has_exact_synonym: "(2S)-2-amino-5-oxopentanoic acid"
   - oboinowl:hasRelatedSynonym*:
-    - has_related_synonym: "5-oxo-L-norvaline"
+    - has_related_synonym: "alpha-L-Fuc-(1->2)-beta-D-Gal-(1->3)-alpha-D-GalNAc-yl group"
   - oboinowl:id:
-    - id: "CHEBI:17232"
+    - id: "CHEBI:201963"
   - oboinowl:inSubset?:
-    - in_subset: obo:chebi#3_STAR    #3_STAR: manually curated by ChEBI
+    - in_subset: AnnotationProperty #3_STAR: manually curated by ChEBI
   - owl:deprecated?:
-    - deprecated: 1
+    - deprecated: "true"
   - obo:IAO_0000115?:
-    - definition: "A glutamic semialdehyde arising from formal reduction of the side-chain carboxy group of L-glutamic acid."
+    - definition: "A 1,2-diacyl-sn-glycero-3-phosphoethanolamine in which the 1- and 2-acyl groups are specified as octadecanoyl and (7Z,10Z,13Z,16Z)-docosatetraenoyl respectively."
   - obo:IAO_0000231?:   # has obsolescence reason
     - has_obsolescence_reason: obo:IAO_0000227   # terms merged
   - obo:IAO_0100001?:   # term replaced by
@@ -48,37 +48,46 @@
   - obochebi:charge?:
     - charge: "0"
   - obochebi:formula*:
-    - formula: "C5H9NO3"
+    - formula: "CH6N4S"
   - obochebi:inchi?:
-    - inchi: "InChI=1S/C5H9NO3/c6-4(5(8)9)2-1-3-7/h3-4H,1-2,6H2,(H,8,9)/t4-/m0/s1"
+    - inchi: "InChI=1S/C21H29N3O2/c1-22-11-21(12-24(13-21)9-14-4-5-14)19-16-7-6-15(26-3)8-17(16)23(2)20(19)18(22)10-25/h6-8,14,18,25H,4-5,9-13H2,1-3H3/t18-/m1/s1"
   - obochebi:inchikey?:
-    - inchikey: "KABXUUFDPUOJMW-BYPYZUCNSA-N"
+    - inchikey: "HZPQKTICJQVCSW-YLJNVRNNSA-J"
   - obochebi:mass*:
-    - mass: "131.12990"
-  - obochebi:monoisotopicmass?:
-    - monoisotopicmass: "131.05824"
+    - mass: "246.259"
+  - obochebi:monoisotopicmass*:
+    - monoisotopicmass: "473.25259"
   - obochebi:smiles?:
-    - smiles: "[H]C(=O)CC[C@H](N)C(O)=O"
+    - smiles: "CCCCCCCC(C(O)=O)C(O)=O"
+
+- AnnotationProperty obo:chebi#3_STAR:
+  - a: owl:AnnotationProperty
+  - rdfs:label?:
+    - annotation_property: "has_obo_namespace"
+  - rdfs:subPropertyOf?:
+    - annotation_propertyof: AnnotationProperty
+  - rdfs:comment?:
+    - annotation_comment: "Annotated by 3rd party"
 
 - ObjectProperty obochebi_sha:has_major_microspecies_at_pH_7_3:   # obochebi_sha:has_functional_parent, obochebi_sha:has_parent_hydride, obochebi_sha:is_conjugate_acid_of, obochebi_sha:is_conjugate_base_of, obochebi_sha:is_enantiomer_of, obochebi_sha:is_substituent_group_from, obochebi_sha:is_tautomer_of, obo:BFO_0000051, obo:RO_0000087
   - a: owl:ObjectProperty
   - a?: owl:TransitiveProperty
-  - owl:inverseOf*:
-    - object_property_inverse_of: obochebi_sha:is_conjugate_base_of
+  - owl:inverseOf?:
+    - object_property_inverse_of: ObjectProperty
   - rdfs:label:
-    - object_property_label: "has major microspecies at pH 7.3"
+    - object_property_label: "has functional parent"
   - oboinowl:hasOBONamespace:
     - object_property_has_obo_namespace: "chebi_ontology"
-  - oboinowl:hasDbXref*:
+  - oboinowl:hasDbXref?:
     - object_property_has_db_xref: "BFO:0000051"   # "RO:0000087"
   - oboinowl:id:
-    - object_property_id: "has_major_microspecies_at_pH_7_3"
+    - object_property_id: "is_enantiomer_of"
   - oboinowl:is_cyclic:
-    - object_property_is_cyclic: 1   # 0
+    - object_property_is_cyclic: "true"   # 0
   - oboinowl:is_transitive?:
-    - object_property_is_transitive: 0
+    - object_property_is_transitive: "false"
   - oboinowl:shorthand?:
-    - object_property_shorthand: "has_part"
+    - object_property_shorthand: "has_role"
     
 - AnnotationProperty oboinowl:hasOBONamespace:
   - a: owl:AnnotationProperty
@@ -131,7 +140,7 @@
 - ChebiOwl <http://purl.obolibrary.org/obo/chebi.owl>:
   - a: owl:Ontology
   - oboinowl:date:
-    - chebi_owl_date: "29:03:2021 19:28"
+    - chebi_owl_date: "29:01:2024 14:42"
   - oboinowl:default-namespace:
     - chebi_owl_default_namespace: "chebi_ontology"
   - oboinowl:hasOBOFormatVersion:
@@ -139,23 +148,24 @@
   - oboinowl:saved-by:
     - chebi_owl_saved_by: "chebi"
   - owl:versionIRI:
-    - chebi_owl_version_iri: obo:chebi/198/chebi.owl
+    - chebi_owl_version_iri: obo:chebi/230/chebi.owl
   - rdfs:comment:
-    - chebi_owl_comment: "Author: ChEBI curation team"
+    - chebi_owl_comment: "developed by Michael Ashburner & Pankaj Jaiswal."
 
 - TransitiveProperty obochebi_sha:is_tautomer_of:   # obo:BFO_0000051
   - a: owl:TransitiveProperty
+  - a: owl:ObjectProperty
   - rdfs:label:
     - transitive_property_label: "is tautomer of"   # "has part"
   - oboinowl:hasOBONamespace:
     - transitive_property_has_obo_namespace: "chebi_ontology"
-  - oboinowl:hasDbXref*:
+  - oboinowl:hasDbXref?:
     - transitive_property_has_db_xref: "BFO:0000051"
   - oboinowl:id:
     - transitive_property_id: "is_tautomer_of"   # "has part"
   - oboinowl:is_cyclic:
-    - transitive_property_is_cyclic: 1   # 0
-  - oboinowl:shorthand*:
+    - transitive_property_is_cyclic: "true"   # 0
+  - oboinowl:shorthand?:
     - transitive_property_shorthand: "has_part"
 
 
