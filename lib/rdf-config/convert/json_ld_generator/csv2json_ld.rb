@@ -23,6 +23,11 @@ class RDFConfig
         @type_in_context = false
 
         @context_generator = ContextGenerator.new(@config)
+
+        @check_jsonl_duplicate = false
+        @outputted_jsonl_lines = []
+        @check_node_duplicate = true
+        @print_perline_progress = true
       end
 
       def generate
@@ -30,7 +35,7 @@ class RDFConfig
           @converter.clear_target_rows
           @reader = @convert.file_reader(source: source)
           @subject_names = subject_names
-          generate_graph
+          generate_graph(per_line: false)
           generate_context
         end
 
@@ -43,30 +48,44 @@ class RDFConfig
         puts JSON.generate(@json_ld)
       end
 
-      def generate_json_lines
+      def generate_json_lines(per_line: true)
         @convert.source_subject_map.each do |source, subject_names|
           @converter.clear_target_rows
           @reader = @convert.file_reader(source: source)
           @subject_names = subject_names
-          generate_graph
+          generate_graph(per_line: per_line)
         end
+        return if per_line
 
         refine_nodes
-
-        json_ld_ctx = @config.prefix.transform_values { |uri| uri[1..-2] }
-        @node.each_value do |data_hash|
-          subject_name = data_hash.keys.select { |key| @model.subject?(key) }.first
-          json_ld_ctx =
-            json_ld_ctx.merge(@context_generator.context_for_data_hash(subject_name, data_hash))
-          puts JSON.generate({ '@context' => context_url }.merge(data_hash))
-        end
-
+        json_ld_ctx = output_jsonl_lines(per_line: per_line)
         File.open(context_file, 'w') do |f|
           f.puts JSON.generate({ '@context' => json_ld_ctx })
         end
       end
 
       private
+
+      def output_jsonl_lines(per_line: true)
+        json_ld_ctx = @config.prefix.transform_values { |uri| uri[1..-2] }
+        @node.each_value do |data_hash|
+          subject_name = data_hash.keys.select { |key| @model.subject?(key) }.first
+          json_ld_ctx =
+            json_ld_ctx.merge(@context_generator.context_for_data_hash(subject_name, data_hash))
+          jsonl_line = JSON.generate({ '@context' => context_url }.merge(data_hash))
+
+          if per_line && @check_jsonl_duplicate
+            unless @outputted_jsonl_lines.include?(jsonl_line)
+              puts jsonl_line
+              @outputted_jsonl_lines << jsonl_line
+            end
+          else
+            puts jsonl_line
+          end
+        end
+
+        json_ld_ctx
+      end
 
       def generate_context
         add_prefixes_to_context
@@ -94,11 +113,26 @@ class RDFConfig
         end
       end
 
-      def generate_graph
+      def generate_graph(per_line: true)
+        if @print_perline_progress
+          line_number = 1
+          start_time = Time.now
+        end
         @reader.each_row do |row|
+          @node = {} if per_line
           @converter.push_target_row(row, clear_variable: true)
           generate_by_row(row)
+          if per_line
+            refine_nodes
+            output_jsonl_lines
+          end
           @converter.pop_target_row
+          next unless @print_perline_progress
+
+          end_time = Time.now
+          warn "#{sprintf('%7d', line_number)}: #{sprintf('%.4f', end_time - start_time)}s"
+          start_time = end_time
+          line_number += 1
         end
       end
 
@@ -151,7 +185,7 @@ class RDFConfig
 
       def add_node(key, object_hash)
         object_key = object_hash.keys.first
-        return if @node.key?(key) && @node[key][object_key] == object_hash[object_key]
+        return if @check_node_duplicate && @node.key?(key) && @node[key][object_key] == object_hash[object_key]
 
         node_value = if object_hash[object_key].is_a?(RDF::Literal) && !object_hash[object_key].language.to_s.empty?
                        {

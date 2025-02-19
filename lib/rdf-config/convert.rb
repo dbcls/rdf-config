@@ -57,7 +57,7 @@ class RDFConfig
     def generate
       if JSON_LD_SYMBOLS.include?(@format)
         if @format == 'jsonl'
-          json_ld_generator.generate_json_lines
+          json_ld_generator.generate_json_lines(per_line: true)
         else
           json_ld_generator.generate
         end
