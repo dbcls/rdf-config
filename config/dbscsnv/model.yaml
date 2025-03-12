@@ -1,33 +1,60 @@
-- DbscsnvVariation dbscsnv_variation:grch38_1_924946_A_C:
-  - a: med2rdf:Variation
-  - faldo:location:
-    - grch38_location: dbscsnv_faldo:grch38_1_924946
-  - dcmiterms:identifier:
-    - variation_id: "grch38_1_924946_A_C"
-  - med2rdf:alternative_allele:
-    - alt_allele: "C"
-  - med2rdf:gene:
-    - gene_symbol: dbscsnv_gene:SAMD11 # SAMD11
-  - med2rdf:reference_allele:
-    - ref_allele: "A"
-  - dbscsnv:function:
-    - dbscsnv_function: "."
-  - dbscsnv:grch37:
-    - grch37_location: dbscsnv_variation:grch37_1_860326_A_C
-  - dbscsnv:hasPrediction+:
-    - damage_prediction: DamagePrediction
-  - dbscsnv:region:
-    - gene_region: "UTR5"
+- DbscSNV <http://identifiers.org/hco/1/GRCh38#248914432-C-T>:
+    - a: dbscsnv:DbscSNV
+    - rdfs:label:
+        - variation_label: "1-248914432-C-T"
+    - m2r:reference_allele:
+        - ref_allele: "C"
+    - m2r:alternative_allele:
+        - alt_allele: "T"
+    - faldo:position:
+        - position: 248914432
+    - faldo:reference:
+        - reference: <http://identifiers.org/hco/1/GRCh38>
+    - dbscsnv:damage_prediction*:
+        - damage_prediction:
+            - RandomForest
+            - AdaBoost
+    - dbscsnv:hasEnsembl:
+        - dbscsnv_ensembl: DbscSNVEnsembl
+    - dbscsnv:hasRefSeq:
+        - dbscsnv_refseq: DbscSNVRefSeq
 
-- DamagePrediction dbscsnv_variation:grch38_1_924946_A_C_RandomForest:
-  - a: dbscsnv:DamagePrediction
-  - dbscsnv:algorithm:
-    - dbscsnv_algorithm: dbscsnv_algorithm:RandomForest
-  - sio:SIO_000216:
-    - random_forest_rankscore: RandomForestRankscore
+- DbscSNVEnsembl <http://identifiers.org/hco/1/GRCh38#248914432-C-T-Ensembl>:
+    - a: dbscsnv:Ensembl
+    - dbscsnv:is_ensembl:
+        - is_ensembl: "y"
+    - dbscsnv:ensembl_region:
+        - ensembl_region: "UTR5"
+    - dbscsnv:ensembl_gene:
+        - ensembl_gene_id: "ENSG00000187634"
+    - dbscsnv:ensembl_functional_consequence:
+        - ensembl_functional_consequence: "nonsynonymous SNV"
+    - dbscsnv:ensembl_id_c_change_p_change:
+        - ensembl_id_c_change_p_change: "ENSG00000198400:ENST00000497019:exon11:c.C1115A:p.A372D;"
 
-- RandomForestRankscore dbscsnv_variation:grch38_1_924946_A_C_RandomForest_rankscore:
-  - a: dbscsnv:PredictionRankScore
-  - rdf:value:
-    - score: 0.03
+- DbscSNVRefSeq <http://identifiers.org/hco/1/GRCh38#248914432-C-T-RefSeq>:
+    - a: dbscsnv:RefSeq
+    - dbscsnv:is_refseq:
+        - is_refseq: "n"
+    - dbscsnv:refseq_region:
+        - refseq_region: "upstream"
+    - dbscsnv:refseq_functional_consequence:
+        - refseq_functional_consequence: "nonsynonymous SNV"
+    - dbscsnv:refseq_id_c_change_p_change:
+        - refseq_id_c_change_p_change: "NBPF11:NM_183372:exon10:c.A1148G:p.Y383C;"
+    - dbscsnv:refseq_gene:
+        - refseq_gene: "SAMD11"
 
+- RandomForest <http://identifiers.org/hco/1/GRCh38#248914432-C-T-RandomForest>:
+    - a:
+        - dbscsnv:DamagePrediction
+        - dbscsnv:RandomForest
+    - dbscsnv:score:
+        - random_forest_score: 0.03
+
+- AdaBoost <http://identifiers.org/hco/1/GRCh38#248914432-C-T-AdaBoost>:
+    - a:
+        - dbscsnv:DamagePrediction
+        - dbscsnv:AdaBoost
+    - dbscsnv:score:
+        - ada_boost_score: 0.007645
