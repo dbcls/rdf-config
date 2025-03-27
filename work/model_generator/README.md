@@ -1,0 +1,10 @@
+# 実行方法
+```
+% bundle exec rdf-config --model --input void --output work/model_generator/output /path/to/mesh_void_plus.ttl
+```
+
+senberoで確認
+```
+% bundle exec rdf-config --config work/model_generator/output --senbero
+```
+

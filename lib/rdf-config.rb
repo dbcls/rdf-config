@@ -17,15 +17,19 @@ require_relative 'rdf-config/schema/chart'
 require_relative 'rdf-config/grasp'
 require_relative 'rdf-config/shex'
 require_relative 'rdf-config/convert'
+require_relative 'rdf-config/model_generator'
 
 class RDFConfig
   def initialize(opts = {})
+    @opts = opts
+
+    return if opts[:mode] == :model
+
     @config = if opts[:config_dir].is_a?(Array)
                 opts[:config_dir].map { |config_dir| Config.new(config_dir) }
               else
                 Config.new(opts[:config_dir])
               end
-    @opts = opts
   end
 
   def exec(opts)
@@ -50,6 +54,8 @@ class RDFConfig
       generate_shex
     when :convert
       convert
+    when :model
+      generate_model
     end
   end
 
@@ -116,5 +122,10 @@ class RDFConfig
   def convert
     convert = Convert.new(@config, @opts)
     convert.generate
+  end
+
+  def generate_model
+    model_generator = ModelGenerator.new(**@opts)
+    model_generator.generate
   end
 end
