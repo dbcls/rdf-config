@@ -1,0 +1,32 @@
+- DGIdbInteraction dgidb_interaction:d3ecfd9a-f84c-40f5-a420-eb9584ebd689:
+  - a: dgio:Interaction
+  - dct:identifier:
+    - interaction_id: d3ecfd9a-f84c-40f5-a420-eb9584ebd689
+  - dgio:interactionType?:
+    - interaction_type: inhibitor
+  - dgio:drug:
+    - dgidb_drug: DGIdbDrug
+  - dgio:gene:
+    - dgidb_gene: DGIdbGene
+  - rdfs:seeAlso*:
+    - publication: pubmed:16790752, pubmed:8997246, pubmed:19458366, pubmed:16946442, pubmed:2789998, pubmed:16871118
+
+- DGIdbDrug dgidb_drug:2fd0a527-6acb-4b3e-b845-ddb74fd97896:
+  - a: dgio:Drug
+  - dct:identifier:
+    - drug_id: 2fd0a527-6acb-4b3e-b845-ddb74fd97896
+  - rdfs:label:
+    - drug_name: FOMEPIZOLE
+  - rdfs:seeAlso:
+    - chembl_molecule: chembl_molecule:CHEMBL1308
+
+- DGIdbGene dgidb_gene:0e1f0042-de27-4c19-99eb-d8978e859ef4:
+  - a: dgio:Gene
+  - dct:identifier:
+    - gene_id: 0e1f0042-de27-4c19-99eb-d8978e859ef4
+  - rdfs:label:
+    - gene_name: ADH1A
+  - skos:altLabel:
+    - alternative_name: "ALCOHOL DEHYDROGENASE 1A (CLASS I), ALPHA POLYPEPTIDE"
+  - rdfs:seeAlso:
+    - ncbi_gene: ncbi_gene:124

@@ -1,0 +1,89 @@
+# Ccleのデータ：CCLE_sample_info_file_2012-10-18.txt
+# Ccleの中のブランクノードのデータ：CCLE_DepMap_18q3_maf_20180718.txt
+# この２つのファイルを結びつける方法が未実装
+- Ccle:
+    - source("CCLE_sample_info_file_2012-10-18.txt")
+    - $ccle_name: tsv("CCLE name")
+    # 以下のような書き方ができない：subjectは配列のみ受け付ける？
+    # - subject: "cclec:$ccle_name"
+    # => undefined method `each' for "cclec:$ccle_name":String
+    - subject:
+        - "cclec:$ccle_name"
+    - objects:
+        # ccle_see_alsoはmed2rdfのコンバータではSPARQL検索を実行して取得しているので
+        # RDF-configのconvertでは取得できない
+        - ccle_label: tsv("CCLE name")
+        - hist_primary: tsv("Histology")
+        - hist_secondary: tsv("Hist Subtype1")
+        - site_primary: tsv("Site Primary")
+        - gender:
+            - tsv("Gender")
+            - change_value(["M", "obo:PATO_0000384"], ["F", "obo:PATO_0000383"])
+
+        # [] a m2r:Assay
+        # - assay_gene: ccleg:ENSG00000000003
+        - assay_sample: "cclec:$ccle_name"
+        # - exp_val: 12.26012
+
+- EnsGene:
+    - source("CCLE_DepMap_18q3_RNAseq_RPKM_20180718_head1001.txt")
+    # 以下のような書き方ができない（要調査）: Must construct Source with a string like object. というメッセージが出力される
+    # - $ensembl:
+    #     - tsv("Name")
+    #     - replace(/\.\d+$/, "")
+    - subject:
+        - tsv("Name")
+        - replace(/\.\d+$/, "")
+        - prepend("ccleg:")
+    - objects:
+        - ensg_label: tsv("Description")
+        - ensg_see_also:
+            - tsv("Name")
+            - replace(/\.\d+$/, "")
+            - prepend("http://rdf.ebi.ac.uk/resource/ensembl/")
+
+- EntrezGene:
+    - source("CCLE_DepMap_18q3_maf_20180718_DMS53_LUNG.txt")
+    - $gene: tsv("Hugo_Symbol")
+    - subject:
+        - "ccleg:$gene"
+    - objects:
+        - entrez_gene_label: $gene
+        - entrez_gene_id:
+            - tsv("Entrez_Gene_Id")
+            - skip("0")
+
+- Variation:
+    - source("CCLE_DepMap_18q3_maf_20180718_DMS53_LUNG.txt")
+    - $gene: tsv("Hugo_Symbol")
+    - $chr: tsv("Chromosome")
+    - $ncbi_build: tsv("NCBI_Build")
+    - subject:
+        - "ccleg:$gene"
+    - objects:
+        - variation_label:
+            - tsv("Protein_Change")
+            - replace(/^p\./, "")
+        - alternative_allele: tsv("Tumor_Seq_Allele1")
+        - variant_gene: "ccleg:$gene"
+        - reference_allele: tsv("Reference_Allele")
+        - variant_consequence:
+            - tsv("Variant_Classification")
+            - change_value(["Missense_Mutation", "sio:SO_0001583"], ["Silent", "sio:SO_0001819"], ["Splice_Site", "sio:SO_0001630"], ["De_novo_Start_OutOfFrame", "sio:SO_0001589"], ["Nonsense_Mutation", "sio:SO_0001587"], ["Nonstop_Mutation", "sio:SO_0001578"], ["Start_Codon_SNP", "sio:SO_0002012"])
+        - variant_type: tsv("Variant_Type")
+        - codon_change: tsv("Codon_Change")
+        - dna_change: tsv("cDNA_Change")
+        - protein_change: tsv("Protein_Change")
+
+        # Transcript
+        # ブランクノードはサポートされていない
+        # - variant_transcript_label: tsv("Annotation_Transcript")
+        # - variant_transcript_gene: "ccleg:$gene"
+        # - variant_transcript_see_also:
+        #     - tsv("Annotation_Transcript")
+        #     - replace(/\.\d+$/, "")
+        #     - prepend("transcript:")
+        # - snp_start_pos: tsv("Start_position")
+        - snp_start_reference: "hco:$chr#GRCh$ncbi_build"
+        # - snp_end_pos: tsv("End_position")
+        # - snp_end_reference: "hco:$chr#GRCh$ncbi_build"

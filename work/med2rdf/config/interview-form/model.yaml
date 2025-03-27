@@ -1,0 +1,119 @@
+- InterviewForm <http://med2rdf.org/if/800126_2590014F1021_1_015_1F>:
+  - a: ifo:InterviewForm
+  - dct:identifier:
+    - if_id: "800126_2590014F1021_1_015_1F"
+  - rdfs:seeAlso:
+    - pdf: <https://www.info.pmda.go.jp/go/interview/1/800126_2590014F1021_1_015_1F> .
+  - ifo:package_insert:
+    - package_insert: <http://med2rdf.org/pi/800126_2590014F1021_1_12>
+  - ifo:drug+:
+    - drug: Drug
+  - ifo:section+:
+    - section: Section
+
+- Drug yjc:2590014F1021:
+  - a: ifo:Drug
+  # 名称
+  - ifo:if_0_8:
+    - if_0_8_name: '"ベタニス錠 25mg"@ja'
+  # 剤形
+  - ifo:if_0_9:
+    - if_0_9: '"フィルムコーティング錠"@ja'
+  # 規格・含量
+  - ifo:if_0_11:
+    - if_0_11: '"1 錠中にミラベグロン 25mg を含有する。"@ja'
+  # 製造販売承認年月日
+  - ifo:if_0_13:
+    - if_0_13: '"2011-07-01"^^xsd:date'
+  # 薬価基準収載年月日
+  - ifo:if_0_14:
+    - if_0_14: '"2011-09-12"^^xsd:date'
+  # 販売開始年月日
+  - ifo:if_0_15:
+    - if_0_15: '"2011-09-16"^^xsd:date'
+  # 承認番号
+  - ifo:if_10_8:
+    - if_10_8: "22300AMX00592"
+  # 厚生労働省薬価基準収載医薬品コード
+  - ifo:yakka_code:
+    - yakka_code: "2590014F2028"
+  # 個別医薬品コード(YJコード)
+  - ifo:yj_code:
+    - yj_code: "2590014F2028"
+  # HOT番号
+  - ifo:hot_code:
+    - hot_code: "120933401"
+  # レセプト電算処理システム用コード
+  - ifo:resept_code:
+    - resept_code: "622093301"
+
+- Section if:IF_8_1:
+  - a: ifo:IF_8_1
+  - ifo:package_insert?:
+    - section_pi: pi:PI_1
+  - rdf:value?:
+    - section_text: '"「Ⅴ.治療に関する項目」を参照すること"@ja'
+  - ifo:item*:
+    - section_item: Item
+  - dct:references*:
+    - section_ref: Reference
+  - rdfs:seeAlso*:
+    - section_xref: Section
+
+- Item if:IF_8_1.item1:
+  - a: ifo:Item
+  - ifo:package_insert?:
+    - item_pi: pi:PI_1.item1
+  - dct:identifier:
+    - item_id: "8.1.item1"
+  - rdf:value:
+    - item_text: '"動物実験(ラット)において、..."@ja'
+  - dct:references*:
+    - item_ref: Reference
+  - rdfs:seeAlso*:
+    - item_xref: Section
+
+- Reference if:ref1:
+  - a:
+    - bibo:Article
+    - bibo:BookSection
+    - bibo:Document
+    - bibo:Webpage
+  - dct:references*:
+    - reference: pmid:15971719
+  - ifo:internal_reference_id?:
+    - internal_reference_id: "DIR110060"
+  # bibo:Article, bibo:BookSection
+  - dct:creator*:
+    - author: "Article authors"
+  - prism:publicationName?:
+    - publication: "Journal or Book title"
+  - prism:startingPage?:
+    - start_page: 266
+  - prism:endingPage?:
+    - end_page: 277
+  - dct:issued?:
+    - issued: 2003
+  # bibo:Article
+  - prism:volume?:
+    - volume: 14
+  - prism:number?:
+    - number: 2
+  # bibo:BookSection
+  - bibo:editor*:
+    - editor: "Editor name"
+  - dct:publisher?:
+    - publisher: "Publisher name"
+  # bibo:Document, bibo:Webpage
+  - rdfs:label?:
+    - title: "Article title"
+  # bibo:Document
+  - dct:dateAccepted*:
+    - date_accepted: 2011-07-01
+  - ifo:ctd_number?:
+    - ctd_number: "CTD2.7.6.7"
+  # bibo:Webpage
+  - rdfs:seeAlso*:
+    - reference_xref: <http://example.org/foo/bar.html>
+  - pav:sourceLastAccessedOn:
+    - last_accessed: 2011-07-01

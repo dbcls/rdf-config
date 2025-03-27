@@ -1,0 +1,62 @@
+- Gene:
+    - source("nightly-FeatureSummaries.tsv")
+    - subject:
+        - tsv("feature_id")
+        - prepend("gene:")
+    - objects:
+        - gene_identifier: tsv("feature_id")
+        - gene_label: tsv("name")
+        - ncbigene:
+            - tsv("entrez_id")
+            - prepend("ncbigene:")
+        # - variation:
+
+- Variation:
+    - source("nightly-VariantSummaries.tsv")
+    - subject:
+        - tsv("variant_id")
+        - prepend("variants:")
+    - objects:
+        - variation_identifier: tsv("variant_id")
+        - variation_label: tsv("variant")
+        # variant_originカラムなし
+        # - variant_origin:
+        - reference_build: tsv("reference_build")
+        - transcript_label: tsv("representative_transcript")
+        - ensembl_version: tsv("ensembl_version")
+        # variant_summaryカラムなし
+        # - variation_description:
+        # m2r:disease civic:LymphoidLeukemia,civic:ChronicMyeloidLeukemia,civic:BoneMarrowCancer,civic:PolycythemiaVera
+        # (Disease.disease_code)
+        # - disease:
+        - enst:
+            - tsv("representative_transcript")
+            - replace(/\.\d+$/, "")
+            - prepend("enst:")
+        # frameshift_truncation,dominant_negative_variant
+        # map(lambda x: urllib.parse.quote(x.replace(" ","").replace("/","-"))  , self.variant_types.split(','))
+        - variant_type:
+            - tsv("variant_types")
+            - skip("N/A")
+            - split(",")
+            - prepend("civic:")
+        # Evidenceクラス evidence_idはnightly-ClinicalEvidenceSummaries.tsvファイルにある
+        # => どのように関連付けるか不明
+        # - evidence:
+
+- Evidence:
+    - source("~/Works/DBCLS/med2rdf/civic/data_c/nightly-ClinicalEvidenceSummaries.tsv")
+    - subject:
+        - tsv("evidence_id")
+        - prepend("evidence:")
+    - objects:
+        - evidence_description: tsv("evidence_statement")
+        - clinical_significance: tsv("significance")
+        - evidence_direction: tsv("evidence_direction")
+        - evidence_type: tsv("evidence_type")
+        - rating: tsv("rating")
+        - evidence_level: tsv("evidence_level")
+        - evidence_status: tsv("evidence_status")
+        - citation: tsv("citation")
+        # - pubmed:
+        # - drug:

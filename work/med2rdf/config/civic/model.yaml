@@ -1,0 +1,62 @@
+- Gene gene:10:
+  - a: m2r:Gene
+  - dct:identifier:
+    - gene_identifier: "10"
+  - rdfs:label:
+    - gene_label: "CCND3"
+  - rdfs:seeAlso:
+    - ncbigene: ncbigene:896
+  - m2r:variation:
+    - variation: Variation # LOSS
+
+- Variation variants:23:
+  - a: m2r:Variation
+  - faldo:location:
+    - []:
+      - a: faldo:Region
+  - dct:identifier:
+    - variation_identifier: "23"
+  - rdfs:label:
+    - variation_label: "LOSS"
+  - civico:variantOrigin:
+    - variant_origin: "Somatic"
+  - civico:referenceBuild:
+    - reference_build: "GRCh37"
+  - civico:transcript_label:
+    - transcript_label: "ENST00000372991.4"
+  - civico:ensemblVersion:
+    - ensembl_version: "75"
+  - dct:description:
+    - variation_description: "Cyclin D has been shown in many cancer types to be misregulated. Well established for their oncogenic properties, the cyclins and the cyclin-dependent kinases (CDK's) they activate have been the focus of major research and development efforts over the past decade. The methods by which the cyclins are deregulated are widely variable, and range from genomic amplification to promoter methylation changes. Cyclin D3 loss has been reported in T-cell acute lymphoblastic leukemia (T-ALL), a seemingly unique trend when compared to the amplifcations and overexpressions of the other cyclin D's. Treating cyclin D3 knockout mice with the targeted therapeutic palbociclib significantly increased the median survival of a Notch-driven model of T-ALL."
+  - m2r:disease:
+    - disease: civic:T-cellLeukemia
+  - m2r:transcript:
+    - enst: enst:ENST00000372991
+  - civico:variant_type:
+    - variant_type: civic:loss_of_function_variant
+  - m2r:evidence:
+    - evidence: Evidence
+
+- Evidence evidence:263:
+  - a: m2r:Evidence
+  - dct:description:
+    - evidence_description: "Treatment of Notch-driven T-cell leukemia in Ccnd3 knockout mice with Palbociclib (PD-0332991) significantly increased median survival."
+  - civico:clinicalSignificance:
+    - clinical_significance: "Sensitivity/Response"
+  - civico:evidenceDirection:
+    - evidence_direction: "Supports"
+  - civico:evidenceType:
+    - evidence_type: "Predictive"
+  - civico:rating:
+    - rating: "3.0"
+  - civico:evidenceLevel:
+    - evidence_level: "D"
+  - civico:evidenceStatus:
+    - evidence_status: "accepted"
+  - civico:citation:
+    - citation: "Sawai et al., 2012, Cancer Cell"
+  - dct:references:
+    - pubmed: pubmed:23079656
+  - civico:drug:
+    - drug: civic:drug_Palbociclib
+

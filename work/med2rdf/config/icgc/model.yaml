@@ -1,0 +1,137 @@
+- Mutation mutation:MU10064858:
+  - a: icgc:Mutation
+  - ivocab:mutation+:
+    - effect: Effect
+    - detection: Detection
+  - vocab:assembly_version:
+    - assembly: "GRCh37"
+  - vocab:chromosome:
+    - chr: "8"
+  - vocab:chromosome_end:
+    - start_pos: "145009610"
+  - vocab:chromosome_start:
+    - end_pos: "145009610"
+  - vocab:chromosome_strand:
+    - strand: "1"
+  - vocab:mutated_from_allele:
+    - ref_allele: "A"
+  - vocab:mutated_to_allele:
+    - alt_allele: "G"
+  - vocab:mutation_id:
+    - icgc_mutation_id: "MU10064858"
+  - vocab:mutation_type:
+    - mutation_type: "single base substitution"
+  - vocab:reference_genome_allele:
+    - reference_allele: "A"
+  - dct:identifier+:
+    - identifier_label: "MU10064858"
+  - rdfs:label+:
+    - rdfs_label: "MU10064858"
+
+- Effect effect:MU10064858_ENST00000322810:
+  - a: icgc:Effect
+  - vocab:consequence_type:
+    - consequence: "intron_variant"
+  - vocab:gene_affected:
+    - affected_gene: AffectedGene # ENSG00000178209
+  - vocab:gene_build_version:
+    - build_version: "75"
+  - vocab:transcript_affected:
+    - affected_transcript: "ENST00000322810"
+
+- Detection detection:DO50505_MU10064858_SP111280:
+  - a: icgc:Detection
+  - vocab:alignment_algorithm:
+    - alignment_algorithm: "BWA http://bio-bwa.sourceforge.net/bwa.shtml"
+  - vocab:atched_icgc_sample_id:
+    - sample_id: "SA529243"
+  - vocab:base_calling_algorithm:
+    - base_call_algorithm: "CASAVA http://support.illumina.com/sequencing/sequencing_software/casava.ilmn"
+  - vocab:biological_validation_status:
+    - validation_status: "not tested"
+  - vocab:donor:
+    - detected_donor_id: DonorId # DO50505
+  - vocab:experimental_protocol:
+    - experimental_protocol: "Paired-End http://technology.illumina.com/technology/next-generation-sequencing/paired-end-sequencing_assay.html"
+  - vocab:mutant_allele_read_count:
+    - read_count: "13"
+  - vocab:mutation_id:
+    - mutation_id: "MU10064858"
+  - vocab:platform:
+    - platform: "Illumina HiSeq"
+  - vocab:project:
+    - project: Project
+  - vocab:raw_data_accession:
+    - accession_id: "EGAS00001000855"
+  - vocab:raw_data_repository:
+    - data_repository: "EGA"
+  - vocab:seq_coverage:
+    - sequence_coverage: "35.0"
+  - vocab:sequencing_strategy:
+    - sequencing_method: "WGS"
+  - vocab:specimen_id:
+    - specimen_id: "SP111280"
+  - vocab:submitted_matched_sample_id:
+    - submitted_matched_sample_id: "IC198C_WGS"
+  - vocab:submitted_sample_id:
+    - submitted_sample_id: "IC198T_WGS"
+  - vocab:total_read_count:
+    - total_read_count: "25"
+  - vocab:variation_calling_algorithm:
+    - variant_call_algorithm: "Bambino https://cgwb.nci.nih.gov/goldenPath/bamview/documentation/index.html"
+  - vocab:verification_status:
+    - verification_status: "not tested"
+
+- DonorID donor:DO50505:
+  - a: icgc:Donor
+  - vocab:age_at_diagnosis:
+    - age_at_diagnosis: "9"
+  - vocab:age_at_enrollment:
+    - age_at_enrollment: "9"
+  - vocab:age_at_last_followup:
+    - age_at_last_follow_up: "11"
+  - vocab:diagnosis_icd10:
+    - icd10_code: "C40-C41"
+  - vocab:donor_id:
+    - donor_id: "DO50505"
+  - vocab:interval_of_last_followup:
+    - interval_of_last_followup: "439"
+  - vocab:relapse_interval:
+    - relapse_interval: "330"
+  - vocab:sex:
+    - sex: "male"
+  - vocab:survival_time:
+    - survival_time: "439"
+  - vocab:tumour_stage_at_diagnosis:
+    - tumor_stage_at_diagnosis: "Metastatic stage"
+  - vocab:vital_status:
+    - vital_status: "deceased"
+  - dct:identifier+:
+    - donor_dct_identifier: "DO50505"
+  - rdfs:label+:
+    - donor_rdfs_label: "DO50505"
+
+- Project project:BOCA-FR:
+  - a: icgc:Project
+  - vocab:countries:
+    - country: "France"
+  - vocab:primary_site:
+    - primary_site: "Bone"
+  - vocab:project_code:
+    - project_code: "BOCA-FR"
+  - vocab:project_name:
+    - project_name: "Soft Tissue cancer - Ewing sarcoma - FR"
+  - dct:identifier+:
+    - project_dct_identifer: "BOCA-FR"
+  - rdfs:label+:
+    - project_rdfs_label: "BOCA-FR"
+
+- AffectedGene gene:ENSG00000178209:
+  - a: icgc:Gene
+  - dct:identifier+:
+    - ensemble_gene_id: "ENSG00000178209"
+  - rdfs:label+:
+    - ensembl_gene_id: "ENSG00000178209"
+  - rdfs:seeAlso+:
+    - ensembl: Ensembl
+

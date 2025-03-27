@@ -1,0 +1,134 @@
+- Ccle cclec:DMS53_LUNG:
+    - a: m2r:CellLine
+    - rdfs:label:
+        - ccle_label: DMS53_LUNG
+    - m2r:has_assay:
+        - []:
+            - a: m2r:Assay
+            - m2r:gene:
+                - assay_gene: ccleg:ENSG00000000003
+            - m2r:sample:
+                - assay_sample: cclec:DMS53_LUNG
+            - sio:SIO_000216:
+                - []:
+                    - a: obo:STATO_0000206
+                    - sio:SIO_000300:
+                        - exp_val: 12.26012
+    - m2r:hist_primary:
+        - hist_primary: carcinoma
+    - m2r:hist_secondary:
+        - hist_secondary: hismall_cell_carcinoma
+    - m2r:site_primary:
+        - site_primary: lung
+    # - m2r:variation:
+    #     - []:
+    #         - a: m2r:Variation
+    #         - rdfs:label:
+    #             - variation_label: A378P
+    #         - faldo:location:
+    #             - []:
+    #                 - a: faldo:Region
+    #                 - faldo:begin:
+    #                     -  []:
+    #                         - a: faldo:ExactPosition
+    #                         - faldo:position:
+    #                             - snp_start_pos: 156763504
+    #                         - faldo:reference:
+    #                             -  snp_start_reference: <http://identifiers.org/hco/3#GRCh37>
+    #                 - faldo:end:
+    #                     -  []:
+    #                         - a: faldo:ExactPosition
+    #                         - faldo:position:
+    #                             - snp_end_pos: 156763504
+    #                         - faldo:reference:
+    #                             -  snp_end_reference: <http://identifiers.org/hco/3#GRCh37>
+    #         - m2r:alternative_allele:
+    #             - alternative_allele: C
+    #         - m2r:gene:
+    #             - variant_gene: ccleg:LEKR1
+    #         - m2r:reference_allele:
+    #             - reference_allele: G
+    #         - m2r:transcript:
+    #             - []:
+    #                 - a: m2r:Transcript
+    #                 - rdfs:label:
+    #                     - variant_transcript_label: ENST00000470811.1
+    #                 - m2r:gene:
+    #                     - variant_transcript_gene: ccleg:LEKR1
+    #                 - rdfs:seeAlso:
+    #                     - variant_transcript_see_also: transcript:ENST00000470811
+    #         - m2r:variant_consequence:
+    #             - variant_consequence: sio:SO_0001583
+    #         - m2r:variant_type:
+    #             - variant_type: SNP
+    #         - ccle:codon_change:
+    #             - codon_change: c.(1132-1134)Gct>Cct
+    #         - ccle:dna_change:
+    #             - dna_change: c.1132G>C
+    #         - ccle:protein_change:
+    #             - protein_change: p.A378P
+    - obo:SIO_000223:
+        - gender: obo:PATO_0000384
+    - rdfs:seeAlso:
+        - ccle_see_also: obo:BTO_0005668
+
+- EnsGene ccleg:ENSG00000000003:
+    - a: m2r:Gene
+    - rdfs:label:
+        - ensg_label: TSPAN6
+    - rdfs:seeAlso:
+        - ensg_see_also: <http://rdf.ebi.ac.uk/resource/ensembl/ENSG00000000003>
+
+- EntrezGene ccleg:AAK1:
+    - a: m2r:Gene
+    - rdfs:label:
+        - entrez_gene_label: AAK1
+    - ccle:entrez_id:
+        - entrez_gene_id: 22848
+
+- Variation ccleg:AAK1:
+    - a: m2r:Variation
+    - rdfs:label:
+        - variation_label: A378P
+    - faldo:location:
+        - []:
+            - a: faldo:Region
+            - faldo:begin:
+                -  []:
+                    - a: faldo:ExactPosition
+                    - faldo:position:
+                        - snp_start_pos: 156763504
+                    - faldo:reference:
+                        -  snp_start_reference: <http://identifiers.org/hco/3#GRCh37>
+            - faldo:end:
+                -  []:
+                    - a: faldo:ExactPosition
+                    - faldo:position:
+                        - snp_end_pos: 156763504
+                    - faldo:reference:
+                        -  snp_end_reference: <http://identifiers.org/hco/3#GRCh37>
+    - m2r:alternative_allele:
+        - alternative_allele: C
+    - m2r:gene:
+        - variant_gene: ccleg:LEKR1
+    - m2r:reference_allele:
+        - reference_allele: G
+    - m2r:transcript:
+        - []:
+            - a: m2r:Transcript
+            - rdfs:label:
+                - variant_transcript_label: ENST00000470811.1
+            - m2r:gene:
+                - variant_transcript_gene: ccleg:LEKR1
+            - rdfs:seeAlso:
+                - variant_transcript_see_also: transcript:ENST00000470811
+    - m2r:variant_consequence:
+        - variant_consequence: sio:SO_0001583
+    - m2r:variant_type:
+        - variant_type: SNP
+    - ccle:codon_change:
+        - codon_change: c.(1132-1134)Gct>Cct
+    - ccle:dna_change:
+        - dna_change: c.1132G>C
+    - ccle:protein_change:
+        - protein_change: p.A378P

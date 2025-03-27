@@ -1,0 +1,31 @@
+- CpdbHuman:
+    - source("ConsensusPathDB_human_PPI_2records.tsv")
+    - subject:
+        - tsv("interaction_participants__uniprot_entry")
+        - split(",")
+        - prepend("cpdb:")
+    - objects:
+        - label:
+            - tsv("interaction_participants__uniprot_entry")
+            - split(",")
+        - participant:
+            - tsv("interaction_participants__uniprot_id")
+            - split(",")
+            - prepend("uniprot_id:")
+        - reference:
+            - tsv("interaction_publications")
+            # このsplitはSubjectと１対１対応ではない
+            - split(",")
+            - prepend("pmid:")
+        - data_source:
+            - tsv("source_databases")
+            # このsplitはSubjectと１対１対応ではない
+            - split(",")
+            - downcase
+            - prepend("http://identifiers.org/")
+        - confidence:
+            - tsv("interaction_confidence")
+            - skip("NA")
+        - taxonomy:
+            # Humanなので 9606固定
+            - "taxid:9606"

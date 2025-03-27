@@ -1,0 +1,24 @@
+- HiNT:
+    - source("HomoSapiens_binary_all_head1001.txt")
+    - $uniprot_a: tsv("Uniprot_A")
+    - $uniprot_b: tsv("Uniprot_B")
+    - subject:
+        - "hnt:$uniprot_a-$uniprot_b"
+    - objects:
+        - data_source: "http://identifiers.org/HINT"
+        - display_hame: "$uniprot_a-$uniprot_b"
+        # pmid:method:quality:typeカラムの値 14667819:0018:HT:binary から pint:evidence-pubmed_14667819-MI_0018-high-throughput を生成する
+        # => ":" で分割し、N番目の値を参照する機能が必要 一時的に固定値を出力
+        - evidence: "pint:evidence-pubmed_14667819-MI_0018-high-throughput"
+        - name: "$uniprot_a-$uniprot_b"
+        # pair0, pair1は空白ノードにぶらさがるので現状は正常に生成されない
+        - pair0: "uni:$uniprot_a"
+        - pair1: "uni:$uniprot_b"
+
+        # pmid:method:quality:typeカラム（新フォーマット） 33961781:0007:LC:binary の typeフィールド
+        # 一時的に "binary" 固定で出力
+        - network_variety: str("binary")
+        # pmid:method:quality:typeカラム 33961781:0007:LC:binary の qualityフィールド
+        # => LCならlow, HTならhigh 一時的に "high" 固定で出力
+        # または、high_qualityカラム？
+        - accuracy: str("high")
