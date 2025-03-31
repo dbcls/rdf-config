@@ -1,17 +1,9 @@
-# Ccleのデータ：CCLE_sample_info_file_2012-10-18.txt
-# Ccleの中のブランクノードのデータ：CCLE_DepMap_18q3_maf_20180718.txt
-# この２つのファイルを結びつける方法が未実装
 - Ccle:
     - source("CCLE_sample_info_file_2012-10-18.txt")
     - $ccle_name: tsv("CCLE name")
-    # 以下のような書き方ができない：subjectは配列のみ受け付ける？
-    # - subject: "cclec:$ccle_name"
-    # => undefined method `each' for "cclec:$ccle_name":String
     - subject:
         - "cclec:$ccle_name"
     - objects:
-        # ccle_see_alsoはmed2rdfのコンバータではSPARQL検索を実行して取得しているので
-        # RDF-configのconvertでは取得できない
         - ccle_label: tsv("CCLE name")
         - hist_primary: tsv("Histology")
         - hist_secondary: tsv("Hist Subtype1")
@@ -27,10 +19,6 @@
 
 - EnsGene:
     - source("CCLE_DepMap_18q3_RNAseq_RPKM_20180718_head1001.txt")
-    # 以下のような書き方ができない（要調査）: Must construct Source with a string like object. というメッセージが出力される
-    # - $ensembl:
-    #     - tsv("Name")
-    #     - replace(/\.\d+$/, "")
     - subject:
         - tsv("Name")
         - replace(/\.\d+$/, "")
@@ -76,14 +64,13 @@
         - protein_change: tsv("Protein_Change")
 
         # Transcript
-        # ブランクノードはサポートされていない
-        # - variant_transcript_label: tsv("Annotation_Transcript")
-        # - variant_transcript_gene: "ccleg:$gene"
-        # - variant_transcript_see_also:
-        #     - tsv("Annotation_Transcript")
-        #     - replace(/\.\d+$/, "")
-        #     - prepend("transcript:")
-        # - snp_start_pos: tsv("Start_position")
+        - variant_transcript_label: tsv("Annotation_Transcript")
+        - variant_transcript_gene: "ccleg:$gene"
+        - variant_transcript_see_also:
+            - tsv("Annotation_Transcript")
+            - replace(/\.\d+$/, "")
+            - prepend("transcript:")
+        - snp_start_pos: tsv("Start_position")
         - snp_start_reference: "hco:$chr#GRCh$ncbi_build"
-        # - snp_end_pos: tsv("End_position")
-        # - snp_end_reference: "hco:$chr#GRCh$ncbi_build"
+        - snp_end_pos: tsv("End_position")
+        - snp_end_reference: "hco:$chr#GRCh$ncbi_build"
