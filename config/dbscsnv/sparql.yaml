@@ -1,3 +1,8 @@
 sparql:
   description: SPARQL description.
-  variables: [DbscsnvVariation, damage_prediction, random_forest_rankscore]
+  variables:
+    - DbscSNV
+    - variation_label
+    - refseq_gene
+    - random_forest_score
+    - ada_boost_score

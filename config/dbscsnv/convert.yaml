@@ -1,0 +1,90 @@
+- DbscSNV:
+  - subject:
+    - $chr: tsv("hg38_chr")
+    - $pos: tsv("hg38_pos")
+    - $alt: tsv("alt")
+    - $ref: tsv("ref")
+    - $pra: join($pos, $ref, $alt, "-")
+    - $hco: join("http://identifiers.org/hco/", $chr, "/GRCh38", "")
+    - $var: join($hco, $pra, "#")
+    - $var
+  - objects:
+    - variation_label: join($chr, $pos, $ref, $alt, "-")
+    - alt_allele: $alt
+    - ref_allele: $ref
+    - position: $pos
+    - reference: $hco
+
+- DbscSNVEnsembl:
+  - subject:
+    - "Ensembl"
+    - prepend("$var-")
+  - objects:
+    - is_ensembl:
+      - tsv("Ensembl?")
+      - split(";")
+      - skip(".")
+    - ensembl_region:
+      - tsv("Ensembl_region")
+      - split(";")
+      - skip(".")
+    - ensembl_gene_id:
+      - tsv("Ensembl_gene")
+      - split(";")
+      - skip(".")
+    - ensembl_functional_consequence:
+      - tsv("Ensembl_functional_consequence")
+      - split(";")
+      - skip(".")
+    - ensembl_id_c_change_p_change:
+      - tsv("Ensembl_id_c.change_p.change")
+      - split(";")
+      - skip(".")
+
+- DbscSNVRefSeq:
+  - subject:
+    - "RefSeq"
+    - prepend("$var-")
+  - objects:
+    - is_refseq:
+      - tsv("RefSeq?")
+      - split(";")
+      - skip(".")
+    - refseq_region:
+      - tsv("RefSeq_region")
+      - split(";")
+      - skip(".")
+    - refseq_gene:
+      - tsv("RefSeq_gene")
+      - split(";")
+      - skip(".")
+    - refseq_functional_consequence:
+      - tsv("RefSeq_functional_consequence")
+      - split(";")
+      - skip(".")
+    - refseq_id_c_change_p_change:
+      - tsv("RefSeq_id_c.change_p.change")
+      - split(";")
+      - skip(".")
+
+- RandomForest:
+  - subject:
+    - $var
+    - append("-RandomForest")
+  - objects:
+    - random_forest_score:
+      - tsv("rf_score")
+      - split(";")
+      - skip(".")
+      - to_float
+
+- AdaBoost:
+  - subject:
+    - $var
+    - append("-AdaBoost")
+  - objects:
+    - ada_boost_score:
+      - tsv("ada_score")
+      - split(";")
+      - skip(".")
+      - to_float
