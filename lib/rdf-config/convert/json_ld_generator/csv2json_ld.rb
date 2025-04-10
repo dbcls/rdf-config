@@ -4,6 +4,7 @@ require 'json'
 require_relative '../generator'
 require_relative '../mix_in/convert_util'
 require_relative 'context_generator'
+require_relative 'nest_generator'
 
 class RDFConfig
   class Convert
@@ -22,70 +23,29 @@ class RDFConfig
         @node = {}
         @type_in_context = false
 
-        @context_generator = ContextGenerator.new(@config)
-
         @check_jsonl_duplicate = false
         @outputted_jsonl_lines = []
         @check_node_duplicate = true
         @print_perline_progress = true
+
+        @nest_node = @convert.format.end_with?('nest')
+        @subject_value_map = {}
       end
 
-      def generate
-        @convert.source_subject_map.each do |source, subject_names|
-          @converter.clear_target_rows
-          @reader = @convert.file_reader(source: source)
-          @subject_names = subject_names
-          generate_graph(per_line: false)
-          generate_context
+      def generate(per_line: false)
+        process_all_sources(per_line: per_line)
+        unless per_line
+          refine_nodes
         end
 
-        refine_nodes
-
         # json_data = @node.map { |id, hash| { '@id' => id }.merge(hash) }
-        @json_ld.merge!(data: @node.values)
+        @json_ld.merge!(data: final_nodes)
 
         # puts JSON.pretty_generate(@json_ld)
         puts JSON.generate(@json_ld)
       end
 
-      def generate_json_lines(per_line: true)
-        @convert.source_subject_map.each do |source, subject_names|
-          @converter.clear_target_rows
-          @reader = @convert.file_reader(source: source)
-          @subject_names = subject_names
-          generate_graph(per_line: per_line)
-        end
-        return if per_line
-
-        refine_nodes
-        json_ld_ctx = output_jsonl_lines(per_line: per_line)
-        File.open(context_file, 'w') do |f|
-          f.puts JSON.generate({ '@context' => json_ld_ctx })
-        end
-      end
-
       private
-
-      def output_jsonl_lines(per_line: true)
-        json_ld_ctx = @config.prefix.transform_values { |uri| uri[1..-2] }
-        @node.each_value do |data_hash|
-          subject_name = data_hash.keys.select { |key| @model.subject?(key) }.first
-          json_ld_ctx =
-            json_ld_ctx.merge(@context_generator.context_for_data_hash(subject_name, data_hash))
-          jsonl_line = JSON.generate({ '@context' => context_url }.merge(data_hash))
-
-          if per_line && @check_jsonl_duplicate
-            unless @outputted_jsonl_lines.include?(jsonl_line)
-              puts jsonl_line
-              @outputted_jsonl_lines << jsonl_line
-            end
-          else
-            puts jsonl_line
-          end
-        end
-
-        json_ld_ctx
-      end
 
       def generate_context
         add_prefixes_to_context
@@ -134,6 +94,20 @@ class RDFConfig
           start_time = end_time
           line_number += 1
         end
+      end
+
+      def process_all_sources(per_line: false)
+        @convert.source_subject_map.each do |source, subject_names|
+          process_source(source, subject_names, per_line: per_line)
+        end
+      end
+
+      def process_source(source, subject_names, per_line: false)
+        @converter.clear_target_rows
+        @reader = @convert.file_reader(source: source)
+        @subject_names = subject_names
+        generate_graph(per_line: per_line)
+        generate_context
       end
 
       def generate_subject(subject_name, subject_value)
@@ -247,14 +221,6 @@ class RDFConfig
         end
       end
 
-      def context_file
-        'context.jsonld'
-      end
-
-      def context_url
-        context_file
-      end
-
       def refine_nodes
         remove_subject_uris = rdftype_only_subject_uris
         until remove_subject_uris.empty?
@@ -326,6 +292,15 @@ class RDFConfig
           valid_values.first
         elsif valid_values.size > 1
           valid_values
+        end
+      end
+
+      def final_nodes
+        if @nest_node
+          nest_generator = JsonLdGenerator::NestGenerator.new(@model, @node)
+          nest_generator.generate
+        else
+          @node.values
         end
       end
     end

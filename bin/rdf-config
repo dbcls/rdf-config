@@ -37,7 +37,8 @@ args = GetoptLong.new(
   ['--stanza_rb',       GetoptLong::OPTIONAL_ARGUMENT],
   ['--shex',            GetoptLong::OPTIONAL_ARGUMENT],
   ['--convert',         GetoptLong::OPTIONAL_ARGUMENT],
-  ['--format',          GetoptLong::OPTIONAL_ARGUMENT],
+  ['--context',         GetoptLong::OPTIONAL_ARGUMENT],
+  ['--output',          GetoptLong::OPTIONAL_ARGUMENT],
   ['--debug',           GetoptLong::OPTIONAL_ARGUMENT]
 )
 args.ordering = GetoptLong::RETURN_IN_ORDER
@@ -61,11 +62,18 @@ rescue StandardError
   exit(1)
 end
 
+ONLY_ONE_VALUE_OPTS = %w[--convert --context --output]
+arg_values = []
 opt_values.each do |opt_name, values|
   next if values.empty?
 
   value = if values.size > 1
-            values
+            if ONLY_ONE_VALUE_OPTS.include?(opt_name)
+              arg_values << values[1..]
+              values.first
+            else
+              values
+            end
           else
             values.first
           end
@@ -107,17 +115,24 @@ opt_values.each do |opt_name, values|
     opts[:stanza_name] = value
   when /--shex/
     opts[:mode] = :shex
-  when /--convert/
+  when '--convert'
     opts[:mode] = :convert
-    opts[:convert_source] = value
-  when /--format/
     opts[:format] = value
-  when /--debug/
+  when '--output'
+    opts[:output_path] = value
+  when '--debug'
     debug_mode = true
+  else
+    arg_values << value
   end
 end
+arg_values.flatten!
 
 opts[:mode] = :sparql if opts[:mode].nil? && (opts.key?(:query) || opts.key?(:endpoint_name))
+
+if opts[:mode] == :convert && !arg_values.empty?
+  opts[:convert_source] = arg_values.last
+end
 
 if opts[:config_dir] && opts[:mode]
   begin

@@ -23,9 +23,10 @@ class RDFConfig
     ROOT_MACRO_NAME = 'root'
     SYSTEM_MACRO_NAMES = [SOURCE_MACRO_NAME, ROOT_MACRO_NAME].freeze
     JSON_LD_SYMBOLS = %w[jsonld json-ld json_ld jsonl].freeze
+    JSON_LD_FORMAT_REGEXP = /\A:?jsonld?([\-:]nest)?\z/
 
     attr_reader :source_subject_map, :subject_config, :object_config, :subject_object_map,
-                :convert_method, :macro_names
+                :convert_method, :macro_names, :format, :output_path
 
     def_delegators :@config_parser,
                    :subject_converts, :object_converts, :source_subject_map, :source_format_map, :macro_names,
@@ -33,7 +34,9 @@ class RDFConfig
 
     def initialize(config, opts)
       @config = config
-      @format = opts[:format] || 'rdf'
+      @format = opts[:format] || ':turtle'
+      @output_path = opts[:output_path]
+      @generate_context = %w[:context context].include?(@format)
 
       @config_parser = ConfigParser.new(config, convert_source: opts[:convert_source])
       @config_parser.parse
@@ -55,9 +58,11 @@ class RDFConfig
     end
 
     def generate
-      if JSON_LD_SYMBOLS.include?(@format)
-        if @format == 'jsonl'
-          json_ld_generator.generate_json_lines(per_line: true)
+      if @format =~ JSON_LD_FORMAT_REGEXP || @generate_context
+        if @format =~ /\A:?jsonl([\-:]nest)?\z/
+          json_ld_generator.generate(per_line: true)
+        elsif @generate_context
+          json_ld_generator.generate_context
         else
           json_ld_generator.generate
         end
@@ -114,8 +119,13 @@ class RDFConfig
     def json_ld_generator
       case @source_file_format
       when 'csv', 'tsv'
-        require_relative 'convert/json_ld_generator/csv2json_ld'
-        CSV2JSON_LD.new(@config, self)
+        if @format =~/\A:?jsonl([\-:]nest)?\z/ || @generate_context
+          require_relative 'convert/json_ld_generator/csv2json_lines'
+          CSV2JSON_Lines.new(@config, self)
+        else
+          require_relative 'convert/json_ld_generator/csv2json_ld'
+          CSV2JSON_LD.new(@config, self)
+        end
       end
     end
 

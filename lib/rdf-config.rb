@@ -50,6 +50,8 @@ class RDFConfig
       generate_shex
     when :convert
       convert
+    when :context
+      convert
     end
   end
 
