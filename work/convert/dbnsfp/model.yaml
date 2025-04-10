@@ -1,0 +1,726 @@
+- DbNSFP <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290>:
+  - a: dbnsfp:DbNSFP
+  - m2r:variation:
+    - variation: Variation
+  - m2r:gene:
+    - gene: Gene
+  - m2r:transcript:
+    - transcript: Transcript
+  - m2r:protein:
+    - protein: Protein
+  - rdfs:seeAlso:
+    - dbsnp: "rs1328695176"
+  - dbnsfp:allele_conservation*:
+    - allele_conservation:
+      - PhyloP100wayVertebrate
+      - PhyloP470wayMammalian
+      - PhyloP17wayPrimate
+      - PhastCons100wayVertebrate
+      - PhastCons470wayMammalian
+      - PhastCons17wayPrimate
+      - GERPRs
+      - SiPhy29wayLogodds
+      - BStatistic
+      - Gerp91Mammals
+  - dbnsfp:damage_prediction*:
+    - damage_prediction:
+      - SIFT
+      - SIFT4G
+      - PROVEAN
+      - Polyphen2Hdiv
+      - Polyphen2Hvar
+      - LRT
+      - MutationTaster
+      - MutationAssessor
+      - FATHMM
+      - FathmmMklCoding
+      - FathmmXfCoding
+      - CADD
+      - CADDHg19
+      - CADDPhred
+      - CADDPhredHg19
+      - VEST4
+      - IntegratedFitcons
+      - GM12878Fitcons
+      - H1HescFitcons
+      - HUVECFitcons
+      - LINSIGHT
+      - DANN
+      - MetaLR
+      - MetaSVM
+      - GenoCanyon
+      - EigenRawCoding
+      - EigenPhredCoding
+      - EigenPcRawCoding
+      - EigenPcPhredCoding
+      - MCap
+      - REVEL
+      - MutPred
+      - MVP
+      - MPC
+      - PrimateAI
+      - DEOGEN2
+      - BayesDelAddAF
+      - BayesDelNoAF
+      - ClinPred
+      - LISTS2
+      - MetaRNN
+      - GMVP
+      - VARITYR
+      - VARITYEr
+      - VARITYRLoo
+      - VARITYErLoo
+      - ESM1b
+      - EVE
+      - AlphaMissense
+      - PHACTBoost
+      - MutFormer
+
+- Variation <http://identifiers.org/hco/1/GRCh38#65565-A-G>:
+  - a: m2r:Variation
+  - rdfs:label:
+    - variation_label: "1-65565-A-G"
+  - m2r:reference_allele:
+    - ref_allele: "A"
+  - m2r:alternative_allele:
+    - alt_allele: "G"
+  - dbnsfp:reference_amino_acid:
+    - ref_amino_acid: "R"
+  - dbnsfp:alternative_amino_acid:
+    - alt_amino_acid: "R"
+  - faldo:location:
+    - dbnsfp_location: Location
+
+- Location <http://identifiers.org/hco/1/GRCh38#65565>:
+  - a: faldo:ExactPosition
+  - faldo:position:
+    - position: 65565
+  - faldo:reference:
+    - reference: <http://identifiers.org/hco/1/GRCh38>
+
+- Gene ensg:ENSG00000187634:
+  - a: m2r:Gene
+  - rdfs:label:
+    - gene_label: "OR4F16"
+  - dct:identifier:
+    - gene_id: "ENSG00000187634"
+
+- Transcript enst:ENST00000341290:
+  - a: m2r:Transcript
+  - dct:identifier:
+    - transcript_id: "ENST00000341290"
+
+- Protein ensp:ENSP00000480870:
+  - a: m2r:Protein
+  - dct:identifier:
+    - protein_id: "ENSP00000480870"
+
+- PhyloP100wayVertebrate <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-PhyloP100wayVertebrate>:
+  - a:
+    - dbnsfp:AlleleConservation
+    - dbnsfp:PhyloP100wayVertebrate
+  - dbnsfp:score:
+    - phylo_p100way_vertebrate_score: 2.589
+  - dbnsfp:rankscore:
+    - phylo_p100way_vertebrate_rankscore: 0.4581
+
+- PhyloP470wayMammalian <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-PhyloP470wayMammalian>:
+  - a:
+    - dbnsfp:AlleleConservation
+    - dbnsfp:PhyloP470wayMammalian
+  - dbnsfp:score:
+    - phylo_p470way_mammalian_score: 11.537
+  - dbnsfp:rankscore:
+    - phylo_p470way_mammalian_rankscore: 0.01011
+
+- PhyloP17wayPrimate <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-PhyloP17wayPrimate>:
+  - a:
+    - dbnsfp:AlleleConservation
+    - dbnsfp:PhyloP17wayPrimate
+  - dbnsfp:score:
+    - phylo_p17way_primate_score: 0.329
+  - dbnsfp:rankscore:
+    - phylo_p17way_primate_rankscore: 0.19528
+
+- PhastCons100wayVertebrate <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-PhastCons100wayVertebrate>:
+  - a:
+    - dbnsfp:AlleleConservation
+    - dbnsfp:PhastCons100wayVertebrate
+  - dbnsfp:score:
+    - phast_cons100way_vertebrate_score: 0.993
+  - dbnsfp:rankscore:
+    - phast_cons100way_vertebrate_rankscore: 0.37899
+
+- PhastCons470wayMammalian <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-PhastCons470wayMammalian>:
+  - a:
+    - dbnsfp:AlleleConservation
+    - dbnsfp:PhastCons470wayMammalian
+  - dbnsfp:score:
+    - phast_cons470way_mammalian_score: 1.0
+  - dbnsfp:rankscore:
+    - phast_cons470way_mammalian_rankscore: 0.68203
+
+- PhastCons17wayPrimate <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-PhastCons17wayPrimate>:
+  - a:
+    - dbnsfp:AlleleConservation
+    - dbnsfp:PhastCons17wayPrimate
+  - dbnsfp:score:
+    - phast_cons17way_primate_score: 0.399
+  - dbnsfp:rankscore:
+    - phast_cons17way_primate_rankscore: 0.26759
+
+- GERPRs <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-GERPRs>:
+  - a:
+    - dbnsfp:AlleleConservation
+    - dbnsfp:GERPRs
+  - dbnsfp:score:
+    - gerp_rs_score: -0.0408
+  - dbnsfp:rankscore:
+    - gerp_rs_rankscore: 0.031
+
+- SiPhy29wayLogodds <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-SiPhy29wayLogodds>:
+  - a:
+    - dbnsfp:AlleleConservation
+    - dbnsfp:SiPhy29wayLogodds
+  - dbnsfp:score:
+    - si_phy_29way_log_odds_score: 8.5667
+  - dbnsfp:rankscore:
+    - si_phy_29way_log_odds_rankscore: 0.25343
+
+- BStatistic <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-BStatistic>:
+  - a:
+    - dbnsfp:AlleleConservation
+    - dbnsfp:BStatistic
+  - dbnsfp:score:
+    - bstatistic_score: 994
+  - dbnsfp:rankscore:
+    - bstatistic_rankscore: 0.00715
+
+- Gerp91Mammals <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-Gerp91Mammals>:
+  - a:
+    - dbnsfp:AlleleConservation
+    - dbnsfp:Gerp91Mammals
+  - dbnsfp:score:
+    - gerp_91_mammals_score: 0.33
+  - dbnsfp:rankscore:
+    - gerp_91_mammals_rankscore: 0.23157
+
+- SIFT <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-SIFT>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:SIFT
+  - dbnsfp:score:
+    - sift_score: 0.031
+  - dbnsfp:rankscore:
+    - sift_rankscore: 0.05703
+  - dbnsfp:pred:
+    - sift_pred: "D"
+
+- SIFT4G <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-SIFT4G>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:SIFT4G
+  - dbnsfp:score:
+    - sift4g_score: 0.031
+  - dbnsfp:rankscore:
+    - sift4g_rankscore: 0.13792
+  - dbnsfp:pred:
+    - sift4g_pred: "D"
+
+- PROVEAN <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-PROVEAN>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:PROVEAN
+  - dbnsfp:score:
+    - provean_score: 0.33
+  - dbnsfp:rankscore:
+    - provean_rankscore: 0.01011
+  - dbnsfp:pred:
+    - provean_pred: "N"
+
+- Polyphen2Hdiv <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-Polyphen2Hdiv>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:Polyphen2Hdiv
+  - dbnsfp:score:
+    - polyphen2_hdiv_score: 0.031
+  - dbnsfp:rankscore:
+    - polyphen2_hdiv_rankscore: 0.47012
+  - dbnsfp:pred:
+    - polyphen2_hdiv_pred: "P"
+
+- Polyphen2Hvar <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-Polyphen2Hvar>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:Polyphen2Hvar
+  - dbnsfp:score:
+    - polyphen2_hvar_score: 0.33
+  - dbnsfp:rankscore:
+    - polyphen2_hvar_rankscore: 0.5637
+  - dbnsfp:pred:
+    - polyphen2_hvar_pred: "P"
+
+- LRT <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-LRT>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:LRT
+  - dbnsfp:score:
+    - lrt_score: 0.108972
+  - dbnsfp:rankscore:
+    - lrt_rankscore: 0.23157
+  - dbnsfp:pred:
+    - lrt_pred: "N"
+
+- MutationTaster <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-MutationTaster>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:MutationTaster
+  - dbnsfp:score:
+    - mutation_taster_score: 0.988174
+  - dbnsfp:rankscore:
+    - mutation_taster_rankscore: 0.33
+  - dbnsfp:pred:
+    - mutation_taster_pred: "A"
+
+- MutationAssessor <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-MutationAssessor>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:MutationAssessor
+  - dbnsfp:score:
+    - mutation_assessor_score: 0.33
+  - dbnsfp:rankscore:
+    - mutation_assessor_rankscore: 0.97867
+  - dbnsfp:pred:
+    - mutation_assessor_pred: "M"
+
+- FATHMM <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-FATHMM>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:FATHMM
+  - dbnsfp:score:
+    - fathmm_score: 0.33
+  - dbnsfp:rankscore:
+    - fathmm_rankscore: 0.00864
+  - dbnsfp:pred:
+    - fathmm_pred: "D"
+
+- FathmmMklCoding <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-FathmmMklCoding>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:FathmmMklCoding
+  - dbnsfp:score:
+    - fathmm_mkl_coding_score: 0.98812
+  - dbnsfp:rankscore:
+    - fathmm_mkl_coding_rankscore: 0.33
+  - dbnsfp:pred:
+    - fathmm_mkl_coding_pred: "N"
+
+- FathmmXfCoding <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-FathmmXfCoding>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:FathmmXfCoding
+  - dbnsfp:score:
+    - fathmm_xf_coding_score: 0.549465
+  - dbnsfp:rankscore:
+    - fathmm_xf_coding_rankscore: 0.47117
+  - dbnsfp:pred:
+    - fathmm_xf_coding_pred: "N"
+
+- CADD <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-CADD>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:CADD
+  - dbnsfp:score:
+    - cadd_score: 2.0917
+  - dbnsfp:rankscore:
+    - cadd_rankscore: 0.26608
+
+- CADDHg19 <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-CADDHg19>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:CADDHg19
+  - dbnsfp:score:
+    - cadd_hg19_score: 4.837575
+  - dbnsfp:rankscore:
+    - cadd_hg19_rankscore: 0.11665
+
+- CADDPhred <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-CADDPhred>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:CADDPhred
+  - dbnsfp:score:
+    - cadd_phred_score: 17.18
+
+- CADDPhredHg19 <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-CADDPhredHg19>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:CADDPhredHg19
+  - dbnsfp:score:
+    - cadd_phred_hg19_score: 0.33
+
+- VEST4 <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-VEST4>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:VEST4
+  - dbnsfp:score:
+    - vest4_score: 0.33
+  - dbnsfp:rankscore:
+    - vest4_rankscore: 0.20793
+
+- IntegratedFitcons <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-IntegratedFitcons>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:IntegratedFitcons
+  - dbnsfp:score:
+    - integrated_fit_cons_score: 0.582742
+  - dbnsfp:rankscore:
+    - integrated_fit_cons_rankscore: 0.02883
+
+- GM12878Fitcons <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-GM12878Fitcons>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:GM12878Fitcons
+  - dbnsfp:score:
+    - gm12878_fit_cons_score: 0.060609
+  - dbnsfp:rankscore:
+    - gm12878_fit_cons_rankscore: 0.05674
+
+- H1HescFitcons <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-H1HescFitcons>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:H1HescFitcons
+  - dbnsfp:score:
+    - h1_hesc_fit_cons_score: 0.175771
+  - dbnsfp:rankscore:
+    - h1_hesc_fit_cons_rankscore: 0.98339
+
+- HUVECFitcons <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-HUVECFitcons>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:HUVECFitcons
+  - dbnsfp:score:
+    - huvec_fit_cons_score: 0.250985
+  - dbnsfp:rankscore:
+    - huvec_fit_cons_rankscore: 0.04801
+
+- LINSIGHT <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-LINSIGHT>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:LINSIGHT
+  - dbnsfp:score:
+    - linsight_score: 0.974948
+  - dbnsfp:rankscore:
+    - linsight_rankscore: 0.46741
+
+- DANN <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-DANN>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:DANN
+  - dbnsfp:score:
+    - dann_score: 0.719489253797072
+  - dbnsfp:rankscore:
+    - dann_rankscore: 0.11665
+
+- MetaLR <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-MetaLR>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:MetaLR
+  - dbnsfp:score:
+    - meta_lr_score: 0.4805
+  - dbnsfp:rankscore:
+    - meta_lr_rankscore: 0.82053
+  - dbnsfp:pred:
+    - meta_lr_pred: "D"
+
+- MetaSVM <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-MetaSVM>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:MetaSVM
+  - dbnsfp:score:
+    - meta_svm_score: -0.5523
+  - dbnsfp:rankscore:
+    - meta_svm_rankscore: 0.53263
+  - dbnsfp:pred:
+    - meta_svm_pred: "D"
+
+- GenoCanyon <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-GenoCanyon>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:GenoCanyon
+  - dbnsfp:score:
+    - geno_canyon_score: 0.999999999821279
+  - dbnsfp:rankscore:
+    - geno_canyon_rankscore: 0.33
+
+- EigenRawCoding <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-EigenRawCoding>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:EigenRawCoding
+  - dbnsfp:score:
+    - eigen_raw_coding_score: 0.0207526303994971
+  - dbnsfp:rankscore:
+    - eigen_raw_coding_rankscore: 0.00864
+
+- EigenPhredCoding <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-EigenPhredCoding>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:EigenPhredCoding
+  - dbnsfp:score:
+    - eigen_phred_coding_score: 0.2120412
+
+- EigenPcRawCoding <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-EigenPcRawCoding>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:EigenPcRawCoding
+  - dbnsfp:score:
+    - eigen_pc_raw_coding_score: -0.627679428955387
+  - dbnsfp:rankscore:
+    - eigen_pc_raw_coding_rankscore: 0.14296
+
+- EigenPcPhredCoding <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-EigenPcPhredCoding>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:EigenPcPhredCoding
+  - dbnsfp:score:
+    - eigen_pc_phred_coding_score: 0.9961763
+
+- MCap <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-MCap>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:MCap
+  - dbnsfp:score:
+    - m_cap_score: 0.125917
+  - dbnsfp:rankscore:
+    - m_cap_rankscore: 0.57541
+  - dbnsfp:pred:
+    - m_cap_pred: "D"
+
+- REVEL <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-REVEL>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:REVEL
+  - dbnsfp:score:
+    - revel_score: 0.031
+  - dbnsfp:rankscore:
+    - revel_rankscore: 0.91371
+
+- MutPred <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-MutPred>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:MutPred
+  - dbnsfp:score:
+    - mut_pred_score: 0.33
+  - dbnsfp:rankscore:
+    - mut_pred_rankscore: 0.98532
+
+- MVP <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-MVP>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:MVP
+  - dbnsfp:score:
+    - mvp_score: 0.84845578892
+  - dbnsfp:rankscore:
+    - mvp_rankscore: 0.82053
+
+- MPC <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-MPC>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:MPC
+  - dbnsfp:score:
+    - mpc_score: 0.137146261983
+  - dbnsfp:rankscore:
+    - mpc_rankscore: 0.66145
+
+- PrimateAI <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-PrimateAI>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:PrimateAI
+  - dbnsfp:score:
+    - primate_ai_score: 0.842421591282
+  - dbnsfp:rankscore:
+    - primate_ai_rankscore: 0.25343
+  - dbnsfp:pred:
+    - primate_ai_pred: "D"
+
+- DEOGEN2 <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-DEOGEN2>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:DEOGEN2
+  - dbnsfp:score:
+    - deogen2_score: 0.125917
+  - dbnsfp:rankscore:
+    - deogen2_rankscore: 0.87971
+  - dbnsfp:pred:
+    - deogen2_pred: "D"
+
+- BayesDelAddAF <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-BayesDelAddAF>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:BayesDelAddAF
+  - dbnsfp:score:
+    - bayes_del_add_af_score: -0.145697
+  - dbnsfp:rankscore:
+    - bayes_del_add_af_rankscore: 0.82053
+  - dbnsfp:pred:
+    - bayes_del_add_af_pred: "D"
+
+- BayesDelNoAF <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-BayesDelNoAF>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:BayesDelNoAF
+  - dbnsfp:score:
+    - bayes_del_no_af_score: -0.335688
+  - dbnsfp:rankscore:
+    - bayes_del_no_af_rankscore: 0.47117
+  - dbnsfp:pred:
+    - bayes_del_no_af_pred: "D"
+
+- ClinPred <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-ClinPred>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:ClinPred
+  - dbnsfp:score:
+    - clin_pred_score: 0.0405197450355202
+  - dbnsfp:rankscore:
+    - clin_pred_rankscore: 0.25343
+  - dbnsfp:pred:
+    - clin_pred_pred: "D"
+
+- LISTS2 <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-LISTS2>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:LISTS2
+  - dbnsfp:score:
+    - list_s2_score: 0.442056
+  - dbnsfp:rankscore:
+    - list_s2_rankscore: 0.3282
+  - dbnsfp:pred:
+    - list_s2_pred: "T"
+
+- MetaRNN <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-MetaRNN>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:MetaRNN
+  - dbnsfp:score:
+    - meta_rnn_score: 0.120530635
+  - dbnsfp:rankscore:
+    - meta_rnn_rankscore: 0.25343
+  - dbnsfp:pred:
+    - meta_rnn_pred: "D"
+
+- GMVP <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-GMVP>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:GMVP
+  - dbnsfp:score:
+    - gmvp_score: 0.35005400862006164
+  - dbnsfp:rankscore:
+    - gmvp_rankscore: 0.14296
+
+- VARITYR <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-VARITYR>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:VARITYR
+  - dbnsfp:score:
+    - varity_r_score: 0.068779714
+  - dbnsfp:rankscore:
+    - varity_r_rankscore: 0.25343
+
+- VARITYEr <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-VARITYEr>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:VARITYEr
+  - dbnsfp:score:
+    - varity_er_score: 0.067452535
+  - dbnsfp:rankscore:
+    - varity_er_rankscore: 0.55128
+
+- VARITYRLoo <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-VARITYRLoo>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:VARITYRLoo
+  - dbnsfp:score:
+    - varity_r_loo_score: 0.068779714
+  - dbnsfp:rankscore:
+    - varity_r_loo_rankscore: 0.27387
+
+- VARITYErLoo <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-VARITYErLoo>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:VARITYErLoo
+  - dbnsfp:score:
+    - varity_er_loo_score: 0.067452535
+  - dbnsfp:rankscore:
+    - varity_er_loo_rankscore: 0.00864
+
+- ESM1b <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-ESM1b>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:ESM1b
+  - dbnsfp:score:
+    - esm1b_score: -10.969
+  - dbnsfp:rankscore:
+    - esm1b_rankscore: 0.55128
+  - dbnsfp:pred:
+    - esm1b_pred: "D"
+
+- EVE <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-EVE>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:EVE
+  - dbnsfp:score:
+    - eve_score: 0.10734602823948336
+  - dbnsfp:rankscore:
+    - eve_rankscore: 0.08313
+  - dbnsfp:class10_pred:
+    - eve_class10_pred: "P"
+  - dbnsfp:class20_pred:
+    - eve_class20_pred: "P"
+  - dbnsfp:class25_pred:
+    - eve_class25_pred: "P"
+  - dbnsfp:class30_pred:
+    - eve_class30_pred: "P"
+  - dbnsfp:class40_pred:
+    - eve_class40_pred: "P"
+  - dbnsfp:class50_pred:
+    - eve_class50_pred: "P"
+  - dbnsfp:class60_pred:
+    - eve_class60_pred: "P"
+  - dbnsfp:class70_pred:
+    - eve_class70_pred: "P"
+  - dbnsfp:class75_pred:
+    - eve_class75_pred: "P"
+  - dbnsfp:class80_pred:
+    - eve_class80_pred: "P"
+  - dbnsfp:class90_pred:
+    - eve_class90_pred: "P"
+
+- AlphaMissense <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-AlphaMissense>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:AlphaMissense
+  - dbnsfp:score:
+    - alpha_missense_score: 0.4805
+  - dbnsfp:rankscore:
+    - alpha_missense_rankscore: 0.77902
+  - dbnsfp:pred:
+    - alpha_missense_pred: "P"
+
+- PHACTBoost <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-PHACTBoost>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:PHACTBoost
+  - dbnsfp:score:
+    - phact_boost_score: 0.450309296251405
+  - dbnsfp:rankscore:
+    - phact_boost_rankscore: 0.4422
+
+- MutFormer <http://identifiers.org/hco/1/GRCh38#65565-A-G-ENST00000341290-MutFormer>:
+  - a:
+    - dbnsfp:DamagePrediction
+    - dbnsfp:MutFormer
+  - dbnsfp:score:
+    - mut_former_score: 0.00038553
+  - dbnsfp:rankscore:
+    - mut_former_rankscore: 0.55128
+
