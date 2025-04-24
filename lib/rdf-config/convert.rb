@@ -22,8 +22,7 @@ class RDFConfig
     SOURCE_MACRO_NAME = 'source'
     ROOT_MACRO_NAME = 'root'
     SYSTEM_MACRO_NAMES = [SOURCE_MACRO_NAME, ROOT_MACRO_NAME].freeze
-    JSON_LD_SYMBOLS = %w[jsonld json-ld json_ld jsonl].freeze
-    JSON_LD_FORMAT_REGEXP = /\A:?jsonld?([\-:]nest)?\z/
+    JSON_LD_FORMATS = Validator::VALID_CONVERT_TYPES - %w[:turtle :context]
 
     attr_reader :source_subject_map, :subject_config, :object_config, :subject_object_map,
                 :convert_method, :macro_names, :format, :output_path
@@ -58,16 +57,15 @@ class RDFConfig
     end
 
     def generate
-      if @format =~ JSON_LD_FORMAT_REGEXP || @generate_context
-        if @format =~ /\A:?jsonl([\-:]nest)?\z/
-          json_ld_generator.generate(per_line: true)
-        elsif @generate_context
-          json_ld_generator.generate_context
-        else
-          json_ld_generator.generate
-        end
-      else
+      case @format
+      when ':turtle'
         rdf_generator.generate
+      when ':jsonld'
+        json_ld_generator.generate
+      when ':jsonl'
+        json_ld_generator.generate(per_line: true)
+      when ':context'
+        json_ld_generator.generate_context
       end
     end
 
@@ -119,7 +117,7 @@ class RDFConfig
     def json_ld_generator
       case @source_file_format
       when 'csv', 'tsv'
-        if @format =~/\A:?jsonl([\-:]nest)?\z/ || @generate_context
+        if @format == ':jsonl' || @generate_context
           require_relative 'convert/json_ld_generator/csv2json_lines'
           CSV2JSON_Lines.new(@config, self)
         else

@@ -12,6 +12,7 @@ class RDFConfig
 
         @context_generator = ContextGenerator.new(@config)
         @jsonld_context = nil
+        @nest_node = true
       end
 
       def generate(per_line: true)

@@ -28,15 +28,13 @@ class RDFConfig
         @check_node_duplicate = true
         @print_perline_progress = true
 
-        @nest_node = @convert.format.end_with?('nest')
+        @nest_node = false
         @subject_value_map = {}
       end
 
       def generate(per_line: false)
         process_all_sources(per_line: per_line)
-        unless per_line
-          refine_nodes
-        end
+        refine_nodes unless per_line
 
         # json_data = @node.map { |id, hash| { '@id' => id }.merge(hash) }
         @json_ld.merge!(data: final_nodes)

@@ -130,8 +130,15 @@ arg_values.flatten!
 
 opts[:mode] = :sparql if opts[:mode].nil? && (opts.key?(:query) || opts.key?(:endpoint_name))
 
-if opts[:mode] == :convert && !arg_values.empty?
-  opts[:convert_source] = arg_values.last
+if opts[:mode] == :convert
+  if arg_values.empty?
+    if opts[:config_dir].is_a?(Array) && opts[:config_dir].size > 1
+      opts[:convert_source] = opts[:config_dir].last
+      opts[:config_dir] = opts[:config_dir].first
+    end
+  else
+    opts[:convert_source] = arg_values.last
+  end
 end
 
 if opts[:config_dir] && opts[:mode]
@@ -165,6 +172,8 @@ SYNOPSIS
     rdf-config --config path/to/config/name --grasp-ns   [output_directory]
     rdf-config --config path/to/config/name --stanza     [stanzaname]
     rdf-config --config path/to/config/name --shex
+    rdf-config --config path/to/config/name --convert output_type [input_file_or_directory]
+      Valid output_type values are :turtle, :jsonld, :jsonl, :context
     rdf-config --help
 
 DESCRIPTION

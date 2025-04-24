@@ -15,8 +15,13 @@ class RDFConfig
 
         def generate
           root_subjects.each do |subject_name|
-            @node.select { |_, object_hash| object_hash.keys.include?(subject_name) }.each_value do |object_hash|
-              @nested_nodes << process_node(object_hash)
+            node = @node.select { |_, object_hash| object_hash.keys.include?(subject_name) }
+            if node.empty?
+              @nested_nodes << @node.values.first
+            else
+              node.each_value do |object_hash|
+                @nested_nodes << process_node(object_hash)
+              end
             end
           end
 

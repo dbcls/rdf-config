@@ -6,7 +6,7 @@ require_relative 'json_ld_generator/csv2json_lines'
 class RDFConfig
   class Convert
     class Validator < RDFConfig::Validator
-      VALID_CONVERT_TYPES = %w[:turtle :jsonld :jsonld-nest :jsonld:nest :jsonl :jsonl-nest :jsonl:nest :context]
+      VALID_CONVERT_TYPES = %w[:turtle :jsonld :jsonl :context]
 
       def initialize(config, **opts)
         super
