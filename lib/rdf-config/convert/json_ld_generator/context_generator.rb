@@ -19,6 +19,10 @@ class RDFConfig
         @prefixes_map = prefixes_map_by_context_map
       end
 
+      def generate_by_convert_config
+        { '@context' => @prefix_hash.merge(@context_map.values.reduce(&:merge).reject { |k, _| k.to_s.empty? }) }
+      end
+
       def context_for_data_hash(subject_name, data_hash)
         context_key_hash = extract_context_key_by_data_hash(subject_name, data_hash)
 

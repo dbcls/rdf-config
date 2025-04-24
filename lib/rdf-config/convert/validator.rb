@@ -1,20 +1,25 @@
 # frozen_string_literal: true
 
 require_relative '../validator'
+require_relative 'json_ld_generator/csv2json_lines'
 
 class RDFConfig
   class Convert
     class Validator < RDFConfig::Validator
+      VALID_CONVERT_TYPES = %w[:turtle :jsonld :jsonl :context]
+
       def initialize(config, **opts)
         super
         @convert = opts[:convert]
       end
 
       def validate
+        validate_convert_type
+        validate_context_path if context_mode?
         validate_variable_name
         # validate_exist_source
-        validate_source_file_path
-        validate_source_format
+        validate_source_file_path unless context_mode?
+        validate_source_format unless context_mode?
         validate_macro_name
         validate_convert_variable_name
 
@@ -26,6 +31,47 @@ class RDFConfig
       end
 
       private
+
+      def validate_convert_type
+        return if VALID_CONVERT_TYPES.include?(@convert.format)
+
+        add_error(%(Invalid value of --convert option. Valid --convert option values are: #{VALID_CONVERT_TYPES.join(', ')}))
+      end
+
+      def validate_context_path
+        return if @convert.output_path.to_s.strip.empty?
+
+        if File.file?(@convert.output_path)
+          validate_output_file_path(@convert.output_path)
+        elsif File.directory?(@convert.output_path)
+          validate_output_dir_path(@convert.output_path)
+        else
+          validate_output_file_path(@convert.output_path)
+        end
+      end
+
+      def validate_output_file_path(output_file_path)
+        if File.exist?(output_file_path)
+          add_error("Output file: #{output_file_path} already exists.")
+        else
+          validate_output_dir_path(File.dirname(output_file_path))
+        end
+      end
+
+      def validate_output_dir_path(output_dir_path)
+        if File.exist?(output_dir_path)
+          if File.writable?(output_dir_path)
+            context_file_path = File.join(output_dir_path, Convert::CSV2JSON_Lines::DEFAULT_CONTEXT_FILE_NAME)
+            if File.exist?(context_file_path)
+              add_error("Output file: #{context_file_path} already exists.")
+            end
+          else
+            add_error("You do not have write permission for #{output_dir_path}")
+          end
+        else
+          add_error("Output directory: #{output_dir_path} does not exist.")
+        end
+      end
 
       def validate_variable_name
         @convert.variable_names.each do |variable_name|
@@ -50,7 +96,7 @@ class RDFConfig
       def validate_source_file_path
         @convert.source_subject_map.each_key do |file_path|
           if file_path.nil?
-            add_error(%(#{@convert.source_subject_map[nil].join(', ')}: Since source file is not specified in convert.yaml, please specify the source file in the --convert option.))
+            add_error(%(#{@convert.source_subject_map[nil].join(', ')}: Since source file is not specified in convert.yaml, please specify the source file.))
           elsif !File.exist?(file_path)
             add_error(%(Source file "#{file_path}" does not exist.))
           end
@@ -90,6 +136,10 @@ class RDFConfig
 
       def valid_variable_name?(variable_name)
         /\A\$[a-z]\w+\z/ =~ variable_name
+      end
+
+      def context_mode?
+        %w[:context context].include?(@opts[:format]) || !@convert.output_path.nil?
       end
     end
   end

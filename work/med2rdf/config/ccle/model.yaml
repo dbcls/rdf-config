@@ -20,53 +20,53 @@
         - hist_secondary: hismall_cell_carcinoma
     - m2r:site_primary:
         - site_primary: lung
-    # - m2r:variation:
-    #     - []:
-    #         - a: m2r:Variation
-    #         - rdfs:label:
-    #             - variation_label: A378P
-    #         - faldo:location:
-    #             - []:
-    #                 - a: faldo:Region
-    #                 - faldo:begin:
-    #                     -  []:
-    #                         - a: faldo:ExactPosition
-    #                         - faldo:position:
-    #                             - snp_start_pos: 156763504
-    #                         - faldo:reference:
-    #                             -  snp_start_reference: <http://identifiers.org/hco/3#GRCh37>
-    #                 - faldo:end:
-    #                     -  []:
-    #                         - a: faldo:ExactPosition
-    #                         - faldo:position:
-    #                             - snp_end_pos: 156763504
-    #                         - faldo:reference:
-    #                             -  snp_end_reference: <http://identifiers.org/hco/3#GRCh37>
-    #         - m2r:alternative_allele:
-    #             - alternative_allele: C
-    #         - m2r:gene:
-    #             - variant_gene: ccleg:LEKR1
-    #         - m2r:reference_allele:
-    #             - reference_allele: G
-    #         - m2r:transcript:
-    #             - []:
-    #                 - a: m2r:Transcript
-    #                 - rdfs:label:
-    #                     - variant_transcript_label: ENST00000470811.1
-    #                 - m2r:gene:
-    #                     - variant_transcript_gene: ccleg:LEKR1
-    #                 - rdfs:seeAlso:
-    #                     - variant_transcript_see_also: transcript:ENST00000470811
-    #         - m2r:variant_consequence:
-    #             - variant_consequence: sio:SO_0001583
-    #         - m2r:variant_type:
-    #             - variant_type: SNP
-    #         - ccle:codon_change:
-    #             - codon_change: c.(1132-1134)Gct>Cct
-    #         - ccle:dna_change:
-    #             - dna_change: c.1132G>C
-    #         - ccle:protein_change:
-    #             - protein_change: p.A378P
+    - m2r:variation:
+        - []:
+            - a: m2r:Variation
+            - rdfs:label:
+                - ccle_variation_label: A378P
+            - faldo:location:
+                - []:
+                    - a: faldo:Region
+                    - faldo:begin:
+                        -  []:
+                            - a: faldo:ExactPosition
+                            - faldo:position:
+                                - ccle_snp_start_pos: 156763504
+                            - faldo:reference:
+                                - ccle_snp_start_reference: <http://identifiers.org/hco/3#GRCh37>
+                    - faldo:end:
+                        -  []:
+                            - a: faldo:ExactPosition
+                            - faldo:position:
+                                - ccle_snp_end_pos: 156763504
+                            - faldo:reference:
+                                - ccle_snp_end_reference: <http://identifiers.org/hco/3#GRCh37>
+            - m2r:alternative_allele:
+                - ccle_alternative_allele: C
+            - m2r:gene:
+                - ccle_variant_gene: ccleg:LEKR1
+            - m2r:reference_allele:
+                - ccle_reference_allele: G
+            - m2r:transcript:
+                - []:
+                    - a: m2r:Transcript
+                    - rdfs:label:
+                        - ccle_variant_transcript_label: ENST00000470811.1
+                    - m2r:gene:
+                        - ccle_variant_transcript_gene: ccleg:LEKR1
+                    - rdfs:seeAlso:
+                        - ccle_variant_transcript_see_also: transcript:ENST00000470811
+            - m2r:variant_consequence:
+                - ccle_variant_consequence: sio:SO_0001583
+            - m2r:variant_type:
+                - ccle_variant_type: SNP
+            - ccle:codon_change:
+                - ccle_codon_change: c.(1132-1134)Gct>Cct
+            - ccle:dna_change:
+                - ccle_dna_change: c.1132G>C
+            - ccle:protein_change:
+                - ccle_protein_change: p.A378P
     - obo:SIO_000223:
         - gender: obo:PATO_0000384
     - rdfs:seeAlso:
@@ -99,14 +99,14 @@
                     - faldo:position:
                         - snp_start_pos: 156763504
                     - faldo:reference:
-                        -  snp_start_reference: <http://identifiers.org/hco/3#GRCh37>
+                        - snp_start_reference: <http://identifiers.org/hco/3#GRCh37>
             - faldo:end:
                 -  []:
                     - a: faldo:ExactPosition
                     - faldo:position:
                         - snp_end_pos: 156763504
                     - faldo:reference:
-                        -  snp_end_reference: <http://identifiers.org/hco/3#GRCh37>
+                        - snp_end_reference: <http://identifiers.org/hco/3#GRCh37>
     - m2r:alternative_allele:
         - alternative_allele: C
     - m2r:gene:

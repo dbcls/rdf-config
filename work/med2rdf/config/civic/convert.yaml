@@ -1,5 +1,5 @@
 - Gene:
-    - source("nightly-FeatureSummaries.tsv")
+    - source("nightly-FeatureSummaries_head101.tsv")
     - subject:
         - tsv("feature_id")
         - prepend("gene:")
@@ -12,7 +12,7 @@
         # - variation:
 
 - Variation:
-    - source("nightly-VariantSummaries.tsv")
+    - source("nightly-VariantSummaries_head101.tsv")
     - subject:
         - tsv("variant_id")
         - prepend("variants:")
@@ -45,7 +45,7 @@
         # - evidence:
 
 - Evidence:
-    - source("~/Works/DBCLS/med2rdf/civic/data_c/nightly-ClinicalEvidenceSummaries.tsv")
+    - source("nightly-ClinicalEvidenceSummaries_head101.tsv")
     - subject:
         - tsv("evidence_id")
         - prepend("evidence:")
@@ -58,5 +58,15 @@
         - evidence_level: tsv("evidence_level")
         - evidence_status: tsv("evidence_status")
         - citation: tsv("citation")
-        # - pubmed:
-        # - drug:
+
+        # ToDo: 以下の処理は source_typeカラムの値が PubMed の場合のみ限定する必要がある
+        - pubmed:
+            - tsv("citation_id")
+            - prepend("pubmed:")
+
+        # model.yamlの例で drug_Palbociclib となっており、Palbociclib という値は
+        # therapiesカラムに現れるが、これを使って良いか？
+        - drug:
+            - tsv("therapies")
+            - split(",")
+            - prepend("civic:drug_")

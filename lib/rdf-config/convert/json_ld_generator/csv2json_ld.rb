@@ -4,6 +4,7 @@ require 'json'
 require_relative '../generator'
 require_relative '../mix_in/convert_util'
 require_relative 'context_generator'
+require_relative 'nest_generator'
 
 class RDFConfig
   class Convert
@@ -22,48 +23,24 @@ class RDFConfig
         @node = {}
         @type_in_context = false
 
-        @context_generator = ContextGenerator.new(@config)
+        @check_jsonl_duplicate = false
+        @outputted_jsonl_lines = []
+        @check_node_duplicate = true
+        @print_perline_progress = true
+
+        @nest_node = false
+        @subject_value_map = {}
       end
 
-      def generate
-        @convert.source_subject_map.each do |source, subject_names|
-          @converter.clear_target_rows
-          @reader = @convert.file_reader(source: source)
-          @subject_names = subject_names
-          generate_graph
-          generate_context
-        end
-
-        refine_nodes
+      def generate(per_line: false)
+        process_all_sources(per_line: per_line)
+        refine_nodes unless per_line
 
         # json_data = @node.map { |id, hash| { '@id' => id }.merge(hash) }
-        @json_ld.merge!(data: @node.values)
+        @json_ld.merge!(data: final_nodes)
 
         # puts JSON.pretty_generate(@json_ld)
         puts JSON.generate(@json_ld)
-      end
-
-      def generate_json_lines
-        @convert.source_subject_map.each do |source, subject_names|
-          @converter.clear_target_rows
-          @reader = @convert.file_reader(source: source)
-          @subject_names = subject_names
-          generate_graph
-        end
-
-        refine_nodes
-
-        json_ld_ctx = @config.prefix.transform_values { |uri| uri[1..-2] }
-        @node.each_value do |data_hash|
-          subject_name = data_hash.keys.select { |key| @model.subject?(key) }.first
-          json_ld_ctx =
-            json_ld_ctx.merge(@context_generator.context_for_data_hash(subject_name, data_hash))
-          puts JSON.generate({ '@context' => context_url }.merge(data_hash))
-        end
-
-        File.open(context_file, 'w') do |f|
-          f.puts JSON.generate({ '@context' => json_ld_ctx })
-        end
       end
 
       private
@@ -94,12 +71,41 @@ class RDFConfig
         end
       end
 
-      def generate_graph
+      def generate_graph(per_line: true)
+        if @print_perline_progress
+          line_number = 1
+          start_time = Time.now
+        end
         @reader.each_row do |row|
+          @node = {} if per_line
           @converter.push_target_row(row, clear_variable: true)
           generate_by_row(row)
+          if per_line
+            refine_nodes
+            output_jsonl_lines
+          end
           @converter.pop_target_row
+          next unless @print_perline_progress
+
+          end_time = Time.now
+          warn "#{sprintf('%7d', line_number)}: #{sprintf('%.4f', end_time - start_time)}s"
+          start_time = end_time
+          line_number += 1
         end
+      end
+
+      def process_all_sources(per_line: false)
+        @convert.source_subject_map.each do |source, subject_names|
+          process_source(source, subject_names, per_line: per_line)
+        end
+      end
+
+      def process_source(source, subject_names, per_line: false)
+        @converter.clear_target_rows
+        @reader = @convert.file_reader(source: source)
+        @subject_names = subject_names
+        generate_graph(per_line: per_line)
+        generate_context
       end
 
       def generate_subject(subject_name, subject_value)
@@ -151,7 +157,7 @@ class RDFConfig
 
       def add_node(key, object_hash)
         object_key = object_hash.keys.first
-        return if @node.key?(key) && @node[key][object_key] == object_hash[object_key]
+        return if @check_node_duplicate && @node.key?(key) && @node[key][object_key] == object_hash[object_key]
 
         node_value = if object_hash[object_key].is_a?(RDF::Literal) && !object_hash[object_key].language.to_s.empty?
                        {
@@ -211,14 +217,6 @@ class RDFConfig
         else
           TYPE_KEY
         end
-      end
-
-      def context_file
-        'context.jsonld'
-      end
-
-      def context_url
-        context_file
       end
 
       def refine_nodes
@@ -292,6 +290,15 @@ class RDFConfig
           valid_values.first
         elsif valid_values.size > 1
           valid_values
+        end
+      end
+
+      def final_nodes
+        if @nest_node
+          nest_generator = JsonLdGenerator::NestGenerator.new(@model, @node)
+          nest_generator.generate
+        else
+          @node.values
         end
       end
     end
