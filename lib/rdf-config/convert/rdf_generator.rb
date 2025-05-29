@@ -27,7 +27,13 @@ class RDFConfig
       def output_rdf
         RDF::Writer.for(:turtle).new(**rdf_writer_opts) do |writer|
           @statements.each do |statement|
-            writer << statement[:statement]
+            if !statement[:triple].nil? && statement[:triple].predicates.size > 1
+              property_path_statements(statement).each do |rdf_statement|
+                writer << rdf_statement
+              end
+            else
+              writer << statement[:statement]
+            end
           end
         end
       end
@@ -253,6 +259,50 @@ class RDFConfig
 
       def subject_uris
         @statements.map { |statement| statement[:statement].subject }.map(&:to_s).uniq
+      end
+
+      def property_path_statements(statement)
+        statements = []
+
+        predicates = statement[:triple].predicates
+        paths =
+          (1...predicates.length).map { |i| predicates[0...i].map(&:uri).join('/') }
+
+        subject = statement[:statement].subject
+        paths.each do |path|
+          num_paths = path.split(/\s*\/\s*/).size
+          object_bnode = bnode_by_bnode_key(bnode_key(statement[:statement].subject, path))
+          statements << RDF::Statement.new(
+            subject,
+            predicate_node(path.split(/\s*\/\s*/).last),
+            object_bnode
+          )
+
+          types = predicates[num_paths-1].objects.first.values.first.select { |h| h.key?('a') }
+          if types.size > 0
+            types.each do |rdf_type|
+              statements << RDF::Statement.new(object_bnode, RDF.type, uri_node(rdf_type['a']))
+            end
+          end
+
+          subject = object_bnode
+        end
+
+        statements << RDF::Statement.new(
+          subject,
+          predicate_node(predicates.last.uri),
+          statement[:statement].object
+        )
+
+        statements
+      end
+
+      def bnode_by_bnode_key(bnode_key)
+        unless @bnode.key?(bnode_key)
+          @bnode[bnode_key] = RDF::Node.new
+        end
+
+        @bnode[bnode_key]
       end
     end
   end

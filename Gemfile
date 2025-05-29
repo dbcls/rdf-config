@@ -4,6 +4,8 @@ source 'https://rubygems.org'
 
 gemspec
 
+gem 'getoptlong'
+gem 'ostruct'
 gem 'parslet'
 gem 'rdf'
 gem 'rdf-turtle'

@@ -1,15 +1,39 @@
 - HiNT:
-    - source("HomoSapiens_binary_all_head101.txt")
-    - $uniprot_a: tsv("Uniprot_A")
-    - $uniprot_b: tsv("Uniprot_B")
+    - source("HomoSapiens_binary_all_head101.txt", :tsv)
+    - $uniprot_a: col("Uniprot_A")
+    - $uniprot_b: col("Uniprot_B")
     - subject:
         - "hnt:$uniprot_a-$uniprot_b"
     - objects:
         - data_source: "http://identifiers.org/HINT"
-        - display_hame: "$uniprot_a-$uniprot_b"
-        - evidence: "pint:evidence-pubmed_14667819-MI_0018-high-throughput"
+        - display_name: "$uniprot_a-$uniprot_b"
+
+        # pmid:method:quality:typeカラムの値
+        # 14667819:0018:HT:binary から
+        # pint:evidence-pubmed_14667819-MI_0018-high-throughput のような値を生成する
+        - evidence:
+            - col("pmid:method:quality:type")
+            - split(":")
+            - $pmid: pick(0)
+            - $method: pick(1)
+            - pick(2)
+            - $quality: change_value(["HT", "high-throughput"], ["LC", "literature-curated"], "unknown")
+            - "pint:evidence-pubmed_$pmid-MI_$method-$quality"
         - name: "$uniprot_a-$uniprot_b"
         - pair0: "uni:$uniprot_a"
         - pair1: "uni:$uniprot_b"
-        - network_variety: str("binary")
-        - accuracy: str("high")
+
+        # pmid:method:quality:typeカラム 33961781:0007:LC:binary の typeフィールド
+        - network_variety:
+            - col("pmid:method:quality:type")
+            - split(":")
+            - pick(3)
+
+        # pmid:method:quality:typeカラム 33961781:0007:LC:binary の qualityフィールド
+        # => LCならlow, HTならhigh
+        # または、high_qualityカラム？
+        - accuracy:
+            - col("pmid:method:quality:type")
+            - split(":")
+            - pick(2)
+            - change_value(["HT", "high"], ["LC", "low"])

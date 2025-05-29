@@ -23,6 +23,7 @@ class RDFConfig
         @object_triple_map = {}
 
         @bnode_id = 0
+        @bnode = {}
       end
 
       private
@@ -179,6 +180,10 @@ class RDFConfig
 
       def bnode_uri
         "_:b#{@bnode_id}"
+      end
+
+      def bnode_key(subject, property_path)
+        [subject.to_s, property_path].join('/')
       end
     end
   end

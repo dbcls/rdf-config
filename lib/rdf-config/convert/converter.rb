@@ -6,6 +6,7 @@ class RDFConfig
       ROW_TARGET_METHODS = %w[csv json xml].freeze
       # VARIABLE_REGEXP = /\$\{([a-zA-Z]\w*)\}|\$([a-z_]\w+)\W*/
       VARIABLE_REGEXP = /\$[a-z_]\w+/
+      NOT_MAP_METHOS = %w[pick]
 
       attr_accessor :convert_variable_names
 
@@ -73,7 +74,7 @@ class RDFConfig
         method_name = method_def[:method_name_]
         variable_name = method_def[:variable_name]
         if variable_name.nil?
-          if @target_value.is_a?(Array)
+          if @target_value.is_a?(Array) && !NOT_MAP_METHOS.include?(method_name)
             @target_value.map { |v| call_convert_method(method_name, v, *args) }
           else
             call_convert_method(method_name, @target_value, *args)
@@ -81,7 +82,7 @@ class RDFConfig
         elsif @variable.key?(variable_name)
           call_convert_method(method_name, @variable[variable_name], *args)
         else
-          call_convert_method(method_name, target_row, *args)
+          call_convert_method(method_name, @target_value.empty? ? target_row : @target_value, *args)
         end
       end
 
@@ -104,8 +105,8 @@ class RDFConfig
         end
       end
 
-      def expand_variable(str)
-        str.gsub(VARIABLE_REGEXP) do |matched|
+      def expand_variable(variable)
+        variable.to_s.gsub(VARIABLE_REGEXP) do |matched|
           if @variable.keys.include?(matched)
             @variable[matched]
           else

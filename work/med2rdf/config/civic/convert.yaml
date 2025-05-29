@@ -1,15 +1,17 @@
 - Gene:
-    - source("nightly-FeatureSummaries_head101.tsv")
+    - source("civic.duckdb", :duckdb, "feature_variants")
     - subject:
-        - tsv("feature_id")
+        - col("features_feature_id")
         - prepend("gene:")
     - objects:
-        - gene_identifier: tsv("feature_id")
-        - gene_label: tsv("name")
+        - gene_identifier: col("features_feature_id")
+        - gene_label: col("features_name")
         - ncbigene:
-            - tsv("entrez_id")
+            - col("features_entrez_id")
             - prepend("ncbigene:")
         # - variation:
+
+---
 
 - Variation:
     - source("nightly-VariantSummaries_head101.tsv")

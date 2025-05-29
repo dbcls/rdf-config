@@ -1,4 +1,4 @@
-- Ccle:
+- CCLE:
     - source("CCLE_sample_info_file_2012-10-18.txt")
     - $ccle_name: tsv("CCLE name")
     - subject:
@@ -9,15 +9,19 @@
         - hist_secondary: tsv("Hist Subtype1")
         - site_primary: tsv("Site Primary")
         - gender:
-            - tsv("Gender")
-            - change_value(["M", "obo:PATO_0000384"], ["F", "obo:PATO_0000383"])
+          - tsv("Gender")
+          - change_value(["M", "obo:PATO_0000384"], ["F", "obo:PATO_0000383"])
 
         # [] a m2r:Assay
-        # - assay_gene: ccleg:ENSG00000000003
+        - assay_gene: ccleg:ENSG00000000003
         - assay_sample: "cclec:$ccle_name"
-        # - exp_val: 12.26012
+        - exp_val:
+          - str("12.26012")
+          - to_float
 
-- EnsGene:
+---
+
+- EnsemblGene:
     - source("CCLE_DepMap_18q3_RNAseq_RPKM_20180718_head1001.txt")
     - subject:
         - tsv("Name")

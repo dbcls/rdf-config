@@ -29,7 +29,7 @@ class RDFConfig
 
     def_delegators :@config_parser,
                    :subject_converts, :object_converts, :source_subject_map, :source_format_map, :macro_names,
-                   :variable_convert, :convert_variable_names, :has_rdf_type_object?
+                   :variable_convert, :convert_variable_names, :has_rdf_type_object?, :source_table
 
     def initialize(config, opts)
       @config = config
@@ -76,6 +76,9 @@ class RDFConfig
       when 'csv', 'tsv'
         require_relative 'convert/file_reader/csv_reader'
         CSVReader.new(source, file_format)
+      when 'duckdb'
+        require_relative 'convert/file_reader/duckdb_reader'
+        DuckdbReader.new(source, source_table)
       when 'json'
         require_relative 'convert/file_reader/json_reader'
         JSONReader.new(@source)
@@ -88,7 +91,7 @@ class RDFConfig
     def rdf_converter
       macro = Macro.get_instance(*macro_names)
       case @source_file_format
-      when 'csv', 'tsv'
+      when 'csv', 'tsv', 'duckdb'
         require_relative 'convert/converter/csv_converter'
         CSVConverter.new(@convert_method, macro)
       when 'json'
@@ -102,7 +105,7 @@ class RDFConfig
 
     def rdf_generator
       case @source_file_format
-      when 'csv', 'tsv'
+      when 'csv', 'tsv', 'duckdb'
         require_relative 'convert/rdf_generator/csv2rdf'
         CSV2RDF.new(@config, self)
       when 'json'
@@ -116,7 +119,7 @@ class RDFConfig
 
     def json_ld_generator
       case @source_file_format
-      when 'csv', 'tsv'
+      when 'csv', 'tsv', 'duckdb'
         if @format == ':jsonl' || @generate_context
           require_relative 'convert/json_ld_generator/csv2json_lines'
           CSV2JSON_Lines.new(@config, self)

@@ -1,12 +1,18 @@
 def change_value(v, *args)
-  mapped_v = v.to_s
+  default_v = if args.last.is_a?(Array)
+                args.pop
+              else
+                v.to_s
+              end
+
+  mapped_v = nil
   args.each do |arg|
-    ary = eval(arg)
-    if mapped_v == ary[0].to_s
+    ary = JSON.parse(arg)
+    if v.to_s == ary[0].to_s
       mapped_v = ary[1].to_s
       break
     end
   end
 
-  mapped_v
+  mapped_v.nil? ? default_v : mapped_v
 end

@@ -11,7 +11,7 @@ class RDFConfig
       include MixIn::ConvertUtil
 
       attr_reader :subject_converts, :object_converts, :variable_converts, :source_subject_map, :source_format_map,
-                  :macro_names, :variable_convert, :convert_variable_names
+                  :macro_names, :variable_convert, :convert_variable_names, :source_table
 
       CONFIG_FILES_KEY = 'config_files'
       SUBJECT_KEY = 'subject'
@@ -223,7 +223,7 @@ class RDFConfig
         begin
           method = @method_parser.parse(converter)
         rescue Parslet::ParseFailed => e
-          # Here comes tha case where the converter is not a method definition
+          # Here comes the case where the converter is not a method definition
           is_macro = false
         end
 
@@ -244,7 +244,7 @@ class RDFConfig
         add_macro_name(macro_name)
 
         if macro_name == SOURCE_MACRO_NAME
-          process_source_macro(method_def[:args_][:arg_][1..-2], variable_name)
+          process_source_macro(method_def, variable_name)
         elsif Convert::SOURCE_FORMATS.include?(macro_name)
           add_source_format_map(@target_source_file_path, macro_name)
         end
@@ -256,10 +256,30 @@ class RDFConfig
         method_def
       end
 
-      def process_source_macro(source_by_config, variable_name)
-        @target_source_file_path = source_file_path(source_by_config)
+      def process_source_macro(method_def, variable_name)
+        args = method_def[:args_].keys.map do |hash|
+          if hash == :arg_
+            method_def[:args_][:arg_].to_s[1..-2]
+          else
+            value = hash.values.first
+            if value.is_a?(Parslet::Slice)
+              value.to_s[1..-2]
+            elsif value.is_a?(Hash)
+              value.values.first.to_s
+            else
+              value.to_s
+            end
+          end
+        end
+
+        @target_source_file_path = source_file_path(args[0])
         add_source_subject_map(@target_source_file_path, variable_name)
         @source_format_map[@target_source_file_path] = [] unless @source_format_map.key?(@target_source_file_path)
+        @source_format_map[@target_source_file_path] << args[1] if args[1]
+
+        return if args[1].to_s != 'duckdb'
+
+        @source_table = args[2]
       end
 
       def add_source_subject_map(source, subject_name)

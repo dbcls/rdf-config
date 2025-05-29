@@ -30,6 +30,7 @@ class RDFConfig
 
         @nest_node = false
         @subject_value_map = {}
+        @triple = {}
       end
 
       def generate(per_line: false)
@@ -296,10 +297,72 @@ class RDFConfig
       def final_nodes
         if @nest_node
           nest_generator = JsonLdGenerator::NestGenerator.new(@model, @node)
-          nest_generator.generate
+          nest_generator.generate.map { |node| modeling_node(node) }
         else
-          @node.values
+          @node.values.map { |node| modeling_node(node) }
         end
+      end
+
+      def modeling_node(node)
+        new_node = {}
+        subject = node.select { |variable_name, _| variable_name =~ /\A[A-Z]/ }.values.first
+        node.each do |variable_name, value|
+          if variable_name =~ /\A[a-z]/
+            triple = triple_by_object_name(variable_name)
+            if triple.predicates.size == 1
+              new_node[variable_name] = value
+            else
+              generate_blank_node(subject, triple)
+              bnode = blank_node(subject, triple.predicates[..-2].map(&:uri).join('/'))
+              bnode[variable_name] = value
+              unless new_node.key?(triple.predicates.first.uri)
+                new_node[triple.predicates.first.uri] = bnode
+              end
+            end
+          else
+            new_node[variable_name] = value
+          end
+        end
+
+        new_node
+      end
+
+      def triple_by_object_name(object_name)
+        @triple[object_name] ||= @model.find_by_object_name(object_name)
+      end
+
+      def generate_blank_node(subject_uri, triple)
+        prev_bnode = nil
+        predicates = triple.predicates
+        paths =
+          (1...predicates.length).map { |i| predicates[0...i].map(&:uri).join('/') }
+        paths.each do |path|
+          num_paths = path.split('/').size
+          key = bnode_key(subject_uri, path)
+          unless @bnode.key?(key)
+            @bnode[key] = {}
+            types = predicates[num_paths-1].objects.first.values.first.select { |h| h.key?('a') }
+            if types.size == 1
+              @bnode[key]['@type'] = types.first['a']
+            elsif types.size > 1
+              @bnode[key]['@type'] = types.map { |h| h['a'] }
+            end
+          end
+
+          if prev_bnode
+            prev_bnode[predicates[num_paths-1].uri] = @bnode[key]
+          end
+
+          prev_bnode = @bnode[key]
+        end
+      end
+
+      def blank_node(subject_uri, property_path)
+        @bnode[bnode_key(subject_uri, property_path)]
+      end
+
+      def bnode_key(subject_uri, property_path)
+        [subject_uri, property_path].join(';')
       end
     end
   end
