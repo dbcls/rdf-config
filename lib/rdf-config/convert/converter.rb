@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative 'processor/switch_processor'
+
 class RDFConfig
   class Convert
     class Converter
@@ -9,6 +11,7 @@ class RDFConfig
       NOT_MAP_METHOS = %w[pick]
 
       attr_accessor :convert_variable_names
+      attr_reader :target_value
 
       def initialize(convert_method, macro)
         @convert_method = convert_method
@@ -27,6 +30,11 @@ class RDFConfig
 
         variable_name = converts.keys.first
         converts[variable_name].each do |method_def|
+          if method_def.is_a?(Processor::SwitchProcessor)
+            method_def.process(self)
+            next
+          end
+
           next if SYSTEM_MACRO_NAMES.include?(method_def[:method_name_])
 
           exec_method(method_def)
@@ -150,6 +158,10 @@ class RDFConfig
 
       def target_row
         @target_rows.last
+      end
+
+      def variable_value(variable_name)
+        @variable[variable_name]
       end
     end
   end

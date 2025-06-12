@@ -2,6 +2,7 @@
 
 require 'yaml'
 require_relative 'mix_in/convert_util'
+require_relative 'parser/method_parser'
 
 class RDFConfig
   class Convert
@@ -11,7 +12,7 @@ class RDFConfig
       include MixIn::ConvertUtil
 
       attr_reader :subject_converts, :object_converts, :variable_converts, :source_subject_map, :source_format_map,
-                  :macro_names, :variable_convert, :convert_variable_names, :source_table
+                  :macro_names, :variable_convert, :convert_variable_names
 
       CONFIG_FILES_KEY = 'config_files'
       SUBJECT_KEY = 'subject'
@@ -68,6 +69,63 @@ class RDFConfig
             parse_subject_config(key, convert_config[key])
           end
         end
+      end
+
+      def parse_converter(variable_name, converter)
+        if converter.is_a?(Hash)
+          key = converter.keys.first
+          if convert_variable?(key)
+            convert_variable_name = converter.keys.first
+            converter = converter[convert_variable_name]
+          else
+            if key.start_with?('switch')
+              require_relative 'processor/switch_processor'
+              switch_processor = Processor::SwitchProcessor.new(variable_name, key, converter[key])
+              switch_processor.parse_convert_process(self)
+              return switch_processor
+            end
+          end
+        elsif convert_variable?(variable_name)
+          convert_variable_name = variable_name
+        else
+          convert_variable_name = nil
+        end
+
+        is_macro = true
+        begin
+          method = @method_parser.parse(converter)
+        rescue Parslet::ParseFailed => e
+          # Here comes the case where the converter is not a method definition
+          is_macro = false
+        end
+
+        method_def = if is_macro
+                       {
+                         method_name_: method[:method_name_].to_str,
+                         args_: method.key?(:args_) ? method[:args_].map { |k, v| [k, v.to_s] }.to_h : nil,
+                         variable_name: convert_variable_name
+                       }
+                     else
+                       {
+                         method_name_: 'str',
+                         args_: { arg_: converter },
+                         variable_name: convert_variable_name
+                       }
+                     end
+        macro_name = method_def[:method_name_].to_s
+        add_macro_name(macro_name)
+
+        if macro_name == SOURCE_MACRO_NAME
+          process_source_macro(method_def, variable_name)
+        elsif Convert::SOURCE_FORMATS.include?(macro_name)
+          add_source_format_map(@target_source_file_path, macro_name)
+        end
+
+        if @source_file_format.nil? && !method.nil? && SOURCE_FORMATS.include?(method[:method_name_])
+          @source_file_format = method[:method_name_]
+        end
+
+        method_def
       end
 
       def has_rdf_type_object?
@@ -209,53 +267,6 @@ class RDFConfig
         add_convert_variable_name(variable_name)
       end
 
-      def parse_converter(variable_name, converter)
-        if converter.is_a?(Hash)
-          convert_variable_name = converter.keys.first
-          converter = converter[convert_variable_name]
-        elsif convert_variable?(variable_name)
-          convert_variable_name = variable_name
-        else
-          convert_variable_name = nil
-        end
-
-        is_macro = true
-        begin
-          method = @method_parser.parse(converter)
-        rescue Parslet::ParseFailed => e
-          # Here comes the case where the converter is not a method definition
-          is_macro = false
-        end
-
-        method_def = if is_macro
-                       {
-                         method_name_: method[:method_name_].to_str,
-                         args_: method.key?(:args_) ? method[:args_].map { |k, v| [k, v.to_s] }.to_h : nil,
-                         variable_name: convert_variable_name
-                       }
-                     else
-                       {
-                         method_name_: 'str',
-                         args_: { arg_: converter },
-                         variable_name: convert_variable_name
-                       }
-                     end
-        macro_name = method_def[:method_name_].to_s
-        add_macro_name(macro_name)
-
-        if macro_name == SOURCE_MACRO_NAME
-          process_source_macro(method_def, variable_name)
-        elsif Convert::SOURCE_FORMATS.include?(macro_name)
-          add_source_format_map(@target_source_file_path, macro_name)
-        end
-
-        if @source_file_format.nil? && !method.nil? && SOURCE_FORMATS.include?(method[:method_name_])
-          @source_file_format = method[:method_name_]
-        end
-
-        method_def
-      end
-
       def process_source_macro(method_def, variable_name)
         args = method_def[:args_].keys.map do |hash|
           if hash == :arg_
@@ -272,14 +283,22 @@ class RDFConfig
           end
         end
 
-        @target_source_file_path = source_file_path(args[0])
+        if args[1].to_s == 'duckdb'
+          process_source_macro_for_rdb(args, variable_name)
+        else
+          @target_source_file_path = source_file_path(args[0])
+          add_source_subject_map(@target_source_file_path, variable_name)
+          @source_format_map[@target_source_file_path] = [] unless @source_format_map.key?(@target_source_file_path)
+          @source_format_map[@target_source_file_path] << args[1] if args[1]
+        end
+      end
+
+      # source_macro_args: [rdb_file_path, rdb_type (ex. duckdb), table_name]
+      def process_source_macro_for_rdb(source_macro_args, variable_name)
+        @target_source_file_path = source_file_path([source_macro_args[0], source_macro_args[2]].join('.'))
         add_source_subject_map(@target_source_file_path, variable_name)
         @source_format_map[@target_source_file_path] = [] unless @source_format_map.key?(@target_source_file_path)
-        @source_format_map[@target_source_file_path] << args[1] if args[1]
-
-        return if args[1].to_s != 'duckdb'
-
-        @source_table = args[2]
+        @source_format_map[@target_source_file_path] << source_macro_args[1] if source_macro_args[1]
       end
 
       def add_source_subject_map(source, subject_name)

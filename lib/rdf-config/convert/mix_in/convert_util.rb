@@ -1,13 +1,27 @@
 # frozen_string_literal: true
 
 require 'uri'
+require_relative '../parser/string_parser'
 
 class RDFConfig
   class Convert
     module MixIn
       module ConvertUtil
+        def parse_quoted_string(quoted_string)
+          return quoted_string unless ['"', "'"].include?(quoted_string[0])
+
+          parser = StringParser.new
+          tree = parser.parse(quoted_string)
+          # tree[:string][:chars].map { |hash| hash[:char].str }.join
+
+          transform = StringTransform.new
+          result = transform.apply(tree)
+
+          result[:string]
+        end
+
         def convert_variable?(variable_name)
-          variable_name.start_with?('$')
+          variable_name.to_s.start_with?('$')
         end
 
         def ext_by_file_path(file_path)
@@ -31,6 +45,14 @@ class RDFConfig
           uri.scheme
         rescue
           nil
+        end
+
+        def rdb_source_file(source)
+          source.split('.')[0..-2].join('.')
+        end
+
+        def rdb_source_table(source)
+          source.split('.').last
         end
       end
     end

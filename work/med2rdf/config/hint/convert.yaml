@@ -16,8 +16,22 @@
             - split(":")
             - $pmid: pick(0)
             - $method: pick(1)
-            - pick(2)
-            - $quality: change_value(["HT", "high-throughput"], ["LC", "literature-curated"], "unknown")
+            - $quality: pick(2)
+            - switch($quality):
+                "HT":
+                    - $quality: str("high-throughput")
+                "LC":
+                    - $quality: str("literature-curated")
+                :default:
+                    - $quality: str("unknown")
+            # high_qualityカラムから生成する場合
+            # - switch("high_quality"):
+            #     "True":
+            #         - $quality: str("high-throughput")
+            #     "False":
+            #         - $quality: str("literature-curated")
+            #     :default:
+            #         - $quality: str("unknown")
             - "pint:evidence-pubmed_$pmid-MI_$method-$quality"
         - name: "$uniprot_a-$uniprot_b"
         - pair0: "uni:$uniprot_a"
@@ -36,4 +50,6 @@
             - col("pmid:method:quality:type")
             - split(":")
             - pick(2)
-            - change_value(["HT", "high"], ["LC", "low"])
+            - switch:
+                "HT": str("high")
+                "LC": str("low")

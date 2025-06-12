@@ -1,11 +1,14 @@
 # frozen_string_literal: true
 
 require_relative '../validator'
+require_relative 'mix_in/convert_util'
 require_relative 'json_ld_generator/csv2json_lines'
 
 class RDFConfig
   class Convert
     class Validator < RDFConfig::Validator
+      include MixIn::ConvertUtil
+
       VALID_CONVERT_TYPES = %w[:turtle :jsonld :jsonl :context]
 
       def initialize(config, **opts)
@@ -97,8 +100,10 @@ class RDFConfig
         @convert.source_subject_map.each_key do |file_path|
           if file_path.nil?
             add_error(%(#{@convert.source_subject_map[nil].join(', ')}: Since source file is not specified in convert.yaml, please specify the source file.))
-          elsif !File.exist?(file_path)
-            add_error(%(Source file "#{file_path}" does not exist.))
+          else
+            formats = @convert.source_format_map[file_path] || []
+            file_path = rdb_source_file(file_path) if formats.include?('duckdb')
+            add_error(%(Source file "#{file_path}" does not exist.)) unless File.exist?(file_path)
           end
         end
       end
@@ -109,7 +114,7 @@ class RDFConfig
 
           if formats.empty?
             add_error("There is no file format specification for the source file (#{source_file_path}) in the settings in convert.yaml.")
-          elsif formats.size > 1
+          elsif formats.uniq.size > 1
             add_error("In the settings in convert.yaml, there are multiple file format specifications (#{formats.join(', ')}) for the same source file (#{source_file_path}) .")
           end
         end

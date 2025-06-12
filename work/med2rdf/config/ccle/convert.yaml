@@ -1,25 +1,36 @@
 - CCLE:
-    - source("CCLE_sample_info_file_2012-10-18.txt")
-    - $ccle_name: tsv("CCLE name")
+    - source("Cell_lines_annotations_20181226.txt")
     - subject:
-        - "cclec:$ccle_name"
+        - tsv("CCLE_ID")
+        - prepend("cclec:")
     - objects:
-        - ccle_label: tsv("CCLE name")
-        - hist_primary: tsv("Histology")
-        - hist_secondary: tsv("Hist Subtype1")
-        - site_primary: tsv("Site Primary")
+        - ccle_label:
+            - tsv("Name")
+            - skip("NA")
+        - hist_primary:
+            - tsv("Histology")
+            - skip("NA")
+        - hist_secondary:
+            - tsv("Hist_Subtype1")
+            - skip("NA", "NS")
+        - site_primary:
+            - tsv("Site_Primary")
+            - skip("NA")
         - gender:
-          - tsv("Gender")
-          - change_value(["M", "obo:PATO_0000384"], ["F", "obo:PATO_0000383"])
+            - switch("Gender"):
+                "male": str("obo:PATO_0000384")
+                "female": str("obo:PATO_0000383")
 
         # [] a m2r:Assay
-        - assay_gene: ccleg:ENSG00000000003
-        - assay_sample: "cclec:$ccle_name"
-        - exp_val:
-          - str("12.26012")
-          - to_float
-
----
+        # 取得方法不明
+        # - assay_gene: ccleg:ENSG00000000003
+        - assay_sample:
+            - tsv("CCLE_ID")
+            - prepend("cclec:")
+        # 取得方法不明
+        # - exp_val: # for test
+        #     - str("12.26012")
+        #     - to_float
 
 - EnsemblGene:
     - source("CCLE_DepMap_18q3_RNAseq_RPKM_20180718_head1001.txt")
@@ -35,33 +46,41 @@
             - prepend("http://rdf.ebi.ac.uk/resource/ensembl/")
 
 - EntrezGene:
-    - source("CCLE_DepMap_18q3_maf_20180718_DMS53_LUNG.txt")
-    - $gene: tsv("Hugo_Symbol")
+    - source("CCLE_DepMap_18q3_maf_20180718_head1001.txt")
     - subject:
-        - "ccleg:$gene"
+        - tsv("Hugo_Symbol")
+        - prepend("ccleg:")
     - objects:
-        - entrez_gene_label: $gene
+        - entrez_gene_label: tsv("Hugo_Symbol")
         - entrez_gene_id:
             - tsv("Entrez_Gene_Id")
             - skip("0")
 
 - Variation:
-    - source("CCLE_DepMap_18q3_maf_20180718_DMS53_LUNG.txt")
-    - $gene: tsv("Hugo_Symbol")
+    - source("CCLE_DepMap_18q3_maf_20180718_head1001.txt")
     - $chr: tsv("Chromosome")
     - $ncbi_build: tsv("NCBI_Build")
     - subject:
-        - "ccleg:$gene"
+        - tsv("Hugo_Symbol")
+        - prepend("ccleg:")
     - objects:
         - variation_label:
             - tsv("Protein_Change")
             - replace(/^p\./, "")
         - alternative_allele: tsv("Tumor_Seq_Allele1")
-        - variant_gene: "ccleg:$gene"
+        - variant_gene:
+            - tsv("Hugo_Symbol")
+            - prepend("ccleg:")
         - reference_allele: tsv("Reference_Allele")
         - variant_consequence:
-            - tsv("Variant_Classification")
-            - change_value(["Missense_Mutation", "sio:SO_0001583"], ["Silent", "sio:SO_0001819"], ["Splice_Site", "sio:SO_0001630"], ["De_novo_Start_OutOfFrame", "sio:SO_0001589"], ["Nonsense_Mutation", "sio:SO_0001587"], ["Nonstop_Mutation", "sio:SO_0001578"], ["Start_Codon_SNP", "sio:SO_0002012"])
+            - switch("Variant_Classification"):
+                "Missense_Mutation": str("sio:SO_0001583")
+                "Silent": str("sio:SO_0001819")
+                "Splice_Site": str("sio:SO_0001630")
+                "De_novo_Start_OutOfFrame": str("sio:SO_0001589")
+                "Nonsense_Mutation": str("sio:SO_0001587")
+                "Nonstop_Mutation": str("sio:SO_0001578")
+                "Start_Codon_SNP": str("sio:SO_0002012")
         - variant_type: tsv("Variant_Type")
         - codon_change: tsv("Codon_Change")
         - dna_change: tsv("cDNA_Change")
@@ -69,7 +88,9 @@
 
         # Transcript
         - variant_transcript_label: tsv("Annotation_Transcript")
-        - variant_transcript_gene: "ccleg:$gene"
+        - variant_transcript_gene:
+            - tsv("Hugo_Symbol")
+            - prepend("ccleg:")
         - variant_transcript_see_also:
             - tsv("Annotation_Transcript")
             - replace(/\.\d+$/, "")

@@ -132,7 +132,7 @@ class RDFConfig
       end
 
       def object_hash_by_triple(triple, values)
-        { triple.object.name => values }
+        { triple.object_name => values }
       end
 
       def add_subject_relation(triple, subject_node, object_node)
@@ -305,22 +305,29 @@ class RDFConfig
 
       def modeling_node(node)
         new_node = {}
-        subject = node.select { |variable_name, _| variable_name =~ /\A[A-Z]/ }.values.first
+        subject_uri = node.select { |variable_name, _| variable_name =~ /\A[A-Z]/ }.values.first
         node.each do |variable_name, value|
           if variable_name =~ /\A[a-z]/
             triple = triple_by_object_name(variable_name)
-            if triple.predicates.size == 1
+            predicates = triple.predicates
+            if predicates.size == 1
               new_node[variable_name] = value
             else
-              generate_blank_node(subject, triple)
-              bnode = blank_node(subject, triple.predicates[..-2].map(&:uri).join('/'))
+              generate_blank_node(subject_uri, triple)
+              bnode = blank_node(subject_uri, triple.predicates[..-2].map(&:uri).join('/'))
               bnode[variable_name] = value
-              unless new_node.key?(triple.predicates.first.uri)
-                new_node[triple.predicates.first.uri] = bnode
-              end
             end
           else
             new_node[variable_name] = value
+          end
+        end
+
+        top_bnode = @bnode.select do |key, _|
+          key.start_with?(subject_uri) && key.split(';').last.split('/').size == 1
+        end
+        if top_bnode
+          top_bnode.each do |key, value|
+            new_node[key.split(';').last] = value
           end
         end
 

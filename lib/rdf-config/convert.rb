@@ -3,7 +3,6 @@
 require 'forwardable'
 require_relative 'convert/mix_in/convert_util'
 require_relative 'convert/config_parser'
-require_relative 'convert/method_parser'
 require_relative 'convert/rdf_generator'
 require_relative 'convert/validator'
 require_relative 'convert/macro'
@@ -29,7 +28,7 @@ class RDFConfig
 
     def_delegators :@config_parser,
                    :subject_converts, :object_converts, :source_subject_map, :source_format_map, :macro_names,
-                   :variable_convert, :convert_variable_names, :has_rdf_type_object?, :source_table
+                   :variable_convert, :convert_variable_names, :has_rdf_type_object?
 
     def initialize(config, opts)
       @config = config
@@ -78,7 +77,7 @@ class RDFConfig
         CSVReader.new(source, file_format)
       when 'duckdb'
         require_relative 'convert/file_reader/duckdb_reader'
-        DuckdbReader.new(source, source_table)
+        DuckdbReader.new(rdb_source_file(source), rdb_source_table(source))
       when 'json'
         require_relative 'convert/file_reader/json_reader'
         JSONReader.new(@source)

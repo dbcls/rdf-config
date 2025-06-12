@@ -9,36 +9,38 @@
         - ncbigene:
             - col("features_entrez_id")
             - prepend("ncbigene:")
-        # - variation:
 
----
+        # Variation
+        - variation:
+            - col("variants_variant_id")
+            - prepend("variants:")
 
 - Variation:
-    - source("nightly-VariantSummaries_head101.tsv")
+    - source("civic.duckdb", :duckdb, "variants")
     - subject:
-        - tsv("variant_id")
+        - col("variant_id")
         - prepend("variants:")
     - objects:
-        - variation_identifier: tsv("variant_id")
-        - variation_label: tsv("variant")
+        - variation_identifier: col("variant_id")
+        - variation_label: col("variant")
         # variant_originカラムなし
         # - variant_origin:
-        - reference_build: tsv("reference_build")
-        - transcript_label: tsv("representative_transcript")
-        - ensembl_version: tsv("ensembl_version")
+        - reference_build: col("reference_build")
+        - transcript_label: col("representative_transcript")
+        - ensembl_version: col("ensembl_version")
         # variant_summaryカラムなし
         # - variation_description:
         # m2r:disease civic:LymphoidLeukemia,civic:ChronicMyeloidLeukemia,civic:BoneMarrowCancer,civic:PolycythemiaVera
         # (Disease.disease_code)
         # - disease:
         - enst:
-            - tsv("representative_transcript")
+            - col("representative_transcript")
             - replace(/\.\d+$/, "")
             - prepend("enst:")
         # frameshift_truncation,dominant_negative_variant
         # map(lambda x: urllib.parse.quote(x.replace(" ","").replace("/","-"))  , self.variant_types.split(','))
         - variant_type:
-            - tsv("variant_types")
+            - col("variant_types")
             - skip("N/A")
             - split(",")
             - prepend("civic:")
@@ -47,28 +49,29 @@
         # - evidence:
 
 - Evidence:
-    - source("nightly-ClinicalEvidenceSummaries_head101.tsv")
+    - source("civic.duckdb", :duckdb, "clinical_evidences")
     - subject:
-        - tsv("evidence_id")
+        - col("evidence_id")
         - prepend("evidence:")
     - objects:
-        - evidence_description: tsv("evidence_statement")
-        - clinical_significance: tsv("significance")
-        - evidence_direction: tsv("evidence_direction")
-        - evidence_type: tsv("evidence_type")
-        - rating: tsv("rating")
-        - evidence_level: tsv("evidence_level")
-        - evidence_status: tsv("evidence_status")
-        - citation: tsv("citation")
-
-        # ToDo: 以下の処理は source_typeカラムの値が PubMed の場合のみ限定する必要がある
+        - evidence_description: col("evidence_statement")
+        - clinical_significance: col("significance")
+        - evidence_direction: col("evidence_direction")
+        - evidence_type: col("evidence_type")
+        - rating: col("rating")
+        - evidence_level: col("evidence_level")
+        - evidence_status: col("evidence_status")
+        - citation: col("citation")
         - pubmed:
-            - tsv("citation_id")
-            - prepend("pubmed:")
+            - switch("source_type"):
+                "PubMed":
+                    - col("citation_id")
+                    - prepend("pubmed:")
+                :default: str("")
 
         # model.yamlの例で drug_Palbociclib となっており、Palbociclib という値は
         # therapiesカラムに現れるが、これを使って良いか？
         - drug:
-            - tsv("therapies")
+            - col("therapies")
             - split(",")
             - prepend("civic:drug_")
