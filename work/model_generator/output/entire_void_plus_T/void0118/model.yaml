@@ -1,0 +1,98 @@
+- OBIws_0000088:
+  - rdf:type:
+    - ob_iws_0000088_type: Class
+  - rdfs:subClassOf:
+    - ob_iws_0000088_sub_class_of: Class
+  - rdfs:label:
+    - ob_iws_0000088_label: string
+  - ns1:IAO_0000115:
+    - ob_iws_0000088_iao_0000115: string
+- AnnotationProperty:
+  - rdfs:label:
+    - annotation_property_label:
+      - string
+      - string
+  - ns1:IAO_0000115:
+    - annotation_property_iao_0000115:
+      - string
+      - string
+  - ns1:IAO_0000116:
+    - annotation_property_iao_0000116: string
+  - ns1:IAO_0000119:
+    - annotation_property_iao_0000119:
+      - string
+      - string
+  - ns1:IAO_0000117:
+    - annotation_property_iao_0000117: string
+- Class:
+  - rdf:type:
+    - class_type: Class
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Restriction
+      - Class
+  - rdfs:label:
+    - class_label:
+      - string
+      - string
+  - ns1:IAO_0000115:
+    - class_iao_0000115:
+      - string
+      - string
+  - ns1:IAO_0000118:
+    - class_iao_0000118:
+      - string
+      - string
+  - ns1:IAO_0000116:
+    - class_iao_0000116:
+      - string
+      - string
+  - ns1:IAO_0000119:
+    - class_iao_0000119:
+      - string
+      - string
+  - rdfs:definition:
+    - class_definition: string
+  - ns1:IAO_0000117:
+    - class_iao_0000117:
+      - string
+      - string
+- NamedIndividual:
+  - rdf:type:
+    - named_individual_type: Class
+  - rdfs:subClassOf:
+    - named_individual_sub_class_of: Class
+  - rdfs:label:
+    - named_individual_label: string
+  - ns1:IAO_0000115:
+    - named_individual_iao_0000115: string
+- TransitiveProperty:
+  - rdfs:subPropertyOf:
+    - transitive_property_sub_property_of: ObjectProperty
+  - rdfs:label:
+    - transitive_property_label: string
+  - ns1:IAO_0000115:
+    - transitive_property_iao_0000115: string
+- Ontology:
+  - rdfs:comment:
+    - ontology_comment: string
+  - dc11:title:
+    - ontology_title: string
+  - dc11:contributor:
+    - ontology_contributor: string
+- Restriction:
+  - owl:someValuesFrom:
+    - restriction_some_values_from: Class
+  - owl:onProperty:
+    - restriction_on_property: ObjectProperty
+- ObjectProperty:
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of:
+      - ObjectProperty
+      - TransitiveProperty
+  - rdfs:label:
+    - object_property_label: string
+  - ns1:IAO_0000115:
+    - object_property_iao_0000115:
+      - string
+      - string

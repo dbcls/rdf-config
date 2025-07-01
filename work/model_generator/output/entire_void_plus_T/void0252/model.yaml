@@ -1,0 +1,437 @@
+- Ontology:
+  - ns2:hasGraphMetadata:
+    - ontology_has_graph_metadata: GraphMetaData
+  - rdfs:label:
+    - ontology_label: string
+- ObjectProperty:
+  - rdfs:range:
+    - object_property_range: Class
+  - owl:inverseOf:
+    - object_property_inverse_of:
+      - InverseFunctionalProperty
+      - FunctionalProperty
+      - SymmetricProperty
+      - ObjectProperty
+  - rdfs:domain:
+    - object_property_domain: Class
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of:
+      - ObjectProperty
+      - FunctionalProperty
+  - rdfs:isDefinedBy:
+    - object_property_is_defined_by: Ontology
+  - dc:isReplacedBy:
+    - object_property_is_replaced_by: ObjectProperty
+  - ns1:informativeReference:
+    - object_property_informative_reference: anyURI
+  - ns1:deprecated:
+    - object_property_deprecated: true
+  - rdfs:comment:
+    - object_property_comment: string
+  - ns1:plainTextDescription:
+    - object_property_plain_text_description: string
+  - dc:description:
+    - object_property_description:
+      - HTML
+      - LatexString
+      - string
+  - rdfs:label:
+    - object_property_label: string
+- BitEncodingType:
+  - rdf:type:
+    - bit_encoding_type_type: Class
+  - rdfs:isDefinedBy:
+    - bit_encoding_type_is_defined_by: Ontology
+  - ns1:bits:
+    - bit_encoding_type_bits: integer
+  - rdfs:label:
+    - bit_encoding_type_label: string
+- InverseFunctionalProperty:
+  - owl:inverseOf:
+    - inverse_functional_property_inverse_of:
+      - FunctionalProperty
+      - ObjectProperty
+      - InverseFunctionalProperty
+      - SymmetricProperty
+  - rdfs:isDefinedBy:
+    - inverse_functional_property_is_defined_by: Ontology
+  - rdfs:label:
+    - inverse_functional_property_label: string
+- Organization:
+  - rdf:type:
+    - organization_type: Class
+  - rdfs:isDefinedBy:
+    - organization_is_defined_by: Ontology
+  - rdfs:label:
+    - organization_label: string
+- CatalogEntry:
+  - rdfs:label:
+    - catalog_entry_label: string
+- Class:
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - AspectClass
+      - Restriction
+      - Class
+  - rdfs:seeAlso:
+    - class_see_also: Class
+  - rdfs:isDefinedBy:
+    - class_is_defined_by: Ontology
+  - ns1:informativeReference:
+    - class_informative_reference: anyURI
+  - dc11:description:
+    - class_description: string
+  - skos:prefLabel:
+    - class_pref_label: string
+  - rdfs:comment:
+    - class_comment:
+      - string
+      - HTML
+  - ns1:dbpediaMatch:
+    - class_dbpedia_match: anyURI
+  - ns1:plainTextDescription:
+    - class_plain_text_description: string
+  - dc:description:
+    - class_description:
+      - HTML
+      - string
+      - LatexString
+  - rdfs:label:
+    - class_label: string
+- Restriction:
+  - owl:onProperty:
+    - restriction_on_property:
+      - Property
+      - AnnotationProperty
+      - DatatypeProperty
+      - FunctionalProperty
+      - ObjectProperty
+  - owl:onClass:
+    - restriction_on_class: Class
+  - owl:allValuesFrom:
+    - restriction_all_values_from:
+      - Class
+      - Datatype
+  - owl:minCardinality:
+    - restriction_min_cardinality: nonNegativeInteger
+  - owl:maxQualifiedCardinality:
+    - restriction_max_qualified_cardinality: nonNegativeInteger
+  - owl:cardinality:
+    - restriction_cardinality:
+      - 12345
+      - nonNegativeInteger
+  - owl:maxCardinality:
+    - restriction_max_cardinality:
+      - 12345
+      - nonNegativeInteger
+      - integer
+- Class:
+  - rdfs:isDefinedBy:
+    - class_is_defined_by: Ontology
+  - rdfs:label:
+    - class_label: string
+- BooleanEncodingType:
+  - rdf:type:
+    - boolean_encoding_type_type: Class
+  - rdfs:isDefinedBy:
+    - boolean_encoding_type_is_defined_by: Ontology
+  - dc11:description:
+    - boolean_encoding_type_description: string
+  - ns1:bytes:
+    - boolean_encoding_type_bytes: integer
+  - ns1:bits:
+    - boolean_encoding_type_bits: integer
+  - rdfs:label:
+    - boolean_encoding_type_label: string
+- ByteEncodingType:
+  - rdf:type:
+    - byte_encoding_type_type: Class
+  - rdfs:isDefinedBy:
+    - byte_encoding_type_is_defined_by: Ontology
+  - ns1:bytes:
+    - byte_encoding_type_bytes: integer
+  - rdfs:label:
+    - byte_encoding_type_label: string
+- CardinalityType:
+  - rdf:type:
+    - cardinality_type_type: Class
+  - rdfs:isDefinedBy:
+    - cardinality_type_is_defined_by: Ontology
+  - ns1:informativeReference:
+    - cardinality_type_informative_reference: anyURI
+  - dc:description:
+    - cardinality_type_description: LatexString
+  - rdfs:label:
+    - cardinality_type_label: string
+  - ns1:literal:
+    - cardinality_type_literal: string
+- Party:
+  - ns2:website:
+    - party_website: anyURI
+  - ns2:graphName:
+    - party_graph_name: string
+  - dc:description:
+    - party_description: HTML
+  - rdfs:label:
+    - party_label: string
+- AspectClass:
+  - rdfs:subClassOf:
+    - aspect_class_sub_class_of:
+      - AspectClass
+      - Class
+      - Restriction
+  - rdf:type:
+    - aspect_class_type: Class
+  - rdfs:isDefinedBy:
+    - aspect_class_is_defined_by: Ontology
+  - rdfs:comment:
+    - aspect_class_comment:
+      - HTML
+      - string
+  - rdfs:label:
+    - aspect_class_label: string
+- GraphMetaData:
+  - ns2:hasOwner:
+    - graph_meta_data_has_owner: Party
+  - ns2:hasSteward:
+    - graph_meta_data_has_steward: Party
+  - ns2:usesNonImportedResource:
+    - graph_meta_data_uses_non_imported_resource:
+      - AnnotationProperty
+      - Property
+  - rdfs:isDefinedBy:
+    - graph_meta_data_is_defined_by: Ontology
+  - ns2:revision:
+    - graph_meta_data_revision: string
+  - ns1:informativeReference:
+    - graph_meta_data_informative_reference: anyURI
+  - dc:subject:
+    - graph_meta_data_subject: string
+  - ns2:graphName:
+    - graph_meta_data_graph_name: string
+  - dc:creator:
+    - graph_meta_data_creator: string
+  - dc:contributor:
+    - graph_meta_data_contributor: string
+  - ns2:logo:
+    - graph_meta_data_logo: anyURI
+  - dc:rights:
+    - graph_meta_data_rights: string
+  - ns2:intent:
+    - graph_meta_data_intent: string
+  - dc:title:
+    - graph_meta_data_title: string
+  - dc:modified:
+    - graph_meta_data_modified: dateTime
+  - dc:description:
+    - graph_meta_data_description: HTML
+  - dc:created:
+    - graph_meta_data_created: '2000-01-01'
+  - ns2:graphTitle:
+    - graph_meta_data_graph_title: string
+  - rdfs:label:
+    - graph_meta_data_label: string
+  - ns2:owner:
+    - graph_meta_data_owner: string
+  - ns2:latestPublishedVersion:
+    - graph_meta_data_latest_published_version: anyURI
+  - ns2:previousPublishedVersion:
+    - graph_meta_data_previous_published_version: anyURI
+  - ns2:namespace:
+    - graph_meta_data_namespace: string
+  - ns2:namespacePrefix:
+    - graph_meta_data_namespace_prefix: string
+  - ns2:turtleFileURL:
+    - graph_meta_data_turtle_file_url: anyURI
+- FunctionalProperty:
+  - rdfs:range:
+    - functional_property_range: Class
+  - owl:inverseOf:
+    - functional_property_inverse_of:
+      - SymmetricProperty
+      - FunctionalProperty
+      - ObjectProperty
+      - InverseFunctionalProperty
+  - rdfs:subPropertyOf:
+    - functional_property_sub_property_of:
+      - FunctionalProperty
+      - ObjectProperty
+  - rdfs:isDefinedBy:
+    - functional_property_is_defined_by: Ontology
+  - ns1:informativeReference:
+    - functional_property_informative_reference: anyURI
+  - dc:description:
+    - functional_property_description:
+      - LatexString
+      - HTML
+  - rdfs:label:
+    - functional_property_label: string
+  - rdfs:seeAlso:
+    - functional_property_see_also: anyURI
+- StringEncodingType:
+  - rdf:type:
+    - string_encoding_type_type: Class
+  - rdfs:isDefinedBy:
+    - string_encoding_type_is_defined_by: Ontology
+  - ns1:bytes:
+    - string_encoding_type_bytes: integer
+  - rdfs:label:
+    - string_encoding_type_label: string
+- CharEncodingType:
+  - rdf:type:
+    - char_encoding_type_type: Class
+  - rdfs:isDefinedBy:
+    - char_encoding_type_is_defined_by: Ontology
+  - dc11:description:
+    - char_encoding_type_description: string
+  - ns1:bytes:
+    - char_encoding_type_bytes: integer
+  - rdfs:label:
+    - char_encoding_type_label: string
+- DatatypeProperty:
+  - rdfs:range:
+    - datatype_property_range:
+      - Datatype
+      - Class
+  - rdfs:domain:
+    - datatype_property_domain: Class
+  - rdfs:subPropertyOf:
+    - datatype_property_sub_property_of: DatatypeProperty
+  - rdfs:isDefinedBy:
+    - datatype_property_is_defined_by: Ontology
+  - ns1:informativeReference:
+    - datatype_property_informative_reference: anyURI
+  - dc:source:
+    - datatype_property_source: anyURI
+  - ns1:deprecated:
+    - datatype_property_deprecated: true
+  - rdfs:comment:
+    - datatype_property_comment: string
+  - ns1:plainTextDescription:
+    - datatype_property_plain_text_description: string
+  - dc:description:
+    - datatype_property_description:
+      - LatexString
+      - string
+      - HTML
+  - rdfs:label:
+    - datatype_property_label: string
+  - rdfs:seeAlso:
+    - datatype_property_see_also: anyURI
+- DateTimeStringEncodingType:
+  - rdf:type:
+    - date_time_string_encoding_type_type: Class
+  - rdfs:isDefinedBy:
+    - date_time_string_encoding_type_is_defined_by: Ontology
+  - ns1:allowedPattern:
+    - date_time_string_encoding_type_allowed_pattern: string
+  - rdfs:label:
+    - date_time_string_encoding_type_label: string
+- Datatype:
+  - rdfs:isDefinedBy:
+    - datatype_is_defined_by: Ontology
+  - owl:equivalentClass:
+    - datatype_equivalent_class:
+      - Class
+      - Datatype
+  - dc:source:
+    - datatype_source: anyURI
+  - ns1:deprecated:
+    - datatype_deprecated: true
+  - rdfs:comment:
+    - datatype_comment: string
+  - dc:description:
+    - datatype_description: string
+  - rdfs:label:
+    - datatype_label: string
+- OrderedType:
+  - rdf:type:
+    - ordered_type_type: Class
+  - rdfs:isDefinedBy:
+    - ordered_type_is_defined_by: Ontology
+  - ns1:plainTextDescription:
+    - ordered_type_plain_text_description: string
+  - rdfs:label:
+    - ordered_type_label: string
+  - ns1:literal:
+    - ordered_type_literal: string
+- AnnotationProperty:
+  - rdfs:subPropertyOf:
+    - annotation_property_sub_property_of: DatatypeProperty
+  - rdfs:isDefinedBy:
+    - annotation_property_is_defined_by: Ontology
+  - ns1:deprecated:
+    - annotation_property_deprecated: true
+  - rdfs:comment:
+    - annotation_property_comment: HTML
+  - dc:description:
+    - annotation_property_description: HTML
+  - rdfs:label:
+    - annotation_property_label: string
+- EndianType:
+  - rdf:type:
+    - endian_type_type: Class
+  - rdfs:isDefinedBy:
+    - endian_type_is_defined_by: Ontology
+  - ns3:literal:
+    - endian_type_literal: string
+  - rdfs:label:
+    - endian_type_label: string
+- SignednessType:
+  - rdf:type:
+    - signedness_type_type: Class
+  - rdfs:isDefinedBy:
+    - signedness_type_is_defined_by: Ontology
+  - ns3:literal:
+    - signedness_type_literal: string
+  - rdfs:label:
+    - signedness_type_label: string
+- FloatingPointEncodingType:
+  - rdf:type:
+    - floating_point_encoding_type_type: Class
+  - rdfs:isDefinedBy:
+    - floating_point_encoding_type_is_defined_by: Ontology
+  - ns1:bytes:
+    - floating_point_encoding_type_bytes: integer
+  - rdfs:label:
+    - floating_point_encoding_type_label: string
+- Property:
+  - rdfs:range:
+    - property_range: Class
+  - rdfs:subPropertyOf:
+    - property_sub_property_of: DatatypeProperty
+  - rdfs:isDefinedBy:
+    - property_is_defined_by: Ontology
+  - rdfs:comment:
+    - property_comment: string
+  - dc:description:
+    - property_description:
+      - string
+      - HTML
+  - rdfs:label:
+    - property_label: string
+- TransitiveProperty:
+  - rdfs:isDefinedBy:
+    - transitive_property_is_defined_by: Ontology
+  - rdfs:label:
+    - transitive_property_label: string
+- SymmetricProperty:
+  - owl:inverseOf:
+    - symmetric_property_inverse_of:
+      - ObjectProperty
+      - SymmetricProperty
+      - InverseFunctionalProperty
+      - FunctionalProperty
+  - rdfs:isDefinedBy:
+    - symmetric_property_is_defined_by: Ontology
+  - rdfs:label:
+    - symmetric_property_label: string
+- IntegerEncodingType:
+  - rdf:type:
+    - integer_encoding_type_type: Class
+  - rdfs:isDefinedBy:
+    - integer_encoding_type_is_defined_by: Ontology
+  - ns1:bytes:
+    - integer_encoding_type_bytes: integer
+  - rdfs:label:
+    - integer_encoding_type_label: string

@@ -1,0 +1,560 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sbm: <http://sparqlbuilder.org/2015/09/rdf-metadata-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://rdfportal.org/ns/> .
+
+<http://rdfportal.org/ns/2ca607731cc6151dba6e7775833b606b>
+    void:classPartition [
+        void:class owl:ObjectProperty ;
+        void:entities 14 ;
+        a void:Dataset
+    ], [
+        void:class <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Asian> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class owl:AnnotationProperty ;
+        void:entities 19 ;
+        a void:Dataset
+    ], [
+        void:class owl:Ontology ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Female> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#African_American> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.org/net/miCLIP#PercentageDistributionByOccupation> ;
+        void:entities 5 ;
+        a void:Dataset
+    ], [
+        void:class <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Locality> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Male> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Sample_Study_Population> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#White> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class owl:Thing ;
+        void:entities 44 ;
+        a void:Dataset
+    ], [
+        void:class <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Age> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.org/net/miCLIP#PercentageDistributionByDisease,DisorderOrFinding> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Hispanic> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.org/net/miCLIP#PercentageDistributionByGender> ;
+        void:entities 4 ;
+        a void:Dataset
+    ], [
+        void:class owl:Restriction ;
+        void:entities 58 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.org/net/miCLIP#PercentageDistributionByRace> ;
+        void:entities 5 ;
+        a void:Dataset
+    ], [
+        void:class owl:Class ;
+        void:entities 278 ;
+        a void:Dataset
+    ], [
+        void:class owl:TransitiveProperty ;
+        void:entities 1 ;
+        a void:Dataset
+    ] ;
+    void:classes 20 ;
+    void:distinctObjects 1009 ;
+    void:distinctSubjects 414 ;
+    void:properties 16 ;
+    void:propertyPartition [
+        void:property <http://purl.obolibrary.org/obo/IAO_0000119> ;
+        void:triples 54 ;
+        sbm:classRelation [
+            void:triples 54 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.org/net/miCLIP#hasAge> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectClass owl:Thing ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Age> ;
+            sbm:subjectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Sample_Study_Population> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Age> ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Thing ;
+            sbm:subjectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Sample_Study_Population> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.obolibrary.org/obo/IAO_0000112> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.org/net/miCLIP#hasPercentageDistribution> ;
+        void:triples 9 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:Thing ;
+            sbm:subjectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Asian> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectClass <http://purl.org/net/miCLIP#PercentageDistributionByRace> ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Thing ;
+            sbm:subjectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Female> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://purl.org/net/miCLIP#PercentageDistributionByGender> ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Thing ;
+            sbm:subjectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Hispanic> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9 ;
+            sbm:objectClass owl:Thing ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://purl.org/net/miCLIP#PercentageDistributionByRace> ;
+            sbm:subjectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Hispanic> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://purl.org/net/miCLIP#PercentageDistributionByRace> ;
+            sbm:subjectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Asian> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Thing ;
+            sbm:subjectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#African_American> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://purl.org/net/miCLIP#PercentageDistributionByRace> ;
+            sbm:subjectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#White> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://purl.org/net/miCLIP#PercentageDistributionByGender> ;
+            sbm:subjectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Male> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://purl.org/net/miCLIP#PercentageDistributionByRace> ;
+            sbm:subjectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#African_American> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://purl.org/net/miCLIP#PercentageDistributionByGender> ;
+            sbm:subjectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Female> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Thing ;
+            sbm:subjectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Male> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Thing ;
+            sbm:subjectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#White> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.obofoundry.org/ro/ro.owl#located_in> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectClass owl:Thing ;
+            sbm:subjectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Sample_Study_Population> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Locality> ;
+            sbm:subjectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Sample_Study_Population> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Locality> ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Thing ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:label ;
+        void:triples 338 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.org/net/miCLIP#PercentageDistributionByDisease,DisorderOrFinding> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 277 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Sample_Study_Population> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 28 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Asian> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 19 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:AnnotationProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.org/net/miCLIP#PercentageDistributionByGender> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#African_American> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Hispanic> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Male> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 14 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Female> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.org/net/miCLIP#PercentageDistributionByOccupation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#White> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.org/net/miCLIP#PercentageDistributionByRace> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Age> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.obolibrary.org/obo/IAO_0000118> ;
+        void:triples 152 ;
+        sbm:classRelation [
+            void:triples 151 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Locality> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.obofoundry.org/ro/ro.owl#location_of> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectClass owl:Thing ;
+            sbm:subjectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Locality> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Sample_Study_Population> ;
+            sbm:subjectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Locality> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Sample_Study_Population> ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Thing ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.obolibrary.org/obo/IAO_0000115> ;
+        void:triples 237 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 236 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:disjointWith ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:onProperty ;
+        void:triples 58 ;
+        sbm:classRelation [
+            void:triples 58 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9 ;
+            sbm:objectClass owl:TransitiveProperty ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:comment ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:subClassOf ;
+        void:triples 329 ;
+        sbm:classRelation [
+            void:triples 271 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 58 ;
+            sbm:objectClass owl:Restriction ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:someValuesFrom ;
+        void:triples 58 ;
+        sbm:classRelation [
+            void:triples 58 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdf:type ;
+        void:triples 445 ;
+        sbm:classRelation [
+            void:triples 10 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://purl.org/net/miCLIP#PercentageDistributionByRace> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Hispanic> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://purl.org/net/miCLIP#PercentageDistributionByDisease,DisorderOrFinding> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Female> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#African_American> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 10 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://purl.org/net/miCLIP#PercentageDistributionByOccupation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Asian> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Male> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 74 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://purl.org/net/miCLIP#PercentageDistributionByGender> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Age> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#White> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Sample_Study_Population> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Locality> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.obolibrary.org/obo/IAO_0000412> ;
+        void:triples 214 ;
+        sbm:classRelation [
+            void:triples 214 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ] ;
+    void:sparqlEndpoint <https://rdfportal.org/bioportal/sparql> ;
+    void:triples 1905 ;
+    a void:Dataset, sd:Graph .

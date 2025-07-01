@@ -1,0 +1,590 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sbm: <http://sparqlbuilder.org/2015/09/rdf-metadata-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://rdfportal.org/ns/> .
+
+<http://rdfportal.org/ns/84b8524baae34561208ad86890e2591a>
+    void:classPartition [
+        void:class owl:Thing ;
+        void:entities 7 ;
+        a void:Dataset
+    ], [
+        void:class <http://jcggdb.jp/rdf/diseases/ggdonto-schema#GlycoRelatedConceptSchemes> ;
+        void:entities 7 ;
+        a void:Dataset
+    ], [
+        void:class owl:Ontology ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://jcggdb.jp/rdf/diseases/ggdonto-schema#OntologyType> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://jcggdb.jp/rdf/diseases/ggdonto-schema#SemanticRelationsGGDonto> ;
+        void:entities 872 ;
+        a void:Dataset
+    ], [
+        void:class skos:ConceptScheme ;
+        void:entities 7 ;
+        a void:Dataset
+    ], [
+        void:class <http://jcggdb.jp/rdf/diseases/ggdonto-schema#DiseaseTypeForClassification> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://jcggdb.jp/rdf/diseases/ggdonto-schema#TopLevelOntologies> ;
+        void:entities 7 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Database> ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class owl:DatatypeProperty ;
+        void:entities 27 ;
+        a void:Dataset
+    ], [
+        void:class owl:Class ;
+        void:entities 19 ;
+        a void:Dataset
+    ], [
+        void:class <http://jcggdb.jp/rdf/diseases/ggdonto-schema#ConceptType> ;
+        void:entities 5 ;
+        a void:Dataset
+    ], [
+        void:class owl:FunctionalProperty ;
+        void:entities 5 ;
+        a void:Dataset
+    ], [
+        void:class <http://jcggdb.jp/rdf/diseases/ggdonto-schema#GlycoRelatedDatabases> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class owl:ObjectProperty ;
+        void:entities 17 ;
+        a void:Dataset
+    ] ;
+    void:classes 15 ;
+    void:distinctObjects 1798 ;
+    void:distinctSubjects 989 ;
+    void:properties 26 ;
+    void:propertyPartition [
+        void:property rdfs:range ;
+        void:triples 19 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass <http://jcggdb.jp/rdf/diseases/ggdonto-schema#ConceptType> ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Thing ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Thing ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://jcggdb.jp/rdf/diseases/ggdonto-schema#ConceptType> ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dcterms:description ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/abbreviation> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://jcggdb.jp/rdf/diseases/ggdonto-schema#GlycoRelatedDatabases> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:inverseOf ;
+        void:triples 872 ;
+        sbm:classRelation [
+            void:triples 872 ;
+            sbm:objectClass <http://jcggdb.jp/rdf/diseases/ggdonto-schema#SemanticRelationsGGDonto> ;
+            sbm:subjectClass <http://jcggdb.jp/rdf/diseases/ggdonto-schema#SemanticRelationsGGDonto> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://jcggdb.jp/rdf/diseases/ggdonto-schema#hasBaseURL> ;
+        void:triples 7 ;
+        sbm:classRelation [
+            void:triples 7 ;
+            sbm:objectDatatype xsd:anyURI ;
+            sbm:subjectClass <http://jcggdb.jp/rdf/diseases/ggdonto-schema#GlycoRelatedConceptSchemes> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectDatatype xsd:anyURI ;
+            sbm:subjectClass skos:ConceptScheme ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:subPropertyOf ;
+        void:triples 872 ;
+        sbm:classRelation [
+            void:triples 436 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass <http://jcggdb.jp/rdf/diseases/ggdonto-schema#SemanticRelationsGGDonto> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://jcggdb.jp/rdf/diseases/ggdonto-schema#parentOntology> ;
+        void:triples 858 ;
+        sbm:classRelation [
+            void:triples 858 ;
+            sbm:objectClass <http://jcggdb.jp/rdf/diseases/ggdonto-schema#TopLevelOntologies> ;
+            sbm:subjectClass <http://jcggdb.jp/rdf/diseases/ggdonto-schema#SemanticRelationsGGDonto> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:domain ;
+        void:triples 17 ;
+        sbm:classRelation [
+            void:triples 10 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://jcggdb.jp/rdf/diseases/ggdonto-schema#ontologyType> ;
+        void:triples 872 ;
+        sbm:classRelation [
+            void:triples 872 ;
+            sbm:objectClass owl:Thing ;
+            sbm:subjectClass <http://jcggdb.jp/rdf/diseases/ggdonto-schema#SemanticRelationsGGDonto> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 872 ;
+            sbm:objectClass <http://jcggdb.jp/rdf/diseases/ggdonto-schema#OntologyType> ;
+            sbm:subjectClass <http://jcggdb.jp/rdf/diseases/ggdonto-schema#SemanticRelationsGGDonto> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dcterms:creator ;
+        void:triples 4 ;
+        sbm:classRelation [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/urlTemplate> ;
+        void:triples 5 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://jcggdb.jp/rdf/diseases/ggdonto-schema#GlycoRelatedDatabases> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Database> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property skos:altLabel ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:seeAlso ;
+        void:triples 10 ;
+        sbm:classRelation [
+            void:triples 5 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://jcggdb.jp/rdf/diseases/ggdonto-schema#ConceptType> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://jcggdb.jp/rdf/diseases/ggdonto-schema#topOntology> ;
+        void:triples 14 ;
+        sbm:classRelation [
+            void:triples 14 ;
+            sbm:objectClass <http://jcggdb.jp/rdf/diseases/ggdonto-schema#TopLevelOntologies> ;
+            sbm:subjectClass <http://jcggdb.jp/rdf/diseases/ggdonto-schema#SemanticRelationsGGDonto> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dcterms:publisher ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dcterms:title ;
+        void:triples 8 ;
+        sbm:classRelation [
+            void:triples 7 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass skos:ConceptScheme ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://jcggdb.jp/rdf/diseases/ggdonto-schema#GlycoRelatedConceptSchemes> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:versionInfo ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:comment ;
+        void:triples 37 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://jcggdb.jp/rdf/diseases/ggdonto-schema#ConceptType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Database> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://jcggdb.jp/rdf/diseases/ggdonto-schema#DiseaseTypeForClassification> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://jcggdb.jp/rdf/diseases/ggdonto-schema#GlycoRelatedDatabases> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 14 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 10 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dcterms:modified ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.org/pav/version> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dcterms:contributor ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdf:type ;
+        void:triples 996 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://jcggdb.jp/rdf/diseases/ggdonto-schema#GlycoRelatedDatabases> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://jcggdb.jp/rdf/diseases/ggdonto-schema#OntologyType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass skos:ConceptScheme ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://jcggdb.jp/rdf/diseases/ggdonto-schema#ConceptType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Database> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://jcggdb.jp/rdf/diseases/ggdonto-schema#GlycoRelatedConceptSchemes> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://jcggdb.jp/rdf/diseases/ggdonto-schema#DiseaseTypeForClassification> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://jcggdb.jp/rdf/diseases/ggdonto-schema#TopLevelOntologies> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 872 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://jcggdb.jp/rdf/diseases/ggdonto-schema#SemanticRelationsGGDonto> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:subClassOf ;
+        void:triples 8 ;
+        sbm:classRelation [
+            void:triples 5 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property skos:scopeNote ;
+        void:triples 885 ;
+        sbm:classRelation [
+            void:triples 5 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 872 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://jcggdb.jp/rdf/diseases/ggdonto-schema#SemanticRelationsGGDonto> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:label ;
+        void:triples 930 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://jcggdb.jp/rdf/diseases/ggdonto-schema#TopLevelOntologies> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://jcggdb.jp/rdf/diseases/ggdonto-schema#GlycoRelatedConceptSchemes> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://jcggdb.jp/rdf/diseases/ggdonto-schema#DiseaseTypeForClassification> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://jcggdb.jp/rdf/diseases/ggdonto-schema#GlycoRelatedDatabases> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://jcggdb.jp/rdf/diseases/ggdonto-schema#OntologyType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://jcggdb.jp/rdf/diseases/ggdonto-schema#ConceptType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 10 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 14 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Database> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 872 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://jcggdb.jp/rdf/diseases/ggdonto-schema#SemanticRelationsGGDonto> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass skos:ConceptScheme ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dcterms:created ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ] ;
+    void:sparqlEndpoint <https://rdfportal.org/primary/sparql> ;
+    void:triples 6462 ;
+    a void:Dataset, sd:Graph .

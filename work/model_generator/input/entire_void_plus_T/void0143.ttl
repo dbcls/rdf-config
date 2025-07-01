@@ -1,0 +1,1571 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sbm: <http://sparqlbuilder.org/2015/09/rdf-metadata-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://rdfportal.org/ns/> .
+
+<http://rdfportal.org/ns/257774230f8b6cca0e43d2fb0ccf3eb5>
+    void:classPartition [
+        void:class owl:FunctionalProperty ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class owl:TransitiveProperty ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class owl:ObjectProperty ;
+        void:entities 44 ;
+        a void:Dataset
+    ], [
+        void:class owl:Class ;
+        void:entities 107260 ;
+        a void:Dataset
+    ], [
+        void:class owl:SymmetricProperty ;
+        void:entities 4 ;
+        a void:Dataset
+    ], [
+        void:class owl:NamedIndividual ;
+        void:entities 107254 ;
+        a void:Dataset
+    ], [
+        void:class owl:AnnotationProperty ;
+        void:entities 17 ;
+        a void:Dataset
+    ], [
+        void:class owl:DatatypeProperty ;
+        void:entities 25 ;
+        a void:Dataset
+    ], [
+        void:class owl:Ontology ;
+        void:entities 1 ;
+        a void:Dataset
+    ] ;
+    void:classes 9 ;
+    void:distinctObjects 955233 ;
+    void:distinctSubjects 107351 ;
+    void:properties 73 ;
+    void:propertyPartition [
+        void:property <http://data.bioontology.org/metadata/prefixIRI> ;
+        void:triples 5 ;
+        sbm:classRelation [
+            void:triples 5 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/RXAUI> ;
+        void:triples 189346 ;
+        sbm:classRelation [
+            void:triples 189346 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 189346 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/inverse_isa> ;
+        void:triples 89398 ;
+        sbm:classRelation [
+            void:triples 89398 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 89398 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 89398 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 89398 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/RXN_BOSS_STRENGTH_DENOM_UNIT> ;
+        void:triples 12764 ;
+        sbm:classRelation [
+            void:triples 12764 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 12764 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/has_tradename> ;
+        void:triples 44036 ;
+        sbm:classRelation [
+            void:triples 44036 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 44036 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 44036 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 44036 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/has_doseformgroup> ;
+        void:triples 16853 ;
+        sbm:classRelation [
+            void:triples 16853 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16853 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16853 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16853 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/isa> ;
+        void:triples 89398 ;
+        sbm:classRelation [
+            void:triples 89398 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 89398 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 89398 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 89398 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/ORIG_CODE> ;
+        void:triples 80 ;
+        sbm:classRelation [
+            void:triples 80 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 80 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/RXN_ACTIVATED> ;
+        void:triples 3702 ;
+        sbm:classRelation [
+            void:triples 3702 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3702 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/RXN_HUMAN_DRUG> ;
+        void:triples 23025 ;
+        sbm:classRelation [
+            void:triples 23025 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 23025 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/consists_of> ;
+        void:triples 46740 ;
+        sbm:classRelation [
+            void:triples 46740 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 46740 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 46740 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 46740 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/has_dose_form> ;
+        void:triples 41481 ;
+        sbm:classRelation [
+            void:triples 41481 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 41481 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 41481 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 41481 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/contains> ;
+        void:triples 1889 ;
+        sbm:classRelation [
+            void:triples 1889 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1889 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1889 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1889 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/RXN_VET_DRUG> ;
+        void:triples 1852 ;
+        sbm:classRelation [
+            void:triples 1852 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1852 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:label ;
+        void:triples 84 ;
+        sbm:classRelation [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 10 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:AnnotationProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:SymmetricProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 25 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 24 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 44 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 27 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property skos:prefLabel ;
+        void:triples 107254 ;
+        sbm:classRelation [
+            void:triples 107254 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 107254 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/dose_form_of> ;
+        void:triples 41481 ;
+        sbm:classRelation [
+            void:triples 41481 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 41481 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 41481 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 41481 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/precise_ingredient_of> ;
+        void:triples 5826 ;
+        sbm:classRelation [
+            void:triples 5826 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5826 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5826 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5826 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dcterms:description ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/RXN_BOSS_STRENGTH_NUM_VALUE> ;
+        void:triples 12764 ;
+        sbm:classRelation [
+            void:triples 12764 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 12764 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/ingredient_of> ;
+        void:triples 71472 ;
+        sbm:classRelation [
+            void:triples 71472 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 71472 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 71472 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 71472 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/has_form> ;
+        void:triples 3295 ;
+        sbm:classRelation [
+            void:triples 3295 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3295 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3295 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3295 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/RXN_BN_CARDINALITY> ;
+        void:triples 5065 ;
+        sbm:classRelation [
+            void:triples 5065 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5065 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/part_of> ;
+        void:triples 10388 ;
+        sbm:classRelation [
+            void:triples 10388 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 10388 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 10388 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 10388 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property skos:scopeNote ;
+        void:triples 11 ;
+        sbm:classRelation [
+            void:triples 6 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:AnnotationProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:subClassOf ;
+        void:triples 107259 ;
+        sbm:classRelation [
+            void:triples 126 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 125 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 125 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 125 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/reformulated_to> ;
+        void:triples 8 ;
+        sbm:classRelation [
+            void:triples 8 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/doseformgroup_of> ;
+        void:triples 16853 ;
+        sbm:classRelation [
+            void:triples 16853 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16853 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16853 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16853 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property skos:example ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:AnnotationProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/RXN_BOSS_STRENGTH_DENOM_VALUE> ;
+        void:triples 12764 ;
+        sbm:classRelation [
+            void:triples 12764 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 12764 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/NDC> ;
+        void:triples 245331 ;
+        sbm:classRelation [
+            void:triples 245331 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 245331 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/ORIG_SOURCE> ;
+        void:triples 77 ;
+        sbm:classRelation [
+            void:triples 77 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 77 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/RXCUI> ;
+        void:triples 115578 ;
+        sbm:classRelation [
+            void:triples 115578 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 115578 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/AMBIGUITY_FLAG> ;
+        void:triples 126 ;
+        sbm:classRelation [
+            void:triples 126 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 126 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/RXTERM_FORM> ;
+        void:triples 20362 ;
+        sbm:classRelation [
+            void:triples 20362 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20362 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/contained_in> ;
+        void:triples 1889 ;
+        sbm:classRelation [
+            void:triples 1889 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1889 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1889 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1889 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:disjointWith ;
+        void:triples 3 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/RXN_AM> ;
+        void:triples 36464 ;
+        sbm:classRelation [
+            void:triples 36464 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 36464 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/reformulation_of> ;
+        void:triples 8 ;
+        sbm:classRelation [
+            void:triples 8 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://bioportal.bioontology.org/ontologies/umls/tui> ;
+        void:triples 126673 ;
+        sbm:classRelation [
+            void:triples 126673 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 126673 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/RXN_BOSS_FROM> ;
+        void:triples 36464 ;
+        sbm:classRelation [
+            void:triples 36464 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 36464 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dcterms:creator ;
+        void:triples 4 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/RXN_QUALITATIVE_DISTINCTION> ;
+        void:triples 297 ;
+        sbm:classRelation [
+            void:triples 297 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 297 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/ingredients_of> ;
+        void:triples 4025 ;
+        sbm:classRelation [
+            void:triples 4025 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4025 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4025 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4025 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/constitutes> ;
+        void:triples 46740 ;
+        sbm:classRelation [
+            void:triples 46740 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 46740 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 46740 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 46740 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/RXN_AI> ;
+        void:triples 36464 ;
+        sbm:classRelation [
+            void:triples 36464 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 36464 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property skos:definition ;
+        void:triples 32 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 10 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:AnnotationProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:SymmetricProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:versionInfo ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/RXN_STRENGTH> ;
+        void:triples 14206 ;
+        sbm:classRelation [
+            void:triples 14206 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 14206 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/has_precise_ingredient> ;
+        void:triples 5826 ;
+        sbm:classRelation [
+            void:triples 5826 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5826 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5826 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5826 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/has_ingredients> ;
+        void:triples 4025 ;
+        sbm:classRelation [
+            void:triples 4025 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4025 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4025 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4025 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/tradename_of> ;
+        void:triples 44036 ;
+        sbm:classRelation [
+            void:triples 44036 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 44036 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 44036 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 44036 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://bioportal.bioontology.org/ontologies/umls/cui> ;
+        void:triples 107128 ;
+        sbm:classRelation [
+            void:triples 107128 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 107128 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/has_ingredient> ;
+        void:triples 71472 ;
+        sbm:classRelation [
+            void:triples 71472 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 71472 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 71472 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 71472 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:subPropertyOf ;
+        void:triples 24 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectClass owl:SymmetricProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:SymmetricProperty ;
+            sbm:subjectClass owl:SymmetricProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:TransitiveProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:SymmetricProperty ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass owl:AnnotationProperty ;
+            sbm:subjectClass owl:AnnotationProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:SymmetricProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 15 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/has_quantified_form> ;
+        void:triples 6 ;
+        sbm:classRelation [
+            void:triples 6 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://bioportal.bioontology.org/ontologies/umls/hasSTY> ;
+        void:triples 126673 ;
+        sbm:classRelation [
+            void:triples 126673 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 126673 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 126673 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 126673 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/RXN_OBSOLETED> ;
+        void:triples 3702 ;
+        sbm:classRelation [
+            void:triples 3702 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3702 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/RXN_QUANTITY> ;
+        void:triples 4639 ;
+        sbm:classRelation [
+            void:triples 4639 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4639 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/RXN_BOSS_STRENGTH_NUM_UNIT> ;
+        void:triples 12764 ;
+        sbm:classRelation [
+            void:triples 12764 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 12764 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/form_of> ;
+        void:triples 3295 ;
+        sbm:classRelation [
+            void:triples 3295 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3295 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3295 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3295 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dcterms:contributor ;
+        void:triples 6 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/RXN_AVAILABLE_STRENGTH> ;
+        void:triples 51540 ;
+        sbm:classRelation [
+            void:triples 51540 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 51540 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property skos:notation ;
+        void:triples 107254 ;
+        sbm:classRelation [
+            void:triples 107254 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 107254 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:comment ;
+        void:triples 65 ;
+        sbm:classRelation [
+            void:triples 7 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:AnnotationProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 33 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 27 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:SymmetricProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 24 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:range ;
+        void:triples 6 ;
+        sbm:classRelation [
+            void:triples 6 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/has_part> ;
+        void:triples 10388 ;
+        sbm:classRelation [
+            void:triples 10388 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 10388 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 10388 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 10388 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dcterms:title ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:inverseOf ;
+        void:triples 4 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:TransitiveProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:TransitiveProperty ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/quantified_form_of> ;
+        void:triples 6 ;
+        sbm:classRelation [
+            void:triples 6 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/RXNORM/RXN_IN_EXPRESSED_FLAG> ;
+        void:triples 2839 ;
+        sbm:classRelation [
+            void:triples 2839 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2839 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:domain ;
+        void:triples 5 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property skos:altLabel ;
+        void:triples 58855 ;
+        sbm:classRelation [
+            void:triples 58855 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 58855 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ] ;
+    void:sparqlEndpoint <https://rdfportal.org/bioportal/sparql> ;
+    void:triples 2469050 ;
+    a void:Dataset, sd:Graph .

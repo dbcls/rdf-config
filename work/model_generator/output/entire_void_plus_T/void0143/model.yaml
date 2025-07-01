@@ -1,0 +1,462 @@
+- FunctionalProperty:
+  - rdfs:range:
+    - functional_property_range: Class
+  - rdfs:domain:
+    - functional_property_domain: Class
+  - rdfs:label:
+    - functional_property_label: string
+  - skos:definition:
+    - functional_property_definition: string
+  - rdfs:comment:
+    - functional_property_comment: string
+- TransitiveProperty:
+  - rdfs:subPropertyOf:
+    - transitive_property_sub_property_of:
+      - ObjectProperty
+      - SymmetricProperty
+  - owl:inverseOf:
+    - transitive_property_inverse_of:
+      - ObjectProperty
+      - TransitiveProperty
+  - rdfs:label:
+    - transitive_property_label: string
+  - skos:scopeNote:
+    - transitive_property_scope_note: string
+  - skos:definition:
+    - transitive_property_definition:
+      - string
+      - string
+  - rdfs:comment:
+    - transitive_property_comment: string
+- ObjectProperty:
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of:
+      - SymmetricProperty
+      - TransitiveProperty
+      - ObjectProperty
+  - rdfs:range:
+    - object_property_range: Class
+  - owl:inverseOf:
+    - object_property_inverse_of:
+      - TransitiveProperty
+      - ObjectProperty
+  - rdfs:domain:
+    - object_property_domain: Class
+  - rdfs:label:
+    - object_property_label:
+      - string
+      - string
+  - skos:scopeNote:
+    - object_property_scope_note: string
+  - skos:definition:
+    - object_property_definition:
+      - string
+      - string
+  - rdfs:comment:
+    - object_property_comment:
+      - string
+      - string
+- Class:
+  - ns1:inverse_isa:
+    - class_inverse_isa:
+      - Class
+      - NamedIndividual
+  - ns1:has_tradename:
+    - class_has_tradename:
+      - NamedIndividual
+      - Class
+  - ns1:has_doseformgroup:
+    - class_has_doseformgroup:
+      - NamedIndividual
+      - Class
+  - ns1:isa:
+    - class_isa:
+      - Class
+      - NamedIndividual
+  - ns1:consists_of:
+    - class_consists_of:
+      - NamedIndividual
+      - Class
+  - ns1:has_dose_form:
+    - class_has_dose_form:
+      - NamedIndividual
+      - Class
+  - ns1:contains:
+    - class_contains:
+      - NamedIndividual
+      - Class
+  - ns1:dose_form_of:
+    - class_dose_form_of:
+      - NamedIndividual
+      - Class
+  - ns1:precise_ingredient_of:
+    - class_precise_ingredient_of:
+      - Class
+      - NamedIndividual
+  - ns1:ingredient_of:
+    - class_ingredient_of:
+      - Class
+      - NamedIndividual
+  - ns1:has_form:
+    - class_has_form:
+      - Class
+      - NamedIndividual
+  - ns1:part_of:
+    - class_part_of:
+      - NamedIndividual
+      - Class
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Class
+      - NamedIndividual
+  - ns1:reformulated_to:
+    - class_reformulated_to:
+      - NamedIndividual
+      - Class
+  - ns1:doseformgroup_of:
+    - class_doseformgroup_of:
+      - NamedIndividual
+      - Class
+  - ns1:contained_in:
+    - class_contained_in:
+      - Class
+      - NamedIndividual
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+  - ns1:reformulation_of:
+    - class_reformulation_of:
+      - NamedIndividual
+      - Class
+  - ns1:ingredients_of:
+    - class_ingredients_of:
+      - Class
+      - NamedIndividual
+  - ns1:constitutes:
+    - class_constitutes:
+      - Class
+      - NamedIndividual
+  - ns1:has_precise_ingredient:
+    - class_has_precise_ingredient:
+      - Class
+      - NamedIndividual
+  - ns1:has_ingredients:
+    - class_has_ingredients:
+      - NamedIndividual
+      - Class
+  - ns1:tradename_of:
+    - class_tradename_of:
+      - NamedIndividual
+      - Class
+  - ns1:has_ingredient:
+    - class_has_ingredient:
+      - NamedIndividual
+      - Class
+  - ns1:has_quantified_form:
+    - class_has_quantified_form:
+      - Class
+      - NamedIndividual
+  - ns2:hasSTY:
+    - class_has_sty:
+      - NamedIndividual
+      - Class
+  - ns1:form_of:
+    - class_form_of:
+      - NamedIndividual
+      - Class
+  - ns1:has_part:
+    - class_has_part:
+      - Class
+      - NamedIndividual
+  - ns1:quantified_form_of:
+    - class_quantified_form_of:
+      - Class
+      - NamedIndividual
+  - ns3:prefixIRI:
+    - class_prefix_iri: string
+  - ns1:RXAUI:
+    - class_rxaui: string
+  - ns1:RXN_BOSS_STRENGTH_DENOM_UNIT:
+    - class_rxn_boss_strength_denom_unit: string
+  - ns1:ORIG_CODE:
+    - class_orig_code: string
+  - ns1:RXN_ACTIVATED:
+    - class_rxn_activated: string
+  - ns1:RXN_HUMAN_DRUG:
+    - class_rxn_human_drug: string
+  - ns1:RXN_VET_DRUG:
+    - class_rxn_vet_drug: string
+  - rdfs:label:
+    - class_label: string
+  - skos:prefLabel:
+    - class_pref_label: string
+  - ns1:RXN_BOSS_STRENGTH_NUM_VALUE:
+    - class_rxn_boss_strength_num_value: string
+  - ns1:RXN_BN_CARDINALITY:
+    - class_rxn_bn_cardinality: string
+  - skos:scopeNote:
+    - class_scope_note: string
+  - skos:example:
+    - class_example: string
+  - ns1:RXN_BOSS_STRENGTH_DENOM_VALUE:
+    - class_rxn_boss_strength_denom_value: string
+  - ns1:NDC:
+    - class_ndc: string
+  - ns1:ORIG_SOURCE:
+    - class_orig_source: string
+  - ns1:RXCUI:
+    - class_rxcui: string
+  - ns1:AMBIGUITY_FLAG:
+    - class_ambiguity_flag: string
+  - ns1:RXTERM_FORM:
+    - class_rxterm_form: string
+  - ns1:RXN_AM:
+    - class_rxn_am: string
+  - ns2:tui:
+    - class_tui: string
+  - ns1:RXN_BOSS_FROM:
+    - class_rxn_boss_from: string
+  - ns1:RXN_QUALITATIVE_DISTINCTION:
+    - class_rxn_qualitative_distinction: string
+  - ns1:RXN_AI:
+    - class_rxn_ai: string
+  - skos:definition:
+    - class_definition: string
+  - ns1:RXN_STRENGTH:
+    - class_rxn_strength: string
+  - ns2:cui:
+    - class_cui: string
+  - ns1:RXN_OBSOLETED:
+    - class_rxn_obsoleted: string
+  - ns1:RXN_QUANTITY:
+    - class_rxn_quantity: string
+  - ns1:RXN_BOSS_STRENGTH_NUM_UNIT:
+    - class_rxn_boss_strength_num_unit: string
+  - ns1:RXN_AVAILABLE_STRENGTH:
+    - class_rxn_available_strength: string
+  - skos:notation:
+    - class_notation: string
+  - ns1:RXN_IN_EXPRESSED_FLAG:
+    - class_rxn_in_expressed_flag: string
+  - skos:altLabel:
+    - class_alt_label: string
+- SymmetricProperty:
+  - rdfs:subPropertyOf:
+    - symmetric_property_sub_property_of:
+      - SymmetricProperty
+      - ObjectProperty
+  - rdfs:label:
+    - symmetric_property_label: string
+  - skos:definition:
+    - symmetric_property_definition: string
+  - rdfs:comment:
+    - symmetric_property_comment: string
+- NamedIndividual:
+  - ns1:inverse_isa:
+    - named_individual_inverse_isa:
+      - Class
+      - NamedIndividual
+  - ns1:has_tradename:
+    - named_individual_has_tradename:
+      - NamedIndividual
+      - Class
+  - ns1:has_doseformgroup:
+    - named_individual_has_doseformgroup:
+      - NamedIndividual
+      - Class
+  - ns1:isa:
+    - named_individual_isa:
+      - Class
+      - NamedIndividual
+  - ns1:consists_of:
+    - named_individual_consists_of:
+      - Class
+      - NamedIndividual
+  - ns1:has_dose_form:
+    - named_individual_has_dose_form:
+      - NamedIndividual
+      - Class
+  - ns1:contains:
+    - named_individual_contains:
+      - NamedIndividual
+      - Class
+  - ns1:dose_form_of:
+    - named_individual_dose_form_of:
+      - Class
+      - NamedIndividual
+  - ns1:precise_ingredient_of:
+    - named_individual_precise_ingredient_of:
+      - Class
+      - NamedIndividual
+  - ns1:ingredient_of:
+    - named_individual_ingredient_of:
+      - NamedIndividual
+      - Class
+  - ns1:has_form:
+    - named_individual_has_form:
+      - NamedIndividual
+      - Class
+  - ns1:part_of:
+    - named_individual_part_of:
+      - NamedIndividual
+      - Class
+  - rdfs:subClassOf:
+    - named_individual_sub_class_of:
+      - Class
+      - NamedIndividual
+  - ns1:reformulated_to:
+    - named_individual_reformulated_to:
+      - NamedIndividual
+      - Class
+  - ns1:doseformgroup_of:
+    - named_individual_doseformgroup_of:
+      - NamedIndividual
+      - Class
+  - ns1:contained_in:
+    - named_individual_contained_in:
+      - Class
+      - NamedIndividual
+  - ns1:reformulation_of:
+    - named_individual_reformulation_of:
+      - Class
+      - NamedIndividual
+  - ns1:ingredients_of:
+    - named_individual_ingredients_of:
+      - Class
+      - NamedIndividual
+  - ns1:constitutes:
+    - named_individual_constitutes:
+      - NamedIndividual
+      - Class
+  - ns1:has_precise_ingredient:
+    - named_individual_has_precise_ingredient:
+      - NamedIndividual
+      - Class
+  - ns1:has_ingredients:
+    - named_individual_has_ingredients:
+      - Class
+      - NamedIndividual
+  - ns1:tradename_of:
+    - named_individual_tradename_of:
+      - NamedIndividual
+      - Class
+  - ns1:has_ingredient:
+    - named_individual_has_ingredient:
+      - NamedIndividual
+      - Class
+  - ns1:has_quantified_form:
+    - named_individual_has_quantified_form:
+      - Class
+      - NamedIndividual
+  - ns2:hasSTY:
+    - named_individual_has_sty:
+      - NamedIndividual
+      - Class
+  - ns1:form_of:
+    - named_individual_form_of:
+      - NamedIndividual
+      - Class
+  - ns1:has_part:
+    - named_individual_has_part:
+      - NamedIndividual
+      - Class
+  - ns1:quantified_form_of:
+    - named_individual_quantified_form_of:
+      - Class
+      - NamedIndividual
+  - ns1:RXAUI:
+    - named_individual_rxaui: string
+  - ns1:RXN_BOSS_STRENGTH_DENOM_UNIT:
+    - named_individual_rxn_boss_strength_denom_unit: string
+  - ns1:ORIG_CODE:
+    - named_individual_orig_code: string
+  - ns1:RXN_ACTIVATED:
+    - named_individual_rxn_activated: string
+  - ns1:RXN_HUMAN_DRUG:
+    - named_individual_rxn_human_drug: string
+  - ns1:RXN_VET_DRUG:
+    - named_individual_rxn_vet_drug: string
+  - skos:prefLabel:
+    - named_individual_pref_label: string
+  - ns1:RXN_BOSS_STRENGTH_NUM_VALUE:
+    - named_individual_rxn_boss_strength_num_value: string
+  - ns1:RXN_BN_CARDINALITY:
+    - named_individual_rxn_bn_cardinality: string
+  - ns1:RXN_BOSS_STRENGTH_DENOM_VALUE:
+    - named_individual_rxn_boss_strength_denom_value: string
+  - ns1:NDC:
+    - named_individual_ndc: string
+  - ns1:ORIG_SOURCE:
+    - named_individual_orig_source: string
+  - ns1:RXCUI:
+    - named_individual_rxcui: string
+  - ns1:AMBIGUITY_FLAG:
+    - named_individual_ambiguity_flag: string
+  - ns1:RXTERM_FORM:
+    - named_individual_rxterm_form: string
+  - ns1:RXN_AM:
+    - named_individual_rxn_am: string
+  - ns2:tui:
+    - named_individual_tui: string
+  - ns1:RXN_BOSS_FROM:
+    - named_individual_rxn_boss_from: string
+  - ns1:RXN_QUALITATIVE_DISTINCTION:
+    - named_individual_rxn_qualitative_distinction: string
+  - ns1:RXN_AI:
+    - named_individual_rxn_ai: string
+  - ns1:RXN_STRENGTH:
+    - named_individual_rxn_strength: string
+  - ns2:cui:
+    - named_individual_cui: string
+  - ns1:RXN_OBSOLETED:
+    - named_individual_rxn_obsoleted: string
+  - ns1:RXN_QUANTITY:
+    - named_individual_rxn_quantity: string
+  - ns1:RXN_BOSS_STRENGTH_NUM_UNIT:
+    - named_individual_rxn_boss_strength_num_unit: string
+  - ns1:RXN_AVAILABLE_STRENGTH:
+    - named_individual_rxn_available_strength: string
+  - skos:notation:
+    - named_individual_notation: string
+  - ns1:RXN_IN_EXPRESSED_FLAG:
+    - named_individual_rxn_in_expressed_flag: string
+  - skos:altLabel:
+    - named_individual_alt_label: string
+- AnnotationProperty:
+  - rdfs:subPropertyOf:
+    - annotation_property_sub_property_of: AnnotationProperty
+  - rdfs:label:
+    - annotation_property_label: string
+  - skos:scopeNote:
+    - annotation_property_scope_note: string
+  - skos:example:
+    - annotation_property_example: string
+  - skos:definition:
+    - annotation_property_definition: string
+  - rdfs:comment:
+    - annotation_property_comment: string
+- DatatypeProperty:
+  - rdfs:label:
+    - datatype_property_label:
+      - string
+      - string
+  - skos:scopeNote:
+    - datatype_property_scope_note: string
+  - skos:definition:
+    - datatype_property_definition: string
+  - rdfs:comment:
+    - datatype_property_comment: string
+- Ontology:
+  - rdfs:label:
+    - ontology_label: string
+  - dc:description:
+    - ontology_description: string
+  - dc:creator:
+    - ontology_creator: string
+  - owl:versionInfo:
+    - ontology_version_info: string
+  - dc:contributor:
+    - ontology_contributor: string
+  - rdfs:comment:
+    - ontology_comment: string
+  - dc:title:
+    - ontology_title: string

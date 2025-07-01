@@ -1,0 +1,170 @@
+- DatatypeProperty:
+  - rdfs:domain:
+    - datatype_property_domain:
+      - Class
+      - Class
+  - rdfs:subPropertyOf:
+    - datatype_property_sub_property_of:
+      - Property
+      - DatatypeProperty
+  - rdfs:isDefinedBy:
+    - datatype_property_is_defined_by: Ontology
+  - vs:term_status:
+    - datatype_property_term_status: string
+  - rdfs:comment:
+    - datatype_property_comment: string
+  - rdfs:label:
+    - datatype_property_label: string
+- AnnotationProperty:
+  - rdfs:isDefinedBy:
+    - annotation_property_is_defined_by: Ontology
+  - vs:term_status:
+    - annotation_property_term_status: string
+  - rdfs:comment:
+    - annotation_property_comment: string
+  - rdfs:label:
+    - annotation_property_label: string
+- ObjectProperty:
+  - rdfs:domain:
+    - object_property_domain:
+      - Class
+      - Class
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of:
+      - InverseFunctionalProperty
+      - Property
+      - ObjectProperty
+  - rdfs:isDefinedBy:
+    - object_property_is_defined_by: Ontology
+  - owl:inverseOf:
+    - object_property_inverse_of:
+      - Property
+      - InverseFunctionalProperty
+      - ObjectProperty
+  - rdfs:range:
+    - object_property_range:
+      - Class
+      - Class
+  - vs:term_status:
+    - object_property_term_status: string
+  - rdfs:comment:
+    - object_property_comment: string
+  - rdfs:label:
+    - object_property_label: string
+- Class:
+  - rdfs:isDefinedBy:
+    - class_is_defined_by: Ontology
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Class
+      - Class
+  - rdf:type:
+    - class_type: Class
+  - owl:disjointWith:
+    - class_disjoint_with:
+      - Class
+      - Class
+  - vs:term_status:
+    - class_term_status: string
+  - rdfs:comment:
+    - class_comment: string
+  - rdfs:label:
+    - class_label: string
+- FunctionalProperty:
+  - rdfs:domain:
+    - functional_property_domain:
+      - Class
+      - Class
+  - rdfs:isDefinedBy:
+    - functional_property_is_defined_by: Ontology
+  - owl:inverseOf:
+    - functional_property_inverse_of:
+      - Property
+      - InverseFunctionalProperty
+  - vs:term_status:
+    - functional_property_term_status: string
+  - rdfs:comment:
+    - functional_property_comment: string
+  - rdfs:label:
+    - functional_property_label: string
+- Ontology:
+  - dc11:title:
+    - ontology_title: string
+  - dc11:description:
+    - ontology_description: string
+- InverseFunctionalProperty:
+  - rdfs:domain:
+    - inverse_functional_property_domain:
+      - Class
+      - Class
+  - rdfs:subPropertyOf:
+    - inverse_functional_property_sub_property_of:
+      - DatatypeProperty
+      - ObjectProperty
+      - InverseFunctionalProperty
+      - Property
+  - rdfs:isDefinedBy:
+    - inverse_functional_property_is_defined_by: Ontology
+  - owl:inverseOf:
+    - inverse_functional_property_inverse_of:
+      - Property
+      - FunctionalProperty
+      - ObjectProperty
+  - rdfs:range:
+    - inverse_functional_property_range:
+      - Class
+      - Class
+  - vs:term_status:
+    - inverse_functional_property_term_status: string
+  - rdfs:comment:
+    - inverse_functional_property_comment: string
+  - rdfs:label:
+    - inverse_functional_property_label: string
+- Class:
+  - rdfs:isDefinedBy:
+    - class_is_defined_by: Ontology
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Class
+      - Class
+  - rdf:type:
+    - class_type: Class
+  - owl:disjointWith:
+    - class_disjoint_with:
+      - Class
+      - Class
+  - vs:term_status:
+    - class_term_status: string
+  - rdfs:comment:
+    - class_comment: string
+  - rdfs:label:
+    - class_label: string
+- Property:
+  - rdfs:domain:
+    - property_domain:
+      - Class
+      - Class
+  - rdfs:subPropertyOf:
+    - property_sub_property_of:
+      - InverseFunctionalProperty
+      - Property
+      - ObjectProperty
+      - DatatypeProperty
+  - rdfs:isDefinedBy:
+    - property_is_defined_by: Ontology
+  - owl:inverseOf:
+    - property_inverse_of:
+      - InverseFunctionalProperty
+      - FunctionalProperty
+      - Property
+      - ObjectProperty
+  - rdfs:range:
+    - property_range:
+      - Class
+      - Class
+  - vs:term_status:
+    - property_term_status: string
+  - rdfs:comment:
+    - property_comment: string
+  - rdfs:label:
+    - property_label: string

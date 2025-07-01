@@ -1,0 +1,1570 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sbm: <http://sparqlbuilder.org/2015/09/rdf-metadata-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://rdfportal.org/ns/> .
+
+<http://rdfportal.org/ns/60f0077c6b98815dba09c89d3b6a0bbb>
+    void:classPartition [
+        void:class owl:TransitiveProperty ;
+        void:entities 15 ;
+        a void:Dataset
+    ], [
+        void:class owl:Class ;
+        void:entities 5159 ;
+        a void:Dataset
+    ], [
+        void:class owl:Ontology ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.w3.org/2003/11/swrl#Imp> ;
+        void:entities 15 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.w3.org/2003/11/swrl#AtomList> ;
+        void:entities 48 ;
+        a void:Dataset
+    ], [
+        void:class owl:ObjectProperty ;
+        void:entities 159 ;
+        a void:Dataset
+    ], [
+        void:class owl:Axiom ;
+        void:entities 11908 ;
+        a void:Dataset
+    ], [
+        void:class owl:NamedIndividual ;
+        void:entities 44 ;
+        a void:Dataset
+    ], [
+        void:class owl:FunctionalProperty ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+        void:entities 47 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class owl:Restriction ;
+        void:entities 4165 ;
+        a void:Dataset
+    ], [
+        void:class owl:SymmetricProperty ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class owl:AnnotationProperty ;
+        void:entities 100 ;
+        a void:Dataset
+    ], [
+        void:class owl:InverseFunctionalProperty ;
+        void:entities 1 ;
+        a void:Dataset
+    ] ;
+    void:classes 15 ;
+    void:distinctObjects 41479 ;
+    void:distinctSubjects 27987 ;
+    void:properties 71 ;
+    void:propertyPartition [
+        void:property <http://purl.obolibrary.org/obo/RO_0002581> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass owl:Axiom ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.w3.org/2003/11/swrl#head> ;
+        void:triples 15 ;
+        sbm:classRelation [
+            void:triples 15 ;
+            sbm:objectClass <http://www.w3.org/2003/11/swrl#AtomList> ;
+            sbm:subjectClass <http://www.w3.org/2003/11/swrl#Imp> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.obolibrary.org/obo/chebi/inchi> ;
+        void:triples 655 ;
+        sbm:classRelation [
+            void:triples 655 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.obolibrary.org/obo/IAO_0000589> ;
+        void:triples 11 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 10 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym> ;
+        void:triples 15 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 14 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 13 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dc:date ;
+        void:triples 3 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:dateTime ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:range ;
+        void:triples 7 ;
+        sbm:classRelation [
+            void:triples 7 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:SymmetricProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property foaf:page ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:anyURI ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.obolibrary.org/obo/chebi/formula> ;
+        void:triples 739 ;
+        sbm:classRelation [
+            void:triples 739 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dcterms:source ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:anyURI ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.obolibrary.org/obo/IAO_0000117> ;
+        void:triples 100 ;
+        sbm:classRelation [
+            void:triples 18 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:SymmetricProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 100 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 89 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.obolibrary.org/obo/chebi/charge> ;
+        void:triples 717 ;
+        sbm:classRelation [
+            void:triples 717 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.obolibrary.org/obo/chebi/monoisotopicmass> ;
+        void:triples 709 ;
+        sbm:classRelation [
+            void:triples 709 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:inverseOf ;
+        void:triples 25 ;
+        sbm:classRelation [
+            void:triples 25 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectClass owl:TransitiveProperty ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:InverseFunctionalProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:InverseFunctionalProperty ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass owl:TransitiveProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.obolibrary.org/obo/chebi/mass> ;
+        void:triples 709 ;
+        sbm:classRelation [
+            void:triples 709 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.obolibrary.org/obo/IAO_0000600> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> ;
+        void:triples 1001 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:SymmetricProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 77 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:InverseFunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 924 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:equivalentClass ;
+        void:triples 1067 ;
+        sbm:classRelation [
+            void:triples 1067 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.obolibrary.org/obo/RO_0002579> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:TransitiveProperty ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:TransitiveProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ;
+        void:triples 4186 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3890 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4182 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.geneontology.org/formats/oboInOwl#creation_date> ;
+        void:triples 59 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 37 ;
+            sbm:objectDatatype xsd:dateTime ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 21 ;
+            sbm:objectDatatype xsd:dateTime ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:dateTime ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:label ;
+        void:triples 2994 ;
+        sbm:classRelation [
+            void:triples 116 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:SymmetricProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:InverseFunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 200 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 44 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2738 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1958 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:SymmetricProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.w3.org/2003/11/swrl#Imp> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:AnnotationProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 25 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:AnnotationProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:InverseFunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 12 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 722 ;
+            sbm:objectDatatype xml:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.obolibrary.org/obo/IAO_0000424> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:SymmetricProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:comment ;
+        void:triples 38 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 24 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.w3.org/2003/11/swrl#Imp> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 21 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 10 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Axiom ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdf:rest ;
+        void:triples 6367 ;
+        sbm:classRelation [
+            void:triples 18 ;
+            sbm:objectClass <http://www.w3.org/2003/11/swrl#AtomList> ;
+            sbm:subjectClass <http://www.w3.org/2003/11/swrl#AtomList> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:annotatedTarget ;
+        void:triples 11908 ;
+        sbm:classRelation [
+            void:triples 11884 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Axiom ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11904 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Axiom ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.obolibrary.org/obo/IAO_0100001> ;
+        void:triples 19 ;
+        sbm:classRelation [
+            void:triples 18 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.obolibrary.org/obo/IAO_0000111> ;
+        void:triples 11 ;
+        sbm:classRelation [
+            void:triples 11 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:InverseFunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.geneontology.org/formats/oboInOwl#inSubset> ;
+        void:triples 1027 ;
+        sbm:classRelation [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 21 ;
+            sbm:objectClass owl:AnnotationProperty ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass owl:AnnotationProperty ;
+            sbm:subjectClass owl:SymmetricProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 925 ;
+            sbm:objectClass owl:AnnotationProperty ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 98 ;
+            sbm:objectClass owl:AnnotationProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.obolibrary.org/obo/IAO_0000232> ;
+        void:triples 20 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 19 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:SymmetricProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dc:title ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.geneontology.org/formats/oboInOwl#is_cyclic> ;
+        void:triples 9 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.obolibrary.org/obo/IAO_0000231> ;
+        void:triples 21 ;
+        sbm:classRelation [
+            void:triples 18 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.w3.org/2003/11/swrl#argument1> ;
+        void:triples 48 ;
+        sbm:classRelation [
+            void:triples 47 ;
+            sbm:objectClass <http://www.w3.org/2003/11/swrl#Variable> ;
+            sbm:subjectClass <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.w3.org/2003/11/swrl#Variable> ;
+            sbm:subjectClass <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdf:first ;
+        void:triples 6367 ;
+        sbm:classRelation [
+            void:triples 47 ;
+            sbm:objectClass <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+            sbm:subjectClass <http://www.w3.org/2003/11/swrl#AtomList> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+            sbm:subjectClass <http://www.w3.org/2003/11/swrl#AtomList> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:subPropertyOf ;
+        void:triples 168 ;
+        sbm:classRelation [
+            void:triples 5 ;
+            sbm:objectClass owl:SymmetricProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectClass owl:TransitiveProperty ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 26 ;
+            sbm:objectClass owl:TransitiveProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 134 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 34 ;
+            sbm:objectClass owl:AnnotationProperty ;
+            sbm:subjectClass owl:AnnotationProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass owl:InverseFunctionalProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass owl:FunctionalProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:SymmetricProperty ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 21 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:SymmetricProperty ;
+            sbm:subjectClass owl:SymmetricProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:SymmetricProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.geneontology.org/formats/oboInOwl#shorthand> ;
+        void:triples 54 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:SymmetricProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:InverseFunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 54 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 10 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.geneontology.org/formats/oboInOwl#source> ;
+        void:triples 6525 ;
+        sbm:classRelation [
+            void:triples 6525 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Axiom ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.obolibrary.org/obo/IAO_0000116> ;
+        void:triples 40 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 40 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:anyURI ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:anyURI ;
+            sbm:subjectClass owl:SymmetricProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:SymmetricProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:InverseFunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 10 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.obolibrary.org/obo/chebi/smiles> ;
+        void:triples 679 ;
+        sbm:classRelation [
+            void:triples 679 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.obolibrary.org/obo/RO_0004049> ;
+        void:triples 7 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectClass owl:TransitiveProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:TransitiveProperty ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.geneontology.org/formats/oboInOwl#id> ;
+        void:triples 985 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:SymmetricProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 61 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 924 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:InverseFunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 10 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dcterms:creator ;
+        void:triples 4 ;
+        sbm:classRelation [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.obolibrary.org/obo/RO_0004050> ;
+        void:triples 7 ;
+        sbm:classRelation [
+            void:triples 7 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:TransitiveProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.obolibrary.org/obo/RO_0002582> ;
+        void:triples 3 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass owl:Axiom ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:annotatedProperty ;
+        void:triples 11908 ;
+        sbm:classRelation [
+            void:triples 11904 ;
+            sbm:objectClass owl:AnnotationProperty ;
+            sbm:subjectClass owl:Axiom ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.w3.org/2003/11/swrl#propertyPredicate> ;
+        void:triples 47 ;
+        sbm:classRelation [
+            void:triples 5 ;
+            sbm:objectClass owl:FunctionalProperty ;
+            sbm:subjectClass <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:InverseFunctionalProperty ;
+            sbm:subjectClass <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass owl:TransitiveProperty ;
+            sbm:subjectClass <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 47 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.obolibrary.org/obo/IAO_0000119> ;
+        void:triples 35 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Axiom ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:seeAlso ;
+        void:triples 22 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:anyURI ;
+            sbm:subjectClass owl:SymmetricProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:anyURI ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:annotatedSource ;
+        void:triples 11908 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:FunctionalProperty ;
+            sbm:subjectClass owl:Axiom ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11892 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Axiom ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Axiom ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:SymmetricProperty ;
+            sbm:subjectClass owl:Axiom ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:Axiom ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.obolibrary.org/obo/chebi/inchikey> ;
+        void:triples 655 ;
+        sbm:classRelation [
+            void:triples 655 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dc:source ;
+        void:triples 3 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property skos:closeMatch ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:anyURI ;
+            sbm:subjectClass owl:SymmetricProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:anyURI ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.geneontology.org/formats/oboInOwl#is_transitive> ;
+        void:triples 7 ;
+        sbm:classRelation [
+            void:triples 7 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.w3.org/2003/11/swrl#classPredicate> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.w3.org/2003/11/swrl#body> ;
+        void:triples 15 ;
+        sbm:classRelation [
+            void:triples 15 ;
+            sbm:objectClass <http://www.w3.org/2003/11/swrl#AtomList> ;
+            sbm:subjectClass <http://www.w3.org/2003/11/swrl#Imp> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:someValuesFrom ;
+        void:triples 4165 ;
+        sbm:classRelation [
+            void:triples 4165 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.geneontology.org/formats/oboInOwl#created_by> ;
+        void:triples 37 ;
+        sbm:classRelation [
+            void:triples 21 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:onProperty ;
+        void:triples 4165 ;
+        sbm:classRelation [
+            void:triples 2032 ;
+            sbm:objectClass owl:FunctionalProperty ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4165 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2032 ;
+            sbm:objectClass owl:TransitiveProperty ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+        void:triples 2431 ;
+        sbm:classRelation [
+            void:triples 2416 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:SymmetricProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2391 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.obolibrary.org/obo/IAO_0000115> ;
+        void:triples 2022 ;
+        sbm:classRelation [
+            void:triples 14 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1883 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:SymmetricProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 10 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 105 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 131 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:AnnotationProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1796 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:InverseFunctionalProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.obolibrary.org/obo/RO_0002575> ;
+        void:triples 3 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectClass owl:TransitiveProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:subClassOf ;
+        void:triples 3205 ;
+        sbm:classRelation [
+            void:triples 1066 ;
+            sbm:objectClass owl:Restriction ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2139 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.w3.org/2003/11/swrl#argument2> ;
+        void:triples 47 ;
+        sbm:classRelation [
+            void:triples 47 ;
+            sbm:objectClass <http://www.w3.org/2003/11/swrl#Variable> ;
+            sbm:subjectClass <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.geneontology.org/formats/oboInOwl#hasAlternativeId> ;
+        void:triples 1093 ;
+        sbm:classRelation [
+            void:triples 1093 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
+        void:triples 14847 ;
+        sbm:classRelation [
+            void:triples 68 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:SymmetricProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9341 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 54 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:InverseFunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5356 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Axiom ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 10 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dc:description ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:deprecated ;
+        void:triples 20 ;
+        sbm:classRelation [
+            void:triples 19 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:domain ;
+        void:triples 6 ;
+        sbm:classRelation [
+            void:triples 6 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:SymmetricProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.obolibrary.org/obo/IAO_0000118> ;
+        void:triples 51 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:InverseFunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 51 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 27 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:SymmetricProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.obolibrary.org/obo/IAO_0000112> ;
+        void:triples 50 ;
+        sbm:classRelation [
+            void:triples 50 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 21 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:InverseFunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ] ;
+    void:sparqlEndpoint <https://rdfportal.org/bioportal/sparql> ;
+    void:triples 129884 ;
+    a void:Dataset, sd:Graph .

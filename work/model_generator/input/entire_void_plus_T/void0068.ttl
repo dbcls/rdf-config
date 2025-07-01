@@ -1,0 +1,2026 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sbm: <http://sparqlbuilder.org/2015/09/rdf-metadata-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://rdfportal.org/ns/> .
+
+<http://rdfportal.org/ns/0ed669a5c8dc1fcbde43cfe84cabc20b>
+    void:classPartition [
+        void:class <http://www.ICPS/ontologies/PatientSafetyIncident#ImpactFloormatFailure> ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ICPS/ontologies/IncidentCharacteristic#PresentOnAdmission> ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#AssociatedState> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ICPS/ontologies/Person#EmergencyServicePersonnel> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.w3.org/2006/time-entry#TemporalUnit> ;
+        void:entities 7 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ICPS/ontologies/IncidentCharacteristic#DetectionAtCommunityCare> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ICPS/ontologies/PatientSafetyIncident#AlarmMatFailure> ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ICPS/ontologies/PatientSafetyIncident#FallMechanism> ;
+        void:entities 5 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ICPS/ontologies/Activity.owl#InvoluntaryActivity> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#FullyDependentTerritory> ;
+        void:entities 42 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ICPS/ontologies/Clothing.owl#Garment> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class owl:Restriction ;
+        void:entities 61 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ICPS/ontologies/Clothing.owl#Sheet> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ICPS/ontologies/PatientSafetyIncident#MobilityAidFailure> ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ICPS/ontologies/Person#HealthcareWorker> ;
+        void:entities 9 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#IndependentState> ;
+        void:entities 199 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ICPS/ontologies/Activity.owl#VoluntaryActivity> ;
+        void:entities 27 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ICPS/ontologies/PatientSafetyIncident#CallBellFailure> ;
+        void:entities 8 ;
+        a void:Dataset
+    ], [
+        void:class owl:NamedIndividual ;
+        void:entities 759 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ICPS/ontologies/PatientOutcomes#DegreeOfHarm> ;
+        void:entities 5 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ICPS/ontologies/PatientSafetyIncident#PersonalAlertFailure> ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ICPS/ontologies/Place#HospitalArea> ;
+        void:entities 14 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ICPS/ontologies/Anatomy#HumanBodySide> ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ICPS/ontologies/PatientSafetyIncident#BedrailsFailure> ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class owl:ObjectProperty ;
+        void:entities 127 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ICPS/ontologies/PatientSafetyIncident#SafetyHelmetFailure> ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ICPS/ontologies/BuildingStructure#FloorSurface> ;
+        void:entities 10 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ICPS/ontologies/Furniture.owl#Chair> ;
+        void:entities 6 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ICPS/ontologies/Person#Gender> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ICPS/ontologies/IncidentCharacteristic#DuringAdmissionDetection> ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#IndependenceDisputedState> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ICPS/ontologies/PatientSafetyIncident#ConfirmedStatusOfFall> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class owl:DatatypeProperty ;
+        void:entities 38 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ICPS/ontologies/ActionsToReduceRisk#RiskAssessmentResult> ;
+        void:entities 4 ;
+        a void:Dataset
+    ], [
+        void:class owl:Thing ;
+        void:entities 759 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ICPS/ontologies/Activity.owl#MovingActivity> ;
+        void:entities 13 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ICPS/ontologies/PatientSafetyIncident#HipProtectorFailure> ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ICPS/ontologies/PatientSafetyIncident#BedrailsLeftDown> ;
+        void:entities 4 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ICPS/ontologies/Activity.owl#ActivitiesOfDailyLiving> ;
+        void:entities 7 ;
+        a void:Dataset
+    ], [
+        void:class owl:TransitiveProperty ;
+        void:entities 4 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#UnclaimableTerritory> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#VirtuallyAnnexedTerritory> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ICPS/ontologies/Activity.owl#MovingInBed> ;
+        void:entities 4 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ontologydesignpatterns.org/cp/owl/objectrole.owl#Role> ;
+        void:entities 9 ;
+        a void:Dataset
+    ], [
+        void:class owl:Ontology ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#ISO3166DefinedCountry> ;
+        void:entities 247 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#VirtualTerritory> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ICPS/ontologies/PatientSafetyIncident#ChemicalRestraintFailure> ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ICPS/ontologies/PatientSafetyIncident#FallHeight> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ICPS/ontologies/Clothing.owl#Undergarment> ;
+        void:entities 4 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ICPS/ontologies/Activity.owl#Climbing> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ICPS/ontologies/Clothing.owl#ClothesFastening> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ICPS/ontologies/Person#HealthcareProfessional> ;
+        void:entities 9 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ICPS/ontologies/PatientSafetyIncident#PhysicalRestraintFailure> ;
+        void:entities 6 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ICPS/ontologies/PatientSafetyIncident#HumanRestraintFailure> ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#OccupiedTerritory> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ICPS/ontologies/Furniture.owl#PieceOfFurniture> ;
+        void:entities 6 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ICPS/ontologies/Anatomy#HumanBodyAnatomicalPart> ;
+        void:entities 54 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ICPS/ontologies/Activity.owl#StationaryActivity> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ICPS/ontologies/PatientOutcomes#PressureUlcerStage> ;
+        void:entities 6 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ICPS/ontologies/Clothing.owl#BedLinen> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class owl:Class ;
+        void:entities 432 ;
+        a void:Dataset
+    ], [
+        void:class owl:FunctionalProperty ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ICPS/ontologies/Clothing.owl#Footwear> ;
+        void:entities 3 ;
+        a void:Dataset
+    ] ;
+    void:classes 64 ;
+    void:distinctObjects 4945 ;
+    void:distinctSubjects 2090 ;
+    void:properties 46 ;
+    void:propertyPartition [
+        void:property <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#relatedCPs> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#nameLocalLong> ;
+        void:triples 153 ;
+        sbm:classRelation [
+            void:triples 153 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 18 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#FullyDependentTerritory> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 153 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 135 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#IndependentState> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#countryCodeISO3166Alpha2> ;
+        void:triples 247 ;
+        sbm:classRelation [
+            void:triples 247 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#ISO3166DefinedCountry> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 247 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 247 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#nameEnglishLong> ;
+        void:triples 200 ;
+        sbm:classRelation [
+            void:triples 200 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 22 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#FullyDependentTerritory> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 177 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#IndependentState> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 200 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#AssociatedState> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#countryCodeISO3166Alpha3> ;
+        void:triples 247 ;
+        sbm:classRelation [
+            void:triples 247 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#ISO3166DefinedCountry> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 247 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 247 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ICPS/ontologies/Anatomy#isAnatomicalPartOfDirectly> ;
+        void:triples 49 ;
+        sbm:classRelation [
+            void:triples 49 ;
+            sbm:objectClass <http://www.ICPS/ontologies/Anatomy#HumanBodyAnatomicalPart> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 49 ;
+            sbm:objectClass owl:Thing ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Anatomy#HumanBodyAnatomicalPart> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 49 ;
+            sbm:objectClass <http://www.ICPS/ontologies/Anatomy#HumanBodyAnatomicalPart> ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 49 ;
+            sbm:objectClass <http://www.ICPS/ontologies/Anatomy#HumanBodyAnatomicalPart> ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Anatomy#HumanBodyAnatomicalPart> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 49 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Anatomy#HumanBodyAnatomicalPart> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 49 ;
+            sbm:objectClass owl:Thing ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 49 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 49 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 49 ;
+            sbm:objectClass owl:Thing ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#extractedFrom> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:comment ;
+        void:triples 92 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#IndependentState> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 18 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 25 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#FullyDependentTerritory> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#VirtualTerritory> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:allValuesFrom ;
+        void:triples 8 ;
+        sbm:classRelation [
+            void:triples 7 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass rdfs:Datatype ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:range ;
+        void:triples 155 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 117 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass rdfs:Datatype ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#scenarios> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:priorVersion ;
+        void:triples 15 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:someValuesFrom ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dc:creator ;
+        void:triples 88 ;
+        sbm:classRelation [
+            void:triples 8 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#coversRequirements> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:domain ;
+        void:triples 152 ;
+        sbm:classRelation [
+            void:triples 4 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 35 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 117 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:subPropertyOf ;
+        void:triples 42 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectClass owl:DatatypeProperty ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass owl:TransitiveProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 40 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:equivalentClass ;
+        void:triples 21 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:Restriction ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#nameLocal> ;
+        void:triples 247 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#AssociatedState> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 247 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#IndependenceDisputedState> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 42 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#FullyDependentTerritory> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#VirtualTerritory> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#UnclaimableTerritory> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#VirtuallyAnnexedTerritory> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 198 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#IndependentState> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 247 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#OccupiedTerritory> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:versionInfo ;
+        void:triples 27 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:inverseOf ;
+        void:triples 27 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 27 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:TransitiveProperty ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:TransitiveProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:onProperty ;
+        void:triples 61 ;
+        sbm:classRelation [
+            void:triples 34 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 27 ;
+            sbm:objectClass owl:DatatypeProperty ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#isCloneOf> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:label ;
+        void:triples 1337 ;
+        sbm:classRelation [
+            void:triples 38 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/PatientSafetyIncident#ConfirmedStatusOfFall> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/PatientSafetyIncident#PhysicalRestraintFailure> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Clothing.owl#Sheet> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 199 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#IndependentState> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 13 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Activity.owl#MovingActivity> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/PatientOutcomes#DegreeOfHarm> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 247 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#ISO3166DefinedCountry> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/PatientSafetyIncident#SafetyHelmetFailure> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#OccupiedTerritory> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/PatientSafetyIncident#HumanRestraintFailure> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 128 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Furniture.owl#Chair> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 10 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/BuildingStructure#FloorSurface> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/PatientSafetyIncident#BedrailsFailure> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/IncidentCharacteristic#DetectionAtCommunityCare> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Clothing.owl#ClothesFastening> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/PatientSafetyIncident#FallHeight> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/IncidentCharacteristic#DuringAdmissionDetection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Person#EmergencyServicePersonnel> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/PatientSafetyIncident#PersonalAlertFailure> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#AssociatedState> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Clothing.owl#Undergarment> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/PatientSafetyIncident#CallBellFailure> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Clothing.owl#Garment> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Clothing.owl#Footwear> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 54 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Anatomy#HumanBodyAnatomicalPart> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.w3.org/2006/time-entry#TemporalUnit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Activity.owl#MovingInBed> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Activity.owl#InvoluntaryActivity> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 766 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 10 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Person#HealthcareProfessional> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 766 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 15 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Person#HealthcareWorker> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/PatientSafetyIncident#HipProtectorFailure> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Activity.owl#ActivitiesOfDailyLiving> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Furniture.owl#PieceOfFurniture> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontologydesignpatterns.org/cp/owl/objectrole.owl#Role> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Person#Gender> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/PatientSafetyIncident#ChemicalRestraintFailure> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/PatientOutcomes#PressureUlcerStage> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#UnclaimableTerritory> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Anatomy#HumanBodyAnatomicalPart> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/ActionsToReduceRisk#RiskAssessmentResult> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/PatientSafetyIncident#MobilityAidFailure> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#VirtualTerritory> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 27 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Activity.owl#VoluntaryActivity> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 14 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Place#HospitalArea> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/PatientSafetyIncident#AlarmMatFailure> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/PatientSafetyIncident#ImpactFloormatFailure> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/PatientSafetyIncident#FallMechanism> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 403 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Clothing.owl#BedLinen> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/PatientSafetyIncident#BedrailsLeftDown> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Activity.owl#Climbing> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#IndependenceDisputedState> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#VirtuallyAnnexedTerritory> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 42 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#FullyDependentTerritory> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Anatomy#HumanBodySide> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Activity.owl#StationaryActivity> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ICPS/ontologies/IncidentCharacteristic#PresentOnAdmission> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:subClassOf ;
+        void:triples 453 ;
+        sbm:classRelation [
+            void:triples 41 ;
+            sbm:objectClass owl:Restriction ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 412 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://data.bioontology.org/metadata/prefixIRI> ;
+        void:triples 398 ;
+        sbm:classRelation [
+            void:triples 398 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasConsequences> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:disjointWith ;
+        void:triples 66 ;
+        sbm:classRelation [
+            void:triples 66 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:cardinality ;
+        void:triples 8 ;
+        sbm:classRelation [
+            void:triples 8 ;
+            sbm:objectDatatype xsd:nonNegativeInteger ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:onClass ;
+        void:triples 11 ;
+        sbm:classRelation [
+            void:triples 11 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ICPS/ontologies/Anatomy#hasAnatomicalPart> ;
+        void:triples 77 ;
+        sbm:classRelation [
+            void:triples 77 ;
+            sbm:objectClass <http://www.ICPS/ontologies/Anatomy#HumanBodyAnatomicalPart> ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Anatomy#HumanBodyAnatomicalPart> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 77 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 77 ;
+            sbm:objectClass owl:Thing ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 77 ;
+            sbm:objectClass <http://www.ICPS/ontologies/Anatomy#HumanBodyAnatomicalPart> ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 77 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Anatomy#HumanBodyAnatomicalPart> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 77 ;
+            sbm:objectClass <http://www.ICPS/ontologies/Anatomy#HumanBodyAnatomicalPart> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 77 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 77 ;
+            sbm:objectClass owl:Thing ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Anatomy#HumanBodyAnatomicalPart> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 77 ;
+            sbm:objectClass owl:Thing ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:seeAlso ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Thing ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasIntent> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:onDataRange ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass rdfs:Datatype ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdf:type ;
+        void:triples 3029 ;
+        sbm:classRelation [
+            void:triples 10 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/PatientSafetyIncident#FallMechanism> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#IndependenceDisputedState> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 28 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Place#HospitalArea> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/PatientSafetyIncident#ImpactFloormatFailure> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/PatientSafetyIncident#MobilityAidFailure> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Activity.owl#InvoluntaryActivity> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 81 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Activity.owl#VoluntaryActivity> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 18 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ontologydesignpatterns.org/cp/owl/objectrole.owl#Role> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/PatientSafetyIncident#BedrailsLeftDown> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Clothing.owl#Undergarment> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 10 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/PatientOutcomes#DegreeOfHarm> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/PatientSafetyIncident#AlarmMatFailure> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/PatientSafetyIncident#ConfirmedStatusOfFall> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 12 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/PatientSafetyIncident#PhysicalRestraintFailure> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/PatientSafetyIncident#ChemicalRestraintFailure> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Clothing.owl#Footwear> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/ActionsToReduceRisk#RiskAssessmentResult> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Anatomy#HumanBodySide> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 12 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Furniture.owl#Chair> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 12 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/PatientOutcomes#PressureUlcerStage> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 21 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Activity.owl#ActivitiesOfDailyLiving> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Clothing.owl#Sheet> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#AssociatedState> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 108 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Anatomy#HumanBodyAnatomicalPart> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#VirtuallyAnnexedTerritory> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Activity.owl#StationaryActivity> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#OccupiedTerritory> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1532 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 398 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#IndependentState> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/IncidentCharacteristic#DuringAdmissionDetection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1532 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/IncidentCharacteristic#DetectionAtCommunityCare> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/PatientSafetyIncident#CallBellFailure> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Person#EmergencyServicePersonnel> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Clothing.owl#Garment> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#VirtualTerritory> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/PatientSafetyIncident#PersonalAlertFailure> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 39 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Activity.owl#MovingActivity> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 494 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#ISO3166DefinedCountry> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 12 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Activity.owl#MovingInBed> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/IncidentCharacteristic#PresentOnAdmission> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/PatientSafetyIncident#HumanRestraintFailure> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 14 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.w3.org/2006/time-entry#TemporalUnit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/PatientSafetyIncident#SafetyHelmetFailure> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/PatientSafetyIncident#FallHeight> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 84 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#FullyDependentTerritory> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 12 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Furniture.owl#PieceOfFurniture> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/BuildingStructure#FloorSurface> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Person#Gender> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/PatientSafetyIncident#HipProtectorFailure> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 18 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Person#HealthcareProfessional> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Activity.owl#Climbing> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 18 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Person#HealthcareWorker> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#UnclaimableTerritory> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Clothing.owl#BedLinen> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Clothing.owl#ClothesFastening> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ICPS/ontologies/PatientSafetyIncident#BedrailsFailure> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#referencesCountry> ;
+        void:triples 246 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#AssociatedState> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#AssociatedState> ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 42 ;
+            sbm:objectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#FullyDependentTerritory> ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 246 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#ISO3166DefinedCountry> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#VirtualTerritory> ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#OccupiedTerritory> ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#ISO3166DefinedCountry> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 246 ;
+            sbm:objectClass owl:Thing ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 197 ;
+            sbm:objectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#IndependentState> ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#ISO3166DefinedCountry> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 246 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 246 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 42 ;
+            sbm:objectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#FullyDependentTerritory> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#AssociatedState> ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#ISO3166DefinedCountry> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#VirtualTerritory> ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#ISO3166DefinedCountry> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 197 ;
+            sbm:objectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#IndependentState> ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#UnclaimableTerritory> ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 42 ;
+            sbm:objectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#FullyDependentTerritory> ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#ISO3166DefinedCountry> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#VirtuallyAnnexedTerritory> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#VirtuallyAnnexedTerritory> ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#ISO3166DefinedCountry> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#OccupiedTerritory> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#UnclaimableTerritory> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#IndependenceDisputedState> ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#VirtuallyAnnexedTerritory> ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 246 ;
+            sbm:objectClass owl:Thing ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#ISO3166DefinedCountry> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 246 ;
+            sbm:objectClass owl:Thing ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#OccupiedTerritory> ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#IndependenceDisputedState> ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#ISO3166DefinedCountry> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 197 ;
+            sbm:objectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#IndependentState> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#VirtualTerritory> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#UnclaimableTerritory> ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#ISO3166DefinedCountry> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#IndependenceDisputedState> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#isSpecializationOf> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:sameAs ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Thing ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#IndependentState> ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Thing ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#IndependentState> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#IndependentState> ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#IndependentState> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Thing ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#IndependentState> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#IndependentState> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ICPS/ontologies/Anatomy#isAnatomicalPartOf> ;
+        void:triples 77 ;
+        sbm:classRelation [
+            void:triples 77 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 77 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Anatomy#HumanBodyAnatomicalPart> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 77 ;
+            sbm:objectClass owl:Thing ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Anatomy#HumanBodyAnatomicalPart> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 77 ;
+            sbm:objectClass owl:Thing ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 77 ;
+            sbm:objectClass <http://www.ICPS/ontologies/Anatomy#HumanBodyAnatomicalPart> ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 77 ;
+            sbm:objectClass <http://www.ICPS/ontologies/Anatomy#HumanBodyAnatomicalPart> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 77 ;
+            sbm:objectClass <http://www.ICPS/ontologies/Anatomy#HumanBodyAnatomicalPart> ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Anatomy#HumanBodyAnatomicalPart> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 77 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 77 ;
+            sbm:objectClass owl:Thing ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:maxCardinality ;
+        void:triples 27 ;
+        sbm:classRelation [
+            void:triples 27 ;
+            sbm:objectDatatype xsd:nonNegativeInteger ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#countryCodeUNNumeric3> ;
+        void:triples 247 ;
+        sbm:classRelation [
+            void:triples 247 ;
+            sbm:objectDatatype xsd:unsignedInt ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 247 ;
+            sbm:objectDatatype xsd:unsignedInt ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#ISO3166DefinedCountry> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 247 ;
+            sbm:objectDatatype xsd:unsignedInt ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:maxQualifiedCardinality ;
+        void:triples 13 ;
+        sbm:classRelation [
+            void:triples 13 ;
+            sbm:objectDatatype xsd:nonNegativeInteger ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#countryNameISO3166Short> ;
+        void:triples 247 ;
+        sbm:classRelation [
+            void:triples 247 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 247 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 247 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#ISO3166DefinedCountry> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ICPS/ontologies/Anatomy#hasAnatomicalPartDirectly> ;
+        void:triples 49 ;
+        sbm:classRelation [
+            void:triples 49 ;
+            sbm:objectClass owl:Thing ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 49 ;
+            sbm:objectClass <http://www.ICPS/ontologies/Anatomy#HumanBodyAnatomicalPart> ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 49 ;
+            sbm:objectClass <http://www.ICPS/ontologies/Anatomy#HumanBodyAnatomicalPart> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 49 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 49 ;
+            sbm:objectClass <http://www.ICPS/ontologies/Anatomy#HumanBodyAnatomicalPart> ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Anatomy#HumanBodyAnatomicalPart> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 49 ;
+            sbm:objectClass owl:Thing ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 49 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 49 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Anatomy#HumanBodyAnatomicalPart> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 49 ;
+            sbm:objectClass owl:Thing ;
+            sbm:subjectClass <http://www.ICPS/ontologies/Anatomy#HumanBodyAnatomicalPart> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:hasValue ;
+        void:triples 4 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass <http://www.ontologydesignpatterns.org/cp/owl/objectrole.owl#Role> ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://www.ICPS/ontologies/PatientSafetyIncident#FallMechanism> ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass owl:Thing ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#nameEnglish> ;
+        void:triples 247 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#VirtualTerritory> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#UnclaimableTerritory> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 247 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 247 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#AssociatedState> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 42 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#FullyDependentTerritory> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 198 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#IndependentState> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#IndependenceDisputedState> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#VirtuallyAnnexedTerritory> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#OccupiedTerritory> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ] ;
+    void:sparqlEndpoint <https://rdfportal.org/bioportal/sparql> ;
+    void:triples 9629 ;
+    a void:Dataset, sd:Graph .

@@ -1,0 +1,108 @@
+- OntologyEngineeringTool:
+  - rdfs:label:
+    - ontology_engineering_tool_label: string
+  - ns1:name:
+    - ontology_engineering_tool_name: string
+- InverseFunctionalProperty:
+  - rdfs:domain:
+    - inverse_functional_property_domain: Class
+  - owl:inverseOf:
+    - inverse_functional_property_inverse_of:
+      - FunctionalProperty
+      - ObjectProperty
+- Restriction:
+  - owl:onProperty:
+    - restriction_on_property:
+      - ObjectProperty
+      - FunctionalProperty
+      - DatatypeProperty
+  - owl:hasValue:
+    - restriction_has_value: string
+  - owl:cardinality:
+    - restriction_cardinality: 12345
+  - owl:maxCardinality:
+    - restriction_max_cardinality: 12345
+  - owl:minCardinality:
+    - restriction_min_cardinality: 12345
+- ObjectProperty:
+  - rdfs:domain:
+    - object_property_domain: Class
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of: ObjectProperty
+  - owl:inverseOf:
+    - object_property_inverse_of:
+      - InverseFunctionalProperty
+      - FunctionalProperty
+      - ObjectProperty
+  - rdfs:range:
+    - object_property_range: Class
+  - rdfs:label:
+    - object_property_label: string
+- Class:
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Class
+      - Restriction
+- Organisation:
+  - ns1:acronym:
+    - organisation_acronym: string
+  - ns1:name:
+    - organisation_name: string
+- KnowledgeRepresentationParadigm:
+  - rdfs:label:
+    - knowledge_representation_paradigm_label: string
+  - rdfs:comment:
+    - knowledge_representation_paradigm_comment: string
+- OntologyLanguage:
+  - ns1:acronym:
+    - ontology_language_acronym: string
+  - rdfs:label:
+    - ontology_language_label: string
+  - ns1:name:
+    - ontology_language_name: string
+- DatatypeProperty:
+  - rdfs:domain:
+    - datatype_property_domain: Class
+  - rdfs:comment:
+    - datatype_property_comment: string
+- ViewDefinitionLanguage:
+  - rdf:type:
+    - view_definition_language_type: Class
+  - ns2:supportedByViewGenerationEngine:
+    - view_definition_language_supported_by_view_generation_engine: ViewGenerationEngine
+  - ns1:acronym:
+    - view_definition_language_acronym: string
+  - rdfs:label:
+    - view_definition_language_label: string
+  - ns1:description:
+    - view_definition_language_description: string
+  - ns1:documentation:
+    - view_definition_language_documentation: string
+  - ns1:name:
+    - view_definition_language_name: string
+- FunctionalProperty:
+  - rdfs:domain:
+    - functional_property_domain: Class
+  - owl:inverseOf:
+    - functional_property_inverse_of:
+      - ObjectProperty
+      - InverseFunctionalProperty
+  - rdfs:range:
+    - functional_property_range: Class
+  - rdfs:comment:
+    - functional_property_comment: string
+- ViewGenerationEngine:
+  - rdf:type:
+    - view_generation_engine_type: Class
+  - ns2:supportsViewDefinitionLanguage:
+    - view_generation_engine_supports_view_definition_language: ViewDefinitionLanguage
+  - ns1:acronym:
+    - view_generation_engine_acronym: string
+  - rdfs:label:
+    - view_generation_engine_label: string
+  - ns1:description:
+    - view_generation_engine_description: string
+  - ns1:documentation:
+    - view_generation_engine_documentation: string
+  - ns1:name:
+    - view_generation_engine_name: string

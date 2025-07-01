@@ -1,0 +1,531 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sbm: <http://sparqlbuilder.org/2015/09/rdf-metadata-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://rdfportal.org/ns/> .
+
+<http://rdfportal.org/ns/934fef02f9432e12c4587cd9f1115ee2>
+    void:classPartition [
+        void:class owl:Ontology ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class skos:Collection ;
+        void:entities 5 ;
+        a void:Dataset
+    ], [
+        void:class owl:Restriction ;
+        void:entities 78 ;
+        a void:Dataset
+    ], [
+        void:class <http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation#CI_PresentationFormCode> ;
+        void:entities 21 ;
+        a void:Dataset
+    ], [
+        void:class owl:Class ;
+        void:entities 22 ;
+        a void:Dataset
+    ], [
+        void:class owl:ObjectProperty ;
+        void:entities 19 ;
+        a void:Dataset
+    ], [
+        void:class skos:Concept ;
+        void:entities 142 ;
+        a void:Dataset
+    ], [
+        void:class <http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation#CI_TelephoneTypeCode> ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class <http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation#CI_OnLineFunctionCode> ;
+        void:entities 11 ;
+        a void:Dataset
+    ], [
+        void:class <http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation#CI_DateTypeCode> ;
+        void:entities 16 ;
+        a void:Dataset
+    ], [
+        void:class owl:DatatypeProperty ;
+        void:entities 29 ;
+        a void:Dataset
+    ], [
+        void:class skos:ConceptScheme ;
+        void:entities 5 ;
+        a void:Dataset
+    ], [
+        void:class <http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation#CI_RoleCode> ;
+        void:entities 20 ;
+        a void:Dataset
+    ], [
+        void:class owl:NamedIndividual ;
+        void:entities 81 ;
+        a void:Dataset
+    ] ;
+    void:classes 14 ;
+    void:distinctObjects 351 ;
+    void:distinctSubjects 314 ;
+    void:properties 21 ;
+    void:propertyPartition [
+        void:property <http://data.bioontology.org/metadata/prefixIRI> ;
+        void:triples 23 ;
+        sbm:classRelation [
+            void:triples 22 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:isDefinedBy ;
+        void:triples 140 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation#CI_TelephoneTypeCode> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 21 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation#CI_PresentationFormCode> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation#CI_OnLineFunctionCode> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 71 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass skos:Concept ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation#CI_RoleCode> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 76 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass skos:ConceptScheme ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation#CI_DateTypeCode> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 19 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 29 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:minCardinality ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:nonNegativeInteger ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:label ;
+        void:triples 66 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 29 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 19 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property skos:inScheme ;
+        void:triples 71 ;
+        sbm:classRelation [
+            void:triples 71 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation#CI_TelephoneTypeCode> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 71 ;
+            sbm:objectClass skos:ConceptScheme ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation#CI_RoleCode> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16 ;
+            sbm:objectClass skos:ConceptScheme ;
+            sbm:subjectClass <http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation#CI_DateTypeCode> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 21 ;
+            sbm:objectClass skos:ConceptScheme ;
+            sbm:subjectClass <http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation#CI_PresentationFormCode> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11 ;
+            sbm:objectClass skos:ConceptScheme ;
+            sbm:subjectClass <http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation#CI_OnLineFunctionCode> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass skos:ConceptScheme ;
+            sbm:subjectClass <http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation#CI_TelephoneTypeCode> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation#CI_OnLineFunctionCode> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation#CI_DateTypeCode> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 21 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation#CI_PresentationFormCode> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 71 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass skos:Concept ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass skos:ConceptScheme ;
+            sbm:subjectClass <http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation#CI_RoleCode> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 71 ;
+            sbm:objectClass skos:ConceptScheme ;
+            sbm:subjectClass skos:Concept ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:range ;
+        void:triples 48 ;
+        sbm:classRelation [
+            void:triples 19 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:onProperty ;
+        void:triples 78 ;
+        sbm:classRelation [
+            void:triples 25 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 53 ;
+            sbm:objectClass owl:DatatypeProperty ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:cardinality ;
+        void:triples 6 ;
+        sbm:classRelation [
+            void:triples 6 ;
+            sbm:objectDatatype xsd:nonNegativeInteger ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:subClassOf ;
+        void:triples 100 ;
+        sbm:classRelation [
+            void:triples 78 ;
+            sbm:objectClass owl:Restriction ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:maxCardinality ;
+        void:triples 23 ;
+        sbm:classRelation [
+            void:triples 23 ;
+            sbm:objectDatatype xsd:nonNegativeInteger ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://def.isotc211.org/iso19150/-2/2012/base#aggregationType> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dcterms:isFormatOf ;
+        void:triples 5 ;
+        sbm:classRelation [
+            void:triples 5 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass skos:ConceptScheme ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://def.isotc211.org/iso19150/-2/2012/base#isAbstract> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://def.isotc211.org/iso19150/-2/2012/base#constraint> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdf:type ;
+        void:triples 463 ;
+        sbm:classRelation [
+            void:triples 152 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass skos:Collection ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 213 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass skos:Concept ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 42 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation#CI_PresentationFormCode> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 22 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation#CI_OnLineFunctionCode> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation#CI_TelephoneTypeCode> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 32 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation#CI_DateTypeCode> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass skos:ConceptScheme ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 40 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation#CI_RoleCode> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:domain ;
+        void:triples 48 ;
+        sbm:classRelation [
+            void:triples 19 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 29 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property skos:prefLabel ;
+        void:triples 81 ;
+        sbm:classRelation [
+            void:triples 71 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass skos:Concept ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation#CI_RoleCode> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation#CI_TelephoneTypeCode> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass skos:Collection ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass skos:ConceptScheme ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation#CI_OnLineFunctionCode> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 81 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation#CI_DateTypeCode> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 21 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation#CI_PresentationFormCode> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:versionInfo ;
+        void:triples 3 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property skos:definition ;
+        void:triples 11 ;
+        sbm:classRelation [
+            void:triples 11 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:allValuesFrom ;
+        void:triples 48 ;
+        sbm:classRelation [
+            void:triples 19 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dcterms:source ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ] ;
+    void:sparqlEndpoint <https://rdfportal.org/bioportal/sparql> ;
+    void:triples 1227 ;
+    a void:Dataset, sd:Graph .

@@ -1,0 +1,426 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sbm: <http://sparqlbuilder.org/2015/09/rdf-metadata-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://rdfportal.org/ns/> .
+
+<http://rdfportal.org/ns/776bfd65329e563355b3e92eee2e4df2>
+    void:classPartition [
+        void:class void:Dataset ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.jp/bio/11/mbgd#CompleteGenome> ;
+        void:entities 3462 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.jp/bio/11/orth#Organism> ;
+        void:entities 17719 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.jp/bio/11/mbgd#DraftGenome> ;
+        void:entities 14257 ;
+        a void:Dataset
+    ] ;
+    void:classes 4 ;
+    void:distinctObjects 178334 ;
+    void:distinctSubjects 17720 ;
+    void:properties 20 ;
+    void:propertyPartition [
+        void:property <http://purl.jp/bio/11/mbgd#species> ;
+        void:triples 17719 ;
+        sbm:classRelation [
+            void:triples 3462 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.jp/bio/11/mbgd#CompleteGenome> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 14257 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.jp/bio/11/mbgd#DraftGenome> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17719 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.jp/bio/11/orth#Organism> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.jp/bio/11/mbgd#assemblyTotalGapLength> ;
+        void:triples 17691 ;
+        sbm:classRelation [
+            void:triples 3434 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://purl.jp/bio/11/mbgd#CompleteGenome> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17691 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://purl.jp/bio/11/orth#Organism> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 14257 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://purl.jp/bio/11/mbgd#DraftGenome> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dcterms:title ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass void:Dataset ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dcterms:created ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:dateTime ;
+            sbm:subjectClass void:Dataset ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.jp/bio/11/mbgd#family> ;
+        void:triples 17719 ;
+        sbm:classRelation [
+            void:triples 14257 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.jp/bio/11/mbgd#DraftGenome> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17719 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.jp/bio/11/orth#Organism> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3462 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.jp/bio/11/mbgd#CompleteGenome> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.jp/bio/11/mbgd#assemblyContigN50> ;
+        void:triples 17691 ;
+        sbm:classRelation [
+            void:triples 3434 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://purl.jp/bio/11/mbgd#CompleteGenome> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 14257 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://purl.jp/bio/11/mbgd#DraftGenome> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17691 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://purl.jp/bio/11/orth#Organism> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.jp/bio/11/mbgd#assemblyTopLevelCount> ;
+        void:triples 17691 ;
+        sbm:classRelation [
+            void:triples 14257 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://purl.jp/bio/11/mbgd#DraftGenome> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17691 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://purl.jp/bio/11/orth#Organism> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3434 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://purl.jp/bio/11/mbgd#CompleteGenome> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.org/pav/version> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass void:Dataset ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.jp/bio/11/mbgd#assemblyMoleculeCount> ;
+        void:triples 17691 ;
+        sbm:classRelation [
+            void:triples 17691 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://purl.jp/bio/11/orth#Organism> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3434 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://purl.jp/bio/11/mbgd#CompleteGenome> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 14257 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://purl.jp/bio/11/mbgd#DraftGenome> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:label ;
+        void:triples 17719 ;
+        sbm:classRelation [
+            void:triples 3462 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.jp/bio/11/mbgd#CompleteGenome> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 14257 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.jp/bio/11/mbgd#DraftGenome> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17719 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.jp/bio/11/orth#Organism> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.jp/bio/11/mbgd#assemblyTotalLength> ;
+        void:triples 17691 ;
+        sbm:classRelation [
+            void:triples 3434 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://purl.jp/bio/11/mbgd#CompleteGenome> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 14257 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://purl.jp/bio/11/mbgd#DraftGenome> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17691 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://purl.jp/bio/11/orth#Organism> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.jp/bio/11/mbgd#unlocalizedTotalLength> ;
+        void:triples 17691 ;
+        sbm:classRelation [
+            void:triples 17691 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://purl.jp/bio/11/orth#Organism> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 14257 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://purl.jp/bio/11/mbgd#DraftGenome> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3434 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://purl.jp/bio/11/mbgd#CompleteGenome> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dcterms:issued ;
+        void:triples 17719 ;
+        sbm:classRelation [
+            void:triples 3462 ;
+            sbm:objectDatatype xsd:date ;
+            sbm:subjectClass <http://purl.jp/bio/11/mbgd#CompleteGenome> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17719 ;
+            sbm:objectDatatype xsd:date ;
+            sbm:subjectClass <http://purl.jp/bio/11/orth#Organism> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 14257 ;
+            sbm:objectDatatype xsd:date ;
+            sbm:subjectClass <http://purl.jp/bio/11/mbgd#DraftGenome> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.jp/bio/11/mbgd#unlocalizedUngappedLength> ;
+        void:triples 17691 ;
+        sbm:classRelation [
+            void:triples 3434 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://purl.jp/bio/11/mbgd#CompleteGenome> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17691 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://purl.jp/bio/11/orth#Organism> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 14257 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://purl.jp/bio/11/mbgd#DraftGenome> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.jp/bio/11/mbgd#genus> ;
+        void:triples 17719 ;
+        sbm:classRelation [
+            void:triples 17719 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.jp/bio/11/orth#Organism> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3462 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.jp/bio/11/mbgd#CompleteGenome> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 14257 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.jp/bio/11/mbgd#DraftGenome> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.jp/bio/11/mbgd#assemblyLevel> ;
+        void:triples 17691 ;
+        sbm:classRelation [
+            void:triples 14257 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.jp/bio/11/mbgd#DraftGenome> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3434 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.jp/bio/11/mbgd#CompleteGenome> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17691 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.jp/bio/11/orth#Organism> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dcterms:description ;
+        void:triples 17720 ;
+        sbm:classRelation [
+            void:triples 14257 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.jp/bio/11/mbgd#DraftGenome> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17719 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.jp/bio/11/orth#Organism> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass void:Dataset ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3462 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.jp/bio/11/mbgd#CompleteGenome> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.jp/bio/11/mbgd#spid> ;
+        void:triples 17719 ;
+        sbm:classRelation [
+            void:triples 3462 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.jp/bio/11/mbgd#CompleteGenome> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17719 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.jp/bio/11/orth#Organism> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 14257 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.jp/bio/11/mbgd#DraftGenome> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.jp/bio/11/mbgd#assemblyContigCount> ;
+        void:triples 17691 ;
+        sbm:classRelation [
+            void:triples 14257 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://purl.jp/bio/11/mbgd#DraftGenome> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3434 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://purl.jp/bio/11/mbgd#CompleteGenome> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17691 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://purl.jp/bio/11/orth#Organism> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.jp/bio/11/mbgd#strain> ;
+        void:triples 17447 ;
+        sbm:classRelation [
+            void:triples 3400 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.jp/bio/11/mbgd#CompleteGenome> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 14047 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.jp/bio/11/mbgd#DraftGenome> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17447 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.jp/bio/11/orth#Organism> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ] ;
+    void:sparqlEndpoint <https://rdfportal.org/primary/sparql> ;
+    void:triples 412575 ;
+    a void:Dataset, sd:Graph .

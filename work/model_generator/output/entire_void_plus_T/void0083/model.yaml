@@ -1,0 +1,126 @@
+- BKO:0000077:
+  - rdf:type:
+    - bko:0000077_type: Class
+  - ns1:order:
+    - bko:0000077_order: integer
+  - rdfs:isDefinedBy:
+    - bko:0000077_is_defined_by: string
+  - rdfs:label:
+    - bko:0000077_label: string
+- Ontology:
+  - owl:versionInfo:
+    - ontology_version_info: string
+  - rdfs:comment:
+    - ontology_comment: string
+  - rdfs:label:
+    - ontology_label: string
+- BKO:0000001:
+  - ns1:hasSuperCategory:
+    - bko:0000001_has_super_category:
+      - NamedIndividual
+      - BKO:0000001
+  - ns1:hasBrick:
+    - bko:0000001_has_brick: Class
+  - rdf:type:
+    - bko:0000001_type: Class
+  - ns1:hasSubCategory:
+    - bko:0000001_has_sub_category:
+      - BKO:0000001
+      - NamedIndividual
+  - rdfs:isDefinedBy:
+    - bko:0000001_is_defined_by: string
+  - rdfs:comment:
+    - bko:0000001_comment: string
+  - rdfs:label:
+    - bko:0000001_label: string
+- AnnotationProperty:
+  - rdfs:subPropertyOf:
+    - annotation_property_sub_property_of: AnnotationProperty
+- ObjectProperty:
+  - rdfs:range:
+    - object_property_range: Class
+  - rdfs:domain:
+    - object_property_domain: Class
+  - rdfs:label:
+    - object_property_label: string
+- NamedIndividual:
+  - ns1:hasSuperCategory:
+    - named_individual_has_super_category:
+      - NamedIndividual
+      - BKO:0000001
+  - ns1:hasBrick:
+    - named_individual_has_brick: Class
+  - rdf:type:
+    - named_individual_type: Class
+  - ns1:hasSubCategory:
+    - named_individual_has_sub_category:
+      - NamedIndividual
+      - BKO:0000001
+  - ns1:order:
+    - named_individual_order: integer
+  - rdfs:isDefinedBy:
+    - named_individual_is_defined_by: string
+  - rdfs:comment:
+    - named_individual_comment: string
+  - rdfs:label:
+    - named_individual_label: string
+- Class:
+  - ns1:hasTermNarrow:
+    - class_has_term_narrow: Class
+  - ns1:hasBrickSynonym:
+    - class_has_brick_synonym: Class
+  - ns1:hasBrickAlternate:
+    - class_has_brick_alternate: Class
+  - ns1:hasTermMain:
+    - class_has_term_main: Class
+  - ns1:hasCategory:
+    - class_has_category:
+      - BKO:0000001
+      - NamedIndividual
+  - ns1:hasAssociatedBrick:
+    - class_has_associated_brick: Class
+  - ns1:hasTermBroad:
+    - class_has_term_broad: Class
+  - ns1:hasTermAlternate:
+    - class_has_term_alternate: Class
+  - ns1:hasBrickBroad:
+    - class_has_brick_broad: Class
+  - ns1:language:
+    - class_language:
+      - BKO:0000001
+      - BKO:0000074
+      - NamedIndividual
+      - BKO:0000078
+      - BKO:0000077
+  - ns1:hasBrickNarrow:
+    - class_has_brick_narrow: Class
+  - ns1:hasBrickMain:
+    - class_has_brick_main: Class
+  - rdfs:subClassOf:
+    - class_sub_class_of: Class
+  - ns1:hasTermSynonym:
+    - class_has_term_synonym: Class
+  - ns1:synonym:
+    - class_synonym: string
+  - rdfs:comment:
+    - class_comment: string
+  - rdfs:label:
+    - class_label: string
+- BKO:0000074:
+  - rdf:type:
+    - bko:0000074_type: Class
+  - ns1:order:
+    - bko:0000074_order: integer
+  - rdfs:isDefinedBy:
+    - bko:0000074_is_defined_by: string
+  - rdfs:label:
+    - bko:0000074_label: string
+- BKO:0000078:
+  - rdf:type:
+    - bko:0000078_type: Class
+  - ns1:order:
+    - bko:0000078_order: integer
+  - rdfs:isDefinedBy:
+    - bko:0000078_is_defined_by: string
+  - rdfs:label:
+    - bko:0000078_label: string

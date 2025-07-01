@@ -1,0 +1,113 @@
+- AnnotationProperty:
+  - rdfs:subPropertyOf:
+    - annotation_property_sub_property_of: AnnotationProperty
+- SymmetricProperty:
+  - rdfs:range:
+    - symmetric_property_range: Class
+  - rdfs:domain:
+    - symmetric_property_domain: Class
+  - rdfs:subPropertyOf:
+    - symmetric_property_sub_property_of: ObjectProperty
+  - rdfs:label:
+    - symmetric_property_label: string
+  - dc11:creator:
+    - symmetric_property_creator: string
+- ObjectProperty:
+  - rdfs:range:
+    - object_property_range: Class
+  - owl:inverseOf:
+    - object_property_inverse_of:
+      - TransitiveProperty
+      - ObjectProperty
+  - rdfs:domain:
+    - object_property_domain: Class
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of:
+      - TransitiveProperty
+      - ObjectProperty
+  - skos:definition:
+    - object_property_definition: string
+  - rdfs:label:
+    - object_property_label: string
+  - dc11:creator:
+    - object_property_creator: string
+- DatatypeProperty:
+  - rdfs:label:
+    - datatype_property_label: string
+  - dc11:creator:
+    - datatype_property_creator: string
+- Class:
+  - owl:equivalentClass:
+    - class_equivalent_class: Class
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+  - owl:complementOf:
+    - class_complement_of: Class
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Class
+      - Restriction
+  - skos:definition:
+    - class_definition:
+      - string
+      - string
+  - rdfs:label:
+    - class_label: string
+  - skos:altLabel:
+    - class_alt_label:
+      - string
+      - string
+  - rdfs:isDefinedBy:
+    - class_is_defined_by:
+      - string
+      - string
+  - rdfs:seeAlso:
+    - class_see_also: string
+  - dc11:creator:
+    - class_creator: string
+- TransitiveProperty:
+  - owl:inverseOf:
+    - transitive_property_inverse_of:
+      - TransitiveProperty
+      - ObjectProperty
+  - rdfs:subPropertyOf:
+    - transitive_property_sub_property_of: ObjectProperty
+  - skos:definition:
+    - transitive_property_definition: string
+  - rdfs:label:
+    - transitive_property_label: string
+  - dc11:creator:
+    - transitive_property_creator: string
+- FunctionalProperty:
+  - rdfs:range:
+    - functional_property_range: Class
+  - rdfs:domain:
+    - functional_property_domain: Class
+  - rdfs:subPropertyOf:
+    - functional_property_sub_property_of: ObjectProperty
+  - rdfs:label:
+    - functional_property_label: string
+  - dc11:creator:
+    - functional_property_creator: string
+- InverseFunctionalProperty:
+  - rdfs:range:
+    - inverse_functional_property_range: Class
+  - rdfs:domain:
+    - inverse_functional_property_domain: Class
+  - rdfs:subPropertyOf:
+    - inverse_functional_property_sub_property_of: ObjectProperty
+  - rdfs:label:
+    - inverse_functional_property_label: string
+  - dc11:creator:
+    - inverse_functional_property_creator: string
+- Restriction:
+  - owl:onProperty:
+    - restriction_on_property:
+      - DatatypeProperty
+      - ObjectProperty
+      - InverseFunctionalProperty
+      - FunctionalProperty
+  - owl:someValuesFrom:
+    - restriction_some_values_from: Class
+  - owl:minQualifiedCardinality:
+    - restriction_min_qualified_cardinality: nonNegativeInteger

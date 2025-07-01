@@ -1,0 +1,2490 @@
+- sugarAminoCarbonVariation:
+  - ns1:has_residue_modification_site:
+    - sugar_amino_carbon_variation_has_residue_modification_site:
+      - NamedIndividual
+      - C_atom_component
+      - carbohydrate_atom
+      - Thing
+  - rdf:type:
+    - sugar_amino_carbon_variation_type: Class
+  - ns1:has_residue_modification_name:
+    - sugar_amino_carbon_variation_has_residue_modification_name: string
+  - rdfs:label:
+    - sugar_amino_carbon_variation_label: string
+- OAtomComponent:
+  - rdf:type:
+    - o_atom_component_type: Class
+  - ns1:has_archetype:
+    - o_atom_component_has_archetype:
+      - Thing
+      - atom
+      - NamedIndividual
+  - rdfs:comment:
+    - o_atom_component_comment: string
+  - rdfs:label:
+    - o_atom_component_label: string
+- nucleosideBaseIntraresidueCovalentBond:
+  - rdf:type:
+    - nucleoside_base_intraresidue_covalent_bond_type: Class
+  - ns1:covalently_links_to:
+    - nucleoside_base_intraresidue_covalent_bond_covalently_links_to:
+      - C_atom_component
+      - nucleoside_base_atom
+      - NamedIndividual
+      - Thing
+      - N_atom_component
+  - ns1:covalently_links_from:
+    - nucleoside_base_intraresidue_covalent_bond_covalently_links_from:
+      - NamedIndividual
+      - C_atom_component
+      - N_atom_component
+      - nucleoside_base_atom
+      - Thing
+      - O_atom_component
+  - rdfs:label:
+    - nucleoside_base_intraresidue_covalent_bond_label: string
+- smallOrganicMoleculeAtom:
+  - rdf:type:
+    - small_organic_molecule_atom_type: Class
+  - ns1:has_archetype:
+    - small_organic_molecule_atom_has_archetype:
+      - Thing
+      - NamedIndividual
+      - atom
+  - rdfs:label:
+    - small_organic_molecule_atom_label: string
+- Class:
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Class
+      - Restriction
+  - owl:equivalentClass:
+    - class_equivalent_class: Restriction
+  - rdfs:comment:
+    - class_comment: string
+  - ns1:CHEBI_ID:
+    - class_chebi_id: string
+  - rdfs:label:
+    - class_label: string
+- alphaSugar:
+  - ns1:has_functional_group:
+    - alpha_sugar_has_functional_group:
+      - functional_group
+      - NamedIndividual
+      - Thing
+  - ns1:has_anomeric_carbon:
+    - alpha_sugar_has_anomeric_carbon:
+      - Thing
+      - NamedIndividual
+      - carbohydrate_atom
+      - C_atom_component
+  - ns1:has_link:
+    - alpha_sugar_has_link:
+      - Thing
+      - NamedIndividual
+      - carbohydrate_intraresidue_covalent_bond
+  - rdf:type:
+    - alpha_sugar_type: Class
+  - ns1:has_substituent:
+    - alpha_sugar_has_substituent:
+      - NamedIndividual
+      - substituent
+  - ns1:has_atom:
+    - alpha_sugar_has_atom:
+      - O_atom_component
+      - Thing
+      - N_atom_component
+      - NamedIndividual
+      - carbohydrate_atom
+      - C_atom_component
+  - ns1:has_monosaccharide_configuration:
+    - alpha_sugar_has_monosaccharide_configuration:
+      - NamedIndividual
+      - Thing
+      - monosaccharide_configuration
+  - ns1:has_ring_form:
+    - alpha_sugar_has_ring_form:
+      - ring_form
+      - Thing
+      - NamedIndividual
+  - ns1:has_anomeric_configuration:
+    - alpha_sugar_has_anomeric_configuration:
+      - anomeric_configuration
+      - NamedIndividual
+      - Thing
+  - ns1:has_second_monosaccharide_configuration:
+    - alpha_sugar_has_second_monosaccharide_configuration:
+      - NamedIndividual
+      - Thing
+      - monosaccharide_configuration
+  - ns1:has_sugar_structural_variation:
+    - alpha_sugar_has_sugar_structural_variation:
+      - sugar_deoxy_carbon_variation
+      - NamedIndividual
+      - sugar_carbonyl_carbon_site_variation
+      - sugar_amino_carbon_variation
+      - Thing
+  - ns1:has_number_of_H_atoms:
+    - alpha_sugar_has_number_of_h_atoms: 12345
+  - ns1:has_monosaccharide_name:
+    - alpha_sugar_has_monosaccharide_name: string
+  - ns1:has_number_of_main_chain_C_atoms:
+    - alpha_sugar_has_number_of_main_chain_c_atoms: 12345
+  - ns1:has_number_of_C_atoms:
+    - alpha_sugar_has_number_of_c_atoms: 12345
+  - rdfs:label:
+    - alpha_sugar_label: string
+  - ns1:has_CHEBI_ID:
+    - alpha_sugar_has_chebi_id: string
+  - ns1:has_number_of_O_atoms:
+    - alpha_sugar_has_number_of_o_atoms: 12345
+- Man-initiatedO-glycanCarbohydrateResidue:
+  - rdf:type:
+    - man-initiated_o-glycan_carbohydrate_residue_type: Class
+  - ns1:has_archetype:
+    - man-initiated_o-glycan_carbohydrate_residue_has_archetype:
+      - alpha_sugar
+      - Thing
+      - NamedIndividual
+      - six-carbon_sugar
+      - aldose
+      - pyranose
+  - rdfs:label:
+    - man-initiated_o-glycan_carbohydrate_residue_label: string
+- purine:
+  - rdf:type:
+    - purine_type: Class
+  - ns1:has_atom:
+    - purine_has_atom:
+      - Thing
+      - nucleoside_base_atom
+      - NamedIndividual
+      - N_atom_component
+  - rdfs:label:
+    - purine_label: string
+- six-carbonSugar:
+  - ns1:has_functional_group:
+    - six-carbon_sugar_has_functional_group:
+      - Thing
+      - NamedIndividual
+      - functional_group
+  - ns1:has_anomeric_carbon:
+    - six-carbon_sugar_has_anomeric_carbon:
+      - C_atom_component
+      - Thing
+      - NamedIndividual
+      - carbohydrate_atom
+  - ns1:has_link:
+    - six-carbon_sugar_has_link:
+      - NamedIndividual
+      - Thing
+      - carbohydrate_intraresidue_covalent_bond
+  - rdf:type:
+    - six-carbon_sugar_type: Class
+  - ns1:has_substituent:
+    - six-carbon_sugar_has_substituent:
+      - NamedIndividual
+      - substituent
+  - ns1:has_atom:
+    - six-carbon_sugar_has_atom:
+      - carbohydrate_atom
+      - NamedIndividual
+      - C_atom_component
+      - Thing
+      - N_atom_component
+      - O_atom_component
+  - ns1:has_monosaccharide_configuration:
+    - six-carbon_sugar_has_monosaccharide_configuration:
+      - Thing
+      - NamedIndividual
+      - monosaccharide_configuration
+  - ns1:has_ring_form:
+    - six-carbon_sugar_has_ring_form:
+      - Thing
+      - ring_form
+      - NamedIndividual
+  - ns1:has_anomeric_configuration:
+    - six-carbon_sugar_has_anomeric_configuration:
+      - Thing
+      - anomeric_configuration
+      - NamedIndividual
+  - ns1:has_sugar_structural_variation:
+    - six-carbon_sugar_has_sugar_structural_variation:
+      - NamedIndividual
+      - sugar_carbonyl_carbon_site_variation
+      - sugar_amino_carbon_variation
+      - Thing
+      - sugar_deoxy_carbon_variation
+  - ns1:has_number_of_H_atoms:
+    - six-carbon_sugar_has_number_of_h_atoms: 12345
+  - ns1:has_monosaccharide_name:
+    - six-carbon_sugar_has_monosaccharide_name: string
+  - ns1:has_number_of_main_chain_C_atoms:
+    - six-carbon_sugar_has_number_of_main_chain_c_atoms: 12345
+  - ns1:has_number_of_C_atoms:
+    - six-carbon_sugar_has_number_of_c_atoms: 12345
+  - rdfs:label:
+    - six-carbon_sugar_label: string
+  - ns1:has_CHEBI_ID:
+    - six-carbon_sugar_has_chebi_id: string
+  - ns1:has_number_of_O_atoms:
+    - six-carbon_sugar_has_number_of_o_atoms: 12345
+  - ns1:has_number_of_N_atoms:
+    - six-carbon_sugar_has_number_of_n_atoms: 12345
+- residueLink:
+  - rdf:type:
+    - residue_link_type: Class
+  - ns1:embodies_more_specific_link:
+    - residue_link_embodies_more_specific_link:
+      - Thing
+      - nucleosidic_covalent_bond
+      - glycosidic_covalent_bond_between_carbohydrate_residues
+      - phosphate_ester_covalent_bond
+      - NamedIndividual
+      - glycosylamide_covalent_bond
+      - glycosidic_to_phosphate_covalent_bond
+  - ns1:covalently_links_to:
+    - residue_link_covalently_links_to:
+      - purine_residue
+      - Thing
+      - GalNAc-initiated_O-glycan_carbohydrate_residue
+      - lipid_residue
+      - N-glycan_lipid-linked_precursor_carbohydrate_residue
+      - amino_acid_residue
+      - pyrimidine_residue
+      - inorganic_residue
+      - nucleoside_carbohydrate_residue
+      - N-glycan_carbohydrate_residue
+      - NamedIndividual
+  - ns1:covalently_links_from:
+    - residue_link_covalently_links_from:
+      - Thing
+      - inorganic_residue
+      - GalNAc-initiated_O-glycan_carbohydrate_residue
+      - nucleoside_carbohydrate_residue
+      - N-glycan_carbohydrate_residue
+      - monoglycosyl_moiety_carbohydrate_residue
+      - NamedIndividual
+      - N-glycan_lipid-linked_precursor_carbohydrate_residue
+  - rdfs:comment:
+    - residue_link_comment:
+      - string
+      - string
+  - rdfs:label:
+    - residue_link_label: string
+- anomericCarbonState:
+  - rdf:type:
+    - anomeric_carbon_state_type: Class
+  - rdfs:comment:
+    - anomeric_carbon_state_comment: string
+  - rdfs:label:
+    - anomeric_carbon_state_label: string
+- nucleosideBaseAtom:
+  - rdf:type:
+    - nucleoside_base_atom_type: Class
+  - ns1:has_archetype:
+    - nucleoside_base_atom_has_archetype:
+      - Thing
+      - atom
+      - NamedIndividual
+  - rdfs:label:
+    - nucleoside_base_atom_label: string
+- N-glycanCarbohydrateResidue:
+  - rdf:type:
+    - n-glycan_carbohydrate_residue_type: Class
+  - ns1:has_archetype:
+    - n-glycan_carbohydrate_residue_has_archetype:
+      - pyranose
+      - Thing
+      - NamedIndividual
+      - alpha_sugar
+      - six-carbon_sugar
+      - aldose
+      - beta_sugar
+      - aldonic_acid
+      - nine-carbon_sugar
+      - deoxy_sugar
+      - amino_sugar
+      - keto_sugar
+  - rdfs:label:
+    - n-glycan_carbohydrate_residue_label: string
+- Gal-initiatedGlycosphingolipidCarbohydrateResidue:
+  - rdf:type:
+    - gal-initiated_glycosphingolipid_carbohydrate_residue_type: Class
+  - ns1:has_archetype:
+    - gal-initiated_glycosphingolipid_carbohydrate_residue_has_archetype:
+      - beta_sugar
+      - six-carbon_sugar
+      - pyranose
+      - aldose
+      - Thing
+      - NamedIndividual
+  - rdfs:label:
+    - gal-initiated_glycosphingolipid_carbohydrate_residue_label: string
+- deoxySugar:
+  - ns1:has_functional_group:
+    - deoxy_sugar_has_functional_group:
+      - Thing
+      - NamedIndividual
+      - functional_group
+  - ns1:has_anomeric_carbon:
+    - deoxy_sugar_has_anomeric_carbon:
+      - Thing
+      - carbohydrate_atom
+      - NamedIndividual
+      - C_atom_component
+  - ns1:has_link:
+    - deoxy_sugar_has_link:
+      - Thing
+      - carbohydrate_intraresidue_covalent_bond
+      - NamedIndividual
+  - rdf:type:
+    - deoxy_sugar_type: Class
+  - ns1:has_substituent:
+    - deoxy_sugar_has_substituent:
+      - NamedIndividual
+      - substituent
+  - ns1:has_atom:
+    - deoxy_sugar_has_atom:
+      - carbohydrate_atom
+      - Thing
+      - N_atom_component
+      - O_atom_component
+      - NamedIndividual
+      - C_atom_component
+  - ns1:has_monosaccharide_configuration:
+    - deoxy_sugar_has_monosaccharide_configuration:
+      - monosaccharide_configuration
+      - NamedIndividual
+      - Thing
+  - ns1:has_ring_form:
+    - deoxy_sugar_has_ring_form:
+      - Thing
+      - NamedIndividual
+      - ring_form
+  - ns1:has_anomeric_configuration:
+    - deoxy_sugar_has_anomeric_configuration:
+      - NamedIndividual
+      - Thing
+      - anomeric_configuration
+  - ns1:has_second_monosaccharide_configuration:
+    - deoxy_sugar_has_second_monosaccharide_configuration:
+      - Thing
+      - monosaccharide_configuration
+      - NamedIndividual
+  - ns1:has_sugar_structural_variation:
+    - deoxy_sugar_has_sugar_structural_variation:
+      - sugar_carbonyl_carbon_site_variation
+      - NamedIndividual
+      - Thing
+      - sugar_amino_carbon_variation
+      - sugar_deoxy_carbon_variation
+  - ns1:has_number_of_H_atoms:
+    - deoxy_sugar_has_number_of_h_atoms: 12345
+  - ns1:has_monosaccharide_name:
+    - deoxy_sugar_has_monosaccharide_name: string
+  - ns1:has_number_of_main_chain_C_atoms:
+    - deoxy_sugar_has_number_of_main_chain_c_atoms: 12345
+  - ns1:has_number_of_C_atoms:
+    - deoxy_sugar_has_number_of_c_atoms: 12345
+  - rdfs:label:
+    - deoxy_sugar_label: string
+  - ns1:has_CHEBI_ID:
+    - deoxy_sugar_has_chebi_id: string
+  - ns1:has_number_of_O_atoms:
+    - deoxy_sugar_has_number_of_o_atoms: 12345
+  - ns1:has_number_of_N_atoms:
+    - deoxy_sugar_has_number_of_n_atoms: 12345
+- nine-carbonSugar:
+  - ns1:has_functional_group:
+    - nine-carbon_sugar_has_functional_group:
+      - NamedIndividual
+      - functional_group
+      - Thing
+  - ns1:has_anomeric_carbon:
+    - nine-carbon_sugar_has_anomeric_carbon:
+      - Thing
+      - NamedIndividual
+      - carbohydrate_atom
+      - C_atom_component
+  - ns1:has_link:
+    - nine-carbon_sugar_has_link:
+      - NamedIndividual
+      - carbohydrate_intraresidue_covalent_bond
+      - Thing
+  - rdf:type:
+    - nine-carbon_sugar_type: Class
+  - ns1:has_substituent:
+    - nine-carbon_sugar_has_substituent:
+      - NamedIndividual
+      - substituent
+  - ns1:has_atom:
+    - nine-carbon_sugar_has_atom:
+      - NamedIndividual
+      - Thing
+      - N_atom_component
+      - O_atom_component
+      - carbohydrate_atom
+      - C_atom_component
+  - ns1:has_monosaccharide_configuration:
+    - nine-carbon_sugar_has_monosaccharide_configuration:
+      - Thing
+      - NamedIndividual
+      - monosaccharide_configuration
+  - ns1:has_ring_form:
+    - nine-carbon_sugar_has_ring_form:
+      - ring_form
+      - Thing
+      - NamedIndividual
+  - ns1:has_anomeric_configuration:
+    - nine-carbon_sugar_has_anomeric_configuration:
+      - NamedIndividual
+      - Thing
+      - anomeric_configuration
+  - ns1:has_second_monosaccharide_configuration:
+    - nine-carbon_sugar_has_second_monosaccharide_configuration:
+      - monosaccharide_configuration
+      - NamedIndividual
+      - Thing
+  - ns1:has_sugar_structural_variation:
+    - nine-carbon_sugar_has_sugar_structural_variation:
+      - Thing
+      - sugar_deoxy_carbon_variation
+      - NamedIndividual
+      - sugar_amino_carbon_variation
+      - sugar_carbonyl_carbon_site_variation
+  - ns1:has_monosaccharide_name:
+    - nine-carbon_sugar_has_monosaccharide_name: string
+  - ns1:has_number_of_main_chain_C_atoms:
+    - nine-carbon_sugar_has_number_of_main_chain_c_atoms: 12345
+  - ns1:has_number_of_C_atoms:
+    - nine-carbon_sugar_has_number_of_c_atoms: 12345
+  - rdfs:label:
+    - nine-carbon_sugar_label: string
+  - ns1:has_CHEBI_ID:
+    - nine-carbon_sugar_has_chebi_id: string
+  - ns1:has_number_of_O_atoms:
+    - nine-carbon_sugar_has_number_of_o_atoms: 12345
+- purineResidue:
+  - rdf:type:
+    - purine_residue_type: Class
+  - ns1:has_archetype:
+    - purine_residue_has_archetype:
+      - purine
+      - NamedIndividual
+      - Thing
+  - rdfs:label:
+    - purine_residue_label: string
+- glycosylamideCovalentBond:
+  - rdf:type:
+    - glycosylamide_covalent_bond_type: Class
+  - ns1:covalently_links_to:
+    - glycosylamide_covalent_bond_covalently_links_to:
+      - Thing
+      - amino_acid_atom
+      - N_atom_component
+      - NamedIndividual
+  - ns1:covalently_links_from:
+    - glycosylamide_covalent_bond_covalently_links_from:
+      - C_atom_component
+      - Thing
+      - NamedIndividual
+      - carbohydrate_atom
+  - rdfs:label:
+    - glycosylamide_covalent_bond_label: string
+- five-carbonSugar:
+  - ns1:has_anomeric_carbon:
+    - five-carbon_sugar_has_anomeric_carbon:
+      - Thing
+      - carbohydrate_atom
+      - NamedIndividual
+      - C_atom_component
+  - ns1:has_link:
+    - five-carbon_sugar_has_link:
+      - NamedIndividual
+      - Thing
+      - carbohydrate_intraresidue_covalent_bond
+  - rdf:type:
+    - five-carbon_sugar_type: Class
+  - ns1:has_substituent:
+    - five-carbon_sugar_has_substituent:
+      - substituent
+      - NamedIndividual
+  - ns1:has_atom:
+    - five-carbon_sugar_has_atom:
+      - carbohydrate_atom
+      - Thing
+      - O_atom_component
+      - C_atom_component
+      - NamedIndividual
+  - ns1:has_monosaccharide_configuration:
+    - five-carbon_sugar_has_monosaccharide_configuration:
+      - Thing
+      - NamedIndividual
+      - monosaccharide_configuration
+  - ns1:has_ring_form:
+    - five-carbon_sugar_has_ring_form:
+      - ring_form
+      - Thing
+      - NamedIndividual
+  - ns1:has_anomeric_configuration:
+    - five-carbon_sugar_has_anomeric_configuration:
+      - NamedIndividual
+      - Thing
+      - anomeric_configuration
+  - ns1:has_sugar_structural_variation:
+    - five-carbon_sugar_has_sugar_structural_variation:
+      - sugar_carbonyl_carbon_site_variation
+      - NamedIndividual
+      - Thing
+  - ns1:has_number_of_H_atoms:
+    - five-carbon_sugar_has_number_of_h_atoms: 12345
+  - ns1:has_monosaccharide_name:
+    - five-carbon_sugar_has_monosaccharide_name: string
+  - ns1:has_number_of_main_chain_C_atoms:
+    - five-carbon_sugar_has_number_of_main_chain_c_atoms: 12345
+  - ns1:has_number_of_C_atoms:
+    - five-carbon_sugar_has_number_of_c_atoms: 12345
+  - rdfs:label:
+    - five-carbon_sugar_label: string
+  - ns1:has_number_of_O_atoms:
+    - five-carbon_sugar_has_number_of_o_atoms: 12345
+- aldonicAcid:
+  - ns1:has_functional_group:
+    - aldonic_acid_has_functional_group:
+      - NamedIndividual
+      - Thing
+      - functional_group
+  - ns1:has_anomeric_carbon:
+    - aldonic_acid_has_anomeric_carbon:
+      - Thing
+      - C_atom_component
+      - carbohydrate_atom
+      - NamedIndividual
+  - ns1:has_link:
+    - aldonic_acid_has_link:
+      - carbohydrate_intraresidue_covalent_bond
+      - NamedIndividual
+      - Thing
+  - rdf:type:
+    - aldonic_acid_type: Class
+  - ns1:has_substituent:
+    - aldonic_acid_has_substituent:
+      - NamedIndividual
+      - substituent
+  - ns1:has_atom:
+    - aldonic_acid_has_atom:
+      - C_atom_component
+      - O_atom_component
+      - NamedIndividual
+      - N_atom_component
+      - carbohydrate_atom
+      - Thing
+  - ns1:has_monosaccharide_configuration:
+    - aldonic_acid_has_monosaccharide_configuration:
+      - monosaccharide_configuration
+      - NamedIndividual
+      - Thing
+  - ns1:has_ring_form:
+    - aldonic_acid_has_ring_form:
+      - Thing
+      - ring_form
+      - NamedIndividual
+  - ns1:has_anomeric_configuration:
+    - aldonic_acid_has_anomeric_configuration:
+      - anomeric_configuration
+      - Thing
+      - NamedIndividual
+  - ns1:has_second_monosaccharide_configuration:
+    - aldonic_acid_has_second_monosaccharide_configuration:
+      - NamedIndividual
+      - Thing
+      - monosaccharide_configuration
+  - ns1:has_sugar_structural_variation:
+    - aldonic_acid_has_sugar_structural_variation:
+      - Thing
+      - sugar_deoxy_carbon_variation
+      - NamedIndividual
+      - sugar_amino_carbon_variation
+      - sugar_carbonyl_carbon_site_variation
+  - ns1:has_monosaccharide_name:
+    - aldonic_acid_has_monosaccharide_name: string
+  - ns1:has_number_of_main_chain_C_atoms:
+    - aldonic_acid_has_number_of_main_chain_c_atoms: 12345
+  - ns1:has_number_of_C_atoms:
+    - aldonic_acid_has_number_of_c_atoms: 12345
+  - rdfs:label:
+    - aldonic_acid_label: string
+  - ns1:has_CHEBI_ID:
+    - aldonic_acid_has_chebi_id: string
+  - ns1:has_number_of_O_atoms:
+    - aldonic_acid_has_number_of_o_atoms: 12345
+- core-4O-glycanOligosaccharide:
+  - ns1:has_link:
+    - core-4_o-glycan_oligosaccharide_has_link:
+      - residue_link
+      - NamedIndividual
+  - ns1:has_residue:
+    - core-4_o-glycan_oligosaccharide_has_residue:
+      - Thing
+      - NamedIndividual
+      - GalNAc-initiated_O-glycan_carbohydrate_residue
+  - rdf:type:
+    - core-4_o-glycan_oligosaccharide_type: Class
+  - ns1:has_root_residue:
+    - core-4_o-glycan_oligosaccharide_has_root_residue:
+      - Thing
+      - NamedIndividual
+      - GalNAc-initiated_O-glycan_carbohydrate_residue
+  - rdfs:label:
+    - core-4_o-glycan_oligosaccharide_label: string
+- inorganicMoleculeAtom:
+  - rdf:type:
+    - inorganic_molecule_atom_type: Class
+  - ns1:has_archetype:
+    - inorganic_molecule_atom_has_archetype:
+      - NamedIndividual
+      - Thing
+      - atom
+  - rdfs:comment:
+    - inorganic_molecule_atom_comment: string
+  - rdfs:label:
+    - inorganic_molecule_atom_label: string
+- NamedIndividual:
+  - ns1:has_functional_group:
+    - named_individual_has_functional_group:
+      - NamedIndividual
+      - Thing
+      - functional_group
+  - ns1:has_anomeric_carbon:
+    - named_individual_has_anomeric_carbon:
+      - NamedIndividual
+      - Thing
+      - carbohydrate_atom
+      - C_atom_component
+  - ns1:has_link:
+    - named_individual_has_link:
+      - residue_link
+      - Thing
+      - carbohydrate_intraresidue_covalent_bond
+      - organic_intraresidue_covalent_bond
+      - NamedIndividual
+  - ns1:has_residue_modification_site:
+    - named_individual_has_residue_modification_site:
+      - C_atom_component
+      - NamedIndividual
+      - Thing
+      - N_atom_component
+      - carbohydrate_atom
+  - ns1:has_residue:
+    - named_individual_has_residue:
+      - lipid_residue
+      - monoglycosyl_moiety_carbohydrate_residue
+      - GalNAc-initiated_O-glycan_carbohydrate_residue
+      - N-glycan_carbohydrate_residue
+      - purine_residue
+      - residue
+      - nucleoside_carbohydrate_residue
+      - NamedIndividual
+      - Thing
+      - pyrimidine_residue
+      - inorganic_residue
+      - amino_acid_residue
+  - ns1:replaced_atom:
+    - named_individual_replaced_atom:
+      - Thing
+      - NamedIndividual
+      - O_atom_component
+      - small_organic_molecule_atom
+  - rdf:type:
+    - named_individual_type: Class
+  - ns1:has_substituent:
+    - named_individual_has_substituent:
+      - substituent
+      - NamedIndividual
+  - ns1:has_atom:
+    - named_individual_has_atom:
+      - carbohydrate_atom
+      - inorganic_molecule_atom
+      - P_atom_component
+      - C_atom_component
+      - Thing
+      - N_atom_component
+      - S_atom_component
+      - nucleoside_base_atom
+      - small_organic_molecule_atom
+      - O_atom_component
+      - lipid_atom
+      - NamedIndividual
+  - ns1:embodies_relative_monosaccharide_configuration:
+    - named_individual_embodies_relative_monosaccharide_configuration:
+      - NamedIndividual
+      - Thing
+      - relative_monosaccharide_configuration
+  - ns1:embodies_more_specific_link:
+    - named_individual_embodies_more_specific_link:
+      - phosphate_ester_covalent_bond
+      - Thing
+      - NamedIndividual
+      - nucleosidic_covalent_bond
+      - glycosylamide_covalent_bond
+      - glycosidic_covalent_bond_between_carbohydrate_residues
+      - glycosidic_to_phosphate_covalent_bond
+  - ns1:has_root_residue:
+    - named_individual_has_root_residue:
+      - Thing
+      - NamedIndividual
+      - GalNAc-initiated_O-glycan_carbohydrate_residue
+      - N-glycan_carbohydrate_residue
+  - ns1:covalently_links_to:
+    - named_individual_covalently_links_to:
+      - N_atom_component
+      - O_atom_component
+      - Thing
+      - small_organic_molecule_atom
+      - amino_acid_residue
+      - purine_residue
+      - GalNAc-initiated_O-glycan_carbohydrate_residue
+      - inorganic_molecule_atom
+      - NamedIndividual
+      - nucleoside_carbohydrate_residue
+      - inorganic_residue
+      - N-glycan_lipid-linked_precursor_carbohydrate_residue
+      - amino_acid_atom
+      - lipid_atom
+      - lipid_residue
+      - C_atom_component
+      - pyrimidine_residue
+      - N-glycan_carbohydrate_residue
+      - nucleoside_base_atom
+      - P_atom_component
+      - carbohydrate_atom
+  - ns1:has_monosaccharide_configuration:
+    - named_individual_has_monosaccharide_configuration:
+      - NamedIndividual
+      - Thing
+      - monosaccharide_configuration
+  - ns1:covalently_links_from:
+    - named_individual_covalently_links_from:
+      - carbohydrate_atom
+      - H_atom_component
+      - C_atom_component
+      - GalNAc-initiated_O-glycan_carbohydrate_residue
+      - small_organic_molecule_atom
+      - monoglycosyl_moiety_carbohydrate_residue
+      - O_atom_component
+      - inorganic_residue
+      - NamedIndividual
+      - N-glycan_carbohydrate_residue
+      - N-glycan_lipid-linked_precursor_carbohydrate_residue
+      - amino_acid_atom
+      - P_atom_component
+      - Thing
+      - nucleoside_carbohydrate_residue
+      - N_atom_component
+      - nucleoside_base_atom
+      - inorganic_molecule_atom
+  - ns1:has_ring_form:
+    - named_individual_has_ring_form:
+      - Thing
+      - ring_form
+      - NamedIndividual
+  - ns1:has_anomeric_configuration:
+    - named_individual_has_anomeric_configuration:
+      - anomeric_configuration
+      - NamedIndividual
+      - Thing
+  - ns1:has_second_monosaccharide_configuration:
+    - named_individual_has_second_monosaccharide_configuration:
+      - monosaccharide_configuration
+      - Thing
+      - NamedIndividual
+  - ns1:has_archetype:
+    - named_individual_has_archetype:
+      - pyranose
+      - keto_sugar
+      - aldonic_acid
+      - nine-carbon_sugar
+      - furanose
+      - lipid
+      - pyrimidine
+      - five-carbon_sugar
+      - NamedIndividual
+      - beta_sugar
+      - small_organic_molecule
+      - inorganic_molecule
+      - atom
+      - six-carbon_sugar
+      - deoxy_sugar
+      - L-polar_amino_acid
+      - amino_sugar
+      - aldose
+      - peptide
+      - alpha_sugar
+      - Thing
+      - purine
+  - ns1:has_sugar_structural_variation:
+    - named_individual_has_sugar_structural_variation:
+      - sugar_carbonyl_carbon_site_variation
+      - sugar_amino_carbon_variation
+      - sugar_deoxy_carbon_variation
+      - NamedIndividual
+      - Thing
+  - ns1:embodies_absolute_configuration:
+    - named_individual_embodies_absolute_configuration:
+      - absolute_configuration
+      - NamedIndividual
+      - Thing
+  - ns1:has_number_of_H_atoms:
+    - named_individual_has_number_of_h_atoms: 12345
+  - rdfs:comment:
+    - named_individual_comment:
+      - string
+      - string
+  - ns1:has_monosaccharide_name:
+    - named_individual_has_monosaccharide_name: string
+  - ns1:has_residue_modification_name:
+    - named_individual_has_residue_modification_name: string
+  - ns1:has_number_of_main_chain_C_atoms:
+    - named_individual_has_number_of_main_chain_c_atoms: 12345
+  - ns1:has_position:
+    - named_individual_has_position: integer
+  - ns1:has_number_of_C_atoms:
+    - named_individual_has_number_of_c_atoms: 12345
+  - rdfs:label:
+    - named_individual_label: string
+  - ns1:has_CHEBI_ID:
+    - named_individual_has_chebi_id: string
+  - ns1:has_number_of_O_atoms:
+    - named_individual_has_number_of_o_atoms: 12345
+  - ns1:has_number_of_N_atoms:
+    - named_individual_has_number_of_n_atoms: 12345
+- atom:
+  - rdf:type:
+    - atom_type: Class
+  - rdfs:label:
+    - atom_label: string
+- sugarFunctionalGroupSubstitutionVariation:
+  - ns1:has_residue_modification_site:
+    - sugar_functional_group_substitution_variation_has_residue_modification_site:
+      - NamedIndividual
+      - Thing
+      - carbohydrate_atom
+      - N_atom_component
+  - rdf:type:
+    - sugar_functional_group_substitution_variation_type: Class
+  - ns1:has_residue_modification_name:
+    - sugar_functional_group_substitution_variation_has_residue_modification_name: string
+  - rdfs:label:
+    - sugar_functional_group_substitution_variation_label: string
+- HAtomComponent:
+  - rdf:type:
+    - h_atom_component_type: Class
+  - ns1:has_archetype:
+    - h_atom_component_has_archetype:
+      - atom
+      - Thing
+      - NamedIndividual
+  - rdfs:comment:
+    - h_atom_component_comment: string
+  - rdfs:label:
+    - h_atom_component_label: string
+- lipidAtom:
+  - rdf:type:
+    - lipid_atom_type: Class
+  - ns1:has_archetype:
+    - lipid_atom_has_archetype:
+      - Thing
+      - NamedIndividual
+      - atom
+  - rdfs:label:
+    - lipid_atom_label: string
+- lipid:
+  - rdf:type:
+    - lipid_type: Class
+  - ns1:has_atom:
+    - lipid_has_atom:
+      - NamedIndividual
+      - lipid_atom
+      - Thing
+      - O_atom_component
+  - rdfs:label:
+    - lipid_label: string
+- inorganicIntraresidueCovalentBond:
+  - rdf:type:
+    - inorganic_intraresidue_covalent_bond_type: Class
+  - ns1:covalently_links_to:
+    - inorganic_intraresidue_covalent_bond_covalently_links_to:
+      - P_atom_component
+      - inorganic_molecule_atom
+      - NamedIndividual
+      - Thing
+  - ns1:covalently_links_from:
+    - inorganic_intraresidue_covalent_bond_covalently_links_from:
+      - inorganic_molecule_atom
+      - O_atom_component
+      - Thing
+      - NamedIndividual
+  - rdfs:label:
+    - inorganic_intraresidue_covalent_bond_label: string
+- carbohydrateIntraresidueCovalentBond:
+  - rdf:type:
+    - carbohydrate_intraresidue_covalent_bond_type: Class
+  - ns1:covalently_links_to:
+    - carbohydrate_intraresidue_covalent_bond_covalently_links_to:
+      - C_atom_component
+      - NamedIndividual
+      - Thing
+      - O_atom_component
+      - carbohydrate_atom
+  - ns1:covalently_links_from:
+    - carbohydrate_intraresidue_covalent_bond_covalently_links_from:
+      - H_atom_component
+      - N_atom_component
+      - Thing
+      - O_atom_component
+      - C_atom_component
+      - NamedIndividual
+      - carbohydrate_atom
+  - rdfs:label:
+    - carbohydrate_intraresidue_covalent_bond_label: string
+- core-2O-glycanOligosaccharide:
+  - ns1:has_link:
+    - core-2_o-glycan_oligosaccharide_has_link:
+      - residue_link
+      - NamedIndividual
+  - ns1:has_residue:
+    - core-2_o-glycan_oligosaccharide_has_residue:
+      - GalNAc-initiated_O-glycan_carbohydrate_residue
+      - NamedIndividual
+      - Thing
+  - rdf:type:
+    - core-2_o-glycan_oligosaccharide_type: Class
+  - ns1:has_root_residue:
+    - core-2_o-glycan_oligosaccharide_has_root_residue:
+      - GalNAc-initiated_O-glycan_carbohydrate_residue
+      - NamedIndividual
+      - Thing
+  - rdfs:label:
+    - core-2_o-glycan_oligosaccharide_label: string
+- GalNAc-initiatedO-glycanCarbohydrateResidue:
+  - rdf:type:
+    - gal_n_ac-initiated_o-glycan_carbohydrate_residue_type: Class
+  - ns1:has_archetype:
+    - gal_n_ac-initiated_o-glycan_carbohydrate_residue_has_archetype:
+      - alpha_sugar
+      - keto_sugar
+      - NamedIndividual
+      - beta_sugar
+      - pyranose
+      - Thing
+      - nine-carbon_sugar
+      - aldonic_acid
+      - amino_sugar
+      - aldose
+      - deoxy_sugar
+      - six-carbon_sugar
+  - rdfs:label:
+    - gal_n_ac-initiated_o-glycan_carbohydrate_residue_label: string
+- lipidResidue:
+  - rdf:type:
+    - lipid_residue_type: Class
+  - ns1:has_archetype:
+    - lipid_residue_has_archetype:
+      - lipid
+      - Thing
+      - NamedIndividual
+  - rdfs:comment:
+    - lipid_residue_comment: string
+  - rdfs:label:
+    - lipid_residue_label: string
+- peptideMoiety:
+  - rdf:type:
+    - peptide_moiety_type: Class
+  - ns1:has_archetype:
+    - peptide_moiety_has_archetype:
+      - Thing
+      - NamedIndividual
+      - peptide
+  - rdfs:comment:
+    - peptide_moiety_comment: string
+  - rdfs:label:
+    - peptide_moiety_label: string
+- aminoAcidAtom:
+  - rdf:type:
+    - amino_acid_atom_type: Class
+  - ns1:has_archetype:
+    - amino_acid_atom_has_archetype:
+      - atom
+      - Thing
+      - NamedIndividual
+  - rdfs:comment:
+    - amino_acid_atom_comment: string
+  - rdfs:label:
+    - amino_acid_atom_label: string
+- aminoSugar:
+  - ns1:has_functional_group:
+    - amino_sugar_has_functional_group:
+      - NamedIndividual
+      - Thing
+      - functional_group
+  - ns1:has_anomeric_carbon:
+    - amino_sugar_has_anomeric_carbon:
+      - C_atom_component
+      - carbohydrate_atom
+      - Thing
+      - NamedIndividual
+  - ns1:has_link:
+    - amino_sugar_has_link:
+      - Thing
+      - NamedIndividual
+      - carbohydrate_intraresidue_covalent_bond
+  - rdf:type:
+    - amino_sugar_type: Class
+  - ns1:has_substituent:
+    - amino_sugar_has_substituent:
+      - substituent
+      - NamedIndividual
+  - ns1:has_atom:
+    - amino_sugar_has_atom:
+      - NamedIndividual
+      - O_atom_component
+      - Thing
+      - carbohydrate_atom
+      - N_atom_component
+      - C_atom_component
+  - ns1:has_monosaccharide_configuration:
+    - amino_sugar_has_monosaccharide_configuration:
+      - NamedIndividual
+      - monosaccharide_configuration
+      - Thing
+  - ns1:has_ring_form:
+    - amino_sugar_has_ring_form:
+      - NamedIndividual
+      - Thing
+      - ring_form
+  - ns1:has_anomeric_configuration:
+    - amino_sugar_has_anomeric_configuration:
+      - NamedIndividual
+      - Thing
+      - anomeric_configuration
+  - ns1:has_second_monosaccharide_configuration:
+    - amino_sugar_has_second_monosaccharide_configuration:
+      - Thing
+      - NamedIndividual
+      - monosaccharide_configuration
+  - ns1:has_sugar_structural_variation:
+    - amino_sugar_has_sugar_structural_variation:
+      - NamedIndividual
+      - sugar_deoxy_carbon_variation
+      - Thing
+      - sugar_carbonyl_carbon_site_variation
+      - sugar_amino_carbon_variation
+  - ns1:has_number_of_H_atoms:
+    - amino_sugar_has_number_of_h_atoms: 12345
+  - ns1:has_monosaccharide_name:
+    - amino_sugar_has_monosaccharide_name: string
+  - ns1:has_number_of_main_chain_C_atoms:
+    - amino_sugar_has_number_of_main_chain_c_atoms: 12345
+  - ns1:has_number_of_C_atoms:
+    - amino_sugar_has_number_of_c_atoms: 12345
+  - rdfs:label:
+    - amino_sugar_label: string
+  - ns1:has_CHEBI_ID:
+    - amino_sugar_has_chebi_id: string
+  - ns1:has_number_of_O_atoms:
+    - amino_sugar_has_number_of_o_atoms: 12345
+  - ns1:has_number_of_N_atoms:
+    - amino_sugar_has_number_of_n_atoms: 12345
+- core-1O-glycanOligosaccharide:
+  - ns1:has_link:
+    - core-1_o-glycan_oligosaccharide_has_link:
+      - NamedIndividual
+      - residue_link
+  - ns1:has_residue:
+    - core-1_o-glycan_oligosaccharide_has_residue:
+      - NamedIndividual
+      - GalNAc-initiated_O-glycan_carbohydrate_residue
+      - Thing
+  - rdf:type:
+    - core-1_o-glycan_oligosaccharide_type: Class
+  - ns1:has_root_residue:
+    - core-1_o-glycan_oligosaccharide_has_root_residue:
+      - GalNAc-initiated_O-glycan_carbohydrate_residue
+      - NamedIndividual
+      - Thing
+  - rdfs:label:
+    - core-1_o-glycan_oligosaccharide_label: string
+- hybridN-glycanOligosaccharide:
+  - ns1:has_link:
+    - hybrid_n-glycan_oligosaccharide_has_link:
+      - residue_link
+      - NamedIndividual
+      - Thing
+  - ns1:has_residue:
+    - hybrid_n-glycan_oligosaccharide_has_residue:
+      - N-glycan_carbohydrate_residue
+      - NamedIndividual
+      - Thing
+  - rdf:type:
+    - hybrid_n-glycan_oligosaccharide_type: Class
+  - ns1:has_root_residue:
+    - hybrid_n-glycan_oligosaccharide_has_root_residue:
+      - NamedIndividual
+      - Thing
+      - N-glycan_carbohydrate_residue
+  - rdfs:label:
+    - hybrid_n-glycan_oligosaccharide_label: string
+- monosaccharideConfiguration:
+  - rdf:type:
+    - monosaccharide_configuration_type: Class
+  - ns1:embodies_relative_monosaccharide_configuration:
+    - monosaccharide_configuration_embodies_relative_monosaccharide_configuration:
+      - Thing
+      - NamedIndividual
+      - relative_monosaccharide_configuration
+  - ns1:embodies_absolute_configuration:
+    - monosaccharide_configuration_embodies_absolute_configuration:
+      - NamedIndividual
+      - absolute_configuration
+      - Thing
+  - rdfs:label:
+    - monosaccharide_configuration_label: string
+- smallOrganicMolecule:
+  - ns1:has_link:
+    - small_organic_molecule_has_link:
+      - Thing
+      - NamedIndividual
+      - organic_intraresidue_covalent_bond
+  - rdf:type:
+    - small_organic_molecule_type: Class
+  - ns1:has_atom:
+    - small_organic_molecule_has_atom:
+      - C_atom_component
+      - Thing
+      - O_atom_component
+      - NamedIndividual
+      - N_atom_component
+      - small_organic_molecule_atom
+  - rdfs:label:
+    - small_organic_molecule_label: string
+- ObjectProperty:
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of: ObjectProperty
+  - owl:inverseOf:
+    - object_property_inverse_of: ObjectProperty
+  - rdfs:domain:
+    - object_property_domain: Class
+  - rdfs:range:
+    - object_property_range: Class
+  - rdfs:comment:
+    - object_property_comment: string
+  - rdfs:label:
+    - object_property_label: string
+- uronicAcid:
+  - ns1:has_anomeric_carbon:
+    - uronic_acid_has_anomeric_carbon:
+      - carbohydrate_atom
+      - C_atom_component
+      - NamedIndividual
+      - Thing
+  - ns1:has_link:
+    - uronic_acid_has_link:
+      - Thing
+      - NamedIndividual
+      - carbohydrate_intraresidue_covalent_bond
+  - rdf:type:
+    - uronic_acid_type: Class
+  - ns1:has_substituent:
+    - uronic_acid_has_substituent:
+      - NamedIndividual
+      - substituent
+  - ns1:has_atom:
+    - uronic_acid_has_atom:
+      - C_atom_component
+      - NamedIndividual
+      - Thing
+      - N_atom_component
+      - O_atom_component
+      - carbohydrate_atom
+  - ns1:has_monosaccharide_configuration:
+    - uronic_acid_has_monosaccharide_configuration:
+      - monosaccharide_configuration
+      - NamedIndividual
+      - Thing
+  - ns1:has_ring_form:
+    - uronic_acid_has_ring_form:
+      - ring_form
+      - Thing
+      - NamedIndividual
+  - ns1:has_anomeric_configuration:
+    - uronic_acid_has_anomeric_configuration:
+      - anomeric_configuration
+      - NamedIndividual
+      - Thing
+  - ns1:has_sugar_structural_variation:
+    - uronic_acid_has_sugar_structural_variation:
+      - sugar_carbonyl_carbon_site_variation
+      - NamedIndividual
+      - sugar_amino_carbon_variation
+      - Thing
+      - sugar_deoxy_carbon_variation
+  - ns1:has_number_of_H_atoms:
+    - uronic_acid_has_number_of_h_atoms: 12345
+  - ns1:has_monosaccharide_name:
+    - uronic_acid_has_monosaccharide_name: string
+  - ns1:has_number_of_main_chain_C_atoms:
+    - uronic_acid_has_number_of_main_chain_c_atoms: 12345
+  - ns1:has_number_of_C_atoms:
+    - uronic_acid_has_number_of_c_atoms: 12345
+  - rdfs:label:
+    - uronic_acid_label: string
+  - ns1:has_number_of_O_atoms:
+    - uronic_acid_has_number_of_o_atoms: 12345
+- DatatypeProperty:
+  - rdfs:subPropertyOf:
+    - datatype_property_sub_property_of: DatatypeProperty
+  - rdfs:domain:
+    - datatype_property_domain: Class
+  - rdfs:comment:
+    - datatype_property_comment: string
+  - rdfs:label:
+    - datatype_property_label: string
+- sugarCarbonylCarbonSiteVariation:
+  - ns1:has_residue_modification_site:
+    - sugar_carbonyl_carbon_site_variation_has_residue_modification_site:
+      - C_atom_component
+      - carbohydrate_atom
+      - NamedIndividual
+      - Thing
+  - rdf:type:
+    - sugar_carbonyl_carbon_site_variation_type: Class
+  - rdfs:comment:
+    - sugar_carbonyl_carbon_site_variation_comment: string
+  - ns1:has_residue_modification_name:
+    - sugar_carbonyl_carbon_site_variation_has_residue_modification_name: string
+  - rdfs:label:
+    - sugar_carbonyl_carbon_site_variation_label: string
+- glycosylDonorSubstrate:
+  - ns1:has_link:
+    - glycosyl_donor_substrate_has_link:
+      - Thing
+      - residue_link
+      - NamedIndividual
+  - ns1:has_residue:
+    - glycosyl_donor_substrate_has_residue:
+      - Thing
+      - lipid_residue
+      - inorganic_residue
+      - nucleoside_carbohydrate_residue
+      - pyrimidine_residue
+      - purine_residue
+      - NamedIndividual
+      - monoglycosyl_moiety_carbohydrate_residue
+  - rdf:type:
+    - glycosyl_donor_substrate_type: Class
+  - rdfs:label:
+    - glycosyl_donor_substrate_label: string
+- inorganicMolecule:
+  - rdf:type:
+    - inorganic_molecule_type: Class
+  - ns1:has_atom:
+    - inorganic_molecule_has_atom:
+      - P_atom_component
+      - inorganic_molecule_atom
+      - Thing
+      - S_atom_component
+      - O_atom_component
+      - NamedIndividual
+  - rdfs:label:
+    - inorganic_molecule_label: string
+- pauci-mannoseN-glycanOligosaccharide:
+  - ns1:has_link:
+    - pauci-mannose_n-glycan_oligosaccharide_has_link:
+      - NamedIndividual
+      - residue_link
+      - Thing
+  - ns1:has_residue:
+    - pauci-mannose_n-glycan_oligosaccharide_has_residue:
+      - NamedIndividual
+      - N-glycan_carbohydrate_residue
+      - Thing
+  - rdf:type:
+    - pauci-mannose_n-glycan_oligosaccharide_type: Class
+  - ns1:has_root_residue:
+    - pauci-mannose_n-glycan_oligosaccharide_has_root_residue:
+      - Thing
+      - NamedIndividual
+      - N-glycan_carbohydrate_residue
+  - rdfs:label:
+    - pauci-mannose_n-glycan_oligosaccharide_label: string
+- CAtomComponent:
+  - rdf:type:
+    - c_atom_component_type: Class
+  - ns1:has_archetype:
+    - c_atom_component_has_archetype:
+      - Thing
+      - atom
+      - NamedIndividual
+  - rdfs:label:
+    - c_atom_component_label: string
+- moiety:
+  - ns1:has_residue:
+    - moiety_has_residue:
+      - residue
+      - NamedIndividual
+      - Thing
+  - rdf:type:
+    - moiety_type: Class
+  - rdfs:comment:
+    - moiety_comment: string
+  - rdfs:label:
+    - moiety_label: string
+- Ontology:
+  - rdfs:comment:
+    - ontology_comment: string
+  - ns1:last_residue_accession:
+    - ontology_last_residue_accession: string
+  - dc11:creator:
+    - ontology_creator: string
+  - dc11:date:
+    - ontology_date: dateTime
+  - ns2:hasVersion:
+    - ontology_has_version: string
+  - owl:versionInfo:
+    - ontology_version_info: string
+  - ns1:last_structure_accession:
+    - ontology_last_structure_accession: string
+- glycosidicCovalentBondBetweenCarbohydrateResidues:
+  - rdf:type:
+    - glycosidic_covalent_bond_between_carbohydrate_residues_type: Class
+  - ns1:covalently_links_to:
+    - glycosidic_covalent_bond_between_carbohydrate_residues_covalently_links_to:
+      - Thing
+      - carbohydrate_atom
+      - NamedIndividual
+      - O_atom_component
+  - ns1:covalently_links_from:
+    - glycosidic_covalent_bond_between_carbohydrate_residues_covalently_links_from:
+      - NamedIndividual
+      - carbohydrate_atom
+      - Thing
+      - C_atom_component
+  - rdfs:label:
+    - glycosidic_covalent_bond_between_carbohydrate_residues_label: string
+- NAtomComponent:
+  - rdf:type:
+    - n_atom_component_type: Class
+  - ns1:has_archetype:
+    - n_atom_component_has_archetype:
+      - NamedIndividual
+      - atom
+      - Thing
+  - rdfs:comment:
+    - n_atom_component_comment: string
+  - rdfs:label:
+    - n_atom_component_label: string
+- betaSugar:
+  - ns1:has_functional_group:
+    - beta_sugar_has_functional_group:
+      - Thing
+      - NamedIndividual
+      - functional_group
+  - ns1:has_anomeric_carbon:
+    - beta_sugar_has_anomeric_carbon:
+      - NamedIndividual
+      - C_atom_component
+      - carbohydrate_atom
+      - Thing
+  - ns1:has_link:
+    - beta_sugar_has_link:
+      - NamedIndividual
+      - Thing
+      - carbohydrate_intraresidue_covalent_bond
+  - rdf:type:
+    - beta_sugar_type: Class
+  - ns1:has_substituent:
+    - beta_sugar_has_substituent:
+      - substituent
+      - NamedIndividual
+  - ns1:has_atom:
+    - beta_sugar_has_atom:
+      - O_atom_component
+      - C_atom_component
+      - N_atom_component
+      - Thing
+      - carbohydrate_atom
+      - NamedIndividual
+  - ns1:has_monosaccharide_configuration:
+    - beta_sugar_has_monosaccharide_configuration:
+      - Thing
+      - NamedIndividual
+      - monosaccharide_configuration
+  - ns1:has_ring_form:
+    - beta_sugar_has_ring_form:
+      - ring_form
+      - NamedIndividual
+      - Thing
+  - ns1:has_anomeric_configuration:
+    - beta_sugar_has_anomeric_configuration:
+      - Thing
+      - anomeric_configuration
+      - NamedIndividual
+  - ns1:has_second_monosaccharide_configuration:
+    - beta_sugar_has_second_monosaccharide_configuration:
+      - Thing
+      - monosaccharide_configuration
+      - NamedIndividual
+  - ns1:has_sugar_structural_variation:
+    - beta_sugar_has_sugar_structural_variation:
+      - sugar_amino_carbon_variation
+      - sugar_deoxy_carbon_variation
+      - sugar_carbonyl_carbon_site_variation
+      - NamedIndividual
+      - Thing
+  - ns1:has_number_of_H_atoms:
+    - beta_sugar_has_number_of_h_atoms: 12345
+  - ns1:has_monosaccharide_name:
+    - beta_sugar_has_monosaccharide_name: string
+  - ns1:has_number_of_main_chain_C_atoms:
+    - beta_sugar_has_number_of_main_chain_c_atoms: 12345
+  - ns1:has_number_of_C_atoms:
+    - beta_sugar_has_number_of_c_atoms: 12345
+  - rdfs:label:
+    - beta_sugar_label: string
+  - ns1:has_CHEBI_ID:
+    - beta_sugar_has_chebi_id: string
+  - ns1:has_number_of_O_atoms:
+    - beta_sugar_has_number_of_o_atoms: 12345
+  - ns1:has_number_of_N_atoms:
+    - beta_sugar_has_number_of_n_atoms: 12345
+- pyranose:
+  - ns1:has_functional_group:
+    - pyranose_has_functional_group:
+      - NamedIndividual
+      - functional_group
+      - Thing
+  - ns1:has_anomeric_carbon:
+    - pyranose_has_anomeric_carbon:
+      - Thing
+      - C_atom_component
+      - carbohydrate_atom
+      - NamedIndividual
+  - ns1:has_link:
+    - pyranose_has_link:
+      - carbohydrate_intraresidue_covalent_bond
+      - Thing
+      - NamedIndividual
+  - rdf:type:
+    - pyranose_type: Class
+  - ns1:has_substituent:
+    - pyranose_has_substituent:
+      - substituent
+      - NamedIndividual
+  - ns1:has_atom:
+    - pyranose_has_atom:
+      - C_atom_component
+      - Thing
+      - NamedIndividual
+      - N_atom_component
+      - carbohydrate_atom
+      - O_atom_component
+  - ns1:has_monosaccharide_configuration:
+    - pyranose_has_monosaccharide_configuration:
+      - NamedIndividual
+      - monosaccharide_configuration
+      - Thing
+  - ns1:has_ring_form:
+    - pyranose_has_ring_form:
+      - Thing
+      - NamedIndividual
+      - ring_form
+  - ns1:has_anomeric_configuration:
+    - pyranose_has_anomeric_configuration:
+      - NamedIndividual
+      - Thing
+      - anomeric_configuration
+  - ns1:has_second_monosaccharide_configuration:
+    - pyranose_has_second_monosaccharide_configuration:
+      - monosaccharide_configuration
+      - NamedIndividual
+      - Thing
+  - ns1:has_sugar_structural_variation:
+    - pyranose_has_sugar_structural_variation:
+      - NamedIndividual
+      - sugar_carbonyl_carbon_site_variation
+      - sugar_amino_carbon_variation
+      - Thing
+      - sugar_deoxy_carbon_variation
+  - ns1:has_number_of_H_atoms:
+    - pyranose_has_number_of_h_atoms: 12345
+  - ns1:has_monosaccharide_name:
+    - pyranose_has_monosaccharide_name: string
+  - ns1:has_number_of_main_chain_C_atoms:
+    - pyranose_has_number_of_main_chain_c_atoms: 12345
+  - ns1:has_number_of_C_atoms:
+    - pyranose_has_number_of_c_atoms: 12345
+  - rdfs:label:
+    - pyranose_label: string
+  - ns1:has_CHEBI_ID:
+    - pyranose_has_chebi_id: string
+  - ns1:has_number_of_O_atoms:
+    - pyranose_has_number_of_o_atoms: 12345
+  - ns1:has_number_of_N_atoms:
+    - pyranose_has_number_of_n_atoms: 12345
+- ketoSugar:
+  - ns1:has_functional_group:
+    - keto_sugar_has_functional_group:
+      - functional_group
+      - Thing
+      - NamedIndividual
+  - ns1:has_anomeric_carbon:
+    - keto_sugar_has_anomeric_carbon:
+      - Thing
+      - carbohydrate_atom
+      - C_atom_component
+      - NamedIndividual
+  - ns1:has_link:
+    - keto_sugar_has_link:
+      - carbohydrate_intraresidue_covalent_bond
+      - Thing
+      - NamedIndividual
+  - rdf:type:
+    - keto_sugar_type: Class
+  - ns1:has_substituent:
+    - keto_sugar_has_substituent:
+      - NamedIndividual
+      - substituent
+  - ns1:has_atom:
+    - keto_sugar_has_atom:
+      - NamedIndividual
+      - N_atom_component
+      - carbohydrate_atom
+      - O_atom_component
+      - C_atom_component
+      - Thing
+  - ns1:has_monosaccharide_configuration:
+    - keto_sugar_has_monosaccharide_configuration:
+      - NamedIndividual
+      - Thing
+      - monosaccharide_configuration
+  - ns1:has_ring_form:
+    - keto_sugar_has_ring_form:
+      - Thing
+      - ring_form
+      - NamedIndividual
+  - ns1:has_anomeric_configuration:
+    - keto_sugar_has_anomeric_configuration:
+      - Thing
+      - NamedIndividual
+      - anomeric_configuration
+  - ns1:has_second_monosaccharide_configuration:
+    - keto_sugar_has_second_monosaccharide_configuration:
+      - Thing
+      - NamedIndividual
+      - monosaccharide_configuration
+  - ns1:has_sugar_structural_variation:
+    - keto_sugar_has_sugar_structural_variation:
+      - NamedIndividual
+      - Thing
+      - sugar_carbonyl_carbon_site_variation
+      - sugar_deoxy_carbon_variation
+      - sugar_amino_carbon_variation
+  - ns1:has_monosaccharide_name:
+    - keto_sugar_has_monosaccharide_name: string
+  - ns1:has_number_of_main_chain_C_atoms:
+    - keto_sugar_has_number_of_main_chain_c_atoms: 12345
+  - ns1:has_number_of_C_atoms:
+    - keto_sugar_has_number_of_c_atoms: 12345
+  - rdfs:label:
+    - keto_sugar_label: string
+  - ns1:has_CHEBI_ID:
+    - keto_sugar_has_chebi_id: string
+  - ns1:has_number_of_O_atoms:
+    - keto_sugar_has_number_of_o_atoms: 12345
+- TransitiveProperty:
+  - rdfs:subPropertyOf:
+    - transitive_property_sub_property_of: ObjectProperty
+  - rdfs:domain:
+    - transitive_property_domain: Class
+  - rdfs:range:
+    - transitive_property_range: Class
+  - rdfs:label:
+    - transitive_property_label: string
+- PAtomComponent:
+  - rdf:type:
+    - p_atom_component_type: Class
+  - ns1:has_archetype:
+    - p_atom_component_has_archetype:
+      - NamedIndividual
+      - atom
+      - Thing
+  - rdfs:label:
+    - p_atom_component_label: string
+- nucleosideCarbohydrateResidue:
+  - rdf:type:
+    - nucleoside_carbohydrate_residue_type: Class
+  - ns1:has_archetype:
+    - nucleoside_carbohydrate_residue_has_archetype:
+      - aldose
+      - NamedIndividual
+      - furanose
+      - Thing
+      - beta_sugar
+      - five-carbon_sugar
+  - ns1:has_monosaccharide_name:
+    - nucleoside_carbohydrate_residue_has_monosaccharide_name: string
+  - rdfs:label:
+    - nucleoside_carbohydrate_residue_label: string
+- high-mannoseN-glycanOligosaccharide:
+  - ns1:has_link:
+    - high-mannose_n-glycan_oligosaccharide_has_link:
+      - NamedIndividual
+      - residue_link
+      - Thing
+  - ns1:has_residue:
+    - high-mannose_n-glycan_oligosaccharide_has_residue:
+      - N-glycan_carbohydrate_residue
+      - NamedIndividual
+      - Thing
+  - rdf:type:
+    - high-mannose_n-glycan_oligosaccharide_type: Class
+  - ns1:has_root_residue:
+    - high-mannose_n-glycan_oligosaccharide_has_root_residue:
+      - Thing
+      - NamedIndividual
+      - N-glycan_carbohydrate_residue
+  - rdfs:label:
+    - high-mannose_n-glycan_oligosaccharide_label: string
+- ringForm:
+  - rdf:type:
+    - ring_form_type: Class
+  - rdfs:comment:
+    - ring_form_comment: string
+  - rdfs:label:
+    - ring_form_label: string
+- aldose:
+  - ns1:has_functional_group:
+    - aldose_has_functional_group:
+      - NamedIndividual
+      - functional_group
+      - Thing
+  - ns1:has_anomeric_carbon:
+    - aldose_has_anomeric_carbon:
+      - carbohydrate_atom
+      - C_atom_component
+      - Thing
+      - NamedIndividual
+  - ns1:has_link:
+    - aldose_has_link:
+      - NamedIndividual
+      - Thing
+      - carbohydrate_intraresidue_covalent_bond
+  - rdf:type:
+    - aldose_type: Class
+  - ns1:has_substituent:
+    - aldose_has_substituent:
+      - NamedIndividual
+      - substituent
+  - ns1:has_atom:
+    - aldose_has_atom:
+      - N_atom_component
+      - Thing
+      - C_atom_component
+      - NamedIndividual
+      - O_atom_component
+      - carbohydrate_atom
+  - ns1:has_monosaccharide_configuration:
+    - aldose_has_monosaccharide_configuration:
+      - Thing
+      - NamedIndividual
+      - monosaccharide_configuration
+  - ns1:has_ring_form:
+    - aldose_has_ring_form:
+      - NamedIndividual
+      - ring_form
+      - Thing
+  - ns1:has_anomeric_configuration:
+    - aldose_has_anomeric_configuration:
+      - anomeric_configuration
+      - Thing
+      - NamedIndividual
+  - ns1:has_second_monosaccharide_configuration:
+    - aldose_has_second_monosaccharide_configuration:
+      - monosaccharide_configuration
+      - NamedIndividual
+      - Thing
+  - ns1:has_sugar_structural_variation:
+    - aldose_has_sugar_structural_variation:
+      - NamedIndividual
+      - sugar_deoxy_carbon_variation
+      - Thing
+      - sugar_carbonyl_carbon_site_variation
+      - sugar_amino_carbon_variation
+  - ns1:has_number_of_H_atoms:
+    - aldose_has_number_of_h_atoms: 12345
+  - ns1:has_monosaccharide_name:
+    - aldose_has_monosaccharide_name: string
+  - ns1:has_number_of_main_chain_C_atoms:
+    - aldose_has_number_of_main_chain_c_atoms: 12345
+  - ns1:has_number_of_C_atoms:
+    - aldose_has_number_of_c_atoms: 12345
+  - rdfs:label:
+    - aldose_label: string
+  - ns1:has_CHEBI_ID:
+    - aldose_has_chebi_id: string
+  - ns1:has_number_of_O_atoms:
+    - aldose_has_number_of_o_atoms: 12345
+  - ns1:has_number_of_N_atoms:
+    - aldose_has_number_of_n_atoms: 12345
+- residue:
+  - rdf:type:
+    - residue_type: Class
+  - rdfs:comment:
+    - residue_comment: string
+  - rdfs:label:
+    - residue_label: string
+- organicIntraresidueCovalentBond:
+  - rdf:type:
+    - organic_intraresidue_covalent_bond_type: Class
+  - ns1:covalently_links_to:
+    - organic_intraresidue_covalent_bond_covalently_links_to:
+      - NamedIndividual
+      - small_organic_molecule_atom
+      - Thing
+      - C_atom_component
+  - ns1:covalently_links_from:
+    - organic_intraresidue_covalent_bond_covalently_links_from:
+      - small_organic_molecule_atom
+      - NamedIndividual
+      - C_atom_component
+      - Thing
+      - O_atom_component
+  - rdfs:label:
+    - organic_intraresidue_covalent_bond_label: string
+- seven-carbonSugar:
+  - ns1:has_anomeric_carbon:
+    - seven-carbon_sugar_has_anomeric_carbon:
+      - C_atom_component
+      - Thing
+      - carbohydrate_atom
+      - NamedIndividual
+  - ns1:has_link:
+    - seven-carbon_sugar_has_link:
+      - carbohydrate_intraresidue_covalent_bond
+      - Thing
+      - NamedIndividual
+  - rdf:type:
+    - seven-carbon_sugar_type: Class
+  - ns1:has_substituent:
+    - seven-carbon_sugar_has_substituent:
+      - substituent
+      - NamedIndividual
+  - ns1:has_atom:
+    - seven-carbon_sugar_has_atom:
+      - Thing
+      - NamedIndividual
+      - carbohydrate_atom
+      - N_atom_component
+      - O_atom_component
+      - C_atom_component
+  - ns1:has_monosaccharide_configuration:
+    - seven-carbon_sugar_has_monosaccharide_configuration:
+      - NamedIndividual
+      - Thing
+      - monosaccharide_configuration
+  - ns1:has_ring_form:
+    - seven-carbon_sugar_has_ring_form:
+      - Thing
+      - ring_form
+      - NamedIndividual
+  - ns1:has_anomeric_configuration:
+    - seven-carbon_sugar_has_anomeric_configuration:
+      - anomeric_configuration
+      - NamedIndividual
+      - Thing
+  - ns1:has_second_monosaccharide_configuration:
+    - seven-carbon_sugar_has_second_monosaccharide_configuration:
+      - monosaccharide_configuration
+      - NamedIndividual
+      - Thing
+  - ns1:has_sugar_structural_variation:
+    - seven-carbon_sugar_has_sugar_structural_variation:
+      - Thing
+      - sugar_amino_carbon_variation
+      - sugar_carbonyl_carbon_site_variation
+      - NamedIndividual
+      - sugar_deoxy_carbon_variation
+  - ns1:has_monosaccharide_name:
+    - seven-carbon_sugar_has_monosaccharide_name: string
+  - ns1:has_number_of_main_chain_C_atoms:
+    - seven-carbon_sugar_has_number_of_main_chain_c_atoms: 12345
+  - rdfs:label:
+    - seven-carbon_sugar_label: string
+- FunctionalProperty:
+  - rdfs:subPropertyOf:
+    - functional_property_sub_property_of:
+      - DatatypeProperty
+      - ObjectProperty
+  - rdfs:domain:
+    - functional_property_domain: Class
+  - rdfs:range:
+    - functional_property_range: Class
+  - rdfs:comment:
+    - functional_property_comment: string
+  - rdfs:label:
+    - functional_property_label: string
+- relativeMonosaccharideConfiguration:
+  - rdf:type:
+    - relative_monosaccharide_configuration_type: Class
+  - rdfs:label:
+    - relative_monosaccharide_configuration_label: string
+- L-polarAminoAcid:
+  - rdf:type:
+    - l-polar_amino_acid_type: Class
+  - rdfs:comment:
+    - l-polar_amino_acid_comment: string
+  - rdfs:label:
+    - l-polar_amino_acid_label: string
+- eight-carbonSugar:
+  - ns1:has_anomeric_carbon:
+    - eight-carbon_sugar_has_anomeric_carbon:
+      - C_atom_component
+      - NamedIndividual
+      - Thing
+      - carbohydrate_atom
+  - ns1:has_link:
+    - eight-carbon_sugar_has_link:
+      - Thing
+      - carbohydrate_intraresidue_covalent_bond
+      - NamedIndividual
+  - rdf:type:
+    - eight-carbon_sugar_type: Class
+  - ns1:has_substituent:
+    - eight-carbon_sugar_has_substituent:
+      - NamedIndividual
+      - substituent
+  - ns1:has_atom:
+    - eight-carbon_sugar_has_atom:
+      - N_atom_component
+      - carbohydrate_atom
+      - O_atom_component
+      - C_atom_component
+      - Thing
+      - NamedIndividual
+  - ns1:has_monosaccharide_configuration:
+    - eight-carbon_sugar_has_monosaccharide_configuration:
+      - Thing
+      - NamedIndividual
+      - monosaccharide_configuration
+  - ns1:has_ring_form:
+    - eight-carbon_sugar_has_ring_form:
+      - NamedIndividual
+      - ring_form
+      - Thing
+  - ns1:has_anomeric_configuration:
+    - eight-carbon_sugar_has_anomeric_configuration:
+      - anomeric_configuration
+      - Thing
+      - NamedIndividual
+  - ns1:has_sugar_structural_variation:
+    - eight-carbon_sugar_has_sugar_structural_variation:
+      - sugar_carbonyl_carbon_site_variation
+      - sugar_amino_carbon_variation
+      - sugar_deoxy_carbon_variation
+      - Thing
+      - NamedIndividual
+  - ns1:has_monosaccharide_name:
+    - eight-carbon_sugar_has_monosaccharide_name: string
+  - ns1:has_number_of_main_chain_C_atoms:
+    - eight-carbon_sugar_has_number_of_main_chain_c_atoms: 12345
+  - rdfs:label:
+    - eight-carbon_sugar_label: string
+- pyrimidineResidue:
+  - rdf:type:
+    - pyrimidine_residue_type: Class
+  - ns1:has_archetype:
+    - pyrimidine_residue_has_archetype:
+      - NamedIndividual
+      - pyrimidine
+      - Thing
+  - rdfs:label:
+    - pyrimidine_residue_label: string
+- inorganicResidue:
+  - rdf:type:
+    - inorganic_residue_type: Class
+  - ns1:has_archetype:
+    - inorganic_residue_has_archetype:
+      - inorganic_molecule
+      - Thing
+      - NamedIndividual
+  - rdfs:label:
+    - inorganic_residue_label: string
+- aminoAcidResidue:
+  - rdf:type:
+    - amino_acid_residue_type: Class
+  - ns1:has_archetype:
+    - amino_acid_residue_has_archetype:
+      - Thing
+      - NamedIndividual
+      - L-polar_amino_acid
+  - rdfs:comment:
+    - amino_acid_residue_comment: string
+  - rdfs:label:
+    - amino_acid_residue_label: string
+- glycosidicToPhosphateCovalentBond:
+  - rdf:type:
+    - glycosidic_to_phosphate_covalent_bond_type: Class
+  - ns1:covalently_links_to:
+    - glycosidic_to_phosphate_covalent_bond_covalently_links_to:
+      - NamedIndividual
+      - inorganic_molecule_atom
+      - O_atom_component
+      - Thing
+  - ns1:covalently_links_from:
+    - glycosidic_to_phosphate_covalent_bond_covalently_links_from:
+      - Thing
+      - C_atom_component
+      - NamedIndividual
+      - carbohydrate_atom
+  - rdfs:label:
+    - glycosidic_to_phosphate_covalent_bond_label: string
+- nucleosidicCovalentBond:
+  - rdf:type:
+    - nucleosidic_covalent_bond_type: Class
+  - ns1:covalently_links_to:
+    - nucleosidic_covalent_bond_covalently_links_to:
+      - N_atom_component
+      - NamedIndividual
+      - Thing
+      - nucleoside_base_atom
+  - ns1:covalently_links_from:
+    - nucleosidic_covalent_bond_covalently_links_from:
+      - Thing
+      - carbohydrate_atom
+      - NamedIndividual
+      - C_atom_component
+  - rdfs:label:
+    - nucleosidic_covalent_bond_label: string
+- complexLipid:
+  - ns1:has_link:
+    - complex_lipid_has_link:
+      - Thing
+      - NamedIndividual
+      - residue_link
+  - ns1:has_residue:
+    - complex_lipid_has_residue:
+      - inorganic_residue
+      - Thing
+      - NamedIndividual
+      - lipid_residue
+  - rdf:type:
+    - complex_lipid_type: Class
+  - rdfs:label:
+    - complex_lipid_label: string
+- substituent:
+  - ns1:replaced_atom:
+    - substituent_replaced_atom:
+      - Thing
+      - O_atom_component
+      - small_organic_molecule_atom
+      - NamedIndividual
+  - rdf:type:
+    - substituent_type: Class
+  - ns1:has_archetype:
+    - substituent_has_archetype:
+      - small_organic_molecule
+      - Thing
+      - NamedIndividual
+  - ns1:has_position:
+    - substituent_has_position: integer
+  - rdfs:label:
+    - substituent_label: string
+- peptide:
+  - ns1:has_residue:
+    - peptide_has_residue:
+      - Thing
+      - amino_acid_residue
+      - NamedIndividual
+  - rdf:type:
+    - peptide_type: Class
+  - rdfs:label:
+    - peptide_label: string
+- monoglycosylMoietyCarbohydrateResidue:
+  - rdf:type:
+    - monoglycosyl_moiety_carbohydrate_residue_type: Class
+  - ns1:has_archetype:
+    - monoglycosyl_moiety_carbohydrate_residue_has_archetype:
+      - Thing
+      - NamedIndividual
+      - aldose
+      - pyranose
+      - beta_sugar
+      - amino_sugar
+      - deoxy_sugar
+      - six-carbon_sugar
+      - alpha_sugar
+  - rdfs:label:
+    - monoglycosyl_moiety_carbohydrate_residue_label: string
+- N-glycanLipid-linkedPrecursorCarbohydrateResidue:
+  - rdf:type:
+    - n-glycan_lipid-linked_precursor_carbohydrate_residue_type: Class
+  - ns1:has_archetype:
+    - n-glycan_lipid-linked_precursor_carbohydrate_residue_has_archetype:
+      - alpha_sugar
+      - deoxy_sugar
+      - Thing
+      - pyranose
+      - aldose
+      - amino_sugar
+      - six-carbon_sugar
+      - beta_sugar
+      - NamedIndividual
+  - rdfs:comment:
+    - n-glycan_lipid-linked_precursor_carbohydrate_residue_comment: string
+  - rdfs:label:
+    - n-glycan_lipid-linked_precursor_carbohydrate_residue_label: string
+- Fuc-initiatedO-glycanCarbohydrateResidue:
+  - rdf:type:
+    - fuc-initiated_o-glycan_carbohydrate_residue_type: Class
+  - ns1:has_archetype:
+    - fuc-initiated_o-glycan_carbohydrate_residue_has_archetype:
+      - NamedIndividual
+      - deoxy_sugar
+      - aldose
+      - Thing
+      - pyranose
+      - six-carbon_sugar
+      - alpha_sugar
+  - rdfs:label:
+    - fuc-initiated_o-glycan_carbohydrate_residue_label: string
+- functionalGroup:
+  - rdf:type:
+    - functional_group_type: Class
+  - rdfs:label:
+    - functional_group_label: string
+- aminoAcidIntraresidueCovalentBond:
+  - rdf:type:
+    - amino_acid_intraresidue_covalent_bond_type: Class
+  - ns1:covalently_links_to:
+    - amino_acid_intraresidue_covalent_bond_covalently_links_to:
+      - N_atom_component
+      - C_atom_component
+      - NamedIndividual
+      - O_atom_component
+      - Thing
+      - amino_acid_atom
+  - ns1:covalently_links_from:
+    - amino_acid_intraresidue_covalent_bond_covalently_links_from:
+      - C_atom_component
+      - O_atom_component
+      - NamedIndividual
+      - H_atom_component
+      - Thing
+      - amino_acid_atom
+  - rdfs:label:
+    - amino_acid_intraresidue_covalent_bond_label: string
+- complexN-glycanOligosaccharide:
+  - ns1:has_link:
+    - complex_n-glycan_oligosaccharide_has_link:
+      - residue_link
+      - Thing
+      - NamedIndividual
+  - ns1:has_residue:
+    - complex_n-glycan_oligosaccharide_has_residue:
+      - NamedIndividual
+      - N-glycan_carbohydrate_residue
+      - Thing
+  - rdf:type:
+    - complex_n-glycan_oligosaccharide_type: Class
+  - ns1:has_root_residue:
+    - complex_n-glycan_oligosaccharide_has_root_residue:
+      - N-glycan_carbohydrate_residue
+      - NamedIndividual
+      - Thing
+  - rdfs:label:
+    - complex_n-glycan_oligosaccharide_label: string
+- absoluteConfiguration:
+  - rdf:type:
+    - absolute_configuration_type: Class
+  - rdfs:label:
+    - absolute_configuration_label: string
+- Thing:
+  - ns1:has_functional_group:
+    - thing_has_functional_group:
+      - Thing
+      - functional_group
+      - NamedIndividual
+  - ns1:has_anomeric_carbon:
+    - thing_has_anomeric_carbon:
+      - carbohydrate_atom
+      - Thing
+      - NamedIndividual
+      - C_atom_component
+  - ns1:has_link:
+    - thing_has_link:
+      - organic_intraresidue_covalent_bond
+      - NamedIndividual
+      - Thing
+      - residue_link
+      - carbohydrate_intraresidue_covalent_bond
+  - ns1:has_residue_modification_site:
+    - thing_has_residue_modification_site:
+      - Thing
+      - NamedIndividual
+      - N_atom_component
+      - carbohydrate_atom
+      - C_atom_component
+  - ns1:has_residue:
+    - thing_has_residue:
+      - nucleoside_carbohydrate_residue
+      - purine_residue
+      - inorganic_residue
+      - monoglycosyl_moiety_carbohydrate_residue
+      - amino_acid_residue
+      - residue
+      - Thing
+      - pyrimidine_residue
+      - NamedIndividual
+      - lipid_residue
+  - rdf:type:
+    - thing_type: Class
+  - ns1:has_substituent:
+    - thing_has_substituent:
+      - substituent
+      - NamedIndividual
+  - ns1:has_atom:
+    - thing_has_atom:
+      - NamedIndividual
+      - Thing
+      - C_atom_component
+      - inorganic_molecule_atom
+      - P_atom_component
+      - carbohydrate_atom
+      - N_atom_component
+      - small_organic_molecule_atom
+      - O_atom_component
+      - lipid_atom
+      - nucleoside_base_atom
+      - S_atom_component
+  - ns1:embodies_relative_monosaccharide_configuration:
+    - thing_embodies_relative_monosaccharide_configuration:
+      - Thing
+      - relative_monosaccharide_configuration
+      - NamedIndividual
+  - ns1:embodies_more_specific_link:
+    - thing_embodies_more_specific_link:
+      - Thing
+      - glycosylamide_covalent_bond
+      - glycosidic_to_phosphate_covalent_bond
+      - phosphate_ester_covalent_bond
+      - nucleosidic_covalent_bond
+      - glycosidic_covalent_bond_between_carbohydrate_residues
+      - NamedIndividual
+  - ns1:covalently_links_to:
+    - thing_covalently_links_to:
+      - lipid_residue
+      - C_atom_component
+      - lipid_atom
+      - amino_acid_atom
+      - P_atom_component
+      - purine_residue
+      - NamedIndividual
+      - nucleoside_carbohydrate_residue
+      - nucleoside_base_atom
+      - inorganic_residue
+      - N-glycan_lipid-linked_precursor_carbohydrate_residue
+      - amino_acid_residue
+      - O_atom_component
+      - small_organic_molecule_atom
+      - N_atom_component
+      - carbohydrate_atom
+      - pyrimidine_residue
+      - inorganic_molecule_atom
+      - Thing
+      - N-glycan_carbohydrate_residue
+  - ns1:has_monosaccharide_configuration:
+    - thing_has_monosaccharide_configuration:
+      - NamedIndividual
+      - Thing
+      - monosaccharide_configuration
+  - ns1:covalently_links_from:
+    - thing_covalently_links_from:
+      - C_atom_component
+      - small_organic_molecule_atom
+      - carbohydrate_atom
+      - N_atom_component
+      - H_atom_component
+      - Thing
+      - inorganic_molecule_atom
+      - N-glycan_carbohydrate_residue
+      - inorganic_residue
+      - NamedIndividual
+      - N-glycan_lipid-linked_precursor_carbohydrate_residue
+      - nucleoside_base_atom
+      - O_atom_component
+      - monoglycosyl_moiety_carbohydrate_residue
+      - nucleoside_carbohydrate_residue
+      - amino_acid_atom
+      - P_atom_component
+  - ns1:has_ring_form:
+    - thing_has_ring_form:
+      - NamedIndividual
+      - ring_form
+      - Thing
+  - ns1:has_anomeric_configuration:
+    - thing_has_anomeric_configuration:
+      - anomeric_configuration
+      - Thing
+      - NamedIndividual
+  - ns1:has_second_monosaccharide_configuration:
+    - thing_has_second_monosaccharide_configuration:
+      - monosaccharide_configuration
+      - Thing
+      - NamedIndividual
+  - ns1:has_archetype:
+    - thing_has_archetype:
+      - pyrimidine
+      - deoxy_sugar
+      - peptide
+      - inorganic_molecule
+      - purine
+      - L-polar_amino_acid
+      - five-carbon_sugar
+      - lipid
+      - pyranose
+      - atom
+      - furanose
+      - aldose
+      - NamedIndividual
+      - Thing
+      - beta_sugar
+      - alpha_sugar
+      - amino_sugar
+      - six-carbon_sugar
+  - ns1:has_sugar_structural_variation:
+    - thing_has_sugar_structural_variation:
+      - sugar_amino_carbon_variation
+      - NamedIndividual
+      - Thing
+      - sugar_deoxy_carbon_variation
+      - sugar_carbonyl_carbon_site_variation
+  - ns1:embodies_absolute_configuration:
+    - thing_embodies_absolute_configuration:
+      - absolute_configuration
+      - Thing
+      - NamedIndividual
+  - ns1:has_number_of_H_atoms:
+    - thing_has_number_of_h_atoms: 12345
+  - rdfs:comment:
+    - thing_comment: string
+  - ns1:has_monosaccharide_name:
+    - thing_has_monosaccharide_name: string
+  - ns1:has_residue_modification_name:
+    - thing_has_residue_modification_name: string
+  - ns1:has_number_of_main_chain_C_atoms:
+    - thing_has_number_of_main_chain_c_atoms: 12345
+  - ns1:has_number_of_C_atoms:
+    - thing_has_number_of_c_atoms: 12345
+  - rdfs:label:
+    - thing_label: string
+  - ns1:has_CHEBI_ID:
+    - thing_has_chebi_id: string
+  - ns1:has_number_of_O_atoms:
+    - thing_has_number_of_o_atoms: 12345
+  - ns1:has_number_of_N_atoms:
+    - thing_has_number_of_n_atoms: 12345
+- pyrimidine:
+  - rdf:type:
+    - pyrimidine_type: Class
+  - ns1:has_atom:
+    - pyrimidine_has_atom:
+      - nucleoside_base_atom
+      - NamedIndividual
+      - Thing
+      - N_atom_component
+  - rdfs:label:
+    - pyrimidine_label: string
+- Restriction:
+  - owl:hasValue:
+    - restriction_has_value:
+      - NamedIndividual
+      - sugar_carbonyl_carbon_site_variation
+      - Thing
+      - ring_form
+      - absolute_configuration
+      - carbohydrate_intraresidue_covalent_bond
+      - C_atom_component
+      - anomeric_configuration
+      - carbohydrate_atom
+      - 12345
+  - owl:allValuesFrom:
+    - restriction_all_values_from: Class
+  - owl:onClass:
+    - restriction_on_class: Class
+  - owl:someValuesFrom:
+    - restriction_some_values_from: Class
+  - owl:onProperty:
+    - restriction_on_property:
+      - FunctionalProperty
+      - ObjectProperty
+      - TransitiveProperty
+      - DatatypeProperty
+  - owl:minQualifiedCardinality:
+    - restriction_min_qualified_cardinality: nonNegativeInteger
+  - owl:cardinality:
+    - restriction_cardinality: nonNegativeInteger
+  - owl:qualifiedCardinality:
+    - restriction_qualified_cardinality: nonNegativeInteger
+- phosphateEsterCovalentBond:
+  - rdf:type:
+    - phosphate_ester_covalent_bond_type: Class
+  - ns1:covalently_links_to:
+    - phosphate_ester_covalent_bond_covalently_links_to:
+      - Thing
+      - O_atom_component
+      - carbohydrate_atom
+      - inorganic_molecule_atom
+      - lipid_atom
+      - NamedIndividual
+  - ns1:covalently_links_from:
+    - phosphate_ester_covalent_bond_covalently_links_from:
+      - Thing
+      - P_atom_component
+      - inorganic_molecule_atom
+      - NamedIndividual
+  - rdfs:label:
+    - phosphate_ester_covalent_bond_label: string
+- sugarDeoxyCarbonVariation:
+  - ns1:has_residue_modification_site:
+    - sugar_deoxy_carbon_variation_has_residue_modification_site:
+      - Thing
+      - C_atom_component
+      - carbohydrate_atom
+      - NamedIndividual
+  - rdf:type:
+    - sugar_deoxy_carbon_variation_type: Class
+  - ns1:has_residue_modification_name:
+    - sugar_deoxy_carbon_variation_has_residue_modification_name: string
+  - rdfs:label:
+    - sugar_deoxy_carbon_variation_label: string
+- anomericConfiguration:
+  - rdf:type:
+    - anomeric_configuration_type: Class
+  - rdfs:label:
+    - anomeric_configuration_label: string
+- furanose:
+  - ns1:has_anomeric_carbon:
+    - furanose_has_anomeric_carbon:
+      - C_atom_component
+      - Thing
+      - NamedIndividual
+      - carbohydrate_atom
+  - ns1:has_link:
+    - furanose_has_link:
+      - Thing
+      - NamedIndividual
+      - carbohydrate_intraresidue_covalent_bond
+  - rdf:type:
+    - furanose_type: Class
+  - ns1:has_substituent:
+    - furanose_has_substituent:
+      - NamedIndividual
+      - substituent
+  - ns1:has_atom:
+    - furanose_has_atom:
+      - N_atom_component
+      - NamedIndividual
+      - carbohydrate_atom
+      - O_atom_component
+      - Thing
+      - C_atom_component
+  - ns1:has_monosaccharide_configuration:
+    - furanose_has_monosaccharide_configuration:
+      - Thing
+      - NamedIndividual
+      - monosaccharide_configuration
+  - ns1:has_ring_form:
+    - furanose_has_ring_form:
+      - Thing
+      - ring_form
+      - NamedIndividual
+  - ns1:has_anomeric_configuration:
+    - furanose_has_anomeric_configuration:
+      - Thing
+      - anomeric_configuration
+      - NamedIndividual
+  - ns1:has_sugar_structural_variation:
+    - furanose_has_sugar_structural_variation:
+      - sugar_amino_carbon_variation
+      - sugar_carbonyl_carbon_site_variation
+      - sugar_deoxy_carbon_variation
+      - NamedIndividual
+      - Thing
+  - ns1:has_number_of_H_atoms:
+    - furanose_has_number_of_h_atoms: 12345
+  - ns1:has_monosaccharide_name:
+    - furanose_has_monosaccharide_name: string
+  - ns1:has_number_of_main_chain_C_atoms:
+    - furanose_has_number_of_main_chain_c_atoms: 12345
+  - ns1:has_number_of_C_atoms:
+    - furanose_has_number_of_c_atoms: 12345
+  - rdfs:label:
+    - furanose_label: string
+  - ns1:has_number_of_O_atoms:
+    - furanose_has_number_of_o_atoms: 12345
+- nucleotide:
+  - ns1:has_link:
+    - nucleotide_has_link:
+      - residue_link
+      - NamedIndividual
+      - Thing
+  - ns1:has_residue:
+    - nucleotide_has_residue:
+      - purine_residue
+      - Thing
+      - NamedIndividual
+      - pyrimidine_residue
+      - nucleoside_carbohydrate_residue
+      - inorganic_residue
+  - rdf:type:
+    - nucleotide_type: Class
+  - rdfs:label:
+    - nucleotide_label: string
+- Glc-initiatedGlycosphingolipidCarbohydrateResidue:
+  - rdf:type:
+    - glc-initiated_glycosphingolipid_carbohydrate_residue_type: Class
+  - ns1:has_archetype:
+    - glc-initiated_glycosphingolipid_carbohydrate_residue_has_archetype:
+      - aldose
+      - NamedIndividual
+      - pyranose
+      - beta_sugar
+      - Thing
+      - six-carbon_sugar
+  - rdfs:label:
+    - glc-initiated_glycosphingolipid_carbohydrate_residue_label: string
+- SAtomComponent:
+  - rdf:type:
+    - s_atom_component_type: Class
+  - ns1:has_archetype:
+    - s_atom_component_has_archetype:
+      - Thing
+      - NamedIndividual
+      - atom
+  - rdfs:label:
+    - s_atom_component_label: string
+- carbohydrateAtom:
+  - rdf:type:
+    - carbohydrate_atom_type: Class
+  - ns1:has_archetype:
+    - carbohydrate_atom_has_archetype:
+      - atom
+      - NamedIndividual
+      - Thing
+  - rdfs:comment:
+    - carbohydrate_atom_comment: string
+  - rdfs:label:
+    - carbohydrate_atom_label: string

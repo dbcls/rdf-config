@@ -1,0 +1,48 @@
+- ObjectProperty:
+  - ns1:allowedParent:
+    - object_property_allowed_parent: Class
+  - rdfs:range:
+    - object_property_range: Class
+  - rdfs:domain:
+    - object_property_domain: Class
+  - rdfs:label:
+    - object_property_label: string
+- FunctionalProperty:
+  - ns1:allowedParent:
+    - functional_property_allowed_parent: Class
+  - rdfs:range:
+    - functional_property_range: Class
+  - rdfs:domain:
+    - functional_property_domain: Class
+  - rdfs:label:
+    - functional_property_label: string
+  - rdfs:comment:
+    - functional_property_comment: string
+- Restriction:
+  - owl:onProperty:
+    - restriction_on_property:
+      - ObjectProperty
+      - DatatypeProperty
+      - FunctionalProperty
+  - owl:hasValue:
+    - restriction_has_value:
+      - Class
+      - string
+- Class:
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Restriction
+      - Class
+  - owl:versionInfo:
+    - class_version_info: string
+  - rdfs:label:
+    - class_label: string
+  - rdfs:comment:
+    - class_comment: string
+- DatatypeProperty:
+  - rdfs:domain:
+    - datatype_property_domain: Class
+  - rdfs:label:
+    - datatype_property_label: string
+  - rdfs:comment:
+    - datatype_property_comment: string

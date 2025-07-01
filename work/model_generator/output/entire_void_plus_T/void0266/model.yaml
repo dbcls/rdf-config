@@ -1,0 +1,109 @@
+- Class:
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Class
+      - Class
+  - rdfs:label:
+    - class_label: string
+  - rdfs:comment:
+    - class_comment: string
+- Organization:
+  - schemas:name:
+    - organization_name: string
+  - foaf:name:
+    - organization_name: string
+- SemanticDistribution:
+  - ns1:accessURL:
+    - semantic_distribution_access_url: string
+- SemanticAsset:
+  - dc:creator:
+    - semantic_asset_creator: Person
+  - ns2:preferredNamespacePrefix:
+    - semantic_asset_preferred_namespace_prefix: string
+  - ns2:preferredNamespaceUri:
+    - semantic_asset_preferred_namespace_uri: string
+  - dc:title:
+    - semantic_asset_title: string
+  - dc:modified:
+    - semantic_asset_modified: '2000-01-01'
+  - dc:created:
+    - semantic_asset_created: '2000-01-01'
+  - dc:description:
+    - semantic_asset_description: string
+- DatatypeProperty:
+  - rdfs:domain:
+    - datatype_property_domain:
+      - Class
+      - Class
+  - rdfs:label:
+    - datatype_property_label: string
+  - rdfs:comment:
+    - datatype_property_comment: string
+- Class:
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Class
+      - Class
+  - rdfs:label:
+    - class_label: string
+  - rdfs:comment:
+    - class_comment: string
+- DatatypeProperty:
+  - rdfs:domain:
+    - datatype_property_domain:
+      - Class
+      - Class
+  - rdfs:label:
+    - datatype_property_label: string
+  - rdfs:comment:
+    - datatype_property_comment: string
+- Person:
+  - schemas:affiliation:
+    - person_affiliation: Organization
+  - schemas:name:
+    - person_name: string
+- Ontology:
+  - dc:creator:
+    - ontology_creator: Person
+  - ns2:preferredNamespacePrefix:
+    - ontology_preferred_namespace_prefix: string
+  - ns2:preferredNamespaceUri:
+    - ontology_preferred_namespace_uri: string
+  - dc:title:
+    - ontology_title: string
+  - dc:modified:
+    - ontology_modified: '2000-01-01'
+  - dc:created:
+    - ontology_created: '2000-01-01'
+  - dc:description:
+    - ontology_description: string
+- ObjectProperty:
+  - rdfs:domain:
+    - object_property_domain:
+      - Class
+      - Class
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of: ObjectProperty
+  - rdfs:range:
+    - object_property_range:
+      - Class
+      - Class
+  - rdfs:label:
+    - object_property_label: string
+  - rdfs:comment:
+    - object_property_comment: string
+- FunctionalProperty:
+  - rdfs:domain:
+    - functional_property_domain:
+      - Class
+      - Class
+  - rdfs:subPropertyOf:
+    - functional_property_sub_property_of: ObjectProperty
+  - rdfs:range:
+    - functional_property_range:
+      - Class
+      - Class
+  - rdfs:label:
+    - functional_property_label: string
+  - rdfs:comment:
+    - functional_property_comment: string

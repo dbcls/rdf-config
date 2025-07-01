@@ -1,0 +1,238 @@
+- NamedIndividual:
+  - ns1:mapped_to:
+    - named_individual_mapped_to:
+      - NamedIndividual
+      - Class
+  - ns1:mapped_from:
+    - named_individual_mapped_from:
+      - Class
+      - NamedIndividual
+  - ns2:hasSTY:
+    - named_individual_has_sty:
+      - NamedIndividual
+      - Class
+  - rdfs:subClassOf:
+    - named_individual_sub_class_of:
+      - Class
+      - NamedIndividual
+  - skos:prefLabel:
+    - named_individual_pref_label: string
+  - ns1:HCC:
+    - named_individual_hcc: string
+  - ns1:HAC:
+    - named_individual_hac: string
+  - ns1:HPG:
+    - named_individual_hpg: string
+  - ns1:HXR:
+    - named_individual_hxr: string
+  - ns1:HCD:
+    - named_individual_hcd: string
+  - ns1:HLC:
+    - named_individual_hlc: string
+  - ns1:HTS:
+    - named_individual_hts: string
+  - ns1:HSN:
+    - named_individual_hsn: string
+  - ns1:HMR:
+    - named_individual_hmr: string
+  - ns1:HAQ:
+    - named_individual_haq: string
+  - ns1:HBT:
+    - named_individual_hbt: string
+  - ns1:HAD:
+    - named_individual_had: string
+  - ns1:HMP:
+    - named_individual_hmp: string
+  - ns1:HPI:
+    - named_individual_hpi: string
+  - skos:notation:
+    - named_individual_notation: string
+  - ns1:HIR:
+    - named_individual_hir: string
+  - ns1:HPD:
+    - named_individual_hpd: string
+  - ns2:tui:
+    - named_individual_tui: string
+  - ns2:cui:
+    - named_individual_cui: string
+  - ns1:HPN:
+    - named_individual_hpn: string
+- DatatypeProperty:
+  - rdfs:label:
+    - datatype_property_label:
+      - string
+      - string
+  - skos:scopeNote:
+    - datatype_property_scope_note: string
+  - rdfs:comment:
+    - datatype_property_comment: string
+  - skos:definition:
+    - datatype_property_definition: string
+- SymmetricProperty:
+  - rdfs:subPropertyOf:
+    - symmetric_property_sub_property_of:
+      - ObjectProperty
+      - SymmetricProperty
+  - rdfs:label:
+    - symmetric_property_label: string
+  - rdfs:comment:
+    - symmetric_property_comment: string
+  - skos:definition:
+    - symmetric_property_definition: string
+- TransitiveProperty:
+  - rdfs:subPropertyOf:
+    - transitive_property_sub_property_of:
+      - ObjectProperty
+      - SymmetricProperty
+  - owl:inverseOf:
+    - transitive_property_inverse_of:
+      - TransitiveProperty
+      - ObjectProperty
+  - rdfs:label:
+    - transitive_property_label: string
+  - skos:scopeNote:
+    - transitive_property_scope_note: string
+  - rdfs:comment:
+    - transitive_property_comment: string
+  - skos:definition:
+    - transitive_property_definition:
+      - string
+      - string
+- Ontology:
+  - rdfs:label:
+    - ontology_label: string
+  - dc:creator:
+    - ontology_creator: string
+  - rdfs:comment:
+    - ontology_comment: string
+  - dc:contributor:
+    - ontology_contributor: string
+  - dc:title:
+    - ontology_title: string
+  - owl:versionInfo:
+    - ontology_version_info: string
+  - dc:description:
+    - ontology_description: string
+- FunctionalProperty:
+  - rdfs:domain:
+    - functional_property_domain: Class
+  - rdfs:range:
+    - functional_property_range: Class
+  - rdfs:label:
+    - functional_property_label: string
+  - rdfs:comment:
+    - functional_property_comment: string
+  - skos:definition:
+    - functional_property_definition: string
+- ObjectProperty:
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of:
+      - ObjectProperty
+      - TransitiveProperty
+      - SymmetricProperty
+  - owl:inverseOf:
+    - object_property_inverse_of:
+      - ObjectProperty
+      - TransitiveProperty
+  - rdfs:domain:
+    - object_property_domain: Class
+  - rdfs:range:
+    - object_property_range: Class
+  - rdfs:label:
+    - object_property_label:
+      - string
+      - string
+  - skos:scopeNote:
+    - object_property_scope_note: string
+  - rdfs:comment:
+    - object_property_comment:
+      - string
+      - string
+  - skos:definition:
+    - object_property_definition:
+      - string
+      - string
+- AnnotationProperty:
+  - rdfs:subPropertyOf:
+    - annotation_property_sub_property_of: AnnotationProperty
+  - rdfs:label:
+    - annotation_property_label: string
+  - skos:scopeNote:
+    - annotation_property_scope_note: string
+  - rdfs:comment:
+    - annotation_property_comment: string
+  - skos:example:
+    - annotation_property_example: string
+  - skos:definition:
+    - annotation_property_definition: string
+- Class:
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+  - ns1:mapped_to:
+    - class_mapped_to:
+      - Class
+      - NamedIndividual
+  - ns1:mapped_from:
+    - class_mapped_from:
+      - NamedIndividual
+      - Class
+  - ns2:hasSTY:
+    - class_has_sty:
+      - Class
+      - NamedIndividual
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - NamedIndividual
+      - Class
+  - skos:prefLabel:
+    - class_pref_label: string
+  - ns1:HCC:
+    - class_hcc: string
+  - ns1:HAC:
+    - class_hac: string
+  - ns1:HPG:
+    - class_hpg: string
+  - ns1:HXR:
+    - class_hxr: string
+  - ns1:HCD:
+    - class_hcd: string
+  - rdfs:label:
+    - class_label: string
+  - skos:scopeNote:
+    - class_scope_note: string
+  - ns3:prefixIRI:
+    - class_prefix_iri: string
+  - ns1:HLC:
+    - class_hlc: string
+  - skos:example:
+    - class_example: string
+  - ns1:HTS:
+    - class_hts: string
+  - ns1:HSN:
+    - class_hsn: string
+  - skos:definition:
+    - class_definition: string
+  - ns1:HMR:
+    - class_hmr: string
+  - ns1:HAQ:
+    - class_haq: string
+  - ns1:HBT:
+    - class_hbt: string
+  - ns1:HAD:
+    - class_had: string
+  - ns1:HMP:
+    - class_hmp: string
+  - ns1:HPI:
+    - class_hpi: string
+  - skos:notation:
+    - class_notation: string
+  - ns1:HIR:
+    - class_hir: string
+  - ns1:HPD:
+    - class_hpd: string
+  - ns2:tui:
+    - class_tui: string
+  - ns2:cui:
+    - class_cui: string
+  - ns1:HPN:
+    - class_hpn: string

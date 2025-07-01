@@ -1,0 +1,164 @@
+- Mutation:
+  - rdf:type:
+    - mutation_type: Class
+  - ns2:chromosome:
+    - mutation_chromosome: string
+  - ns2:chromosome_start:
+    - mutation_chromosome_start: string
+  - ns2:mutation_id:
+    - mutation_mutation_id: string
+  - ns2:reference_genome_allele:
+    - mutation_reference_genome_allele: string
+  - ns2:mutated_to_allele:
+    - mutation_mutated_to_allele: string
+  - ns2:mutated_from_allele:
+    - mutation_mutated_from_allele: string
+  - ns2:chromosome_end:
+    - mutation_chromosome_end: string
+  - rdfs:label:
+    - mutation_label: string
+  - ns2:chromosome_strand:
+    - mutation_chromosome_strand: string
+  - ns2:mutation_type:
+    - mutation_mutation_type: string
+  - ns2:assembly_version:
+    - mutation_assembly_version: string
+  - dc:identifier:
+    - mutation_identifier: string
+- Donor:
+  - ns2:project:
+    - donor_project: Project
+  - rdf:type:
+    - donor_type: Class
+  - ns2:relapse_type:
+    - donor_relapse_type: string
+  - ns2:tumour_stage_at_diagnosis_supplemental:
+    - donor_tumour_stage_at_diagnosis_supplemental: string
+  - ns2:diagnosis_icd10:
+    - donor_diagnosis_icd10: string
+  - ns2:interval_of_last_followup:
+    - donor_interval_of_last_followup: string
+  - ns2:donor_id:
+    - donor_donor_id: string
+  - ns2:age_at_diagnosis:
+    - donor_age_at_diagnosis: string
+  - ns2:sex:
+    - donor_sex: string
+  - ns2:tumour_stage_at_diagnosis:
+    - donor_tumour_stage_at_diagnosis: string
+  - ns2:survival_time:
+    - donor_survival_time: string
+  - ns2:disease_status_last_followup:
+    - donor_disease_status_last_followup: string
+  - ns2:age_at_enrollment:
+    - donor_age_at_enrollment: string
+  - rdfs:label:
+    - donor_label: string
+  - ns2:vital_status:
+    - donor_vital_status: string
+  - ns2:tumour_staging_system_at_diagnosis:
+    - donor_tumour_staging_system_at_diagnosis: string
+  - ns2:relapse_interval:
+    - donor_relapse_interval: string
+  - ns2:age_at_last_followup:
+    - donor_age_at_last_followup: string
+  - dc:identifier:
+    - donor_identifier: string
+- Detection:
+  - ns2:donor:
+    - detection_donor: Donor
+  - ns2:project:
+    - detection_project: Project
+  - ns2:mutation:
+    - detection_mutation: Mutation
+  - rdf:type:
+    - detection_type: Class
+  - ns2:submitted_sample_id:
+    - detection_submitted_sample_id: string
+  - ns2:verification_platform:
+    - detection_verification_platform: string
+  - ns2:biological_validation_status:
+    - detection_biological_validation_status: string
+  - ns2:donor_id:
+    - detection_donor_id: string
+  - ns2:atched_icgc_sample_id:
+    - detection_atched_icgc_sample_id: string
+  - ns2:quality_score:
+    - detection_quality_score: string
+  - ns2:mutation_id:
+    - detection_mutation_id: string
+  - ns2:sequencing_strategy:
+    - detection_sequencing_strategy: string
+  - ns2:platform:
+    - detection_platform: string
+  - ns2:other_analysis_algorithm:
+    - detection_other_analysis_algorithm: string
+  - ns2:experimental_protocol:
+    - detection_experimental_protocol: string
+  - ns2:project_code:
+    - detection_project_code: string
+  - ns2:total_read_count:
+    - detection_total_read_count: string
+  - ns2:biological_validation_platform:
+    - detection_biological_validation_platform: string
+  - ns2:probability:
+    - detection_probability: string
+  - ns2:raw_data_repository:
+    - detection_raw_data_repository: string
+  - ns2:alignment_algorithm:
+    - detection_alignment_algorithm: string
+  - ns2:variation_calling_algorithm:
+    - detection_variation_calling_algorithm: string
+  - ns2:verification_status:
+    - detection_verification_status: string
+  - ns2:raw_data_accession:
+    - detection_raw_data_accession: string
+  - ns2:base_calling_algorithm:
+    - detection_base_calling_algorithm: string
+  - ns2:submitted_matched_sample_id:
+    - detection_submitted_matched_sample_id: string
+  - ns2:seq_coverage:
+    - detection_seq_coverage: string
+  - ns2:mutant_allele_read_count:
+    - detection_mutant_allele_read_count: string
+  - ns2:sample_id:
+    - detection_sample_id: string
+  - ns2:specimen_id:
+    - detection_specimen_id: string
+- Project:
+  - rdf:type:
+    - project_type: Class
+  - ns2:primary_site:
+    - project_primary_site: string
+  - ns2:project_code:
+    - project_project_code: string
+  - rdfs:label:
+    - project_label: string
+  - ns2:project_name:
+    - project_project_name: string
+  - ns2:countries:
+    - project_countries: string
+  - dc:identifier:
+    - project_identifier: string
+- Gene:
+  - rdfs:label:
+    - gene_label: string
+  - dc:identifier:
+    - gene_identifier: string
+- Effect:
+  - ns2:gene_affected:
+    - effect_gene_affected: Gene
+  - ns2:mutation:
+    - effect_mutation: Mutation
+  - rdf:type:
+    - effect_type: Class
+  - ns2:aa_mutation:
+    - effect_aa_mutation: string
+  - ns2:transcript_affected:
+    - effect_transcript_affected: string
+  - ns2:consequence_type:
+    - effect_consequence_type: string
+  - ns2:cds_mutation:
+    - effect_cds_mutation: string
+  - ns2:gene_build_version:
+    - effect_gene_build_version: string

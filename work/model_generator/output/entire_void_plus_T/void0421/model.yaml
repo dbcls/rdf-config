@@ -1,0 +1,730 @@
+- solvent:
+  - rdf:type:
+    - solvent_type: Class
+  - rdfs:label:
+    - solvent_label: string
+  - rdfs:comment:
+    - solvent_comment: string
+- adductIon:
+  - rdf:type:
+    - adduct_ion_type: Class
+  - rdfs:label:
+    - adduct_ion_label: string
+- OrganismForms:
+  - rdf:type:
+    - organism_forms_type: Class
+  - rdfs:label:
+    - organism_forms_label: string
+  - skos:altLabel:
+    - organism_forms_alt_label: string
+- Database:
+  - rdf:type:
+    - database_type: Class
+  - skos:closeMatch:
+    - database_close_match: NamedIndividual
+  - rdfs:label:
+    - database_label: string
+  - ns3:urlTemplate:
+    - database_url_template: string
+  - rdfs:comment:
+    - database_comment: string
+- InfoSources:
+  - rdf:type:
+    - info_sources_type: Class
+  - ns4:sourceOfficialName:
+    - info_sources_source_official_name: string
+  - ns4:sourceAbbrNcbi:
+    - info_sources_source_abbr_ncbi: string
+  - ns4:sourceURI:
+    - info_sources_source_uri: string
+  - rdfs:label:
+    - info_sources_label: string
+  - ns4:sourceOfficialAbbr:
+    - info_sources_source_official_abbr: string
+  - rdfs:comment:
+    - info_sources_comment: string
+- DatatypeProperty:
+  - owl:propertyDisjointWith:
+    - datatype_property_property_disjoint_with:
+      - DatatypeProperty
+      - FunctionalProperty
+  - rdfs:subPropertyOf:
+    - datatype_property_sub_property_of: DatatypeProperty
+  - rdfs:domain:
+    - datatype_property_domain: Class
+  - rdfs:label:
+    - datatype_property_label:
+      - string
+      - string
+  - skos:definition:
+    - datatype_property_definition: string
+  - rdfs:comment:
+    - datatype_property_comment:
+      - string
+      - string
+  - skos:altLabel:
+    - datatype_property_alt_label: string
+  - skos:scopeNote:
+    - datatype_property_scope_note: string
+- SemanticRelationsPAConto:
+  - rdfs:range:
+    - semantic_relations_pa_conto_range: Class
+  - rdfs:subPropertyOf:
+    - semantic_relations_pa_conto_sub_property_of: ObjectProperty
+  - rdf:type:
+    - semantic_relations_pa_conto_type: Class
+  - rdfs:domain:
+    - semantic_relations_pa_conto_domain: Class
+  - rdfs:label:
+    - semantic_relations_pa_conto_label: string
+  - rdfs:comment:
+    - semantic_relations_pa_conto_comment: string
+  - skos:scopeNote:
+    - semantic_relations_pa_conto_scope_note: string
+- Thing:
+  - rdf:type:
+    - thing_type: Class
+  - rdfs:seeAlso:
+    - thing_see_also: Class
+  - ns6:prefixIRI:
+    - thing_prefix_iri: string
+  - rdfs:label:
+    - thing_label: string
+  - rdfs:comment:
+    - thing_comment: string
+  - skos:altLabel:
+    - thing_alt_label: string
+- ringType:
+  - rdf:type:
+    - ring_type_type: Class
+  - rdfs:label:
+    - ring_type_label: string
+  - rdfs:comment:
+    - ring_type_comment: string
+- AnnotationProperty:
+  - ns5:topOntology:
+    - annotation_property_top_ontology:
+      - TopLevelOntologies
+      - NamedIndividual
+  - ns5:ontologyType:
+    - annotation_property_ontology_type:
+      - Thing
+      - NamedIndividual
+      - OntologyType
+  - rdfs:subPropertyOf:
+    - annotation_property_sub_property_of: AnnotationProperty
+  - rdf:type:
+    - annotation_property_type: Class
+  - ns5:parentOntology:
+    - annotation_property_parent_ontology:
+      - NamedIndividual
+      - TopLevelOntologies
+  - rdfs:label:
+    - annotation_property_label: string
+  - rdfs:comment:
+    - annotation_property_comment: string
+  - skos:scopeNote:
+    - annotation_property_scope_note: string
+- TransitiveProperty:
+  - rdfs:range:
+    - transitive_property_range: Class
+  - rdf:type:
+    - transitive_property_type: Class
+  - rdfs:domain:
+    - transitive_property_domain: Class
+  - rdfs:comment:
+    - transitive_property_comment: string
+- Label:
+  - rdf:type:
+    - label_type: Class
+  - rdfs:label:
+    - label_label: string
+  - rdfs:comment:
+    - label_comment: string
+- symbolFormat:
+  - rdf:type:
+    - symbol_format_type: Class
+  - rdfs:label:
+    - symbol_format_label: string
+  - rdfs:comment:
+    - symbol_format_comment: string
+- GlycosidaseTreatment:
+  - rdf:type:
+    - glycosidase_treatment_type: Class
+  - rdfs:label:
+    - glycosidase_treatment_label: string
+  - rdfs:comment:
+    - glycosidase_treatment_comment: string
+- coreModificationType:
+  - rdf:type:
+    - core_modification_type_type: Class
+  - rdfs:label:
+    - core_modification_type_label: string
+  - rdfs:comment:
+    - core_modification_type_comment: string
+- absoluteConfiguration:
+  - rdf:type:
+    - absolute_configuration_type: Class
+  - rdfs:label:
+    - absolute_configuration_label: string
+- chemicalRelease:
+  - rdf:type:
+    - chemical_release_type: Class
+  - rdfs:label:
+    - chemical_release_label: string
+  - rdfs:comment:
+    - chemical_release_comment: string
+- glycanDatabaseCategory:
+  - rdf:type:
+    - glycan_database_category_type: Class
+  - rdfs:label:
+    - glycan_database_category_label: string
+  - rdfs:comment:
+    - glycan_database_category_comment: string
+- SemanticRelationsGGDonto:
+  - ns5:topOntology:
+    - semantic_relations_gg_donto_top_ontology:
+      - TopLevelOntologies
+      - NamedIndividual
+  - ns5:ontologyType:
+    - semantic_relations_gg_donto_ontology_type:
+      - Thing
+      - NamedIndividual
+      - OntologyType
+  - owl:inverseOf:
+    - semantic_relations_gg_donto_inverse_of:
+      - NamedIndividual
+      - SemanticRelationsGGDonto
+      - AnnotationProperty
+  - rdfs:subPropertyOf:
+    - semantic_relations_gg_donto_sub_property_of:
+      - ObjectProperty
+      - AnnotationProperty
+  - rdf:type:
+    - semantic_relations_gg_donto_type: Class
+  - ns5:parentOntology:
+    - semantic_relations_gg_donto_parent_ontology:
+      - NamedIndividual
+      - TopLevelOntologies
+  - rdfs:label:
+    - semantic_relations_gg_donto_label: string
+  - skos:scopeNote:
+    - semantic_relations_gg_donto_scope_note: string
+- InverseFunctionalProperty:
+  - rdfs:range:
+    - inverse_functional_property_range: Class
+  - rdf:type:
+    - inverse_functional_property_type: Class
+  - rdfs:domain:
+    - inverse_functional_property_domain: Class
+  - rdfs:comment:
+    - inverse_functional_property_comment: string
+- GlycoRelatedDatabases:
+  - rdf:type:
+    - glyco_related_databases_type: Class
+  - rdfs:label:
+    - glyco_related_databases_label: string
+  - ns3:urlTemplate:
+    - glyco_related_databases_url_template: string
+  - ns3:abbreviation:
+    - glyco_related_databases_abbreviation: string
+  - rdfs:comment:
+    - glyco_related_databases_comment: string
+- enzymaticRelease:
+  - rdf:type:
+    - enzymatic_release_type: Class
+  - rdfs:label:
+    - enzymatic_release_label: string
+  - rdfs:comment:
+    - enzymatic_release_comment: string
+- ConceptType:
+  - rdf:type:
+    - concept_type_type: Class
+  - rdfs:seeAlso:
+    - concept_type_see_also: Class
+  - ns6:prefixIRI:
+    - concept_type_prefix_iri: string
+  - rdfs:label:
+    - concept_type_label: string
+  - rdfs:comment:
+    - concept_type_comment: string
+- SymmetricProperty:
+  - rdfs:range:
+    - symmetric_property_range: Class
+  - rdf:type:
+    - symmetric_property_type: Class
+  - rdfs:domain:
+    - symmetric_property_domain: Class
+  - rdfs:comment:
+    - symmetric_property_comment: string
+- Restriction:
+  - owl:someValuesFrom:
+    - restriction_some_values_from: Class
+  - owl:onProperty:
+    - restriction_on_property:
+      - FunctionalProperty
+      - DatatypeProperty
+      - ObjectProperty
+  - owl:minCardinality:
+    - restriction_min_cardinality: nonNegativeInteger
+  - owl:cardinality:
+    - restriction_cardinality: nonNegativeInteger
+  - owl:maxCardinality:
+    - restriction_max_cardinality: nonNegativeInteger
+- linkageType:
+  - rdf:type:
+    - linkage_type_type: Class
+  - rdfs:label:
+    - linkage_type_label: string
+  - rdfs:comment:
+    - linkage_type_comment: string
+- OntologyType:
+  - rdf:type:
+    - ontology_type_type: Class
+  - rdfs:label:
+    - ontology_type_label: string
+- substituentType:
+  - rdf:type:
+    - substituent_type_type: Class
+  - rdfs:label:
+    - substituent_type_label: string
+  - rdfs:comment:
+    - substituent_type_comment: string
+- evidenceType:
+  - rdf:type:
+    - evidence_type_type: Class
+  - rdfs:label:
+    - evidence_type_label: string
+- repeatAttribute:
+  - rdf:type:
+    - repeat_attribute_type: Class
+  - rdfs:label:
+    - repeat_attribute_label: string
+- Class:
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Restriction
+      - Class
+      - NamedIndividual
+  - rdf:type:
+    - class_type: Class
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+  - rdfs:seeAlso:
+    - class_see_also: Class
+  - owl:equivalentClass:
+    - class_equivalent_class: Class
+  - ns6:prefixIRI:
+    - class_prefix_iri: string
+  - rdfs:label:
+    - class_label:
+      - string
+      - string
+  - rdfs:comment:
+    - class_comment:
+      - string
+      - string
+  - skos:altLabel:
+    - class_alt_label: string
+  - skos:scopeNote:
+    - class_scope_note: string
+- ObjectProperty:
+  - rdfs:range:
+    - object_property_range:
+      - Thing
+      - NamedIndividual
+      - Class
+      - ConceptType
+  - ns5:topOntology:
+    - object_property_top_ontology:
+      - NamedIndividual
+      - TopLevelOntologies
+  - ns5:ontologyType:
+    - object_property_ontology_type:
+      - OntologyType
+      - Thing
+      - NamedIndividual
+  - owl:inverseOf:
+    - object_property_inverse_of:
+      - AnnotationProperty
+      - ObjectProperty
+      - NamedIndividual
+      - SemanticRelationsGGDonto
+      - SemanticRelationsUMLS
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of:
+      - FunctionalProperty
+      - ObjectProperty
+  - rdf:type:
+    - object_property_type: Class
+  - ns5:parentOntology:
+    - object_property_parent_ontology:
+      - NamedIndividual
+      - TopLevelOntologies
+  - rdfs:domain:
+    - object_property_domain: Class
+  - ns4:umlsAbr:
+    - object_property_umls_abr: string
+  - ns4:umlsRlDef:
+    - object_property_umls_rl_def: string
+  - rdfs:label:
+    - object_property_label:
+      - string
+      - string
+  - ns4:umlsHl:
+    - object_property_umls_hl: string
+  - ns4:umlsRin:
+    - object_property_umls_rin: string
+  - ns4:umlsRl:
+    - object_property_umls_rl: string
+  - ns4:umlsRtn:
+    - object_property_umls_rtn: string
+  - ns4:umlsUi:
+    - object_property_umls_ui: string
+  - rdfs:comment:
+    - object_property_comment:
+      - string
+      - string
+  - skos:scopeNote:
+    - object_property_scope_note: string
+- anomer:
+  - rdf:type:
+    - anomer_type: Class
+  - rdfs:label:
+    - anomer_label: string
+- FunctionalProperty:
+  - owl:propertyDisjointWith:
+    - functional_property_property_disjoint_with:
+      - DatatypeProperty
+      - FunctionalProperty
+  - rdfs:range:
+    - functional_property_range:
+      - NamedIndividual
+      - Class
+      - Thing
+      - ConceptType
+  - rdfs:subPropertyOf:
+    - functional_property_sub_property_of:
+      - DatatypeProperty
+      - ObjectProperty
+  - rdf:type:
+    - functional_property_type: Class
+  - rdfs:domain:
+    - functional_property_domain: Class
+  - rdfs:label:
+    - functional_property_label:
+      - string
+      - string
+  - rdfs:comment:
+    - functional_property_comment:
+      - string
+      - string
+  - skos:scopeNote:
+    - functional_property_scope_note: string
+- syntheticType:
+  - rdf:type:
+    - synthetic_type_type: Class
+  - rdfs:label:
+    - synthetic_type_label: string
+  - rdfs:comment:
+    - synthetic_type_comment: string
+- SemanticRelationsUMLS:
+  - rdfs:range:
+    - semantic_relations_umls_range: Class
+  - owl:inverseOf:
+    - semantic_relations_umls_inverse_of:
+      - NamedIndividual
+      - SemanticRelationsUMLS
+      - ObjectProperty
+  - rdfs:subPropertyOf:
+    - semantic_relations_umls_sub_property_of: ObjectProperty
+  - rdf:type:
+    - semantic_relations_umls_type: Class
+  - rdfs:domain:
+    - semantic_relations_umls_domain: Class
+  - ns4:umlsAbr:
+    - semantic_relations_umls_umls_abr: string
+  - ns4:umlsRlDef:
+    - semantic_relations_umls_umls_rl_def: string
+  - rdfs:label:
+    - semantic_relations_umls_label: string
+  - ns4:umlsHl:
+    - semantic_relations_umls_umls_hl: string
+  - ns4:umlsRin:
+    - semantic_relations_umls_umls_rin: string
+  - ns4:umlsRl:
+    - semantic_relations_umls_umls_rl: string
+  - ns4:umlsRtn:
+    - semantic_relations_umls_umls_rtn: string
+  - ns4:umlsUi:
+    - semantic_relations_umls_umls_ui: string
+  - rdfs:comment:
+    - semantic_relations_umls_comment: string
+- monosaccharideNotationScheme:
+  - rdf:type:
+    - monosaccharide_notation_scheme_type: Class
+  - rdfs:label:
+    - monosaccharide_notation_scheme_label: string
+  - rdfs:comment:
+    - monosaccharide_notation_scheme_comment: string
+- msFragmentType:
+  - rdf:type:
+    - ms_fragment_type_type: Class
+  - rdfs:label:
+    - ms_fragment_type_label: string
+- relativeConfiguration:
+  - rdf:type:
+    - relative_configuration_type: Class
+  - rdfs:label:
+    - relative_configuration_label: string
+- TopLevelOntologies:
+  - rdf:type:
+    - top_level_ontologies_type: Class
+  - rdfs:label:
+    - top_level_ontologies_label: string
+- Rank:
+  - rdf:type:
+    - rank_type: Class
+  - rdfs:label:
+    - rank_label: string
+- ConceptScheme:
+  - rdf:type:
+    - concept_scheme_type: Class
+  - rdfs:label:
+    - concept_scheme_label: string
+  - dc:title:
+    - concept_scheme_title: string
+  - ns5:hasBaseURL:
+    - concept_scheme_has_base_url: anyURI
+- aminoAcid:
+  - ns1:has_absolute_configuration:
+    - amino_acid_has_absolute_configuration:
+      - absolute_configuration
+      - NamedIndividual
+  - rdf:type:
+    - amino_acid_type: Class
+  - rdfs:label:
+    - amino_acid_label: string
+- DiseaseTypeForClassification:
+  - rdf:type:
+    - disease_type_for_classification_type: Class
+  - rdfs:label:
+    - disease_type_for_classification_label: string
+  - rdfs:comment:
+    - disease_type_for_classification_comment: string
+- carbohydrateFormat:
+  - rdf:type:
+    - carbohydrate_format_type: Class
+  - rdfs:label:
+    - carbohydrate_format_label: string
+- DiseasesClassificationsMeSH:
+  - rdf:type:
+    - diseases_classifications_me_sh_type: Class
+  - rdfs:label:
+    - diseases_classifications_me_sh_label: string
+  - rdfs:comment:
+    - diseases_classifications_me_sh_comment: string
+  - skos:altLabel:
+    - diseases_classifications_me_sh_alt_label: string
+- Ontology:
+  - dc:license:
+    - ontology_license: NamedIndividual
+  - dc:label:
+    - ontology_label: string
+  - dc:contributor:
+    - ontology_contributor:
+      - string
+      - string
+  - dc:source:
+    - ontology_source: string
+  - rdfs:label:
+    - ontology_label: string
+  - dc:modified:
+    - ontology_modified: string
+  - dc11:creator:
+    - ontology_creator: string
+  - dc:publisher:
+    - ontology_publisher: string
+  - dc:created:
+    - ontology_created: string
+  - owl:versionInfo:
+    - ontology_version_info:
+      - string
+      - string
+  - rdfs:title:
+    - ontology_title: string
+  - dc11:date:
+    - ontology_date: dateTime
+  - ns7:version:
+    - ontology_version: string
+- GlycoRelatedConceptSchemes:
+  - rdf:type:
+    - glyco_related_concept_schemes_type: Class
+  - rdfs:label:
+    - glyco_related_concept_schemes_label: string
+  - dc:title:
+    - glyco_related_concept_schemes_title: string
+  - ns5:hasBaseURL:
+    - glyco_related_concept_schemes_has_base_url: anyURI
+- ConnectionToDiseasesClassif:
+  - rdfs:range:
+    - connection_to_diseases_classif_range: Class
+  - rdfs:subPropertyOf:
+    - connection_to_diseases_classif_sub_property_of: ObjectProperty
+  - rdf:type:
+    - connection_to_diseases_classif_type: Class
+  - rdfs:domain:
+    - connection_to_diseases_classif_domain: Class
+  - rdfs:label:
+    - connection_to_diseases_classif_label: string
+  - rdfs:comment:
+    - connection_to_diseases_classif_comment: string
+  - skos:scopeNote:
+    - connection_to_diseases_classif_scope_note: string
+- glycanDatabase:
+  - ns1:has_category:
+    - glycan_database_has_category:
+      - NamedIndividual
+      - glycan_database_category
+  - rdf:type:
+    - glycan_database_type: Class
+  - rdfs:label:
+    - glycan_database_label: string
+  - foaf:name:
+    - glycan_database_name: string
+  - ns1:has_url_template:
+    - glycan_database_has_url_template: string
+  - ns1:has_abbreviation:
+    - glycan_database_has_abbreviation: string
+  - rdfs:seeAlso:
+    - glycan_database_see_also: anyURI
+- configuration:
+  - rdf:type:
+    - configuration_type: Class
+  - rdfs:label:
+    - configuration_label: string
+- NamedIndividual:
+  - dc:license:
+    - named_individual_license: NamedIndividual
+  - ns1:has_category:
+    - named_individual_has_category:
+      - NamedIndividual
+      - glycan_database_category
+  - rdfs:subClassOf:
+    - named_individual_sub_class_of:
+      - NamedIndividual
+      - Class
+  - rdfs:range:
+    - named_individual_range: Class
+  - ns1:has_absolute_configuration:
+    - named_individual_has_absolute_configuration:
+      - NamedIndividual
+      - absolute_configuration
+  - ns5:topOntology:
+    - named_individual_top_ontology:
+      - TopLevelOntologies
+      - NamedIndividual
+  - ns5:ontologyType:
+    - named_individual_ontology_type:
+      - OntologyType
+      - Thing
+      - NamedIndividual
+  - owl:inverseOf:
+    - named_individual_inverse_of:
+      - ObjectProperty
+      - SemanticRelationsUMLS
+      - NamedIndividual
+      - SemanticRelationsGGDonto
+      - AnnotationProperty
+  - rdfs:subPropertyOf:
+    - named_individual_sub_property_of:
+      - ObjectProperty
+      - AnnotationProperty
+  - rdf:type:
+    - named_individual_type: Class
+  - skos:closeMatch:
+    - named_individual_close_match: NamedIndividual
+  - ns5:parentOntology:
+    - named_individual_parent_ontology:
+      - TopLevelOntologies
+      - NamedIndividual
+  - rdfs:domain:
+    - named_individual_domain: Class
+  - rdfs:seeAlso:
+    - named_individual_see_also:
+      - Class
+      - anyURI
+  - ns4:umlsAbr:
+    - named_individual_umls_abr: string
+  - ns4:sourceOfficialName:
+    - named_individual_source_official_name: string
+  - dc:creator:
+    - named_individual_creator: string
+  - dc:label:
+    - named_individual_label: string
+  - ns6:prefixIRI:
+    - named_individual_prefix_iri: string
+  - dc:contributor:
+    - named_individual_contributor: string
+  - dc:source:
+    - named_individual_source: string
+  - ns4:sourceAbbrNcbi:
+    - named_individual_source_abbr_ncbi: string
+  - ns4:umlsRlDef:
+    - named_individual_umls_rl_def: string
+  - ns4:sourceURI:
+    - named_individual_source_uri: string
+  - rdfs:label:
+    - named_individual_label:
+      - string
+      - string
+  - dc:modified:
+    - named_individual_modified: string
+  - ns4:sourceOfficialAbbr:
+    - named_individual_source_official_abbr: string
+  - dc:publisher:
+    - named_individual_publisher: string
+  - ns4:umlsHl:
+    - named_individual_umls_hl: string
+  - ns4:umlsRin:
+    - named_individual_umls_rin: string
+  - ns4:umlsRl:
+    - named_individual_umls_rl: string
+  - foaf:name:
+    - named_individual_name: string
+  - dc:title:
+    - named_individual_title: string
+  - dc:description:
+    - named_individual_description: string
+  - skos:definition:
+    - named_individual_definition: string
+  - ns4:umlsRtn:
+    - named_individual_umls_rtn: string
+  - dc:created:
+    - named_individual_created: string
+  - ns3:urlTemplate:
+    - named_individual_url_template: string
+  - ns4:umlsUi:
+    - named_individual_umls_ui: string
+  - ns3:abbreviation:
+    - named_individual_abbreviation: string
+  - ns1:has_url_template:
+    - named_individual_has_url_template: string
+  - owl:versionInfo:
+    - named_individual_version_info: string
+  - rdfs:comment:
+    - named_individual_comment:
+      - string
+      - string
+  - skos:altLabel:
+    - named_individual_alt_label: string
+  - ns1:has_abbreviation:
+    - named_individual_has_abbreviation: string
+  - ns5:hasBaseURL:
+    - named_individual_has_base_url: anyURI
+  - rdfs:title:
+    - named_individual_title: string
+  - skos:scopeNote:
+    - named_individual_scope_note: string
+  - ns7:version:
+    - named_individual_version: string

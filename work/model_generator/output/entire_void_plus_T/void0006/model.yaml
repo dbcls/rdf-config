@@ -1,0 +1,27 @@
+- Ontology:
+  - dc:created:
+    - ontology_created: dateTime
+  - dc11:creator:
+    - ontology_creator: string
+  - dc:modified:
+    - ontology_modified: dateTime
+  - owl:versionInfo:
+    - ontology_version_info: string
+- DatatypeProperty:
+  - rdfs:label:
+    - datatype_property_label: string
+- Class:
+  - rdfs:subClassOf:
+    - class_sub_class_of: Class
+  - dc:identifier:
+    - class_identifier: string
+  - dc:description:
+    - class_description: string
+  - skos:altLabel:
+    - class_alt_label: string
+  - skos:prefLabel:
+    - class_pref_label: string
+  - rdfs:label:
+    - class_label: string
+  - ns1:hasNotificationNumber:
+    - class_has_notification_number: string

@@ -1,0 +1,86 @@
+- Rank:
+  - rdf:type:
+    - rank_type: Class
+  - rdfs:label:
+    - rank_label: string
+- FunctionalProperty:
+  - rdfs:range:
+    - functional_property_range: Class
+  - rdfs:domain:
+    - functional_property_domain: Class
+  - rdfs:subPropertyOf:
+    - functional_property_sub_property_of: DatatypeProperty
+  - rdfs:label:
+    - functional_property_label: string
+- DatatypeProperty:
+  - rdfs:domain:
+    - datatype_property_domain: Class
+  - rdfs:subPropertyOf:
+    - datatype_property_sub_property_of: DatatypeProperty
+  - rdfs:label:
+    - datatype_property_label: string
+- GeneticCode:
+  - rdf:type:
+    - genetic_code_type: Class
+  - rdfs:label:
+    - genetic_code_label: string
+- ObjectProperty:
+  - rdfs:range:
+    - object_property_range: Class
+  - rdfs:domain:
+    - object_property_domain: Class
+  - rdfs:label:
+    - object_property_label: string
+- Taxon:
+  - ns1:rank:
+    - taxon_rank: Rank
+  - ns1:geneticCode:
+    - taxon_genetic_code: GeneticCode
+  - ns1:geneticCodeMt:
+    - taxon_genetic_code_mt: GeneticCode
+  - rdf:type:
+    - taxon_type: Class
+  - rdfs:subClassOf:
+    - taxon_sub_class_of: Taxon
+  - ns1:typeMaterial:
+    - taxon_type_material: string
+  - ns1:genbankAcronym:
+    - taxon_genbank_acronym: string
+  - ns1:equivalentName:
+    - taxon_equivalent_name: string
+  - ns1:scientificName:
+    - taxon_scientific_name: string
+  - rdfs:label:
+    - taxon_label: string
+  - ns1:blastName:
+    - taxon_blast_name: string
+  - ns1:includes:
+    - taxon_includes: string
+  - ns1:authority:
+    - taxon_authority: string
+  - ns1:synonym:
+    - taxon_synonym: string
+  - ns1:commonName:
+    - taxon_common_name: string
+  - ns1:inPart:
+    - taxon_in_part: string
+  - ns1:acronym:
+    - taxon_acronym: string
+  - ns1:genbankCommonName:
+    - taxon_genbank_common_name: string
+  - ns1:uniqueName:
+    - taxon_unique_name: string
+  - dc:identifier:
+    - taxon_identifier: integer
+- Class:
+  - rdfs:subClassOf:
+    - class_sub_class_of: Class
+  - rdfs:label:
+    - class_label: string
+- Ontology:
+  - rdfs:comment:
+    - ontology_comment: string
+  - rdfs:label:
+    - ontology_label: string
+  - owl:versionInfo:
+    - ontology_version_info: '2000-01-01'

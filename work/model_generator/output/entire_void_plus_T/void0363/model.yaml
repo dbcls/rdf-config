@@ -1,0 +1,585 @@
+- DatatypeProperty:
+  - rdfs:domain:
+    - datatype_property_domain: Class
+- MarshEnvironment:
+  - rdf:type:
+    - marsh_environment_type: Class
+- ColetaporParcelas:
+  - rdf:type:
+    - coletapor_parcelas_type: Class
+- FieldVagetation:
+  - ns1:localizationInEntMatLocEspa:
+    - field_vagetation_localization_in_ent_mat_loc_espa:
+      - LocalCollect
+      - NamedIndividual
+  - rdf:type:
+    - field_vagetation_type: Class
+- MicroEnvironment:
+  - ns1:caracterizationMiAmPontoGeo:
+    - micro_environment_caracterization_mi_am_ponto_geo:
+      - GeographicPoint
+      - NamedIndividual
+  - rdf:type:
+    - micro_environment_type: Class
+  - ns1:isClassifiedAsMiAmTipoMiAm:
+    - micro_environment_is_classified_as_mi_am_tipo_mi_am:
+      - AmbientedeCascalho
+      - AmbientedeAreiaGrossa
+      - NamedIndividual
+      - AmbientedeHumus
+      - AmbientedeAreiaFina
+- State:
+  - ns1:spatiallyConteinedInEstPais:
+    - state_spatially_conteined_in_est_pais:
+      - Country
+      - NamedIndividual
+  - rdf:type:
+    - state_type: Class
+  - ns1:spatiallyConteinedInLocalidadeMun:
+    - state_spatially_conteined_in_localidade_mun:
+      - NamedIndividual
+      - Locality
+      - County
+- TrapCollect:
+  - rdf:type:
+    - trap_collect_type: Class
+- classification:
+  - ns1:mediationClassificadorClassificacao:
+    - classification_mediation_classificador_classificacao:
+      - NamedIndividual
+      - Classifier
+  - rdf:type:
+    - classification_type: Class
+- Caatinga:
+  - ns1:isConteinedInEcosLocalEspa:
+    - caatinga_is_conteined_in_ecos_local_espa:
+      - LocalCollect
+      - NamedIndividual
+  - rdf:type:
+    - caatinga_type: Class
+- ClassifiedObject:
+  - ns1:mediationClasObjClas:
+    - classified_object_mediation_clas_obj_clas:
+      - NamedIndividual
+      - classification
+  - rdf:type:
+    - classified_object_type: Class
+- CapoeiraVegetation:
+  - ns1:localizationInEntMatLocEspa:
+    - capoeira_vegetation_localization_in_ent_mat_loc_espa:
+      - NamedIndividual
+      - LocalCollect
+  - rdf:type:
+    - capoeira_vegetation_type: Class
+- Adult:
+  - rdf:type:
+    - adult_type: Class
+- LocalCollect:
+  - ns1:isConteinedInEcosLocalEspa:
+    - local_collect_is_conteined_in_ecos_local_espa:
+      - Caatinga
+      - Amazonia
+      - Pantanal
+      - Cerrado
+      - NamedIndividual
+  - ns1:spatiallyContainedIn:
+    - local_collect_spatially_contained_in:
+      - AmazonRegion
+      - Locality
+      - CaatingaRegion
+      - AraucariasRegion
+      - NamedIndividual
+      - MataAtlanticaRegion
+  - rdf:type:
+    - local_collect_type: Class
+  - ns1:localizationEspaGeoCoordGeo:
+    - local_collect_localization_espa_geo_coord_geo:
+      - GeographicalCoordinate
+      - NamedIndividual
+  - ns1:caracterizationMaAmEspGeo:
+    - local_collect_caracterization_ma_am_esp_geo:
+      - NamedIndividual
+      - MacroEnvironment
+- AmazonRegion:
+  - rdf:type:
+    - amazon_region_type: Class
+- IndividualPropertyAtom:
+  - ns2:argument2:
+    - individual_property_atom_argument2: Variable
+  - ns2:argument1:
+    - individual_property_atom_argument1: Variable
+  - ns2:propertyPredicate:
+    - individual_property_atom_property_predicate: ObjectProperty
+- Country:
+  - ns1:spatiallyConteinedInEstPais:
+    - country_spatially_conteined_in_est_pais:
+      - State
+      - NamedIndividual
+  - rdf:type:
+    - country_type: Class
+- FunctionalProperty:
+  - rdfs:domain:
+    - functional_property_domain: Class
+- Young:
+  - rdf:type:
+    - young_type: Class
+- ForestVegetation:
+  - ns1:localizationInEntMatLocEspa:
+    - forest_vegetation_localization_in_ent_mat_loc_espa:
+      - LocalCollect
+      - NamedIndividual
+  - rdf:type:
+    - forest_vegetation_type: Class
+- Egg:
+  - rdf:type:
+    - egg_type: Class
+- NetCollect:
+  - rdf:type:
+    - net_collect_type: Class
+- Locality:
+  - rdf:type:
+    - locality_type: Class
+  - ns1:spatiallyConteinedInLocalidadeMun:
+    - locality_spatially_conteined_in_localidade_mun:
+      - County
+      - NamedIndividual
+  - ns1:longitude:
+    - locality_longitude: string
+  - ns1:latitude:
+    - locality_latitude: string
+- SavannahVegetation:
+  - ns1:localizationInEntMatLocEspa:
+    - savannah_vegetation_localization_in_ent_mat_loc_espa:
+      - NamedIndividual
+      - LocalCollect
+  - rdf:type:
+    - savannah_vegetation_type: Class
+- RandomCollect:
+  - rdf:type:
+    - random_collect_type: Class
+- MataAtlanticaRegion:
+  - rdf:type:
+    - mata_atlantica_region_type: Class
+- ObjectProperty:
+  - rdfs:domain:
+    - object_property_domain: Class
+  - rdfs:range:
+    - object_property_range:
+      - Class
+      - Restriction
+- Pantanal:
+  - ns1:isConteinedInEcosLocalEspa:
+    - pantanal_is_conteined_in_ecos_local_espa:
+      - NamedIndividual
+      - LocalCollect
+  - rdf:type:
+    - pantanal_type: Class
+- CanopyEnvironment:
+  - rdf:type:
+    - canopy_environment_type: Class
+- AraucariasRegion:
+  - rdf:type:
+    - araucarias_region_type: Class
+- Restriction:
+  - owl:allValuesFrom:
+    - restriction_all_values_from: Class
+  - owl:someValuesFrom:
+    - restriction_some_values_from: Class
+  - owl:onProperty:
+    - restriction_on_property: ObjectProperty
+- ManualCollect:
+  - rdf:type:
+    - manual_collect_type: Class
+- County:
+  - ns1:spatiallyConteinedInMunEst:
+    - county_spatially_conteined_in_mun_est:
+      - NamedIndividual
+      - State
+  - rdf:type:
+    - county_type: Class
+  - ns1:longitude:
+    - county_longitude: string
+  - ns1:latitude:
+    - county_latitude: string
+- AffluentEnvironment:
+  - rdf:type:
+    - affluent_environment_type: Class
+- DatavaluedPropertyAtom:
+  - ns2:argument2:
+    - datavalued_property_atom_argument2: Variable
+  - ns2:argument1:
+    - datavalued_property_atom_argument1: Variable
+  - ns2:propertyPredicate:
+    - datavalued_property_atom_property_predicate: DatatypeProperty
+- AmbientedeAreiaFina:
+  - rdf:type:
+    - ambientede_areia_fina_type: Class
+- CollectResponsibleInstitution:
+  - rdf:type:
+    - collect_responsible_institution_type: Class
+- Genus:
+  - ns1:subkindOfEspGen:
+    - genus_subkind_of_esp_gen:
+      - NamedIndividual
+      - Species
+  - rdf:type:
+    - genus_type: Class
+  - ns1:nomepopular:
+    - genus_nomepopular: string
+- PrimaryForestEnvironment:
+  - rdf:type:
+    - primary_forest_environment_type: Class
+- AmbientedeCascalho:
+  - rdf:type:
+    - ambientede_cascalho_type: Class
+- Amazonia:
+  - ns1:isConteinedInEcosLocalEspa:
+    - amazonia_is_conteined_in_ecos_local_espa:
+      - LocalCollect
+      - NamedIndividual
+  - rdf:type:
+    - amazonia_type: Class
+- MacroEnvironment:
+  - ns1:isClassifiedAsMaAmTipoMaAm:
+    - macro_environment_is_classified_as_ma_am_tipo_ma_am:
+      - MarshEnvironment
+      - NamedIndividual
+      - CanopyEnvironment
+      - PrimaryForestEnvironment
+      - AffluentEnvironment
+  - rdf:type:
+    - macro_environment_type: Class
+  - ns1:caracterizationMaAmEspGeo:
+    - macro_environment_caracterization_ma_am_esp_geo:
+      - LocalCollect
+      - NamedIndividual
+- Family:
+  - ns1:subkindOfGenFam:
+    - family_subkind_of_gen_fam:
+      - Genus
+      - NamedIndividual
+  - rdf:type:
+    - family_type: Class
+  - ns1:nomepopular:
+    - family_nomepopular: string
+- CollectAssistent:
+  - rdf:type:
+    - collect_assistent_type: Class
+- Taxon:
+  - rdf:type:
+    - taxon_type: Class
+- GeographicalCoordinate:
+  - rdf:type:
+    - geographical_coordinate_type: Class
+  - ns1:longitude:
+    - geographical_coordinate_longitude: string
+  - ns1:altitude:
+    - geographical_coordinate_altitude: string
+  - ns1:latitude:
+    - geographical_coordinate_latitude: string
+- Collect:
+  - ns1:isClassifiedAsColetaTipoColeta:
+    - collect_is_classified_as_coleta_tipo_coleta:
+      - RandomCollect
+      - NamedIndividual
+      - TrapCollect
+      - ManualCollect
+      - NetCollect
+      - ColetaporParcelas
+  - ns1:mediationColetaInstituicaoResponsavelColeta:
+    - collect_mediation_coleta_instituicao_responsavel_coleta:
+      - NamedIndividual
+      - CollectResponsibleInstitution
+  - ns1:mediationObjColetadoColeta:
+    - collect_mediation_obj_coletado_coleta:
+      - NamedIndividual
+      - CollectedObject
+  - ns1:mediationColetaLocalColeta:
+    - collect_mediation_coleta_local_coleta:
+      - LocalCollect
+      - NamedIndividual
+  - ns1:mediationPartColetaCol:
+    - collect_mediation_part_coleta_col:
+      - CollectResponsible
+      - NamedIndividual
+      - CollectAssistent
+  - rdf:type:
+    - collect_type: Class
+  - ns1:mediationColetaRespColeta:
+    - collect_mediation_coleta_resp_coleta:
+      - CollectResponsible
+      - NamedIndividual
+- GeographicPoint:
+  - ns1:caracterizationMiAmPontoGeo:
+    - geographic_point_caracterization_mi_am_ponto_geo:
+      - NamedIndividual
+      - MicroEnvironment
+  - rdf:type:
+    - geographic_point_type: Class
+- Embryo:
+  - rdf:type:
+    - embryo_type: Class
+- AmbientedeHumus:
+  - rdf:type:
+    - ambientede_humus_type: Class
+- Species:
+  - ns1:mediationClasEspe:
+    - species_mediation_clas_espe:
+      - NamedIndividual
+      - classification
+  - rdf:type:
+    - species_type: Class
+  - ns1:spatiallyConteinedInLocalidadeMun:
+    - species_spatially_conteined_in_localidade_mun:
+      - Locality
+      - NamedIndividual
+  - ns1:nomepopular:
+    - species_nomepopular: string
+- Classifier:
+  - rdf:type:
+    - classifier_type: Class
+- AmbientedeAreiaGrossa:
+  - rdf:type:
+    - ambientede_areia_grossa_type: Class
+- Cerrado:
+  - ns1:isConteinedInEcosLocalEspa:
+    - cerrado_is_conteined_in_ecos_local_espa:
+      - LocalCollect
+      - NamedIndividual
+  - rdf:type:
+    - cerrado_type: Class
+- NamedIndividual:
+  - ns1:mediationClasEspe:
+    - named_individual_mediation_clas_espe:
+      - classification
+      - NamedIndividual
+  - ns1:mediationClasObjClas:
+    - named_individual_mediation_clas_obj_clas:
+      - classification
+      - NamedIndividual
+  - ns1:isConteinedInEcosLocalEspa:
+    - named_individual_is_conteined_in_ecos_local_espa:
+      - LocalCollect
+      - NamedIndividual
+      - Pantanal
+      - Cerrado
+      - Amazonia
+      - Caatinga
+  - ns1:isClassifiedAsColetaTipoColeta:
+    - named_individual_is_classified_as_coleta_tipo_coleta:
+      - NetCollect
+      - RandomCollect
+      - ColetaporParcelas
+      - ManualCollect
+      - TrapCollect
+      - NamedIndividual
+  - ns1:spatiallyConteinedInEstPais:
+    - named_individual_spatially_conteined_in_est_pais:
+      - Country
+      - State
+      - NamedIndividual
+  - ns1:localizationInEntMatLocEspa:
+    - named_individual_localization_in_ent_mat_loc_espa:
+      - GeographicPoint
+      - LocalCollect
+      - NamedIndividual
+  - ns1:mediationColetaInstituicaoResponsavelColeta:
+    - named_individual_mediation_coleta_instituicao_responsavel_coleta:
+      - NamedIndividual
+      - CollectResponsibleInstitution
+  - ns1:subkindOfGenFam:
+    - named_individual_subkind_of_gen_fam:
+      - NamedIndividual
+      - Genus
+  - ns1:subkindOfEspGen:
+    - named_individual_subkind_of_esp_gen:
+      - NamedIndividual
+      - Species
+  - ns1:mediationObjColetadoColeta:
+    - named_individual_mediation_obj_coletado_coleta:
+      - NamedIndividual
+      - CollectedObject
+  - ns1:isClassifiedAsMaAmTipoMaAm:
+    - named_individual_is_classified_as_ma_am_tipo_ma_am:
+      - CanopyEnvironment
+      - PrimaryForestEnvironment
+      - NamedIndividual
+      - MarshEnvironment
+      - AffluentEnvironment
+  - ns1:caracterizationMiAmPontoGeo:
+    - named_individual_caracterization_mi_am_ponto_geo:
+      - MicroEnvironment
+      - GeographicPoint
+      - NamedIndividual
+  - ns1:spatiallyConteinedInMunEst:
+    - named_individual_spatially_conteined_in_mun_est:
+      - NamedIndividual
+      - State
+  - ns1:mediationClassificadorClassificacao:
+    - named_individual_mediation_classificador_classificacao:
+      - NamedIndividual
+      - Classifier
+  - ns1:RelacaoEntbioSexo:
+    - named_individual_relacao_entbio_sexo:
+      - NamedIndividual
+      - Sex
+  - ns1:mediationColetaLocalColeta:
+    - named_individual_mediation_coleta_local_coleta:
+      - LocalCollect
+      - NamedIndividual
+  - ns1:mediationPartColetaCol:
+    - named_individual_mediation_part_coleta_col:
+      - CollectAssistent
+      - CollectResponsible
+      - NamedIndividual
+  - ns1:spatiallyContainedIn:
+    - named_individual_spatially_contained_in:
+      - CaatingaRegion
+      - MataAtlanticaRegion
+      - NamedIndividual
+      - AmazonRegion
+      - AraucariasRegion
+      - Locality
+  - rdf:type:
+    - named_individual_type: Class
+  - ns1:spatiallyConteinedInLocalidadeMun:
+    - named_individual_spatially_conteined_in_localidade_mun:
+      - County
+      - Locality
+      - NamedIndividual
+  - ns1:RelacaoEntbioEstvid:
+    - named_individual_relacao_entbio_estvid:
+      - Young
+      - Adult
+      - Egg
+      - NamedIndividual
+      - Embryo
+  - ns1:localizationEspaGeoCoordGeo:
+    - named_individual_localization_espa_geo_coord_geo:
+      - NamedIndividual
+      - GeographicalCoordinate
+  - ns1:mediationColetaRespColeta:
+    - named_individual_mediation_coleta_resp_coleta:
+      - NamedIndividual
+      - CollectResponsible
+  - ns1:instanceOfSpecies:
+    - named_individual_instance_of_species:
+      - Species
+      - NamedIndividual
+  - ns1:localizationInEntMatCoordGeo:
+    - named_individual_localization_in_ent_mat_coord_geo:
+      - GeographicalCoordinate
+      - NamedIndividual
+  - ns1:caracterizationMaAmEspGeo:
+    - named_individual_caracterization_ma_am_esp_geo:
+      - NamedIndividual
+      - LocalCollect
+      - MacroEnvironment
+  - ns1:instanceOfTaxon:
+    - named_individual_instance_of_taxon:
+      - Species
+      - Family
+      - NamedIndividual
+      - Genus
+  - ns1:isClassifiedAsMiAmTipoMiAm:
+    - named_individual_is_classified_as_mi_am_tipo_mi_am:
+      - AmbientedeCascalho
+      - NamedIndividual
+      - AmbientedeHumus
+      - AmbientedeAreiaFina
+      - AmbientedeAreiaGrossa
+  - ns1:longitude:
+    - named_individual_longitude: string
+  - ns1:especie:
+    - named_individual_especie: string
+  - ns1:bisexual:
+    - named_individual_bisexual: string
+  - ns1:female:
+    - named_individual_female: string
+  - ns1:altitude:
+    - named_individual_altitude: string
+  - ns1:nomepopular:
+    - named_individual_nomepopular: string
+  - ns1:latitude:
+    - named_individual_latitude: string
+  - ns1:asexual:
+    - named_individual_asexual: string
+  - ns1:peso:
+    - named_individual_peso: 123.45
+  - ns1:male:
+    - named_individual_male: string
+- Imp:
+  - ns2:head:
+    - imp_head: AtomList
+  - ns2:body:
+    - imp_body: AtomList
+- CaatingaRegion:
+  - rdf:type:
+    - caatinga_region_type: Class
+- CollectedObject:
+  - ns1:localizationInEntMatLocEspa:
+    - collected_object_localization_in_ent_mat_loc_espa:
+      - GeographicPoint
+      - NamedIndividual
+  - ns1:RelacaoEntbioSexo:
+    - collected_object_relacao_entbio_sexo:
+      - Sex
+      - NamedIndividual
+  - rdf:type:
+    - collected_object_type: Class
+  - ns1:RelacaoEntbioEstvid:
+    - collected_object_relacao_entbio_estvid:
+      - Young
+      - Adult
+      - NamedIndividual
+      - Embryo
+      - Egg
+  - ns1:instanceOfSpecies:
+    - collected_object_instance_of_species:
+      - Species
+      - NamedIndividual
+  - ns1:localizationInEntMatCoordGeo:
+    - collected_object_localization_in_ent_mat_coord_geo:
+      - GeographicalCoordinate
+      - NamedIndividual
+  - ns1:instanceOfTaxon:
+    - collected_object_instance_of_taxon:
+      - NamedIndividual
+      - Species
+      - Genus
+      - Family
+  - ns1:peso:
+    - collected_object_peso: 123.45
+- ClassAtom:
+  - ns2:argument1:
+    - class_atom_argument1: Variable
+  - ns2:classPredicate:
+    - class_atom_class_predicate: Class
+- Class:
+  - rdfs:subClassOf:
+    - class_sub_class_of: Class
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+- Sex:
+  - rdf:type:
+    - sex_type: Class
+  - ns1:bisexual:
+    - sex_bisexual: string
+  - ns1:female:
+    - sex_female: string
+  - ns1:asexual:
+    - sex_asexual: string
+  - ns1:male:
+    - sex_male: string
+- AtomList:
+  - rdf:rest:
+    - atom_list_rest: AtomList
+  - rdf:first:
+    - atom_list_first:
+      - DatavaluedPropertyAtom
+      - BuiltinAtom
+      - IndividualPropertyAtom
+      - ClassAtom
+- CollectResponsible:
+  - rdf:type:
+    - collect_responsible_type: Class

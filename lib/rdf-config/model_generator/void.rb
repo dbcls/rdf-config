@@ -46,6 +46,7 @@ class RDFConfig
       def parse
         fetch_subject_uris
         @subject_uris.each do |subject_uri|
+          # warn subject_uri
           fetch_property_by_subject(subject_uri)
         end
       end
@@ -83,6 +84,7 @@ class RDFConfig
         File.open(File.join(@output_dir, 'model.yaml'), 'w') do |f|
           f.puts Psych.dump(@model).to_s.sub(/^---\n/, '')
         end
+        warn "model.yaml and prefix.yaml have been successfully generated in the #{@output_dir}"
       end
 
       def fetch_subject_uris
@@ -94,7 +96,7 @@ class RDFConfig
         @graph.query(query) do |solution|
           subject_uri = solution[:resource_class]
           register_prefix(subject_uri)
-          @subject_uris << subject_uri
+          add_subject_uri(subject_uri)
         end
       end
 
@@ -145,7 +147,13 @@ class RDFConfig
         end
       end
 
+      def add_subject_uri(subject_uri)
+        # warn "add_subject_uri: #{subject_uri}"
+        @subject_uris << subject_uri
+      end
+
       def add_property(subject_uri, predicate_uri, object)
+        # warn "add_property: #{subject_uri} #{predicate_uri} #{object}"
         register_prefix(predicate_uri)
         register_prefix(object)
 

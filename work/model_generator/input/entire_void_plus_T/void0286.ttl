@@ -1,0 +1,1171 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sbm: <http://sparqlbuilder.org/2015/09/rdf-metadata-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://rdfportal.org/ns/> .
+
+<http://rdfportal.org/ns/57026d1af3f73ac67a49475806bf9d29>
+    void:classPartition [
+        void:class <http://id.nlm.nih.gov/mesh/vocab#AllowedDescriptorQualifierPair> ;
+        void:entities 607383 ;
+        a void:Dataset
+    ], [
+        void:class <http://id.nlm.nih.gov/mesh/vocab#Concept> ;
+        void:entities 404974 ;
+        a void:Dataset
+    ], [
+        void:class <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> ;
+        void:entities 29054 ;
+        a void:Dataset
+    ], [
+        void:class <http://id.nlm.nih.gov/mesh/vocab#CheckTag> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://id.nlm.nih.gov/mesh/vocab#Qualifier> ;
+        void:entities 76 ;
+        a void:Dataset
+    ], [
+        void:class <http://id.nlm.nih.gov/mesh/vocab#TreeNumber> ;
+        void:entities 60755 ;
+        a void:Dataset
+    ], [
+        void:class <http://id.nlm.nih.gov/mesh/vocab#DisallowedDescriptorQualifierPair> ;
+        void:entities 978 ;
+        a void:Dataset
+    ], [
+        void:class <http://id.nlm.nih.gov/mesh/vocab#SCR_Disease> ;
+        void:entities 6479 ;
+        a void:Dataset
+    ], [
+        void:class <http://id.nlm.nih.gov/mesh/vocab#PublicationType> ;
+        void:entities 187 ;
+        a void:Dataset
+    ], [
+        void:class <http://id.nlm.nih.gov/mesh/vocab#Term> ;
+        void:entities 757237 ;
+        a void:Dataset
+    ], [
+        void:class <http://id.nlm.nih.gov/mesh/vocab#SCR_Protocol> ;
+        void:entities 1215 ;
+        a void:Dataset
+    ], [
+        void:class <http://id.nlm.nih.gov/mesh/vocab#SCR_Organism> ;
+        void:entities 19019 ;
+        a void:Dataset
+    ], [
+        void:class <http://id.nlm.nih.gov/mesh/vocab#GeographicalDescriptor> ;
+        void:entities 397 ;
+        a void:Dataset
+    ], [
+        void:class <http://id.nlm.nih.gov/mesh/vocab#SCR_Chemical> ;
+        void:entities 243740 ;
+        a void:Dataset
+    ] ;
+    void:classes 14 ;
+    void:distinctObjects 4938857 ;
+    void:distinctSubjects 2131496 ;
+    void:properties 46 ;
+    void:propertyPartition [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#altLabel> ;
+        void:triples 120696 ;
+        sbm:classRelation [
+            void:triples 120696 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#Term> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#annotation> ;
+        void:triples 12540 ;
+        sbm:classRelation [
+            void:triples 186 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#PublicationType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 76 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#Qualifier> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#CheckTag> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 12106 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 170 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#GeographicalDescriptor> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#thesaurusID> ;
+        void:triples 801563 ;
+        sbm:classRelation [
+            void:triples 801563 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#Term> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#relatedRegistryNumber> ;
+        void:triples 40648 ;
+        sbm:classRelation [
+            void:triples 40648 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#Concept> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#concept> ;
+        void:triples 104805 ;
+        sbm:classRelation [
+            void:triples 390 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#Concept> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Protocol> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 492 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#Concept> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Disease> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 109 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#Concept> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#GeographicalDescriptor> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 28213 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#Concept> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 48 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#Concept> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#PublicationType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 75207 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#Concept> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Chemical> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 188 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#Concept> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Organism> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 158 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#Concept> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#Qualifier> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#dateCreated> ;
+        void:triples 828599 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:date ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#CheckTag> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 76 ;
+            sbm:objectDatatype xsd:date ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#Qualifier> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 528430 ;
+            sbm:objectDatatype xsd:date ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#Term> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 397 ;
+            sbm:objectDatatype xsd:date ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#GeographicalDescriptor> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1215 ;
+            sbm:objectDatatype xsd:date ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Protocol> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 187 ;
+            sbm:objectDatatype xsd:date ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#PublicationType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 243740 ;
+            sbm:objectDatatype xsd:date ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Chemical> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 29054 ;
+            sbm:objectDatatype xsd:date ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6479 ;
+            sbm:objectDatatype xsd:date ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Disease> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 19019 ;
+            sbm:objectDatatype xsd:date ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Organism> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#identifier> ;
+        void:triples 1462380 ;
+        sbm:classRelation [
+            void:triples 29054 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1215 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Protocol> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 19019 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Organism> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 404974 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#Concept> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 243740 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Chemical> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 397 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#GeographicalDescriptor> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 757237 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#Term> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 187 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#PublicationType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#CheckTag> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6479 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Disease> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 76 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#Qualifier> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#broaderDescriptor> ;
+        void:triples 40248 ;
+        sbm:classRelation [
+            void:triples 214 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#PublicationType> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#PublicationType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#GeographicalDescriptor> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 39558 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 40 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#GeographicalDescriptor> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 432 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#GeographicalDescriptor> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#GeographicalDescriptor> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#indexerConsiderAlso> ;
+        void:triples 44902 ;
+        sbm:classRelation [
+            void:triples 38029 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Chemical> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Protocol> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6560 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#AllowedDescriptorQualifierPair> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Chemical> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 18 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Disease> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 128 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Organism> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 79 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#DisallowedDescriptorQualifierPair> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Chemical> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#pharmacologicalAction> ;
+        void:triples 14777 ;
+        sbm:classRelation [
+            void:triples 9737 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Chemical> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5039 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Protocol> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#preferredMappedTo> ;
+        void:triples 368512 ;
+        sbm:classRelation [
+            void:triples 90 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#AllowedDescriptorQualifierPair> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Protocol> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 301933 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Chemical> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1225 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Protocol> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1891 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#AllowedDescriptorQualifierPair> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Disease> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 19019 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Organism> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11315 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Disease> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 33039 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#AllowedDescriptorQualifierPair> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Chemical> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#note> ;
+        void:triples 213755 ;
+        sbm:classRelation [
+            void:triples 1209 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Protocol> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 210549 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Chemical> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Organism> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1996 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Disease> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#lexicalTag> ;
+        void:triples 757237 ;
+        sbm:classRelation [
+            void:triples 757237 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#Term> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#onlineNote> ;
+        void:triples 3055 ;
+        sbm:classRelation [
+            void:triples 2940 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 41 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#GeographicalDescriptor> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 74 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#Qualifier> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#treeNumber> ;
+        void:triples 60755 ;
+        sbm:classRelation [
+            void:triples 59923 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#TreeNumber> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 231 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#TreeNumber> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#PublicationType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 89 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#TreeNumber> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#Qualifier> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 512 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#TreeNumber> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#GeographicalDescriptor> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#considerAlso> ;
+        void:triples 66 ;
+        sbm:classRelation [
+            void:triples 66 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#hasQualifier> ;
+        void:triples 608361 ;
+        sbm:classRelation [
+            void:triples 607383 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#Qualifier> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#AllowedDescriptorQualifierPair> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 978 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#Qualifier> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#DisallowedDescriptorQualifierPair> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#prefLabel> ;
+        void:triples 757237 ;
+        sbm:classRelation [
+            void:triples 757237 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#Term> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#preferredTerm> ;
+        void:triples 705143 ;
+        sbm:classRelation [
+            void:triples 187 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#Term> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#PublicationType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 243740 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#Term> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Chemical> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6479 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#Term> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Disease> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 19019 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#Term> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Organism> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1215 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#Term> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Protocol> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 404974 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#Term> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#Concept> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 29054 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#Term> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 76 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#Term> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#Qualifier> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 397 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#Term> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#GeographicalDescriptor> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#Term> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#CheckTag> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#abbreviation> ;
+        void:triples 78 ;
+        sbm:classRelation [
+            void:triples 78 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#Term> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#preferredConcept> ;
+        void:triples 300169 ;
+        sbm:classRelation [
+            void:triples 397 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#Concept> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#GeographicalDescriptor> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 29054 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#Concept> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#Concept> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#CheckTag> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1215 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#Concept> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Protocol> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 76 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#Concept> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#Qualifier> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 187 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#Concept> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#PublicationType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 19019 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#Concept> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Organism> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6479 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#Concept> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Disease> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 243740 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#Concept> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Chemical> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#relatedConcept> ;
+        void:triples 7517 ;
+        sbm:classRelation [
+            void:triples 7517 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#Concept> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#Concept> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#narrowerConcept> ;
+        void:triples 88948 ;
+        sbm:classRelation [
+            void:triples 88948 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#Concept> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#Concept> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#useInstead> ;
+        void:triples 978 ;
+        sbm:classRelation [
+            void:triples 930 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#DisallowedDescriptorQualifierPair> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 48 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#AllowedDescriptorQualifierPair> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#DisallowedDescriptorQualifierPair> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#parentTreeNumber> ;
+        void:triples 60616 ;
+        sbm:classRelation [
+            void:triples 60616 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#TreeNumber> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#TreeNumber> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#dateEstablished> ;
+        void:triples 29716 ;
+        sbm:classRelation [
+            void:triples 187 ;
+            sbm:objectDatatype xsd:date ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#PublicationType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 29054 ;
+            sbm:objectDatatype xsd:date ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 76 ;
+            sbm:objectDatatype xsd:date ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#Qualifier> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:date ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#CheckTag> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 397 ;
+            sbm:objectDatatype xsd:date ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#GeographicalDescriptor> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#publicMeSHNote> ;
+        void:triples 25180 ;
+        sbm:classRelation [
+            void:triples 25180 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#scopeNote> ;
+        void:triples 31744 ;
+        sbm:classRelation [
+            void:triples 31744 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#Concept> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#broaderConcept> ;
+        void:triples 8340 ;
+        sbm:classRelation [
+            void:triples 8340 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#Concept> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#Concept> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#previousIndexing> ;
+        void:triples 81198 ;
+        sbm:classRelation [
+            void:triples 221 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Protocol> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 57 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#GeographicalDescriptor> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 26353 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 91 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Disease> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 10 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#PublicationType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Organism> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 54465 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Chemical> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:label ;
+        void:triples 1374273 ;
+        sbm:classRelation [
+            void:triples 978 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#DisallowedDescriptorQualifierPair> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 404974 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#Concept> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 607383 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#AllowedDescriptorQualifierPair> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 19019 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Organism> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#CheckTag> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 60755 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#TreeNumber> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 187 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#PublicationType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 76 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#Qualifier> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1215 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Protocol> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6479 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Disease> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 397 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#GeographicalDescriptor> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 243740 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Chemical> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 29068 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#dateRevised> ;
+        void:triples 226130 ;
+        sbm:classRelation [
+            void:triples 3567 ;
+            sbm:objectDatatype xsd:date ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Disease> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 386 ;
+            sbm:objectDatatype xsd:date ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#GeographicalDescriptor> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 27281 ;
+            sbm:objectDatatype xsd:date ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 19019 ;
+            sbm:objectDatatype xsd:date ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Organism> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 76 ;
+            sbm:objectDatatype xsd:date ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#Qualifier> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1147 ;
+            sbm:objectDatatype xsd:date ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Protocol> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:date ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#CheckTag> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 174465 ;
+            sbm:objectDatatype xsd:date ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Chemical> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 187 ;
+            sbm:objectDatatype xsd:date ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#PublicationType> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#mappedTo> ;
+        void:triples 10403 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#AllowedDescriptorQualifierPair> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Protocol> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 366 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Disease> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4713 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Protocol> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5290 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Chemical> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 28 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#AllowedDescriptorQualifierPair> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Chemical> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#AllowedDescriptorQualifierPair> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Disease> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#broaderQualifier> ;
+        void:triples 66 ;
+        sbm:classRelation [
+            void:triples 66 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#Qualifier> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#Qualifier> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#registryNumber> ;
+        void:triples 323366 ;
+        sbm:classRelation [
+            void:triples 323366 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#Concept> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#hasDescriptor> ;
+        void:triples 608361 ;
+        sbm:classRelation [
+            void:triples 978 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#DisallowedDescriptorQualifierPair> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 606591 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#AllowedDescriptorQualifierPair> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 792 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#GeographicalDescriptor> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#AllowedDescriptorQualifierPair> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#allowableQualifier> ;
+        void:triples 607383 ;
+        sbm:classRelation [
+            void:triples 606591 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#Qualifier> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 792 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#Qualifier> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#GeographicalDescriptor> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#frequency> ;
+        void:triples 270453 ;
+        sbm:classRelation [
+            void:triples 19019 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Organism> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 243740 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Chemical> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1215 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Protocol> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6479 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Disease> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#historyNote> ;
+        void:triples 25689 ;
+        sbm:classRelation [
+            void:triples 183 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#PublicationType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 76 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#Qualifier> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 25263 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 165 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#GeographicalDescriptor> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#CheckTag> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#sortVersion> ;
+        void:triples 3927 ;
+        sbm:classRelation [
+            void:triples 3927 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#Term> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#entryVersion> ;
+        void:triples 16195 ;
+        sbm:classRelation [
+            void:triples 16195 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#Term> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#seeAlso> ;
+        void:triples 8874 ;
+        sbm:classRelation [
+            void:triples 67 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#PublicationType> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#PublicationType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#PublicationType> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8806 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#term> ;
+        void:triples 352263 ;
+        sbm:classRelation [
+            void:triples 352263 ;
+            sbm:objectClass <http://id.nlm.nih.gov/mesh/vocab#Term> ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#Concept> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#casn1_label> ;
+        void:triples 22908 ;
+        sbm:classRelation [
+            void:triples 22908 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#Concept> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#nlmClassificationNumber> ;
+        void:triples 6496 ;
+        sbm:classRelation [
+            void:triples 15 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#PublicationType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6481 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#TopicalDescriptor> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.nlm.nih.gov/mesh/vocab#source> ;
+        void:triples 250363 ;
+        sbm:classRelation [
+            void:triples 249055 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Chemical> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 94 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Disease> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1214 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.nlm.nih.gov/mesh/vocab#SCR_Protocol> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ] ;
+    void:sparqlEndpoint <https://rdfportal.org/ncbi/sparql> ;
+    void:triples 13818409 ;
+    a void:Dataset, sd:Graph .

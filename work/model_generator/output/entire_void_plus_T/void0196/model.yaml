@@ -1,0 +1,129 @@
+- TransitiveProperty:
+  - rdfs:domain:
+    - transitive_property_domain: Class
+  - rdfs:range:
+    - transitive_property_range: Class
+  - rdfs:subPropertyOf:
+    - transitive_property_sub_property_of: ObjectProperty
+  - ns1:IAO_0000117:
+    - transitive_property_iao_0000117: string
+  - dc11:description:
+    - transitive_property_description: string
+  - rdfs:label:
+    - transitive_property_label:
+      - string
+      - string
+  - ns1:IAO_0000115:
+    - transitive_property_iao_0000115: string
+- ObjectProperty:
+  - rdfs:domain:
+    - object_property_domain: Class
+  - owl:propertyDisjointWith:
+    - object_property_property_disjoint_with: ObjectProperty
+  - owl:inverseOf:
+    - object_property_inverse_of: ObjectProperty
+  - rdfs:range:
+    - object_property_range: Class
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of:
+      - TransitiveProperty
+      - ObjectProperty
+      - SymmetricProperty
+  - ns1:IAO_0000117:
+    - object_property_iao_0000117: string
+  - rdfs:comment:
+    - object_property_comment: string
+  - dc11:description:
+    - object_property_description: string
+  - rdfs:label:
+    - object_property_label:
+      - string
+      - string
+  - ns1:IAO_0000115:
+    - object_property_iao_0000115: string
+- Ontology:
+  - rdfs:comment:
+    - ontology_comment: string
+  - dc11:format:
+    - ontology_format: string
+  - dc:license:
+    - ontology_license: string
+  - dc11:title:
+    - ontology_title: string
+  - owl:versionInfo:
+    - ontology_version_info: string
+  - dc11:language:
+    - ontology_language: string
+  - dc11:contributor:
+    - ontology_contributor: string
+- Restriction:
+  - owl:onProperty:
+    - restriction_on_property:
+      - ObjectProperty
+      - DatatypeProperty
+  - owl:someValuesFrom:
+    - restriction_some_values_from:
+      - Class
+      - Datatype
+- DatatypeProperty:
+  - rdfs:domain:
+    - datatype_property_domain: Class
+  - rdfs:subPropertyOf:
+    - datatype_property_sub_property_of: DatatypeProperty
+  - rdfs:label:
+    - datatype_property_label: string
+- FunctionalProperty:
+  - rdfs:domain:
+    - functional_property_domain: Class
+  - rdfs:subPropertyOf:
+    - functional_property_sub_property_of: DatatypeProperty
+  - rdfs:label:
+    - functional_property_label: string
+- SymmetricProperty:
+  - rdfs:domain:
+    - symmetric_property_domain: Class
+  - rdfs:range:
+    - symmetric_property_range: Class
+  - rdfs:subPropertyOf:
+    - symmetric_property_sub_property_of: ObjectProperty
+  - ns1:IAO_0000117:
+    - symmetric_property_iao_0000117: string
+  - dc11:description:
+    - symmetric_property_description: string
+  - rdfs:label:
+    - symmetric_property_label:
+      - string
+      - string
+  - ns1:IAO_0000115:
+    - symmetric_property_iao_0000115: string
+- Class:
+  - owl:equivalentClass:
+    - class_equivalent_class:
+      - Restriction
+      - Class
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Restriction
+      - Class
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+  - ns1:IAO_0000117:
+    - class_iao_0000117: string
+  - ns1:IAO_0000118:
+    - class_iao_0000118: string
+  - rdfs:comment:
+    - class_comment: string
+  - dc11:description:
+    - class_description: string
+  - ns2:short_name:
+    - class_short_name: string
+  - bibo:doi:
+    - class_doi: string
+  - ns3:hasAlternativeId:
+    - class_has_alternative_id: string
+  - rdfs:label:
+    - class_label:
+      - string
+      - string
+  - ns1:IAO_0000115:
+    - class_iao_0000115: string

@@ -1,0 +1,248 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sbm: <http://sparqlbuilder.org/2015/09/rdf-metadata-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://rdfportal.org/ns/> .
+
+<http://rdfportal.org/ns/4bfb4029bbd281082d8c39520cc93a77>
+    void:classPartition [
+        void:class rdfs:Class ;
+        void:entities 158239 ;
+        a void:Dataset
+    ], [
+        void:class owl:ObjectProperty ;
+        void:entities 12 ;
+        a void:Dataset
+    ] ;
+    void:classes 2 ;
+    void:distinctObjects 777720 ;
+    void:distinctSubjects 158251 ;
+    void:properties 19 ;
+    void:propertyPartition [
+        void:property rdfs:subClassOf ;
+        void:triples 162839 ;
+        sbm:classRelation [
+            void:triples 162839 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass rdfs:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://semanticscience.org/resource/SIO_000139> ;
+        void:triples 167358 ;
+        sbm:classRelation [
+            void:triples 167358 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass rdfs:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.obolibrary.org/obo/RO_0000052> ;
+        void:triples 85037 ;
+        sbm:classRelation [
+            void:triples 85037 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass rdfs:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.obolibrary.org/obo/RO_0002212> ;
+        void:triples 25 ;
+        sbm:classRelation [
+            void:triples 25 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass rdfs:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.obolibrary.org/obo/RO_0000053> ;
+        void:triples 26573 ;
+        sbm:classRelation [
+            void:triples 26573 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass rdfs:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.obolibrary.org/obo/BFO_0000050> ;
+        void:triples 146033 ;
+        sbm:classRelation [
+            void:triples 146033 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass rdfs:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.obolibrary.org/obo/RO_0002213> ;
+        void:triples 22 ;
+        sbm:classRelation [
+            void:triples 22 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass rdfs:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property skos:relatedMatch ;
+        void:triples 204876 ;
+        sbm:classRelation [
+            void:triples 204864 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass rdfs:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 12 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://semanticscience.org/resource/SIO_010078> ;
+        void:triples 38406 ;
+        sbm:classRelation [
+            void:triples 38406 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass rdfs:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.obolibrary.org/obo/RO_0002211> ;
+        void:triples 34 ;
+        sbm:classRelation [
+            void:triples 34 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass rdfs:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property skos:prefLabel ;
+        void:triples 158251 ;
+        sbm:classRelation [
+            void:triples 12 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 158239 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass rdfs:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property skos:definition ;
+        void:triples 158239 ;
+        sbm:classRelation [
+            void:triples 158239 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass rdfs:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.geneontology.org/formats/oboInOwl#id> ;
+        void:triples 158251 ;
+        sbm:classRelation [
+            void:triples 12 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 158239 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass rdfs:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://semanticscience.org/resource/SIO_000558> ;
+        void:triples 118977 ;
+        sbm:classRelation [
+            void:triples 118977 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass rdfs:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://semanticscience.org/resource/SIO_000630> ;
+        void:triples 83693 ;
+        sbm:classRelation [
+            void:triples 83693 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass rdfs:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> ;
+        void:triples 14431 ;
+        sbm:classRelation [
+            void:triples 14431 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass rdfs:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.obolibrary.org/obo/RO_0002327> ;
+        void:triples 135032 ;
+        sbm:classRelation [
+            void:triples 135032 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass rdfs:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property skos:altLabel ;
+        void:triples 189011 ;
+        sbm:classRelation [
+            void:triples 189011 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass rdfs:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.obolibrary.org/obo/RO_0002331> ;
+        void:triples 33534 ;
+        sbm:classRelation [
+            void:triples 33534 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass rdfs:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ] ;
+    void:sparqlEndpoint <https://rdfportal.org/bioportal/sparql> ;
+    void:triples 2043111 ;
+    a void:Dataset, sd:Graph .

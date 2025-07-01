@@ -1,0 +1,179 @@
+- ObjectProperty:
+  - owl:inverseOf:
+    - object_property_inverse_of: ObjectProperty
+  - rdfs:range:
+    - object_property_range: Class
+  - rdfs:domain:
+    - object_property_domain: Class
+  - ns1:hasRelatedSynonym:
+    - object_property_has_related_synonym: string
+  - ns1:hasNarrowSynonym:
+    - object_property_has_narrow_synonym: string
+  - ns2:is_anti_symmetric:
+    - object_property_is_anti_symmetric: string
+  - ns2:is_reflexive:
+    - object_property_is_reflexive: string
+  - ns2:is_symmetric:
+    - object_property_is_symmetric: string
+  - ns2:transitive_over:
+    - object_property_transitive_over: string
+  - rdfs:label:
+    - object_property_label: string
+  - ns1:hasDefinition:
+    - object_property_has_definition: string
+  - rdfs:comment:
+    - object_property_comment: string
+  - ns1:isCyclic:
+    - object_property_is_cyclic:
+      - string
+      - true
+- Axiom:
+  - owl:annotatedSource:
+    - axiom_annotated_source:
+      - ObjectProperty
+      - Class
+  - owl:annotatedTarget:
+    - axiom_annotated_target:
+      - AnnotationProperty
+      - string
+      - true
+  - owl:annotatedProperty:
+    - axiom_annotated_property: AnnotationProperty
+  - rdfs:comment:
+    - axiom_comment: string
+- Ontology:
+  - ns3:has_format:
+    - ontology_has_format: Class
+  - ns1:hasSubset:
+    - ontology_has_subset: AnnotationProperty
+  - ns3:next_id:
+    - ontology_next_id: string
+  - ns2:date:
+    - ontology_date: string
+  - dc11:contributor:
+    - ontology_contributor: string
+  - ns2:remark:
+    - ontology_remark: string
+  - ns2:idspace:
+    - ontology_idspace: string
+  - ns1:savedBy:
+    - ontology_saved_by: string
+  - dc11:title:
+    - ontology_title: string
+  - doap:Version:
+    - ontology_version: string
+  - dc11:description:
+    - ontology_description: string
+  - dc11:format:
+    - ontology_format: string
+  - dc11:creator:
+    - ontology_creator: string
+- Restriction:
+  - owl:onProperty:
+    - restriction_on_property: ObjectProperty
+  - owl:someValuesFrom:
+    - restriction_some_values_from: Class
+- AnnotationProperty:
+  - rdfs:subPropertyOf:
+    - annotation_property_sub_property_of: AnnotationProperty
+  - ns1:hasRelatedSynonym:
+    - annotation_property_has_related_synonym: string
+  - ns1:hasNarrowSynonym:
+    - annotation_property_has_narrow_synonym: string
+  - ns3:created_in:
+    - annotation_property_created_in: string
+  - ns1:hasExactSynonym:
+    - annotation_property_has_exact_synonym: string
+  - ns1:hasBroadSynonym:
+    - annotation_property_has_broad_synonym: string
+  - rdfs:label:
+    - annotation_property_label: string
+  - ns1:hasDefinition:
+    - annotation_property_has_definition: string
+  - rdfs:comment:
+    - annotation_property_comment: string
+  - ns2:is_metadata_tag:
+    - annotation_property_is_metadata_tag: true
+- Class:
+  - rdfs:seeAlso:
+    - class_see_also:
+      - Class
+      - string
+  - ns1:replacedBy:
+    - class_replaced_by: Class
+  - ns3:ontology_used:
+    - class_ontology_used:
+      - Class
+      - string
+  - ns3:oldParent:
+    - class_old_parent: Class
+  - ns1:inSubset:
+    - class_in_subset: AnnotationProperty
+  - skos:broadMatch:
+    - class_broad_match: AnnotationProperty
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Restriction
+      - Class
+  - ns1:consider:
+    - class_consider: Class
+  - ns3:comment_handle:
+    - class_comment_handle: AnnotationProperty
+  - ns1:hasRelatedSynonym:
+    - class_has_related_synonym: string
+  - ns1:hasNarrowSynonym:
+    - class_has_narrow_synonym: string
+  - ns3:related_term:
+    - class_related_term: string
+  - ns3:is_deprecation_candidate:
+    - class_is_deprecation_candidate: true
+  - ns3:created_in:
+    - class_created_in:
+      - string
+      - decimal
+  - ns1:hasAlternativeId:
+    - class_has_alternative_id: string
+  - ns1:hasExactSynonym:
+    - class_has_exact_synonym: string
+  - ns3:obsolete_since:
+    - class_obsolete_since:
+      - string
+      - decimal
+  - ns3:refactor_comment:
+    - class_refactor_comment: string
+  - owl:deprecated:
+    - class_deprecated: true
+  - ns1:hasBroadSynonym:
+    - class_has_broad_synonym: string
+  - ns3:is_refactor_candidate:
+    - class_is_refactor_candidate: true
+  - ns3:file_extension:
+    - class_file_extension: string
+  - ns3:documentation:
+    - class_documentation: string
+  - ns3:media_type:
+    - class_media_type: string
+  - ns3:notRecommendedForAnnotation:
+    - class_not_recommended_for_annotation: true
+  - ns1:hasDbXref:
+    - class_has_db_xref: string
+  - rdfs:label:
+    - class_label:
+      - string
+      - string
+  - ns1:hasHumanReadableId:
+    - class_has_human_readable_id: string
+  - ns1:hasDefinition:
+    - class_has_definition: string
+  - rdfs:comment:
+    - class_comment: string
+  - ns3:deprecation_comment:
+    - class_deprecation_comment: string
+  - ns3:example:
+    - class_example: string
+  - ns3:regex:
+    - class_regex: string
+  - ns3:isdebtag:
+    - class_isdebtag: true

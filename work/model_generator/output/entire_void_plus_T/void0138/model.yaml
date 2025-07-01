@@ -1,0 +1,15 @@
+- OrthologyDataset:
+  - dc:title:
+    - orthology_dataset_title: string
+- Gene:
+  - rdfs:label:
+    - gene_label: string
+- OrthologsCluster:
+  - ns1:hasHomologousMember:
+    - orthologs_cluster_has_homologous_member: Gene
+  - ns1:inDataset:
+    - orthologs_cluster_in_dataset: OrthologyDataset
+  - rdfs:label:
+    - orthologs_cluster_label: string
+  - dc:identifier:
+    - orthologs_cluster_identifier: integer

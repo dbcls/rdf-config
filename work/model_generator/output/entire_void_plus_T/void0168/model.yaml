@@ -1,0 +1,399 @@
+- Class:
+  - owl:complementOf:
+    - class_complement_of: Restriction
+  - rdfs:isDefinedBy:
+    - class_is_defined_by: Ontology
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+  - owl:equivalentClass:
+    - class_equivalent_class: Class
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Restriction
+      - Class
+  - ns1:example:
+    - class_example: string
+  - schema:comment:
+    - class_comment:
+      - string
+      - string
+  - skos:exactMatch:
+    - class_exact_match: string
+  - skos:example:
+    - class_example: string
+  - rdfs:seeAlso:
+    - class_see_also:
+      - string
+      - anyURI
+  - rdfs:comment:
+    - class_comment: string
+  - ns1:broaderThan:
+    - class_broader_than: string
+  - dc:description:
+    - class_description:
+      - string
+      - string
+  - ns1:equivalentTo:
+    - class_equivalent_to:
+      - string
+      - anyURI
+  - dc:title:
+    - class_title: string
+  - dc11:identifier:
+    - class_identifier: string
+  - ns1:similarTo:
+    - class_similar_to:
+      - anyURI
+      - string
+  - dc:alternative:
+    - class_alternative:
+      - string
+      - string
+  - rdfs:label:
+    - class_label: string
+  - dc11:description:
+    - class_description: string
+  - ns1:subset:
+    - class_subset:
+      - string
+      - string
+- ObjectProperty:
+  - rdfs:isDefinedBy:
+    - object_property_is_defined_by: Ontology
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of:
+      - IrreflexiveProperty
+      - ReflexiveProperty
+      - SymmetricProperty
+      - AsymmetricProperty
+      - InverseFunctionalProperty
+      - TransitiveProperty
+      - FunctionalProperty
+      - ObjectProperty
+  - owl:inverseOf:
+    - object_property_inverse_of:
+      - FunctionalProperty
+      - AsymmetricProperty
+      - InverseFunctionalProperty
+      - SymmetricProperty
+      - ObjectProperty
+      - ReflexiveProperty
+      - TransitiveProperty
+      - IrreflexiveProperty
+  - rdfs:range:
+    - object_property_range: Class
+  - rdfs:domain:
+    - object_property_domain: Class
+  - schema:comment:
+    - object_property_comment: string
+  - skos:example:
+    - object_property_example: string
+  - dc:description:
+    - object_property_description:
+      - string
+      - string
+  - ns1:equivalentTo:
+    - object_property_equivalent_to:
+      - string
+      - anyURI
+  - dc11:identifier:
+    - object_property_identifier: string
+  - dc:alternative:
+    - object_property_alternative:
+      - string
+      - string
+  - rdfs:label:
+    - object_property_label: string
+  - dc11:description:
+    - object_property_description: string
+  - ns1:subset:
+    - object_property_subset:
+      - string
+      - string
+- Ontology:
+  - rdfs:isDefinedBy:
+    - ontology_is_defined_by: Ontology
+  - ns2:preferredNamespacePrefix:
+    - ontology_preferred_namespace_prefix: string
+  - schema:comment:
+    - ontology_comment: string
+  - dc:creator:
+    - ontology_creator: anyURI
+  - dc:issued:
+    - ontology_issued: '2000-01-01'
+  - ns3:defaultLanguage:
+    - ontology_default_language: string
+  - rdfs:seeAlso:
+    - ontology_see_also: anyURI
+  - dc11:creator:
+    - ontology_creator: string
+  - ns4:citesAsAuthority:
+    - ontology_cites_as_authority: anyURI
+  - dc:description:
+    - ontology_description: string
+  - dc:rights:
+    - ontology_rights: string
+  - owl:versionInfo:
+    - ontology_version_info: string
+  - dc11:contributor:
+    - ontology_contributor: string
+  - dc:title:
+    - ontology_title: string
+  - dc:modified:
+    - ontology_modified: '2000-01-01'
+  - ns2:preferredNamespaceUri:
+    - ontology_preferred_namespace_uri: string
+  - dc11:identifier:
+    - ontology_identifier: string
+- AllDisjointClasses:
+  - dc11:identifier:
+    - all_disjoint_classes_identifier: string
+- AsymmetricProperty:
+  - rdfs:isDefinedBy:
+    - asymmetric_property_is_defined_by: Ontology
+  - rdfs:subPropertyOf:
+    - asymmetric_property_sub_property_of:
+      - ReflexiveProperty
+      - TransitiveProperty
+      - ObjectProperty
+  - owl:inverseOf:
+    - asymmetric_property_inverse_of:
+      - AsymmetricProperty
+      - ObjectProperty
+      - IrreflexiveProperty
+  - skos:example:
+    - asymmetric_property_example: string
+  - dc:description:
+    - asymmetric_property_description: string
+  - ns1:equivalentTo:
+    - asymmetric_property_equivalent_to: string
+  - dc11:identifier:
+    - asymmetric_property_identifier: string
+  - rdfs:label:
+    - asymmetric_property_label: string
+  - ns1:subset:
+    - asymmetric_property_subset: string
+- FunctionalProperty:
+  - rdfs:isDefinedBy:
+    - functional_property_is_defined_by: Ontology
+  - rdfs:subPropertyOf:
+    - functional_property_sub_property_of:
+      - SymmetricProperty
+      - ObjectProperty
+      - FunctionalProperty
+      - TransitiveProperty
+  - owl:inverseOf:
+    - functional_property_inverse_of:
+      - FunctionalProperty
+      - InverseFunctionalProperty
+      - ObjectProperty
+  - rdfs:range:
+    - functional_property_range: Class
+  - rdfs:domain:
+    - functional_property_domain: Class
+  - dc:description:
+    - functional_property_description: string
+  - dc11:identifier:
+    - functional_property_identifier: string
+  - rdfs:label:
+    - functional_property_label: string
+  - ns1:subset:
+    - functional_property_subset:
+      - string
+      - string
+- TransitiveProperty:
+  - rdfs:isDefinedBy:
+    - transitive_property_is_defined_by: Ontology
+  - rdfs:subPropertyOf:
+    - transitive_property_sub_property_of:
+      - TransitiveProperty
+      - SymmetricProperty
+      - ObjectProperty
+  - owl:inverseOf:
+    - transitive_property_inverse_of:
+      - ObjectProperty
+      - ReflexiveProperty
+      - TransitiveProperty
+  - rdfs:range:
+    - transitive_property_range: Class
+  - rdfs:domain:
+    - transitive_property_domain: Class
+  - schema:comment:
+    - transitive_property_comment: string
+  - skos:example:
+    - transitive_property_example: string
+  - dc:description:
+    - transitive_property_description: string
+  - ns1:equivalentTo:
+    - transitive_property_equivalent_to: string
+  - dc11:identifier:
+    - transitive_property_identifier: string
+  - dc:alternative:
+    - transitive_property_alternative: string
+  - rdfs:label:
+    - transitive_property_label: string
+  - ns1:subset:
+    - transitive_property_subset: string
+- Restriction:
+  - owl:onProperty:
+    - restriction_on_property:
+      - TransitiveProperty
+      - ReflexiveProperty
+      - AsymmetricProperty
+      - DatatypeProperty
+      - InverseFunctionalProperty
+      - FunctionalProperty
+      - ObjectProperty
+      - IrreflexiveProperty
+      - SymmetricProperty
+  - owl:onClass:
+    - restriction_on_class: Class
+  - owl:someValuesFrom:
+    - restriction_some_values_from:
+      - Class
+      - Datatype
+      - Restriction
+  - owl:allValuesFrom:
+    - restriction_all_values_from:
+      - Class
+      - Restriction
+  - owl:minQualifiedCardinality:
+    - restriction_min_qualified_cardinality: nonNegativeInteger
+  - owl:hasValue:
+    - restriction_has_value:
+      - string
+      - true
+  - owl:qualifiedCardinality:
+    - restriction_qualified_cardinality: nonNegativeInteger
+  - owl:maxQualifiedCardinality:
+    - restriction_max_qualified_cardinality: nonNegativeInteger
+  - dc11:identifier:
+    - restriction_identifier: string
+- DatatypeProperty:
+  - rdfs:isDefinedBy:
+    - datatype_property_is_defined_by: Ontology
+  - dc:description:
+    - datatype_property_description: string
+  - dc11:identifier:
+    - datatype_property_identifier: string
+  - rdfs:label:
+    - datatype_property_label: string
+  - ns1:subset:
+    - datatype_property_subset:
+      - string
+      - string
+- AnnotationProperty:
+  - rdfs:isDefinedBy:
+    - annotation_property_is_defined_by: Ontology
+  - dc11:identifier:
+    - annotation_property_identifier: string
+- SymmetricProperty:
+  - rdfs:isDefinedBy:
+    - symmetric_property_is_defined_by: Ontology
+  - rdfs:subPropertyOf:
+    - symmetric_property_sub_property_of:
+      - ObjectProperty
+      - TransitiveProperty
+      - SymmetricProperty
+  - owl:inverseOf:
+    - symmetric_property_inverse_of:
+      - ObjectProperty
+      - SymmetricProperty
+  - rdfs:range:
+    - symmetric_property_range: Class
+  - rdfs:domain:
+    - symmetric_property_domain: Class
+  - schema:comment:
+    - symmetric_property_comment: string
+  - skos:example:
+    - symmetric_property_example: string
+  - dc:description:
+    - symmetric_property_description: string
+  - ns1:equivalentTo:
+    - symmetric_property_equivalent_to:
+      - anyURI
+      - string
+  - dc11:identifier:
+    - symmetric_property_identifier: string
+  - dc:alternative:
+    - symmetric_property_alternative: string
+  - rdfs:label:
+    - symmetric_property_label: string
+  - ns1:subset:
+    - symmetric_property_subset: string
+- Datatype:
+  - dc11:identifier:
+    - datatype_identifier: string
+- ReflexiveProperty:
+  - rdfs:isDefinedBy:
+    - reflexive_property_is_defined_by: Ontology
+  - rdfs:subPropertyOf:
+    - reflexive_property_sub_property_of:
+      - ObjectProperty
+      - SymmetricProperty
+      - TransitiveProperty
+  - owl:inverseOf:
+    - reflexive_property_inverse_of:
+      - ReflexiveProperty
+      - TransitiveProperty
+      - ObjectProperty
+  - skos:example:
+    - reflexive_property_example: string
+  - dc:description:
+    - reflexive_property_description: string
+  - ns1:equivalentTo:
+    - reflexive_property_equivalent_to: string
+  - dc11:identifier:
+    - reflexive_property_identifier: string
+  - rdfs:label:
+    - reflexive_property_label: string
+  - ns1:subset:
+    - reflexive_property_subset: string
+- InverseFunctionalProperty:
+  - rdfs:isDefinedBy:
+    - inverse_functional_property_is_defined_by: Ontology
+  - rdfs:subPropertyOf:
+    - inverse_functional_property_sub_property_of:
+      - InverseFunctionalProperty
+      - ObjectProperty
+  - owl:inverseOf:
+    - inverse_functional_property_inverse_of:
+      - ObjectProperty
+      - FunctionalProperty
+  - rdfs:range:
+    - inverse_functional_property_range: Class
+  - skos:example:
+    - inverse_functional_property_example: string
+  - dc:description:
+    - inverse_functional_property_description: string
+  - dc11:identifier:
+    - inverse_functional_property_identifier: string
+  - rdfs:label:
+    - inverse_functional_property_label: string
+- IrreflexiveProperty:
+  - rdfs:isDefinedBy:
+    - irreflexive_property_is_defined_by: Ontology
+  - rdfs:subPropertyOf:
+    - irreflexive_property_sub_property_of:
+      - TransitiveProperty
+      - ReflexiveProperty
+      - ObjectProperty
+  - owl:inverseOf:
+    - irreflexive_property_inverse_of:
+      - IrreflexiveProperty
+      - AsymmetricProperty
+      - ObjectProperty
+  - rdfs:domain:
+    - irreflexive_property_domain: Class
+  - skos:example:
+    - irreflexive_property_example: string
+  - dc:description:
+    - irreflexive_property_description: string
+  - ns1:equivalentTo:
+    - irreflexive_property_equivalent_to: string
+  - dc11:identifier:
+    - irreflexive_property_identifier: string
+  - rdfs:label:
+    - irreflexive_property_label: string
+  - ns1:subset:
+    - irreflexive_property_subset: string

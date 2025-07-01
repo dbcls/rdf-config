@@ -1,0 +1,1178 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sbm: <http://sparqlbuilder.org/2015/09/rdf-metadata-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://rdfportal.org/ns/> .
+
+<http://rdfportal.org/ns/0043cbe9ef4a2d41e9780c29a9618200>
+    void:classPartition [
+        void:class <https://identifiers.org/ito:Dataset> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class owl:NamedIndividual ;
+        void:entities 37222 ;
+        a void:Dataset
+    ], [
+        void:class owl:Restriction ;
+        void:entities 643 ;
+        a void:Dataset
+    ], [
+        void:class owl:ObjectProperty ;
+        void:entities 15 ;
+        a void:Dataset
+    ], [
+        void:class <http://edamontology.org/data_0971> ;
+        void:entities 11749 ;
+        a void:Dataset
+    ], [
+        void:class <https://identifiers.org/ito:ITO_61417> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <https://identifiers.org/ito:ITO_00372> ;
+        void:entities 15 ;
+        a void:Dataset
+    ], [
+        void:class owl:Class ;
+        void:entities 16283 ;
+        a void:Dataset
+    ], [
+        void:class owl:Ontology ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://edamontology.org/data_3442> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <https://identifiers.org/ito:ITO_00926> ;
+        void:entities 16 ;
+        a void:Dataset
+    ], [
+        void:class <https://identifiers.org/ito:Software> ;
+        void:entities 20020 ;
+        a void:Dataset
+    ], [
+        void:class owl:DatatypeProperty ;
+        void:entities 3178 ;
+        a void:Dataset
+    ], [
+        void:class <https://identifiers.org/ito:ITO_01137> ;
+        void:entities 16 ;
+        a void:Dataset
+    ], [
+        void:class owl:Axiom ;
+        void:entities 16 ;
+        a void:Dataset
+    ], [
+        void:class <https://identifiers.org/ito:Benchmark_dataset> ;
+        void:entities 5450 ;
+        a void:Dataset
+    ], [
+        void:class owl:AnnotationProperty ;
+        void:entities 28 ;
+        a void:Dataset
+    ] ;
+    void:classes 17 ;
+    void:distinctObjects 177442 ;
+    void:distinctSubjects 57414 ;
+    void:properties 54 ;
+    void:propertyPartition [
+        void:property dc:source ;
+        void:triples 52713 ;
+        sbm:classRelation [
+            void:triples 11749 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://edamontology.org/data_0971> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 12493 ;
+            sbm:objectClass <https://identifiers.org/ito:Dataset> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11749 ;
+            sbm:objectClass <https://identifiers.org/ito:Dataset> ;
+            sbm:subjectClass <http://edamontology.org/data_0971> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5450 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <https://identifiers.org/ito:Benchmark_dataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3001 ;
+            sbm:objectClass <https://identifiers.org/ito:Dataset> ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 12493 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5450 ;
+            sbm:objectClass <https://identifiers.org/ito:Dataset> ;
+            sbm:subjectClass <https://identifiers.org/ito:Benchmark_dataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://edamontology.org/data_3442> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <https://identifiers.org/ito:Dataset> ;
+            sbm:subjectClass <http://edamontology.org/data_3442> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 37219 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 37219 ;
+            sbm:objectClass <https://identifiers.org/ito:Dataset> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3001 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20020 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <https://identifiers.org/ito:Software> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20020 ;
+            sbm:objectClass <https://identifiers.org/ito:Dataset> ;
+            sbm:subjectClass <https://identifiers.org/ito:Software> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:equivalentClass ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <https://identifiers.org/ito:ITO_61421> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:decimal ;
+            sbm:subjectClass <https://identifiers.org/ito:ITO_61417> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:decimal ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <https://identifiers.org/ito:ITO_61425> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:decimal ;
+            sbm:subjectClass <https://identifiers.org/ito:ITO_61417> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:decimal ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <https://identifiers.org/ito:ITO_61426> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:decimal ;
+            sbm:subjectClass <https://identifiers.org/ito:ITO_61417> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:decimal ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.geneontology.org/formats/oboInOwl#creation_date> ;
+        void:triples 46595 ;
+        sbm:classRelation [
+            void:triples 52 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7866 ;
+            sbm:objectDatatype xsd:dateTime ;
+            sbm:subjectClass <http://edamontology.org/data_0971> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 173 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2255 ;
+            sbm:objectDatatype xsd:dateTime ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3646 ;
+            sbm:objectDatatype xsd:dateTime ;
+            sbm:subjectClass <https://identifiers.org/ito:Benchmark_dataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 12579 ;
+            sbm:objectDatatype xsd:dateTime ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 31534 ;
+            sbm:objectDatatype xsd:dateTime ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20022 ;
+            sbm:objectDatatype xsd:dateTime ;
+            sbm:subjectClass <https://identifiers.org/ito:Software> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.geneontology.org/formats/oboInOwl#date> ;
+        void:triples 11687 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:date ;
+            sbm:subjectClass <https://identifiers.org/ito:ITO_61417> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11684 ;
+            sbm:objectDatatype xsd:date ;
+            sbm:subjectClass <http://edamontology.org/data_0971> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:date ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11686 ;
+            sbm:objectDatatype xsd:date ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <https://identifiers.org/ito:ITO_61418> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:decimal ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:decimal ;
+            sbm:subjectClass <https://identifiers.org/ito:ITO_61417> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:subPropertyOf ;
+        void:triples 5405 ;
+        sbm:classRelation [
+            void:triples 5401 ;
+            sbm:objectClass owl:DatatypeProperty ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <https://identifiers.org/ito:ITO_15911> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:decimal ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <https://identifiers.org/ito:ITO_61428> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:decimal ;
+            sbm:subjectClass <https://identifiers.org/ito:ITO_61417> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:decimal ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <https://identifiers.org/ito:has_input> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <https://identifiers.org/ito:ITO_61417> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <https://identifiers.org/ito:Benchmark_dataset> ;
+            sbm:subjectClass <https://identifiers.org/ito:ITO_61417> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <https://identifiers.org/ito:Benchmark_dataset> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.geneontology.org/formats/oboInOwl#hasDefinition> ;
+        void:triples 3845 ;
+        sbm:classRelation [
+            void:triples 11 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3824 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3823 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:AnnotationProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:label ;
+        void:triples 56703 ;
+        sbm:classRelation [
+            void:triples 37221 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20020 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <https://identifiers.org/ito:Software> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://edamontology.org/data_3442> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <https://identifiers.org/ito:ITO_61417> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:AnnotationProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16280 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16282 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3177 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5450 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <https://identifiers.org/ito:Benchmark_dataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 15 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11749 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://edamontology.org/data_0971> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:isDefinedBy ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> ;
+        void:triples 39 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:AnnotationProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 31 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dc:date ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:dateTime ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <https://identifiers.org/ito:ITO_61430> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:decimal ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:decimal ;
+            sbm:subjectClass <https://identifiers.org/ito:ITO_61417> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdf:type ;
+        void:triples 94656 ;
+        sbm:classRelation [
+            void:triples 20020 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <https://identifiers.org/ito:Software> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://edamontology.org/data_3442> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 36 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <https://identifiers.org/ito:ITO_00926> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11749 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://edamontology.org/data_0971> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <https://identifiers.org/ito:Dataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <https://identifiers.org/ito:ITO_61417> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 33 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <https://identifiers.org/ito:ITO_00372> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5451 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <https://identifiers.org/ito:Benchmark_dataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 36 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <https://identifiers.org/ito:ITO_01137> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 37222 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://edamontology.org/documentation> ;
+        void:triples 264 ;
+        sbm:classRelation [
+            void:triples 22 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <https://identifiers.org/ito:ITO_61427> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:decimal ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:decimal ;
+            sbm:subjectClass <https://identifiers.org/ito:ITO_61417> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <https://identifiers.org/ito:ITO_61431> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:decimal ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:decimal ;
+            sbm:subjectClass <https://identifiers.org/ito:ITO_61417> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <https://identifiers.org/ito:ITO_61420> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:decimal ;
+            sbm:subjectClass <https://identifiers.org/ito:ITO_61417> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:decimal ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:subClassOf ;
+        void:triples 29774 ;
+        sbm:classRelation [
+            void:triples 29126 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 642 ;
+            sbm:objectClass owl:Restriction ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
+        void:triples 411 ;
+        sbm:classRelation [
+            void:triples 274 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:range ;
+        void:triples 5 ;
+        sbm:classRelation [
+            void:triples 5 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <https://identifiers.org/ito:papers_with_code_id> ;
+        void:triples 54138 ;
+        sbm:classRelation [
+            void:triples 13918 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11749 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://edamontology.org/data_0971> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5450 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <https://identifiers.org/ito:Benchmark_dataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://edamontology.org/data_3442> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20020 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <https://identifiers.org/ito:Software> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 37219 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3001 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym> ;
+        void:triples 64 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:AnnotationProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 62 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://edamontology.org/is_refactor_candidate> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:comment ;
+        void:triples 590 ;
+        sbm:classRelation [
+            void:triples 16 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Axiom ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:AnnotationProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 10 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 39 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 522 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dc:creator ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <https://identifiers.org/ito:ITO_61419> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:decimal ;
+            sbm:subjectClass <https://identifiers.org/ito:ITO_61417> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:decimal ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <https://identifiers.org/ito:ITO_61423> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:decimal ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:decimal ;
+            sbm:subjectClass <https://identifiers.org/ito:ITO_61417> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:annotatedTarget ;
+        void:triples 16 ;
+        sbm:classRelation [
+            void:triples 14 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Axiom ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:disjointWith ;
+        void:triples 6 ;
+        sbm:classRelation [
+            void:triples 6 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:annotatedSource ;
+        void:triples 16 ;
+        sbm:classRelation [
+            void:triples 6 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:Axiom ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 10 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Axiom ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:versionInfo ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ;
+        void:triples 1382 ;
+        sbm:classRelation [
+            void:triples 1352 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym> ;
+        void:triples 1035 ;
+        sbm:classRelation [
+            void:triples 1033 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:seeAlso ;
+        void:triples 41422 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass <https://identifiers.org/ito:Software> ;
+            sbm:subjectClass <https://identifiers.org/ito:ITO_61417> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://edamontology.org/data_0971> ;
+            sbm:subjectClass <https://identifiers.org/ito:ITO_61417> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20020 ;
+            sbm:objectClass <http://edamontology.org/data_0971> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 82 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <https://identifiers.org/ito:ITO_61417> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <https://identifiers.org/ito:ITO_61417> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20018 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <https://identifiers.org/ito:Software> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20915 ;
+            sbm:objectClass owl:DatatypeProperty ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20022 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <https://identifiers.org/ito:Software> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://edamontology.org/data_0971> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20018 ;
+            sbm:objectClass <http://edamontology.org/data_0971> ;
+            sbm:subjectClass <https://identifiers.org/ito:Software> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 15 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:domain ;
+        void:triples 8 ;
+        sbm:classRelation [
+            void:triples 8 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://edamontology.org/file_extension> ;
+        void:triples 26 ;
+        sbm:classRelation [
+            void:triples 26 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:annotatedProperty ;
+        void:triples 16 ;
+        sbm:classRelation [
+            void:triples 16 ;
+            sbm:objectClass owl:AnnotationProperty ;
+            sbm:subjectClass owl:Axiom ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <https://identifiers.org/ito:ITO_61422> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:decimal ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:decimal ;
+            sbm:subjectClass <https://identifiers.org/ito:ITO_61417> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://edamontology.org/example> ;
+        void:triples 33 ;
+        sbm:classRelation [
+            void:triples 13 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:onProperty ;
+        void:triples 643 ;
+        sbm:classRelation [
+            void:triples 643 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <https://identifiers.org/ito:ITO_61424> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:decimal ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:decimal ;
+            sbm:subjectClass <https://identifiers.org/ito:ITO_61417> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:hasValue ;
+        void:triples 7 ;
+        sbm:classRelation [
+            void:triples 6 ;
+            sbm:objectClass <https://identifiers.org/ito:Software> ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <https://identifiers.org/ito:Benchmark_dataset> ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:someValuesFrom ;
+        void:triples 636 ;
+        sbm:classRelation [
+            void:triples 636 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.geneontology.org/formats/oboInOwl#created_by> ;
+        void:triples 230 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 54 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 174 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:inverseOf ;
+        void:triples 5 ;
+        sbm:classRelation [
+            void:triples 5 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <https://identifiers.org/ito:ITO_61429> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:decimal ;
+            sbm:subjectClass <https://identifiers.org/ito:ITO_61417> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:decimal ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://edamontology.org/refactor_comment> ;
+        void:triples 34326 ;
+        sbm:classRelation [
+            void:triples 31501 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7866 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://edamontology.org/data_0971> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1849 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3615 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <https://identifiers.org/ito:Benchmark_dataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20020 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <https://identifiers.org/ito:Software> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 975 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property skos:altLabel ;
+        void:triples 3 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ] ;
+    void:sparqlEndpoint <https://rdfportal.org/bioportal/sparql> ;
+    void:triples 448506 ;
+    a void:Dataset, sd:Graph .

@@ -1,0 +1,128 @@
+- AtAge_30To_39:
+  - rdf:type:
+    - at_age_30_to_39_type: Class
+- DifferentIndividualsAtom:
+  - ns2:argument2:
+    - different_individuals_atom_argument2: Variable
+  - ns2:argument1:
+    - different_individuals_atom_argument1: Variable
+- PositiveButResolved:
+  - rdf:type:
+    - positive_but_resolved_type: Class
+- InInfancy:
+  - rdf:type:
+    - in_infancy_type: Class
+- IndividualPropertyAtom:
+  - ns2:argument2:
+    - individual_property_atom_argument2: Variable
+  - ns2:propertyPredicate:
+    - individual_property_atom_property_predicate:
+      - ObjectProperty
+      - SymmetricProperty
+  - ns2:argument1:
+    - individual_property_atom_argument1: Variable
+- AtAge_60AndOlder:
+  - rdf:type:
+    - at_age_60_and_older_type: Class
+- ClassAtom:
+  - ns2:classPredicate:
+    - class_atom_class_predicate: Class
+  - ns2:argument1:
+    - class_atom_argument1: Variable
+- AtAge_20To_29:
+  - rdf:type:
+    - at_age_20_to_29_type: Class
+- AtAge_50To_59:
+  - rdf:type:
+    - at_age_50_to_59_type: Class
+- DatatypeProperty:
+  - rdfs:domain:
+    - datatype_property_domain: Class
+- Negative:
+  - rdf:type:
+    - negative_type: Class
+- Imp:
+  - ns2:head:
+    - imp_head: AtomList
+  - ns2:body:
+    - imp_body: AtomList
+- Unknown:
+  - rdf:type:
+    - unknown_type: Class
+- ObjectProperty:
+  - rdfs:domain:
+    - object_property_domain: Class
+  - owl:inverseOf:
+    - object_property_inverse_of:
+      - ObjectProperty
+      - SymmetricProperty
+      - InverseFunctionalProperty
+      - FunctionalProperty
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of: ObjectProperty
+  - rdfs:range:
+    - object_property_range: Class
+  - rdfs:comment:
+    - object_property_comment: string
+  - owl:versionInfo:
+    - object_property_version_info: string
+- Class:
+  - owl:equivalentClass:
+    - class_equivalent_class: Class
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+  - rdfs:subClassOf:
+    - class_sub_class_of: Class
+  - rdfs:comment:
+    - class_comment: string
+  - owl:versionInfo:
+    - class_version_info: string
+- Positive:
+  - rdf:type:
+    - positive_type: Class
+- AtAge_40To_49:
+  - rdf:type:
+    - at_age_40_to_49_type: Class
+- AgeUnknown:
+  - rdf:type:
+    - age_unknown_type: Class
+- AtomList:
+  - rdf:rest:
+    - atom_list_rest: AtomList
+  - rdf:first:
+    - atom_list_first:
+      - IndividualPropertyAtom
+      - DifferentIndividualsAtom
+      - ClassAtom
+- SymmetricProperty:
+  - rdfs:domain:
+    - symmetric_property_domain: Class
+  - owl:inverseOf:
+    - symmetric_property_inverse_of:
+      - ObjectProperty
+      - SymmetricProperty
+  - rdfs:subPropertyOf:
+    - symmetric_property_sub_property_of: ObjectProperty
+- FunctionalProperty:
+  - rdfs:domain:
+    - functional_property_domain: Class
+  - owl:inverseOf:
+    - functional_property_inverse_of:
+      - InverseFunctionalProperty
+      - ObjectProperty
+  - rdfs:range:
+    - functional_property_range: Class
+- InverseFunctionalProperty:
+  - rdfs:domain:
+    - inverse_functional_property_domain: Class
+  - owl:inverseOf:
+    - inverse_functional_property_inverse_of:
+      - ObjectProperty
+      - FunctionalProperty
+  - rdfs:range:
+    - inverse_functional_property_range: Class
+  - owl:versionInfo:
+    - inverse_functional_property_version_info: string
+- BeforeAge_20:
+  - rdf:type:
+    - before_age_20_type: Class

@@ -1,0 +1,423 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sbm: <http://sparqlbuilder.org/2015/09/rdf-metadata-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://rdfportal.org/ns/> .
+
+<http://rdfportal.org/ns/0ec02dca37eaf979d8f667b435f54e18>
+    void:classPartition [
+        void:class <http://omv.ontoware.org/2005/05/ontology#OntologyEngineeringTool> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class owl:InverseFunctionalProperty ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class owl:Restriction ;
+        void:entities 50 ;
+        a void:Dataset
+    ], [
+        void:class owl:ObjectProperty ;
+        void:entities 27 ;
+        a void:Dataset
+    ], [
+        void:class owl:Class ;
+        void:entities 27 ;
+        a void:Dataset
+    ], [
+        void:class <http://omv.ontoware.org/2005/05/ontology#Organisation> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://omv.ontoware.org/2005/05/ontology#KnowledgeRepresentationParadigm> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://omv.ontoware.org/2005/05/ontology#OntologyLanguage> ;
+        void:entities 4 ;
+        a void:Dataset
+    ], [
+        void:class owl:DatatypeProperty ;
+        void:entities 38 ;
+        a void:Dataset
+    ], [
+        void:class <http://protege.stanford.edu/ontologies/metadata/BioPortalMetadata.owl#ViewDefinitionLanguage> ;
+        void:entities 7 ;
+        a void:Dataset
+    ], [
+        void:class owl:FunctionalProperty ;
+        void:entities 26 ;
+        a void:Dataset
+    ], [
+        void:class <http://protege.stanford.edu/ontologies/metadata/BioPortalMetadata.owl#ViewGenerationEngine> ;
+        void:entities 5 ;
+        a void:Dataset
+    ] ;
+    void:classes 12 ;
+    void:distinctObjects 296 ;
+    void:distinctSubjects 246 ;
+    void:properties 19 ;
+    void:propertyPartition [
+        void:property <http://omv.ontoware.org/2005/05/ontology#acronym> ;
+        void:triples 22 ;
+        sbm:classRelation [
+            void:triples 5 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://protege.stanford.edu/ontologies/metadata/BioPortalMetadata.owl#ViewGenerationEngine> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://omv.ontoware.org/2005/05/ontology#OntologyLanguage> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://omv.ontoware.org/2005/05/ontology#Organisation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://protege.stanford.edu/ontologies/metadata/BioPortalMetadata.owl#ViewDefinitionLanguage> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:label ;
+        void:triples 27 ;
+        sbm:classRelation [
+            void:triples 6 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://omv.ontoware.org/2005/05/ontology#KnowledgeRepresentationParadigm> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://omv.ontoware.org/2005/05/ontology#OntologyLanguage> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://protege.stanford.edu/ontologies/metadata/BioPortalMetadata.owl#ViewDefinitionLanguage> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://protege.stanford.edu/ontologies/metadata/BioPortalMetadata.owl#ViewGenerationEngine> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://omv.ontoware.org/2005/05/ontology#OntologyEngineeringTool> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:comment ;
+        void:triples 11 ;
+        sbm:classRelation [
+            void:triples 8 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 10 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://omv.ontoware.org/2005/05/ontology#KnowledgeRepresentationParadigm> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://omv.ontoware.org/2005/05/ontology#description> ;
+        void:triples 8 ;
+        sbm:classRelation [
+            void:triples 6 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://protege.stanford.edu/ontologies/metadata/BioPortalMetadata.owl#ViewDefinitionLanguage> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://protege.stanford.edu/ontologies/metadata/BioPortalMetadata.owl#ViewGenerationEngine> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:hasValue ;
+        void:triples 3 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdf:type ;
+        void:triples 192 ;
+        sbm:classRelation [
+            void:triples 7 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://protege.stanford.edu/ontologies/metadata/BioPortalMetadata.owl#ViewDefinitionLanguage> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://protege.stanford.edu/ontologies/metadata/BioPortalMetadata.owl#ViewGenerationEngine> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:onProperty ;
+        void:triples 50 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 22 ;
+            sbm:objectClass owl:FunctionalProperty ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 23 ;
+            sbm:objectClass owl:DatatypeProperty ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:domain ;
+        void:triples 62 ;
+        sbm:classRelation [
+            void:triples 16 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:InverseFunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 13 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:subPropertyOf ;
+        void:triples 6 ;
+        sbm:classRelation [
+            void:triples 6 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:cardinality ;
+        void:triples 21 ;
+        sbm:classRelation [
+            void:triples 21 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://protege.stanford.edu/ontologies/metadata/BioPortalMetadata.owl#supportsViewDefinitionLanguage> ;
+        void:triples 9 ;
+        sbm:classRelation [
+            void:triples 9 ;
+            sbm:objectClass <http://protege.stanford.edu/ontologies/metadata/BioPortalMetadata.owl#ViewDefinitionLanguage> ;
+            sbm:subjectClass <http://protege.stanford.edu/ontologies/metadata/BioPortalMetadata.owl#ViewGenerationEngine> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:subClassOf ;
+        void:triples 60 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 34 ;
+            sbm:objectClass owl:Restriction ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://omv.ontoware.org/2005/05/ontology#documentation> ;
+        void:triples 8 ;
+        sbm:classRelation [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://protege.stanford.edu/ontologies/metadata/BioPortalMetadata.owl#ViewDefinitionLanguage> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://protege.stanford.edu/ontologies/metadata/BioPortalMetadata.owl#ViewGenerationEngine> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:inverseOf ;
+        void:triples 14 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:FunctionalProperty ;
+            sbm:subjectClass owl:InverseFunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:InverseFunctionalProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:InverseFunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:FunctionalProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 14 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:InverseFunctionalProperty ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:maxCardinality ;
+        void:triples 15 ;
+        sbm:classRelation [
+            void:triples 15 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:range ;
+        void:triples 59 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 14 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:minCardinality ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://omv.ontoware.org/2005/05/ontology#name> ;
+        void:triples 26 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://omv.ontoware.org/2005/05/ontology#OntologyEngineeringTool> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://protege.stanford.edu/ontologies/metadata/BioPortalMetadata.owl#ViewDefinitionLanguage> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://omv.ontoware.org/2005/05/ontology#OntologyLanguage> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://protege.stanford.edu/ontologies/metadata/BioPortalMetadata.owl#ViewGenerationEngine> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://omv.ontoware.org/2005/05/ontology#Organisation> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://protege.stanford.edu/ontologies/metadata/BioPortalMetadata.owl#supportedByViewGenerationEngine> ;
+        void:triples 9 ;
+        sbm:classRelation [
+            void:triples 9 ;
+            sbm:objectClass <http://protege.stanford.edu/ontologies/metadata/BioPortalMetadata.owl#ViewGenerationEngine> ;
+            sbm:subjectClass <http://protege.stanford.edu/ontologies/metadata/BioPortalMetadata.owl#ViewDefinitionLanguage> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ] ;
+    void:sparqlEndpoint <https://rdfportal.org/bioportal/sparql> ;
+    void:triples 757 ;
+    a void:Dataset, sd:Graph .

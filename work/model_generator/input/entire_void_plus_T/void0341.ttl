@@ -1,0 +1,1002 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sbm: <http://sparqlbuilder.org/2015/09/rdf-metadata-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://rdfportal.org/ns/> .
+
+<http://rdfportal.org/ns/68899d414134926d0ff8f27e8be294bc>
+    void:classPartition [
+        void:class <http://www.svu.edu.sy/UniversityOntology.owl#Teacher> ;
+        void:entities 6 ;
+        a void:Dataset
+    ], [
+        void:class owl:DatatypeProperty ;
+        void:entities 22 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.svu.edu.sy/UniversityOntology.owl#UndergraduateStudent> ;
+        void:entities 11 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.svu.edu.sy/UniversityOntology.owl#Program> ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.svu.edu.sy/UniversityOntology.owl#University> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class owl:ObjectProperty ;
+        void:entities 8 ;
+        a void:Dataset
+    ], [
+        void:class owl:Class ;
+        void:entities 10 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.svu.edu.sy/UniversityOntology.owl#GraduateStudent> ;
+        void:entities 20 ;
+        a void:Dataset
+    ], [
+        void:class owl:Restriction ;
+        void:entities 8 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.svu.edu.sy/UniversityOntology.owl#Course> ;
+        void:entities 16 ;
+        a void:Dataset
+    ], [
+        void:class owl:NamedIndividual ;
+        void:entities 62 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.svu.edu.sy/UniversityOntology.owl#AcademicTerm> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.svu.edu.sy/UniversityOntology.owl#AcademicYear> ;
+        void:entities 4 ;
+        a void:Dataset
+    ] ;
+    void:classes 13 ;
+    void:distinctObjects 419 ;
+    void:distinctSubjects 110 ;
+    void:properties 41 ;
+    void:propertyPartition [
+        void:property rdfs:subClassOf ;
+        void:triples 9 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.svu.edu.sy/UniversityOntology.owl#Nationality> ;
+        void:triples 31 ;
+        sbm:classRelation [
+            void:triples 20 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#GraduateStudent> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#UndergraduateStudent> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 31 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdf:type ;
+        void:triples 173 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#Program> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#Teacher> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#AcademicYear> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#Course> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#AcademicTerm> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 62 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#UndergraduateStudent> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#GraduateStudent> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#Teacher> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#University> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.svu.edu.sy/UniversityOntology.owl#MaxYear> ;
+        void:triples 3 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#Program> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.svu.edu.sy/UniversityOntology.owl#PriceSyrianPound> ;
+        void:triples 19 ;
+        sbm:classRelation [
+            void:triples 19 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#Course> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#Program> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.svu.edu.sy/UniversityOntology.owl#Identifier> ;
+        void:triples 47 ;
+        sbm:classRelation [
+            void:triples 11 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#UndergraduateStudent> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 47 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#GraduateStudent> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#Course> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.svu.edu.sy/UniversityOntology.owl#LastName> ;
+        void:triples 35 ;
+        sbm:classRelation [
+            void:triples 35 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 19 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#GraduateStudent> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 10 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#UndergraduateStudent> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#Teacher> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.svu.edu.sy/UniversityOntology.owl#StudentGroup> ;
+        void:triples 197 ;
+        sbm:classRelation [
+            void:triples 66 ;
+            sbm:objectClass <http://www.svu.edu.sy/UniversityOntology.owl#UndergraduateStudent> ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#Course> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 77 ;
+            sbm:objectClass <http://www.svu.edu.sy/UniversityOntology.owl#UndergraduateStudent> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 31 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#Program> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 120 ;
+            sbm:objectClass <http://www.svu.edu.sy/UniversityOntology.owl#GraduateStudent> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11 ;
+            sbm:objectClass <http://www.svu.edu.sy/UniversityOntology.owl#UndergraduateStudent> ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#Program> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 100 ;
+            sbm:objectClass <http://www.svu.edu.sy/UniversityOntology.owl#GraduateStudent> ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#Course> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.svu.edu.sy/UniversityOntology.owl#GraduateStudent> ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#Program> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 197 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 166 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#Course> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:onProperty ;
+        void:triples 8 ;
+        sbm:classRelation [
+            void:triples 8 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:qualifiedCardinality ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:nonNegativeInteger ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:equivalentClass ;
+        void:triples 8 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectClass owl:Restriction ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectClass owl:Restriction ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:disjointWith ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:maxQualifiedCardinality ;
+        void:triples 3 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:nonNegativeInteger ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.svu.edu.sy/UniversityOntology.owl#FirstName> ;
+        void:triples 39 ;
+        sbm:classRelation [
+            void:triples 39 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 21 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#GraduateStudent> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#Teacher> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 12 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#UndergraduateStudent> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.svu.edu.sy/UniversityOntology.owl#CourseDescription> ;
+        void:triples 16 ;
+        sbm:classRelation [
+            void:triples 16 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#Course> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.svu.edu.sy/UniversityOntology.owl#Has> ;
+        void:triples 6 ;
+        sbm:classRelation [
+            void:triples 6 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#Program> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass <http://www.svu.edu.sy/UniversityOntology.owl#AcademicYear> ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#Program> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass <http://www.svu.edu.sy/UniversityOntology.owl#AcademicYear> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:range ;
+        void:triples 31 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:inverseOf ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.svu.edu.sy/UniversityOntology.owl#Phone> ;
+        void:triples 31 ;
+        sbm:classRelation [
+            void:triples 31 ;
+            sbm:objectDatatype xsd:long ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectDatatype xsd:long ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#GraduateStudent> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11 ;
+            sbm:objectDatatype xsd:long ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#UndergraduateStudent> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.svu.edu.sy/UniversityOntology.owl#Include> ;
+        void:triples 16 ;
+        sbm:classRelation [
+            void:triples 16 ;
+            sbm:objectClass <http://www.svu.edu.sy/UniversityOntology.owl#Course> ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#Program> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#Program> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16 ;
+            sbm:objectClass <http://www.svu.edu.sy/UniversityOntology.owl#Course> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.svu.edu.sy/UniversityOntology.owl#Teaches> ;
+        void:triples 20 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#Teacher> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 19 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#Course> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 19 ;
+            sbm:objectClass <http://www.svu.edu.sy/UniversityOntology.owl#Teacher> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.svu.edu.sy/UniversityOntology.owl#Course> ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#Teacher> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.svu.edu.sy/UniversityOntology.owl#Course> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 19 ;
+            sbm:objectClass <http://www.svu.edu.sy/UniversityOntology.owl#Teacher> ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#Course> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.svu.edu.sy/UniversityOntology.owl#MinYear> ;
+        void:triples 3 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#Program> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:domain ;
+        void:triples 44 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 34 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 10 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.svu.edu.sy/UniversityOntology.owl#Register> ;
+        void:triples 197 ;
+        sbm:classRelation [
+            void:triples 100 ;
+            sbm:objectClass <http://www.svu.edu.sy/UniversityOntology.owl#Course> ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#GraduateStudent> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11 ;
+            sbm:objectClass <http://www.svu.edu.sy/UniversityOntology.owl#Program> ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#UndergraduateStudent> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 197 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.svu.edu.sy/UniversityOntology.owl#Program> ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#GraduateStudent> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 66 ;
+            sbm:objectClass <http://www.svu.edu.sy/UniversityOntology.owl#Course> ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#UndergraduateStudent> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 31 ;
+            sbm:objectClass <http://www.svu.edu.sy/UniversityOntology.owl#Program> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 166 ;
+            sbm:objectClass <http://www.svu.edu.sy/UniversityOntology.owl#Course> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 120 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#GraduateStudent> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 77 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#UndergraduateStudent> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:comment ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.svu.edu.sy/UniversityOntology.owl#HasOrganizationName> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#University> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.svu.edu.sy/UniversityOntology.owl#HomePage> ;
+        void:triples 55 ;
+        sbm:classRelation [
+            void:triples 11 ;
+            sbm:objectDatatype xsd:anyURI ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#UndergraduateStudent> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectDatatype xsd:anyURI ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#Teacher> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 14 ;
+            sbm:objectDatatype xsd:anyURI ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#Course> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#Course> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#Course> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectDatatype xsd:anyURI ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#GraduateStudent> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 53 ;
+            sbm:objectDatatype xsd:anyURI ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:anyURI ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#University> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.svu.edu.sy/UniversityOntology.owl#SiteAddress> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#University> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.svu.edu.sy/UniversityOntology.owl#PriceEuro> ;
+        void:triples 19 ;
+        sbm:classRelation [
+            void:triples 16 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#Course> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#Program> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 19 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.svu.edu.sy/UniversityOntology.owl#EducationalBackground> ;
+        void:triples 6 ;
+        sbm:classRelation [
+            void:triples 6 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#Teacher> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.svu.edu.sy/UniversityOntology.owl#Gender> ;
+        void:triples 37 ;
+        sbm:classRelation [
+            void:triples 37 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#GraduateStudent> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#UndergraduateStudent> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#Teacher> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.svu.edu.sy/UniversityOntology.owl#Logo> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:anyURI ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#University> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:anyURI ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.svu.edu.sy/UniversityOntology.owl#CourseTitle> ;
+        void:triples 16 ;
+        sbm:classRelation [
+            void:triples 16 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#Course> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.svu.edu.sy/UniversityOntology.owl#TeacherOf> ;
+        void:triples 18 ;
+        sbm:classRelation [
+            void:triples 18 ;
+            sbm:objectClass <http://www.svu.edu.sy/UniversityOntology.owl#Course> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 18 ;
+            sbm:objectClass <http://www.svu.edu.sy/UniversityOntology.owl#Course> ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#Teacher> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 18 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#Teacher> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 18 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.svu.edu.sy/UniversityOntology.owl#Email> ;
+        void:triples 36 ;
+        sbm:classRelation [
+            void:triples 20 ;
+            sbm:objectDatatype xsd:anyURI ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#GraduateStudent> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11 ;
+            sbm:objectDatatype xsd:anyURI ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#UndergraduateStudent> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectDatatype xsd:anyURI ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#Teacher> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 36 ;
+            sbm:objectDatatype xsd:anyURI ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.svu.edu.sy/UniversityOntology.owl#code> ;
+        void:triples 15 ;
+        sbm:classRelation [
+            void:triples 15 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#Course> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 15 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.svu.edu.sy/UniversityOntology.owl#Comment> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#University> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:minQualifiedCardinality ;
+        void:triples 3 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:nonNegativeInteger ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.svu.edu.sy/UniversityOntology.owl#Teacher> ;
+        void:triples 13 ;
+        sbm:classRelation [
+            void:triples 13 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#Program> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 13 ;
+            sbm:objectClass <http://www.svu.edu.sy/UniversityOntology.owl#Teacher> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 13 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 13 ;
+            sbm:objectClass <http://www.svu.edu.sy/UniversityOntology.owl#Teacher> ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#Program> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:onClass ;
+        void:triples 8 ;
+        sbm:classRelation [
+            void:triples 8 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.svu.edu.sy/UniversityOntology.owl#HeadOf> ;
+        void:triples 4 ;
+        sbm:classRelation [
+            void:triples 4 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#University> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#Program> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://www.svu.edu.sy/UniversityOntology.owl#Teacher> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://www.svu.edu.sy/UniversityOntology.owl#Teacher> ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#Program> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.svu.edu.sy/UniversityOntology.owl#Teacher> ;
+            sbm:subjectClass <http://www.svu.edu.sy/UniversityOntology.owl#University> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ] ;
+    void:sparqlEndpoint <https://rdfportal.org/bioportal/sparql> ;
+    void:triples 1176 ;
+    a void:Dataset, sd:Graph .

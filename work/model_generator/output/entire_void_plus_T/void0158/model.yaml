@@ -1,0 +1,352 @@
+- ConceptScheme:
+  - ns3:hierarchyChildProperty:
+    - concept_scheme_hierarchy_child_property: AnnotationProperty
+  - rdf:type:
+    - concept_scheme_type: Class
+  - dc:creator:
+    - concept_scheme_creator: Agent
+  - ns3:hierarchyRootProperty:
+    - concept_scheme_hierarchy_root_property: AnnotationProperty
+  - dc:title:
+    - concept_scheme_title: string
+  - ns4:preferredNamespacePrefix:
+    - concept_scheme_preferred_namespace_prefix: string
+  - dc:created:
+    - concept_scheme_created: '2000-01-01'
+  - rdfs:label:
+    - concept_scheme_label: string
+  - dc:rights:
+    - concept_scheme_rights:
+      - string
+      - string
+  - dc:source:
+    - concept_scheme_source: string
+  - ns4:preferredNamespaceUri:
+    - concept_scheme_preferred_namespace_uri: string
+  - dc:description:
+    - concept_scheme_description:
+      - string
+      - HTML
+  - dc:modified:
+    - concept_scheme_modified: '2000-01-01'
+  - dc:isFormatOf:
+    - concept_scheme_is_format_of: HTML
+  - ns5:notation:
+    - concept_scheme_notation: string
+  - skos:changeNote:
+    - concept_scheme_change_note: string
+- Concept:
+  - skos:topConceptOf:
+    - concept_top_concept_of:
+      - ConceptScheme
+      - Ontology
+      - NamedIndividual
+  - rdf:type:
+    - concept_type: Class
+  - owl:sameAs:
+    - concept_same_as: NamedIndividual
+  - ns3:isMemberOf:
+    - concept_is_member_of:
+      - NamedIndividual
+      - Collection
+      - ObservableProperty
+  - skos:inScheme:
+    - concept_in_scheme:
+      - Ontology
+      - ConceptScheme
+      - NamedIndividual
+  - rdfs:label:
+    - concept_label: string
+  - skos:prefLabel:
+    - concept_pref_label: string
+  - rdfs:comment:
+    - concept_comment:
+      - string
+      - string
+  - skos:definition:
+    - concept_definition: string
+  - dc:identifier:
+    - concept_identifier: anyURI
+  - dc:description:
+    - concept_description: string
+  - skos:altLabel:
+    - concept_alt_label: string
+  - skos:notation:
+    - concept_notation: string
+- Agent:
+  - rdf:type:
+    - agent_type: Class
+  - foaf:name:
+    - agent_name: string
+- Class:
+  - rdfs:isDefinedBy:
+    - class_is_defined_by:
+      - Vocabulary
+      - NamedIndividual
+  - rdfs:label:
+    - class_label: string
+  - ns6:prefixIRI:
+    - class_prefix_iri: string
+  - rdfs:comment:
+    - class_comment: string
+  - skos:definition:
+    - class_definition: string
+  - skos:note:
+    - class_note: string
+  - skos:example:
+    - class_example: string
+- Ontology:
+  - ns3:hierarchyChildProperty:
+    - ontology_hierarchy_child_property: AnnotationProperty
+  - rdf:type:
+    - ontology_type: Class
+  - dc:creator:
+    - ontology_creator: Agent
+  - ns3:hierarchyRootProperty:
+    - ontology_hierarchy_root_property: AnnotationProperty
+  - dc:title:
+    - ontology_title: string
+  - ns4:preferredNamespacePrefix:
+    - ontology_preferred_namespace_prefix: string
+  - dc:created:
+    - ontology_created: '2000-01-01'
+  - rdfs:label:
+    - ontology_label: string
+  - dc:rights:
+    - ontology_rights:
+      - string
+      - string
+  - dc:source:
+    - ontology_source: string
+  - ns4:preferredNamespaceUri:
+    - ontology_preferred_namespace_uri: string
+  - dc:description:
+    - ontology_description:
+      - HTML
+      - string
+  - dc:modified:
+    - ontology_modified: '2000-01-01'
+  - dc:isFormatOf:
+    - ontology_is_format_of: HTML
+  - ns5:notation:
+    - ontology_notation: string
+  - skos:changeNote:
+    - ontology_change_note: string
+- Collection:
+  - rdf:type:
+    - collection_type: Class
+  - skos:member:
+    - collection_member:
+      - Collection
+      - ObservableProperty
+      - Concept
+      - NamedIndividual
+  - owl:sameAs:
+    - collection_same_as:
+      - ObservableProperty
+      - NamedIndividual
+      - Collection
+  - ns3:isMemberOf:
+    - collection_is_member_of:
+      - NamedIndividual
+      - ObservableProperty
+      - Collection
+  - rdfs:label:
+    - collection_label: string
+  - skos:prefLabel:
+    - collection_pref_label: string
+  - rdfs:comment:
+    - collection_comment:
+      - string
+      - string
+  - skos:definition:
+    - collection_definition: string
+  - dc:identifier:
+    - collection_identifier: anyURI
+  - dc:description:
+    - collection_description:
+      - HTML
+      - string
+  - skos:note:
+    - collection_note: string
+  - skos:notation:
+    - collection_notation: string
+- ObjectProperty:
+  - schema:rangeIncludes:
+    - object_property_range_includes: Class
+  - schema:domainIncludes:
+    - object_property_domain_includes: Class
+  - owl:inverseOf:
+    - object_property_inverse_of: ObjectProperty
+  - rdfs:isDefinedBy:
+    - object_property_is_defined_by:
+      - Vocabulary
+      - NamedIndividual
+  - rdfs:label:
+    - object_property_label: string
+  - rdfs:comment:
+    - object_property_comment: string
+  - skos:definition:
+    - object_property_definition: string
+  - skos:example:
+    - object_property_example: string
+- ObservableProperty:
+  - skos:topConceptOf:
+    - observable_property_top_concept_of:
+      - NamedIndividual
+      - ConceptScheme
+      - Ontology
+  - rdf:type:
+    - observable_property_type: Class
+  - skos:member:
+    - observable_property_member:
+      - ObservableProperty
+      - NamedIndividual
+      - Collection
+      - Concept
+  - owl:sameAs:
+    - observable_property_same_as:
+      - NamedIndividual
+      - ObservableProperty
+      - Collection
+  - ns3:isMemberOf:
+    - observable_property_is_member_of:
+      - Collection
+      - NamedIndividual
+      - ObservableProperty
+  - skos:inScheme:
+    - observable_property_in_scheme:
+      - Ontology
+      - NamedIndividual
+      - ConceptScheme
+  - rdfs:label:
+    - observable_property_label: string
+  - skos:prefLabel:
+    - observable_property_pref_label: string
+  - rdfs:comment:
+    - observable_property_comment:
+      - string
+      - string
+  - skos:definition:
+    - observable_property_definition: string
+  - dc:identifier:
+    - observable_property_identifier: anyURI
+  - dc:description:
+    - observable_property_description:
+      - HTML
+      - string
+  - skos:note:
+    - observable_property_note: string
+  - skos:notation:
+    - observable_property_notation: string
+- Vocabulary:
+  - rdf:type:
+    - vocabulary_type: Class
+  - dc:creator:
+    - vocabulary_creator: Agent
+  - dc:title:
+    - vocabulary_title: string
+  - ns4:preferredNamespacePrefix:
+    - vocabulary_preferred_namespace_prefix: string
+  - dc:created:
+    - vocabulary_created: '2000-01-01'
+  - dc:rights:
+    - vocabulary_rights: string
+  - ns4:preferredNamespaceUri:
+    - vocabulary_preferred_namespace_uri: string
+  - dc:description:
+    - vocabulary_description: string
+- NamedIndividual:
+  - ns3:hierarchyChildProperty:
+    - named_individual_hierarchy_child_property: AnnotationProperty
+  - skos:topConceptOf:
+    - named_individual_top_concept_of:
+      - ConceptScheme
+      - Ontology
+      - NamedIndividual
+  - rdf:type:
+    - named_individual_type: Class
+  - dc:creator:
+    - named_individual_creator: Agent
+  - ns3:hierarchyRootProperty:
+    - named_individual_hierarchy_root_property: AnnotationProperty
+  - skos:member:
+    - named_individual_member:
+      - Concept
+      - ObservableProperty
+      - NamedIndividual
+      - Collection
+  - owl:sameAs:
+    - named_individual_same_as:
+      - ObservableProperty
+      - NamedIndividual
+      - Collection
+  - ns3:isMemberOf:
+    - named_individual_is_member_of:
+      - Collection
+      - ObservableProperty
+      - NamedIndividual
+  - skos:inScheme:
+    - named_individual_in_scheme:
+      - Ontology
+      - NamedIndividual
+      - ConceptScheme
+  - dc:title:
+    - named_individual_title: string
+  - ns4:preferredNamespacePrefix:
+    - named_individual_preferred_namespace_prefix: string
+  - dc:created:
+    - named_individual_created: '2000-01-01'
+  - rdfs:label:
+    - named_individual_label: string
+  - dc:rights:
+    - named_individual_rights:
+      - string
+      - string
+  - skos:prefLabel:
+    - named_individual_pref_label: string
+  - dc:source:
+    - named_individual_source: string
+  - rdfs:comment:
+    - named_individual_comment:
+      - string
+      - string
+  - ns4:preferredNamespaceUri:
+    - named_individual_preferred_namespace_uri: string
+  - skos:definition:
+    - named_individual_definition: string
+  - dc:identifier:
+    - named_individual_identifier: anyURI
+  - dc:description:
+    - named_individual_description:
+      - HTML
+      - string
+  - dc:modified:
+    - named_individual_modified: '2000-01-01'
+  - dc:isFormatOf:
+    - named_individual_is_format_of: HTML
+  - skos:note:
+    - named_individual_note: string
+  - ns5:notation:
+    - named_individual_notation: string
+  - skos:changeNote:
+    - named_individual_change_note: string
+  - skos:altLabel:
+    - named_individual_alt_label: string
+  - skos:notation:
+    - named_individual_notation: string
+- DatatypeProperty:
+  - schema:domainIncludes:
+    - datatype_property_domain_includes: Class
+  - rdfs:isDefinedBy:
+    - datatype_property_is_defined_by:
+      - Vocabulary
+      - NamedIndividual
+  - rdfs:label:
+    - datatype_property_label: string
+  - rdfs:comment:
+    - datatype_property_comment: string
+  - skos:definition:
+    - datatype_property_definition: string
+  - skos:example:
+    - datatype_property_example: string

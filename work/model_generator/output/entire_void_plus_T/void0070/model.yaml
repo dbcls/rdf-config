@@ -1,0 +1,174 @@
+- SymmetricProperty:
+  - rdfs:range:
+    - symmetric_property_range: Class
+  - rdfs:domain:
+    - symmetric_property_domain: Class
+  - rdfs:subPropertyOf:
+    - symmetric_property_sub_property_of: ObjectProperty
+- AnnotationProperty:
+  - ns1:hasScope:
+    - annotation_property_has_scope: AnnotationProperty
+  - rdfs:subPropertyOf:
+    - annotation_property_sub_property_of: AnnotationProperty
+  - rdfs:label:
+    - annotation_property_label: string
+- Axiom:
+  - owl:annotatedSource:
+    - axiom_annotated_source:
+      - ObjectProperty
+      - TransitiveProperty
+      - Class
+  - ns1:hasSynonymType:
+    - axiom_has_synonym_type: AnnotationProperty
+  - owl:annotatedProperty:
+    - axiom_annotated_property: AnnotationProperty
+  - ns1:hasDbXref:
+    - axiom_has_db_xref: string
+  - rdfs:label:
+    - axiom_label: string
+  - owl:annotatedTarget:
+    - axiom_annotated_target: string
+- Ontology:
+  - ns2:IAO_0000700:
+    - ontology_iao_0000700: Class
+  - ns1:hasOBOFormatVersion:
+    - ontology_has_obo_format_version: string
+  - ns1:auto-generated-by:
+    - ontology_auto-generated-by: string
+  - dc:description:
+    - ontology_description: string
+  - ns1:saved-by:
+    - ontology_saved-by: string
+  - ns1:default-namespace:
+    - ontology_default-namespace: string
+  - ns1:date:
+    - ontology_date: string
+  - rdfs:comment:
+    - ontology_comment: string
+  - dc:title:
+    - ontology_title: string
+- ObjectProperty:
+  - rdfs:range:
+    - object_property_range: Class
+  - rdfs:domain:
+    - object_property_domain: Class
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of: ObjectProperty
+  - ns1:hasDbXref:
+    - object_property_has_db_xref: string
+  - rdfs:label:
+    - object_property_label: string
+  - ns1:id:
+    - object_property_id: string
+  - owl:deprecated:
+    - object_property_deprecated: true
+  - ns2:IAO_0000115:
+    - object_property_iao_0000115: string
+  - ns1:shorthand:
+    - object_property_shorthand: string
+  - ns1:hasOBONamespace:
+    - object_property_has_obo_namespace: string
+  - rdfs:comment:
+    - object_property_comment: string
+  - ns1:is_transitive:
+    - object_property_is_transitive: true
+- Class:
+  - ns2:RO_0001025:
+    - class_ro_0001025: Class
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Restriction
+      - Class
+  - ns3:non-covalently_bound_to:
+    - class_non-covalently_bound_to: Class
+  - ns3:lacks_part:
+    - class_lacks_part: Class
+  - ns2:RO_0002215:
+    - class_ro_0002215: Class
+  - ns2:RO_0002331:
+    - class_ro_0002331: Class
+  - ns2:BFO_0000051:
+    - class_bfo_0000051: Class
+  - ns3:confers_resistance_to:
+    - class_confers_resistance_to: Class
+  - ns3:has_gene_template:
+    - class_has_gene_template: Class
+  - ns2:RO_0002160:
+    - class_ro_0002160: Class
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+  - ns2:RO_0001000:
+    - class_ro_0001000: Class
+  - owl:equivalentClass:
+    - class_equivalent_class: Class
+  - ns4:treeView:
+    - class_tree_view: Class
+  - ns2:RO_0002180:
+    - class_ro_0002180: Class
+  - ns2:IAO_0100001:
+    - class_iao_0100001:
+      - Class
+      - string
+  - ns5:part_of:
+    - class_part_of: Class
+  - ns2:RO_0002353:
+    - class_ro_0002353: Class
+  - ns1:hasDbXref:
+    - class_has_db_xref: string
+  - rdfs:label:
+    - class_label: string
+  - ns1:hasBroadSynonym:
+    - class_has_broad_synonym: string
+  - ns1:id:
+    - class_id: string
+  - owl:deprecated:
+    - class_deprecated: true
+  - ns1:consider:
+    - class_consider: string
+  - ns1:hasRelatedSynonym:
+    - class_has_related_synonym: string
+  - ns1:hasNarrowSynonym:
+    - class_has_narrow_synonym: string
+  - ns2:IAO_0000115:
+    - class_iao_0000115: string
+  - ns1:hasAlternativeId:
+    - class_has_alternative_id: string
+  - ns1:hasOBONamespace:
+    - class_has_obo_namespace: string
+  - rdfs:comment:
+    - class_comment: string
+  - ns1:hasExactSynonym:
+    - class_has_exact_synonym: string
+  - skos:notation:
+    - class_notation: string
+- Restriction:
+  - owl:onProperty:
+    - restriction_on_property:
+      - TransitiveProperty
+      - SymmetricProperty
+      - ObjectProperty
+  - owl:someValuesFrom:
+    - restriction_some_values_from: Class
+  - owl:onClass:
+    - restriction_on_class: Class
+  - owl:maxQualifiedCardinality:
+    - restriction_max_qualified_cardinality: nonNegativeInteger
+  - owl:qualifiedCardinality:
+    - restriction_qualified_cardinality: nonNegativeInteger
+  - owl:minQualifiedCardinality:
+    - restriction_min_qualified_cardinality: nonNegativeInteger
+- TransitiveProperty:
+  - ns1:hasDbXref:
+    - transitive_property_has_db_xref: string
+  - rdfs:label:
+    - transitive_property_label: string
+  - ns1:id:
+    - transitive_property_id: string
+  - ns2:IAO_0000115:
+    - transitive_property_iao_0000115: string
+  - ns1:shorthand:
+    - transitive_property_shorthand: string
+  - ns1:hasOBONamespace:
+    - transitive_property_has_obo_namespace: string
+  - rdfs:comment:
+    - transitive_property_comment: string

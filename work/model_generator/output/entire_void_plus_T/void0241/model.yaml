@@ -1,0 +1,71 @@
+- Restriction:
+  - owl:onProperty:
+    - restriction_on_property:
+      - ObjectProperty
+      - DatatypeProperty
+  - owl:someValuesFrom:
+    - restriction_some_values_from: Class
+  - owl:minQualifiedCardinality:
+    - restriction_min_qualified_cardinality: nonNegativeInteger
+  - owl:maxQualifiedCardinality:
+    - restriction_max_qualified_cardinality: nonNegativeInteger
+- Ontology:
+  - rdfs:label:
+    - ontology_label: string
+  - skos:prefLabel:
+    - ontology_pref_label: string
+  - dc:creator:
+    - ontology_creator: string
+  - dc11:publisher:
+    - ontology_publisher: string
+  - dc:description:
+    - ontology_description: string
+  - skos:altLabel:
+    - ontology_alt_label: string
+  - dcat:landingpage:
+    - ontology_landingpage: string
+  - dc:contributor:
+    - ontology_contributor: string
+  - ns1:doi:
+    - ontology_doi: string
+  - dc:created:
+    - ontology_created: integer
+  - ns2:version:
+    - ontology_version: decimal
+  - dcat:downloadURL:
+    - ontology_download_url: string
+- Class:
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Class
+      - Restriction
+  - rdfs:label:
+    - class_label:
+      - string
+      - string
+  - skos:prefLabel:
+    - class_pref_label: string
+  - ns3:IAO_0000115:
+    - class_iao_0000115: string
+  - skos:altLabel:
+    - class_alt_label: string
+  - ns4:correspondsTo:
+    - class_corresponds_to:
+      - string
+      - string
+  - ns4:definitionByCirad:
+    - class_definition_by_cirad: string
+- ObjectProperty:
+  - rdfs:domain:
+    - object_property_domain: Class
+  - rdfs:range:
+    - object_property_range: Class
+- DatatypeProperty:
+  - owl:propertyDisjointWith:
+    - datatype_property_property_disjoint_with: DatatypeProperty
+  - rdfs:subPropertyOf:
+    - datatype_property_sub_property_of: DatatypeProperty
+  - rdfs:domain:
+    - datatype_property_domain: Class

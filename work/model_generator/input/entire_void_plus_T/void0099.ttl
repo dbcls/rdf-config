@@ -1,0 +1,1227 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sbm: <http://sparqlbuilder.org/2015/09/rdf-metadata-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://rdfportal.org/ns/> .
+
+<http://rdfportal.org/ns/18c387e65f5a2df9013a991933924e64>
+    void:classPartition [
+        void:class <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#nucleotide> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#coding_variant> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class owl:DatatypeProperty ;
+        void:entities 12 ;
+        a void:Dataset
+    ], [
+        void:class owl:Restriction ;
+        void:entities 87 ;
+        a void:Dataset
+    ], [
+        void:class owl:NamedIndividual ;
+        void:entities 17 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#chromosome> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#gene> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#dna_sequence> ;
+        void:entities 5 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#nucleotide_variation> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#exon> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#sequence_position> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class owl:Class ;
+        void:entities 146 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#dbsnp> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class owl:FunctionalProperty ;
+        void:entities 13 ;
+        a void:Dataset
+    ], [
+        void:class owl:InverseFunctionalProperty ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#ncbi_nucleotide> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class owl:Ontology ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class owl:ObjectProperty ;
+        void:entities 49 ;
+        a void:Dataset
+    ] ;
+    void:classes 18 ;
+    void:distinctObjects 720 ;
+    void:distinctSubjects 471 ;
+    void:properties 51 ;
+    void:propertyPartition [
+        void:property <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#isStoredInVarDb> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#dbsnp> ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#coding_variant> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#dbsnp> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#coding_variant> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#isOneObservedAlleleIn> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#nucleotide_variation> ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#dna_sequence> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#dna_sequence> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#nucleotide_variation> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.org/obo/owl/OBO_REL#OBO_REL_part_of> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#exon> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#gene> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#gene> ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#exon> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#hasVariant> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#sequence_position> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#coding_variant> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#coding_variant> ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#sequence_position> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#isSequenceIn> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#gene> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#dna_sequence> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#gene> ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#dna_sequence> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:minCardinality ;
+        void:triples 3 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:nonNegativeInteger ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#isStoredInSeqDb> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#dna_sequence> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#ncbi_nucleotide> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#ncbi_nucleotide> ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#dna_sequence> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:inverseOf ;
+        void:triples 17 ;
+        sbm:classRelation [
+            void:triples 5 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:InverseFunctionalProperty ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:InverseFunctionalProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#storesVariant> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#coding_variant> ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#dbsnp> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#dbsnp> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#coding_variant> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:label ;
+        void:triples 187 ;
+        sbm:classRelation [
+            void:triples 38 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 137 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 70 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:InverseFunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 13 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 12 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#isPositionIn> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#dna_sequence> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#dna_sequence> ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#sequence_position> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#sequence_position> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdf:type ;
+        void:triples 378 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#sequence_position> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#nucleotide> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#chromosome> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#gene> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#dbsnp> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#coding_variant> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#nucleotide_variation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#exon> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#dna_sequence> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#ncbi_nucleotide> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#db_name> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#ncbi_nucleotide> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#dbsnp> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#storesSequence> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#ncbi_nucleotide> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#dna_sequence> ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#ncbi_nucleotide> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#dna_sequence> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#hasVariantAlleleSequence> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#nucleotide_variation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#dna_sequence> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#dna_sequence> ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#nucleotide_variation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#composesSequence> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#dna_sequence> ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#nucleotide> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#dna_sequence> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#nucleotide> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#db_version> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#dbsnp> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#ncbi_nucleotide> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#hasPosition> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#sequence_position> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#coding_variant> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#sequence_position> ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#coding_variant> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:allValuesFrom ;
+        void:triples 29 ;
+        sbm:classRelation [
+            void:triples 29 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#hasNucleotideVariation> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#nucleotide_variation> ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#coding_variant> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#nucleotide_variation> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#coding_variant> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dc:creator ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:equivalentClass ;
+        void:triples 16 ;
+        sbm:classRelation [
+            void:triples 13 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:Restriction ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#presentsPosition> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#sequence_position> ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#dna_sequence> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#dna_sequence> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#sequence_position> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:comment ;
+        void:triples 119 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:InverseFunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 38 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 71 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 10 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#isDnaVariantIn> ;
+        void:triples 3 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#exon> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#chromosome> ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#coding_variant> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#gene> ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#coding_variant> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#coding_variant> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#gene> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#chromosome> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#exon> ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#coding_variant> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:sameAs ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#coding_variant> ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#coding_variant> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#coding_variant> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#coding_variant> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dc:language ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:range ;
+        void:triples 45 ;
+        sbm:classRelation [
+            void:triples 4 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 33 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:InverseFunctionalProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#isASequenceComposedOf> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#nucleotide> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#dna_sequence> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#nucleotide> ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#dna_sequence> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:disjointWith ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#identifierInRelatedSeqDb> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#dna_sequence> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#strand> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#nucleotide_variation> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://protege.stanford.edu/plugins/owl/protege#defaultLanguage> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#hasDnaSequence> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#dna_sequence> ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#chromosome> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#dna_sequence> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#chromosome> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:subClassOf ;
+        void:triples 134 ;
+        sbm:classRelation [
+            void:triples 33 ;
+            sbm:objectClass owl:Restriction ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 84 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#hasSequence> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#dna_sequence> ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#gene> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#gene> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#dna_sequence> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#stop_position> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#sequence_position> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#isNucleotideVariationOf> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#coding_variant> ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#nucleotide_variation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#coding_variant> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#nucleotide_variation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#length> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#dna_sequence> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#db_url> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#ncbi_nucleotide> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#dbsnp> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:versionInfo ;
+        void:triples 5 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#hasDnaVariant> ;
+        void:triples 3 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#chromosome> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#coding_variant> ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#chromosome> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#coding_variant> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#coding_variant> ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#gene> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#coding_variant> ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#exon> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#exon> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#gene> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:onProperty ;
+        void:triples 87 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectClass owl:DatatypeProperty ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 84 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 12 ;
+            sbm:objectClass owl:FunctionalProperty ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:InverseFunctionalProperty ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:maxCardinality ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:nonNegativeInteger ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:cardinality ;
+        void:triples 21 ;
+        sbm:classRelation [
+            void:triples 16 ;
+            sbm:objectDatatype xsd:nonNegativeInteger ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#identifierInRelatedVarDb> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#coding_variant> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#isDnaSequenceOf> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#dna_sequence> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#chromosome> ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#dna_sequence> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#chromosome> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:subPropertyOf ;
+        void:triples 9 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:InverseFunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:domain ;
+        void:triples 42 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:InverseFunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 30 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 12 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 12 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:someValuesFrom ;
+        void:triples 38 ;
+        sbm:classRelation [
+            void:triples 38 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#start_position> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.loria.fr/~coulet/ontology/snpontology/version1.6/snpontology_full.owl#sequence_position> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ] ;
+    void:sparqlEndpoint <https://rdfportal.org/bioportal/sparql> ;
+    void:triples 1465 ;
+    a void:Dataset, sd:Graph .

@@ -1,0 +1,73 @@
+- DatatypeProperty:
+  - rdfs:domain:
+    - datatype_property_domain: Class
+  - rdfs:range:
+    - datatype_property_range: Class
+  - skos:definition:
+    - datatype_property_definition: string
+  - rdfs:isDefinedBy:
+    - datatype_property_is_defined_by: anyURI
+  - rdfs:label:
+    - datatype_property_label: string
+  - rdfs:comment:
+    - datatype_property_comment: string
+  - vs:term_status:
+    - datatype_property_term_status: string
+  - skos:prefLabel:
+    - datatype_property_pref_label: string
+- Class:
+  - rdfs:type:
+    - class_type: Class
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Restriction
+      - Class
+  - skos:definition:
+    - class_definition: string
+  - rdfs:isDefinedBy:
+    - class_is_defined_by: anyURI
+  - rdfs:label:
+    - class_label:
+      - string
+      - string
+  - rdfs:comment:
+    - class_comment: string
+  - vs:term_status:
+    - class_term_status: string
+- Restriction:
+  - owl:allValuesFrom:
+    - restriction_all_values_from: Class
+  - owl:minCardinality:
+    - restriction_min_cardinality: nonNegativeInteger
+- ObjectProperty:
+  - rdfs:domain:
+    - object_property_domain: Class
+  - rdfs:range:
+    - object_property_range: Class
+  - skos:definition:
+    - object_property_definition: string
+  - rdfs:isDefinedBy:
+    - object_property_is_defined_by: anyURI
+  - rdfs:label:
+    - object_property_label: string
+  - rdfs:comment:
+    - object_property_comment: string
+  - dc:identifier:
+    - object_property_identifier: string
+  - vs:term_status:
+    - object_property_term_status: string
+  - skos:prefLabel:
+    - object_property_pref_label: string
+  - dc:source:
+    - object_property_source: string
+- Ontology:
+  - dc:publisher:
+    - ontology_publisher: string
+  - dc:contributor:
+    - ontology_contributor: string
+  - dc:modified:
+    - ontology_modified: dateTime
+  - skos:scopeNote:
+    - ontology_scope_note: string
+  - skos:changeNote:
+    - ontology_change_note: string

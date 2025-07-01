@@ -1,0 +1,1761 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sbm: <http://sparqlbuilder.org/2015/09/rdf-metadata-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://rdfportal.org/ns/> .
+
+<http://rdfportal.org/ns/5c9a1c4fbf7abf9f2630b2e508a23979>
+    void:classPartition [
+        void:class owl:ObjectProperty ;
+        void:entities 97 ;
+        a void:Dataset
+    ], [
+        void:class owl:Ontology ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class owl:Class ;
+        void:entities 205227 ;
+        a void:Dataset
+    ], [
+        void:class owl:Restriction ;
+        void:entities 133957 ;
+        a void:Dataset
+    ], [
+        void:class owl:AnnotationProperty ;
+        void:entities 145 ;
+        a void:Dataset
+    ], [
+        void:class rdfs:Datatype ;
+        void:entities 41 ;
+        a void:Dataset
+    ], [
+        void:class owl:Axiom ;
+        void:entities 919241 ;
+        a void:Dataset
+    ], [
+        void:class rdf:List ;
+        void:entities 421 ;
+        a void:Dataset
+    ], [
+        void:class owl:TransitiveProperty ;
+        void:entities 2 ;
+        a void:Dataset
+    ] ;
+    void:classes 9 ;
+    void:distinctObjects 1739222 ;
+    void:distinctSubjects 1371473 ;
+    void:properties 150 ;
+    void:propertyPartition [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P364> ;
+        void:triples 356 ;
+        sbm:classRelation [
+            void:triples 356 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P379> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Axiom ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P391> ;
+        void:triples 6350 ;
+        sbm:classRelation [
+            void:triples 6350 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Axiom ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:onProperty ;
+        void:triples 133957 ;
+        sbm:classRelation [
+            void:triples 133957 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3143 ;
+            sbm:objectClass owl:TransitiveProperty ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P397> ;
+        void:triples 7822 ;
+        sbm:classRelation [
+            void:triples 7822 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Axiom ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#A22> ;
+        void:triples 540 ;
+        sbm:classRelation [
+            void:triples 540 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P399> ;
+        void:triples 8317 ;
+        sbm:classRelation [
+            void:triples 8317 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P325> ;
+        void:triples 55056 ;
+        sbm:classRelation [
+            void:triples 5 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:AnnotationProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 55051 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P208> ;
+        void:triples 57051 ;
+        sbm:classRelation [
+            void:triples 57051 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P352> ;
+        void:triples 27 ;
+        sbm:classRelation [
+            void:triples 27 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:deprecated ;
+        void:triples 5038 ;
+        sbm:classRelation [
+            void:triples 5038 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#A31> ;
+        void:triples 14131 ;
+        sbm:classRelation [
+            void:triples 14131 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
+        void:triples 1841 ;
+        sbm:classRelation [
+            void:triples 1841 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://protege.stanford.edu/plugins/owl/protege#readOnly> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:AnnotationProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P211> ;
+        void:triples 6267 ;
+        sbm:classRelation [
+            void:triples 6267 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#A16> ;
+        void:triples 201 ;
+        sbm:classRelation [
+            void:triples 201 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P366> ;
+        void:triples 72466 ;
+        sbm:classRelation [
+            void:triples 72466 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#A21> ;
+        void:triples 523 ;
+        sbm:classRelation [
+            void:triples 523 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P376> ;
+        void:triples 1498 ;
+        sbm:classRelation [
+            void:triples 1498 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P367> ;
+        void:triples 180 ;
+        sbm:classRelation [
+            void:triples 180 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P108> ;
+        void:triples 184746 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 184509 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 97 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 140 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:AnnotationProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdf:rest ;
+        void:triples 112760 ;
+        sbm:classRelation [
+            void:triples 402 ;
+            sbm:objectClass rdf:List ;
+            sbm:subjectClass rdf:List ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P333> ;
+        void:triples 341 ;
+        sbm:classRelation [
+            void:triples 341 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P386> ;
+        void:triples 41430 ;
+        sbm:classRelation [
+            void:triples 41430 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Axiom ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P383> ;
+        void:triples 689188 ;
+        sbm:classRelation [
+            void:triples 689188 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Axiom ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P369> ;
+        void:triples 5692 ;
+        sbm:classRelation [
+            void:triples 5692 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P380> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Axiom ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P320> ;
+        void:triples 3 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P315> ;
+        void:triples 423 ;
+        sbm:classRelation [
+            void:triples 423 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P203> ;
+        void:triples 3024 ;
+        sbm:classRelation [
+            void:triples 3024 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P357> ;
+        void:triples 6 ;
+        sbm:classRelation [
+            void:triples 6 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P372> ;
+        void:triples 2326 ;
+        sbm:classRelation [
+            void:triples 2326 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#A38> ;
+        void:triples 809 ;
+        sbm:classRelation [
+            void:triples 809 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P93> ;
+        void:triples 5639 ;
+        sbm:classRelation [
+            void:triples 5639 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P375> ;
+        void:triples 19797 ;
+        sbm:classRelation [
+            void:triples 19797 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P171> ;
+        void:triples 821 ;
+        sbm:classRelation [
+            void:triples 821 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#A15> ;
+        void:triples 4048 ;
+        sbm:classRelation [
+            void:triples 4048 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#A33> ;
+        void:triples 431 ;
+        sbm:classRelation [
+            void:triples 431 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:label ;
+        void:triples 184747 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 184509 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 140 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:AnnotationProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 97 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P107> ;
+        void:triples 32890 ;
+        sbm:classRelation [
+            void:triples 86 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 65 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:AnnotationProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 32739 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#NHC0> ;
+        void:triples 184744 ;
+        sbm:classRelation [
+            void:triples 97 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 138 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:AnnotationProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 184509 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P354> ;
+        void:triples 134 ;
+        sbm:classRelation [
+            void:triples 134 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P201> ;
+        void:triples 2778 ;
+        sbm:classRelation [
+            void:triples 2778 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P205> ;
+        void:triples 7 ;
+        sbm:classRelation [
+            void:triples 7 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#A27> ;
+        void:triples 182 ;
+        sbm:classRelation [
+            void:triples 182 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P167> ;
+        void:triples 6 ;
+        sbm:classRelation [
+            void:triples 6 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P390> ;
+        void:triples 6350 ;
+        sbm:classRelation [
+            void:triples 6350 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Axiom ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://protege.stanford.edu/plugins/owl/protege#defaultLanguage> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P319> ;
+        void:triples 19299 ;
+        sbm:classRelation [
+            void:triples 19299 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#A18> ;
+        void:triples 615 ;
+        sbm:classRelation [
+            void:triples 615 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P381> ;
+        void:triples 9955 ;
+        sbm:classRelation [
+            void:triples 9955 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Axiom ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P331> ;
+        void:triples 2226 ;
+        sbm:classRelation [
+            void:triples 2226 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P97> ;
+        void:triples 143539 ;
+        sbm:classRelation [
+            void:triples 97 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 143310 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 130 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:AnnotationProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:equivalentClass ;
+        void:triples 20298 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:Restriction ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 19 ;
+            sbm:objectClass rdfs:Datatype ;
+            sbm:subjectClass rdfs:Datatype ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20278 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P200> ;
+        void:triples 5006 ;
+        sbm:classRelation [
+            void:triples 5006 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P92> ;
+        void:triples 1261 ;
+        sbm:classRelation [
+            void:triples 1261 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P351> ;
+        void:triples 43 ;
+        sbm:classRelation [
+            void:triples 43 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#A48> ;
+        void:triples 781 ;
+        sbm:classRelation [
+            void:triples 781 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#A12> ;
+        void:triples 10 ;
+        sbm:classRelation [
+            void:triples 10 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#A26> ;
+        void:triples 636 ;
+        sbm:classRelation [
+            void:triples 636 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P387> ;
+        void:triples 6350 ;
+        sbm:classRelation [
+            void:triples 6350 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Axiom ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P365> ;
+        void:triples 511 ;
+        sbm:classRelation [
+            void:triples 511 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#A19> ;
+        void:triples 565 ;
+        sbm:classRelation [
+            void:triples 565 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#A13> ;
+        void:triples 4569 ;
+        sbm:classRelation [
+            void:triples 4569 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:oneOf ;
+        void:triples 19 ;
+        sbm:classRelation [
+            void:triples 19 ;
+            sbm:objectClass rdf:List ;
+            sbm:subjectClass rdfs:Datatype ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#A34> ;
+        void:triples 446 ;
+        sbm:classRelation [
+            void:triples 446 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#A42> ;
+        void:triples 725 ;
+        sbm:classRelation [
+            void:triples 725 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:versionInfo ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#A20> ;
+        void:triples 551 ;
+        sbm:classRelation [
+            void:triples 551 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#A8> ;
+        void:triples 360023 ;
+        sbm:classRelation [
+            void:triples 360023 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#A4> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#A25> ;
+        void:triples 400 ;
+        sbm:classRelation [
+            void:triples 400 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P353> ;
+        void:triples 203 ;
+        sbm:classRelation [
+            void:triples 203 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P332> ;
+        void:triples 154 ;
+        sbm:classRelation [
+            void:triples 154 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P302> ;
+        void:triples 779 ;
+        sbm:classRelation [
+            void:triples 779 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P210> ;
+        void:triples 17705 ;
+        sbm:classRelation [
+            void:triples 17705 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P90> ;
+        void:triples 591755 ;
+        sbm:classRelation [
+            void:triples 591506 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 152 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:AnnotationProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 97 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#A28> ;
+        void:triples 663 ;
+        sbm:classRelation [
+            void:triples 663 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P102> ;
+        void:triples 5923 ;
+        sbm:classRelation [
+            void:triples 5923 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P361> ;
+        void:triples 1221 ;
+        sbm:classRelation [
+            void:triples 1221 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:domain ;
+        void:triples 86 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 86 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P98> ;
+        void:triples 11939 ;
+        sbm:classRelation [
+            void:triples 15 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:AnnotationProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11918 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdf:first ;
+        void:triples 112760 ;
+        sbm:classRelation [
+            void:triples 421 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass rdf:List ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P96> ;
+        void:triples 1969 ;
+        sbm:classRelation [
+            void:triples 1969 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P359> ;
+        void:triples 32 ;
+        sbm:classRelation [
+            void:triples 32 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P100> ;
+        void:triples 16975 ;
+        sbm:classRelation [
+            void:triples 16975 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P350> ;
+        void:triples 10839 ;
+        sbm:classRelation [
+            void:triples 10839 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#A29> ;
+        void:triples 756 ;
+        sbm:classRelation [
+            void:triples 756 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#A3> ;
+        void:triples 11 ;
+        sbm:classRelation [
+            void:triples 11 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P322> ;
+        void:triples 128571 ;
+        sbm:classRelation [
+            void:triples 128558 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 13 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:AnnotationProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:someValuesFrom ;
+        void:triples 133957 ;
+        sbm:classRelation [
+            void:triples 133957 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P360> ;
+        void:triples 23 ;
+        sbm:classRelation [
+            void:triples 23 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P317> ;
+        void:triples 1693 ;
+        sbm:classRelation [
+            void:triples 1693 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P362> ;
+        void:triples 214 ;
+        sbm:classRelation [
+            void:triples 214 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P310> ;
+        void:triples 8549 ;
+        sbm:classRelation [
+            void:triples 8549 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:subClassOf ;
+        void:triples 233826 ;
+        sbm:classRelation [
+            void:triples 180308 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 53518 ;
+            sbm:objectClass owl:Restriction ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P321> ;
+        void:triples 5724 ;
+        sbm:classRelation [
+            void:triples 5724 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P316> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P363> ;
+        void:triples 13536 ;
+        sbm:classRelation [
+            void:triples 13536 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P389> ;
+        void:triples 6350 ;
+        sbm:classRelation [
+            void:triples 6350 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Axiom ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P368> ;
+        void:triples 3636 ;
+        sbm:classRelation [
+            void:triples 3636 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:annotatedSource ;
+        void:triples 919241 ;
+        sbm:classRelation [
+            void:triples 289 ;
+            sbm:objectClass owl:AnnotationProperty ;
+            sbm:subjectClass owl:Axiom ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass owl:TransitiveProperty ;
+            sbm:subjectClass owl:Axiom ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 194 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:Axiom ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 918756 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Axiom ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P207> ;
+        void:triples 116151 ;
+        sbm:classRelation [
+            void:triples 116151 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P330> ;
+        void:triples 7065 ;
+        sbm:classRelation [
+            void:triples 7065 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#A2> ;
+        void:triples 97 ;
+        sbm:classRelation [
+            void:triples 97 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P356> ;
+        void:triples 11 ;
+        sbm:classRelation [
+            void:triples 11 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#A7> ;
+        void:triples 4742 ;
+        sbm:classRelation [
+            void:triples 4742 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#A36> ;
+        void:triples 330 ;
+        sbm:classRelation [
+            void:triples 330 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:comment ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Axiom ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#A6> ;
+        void:triples 1873 ;
+        sbm:classRelation [
+            void:triples 1873 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P396> ;
+        void:triples 24851 ;
+        sbm:classRelation [
+            void:triples 24851 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Axiom ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:subPropertyOf ;
+        void:triples 11 ;
+        sbm:classRelation [
+            void:triples 11 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#A14> ;
+        void:triples 105 ;
+        sbm:classRelation [
+            void:triples 105 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P175> ;
+        void:triples 2375 ;
+        sbm:classRelation [
+            void:triples 2375 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P358> ;
+        void:triples 55 ;
+        sbm:classRelation [
+            void:triples 55 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P394> ;
+        void:triples 24851 ;
+        sbm:classRelation [
+            void:triples 24851 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Axiom ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#A5> ;
+        void:triples 1864 ;
+        sbm:classRelation [
+            void:triples 1864 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P395> ;
+        void:triples 24851 ;
+        sbm:classRelation [
+            void:triples 24851 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Axiom ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P215> ;
+        void:triples 237 ;
+        sbm:classRelation [
+            void:triples 237 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P101> ;
+        void:triples 202 ;
+        sbm:classRelation [
+            void:triples 202 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P329> ;
+        void:triples 7067 ;
+        sbm:classRelation [
+            void:triples 7067 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P393> ;
+        void:triples 24851 ;
+        sbm:classRelation [
+            void:triples 24851 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Axiom ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:disjointWith ;
+        void:triples 171 ;
+        sbm:classRelation [
+            void:triples 171 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dc:date ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P355> ;
+        void:triples 332 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:AnnotationProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 330 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#A17> ;
+        void:triples 639 ;
+        sbm:classRelation [
+            void:triples 639 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P371> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:annotatedProperty ;
+        void:triples 919241 ;
+        sbm:classRelation [
+            void:triples 919241 ;
+            sbm:objectClass owl:AnnotationProperty ;
+            sbm:subjectClass owl:Axiom ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P216> ;
+        void:triples 335 ;
+        sbm:classRelation [
+            void:triples 335 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#A37> ;
+        void:triples 760 ;
+        sbm:classRelation [
+            void:triples 760 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#A35> ;
+        void:triples 320 ;
+        sbm:classRelation [
+            void:triples 320 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P384> ;
+        void:triples 689186 ;
+        sbm:classRelation [
+            void:triples 689186 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Axiom ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#A24> ;
+        void:triples 610 ;
+        sbm:classRelation [
+            void:triples 610 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#A32> ;
+        void:triples 14148 ;
+        sbm:classRelation [
+            void:triples 14148 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P385> ;
+        void:triples 81401 ;
+        sbm:classRelation [
+            void:triples 81401 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Axiom ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:range ;
+        void:triples 226 ;
+        sbm:classRelation [
+            void:triples 23 ;
+            sbm:objectClass rdfs:Datatype ;
+            sbm:subjectClass owl:AnnotationProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 86 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#A30> ;
+        void:triples 124 ;
+        sbm:classRelation [
+            void:triples 124 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:annotatedTarget ;
+        void:triples 919241 ;
+        sbm:classRelation [
+            void:triples 919241 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Axiom ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P398> ;
+        void:triples 1288 ;
+        sbm:classRelation [
+            void:triples 1288 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P204> ;
+        void:triples 696 ;
+        sbm:classRelation [
+            void:triples 696 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P378> ;
+        void:triples 198855 ;
+        sbm:classRelation [
+            void:triples 198853 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Axiom ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:AnnotationProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P400> ;
+        void:triples 431 ;
+        sbm:classRelation [
+            void:triples 431 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#required> ;
+        void:triples 13 ;
+        sbm:classRelation [
+            void:triples 13 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass owl:AnnotationProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#A40> ;
+        void:triples 1059 ;
+        sbm:classRelation [
+            void:triples 1059 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#A39> ;
+        void:triples 799 ;
+        sbm:classRelation [
+            void:triples 799 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P106> ;
+        void:triples 195048 ;
+        sbm:classRelation [
+            void:triples 97 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 194822 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 129 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:AnnotationProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#P334> ;
+        void:triples 1231 ;
+        sbm:classRelation [
+            void:triples 1231 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#A1> ;
+        void:triples 97 ;
+        sbm:classRelation [
+            void:triples 97 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#A23> ;
+        void:triples 364 ;
+        sbm:classRelation [
+            void:triples 364 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#A9> ;
+        void:triples 28 ;
+        sbm:classRelation [
+            void:triples 28 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ] ;
+    void:sparqlEndpoint <https://rdfportal.org/bioportal/sparql> ;
+    void:triples 9209958 ;
+    a void:Dataset, sd:Graph .

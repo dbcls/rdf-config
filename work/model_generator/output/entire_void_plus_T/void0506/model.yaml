@@ -1,0 +1,102 @@
+- TransitiveProperty:
+  - ns1:IAO_0000115:
+    - transitive_property_iao_0000115: string
+  - rdfs:comment:
+    - transitive_property_comment: string
+  - ns2:hasOBONamespace:
+    - transitive_property_has_obo_namespace: string
+  - rdfs:label:
+    - transitive_property_label: string
+  - ns2:id:
+    - transitive_property_id: string
+- Ontology:
+  - rdfs:comment:
+    - ontology_comment: string
+  - ns2:saved-by:
+    - ontology_saved-by: string
+  - ns2:hasOBOFormatVersion:
+    - ontology_has_obo_format_version: string
+  - ns2:date:
+    - ontology_date: string
+  - ns2:default-namespace:
+    - ontology_default-namespace: string
+- Axiom:
+  - owl:annotatedProperty:
+    - axiom_annotated_property: AnnotationProperty
+  - owl:annotatedSource:
+    - axiom_annotated_source:
+      - Class
+      - TransitiveProperty
+      - ObjectProperty
+  - ns2:hasSynonymType:
+    - axiom_has_synonym_type: AnnotationProperty
+  - ns2:hasDbXref:
+    - axiom_has_db_xref: string
+  - owl:annotatedTarget:
+    - axiom_annotated_target: string
+  - rdfs:label:
+    - axiom_label: string
+- Restriction:
+  - owl:onProperty:
+    - restriction_on_property:
+      - TransitiveProperty
+      - ObjectProperty
+  - owl:someValuesFrom:
+    - restriction_some_values_from: Class
+- ObjectProperty:
+  - ns1:IAO_0000115:
+    - object_property_iao_0000115: string
+  - rdfs:comment:
+    - object_property_comment: string
+  - ns2:hasOBONamespace:
+    - object_property_has_obo_namespace: string
+  - rdfs:label:
+    - object_property_label: string
+  - ns2:id:
+    - object_property_id: string
+- AnnotationProperty:
+  - ns2:hasScope:
+    - annotation_property_has_scope: AnnotationProperty
+  - rdfs:subPropertyOf:
+    - annotation_property_sub_property_of: AnnotationProperty
+  - rdfs:comment:
+    - annotation_property_comment: string
+  - rdfs:label:
+    - annotation_property_label: string
+- Class:
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Restriction
+      - Class
+  - ns3:part_of:
+    - class_part_of: Class
+  - ns4:treeView:
+    - class_tree_view: Class
+  - ns5:derives_from:
+    - class_derives_from: Class
+  - ns5:has_functional_parent:
+    - class_has_functional_parent: Class
+  - ns2:inSubset:
+    - class_in_subset: AnnotationProperty
+  - ns3:contains:
+    - class_contains: Class
+  - ns1:IAO_0000115:
+    - class_iao_0000115: string
+  - ns2:hasExactSynonym:
+    - class_has_exact_synonym: string
+  - ns2:hasDbXref:
+    - class_has_db_xref: string
+  - rdfs:comment:
+    - class_comment: string
+  - ns2:hasOBONamespace:
+    - class_has_obo_namespace: string
+  - ns2:hasRelatedSynonym:
+    - class_has_related_synonym: string
+  - owl:deprecated:
+    - class_deprecated: true
+  - rdfs:label:
+    - class_label: string
+  - ns2:id:
+    - class_id: string
+  - skos:notation:
+    - class_notation: string

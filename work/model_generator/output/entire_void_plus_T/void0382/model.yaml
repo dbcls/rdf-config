@@ -1,0 +1,64 @@
+- MeasurementType:
+  - rdf:type:
+    - measurement_type_type: Class
+- Pathogen:
+  - rdf:type:
+    - pathogen_type: Class
+- Class:
+  - rdfs:subClassOf:
+    - class_sub_class_of: Class
+  - ns2:IAO_0000118:
+    - class_iao_0000118: string
+  - ns2:IAO_0000119:
+    - class_iao_0000119: string
+  - ns2:IAO_0000117:
+    - class_iao_0000117: string
+  - ns2:IAO_0000111:
+    - class_iao_0000111: string
+  - ns2:IAO_0000115:
+    - class_iao_0000115:
+      - string
+      - string
+  - rdfs:label:
+    - class_label:
+      - string
+      - string
+- EventType:
+  - rdf:type:
+    - event_type_type: Class
+- ObjectProperty:
+  - rdfs:range:
+    - object_property_range: Class
+  - rdfs:domain:
+    - object_property_domain: Class
+  - ns2:IAO_0000119:
+    - object_property_iao_0000119: string
+  - ns2:IAO_0000117:
+    - object_property_iao_0000117: string
+  - ns2:IAO_0000115:
+    - object_property_iao_0000115: string
+  - ns2:IAO_0000112:
+    - object_property_iao_0000112: string
+  - ns2:IAO_0000116:
+    - object_property_iao_0000116: string
+  - rdfs:label:
+    - object_property_label: string
+- DatatypeProperty:
+  - rdfs:domain:
+    - datatype_property_domain: Class
+  - rdfs:label:
+    - datatype_property_label: string
+- NamedIndividual:
+  - rdf:type:
+    - named_individual_type: Class
+  - rdfs:comment:
+    - named_individual_comment: string
+  - rdfs:label:
+    - named_individual_label: string
+- Unit:
+  - rdf:type:
+    - unit_type: Class
+  - rdfs:comment:
+    - unit_comment: string
+  - rdfs:label:
+    - unit_label: string

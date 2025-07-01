@@ -1,0 +1,224 @@
+- FunctionalProperty:
+  - rdfs:domain:
+    - functional_property_domain: Class
+  - rdfs:range:
+    - functional_property_range: Class
+  - rdfs:comment:
+    - functional_property_comment: string
+  - rdfs:label:
+    - functional_property_label: string
+  - skos:definition:
+    - functional_property_definition: string
+- Class:
+  - ns1:hasSTY:
+    - class_has_sty:
+      - NamedIndividual
+      - Class
+  - ns2:mapped_to:
+    - class_mapped_to:
+      - Class
+      - NamedIndividual
+  - ns2:mapped_from:
+    - class_mapped_from:
+      - NamedIndividual
+      - Class
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Class
+      - NamedIndividual
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+  - ns2:RQ:
+    - class_rq:
+      - NamedIndividual
+      - Class
+  - ns2:has_mapping_qualifier:
+    - class_has_mapping_qualifier: NamedIndividual
+  - ns2:related_to:
+    - class_related_to:
+      - Class
+      - NamedIndividual
+  - ns2:SY:
+    - class_sy:
+      - Class
+      - NamedIndividual
+  - skos:altLabel:
+    - class_alt_label: string
+  - skos:prefLabel:
+    - class_pref_label: string
+  - ns2:SOS:
+    - class_sos: string
+  - ns2:MP_GROUP_URL:
+    - class_mp_group_url: string
+  - ns1:tui:
+    - class_tui: string
+  - rdfs:label:
+    - class_label: string
+  - skos:definition:
+    - class_definition: string
+  - ns2:MP_PRIMARY_INSTITUTE_URL:
+    - class_mp_primary_institute_url: string
+  - ns1:cui:
+    - class_cui: string
+  - skos:example:
+    - class_example: string
+  - skos:notation:
+    - class_notation: string
+  - ns2:DATE_CREATED:
+    - class_date_created: string
+  - ns3:prefixIRI:
+    - class_prefix_iri: string
+  - skos:scopeNote:
+    - class_scope_note: string
+  - ns2:MP_OTHER_LANGUAGE_URL:
+    - class_mp_other_language_url: string
+- DatatypeProperty:
+  - rdfs:comment:
+    - datatype_property_comment: string
+  - rdfs:label:
+    - datatype_property_label:
+      - string
+      - string
+  - skos:definition:
+    - datatype_property_definition: string
+  - skos:scopeNote:
+    - datatype_property_scope_note: string
+- NamedIndividual:
+  - ns1:hasSTY:
+    - named_individual_has_sty:
+      - Class
+      - NamedIndividual
+  - ns2:mapped_to:
+    - named_individual_mapped_to:
+      - NamedIndividual
+      - Class
+  - ns2:mapped_from:
+    - named_individual_mapped_from:
+      - Class
+      - NamedIndividual
+  - rdfs:subClassOf:
+    - named_individual_sub_class_of:
+      - Class
+      - NamedIndividual
+  - ns2:RQ:
+    - named_individual_rq:
+      - Class
+      - NamedIndividual
+  - ns2:has_mapping_qualifier:
+    - named_individual_has_mapping_qualifier: NamedIndividual
+  - ns2:related_to:
+    - named_individual_related_to:
+      - Class
+      - NamedIndividual
+  - ns2:SY:
+    - named_individual_sy:
+      - NamedIndividual
+      - Class
+  - skos:altLabel:
+    - named_individual_alt_label: string
+  - skos:prefLabel:
+    - named_individual_pref_label: string
+  - ns2:SOS:
+    - named_individual_sos: string
+  - ns2:MP_GROUP_URL:
+    - named_individual_mp_group_url: string
+  - ns1:tui:
+    - named_individual_tui: string
+  - skos:definition:
+    - named_individual_definition: string
+  - ns2:MP_PRIMARY_INSTITUTE_URL:
+    - named_individual_mp_primary_institute_url: string
+  - ns1:cui:
+    - named_individual_cui: string
+  - skos:notation:
+    - named_individual_notation: string
+  - ns2:DATE_CREATED:
+    - named_individual_date_created: string
+  - ns2:MP_OTHER_LANGUAGE_URL:
+    - named_individual_mp_other_language_url: string
+- ObjectProperty:
+  - rdfs:domain:
+    - object_property_domain: Class
+  - rdfs:range:
+    - object_property_range: Class
+  - owl:inverseOf:
+    - object_property_inverse_of:
+      - ObjectProperty
+      - TransitiveProperty
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of:
+      - ObjectProperty
+      - TransitiveProperty
+      - SymmetricProperty
+  - rdfs:comment:
+    - object_property_comment:
+      - string
+      - string
+  - rdfs:label:
+    - object_property_label:
+      - string
+      - string
+  - skos:definition:
+    - object_property_definition:
+      - string
+      - string
+  - skos:scopeNote:
+    - object_property_scope_note: string
+- SymmetricProperty:
+  - rdfs:subPropertyOf:
+    - symmetric_property_sub_property_of:
+      - ObjectProperty
+      - SymmetricProperty
+  - rdfs:comment:
+    - symmetric_property_comment: string
+  - rdfs:label:
+    - symmetric_property_label: string
+  - skos:definition:
+    - symmetric_property_definition: string
+- Ontology:
+  - rdfs:comment:
+    - ontology_comment: string
+  - rdfs:label:
+    - ontology_label: string
+  - dc:creator:
+    - ontology_creator: string
+  - dc:title:
+    - ontology_title: string
+  - dc:contributor:
+    - ontology_contributor: string
+  - dc:description:
+    - ontology_description: string
+  - owl:versionInfo:
+    - ontology_version_info: string
+- TransitiveProperty:
+  - owl:inverseOf:
+    - transitive_property_inverse_of:
+      - ObjectProperty
+      - TransitiveProperty
+  - rdfs:subPropertyOf:
+    - transitive_property_sub_property_of:
+      - ObjectProperty
+      - SymmetricProperty
+  - rdfs:comment:
+    - transitive_property_comment: string
+  - rdfs:label:
+    - transitive_property_label: string
+  - skos:definition:
+    - transitive_property_definition:
+      - string
+      - string
+  - skos:scopeNote:
+    - transitive_property_scope_note: string
+- AnnotationProperty:
+  - rdfs:subPropertyOf:
+    - annotation_property_sub_property_of: AnnotationProperty
+  - rdfs:comment:
+    - annotation_property_comment: string
+  - rdfs:label:
+    - annotation_property_label: string
+  - skos:definition:
+    - annotation_property_definition: string
+  - skos:example:
+    - annotation_property_example: string
+  - skos:scopeNote:
+    - annotation_property_scope_note: string

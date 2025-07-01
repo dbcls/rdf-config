@@ -1,0 +1,165 @@
+- ObjectProperty:
+  - rdfs:label:
+    - object_property_label: string
+- Asian:
+  - ns2:hasPercentageDistribution:
+    - asian_has_percentage_distribution:
+      - Thing
+      - PercentageDistributionByRace
+  - rdf:type:
+    - asian_type: Class
+  - rdfs:label:
+    - asian_label: string
+- AnnotationProperty:
+  - rdfs:label:
+    - annotation_property_label: string
+- Ontology:
+  - rdfs:comment:
+    - ontology_comment: string
+- Female:
+  - ns2:hasPercentageDistribution:
+    - female_has_percentage_distribution:
+      - Thing
+      - PercentageDistributionByGender
+  - rdf:type:
+    - female_type: Class
+  - rdfs:label:
+    - female_label: string
+- AfricanAmerican:
+  - ns2:hasPercentageDistribution:
+    - african_american_has_percentage_distribution:
+      - Thing
+      - PercentageDistributionByRace
+  - rdf:type:
+    - african_american_type: Class
+  - rdfs:label:
+    - african_american_label: string
+- PercentageDistributionByOccupation:
+  - rdf:type:
+    - percentage_distribution_by_occupation_type: Class
+  - rdfs:label:
+    - percentage_distribution_by_occupation_label: string
+- Locality:
+  - ns3:location_of:
+    - locality_location_of:
+      - Thing
+      - Sample_Study_Population
+  - rdf:type:
+    - locality_type: Class
+  - ns4:IAO_0000118:
+    - locality_iao_0000118: string
+- Male:
+  - ns2:hasPercentageDistribution:
+    - male_has_percentage_distribution:
+      - PercentageDistributionByGender
+      - Thing
+  - rdf:type:
+    - male_type: Class
+  - rdfs:label:
+    - male_label: string
+- SampleStudyPopulation:
+  - ns2:hasAge:
+    - sample_study_population_has_age:
+      - Age
+      - Thing
+  - ns3:located_in:
+    - sample_study_population_located_in:
+      - Thing
+      - Locality
+  - rdf:type:
+    - sample_study_population_type: Class
+  - rdfs:label:
+    - sample_study_population_label: string
+- White:
+  - ns2:hasPercentageDistribution:
+    - white_has_percentage_distribution:
+      - PercentageDistributionByRace
+      - Thing
+  - rdf:type:
+    - white_type: Class
+  - rdfs:label:
+    - white_label: string
+- Thing:
+  - ns2:hasAge:
+    - thing_has_age:
+      - Thing
+      - Age
+  - ns2:hasPercentageDistribution:
+    - thing_has_percentage_distribution:
+      - PercentageDistributionByRace
+      - PercentageDistributionByGender
+      - Thing
+  - ns3:located_in:
+    - thing_located_in:
+      - Locality
+      - Thing
+  - ns3:location_of:
+    - thing_location_of:
+      - Sample_Study_Population
+      - Thing
+  - rdf:type:
+    - thing_type: Class
+  - rdfs:label:
+    - thing_label: string
+  - ns4:IAO_0000118:
+    - thing_iao_0000118: string
+  - ns4:IAO_0000115:
+    - thing_iao_0000115: string
+- Age:
+  - rdf:type:
+    - age_type: Class
+  - rdfs:label:
+    - age_label: string
+- PercentageDistributionByDisease,DisorderOrFinding:
+  - rdf:type:
+    - percentage_distribution_by_disease,disorder_or_finding_type: Class
+  - rdfs:label:
+    - percentage_distribution_by_disease,disorder_or_finding_label: string
+- Hispanic:
+  - ns2:hasPercentageDistribution:
+    - hispanic_has_percentage_distribution:
+      - Thing
+      - PercentageDistributionByRace
+  - rdf:type:
+    - hispanic_type: Class
+  - rdfs:label:
+    - hispanic_label: string
+- PercentageDistributionByGender:
+  - rdf:type:
+    - percentage_distribution_by_gender_type: Class
+  - rdfs:label:
+    - percentage_distribution_by_gender_label: string
+- Restriction:
+  - owl:onProperty:
+    - restriction_on_property:
+      - ObjectProperty
+      - TransitiveProperty
+  - owl:someValuesFrom:
+    - restriction_some_values_from: Class
+- PercentageDistributionByRace:
+  - rdf:type:
+    - percentage_distribution_by_race_type: Class
+  - rdfs:label:
+    - percentage_distribution_by_race_label: string
+- Class:
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Class
+      - Restriction
+  - ns4:IAO_0000119:
+    - class_iao_0000119: string
+  - ns4:IAO_0000112:
+    - class_iao_0000112: string
+  - rdfs:label:
+    - class_label: string
+  - ns4:IAO_0000118:
+    - class_iao_0000118: string
+  - ns4:IAO_0000115:
+    - class_iao_0000115: string
+  - ns4:IAO_0000412:
+    - class_iao_0000412: string
+- TransitiveProperty:
+  - rdfs:label:
+    - transitive_property_label: string

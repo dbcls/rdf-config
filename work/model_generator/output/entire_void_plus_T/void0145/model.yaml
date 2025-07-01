@@ -1,0 +1,62 @@
+- data_1460:
+  - rdfs:seeAlso:
+    - data_1460_see_also: pdb
+  - ns1:is_output_of:
+    - data_1460_is_output_of: operation_0477
+  - ns3:chain:
+    - data_1460_chain: string
+- Region:
+  - ns2:end:
+    - region_end:
+      - Position
+      - ExactPosition
+  - ns2:begin:
+    - region_begin:
+      - Position
+      - ExactPosition
+- Protein3DModel:
+  - ns3:hasModel:
+    - protein3_d_model_has_model: data_1460
+  - dc:identifier:
+    - protein3_d_model_identifier: string
+- operation_0477:
+  - ns1:hasInput:
+    - operation_0477_has_input:
+      - data_1460
+      - data_0863
+- ExactPosition:
+  - rdfs:seeAlso:
+    - exact_position_see_also: pdb
+  - ns2:reference:
+    - exact_position_reference: data_1460
+  - ns2:position:
+    - exact_position_position: 12345
+- data_0863:
+  - ns3:hasRegion:
+    - data_0863_has_region: Region
+  - ns1:is_output_of:
+    - data_0863_is_output_of: operation_0495
+  - ns3:identity:
+    - data_0863_identity: 12345
+  - ns3:evalue:
+    - data_0863_evalue: double
+- data_2976:
+  - rdfs:seeAlso:
+    - data_2976_see_also: uniprot
+  - rdfs:comment:
+    - data_2976_comment: string
+- pdb:
+  - dc:identifier:
+    - pdb_identifier: string
+- Position:
+  - rdfs:seeAlso:
+    - position_see_also: pdb
+  - ns2:reference:
+    - position_reference: data_1460
+  - ns2:position:
+    - position_position: 12345
+- operation_0495:
+  - ns1:hasInput:
+    - operation_0495_has_input:
+      - data_2976
+      - data_1460

@@ -1,0 +1,1915 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sbm: <http://sparqlbuilder.org/2015/09/rdf-metadata-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://rdfportal.org/ns/> .
+
+<http://rdfportal.org/ns/72f4015d0f2e80600daa000018f7e493>
+    void:classPartition [
+        void:class <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#HypoglycemicDrug> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+        void:entities 63 ;
+        a void:Dataset
+    ], [
+        void:class owl:FunctionalProperty ;
+        void:entities 96 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Hypertension> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class owl:Restriction ;
+        void:entities 30 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#LiverDisease> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Diet> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class owl:NamedIndividual ;
+        void:entities 32 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+        void:entities 180 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#BodyMassIndex> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Gender> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Stroke> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Lipoprotein> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Triglyceride> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class rdf:List ;
+        void:entities 126 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#AntiHypetensiveDrug> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#ChronicObstructivePulmonaryDisease> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class owl:DatatypeProperty ;
+        void:entities 66 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#HypolipidemicDrug> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#SkinDisease> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#CoronaryHeartDisease> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Exercise> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#BloodGlucose> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+        void:entities 80 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#TotalCholesterol> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Education> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Mentality> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Age> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Hyperlipidemia> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Drinking> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.w3.org/2003/11/swrl#AtomList> ;
+        void:entities 417 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Diabetes> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class owl:ObjectProperty ;
+        void:entities 30 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#KidneyDisease> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#EyeDisease> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#StomachDisease> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#LungDisease> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class owl:Class ;
+        void:entities 40 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#BloodPressure> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#UricAcid> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+        void:entities 94 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Smoking> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.w3.org/2003/11/swrl#Imp> ;
+        void:entities 80 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Pregnancy> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+        void:entities 1 ;
+        a void:Dataset
+    ] ;
+    void:classes 45 ;
+    void:distinctObjects 1609 ;
+    void:distinctSubjects 1455 ;
+    void:properties 81 ;
+    void:propertyPartition [
+        void:property rdfs:subClassOf ;
+        void:triples 64 ;
+        sbm:classRelation [
+            void:triples 30 ;
+            sbm:objectClass owl:Restriction ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 34 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasBMI> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#BodyMassIndex> ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#BodyMassIndex> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasEyeDisease> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#EyeDisease> ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#EyeDisease> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasStroke> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Stroke> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Stroke> ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasBGValue> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:double ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#BloodGlucose> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:double ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasLDLValue> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:double ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:double ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Lipoprotein> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasLungDisease> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#LungDisease> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#LungDisease> ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasHypolipidemicDrug> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#HypolipidemicDrug> ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#HypolipidemicDrug> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.w3.org/2003/11/swrl#argument1> ;
+        void:triples 354 ;
+        sbm:classRelation [
+            void:triples 94 ;
+            sbm:objectClass <http://www.w3.org/2003/11/swrl#Variable> ;
+            sbm:subjectClass <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 80 ;
+            sbm:objectClass <http://www.w3.org/2003/11/swrl#Variable> ;
+            sbm:subjectClass <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 180 ;
+            sbm:objectClass <http://www.w3.org/2003/11/swrl#Variable> ;
+            sbm:subjectClass <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasDiet> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Diet> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Diet> ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.w3.org/2003/11/swrl#classPredicate> ;
+        void:triples 80 ;
+        sbm:classRelation [
+            void:triples 80 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.w3.org/2003/11/swrl#body> ;
+        void:triples 80 ;
+        sbm:classRelation [
+            void:triples 80 ;
+            sbm:objectClass <http://www.w3.org/2003/11/swrl#AtomList> ;
+            sbm:subjectClass <http://www.w3.org/2003/11/swrl#Imp> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasLipoprotein> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Lipoprotein> ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Lipoprotein> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasCHDValue> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#CoronaryHeartDisease> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasDailyDrinking> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:double ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Drinking> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:double ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasTCValue> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:double ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#TotalCholesterol> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:double ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:comment ;
+        void:triples 80 ;
+        sbm:classRelation [
+            void:triples 80 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.w3.org/2003/11/swrl#Imp> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasTG> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Triglyceride> ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Triglyceride> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasPregnancyValue> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Pregnancy> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasBMIValue> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:double ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:double ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#BodyMassIndex> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasSBPValue> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#BloodPressure> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.w3.org/2003/11/swrl#arguments> ;
+        void:triples 63 ;
+        sbm:classRelation [
+            void:triples 63 ;
+            sbm:objectClass rdf:List ;
+            sbm:subjectClass <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasMentality> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Mentality> ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Mentality> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasCOPD> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#ChronicObstructivePulmonaryDisease> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#ChronicObstructivePulmonaryDisease> ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> ;
+        void:triples 80 ;
+        sbm:classRelation [
+            void:triples 80 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass <http://www.w3.org/2003/11/swrl#Imp> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.w3.org/2003/11/swrl#argument2> ;
+        void:triples 274 ;
+        sbm:classRelation [
+            void:triples 94 ;
+            sbm:objectClass <http://www.w3.org/2003/11/swrl#Variable> ;
+            sbm:subjectClass <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 28 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 15 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 81 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 56 ;
+            sbm:objectClass <http://www.w3.org/2003/11/swrl#Variable> ;
+            sbm:subjectClass <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasBP> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#BloodPressure> ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#BloodPressure> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasTGValue> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:double ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Triglyceride> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:double ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasDietLevel> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Diet> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasTC> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#TotalCholesterol> ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#TotalCholesterol> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasSkinDiseaseValue> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#SkinDisease> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasDBPValue> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#BloodPressure> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasHypolipidemicDrugValue> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#HypolipidemicDrug> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:range ;
+        void:triples 96 ;
+        sbm:classRelation [
+            void:triples 49 ;
+            sbm:objectClass rdfs:Datatype ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 49 ;
+            sbm:objectClass rdfs:Datatype ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 30 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 30 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasHyperlipidemia> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Hyperlipidemia> ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Hyperlipidemia> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasAgeValue> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Age> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasCHD> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#CoronaryHeartDisease> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#CoronaryHeartDisease> ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasExercise> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Exercise> ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Exercise> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasDiabetesValue> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Diabetes> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasLiverDiseaseValue> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#LiverDisease> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasEyeDiseaseValue> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#EyeDisease> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:label ;
+        void:triples 80 ;
+        sbm:classRelation [
+            void:triples 80 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.w3.org/2003/11/swrl#Imp> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasAge> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Age> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Age> ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasStomachDisease> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#StomachDisease> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#StomachDisease> ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasUAValue> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:double ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#UricAcid> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:double ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.w3.org/2003/11/swrl#propertyPredicate> ;
+        void:triples 274 ;
+        sbm:classRelation [
+            void:triples 180 ;
+            sbm:objectClass owl:FunctionalProperty ;
+            sbm:subjectClass <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 180 ;
+            sbm:objectClass owl:DatatypeProperty ;
+            sbm:subjectClass <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 94 ;
+            sbm:objectClass owl:FunctionalProperty ;
+            sbm:subjectClass <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 94 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasAntiHypertensiveDrugValue> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#AntiHypetensiveDrug> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasSkinDisease> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#SkinDisease> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#SkinDisease> ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:domain ;
+        void:triples 96 ;
+        sbm:classRelation [
+            void:triples 30 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 66 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 96 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasHyperlipidemiaValue> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Hyperlipidemia> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasPregnancy> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Pregnancy> ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Pregnancy> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasInsulinValue> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#HypoglycemicDrug> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasCOPDValue> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#ChronicObstructivePulmonaryDisease> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasStomachDiseaseValue> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#StomachDisease> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasLiverDisease> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#LiverDisease> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#LiverDisease> ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:onProperty ;
+        void:triples 30 ;
+        sbm:classRelation [
+            void:triples 30 ;
+            sbm:objectClass owl:FunctionalProperty ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 30 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasDailyCigarettes> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Smoking> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasGenderValue> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Gender> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasHypoglycemicDrug> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#HypoglycemicDrug> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#HypoglycemicDrug> ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.w3.org/2003/11/swrl#head> ;
+        void:triples 80 ;
+        sbm:classRelation [
+            void:triples 80 ;
+            sbm:objectClass <http://www.w3.org/2003/11/swrl#AtomList> ;
+            sbm:subjectClass <http://www.w3.org/2003/11/swrl#Imp> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasPHQ9Value> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Mentality> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdf:rest ;
+        void:triples 631 ;
+        sbm:classRelation [
+            void:triples 257 ;
+            sbm:objectClass <http://www.w3.org/2003/11/swrl#AtomList> ;
+            sbm:subjectClass <http://www.w3.org/2003/11/swrl#AtomList> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 63 ;
+            sbm:objectClass rdf:List ;
+            sbm:subjectClass rdf:List ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasUA> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#UricAcid> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#UricAcid> ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasKidneyDisease> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#KidneyDisease> ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#KidneyDisease> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:allValuesFrom ;
+        void:triples 30 ;
+        sbm:classRelation [
+            void:triples 30 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasHDLValue> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:double ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:double ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Lipoprotein> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasHypertensionValue> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Hypertension> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasStrokeValue> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Stroke> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdf:first ;
+        void:triples 631 ;
+        sbm:classRelation [
+            void:triples 180 ;
+            sbm:objectClass <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+            sbm:subjectClass <http://www.w3.org/2003/11/swrl#AtomList> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 63 ;
+            sbm:objectClass <http://www.w3.org/2003/11/swrl#Variable> ;
+            sbm:subjectClass rdf:List ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 10 ;
+            sbm:objectDatatype xsd:decimal ;
+            sbm:subjectClass rdf:List ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 80 ;
+            sbm:objectClass <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+            sbm:subjectClass <http://www.w3.org/2003/11/swrl#AtomList> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 53 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass rdf:List ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 94 ;
+            sbm:objectClass <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+            sbm:subjectClass <http://www.w3.org/2003/11/swrl#AtomList> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 63 ;
+            sbm:objectClass <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+            sbm:subjectClass <http://www.w3.org/2003/11/swrl#AtomList> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasBG> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#BloodGlucose> ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#BloodGlucose> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasKidneyDiseaseValue> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#KidneyDisease> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasDrinking> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Drinking> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Drinking> ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasLungDiseaseValue> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#LungDisease> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasHypoglycemicDrugValue> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#HypoglycemicDrug> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasAntiHypertensiveDrug> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#AntiHypetensiveDrug> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#AntiHypetensiveDrug> ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasSmoking> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Smoking> ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Smoking> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasDiabetes> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Diabetes> ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Diabetes> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdf:type ;
+        void:triples 1445 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Triglyceride> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Diabetes> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Mentality> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Exercise> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Age> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Education> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#KidneyDisease> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Drinking> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#LiverDisease> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Diet> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#ChronicObstructivePulmonaryDisease> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Hypertension> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Stroke> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Lipoprotein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#CoronaryHeartDisease> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#BodyMassIndex> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#BloodGlucose> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#EyeDisease> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#StomachDisease> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Hyperlipidemia> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 32 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#HypoglycemicDrug> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Pregnancy> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#BloodPressure> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#SkinDisease> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Smoking> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#AntiHypetensiveDrug> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#LungDisease> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#HypolipidemicDrug> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Gender> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#TotalCholesterol> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#UricAcid> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasIPAQLevel> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Exercise> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasGender> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Gender> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Gender> ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#hasHypertension> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Hypertension> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Hypertension> ;
+            sbm:subjectClass <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#PatientProfile> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ] ;
+    void:sparqlEndpoint <https://rdfportal.org/bioportal/sparql> ;
+    void:triples 4845 ;
+    a void:Dataset, sd:Graph .

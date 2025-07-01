@@ -1,0 +1,118 @@
+- Class:
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+  - owl:complementOf:
+    - class_complement_of: Restriction
+  - owl:equivalentClass:
+    - class_equivalent_class: Class
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Restriction
+      - Class
+  - rdfs:label:
+    - class_label:
+      - string
+      - string
+  - ns2:todoProperty:
+    - class_todo_property: string
+  - ns1:reference:
+    - class_reference: string
+  - rdfs:comment:
+    - class_comment: string
+  - ns1:synonym:
+    - class_synonym:
+      - string
+      - string
+  - ns1:definition:
+    - class_definition: string
+- DataRange:
+  - owl:oneOf:
+    - data_range_one_of: List
+- AnnotationProperty:
+  - ns1:definition:
+    - annotation_property_definition: string
+- Restriction:
+  - owl:someValuesFrom:
+    - restriction_some_values_from: Class
+  - owl:onClass:
+    - restriction_on_class: Class
+  - owl:onProperty:
+    - restriction_on_property:
+      - DatatypeProperty
+      - FunctionalProperty
+      - ObjectProperty
+  - owl:allValuesFrom:
+    - restriction_all_values_from: Class
+  - owl:minCardinality:
+    - restriction_min_cardinality: nonNegativeInteger
+  - owl:hasValue:
+    - restriction_has_value: string
+  - owl:minQualifiedCardinality:
+    - restriction_min_qualified_cardinality: nonNegativeInteger
+- Ontology:
+  - rdf:type:
+    - ontology_type: Class
+  - dc11:title:
+    - ontology_title: string
+  - owl:versionInfo:
+    - ontology_version_info: string
+  - dc11:date:
+    - ontology_date: string
+  - dc11:creator:
+    - ontology_creator: string
+  - ns2:defaultLanguage:
+    - ontology_default_language: string
+  - dc11:description:
+    - ontology_description: string
+- ObjectProperty:
+  - rdfs:range:
+    - object_property_range: Class
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of: ObjectProperty
+  - rdfs:domain:
+    - object_property_domain: Class
+  - owl:inverseOf:
+    - object_property_inverse_of: ObjectProperty
+- DatatypeProperty:
+  - rdfs:range:
+    - datatype_property_range: DataRange
+  - rdfs:domain:
+    - datatype_property_domain: Class
+  - ns1:definition:
+    - datatype_property_definition: string
+- List:
+  - rdf:rest:
+    - list_rest: List
+  - rdf:first:
+    - list_first: string
+- FunctionalProperty:
+  - rdfs:range:
+    - functional_property_range: DataRange
+  - rdfs:domain:
+    - functional_property_domain: Class
+  - ns1:definition:
+    - functional_property_definition: string
+- Continuant:
+  - rdf:type:
+    - continuant_type: Class
+  - ns1:hasPolarity:
+    - continuant_has_polarity: string
+- Thing:
+  - rdf:type:
+    - thing_type: Class
+  - rdfs:label:
+    - thing_label: string
+  - ns1:hasPolarity:
+    - thing_has_polarity: string
+  - dc11:title:
+    - thing_title: string
+  - owl:versionInfo:
+    - thing_version_info: string
+  - dc11:date:
+    - thing_date: string
+  - dc11:creator:
+    - thing_creator: string
+  - ns2:defaultLanguage:
+    - thing_default_language: string
+  - dc11:description:
+    - thing_description: string

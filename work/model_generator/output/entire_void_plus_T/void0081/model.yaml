@@ -1,0 +1,40 @@
+- AnnotationProperty:
+  - rdfs:label:
+    - annotation_property_label: string
+- DatatypeProperty:
+  - rdfs:label:
+    - datatype_property_label: string
+- Class:
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Restriction
+      - Class
+  - owl:equivalentClass:
+    - class_equivalent_class: Restriction
+  - ns1:hasOBONamespace:
+    - class_has_obo_namespace: string
+  - ns2:CCONT_0000186:
+    - class_ccont_0000186: string
+  - rdfs:label:
+    - class_label:
+      - string
+      - string
+  - ns3:alternative_term:
+    - class_alternative_term: string
+- ObjectProperty:
+  - rdfs:label:
+    - object_property_label: string
+  - ns3:definition:
+    - object_property_definition: string
+- Restriction:
+  - owl:someValuesFrom:
+    - restriction_some_values_from: Class
+  - owl:onProperty:
+    - restriction_on_property: ObjectProperty
+- Ontology:
+  - rdfs:label:
+    - ontology_label: string
+  - owl:versionInfo:
+    - ontology_version_info: string
+  - ns3:creator:
+    - ontology_creator: string

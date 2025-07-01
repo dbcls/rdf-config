@@ -1,0 +1,100 @@
+- ObjectProperty:
+  - rdfs:range:
+    - object_property_range: Class
+  - rdfs:domain:
+    - object_property_domain: Class
+  - skos:prefLabel:
+    - object_property_pref_label: string
+  - rdfs:label:
+    - object_property_label: string
+  - rdfs:isDefinedBy:
+    - object_property_is_defined_by: string
+- Collection:
+  - rdf:type:
+    - collection_type: Class
+  - skos:prefLabel:
+    - collection_pref_label: string
+- ConceptScheme:
+  - dc:isFormatOf:
+    - concept_scheme_is_format_of: Class
+  - rdf:type:
+    - concept_scheme_type: Class
+  - skos:prefLabel:
+    - concept_scheme_pref_label: string
+  - rdfs:isDefinedBy:
+    - concept_scheme_is_defined_by: string
+- Restriction:
+  - owl:onProperty:
+    - restriction_on_property:
+      - DatatypeProperty
+      - ObjectProperty
+  - owl:allValuesFrom:
+    - restriction_all_values_from: Class
+  - owl:cardinality:
+    - restriction_cardinality: nonNegativeInteger
+  - owl:maxCardinality:
+    - restriction_max_cardinality: nonNegativeInteger
+- MDScopeCode:
+  - skos:inScheme:
+    - md_scope_code_in_scheme:
+      - ConceptScheme
+      - NamedIndividual
+  - rdf:type:
+    - md_scope_code_type: Class
+  - skos:prefLabel:
+    - md_scope_code_pref_label: string
+  - rdfs:isDefinedBy:
+    - md_scope_code_is_defined_by: string
+- DatatypeProperty:
+  - rdfs:domain:
+    - datatype_property_domain: Class
+  - rdfs:label:
+    - datatype_property_label: string
+  - rdfs:isDefinedBy:
+    - datatype_property_is_defined_by: string
+- NamedIndividual:
+  - skos:inScheme:
+    - named_individual_in_scheme:
+      - NamedIndividual
+      - ConceptScheme
+  - dc:isFormatOf:
+    - named_individual_is_format_of: Class
+  - rdf:type:
+    - named_individual_type: Class
+  - skos:prefLabel:
+    - named_individual_pref_label: string
+  - rdfs:isDefinedBy:
+    - named_individual_is_defined_by: string
+- Concept:
+  - skos:inScheme:
+    - concept_in_scheme:
+      - NamedIndividual
+      - ConceptScheme
+  - rdf:type:
+    - concept_type: Class
+  - skos:prefLabel:
+    - concept_pref_label: string
+  - rdfs:isDefinedBy:
+    - concept_is_defined_by: string
+- Ontology:
+  - owl:versionInfo:
+    - ontology_version_info: string
+  - rdfs:label:
+    - ontology_label: string
+  - dc:source:
+    - ontology_source: string
+- Class:
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Class
+      - Restriction
+  - owl:equivalentClass:
+    - class_equivalent_class: Class
+  - skos:definition:
+    - class_definition: string
+  - rdfs:label:
+    - class_label: string
+  - rdfs:isDefinedBy:
+    - class_is_defined_by: string
+  - ns2:prefixIRI:
+    - class_prefix_iri: string

@@ -1,0 +1,96 @@
+- AsymmetricProperty:
+  - rdfs:range:
+    - asymmetric_property_range: Class
+  - owl:inverseOf:
+    - asymmetric_property_inverse_of:
+      - ObjectProperty
+      - AsymmetricProperty
+  - rdfs:domain:
+    - asymmetric_property_domain: Class
+  - rdfs:subPropertyOf:
+    - asymmetric_property_sub_property_of:
+      - AsymmetricProperty
+      - ObjectProperty
+  - rdfs:label:
+    - asymmetric_property_label: string
+  - rdfs:comment:
+    - asymmetric_property_comment: string
+- AnnotationProperty:
+  - dc:source:
+    - annotation_property_source: anyURI
+  - rdfs:isDefinedBy:
+    - annotation_property_is_defined_by: anyURI
+  - rdfs:label:
+    - annotation_property_label:
+      - string
+      - string
+  - ns1:ncit:synonym:
+    - annotation_property_ncit:synonym: string
+  - skos:definition:
+    - annotation_property_definition: string
+- Restriction:
+  - owl:onProperty:
+    - restriction_on_property:
+      - ObjectProperty
+      - AsymmetricProperty
+  - owl:someValuesFrom:
+    - restriction_some_values_from: Class
+- ObjectProperty:
+  - rdfs:range:
+    - object_property_range: Class
+  - owl:inverseOf:
+    - object_property_inverse_of:
+      - ObjectProperty
+      - AsymmetricProperty
+  - rdfs:domain:
+    - object_property_domain: Class
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of:
+      - AsymmetricProperty
+      - ObjectProperty
+  - rdfs:label:
+    - object_property_label: string
+  - rdfs:comment:
+    - object_property_comment: string
+- Class:
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Class
+      - Restriction
+  - dc:source:
+    - class_source: string
+  - rdfs:label:
+    - class_label:
+      - string
+      - string
+  - ns1:ncit:synonym:
+    - class_ncit:synonym:
+      - string
+      - string
+  - ns1:ncit:abbreviation:
+    - class_ncit:abbreviation: string
+  - rdfs:comment:
+    - class_comment:
+      - string
+      - string
+  - skos:definition:
+    - class_definition: string
+  - ns1:umls:cui:
+    - class_umls:cui: string
+- Ontology:
+  - dc:license:
+    - ontology_license: string
+  - owl:versionInfo:
+    - ontology_version_info: string
+  - skos:note:
+    - ontology_note: string
+  - dc:date:
+    - ontology_date: string
+  - dc:title:
+    - ontology_title: string
+  - dc:creator:
+    - ontology_creator: string
+  - rdfs:comment:
+    - ontology_comment: string

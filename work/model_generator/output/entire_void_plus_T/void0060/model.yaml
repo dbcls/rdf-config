@@ -1,0 +1,517 @@
+- DatatypeProperty:
+  - ns1:IAO_0000115:
+    - datatype_property_iao_0000115: string
+  - rdfs:label:
+    - datatype_property_label: string
+- AnnotationProperty:
+  - ns1:UBPROP_0000100:
+    - annotation_property_ubprop_0000100: Class
+  - rdfs:subPropertyOf:
+    - annotation_property_sub_property_of: AnnotationProperty
+  - ns1:IAO_0000116:
+    - annotation_property_iao_0000116: string
+  - ns2:id:
+    - annotation_property_id: string
+  - ns1:IAO_0000115:
+    - annotation_property_iao_0000115: string
+  - ns2:hasDbXref:
+    - annotation_property_has_db_xref: string
+  - ns1:IAO_0000425:
+    - annotation_property_iao_0000425: string
+  - ns2:is_metadata_tag:
+    - annotation_property_is_metadata_tag: true
+  - owl:deprecated:
+    - annotation_property_deprecated: true
+  - ns1:IAO_0000117:
+    - annotation_property_iao_0000117: string
+  - ns2:shorthand:
+    - annotation_property_shorthand: string
+  - ns2:hasOBONamespace:
+    - annotation_property_has_obo_namespace: string
+  - rdfs:comment:
+    - annotation_property_comment: string
+  - ns1:IAO_0100001:
+    - annotation_property_iao_0100001: string
+  - ns2:is_class_level:
+    - annotation_property_is_class_level: true
+  - ns3:reason_for_obsolescence:
+    - annotation_property_reason_for_obsolescence: string
+  - ns1:IAO_0000114:
+    - annotation_property_iao_0000114: string
+  - ns3:obsoleted_in_version:
+    - annotation_property_obsoleted_in_version: string
+  - rdfs:label:
+    - annotation_property_label: string
+  - dc11:creator:
+    - annotation_property_creator: string
+- FunctionalProperty:
+  - rdfs:subPropertyOf:
+    - functional_property_sub_property_of: ObjectProperty
+  - owl:inverseOf:
+    - functional_property_inverse_of: ObjectProperty
+  - ns1:IAO_0000116:
+    - functional_property_iao_0000116: string
+  - ns2:id:
+    - functional_property_id: string
+  - ns1:IAO_0000115:
+    - functional_property_iao_0000115: string
+  - ns2:hasDbXref:
+    - functional_property_has_db_xref: string
+  - ns1:IAO_0000117:
+    - functional_property_iao_0000117: string
+  - ns2:shorthand:
+    - functional_property_shorthand: string
+  - ns2:hasOBONamespace:
+    - functional_property_has_obo_namespace: string
+  - ns1:IAO_0000112:
+    - functional_property_iao_0000112: string
+  - ns1:IAO_0000118:
+    - functional_property_iao_0000118: string
+  - rdfs:comment:
+    - functional_property_comment: string
+  - ns3:EFO_URI:
+    - functional_property_efo_uri: string
+  - ns1:IAO_0000111:
+    - functional_property_iao_0000111: string
+  - rdfs:label:
+    - functional_property_label:
+      - string
+      - string
+- SymmetricProperty:
+  - ns2:created_by:
+    - symmetric_property_created_by: string
+  - ns2:id:
+    - symmetric_property_id: string
+  - rdfs:comment:
+    - symmetric_property_comment: string
+  - rdfs:label:
+    - symmetric_property_label: string
+- Restriction:
+  - owl:disjointWith:
+    - restriction_disjoint_with: Restriction
+  - owl:onProperty:
+    - restriction_on_property:
+      - TransitiveProperty
+      - SymmetricProperty
+      - ObjectProperty
+      - FunctionalProperty
+  - owl:someValuesFrom:
+    - restriction_some_values_from: Class
+  - owl:allValuesFrom:
+    - restriction_all_values_from: Class
+- Axiom:
+  - owl:annotatedTarget:
+    - axiom_annotated_target:
+      - Restriction
+      - Class
+      - string
+      - anyURI
+  - owl:annotatedProperty:
+    - axiom_annotated_property: AnnotationProperty
+  - ns2:hasSynonymType:
+    - axiom_has_synonym_type: AnnotationProperty
+  - owl:annotatedSource:
+    - axiom_annotated_source:
+      - AnnotationProperty
+      - ObjectProperty
+      - Class
+  - ns4:createdBy:
+    - axiom_created_by: string
+  - ns2:status:
+    - axiom_status: string
+  - ns2:id:
+    - axiom_id: string
+  - ns2:seeAlso:
+    - axiom_see_also: string
+  - skos:narrowMatch:
+    - axiom_narrow_match: string
+  - ns2:external_ontology:
+    - axiom_external_ontology: string
+  - ns2:http://purl.obolibrary.org/obo/IAO_0000232:
+    - axiom_http://purl.obolibrary.org/obo/iao_0000232: string
+  - ns1:IAO_0000115:
+    - axiom_iao_0000115: string
+  - ns2:hasDbXref:
+    - axiom_has_db_xref: string
+  - ns2:date_retrieved:
+    - axiom_date_retrieved: string
+  - dc:contributor:
+    - axiom_contributor: string
+  - skos:closeMatch:
+    - axiom_close_match: string
+  - ns2:source:
+    - axiom_source: string
+  - ns3:definition_citation:
+    - axiom_definition_citation: string
+  - ns2:hasScope:
+    - axiom_has_scope: string
+  - ns2:taxon:
+    - axiom_taxon: string
+  - ns2:editor:
+    - axiom_editor: string
+  - ns2:external_class:
+    - axiom_external_class: string
+  - ns2:exceptions_url:
+    - axiom_exceptions_url: string
+  - rdfs:comment:
+    - axiom_comment: string
+  - ns2:notes:
+    - axiom_notes: string
+  - ns2:url:
+    - axiom_url: string
+  - ns2:ontology:
+    - axiom_ontology: string
+  - ns2:reference:
+    - axiom_reference: string
+  - rdfs:label:
+    - axiom_label: string
+  - ns2:exceptions:
+    - axiom_exceptions: string
+- Ontology:
+  - dc11:rights:
+    - ontology_rights: string
+  - ns3:creator:
+    - ontology_creator: string
+  - ns1:format-version:
+    - ontology_format-version: string
+  - dc:license:
+    - ontology_license: string
+  - rdfs:comment:
+    - ontology_comment: string
+  - owl:versionInfo:
+    - ontology_version_info: string
+  - dc11:creator:
+    - ontology_creator: string
+- Class:
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+  - ns5:exactMatch:
+    - class_exact_match: Class
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Class
+      - Restriction
+  - skos:exactMatch:
+    - class_exact_match: Class
+  - ns1:RO_0002175:
+    - class_ro_0002175: Class
+  - ns1:RO_0002174:
+    - class_ro_0002174: Class
+  - ns1:IAO_0100001:
+    - class_iao_0100001:
+      - Class
+      - string
+  - ns1:RO_0002161:
+    - class_ro_0002161: Class
+  - owl:equivalentClass:
+    - class_equivalent_class:
+      - Class
+      - Restriction
+  - ns1:RO_0002171:
+    - class_ro_0002171: Class
+  - ns5:excluded_subClassOf:
+    - class_excluded_sub_class_of: Class
+  - ns2:inSubset:
+    - class_in_subset: AnnotationProperty
+  - ns1:UBPROP_0000009:
+    - class_ubprop_0000009: string
+  - ns2:created_by:
+    - class_created_by: string
+  - ns1:IAO_0000116:
+    - class_iao_0000116:
+      - string
+      - string
+  - ns2:creation_date:
+    - class_creation_date:
+      - string
+      - dateTime
+  - dc11:date:
+    - class_date: dateTime
+  - ns4:createdBy:
+    - class_created_by: string
+  - ns1:UBPROP_0000004:
+    - class_ubprop_0000004: string
+  - ns2:consider:
+    - class_consider: string
+  - ns2:id:
+    - class_id: string
+  - ns6:inchi:
+    - class_inchi: string
+  - ns3:SRA_label:
+    - class_sra_label: string
+  - ns2:hasAlternativeId:
+    - class_has_alternative_id: string
+  - ns1:UBPROP_0000012:
+    - class_ubprop_0000012: string
+  - ns1:IAO_0000115:
+    - class_iao_0000115:
+      - string
+      - string
+  - ns2:hasDbXref:
+    - class_has_db_xref: string
+  - ns1:UBPROP_0000001:
+    - class_ubprop_0000001: string
+  - ns1:UBPROP_0000011:
+    - class_ubprop_0000011: string
+  - dc:contributor:
+    - class_contributor: string
+  - ns6:smiles:
+    - class_smiles: string
+  - ns2:hasRelatedSynonym:
+    - class_has_related_synonym: string
+  - ns3:ArrayExpress_label:
+    - class_array_express_label: string
+  - ns1:IAO_0000231:
+    - class_iao_0000231: string
+  - ns1:IAO_0006012:
+    - class_iao_0006012: string
+  - ns3:creator:
+    - class_creator: string
+  - ns3:definition_citation:
+    - class_definition_citation: string
+  - ns6:mass:
+    - class_mass: string
+  - ns1:IAO_0000233:
+    - class_iao_0000233:
+      - anyURI
+      - string
+  - rdfs:seeAlso:
+    - class_see_also:
+      - string
+      - anyURI
+  - ns2:hasBroadSynonym:
+    - class_has_broad_synonym: string
+  - ns1:UBPROP_0000008:
+    - class_ubprop_0000008: string
+  - ns1:UBPROP_0000111:
+    - class_ubprop_0000111: nonNegativeInteger
+  - owl:deprecated:
+    - class_deprecated: true
+  - ns1:IAO_0000232:
+    - class_iao_0000232:
+      - string
+      - string
+  - ns6:formula:
+    - class_formula: string
+  - ns1:namespace:
+    - class_namespace: string
+  - ns1:IAO_0000117:
+    - class_iao_0000117:
+      - string
+      - string
+  - ns1:OBI_0001886:
+    - class_obi_0001886: string
+  - ns6:inchikey:
+    - class_inchikey: string
+  - skos:prefLabel:
+    - class_pref_label: string
+  - dc11:contributor:
+    - class_contributor: string
+  - ns1:OBI_0001847:
+    - class_obi_0001847: string
+  - ns1:UBPROP_0000002:
+    - class_ubprop_0000002: string
+  - ns1:IAO_0000589:
+    - class_iao_0000589: string
+  - ns1:UBPROP_0000006:
+    - class_ubprop_0000006: anyURI
+  - ns1:IAO_0000119:
+    - class_iao_0000119:
+      - string
+      - string
+  - ns2:hasExactSynonym:
+    - class_has_exact_synonym:
+      - string
+      - string
+  - ns1:UBPROP_0000013:
+    - class_ubprop_0000013: string
+  - ns3:source_definition:
+    - class_source_definition: string
+  - ns1:UBPROP_0000010:
+    - class_ubprop_0000010: string
+  - ns2:hasOBONamespace:
+    - class_has_obo_namespace: string
+  - ns1:IAO_0000112:
+    - class_iao_0000112:
+      - string
+      - string
+  - ns1:IAO_0000118:
+    - class_iao_0000118:
+      - string
+      - string
+  - foaf:depicted_by:
+    - class_depicted_by: anyURI
+  - ns1:OBI_9991118:
+    - class_obi_9991118: string
+  - rdfs:comment:
+    - class_comment: string
+  - ns2:hasNarrowSynonym:
+    - class_has_narrow_synonym: string
+  - ns1:UBPROP_0000003:
+    - class_ubprop_0000003: string
+  - ns1:UBPROP_0000007:
+    - class_ubprop_0000007: string
+  - ns3:primary_source:
+    - class_primary_source: string
+  - ns3:gwas_trait:
+    - class_gwas_trait: true
+  - ns3:EFO_URI:
+    - class_efo_uri: string
+  - owl:incompatibleWith:
+    - class_incompatible_with: string
+  - ns1:UBPROP_0000005:
+    - class_ubprop_0000005: string
+  - ns3:reason_for_obsolescence:
+    - class_reason_for_obsolescence: string
+  - ns1:IAO_0000111:
+    - class_iao_0000111:
+      - string
+      - string
+  - ns1:IAO_0000114:
+    - class_iao_0000114: string
+  - ns1:UBPROP_0000112:
+    - class_ubprop_0000112: 12345
+  - ns6:charge:
+    - class_charge: string
+  - ns7:has_rank:
+    - class_has_rank: string
+  - ns6:monoisotopicmass:
+    - class_monoisotopicmass: string
+  - ns3:obsoleted_in_version:
+    - class_obsoleted_in_version: string
+  - ns1:UBPROP_0000108:
+    - class_ubprop_0000108: nonNegativeInteger
+  - dc11:source:
+    - class_source: string
+  - dc11:description:
+    - class_description: string
+  - ns3:branch_class:
+    - class_branch_class: string
+  - ns3:organizational_class:
+    - class_organizational_class:
+      - string
+      - true
+  - ns5:excluded_synonym:
+    - class_excluded_synonym: string
+  - ns1:IAO_0010000:
+    - class_iao_0010000: string
+  - rdfs:label:
+    - class_label:
+      - string
+      - string
+  - dc:date:
+    - class_date: dateTime
+  - dc11:creator:
+    - class_creator: string
+- TransitiveProperty:
+  - ns1:RO_0040042:
+    - transitive_property_ro_0040042: Class
+  - rdfs:domain:
+    - transitive_property_domain: Class
+  - rdfs:subPropertyOf:
+    - transitive_property_sub_property_of: ObjectProperty
+  - owl:inverseOf:
+    - transitive_property_inverse_of:
+      - TransitiveProperty
+      - ObjectProperty
+  - rdfs:range:
+    - transitive_property_range: Class
+  - ns1:IAO_0000116:
+    - transitive_property_iao_0000116: string
+  - ns2:id:
+    - transitive_property_id: string
+  - ns1:IAO_0000115:
+    - transitive_property_iao_0000115:
+      - string
+      - string
+  - ns2:hasDbXref:
+    - transitive_property_has_db_xref: string
+  - rdfs:seeAlso:
+    - transitive_property_see_also: string
+  - ns2:hasExactSynonym:
+    - transitive_property_has_exact_synonym: string
+  - ns2:shorthand:
+    - transitive_property_shorthand: string
+  - ns2:hasOBONamespace:
+    - transitive_property_has_obo_namespace: string
+  - ns1:IAO_0000112:
+    - transitive_property_iao_0000112: string
+  - ns1:IAO_0000118:
+    - transitive_property_iao_0000118: string
+  - rdfs:comment:
+    - transitive_property_comment: string
+  - ns3:EFO_URI:
+    - transitive_property_efo_uri: string
+  - ns1:IAO_0000111:
+    - transitive_property_iao_0000111: string
+  - rdfs:label:
+    - transitive_property_label:
+      - string
+      - string
+- ObjectProperty:
+  - ns1:RO_0040042:
+    - object_property_ro_0040042: Class
+  - rdfs:domain:
+    - object_property_domain: Class
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of:
+      - ObjectProperty
+      - FunctionalProperty
+      - TransitiveProperty
+  - owl:inverseOf:
+    - object_property_inverse_of:
+      - FunctionalProperty
+      - TransitiveProperty
+      - ObjectProperty
+  - rdfs:range:
+    - object_property_range: Class
+  - ns2:created_by:
+    - object_property_created_by: string
+  - ns1:IAO_0000116:
+    - object_property_iao_0000116:
+      - string
+      - string
+  - ns2:id:
+    - object_property_id: string
+  - ns1:IAO_0000115:
+    - object_property_iao_0000115:
+      - string
+      - string
+  - ns2:hasDbXref:
+    - object_property_has_db_xref: string
+  - rdfs:seeAlso:
+    - object_property_see_also: string
+  - owl:deprecated:
+    - object_property_deprecated: true
+  - ns1:IAO_0000117:
+    - object_property_iao_0000117:
+      - string
+      - string
+  - ns2:hasExactSynonym:
+    - object_property_has_exact_synonym: string
+  - ns2:shorthand:
+    - object_property_shorthand: string
+  - ns2:hasOBONamespace:
+    - object_property_has_obo_namespace: string
+  - ns1:IAO_0000112:
+    - object_property_iao_0000112:
+      - string
+      - string
+  - ns1:IAO_0000118:
+    - object_property_iao_0000118:
+      - string
+      - string
+  - rdfs:comment:
+    - object_property_comment: string
+  - ns3:EFO_URI:
+    - object_property_efo_uri: string
+  - ns1:IAO_0000600:
+    - object_property_iao_0000600: string
+  - ns1:IAO_0000111:
+    - object_property_iao_0000111:
+      - string
+      - string
+  - rdfs:label:
+    - object_property_label:
+      - string
+      - string

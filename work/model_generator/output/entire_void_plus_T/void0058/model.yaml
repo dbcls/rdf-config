@@ -1,0 +1,75 @@
+- DatatypeProperty:
+  - rdfs:subPropertyOf:
+    - datatype_property_sub_property_of: DatatypeProperty
+  - rdfs:comment:
+    - datatype_property_comment: string
+  - skos:note:
+    - datatype_property_note: string
+- AnnotationProperty:
+  - rdfs:label:
+    - annotation_property_label: string
+- subjectOfCare:
+  - rdf:type:
+    - subject_of_care_type: Class
+- ObjectProperty:
+  - owl:inverseOf:
+    - object_property_inverse_of: ObjectProperty
+  - rdfs:comment:
+    - object_property_comment: string
+- Restriction:
+  - owl:onProperty:
+    - restriction_on_property:
+      - SymmetricProperty
+      - ReflexiveProperty
+      - AsymmetricProperty
+      - DatatypeProperty
+      - ObjectProperty
+  - owl:someValuesFrom:
+    - restriction_some_values_from: Class
+  - owl:onClass:
+    - restriction_on_class: Class
+  - owl:minQualifiedCardinality:
+    - restriction_min_qualified_cardinality: nonNegativeInteger
+  - owl:maxQualifiedCardinality:
+    - restriction_max_qualified_cardinality: nonNegativeInteger
+  - owl:qualifiedCardinality:
+    - restriction_qualified_cardinality: nonNegativeInteger
+- NamedIndividual:
+  - rdf:type:
+    - named_individual_type: Class
+- Class:
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Restriction
+      - Class
+  - rdfs:label:
+    - class_label: string
+  - skos:example:
+    - class_example: string
+  - rdfs:comment:
+    - class_comment:
+      - string
+      - string
+  - skos:note:
+    - class_note: string
+  - rdfs:seeAlso:
+    - class_see_also: string
+  - ns2:hasDbXref:
+    - class_has_db_xref:
+      - anyURI
+      - string
+- Ontology:
+  - dc11:date:
+    - ontology_date: dateTime
+  - dc11:creator:
+    - ontology_creator: string
+  - dc11:title:
+    - ontology_title: string
+  - dc11:contributor:
+    - ontology_contributor: string
+  - dc:license:
+    - ontology_license: anyURI
+  - rdfs:comment:
+    - ontology_comment: string

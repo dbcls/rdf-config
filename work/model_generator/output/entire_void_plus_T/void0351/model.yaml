@@ -1,0 +1,360 @@
+- Person:
+  - rdf:type:
+    - person_type: Class
+  - rdfs:label:
+    - person_label:
+      - string
+      - string
+- ObjectProperty:
+  - rdfs:label:
+    - object_property_label: string
+- hivList:
+  - rdf:type:
+    - hiv_list_type: Class
+  - rdfs:label:
+    - hiv_list_label: string
+  - rdfs:comment:
+    - hiv_list_comment: string
+  - skos:relatedMatch:
+    - hiv_list_related_match: anyURI
+- sexList:
+  - rdf:type:
+    - sex_list_type: Class
+  - rdfs:label:
+    - sex_list_label: string
+  - skos:relatedMatch:
+    - sex_list_related_match: anyURI
+- coronaVirusList:
+  - rdf:type:
+    - corona_virus_list_type: Class
+  - rdfs:label:
+    - corona_virus_list_label: string
+  - skos:relatedMatch:
+    - corona_virus_list_related_match: anyURI
+- oxygenSaturationList:
+  - rdf:type:
+    - oxygen_saturation_list_type: Class
+  - dc11:creator:
+    - oxygen_saturation_list_creator:
+      - Person
+      - NamedIndividual
+  - rdfs:label:
+    - oxygen_saturation_list_label: string
+  - rdfs:comment:
+    - oxygen_saturation_list_comment: string
+  - dc11:date:
+    - oxygen_saturation_list_date: dateTime
+  - skos:relatedMatch:
+    - oxygen_saturation_list_related_match: anyURI
+- o2FlowList:
+  - rdf:type:
+    - o2_flow_list_type: Class
+  - rdfs:label:
+    - o2_flow_list_label: string
+  - rdfs:comment:
+    - o2_flow_list_comment: string
+  - skos:relatedMatch:
+    - o2_flow_list_related_match: anyURI
+- oxygenInterfaceList:
+  - rdfs:seeAlso:
+    - oxygen_interface_list_see_also: NamedIndividual
+  - rdf:type:
+    - oxygen_interface_list_type: Class
+  - rdfs:label:
+    - oxygen_interface_list_label: string
+  - rdfs:comment:
+    - oxygen_interface_list_comment:
+      - string
+      - string
+  - owl:deprecated:
+    - oxygen_interface_list_deprecated: true
+  - skos:relatedMatch:
+    - oxygen_interface_list_related_match: anyURI
+- DatatypeProperty:
+  - rdfs:range:
+    - datatype_property_range: Datatype
+  - rdfs:subPropertyOf:
+    - datatype_property_sub_property_of: DatatypeProperty
+  - rdfs:domain:
+    - datatype_property_domain: Class
+  - rdfs:label:
+    - datatype_property_label: string
+  - rdfs:comment:
+    - datatype_property_comment: string
+- corticosteroidList:
+  - rdf:type:
+    - corticosteroid_list_type: Class
+  - rdfs:label:
+    - corticosteroid_list_label: string
+- AVPUList:
+  - rdf:type:
+    - avpu_list_type: Class
+  - rdfs:label:
+    - avpu_list_label: string
+  - rdfs:comment:
+    - avpu_list_comment: string
+  - skos:altLabel:
+    - avpu_list_alt_label: string
+- Ontology:
+  - dc11:contributor:
+    - ontology_contributor:
+      - Person
+      - NamedIndividual
+  - dc11:creator:
+    - ontology_creator:
+      - NamedIndividual
+      - Person
+  - rdfs:label:
+    - ontology_label: string
+  - rdfs:comment:
+    - ontology_comment: string
+  - dc11:title:
+    - ontology_title: string
+  - dc11:description:
+    - ontology_description: string
+  - dc11:format:
+    - ontology_format: string
+  - owl:versionInfo:
+    - ontology_version_info: string
+  - foaf:name:
+    - ontology_name: string
+  - skos:prefLabel:
+    - ontology_pref_label: string
+  - dc:hasVersion:
+    - ontology_has_version: string
+- ynunList:
+  - rdf:type:
+    - ynun_list_type: Class
+  - rdfs:label:
+    - ynun_list_label: string
+  - rdfs:comment:
+    - ynun_list_comment: string
+  - skos:relatedMatch:
+    - ynun_list_related_match: anyURI
+- Class:
+  - rdfs:seeAlso:
+    - class_see_also: Class
+  - dc11:creator:
+    - class_creator:
+      - NamedIndividual
+      - Person
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Restriction
+      - Class
+  - prov:hadPrimarySource:
+    - class_had_primary_source: anyURI
+  - skos:closeMatch:
+    - class_close_match:
+      - string
+      - string
+      - anyURI
+  - rdfs:label:
+    - class_label:
+      - string
+      - string
+  - rdfs:comment:
+    - class_comment:
+      - string
+      - string
+  - dc11:title:
+    - class_title: string
+  - dc11:description:
+    - class_description: string
+  - skos:altLabel:
+    - class_alt_label:
+      - string
+      - anyURI
+  - owl:deprecated:
+    - class_deprecated: true
+  - skos:definition:
+    - class_definition: string
+  - skos:prefLabel:
+    - class_pref_label: string
+  - dc11:date:
+    - class_date: dateTime
+  - skos:exactMatch:
+    - class_exact_match:
+      - string
+      - string
+      - anyURI
+  - ns1:who_covid_crf_label:
+    - class_who_covid_crf_label: string
+  - skos:relatedMatch:
+    - class_related_match:
+      - anyURI
+      - string
+- AnnotationProperty:
+  - rdfs:label:
+    - annotation_property_label: string
+  - rdfs:comment:
+    - annotation_property_comment: string
+- pnnotdoneList:
+  - rdf:type:
+    - pnnotdone_list_type: Class
+  - rdfs:label:
+    - pnnotdone_list_label: string
+  - skos:relatedMatch:
+    - pnnotdone_list_related_match: anyURI
+- sourceOfOxygenList:
+  - rdf:type:
+    - source_of_oxygen_list_type: Class
+  - rdfs:label:
+    - source_of_oxygen_list_label: string
+  - rdfs:comment:
+    - source_of_oxygen_list_comment: string
+  - skos:relatedMatch:
+    - source_of_oxygen_list_related_match: anyURI
+- IAO_0000003:
+  - rdf:type:
+    - iao_0000003_type: Class
+  - rdfs:label:
+    - iao_0000003_label:
+      - string
+      - string
+  - rdfs:comment:
+    - iao_0000003_comment: string
+  - skos:prefLabel:
+    - iao_0000003_pref_label: string
+- outcomeList:
+  - rdf:type:
+    - outcome_list_type: Class
+  - rdfs:label:
+    - outcome_list_label: string
+  - rdfs:comment:
+    - outcome_list_comment: string
+  - skos:prefLabel:
+    - outcome_list_pref_label: string
+  - skos:relatedMatch:
+    - outcome_list_related_match: anyURI
+- antiviralList:
+  - rdfs:seeAlso:
+    - antiviral_list_see_also:
+      - NamedIndividual
+      - antiviral_list
+  - rdf:type:
+    - antiviral_list_type: Class
+  - dc11:creator:
+    - antiviral_list_creator:
+      - Person
+      - NamedIndividual
+  - rdfs:label:
+    - antiviral_list_label:
+      - string
+      - string
+  - rdfs:comment:
+    - antiviral_list_comment: string
+  - skos:altLabel:
+    - antiviral_list_alt_label: string
+  - owl:deprecated:
+    - antiviral_list_deprecated: true
+  - skos:prefLabel:
+    - antiviral_list_pref_label: string
+  - dc11:date:
+    - antiviral_list_date: dateTime
+  - skos:exactMatch:
+    - antiviral_list_exact_match: anyURI
+  - skos:relatedMatch:
+    - antiviral_list_related_match: anyURI
+- FunctionalProperty:
+  - rdfs:range:
+    - functional_property_range: Datatype
+  - rdfs:domain:
+    - functional_property_domain: Class
+- Restriction:
+  - owl:onClass:
+    - restriction_on_class: Class
+  - owl:onProperty:
+    - restriction_on_property:
+      - DatatypeProperty
+      - ObjectProperty
+  - owl:hasValue:
+    - restriction_has_value:
+      - UO_0000003
+      - UO_0000001
+      - UO_0000002
+      - pnnotdone_list
+      - IAO_0000003
+      - NamedIndividual
+  - owl:someValuesFrom:
+    - restriction_some_values_from:
+      - Datatype
+      - Class
+  - owl:qualifiedCardinality:
+    - restriction_qualified_cardinality: nonNegativeInteger
+- UO_0000003:
+  - rdf:type:
+    - uo_0000003_type: Class
+  - rdfs:comment:
+    - uo_0000003_comment: string
+- UO_0000001:
+  - rdf:type:
+    - uo_0000001_type: Class
+  - rdfs:label:
+    - uo_0000001_label: string
+  - rdfs:comment:
+    - uo_0000001_comment: string
+  - skos:relatedMatch:
+    - uo_0000001_related_match: anyURI
+- UO_0000002:
+  - rdf:type:
+    - uo_0000002_type: Class
+  - rdfs:label:
+    - uo_0000002_label: string
+  - rdfs:comment:
+    - uo_0000002_comment: string
+  - skos:relatedMatch:
+    - uo_0000002_related_match: anyURI
+- NamedIndividual:
+  - rdfs:seeAlso:
+    - named_individual_see_also:
+      - NamedIndividual
+      - antiviral_list
+  - rdf:type:
+    - named_individual_type: Class
+  - dc11:creator:
+    - named_individual_creator:
+      - Person
+      - NamedIndividual
+  - rdfs:label:
+    - named_individual_label:
+      - string
+      - string
+  - rdfs:comment:
+    - named_individual_comment:
+      - string
+      - string
+  - skos:altLabel:
+    - named_individual_alt_label:
+      - string
+      - string
+  - owl:deprecated:
+    - named_individual_deprecated: true
+  - skos:prefLabel:
+    - named_individual_pref_label:
+      - string
+      - string
+  - dc11:date:
+    - named_individual_date: dateTime
+  - skos:exactMatch:
+    - named_individual_exact_match: anyURI
+  - skos:relatedMatch:
+    - named_individual_related_match: anyURI
+- ynuList:
+  - rdf:type:
+    - ynu_list_type: Class
+  - rdfs:label:
+    - ynu_list_label: string
+  - rdfs:comment:
+    - ynu_list_comment: string
+  - skos:relatedMatch:
+    - ynu_list_related_match: anyURI
+- selfCareList:
+  - rdf:type:
+    - self_care_list_type: Class
+  - rdfs:label:
+    - self_care_list_label: string
+  - rdfs:comment:
+    - self_care_list_comment: string
+  - skos:relatedMatch:
+    - self_care_list_related_match: anyURI

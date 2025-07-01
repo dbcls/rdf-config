@@ -1,0 +1,54 @@
+- ObjectProperty:
+  - rdfs:range:
+    - object_property_range: Class
+  - rdfs:domain:
+    - object_property_domain: Class
+  - rdfs:comment:
+    - object_property_comment: string
+  - rdfs:seeAlso:
+    - object_property_see_also: string
+- DatatypeProperty:
+  - rdfs:domain:
+    - datatype_property_domain: Class
+- InverseFunctionalProperty:
+  - rdfs:range:
+    - inverse_functional_property_range: Class
+- Restriction:
+  - owl:onProperty:
+    - restriction_on_property:
+      - DatatypeProperty
+      - FunctionalProperty
+      - InverseFunctionalProperty
+      - ObjectProperty
+  - owl:allValuesFrom:
+    - restriction_all_values_from: Class
+  - owl:someValuesFrom:
+    - restriction_some_values_from:
+      - Datatype
+      - Class
+  - owl:hasValue:
+    - restriction_has_value: integer
+- Class:
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+  - owl:equivalentClass:
+    - class_equivalent_class: Class
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Class
+      - Restriction
+  - rdfs:comment:
+    - class_comment: string
+  - ns1:subject:
+    - class_subject: string
+  - owl:versionInfo:
+    - class_version_info: string
+- FunctionalProperty:
+  - rdfs:range:
+    - functional_property_range: Class
+  - rdfs:domain:
+    - functional_property_domain: Class
+  - rdfs:comment:
+    - functional_property_comment: string
+  - rdfs:seeAlso:
+    - functional_property_see_also: string

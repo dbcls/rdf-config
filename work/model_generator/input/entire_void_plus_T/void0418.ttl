@@ -1,0 +1,3509 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sbm: <http://sparqlbuilder.org/2015/09/rdf-metadata-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://rdfportal.org/ns/> .
+
+<http://rdfportal.org/ns/7e815ef071bac183903a990e027f6f98>
+    void:classPartition [
+        void:class <http://www.semanticweb.org/Terrorism#Howitzer> ;
+        void:entities 5 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#ThroughWallDetectionRadar> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#BallisticMissileDefenceSystem> ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#SelfPropelledArtillery> ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#MechanizedInfantryRegiment> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#AntiMaterialRifle> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#ArmouredAmbulance> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#UnmannedCombatAerialVehicle> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#PlasticExplosive> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#ReconnaissanceVehicles> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#UtilityHelicopter> ;
+        void:entities 5 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#ArmouredCombatEngineeringVehicle> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#MultipleRocketLauncher> ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#ArmouredLightRecoveryVehicle> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#Country> ;
+        void:entities 30 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#TerroristOrganisation> ;
+        void:entities 20 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#ArmouredPersonnelCarriers> ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#HighMobility6x6Truck> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#LightRecoveryVehicle> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class owl:ObjectProperty ;
+        void:entities 22 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#NaxalistOrganisation> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#MinePlow> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class owl:NamedIndividual ;
+        void:entities 929 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#ArtilleryTractorTruck> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#ServiceRifle> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#IntermediateRangeBallisticMissile> ;
+        void:entities 5 ;
+        a void:Dataset
+    ], [
+        void:class owl:FunctionalProperty ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#SecondaryHighExplosive> ;
+        void:entities 6 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#TruckMountedBridgingSystem> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#PrimaryHighExplosive> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#MANPADS> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#GroundPenetrationRadar> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#x10Trucks> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#MortarCarrier> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#SubMachineGun> ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#ArmouredAmphibiousBulldozer> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#MineProtectedVehicle> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#Operation> ;
+        void:entities 21 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#FieldGun> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#TankDestroyers> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#ArmouredRegiment> ;
+        void:entities 63 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#MilitaryEngineeringVehicle> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#ArtilleryLocatingRadar> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#FireTender> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#TacticalBallisticMissile> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#Army> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#Gadgets> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#City> ;
+        void:entities 139 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#Tank> ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#CombatShotgun> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#InfantryFightingVehicles> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#Handguns> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#AntiAircraftartillery> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#ArmouredRecoveryVehicle> ;
+        void:entities 4 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#RecoillessRifle> ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#ShortRangeBattleFieldSurveillanceRadar> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#TractorTruck> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#MultiMissionRadar> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#Heavy4x4Trucks> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#AttackHelicopter> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#PassiveElectronicallyScannerArrayRadar> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#Medium4By4Truck> ;
+        void:entities 6 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#ArmouredPersonnelCarrier> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#MineClearingVehicle> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#AllTerrainTransportVehicle> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#BattlefieldSurveilanceSystem> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#Workshops> ;
+        void:entities 8 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#SemiAutomaticPistol> ;
+        void:entities 4 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#LowLevelLightWeight2DRadar> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#RocketLauncher> ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#ElectronicWarfare> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#State> ;
+        void:entities 32 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#MachinePistol> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#ArmouredCombatVehicles> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#ShortRangeBallisticMissile> ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class owl:DatatypeProperty ;
+        void:entities 20 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#UnmannedAerialVehicle> ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#AssaultRifle> ;
+        void:entities 10 ;
+        a void:Dataset
+    ], [
+        void:class owl:Restriction ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#AllTerrainVehicle> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class owl:Class ;
+        void:entities 260 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#AutomaticGrenadeLauncher> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#HeavyMachineGun> ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#Mortar> ;
+        void:entities 4 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#Hospital> ;
+        void:entities 268 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#AntiTank> ;
+        void:entities 13 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#SurfaceToAirMissile> ;
+        void:entities 9 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#InfantryRegiment> ;
+        void:entities 29 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#TerroristAttack> ;
+        void:entities 84 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#SniperRifle> ;
+        void:entities 6 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#BombDisposalRobot> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#MobileDecontaminationVehicle> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#LightUtilityVehicles> ;
+        void:entities 4 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#CruiseMissile> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#SelfPropelledAnti-AircraftWeapon> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#Male> ;
+        void:entities 16 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#MainBattleTank> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#FastAttackVehicle> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#ArmouredVehicleLaunchedBridge> ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#NaxalistAttack> ;
+        void:entities 11 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#HeavyGun> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#3DRadar> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#MediumRangeBallisticMissile> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#LightMachineGun> ;
+        void:entities 4 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#GrenadeLauncher> ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/Terrorism#Hand_Grenade> ;
+        void:entities 2 ;
+        a void:Dataset
+    ] ;
+    void:classes 106 ;
+    void:distinctObjects 1433 ;
+    void:distinctSubjects 1492 ;
+    void:properties 46 ;
+    void:propertyPartition [
+        void:property rdfs:comment ;
+        void:triples 24 ;
+        sbm:classRelation [
+            void:triples 18 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:inverseOf ;
+        void:triples 7 ;
+        sbm:classRelation [
+            void:triples 7 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/Terrorism#hasUsed> ;
+        void:triples 111 ;
+        sbm:classRelation [
+            void:triples 21 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Hand_Grenade> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#SecondaryHighExplosive> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#NaxalistAttack> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#AssaultRifle> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TerroristAttack> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#SemiAutomaticPistol> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Handguns> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#NaxalistAttack> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TerroristAttack> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 40 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#SecondaryHighExplosive> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TerroristAttack> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Gadgets> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 21 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Hand_Grenade> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TerroristAttack> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#GrenadeLauncher> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 111 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 96 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TerroristAttack> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#PlasticExplosive> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#PrimaryHighExplosive> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#NaxalistAttack> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#PlasticExplosive> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TerroristAttack> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#ServiceRifle> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Gadgets> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TerroristAttack> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 15 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#NaxalistAttack> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#PrimaryHighExplosive> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#ServiceRifle> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TerroristAttack> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#AssaultRifle> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#GrenadeLauncher> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TerroristAttack> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 15 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Handguns> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#SemiAutomaticPistol> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TerroristAttack> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 45 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#SecondaryHighExplosive> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Handguns> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TerroristAttack> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/Terrorism#numberOfPersonsDied> ;
+        void:triples 102 ;
+        sbm:classRelation [
+            void:triples 102 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 80 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TerroristAttack> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Operation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#NaxalistAttack> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:disjointWith ;
+        void:triples 11 ;
+        sbm:classRelation [
+            void:triples 11 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#GrenadeLauncher> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/Terrorism#numberOfPersonsInjured> ;
+        void:triples 90 ;
+        sbm:classRelation [
+            void:triples 7 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Operation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 72 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TerroristAttack> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#NaxalistAttack> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 90 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/Terrorism#casualityDescription> ;
+        void:triples 8 ;
+        sbm:classRelation [
+            void:triples 8 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Operation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/Terrorism#seniorityRank> ;
+        void:triples 29 ;
+        sbm:classRelation [
+            void:triples 29 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 29 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#InfantryRegiment> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:onProperty ;
+        void:triples 3 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/Terrorism#attackedAt> ;
+        void:triples 96 ;
+        sbm:classRelation [
+            void:triples 96 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 93 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#City> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#NaxalistAttack> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#City> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#NaxalistAttack> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 85 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TerroristAttack> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 82 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#City> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TerroristAttack> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/Terrorism#isMemberOf> ;
+        void:triples 13 ;
+        sbm:classRelation [
+            void:triples 13 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 13 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#TerroristOrganisation> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Male> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 13 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Male> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 13 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#TerroristOrganisation> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/Terrorism#motto> ;
+        void:triples 25 ;
+        sbm:classRelation [
+            void:triples 25 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#InfantryRegiment> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 25 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/Terrorism#quantity> ;
+        void:triples 65 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#AttackHelicopter> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#UtilityHelicopter> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#SelfPropelledAnti-AircraftWeapon> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#HeavyGun> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MineProtectedVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Heavy4x4Trucks> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#LightUtilityVehicles> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MultipleRocketLauncher> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#AntiTank> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Mortar> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArmouredPersonnelCarrier> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArmouredPersonnelCarriers> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#AntiAircraftartillery> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Hand_Grenade> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MineClearingVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MainBattleTank> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#SelfPropelledArtillery> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#FieldGun> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 65 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArmouredVehicleLaunchedBridge> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArtilleryTractorTruck> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Howitzer> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Tank> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArmouredAmbulance> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#FastAttackVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#CruiseMissile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#UnmannedAerialVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#BombDisposalRobot> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Medium4By4Truck> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArmouredCombatEngineeringVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ReconnaissanceVehicles> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MortarCarrier> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#UnmannedCombatAerialVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#RecoillessRifle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#InfantryFightingVehicles> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MANPADS> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#SurfaceToAirMissile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArmouredRecoveryVehicle> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/Terrorism#basedIn> ;
+        void:triples 12 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#State> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#City> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TerroristOrganisation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 12 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#City> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TerroristOrganisation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 12 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TerroristOrganisation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#State> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TerroristOrganisation> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/Terrorism#attackedBy> ;
+        void:triples 88 ;
+        sbm:classRelation [
+            void:triples 11 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#NaxalistAttack> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 77 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TerroristAttack> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 77 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#TerroristOrganisation> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TerroristAttack> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#NaxalistOrganisation> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#NaxalistAttack> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 77 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#TerroristOrganisation> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#NaxalistOrganisation> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 88 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/Terrorism#hasReason> ;
+        void:triples 8 ;
+        sbm:classRelation [
+            void:triples 7 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TerroristAttack> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Operation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:subClassOf ;
+        void:triples 263 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectClass owl:Restriction ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#GrenadeLauncher> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#AssaultRifle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 253 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdf:type ;
+        void:triples 2209 ;
+        sbm:classRelation [
+            void:triples 5 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Howitzer> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MineClearingVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#AntiAircraftartillery> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MachinePistol> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 30 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 10 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#AssaultRifle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#CombatShotgun> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#FireTender> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MainBattleTank> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#SelfPropelledAnti-AircraftWeapon> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#SemiAutomaticPistol> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#GrenadeLauncher> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#SelfPropelledArtillery> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArmouredAmbulance> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArmouredCombatEngineeringVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MortarCarrier> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 139 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#City> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#RecoillessRifle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ThroughWallDetectionRadar> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Heavy4x4Trucks> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#InfantryFightingVehicles> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#PassiveElectronicallyScannerArrayRadar> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Handguns> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#NaxalistOrganisation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Mortar> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#GrenadeLauncher> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#x10Trucks> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MinePlow> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 63 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArmouredRegiment> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 13 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#AntiTank> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MilitaryEngineeringVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Army> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MechanizedInfantryRegiment> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#CruiseMissile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#GrenadeLauncher> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#GroundPenetrationRadar> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#FastAttackVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MultipleRocketLauncher> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#HighMobility6x6Truck> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MANPADS> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MobileDecontaminationVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 268 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Hospital> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArmouredCombatVehicles> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArmouredRecoveryVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 29 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#InfantryRegiment> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#AutomaticGrenadeLauncher> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#LightMachineGun> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#NaxalistAttack> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 928 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#LightUtilityVehicles> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#IntermediateRangeBallisticMissile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 32 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#State> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArmouredAmphibiousBulldozer> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#LightRecoveryVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Hand_Grenade> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MediumRangeBallisticMissile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ShortRangeBallisticMissile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TerroristOrganisation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#LowLevelLightWeight2DRadar> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#PrimaryHighExplosive> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Medium4By4Truck> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArmouredVehicleLaunchedBridge> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 21 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Operation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#UnmannedAerialVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#FieldGun> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#UtilityHelicopter> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#HeavyGun> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ServiceRifle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#SecondaryHighExplosive> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ReconnaissanceVehicles> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#GrenadeLauncher> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArmouredPersonnelCarriers> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#BallisticMissileDefenceSystem> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#RocketLauncher> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArmouredLightRecoveryVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#BombDisposalRobot> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MultiMissionRadar> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 84 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TerroristAttack> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#UnmannedCombatAerialVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#GrenadeLauncher> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#GrenadeLauncher> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TruckMountedBridgingSystem> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TractorTruck> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#PlasticExplosive> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#SubMachineGun> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#SurfaceToAirMissile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#AllTerrainTransportVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Workshops> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TacticalBallisticMissile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArmouredPersonnelCarrier> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#BattlefieldSurveilanceSystem> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ElectronicWarfare> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#3DRadar> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#AntiMaterialRifle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Tank> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Male> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#SniperRifle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArtilleryTractorTruck> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#HeavyMachineGun> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#AllTerrainVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ShortRangeBattleFieldSurveillanceRadar> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TankDestroyers> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#AttackHelicopter> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MineProtectedVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArtilleryLocatingRadar> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Gadgets> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:subPropertyOf ;
+        void:triples 3 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectClass owl:DatatypeProperty ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:DatatypeProperty ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/Terrorism#involvedIn> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TerroristOrganisation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#TerroristAttack> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#TerroristAttack> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TerroristOrganisation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/Terrorism#happenedAt> ;
+        void:triples 21 ;
+        sbm:classRelation [
+            void:triples 21 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Operation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Operation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#State> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Operation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 21 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#City> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#State> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#City> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Operation> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/Terrorism#forceInvolved> ;
+        void:triples 9 ;
+        sbm:classRelation [
+            void:triples 9 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Army> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Operation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Operation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Army> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/Terrorism#location> ;
+        void:triples 34 ;
+        sbm:classRelation [
+            void:triples 25 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#InfantryRegiment> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#State> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#City> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#State> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Workshops> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#State> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#City> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 30 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#City> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Workshops> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#State> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#InfantryRegiment> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Workshops> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 24 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#City> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#InfantryRegiment> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 34 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#City> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Workshops> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/Terrorism#activeFrom> ;
+        void:triples 29 ;
+        sbm:classRelation [
+            void:triples 29 ;
+            sbm:objectDatatype xsd:dateTime ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#InfantryRegiment> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 29 ;
+            sbm:objectDatatype xsd:dateTime ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/Terrorism#isPartOf> ;
+        void:triples 170 ;
+        sbm:classRelation [
+            void:triples 136 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#State> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#City> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 32 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#State> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 137 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#State> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 32 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#State> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 170 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 33 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 137 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#City> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#City> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/Terrorism#mandate> ;
+        void:triples 8 ;
+        sbm:classRelation [
+            void:triples 8 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Workshops> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/Terrorism#hasLeader> ;
+        void:triples 3 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Male> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TerroristOrganisation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Male> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TerroristOrganisation> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/Terrorism#personInvolved> ;
+        void:triples 13 ;
+        sbm:classRelation [
+            void:triples 13 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Male> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 13 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 13 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Male> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TerroristAttack> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 13 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TerroristAttack> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/Terrorism#isLeaderOf> ;
+        void:triples 3 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#TerroristOrganisation> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Male> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Male> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#TerroristOrganisation> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:someValuesFrom ;
+        void:triples 3 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/Terrorism#detail> ;
+        void:triples 164 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TankDestroyers> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Tank> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#UnmannedAerialVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#3DRadar> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArmouredAmbulance> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#AntiMaterialRifle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArmouredPersonnelCarriers> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#SurfaceToAirMissile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#IntermediateRangeBallisticMissile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#SemiAutomaticPistol> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#UtilityHelicopter> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#BallisticMissileDefenceSystem> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MANPADS> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#AttackHelicopter> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArmouredVehicleLaunchedBridge> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#LightUtilityVehicles> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#GrenadeLauncher> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MediumRangeBallisticMissile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#CruiseMissile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TacticalBallisticMissile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#x10Trucks> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArmouredCombatVehicles> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ShortRangeBattleFieldSurveillanceRadar> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#SelfPropelledAnti-AircraftWeapon> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#InfantryFightingVehicles> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#HeavyMachineGun> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#AllTerrainVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#LightMachineGun> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArtilleryLocatingRadar> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#SubMachineGun> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#HeavyGun> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ShortRangeBallisticMissile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArmouredPersonnelCarrier> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MilitaryEngineeringVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#SniperRifle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#SelfPropelledArtillery> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#LightRecoveryVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Hand_Grenade> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#HighMobility6x6Truck> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Medium4By4Truck> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#FieldGun> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArmouredRecoveryVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#FastAttackVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArmouredLightRecoveryVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ReconnaissanceVehicles> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#AntiAircraftartillery> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MainBattleTank> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MinePlow> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#RocketLauncher> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MineProtectedVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Heavy4x4Trucks> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Howitzer> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#GroundPenetrationRadar> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArmouredAmphibiousBulldozer> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#CombatShotgun> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#AutomaticGrenadeLauncher> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#PassiveElectronicallyScannerArrayRadar> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#BombDisposalRobot> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Mortar> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#RecoillessRifle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MineClearingVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#BattlefieldSurveilanceSystem> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MultiMissionRadar> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#UnmannedCombatAerialVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ThroughWallDetectionRadar> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 13 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#AntiTank> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MultipleRocketLauncher> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#AssaultRifle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MortarCarrier> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 164 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ElectronicWarfare> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MachinePistol> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#LowLevelLightWeight2DRadar> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/Terrorism#hasCompensationDetail> ;
+        void:triples 15 ;
+        sbm:classRelation [
+            void:triples 15 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 15 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TerroristAttack> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:isDefinedBy ;
+        void:triples 44 ;
+        sbm:classRelation [
+            void:triples 43 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Workshops> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/Terrorism#hasAttackType> ;
+        void:triples 34 ;
+        sbm:classRelation [
+            void:triples 33 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TerroristAttack> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 34 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#NaxalistAttack> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/Terrorism#between> ;
+        void:triples 11 ;
+        sbm:classRelation [
+            void:triples 11 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Operation> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/Terrorism#warCry> ;
+        void:triples 27 ;
+        sbm:classRelation [
+            void:triples 27 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#InfantryRegiment> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 27 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:sameAs ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Mortar> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Mortar> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Mortar> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#City> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#City> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Mortar> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#City> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#City> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:domain ;
+        void:triples 12 ;
+        sbm:classRelation [
+            void:triples 12 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/Terrorism#hasMember> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Male> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TerroristOrganisation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Male> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TerroristOrganisation> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/Terrorism#hasStartDate> ;
+        void:triples 115 ;
+        sbm:classRelation [
+            void:triples 84 ;
+            sbm:objectDatatype xsd:dateTime ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TerroristAttack> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectDatatype xsd:dateTime ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Operation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 115 ;
+            sbm:objectDatatype xsd:dateTime ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11 ;
+            sbm:objectDatatype xsd:dateTime ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#NaxalistAttack> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/Terrorism#hasDescription> ;
+        void:triples 69 ;
+        sbm:classRelation [
+            void:triples 20 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Operation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#NaxalistAttack> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 69 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 43 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TerroristAttack> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/Terrorism#origin> ;
+        void:triples 205 ;
+        sbm:classRelation [
+            void:triples 4 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#LightUtilityVehicles> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#FieldGun> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArmouredAmbulance> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#GroundPenetrationRadar> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#LightUtilityVehicles> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Mortar> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArmouredLightRecoveryVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MultiMissionRadar> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Tank> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#HighMobility6x6Truck> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#RocketLauncher> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#BallisticMissileDefenceSystem> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#LightRecoveryVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ShortRangeBattleFieldSurveillanceRadar> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MainBattleTank> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#LightMachineGun> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#3DRadar> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#CombatShotgun> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArtilleryLocatingRadar> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#SurfaceToAirMissile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#IntermediateRangeBallisticMissile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TruckMountedBridgingSystem> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#SelfPropelledArtillery> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#RecoillessRifle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#UtilityHelicopter> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Mortar> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MultiMissionRadar> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#SubMachineGun> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TractorTruck> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ShortRangeBallisticMissile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MainBattleTank> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#AntiTank> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#AllTerrainVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#RecoillessRifle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Medium4By4Truck> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MobileDecontaminationVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Hand_Grenade> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#SelfPropelledArtillery> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#GroundPenetrationRadar> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#AttackHelicopter> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TankDestroyers> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#FastAttackVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#BallisticMissileDefenceSystem> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#x10Trucks> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MANPADS> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 205 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#AssaultRifle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArmouredPersonnelCarrier> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MilitaryEngineeringVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#LightRecoveryVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MineClearingVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArtilleryTractorTruck> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#SniperRifle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#UnmannedCombatAerialVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArmouredPersonnelCarrier> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArmouredVehicleLaunchedBridge> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#3DRadar> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MinePlow> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#IntermediateRangeBallisticMissile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MortarCarrier> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#SurfaceToAirMissile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MineProtectedVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#HeavyGun> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 205 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MachinePistol> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MANPADS> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ReconnaissanceVehicles> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Heavy4x4Trucks> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TractorTruck> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArmouredRecoveryVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#AntiAircraftartillery> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArtilleryTractorTruck> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Hand_Grenade> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ReconnaissanceVehicles> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ElectronicWarfare> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArmouredVehicleLaunchedBridge> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ShortRangeBattleFieldSurveillanceRadar> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#UnmannedCombatAerialVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Howitzer> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MediumRangeBallisticMissile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#AttackHelicopter> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#SelfPropelledAnti-AircraftWeapon> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ThroughWallDetectionRadar> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MortarCarrier> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#AntiMaterialRifle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#SubMachineGun> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#AutomaticGrenadeLauncher> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#GrenadeLauncher> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#PassiveElectronicallyScannerArrayRadar> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MilitaryEngineeringVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArtilleryLocatingRadar> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#HeavyGun> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#FieldGun> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TacticalBallisticMissile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#AntiMaterialRifle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#UnmannedAerialVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#CruiseMissile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#AllTerrainTransportVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TruckMountedBridgingSystem> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#FireTender> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TankDestroyers> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Howitzer> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArmouredCombatVehicles> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#HeavyMachineGun> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArmouredLightRecoveryVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#x10Trucks> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#SemiAutomaticPistol> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#CruiseMissile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TacticalBallisticMissile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MediumRangeBallisticMissile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#BattlefieldSurveilanceSystem> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#UnmannedAerialVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#BombDisposalRobot> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#AssaultRifle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ShortRangeBallisticMissile> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArmouredAmphibiousBulldozer> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#AllTerrainVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#AllTerrainTransportVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#BattlefieldSurveilanceSystem> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#RocketLauncher> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ThroughWallDetectionRadar> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MinePlow> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#SelfPropelledAnti-AircraftWeapon> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#PassiveElectronicallyScannerArrayRadar> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArmouredAmphibiousBulldozer> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#AntiTank> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#HighMobility6x6Truck> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MineClearingVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#UtilityHelicopter> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MultipleRocketLauncher> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#GrenadeLauncher> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MobileDecontaminationVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#InfantryFightingVehicles> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#AntiAircraftartillery> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArmouredPersonnelCarriers> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArmouredCombatEngineeringVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#SemiAutomaticPistol> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#InfantryFightingVehicles> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#BombDisposalRobot> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MineProtectedVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArmouredCombatVehicles> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MachinePistol> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArmouredAmbulance> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#AutomaticGrenadeLauncher> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArmouredCombatEngineeringVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#HeavyMachineGun> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Tank> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#LightMachineGun> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArmouredPersonnelCarriers> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Heavy4x4Trucks> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#MultipleRocketLauncher> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#FastAttackVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#LowLevelLightWeight2DRadar> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#LowLevelLightWeight2DRadar> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#CombatShotgun> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ElectronicWarfare> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#SniperRifle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#FireTender> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#ArmouredRecoveryVehicle> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#Country> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Medium4By4Truck> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/Terrorism#locatedAt> ;
+        void:triples 268 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#State> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Hospital> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#State> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 268 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 268 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Hospital> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 256 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#City> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 256 ;
+            sbm:objectClass <http://www.semanticweb.org/Terrorism#City> ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Hospital> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:range ;
+        void:triples 35 ;
+        sbm:classRelation [
+            void:triples 17 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/Terrorism#hasEndDate> ;
+        void:triples 24 ;
+        sbm:classRelation [
+            void:triples 9 ;
+            sbm:objectDatatype xsd:dateTime ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Operation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 14 ;
+            sbm:objectDatatype xsd:dateTime ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#TerroristAttack> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:dateTime ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#NaxalistAttack> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 24 ;
+            sbm:objectDatatype xsd:dateTime ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.semanticweb.org/Terrorism#result> ;
+        void:triples 12 ;
+        sbm:classRelation [
+            void:triples 12 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/Terrorism#Operation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 12 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ] ;
+    void:sparqlEndpoint <https://rdfportal.org/bioportal/sparql> ;
+    void:triples 4973 ;
+    a void:Dataset, sd:Graph .

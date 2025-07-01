@@ -1,0 +1,128 @@
+- ConceptScheme:
+  - rdf:type:
+    - concept_scheme_type: Class
+  - skos:hasTopConcept:
+    - concept_scheme_has_top_concept:
+      - NamedIndividual
+      - Concept
+  - ns1:createdOn:
+    - concept_scheme_created_on: string
+  - dc:description:
+    - concept_scheme_description: string
+  - ns1:lastUpdatedOn:
+    - concept_scheme_last_updated_on: string
+  - ns1:version:
+    - concept_scheme_version: string
+  - dc:title:
+    - concept_scheme_title: string
+- Concept:
+  - skos:broader:
+    - concept_broader:
+      - NamedIndividual
+      - Concept
+  - skos:narrower:
+    - concept_narrower:
+      - Concept
+      - NamedIndividual
+  - rdf:type:
+    - concept_type: Class
+  - skos:topConceptOf:
+    - concept_top_concept_of:
+      - NamedIndividual
+      - ConceptScheme
+  - ns2:hasProperty:
+    - concept_has_property:
+      - Concept
+      - NamedIndividual
+  - skos:inScheme:
+    - concept_in_scheme:
+      - ConceptScheme
+      - NamedIndividual
+  - rdfs:seeAlso:
+    - concept_see_also: string
+  - skos:prefLabel:
+    - concept_pref_label: string
+  - skos:scopeNote:
+    - concept_scope_note: string
+  - dc:modified:
+    - concept_modified: '2000-01-01'
+  - skos:note:
+    - concept_note: string
+  - skos:editorialNote:
+    - concept_editorial_note: string
+  - skos:definition:
+    - concept_definition: string
+  - skos:altLabel:
+    - concept_alt_label: string
+  - skos:hiddenLabel:
+    - concept_hidden_label: string
+  - dc:created:
+    - concept_created: '2000-01-01'
+  - dc:contributor:
+    - concept_contributor: string
+  - dc:creator:
+    - concept_creator: string
+- NamedIndividual:
+  - skos:broader:
+    - named_individual_broader:
+      - Concept
+      - NamedIndividual
+  - skos:narrower:
+    - named_individual_narrower:
+      - NamedIndividual
+      - Concept
+  - rdf:type:
+    - named_individual_type: Class
+  - skos:topConceptOf:
+    - named_individual_top_concept_of:
+      - NamedIndividual
+      - ConceptScheme
+  - ns2:hasProperty:
+    - named_individual_has_property:
+      - Concept
+      - NamedIndividual
+  - skos:hasTopConcept:
+    - named_individual_has_top_concept:
+      - NamedIndividual
+      - Concept
+  - skos:inScheme:
+    - named_individual_in_scheme:
+      - ConceptScheme
+      - NamedIndividual
+  - ns1:createdOn:
+    - named_individual_created_on: string
+  - rdfs:seeAlso:
+    - named_individual_see_also: string
+  - skos:prefLabel:
+    - named_individual_pref_label: string
+  - dc:description:
+    - named_individual_description: string
+  - skos:scopeNote:
+    - named_individual_scope_note: string
+  - ns1:lastUpdatedOn:
+    - named_individual_last_updated_on: string
+  - dc:modified:
+    - named_individual_modified: '2000-01-01'
+  - ns1:version:
+    - named_individual_version: string
+  - skos:note:
+    - named_individual_note: string
+  - skos:editorialNote:
+    - named_individual_editorial_note: string
+  - skos:definition:
+    - named_individual_definition: string
+  - skos:altLabel:
+    - named_individual_alt_label: string
+  - skos:hiddenLabel:
+    - named_individual_hidden_label: string
+  - dc:created:
+    - named_individual_created: '2000-01-01'
+  - dc:contributor:
+    - named_individual_contributor: string
+  - dc:creator:
+    - named_individual_creator: string
+  - dc:title:
+    - named_individual_title: string
+- Class:
+  - ns3:prefixIRI:
+    - class_prefix_iri: string

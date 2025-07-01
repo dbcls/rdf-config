@@ -1,0 +1,89 @@
+- Collection:
+  - skos:member:
+    - collection_member:
+      - Concept
+      - MD_ClassificationCode
+      - MD_RestrictionCode
+  - skos:prefLabel:
+    - collection_pref_label: string
+- Class:
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Class
+      - Restriction
+  - ns2:constraint:
+    - class_constraint: string
+  - rdfs:label:
+    - class_label: string
+  - skos:definition:
+    - class_definition: string
+  - rdfs:isDefinedBy:
+    - class_is_defined_by: string
+- Restriction:
+  - owl:onProperty:
+    - restriction_on_property:
+      - ObjectProperty
+      - DatatypeProperty
+  - owl:allValuesFrom:
+    - restriction_all_values_from: Class
+  - owl:maxCardinality:
+    - restriction_max_cardinality: nonNegativeInteger
+  - owl:cardinality:
+    - restriction_cardinality: nonNegativeInteger
+- Ontology:
+  - rdfs:label:
+    - ontology_label: string
+  - owl:versionInfo:
+    - ontology_version_info: string
+  - dc:source:
+    - ontology_source: string
+- ObjectProperty:
+  - rdfs:domain:
+    - object_property_domain: Class
+  - rdfs:range:
+    - object_property_range: Class
+  - rdfs:label:
+    - object_property_label: string
+  - rdfs:isDefinedBy:
+    - object_property_is_defined_by: string
+- DatatypeProperty:
+  - rdfs:domain:
+    - datatype_property_domain: Class
+  - rdfs:label:
+    - datatype_property_label: string
+  - rdfs:isDefinedBy:
+    - datatype_property_is_defined_by: string
+- Concept:
+  - skos:inScheme:
+    - concept_in_scheme: ConceptScheme
+  - rdf:type:
+    - concept_type: Class
+  - skos:prefLabel:
+    - concept_pref_label: string
+  - rdfs:isDefinedBy:
+    - concept_is_defined_by: string
+- ConceptScheme:
+  - dc:isFormatOf:
+    - concept_scheme_is_format_of: Class
+  - skos:prefLabel:
+    - concept_scheme_pref_label: string
+  - rdfs:isDefinedBy:
+    - concept_scheme_is_defined_by: string
+- MDClassificationCode:
+  - skos:inScheme:
+    - md_classification_code_in_scheme: ConceptScheme
+  - rdf:type:
+    - md_classification_code_type: Class
+  - skos:prefLabel:
+    - md_classification_code_pref_label: string
+  - rdfs:isDefinedBy:
+    - md_classification_code_is_defined_by: string
+- MDRestrictionCode:
+  - skos:inScheme:
+    - md_restriction_code_in_scheme: ConceptScheme
+  - rdf:type:
+    - md_restriction_code_type: Class
+  - skos:prefLabel:
+    - md_restriction_code_pref_label: string
+  - rdfs:isDefinedBy:
+    - md_restriction_code_is_defined_by: string

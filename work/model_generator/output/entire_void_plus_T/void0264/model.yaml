@@ -1,0 +1,61 @@
+- Ontology:
+  - owl:versionInfo:
+    - ontology_version_info: decimal
+  - dc11:contributor:
+    - ontology_contributor: string
+  - dc11:date:
+    - ontology_date: string
+  - dc11:creator:
+    - ontology_creator: string
+  - rdfs:comment:
+    - ontology_comment: string
+- AnnotationProperty:
+  - rdfs:subPropertyOf:
+    - annotation_property_sub_property_of: AnnotationProperty
+  - dc11:creator:
+    - annotation_property_creator: string
+- Restriction:
+  - owl:someValuesFrom:
+    - restriction_some_values_from: Class
+  - owl:onProperty:
+    - restriction_on_property: ObjectProperty
+- ObjectProperty:
+  - rdfs:domain:
+    - object_property_domain: Class
+  - rdfs:range:
+    - object_property_range: Class
+- Class:
+  - owl:equivalentClass:
+    - class_equivalent_class: Class
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Restriction
+      - Class
+  - skos:altLabel:
+    - class_alt_label: string
+  - ns1:ICNP_id:
+    - class_icnp_id: string
+  - ns1:UMLS_id:
+    - class_umls_id:
+      - string
+      - string
+  - ns1:CIF_id:
+    - class_cif_id: string
+  - skos:definition:
+    - class_definition: string
+  - ns1:MeSH_id:
+    - class_me_sh_id: string
+  - ns1:Cladimed_id:
+    - class_cladimed_id: string
+  - rdfs:comment:
+    - class_comment:
+      - string
+      - string
+  - ns1:NCIt_id:
+    - class_nc_it_id:
+      - integer
+      - string
+  - skos:prefLabel:
+    - class_pref_label: string
+  - ns1:CISMeF_id:
+    - class_cis_me_f_id: string

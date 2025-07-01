@@ -1,0 +1,25 @@
+- Class:
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Restriction
+      - Class
+  - owl:equivalentClass:
+    - class_equivalent_class: Class
+  - rdfs:comment:
+    - class_comment: string
+  - rdfs:label:
+    - class_label: string
+- Restriction:
+  - owl:someValuesFrom:
+    - restriction_some_values_from: Class
+  - owl:onProperty:
+    - restriction_on_property: ObjectProperty
+  - owl:allValuesFrom:
+    - restriction_all_values_from: Class
+- Ontology:
+  - rdfs:comment:
+    - ontology_comment: string
+  - rdfs:label:
+    - ontology_label: string
+  - owl:versionInfo:
+    - ontology_version_info: string

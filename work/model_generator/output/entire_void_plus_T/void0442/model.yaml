@@ -1,0 +1,183 @@
+- Class:
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Restriction
+      - Class
+  - rdfs:label:
+    - class_label: string
+- Restriction:
+  - owl:onProperty:
+    - restriction_on_property:
+      - DatatypeProperty
+      - ObjectProperty
+  - owl:minCardinality:
+    - restriction_min_cardinality: 12345
+- type:
+  - ns1:isTypeOf:
+    - type_is_type_of:
+      - ISO639-3
+      - ISO639-2B
+      - ISO639-1
+      - ISO639-2T
+  - rdf:type:
+    - type_type: Class
+  - ns1:hasISO639-3Code:
+    - type_has_iso639-3_code: ISO639-3
+  - ns1:isScopeOf:
+    - type_is_scope_of:
+      - ISO639-2B
+      - ISO639-2T
+      - ISO639-3
+  - ns1:hasEnglishName:
+    - type_has_english_name: string
+- ISO639-1:
+  - ns1:hasType:
+    - iso639-1_has_type:
+      - type
+      - language
+  - ns1:hasScope:
+    - iso639-1_has_scope: scope
+  - rdf:type:
+    - iso639-1_type: Class
+  - ns1:isCodeOf:
+    - iso639-1_is_code_of: language
+  - ns1:isValid:
+    - iso639-1_is_valid: true
+  - ns1:isValidUntil:
+    - iso639-1_is_valid_until: string
+  - ns1:isValidFrom:
+    - iso639-1_is_valid_from: string
+- language:
+  - ns1:isTypeOf:
+    - language_is_type_of:
+      - ISO639-2B
+      - ISO639-3
+      - ISO639-2T
+      - ISO639-1
+  - rdf:type:
+    - language_type: Class
+  - ns1:hasISO639-3Code:
+    - language_has_iso639-3_code:
+      - ISO639-2B
+      - ISO639-3
+      - ISO639-2T
+  - ns1:hasISO639-2Code:
+    - language_has_iso639-2_code:
+      - ISO639-2T
+      - ISO639-2B
+      - ISO639-3
+  - ns1:hasISO639-1Code:
+    - language_has_iso639-1_code: ISO639-1
+  - ns1:hasChineseName:
+    - language_has_chinese_name: string
+  - ns1:hasSpanishName:
+    - language_has_spanish_name: string
+  - ns1:hasRussianName:
+    - language_has_russian_name: string
+  - ns1:hasFrenchName:
+    - language_has_french_name: string
+  - ns1:hasEnglishName:
+    - language_has_english_name: string
+- scope:
+  - ns1:isTypeOf:
+    - scope_is_type_of:
+      - ISO639-2B
+      - ISO639-2T
+      - ISO639-3
+  - rdf:type:
+    - scope_type: Class
+  - ns1:isScopeOf:
+    - scope_is_scope_of:
+      - ISO639-3
+      - ISO639-2T
+      - ISO639-2B
+      - ISO639-1
+- DatatypeProperty:
+  - rdfs:domain:
+    - datatype_property_domain: Class
+  - rdfs:subPropertyOf:
+    - datatype_property_sub_property_of: DatatypeProperty
+- ObjectProperty:
+  - rdfs:domain:
+    - object_property_domain: Class
+  - owl:inverseOf:
+    - object_property_inverse_of: ObjectProperty
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of: ObjectProperty
+  - rdfs:range:
+    - object_property_range: Class
+- ISO639-3:
+  - ns1:hasType:
+    - iso639-3_has_type:
+      - language
+      - scope
+      - type
+  - ns1:isPredecessorOf:
+    - iso639-3_is_predecessor_of:
+      - ISO639-2B
+      - ISO639-3
+      - ISO639-2T
+  - ns1:hasScope:
+    - iso639-3_has_scope:
+      - scope
+      - type
+  - rdf:type:
+    - iso639-3_type: Class
+  - ns1:isSuccessorOf:
+    - iso639-3_is_successor_of: ISO639-3
+  - ns1:isCodeOf:
+    - iso639-3_is_code_of:
+      - language
+      - type
+  - ns1:isValid:
+    - iso639-3_is_valid: true
+  - ns1:isValidUntil:
+    - iso639-3_is_valid_until: string
+  - ns1:isValidFrom:
+    - iso639-3_is_valid_from: string
+- ISO639-2T:
+  - ns1:hasType:
+    - iso639-2_t_has_type:
+      - type
+      - language
+      - scope
+  - ns1:hasScope:
+    - iso639-2_t_has_scope:
+      - scope
+      - type
+  - rdf:type:
+    - iso639-2_t_type: Class
+  - ns1:isSuccessorOf:
+    - iso639-2_t_is_successor_of: ISO639-3
+  - ns1:isCodeOf:
+    - iso639-2_t_is_code_of: language
+  - ns1:isValid:
+    - iso639-2_t_is_valid: true
+  - ns1:isValidUntil:
+    - iso639-2_t_is_valid_until: string
+  - ns1:isValidFrom:
+    - iso639-2_t_is_valid_from: string
+- ISO639-2B:
+  - ns1:hasType:
+    - iso639-2_b_has_type:
+      - language
+      - scope
+      - type
+  - ns1:hasScope:
+    - iso639-2_b_has_scope:
+      - type
+      - scope
+  - rdf:type:
+    - iso639-2_b_type: Class
+  - ns1:isSuccessorOf:
+    - iso639-2_b_is_successor_of: ISO639-3
+  - ns1:isCodeOf:
+    - iso639-2_b_is_code_of: language
+  - ns1:isValid:
+    - iso639-2_b_is_valid: true
+  - ns1:isValidUntil:
+    - iso639-2_b_is_valid_until: string
+  - ns1:isValidFrom:
+    - iso639-2_b_is_valid_from: string

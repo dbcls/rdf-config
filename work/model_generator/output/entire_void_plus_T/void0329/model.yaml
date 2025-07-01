@@ -1,0 +1,72 @@
+- ObjectProperty:
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of:
+      - InverseFunctionalProperty
+      - ObjectProperty
+  - owl:inverseOf:
+    - object_property_inverse_of: ObjectProperty
+  - rdfs:range:
+    - object_property_range: Class
+  - rdfs:domain:
+    - object_property_domain: Class
+  - rdfs:label:
+    - object_property_label: string
+- DatatypeProperty:
+  - skos:altLabel:
+    - datatype_property_alt_label:
+      - DatatypeProperty
+      - string
+  - rdfs:domain:
+    - datatype_property_domain: Class
+  - skos:note:
+    - datatype_property_note: string
+  - rdfs:comment:
+    - datatype_property_comment: string
+  - rdfs:label:
+    - datatype_property_label: string
+  - skos:scopeNote:
+    - datatype_property_scope_note: string
+- Class:
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+  - ns1:prefixIRI:
+    - class_prefix_iri: string
+  - rdfs:label:
+    - class_label: string
+  - skos:scopeNote:
+    - class_scope_note: string
+- FunctionalProperty:
+  - rdfs:subPropertyOf:
+    - functional_property_sub_property_of: ObjectProperty
+  - rdfs:range:
+    - functional_property_range: Class
+  - rdfs:domain:
+    - functional_property_domain: Class
+  - rdfs:label:
+    - functional_property_label: string
+- Ontology:
+  - dc11:contributor:
+    - ontology_contributor:
+      - string
+      - string
+  - dc11:license:
+    - ontology_license: string
+  - dc11:creator:
+    - ontology_creator: string
+  - dc11:source:
+    - ontology_source: string
+  - rdfs:comment:
+    - ontology_comment: string
+  - dc11:language:
+    - ontology_language: string
+  - rdfs:label:
+    - ontology_label: string
+- InverseFunctionalProperty:
+  - rdfs:subPropertyOf:
+    - inverse_functional_property_sub_property_of: ObjectProperty
+  - rdfs:range:
+    - inverse_functional_property_range: Class
+  - rdfs:domain:
+    - inverse_functional_property_domain: Class
+  - rdfs:label:
+    - inverse_functional_property_label: string

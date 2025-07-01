@@ -1,0 +1,115 @@
+- ConceptScheme:
+  - skos:inScheme:
+    - concept_scheme_in_scheme:
+      - NamedIndividual
+      - Concept
+      - ConceptScheme
+  - skos:topConceptOf:
+    - concept_scheme_top_concept_of:
+      - Concept
+      - NamedIndividual
+      - ConceptScheme
+  - rdf:type:
+    - concept_scheme_type: Class
+  - skos:hasTopConcept:
+    - concept_scheme_has_top_concept:
+      - Concept
+      - NamedIndividual
+      - ConceptScheme
+  - ns1:lastUpdatedOn:
+    - concept_scheme_last_updated_on: string
+  - dc:title:
+    - concept_scheme_title: string
+  - ns1:version:
+    - concept_scheme_version: string
+  - dc:description:
+    - concept_scheme_description: string
+  - ns1:createdOn:
+    - concept_scheme_created_on: string
+- NamedIndividual:
+  - skos:inScheme:
+    - named_individual_in_scheme:
+      - NamedIndividual
+      - ConceptScheme
+      - Concept
+  - skos:narrower:
+    - named_individual_narrower:
+      - NamedIndividual
+      - Concept
+  - skos:topConceptOf:
+    - named_individual_top_concept_of:
+      - NamedIndividual
+      - Concept
+      - ConceptScheme
+  - rdf:type:
+    - named_individual_type: Class
+  - skos:hasTopConcept:
+    - named_individual_has_top_concept:
+      - ConceptScheme
+      - NamedIndividual
+      - Concept
+  - skos:broader:
+    - named_individual_broader:
+      - Concept
+      - NamedIndividual
+  - skos:prefLabel:
+    - named_individual_pref_label: string
+  - ns1:lastUpdatedOn:
+    - named_individual_last_updated_on: string
+  - dc:title:
+    - named_individual_title: string
+  - ns1:version:
+    - named_individual_version: string
+  - dc:description:
+    - named_individual_description: string
+  - ns1:createdOn:
+    - named_individual_created_on: string
+  - skos:definition:
+    - named_individual_definition: string
+  - skos:altLabel:
+    - named_individual_alt_label: string
+- Concept:
+  - skos:inScheme:
+    - concept_in_scheme:
+      - NamedIndividual
+      - ConceptScheme
+      - Concept
+  - skos:narrower:
+    - concept_narrower:
+      - NamedIndividual
+      - Concept
+  - skos:topConceptOf:
+    - concept_top_concept_of:
+      - NamedIndividual
+      - ConceptScheme
+      - Concept
+  - rdf:type:
+    - concept_type: Class
+  - skos:hasTopConcept:
+    - concept_has_top_concept:
+      - ConceptScheme
+      - Concept
+      - NamedIndividual
+  - skos:broader:
+    - concept_broader:
+      - Concept
+      - NamedIndividual
+  - skos:prefLabel:
+    - concept_pref_label: string
+  - ns1:lastUpdatedOn:
+    - concept_last_updated_on: string
+  - dc:title:
+    - concept_title: string
+  - ns1:version:
+    - concept_version: string
+  - dc:description:
+    - concept_description: string
+  - ns1:createdOn:
+    - concept_created_on: string
+  - skos:definition:
+    - concept_definition: string
+  - skos:altLabel:
+    - concept_alt_label: string
+- Class:
+  - ns2:prefixIRI:
+    - class_prefix_iri: string

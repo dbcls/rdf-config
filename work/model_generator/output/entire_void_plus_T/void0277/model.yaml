@@ -1,0 +1,193 @@
+- Label:
+  - rdf:type:
+    - label_type: Class
+  - skosxl:literalForm:
+    - label_literal_form: string
+- NamedIndividual:
+  - skosxl:altLabel:
+    - named_individual_alt_label:
+      - NamedIndividual
+      - Label
+  - ns3:incorporatedInto:
+    - named_individual_incorporated_into:
+      - NamedIndividual
+      - Concept
+  - ns3:mergedWith:
+    - named_individual_merged_with:
+      - NamedIndividual
+      - Concept
+  - ns3:splitFrom:
+    - named_individual_split_from:
+      - Concept
+      - NamedIndividual
+  - dc:replaces:
+    - named_individual_replaces:
+      - Concept
+      - NamedIndividual
+  - skos:broader:
+    - named_individual_broader:
+      - NamedIndividual
+      - Concept
+  - skos:hasTopConcept:
+    - named_individual_has_top_concept:
+      - Concept
+      - NamedIndividual
+  - ns3:incorporates:
+    - named_individual_incorporates:
+      - NamedIndividual
+      - Concept
+  - ns3:renamedAs:
+    - named_individual_renamed_as:
+      - NamedIndividual
+      - Concept
+  - skos:narrower:
+    - named_individual_narrower:
+      - NamedIndividual
+      - Concept
+  - rdf:type:
+    - named_individual_type: Class
+  - ns1:address:
+    - named_individual_address: postalAddress
+  - ns3:affilWith:
+    - named_individual_affil_with:
+      - Concept
+      - NamedIndividual
+  - ns3:continuationOf:
+    - named_individual_continuation_of:
+      - Concept
+      - NamedIndividual
+  - dc:isReplacedBy:
+    - named_individual_is_replaced_by:
+      - Concept
+      - NamedIndividual
+  - ns3:splitInto:
+    - named_individual_split_into:
+      - Concept
+      - NamedIndividual
+  - skosxl:prefLabel:
+    - named_individual_pref_label:
+      - NamedIndividual
+      - Label
+  - ns3:mergerOf:
+    - named_individual_merger_of:
+      - Concept
+      - NamedIndividual
+  - ns3:taxId:
+    - named_individual_tax_id: string
+  - ns3:fundingBodyType:
+    - named_individual_funding_body_type: string
+  - ns3:fundingBodySubType:
+    - named_individual_funding_body_sub_type: string
+  - dc:created:
+    - named_individual_created: string
+  - skosxl:literalForm:
+    - named_individual_literal_form: string
+  - dc:title:
+    - named_individual_title: string
+  - ns3:region:
+    - named_individual_region: string
+  - dc:modified:
+    - named_individual_modified: string
+- Concept:
+  - skosxl:altLabel:
+    - concept_alt_label:
+      - Label
+      - NamedIndividual
+  - ns3:incorporatedInto:
+    - concept_incorporated_into:
+      - NamedIndividual
+      - Concept
+  - ns3:mergedWith:
+    - concept_merged_with:
+      - NamedIndividual
+      - Concept
+  - ns3:splitFrom:
+    - concept_split_from:
+      - Concept
+      - NamedIndividual
+  - dc:replaces:
+    - concept_replaces:
+      - Concept
+      - NamedIndividual
+  - skos:broader:
+    - concept_broader:
+      - Concept
+      - NamedIndividual
+  - ns3:incorporates:
+    - concept_incorporates:
+      - Concept
+      - NamedIndividual
+  - ns3:renamedAs:
+    - concept_renamed_as:
+      - NamedIndividual
+      - Concept
+  - skos:narrower:
+    - concept_narrower:
+      - Concept
+      - NamedIndividual
+  - rdf:type:
+    - concept_type: Class
+  - ns1:address:
+    - concept_address: postalAddress
+  - ns3:affilWith:
+    - concept_affil_with:
+      - NamedIndividual
+      - Concept
+  - ns3:continuationOf:
+    - concept_continuation_of:
+      - NamedIndividual
+      - Concept
+  - dc:isReplacedBy:
+    - concept_is_replaced_by:
+      - NamedIndividual
+      - Concept
+  - ns3:splitInto:
+    - concept_split_into:
+      - NamedIndividual
+      - Concept
+  - skosxl:prefLabel:
+    - concept_pref_label:
+      - NamedIndividual
+      - Label
+  - ns3:mergerOf:
+    - concept_merger_of:
+      - Concept
+      - NamedIndividual
+  - ns3:taxId:
+    - concept_tax_id: string
+  - ns3:fundingBodyType:
+    - concept_funding_body_type: string
+  - ns3:fundingBodySubType:
+    - concept_funding_body_sub_type: string
+  - dc:created:
+    - concept_created: string
+  - ns3:region:
+    - concept_region: string
+  - dc:modified:
+    - concept_modified: string
+- postalAddress:
+  - rdf:type:
+    - postal_address_type: Class
+  - ns1:addressCountry:
+    - postal_address_address_country: string
+- Class:
+  - ns4:prefixIRI:
+    - class_prefix_iri: string
+- termsregistry:
+  - rdf:type:
+    - termsregistry_type: Class
+  - dc:created:
+    - termsregistry_created: string
+  - dc:creator:
+    - termsregistry_creator: string
+  - ns2:termsschemaVersion:
+    - termsregistry_termsschema_version: string
+- ConceptScheme:
+  - skos:hasTopConcept:
+    - concept_scheme_has_top_concept:
+      - NamedIndividual
+      - Concept
+  - rdf:type:
+    - concept_scheme_type: Class
+  - dc:title:
+    - concept_scheme_title: string

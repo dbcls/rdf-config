@@ -1,0 +1,3129 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sbm: <http://sparqlbuilder.org/2015/09/rdf-metadata-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://rdfportal.org/ns/> .
+
+<http://rdfportal.org/ns/1b29b13fd10f94eb3dce488313b96a03>
+    void:classPartition [
+        void:class <http://www.ontology-of-units-of-measure.org/resource/om-2/ApplicationArea> ;
+        void:entities 19 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ontology-of-units-of-measure.org/resource/om-2/Mass> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class owl:Ontology ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class owl:Restriction ;
+        void:entities 710 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ontology-of-units-of-measure.org/resource/om-2/MetrePerPrefixedSecond-Time> ;
+        void:entities 20 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ontology-of-units-of-measure.org/resource/om-2/FixedPoint> ;
+        void:entities 34 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ontology-of-units-of-measure.org/resource/om-2/Length> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.org/ontology/bibo/Chapter> ;
+        void:entities 6 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedUnit> ;
+        void:entities 652 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitMultiple> ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+        void:entities 261 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitExponentiation> ;
+        void:entities 34 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitMultiplication> ;
+        void:entities 47 ;
+        a void:Dataset
+    ], [
+        void:class rdf:Seq ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMetrePerSecond-Time> ;
+        void:entities 20 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.org/ontology/bibo/Standard> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ontology-of-units-of-measure.org/resource/om-2/SquarePrefixedMetre> ;
+        void:entities 20 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ontology-of-units-of-measure.org/resource/om-2/GramPerPrefixedLitre> ;
+        void:entities 20 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ontology-of-units-of-measure.org/resource/om-2/InformationCapacity> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ontology-of-units-of-measure.org/resource/om-2/LuminousIntensity> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ontology-of-units-of-measure.org/resource/om-2/MolePerPrefixedMetre> ;
+        void:entities 20 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.org/ontology/bibo/Article> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.org/ontology/bibo/Book> ;
+        void:entities 4 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ontology-of-units-of-measure.org/resource/om-2/Duration> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMolePerLitre> ;
+        void:entities 20 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ontology-of-units-of-measure.org/resource/om-2/BinaryPrefix> ;
+        void:entities 8 ;
+        a void:Dataset
+    ], [
+        void:class owl:ObjectProperty ;
+        void:entities 23 ;
+        a void:Dataset
+    ], [
+        void:class owl:Thing ;
+        void:entities 6 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.org/ontology/bibo/Journal> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMetrePerSecond-TimeSquared> ;
+        void:entities 20 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ontology-of-units-of-measure.org/resource/om-2/SIPrefix> ;
+        void:entities 20 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ontology-of-units-of-measure.org/resource/om-2/MolePerPrefixedLitre> ;
+        void:entities 20 ;
+        a void:Dataset
+    ], [
+        void:class owl:DatatypeProperty ;
+        void:entities 11 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ontology-of-units-of-measure.org/resource/om-2/AmountOfSubstance> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.org/ontology/bibo/BookSection> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class owl:AnnotationProperty ;
+        void:entities 36 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ontology-of-units-of-measure.org/resource/om-2/SymbolRate> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class owl:FunctionalProperty ;
+        void:entities 5 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ontology-of-units-of-measure.org/resource/om-2/Function> ;
+        void:entities 20 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+        void:entities 283 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ontology-of-units-of-measure.org/resource/om-2/ElectricCurrent> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ontology-of-units-of-measure.org/resource/om-2/RatioScale> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedGramPerLitre> ;
+        void:entities 20 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ontology-of-units-of-measure.org/resource/om-2/Dimension> ;
+        void:entities 76 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitDivision> ;
+        void:entities 171 ;
+        a void:Dataset
+    ], [
+        void:class foaf:Organization ;
+        void:entities 7 ;
+        a void:Dataset
+    ], [
+        void:class owl:Class ;
+        void:entities 1110 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ontology-of-units-of-measure.org/resource/om-2/ThermodynamicTemperature> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.org/ontology/bibo/Thesis> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ontology-of-units-of-measure.org/resource/om-2/IntervalScale> ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ontology-of-units-of-measure.org/resource/om-2/MetrePerPrefixedSecond-TimeSquared> ;
+        void:entities 20 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedSecond-TimeSquared> ;
+        void:entities 20 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ontology-of-units-of-measure.org/resource/om-2/SystemOfUnits> ;
+        void:entities 8 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ontology-of-units-of-measure.org/resource/om-2/CubicPrefixedMetre> ;
+        void:entities 20 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMolePerMetre> ;
+        void:entities 20 ;
+        a void:Dataset
+    ], [
+        void:class foaf:Person ;
+        void:entities 8 ;
+        a void:Dataset
+    ] ;
+    void:classes 56 ;
+    void:distinctObjects 12501 ;
+    void:distinctSubjects 4519 ;
+    void:properties 78 ;
+    void:propertyPartition [
+        void:property <http://www.ontology-of-units-of-measure.org/resource/om-2/hasTerm1> ;
+        void:triples 47 ;
+        sbm:classRelation [
+            void:triples 21 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitMultiplication> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitMultiplication> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitMultiplication> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 12 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitMultiplication> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitExponentiation> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitMultiplication> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 21 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitMultiplication> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontology-of-units-of-measure.org/resource/om-2/hasDerivedUnit> ;
+        void:triples 792 ;
+        sbm:classRelation [
+            void:triples 35 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitDivision> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SystemOfUnits> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/MetrePerPrefixedSecond-Time> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SystemOfUnits> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 82 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SystemOfUnits> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMetrePerSecond-TimeSquared> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SystemOfUnits> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SquarePrefixedMetre> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SystemOfUnits> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 82 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SystemOfUnits> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 550 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SystemOfUnits> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/CubicPrefixedMetre> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SystemOfUnits> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/MetrePerPrefixedSecond-TimeSquared> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SystemOfUnits> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitMultiplication> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SystemOfUnits> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitExponentiation> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SystemOfUnits> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMetrePerSecond-Time> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SystemOfUnits> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property foaf:name ;
+        void:triples 15 ;
+        sbm:classRelation [
+            void:triples 7 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass foaf:Organization ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass foaf:Person ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.org/ontology/bibo/shortTitle> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Journal> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontology-of-units-of-measure.org/resource/om-2/hasPhenomenon> ;
+        void:triples 6 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:Thing ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/InformationCapacity> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Thing ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/ThermodynamicTemperature> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Thing ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/AmountOfSubstance> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Thing ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Mass> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Thing ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Length> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Thing ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Duration> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontology-of-units-of-measure.org/resource/om-2/hasSILengthDimensionExponent> ;
+        void:triples 76 ;
+        sbm:classRelation [
+            void:triples 76 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Dimension> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:subClassOf ;
+        void:triples 1108 ;
+        sbm:classRelation [
+            void:triples 801 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 307 ;
+            sbm:objectClass owl:Restriction ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontology-of-units-of-measure.org/resource/om-2/hasBase> ;
+        void:triples 93 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitExponentiation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/CubicPrefixedMetre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 27 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitExponentiation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedSecond-TimeSquared> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 27 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitExponentiation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitMultiplication> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitExponentiation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SquarePrefixedMetre> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.org/ontology/bibo/uri> ;
+        void:triples 9 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Journal> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Standard> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Book> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Article> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Thesis> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.wurvoc.org/vocabularies/WV/logo> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdf:_2 ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass foaf:Person ;
+            sbm:subjectClass rdf:Seq ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:equivalentClass ;
+        void:triples 231 ;
+        sbm:classRelation [
+            void:triples 231 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontology-of-units-of-measure.org/resource/om-2/unofficialAbbreviation> ;
+        void:triples 13 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedUnit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SquarePrefixedMetre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitDivision> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontology-of-units-of-measure.org/resource/om-2/hasExponent> ;
+        void:triples 93 ;
+        sbm:classRelation [
+            void:triples 20 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/CubicPrefixedMetre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 33 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitExponentiation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SquarePrefixedMetre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedSecond-TimeSquared> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:allValuesFrom ;
+        void:triples 400 ;
+        sbm:classRelation [
+            void:triples 234 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 166 ;
+            sbm:objectClass owl:Restriction ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.org/ontology/bibo/volume> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Article> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontology-of-units-of-measure.org/resource/om-2/symbol> ;
+        void:triples 1600 ;
+        sbm:classRelation [
+            void:triples 47 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitMultiplication> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SquarePrefixedMetre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SIPrefix> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/GramPerPrefixedLitre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitMultiple> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/CubicPrefixedMetre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMolePerMetre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMolePerLitre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/MetrePerPrefixedSecond-Time> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedSecond-TimeSquared> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 32 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitExponentiation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 246 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/MolePerPrefixedLitre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedGramPerLitre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMetrePerSecond-TimeSquared> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/MolePerPrefixedMetre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 167 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 651 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedUnit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 164 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/MetrePerPrefixedSecond-TimeSquared> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Dimension> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMetrePerSecond-Time> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/BinaryPrefix> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 164 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitDivision> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontology-of-units-of-measure.org/resource/om-2/hasSIElectricCurrentDimensionExponent> ;
+        void:triples 76 ;
+        sbm:classRelation [
+            void:triples 76 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Dimension> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dc:date ;
+        void:triples 9 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Standard> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Article> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Book> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Thesis> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontology-of-units-of-measure.org/resource/om-2/hasSITimeDimensionExponent> ;
+        void:triples 76 ;
+        sbm:classRelation [
+            void:triples 76 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Dimension> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dc:title ;
+        void:triples 17 ;
+        sbm:classRelation [
+            void:triples 6 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Chapter> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Book> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/BookSection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Journal> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Article> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Standard> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Thesis> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontology-of-units-of-measure.org/resource/om-2/LaTeXSymbol> ;
+        void:triples 15 ;
+        sbm:classRelation [
+            void:triples 10 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitDivision> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 10 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontology-of-units-of-measure.org/resource/om-2/hasSIThermodynamicTemperatureDimensionExponent> ;
+        void:triples 76 ;
+        sbm:classRelation [
+            void:triples 76 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Dimension> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dc:subject ;
+        void:triples 7 ;
+        sbm:classRelation [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Article> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Book> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontology-of-units-of-measure.org/resource/om-2/longcomment> ;
+        void:triples 52 ;
+        sbm:classRelation [
+            void:triples 18 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitDivision> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 28 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitExponentiation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 28 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedUnit> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:comment ;
+        void:triples 1066 ;
+        sbm:classRelation [
+            void:triples 20 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMetrePerSecond-Time> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 213 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/MolePerPrefixedLitre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMetrePerSecond-TimeSquared> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/MetrePerPrefixedSecond-Time> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/GramPerPrefixedLitre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitExponentiation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/FixedPoint> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedGramPerLitre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/MetrePerPrefixedSecond-TimeSquared> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 310 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedUnit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:AnnotationProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMolePerLitre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 331 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:AnnotationProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 32 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitDivision> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 213 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/BinaryPrefix> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdf:type ;
+        void:triples 3848 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/AmountOfSubstance> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 548 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMetrePerSecond-TimeSquared> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/ElectricCurrent> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass foaf:Person ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 653 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedUnit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SymbolRate> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Chapter> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SystemOfUnits> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 178 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitDivision> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Mass> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/MolePerPrefixedMetre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/LuminousIntensity> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Book> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 47 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitMultiplication> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/MolePerPrefixedLitre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/MetrePerPrefixedSecond-TimeSquared> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMetrePerSecond-Time> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Article> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMolePerMetre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/ThermodynamicTemperature> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Function> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/InformationCapacity> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/BinaryPrefix> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/BookSection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass foaf:Organization ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Standard> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 34 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/FixedPoint> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/RatioScale> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SquarePrefixedMetre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Thesis> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMolePerLitre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitMultiple> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 19 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/ApplicationArea> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Duration> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/IntervalScale> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Journal> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SIPrefix> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 76 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Dimension> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Length> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/GramPerPrefixedLitre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 34 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitExponentiation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedSecond-TimeSquared> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 523 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/MetrePerPrefixedSecond-Time> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedGramPerLitre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/CubicPrefixedMetre> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontology-of-units-of-measure.org/resource/om-2/alternativeLabel> ;
+        void:triples 410 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitExponentiation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 18 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:AnnotationProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 127 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SIPrefix> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 210 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 12 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitDivision> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/RatioScale> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 10 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SystemOfUnits> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/BinaryPrefix> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 10 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedUnit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/IntervalScale> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 10 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitMultiplication> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Function> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 127 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontology-of-units-of-measure.org/resource/om-2/hasBaseQuantity> ;
+        void:triples 31 ;
+        sbm:classRelation [
+            void:triples 31 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SystemOfUnits> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontology-of-units-of-measure.org/resource/om-2/usesUnit> ;
+        void:triples 1009 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedGramPerLitre> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/ApplicationArea> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMolePerLitre> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/ApplicationArea> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 475 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/ApplicationArea> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 13 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitMultiplication> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/ApplicationArea> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 18 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SquarePrefixedMetre> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/ApplicationArea> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/CubicPrefixedMetre> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/ApplicationArea> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMolePerMetre> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/ApplicationArea> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMetrePerSecond-TimeSquared> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/ApplicationArea> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/MetrePerPrefixedSecond-TimeSquared> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/ApplicationArea> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 244 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/ApplicationArea> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/MolePerPrefixedLitre> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/ApplicationArea> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/MetrePerPrefixedSecond-Time> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/ApplicationArea> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/MolePerPrefixedMetre> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/ApplicationArea> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 19 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitExponentiation> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/ApplicationArea> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 245 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/ApplicationArea> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 88 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitDivision> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/ApplicationArea> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMetrePerSecond-Time> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/ApplicationArea> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.org/ontology/bibo/chapter> ;
+        void:triples 5 ;
+        sbm:classRelation [
+            void:triples 5 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Chapter> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:hasValue ;
+        void:triples 192 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Function> ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 133 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Dimension> ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:nonNegativeInteger ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/IntervalScale> ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 49 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 49 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/RatioScale> ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitExponentiation> ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontology-of-units-of-measure.org/resource/om-2/unofficialLabel> ;
+        void:triples 17 ;
+        sbm:classRelation [
+            void:triples 17 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontology-of-units-of-measure.org/resource/om-2/hasPrefix> ;
+        void:triples 651 ;
+        sbm:classRelation [
+            void:triples 16 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/BinaryPrefix> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedUnit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 635 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SIPrefix> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedUnit> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontology-of-units-of-measure.org/resource/om-2/hasBaseUnit> ;
+        void:triples 31 ;
+        sbm:classRelation [
+            void:triples 23 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SystemOfUnits> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 23 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SystemOfUnits> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SystemOfUnits> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:label ;
+        void:triples 4231 ;
+        sbm:classRelation [
+            void:triples 38 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/ApplicationArea> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/IntervalScale> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 40 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/MolePerPrefixedLitre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Duration> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 40 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedSecond-TimeSquared> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/RatioScale> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/BinaryPrefix> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/InformationCapacity> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Length> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/ThermodynamicTemperature> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 40 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMolePerMetre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 29 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Function> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1065 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 60 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitExponentiation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 40 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SquarePrefixedMetre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/AmountOfSubstance> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 40 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedGramPerLitre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:AnnotationProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 51 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/FixedPoint> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 446 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/LuminousIntensity> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1326 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedUnit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 40 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/MetrePerPrefixedSecond-Time> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 40 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SIPrefix> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 40 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMetrePerSecond-TimeSquared> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 40 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMolePerLitre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 311 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitDivision> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 40 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMetrePerSecond-Time> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 487 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 40 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/MolePerPrefixedMetre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 40 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/MetrePerPrefixedSecond-TimeSquared> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitMultiple> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Mass> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 40 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/GramPerPrefixedLitre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 40 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/CubicPrefixedMetre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 31 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 88 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitMultiplication> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 18 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SystemOfUnits> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/ElectricCurrent> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 12 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 91 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Dimension> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Thing ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontology-of-units-of-measure.org/resource/om-2/usesQuantity> ;
+        void:triples 341 ;
+        sbm:classRelation [
+            void:triples 341 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/ApplicationArea> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:cardinality ;
+        void:triples 118 ;
+        sbm:classRelation [
+            void:triples 118 ;
+            sbm:objectDatatype xsd:nonNegativeInteger ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontology-of-units-of-measure.org/resource/om-2/hasDimension> ;
+        void:triples 1190 ;
+        sbm:classRelation [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Dimension> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMetrePerSecond-Time> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 230 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Dimension> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Dimension> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMetrePerSecond-TimeSquared> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Dimension> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/IntervalScale> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Dimension> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SquarePrefixedMetre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Dimension> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMolePerLitre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Dimension> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/MetrePerPrefixedSecond-Time> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Dimension> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/GramPerPrefixedLitre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Dimension> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/MetrePerPrefixedSecond-TimeSquared> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Dimension> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedGramPerLitre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 24 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Dimension> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitExponentiation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Dimension> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitMultiple> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 229 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Dimension> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Dimension> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/RatioScale> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Dimension> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Dimension> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/CubicPrefixedMetre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 616 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Dimension> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedUnit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 92 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Dimension> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitDivision> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 21 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Dimension> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitMultiplication> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Dimension> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/MolePerPrefixedLitre> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontology-of-units-of-measure.org/resource/om-2/hasFactor> ;
+        void:triples 209 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:float ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitMultiple> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectDatatype xsd:float ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/BinaryPrefix> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 173 ;
+            sbm:objectDatatype xsd:float ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 173 ;
+            sbm:objectDatatype xsd:float ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:float ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/IntervalScale> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:float ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/RatioScale> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:float ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitDivision> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectDatatype xsd:float ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SIPrefix> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontology-of-units-of-measure.org/resource/om-2/hasDenominator> ;
+        void:triples 368 ;
+        sbm:classRelation [
+            void:triples 24 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitMultiplication> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitDivision> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitMultiplication> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/MolePerPrefixedLitre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitMultiple> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitDivision> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 74 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitDivision> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMolePerLitre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMetrePerSecond-Time> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/MetrePerPrefixedSecond-Time> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 74 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitDivision> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedGramPerLitre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/CubicPrefixedMetre> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitDivision> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMetrePerSecond-Time> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SquarePrefixedMetre> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitDivision> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitExponentiation> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMetrePerSecond-TimeSquared> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 31 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitExponentiation> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitDivision> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitMultiplication> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedUnit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMolePerLitre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedSecond-TimeSquared> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/MetrePerPrefixedSecond-TimeSquared> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedGramPerLitre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMolePerMetre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/MolePerPrefixedMetre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/GramPerPrefixedLitre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 30 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitDivision> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMolePerMetre> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontology-of-units-of-measure.org/resource/om-2/LaTeXCommand> ;
+        void:triples 13 ;
+        sbm:classRelation [
+            void:triples 12 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 12 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.org/ontology/bibo/isbn10> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Book> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontology-of-units-of-measure.org/resource/om-2/alternativeSymbol> ;
+        void:triples 895 ;
+        sbm:classRelation [
+            void:triples 40 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMetrePerSecond-Time> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 23 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 40 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/MolePerPrefixedLitre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 54 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitMultiplication> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 40 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMolePerMetre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 40 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/MetrePerPrefixedSecond-TimeSquared> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 86 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 40 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/MetrePerPrefixedSecond-Time> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SIPrefix> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitExponentiation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 40 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMetrePerSecond-TimeSquared> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 25 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 40 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/GramPerPrefixedLitre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 328 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitDivision> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 40 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedGramPerLitre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 40 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/MolePerPrefixedMetre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 40 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMolePerLitre> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontology-of-units-of-measure.org/resource/om-2/hasScale> ;
+        void:triples 38 ;
+        sbm:classRelation [
+            void:triples 17 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/RatioScale> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/FixedPoint> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/IntervalScale> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/FixedPoint> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/RatioScale> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/RatioScale> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/RatioScale> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/IntervalScale> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontology-of-units-of-measure.org/resource/om-2/hasOff-Set> ;
+        void:triples 4 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:float ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/IntervalScale> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:float ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/RatioScale> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.wurvoc.org/vocabularies/WV/illustration> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontology-of-units-of-measure.org/resource/om-2/commonlyHasUnit> ;
+        void:triples 4124 ;
+        sbm:classRelation [
+            void:triples 64 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMetrePerSecond-Time> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/MolePerPrefixedLitre> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1774 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedUnit> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 64 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/MetrePerPrefixedSecond-Time> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 98 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitMultiplication> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 32 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SquarePrefixedMetre> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMolePerLitre> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 32 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMetrePerSecond-TimeSquared> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitMultiple> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedGramPerLitre> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1627 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1629 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/CubicPrefixedMetre> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 285 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitDivision> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 32 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitExponentiation> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 32 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/MetrePerPrefixedSecond-TimeSquared> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/GramPerPrefixedLitre> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontology-of-units-of-measure.org/resource/om-2/abbreviation> ;
+        void:triples 10 ;
+        sbm:classRelation [
+            void:triples 10 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SystemOfUnits> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.wurvoc.org/bibliography/om-2/reference> ;
+        void:triples 62 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass <http://purl.org/ontology/bibo/Chapter> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://purl.org/ontology/bibo/Thesis> ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 36 ;
+            sbm:objectClass <http://purl.org/ontology/bibo/Chapter> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://purl.org/ontology/bibo/Chapter> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 12 ;
+            sbm:objectClass <http://purl.org/ontology/bibo/BookSection> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 12 ;
+            sbm:objectClass <http://purl.org/ontology/bibo/Article> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontology-of-units-of-measure.org/resource/om-2/hasTerm2> ;
+        void:triples 47 ;
+        sbm:classRelation [
+            void:triples 31 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitMultiplication> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 12 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitExponentiation> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitMultiplication> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 31 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitMultiplication> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitMultiplication> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dc:publisher ;
+        void:triples 5 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass foaf:Organization ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Standard> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass foaf:Organization ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Book> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:versionInfo ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:onProperty ;
+        void:triples 710 ;
+        sbm:classRelation [
+            void:triples 6 ;
+            sbm:objectClass owl:DatatypeProperty ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 704 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 327 ;
+            sbm:objectClass owl:FunctionalProperty ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.org/ontology/bibo/reproducedIn> ;
+        void:triples 7 ;
+        sbm:classRelation [
+            void:triples 5 ;
+            sbm:objectClass <http://purl.org/ontology/bibo/Book> ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Chapter> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://purl.org/ontology/bibo/Book> ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/BookSection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://purl.org/ontology/bibo/Standard> ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Chapter> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontology-of-units-of-measure.org/resource/om-2/hasSIMassDimensionExponent> ;
+        void:triples 76 ;
+        sbm:classRelation [
+            void:triples 76 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Dimension> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontology-of-units-of-measure.org/resource/om-2/hasPoint> ;
+        void:triples 51 ;
+        sbm:classRelation [
+            void:triples 17 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/FixedPoint> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/FixedPoint> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/FixedPoint> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/IntervalScale> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/FixedPoint> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/RatioScale> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dc:creator ;
+        void:triples 10 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass foaf:Organization ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Standard> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectClass foaf:Person ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Book> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass foaf:Person ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Article> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass foaf:Person ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Thesis> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontology-of-units-of-measure.org/resource/om-2/hasQuantity> ;
+        void:triples 10 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Length> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SymbolRate> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Duration> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/InformationCapacity> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Mass> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedUnit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Duration> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SymbolRate> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/ElectricCurrent> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Length> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/ElectricCurrent> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/InformationCapacity> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/ThermodynamicTemperature> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/AmountOfSubstance> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/ThermodynamicTemperature> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/FixedPoint> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/LuminousIntensity> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/AmountOfSubstance> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/LuminousIntensity> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/ThermodynamicTemperature> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.org/ontology/bibo/isbn13> ;
+        void:triples 3 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Book> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Thesis> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:domain ;
+        void:triples 34 ;
+        sbm:classRelation [
+            void:triples 5 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 23 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.org/ontology/bibo/pageEnd> ;
+        void:triples 8 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Article> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/BookSection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Chapter> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontology-of-units-of-measure.org/resource/om-2/hasNumericalValue> ;
+        void:triples 34 ;
+        sbm:classRelation [
+            void:triples 34 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/FixedPoint> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontology-of-units-of-measure.org/resource/om-2/hasDerivedQuantity> ;
+        void:triples 105 ;
+        sbm:classRelation [
+            void:triples 105 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SystemOfUnits> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:range ;
+        void:triples 30 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontology-of-units-of-measure.org/resource/om-2/hasSILuminousIntensityDimensionExponent> ;
+        void:triples 76 ;
+        sbm:classRelation [
+            void:triples 76 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Dimension> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit> ;
+        void:triples 862 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/RatioScale> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 122 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitDivision> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitDivision> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 25 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitDivision> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 25 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitDivision> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/IntervalScale> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 122 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMetrePerSecond-TimeSquared> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/RatioScale> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 31 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitExponentiation> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 31 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitExponentiation> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/IntervalScale> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitMultiple> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMetrePerSecond-TimeSquared> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 651 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedUnit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitDivision> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitDivision> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitMultiple> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 122 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitDivision> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 651 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedUnit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitMultiplication> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 122 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitMultiplication> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitMultiple> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitMultiple> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdf:_1 ;
+        void:triples 3 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectClass foaf:Person ;
+            sbm:subjectClass rdf:Seq ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:subPropertyOf ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectClass owl:AnnotationProperty ;
+            sbm:subjectClass owl:AnnotationProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.org/ontology/bibo/authorList> ;
+        void:triples 3 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectClass rdf:Seq ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Article> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass rdf:Seq ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Book> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.org/ontology/bibo/issuer> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass foaf:Organization ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Thesis> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property foaf:based_near ;
+        void:triples 4 ;
+        sbm:classRelation [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass foaf:Organization ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dc:isPartOf ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectClass <http://purl.org/ontology/bibo/Journal> ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Article> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.org/ontology/bibo/edition> ;
+        void:triples 3 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Book> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.org/ontology/bibo/pageStart> ;
+        void:triples 8 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/BookSection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Chapter> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.org/ontology/bibo/Article> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontology-of-units-of-measure.org/resource/om-2/hasNumerator> ;
+        void:triples 368 ;
+        sbm:classRelation [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMetrePerSecond-Time> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 104 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitDivision> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedGramPerLitre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/MetrePerPrefixedSecond-Time> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitExponentiation> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitDivision> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitMultiple> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitDivision> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/MolePerPrefixedLitre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMolePerLitre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/MetrePerPrefixedSecond-TimeSquared> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitMultiplication> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitDivision> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMolePerMetre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/GramPerPrefixedLitre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMetrePerSecond-TimeSquared> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedUnit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/MolePerPrefixedLitre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitDivision> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitDivision> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/MolePerPrefixedMetre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/CubicPrefixedMetre> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitDivision> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/GramPerPrefixedLitre> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/MetrePerPrefixedSecond-Time> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Unit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/MetrePerPrefixedSecond-TimeSquared> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 104 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitDivision> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedMetrePerSecond-Time> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitDivision> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 42 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/PrefixedUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/UnitDivision> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/SingularUnit> ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/MolePerPrefixedMetre> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dc:identifier ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.ontology-of-units-of-measure.org/resource/om-2/hasSIAmountOfSubstanceDimensionExponent> ;
+        void:triples 76 ;
+        sbm:classRelation [
+            void:triples 76 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://www.ontology-of-units-of-measure.org/resource/om-2/Dimension> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ] ;
+    void:sparqlEndpoint <https://rdfportal.org/bioportal/sparql> ;
+    void:triples 28407 ;
+    a void:Dataset, sd:Graph .

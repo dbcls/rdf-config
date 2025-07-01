@@ -1,0 +1,439 @@
+- Pathway:
+  - ns1:evidence:
+    - pathway_evidence: Evidence
+  - ns1:pathwayOrder:
+    - pathway_pathway_order: PathwayStep
+  - ns1:organism:
+    - pathway_organism: BioSource
+  - ns1:pathwayComponent:
+    - pathway_pathway_component:
+      - Pathway
+      - BiochemicalReaction
+      - TemplateReaction
+      - Degradation
+  - ns1:dataSource:
+    - pathway_data_source: Provenance
+  - ns1:xref:
+    - pathway_xref:
+      - RelationshipXref
+      - PublicationXref
+      - UnificationXref
+  - ns1:name:
+    - pathway_name: string
+  - ns1:comment:
+    - pathway_comment: string
+  - ns1:displayName:
+    - pathway_display_name: string
+- SequenceSite:
+  - ns1:sequencePosition:
+    - sequence_site_sequence_position: 12345
+  - ns1:positionStatus:
+    - sequence_site_position_status: string
+- ModificationFeature:
+  - ns1:featureLocation:
+    - modification_feature_feature_location: SequenceSite
+  - ns1:modificationType:
+    - modification_feature_modification_type: SequenceModificationVocabulary
+  - ns1:comment:
+    - modification_feature_comment: string
+- SequenceInterval:
+  - ns1:sequenceIntervalEnd:
+    - sequence_interval_sequence_interval_end: SequenceSite
+  - ns1:sequenceIntervalBegin:
+    - sequence_interval_sequence_interval_begin: SequenceSite
+- BioSource:
+  - ns1:xref:
+    - bio_source_xref: UnificationXref
+  - ns1:name:
+    - bio_source_name: string
+- Protein:
+  - ns1:feature:
+    - protein_feature:
+      - ModificationFeature
+      - FragmentFeature
+  - ns1:memberPhysicalEntity:
+    - protein_member_physical_entity: Protein
+  - ns1:dataSource:
+    - protein_data_source: Provenance
+  - ns1:cellularLocation:
+    - protein_cellular_location: CellularLocationVocabulary
+  - ns1:entityReference:
+    - protein_entity_reference: ProteinReference
+  - ns1:xref:
+    - protein_xref:
+      - UnificationXref
+      - RelationshipXref
+  - ns1:name:
+    - protein_name: string
+  - ns1:comment:
+    - protein_comment: string
+  - ns1:displayName:
+    - protein_display_name: string
+- Rna:
+  - ns1:feature:
+    - rna_feature:
+      - FragmentFeature
+      - ModificationFeature
+  - ns1:memberPhysicalEntity:
+    - rna_member_physical_entity: Rna
+  - ns1:dataSource:
+    - rna_data_source: Provenance
+  - ns1:cellularLocation:
+    - rna_cellular_location: CellularLocationVocabulary
+  - ns1:entityReference:
+    - rna_entity_reference: RnaReference
+  - ns1:xref:
+    - rna_xref:
+      - RelationshipXref
+      - UnificationXref
+  - ns1:name:
+    - rna_name: string
+  - ns1:comment:
+    - rna_comment: string
+  - ns1:displayName:
+    - rna_display_name: string
+- PathwayStep:
+  - ns1:stepProcess:
+    - pathway_step_step_process:
+      - TemplateReaction
+      - BiochemicalReaction
+      - Degradation
+      - Pathway
+      - Control
+      - TemplateReactionRegulation
+      - Catalysis
+  - ns1:nextStep:
+    - pathway_step_next_step: PathwayStep
+- SequenceModificationVocabulary:
+  - ns1:xref:
+    - sequence_modification_vocabulary_xref: UnificationXref
+  - ns1:term:
+    - sequence_modification_vocabulary_term: string
+- SmallMolecule:
+  - ns1:memberPhysicalEntity:
+    - small_molecule_member_physical_entity: SmallMolecule
+  - ns1:dataSource:
+    - small_molecule_data_source: Provenance
+  - ns1:cellularLocation:
+    - small_molecule_cellular_location: CellularLocationVocabulary
+  - ns1:entityReference:
+    - small_molecule_entity_reference: SmallMoleculeReference
+  - ns1:xref:
+    - small_molecule_xref:
+      - UnificationXref
+      - RelationshipXref
+  - ns1:name:
+    - small_molecule_name: string
+  - ns1:comment:
+    - small_molecule_comment: string
+  - ns1:displayName:
+    - small_molecule_display_name: string
+- Provenance:
+  - ns1:name:
+    - provenance_name: string
+  - ns1:comment:
+    - provenance_comment: string
+- BiochemicalReaction:
+  - ns1:evidence:
+    - biochemical_reaction_evidence: Evidence
+  - ns1:dataSource:
+    - biochemical_reaction_data_source: Provenance
+  - ns1:right:
+    - biochemical_reaction_right:
+      - Complex
+      - Rna
+      - Protein
+      - SmallMolecule
+      - PhysicalEntity
+      - Dna
+  - ns1:left:
+    - biochemical_reaction_left:
+      - Rna
+      - PhysicalEntity
+      - Protein
+      - SmallMolecule
+      - Dna
+      - Complex
+  - ns1:xref:
+    - biochemical_reaction_xref:
+      - RelationshipXref
+      - PublicationXref
+      - UnificationXref
+  - ns1:participantStoichiometry:
+    - biochemical_reaction_participant_stoichiometry: Stoichiometry
+  - ns1:conversionDirection:
+    - biochemical_reaction_conversion_direction: string
+  - ns1:name:
+    - biochemical_reaction_name: string
+  - ns1:comment:
+    - biochemical_reaction_comment: string
+  - ns1:displayName:
+    - biochemical_reaction_display_name: string
+  - ns1:eCNumber:
+    - biochemical_reaction_e_c_number: string
+- Complex:
+  - ns1:component:
+    - complex_component:
+      - SmallMolecule
+      - PhysicalEntity
+      - Complex
+      - Dna
+      - Protein
+      - Rna
+  - ns1:memberPhysicalEntity:
+    - complex_member_physical_entity: Complex
+  - ns1:dataSource:
+    - complex_data_source: Provenance
+  - ns1:componentStoichiometry:
+    - complex_component_stoichiometry: Stoichiometry
+  - ns1:cellularLocation:
+    - complex_cellular_location: CellularLocationVocabulary
+  - ns1:xref:
+    - complex_xref:
+      - RelationshipXref
+      - UnificationXref
+  - ns1:name:
+    - complex_name: string
+  - ns1:comment:
+    - complex_comment: string
+  - ns1:displayName:
+    - complex_display_name: string
+- Degradation:
+  - ns1:evidence:
+    - degradation_evidence: Evidence
+  - ns1:dataSource:
+    - degradation_data_source: Provenance
+  - ns1:left:
+    - degradation_left:
+      - Complex
+      - PhysicalEntity
+      - Rna
+      - Protein
+  - ns1:xref:
+    - degradation_xref:
+      - PublicationXref
+      - RelationshipXref
+      - UnificationXref
+  - ns1:comment:
+    - degradation_comment: string
+  - ns1:displayName:
+    - degradation_display_name: string
+- TemplateReaction:
+  - ns1:evidence:
+    - template_reaction_evidence: Evidence
+  - ns1:dataSource:
+    - template_reaction_data_source: Provenance
+  - ns1:product:
+    - template_reaction_product:
+      - SmallMolecule
+      - PhysicalEntity
+      - Protein
+  - ns1:xref:
+    - template_reaction_xref:
+      - UnificationXref
+      - RelationshipXref
+      - PublicationXref
+  - ns1:comment:
+    - template_reaction_comment: string
+  - ns1:displayName:
+    - template_reaction_display_name: string
+- TemplateReactionRegulation:
+  - ns1:controller:
+    - template_reaction_regulation_controller:
+      - Complex
+      - Protein
+      - SmallMolecule
+  - ns1:dataSource:
+    - template_reaction_regulation_data_source: Provenance
+  - ns1:controlled:
+    - template_reaction_regulation_controlled: TemplateReaction
+  - ns1:xref:
+    - template_reaction_regulation_xref: UnificationXref
+  - ns1:controlType:
+    - template_reaction_regulation_control_type: string
+- RnaReference:
+  - ns1:organism:
+    - rna_reference_organism: BioSource
+  - ns1:xref:
+    - rna_reference_xref: UnificationXref
+  - ns1:name:
+    - rna_reference_name: string
+  - ns1:comment:
+    - rna_reference_comment: string
+- Catalysis:
+  - ns1:controller:
+    - catalysis_controller:
+      - PhysicalEntity
+      - Complex
+      - SmallMolecule
+      - Protein
+  - ns1:dataSource:
+    - catalysis_data_source: Provenance
+  - ns1:controlled:
+    - catalysis_controlled:
+      - BiochemicalReaction
+      - Degradation
+  - ns1:xref:
+    - catalysis_xref: RelationshipXref
+  - ns1:comment:
+    - catalysis_comment: string
+  - ns1:controlType:
+    - catalysis_control_type: string
+- SmallMoleculeReference:
+  - ns1:xref:
+    - small_molecule_reference_xref: UnificationXref
+  - ns1:name:
+    - small_molecule_reference_name: string
+- Control:
+  - ns1:controller:
+    - control_controller:
+      - Complex
+      - Protein
+      - SmallMolecule
+      - Rna
+      - PhysicalEntity
+  - ns1:dataSource:
+    - control_data_source: Provenance
+  - ns1:controlled:
+    - control_controlled:
+      - Degradation
+      - BiochemicalReaction
+  - ns1:xref:
+    - control_xref: UnificationXref
+  - ns1:comment:
+    - control_comment: string
+  - ns1:controlType:
+    - control_control_type: string
+- PublicationXref:
+  - ns1:db:
+    - publication_xref_db: string
+  - ns1:source:
+    - publication_xref_source: string
+  - ns1:author:
+    - publication_xref_author: string
+  - ns1:url:
+    - publication_xref_url: string
+  - ns1:id:
+    - publication_xref_id: string
+  - ns1:title:
+    - publication_xref_title: string
+  - ns1:year:
+    - publication_xref_year: 12345
+- UnificationXref:
+  - ns1:db:
+    - unification_xref_db: string
+  - ns1:idVersion:
+    - unification_xref_id_version: string
+  - ns1:comment:
+    - unification_xref_comment: string
+  - ns1:id:
+    - unification_xref_id: string
+- Stoichiometry:
+  - ns1:physicalEntity:
+    - stoichiometry_physical_entity:
+      - Protein
+      - PhysicalEntity
+      - Dna
+      - SmallMolecule
+      - Complex
+      - Rna
+  - ns1:stoichiometricCoefficient:
+    - stoichiometry_stoichiometric_coefficient: 123.45
+- FragmentFeature:
+  - ns1:featureLocation:
+    - fragment_feature_feature_location: SequenceInterval
+- Evidence:
+  - ns1:xref:
+    - evidence_xref: PublicationXref
+  - ns1:evidenceCode:
+    - evidence_evidence_code: EvidenceCodeVocabulary
+  - ns1:comment:
+    - evidence_comment: string
+- PhysicalEntity:
+  - ns1:memberPhysicalEntity:
+    - physical_entity_member_physical_entity:
+      - Protein
+      - PhysicalEntity
+      - Rna
+      - Complex
+      - SmallMolecule
+      - Dna
+  - ns1:dataSource:
+    - physical_entity_data_source: Provenance
+  - ns1:cellularLocation:
+    - physical_entity_cellular_location: CellularLocationVocabulary
+  - ns1:xref:
+    - physical_entity_xref:
+      - RelationshipXref
+      - UnificationXref
+  - ns1:name:
+    - physical_entity_name: string
+  - ns1:comment:
+    - physical_entity_comment: string
+  - ns1:displayName:
+    - physical_entity_display_name: string
+- ProteinReference:
+  - ns1:organism:
+    - protein_reference_organism: BioSource
+  - ns1:xref:
+    - protein_reference_xref: UnificationXref
+  - ns1:name:
+    - protein_reference_name: string
+  - ns1:comment:
+    - protein_reference_comment: string
+- Dna:
+  - ns1:feature:
+    - dna_feature:
+      - FragmentFeature
+      - ModificationFeature
+  - ns1:memberPhysicalEntity:
+    - dna_member_physical_entity: Dna
+  - ns1:dataSource:
+    - dna_data_source: Provenance
+  - ns1:cellularLocation:
+    - dna_cellular_location: CellularLocationVocabulary
+  - ns1:entityReference:
+    - dna_entity_reference: DnaReference
+  - ns1:xref:
+    - dna_xref:
+      - UnificationXref
+      - RelationshipXref
+  - ns1:name:
+    - dna_name: string
+  - ns1:comment:
+    - dna_comment: string
+  - ns1:displayName:
+    - dna_display_name: string
+- RelationshipTypeVocabulary:
+  - ns1:xref:
+    - relationship_type_vocabulary_xref: UnificationXref
+  - ns1:term:
+    - relationship_type_vocabulary_term: string
+- CellularLocationVocabulary:
+  - ns1:xref:
+    - cellular_location_vocabulary_xref: UnificationXref
+  - ns1:term:
+    - cellular_location_vocabulary_term: string
+- EvidenceCodeVocabulary:
+  - ns1:xref:
+    - evidence_code_vocabulary_xref: UnificationXref
+  - ns1:term:
+    - evidence_code_vocabulary_term: string
+- RelationshipXref:
+  - ns1:relationshipType:
+    - relationship_xref_relationship_type: RelationshipTypeVocabulary
+  - ns1:db:
+    - relationship_xref_db: string
+  - ns1:comment:
+    - relationship_xref_comment: string
+  - ns1:id:
+    - relationship_xref_id: string
+- DnaReference:
+  - ns1:organism:
+    - dna_reference_organism: BioSource
+  - ns1:xref:
+    - dna_reference_xref: UnificationXref
+  - ns1:name:
+    - dna_reference_name: string
+  - ns1:comment:
+    - dna_reference_comment: string

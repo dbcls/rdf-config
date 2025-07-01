@@ -1,0 +1,345 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sbm: <http://sparqlbuilder.org/2015/09/rdf-metadata-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://rdfportal.org/ns/> .
+
+<http://rdfportal.org/ns/79f2e6ad006a9fe98a19fbdd4d3ae6aa>
+    void:classPartition [
+        void:class skos:Concept ;
+        void:entities 339 ;
+        a void:Dataset
+    ], [
+        void:class owl:NamedIndividual ;
+        void:entities 340 ;
+        a void:Dataset
+    ], [
+        void:class owl:Class ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class skos:ConceptScheme ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <https://www.ctu.unibe.ch/0.0.1/class-gemeinde_long> ;
+        void:entities 338 ;
+        a void:Dataset
+    ] ;
+    void:classes 5 ;
+    void:distinctObjects 694 ;
+    void:distinctSubjects 351 ;
+    void:properties 9 ;
+    void:propertyPartition [
+        void:property skos:topConceptOf ;
+        void:triples 339 ;
+        sbm:classRelation [
+            void:triples 339 ;
+            sbm:objectClass skos:ConceptScheme ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass skos:ConceptScheme ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 338 ;
+            sbm:objectClass skos:ConceptScheme ;
+            sbm:subjectClass <https://www.ctu.unibe.ch/0.0.1/class-gemeinde_long> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 339 ;
+            sbm:objectClass skos:ConceptScheme ;
+            sbm:subjectClass skos:Concept ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 339 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 339 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass skos:Concept ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 338 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <https://www.ctu.unibe.ch/0.0.1/class-gemeinde_long> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property skos:inScheme ;
+        void:triples 339 ;
+        sbm:classRelation [
+            void:triples 338 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <https://www.ctu.unibe.ch/0.0.1/class-gemeinde_long> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass skos:ConceptScheme ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 339 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass skos:Concept ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 338 ;
+            sbm:objectClass skos:ConceptScheme ;
+            sbm:subjectClass <https://www.ctu.unibe.ch/0.0.1/class-gemeinde_long> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 339 ;
+            sbm:objectClass skos:ConceptScheme ;
+            sbm:subjectClass skos:Concept ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 339 ;
+            sbm:objectClass skos:ConceptScheme ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 339 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property skos:hasTopConcept ;
+        void:triples 339 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass skos:ConceptScheme ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 339 ;
+            sbm:objectClass skos:Concept ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 339 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass skos:ConceptScheme ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 338 ;
+            sbm:objectClass <https://www.ctu.unibe.ch/0.0.1/class-gemeinde_long> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 339 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 339 ;
+            sbm:objectClass skos:Concept ;
+            sbm:subjectClass skos:ConceptScheme ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 338 ;
+            sbm:objectClass <https://www.ctu.unibe.ch/0.0.1/class-gemeinde_long> ;
+            sbm:subjectClass skos:ConceptScheme ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdf:type ;
+        void:triples 1030 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass skos:ConceptScheme ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 338 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 677 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass skos:Concept ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 338 ;
+            sbm:objectClass skos:Concept ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 338 ;
+            sbm:objectClass skos:Concept ;
+            sbm:subjectClass skos:Concept ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 678 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 676 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <https://www.ctu.unibe.ch/0.0.1/class-gemeinde_long> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 338 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass skos:Concept ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 338 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <https://www.ctu.unibe.ch/0.0.1/class-gemeinde_long> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 338 ;
+            sbm:objectClass skos:Concept ;
+            sbm:subjectClass <https://www.ctu.unibe.ch/0.0.1/class-gemeinde_long> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property skos:note ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass skos:ConceptScheme ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property skos:prefLabel ;
+        void:triples 341 ;
+        sbm:classRelation [
+            void:triples 339 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <https://www.ctu.unibe.ch/0.0.1/class-gemeinde_long> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 341 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass skos:ConceptScheme ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 340 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass skos:Concept ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://data.bioontology.org/metadata/prefixIRI> ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dcterms:license ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass skos:ConceptScheme ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property skos:definition ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass skos:Concept ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass skos:ConceptScheme ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ] ;
+    void:sparqlEndpoint <https://rdfportal.org/bioportal/sparql> ;
+    void:triples 2397 ;
+    a void:Dataset, sd:Graph .

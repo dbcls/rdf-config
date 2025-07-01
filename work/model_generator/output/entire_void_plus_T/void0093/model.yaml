@@ -1,0 +1,105 @@
+- DatatypeProperty:
+  - owl:equivalentProperty:
+    - datatype_property_equivalent_property: DatatypeProperty
+  - ns1:BMSLM_0000073:
+    - datatype_property_bmslm_0000073: string
+  - ns2:IAO_0000115:
+    - datatype_property_iao_0000115: string
+  - rdfs:label:
+    - datatype_property_label: string
+  - ns2:IAO_0000112:
+    - datatype_property_iao_0000112: string
+- Ontology:
+  - dc11:license:
+    - ontology_license: string
+  - dc11:creator:
+    - ontology_creator: string
+  - owl:versionInfo:
+    - ontology_version_info: string
+  - dc11:contributor:
+    - ontology_contributor: string
+  - rdfs:comment:
+    - ontology_comment: string
+  - ns3:defaultLanguage:
+    - ontology_default_language: string
+- Restriction:
+  - owl:someValuesFrom:
+    - restriction_some_values_from:
+      - Class
+      - Restriction
+  - owl:onProperty:
+    - restriction_on_property:
+      - ObjectProperty
+      - TransitiveProperty
+  - owl:onClass:
+    - restriction_on_class: Class
+  - owl:qualifiedCardinality:
+    - restriction_qualified_cardinality: nonNegativeInteger
+  - owl:minQualifiedCardinality:
+    - restriction_min_qualified_cardinality: nonNegativeInteger
+- TransitiveProperty:
+  - ns2:IAO_0000115:
+    - transitive_property_iao_0000115: string
+  - rdfs:label:
+    - transitive_property_label: string
+  - ns2:IAO_0000112:
+    - transitive_property_iao_0000112: string
+- AnnotationProperty:
+  - rdfs:label:
+    - annotation_property_label: string
+  - rdfs:comment:
+    - annotation_property_comment: string
+- ObjectProperty:
+  - owl:equivalentProperty:
+    - object_property_equivalent_property: ObjectProperty
+  - rdfs:range:
+    - object_property_range: Class
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of: ObjectProperty
+  - rdfs:domain:
+    - object_property_domain: Class
+  - ns2:IAO_0000115:
+    - object_property_iao_0000115: string
+  - rdfs:label:
+    - object_property_label: string
+  - ns2:IAO_0000112:
+    - object_property_iao_0000112:
+      - string
+      - string
+  - rdfs:comment:
+    - object_property_comment:
+      - string
+      - string
+- Class:
+  - ns1:BMSLM_0000073:
+    - class_bmslm_0000073: Class
+  - ns1:BMSLM_0000072:
+    - class_bmslm_0000072: Class
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Class
+      - Restriction
+  - ns2:IAO_0000119:
+    - class_iao_0000119: string
+  - ns2:IAO_0000111:
+    - class_iao_0000111:
+      - string
+      - string
+  - rdfs:isDefinedBy:
+    - class_is_defined_by: string
+  - ns2:IAO_0000115:
+    - class_iao_0000115:
+      - string
+      - string
+  - rdfs:label:
+    - class_label: string
+  - ns2:IAO_0000118:
+    - class_iao_0000118:
+      - string
+      - string
+  - owl:backwardCompatibleWith:
+    - class_backward_compatible_with: string
+  - ns2:IAO_0000112:
+    - class_iao_0000112: string
+  - rdfs:comment:
+    - class_comment: string

@@ -1,0 +1,316 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sbm: <http://sparqlbuilder.org/2015/09/rdf-metadata-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://rdfportal.org/ns/> .
+
+<http://rdfportal.org/ns/2daa9637785e1a94345e84b4ac8c9195>
+    void:classPartition [
+        void:class <http://www.ebi.ac.uk/efo/EFO_0005135> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.org/genex#AbsenceExpression> ;
+        void:entities 8750753 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.org/genex#AnatomicalEntity> ;
+        void:entities 40538 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.org/genex#ExpressionCondition> ;
+        void:entities 145215 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.org/genex#Expression> ;
+        void:entities 694673052 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.org/net/orth#Gene> ;
+        void:entities 1559014 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.ebi.ac.uk/efo/EFO_0000399> ;
+        void:entities 1204 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Taxon> ;
+        void:entities 52 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.org/net/orth#Organism> ;
+        void:entities 52 ;
+        a void:Dataset
+    ] ;
+    void:classes 9 ;
+    void:distinctObjects 151601395 ;
+    void:distinctSubjects 705169881 ;
+    void:properties 18 ;
+    void:propertyPartition [
+        void:property dcterms:description ;
+        void:triples 1151608 ;
+        sbm:classRelation [
+            void:triples 1155 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ebi.ac.uk/efo/EFO_0000399> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1122968 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.org/net/orth#Gene> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 27485 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.org/genex#AnatomicalEntity> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.org/genex#hasStrain> ;
+        void:triples 145215 ;
+        sbm:classRelation [
+            void:triples 145215 ;
+            sbm:objectClass <http://www.ebi.ac.uk/efo/EFO_0005135> ;
+            sbm:subjectClass <http://purl.org/genex#ExpressionCondition> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.org/genex#hasSequenceUnit> ;
+        void:triples 703423805 ;
+        sbm:classRelation [
+            void:triples 8750753 ;
+            sbm:objectClass <http://purl.org/net/orth#Gene> ;
+            sbm:subjectClass <http://purl.org/genex#AbsenceExpression> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 694673052 ;
+            sbm:objectClass <http://purl.org/net/orth#Gene> ;
+            sbm:subjectClass <http://purl.org/genex#Expression> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.org/genex#hasExpressionLevel> ;
+        void:triples 703423805 ;
+        sbm:classRelation [
+            void:triples 694673052 ;
+            sbm:objectDatatype xsd:double ;
+            sbm:subjectClass <http://purl.org/genex#Expression> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8750753 ;
+            sbm:objectDatatype xsd:double ;
+            sbm:subjectClass <http://purl.org/genex#AbsenceExpression> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.org/genex#hasExpressionCondition> ;
+        void:triples 703423805 ;
+        sbm:classRelation [
+            void:triples 694673052 ;
+            sbm:objectClass <http://purl.org/genex#ExpressionCondition> ;
+            sbm:subjectClass <http://purl.org/genex#Expression> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8750753 ;
+            sbm:objectClass <http://purl.org/genex#ExpressionCondition> ;
+            sbm:subjectClass <http://purl.org/genex#AbsenceExpression> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.org/genex#hasFDRpvalue> ;
+        void:triples 703423805 ;
+        sbm:classRelation [
+            void:triples 8750753 ;
+            sbm:objectDatatype xsd:double ;
+            sbm:subjectClass <http://purl.org/genex#AbsenceExpression> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 694673052 ;
+            sbm:objectDatatype xsd:double ;
+            sbm:subjectClass <http://purl.org/genex#Expression> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.org/genex#isExpressedIn> ;
+        void:triples 797802528 ;
+        sbm:classRelation [
+            void:triples 103129476 ;
+            sbm:objectClass <http://purl.org/genex#AnatomicalEntity> ;
+            sbm:subjectClass <http://purl.org/net/orth#Gene> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 694673052 ;
+            sbm:objectClass <http://purl.org/genex#ExpressionCondition> ;
+            sbm:subjectClass <http://purl.org/net/orth#Gene> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.org/net/orth#organism> ;
+        void:triples 1559014 ;
+        sbm:classRelation [
+            void:triples 1559014 ;
+            sbm:objectClass <http://purl.org/net/orth#Organism> ;
+            sbm:subjectClass <http://purl.org/net/orth#Gene> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.org/genex#hasSex> ;
+        void:triples 145215 ;
+        sbm:classRelation [
+            void:triples 145215 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.org/genex#ExpressionCondition> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dcterms:identifier ;
+        void:triples 1559014 ;
+        sbm:classRelation [
+            void:triples 1559014 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.org/net/orth#Gene> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.org/genex#hasDevelopmentalStage> ;
+        void:triples 145215 ;
+        sbm:classRelation [
+            void:triples 145215 ;
+            sbm:objectClass <http://www.ebi.ac.uk/efo/EFO_0000399> ;
+            sbm:subjectClass <http://purl.org/genex#ExpressionCondition> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:label ;
+        void:triples 1600757 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ebi.ac.uk/efo/EFO_0005135> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1559014 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.org/net/orth#Gene> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 40538 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.org/genex#AnatomicalEntity> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1204 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.ebi.ac.uk/efo/EFO_0000399> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.obolibrary.org/obo/RO_0002162> ;
+        void:triples 145267 ;
+        sbm:classRelation [
+            void:triples 145215 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Taxon> ;
+            sbm:subjectClass <http://purl.org/genex#ExpressionCondition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 52 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Taxon> ;
+            sbm:subjectClass <http://purl.org/net/orth#Organism> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.obolibrary.org/obo/RO_0002206> ;
+        void:triples 797802528 ;
+        sbm:classRelation [
+            void:triples 694673052 ;
+            sbm:objectClass <http://purl.org/genex#ExpressionCondition> ;
+            sbm:subjectClass <http://purl.org/net/orth#Gene> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 103129476 ;
+            sbm:objectClass <http://purl.org/genex#AnatomicalEntity> ;
+            sbm:subjectClass <http://purl.org/net/orth#Gene> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.org/genex#isAbsentIn> ;
+        void:triples 10729524 ;
+        sbm:classRelation [
+            void:triples 1978771 ;
+            sbm:objectClass <http://purl.org/genex#AnatomicalEntity> ;
+            sbm:subjectClass <http://purl.org/net/orth#Gene> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8750753 ;
+            sbm:objectClass <http://purl.org/genex#ExpressionCondition> ;
+            sbm:subjectClass <http://purl.org/net/orth#Gene> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/scientificName> ;
+        void:triples 52 ;
+        sbm:classRelation [
+            void:triples 52 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Taxon> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.org/genex#hasAnatomicalEntity> ;
+        void:triples 290388 ;
+        sbm:classRelation [
+            void:triples 290388 ;
+            sbm:objectClass <http://purl.org/genex#AnatomicalEntity> ;
+            sbm:subjectClass <http://purl.org/genex#ExpressionCondition> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/commonName> ;
+        void:triples 50 ;
+        sbm:classRelation [
+            void:triples 50 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Taxon> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ] ;
+    void:sparqlEndpoint <https://rdfportal.org/sib/sparql> ;
+    void:triples 5840040286 ;
+    a void:Dataset, sd:Graph .

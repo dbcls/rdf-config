@@ -1,0 +1,1841 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sbm: <http://sparqlbuilder.org/2015/09/rdf-metadata-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://rdfportal.org/ns/> .
+
+<http://rdfportal.org/ns/2d881d96cd0a1b032b8a96d21d2468ed>
+    void:classPartition [
+        void:class <http://kero.hgc.jp/ontology/kero.owl#WeakEnhancer> ;
+        void:entities 2857059 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.obolibrary.org/obo/SO_0001483> ;
+        void:entities 83926194 ;
+        a void:Dataset
+    ], [
+        void:class <http://biohackathon.org/resource/faldo#StrandedPosition> ;
+        void:entities 164749269 ;
+        a void:Dataset
+    ], [
+        void:class <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C64214> ;
+        void:entities 7596074 ;
+        a void:Dataset
+    ], [
+        void:class <http://kero.hgc.jp/ontology/kero.owl#ChromHMMDataset> ;
+        void:entities 27 ;
+        a void:Dataset
+    ], [
+        void:class <http://kero.hgc.jp/ontology/kero.owl#TSSseqDataset> ;
+        void:entities 26 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.obolibrary.org/obo/SO_0000306> ;
+        void:entities 79081234 ;
+        a void:Dataset
+    ], [
+        void:class <http://semanticscience.org/resource/SIO_001050> ;
+        void:entities 27 ;
+        a void:Dataset
+    ], [
+        void:class <http://kero.hgc.jp/ontology/kero.owl#SNVDataset> ;
+        void:entities 52 ;
+        a void:Dataset
+    ], [
+        void:class rdf:Property ;
+        void:entities 28 ;
+        a void:Dataset
+    ], [
+        void:class <http://biohackathon.org/resource/faldo#Region> ;
+        void:entities 145984467 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.obolibrary.org/obo/SO_0001697> ;
+        void:entities 407540623 ;
+        a void:Dataset
+    ], [
+        void:class <http://kero.hgc.jp/ontology/kero.owl#SpeciesType> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://kero.hgc.jp/ontology/kero.owl#ActivePromoter> ;
+        void:entities 517846 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.obolibrary.org/obo/SO_0000957> ;
+        void:entities 66 ;
+        a void:Dataset
+    ], [
+        void:class <http://kero.hgc.jp/ontology/kero.owl#RNAseqDataset> ;
+        void:entities 27 ;
+        a void:Dataset
+    ], [
+        void:class <http://biohackathon.org/resource/faldoRegion> ;
+        void:entities 7594420 ;
+        a void:Dataset
+    ], [
+        void:class <http://biohackathon.org/resource/faldo#ExactPosition> ;
+        void:entities 164852641 ;
+        a void:Dataset
+    ], [
+        void:class <http://biohackathon.org/resource/faldoExactPosition> ;
+        void:entities 14914753 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.obolibrary.org/obo/SO_0000673> ;
+        void:entities 1541700 ;
+        a void:Dataset
+    ], [
+        void:class foaf:Person ;
+        void:entities 27 ;
+        a void:Dataset
+    ], [
+        void:class <http://kero.hgc.jp/ontology/kero.owl#TranscriptionalElongation> ;
+        void:entities 972160 ;
+        a void:Dataset
+    ], [
+        void:class <http://rdf.ebi.ac.uk/terms/ensemblvariation#ancestral_allele> ;
+        void:entities 12105027 ;
+        a void:Dataset
+    ], [
+        void:class <http://kero.hgc.jp/ontology/kero.owl#StrongEnhancer> ;
+        void:entities 1108922 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.obolibrary.org/obo/SO_0000315> ;
+        void:entities 17809864 ;
+        a void:Dataset
+    ], [
+        void:class <http://biohackathon.org/resource/faldoStrandedPosition> ;
+        void:entities 14914753 ;
+        a void:Dataset
+    ], [
+        void:class <http://kero.hgc.jp/ontology/kero.owl#InactiveRegion> ;
+        void:entities 797619 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.obolibrary.org/obo/SO_0000819> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://kero.hgc.jp/ontology/kero.owl#WeakOrPoisedPromoter> ;
+        void:entities 609599 ;
+        a void:Dataset
+    ], [
+        void:class <http://kero.hgc.jp/ontology/kero.owl#LowOrNoSignal> ;
+        void:entities 4257922 ;
+        a void:Dataset
+    ], [
+        void:class <http://kero.hgc.jp/ontology/kero.owl#SampleType> ;
+        void:entities 27 ;
+        a void:Dataset
+    ], [
+        void:class <http://rdf.ebi.ac.uk/terms/ensemblvariation#derived_allele> ;
+        void:entities 12138174 ;
+        a void:Dataset
+    ], [
+        void:class <http://kero.hgc.jp/ontology/kero.owl#ChIPseqPeakDataset> ;
+        void:entities 216 ;
+        a void:Dataset
+    ], [
+        void:class <http://rdf.ebi.ac.uk/terms/ensemblvariation#reference_allele> ;
+        void:entities 12105027 ;
+        a void:Dataset
+    ], [
+        void:class <http://kero.hgc.jp/ontology/kero.owl#MethylseqDataset> ;
+        void:entities 26 ;
+        a void:Dataset
+    ], [
+        void:class <http://biohackathon.org/resource/faldo#ReverseStrandPosition> ;
+        void:entities 55849 ;
+        a void:Dataset
+    ], [
+        void:class <http://kero.hgc.jp/ontology/kero.owl#ChIPseqDataset> ;
+        void:entities 216 ;
+        a void:Dataset
+    ], [
+        void:class <http://biohackathon.org/resource/faldo#ForwardStrandPosition> ;
+        void:entities 56885 ;
+        a void:Dataset
+    ], [
+        void:class <http://kero.hgc.jp/ontology/kero.owl#InactiveRegionOrHeterochroma> ;
+        void:entities 952899 ;
+        a void:Dataset
+    ] ;
+    void:classes 39 ;
+    void:distinctObjects 7487172255 ;
+    void:distinctSubjects 965396882 ;
+    void:properties 53 ;
+    void:propertyPartition [
+        void:property <http://kero.hgc.jp/ontology/kero.owl#repprm> ;
+        void:triples 17817869 ;
+        sbm:classRelation [
+            void:triples 17817869 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0000315> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://kero.hgc.jp/ontology/kero.owl#log_pval> ;
+        void:triples 7596074 ;
+        sbm:classRelation [
+            void:triples 7596074 ;
+            sbm:objectDatatype xsd:decimal ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0001697> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://kero.hgc.jp/ontology/kero.owl#genotypeData> ;
+        void:triples 83926195 ;
+        sbm:classRelation [
+            void:triples 83926194 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0001483> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://kero.hgc.jp/ontology/kero.owl#sample> ;
+        void:triples 374 ;
+        sbm:classRelation [
+            void:triples 26 ;
+            sbm:objectClass <http://kero.hgc.jp/ontology/kero.owl#SampleType> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#TSSseqDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 216 ;
+            sbm:objectClass <http://semanticscience.org/resource/SIO_001050> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#ChIPseqDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 26 ;
+            sbm:objectClass <http://semanticscience.org/resource/SIO_001050> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#MethylseqDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 52 ;
+            sbm:objectClass <http://kero.hgc.jp/ontology/kero.owl#SampleType> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#SNVDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 27 ;
+            sbm:objectClass <http://kero.hgc.jp/ontology/kero.owl#SampleType> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#ChromHMMDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 26 ;
+            sbm:objectClass <http://kero.hgc.jp/ontology/kero.owl#SampleType> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#MethylseqDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 52 ;
+            sbm:objectClass <http://semanticscience.org/resource/SIO_001050> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#SNVDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 27 ;
+            sbm:objectClass <http://semanticscience.org/resource/SIO_001050> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#ChromHMMDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 27 ;
+            sbm:objectClass <http://kero.hgc.jp/ontology/kero.owl#SampleType> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#RNAseqDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 27 ;
+            sbm:objectClass <http://semanticscience.org/resource/SIO_001050> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#RNAseqDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 26 ;
+            sbm:objectClass <http://semanticscience.org/resource/SIO_001050> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#TSSseqDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 216 ;
+            sbm:objectClass <http://kero.hgc.jp/ontology/kero.owl#SampleType> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#ChIPseqDataset> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.bioontology.org/ontology/SNOMEDCT/specimenOf> ;
+        void:triples 27 ;
+        sbm:classRelation [
+            void:triples 27 ;
+            sbm:objectClass foaf:Person ;
+            sbm:subjectClass <http://semanticscience.org/resource/SIO_001050> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 27 ;
+            sbm:objectClass foaf:Person ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#SampleType> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property skos:altLabel ;
+        void:triples 2181034 ;
+        sbm:classRelation [
+            void:triples 2181033 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0000673> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#SpeciesType> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://kero.hgc.jp/ontology/kero.owl#hasBindingSite> ;
+        void:triples 4227999395 ;
+        sbm:classRelation [
+            void:triples 7596074 ;
+            sbm:objectClass <http://purl.obolibrary.org/obo/SO_0001697> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#ChIPseqPeakDataset> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://kero.hgc.jp/ontology/kero.owl#hasTranscriptionStartSite> ;
+        void:triples 17809864 ;
+        sbm:classRelation [
+            void:triples 17809864 ;
+            sbm:objectClass <http://purl.obolibrary.org/obo/SO_0000315> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#TSSseqDataset> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://kero.hgc.jp/ontology/kero.owl#antigen> ;
+        void:triples 216 ;
+        sbm:classRelation [
+            void:triples 27 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#ChIPseqPeakDataset> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://kero.hgc.jp/ontology/kero.owl#genotype> ;
+        void:triples 83926195 ;
+        sbm:classRelation [
+            void:triples 83926194 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0001483> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://biohackathon.org/resource/faldoreference> ;
+        void:triples 29829506 ;
+        sbm:classRelation [
+            void:triples 90 ;
+            sbm:objectClass <http://purl.obolibrary.org/obo/SO_0000819> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldoStrandedPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1856040 ;
+            sbm:objectClass <http://purl.obolibrary.org/obo/SO_0000957> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#StrandedPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17 ;
+            sbm:objectClass <http://purl.obolibrary.org/obo/SO_0000819> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#StrandedPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1856040 ;
+            sbm:objectClass <http://purl.obolibrary.org/obo/SO_0000957> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#ExactPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17 ;
+            sbm:objectClass <http://purl.obolibrary.org/obo/SO_0000819> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#ExactPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 14914663 ;
+            sbm:objectClass <http://purl.obolibrary.org/obo/SO_0000957> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldoStrandedPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 90 ;
+            sbm:objectClass <http://purl.obolibrary.org/obo/SO_0000819> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldoExactPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 14914663 ;
+            sbm:objectClass <http://purl.obolibrary.org/obo/SO_0000957> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldoExactPosition> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://kero.hgc.jp/ontology/hasExpressionData> ;
+        void:triples 57100 ;
+        sbm:classRelation [
+            void:triples 57100 ;
+            sbm:objectClass <http://purl.obolibrary.org/obo/SO_0000673> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#RNAseqDataset> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://kero.hgc.jp/ontology/kero.owl#repgrp> ;
+        void:triples 17825746 ;
+        sbm:classRelation [
+            void:triples 17825746 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0000315> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://kero.hgc.jp/ontology/kero.owl#hasMethylationSite> ;
+        void:triples 79081234 ;
+        sbm:classRelation [
+            void:triples 79081234 ;
+            sbm:objectClass <http://purl.obolibrary.org/obo/SO_0000306> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#MethylseqDataset> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://biohackathon.org/resource/faldo#reference> ;
+        void:triples 310837108 ;
+        sbm:classRelation [
+            void:triples 20059 ;
+            sbm:objectClass <http://purl.obolibrary.org/obo/SO_0000819> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#StrandedPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 23 ;
+            sbm:objectClass <http://purl.obolibrary.org/obo/SO_0000957> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldoRegion> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 56830 ;
+            sbm:objectClass <http://purl.obolibrary.org/obo/SO_0000957> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#ForwardStrandPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 55 ;
+            sbm:objectClass <http://purl.obolibrary.org/obo/SO_0000819> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#ForwardStrandPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17 ;
+            sbm:objectClass <http://purl.obolibrary.org/obo/SO_0000819> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#ReverseStrandPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 164729210 ;
+            sbm:objectClass <http://purl.obolibrary.org/obo/SO_0000957> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#StrandedPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 145962138 ;
+            sbm:objectClass <http://purl.obolibrary.org/obo/SO_0000957> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#Region> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17 ;
+            sbm:objectClass <http://purl.obolibrary.org/obo/SO_0000819> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldoStrandedPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20111 ;
+            sbm:objectClass <http://purl.obolibrary.org/obo/SO_0000819> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#ExactPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 55832 ;
+            sbm:objectClass <http://purl.obolibrary.org/obo/SO_0000957> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#ReverseStrandPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 164832530 ;
+            sbm:objectClass <http://purl.obolibrary.org/obo/SO_0000957> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#ExactPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17 ;
+            sbm:objectClass <http://purl.obolibrary.org/obo/SO_0000819> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldoExactPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 22329 ;
+            sbm:objectClass <http://purl.obolibrary.org/obo/SO_0000819> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#Region> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1856040 ;
+            sbm:objectClass <http://purl.obolibrary.org/obo/SO_0000957> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldoExactPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1856040 ;
+            sbm:objectClass <http://purl.obolibrary.org/obo/SO_0000957> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldoStrandedPosition> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://dbpedia.org/ontology/age> ;
+        void:triples 15 ;
+        sbm:classRelation [
+            void:triples 15 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass foaf:Person ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://biohackathon.org/resource/faldo#begin> ;
+        void:triples 145984467 ;
+        sbm:classRelation [
+            void:triples 23 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldoExactPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldoRegion> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 33356 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#ForwardStrandPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#Region> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 32692 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#ReverseStrandPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#Region> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 23 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldoStrandedPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldoRegion> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 23 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#StrandedPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldoRegion> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1837789 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldoStrandedPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#Region> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 145984467 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#ExactPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#Region> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 23 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#ExactPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldoRegion> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 145932540 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#StrandedPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#Region> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1837789 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldoExactPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#Region> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://biohackathon.org/resource/faldoposition> ;
+        void:triples 14914753 ;
+        sbm:classRelation [
+            void:triples 14914753 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldoExactPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1856057 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#ExactPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1856057 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#StrandedPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 14914753 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldoStrandedPosition> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://kero.hgc.jp/ontology/kero.owl#cgNum> ;
+        void:triples 79081234 ;
+        sbm:classRelation [
+            void:triples 79081234 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0000306> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://kero.hgc.jp/ontology/kero.owl#alleleFrequency> ;
+        void:triples 83926194 ;
+        sbm:classRelation [
+            void:triples 83926194 ;
+            sbm:objectDatatype xsd:float ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0001483> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://rdf.ebi.ac.uk/terms/ensemblvariation#has_allele> ;
+        void:triples 167884840 ;
+        sbm:classRelation [
+            void:triples 83929037 ;
+            sbm:objectClass <http://rdf.ebi.ac.uk/terms/ensemblvariation#reference_allele> ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0001483> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 83929037 ;
+            sbm:objectClass <http://rdf.ebi.ac.uk/terms/ensemblvariation#ancestral_allele> ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0001483> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 83961563 ;
+            sbm:objectClass <http://rdf.ebi.ac.uk/terms/ensemblvariation#derived_allele> ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0001483> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://kero.hgc.jp/ontology/kero.owl#ppm> ;
+        void:triples 1541700 ;
+        sbm:classRelation [
+            void:triples 1541700 ;
+            sbm:objectDatatype xsd:float ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0000673> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:label ;
+        void:triples 937139105 ;
+        sbm:classRelation [
+            void:triples 1856057 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldoExactPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass rdf:Property ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 27 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#SampleType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 164852641 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#ExactPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 55849 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#ReverseStrandPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 26 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#TSSseqDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 27 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#ChromHMMDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 216 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#ChIPseqDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1533168 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0000673> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 216 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#ChIPseqPeakDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 26 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#MethylseqDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4257922 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#LowOrNoSignal> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 56885 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#ForwardStrandPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 66 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0000957> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 407540623 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0001697> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 952899 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#InactiveRegionOrHeterochroma> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1108922 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#StrongEnhancer> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 517846 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#ActivePromoter> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 797619 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#InactiveRegion> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 972160 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#TranscriptionalElongation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1856057 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldoStrandedPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2857059 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#WeakEnhancer> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 12105027 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://rdf.ebi.ac.uk/terms/ensemblvariation#ancestral_allele> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 52 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#SNVDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 12138174 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://rdf.ebi.ac.uk/terms/ensemblvariation#derived_allele> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 23 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldoRegion> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 164749269 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#StrandedPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0000819> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 609599 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#WeakOrPoisedPromoter> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 12105027 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://rdf.ebi.ac.uk/terms/ensemblvariation#reference_allele> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17809864 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0000315> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#SpeciesType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 83926194 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0001483> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 27 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#RNAseqDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 79081234 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0000306> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 27 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://semanticscience.org/resource/SIO_001050> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 145984467 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#Region> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://semanticscience.org/resource/SIO_000300> ;
+        void:triples 7596074 ;
+        sbm:classRelation [
+            void:triples 7294969 ;
+            sbm:objectDatatype xsd:decimal ;
+            sbm:subjectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C64214> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 301105 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C64214> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://kero.hgc.jp/ontology/kero.owl#additionalInformation> ;
+        void:triples 83926194 ;
+        sbm:classRelation [
+            void:triples 83926194 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0001483> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://biohackathon.org/resource/faldo#end> ;
+        void:triples 145984467 ;
+        sbm:classRelation [
+            void:triples 145932460 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#StrandedPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#Region> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 23 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldoStrandedPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldoRegion> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 33356 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#ForwardStrandPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#Region> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1844073 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldoStrandedPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#Region> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 32692 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#ReverseStrandPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#Region> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 23 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#StrandedPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldoRegion> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1844073 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldoExactPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#Region> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 23 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#ExactPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldoRegion> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 145984467 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#ExactPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#Region> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 23 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldoExactPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldoRegion> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property foaf:gender ;
+        void:triples 20 ;
+        sbm:classRelation [
+            void:triples 20 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass foaf:Person ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://biohackathon.org/resource/faldo#location> ;
+        void:triples 775186327 ;
+        sbm:classRelation [
+            void:triples 83926194 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0001483> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldoRegion> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#ActivePromoter> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 490062 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldoStrandedPosition> ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0001483> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 490062 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldoExactPosition> ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0001483> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 609599 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#WeakOrPoisedPromoter> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldoRegion> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#WeakOrPoisedPromoter> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1319671 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldoStrandedPosition> ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0000306> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldoRegion> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#InactiveRegion> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17809864 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#ExactPosition> ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0000315> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 39434 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#ReverseStrandPosition> ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0000315> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 952899 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#InactiveRegionOrHeterochroma> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 399944549 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0001697> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17809864 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#StrandedPosition> ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0000315> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4257922 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#LowOrNoSignal> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 79081234 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0000306> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldoRegion> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#LowOrNoSignal> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 83926194 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#ExactPosition> ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0001483> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 517846 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#ActivePromoter> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 79081234 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#ExactPosition> ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0000306> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldoRegion> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#WeakEnhancer> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 83926194 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#StrandedPosition> ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0001483> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldoRegion> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#TranscriptionalElongation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1108922 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#StrongEnhancer> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2857059 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#WeakEnhancer> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1319671 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldoExactPosition> ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0000306> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 79081234 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#StrandedPosition> ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0000306> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17809864 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0000315> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 39745 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#ForwardStrandPosition> ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0000315> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 797619 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#InactiveRegion> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldoRegion> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#StrongEnhancer> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 972160 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#TranscriptionalElongation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1533168 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0000673> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://kero.hgc.jp/ontology/kero.owl#hasChromHMM> ;
+        void:triples 11504659 ;
+        sbm:classRelation [
+            void:triples 4069905 ;
+            sbm:objectClass <http://kero.hgc.jp/ontology/kero.owl#LowOrNoSignal> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#ChromHMMDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 500435 ;
+            sbm:objectClass <http://kero.hgc.jp/ontology/kero.owl#ActivePromoter> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#ChromHMMDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1032174 ;
+            sbm:objectClass <http://kero.hgc.jp/ontology/kero.owl#StrongEnhancer> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#ChromHMMDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 768694 ;
+            sbm:objectClass <http://kero.hgc.jp/ontology/kero.owl#InactiveRegion> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#ChromHMMDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 909523 ;
+            sbm:objectClass <http://kero.hgc.jp/ontology/kero.owl#InactiveRegionOrHeterochroma> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#ChromHMMDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 592444 ;
+            sbm:objectClass <http://kero.hgc.jp/ontology/kero.owl#WeakOrPoisedPromoter> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#ChromHMMDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2707787 ;
+            sbm:objectClass <http://kero.hgc.jp/ontology/kero.owl#WeakEnhancer> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#ChromHMMDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 923697 ;
+            sbm:objectClass <http://kero.hgc.jp/ontology/kero.owl#TranscriptionalElongation> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#ChromHMMDataset> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://biohackathon.org/resource/faldoend> ;
+        void:triples 7594420 ;
+        sbm:classRelation [
+            void:triples 958362 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#StrandedPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldoRegion> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 958362 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#ExactPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldoRegion> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 23 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldoExactPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#Region> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 23 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldoStrandedPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#Region> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7594420 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldoExactPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldoRegion> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 23 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#ExactPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#Region> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7594420 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldoStrandedPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldoRegion> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 23 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#StrandedPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#Region> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dcterms:identifier ;
+        void:triples 626310239 ;
+        sbm:classRelation [
+            void:triples 4257922 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#LowOrNoSignal> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 952899 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#InactiveRegionOrHeterochroma> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 27 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#ChromHMMDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 216 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#ChIPseqDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2857059 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#WeakEnhancer> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 26 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#MethylseqDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 83926194 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0001483> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 79081234 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0000306> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 407540623 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0001697> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 27 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#SampleType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 972160 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#TranscriptionalElongation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1108922 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#StrongEnhancer> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 797619 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#InactiveRegion> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 517846 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#ActivePromoter> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 12138174 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://rdf.ebi.ac.uk/terms/ensemblvariation#derived_allele> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 609599 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#WeakOrPoisedPromoter> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 27 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#RNAseqDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1541700 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0000673> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 12105027 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://rdf.ebi.ac.uk/terms/ensemblvariation#reference_allele> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 26 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#TSSseqDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 52 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#SNVDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 27 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://semanticscience.org/resource/SIO_001050> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17809864 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0000315> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 12105027 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://rdf.ebi.ac.uk/terms/ensemblvariation#ancestral_allele> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://biohackathon.org/resource/faldo#position> ;
+        void:triples 164852641 ;
+        sbm:classRelation [
+            void:triples 1856057 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldoExactPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 164852641 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#ExactPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 56885 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#ForwardStrandPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 164749269 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#StrandedPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1856057 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldoStrandedPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 55849 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#ReverseStrandPosition> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://kero.hgc.jp/ontology/kero.owl#bin> ;
+        void:triples 108965124 ;
+        sbm:classRelation [
+            void:triples 797619 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#InactiveRegion> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 517846 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#ActivePromoter> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 79081234 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0000306> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 609599 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#WeakOrPoisedPromoter> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 972160 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#TranscriptionalElongation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4257922 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#LowOrNoSignal> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17809864 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0000315> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 952899 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#InactiveRegionOrHeterochroma> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1108922 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#StrongEnhancer> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2857059 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#WeakEnhancer> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://biohackathon.org/resource/faldolocation> ;
+        void:triples 7596074 ;
+        sbm:classRelation [
+            void:triples 23 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0001697> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7596074 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldoRegion> ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0001697> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://kero.hgc.jp/ontology/kero.owl#antibodyFor> ;
+        void:triples 216 ;
+        sbm:classRelation [
+            void:triples 216 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#ChIPseqDataset> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://kero.hgc.jp/ontology/kero.owl#tags> ;
+        void:triples 7596074 ;
+        sbm:classRelation [
+            void:triples 7596074 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0001697> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://kero.hgc.jp/ontology/kero.owl#hasExpressionData> ;
+        void:triples 1484600 ;
+        sbm:classRelation [
+            void:triples 1484600 ;
+            sbm:objectClass <http://purl.obolibrary.org/obo/SO_0000673> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#RNAseqDataset> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://kero.hgc.jp/ontology/kero.owl#summit> ;
+        void:triples 7596074 ;
+        sbm:classRelation [
+            void:triples 7596074 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0001697> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://kero.hgc.jp/ontology/hasChromHMM> ;
+        void:triples 569367 ;
+        sbm:classRelation [
+            void:triples 149272 ;
+            sbm:objectClass <http://kero.hgc.jp/ontology/kero.owl#WeakEnhancer> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#ChromHMMDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 48463 ;
+            sbm:objectClass <http://kero.hgc.jp/ontology/kero.owl#TranscriptionalElongation> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#ChromHMMDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 43376 ;
+            sbm:objectClass <http://kero.hgc.jp/ontology/kero.owl#InactiveRegionOrHeterochroma> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#ChromHMMDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17411 ;
+            sbm:objectClass <http://kero.hgc.jp/ontology/kero.owl#ActivePromoter> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#ChromHMMDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 188017 ;
+            sbm:objectClass <http://kero.hgc.jp/ontology/kero.owl#LowOrNoSignal> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#ChromHMMDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 28925 ;
+            sbm:objectClass <http://kero.hgc.jp/ontology/kero.owl#InactiveRegion> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#ChromHMMDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17155 ;
+            sbm:objectClass <http://kero.hgc.jp/ontology/kero.owl#WeakOrPoisedPromoter> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#ChromHMMDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 76748 ;
+            sbm:objectClass <http://kero.hgc.jp/ontology/kero.owl#StrongEnhancer> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#ChromHMMDataset> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://kero.hgc.jp/ontology/kero.owl#caNum> ;
+        void:triples 79081234 ;
+        sbm:classRelation [
+            void:triples 79081234 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0000306> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://kero.hgc.jp/ontology/kero.owl#count> ;
+        void:triples 419296113 ;
+        sbm:classRelation [
+            void:triples 17809864 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0000315> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 399944549 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0001697> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1541700 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0000673> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://kero.hgc.jp/ontology/kero.owl#genotypeQuality> ;
+        void:triples 83926195 ;
+        sbm:classRelation [
+            void:triples 83926194 ;
+            sbm:objectDatatype xsd:float ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0001483> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://med2rdf.org/ontology/med2rdf#sample> ;
+        void:triples 216 ;
+        sbm:classRelation [
+            void:triples 216 ;
+            sbm:objectClass <http://kero.hgc.jp/ontology/kero.owl#SampleType> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#ChIPseqPeakDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 216 ;
+            sbm:objectClass <http://semanticscience.org/resource/SIO_001050> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#ChIPseqPeakDataset> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://kero.hgc.jp/ontology/kero.owl#allelicDepth> ;
+        void:triples 83926194 ;
+        sbm:classRelation [
+            void:triples 83926194 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0001483> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dc:identifier ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#SpeciesType> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdf:type ;
+        void:triples 1159041770 ;
+        sbm:classRelation [
+            void:triples 1541700 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0000673> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 329507900 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#StrandedPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4257922 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#LowOrNoSignal> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 609599 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#WeakOrPoisedPromoter> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1108922 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#StrongEnhancer> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2857059 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#WeakEnhancer> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 517846 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#ActivePromoter> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 145984467 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#Region> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17809864 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0000315> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 23 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldoRegion> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 797619 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#InactiveRegion> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3712114 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldoExactPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 79081234 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0000306> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 83926194 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0001483> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 116339 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#ReverseStrandPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 407540623 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0001697> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 118491 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#ForwardStrandPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 24210653 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://rdf.ebi.ac.uk/terms/ensemblvariation#reference_allele> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 972160 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#TranscriptionalElongation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 952899 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#InactiveRegionOrHeterochroma> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 12139372 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://rdf.ebi.ac.uk/terms/ensemblvariation#derived_allele> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3712114 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldoStrandedPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 24210653 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://rdf.ebi.ac.uk/terms/ensemblvariation#ancestral_allele> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 66 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0000957> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0000819> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 329714644 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#ExactPosition> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://semanticscience.org/resource/SIO_000216> ;
+        void:triples 7596074 ;
+        sbm:classRelation [
+            void:triples 7596074 ;
+            sbm:objectClass <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C64214> ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0001697> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://kero.hgc.jp/ontology/kero.owl#antibody> ;
+        void:triples 216 ;
+        sbm:classRelation [
+            void:triples 162 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#ChIPseqPeakDataset> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dcat:theme ;
+        void:triples 374 ;
+        sbm:classRelation [
+            void:triples 52 ;
+            sbm:objectClass <http://kero.hgc.jp/ontology/kero.owl#SpeciesType> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#SNVDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 27 ;
+            sbm:objectClass <http://kero.hgc.jp/ontology/kero.owl#SpeciesType> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#ChromHMMDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 27 ;
+            sbm:objectClass <http://kero.hgc.jp/ontology/kero.owl#SpeciesType> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#RNAseqDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 26 ;
+            sbm:objectClass <http://kero.hgc.jp/ontology/kero.owl#SpeciesType> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#MethylseqDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 26 ;
+            sbm:objectClass <http://kero.hgc.jp/ontology/kero.owl#SpeciesType> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#TSSseqDataset> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 216 ;
+            sbm:objectClass <http://kero.hgc.jp/ontology/kero.owl#SpeciesType> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#ChIPseqDataset> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://kero.hgc.jp/ontology/kero.owl#hasVariationSite> ;
+        void:triples 88676109 ;
+        sbm:classRelation [
+            void:triples 83926194 ;
+            sbm:objectClass <http://purl.obolibrary.org/obo/SO_0001483> ;
+            sbm:subjectClass <http://kero.hgc.jp/ontology/kero.owl#SNVDataset> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://biohackathon.org/resource/faldobegin> ;
+        void:triples 7594420 ;
+        sbm:classRelation [
+            void:triples 23 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#StrandedPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#Region> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 23 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldoStrandedPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#Region> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 940340 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#ExactPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldoRegion> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 940340 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#StrandedPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldoRegion> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7594420 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldoStrandedPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldoRegion> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 23 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#ExactPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#Region> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7594420 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldoExactPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldoRegion> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 23 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldoExactPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#Region> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://kero.hgc.jp/ontology/kero.owl#rpkm> ;
+        void:triples 1541700 ;
+        sbm:classRelation [
+            void:triples 1541700 ;
+            sbm:objectDatatype xsd:float ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0000673> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://kero.hgc.jp/ontology/kero.owl#rep> ;
+        void:triples 17809864 ;
+        sbm:classRelation [
+            void:triples 17809864 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://purl.obolibrary.org/obo/SO_0000315> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ] ;
+    void:sparqlEndpoint <https://rdfportal.org/kero/sparql> ;
+    void:triples 11198913015 ;
+    a void:Dataset, sd:Graph .

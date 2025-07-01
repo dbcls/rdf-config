@@ -1,0 +1,101 @@
+- FunctionalProperty:
+  - rdfs:domain:
+    - functional_property_domain: Class
+  - rdfs:range:
+    - functional_property_range: Class
+- AsymmetricProperty:
+  - rdfs:domain:
+    - asymmetric_property_domain: Class
+  - owl:inverseOf:
+    - asymmetric_property_inverse_of:
+      - IrreflexiveProperty
+      - AsymmetricProperty
+      - ObjectProperty
+  - rdfs:range:
+    - asymmetric_property_range: Class
+- ObjectProperty:
+  - rdfs:domain:
+    - object_property_domain: Class
+  - owl:inverseOf:
+    - object_property_inverse_of:
+      - AsymmetricProperty
+      - ObjectProperty
+      - IrreflexiveProperty
+  - rdfs:range:
+    - object_property_range: Class
+  - rdfs:comment:
+    - object_property_comment: string
+- DatatypeProperty:
+  - rdfs:domain:
+    - datatype_property_domain: Class
+- MontaneWetTemperate:
+  - rdf:type:
+    - montane_wet_temperate_type: Class
+- ReflexiveProperty:
+  - rdfs:domain:
+    - reflexive_property_domain: Class
+  - rdfs:range:
+    - reflexive_property_range: Class
+- Restriction:
+  - owl:someValuesFrom:
+    - restriction_some_values_from: Class
+  - owl:onProperty:
+    - restriction_on_property:
+      - DatatypeProperty
+      - ObjectProperty
+      - FunctionalProperty
+      - SymmetricProperty
+      - InverseFunctionalProperty
+- TransitiveProperty:
+  - rdfs:domain:
+    - transitive_property_domain: Class
+  - rdfs:range:
+    - transitive_property_range: Class
+- Class:
+  - rdf:type:
+    - class_type: Class
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Restriction
+      - Class
+  - owl:equivalentClass:
+    - class_equivalent_class: Class
+- WesternGhats:
+  - rdf:type:
+    - western_ghats_type: Class
+  - rdfs:subClassOf:
+    - western_ghats_sub_class_of: Class
+- SymmetricProperty:
+  - rdfs:domain:
+    - symmetric_property_domain: Class
+  - rdfs:range:
+    - symmetric_property_range: Class
+- NamedIndividual:
+  - rdf:type:
+    - named_individual_type: Class
+  - rdfs:subClassOf:
+    - named_individual_sub_class_of: Class
+  - ns1:TypeOfSpecies:
+    - named_individual_type_of_species: string
+- InverseFunctionalProperty:
+  - rdfs:domain:
+    - inverse_functional_property_domain: Class
+  - rdfs:range:
+    - inverse_functional_property_range: Class
+- Taxon:
+  - rdf:type:
+    - taxon_type: Class
+  - ns1:TypeOfSpecies:
+    - taxon_type_of_species: string
+- IrreflexiveProperty:
+  - rdfs:domain:
+    - irreflexive_property_domain: Class
+  - owl:inverseOf:
+    - irreflexive_property_inverse_of:
+      - ObjectProperty
+      - AsymmetricProperty
+      - IrreflexiveProperty
+  - rdfs:range:
+    - irreflexive_property_range: Class

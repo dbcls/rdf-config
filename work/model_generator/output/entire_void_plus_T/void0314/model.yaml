@@ -1,0 +1,2450 @@
+- AnnotationProperty:
+  - rdfs:range:
+    - annotation_property_range: Class
+- LocationRelation:
+  - rdf:type:
+    - location_relation_type: Class
+- b11668474:
+  - ns1:hasTask:
+    - b11668474_has_task: View.Diagnosis
+  - ns1:hasDataRequestor:
+    - b11668474_has_data_requestor:
+      - Data_Requestor
+      - b11666866
+      - b11666869
+  - ns1:hasR2RRelation:
+    - b11668474_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668474_has_patient:
+      - Patient
+      - b11667173
+  - rdf:type:
+    - b11668474_type:
+      - Class
+      - Restriction
+- b11668519:
+  - ns1:hasTask:
+    - b11668519_has_task: View.Diagnosis
+  - ns1:hasDataRequestor:
+    - b11668519_has_data_requestor:
+      - b11666896
+      - Data_Requestor
+      - b11666892
+  - ns1:hasR2RRelation:
+    - b11668519_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668519_has_patient:
+      - Patient
+      - b11667175
+  - rdf:type:
+    - b11668519_type:
+      - Class
+      - Restriction
+- b11667174:
+  - ns1:hasHospitalizedDepartment:
+    - b11667174_has_hospitalized_department: Hospitalization_Department
+  - ns1:hasStatus:
+    - b11667174_has_status: Patient_Status
+  - rdf:type:
+    - b11667174_type:
+      - Restriction
+      - Class
+- b11668494:
+  - ns1:hasTask:
+    - b11668494_has_task: View.Prescription
+  - ns1:hasDataRequestor:
+    - b11668494_has_data_requestor:
+      - b11666880
+      - Data_Requestor
+      - b11666878
+  - ns1:hasR2RRelation:
+    - b11668494_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668494_has_patient:
+      - Patient
+      - b11667173
+  - rdf:type:
+    - b11668494_type:
+      - Restriction
+      - Class
+- b11668572:
+  - ns1:hasTask:
+    - b11668572_has_task: View.Encounter
+  - ns1:hasDataRequestor:
+    - b11668572_has_data_requestor:
+      - Data_Requestor
+      - b11666820
+  - rdf:type:
+    - b11668572_type:
+      - Class
+      - Restriction
+- b11668522:
+  - ns1:hasTask:
+    - b11668522_has_task: View.Diagnosis
+  - ns1:hasDataRequestor:
+    - b11668522_has_data_requestor:
+      - Data_Requestor
+      - b11666892
+      - b11666896
+  - ns1:hasR2RRelation:
+    - b11668522_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668522_has_patient:
+      - Patient
+      - b11667175
+  - rdf:type:
+    - b11668522_type:
+      - Restriction
+      - Class
+- b11668589:
+  - ns1:hasEHR:
+    - b11668589_has_ehr: EHR
+  - ns1:hasTask:
+    - b11668589_has_task: View.Demographic_Section
+  - ns1:hasDataRequestor:
+    - b11668589_has_data_requestor:
+      - Data_Requestor
+      - b11666847
+      - b11666845
+  - ns1:hasR2RRelation:
+    - b11668589_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668589_has_patient:
+      - Patient
+      - b11667185
+  - rdf:type:
+    - b11668589_type:
+      - Restriction
+      - Class
+- b11667177:
+  - ns1:hasSupervisionClinic:
+    - b11667177_has_supervision_clinic: OutPatient_Clinic
+  - ns1:hasStatus:
+    - b11667177_has_status: Patient_Status
+  - rdf:type:
+    - b11667177_type:
+      - Class
+      - Restriction
+  - ns1:hasLocation:
+    - b11667177_has_location: OutPatient_Clinic
+  - ns1:hasInsurance:
+    - b11667177_has_insurance: HMO
+- HospitalizationDepartment:
+  - rdf:type:
+    - hospitalization_department_type: Class
+- Document.Testing:
+  - ns1:hasAction:
+    - document.testing_has_action: Document
+  - rdf:type:
+    - document.testing_type: Class
+  - ns1:hasEHRSectionPart:
+    - document.testing_has_ehr_section_part: Testing
+- Shift:
+  - rdf:type:
+    - shift_type: Class
+  - ns1:hasShiftEndTime:
+    - shift_has_shift_end_time: time
+  - ns1:hasShiftStartTime:
+    - shift_has_shift_start_time: time
+- Builtin:
+  - ns5:maxArgs:
+    - builtin_max_args: 12345
+  - ns5:args:
+    - builtin_args: 12345
+  - ns5:minArgs:
+    - builtin_min_args: 12345
+- b11666836:
+  - ns1:hasWorkingDepartment:
+    - b11666836_has_working_department: Hospitalization_Department
+  - ns1:isInShift:
+    - b11666836_is_in_shift: Is_In_Shift
+  - rdf:type:
+    - b11666836_type:
+      - Class
+      - Restriction
+  - ns1:hasRole:
+    - b11666836_has_role: Nurse
+  - ns1:hasWorkPlace:
+    - b11666836_has_work_place: Hospital
+- Transfer.Diagnosis:
+  - ns1:hasAction:
+    - transfer.diagnosis_has_action: Transfer
+  - rdf:type:
+    - transfer.diagnosis_type: Class
+  - ns1:hasEHRSectionPart:
+    - transfer.diagnosis_has_ehr_section_part: Diagnosis
+- SocialWorker:
+  - rdf:type:
+    - social_worker_type: Class
+- b11668454:
+  - ns1:hasTask:
+    - b11668454_has_task: Transfer.Identification_Section
+  - ns1:hasDataRequestor:
+    - b11668454_has_data_requestor:
+      - b11666851
+      - Data_Requestor
+      - b11666853
+  - ns1:hasR2RRelation:
+    - b11668454_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668454_has_patient:
+      - b11667181
+      - Patient
+      - b11667183
+  - rdf:type:
+    - b11668454_type:
+      - Restriction
+      - Class
+- b11666822:
+  - ns1:hasWorkingDepartment:
+    - b11666822_has_working_department:
+      - OutPatient_Clinic
+      - Hospitalization_Department
+  - ns1:isInShift:
+    - b11666822_is_in_shift: Is_In_Shift
+  - rdf:type:
+    - b11666822_type:
+      - Class
+      - Restriction
+  - ns1:hasRole:
+    - b11666822_has_role: Nurse
+  - ns1:hasWorkPlace:
+    - b11666822_has_work_place: Hospital
+- Restriction:
+  - owl:hasValue:
+    - restriction_has_value:
+      - Is_In_Shift
+      - Location_Relation
+      - Patient_Status
+      - Response
+      - Time_Relation
+      - Organization_Relation
+      - EHR_2_Patient_Relation
+      - EHR_Relation
+      - DataRequestor_2_Patient_Relation
+  - owl:someValuesFrom:
+    - restriction_some_values_from:
+      - Restriction
+      - Class
+  - owl:onProperty:
+    - restriction_on_property:
+      - ObjectProperty
+      - FunctionalProperty
+  - owl:cardinality:
+    - restriction_cardinality: nonNegativeInteger
+  - owl:minCardinality:
+    - restriction_min_cardinality: nonNegativeInteger
+- b11668479:
+  - ns1:hasTask:
+    - b11668479_has_task: View.Diagnosis
+  - ns1:hasDataRequestor:
+    - b11668479_has_data_requestor:
+      - b11666866
+      - b11666869
+      - Data_Requestor
+  - ns1:hasR2RRelation:
+    - b11668479_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668479_has_patient:
+      - b11667174
+      - Patient
+  - rdf:type:
+    - b11668479_type:
+      - Restriction
+      - Class
+- Document.DemographicSection:
+  - ns1:hasAction:
+    - document.demographic_section_has_action: Document
+  - rdf:type:
+    - document.demographic_section_type: Class
+  - ns1:hasEHRSectionPart:
+    - document.demographic_section_has_ehr_section_part: Demographic_Section
+- SeniorMedicalSecretary:
+  - rdf:type:
+    - senior_medical_secretary_type: Class
+- b11668539:
+  - ns1:hasEHR:
+    - b11668539_has_ehr: EHR
+  - ns1:hasTask:
+    - b11668539_has_task: Document.Prescription
+  - ns1:hasDataRequestor:
+    - b11668539_has_data_requestor:
+      - b11666822
+      - Data_Requestor
+      - b11666824
+  - ns1:hasR2RRelation:
+    - b11668539_has_r2_r_relation:
+      - Time_Relation
+      - Organization_Relation
+  - ns1:hasPatient:
+    - b11668539_has_patient:
+      - b11667174
+      - Patient
+  - rdf:type:
+    - b11668539_type:
+      - Restriction
+      - Class
+- b11668507:
+  - ns1:hasTask:
+    - b11668507_has_task: View.Identification_Section
+  - ns1:hasDataRequestor:
+    - b11668507_has_data_requestor:
+      - b11666883
+      - b11666884
+      - Data_Requestor
+  - ns1:hasR2RRelation:
+    - b11668507_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668507_has_patient:
+      - Patient
+      - b11667174
+  - rdf:type:
+    - b11668507_type:
+      - Restriction
+      - Class
+- Transfer.Testing:
+  - ns1:hasAction:
+    - transfer.testing_has_action: Transfer
+  - rdf:type:
+    - transfer.testing_type: Class
+  - ns1:hasEHRSectionPart:
+    - transfer.testing_has_ehr_section_part: Testing
+- OrdinaryPhysician:
+  - rdf:type:
+    - ordinary_physician_type: Class
+- DatatypeProperty:
+  - rdfs:domain:
+    - datatype_property_domain: Class
+- b11668490:
+  - ns1:hasTask:
+    - b11668490_has_task: View.Diagnosis
+  - ns1:hasDataRequestor:
+    - b11668490_has_data_requestor:
+      - b11666878
+      - Data_Requestor
+      - b11666880
+  - ns1:hasPatient:
+    - b11668490_has_patient:
+      - Patient
+      - b11667181
+      - b11667183
+  - rdf:type:
+    - b11668490_type:
+      - Restriction
+      - Class
+- b11668467:
+  - ns1:hasTask:
+    - b11668467_has_task: View.Testing
+  - ns1:hasDataRequestor:
+    - b11668467_has_data_requestor:
+      - b11666834
+      - b11666832
+      - Data_Requestor
+  - ns1:hasPatient:
+    - b11668467_has_patient:
+      - Patient
+      - b11667183
+      - b11667181
+  - rdf:type:
+    - b11668467_type:
+      - Class
+      - Restriction
+- b11668016:
+  - ns1:hasEHR:
+    - b11668016_has_ehr: EHR
+  - ns1:hasTask:
+    - b11668016_has_task: Document.Encounter
+  - ns1:hasDataRequestor:
+    - b11668016_has_data_requestor:
+      - b11666819
+      - Data_Requestor
+      - b11666818
+  - ns1:hasR2RRelation:
+    - b11668016_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668016_has_patient:
+      - Patient
+      - b11667174
+  - rdf:type:
+    - b11668016_type:
+      - Restriction
+      - Class
+- b11666887:
+  - ns1:hasWorkingDepartment:
+    - b11666887_has_working_department: OutPatient_Clinic
+  - ns1:isInShift:
+    - b11666887_is_in_shift: Is_In_Shift
+  - rdf:type:
+    - b11666887_type:
+      - Class
+      - Restriction
+  - ns1:hasRole:
+    - b11666887_has_role: Senior_Medical_Secretary
+- EHR:
+  - ns1:hasMedicalSiteOwner:
+    - ehr_has_medical_site_owner: Hospital
+  - rdf:type:
+    - ehr_type: Class
+- b11668468:
+  - ns1:hasTask:
+    - b11668468_has_task: View.Diagnosis
+  - ns1:hasDataRequestor:
+    - b11668468_has_data_requestor:
+      - b11666866
+      - Data_Requestor
+      - b11666869
+  - ns1:hasR2RRelation:
+    - b11668468_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668468_has_patient:
+      - Patient
+      - b11667173
+  - rdf:type:
+    - b11668468_type:
+      - Class
+      - Restriction
+- View.Diagnosis:
+  - ns1:hasAction:
+    - view.diagnosis_has_action: View
+  - rdf:type:
+    - view.diagnosis_type: Class
+  - ns1:hasEHRSectionPart:
+    - view.diagnosis_has_ehr_section_part: Diagnosis
+- b11666819:
+  - ns1:hasWorkingDepartment:
+    - b11666819_has_working_department:
+      - OutPatient_Clinic
+      - Hospitalization_Department
+  - ns1:isInShift:
+    - b11666819_is_in_shift: Is_In_Shift
+  - rdf:type:
+    - b11666819_type:
+      - Class
+      - Restriction
+  - ns1:hasRole:
+    - b11666819_has_role: Expert_Physician
+- Transfer.RefferalForm:
+  - ns1:hasAction:
+    - transfer.refferal_form_has_action: Transfer
+  - rdf:type:
+    - transfer.refferal_form_type: Class
+  - ns1:hasEHRSectionPart:
+    - transfer.refferal_form_has_ehr_section_part: Prescription
+- Testing:
+  - rdf:type:
+    - testing_type: Class
+- b11668546:
+  - ns1:hasEHR:
+    - b11668546_has_ehr: EHR
+  - ns1:hasTask:
+    - b11668546_has_task: Document.Prescription
+  - ns1:hasDataRequestor:
+    - b11668546_has_data_requestor:
+      - Data_Requestor
+      - b11666836
+      - b11666839
+  - ns1:hasR2RRelation:
+    - b11668546_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668546_has_patient:
+      - b11667174
+      - Patient
+  - rdf:type:
+    - b11668546_type:
+      - Class
+      - Restriction
+- b11668511:
+  - ns1:hasTask:
+    - b11668511_has_task: View.Identification_Section
+  - ns1:hasDataRequestor:
+    - b11668511_has_data_requestor:
+      - b11666887
+      - Data_Requestor
+      - b11666889
+  - ns1:hasR2RRelation:
+    - b11668511_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668511_has_patient:
+      - Patient
+      - b11667177
+  - rdf:type:
+    - b11668511_type:
+      - Class
+      - Restriction
+- b11666874:
+  - ns1:hasWorkingDepartment:
+    - b11666874_has_working_department:
+      - OutPatient_Clinic
+      - Hospitalization_Department
+  - ns1:isInShift:
+    - b11666874_is_in_shift: Is_In_Shift
+  - rdf:type:
+    - b11666874_type:
+      - Restriction
+      - Class
+  - ns1:hasRole:
+    - b11666874_has_role: Ordinary_Physician
+- b11668538:
+  - ns1:hasTask:
+    - b11668538_has_task: View.Demographic_Section
+  - ns1:hasDataRequestor:
+    - b11668538_has_data_requestor:
+      - b11666896
+      - Data_Requestor
+      - b11666892
+  - ns1:hasR2RRelation:
+    - b11668538_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668538_has_patient:
+      - Patient
+      - b11667174
+  - rdf:type:
+    - b11668538_type:
+      - Class
+      - Restriction
+- IsInShift:
+  - rdf:type:
+    - is_in_shift_type: Class
+- b11666855:
+  - ns1:hasWorkingDepartment:
+    - b11666855_has_working_department: OutPatient_Clinic
+  - ns1:isInShift:
+    - b11666855_is_in_shift: Is_In_Shift
+  - rdf:type:
+    - b11666855_type:
+      - Restriction
+      - Class
+  - ns1:hasRole:
+    - b11666855_has_role: Ordinary_HCP
+- b11668586:
+  - ns1:hasTask:
+    - b11668586_has_task: View.Diagnosis
+  - ns1:hasDataRequestor:
+    - b11668586_has_data_requestor:
+      - b11666901
+      - b11666900
+      - Data_Requestor
+  - ns1:hasR2RRelation:
+    - b11668586_has_r2_r_relation:
+      - Time_Relation
+      - EHR_Relation
+      - Organization_Relation
+  - ns1:hasPatient:
+    - b11668586_has_patient: Patient
+  - rdf:type:
+    - b11668586_type:
+      - Class
+      - Restriction
+  - ns1:hasLegalAuthorization:
+    - b11668586_has_legal_authorization:
+      - b11667028
+      - b11667027
+      - Legal_Authorization
+- b11666834:
+  - ns1:hasWorkingDepartment:
+    - b11666834_has_working_department: Hospitalization_Department
+  - ns1:isInShift:
+    - b11666834_is_in_shift: Is_In_Shift
+  - rdf:type:
+    - b11666834_type:
+      - Class
+      - Restriction
+  - ns1:hasRole:
+    - b11666834_has_role: Nurse
+- b11667030:
+  - ns1:hasRelatedEHRSection:
+    - b11667030_has_related_ehr_section: Diagnosis
+  - rdf:type:
+    - b11667030_type:
+      - Class
+      - Restriction
+  - ns1:hasRefferedTo:
+    - b11667030_has_reffered_to: HMO
+  - ns1:hasLegalAuthorizationType:
+    - b11667030_has_legal_authorization_type: Patient_Consent_Form
+- Granularity:
+  - rdf:type:
+    - granularity_type: Class
+- b11666847:
+  - ns1:hasWorkingDepartment:
+    - b11666847_has_working_department: Hospitalization_Department
+  - rdf:type:
+    - b11666847_type:
+      - Restriction
+      - Class
+  - ns1:hasRole:
+    - b11666847_has_role: Nurse
+- List:
+  - rdf:rest:
+    - list_rest: List
+  - rdf:first:
+    - list_first: Variable
+- Nursing:
+  - rdf:type:
+    - nursing_type: Class
+- Transfer.IdentificationSection:
+  - ns1:hasAction:
+    - transfer.identification_section_has_action: Transfer
+  - rdf:type:
+    - transfer.identification_section_type: Class
+  - ns1:hasEHRSectionPart:
+    - transfer.identification_section_has_ehr_section_part: Identification_Section
+- b11668461:
+  - ns1:hasTask:
+    - b11668461_has_task: View.Prescription
+  - ns1:hasDataRequestor:
+    - b11668461_has_data_requestor:
+      - b11666828
+      - Data_Requestor
+      - b11666830
+  - ns1:hasR2RRelation:
+    - b11668461_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668461_has_patient:
+      - b11667173
+      - Patient
+  - rdf:type:
+    - b11668461_type:
+      - Restriction
+      - Class
+- b11666889:
+  - ns1:hasWorkingDepartment:
+    - b11666889_has_working_department: OutPatient_Clinic
+  - ns1:isInShift:
+    - b11666889_is_in_shift: Is_In_Shift
+  - rdf:type:
+    - b11666889_type:
+      - Class
+      - Restriction
+  - ns1:hasRole:
+    - b11666889_has_role: Senior_Medical_Secretary
+- b11668478:
+  - ns1:hasTask:
+    - b11668478_has_task: View.Diagnosis
+  - ns1:hasDataRequestor:
+    - b11668478_has_data_requestor:
+      - Data_Requestor
+      - b11666869
+      - b11666866
+  - ns1:hasR2RRelation:
+    - b11668478_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668478_has_patient:
+      - Patient
+      - b11667174
+  - rdf:type:
+    - b11668478_type:
+      - Restriction
+      - Class
+- OrdinaryHCA:
+  - rdf:type:
+    - ordinary_hca_type: Class
+- Ontology:
+  - ns6:defaultLanguage:
+    - ontology_default_language: string
+- b11666875:
+  - ns1:hasWorkingDepartment:
+    - b11666875_has_working_department:
+      - OutPatient_Clinic
+      - Hospitalization_Department
+  - ns1:isInShift:
+    - b11666875_is_in_shift: Is_In_Shift
+  - rdf:type:
+    - b11666875_type:
+      - Class
+      - Restriction
+  - ns1:hasRole:
+    - b11666875_has_role: Ordinary_Physician
+- b11668512:
+  - ns1:hasTask:
+    - b11668512_has_task: View.Identification_Section
+  - ns1:hasDataRequestor:
+    - b11668512_has_data_requestor:
+      - b11666889
+      - Data_Requestor
+      - b11666887
+  - ns1:hasR2RRelation:
+    - b11668512_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668512_has_patient:
+      - b11667177
+      - Patient
+  - rdf:type:
+    - b11668512_type:
+      - Restriction
+      - Class
+- Class:
+  - owl:equivalentClass:
+    - class_equivalent_class:
+      - Restriction
+      - Class
+  - owl:complementOf:
+    - class_complement_of: Class
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Restriction
+      - Class
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+  - rdfs:comment:
+    - class_comment: string
+- b11668499:
+  - ns1:hasTask:
+    - b11668499_has_task: View.Prescription
+  - ns1:hasDataRequestor:
+    - b11668499_has_data_requestor:
+      - b11666878
+      - Data_Requestor
+      - b11666880
+  - ns1:hasR2RRelation:
+    - b11668499_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668499_has_patient:
+      - b11667173
+      - Patient
+  - rdf:type:
+    - b11668499_type:
+      - Class
+      - Restriction
+- b11668558:
+  - ns1:hasEHR:
+    - b11668558_has_ehr: EHR
+  - ns1:hasTask:
+    - b11668558_has_task: View.Identification_Section
+  - ns1:hasDataRequestor:
+    - b11668558_has_data_requestor:
+      - Data_Requestor
+      - b11666822
+      - b11666824
+  - ns1:hasR2RRelation:
+    - b11668558_has_r2_r_relation:
+      - Organization_Relation
+      - Time_Relation
+  - ns1:hasPatient:
+    - b11668558_has_patient:
+      - b11667177
+      - Patient
+  - rdf:type:
+    - b11668558_type:
+      - Restriction
+      - Class
+- b11668577:
+  - ns1:hasTask:
+    - b11668577_has_task: View.Diagnosis
+  - ns1:hasDataRequestor:
+    - b11668577_has_data_requestor:
+      - Data_Requestor
+      - b11666901
+      - b11666900
+  - ns1:hasR2RRelation:
+    - b11668577_has_r2_r_relation:
+      - EHR_Relation
+      - Organization_Relation
+      - Time_Relation
+  - ns1:hasPatient:
+    - b11668577_has_patient: Patient
+  - rdf:type:
+    - b11668577_type:
+      - Class
+      - Restriction
+  - ns1:hasLegalAuthorization:
+    - b11668577_has_legal_authorization:
+      - Legal_Authorization
+      - b11667031
+      - b11667030
+- TimeRelation:
+  - rdf:type:
+    - time_relation_type: Class
+- DemographicSection:
+  - rdf:type:
+    - demographic_section_type: Class
+- b11667183:
+  - ns1:hasSupervisionClinic:
+    - b11667183_has_supervision_clinic: OutPatient_Clinic
+  - rdf:type:
+    - b11667183_type:
+      - Restriction
+      - Class
+- b11668581:
+  - ns1:hasTask:
+    - b11668581_has_task: View.Diagnosis
+  - ns1:hasDataRequestor:
+    - b11668581_has_data_requestor:
+      - Data_Requestor
+      - b11666901
+      - b11666900
+  - ns1:hasR2RRelation:
+    - b11668581_has_r2_r_relation:
+      - EHR_Relation
+      - Time_Relation
+      - Organization_Relation
+  - ns1:hasPatient:
+    - b11668581_has_patient: Patient
+  - rdf:type:
+    - b11668581_type:
+      - Class
+      - Restriction
+  - ns1:hasLegalAuthorization:
+    - b11668581_has_legal_authorization:
+      - Legal_Authorization
+      - b11667030
+      - b11667031
+- b11668015:
+  - ns1:hasEHR:
+    - b11668015_has_ehr: EHR
+  - ns1:hasTask:
+    - b11668015_has_task: Document.Encounter
+  - ns1:hasDataRequestor:
+    - b11668015_has_data_requestor:
+      - b11666818
+      - Data_Requestor
+      - b11666819
+  - ns1:hasR2RRelation:
+    - b11668015_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668015_has_patient:
+      - b11667174
+      - Patient
+  - rdf:type:
+    - b11668015_type:
+      - Class
+      - Restriction
+- View:
+  - rdf:type:
+    - view_type: Class
+- Nurse:
+  - rdf:type:
+    - nurse_type: Class
+- View.Encounter:
+  - ns1:hasAction:
+    - view.encounter_has_action: View
+  - rdf:type:
+    - view.encounter_type: Class
+  - ns1:hasEHRSectionPart:
+    - view.encounter_has_ehr_section_part: Encounter
+- Document.RefferalForm:
+  - ns1:hasAction:
+    - document.refferal_form_has_action: Document
+  - rdf:type:
+    - document.refferal_form_type: Class
+  - ns1:hasEHRSectionPart:
+    - document.refferal_form_has_ehr_section_part: Refferal_Form
+- b11668566:
+  - ns1:hasTask:
+    - b11668566_has_task: Document.Encounter
+  - ns1:hasDataRequestor:
+    - b11668566_has_data_requestor:
+      - b11666874
+      - b11666875
+      - Data_Requestor
+  - ns1:hasR2RRelation:
+    - b11668566_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668566_has_patient:
+      - Patient
+      - b11667179
+  - rdf:type:
+    - b11668566_type:
+      - Restriction
+      - Class
+- AtomList:
+  - rdf:rest:
+    - atom_list_rest: AtomList
+  - rdf:first:
+    - atom_list_first:
+      - DatavaluedPropertyAtom
+      - BuiltinAtom
+      - ClassAtom
+      - IndividualPropertyAtom
+      - DifferentIndividualsAtom
+- b11668504:
+  - ns1:hasTask:
+    - b11668504_has_task: View.Identification_Section
+  - ns1:hasDataRequestor:
+    - b11668504_has_data_requestor:
+      - Data_Requestor
+      - b11666883
+      - b11666884
+  - ns1:hasR2RRelation:
+    - b11668504_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668504_has_patient:
+      - Patient
+      - b11667174
+  - rdf:type:
+    - b11668504_type:
+      - Class
+      - Restriction
+- View.DemographicSection:
+  - ns1:hasAction:
+    - view.demographic_section_has_action: View
+  - rdf:type:
+    - view.demographic_section_type: Class
+  - ns1:hasEHRSectionPart:
+    - view.demographic_section_has_ehr_section_part: Demographic_Section
+- Transfer:
+  - rdf:type:
+    - transfer_type: Class
+- RequestForExpertPhysician:
+  - rdf:type:
+    - request_for_expert_physician_type: Class
+- DataRequestor:
+  - ns1:hasWorkingDepartment:
+    - data_requestor_has_working_department:
+      - OutPatient_Clinic
+      - Hospitalization_Department
+  - ns1:isInShift:
+    - data_requestor_is_in_shift: Is_In_Shift
+  - rdf:type:
+    - data_requestor_type:
+      - Class
+      - Restriction
+  - ns1:hasRole:
+    - data_requestor_has_role:
+      - Senior_Medical_Secretary
+      - Ordinary_Medcial_Secretary
+      - Ordinary_Physician
+      - Nurse
+      - Hospital_Manager
+      - Ordinary_HCA
+      - Ordinary_Paramedic
+      - Ordinary_HCP
+      - Social_Worker
+      - Expert_Physician
+  - ns1:hasEmployer:
+    - data_requestor_has_employer: HMO
+  - ns1:hasWorkPlace:
+    - data_requestor_has_work_place: Hospital
+  - ns1:HasAccessDate:
+    - data_requestor_has_access_date: '2000-01-01'
+  - ns1:hasAccessTime:
+    - data_requestor_has_access_time: time
+- b11666830:
+  - ns1:hasWorkingDepartment:
+    - b11666830_has_working_department: Hospitalization_Department
+  - ns1:isInShift:
+    - b11666830_is_in_shift: Is_In_Shift
+  - rdf:type:
+    - b11666830_type:
+      - Restriction
+      - Class
+  - ns1:hasRole:
+    - b11666830_has_role: Nurse
+- Patient:
+  - ns1:hasHospitalizedDepartment:
+    - patient_has_hospitalized_department: Hospitalization_Department
+  - ns1:hasSupervisionClinic:
+    - patient_has_supervision_clinic: OutPatient_Clinic
+  - ns1:hasStatus:
+    - patient_has_status: Patient_Status
+  - rdf:type:
+    - patient_type:
+      - Class
+      - Restriction
+  - ns1:hasLocation:
+    - patient_has_location: OutPatient_Clinic
+  - ns1:hasInsurance:
+    - patient_has_insurance: HMO
+- Encounter:
+  - rdf:type:
+    - encounter_type: Class
+- b11666869:
+  - ns1:hasWorkingDepartment:
+    - b11666869_has_working_department: Hospitalization_Department
+  - ns1:isInShift:
+    - b11666869_is_in_shift: Is_In_Shift
+  - rdf:type:
+    - b11666869_type:
+      - Class
+      - Restriction
+  - ns1:hasRole:
+    - b11666869_has_role: Ordinary_Paramedic
+- b11667179:
+  - ns1:hasSupervisionClinic:
+    - b11667179_has_supervision_clinic: OutPatient_Clinic
+  - ns1:hasStatus:
+    - b11667179_has_status: Patient_Status
+  - rdf:type:
+    - b11667179_type:
+      - Restriction
+      - Class
+- OutPatientClinic:
+  - rdf:type:
+    - out_patient_clinic_type: Class
+- b11668480:
+  - ns1:hasTask:
+    - b11668480_has_task: View.Demographic_Section
+  - ns1:hasDataRequestor:
+    - b11668480_has_data_requestor:
+      - b11666884
+      - b11666883
+      - Data_Requestor
+  - ns1:hasR2RRelation:
+    - b11668480_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668480_has_patient:
+      - Patient
+      - b11667174
+  - rdf:type:
+    - b11668480_type:
+      - Restriction
+      - Class
+- RefferalForm:
+  - rdf:type:
+    - refferal_form_type: Class
+- Document.Prescription:
+  - ns1:hasAction:
+    - document.prescription_has_action: Document
+  - rdf:type:
+    - document.prescription_type: Class
+  - ns1:hasEHRSectionPart:
+    - document.prescription_has_ehr_section_part: Prescription
+- b11668584:
+  - ns1:hasTask:
+    - b11668584_has_task: View.Diagnosis
+  - ns1:hasDataRequestor:
+    - b11668584_has_data_requestor:
+      - Data_Requestor
+      - b11666901
+      - b11666900
+  - ns1:hasR2RRelation:
+    - b11668584_has_r2_r_relation:
+      - Organization_Relation
+      - Time_Relation
+      - EHR_Relation
+  - ns1:hasPatient:
+    - b11668584_has_patient: Patient
+  - rdf:type:
+    - b11668584_type:
+      - Class
+      - Restriction
+  - ns1:hasLegalAuthorization:
+    - b11668584_has_legal_authorization:
+      - b11667027
+      - Legal_Authorization
+      - b11667028
+- OrdinaryHCP:
+  - rdf:type:
+    - ordinary_hcp_type: Class
+- b11668457:
+  - ns1:hasTask:
+    - b11668457_has_task: View.Prescription
+  - ns1:hasDataRequestor:
+    - b11668457_has_data_requestor:
+      - Data_Requestor
+      - b11666828
+      - b11666830
+  - ns1:hasR2RRelation:
+    - b11668457_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668457_has_patient:
+      - b11667173
+      - Patient
+  - rdf:type:
+    - b11668457_type:
+      - Restriction
+      - Class
+- PatientConfirmationReleaseForm:
+  - rdf:type:
+    - patient_confirmation_release_form_type: Class
+- b11668012:
+  - ns1:hasEHR:
+    - b11668012_has_ehr: EHR
+  - ns1:hasTask:
+    - b11668012_has_task: Document.Encounter
+  - ns1:hasDataRequestor:
+    - b11668012_has_data_requestor:
+      - b11666819
+      - Data_Requestor
+      - b11666818
+  - ns1:hasR2RRelation:
+    - b11668012_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668012_has_patient:
+      - b11667174
+      - Patient
+  - rdf:type:
+    - b11668012_type:
+      - Restriction
+      - Class
+- OrdinaryMedcialSecretary:
+  - rdf:type:
+    - ordinary_medcial_secretary_type: Class
+- b11667027:
+  - ns1:hasRelatedEHRSection:
+    - b11667027_has_related_ehr_section: Diagnosis
+  - rdf:type:
+    - b11667027_type:
+      - Class
+      - Restriction
+  - ns1:hasRefferedTo:
+    - b11667027_has_reffered_to: HMO
+  - ns1:hasLegalAuthorizationType:
+    - b11667027_has_legal_authorization_type: Patient_Consent_Form
+- b11668516:
+  - ns1:hasTask:
+    - b11668516_has_task: View.Demographic_Section
+  - ns1:hasDataRequestor:
+    - b11668516_has_data_requestor:
+      - b11666848
+      - Data_Requestor
+      - b11666849
+  - ns1:hasR2RRelation:
+    - b11668516_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668516_has_patient:
+      - Patient
+      - b11667175
+  - rdf:type:
+    - b11668516_type:
+      - Class
+      - Restriction
+- OrdinaryParamedic:
+  - rdf:type:
+    - ordinary_paramedic_type: Class
+- b11668591:
+  - ns1:hasEHR:
+    - b11668591_has_ehr: EHR
+  - ns1:hasTask:
+    - b11668591_has_task: View.Demographic_Section
+  - ns1:hasDataRequestor:
+    - b11668591_has_data_requestor:
+      - b11666847
+      - b11666845
+      - Data_Requestor
+  - ns1:hasR2RRelation:
+    - b11668591_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668591_has_patient:
+      - b11667185
+      - Patient
+  - rdf:type:
+    - b11668591_type:
+      - Class
+      - Restriction
+- View.RefferalForm:
+  - ns1:hasAction:
+    - view.refferal_form_has_action: View
+  - rdf:type:
+    - view.refferal_form_type: Class
+  - ns1:hasEHRSectionPart:
+    - view.refferal_form_has_ehr_section_part: Refferal_Form
+- Hospital:
+  - ns1:hasShift:
+    - hospital_has_shift: Shift
+  - rdf:type:
+    - hospital_type: Class
+- b11668513:
+  - ns1:hasTask:
+    - b11668513_has_task: View.Demographic_Section
+  - ns1:hasDataRequestor:
+    - b11668513_has_data_requestor:
+      - b11666848
+      - Data_Requestor
+      - b11666849
+  - ns1:hasR2RRelation:
+    - b11668513_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668513_has_patient:
+      - b11667175
+      - Patient
+  - rdf:type:
+    - b11668513_type:
+      - Class
+      - Restriction
+- b11668562:
+  - ns1:hasTask:
+    - b11668562_has_task: Document.Encounter
+  - ns1:hasDataRequestor:
+    - b11668562_has_data_requestor:
+      - b11666874
+      - b11666875
+      - Data_Requestor
+  - ns1:hasR2RRelation:
+    - b11668562_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668562_has_patient:
+      - b11667179
+      - Patient
+  - rdf:type:
+    - b11668562_type:
+      - Restriction
+      - Class
+- b11666849:
+  - ns1:hasWorkingDepartment:
+    - b11666849_has_working_department: Hospitalization_Department
+  - ns1:isInShift:
+    - b11666849_is_in_shift: Is_In_Shift
+  - rdf:type:
+    - b11666849_type:
+      - Restriction
+      - Class
+  - ns1:hasRole:
+    - b11666849_has_role: Ordinary_HCA
+- b11668534:
+  - ns1:hasTask:
+    - b11668534_has_task: View.Demographic_Section
+  - ns1:hasDataRequestor:
+    - b11668534_has_data_requestor:
+      - Data_Requestor
+      - b11666892
+      - b11666896
+  - ns1:hasR2RRelation:
+    - b11668534_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668534_has_patient:
+      - Patient
+      - b11667174
+  - rdf:type:
+    - b11668534_type:
+      - Restriction
+      - Class
+- OrganizationRelation:
+  - rdf:type:
+    - organization_relation_type: Class
+- View.IdentificationSection:
+  - ns1:hasAction:
+    - view.identification_section_has_action: View
+  - rdf:type:
+    - view.identification_section_type: Class
+  - ns1:hasEHRSectionPart:
+    - view.identification_section_has_ehr_section_part: Identification_Section
+- b11668568:
+  - ns1:hasTask:
+    - b11668568_has_task: View.Encounter
+  - ns1:hasDataRequestor:
+    - b11668568_has_data_requestor:
+      - b11666820
+      - Data_Requestor
+  - rdf:type:
+    - b11668568_type:
+      - Class
+      - Restriction
+- PrimaryCareClinic:
+  - rdf:type:
+    - primary_care_clinic_type: Class
+- b11668515:
+  - ns1:hasTask:
+    - b11668515_has_task: View.Demographic_Section
+  - ns1:hasDataRequestor:
+    - b11668515_has_data_requestor:
+      - Data_Requestor
+      - b11666848
+      - b11666849
+  - ns1:hasR2RRelation:
+    - b11668515_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668515_has_patient:
+      - Patient
+      - b11667175
+  - rdf:type:
+    - b11668515_type:
+      - Class
+      - Restriction
+- b11668481:
+  - ns1:hasTask:
+    - b11668481_has_task: View.Demographic_Section
+  - ns1:hasDataRequestor:
+    - b11668481_has_data_requestor:
+      - b11666883
+      - Data_Requestor
+      - b11666884
+  - ns1:hasR2RRelation:
+    - b11668481_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668481_has_patient:
+      - Patient
+      - b11667174
+  - rdf:type:
+    - b11668481_type:
+      - Restriction
+      - Class
+- IdentificationSection:
+  - rdf:type:
+    - identification_section_type: Class
+- b11667173:
+  - ns1:hasHospitalizedDepartment:
+    - b11667173_has_hospitalized_department: Hospitalization_Department
+  - ns1:hasStatus:
+    - b11667173_has_status: Patient_Status
+  - rdf:type:
+    - b11667173_type:
+      - Restriction
+      - Class
+- Response:
+  - rdf:type:
+    - response_type: Class
+- Diagnosis:
+  - rdf:type:
+    - diagnosis_type: Class
+- b11668556:
+  - ns1:hasTask:
+    - b11668556_has_task: Document.Encounter
+  - ns1:hasDataRequestor:
+    - b11668556_has_data_requestor:
+      - Data_Requestor
+      - b11666862
+      - b11666860
+  - ns1:hasR2RRelation:
+    - b11668556_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668556_has_patient:
+      - b11667177
+      - Patient
+  - rdf:type:
+    - b11668556_type:
+      - Class
+      - Restriction
+- b11668575:
+  - ns1:hasTask:
+    - b11668575_has_task: View.Diagnosis
+  - ns1:hasDataRequestor:
+    - b11668575_has_data_requestor:
+      - Data_Requestor
+      - b11666900
+      - b11666901
+  - ns1:hasR2RRelation:
+    - b11668575_has_r2_r_relation:
+      - Time_Relation
+      - EHR_Relation
+      - Organization_Relation
+  - ns1:hasPatient:
+    - b11668575_has_patient: Patient
+  - rdf:type:
+    - b11668575_type:
+      - Class
+      - Restriction
+  - ns1:hasLegalAuthorization:
+    - b11668575_has_legal_authorization:
+      - b11667031
+      - b11667030
+      - Legal_Authorization
+- OrdinaryHPP:
+  - rdf:type:
+    - ordinary_hpp_type: Class
+- Nutritionist:
+  - rdf:type:
+    - nutritionist_type: Class
+- b11668486:
+  - ns1:hasTask:
+    - b11668486_has_task: View.Diagnosis
+  - ns1:hasDataRequestor:
+    - b11668486_has_data_requestor:
+      - Data_Requestor
+      - b11666880
+      - b11666878
+  - ns1:hasPatient:
+    - b11668486_has_patient:
+      - b11667183
+      - b11667181
+      - Patient
+  - rdf:type:
+    - b11668486_type:
+      - Class
+      - Restriction
+- b11668564:
+  - ns1:hasTask:
+    - b11668564_has_task: Document.Encounter
+  - ns1:hasDataRequestor:
+    - b11668564_has_data_requestor:
+      - Data_Requestor
+      - b11666874
+      - b11666875
+  - ns1:hasR2RRelation:
+    - b11668564_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668564_has_patient:
+      - b11667179
+      - Patient
+  - rdf:type:
+    - b11668564_type:
+      - Restriction
+      - Class
+- b11668525:
+  - ns1:hasTask:
+    - b11668525_has_task: Transfer.Identification_Section
+  - ns1:hasDataRequestor:
+    - b11668525_has_data_requestor:
+      - b11666857
+      - Data_Requestor
+      - b11666855
+  - rdf:type:
+    - b11668525_type:
+      - Restriction
+      - Class
+- b11666900:
+  - ns1:isInShift:
+    - b11666900_is_in_shift: Is_In_Shift
+  - rdf:type:
+    - b11666900_type:
+      - Class
+      - Restriction
+  - ns1:hasRole:
+    - b11666900_has_role: Social_Worker
+  - ns1:hasEmployer:
+    - b11666900_has_employer: HMO
+- b11668536:
+  - ns1:hasTask:
+    - b11668536_has_task: View.Demographic_Section
+  - ns1:hasDataRequestor:
+    - b11668536_has_data_requestor:
+      - b11666896
+      - Data_Requestor
+      - b11666892
+  - ns1:hasR2RRelation:
+    - b11668536_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668536_has_patient:
+      - b11667174
+      - Patient
+  - rdf:type:
+    - b11668536_type:
+      - Restriction
+      - Class
+- b11666896:
+  - ns1:hasWorkingDepartment:
+    - b11666896_has_working_department: Hospitalization_Department
+  - ns1:isInShift:
+    - b11666896_is_in_shift: Is_In_Shift
+  - rdf:type:
+    - b11666896_type:
+      - Class
+      - Restriction
+  - ns1:hasRole:
+    - b11666896_has_role: Social_Worker
+- b11668542:
+  - ns1:hasEHR:
+    - b11668542_has_ehr: EHR
+  - ns1:hasTask:
+    - b11668542_has_task: Document.Prescription
+  - ns1:hasDataRequestor:
+    - b11668542_has_data_requestor:
+      - Data_Requestor
+      - b11666822
+      - b11666824
+  - ns1:hasR2RRelation:
+    - b11668542_has_r2_r_relation:
+      - Organization_Relation
+      - Time_Relation
+  - ns1:hasPatient:
+    - b11668542_has_patient:
+      - Patient
+      - b11667174
+  - rdf:type:
+    - b11668542_type:
+      - Restriction
+      - Class
+- b11666872:
+  - ns1:hasWorkingDepartment:
+    - b11666872_has_working_department: Hospitalization_Department
+  - rdf:type:
+    - b11666872_type:
+      - Class
+      - Restriction
+  - ns1:hasRole:
+    - b11666872_has_role: Ordinary_Paramedic
+- b11666880:
+  - ns1:hasWorkingDepartment:
+    - b11666880_has_working_department: Hospitalization_Department
+  - rdf:type:
+    - b11666880_type:
+      - Class
+      - Restriction
+  - ns1:hasRole:
+    - b11666880_has_role: Ordinary_Medcial_Secretary
+- Prescription:
+  - rdf:type:
+    - prescription_type: Class
+- HospitalManager:
+  - rdf:type:
+    - hospital_manager_type: Class
+- Document.Encounter:
+  - ns1:hasAction:
+    - document.encounter_has_action: Document
+  - rdf:type:
+    - document.encounter_type: Class
+  - ns1:hasEHRSectionPart:
+    - document.encounter_has_ehr_section_part: Encounter
+- b11668526:
+  - ns1:hasTask:
+    - b11668526_has_task: Transfer.Identification_Section
+  - ns1:hasDataRequestor:
+    - b11668526_has_data_requestor:
+      - b11666855
+      - b11666857
+      - Data_Requestor
+  - rdf:type:
+    - b11668526_type:
+      - Restriction
+      - Class
+- Imp:
+  - ns3:head:
+    - imp_head: AtomList
+  - ns3:body:
+    - imp_body: AtomList
+  - ns7:isRuleEnabled:
+    - imp_is_rule_enabled: true
+- ClassAtom:
+  - ns3:classPredicate:
+    - class_atom_class_predicate: Class
+  - ns3:argument1:
+    - class_atom_argument1:
+      - Variable
+      - Organization_Relation
+      - EHR_Relation
+      - Time_Relation
+      - Location_Relation
+- DatavaluedPropertyAtom:
+  - ns3:argument2:
+    - datavalued_property_atom_argument2: Variable
+  - ns3:argument1:
+    - datavalued_property_atom_argument1:
+      - Variable
+      - Shift
+  - ns3:propertyPredicate:
+    - datavalued_property_atom_property_predicate:
+      - FunctionalProperty
+      - DatatypeProperty
+- b11666884:
+  - ns1:hasWorkingDepartment:
+    - b11666884_has_working_department: Hospitalization_Department
+  - ns1:isInShift:
+    - b11666884_is_in_shift: Is_In_Shift
+  - rdf:type:
+    - b11666884_type:
+      - Restriction
+      - Class
+  - ns1:hasRole:
+    - b11666884_has_role: Senior_Medical_Secretary
+- b11668501:
+  - ns1:hasTask:
+    - b11668501_has_task: View.Identification_Section
+  - ns1:hasDataRequestor:
+    - b11668501_has_data_requestor:
+      - Data_Requestor
+      - b11666883
+      - b11666884
+  - ns1:hasR2RRelation:
+    - b11668501_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668501_has_patient:
+      - Patient
+      - b11667174
+  - rdf:type:
+    - b11668501_type:
+      - Restriction
+      - Class
+- SeniorResearcher:
+  - rdf:type:
+    - senior_researcher_type: Class
+- b11668459:
+  - ns1:hasTask:
+    - b11668459_has_task: View.Prescription
+  - ns1:hasDataRequestor:
+    - b11668459_has_data_requestor:
+      - b11666828
+      - Data_Requestor
+      - b11666830
+  - ns1:hasR2RRelation:
+    - b11668459_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668459_has_patient:
+      - Patient
+      - b11667173
+  - rdf:type:
+    - b11668459_type:
+      - Class
+      - Restriction
+- b11666901:
+  - ns1:isInShift:
+    - b11666901_is_in_shift: Is_In_Shift
+  - rdf:type:
+    - b11666901_type:
+      - Class
+      - Restriction
+  - ns1:hasRole:
+    - b11666901_has_role: Social_Worker
+  - ns1:hasEmployer:
+    - b11666901_has_employer: HMO
+- b11668592:
+  - ns1:hasEHR:
+    - b11668592_has_ehr: EHR
+  - ns1:hasTask:
+    - b11668592_has_task: View.Demographic_Section
+  - ns1:hasDataRequestor:
+    - b11668592_has_data_requestor:
+      - b11666847
+      - b11666845
+      - Data_Requestor
+  - ns1:hasR2RRelation:
+    - b11668592_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668592_has_patient:
+      - b11667185
+      - Patient
+  - rdf:type:
+    - b11668592_type:
+      - Restriction
+      - Class
+- b11666862:
+  - ns1:hasWorkingDepartment:
+    - b11666862_has_working_department:
+      - Hospitalization_Department
+      - OutPatient_Clinic
+  - ns1:isInShift:
+    - b11666862_is_in_shift: Is_In_Shift
+  - rdf:type:
+    - b11666862_type:
+      - Restriction
+      - Class
+  - ns1:hasRole:
+    - b11666862_has_role: Ordinary_Paramedic
+- Transfer.Prescription:
+  - ns1:hasAction:
+    - transfer.prescription_has_action: Transfer
+  - rdf:type:
+    - transfer.prescription_type: Class
+  - ns1:hasEHRSectionPart:
+    - transfer.prescription_has_ehr_section_part: Prescription
+- b11666853:
+  - ns1:hasWorkingDepartment:
+    - b11666853_has_working_department: OutPatient_Clinic
+  - rdf:type:
+    - b11666853_type:
+      - Restriction
+      - Class
+  - ns1:hasRole:
+    - b11666853_has_role: Ordinary_HCA
+- b11666866:
+  - ns1:hasWorkingDepartment:
+    - b11666866_has_working_department: Hospitalization_Department
+  - ns1:isInShift:
+    - b11666866_is_in_shift: Is_In_Shift
+  - rdf:type:
+    - b11666866_type:
+      - Class
+      - Restriction
+  - ns1:hasRole:
+    - b11666866_has_role: Ordinary_Paramedic
+- DifferentIndividualsAtom:
+  - ns3:argument2:
+    - different_individuals_atom_argument2: Variable
+  - ns3:argument1:
+    - different_individuals_atom_argument1: Variable
+- b11668553:
+  - ns1:hasTask:
+    - b11668553_has_task: Document.Encounter
+  - ns1:hasDataRequestor:
+    - b11668553_has_data_requestor:
+      - b11666860
+      - b11666862
+      - Data_Requestor
+  - ns1:hasR2RRelation:
+    - b11668553_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668553_has_patient:
+      - b11667177
+      - Patient
+  - rdf:type:
+    - b11668553_type:
+      - Class
+      - Restriction
+- BuiltinAtom:
+  - ns3:builtin:
+    - builtin_atom_builtin: Builtin
+  - ns3:arguments:
+    - builtin_atom_arguments: List
+- b11668465:
+  - ns1:hasTask:
+    - b11668465_has_task: View.Testing
+  - ns1:hasDataRequestor:
+    - b11668465_has_data_requestor:
+      - Data_Requestor
+      - b11666834
+      - b11666832
+  - ns1:hasPatient:
+    - b11668465_has_patient:
+      - Patient
+      - b11667181
+      - b11667183
+  - rdf:type:
+    - b11668465_type:
+      - Restriction
+      - Class
+- b11666873:
+  - ns1:hasWorkingDepartment:
+    - b11666873_has_working_department: Hospitalization_Department
+  - rdf:type:
+    - b11666873_type:
+      - Restriction
+      - Class
+  - ns1:hasRole:
+    - b11666873_has_role: Ordinary_Paramedic
+- b11666857:
+  - ns1:hasWorkingDepartment:
+    - b11666857_has_working_department: OutPatient_Clinic
+  - ns1:isInShift:
+    - b11666857_is_in_shift: Is_In_Shift
+  - rdf:type:
+    - b11666857_type:
+      - Class
+      - Restriction
+  - ns1:hasRole:
+    - b11666857_has_role: Ordinary_HCP
+- b11666832:
+  - ns1:hasWorkingDepartment:
+    - b11666832_has_working_department: Hospitalization_Department
+  - ns1:isInShift:
+    - b11666832_is_in_shift: Is_In_Shift
+  - rdf:type:
+    - b11666832_type:
+      - Class
+      - Restriction
+  - ns1:hasRole:
+    - b11666832_has_role: Nurse
+- b11668510:
+  - ns1:hasTask:
+    - b11668510_has_task: View.Identification_Section
+  - ns1:hasDataRequestor:
+    - b11668510_has_data_requestor:
+      - b11666889
+      - b11666887
+      - Data_Requestor
+  - ns1:hasR2RRelation:
+    - b11668510_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668510_has_patient:
+      - Patient
+      - b11667177
+  - rdf:type:
+    - b11668510_type:
+      - Class
+      - Restriction
+- b11666828:
+  - ns1:hasWorkingDepartment:
+    - b11666828_has_working_department: Hospitalization_Department
+  - ns1:isInShift:
+    - b11666828_is_in_shift: Is_In_Shift
+  - rdf:type:
+    - b11666828_type:
+      - Class
+      - Restriction
+  - ns1:hasRole:
+    - b11666828_has_role: Nurse
+- b11668540:
+  - ns1:hasEHR:
+    - b11668540_has_ehr: EHR
+  - ns1:hasTask:
+    - b11668540_has_task: Document.Prescription
+  - ns1:hasDataRequestor:
+    - b11668540_has_data_requestor:
+      - b11666824
+      - Data_Requestor
+      - b11666822
+  - ns1:hasR2RRelation:
+    - b11668540_has_r2_r_relation:
+      - Organization_Relation
+      - Time_Relation
+  - ns1:hasPatient:
+    - b11668540_has_patient:
+      - Patient
+      - b11667174
+  - rdf:type:
+    - b11668540_type:
+      - Restriction
+      - Class
+- FunctionalProperty:
+  - rdfs:range:
+    - functional_property_range: Class
+  - rdfs:domain:
+    - functional_property_domain: Class
+- b11668496:
+  - ns1:hasTask:
+    - b11668496_has_task: View.Prescription
+  - ns1:hasDataRequestor:
+    - b11668496_has_data_requestor:
+      - b11666880
+      - Data_Requestor
+      - b11666878
+  - ns1:hasR2RRelation:
+    - b11668496_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668496_has_patient:
+      - b11667173
+      - Patient
+  - rdf:type:
+    - b11668496_type:
+      - Restriction
+      - Class
+- DataRequestor_2PatientRelation:
+  - rdf:type:
+    - data_requestor_2_patient_relation_type: Class
+- PatientStatus:
+  - rdf:type:
+    - patient_status_type: Class
+- View.Nursing:
+  - ns1:hasAction:
+    - view.nursing_has_action: View
+  - rdf:type:
+    - view.nursing_type: Class
+  - ns1:hasEHRSectionPart:
+    - view.nursing_has_ehr_section_part: Nursing
+- b11667181:
+  - ns1:hasSupervisionClinic:
+    - b11667181_has_supervision_clinic: OutPatient_Clinic
+  - rdf:type:
+    - b11667181_type:
+      - Restriction
+      - Class
+- b11667028:
+  - ns1:hasRelatedEHRSection:
+    - b11667028_has_related_ehr_section: Diagnosis
+  - rdf:type:
+    - b11667028_type:
+      - Restriction
+      - Class
+  - ns1:hasRefferedTo:
+    - b11667028_has_reffered_to: HMO
+  - ns1:hasLegalAuthorizationType:
+    - b11667028_has_legal_authorization_type: Patient_Consent_Form
+- b11668559:
+  - ns1:hasEHR:
+    - b11668559_has_ehr: EHR
+  - ns1:hasTask:
+    - b11668559_has_task: View.Identification_Section
+  - ns1:hasDataRequestor:
+    - b11668559_has_data_requestor:
+      - Data_Requestor
+      - b11666822
+      - b11666824
+  - ns1:hasR2RRelation:
+    - b11668559_has_r2_r_relation:
+      - Time_Relation
+      - Organization_Relation
+  - ns1:hasPatient:
+    - b11668559_has_patient:
+      - b11667177
+      - Patient
+  - rdf:type:
+    - b11668559_type:
+      - Class
+      - Restriction
+- View.Testing:
+  - ns1:hasAction:
+    - view.testing_has_action: View
+  - rdf:type:
+    - view.testing_type: Class
+  - ns1:hasEHRSectionPart:
+    - view.testing_has_ehr_section_part: Testing
+- b11666824:
+  - ns1:hasWorkingDepartment:
+    - b11666824_has_working_department:
+      - OutPatient_Clinic
+      - Hospitalization_Department
+  - ns1:isInShift:
+    - b11666824_is_in_shift: Is_In_Shift
+  - rdf:type:
+    - b11666824_type:
+      - Class
+      - Restriction
+  - ns1:hasRole:
+    - b11666824_has_role: Nurse
+  - ns1:hasWorkPlace:
+    - b11666824_has_work_place: Hospital
+- Situation:
+  - ns1:hasEHR:
+    - situation_has_ehr: EHR
+  - ns1:hasTask:
+    - situation_has_task:
+      - View.Prescription
+      - View.Diagnosis
+      - Document.Encounter
+      - View.Encounter
+      - View.Identification_Section
+      - Document.Prescription
+      - Transfer.Identification_Section
+      - View.Demographic_Section
+      - View.Testing
+  - ns1:hasDataRequestor:
+    - situation_has_data_requestor:
+      - b11666830
+      - b11666853
+      - b11666855
+      - b11666847
+      - b11666848
+      - b11666883
+      - b11666819
+      - b11666836
+      - b11666889
+      - b11666892
+      - b11666839
+      - b11666874
+      - b11666834
+      - b11666828
+      - b11666860
+      - b11666887
+      - b11666824
+      - b11666832
+      - b11666880
+      - b11666878
+      - b11666851
+      - b11666884
+      - b11666869
+      - Data_Requestor
+      - b11666818
+      - b11666900
+      - b11666866
+      - b11666896
+      - b11666901
+      - b11666845
+      - b11666862
+      - b11666820
+      - b11666857
+      - b11666849
+      - b11666875
+      - b11666822
+  - ns1:hasR2RRelation:
+    - situation_has_r2_r_relation:
+      - Time_Relation
+      - EHR_Relation
+      - Organization_Relation
+  - ns1:hasPatient:
+    - situation_has_patient:
+      - b11667177
+      - b11667179
+      - Patient
+      - b11667173
+      - b11667181
+      - b11667185
+      - b11667175
+      - b11667183
+      - b11667174
+  - rdf:type:
+    - situation_type:
+      - Restriction
+      - Class
+  - ns1:hasLegalAuthorization:
+    - situation_has_legal_authorization:
+      - b11667027
+      - Legal_Authorization
+      - b11667031
+      - b11667028
+      - b11667030
+- b11668555:
+  - ns1:hasTask:
+    - b11668555_has_task: Document.Encounter
+  - ns1:hasDataRequestor:
+    - b11668555_has_data_requestor:
+      - b11666860
+      - b11666862
+      - Data_Requestor
+  - ns1:hasR2RRelation:
+    - b11668555_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668555_has_patient:
+      - b11667177
+      - Patient
+  - rdf:type:
+    - b11668555_type:
+      - Restriction
+      - Class
+- b11667031:
+  - ns1:hasRelatedEHRSection:
+    - b11667031_has_related_ehr_section: Diagnosis
+  - rdf:type:
+    - b11667031_type:
+      - Class
+      - Restriction
+  - ns1:hasRefferedTo:
+    - b11667031_has_reffered_to: HMO
+  - ns1:hasLegalAuthorizationType:
+    - b11667031_has_legal_authorization_type: Patient_Consent_Form
+- EHR_2PatientRelation:
+  - rdf:type:
+    - ehr_2_patient_relation_type: Class
+- b11668471:
+  - ns1:hasTask:
+    - b11668471_has_task: View.Diagnosis
+  - ns1:hasDataRequestor:
+    - b11668471_has_data_requestor:
+      - Data_Requestor
+      - b11666866
+      - b11666869
+  - ns1:hasR2RRelation:
+    - b11668471_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668471_has_patient:
+      - Patient
+      - b11667173
+  - rdf:type:
+    - b11668471_type:
+      - Class
+      - Restriction
+- Transfer.Encounter:
+  - ns1:hasAction:
+    - transfer.encounter_has_action: Transfer
+  - rdf:type:
+    - transfer.encounter_type: Class
+  - ns1:hasEHRSectionPart:
+    - transfer.encounter_has_ehr_section_part: Encounter
+- b11668483:
+  - ns1:hasTask:
+    - b11668483_has_task: View.Demographic_Section
+  - ns1:hasDataRequestor:
+    - b11668483_has_data_requestor:
+      - Data_Requestor
+      - b11666883
+      - b11666884
+  - ns1:hasR2RRelation:
+    - b11668483_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668483_has_patient:
+      - Patient
+      - b11667174
+  - rdf:type:
+    - b11668483_type:
+      - Class
+      - Restriction
+- b11668488:
+  - ns1:hasTask:
+    - b11668488_has_task: View.Diagnosis
+  - ns1:hasDataRequestor:
+    - b11668488_has_data_requestor:
+      - Data_Requestor
+      - b11666878
+      - b11666880
+  - ns1:hasPatient:
+    - b11668488_has_patient:
+      - b11667181
+      - b11667183
+      - Patient
+  - rdf:type:
+    - b11668488_type:
+      - Restriction
+      - Class
+- EHRRelation:
+  - rdf:type:
+    - ehr_relation_type: Class
+- b11666839:
+  - ns1:hasWorkingDepartment:
+    - b11666839_has_working_department: Hospitalization_Department
+  - ns1:isInShift:
+    - b11666839_is_in_shift: Is_In_Shift
+  - rdf:type:
+    - b11666839_type:
+      - Class
+      - Restriction
+  - ns1:hasRole:
+    - b11666839_has_role: Nurse
+  - ns1:hasWorkPlace:
+    - b11666839_has_work_place: Hospital
+- Update:
+  - rdf:type:
+    - update_type: Class
+- b11668451:
+  - ns1:hasTask:
+    - b11668451_has_task: Transfer.Identification_Section
+  - ns1:hasDataRequestor:
+    - b11668451_has_data_requestor:
+      - b11666851
+      - b11666853
+      - Data_Requestor
+  - ns1:hasR2RRelation:
+    - b11668451_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668451_has_patient:
+      - Patient
+      - b11667183
+      - b11667181
+  - rdf:type:
+    - b11668451_type:
+      - Class
+      - Restriction
+- b11668548:
+  - ns1:hasEHR:
+    - b11668548_has_ehr: EHR
+  - ns1:hasTask:
+    - b11668548_has_task: Document.Prescription
+  - ns1:hasDataRequestor:
+    - b11668548_has_data_requestor:
+      - b11666839
+      - b11666836
+      - Data_Requestor
+  - ns1:hasR2RRelation:
+    - b11668548_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668548_has_patient:
+      - b11667174
+      - Patient
+  - rdf:type:
+    - b11668548_type:
+      - Class
+      - Restriction
+- b11666860:
+  - ns1:hasWorkingDepartment:
+    - b11666860_has_working_department:
+      - OutPatient_Clinic
+      - Hospitalization_Department
+  - ns1:isInShift:
+    - b11666860_is_in_shift: Is_In_Shift
+  - rdf:type:
+    - b11666860_type:
+      - Class
+      - Restriction
+  - ns1:hasRole:
+    - b11666860_has_role: Ordinary_Paramedic
+- b11667175:
+  - ns1:hasHospitalizedDepartment:
+    - b11667175_has_hospitalized_department: Hospitalization_Department
+  - ns1:hasStatus:
+    - b11667175_has_status: Patient_Status
+  - rdf:type:
+    - b11667175_type:
+      - Restriction
+      - Class
+- Transfer.Nursing:
+  - ns1:hasAction:
+    - transfer.nursing_has_action: Transfer
+  - rdf:type:
+    - transfer.nursing_type: Class
+  - ns1:hasEHRSectionPart:
+    - transfer.nursing_has_ehr_section_part: Nursing
+- b11668557:
+  - ns1:hasEHR:
+    - b11668557_has_ehr: EHR
+  - ns1:hasTask:
+    - b11668557_has_task: View.Identification_Section
+  - ns1:hasDataRequestor:
+    - b11668557_has_data_requestor:
+      - b11666824
+      - b11666822
+      - Data_Requestor
+  - ns1:hasR2RRelation:
+    - b11668557_has_r2_r_relation:
+      - Organization_Relation
+      - Time_Relation
+  - ns1:hasPatient:
+    - b11668557_has_patient:
+      - Patient
+      - b11667177
+  - rdf:type:
+    - b11668557_type:
+      - Class
+      - Restriction
+- b11667185:
+  - ns1:hasHospitalizedDepartment:
+    - b11667185_has_hospitalized_department: Hospitalization_Department
+  - ns1:hasStatus:
+    - b11667185_has_status: Patient_Status
+  - rdf:type:
+    - b11667185_type:
+      - Restriction
+      - Class
+- ISAdministrator:
+  - rdf:type:
+    - is_administrator_type: Class
+- b11668529:
+  - ns1:hasTask:
+    - b11668529_has_task: Transfer.Identification_Section
+  - ns1:hasDataRequestor:
+    - b11668529_has_data_requestor:
+      - b11666857
+      - b11666855
+      - Data_Requestor
+  - rdf:type:
+    - b11668529_type:
+      - Class
+      - Restriction
+- LegalAuthorization:
+  - ns1:hasRelatedEHRSection:
+    - legal_authorization_has_related_ehr_section: Diagnosis
+  - rdf:type:
+    - legal_authorization_type:
+      - Restriction
+      - Class
+  - ns1:hasRefferedTo:
+    - legal_authorization_has_reffered_to: HMO
+  - ns1:hasLegalAuthorizationType:
+    - legal_authorization_has_legal_authorization_type: Patient_Consent_Form
+  - ns1:hasValidAccessDate:
+    - legal_authorization_has_valid_access_date: '2000-01-01'
+  - ns1:hasDateOfIssue:
+    - legal_authorization_has_date_of_issue: '2000-01-01'
+- b11666851:
+  - ns1:hasWorkingDepartment:
+    - b11666851_has_working_department: OutPatient_Clinic
+  - rdf:type:
+    - b11666851_type:
+      - Restriction
+      - Class
+  - ns1:hasRole:
+    - b11666851_has_role: Ordinary_HCA
+- Document:
+  - rdf:type:
+    - document_type: Class
+- b11668453:
+  - ns1:hasTask:
+    - b11668453_has_task: Transfer.Identification_Section
+  - ns1:hasDataRequestor:
+    - b11668453_has_data_requestor:
+      - b11666851
+      - b11666853
+      - Data_Requestor
+  - ns1:hasR2RRelation:
+    - b11668453_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668453_has_patient:
+      - b11667183
+      - Patient
+      - b11667181
+  - rdf:type:
+    - b11668453_type:
+      - Class
+      - Restriction
+- View.Prescription:
+  - ns1:hasAction:
+    - view.prescription_has_action: View
+  - rdf:type:
+    - view.prescription_type: Class
+  - ns1:hasEHRSectionPart:
+    - view.prescription_has_ehr_section_part: Prescription
+- ObjectProperty:
+  - rdfs:range:
+    - object_property_range: Class
+  - rdfs:domain:
+    - object_property_domain: Class
+- Resident:
+  - rdf:type:
+    - resident_type: Class
+- OrdinaryResearcher:
+  - rdf:type:
+    - ordinary_researcher_type: Class
+- IndividualPropertyAtom:
+  - ns3:argument2:
+    - individual_property_atom_argument2:
+      - Organization_Relation
+      - Shift
+      - Location_Relation
+      - EHR_Relation
+      - Time_Relation
+      - Variable
+  - ns3:argument1:
+    - individual_property_atom_argument1: Variable
+  - ns3:propertyPredicate:
+    - individual_property_atom_property_predicate:
+      - ObjectProperty
+      - FunctionalProperty
+- b11668544:
+  - ns1:hasEHR:
+    - b11668544_has_ehr: EHR
+  - ns1:hasTask:
+    - b11668544_has_task: Document.Prescription
+  - ns1:hasDataRequestor:
+    - b11668544_has_data_requestor:
+      - b11666836
+      - Data_Requestor
+      - b11666839
+  - ns1:hasR2RRelation:
+    - b11668544_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668544_has_patient:
+      - b11667174
+      - Patient
+  - rdf:type:
+    - b11668544_type:
+      - Restriction
+      - Class
+- RefferalLetterForm:
+  - rdf:type:
+    - refferal_letter_form_type: Class
+- b11666878:
+  - ns1:hasWorkingDepartment:
+    - b11666878_has_working_department: Hospitalization_Department
+  - rdf:type:
+    - b11666878_type:
+      - Class
+      - Restriction
+  - ns1:hasRole:
+    - b11666878_has_role: Ordinary_Medcial_Secretary
+- b11666892:
+  - ns1:hasWorkingDepartment:
+    - b11666892_has_working_department: Hospitalization_Department
+  - ns1:isInShift:
+    - b11666892_is_in_shift: Is_In_Shift
+  - rdf:type:
+    - b11666892_type:
+      - Class
+      - Restriction
+  - ns1:hasRole:
+    - b11666892_has_role: Social_Worker
+- HMO:
+  - rdf:type:
+    - hmo_type: Class
+- b11668463:
+  - ns1:hasTask:
+    - b11668463_has_task: View.Testing
+  - ns1:hasDataRequestor:
+    - b11668463_has_data_requestor:
+      - b11666834
+      - b11666832
+      - Data_Requestor
+  - ns1:hasPatient:
+    - b11668463_has_patient:
+      - b11667183
+      - Patient
+      - b11667181
+  - rdf:type:
+    - b11668463_type:
+      - Restriction
+      - Class
+- Document.Diagnosis:
+  - ns1:hasAction:
+    - document.diagnosis_has_action: Document
+  - rdf:type:
+    - document.diagnosis_type: Class
+  - ns1:hasEHRSectionPart:
+    - document.diagnosis_has_ehr_section_part: Diagnosis
+- b11666845:
+  - ns1:hasWorkingDepartment:
+    - b11666845_has_working_department: Hospitalization_Department
+  - rdf:type:
+    - b11666845_type:
+      - Restriction
+      - Class
+  - ns1:hasRole:
+    - b11666845_has_role: Nurse
+- b11666883:
+  - ns1:hasWorkingDepartment:
+    - b11666883_has_working_department: Hospitalization_Department
+  - ns1:isInShift:
+    - b11666883_is_in_shift: Is_In_Shift
+  - rdf:type:
+    - b11666883_type:
+      - Class
+      - Restriction
+  - ns1:hasRole:
+    - b11666883_has_role: Senior_Medical_Secretary
+- b11668521:
+  - ns1:hasTask:
+    - b11668521_has_task: View.Diagnosis
+  - ns1:hasDataRequestor:
+    - b11668521_has_data_requestor:
+      - b11666896
+      - b11666892
+      - Data_Requestor
+  - ns1:hasR2RRelation:
+    - b11668521_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668521_has_patient:
+      - b11667175
+      - Patient
+  - rdf:type:
+    - b11668521_type:
+      - Class
+      - Restriction
+- Dietitian:
+  - rdf:type:
+    - dietitian_type: Class
+- b11666820:
+  - rdf:type:
+    - b11666820_type:
+      - Class
+      - Restriction
+  - ns1:hasRole:
+    - b11666820_has_role: Hospital_Manager
+- b11666848:
+  - ns1:hasWorkingDepartment:
+    - b11666848_has_working_department: Hospitalization_Department
+  - ns1:isInShift:
+    - b11666848_is_in_shift: Is_In_Shift
+  - rdf:type:
+    - b11666848_type:
+      - Restriction
+      - Class
+  - ns1:hasRole:
+    - b11666848_has_role: Ordinary_HCA
+- b11668477:
+  - ns1:hasTask:
+    - b11668477_has_task: View.Diagnosis
+  - ns1:hasDataRequestor:
+    - b11668477_has_data_requestor:
+      - b11666866
+      - Data_Requestor
+      - b11666869
+  - ns1:hasR2RRelation:
+    - b11668477_has_r2_r_relation: Organization_Relation
+  - ns1:hasPatient:
+    - b11668477_has_patient:
+      - b11667174
+      - Patient
+  - rdf:type:
+    - b11668477_type:
+      - Class
+      - Restriction
+- b11668585:
+  - ns1:hasTask:
+    - b11668585_has_task: View.Diagnosis
+  - ns1:hasDataRequestor:
+    - b11668585_has_data_requestor:
+      - b11666901
+      - b11666900
+      - Data_Requestor
+  - ns1:hasR2RRelation:
+    - b11668585_has_r2_r_relation:
+      - Organization_Relation
+      - Time_Relation
+      - EHR_Relation
+  - ns1:hasPatient:
+    - b11668585_has_patient: Patient
+  - rdf:type:
+    - b11668585_type:
+      - Class
+      - Restriction
+  - ns1:hasLegalAuthorization:
+    - b11668585_has_legal_authorization:
+      - b11667028
+      - b11667027
+      - Legal_Authorization
+- GeneralDepartment:
+  - rdf:type:
+    - general_department_type: Class
+- PatientConsentForm:
+  - rdf:type:
+    - patient_consent_form_type: Class
+- b11666818:
+  - ns1:hasWorkingDepartment:
+    - b11666818_has_working_department:
+      - Hospitalization_Department
+      - OutPatient_Clinic
+  - ns1:isInShift:
+    - b11666818_is_in_shift: Is_In_Shift
+  - rdf:type:
+    - b11666818_type:
+      - Restriction
+      - Class
+  - ns1:hasRole:
+    - b11666818_has_role: Expert_Physician
+- GrantedResearchForm:
+  - rdf:type:
+    - granted_research_form_type: Class
+- b11668570:
+  - ns1:hasTask:
+    - b11668570_has_task: View.Encounter
+  - ns1:hasDataRequestor:
+    - b11668570_has_data_requestor:
+      - b11666820
+      - Data_Requestor
+  - rdf:type:
+    - b11668570_type:
+      - Class
+      - Restriction
+- ExpertPhysician:
+  - rdf:type:
+    - expert_physician_type: Class
+- Document.Nursing:
+  - ns1:hasAction:
+    - document.nursing_has_action: Document
+  - rdf:type:
+    - document.nursing_type: Class
+  - ns1:hasEHRSectionPart:
+    - document.nursing_has_ehr_section_part: Nursing

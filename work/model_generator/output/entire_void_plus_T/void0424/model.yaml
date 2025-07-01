@@ -1,0 +1,2001 @@
+- MolportRef:
+  - rdf:type:
+    - molport_ref_type: Class
+  - rdfs:label:
+    - molport_ref_label: string
+- Oligonucleotide:
+  - ns1:moleculeXref:
+    - oligonucleotide_molecule_xref: WikipediaMolRef
+  - ns1:hasBioComponent:
+    - oligonucleotide_has_bio_component: BioComponent
+  - ns1:hasChildMolecule:
+    - oligonucleotide_has_child_molecule: Oligonucleotide
+  - ns1:hasDrugIndication:
+    - oligonucleotide_has_drug_indication: DrugIndication
+  - ns1:hasActivity:
+    - oligonucleotide_has_activity: Activity
+  - rdf:type:
+    - oligonucleotide_type: Class
+  - ns2:SIO_000008:
+    - oligonucleotide_sio_000008:
+      - CHEMINF_000350
+      - CHEMINF_000018
+      - CHEMINF_000059
+      - CHEMINF_000042
+      - CHEMINF_000218
+      - CHEMINF_000113
+      - CHEMINF_000216
+  - ns1:hasMechanism:
+    - oligonucleotide_has_mechanism: Mechanism
+  - foaf:depiction:
+    - oligonucleotide_depiction: Image
+  - ns1:hasDocument:
+    - oligonucleotide_has_document: Document
+  - ns1:hasParentMolecule:
+    - oligonucleotide_has_parent_molecule: Oligonucleotide
+  - ns1:highestDevelopmentPhase:
+    - oligonucleotide_highest_development_phase: 123.45
+  - ns1:chemblId:
+    - oligonucleotide_chembl_id: string
+  - ns1:substanceType:
+    - oligonucleotide_substance_type: string
+  - ns1:isBiotherapeutic:
+    - oligonucleotide_is_biotherapeutic: true
+  - skos:prefLabel:
+    - oligonucleotide_pref_label: string
+  - dc:description:
+    - oligonucleotide_description: string
+  - ns1:atcClassification:
+    - oligonucleotide_atc_classification: string
+  - rdfs:label:
+    - oligonucleotide_label: string
+  - skos:altLabel:
+    - oligonucleotide_alt_label: string
+- Image:
+  - rdfs:label:
+    - image_label: string
+- TimbalRef:
+  - rdf:type:
+    - timbal_ref_type: Class
+  - rdfs:label:
+    - timbal_ref_label: string
+- LincsRef:
+  - rdf:type:
+    - lincs_ref_type: Class
+  - rdfs:label:
+    - lincs_ref_label: string
+- ChimericProtein:
+  - ns1:relOverlapsWith:
+    - chimeric_protein_rel_overlaps_with:
+      - ProteinFamily
+      - ChimericProtein
+      - ProteinComplex
+      - ProteinProteinInteraction
+      - ProteinSelectivityGroup
+  - ns1:relSubsetOf:
+    - chimeric_protein_rel_subset_of:
+      - ProteinFamily
+      - ProteinProteinInteraction
+      - ProteinSelectivityGroup
+  - ns1:relHasSubset:
+    - chimeric_protein_rel_has_subset: SingleProtein
+  - ns1:hasProteinClassification:
+    - chimeric_protein_has_protein_classification: ProteinClassification
+  - skos:relatedMatch:
+    - chimeric_protein_related_match: TargetComponent
+  - rdf:type:
+    - chimeric_protein_type: Class
+  - ns1:hasAssay:
+    - chimeric_protein_has_assay: Assay
+  - ns1:hasBindingSite:
+    - chimeric_protein_has_binding_site: BindingSite
+  - ns1:isTargetForMechanism:
+    - chimeric_protein_is_target_for_mechanism: Mechanism
+  - ns1:hasTargetComponent:
+    - chimeric_protein_has_target_component: TargetComponent
+  - dc:title:
+    - chimeric_protein_title: string
+  - ns1:organismName:
+    - chimeric_protein_organism_name: string
+  - ns1:chemblId:
+    - chimeric_protein_chembl_id: string
+  - ns1:targetType:
+    - chimeric_protein_target_type: string
+  - rdfs:label:
+    - chimeric_protein_label: string
+- EmoleculesRef:
+  - rdf:type:
+    - emolecules_ref_type: Class
+  - rdfs:label:
+    - emolecules_ref_label: string
+- ProteinFamily:
+  - ns1:relOverlapsWith:
+    - protein_family_rel_overlaps_with:
+      - ProteinFamily
+      - ProteinComplex
+      - ProteinSelectivityGroup
+      - ProteinComplexGroup
+      - ProteinProteinInteraction
+      - ChimericProtein
+  - ns1:relEquivalentTo:
+    - protein_family_rel_equivalent_to:
+      - ProteinComplex
+      - ProteinSelectivityGroup
+      - ProteinFamily
+  - ns1:relSubsetOf:
+    - protein_family_rel_subset_of:
+      - ProteinComplexGroup
+      - ProteinComplex
+      - ProteinSelectivityGroup
+      - ProteinFamily
+      - ProteinProteinInteraction
+  - ns1:relHasSubset:
+    - protein_family_rel_has_subset:
+      - ChimericProtein
+      - ProteinComplexGroup
+      - ProteinFamily
+      - SingleProtein
+      - ProteinSelectivityGroup
+      - ProteinComplex
+  - ns1:hasProteinClassification:
+    - protein_family_has_protein_classification: ProteinClassification
+  - skos:relatedMatch:
+    - protein_family_related_match: TargetComponent
+  - rdf:type:
+    - protein_family_type: Class
+  - ns1:hasAssay:
+    - protein_family_has_assay: Assay
+  - ns1:hasBindingSite:
+    - protein_family_has_binding_site: BindingSite
+  - ns1:isTargetForMechanism:
+    - protein_family_is_target_for_mechanism: Mechanism
+  - ns1:hasTargetComponent:
+    - protein_family_has_target_component: TargetComponent
+  - dc:title:
+    - protein_family_title: string
+  - ns1:organismName:
+    - protein_family_organism_name: string
+  - ns1:chemblId:
+    - protein_family_chembl_id: string
+  - ns1:targetType:
+    - protein_family_target_type: string
+  - ns1:isSpeciesGroup:
+    - protein_family_is_species_group: true
+  - rdfs:label:
+    - protein_family_label: string
+- CHEMINF_000059:
+  - ns2:SIO_000300:
+    - cheminf_000059_sio_000300: string
+  - rdfs:label:
+    - cheminf_000059_label: string
+- Organism:
+  - rdf:type:
+    - organism_type: Class
+  - ns1:hasAssay:
+    - organism_has_assay: Assay
+  - ns1:isTargetForMechanism:
+    - organism_is_target_for_mechanism: Mechanism
+  - dc:title:
+    - organism_title: string
+  - ns1:organismName:
+    - organism_organism_name: string
+  - ns1:chemblId:
+    - organism_chembl_id: string
+  - ns1:targetType:
+    - organism_target_type: string
+  - ns1:isSpeciesGroup:
+    - organism_is_species_group: true
+  - rdfs:label:
+    - organism_label: string
+- PubchemThomPharmRef:
+  - rdf:type:
+    - pubchem_thom_pharm_ref_type: Class
+  - rdfs:label:
+    - pubchem_thom_pharm_ref_label: string
+- Enzyme:
+  - ns1:moleculeXref:
+    - enzyme_molecule_xref: WikipediaMolRef
+  - ns1:hasBioComponent:
+    - enzyme_has_bio_component: BioComponent
+  - ns1:hasDrugIndication:
+    - enzyme_has_drug_indication: DrugIndication
+  - ns1:hasActivity:
+    - enzyme_has_activity: Activity
+  - rdf:type:
+    - enzyme_type: Class
+  - ns1:hasMechanism:
+    - enzyme_has_mechanism: Mechanism
+  - foaf:depiction:
+    - enzyme_depiction: Image
+  - ns1:hasDocument:
+    - enzyme_has_document: Document
+  - ns1:highestDevelopmentPhase:
+    - enzyme_highest_development_phase: 123.45
+  - ns1:chemblId:
+    - enzyme_chembl_id: string
+  - ns1:substanceType:
+    - enzyme_substance_type: string
+  - ns1:isBiotherapeutic:
+    - enzyme_is_biotherapeutic: true
+  - skos:prefLabel:
+    - enzyme_pref_label: string
+  - dc:description:
+    - enzyme_description: string
+  - ns1:atcClassification:
+    - enzyme_atc_classification: string
+  - rdfs:label:
+    - enzyme_label: string
+  - skos:altLabel:
+    - enzyme_alt_label: string
+- CHEMINF_000312:
+  - ns2:SIO_000300:
+    - cheminf_000312_sio_000300: double
+  - rdfs:label:
+    - cheminf_000312_label: string
+- PfamRef:
+  - rdf:type:
+    - pfam_ref_type: Class
+  - rdfs:label:
+    - pfam_ref_label: string
+- CHEMINF_000113:
+  - ns2:SIO_000300:
+    - cheminf_000113_sio_000300: string
+  - rdfs:label:
+    - cheminf_000113_label: string
+- EnzymeClassRef:
+  - rdf:type:
+    - enzyme_class_ref_type: Class
+  - rdfs:label:
+    - enzyme_class_ref_label: string
+- AtlasRef:
+  - rdf:type:
+    - atlas_ref_type: Class
+  - rdfs:label:
+    - atlas_ref_label: string
+- UnknownSubstance:
+  - ns1:moleculeXref:
+    - unknown_substance_molecule_xref:
+      - SureChemblRef
+      - ZincRef
+      - PubchemDotfRef
+      - PubchemRef
+      - MculeRef
+      - EmoleculesRef
+      - FdaSrsRef
+      - SelleckRef
+      - AtlasRef
+      - NmrShiftDb2Ref
+      - DrugbankRef
+      - WikipediaMolRef
+      - PdbeRef
+      - LincsRef
+      - KeggLigandRef
+      - HmdbRef
+      - IupharRef
+      - PharmGkbRef
+      - PubchemThomPharmRef
+      - NikkajiRef
+      - ReconRef
+      - MolportRef
+      - ChebiRef
+      - ActorRef
+  - ns1:hasBioComponent:
+    - unknown_substance_has_bio_component: BioComponent
+  - ns1:hasChildMolecule:
+    - unknown_substance_has_child_molecule:
+      - UnknownSubstance
+      - SmallMolecule
+  - ns1:hasDrugIndication:
+    - unknown_substance_has_drug_indication: DrugIndication
+  - ns1:hasActivity:
+    - unknown_substance_has_activity: Activity
+  - rdf:type:
+    - unknown_substance_type: Class
+  - ns2:SIO_000008:
+    - unknown_substance_sio_000008:
+      - CHEMINF_000312
+      - CHEMINF_000018
+      - CHEMINF_000350
+      - CHEMINF_000300
+      - CHEMINF_000218
+      - CHEMINF_000315
+      - CHEMINF_000251
+      - CHEMINF_000307
+      - CHEMINF_000216
+      - CHEMINF_000326
+      - CHEMINF_000059
+      - CHEMINF_000113
+      - CHEMINF_000042
+      - CHEMINF_000244
+      - CHEMINF_000322
+      - CHEMINF_000195
+      - CHEMINF_000245
+      - CHEMINF_000431
+      - CHEMINF_000254
+      - CHEMINF_000381
+  - ns1:hasMechanism:
+    - unknown_substance_has_mechanism: Mechanism
+  - foaf:depiction:
+    - unknown_substance_depiction: Image
+  - ns1:hasDocument:
+    - unknown_substance_has_document: Document
+  - ns1:hasParentMolecule:
+    - unknown_substance_has_parent_molecule:
+      - UnknownSubstance
+      - SmallMolecule
+      - Oligosaccharide
+      - ProteinMolecule
+  - ns1:highestDevelopmentPhase:
+    - unknown_substance_highest_development_phase: 123.45
+  - ns1:chemblId:
+    - unknown_substance_chembl_id: string
+  - ns1:hracClassification:
+    - unknown_substance_hrac_classification: string
+  - ns1:fracClassification:
+    - unknown_substance_frac_classification: string
+  - ns1:substanceType:
+    - unknown_substance_substance_type: string
+  - ns1:isBiotherapeutic:
+    - unknown_substance_is_biotherapeutic: true
+  - skos:prefLabel:
+    - unknown_substance_pref_label: string
+  - dc:description:
+    - unknown_substance_description: string
+  - ns1:atcClassification:
+    - unknown_substance_atc_classification: string
+  - rdfs:label:
+    - unknown_substance_label: string
+  - ns1:iracClassification:
+    - unknown_substance_irac_classification: string
+  - skos:altLabel:
+    - unknown_substance_alt_label: string
+- SureChemblRef:
+  - rdf:type:
+    - sure_chembl_ref_type: Class
+  - rdfs:label:
+    - sure_chembl_ref_label: string
+- CellTherapy:
+  - ns1:moleculeXref:
+    - cell_therapy_molecule_xref: WikipediaMolRef
+  - ns1:hasBioComponent:
+    - cell_therapy_has_bio_component: BioComponent
+  - ns1:hasDrugIndication:
+    - cell_therapy_has_drug_indication: DrugIndication
+  - rdf:type:
+    - cell_therapy_type: Class
+  - ns1:hasMechanism:
+    - cell_therapy_has_mechanism: Mechanism
+  - foaf:depiction:
+    - cell_therapy_depiction: Image
+  - ns1:hasDocument:
+    - cell_therapy_has_document: Document
+  - ns1:highestDevelopmentPhase:
+    - cell_therapy_highest_development_phase: 123.45
+  - ns1:chemblId:
+    - cell_therapy_chembl_id: string
+  - ns1:substanceType:
+    - cell_therapy_substance_type: string
+  - ns1:isBiotherapeutic:
+    - cell_therapy_is_biotherapeutic: true
+  - skos:prefLabel:
+    - cell_therapy_pref_label: string
+  - ns1:atcClassification:
+    - cell_therapy_atc_classification: string
+  - rdfs:label:
+    - cell_therapy_label: string
+  - skos:altLabel:
+    - cell_therapy_alt_label: string
+- ChebiRef:
+  - rdf:type:
+    - chebi_ref_type: Class
+  - rdfs:label:
+    - chebi_ref_label: string
+- CHEMINF_000245:
+  - ns2:SIO_000300:
+    - cheminf_000245_sio_000300: double
+  - rdfs:label:
+    - cheminf_000245_label: string
+- ProteinComplexGroup:
+  - ns1:relOverlapsWith:
+    - protein_complex_group_rel_overlaps_with:
+      - ProteinProteinInteraction
+      - ProteinComplexGroup
+      - ProteinSelectivityGroup
+      - ProteinFamily
+      - ProteinComplex
+  - ns1:relSubsetOf:
+    - protein_complex_group_rel_subset_of:
+      - ProteinFamily
+      - ProteinSelectivityGroup
+      - ProteinComplexGroup
+  - ns1:relHasSubset:
+    - protein_complex_group_rel_has_subset:
+      - ProteinComplexGroup
+      - ProteinFamily
+      - ProteinComplex
+      - SingleProtein
+  - ns1:hasProteinClassification:
+    - protein_complex_group_has_protein_classification: ProteinClassification
+  - skos:relatedMatch:
+    - protein_complex_group_related_match: TargetComponent
+  - rdf:type:
+    - protein_complex_group_type: Class
+  - ns1:hasAssay:
+    - protein_complex_group_has_assay: Assay
+  - ns1:hasBindingSite:
+    - protein_complex_group_has_binding_site: BindingSite
+  - ns1:isTargetForMechanism:
+    - protein_complex_group_is_target_for_mechanism: Mechanism
+  - ns1:hasTargetComponent:
+    - protein_complex_group_has_target_component: TargetComponent
+  - dc:title:
+    - protein_complex_group_title: string
+  - ns1:organismName:
+    - protein_complex_group_organism_name: string
+  - ns1:chemblId:
+    - protein_complex_group_chembl_id: string
+  - ns1:targetType:
+    - protein_complex_group_target_type: string
+  - ns1:isSpeciesGroup:
+    - protein_complex_group_is_species_group: true
+  - rdfs:label:
+    - protein_complex_group_label: string
+- ReconRef:
+  - rdf:type:
+    - recon_ref_type: Class
+  - rdfs:label:
+    - recon_ref_label: string
+- ProteinDataBankRef:
+  - rdf:type:
+    - protein_data_bank_ref_type: Class
+  - rdfs:label:
+    - protein_data_bank_ref_label: string
+- OligosaccharideTarget:
+  - rdf:type:
+    - oligosaccharide_target_type: Class
+  - ns1:hasAssay:
+    - oligosaccharide_target_has_assay: Assay
+  - ns1:isTargetForMechanism:
+    - oligosaccharide_target_is_target_for_mechanism: Mechanism
+  - dc:title:
+    - oligosaccharide_target_title: string
+  - ns1:organismName:
+    - oligosaccharide_target_organism_name: string
+  - ns1:chemblId:
+    - oligosaccharide_target_chembl_id: string
+  - ns1:targetType:
+    - oligosaccharide_target_target_type: string
+  - rdfs:label:
+    - oligosaccharide_target_label: string
+- ReactomeRef:
+  - rdf:type:
+    - reactome_ref_type: Class
+  - rdfs:label:
+    - reactome_ref_label: string
+- Tissue:
+  - rdf:type:
+    - tissue_type: Class
+  - ns1:hasAssay:
+    - tissue_has_assay: Assay
+  - dc:title:
+    - tissue_title: string
+  - ns1:organismName:
+    - tissue_organism_name: string
+  - ns1:chemblId:
+    - tissue_chembl_id: string
+  - ns1:targetType:
+    - tissue_target_type: string
+  - ns1:isSpeciesGroup:
+    - tissue_is_species_group: true
+  - rdfs:label:
+    - tissue_label: string
+- NucleicAcid:
+  - ns1:hasProteinClassification:
+    - nucleic_acid_has_protein_classification: ProteinClassification
+  - rdf:type:
+    - nucleic_acid_type: Class
+  - ns1:hasAssay:
+    - nucleic_acid_has_assay: Assay
+  - ns1:isTargetForMechanism:
+    - nucleic_acid_is_target_for_mechanism: Mechanism
+  - ns1:hasTargetComponent:
+    - nucleic_acid_has_target_component: TargetComponent
+  - dc:title:
+    - nucleic_acid_title: string
+  - ns1:organismName:
+    - nucleic_acid_organism_name: string
+  - ns1:chemblId:
+    - nucleic_acid_chembl_id: string
+  - ns1:targetType:
+    - nucleic_acid_target_type: string
+  - ns1:isSpeciesGroup:
+    - nucleic_acid_is_species_group: true
+  - rdfs:label:
+    - nucleic_acid_label: string
+- HmdbRef:
+  - rdf:type:
+    - hmdb_ref_type: Class
+  - rdfs:label:
+    - hmdb_ref_label: string
+- CHEMINF_000251:
+  - ns2:SIO_000300:
+    - cheminf_000251_sio_000300: double
+  - rdfs:label:
+    - cheminf_000251_label: string
+- CHEMINF_000244:
+  - ns2:SIO_000300:
+    - cheminf_000244_sio_000300: double
+  - rdfs:label:
+    - cheminf_000244_label: string
+- Macromolecule:
+  - rdf:type:
+    - macromolecule_type: Class
+  - ns1:hasAssay:
+    - macromolecule_has_assay: Assay
+  - ns1:isTargetForMechanism:
+    - macromolecule_is_target_for_mechanism: Mechanism
+  - dc:title:
+    - macromolecule_title: string
+  - ns1:organismName:
+    - macromolecule_organism_name: string
+  - ns1:chemblId:
+    - macromolecule_chembl_id: string
+  - ns1:targetType:
+    - macromolecule_target_type: string
+  - ns1:isSpeciesGroup:
+    - macromolecule_is_species_group: true
+  - rdfs:label:
+    - macromolecule_label: string
+- DatasetDescription:
+  - dc:title:
+    - dataset_description_title: string
+  - dc:issued:
+    - dataset_description_issued: dateTime
+  - dc:description:
+    - dataset_description_description: string
+  - ns3:lastUpdateOn:
+    - dataset_description_last_update_on: dateTime
+  - ns3:createdOn:
+    - dataset_description_created_on: dateTime
+- LincsCellRef:
+  - rdf:type:
+    - lincs_cell_ref_type: Class
+  - rdfs:label:
+    - lincs_cell_ref_label: string
+- NonMolecular:
+  - rdf:type:
+    - non_molecular_type: Class
+  - ns1:hasAssay:
+    - non_molecular_has_assay: Assay
+  - dc:title:
+    - non_molecular_title: string
+  - ns1:chemblId:
+    - non_molecular_chembl_id: string
+  - ns1:targetType:
+    - non_molecular_target_type: string
+  - rdfs:label:
+    - non_molecular_label: string
+- GoComponentRef:
+  - rdf:type:
+    - go_component_ref_type: Class
+  - rdfs:label:
+    - go_component_ref_label: string
+- SmallMolecule:
+  - ns1:moleculeXref:
+    - small_molecule_molecule_xref:
+      - DrugbankRef
+      - ZincRef
+      - IupharRef
+      - PubchemRef
+      - MolportRef
+      - NmrShiftDb2Ref
+      - SureChemblRef
+      - WikipediaMolRef
+      - ActorRef
+      - HmdbRef
+      - AtlasRef
+      - PdbeRef
+      - PubchemDotfRef
+      - EmoleculesRef
+      - ReconRef
+      - KeggLigandRef
+      - ChebiRef
+      - PubchemThomPharmRef
+      - MculeRef
+      - SelleckRef
+      - PharmGkbRef
+      - LincsRef
+      - NikkajiRef
+      - FdaSrsRef
+  - ns1:hasChildMolecule:
+    - small_molecule_has_child_molecule:
+      - SmallMolecule
+      - UnknownSubstance
+      - ProteinMolecule
+  - ns1:hasDrugIndication:
+    - small_molecule_has_drug_indication: DrugIndication
+  - ns1:hasActivity:
+    - small_molecule_has_activity: Activity
+  - rdf:type:
+    - small_molecule_type: Class
+  - ns2:SIO_000008:
+    - small_molecule_sio_000008:
+      - CHEMINF_000195
+      - CHEMINF_000307
+      - CHEMINF_000245
+      - CHEMINF_000042
+      - CHEMINF_000322
+      - CHEMINF_000218
+      - CHEMINF_000431
+      - CHEMINF_000326
+      - CHEMINF_000300
+      - CHEMINF_000312
+      - CHEMINF_000216
+      - CHEMINF_000113
+      - CHEMINF_000018
+      - CHEMINF_000251
+      - CHEMINF_000381
+      - CHEMINF_000315
+      - CHEMINF_000254
+      - CHEMINF_000244
+      - CHEMINF_000059
+      - CHEMINF_000350
+  - ns1:hasMechanism:
+    - small_molecule_has_mechanism: Mechanism
+  - foaf:depiction:
+    - small_molecule_depiction: Image
+  - ns1:hasDocument:
+    - small_molecule_has_document: Document
+  - ns1:hasParentMolecule:
+    - small_molecule_has_parent_molecule:
+      - UnknownSubstance
+      - SmallMolecule
+      - ProteinMolecule
+  - ns1:helmNotation:
+    - small_molecule_helm_notation: string
+  - ns1:highestDevelopmentPhase:
+    - small_molecule_highest_development_phase: 123.45
+  - ns1:chemblId:
+    - small_molecule_chembl_id: string
+  - ns1:hracClassification:
+    - small_molecule_hrac_classification: string
+  - ns1:fracClassification:
+    - small_molecule_frac_classification: string
+  - ns1:substanceType:
+    - small_molecule_substance_type: string
+  - ns1:isBiotherapeutic:
+    - small_molecule_is_biotherapeutic: true
+  - skos:prefLabel:
+    - small_molecule_pref_label: string
+  - ns1:atcClassification:
+    - small_molecule_atc_classification: string
+  - rdfs:label:
+    - small_molecule_label: string
+  - ns1:iracClassification:
+    - small_molecule_irac_classification: string
+  - skos:altLabel:
+    - small_molecule_alt_label: string
+- SelleckRef:
+  - rdf:type:
+    - selleck_ref_type: Class
+  - rdfs:label:
+    - selleck_ref_label: string
+- Phenotype:
+  - rdf:type:
+    - phenotype_type: Class
+  - ns1:hasAssay:
+    - phenotype_has_assay: Assay
+  - dc:title:
+    - phenotype_title: string
+  - ns1:chemblId:
+    - phenotype_chembl_id: string
+  - ns1:targetType:
+    - phenotype_target_type: string
+  - rdfs:label:
+    - phenotype_label: string
+- DatatypeProperty:
+  - rdfs:domain:
+    - datatype_property_domain: Class
+  - dc11:description:
+    - datatype_property_description: string
+  - skos:prefLabel:
+    - datatype_property_pref_label: string
+  - rdfs:label:
+    - datatype_property_label: string
+- ProteinSelectivityGroup:
+  - ns1:relOverlapsWith:
+    - protein_selectivity_group_rel_overlaps_with:
+      - ProteinProteinInteraction
+      - ProteinComplex
+      - ProteinSelectivityGroup
+      - ChimericProtein
+      - ProteinComplexGroup
+      - ProteinFamily
+  - ns1:relEquivalentTo:
+    - protein_selectivity_group_rel_equivalent_to:
+      - ProteinComplex
+      - ProteinFamily
+  - ns1:relSubsetOf:
+    - protein_selectivity_group_rel_subset_of:
+      - ProteinComplex
+      - ProteinFamily
+      - ProteinSelectivityGroup
+  - ns1:relHasSubset:
+    - protein_selectivity_group_rel_has_subset:
+      - ProteinComplexGroup
+      - ProteinSelectivityGroup
+      - ProteinFamily
+      - ChimericProtein
+      - SingleProtein
+      - ProteinComplex
+  - ns1:hasProteinClassification:
+    - protein_selectivity_group_has_protein_classification: ProteinClassification
+  - skos:relatedMatch:
+    - protein_selectivity_group_related_match: TargetComponent
+  - rdf:type:
+    - protein_selectivity_group_type: Class
+  - ns1:hasAssay:
+    - protein_selectivity_group_has_assay: Assay
+  - ns1:isTargetForMechanism:
+    - protein_selectivity_group_is_target_for_mechanism: Mechanism
+  - ns1:hasTargetComponent:
+    - protein_selectivity_group_has_target_component: TargetComponent
+  - dc:title:
+    - protein_selectivity_group_title: string
+  - ns1:organismName:
+    - protein_selectivity_group_organism_name: string
+  - ns1:chemblId:
+    - protein_selectivity_group_chembl_id: string
+  - ns1:targetType:
+    - protein_selectivity_group_target_type: string
+  - rdfs:label:
+    - protein_selectivity_group_label: string
+- Dataset:
+  - ns3:hasCurrentVersion:
+    - dataset_has_current_version: Dataset
+  - dc:isVersionOf:
+    - dataset_is_version_of: Dataset
+  - dc:hasDistribution:
+    - dataset_has_distribution:
+      - Dataset
+      - Distribution
+  - dc:title:
+    - dataset_title: string
+  - ns3:version:
+    - dataset_version: string
+  - dc:issued:
+    - dataset_issued: dateTime
+  - dc:description:
+    - dataset_description: string
+  - dcat:mediaType:
+    - dataset_media_type: string
+- PubchemDotfRef:
+  - rdf:type:
+    - pubchem_dotf_ref_type: Class
+  - rdfs:label:
+    - pubchem_dotf_ref_label: string
+- DrugbankRef:
+  - rdfs:label:
+    - drugbank_ref_label: string
+- Distribution:
+  - void:subset:
+    - distribution_subset: Dataset
+  - void:exampleResource:
+    - distribution_example_resource: SmallMolecule
+  - dc:title:
+    - distribution_title: string
+  - dc:created:
+    - distribution_created: dateTime
+  - ns3:version:
+    - distribution_version: string
+  - dc:format:
+    - distribution_format: string
+  - dc:modified:
+    - distribution_modified: dateTime
+  - void:uriSpace:
+    - distribution_uri_space: string
+  - dc:description:
+    - distribution_description: string
+  - ns3:lastUpdateOn:
+    - distribution_last_update_on: dateTime
+  - ns3:createdOn:
+    - distribution_created_on: dateTime
+- Ontology:
+  - dc11:description:
+    - ontology_description: string
+  - dc11:title:
+    - ontology_title: string
+  - owl:versionInfo:
+    - ontology_version_info: string
+- CHEMINF_000195:
+  - ns2:SIO_000300:
+    - cheminf_000195_sio_000300: double
+  - rdfs:label:
+    - cheminf_000195_label: string
+- KeggLigandRef:
+  - rdf:type:
+    - kegg_ligand_ref_type: Class
+  - rdfs:label:
+    - kegg_ligand_ref_label: string
+- CHEMINF_000018:
+  - ns2:SIO_000300:
+    - cheminf_000018_sio_000300: string
+  - rdfs:label:
+    - cheminf_000018_label: string
+- UnclassifiedTarget:
+  - rdf:type:
+    - unclassified_target_type: Class
+  - ns1:hasAssay:
+    - unclassified_target_has_assay: Assay
+  - ns1:isTargetForMechanism:
+    - unclassified_target_is_target_for_mechanism: Mechanism
+  - dc:title:
+    - unclassified_target_title: string
+  - ns1:organismName:
+    - unclassified_target_organism_name: string
+  - ns1:chemblId:
+    - unclassified_target_chembl_id: string
+  - ns1:targetType:
+    - unclassified_target_target_type: string
+  - ns1:isSpeciesGroup:
+    - unclassified_target_is_species_group: true
+  - rdfs:label:
+    - unclassified_target_label: string
+- ProteinMolecule:
+  - ns1:moleculeXref:
+    - protein_molecule_molecule_xref:
+      - MolportRef
+      - ZincRef
+      - HmdbRef
+      - MculeRef
+      - ReconRef
+      - DrugbankRef
+      - ActorRef
+      - NmrShiftDb2Ref
+      - PubchemThomPharmRef
+      - AtlasRef
+      - WikipediaMolRef
+      - SelleckRef
+      - KeggLigandRef
+      - IupharRef
+      - PubchemRef
+      - LincsRef
+      - PdbeRef
+      - FdaSrsRef
+      - NikkajiRef
+      - ChebiRef
+      - PubchemDotfRef
+      - SureChemblRef
+      - EmoleculesRef
+      - PharmGkbRef
+  - ns1:hasBioComponent:
+    - protein_molecule_has_bio_component: BioComponent
+  - ns1:hasChildMolecule:
+    - protein_molecule_has_child_molecule:
+      - ProteinMolecule
+      - UnknownSubstance
+      - SmallMolecule
+  - ns1:hasDrugIndication:
+    - protein_molecule_has_drug_indication: DrugIndication
+  - ns1:hasActivity:
+    - protein_molecule_has_activity: Activity
+  - rdf:type:
+    - protein_molecule_type: Class
+  - ns2:SIO_000008:
+    - protein_molecule_sio_000008:
+      - CHEMINF_000216
+      - CHEMINF_000431
+      - CHEMINF_000350
+      - CHEMINF_000254
+      - CHEMINF_000307
+      - CHEMINF_000381
+      - CHEMINF_000195
+      - CHEMINF_000018
+      - CHEMINF_000042
+      - CHEMINF_000300
+      - CHEMINF_000059
+      - CHEMINF_000251
+      - CHEMINF_000113
+      - CHEMINF_000218
+      - CHEMINF_000315
+      - CHEMINF_000312
+      - CHEMINF_000322
+      - CHEMINF_000326
+      - CHEMINF_000244
+      - CHEMINF_000245
+  - ns1:hasMechanism:
+    - protein_molecule_has_mechanism: Mechanism
+  - foaf:depiction:
+    - protein_molecule_depiction: Image
+  - ns1:hasDocument:
+    - protein_molecule_has_document: Document
+  - ns1:hasParentMolecule:
+    - protein_molecule_has_parent_molecule:
+      - SmallMolecule
+      - ProteinMolecule
+  - ns1:helmNotation:
+    - protein_molecule_helm_notation: string
+  - ns1:highestDevelopmentPhase:
+    - protein_molecule_highest_development_phase: 123.45
+  - ns1:chemblId:
+    - protein_molecule_chembl_id: string
+  - ns1:substanceType:
+    - protein_molecule_substance_type: string
+  - ns1:isBiotherapeutic:
+    - protein_molecule_is_biotherapeutic: true
+  - skos:prefLabel:
+    - protein_molecule_pref_label: string
+  - dc:description:
+    - protein_molecule_description: string
+  - ns1:atcClassification:
+    - protein_molecule_atc_classification: string
+  - rdfs:label:
+    - protein_molecule_label: string
+  - skos:altLabel:
+    - protein_molecule_alt_label: string
+- SmallMoleculeTarget:
+  - rdf:type:
+    - small_molecule_target_type: Class
+  - ns1:hasAssay:
+    - small_molecule_target_has_assay: Assay
+  - ns1:isTargetForMechanism:
+    - small_molecule_target_is_target_for_mechanism: Mechanism
+  - dc:title:
+    - small_molecule_target_title: string
+  - ns1:organismName:
+    - small_molecule_target_organism_name: string
+  - ns1:chemblId:
+    - small_molecule_target_chembl_id: string
+  - ns1:targetType:
+    - small_molecule_target_target_type: string
+  - ns1:isSpeciesGroup:
+    - small_molecule_target_is_species_group: true
+  - rdfs:label:
+    - small_molecule_target_label: string
+- Dataset:
+  - void:subset:
+    - dataset_subset: Dataset
+  - void:exampleResource:
+    - dataset_example_resource:
+      - Activity
+      - ProteinClassification
+      - Mechanism
+      - TargetComponent
+      - Assay
+      - Document
+      - DrugIndication
+      - SmallMolecule
+      - SingleProtein
+      - Source
+      - BioComponent
+  - void:subsets:
+    - dataset_subsets: Linkset
+  - dc:title:
+    - dataset_title: string
+  - dc:created:
+    - dataset_created: dateTime
+  - ns3:version:
+    - dataset_version: string
+  - dc:format:
+    - dataset_format: string
+  - dc:modified:
+    - dataset_modified: dateTime
+  - void:uriSpace:
+    - dataset_uri_space: string
+  - dc:description:
+    - dataset_description: string
+  - ns3:lastUpdateOn:
+    - dataset_last_update_on: dateTime
+  - ns3:createdOn:
+    - dataset_created_on: dateTime
+- BioComponent:
+  - ns1:hasMolecule:
+    - bio_component_has_molecule:
+      - Oligonucleotide
+      - Enzyme
+      - CellTherapy
+      - ProteinMolecule
+      - UnknownSubstance
+      - UnclassifiedMolecule
+      - Antibody
+  - rdf:type:
+    - bio_component_type: Class
+  - ns1:organismName:
+    - bio_component_organism_name: string
+  - ns1:proteinSequence:
+    - bio_component_protein_sequence: string
+  - ns1:chemblId:
+    - bio_component_chembl_id: string
+  - dc:description:
+    - bio_component_description: string
+  - rdfs:label:
+    - bio_component_label: string
+  - ns1:componentType:
+    - bio_component_component_type: string
+- CHEMINF_000218:
+  - ns2:SIO_000300:
+    - cheminf_000218_sio_000300: double
+  - rdfs:label:
+    - cheminf_000218_label: string
+- Source:
+  - rdf:type:
+    - source_type: Class
+  - ns1:hasAssay:
+    - source_has_assay: Assay
+  - ns1:chemblId:
+    - source_chembl_id: string
+  - dc:description:
+    - source_description: string
+  - rdfs:label:
+    - source_label: string
+- ActorRef:
+  - rdf:type:
+    - actor_ref_type: Class
+  - rdfs:label:
+    - actor_ref_label: string
+- PharmgkbRef:
+  - rdf:type:
+    - pharmgkb_ref_type: Class
+  - rdfs:label:
+    - pharmgkb_ref_label: string
+- ProteinComplex:
+  - ns1:relOverlapsWith:
+    - protein_complex_rel_overlaps_with:
+      - ProteinComplexGroup
+      - ProteinFamily
+      - ProteinComplex
+      - ProteinProteinInteraction
+      - ChimericProtein
+      - ProteinSelectivityGroup
+  - ns1:relEquivalentTo:
+    - protein_complex_rel_equivalent_to:
+      - ProteinComplex
+      - ProteinFamily
+      - ProteinSelectivityGroup
+      - ProteinProteinInteraction
+  - ns1:relSubsetOf:
+    - protein_complex_rel_subset_of:
+      - ProteinComplexGroup
+      - ProteinSelectivityGroup
+      - ProteinFamily
+      - ProteinProteinInteraction
+      - ProteinComplex
+  - ns1:relHasSubset:
+    - protein_complex_rel_has_subset:
+      - ProteinSelectivityGroup
+      - ProteinProteinInteraction
+      - SingleProtein
+      - ProteinComplex
+      - ProteinFamily
+  - ns1:hasProteinClassification:
+    - protein_complex_has_protein_classification: ProteinClassification
+  - skos:relatedMatch:
+    - protein_complex_related_match: TargetComponent
+  - rdf:type:
+    - protein_complex_type: Class
+  - ns1:hasAssay:
+    - protein_complex_has_assay: Assay
+  - ns1:hasBindingSite:
+    - protein_complex_has_binding_site: BindingSite
+  - ns1:isTargetForMechanism:
+    - protein_complex_is_target_for_mechanism: Mechanism
+  - ns1:hasTargetComponent:
+    - protein_complex_has_target_component: TargetComponent
+  - dc:title:
+    - protein_complex_title: string
+  - ns1:organismName:
+    - protein_complex_organism_name: string
+  - ns1:chemblId:
+    - protein_complex_chembl_id: string
+  - ns1:targetType:
+    - protein_complex_target_type: string
+  - ns1:isSpeciesGroup:
+    - protein_complex_is_species_group: true
+  - rdfs:label:
+    - protein_complex_label: string
+- Metal:
+  - rdf:type:
+    - metal_type: Class
+  - ns1:isTargetForMechanism:
+    - metal_is_target_for_mechanism: Mechanism
+  - dc:title:
+    - metal_title: string
+  - ns1:organismName:
+    - metal_organism_name: string
+  - ns1:chemblId:
+    - metal_chembl_id: string
+  - ns1:targetType:
+    - metal_target_type: string
+  - rdfs:label:
+    - metal_label: string
+- ProteinClassification:
+  - rdfs:subClassOf:
+    - protein_classification_sub_class_of: ProteinClassification
+  - skos:broader:
+    - protein_classification_broader: ProteinClassification
+  - ns1:hasTargetComponentDescendant:
+    - protein_classification_has_target_component_descendant: TargetComponent
+  - rdf:type:
+    - protein_classification_type: Class
+  - skos:narrower:
+    - protein_classification_narrower: ProteinClassification
+  - ns1:hasTargetDescendant:
+    - protein_classification_has_target_descendant:
+      - ProteinSelectivityGroup
+      - ProteinFamily
+      - ProteinNucleicAcidComplex
+      - ChimericProtein
+      - ProteinProteinInteraction
+      - NucleicAcid
+      - ProteinComplexGroup
+      - ProteinComplex
+      - SingleProtein
+  - ns1:classLevel:
+    - protein_classification_class_level: string
+  - ns1:chemblId:
+    - protein_classification_chembl_id: string
+  - skos:prefLabel:
+    - protein_classification_pref_label: string
+  - ns1:classPath:
+    - protein_classification_class_path: string
+  - rdfs:label:
+    - protein_classification_label: string
+- WikipediaMolRef:
+  - rdf:type:
+    - wikipedia_mol_ref_type: Class
+  - rdfs:label:
+    - wikipedia_mol_ref_label: string
+- SubCellular:
+  - rdf:type:
+    - sub_cellular_type: Class
+  - ns1:hasAssay:
+    - sub_cellular_has_assay: Assay
+  - ns1:isTargetForMechanism:
+    - sub_cellular_is_target_for_mechanism: Mechanism
+  - dc:title:
+    - sub_cellular_title: string
+  - ns1:organismName:
+    - sub_cellular_organism_name: string
+  - ns1:chemblId:
+    - sub_cellular_chembl_id: string
+  - ns1:targetType:
+    - sub_cellular_target_type: string
+  - ns1:isSpeciesGroup:
+    - sub_cellular_is_species_group: true
+  - rdfs:label:
+    - sub_cellular_label: string
+- Assay:
+  - ns1:assayXref:
+    - assay_assay_xref: PubchemBioassayRef
+  - ns1:hasSource:
+    - assay_has_source: Source
+  - ns1:hasActivity:
+    - assay_has_activity: Activity
+  - rdf:type:
+    - assay_type: Class
+  - ns1:hasCellLine:
+    - assay_has_cell_line: CellLine
+  - ns1:hasDocument:
+    - assay_has_document: Document
+  - ns1:hasTarget:
+    - assay_has_target:
+      - OligosaccharideTarget
+      - UnknownTarget
+      - SmallMoleculeTarget
+      - SingleProtein
+      - Organism
+      - Macromolecule
+      - CellLineTarget
+      - NonMolecular
+      - NucleicAcid
+      - ProteinNucleicAcidComplex
+      - UnclassifiedTarget
+      - ProteinComplexGroup
+      - ProteinProteinInteraction
+      - ProteinComplex
+      - SubCellular
+      - Phenotype
+      - ADMET
+      - ProteinSelectivityGroup
+      - ChimericProtein
+      - ProteinFamily
+      - Tissue
+  - ns1:assayTestType:
+    - assay_assay_test_type: string
+  - ns1:assayCellType:
+    - assay_assay_cell_type: string
+  - ns1:organismName:
+    - assay_organism_name: string
+  - ns1:targetConfScore:
+    - assay_target_conf_score: 12345
+  - ns1:chemblId:
+    - assay_chembl_id: string
+  - ns1:assaySubCellFrac:
+    - assay_assay_sub_cell_frac: string
+  - ns1:targetRelType:
+    - assay_target_rel_type: string
+  - ns1:assayTissue:
+    - assay_assay_tissue: string
+  - ns1:targetConfDesc:
+    - assay_target_conf_desc: string
+  - ns1:assayStrain:
+    - assay_assay_strain: string
+  - dc:description:
+    - assay_description: string
+  - ns1:assayType:
+    - assay_assay_type: string
+  - rdfs:label:
+    - assay_label: string
+  - ns1:assayCategory:
+    - assay_assay_category: string
+  - ns1:targetRelDesc:
+    - assay_target_rel_desc: string
+- CHEMINF_000307:
+  - ns2:SIO_000300:
+    - cheminf_000307_sio_000300: double
+  - rdfs:label:
+    - cheminf_000307_label: string
+- TargetComponent:
+  - ns1:hasProteinClassification:
+    - target_component_has_protein_classification: ProteinClassification
+  - ns1:targetCmptXref:
+    - target_component_target_cmpt_xref:
+      - IntactRef
+      - PharmgkbRef
+      - GoProcessRef
+      - GoFunctionRef
+      - PfamRef
+      - EnzymeClassRef
+      - TimbalRef
+      - UniprotRef
+      - ProteinDataBankRef
+      - CGDRef
+      - GoComponentRef
+      - ReactomeRef
+      - InterproRef
+  - skos:exactMatch:
+    - target_component_exact_match: UniprotRef
+  - rdf:type:
+    - target_component_type: Class
+  - ns1:hasTarget:
+    - target_component_has_target:
+      - ProteinComplexGroup
+      - ProteinSelectivityGroup
+      - ProteinComplex
+      - ProteinFamily
+      - SingleProtein
+      - ProteinNucleicAcidComplex
+      - ProteinProteinInteraction
+      - ChimericProtein
+      - NucleicAcid
+  - ns1:organismName:
+    - target_component_organism_name: string
+  - ns1:proteinSequence:
+    - target_component_protein_sequence: string
+  - ns1:chemblId:
+    - target_component_chembl_id: string
+  - dc:description:
+    - target_component_description: string
+  - rdfs:label:
+    - target_component_label: string
+  - ns1:componentType:
+    - target_component_component_type: string
+  - skos:altLabel:
+    - target_component_alt_label: string
+- UnclassifiedMolecule:
+  - ns1:hasBioComponent:
+    - unclassified_molecule_has_bio_component: BioComponent
+  - ns1:hasDrugIndication:
+    - unclassified_molecule_has_drug_indication: DrugIndication
+  - ns1:hasMechanism:
+    - unclassified_molecule_has_mechanism: Mechanism
+  - foaf:depiction:
+    - unclassified_molecule_depiction: Image
+  - ns1:hasDocument:
+    - unclassified_molecule_has_document: Document
+  - ns1:highestDevelopmentPhase:
+    - unclassified_molecule_highest_development_phase: 123.45
+  - ns1:chemblId:
+    - unclassified_molecule_chembl_id: string
+  - ns1:substanceType:
+    - unclassified_molecule_substance_type: string
+  - ns1:isBiotherapeutic:
+    - unclassified_molecule_is_biotherapeutic: true
+  - skos:prefLabel:
+    - unclassified_molecule_pref_label: string
+  - ns1:atcClassification:
+    - unclassified_molecule_atc_classification: string
+  - rdfs:label:
+    - unclassified_molecule_label: string
+  - skos:altLabel:
+    - unclassified_molecule_alt_label: string
+- CHEMINF_000326:
+  - ns2:SIO_000300:
+    - cheminf_000326_sio_000300: string
+  - rdfs:label:
+    - cheminf_000326_label: string
+- InterproRef:
+  - rdf:type:
+    - interpro_ref_type: Class
+  - rdfs:label:
+    - interpro_ref_label: string
+- PubchemRef:
+  - rdf:type:
+    - pubchem_ref_type: Class
+  - rdfs:label:
+    - pubchem_ref_label: string
+- CHEMINF_000042:
+  - ns2:SIO_000300:
+    - cheminf_000042_sio_000300: string
+  - rdfs:label:
+    - cheminf_000042_label: string
+- Class:
+  - rdfs:subClassOf:
+    - class_sub_class_of: Class
+  - dc11:description:
+    - class_description: string
+  - skos:prefLabel:
+    - class_pref_label: string
+  - rdfs:label:
+    - class_label: string
+- Antibody:
+  - ns1:moleculeXref:
+    - antibody_molecule_xref:
+      - ChebiRef
+      - HmdbRef
+      - SureChemblRef
+      - FdaSrsRef
+      - PubchemThomPharmRef
+      - NmrShiftDb2Ref
+      - LincsRef
+      - ActorRef
+      - WikipediaMolRef
+      - NikkajiRef
+      - KeggLigandRef
+      - MolportRef
+      - MculeRef
+      - ZincRef
+      - PubchemDotfRef
+      - EmoleculesRef
+      - DrugbankRef
+  - ns1:hasBioComponent:
+    - antibody_has_bio_component: BioComponent
+  - ns1:hasDrugIndication:
+    - antibody_has_drug_indication: DrugIndication
+  - ns1:hasActivity:
+    - antibody_has_activity: Activity
+  - rdf:type:
+    - antibody_type: Class
+  - ns2:SIO_000008:
+    - antibody_sio_000008:
+      - CHEMINF_000218
+      - CHEMINF_000350
+      - CHEMINF_000113
+      - CHEMINF_000059
+      - CHEMINF_000381
+      - CHEMINF_000195
+      - CHEMINF_000326
+      - CHEMINF_000300
+      - CHEMINF_000431
+      - CHEMINF_000216
+      - CHEMINF_000018
+      - CHEMINF_000254
+      - CHEMINF_000315
+      - CHEMINF_000307
+      - CHEMINF_000042
+      - CHEMINF_000244
+      - CHEMINF_000312
+      - CHEMINF_000251
+      - CHEMINF_000322
+      - CHEMINF_000245
+  - ns1:hasMechanism:
+    - antibody_has_mechanism: Mechanism
+  - foaf:depiction:
+    - antibody_depiction: Image
+  - ns1:hasDocument:
+    - antibody_has_document: Document
+  - ns1:helmNotation:
+    - antibody_helm_notation: string
+  - ns1:highestDevelopmentPhase:
+    - antibody_highest_development_phase: 123.45
+  - ns1:chemblId:
+    - antibody_chembl_id: string
+  - ns1:substanceType:
+    - antibody_substance_type: string
+  - ns1:isBiotherapeutic:
+    - antibody_is_biotherapeutic: true
+  - skos:prefLabel:
+    - antibody_pref_label: string
+  - dc:description:
+    - antibody_description: string
+  - ns1:atcClassification:
+    - antibody_atc_classification: string
+  - rdfs:label:
+    - antibody_label: string
+  - skos:altLabel:
+    - antibody_alt_label: string
+- SingleProtein:
+  - ns1:relEquivalentTo:
+    - single_protein_rel_equivalent_to: SingleProtein
+  - ns1:relSubsetOf:
+    - single_protein_rel_subset_of:
+      - ChimericProtein
+      - ProteinSelectivityGroup
+      - ProteinNucleicAcidComplex
+      - ProteinComplex
+      - ProteinComplexGroup
+      - ProteinProteinInteraction
+      - ProteinFamily
+  - ns1:hasProteinClassification:
+    - single_protein_has_protein_classification: ProteinClassification
+  - skos:exactMatch:
+    - single_protein_exact_match: TargetComponent
+  - rdf:type:
+    - single_protein_type: Class
+  - ns1:hasAssay:
+    - single_protein_has_assay: Assay
+  - ns1:hasBindingSite:
+    - single_protein_has_binding_site: BindingSite
+  - ns1:isTargetForMechanism:
+    - single_protein_is_target_for_mechanism: Mechanism
+  - ns1:hasTargetComponent:
+    - single_protein_has_target_component: TargetComponent
+  - dc:title:
+    - single_protein_title: string
+  - ns1:organismName:
+    - single_protein_organism_name: string
+  - ns1:chemblId:
+    - single_protein_chembl_id: string
+  - ns1:targetType:
+    - single_protein_target_type: string
+  - ns1:isSpeciesGroup:
+    - single_protein_is_species_group: true
+  - rdfs:label:
+    - single_protein_label: string
+- CellLine:
+  - ns1:isCellLineForTarget:
+    - cell_line_is_cell_line_for_target: CellLineTarget
+  - ns1:cellXref:
+    - cell_line_cell_xref: LincsCellRef
+  - ns1:isCellLineForAssay:
+    - cell_line_is_cell_line_for_assay: Assay
+  - rdf:type:
+    - cell_line_type: Class
+  - ns1:organismName:
+    - cell_line_organism_name: string
+  - ns1:chemblId:
+    - cell_line_chembl_id: string
+  - ns1:cellosaurusId:
+    - cell_line_cellosaurus_id: string
+  - dc:description:
+    - cell_line_description: string
+  - rdfs:label:
+    - cell_line_label: string
+- Document:
+  - ns1:hasMolecule:
+    - document_has_molecule:
+      - ProteinMolecule
+      - CellTherapy
+      - Oligosaccharide
+      - Oligonucleotide
+      - UnknownSubstance
+      - Enzyme
+      - Antibody
+      - UnclassifiedMolecule
+      - SmallMolecule
+  - ns1:hasActivity:
+    - document_has_activity: Activity
+  - rdf:type:
+    - document_type: Class
+  - ns1:hasAssay:
+    - document_has_assay: Assay
+  - ns1:hasJournal:
+    - document_has_journal: Journal
+  - bibo:pageEnd:
+    - document_page_end: string
+  - dc:title:
+    - document_title: string
+  - dc:date:
+    - document_date: 12345
+  - bibo:doi:
+    - document_doi: string
+  - ns1:chemblId:
+    - document_chembl_id: string
+  - ns1:documentType:
+    - document_document_type: string
+  - bibo:volume:
+    - document_volume: string
+  - bibo:issue:
+    - document_issue: string
+  - bibo:pageStart:
+    - document_page_start: string
+  - rdfs:label:
+    - document_label: string
+- CHEMINF_000315:
+  - ns2:SIO_000300:
+    - cheminf_000315_sio_000300: string
+  - rdfs:label:
+    - cheminf_000315_label: string
+- CHEMINF_000381:
+  - ns2:SIO_000300:
+    - cheminf_000381_sio_000300: double
+  - rdfs:label:
+    - cheminf_000381_label: string
+- PubchemBioassayRef:
+  - rdf:type:
+    - pubchem_bioassay_ref_type: Class
+  - rdfs:label:
+    - pubchem_bioassay_ref_label: string
+- CHEMINF_000300:
+  - ns2:SIO_000300:
+    - cheminf_000300_sio_000300: double
+  - rdfs:label:
+    - cheminf_000300_label: string
+- ADMET:
+  - rdf:type:
+    - admet_type: Class
+  - ns1:hasAssay:
+    - admet_has_assay: Assay
+  - dc:title:
+    - admet_title: string
+  - ns1:chemblId:
+    - admet_chembl_id: string
+  - ns1:targetType:
+    - admet_target_type: string
+  - rdfs:label:
+    - admet_label: string
+- IntactRef:
+  - rdf:type:
+    - intact_ref_type: Class
+  - rdfs:label:
+    - intact_ref_label: string
+- Journal:
+  - rdf:type:
+    - journal_type: Class
+  - ns1:hasDocument:
+    - journal_has_document: Document
+  - dc:title:
+    - journal_title: string
+  - ns1:chemblId:
+    - journal_chembl_id: string
+  - bibo:issn:
+    - journal_issn: string
+  - bibo:eissn:
+    - journal_eissn: string
+  - rdfs:label:
+    - journal_label: string
+  - bibo:shortTitle:
+    - journal_short_title: string
+- CHEMINF_000254:
+  - ns2:SIO_000300:
+    - cheminf_000254_sio_000300: double
+  - rdfs:label:
+    - cheminf_000254_label: string
+- ZincRef:
+  - rdf:type:
+    - zinc_ref_type: Class
+  - rdfs:label:
+    - zinc_ref_label: string
+- GoProcessRef:
+  - rdf:type:
+    - go_process_ref_type: Class
+  - rdfs:label:
+    - go_process_ref_label: string
+- UnknownTarget:
+  - rdf:type:
+    - unknown_target_type: Class
+  - ns1:hasAssay:
+    - unknown_target_has_assay: Assay
+  - ns1:isTargetForMechanism:
+    - unknown_target_is_target_for_mechanism: Mechanism
+  - dc:title:
+    - unknown_target_title: string
+  - ns1:organismName:
+    - unknown_target_organism_name: string
+  - ns1:chemblId:
+    - unknown_target_chembl_id: string
+  - ns1:targetType:
+    - unknown_target_target_type: string
+  - rdfs:label:
+    - unknown_target_label: string
+- CellLineTarget:
+  - ns1:isTargetForCellLine:
+    - cell_line_target_is_target_for_cell_line: CellLine
+  - rdf:type:
+    - cell_line_target_type: Class
+  - ns1:hasAssay:
+    - cell_line_target_has_assay: Assay
+  - ns1:isTargetForMechanism:
+    - cell_line_target_is_target_for_mechanism: Mechanism
+  - dc:title:
+    - cell_line_target_title: string
+  - ns1:organismName:
+    - cell_line_target_organism_name: string
+  - ns1:chemblId:
+    - cell_line_target_chembl_id: string
+  - ns1:targetType:
+    - cell_line_target_target_type: string
+  - rdfs:label:
+    - cell_line_target_label: string
+- CHEMINF_000216:
+  - ns2:SIO_000300:
+    - cheminf_000216_sio_000300: double
+  - rdfs:label:
+    - cheminf_000216_label: string
+- PharmGkbRef:
+  - rdf:type:
+    - pharm_gkb_ref_type: Class
+  - rdfs:label:
+    - pharm_gkb_ref_label: string
+- PdbeRef:
+  - rdf:type:
+    - pdbe_ref_type: Class
+  - rdfs:label:
+    - pdbe_ref_label: string
+- ProteinProteinInteraction:
+  - ns1:relOverlapsWith:
+    - protein_protein_interaction_rel_overlaps_with:
+      - ProteinComplex
+      - ProteinFamily
+      - ProteinSelectivityGroup
+      - ProteinComplexGroup
+      - ChimericProtein
+      - ProteinProteinInteraction
+  - ns1:relEquivalentTo:
+    - protein_protein_interaction_rel_equivalent_to: ProteinComplex
+  - ns1:relSubsetOf:
+    - protein_protein_interaction_rel_subset_of:
+      - ProteinProteinInteraction
+      - ProteinComplex
+  - ns1:relHasSubset:
+    - protein_protein_interaction_rel_has_subset:
+      - ProteinFamily
+      - SingleProtein
+      - ProteinComplex
+      - ChimericProtein
+      - ProteinProteinInteraction
+  - ns1:hasProteinClassification:
+    - protein_protein_interaction_has_protein_classification: ProteinClassification
+  - skos:relatedMatch:
+    - protein_protein_interaction_related_match: TargetComponent
+  - rdf:type:
+    - protein_protein_interaction_type: Class
+  - ns1:hasAssay:
+    - protein_protein_interaction_has_assay: Assay
+  - ns1:isTargetForMechanism:
+    - protein_protein_interaction_is_target_for_mechanism: Mechanism
+  - ns1:hasTargetComponent:
+    - protein_protein_interaction_has_target_component: TargetComponent
+  - dc:title:
+    - protein_protein_interaction_title: string
+  - ns1:organismName:
+    - protein_protein_interaction_organism_name: string
+  - ns1:chemblId:
+    - protein_protein_interaction_chembl_id: string
+  - ns1:targetType:
+    - protein_protein_interaction_target_type: string
+  - rdfs:label:
+    - protein_protein_interaction_label: string
+- UniprotRef:
+  - rdf:type:
+    - uniprot_ref_type: Class
+  - rdfs:label:
+    - uniprot_ref_label: string
+- NikkajiRef:
+  - rdf:type:
+    - nikkaji_ref_type: Class
+  - rdfs:label:
+    - nikkaji_ref_label: string
+- CHEMINF_000322:
+  - ns2:SIO_000300:
+    - cheminf_000322_sio_000300: double
+  - rdfs:label:
+    - cheminf_000322_label: string
+- Linkset:
+  - void:objectsTarget:
+    - linkset_objects_target:
+      - Dataset
+      - Dataset
+  - void:subjectsTarget:
+    - linkset_subjects_target: Dataset
+  - dc:title:
+    - linkset_title: string
+  - dc:issued:
+    - linkset_issued: dateTime
+  - dc:description:
+    - linkset_description: string
+  - ns3:authoredOn:
+    - linkset_authored_on: dateTime
+  - ns3:createdOn:
+    - linkset_created_on: dateTime
+- ObjectProperty:
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of: ObjectProperty
+  - rdfs:domain:
+    - object_property_domain: Class
+  - rdfs:range:
+    - object_property_range: Class
+  - dc11:description:
+    - object_property_description: string
+  - skos:prefLabel:
+    - object_property_pref_label: string
+  - rdfs:label:
+    - object_property_label: string
+- Mechanism:
+  - ns1:hasMolecule:
+    - mechanism_has_molecule:
+      - ProteinMolecule
+      - Oligonucleotide
+      - UnknownSubstance
+      - Oligosaccharide
+      - Enzyme
+      - Antibody
+      - UnclassifiedMolecule
+      - CellTherapy
+      - SmallMolecule
+  - rdf:type:
+    - mechanism_type: Class
+  - ns1:hasBindingSite:
+    - mechanism_has_binding_site: BindingSite
+  - ns1:hasTarget:
+    - mechanism_has_target:
+      - CellLineTarget
+      - UnknownTarget
+      - OligosaccharideTarget
+      - SubCellular
+      - NucleicAcid
+      - Macromolecule
+      - ChimericProtein
+      - ProteinNucleicAcidComplex
+      - Organism
+      - SingleProtein
+      - ProteinProteinInteraction
+      - ProteinComplex
+      - SmallMoleculeTarget
+      - ProteinComplexGroup
+      - ProteinFamily
+      - ProteinSelectivityGroup
+      - Metal
+      - UnclassifiedTarget
+  - ns1:chemblId:
+    - mechanism_chembl_id: string
+  - ns1:mechanismActionType:
+    - mechanism_mechanism_action_type: string
+  - ns1:mechanismDescription:
+    - mechanism_mechanism_description: string
+  - rdfs:label:
+    - mechanism_label: string
+- GoFunctionRef:
+  - rdf:type:
+    - go_function_ref_type: Class
+  - rdfs:label:
+    - go_function_ref_label: string
+- CGDRef:
+  - rdf:type:
+    - cgd_ref_type: Class
+  - rdfs:label:
+    - cgd_ref_label: string
+- CHEMINF_000350:
+  - ns2:SIO_000300:
+    - cheminf_000350_sio_000300: double
+  - rdfs:label:
+    - cheminf_000350_label: string
+- ProteinNucleicAcidComplex:
+  - ns1:hasProteinClassification:
+    - protein_nucleic_acid_complex_has_protein_classification: ProteinClassification
+  - skos:relatedMatch:
+    - protein_nucleic_acid_complex_related_match: TargetComponent
+  - rdf:type:
+    - protein_nucleic_acid_complex_type: Class
+  - ns1:hasAssay:
+    - protein_nucleic_acid_complex_has_assay: Assay
+  - ns1:hasBindingSite:
+    - protein_nucleic_acid_complex_has_binding_site: BindingSite
+  - ns1:isTargetForMechanism:
+    - protein_nucleic_acid_complex_is_target_for_mechanism: Mechanism
+  - ns1:hasTargetComponent:
+    - protein_nucleic_acid_complex_has_target_component: TargetComponent
+  - dc:title:
+    - protein_nucleic_acid_complex_title: string
+  - ns1:organismName:
+    - protein_nucleic_acid_complex_organism_name: string
+  - ns1:chemblId:
+    - protein_nucleic_acid_complex_chembl_id: string
+  - ns1:targetType:
+    - protein_nucleic_acid_complex_target_type: string
+  - ns1:isSpeciesGroup:
+    - protein_nucleic_acid_complex_is_species_group: true
+  - rdfs:label:
+    - protein_nucleic_acid_complex_label: string
+- NmrShiftDb2Ref:
+  - rdf:type:
+    - nmr_shift_db2_ref_type: Class
+  - rdfs:label:
+    - nmr_shift_db2_ref_label: string
+- FdaSrsRef:
+  - rdf:type:
+    - fda_srs_ref_type: Class
+  - rdfs:label:
+    - fda_srs_ref_label: string
+- Oligosaccharide:
+  - ns1:moleculeXref:
+    - oligosaccharide_molecule_xref:
+      - ActorRef
+      - SureChemblRef
+      - PubchemRef
+      - KeggLigandRef
+      - PubchemThomPharmRef
+      - HmdbRef
+      - ZincRef
+      - AtlasRef
+      - DrugbankRef
+      - NikkajiRef
+      - PubchemDotfRef
+      - LincsRef
+      - FdaSrsRef
+      - PharmGkbRef
+      - SelleckRef
+      - NmrShiftDb2Ref
+      - WikipediaMolRef
+      - IupharRef
+      - MolportRef
+      - EmoleculesRef
+      - ChebiRef
+  - ns1:hasChildMolecule:
+    - oligosaccharide_has_child_molecule:
+      - UnknownSubstance
+      - Oligosaccharide
+  - ns1:hasDrugIndication:
+    - oligosaccharide_has_drug_indication: DrugIndication
+  - ns1:hasActivity:
+    - oligosaccharide_has_activity: Activity
+  - rdf:type:
+    - oligosaccharide_type: Class
+  - ns2:SIO_000008:
+    - oligosaccharide_sio_000008:
+      - CHEMINF_000245
+      - CHEMINF_000244
+      - CHEMINF_000218
+      - CHEMINF_000312
+      - CHEMINF_000216
+      - CHEMINF_000251
+      - CHEMINF_000307
+      - CHEMINF_000431
+      - CHEMINF_000350
+      - CHEMINF_000018
+      - CHEMINF_000326
+      - CHEMINF_000113
+      - CHEMINF_000315
+      - CHEMINF_000300
+      - CHEMINF_000381
+      - CHEMINF_000059
+      - CHEMINF_000254
+      - CHEMINF_000322
+      - CHEMINF_000195
+      - CHEMINF_000042
+  - ns1:hasMechanism:
+    - oligosaccharide_has_mechanism: Mechanism
+  - foaf:depiction:
+    - oligosaccharide_depiction: Image
+  - ns1:hasDocument:
+    - oligosaccharide_has_document: Document
+  - ns1:hasParentMolecule:
+    - oligosaccharide_has_parent_molecule: Oligosaccharide
+  - ns1:highestDevelopmentPhase:
+    - oligosaccharide_highest_development_phase: 123.45
+  - ns1:chemblId:
+    - oligosaccharide_chembl_id: string
+  - ns1:substanceType:
+    - oligosaccharide_substance_type: string
+  - skos:prefLabel:
+    - oligosaccharide_pref_label: string
+  - ns1:atcClassification:
+    - oligosaccharide_atc_classification: string
+  - rdfs:label:
+    - oligosaccharide_label: string
+  - skos:altLabel:
+    - oligosaccharide_alt_label: string
+- MculeRef:
+  - rdf:type:
+    - mcule_ref_type: Class
+  - rdfs:label:
+    - mcule_ref_label: string
+- Activity:
+  - ns1:hasMolecule:
+    - activity_has_molecule:
+      - Enzyme
+      - ProteinMolecule
+      - Oligosaccharide
+      - Antibody
+      - SmallMolecule
+      - Oligonucleotide
+      - UnknownSubstance
+  - rdf:type:
+    - activity_type: Class
+  - ns1:hasAssay:
+    - activity_has_assay: Assay
+  - ns1:hasDocument:
+    - activity_has_document: Document
+  - ns1:units:
+    - activity_units: string
+  - ns1:standardType:
+    - activity_standard_type: string
+  - ns1:potentialDuplicate:
+    - activity_potential_duplicate: true
+  - ns1:chemblId:
+    - activity_chembl_id: string
+  - ns1:standardRelation:
+    - activity_standard_relation: string
+  - ns1:value:
+    - activity_value: double
+  - ns1:standardUnits:
+    - activity_standard_units: string
+  - ns1:pChembl:
+    - activity_p_chembl: double
+  - ns1:dataValidityIssue:
+    - activity_data_validity_issue: true
+  - ns1:type:
+    - activity_type: string
+  - ns1:standardValue:
+    - activity_standard_value: double
+  - rdfs:label:
+    - activity_label: string
+  - ns1:activityComment:
+    - activity_activity_comment: string
+  - ns1:relation:
+    - activity_relation: string
+  - ns1:dataValidityComment:
+    - activity_data_validity_comment: string
+- IupharRef:
+  - rdf:type:
+    - iuphar_ref_type: Class
+  - rdfs:label:
+    - iuphar_ref_label: string
+- BindingSite:
+  - ns1:isBindingSiteForMechanism:
+    - binding_site_is_binding_site_for_mechanism: Mechanism
+  - rdf:type:
+    - binding_site_type: Class
+  - ns1:hasTarget:
+    - binding_site_has_target:
+      - ProteinComplexGroup
+      - ChimericProtein
+      - ProteinNucleicAcidComplex
+      - ProteinFamily
+      - ProteinComplex
+      - SingleProtein
+  - ns1:chemblId:
+    - binding_site_chembl_id: string
+  - rdfs:label:
+    - binding_site_label: string
+  - ns1:bindingSiteName:
+    - binding_site_binding_site_name: string
+- CHEMINF_000431:
+  - ns2:SIO_000300:
+    - cheminf_000431_sio_000300: double
+  - rdfs:label:
+    - cheminf_000431_label: string
+- DrugIndication:
+  - ns1:hasMolecule:
+    - drug_indication_has_molecule:
+      - UnclassifiedMolecule
+      - Antibody
+      - CellTherapy
+      - ProteinMolecule
+      - UnknownSubstance
+      - SmallMolecule
+      - Enzyme
+      - Oligosaccharide
+      - Oligonucleotide
+  - rdf:type:
+    - drug_indication_type: Class
+  - ns1:highestDevelopmentPhase:
+    - drug_indication_highest_development_phase: 12345
+  - ns1:chemblId:
+    - drug_indication_chembl_id: string
+  - ns1:hasEFOName:
+    - drug_indication_has_efo_name: string
+  - ns1:hasMeshHeading:
+    - drug_indication_has_mesh_heading: string
+  - rdfs:label:
+    - drug_indication_label: string

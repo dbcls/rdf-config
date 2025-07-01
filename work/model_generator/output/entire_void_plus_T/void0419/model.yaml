@@ -1,0 +1,90 @@
+- bi-coded-scale-item:
+  - rdf:type:
+    - bi-coded-scale-item_type: Class
+  - ns1:has-quantitative-scale-item-code:
+    - bi-coded-scale-item_has-quantitative-scale-item-code: string
+  - rdfs:label:
+    - bi-coded-scale-item_label: string
+  - ns1:has-numerical-value:
+    - bi-coded-scale-item_has-numerical-value: 123.45
+  - ns1:has-qualitative-scale-item-code:
+    - bi-coded-scale-item_has-qualitative-scale-item-code: string
+- model-name:
+  - rdf:type:
+    - model-name_type: Class
+  - rdfs:label:
+    - model-name_label: string
+- Class:
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Class
+      - Restriction
+  - rdfs:label:
+    - class_label: string
+- Ontology:
+  - dc11:contributor:
+    - ontology_contributor: Literal
+  - dc11:date:
+    - ontology_date: string
+- model-acronym:
+  - rdf:type:
+    - model-acronym_type: Class
+  - rdfs:label:
+    - model-acronym_label: string
+- qualitative-scale-item:
+  - rdf:type:
+    - qualitative-scale-item_type: Class
+  - ns1:has-qualitative-scale-item-code:
+    - qualitative-scale-item_has-qualitative-scale-item-code: string
+- NamedIndividual:
+  - rdf:type:
+    - named_individual_type: Class
+  - ns1:has-quantitative-scale-item-code:
+    - named_individual_has-quantitative-scale-item-code: string
+  - rdfs:label:
+    - named_individual_label: string
+  - ns1:has-numerical-value:
+    - named_individual_has-numerical-value: 123.45
+  - ns1:has-qualitative-scale-item-code:
+    - named_individual_has-qualitative-scale-item-code: string
+- instrument-definition-article:
+  - rdf:type:
+    - instrument-definition-article_type: Class
+  - rdfs:label:
+    - instrument-definition-article_label: string
+- Thing:
+  - rdf:type:
+    - thing_type: Class
+  - ns1:has-quantitative-scale-item-code:
+    - thing_has-quantitative-scale-item-code: string
+  - rdfs:label:
+    - thing_label: string
+  - ns1:has-numerical-value:
+    - thing_has-numerical-value: 123.45
+  - ns1:has-qualitative-scale-item-code:
+    - thing_has-qualitative-scale-item-code: string
+- score-standardization-article:
+  - rdf:type:
+    - score-standardization-article_type: Class
+  - rdfs:label:
+    - score-standardization-article_label: string
+- Restriction:
+  - owl:onClass:
+    - restriction_on_class: Class
+  - owl:hasValue:
+    - restriction_has_value:
+      - Thing
+      - NamedIndividual
+      - model-acronym
+      - model-name
+      - bi-coded-scale-item
+      - instrument-definition-article
+      - qualitative-scale-item
+  - owl:someValuesFrom:
+    - restriction_some_values_from: Class
+  - owl:onProperty:
+    - restriction_on_property: ObjectProperty
+  - owl:allValuesFrom:
+    - restriction_all_values_from: Class
+  - owl:qualifiedCardinality:
+    - restriction_qualified_cardinality: nonNegativeInteger

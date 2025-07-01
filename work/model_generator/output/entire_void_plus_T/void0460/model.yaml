@@ -1,0 +1,71 @@
+- AnnotationProperty:
+  - rdfs:label:
+    - annotation_property_label: string
+  - skos:prefLabel:
+    - annotation_property_pref_label: string
+- Thing:
+  - rdfs:label:
+    - thing_label: string
+- Class:
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Class
+      - Restriction
+  - ns1:SIO_000983:
+    - class_sio_000983: Class
+  - owl:equivalentClass:
+    - class_equivalent_class: Class
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+  - rdfs:label:
+    - class_label: string
+  - rdfs:comment:
+    - class_comment: string
+  - skos:exactMatch:
+    - class_exact_match: anyURI
+  - skos:altLabel:
+    - class_alt_label: string
+  - rdfs:seeAlso:
+    - class_see_also: string
+  - skos:prefLabel:
+    - class_pref_label: string
+- ObjectProperty:
+  - rdfs:domain:
+    - object_property_domain: Class
+  - rdfs:range:
+    - object_property_range: Class
+  - rdfs:label:
+    - object_property_label: string
+- NamedIndividual:
+  - rdfs:label:
+    - named_individual_label: string
+- Ontology:
+  - dc11:creator:
+    - ontology_creator:
+      - NamedIndividual
+      - Thing
+  - owl:versionInfo:
+    - ontology_version_info: string
+  - dc:license:
+    - ontology_license: string
+  - rdfs:label:
+    - ontology_label: string
+  - dc:bibliographicCitation:
+    - ontology_bibliographic_citation: string
+  - dc:hasVersion:
+    - ontology_has_version: string
+  - skos:prefLabel:
+    - ontology_pref_label: string
+  - dc11:format:
+    - ontology_format: string
+  - foaf:name:
+    - ontology_name: string
+  - dc11:description:
+    - ontology_description: string
+  - dc11:title:
+    - ontology_title: string
+- Restriction:
+  - owl:onProperty:
+    - restriction_on_property: ObjectProperty
+  - owl:someValuesFrom:
+    - restriction_some_values_from: Class

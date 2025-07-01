@@ -1,0 +1,958 @@
+- time:TemporalUnit:
+  - rdf:type:
+    - time:temporal_unit_type: Class
+- AtomList:
+  - rdf:first:
+    - atom_list_first:
+      - IndividualPropertyAtom
+      - ClassAtom
+  - rdf:rest:
+    - atom_list_rest: AtomList
+- TransitiveProperty:
+  - rdfs:range:
+    - transitive_property_range: Class
+  - ns5:inSubset:
+    - transitive_property_in_subset: AnnotationProperty
+  - ns3:RO_0002579:
+    - transitive_property_ro_0002579:
+      - ObjectProperty
+      - TransitiveProperty
+  - ns3:IAO_0000114:
+    - transitive_property_iao_0000114:
+      - NamedIndividual
+      - IAO_0000078
+  - owl:inverseOf:
+    - transitive_property_inverse_of:
+      - TransitiveProperty
+      - ObjectProperty
+      - ReflexiveProperty
+  - rdfs:subPropertyOf:
+    - transitive_property_sub_property_of:
+      - SymmetricProperty
+      - ReflexiveProperty
+      - TransitiveProperty
+      - ObjectProperty
+  - rdfs:domain:
+    - transitive_property_domain: Class
+  - ns3:RO_0040042:
+    - transitive_property_ro_0040042: Class
+  - ns3:RO_0004049:
+    - transitive_property_ro_0004049:
+      - TransitiveProperty
+      - ObjectProperty
+  - ns3:IAO_0000119:
+    - transitive_property_iao_0000119: string
+  - rdfs:seeAlso:
+    - transitive_property_see_also: string
+  - ns5:hasOBONamespace:
+    - transitive_property_has_obo_namespace: string
+  - ns3:IAO_0000115:
+    - transitive_property_iao_0000115:
+      - string
+      - string
+  - ns5:hasExactSynonym:
+    - transitive_property_has_exact_synonym: string
+  - ns3:IAO_0000600:
+    - transitive_property_iao_0000600: true
+  - ns3:IAO_0000232:
+    - transitive_property_iao_0000232: string
+  - ns3:IAO_0000589:
+    - transitive_property_iao_0000589: string
+  - rdfs:comment:
+    - transitive_property_comment:
+      - string
+      - string
+  - ns3:IAO_0000118:
+    - transitive_property_iao_0000118:
+      - string
+      - string
+  - ns5:id:
+    - transitive_property_id: string
+  - rdfs:label:
+    - transitive_property_label:
+      - string
+      - string
+  - ns5:hasRelatedSynonym:
+    - transitive_property_has_related_synonym: string
+  - ns3:IAO_0000117:
+    - transitive_property_iao_0000117:
+      - string
+      - string
+  - ns5:hasDbXref:
+    - transitive_property_has_db_xref: string
+  - ns3:IAO_0000116:
+    - transitive_property_iao_0000116:
+      - string
+      - string
+  - ns3:IAO_0000112:
+    - transitive_property_iao_0000112:
+      - string
+      - string
+  - ns5:is_cyclic:
+    - transitive_property_is_cyclic: true
+  - ns3:IAO_0000111:
+    - transitive_property_iao_0000111: string
+  - ns5:shorthand:
+    - transitive_property_shorthand: string
+  - dc11:source:
+    - transitive_property_source: string
+- ENVO_01000216:
+  - rdf:type:
+    - envo_01000216_type:
+      - Restriction
+      - Class
+  - ns3:IAO_0000115:
+    - envo_01000216_iao_0000115: string
+  - ns5:hasExactSynonym:
+    - envo_01000216_has_exact_synonym: string
+  - rdfs:label:
+    - envo_01000216_label: string
+- ENVO_01001211:
+  - ns3:RO_0002608:
+    - envo_01001211_ro_0002608:
+      - NamedIndividual
+      - ENVO_01000801
+  - rdf:type:
+    - envo_01001211_type: Class
+  - dc11:date:
+    - envo_01001211_date: dateTime
+  - ns3:IAO_0000115:
+    - envo_01001211_iao_0000115: string
+  - rdfs:label:
+    - envo_01001211_label: string
+- ENVO_01001780:
+  - ns3:BFO_0000050:
+    - envo_01001780_bfo_0000050:
+      - NamedIndividual
+      - ENVO_01001570
+  - rdf:type:
+    - envo_01001780_type: Class
+  - ns5:creation_date:
+    - envo_01001780_creation_date: dateTime
+  - rdfs:label:
+    - envo_01001780_label: string
+  - ns5:hasRelatedSynonym:
+    - envo_01001780_has_related_synonym: string
+  - ns5:hasDbXref:
+    - envo_01001780_has_db_xref: string
+- FunctionalProperty:
+  - owl:inverseOf:
+    - functional_property_inverse_of:
+      - InverseFunctionalProperty
+      - ObjectProperty
+  - rdfs:subPropertyOf:
+    - functional_property_sub_property_of:
+      - ObjectProperty
+      - TransitiveProperty
+  - ns3:IAO_0000115:
+    - functional_property_iao_0000115:
+      - string
+      - string
+  - ns5:creation_date:
+    - functional_property_creation_date: dateTime
+  - rdfs:comment:
+    - functional_property_comment: string
+  - ns3:IAO_0000118:
+    - functional_property_iao_0000118: string
+  - rdfs:label:
+    - functional_property_label:
+      - string
+      - string
+  - ns5:hasDbXref:
+    - functional_property_has_db_xref: string
+  - ns3:IAO_0000116:
+    - functional_property_iao_0000116: string
+  - ns3:IAO_0000112:
+    - functional_property_iao_0000112: string
+  - ns3:IAO_0000111:
+    - functional_property_iao_0000111: string
+  - ns5:shorthand:
+    - functional_property_shorthand: string
+  - ns5:created_by:
+    - functional_property_created_by: string
+- ENVO_00000015:
+  - ns3:BFO_0000050:
+    - envo_00000015_bfo_0000050:
+      - ENVO_01000958
+      - NamedIndividual
+  - rdf:type:
+    - envo_00000015_type: Class
+  - ns3:IAO_0000115:
+    - envo_00000015_iao_0000115: string
+  - rdfs:label:
+    - envo_00000015_label: string
+- b3398180:
+  - rdf:type:
+    - b3398180_type:
+      - Class
+      - Restriction
+- ENVO_01000801:
+  - rdf:type:
+    - envo_01000801_type: Class
+  - ns5:hasExactSynonym:
+    - envo_01000801_has_exact_synonym: string
+  - rdfs:label:
+    - envo_01000801_label: string
+- Restriction:
+  - owl:onProperty:
+    - restriction_on_property:
+      - FunctionalProperty
+      - ReflexiveProperty
+      - SymmetricProperty
+      - TransitiveProperty
+      - IrreflexiveProperty
+      - InverseFunctionalProperty
+      - ObjectProperty
+  - owl:onClass:
+    - restriction_on_class: Class
+  - owl:someValuesFrom:
+    - restriction_some_values_from:
+      - Class
+      - Restriction
+  - rdfs:subClassOf:
+    - restriction_sub_class_of: Class
+  - owl:allValuesFrom:
+    - restriction_all_values_from: Class
+  - owl:hasSelf:
+    - restriction_has_self: true
+  - owl:qualifiedCardinality:
+    - restriction_qualified_cardinality: nonNegativeInteger
+  - owl:minQualifiedCardinality:
+    - restriction_min_qualified_cardinality: nonNegativeInteger
+- SymmetricProperty:
+  - rdfs:range:
+    - symmetric_property_range: Class
+  - ns5:inSubset:
+    - symmetric_property_in_subset: AnnotationProperty
+  - ns3:IAO_0000114:
+    - symmetric_property_iao_0000114:
+      - NamedIndividual
+      - IAO_0000078
+  - rdfs:subPropertyOf:
+    - symmetric_property_sub_property_of:
+      - ObjectProperty
+      - SymmetricProperty
+  - rdfs:domain:
+    - symmetric_property_domain: Class
+  - rdfs:seeAlso:
+    - symmetric_property_see_also:
+      - string
+      - anyURI
+  - ns5:hasOBONamespace:
+    - symmetric_property_has_obo_namespace: string
+  - ns3:IAO_0000115:
+    - symmetric_property_iao_0000115: string
+  - ns5:hasExactSynonym:
+    - symmetric_property_has_exact_synonym: string
+  - ns3:IAO_0000232:
+    - symmetric_property_iao_0000232: string
+  - foaf:page:
+    - symmetric_property_page: anyURI
+  - rdfs:comment:
+    - symmetric_property_comment: string
+  - ns3:IAO_0000118:
+    - symmetric_property_iao_0000118: string
+  - ns5:id:
+    - symmetric_property_id: string
+  - rdfs:label:
+    - symmetric_property_label:
+      - string
+      - string
+  - ns3:IAO_0000117:
+    - symmetric_property_iao_0000117: string
+  - ns5:hasDbXref:
+    - symmetric_property_has_db_xref: string
+  - ns3:IAO_0000424:
+    - symmetric_property_iao_0000424: string
+  - ns3:IAO_0000116:
+    - symmetric_property_iao_0000116:
+      - anyURI
+      - string
+  - ns5:shorthand:
+    - symmetric_property_shorthand: string
+  - skos:closeMatch:
+    - symmetric_property_close_match: anyURI
+- ClassAtom:
+  - ns2:argument1:
+    - class_atom_argument1: Variable
+  - ns2:classPredicate:
+    - class_atom_class_predicate: Class
+- IndividualPropertyAtom:
+  - ns2:argument1:
+    - individual_property_atom_argument1: Variable
+  - ns2:argument2:
+    - individual_property_atom_argument2: Variable
+  - ns2:propertyPredicate:
+    - individual_property_atom_property_predicate:
+      - SymmetricProperty
+      - InverseFunctionalProperty
+      - ObjectProperty
+      - TransitiveProperty
+      - ReflexiveProperty
+      - FunctionalProperty
+- ENVO_01000958:
+  - rdf:type:
+    - envo_01000958_type: Class
+  - ns3:IAO_0000115:
+    - envo_01000958_iao_0000115: string
+  - rdfs:label:
+    - envo_01000958_label: string
+- ObjectProperty:
+  - rdfs:range:
+    - object_property_range:
+      - Restriction
+      - Class
+  - ns5:inSubset:
+    - object_property_in_subset: AnnotationProperty
+  - ns3:RO_0002579:
+    - object_property_ro_0002579:
+      - ObjectProperty
+      - TransitiveProperty
+  - ns3:IAO_0000114:
+    - object_property_iao_0000114:
+      - NamedIndividual
+      - IAO_0000078
+  - owl:inverseOf:
+    - object_property_inverse_of:
+      - ObjectProperty
+      - InverseFunctionalProperty
+      - ReflexiveProperty
+      - IrreflexiveProperty
+      - TransitiveProperty
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of:
+      - IrreflexiveProperty
+      - ObjectProperty
+      - ReflexiveProperty
+      - FunctionalProperty
+      - SymmetricProperty
+      - TransitiveProperty
+      - InverseFunctionalProperty
+  - rdfs:domain:
+    - object_property_domain:
+      - Class
+      - Restriction
+  - ns3:RO_0002575:
+    - object_property_ro_0002575:
+      - ObjectProperty
+      - TransitiveProperty
+  - ns3:RO_0040042:
+    - object_property_ro_0040042: Class
+  - ns3:RO_0004049:
+    - object_property_ro_0004049:
+      - ObjectProperty
+      - TransitiveProperty
+  - ns3:RO_0004050:
+    - object_property_ro_0004050:
+      - TransitiveProperty
+      - ObjectProperty
+  - ns3:IAO_0000119:
+    - object_property_iao_0000119:
+      - string
+      - anyURI
+      - string
+  - dc11:date:
+    - object_property_date: dateTime
+  - rdfs:seeAlso:
+    - object_property_see_also:
+      - anyURI
+      - string
+  - ns5:hasOBONamespace:
+    - object_property_has_obo_namespace: string
+  - ns3:IAO_0000115:
+    - object_property_iao_0000115:
+      - string
+      - string
+  - ns3:UBPROP_0000001:
+    - object_property_ubprop_0000001: string
+  - ns5:hasExactSynonym:
+    - object_property_has_exact_synonym: string
+  - dc:creator:
+    - object_property_creator: string
+  - ns3:IAO_0000600:
+    - object_property_iao_0000600:
+      - true
+      - string
+  - ns5:creation_date:
+    - object_property_creation_date:
+      - string
+      - dateTime
+  - ns3:IAO_0000232:
+    - object_property_iao_0000232:
+      - string
+      - string
+  - foaf:page:
+    - object_property_page: anyURI
+  - ns3:IAO_0000589:
+    - object_property_iao_0000589: string
+  - dc:contributor:
+    - object_property_contributor: string
+  - rdfs:comment:
+    - object_property_comment:
+      - string
+      - string
+  - ns3:IAO_0000118:
+    - object_property_iao_0000118:
+      - true
+      - string
+      - string
+  - ns5:id:
+    - object_property_id: string
+  - rdfs:label:
+    - object_property_label:
+      - string
+      - string
+  - ns5:hasRelatedSynonym:
+    - object_property_has_related_synonym: string
+  - ns5:is_transitive:
+    - object_property_is_transitive: true
+  - ns3:IAO_0000117:
+    - object_property_iao_0000117:
+      - string
+      - string
+  - ns5:hasDbXref:
+    - object_property_has_db_xref: string
+  - ns3:IAO_0000424:
+    - object_property_iao_0000424: string
+  - ns5:hasBroadSynonym:
+    - object_property_has_broad_synonym: string
+  - ns3:IAO_0000116:
+    - object_property_iao_0000116:
+      - true
+      - anyURI
+      - string
+      - string
+  - ns3:IAO_0000112:
+    - object_property_iao_0000112:
+      - string
+      - string
+  - dc:source:
+    - object_property_source: anyURI
+  - ns5:is_cyclic:
+    - object_property_is_cyclic: true
+  - ns3:IAO_0000111:
+    - object_property_iao_0000111:
+      - string
+      - string
+  - ns5:shorthand:
+    - object_property_shorthand: string
+  - skos:closeMatch:
+    - object_property_close_match: anyURI
+  - dc11:source:
+    - object_property_source: string
+  - ns5:created_by:
+    - object_property_created_by: string
+- Axiom:
+  - ns5:hasSynonymType:
+    - axiom_has_synonym_type: AnnotationProperty
+  - owl:annotatedTarget:
+    - axiom_annotated_target:
+      - Class
+      - Restriction
+      - string
+      - string
+  - owl:annotatedProperty:
+    - axiom_annotated_property: AnnotationProperty
+  - owl:annotatedSource:
+    - axiom_annotated_source:
+      - Class
+      - ReflexiveProperty
+      - ENVO_01000216
+      - ObjectProperty
+      - AnnotationProperty
+      - FunctionalProperty
+      - ENVO_01001698
+      - SymmetricProperty
+      - NamedIndividual
+      - ENVO_00000015
+      - ENVO_01000958
+      - TransitiveProperty
+      - b3398180
+  - ns3:IAO_0000119:
+    - axiom_iao_0000119: string
+  - ns3:RO_0002582:
+    - axiom_ro_0002582: true
+  - ns3:NCIT_P385:
+    - axiom_ncit_p385: string
+  - rdfs:seeAlso:
+    - axiom_see_also: anyURI
+  - ns3:NCIT_P394:
+    - axiom_ncit_p394: string
+  - rdfs:comment:
+    - axiom_comment:
+      - string
+      - string
+  - ns3:NCIT_P393:
+    - axiom_ncit_p393: string
+  - ns3:NCIT_P378:
+    - axiom_ncit_p378: string
+  - ns3:NCIT_P386:
+    - axiom_ncit_p386: string
+  - rdfs:label:
+    - axiom_label: string
+  - ns3:NCIT_P396:
+    - axiom_ncit_p396: string
+  - ns3:NCIT_P384:
+    - axiom_ncit_p384: string
+  - ns3:IAO_0000412:
+    - axiom_iao_0000412: string
+  - ns5:hasDbXref:
+    - axiom_has_db_xref:
+      - anyURI
+      - string
+  - ns3:NCIT_P381:
+    - axiom_ncit_p381: string
+  - ns3:NCIT_P397:
+    - axiom_ncit_p397: string
+  - ns3:IAO_0000116:
+    - axiom_iao_0000116: string
+  - ns3:NCIT_P395:
+    - axiom_ncit_p395: string
+  - ns3:RO_0002581:
+    - axiom_ro_0002581: true
+  - ns3:NCIT_P383:
+    - axiom_ncit_p383: string
+  - ns5:source:
+    - axiom_source: string
+  - dc:license:
+    - axiom_license: string
+  - dc:rightsHolder:
+    - axiom_rights_holder: string
+  - ns5:created_by:
+    - axiom_created_by: string
+- IAO_0000078:
+  - rdf:type:
+    - iao_0000078_type: Class
+  - ns3:IAO_0000119:
+    - iao_0000078_iao_0000119: string
+  - ns3:IAO_0000115:
+    - iao_0000078_iao_0000115: string
+  - rdfs:label:
+    - iao_0000078_label: string
+  - ns3:IAO_0000111:
+    - iao_0000078_iao_0000111: string
+- Imp:
+  - ns2:head:
+    - imp_head: AtomList
+  - ns2:body:
+    - imp_body: AtomList
+  - rdfs:comment:
+    - imp_comment: string
+  - rdfs:label:
+    - imp_label: string
+  - ns6:isRuleEnabled:
+    - imp_is_rule_enabled: true
+- ENVO_01001698:
+  - rdf:type:
+    - envo_01001698_type: Class
+  - dc11:date:
+    - envo_01001698_date: dateTime
+  - ns5:inSubset:
+    - envo_01001698_in_subset: string
+  - ns3:IAO_0000115:
+    - envo_01001698_iao_0000115: string
+  - rdfs:label:
+    - envo_01001698_label: string
+- ReflexiveProperty:
+  - ns5:inSubset:
+    - reflexive_property_in_subset: AnnotationProperty
+  - rdfs:subPropertyOf:
+    - reflexive_property_sub_property_of:
+      - ObjectProperty
+      - SymmetricProperty
+  - ns5:hasOBONamespace:
+    - reflexive_property_has_obo_namespace: string
+  - ns3:IAO_0000115:
+    - reflexive_property_iao_0000115:
+      - string
+      - string
+  - rdfs:comment:
+    - reflexive_property_comment: string
+  - ns3:IAO_0000118:
+    - reflexive_property_iao_0000118: string
+  - ns5:id:
+    - reflexive_property_id: string
+  - rdfs:label:
+    - reflexive_property_label:
+      - string
+      - string
+  - ns5:hasDbXref:
+    - reflexive_property_has_db_xref: string
+  - ns3:IAO_0000116:
+    - reflexive_property_iao_0000116: string
+  - ns3:IAO_0000112:
+    - reflexive_property_iao_0000112: string
+  - ns5:is_cyclic:
+    - reflexive_property_is_cyclic: true
+  - ns3:IAO_0000111:
+    - reflexive_property_iao_0000111: string
+  - ns5:shorthand:
+    - reflexive_property_shorthand: string
+- AnnotationProperty:
+  - ns3:IAO_0000114:
+    - annotation_property_iao_0000114:
+      - NamedIndividual
+      - IAO_0000078
+  - rdfs:subPropertyOf:
+    - annotation_property_sub_property_of: AnnotationProperty
+  - ns5:hasDbXref:
+    - annotation_property_has_db_xref:
+      - AnnotationProperty
+      - string
+  - ns3:IAO_0000119:
+    - annotation_property_iao_0000119: string
+  - ns5:hasOBONamespace:
+    - annotation_property_has_obo_namespace: string
+  - ns3:IAO_0000115:
+    - annotation_property_iao_0000115:
+      - string
+      - string
+  - ns5:hasExactSynonym:
+    - annotation_property_has_exact_synonym: string
+  - ns5:is_metadata_tag:
+    - annotation_property_is_metadata_tag: true
+  - ns3:NCIT_P106:
+    - annotation_property_ncit_p106: string
+  - rdfs:comment:
+    - annotation_property_comment: string
+  - ns5:id:
+    - annotation_property_id: string
+  - rdfs:label:
+    - annotation_property_label:
+      - string
+      - string
+  - ns3:IAO_0000117:
+    - annotation_property_iao_0000117: string
+  - ns3:NCIT_P108:
+    - annotation_property_ncit_p108: string
+  - ns3:IAO_0000116:
+    - annotation_property_iao_0000116: string
+  - ns3:IAO_0000111:
+    - annotation_property_iao_0000111:
+      - string
+      - string
+  - ns5:shorthand:
+    - annotation_property_shorthand: string
+- ENVO_01001570:
+  - ns3:BFO_0000050:
+    - envo_01001570_bfo_0000050:
+      - ENVO_01001570
+      - NamedIndividual
+  - rdf:type:
+    - envo_01001570_type: Class
+  - ns5:hasExactSynonym:
+    - envo_01001570_has_exact_synonym: string
+  - ns5:creation_date:
+    - envo_01001570_creation_date: dateTime
+  - rdfs:label:
+    - envo_01001570_label:
+      - string
+      - string
+  - ns5:hasRelatedSynonym:
+    - envo_01001570_has_related_synonym: string
+  - ns5:hasDbXref:
+    - envo_01001570_has_db_xref: string
+  - ns5:hasBroadSynonym:
+    - envo_01001570_has_broad_synonym:
+      - string
+      - string
+- Class:
+  - ns5:inSubset:
+    - class_in_subset:
+      - AnnotationProperty
+      - string
+      - string
+  - rdfs:seeAlso:
+    - class_see_also:
+      - Class
+      - anyURI
+      - string
+      - string
+  - ns3:IAO_0100001:
+    - class_iao_0100001:
+      - Class
+      - string
+      - anyURI
+  - ns5:hasExactSynonym:
+    - class_has_exact_synonym:
+      - IAO_0000078
+      - NamedIndividual
+      - string
+      - string
+  - owl:complementOf:
+    - class_complement_of:
+      - Restriction
+      - Class
+  - ns3:RO_0002604:
+    - class_ro_0002604: Class
+  - ns3:NCIT_A39:
+    - class_ncit_a39: Class
+  - ns3:NCIT_A32:
+    - class_ncit_a32: Class
+  - ns3:IAO_0000114:
+    - class_iao_0000114:
+      - IAO_0000078
+      - NamedIndividual
+      - string
+      - string
+  - ns3:IAO_0000117:
+    - class_iao_0000117:
+      - IAO_0000078
+      - NamedIndividual
+      - string
+      - anyURI
+      - string
+      - anyURI
+  - ns5:hasDbXref:
+    - class_has_db_xref:
+      - Class
+      - string
+      - Literal
+      - anyURI
+      - string
+  - ns3:NCIT_A31:
+    - class_ncit_a31: Class
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Restriction
+      - Class
+  - ns3:RO_0002161:
+    - class_ro_0002161: Class
+  - owl:equivalentClass:
+    - class_equivalent_class:
+      - Class
+      - Restriction
+  - ns3:IAO_0000119:
+    - class_iao_0000119:
+      - string
+      - anyURI
+      - string
+  - dc11:date:
+    - class_date:
+      - string
+      - dateTime
+      - dateTimeStamp
+  - ns5:hasAlternativeId:
+    - class_has_alternative_id: string
+  - ns3:NCIT_P207:
+    - class_ncit_p207: string
+  - ns5:hasOBONamespace:
+    - class_has_obo_namespace: string
+  - ns3:GENEPIO_0000006:
+    - class_genepio_0000006: string
+  - ns5:hasSynonym:
+    - class_has_synonym:
+      - string
+      - string
+  - ns3:IAO_0000233:
+    - class_iao_0000233: anyURI
+  - ns3:IAO_0000115:
+    - class_iao_0000115:
+      - string
+      - string
+  - ns3:NCIT_P208:
+    - class_ncit_p208: string
+  - dc:creator:
+    - class_creator: string
+  - ns3:IAO_0000600:
+    - class_iao_0000600: string
+  - ns5:creation_date:
+    - class_creation_date:
+      - string
+      - dateTime
+  - schema:image:
+    - class_image: anyURI
+  - ns3:NCIT_P106:
+    - class_ncit_p106: string
+  - ns3:IAO_0000589:
+    - class_iao_0000589: string
+  - ns3:NCIT_P325:
+    - class_ncit_p325: string
+  - rdfs:comment:
+    - class_comment:
+      - string
+      - true
+      - string
+  - dc11:contributor:
+    - class_contributor: string
+  - ns3:NCIT_NHC0:
+    - class_ncit_nhc0: string
+  - ns3:IAO_0000118:
+    - class_iao_0000118:
+      - string
+      - string
+  - ns5:xref:
+    - class_xref: string
+  - ns5:id:
+    - class_id: string
+  - ns3:IAO_0000601:
+    - class_iao_0000601: string
+  - ns7:smiles:
+    - class_smiles: string
+  - rdfs:label:
+    - class_label:
+      - string
+      - namespacestring
+      - string
+  - ns7:inchi:
+    - class_inchi: string
+  - ns5:hasRelatedSynonym:
+    - class_has_related_synonym:
+      - string
+      - string
+  - ns3:NCIT_P375:
+    - class_ncit_p375: string
+  - ns7:inchikey:
+    - class_inchikey: string
+  - ns3:IAO_0000412:
+    - class_iao_0000412:
+      - anyURI
+      - string
+  - ns3:NCIT_P108:
+    - class_ncit_p108: string
+  - ns5:hasBroadSynonym:
+    - class_has_broad_synonym:
+      - string
+      - string
+  - ns3:IAO_0000116:
+    - class_iao_0000116:
+      - string
+      - string
+  - ns3:IAO_0000112:
+    - class_iao_0000112:
+      - string
+      - anyURI
+      - string
+  - ns7:charge:
+    - class_charge: string
+  - ns3:BFO_0000180:
+    - class_bfo_0000180: string
+  - ns3:NCIT_P317:
+    - class_ncit_p317: string
+  - ns3:NCIT_P322:
+    - class_ncit_p322: string
+  - ns7:formula:
+    - class_formula: string
+  - ns5:hasNarrowSynonym:
+    - class_has_narrow_synonym:
+      - string
+      - string
+      - anyURI
+  - ns3:NCIT_P366:
+    - class_ncit_p366: string
+  - ns3:NCIT_P107:
+    - class_ncit_p107: string
+  - ns3:IAO_0000111:
+    - class_iao_0000111:
+      - string
+      - string
+  - ns3:IAO_0000602:
+    - class_iao_0000602: string
+  - ns3:BFO_0000179:
+    - class_bfo_0000179: string
+  - ns7:monoisotopicmass:
+    - class_monoisotopicmass: string
+  - ns5:created_by:
+    - class_created_by: string
+  - ns3:NCIT_P98:
+    - class_ncit_p98: string
+  - ns7:mass:
+    - class_mass: string
+  - owl:deprecated:
+    - class_deprecated: true
+- InverseFunctionalProperty:
+  - rdfs:range:
+    - inverse_functional_property_range: Class
+  - ns5:hasOBONamespace:
+    - inverse_functional_property_has_obo_namespace: string
+  - ns3:IAO_0000115:
+    - inverse_functional_property_iao_0000115: string
+  - ns3:IAO_0000118:
+    - inverse_functional_property_iao_0000118: string
+  - ns5:id:
+    - inverse_functional_property_id: string
+  - rdfs:label:
+    - inverse_functional_property_label:
+      - string
+      - string
+  - ns5:hasDbXref:
+    - inverse_functional_property_has_db_xref: string
+  - ns3:IAO_0000116:
+    - inverse_functional_property_iao_0000116: string
+  - ns3:IAO_0000112:
+    - inverse_functional_property_iao_0000112: string
+  - ns3:IAO_0000111:
+    - inverse_functional_property_iao_0000111: string
+  - ns5:shorthand:
+    - inverse_functional_property_shorthand: string
+- NamedIndividual:
+  - ns3:BFO_0000050:
+    - named_individual_bfo_0000050:
+      - ENVO_01001570
+      - NamedIndividual
+      - ENVO_01000958
+  - ns3:RO_0002608:
+    - named_individual_ro_0002608:
+      - NamedIndividual
+      - ENVO_01000801
+  - rdf:type:
+    - named_individual_type:
+      - Class
+      - Restriction
+  - ns3:IAO_0000119:
+    - named_individual_iao_0000119: string
+  - dc11:date:
+    - named_individual_date: dateTime
+  - ns5:inSubset:
+    - named_individual_in_subset: string
+  - ns3:IAO_0000115:
+    - named_individual_iao_0000115:
+      - string
+      - string
+  - ns5:hasExactSynonym:
+    - named_individual_has_exact_synonym: string
+  - ns5:creation_date:
+    - named_individual_creation_date: dateTime
+  - rdfs:label:
+    - named_individual_label:
+      - string
+      - string
+  - ns5:hasRelatedSynonym:
+    - named_individual_has_related_synonym: string
+  - ns5:hasDbXref:
+    - named_individual_has_db_xref: string
+  - ns5:hasBroadSynonym:
+    - named_individual_has_broad_synonym:
+      - string
+      - string
+  - ns3:IAO_0000111:
+    - named_individual_iao_0000111: string
+- IrreflexiveProperty:
+  - ns3:IAO_0000114:
+    - irreflexive_property_iao_0000114:
+      - IAO_0000078
+      - NamedIndividual
+  - rdfs:subPropertyOf:
+    - irreflexive_property_sub_property_of:
+      - ObjectProperty
+      - ReflexiveProperty
+      - TransitiveProperty
+  - ns3:IAO_0000119:
+    - irreflexive_property_iao_0000119: string
+  - ns3:IAO_0000115:
+    - irreflexive_property_iao_0000115:
+      - string
+      - string
+  - rdfs:label:
+    - irreflexive_property_label: string
+  - ns3:IAO_0000117:
+    - irreflexive_property_iao_0000117: string
+- Ontology:
+  - dc11:title:
+    - ontology_title: string
+  - ns3:IAO_0000700:
+    - ontology_iao_0000700: string
+  - owl:versionInfo:
+    - ontology_version_info: string
+  - dc11:description:
+    - ontology_description: string

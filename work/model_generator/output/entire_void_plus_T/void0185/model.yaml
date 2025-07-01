@@ -1,0 +1,49 @@
+- Ontology:
+  - owl:versionInfo:
+    - ontology_version_info: string
+- ObjectProperty:
+  - rdfs:range:
+    - object_property_range: Class
+  - rdfs:domain:
+    - object_property_domain: Class
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of: ObjectProperty
+  - rdfs:label:
+    - object_property_label: string
+  - rdfs:comment:
+    - object_property_comment: string
+  - dc:description:
+    - object_property_description: string
+- TransitiveProperty:
+  - rdfs:range:
+    - transitive_property_range: Class
+  - rdfs:domain:
+    - transitive_property_domain: Class
+  - rdfs:label:
+    - transitive_property_label: string
+  - rdfs:comment:
+    - transitive_property_comment: string
+  - dc:description:
+    - transitive_property_description: string
+- Class:
+  - rdfs:subClassOf:
+    - class_sub_class_of: Class
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+  - rdfs:label:
+    - class_label: string
+  - rdfs:comment:
+    - class_comment: string
+  - dc:description:
+    - class_description: string
+- DatatypeProperty:
+  - owl:propertyDisjointWith:
+    - datatype_property_property_disjoint_with: DatatypeProperty
+  - rdfs:subPropertyOf:
+    - datatype_property_sub_property_of: DatatypeProperty
+  - rdfs:label:
+    - datatype_property_label: string
+  - rdfs:comment:
+    - datatype_property_comment: string
+  - dc:description:
+    - datatype_property_description: string

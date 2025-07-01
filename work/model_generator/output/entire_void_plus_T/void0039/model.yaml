@@ -1,0 +1,194 @@
+- NamedIndividual:
+  - rdfs:subClassOf:
+    - named_individual_sub_class_of: Class
+  - rdfs:isDefinedBy:
+    - named_individual_is_defined_by: Ontology
+  - prov:definition:
+    - named_individual_definition: string
+  - prov:component:
+    - named_individual_component: string
+  - prov:category:
+    - named_individual_category: string
+  - rdfs:label:
+    - named_individual_label: string
+- Class:
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Restriction
+      - Class
+  - prov:unqualifiedForm:
+    - class_unqualified_form:
+      - AnnotationProperty
+      - ObjectProperty
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+  - rdfs:seeAlso:
+    - class_see_also: ObjectProperty
+  - rdfs:isDefinedBy:
+    - class_is_defined_by: Ontology
+  - prov:definition:
+    - class_definition:
+      - string
+      - string
+  - prov:constraints:
+    - class_constraints: anyURI
+  - prov:component:
+    - class_component: string
+  - rdfs:comment:
+    - class_comment: string
+  - prov:category:
+    - class_category: string
+  - rdfs:label:
+    - class_label:
+      - string
+      - string
+  - prov:n:
+    - class_n: anyURI
+  - prov:dm:
+    - class_dm: anyURI
+  - prov:editorsDefinition:
+    - class_editors_definition: string
+- AnnotationProperty:
+  - rdfs:domain:
+    - annotation_property_domain: Class
+  - prov:qualifiedForm:
+    - annotation_property_qualified_form:
+      - Class
+      - ObjectProperty
+  - rdfs:subPropertyOf:
+    - annotation_property_sub_property_of:
+      - ObjectProperty
+      - AnnotationProperty
+  - rdfs:seeAlso:
+    - annotation_property_see_also: ObjectProperty
+  - rdfs:range:
+    - annotation_property_range: Class
+  - rdfs:isDefinedBy:
+    - annotation_property_is_defined_by: Ontology
+  - prov:definition:
+    - annotation_property_definition: string
+  - prov:inverse:
+    - annotation_property_inverse: string
+  - prov:constraints:
+    - annotation_property_constraints: anyURI
+  - prov:component:
+    - annotation_property_component: string
+  - rdfs:comment:
+    - annotation_property_comment: string
+  - prov:category:
+    - annotation_property_category: string
+  - rdfs:label:
+    - annotation_property_label: string
+  - prov:n:
+    - annotation_property_n: anyURI
+  - prov:dm:
+    - annotation_property_dm: anyURI
+- Ontology:
+  - rdfs:comment:
+    - ontology_comment: string
+  - rdfs:label:
+    - ontology_label: string
+  - owl:versionInfo:
+    - ontology_version_info: string
+- ObjectProperty:
+  - rdfs:domain:
+    - object_property_domain: Class
+  - prov:qualifiedForm:
+    - object_property_qualified_form:
+      - Class
+      - ObjectProperty
+  - prov:unqualifiedForm:
+    - object_property_unqualified_form:
+      - AnnotationProperty
+      - ObjectProperty
+  - prov:sharesDefinitionWith:
+    - object_property_shares_definition_with: Class
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of: ObjectProperty
+  - owl:inverseOf:
+    - object_property_inverse_of: ObjectProperty
+  - rdfs:seeAlso:
+    - object_property_see_also:
+      - ObjectProperty
+      - AnnotationProperty
+  - rdfs:range:
+    - object_property_range: Class
+  - rdfs:isDefinedBy:
+    - object_property_is_defined_by: Ontology
+  - prov:definition:
+    - object_property_definition: string
+  - prov:inverse:
+    - object_property_inverse: string
+  - prov:constraints:
+    - object_property_constraints: anyURI
+  - prov:component:
+    - object_property_component: string
+  - prov:editorialNote:
+    - object_property_editorial_note: string
+  - rdfs:comment:
+    - object_property_comment:
+      - string
+      - string
+  - prov:category:
+    - object_property_category: string
+  - rdfs:label:
+    - object_property_label: string
+  - prov:n:
+    - object_property_n: anyURI
+  - prov:dm:
+    - object_property_dm: anyURI
+  - prov:editorsDefinition:
+    - object_property_editors_definition:
+      - string
+      - string
+- Axiom:
+  - owl:annotatedSource:
+    - axiom_annotated_source:
+      - AnnotationProperty
+      - ObjectProperty
+  - owl:annotatedTarget:
+    - axiom_annotated_target:
+      - ObjectProperty
+      - Class
+  - prov:definition:
+    - axiom_definition: string
+  - rdfs:comment:
+    - axiom_comment:
+      - string
+      - string
+  - prov:dm:
+    - axiom_dm: string
+- Restriction:
+  - owl:onProperty:
+    - restriction_on_property: ObjectProperty
+  - owl:maxCardinality:
+    - restriction_max_cardinality: nonNegativeInteger
+- DatatypeProperty:
+  - rdfs:domain:
+    - datatype_property_domain: Class
+  - prov:qualifiedForm:
+    - datatype_property_qualified_form:
+      - Class
+      - DatatypeProperty
+  - prov:unqualifiedForm:
+    - datatype_property_unqualified_form: DatatypeProperty
+  - prov:sharesDefinitionWith:
+    - datatype_property_shares_definition_with: Class
+  - rdfs:isDefinedBy:
+    - datatype_property_is_defined_by: Ontology
+  - prov:definition:
+    - datatype_property_definition: string
+  - prov:component:
+    - datatype_property_component: string
+  - prov:editorialNote:
+    - datatype_property_editorial_note:
+      - string
+      - string
+  - rdfs:comment:
+    - datatype_property_comment: string
+  - prov:category:
+    - datatype_property_category: string
+  - rdfs:label:
+    - datatype_property_label: string
+  - prov:dm:
+    - datatype_property_dm: anyURI

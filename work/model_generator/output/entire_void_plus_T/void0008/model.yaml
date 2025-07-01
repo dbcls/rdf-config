@@ -1,0 +1,112 @@
+- Class:
+  - ns2:hasExactSynonym:
+    - class_has_exact_synonym:
+      - Class
+      - string
+      - string
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Class
+      - Restriction
+  - owl:equivalentClass:
+    - class_equivalent_class:
+      - Restriction
+      - Class
+  - owl:complementOf:
+    - class_complement_of: Restriction
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+  - ns2:creation_date:
+    - class_creation_date: string
+  - rdfs:label:
+    - class_label:
+      - string
+      - string
+  - dc11:description:
+    - class_description: string
+  - ns2:hasRelatedSynonym:
+    - class_has_related_synonym:
+      - string
+      - string
+  - ns2:consider:
+    - class_consider: string
+  - ns2:hasBroadSynonym:
+    - class_has_broad_synonym: string
+  - ns3:IAO_0000115:
+    - class_iao_0000115:
+      - string
+      - string
+  - ns2:hasAlternativeId:
+    - class_has_alternative_id: string
+  - ns3:IAO_0100001:
+    - class_iao_0100001: string
+  - owl:deprecated:
+    - class_deprecated: true
+  - ns3:PORO_0000995:
+    - class_poro_0000995: string
+  - ns2:created_by:
+    - class_created_by: string
+  - rdfs:comment:
+    - class_comment:
+      - string
+      - string
+  - ns2:hasDbXref:
+    - class_has_db_xref: string
+- Ontology:
+  - dc11:description:
+    - ontology_description: string
+  - foaf:homepage:
+    - ontology_homepage: anyURI
+  - dc11:title:
+    - ontology_title: string
+  - dc11:creator:
+    - ontology_creator: string
+- b10878235:
+  - rdf:type:
+    - b10878235_type: Restriction
+- Axiom:
+  - ns2:hasSynonymType:
+    - axiom_has_synonym_type: AnnotationProperty
+  - owl:annotatedProperty:
+    - axiom_annotated_property: AnnotationProperty
+  - owl:annotatedSource:
+    - axiom_annotated_source: Class
+  - owl:annotatedTarget:
+    - axiom_annotated_target: string
+  - ns2:hasDbXref:
+    - axiom_has_db_xref: string
+- Restriction:
+  - owl:onProperty:
+    - restriction_on_property: ObjectProperty
+  - owl:someValuesFrom:
+    - restriction_some_values_from: Class
+  - owl:onClass:
+    - restriction_on_class: Class
+  - owl:disjointWith:
+    - restriction_disjoint_with: Restriction
+  - owl:qualifiedCardinality:
+    - restriction_qualified_cardinality: nonNegativeInteger
+  - owl:minQualifiedCardinality:
+    - restriction_min_qualified_cardinality: nonNegativeInteger
+- NamedIndividual:
+  - rdf:type:
+    - named_individual_type: Restriction
+- AnnotationProperty:
+  - ns2:hasScope:
+    - annotation_property_has_scope: AnnotationProperty
+  - rdfs:subPropertyOf:
+    - annotation_property_sub_property_of: AnnotationProperty
+  - rdfs:label:
+    - annotation_property_label:
+      - string
+      - string
+- b10878236:
+  - rdf:type:
+    - b10878236_type: Restriction
+- ObjectProperty:
+  - rdfs:label:
+    - object_property_label:
+      - string
+      - string
+  - ns2:hasRelatedSynonym:
+    - object_property_has_related_synonym: string

@@ -1,0 +1,558 @@
+- HypoglycemicDrug:
+  - rdf:type:
+    - hypoglycemic_drug_type: Class
+  - ns1:hasInsulinValue:
+    - hypoglycemic_drug_has_insulin_value: true
+  - ns1:hasHypoglycemicDrugValue:
+    - hypoglycemic_drug_has_hypoglycemic_drug_value: integer
+- BuiltinAtom:
+  - ns2:arguments:
+    - builtin_atom_arguments: List
+- FunctionalProperty:
+  - rdfs:range:
+    - functional_property_range:
+      - Datatype
+      - Class
+  - rdfs:domain:
+    - functional_property_domain: Class
+- Hypertension:
+  - rdf:type:
+    - hypertension_type: Class
+  - ns1:hasHypertensionValue:
+    - hypertension_has_hypertension_value: true
+- Restriction:
+  - owl:onProperty:
+    - restriction_on_property:
+      - FunctionalProperty
+      - ObjectProperty
+  - owl:allValuesFrom:
+    - restriction_all_values_from: Class
+- LiverDisease:
+  - rdf:type:
+    - liver_disease_type: Class
+  - ns1:hasLiverDiseaseValue:
+    - liver_disease_has_liver_disease_value: true
+- Diet:
+  - rdf:type:
+    - diet_type: Class
+  - ns1:hasDietLevel:
+    - diet_has_diet_level: string
+- NamedIndividual:
+  - ns1:hasBMI:
+    - named_individual_has_bmi:
+      - NamedIndividual
+      - BodyMassIndex
+  - ns1:hasEyeDisease:
+    - named_individual_has_eye_disease:
+      - NamedIndividual
+      - EyeDisease
+  - ns1:hasStroke:
+    - named_individual_has_stroke:
+      - Stroke
+      - NamedIndividual
+  - ns1:hasLungDisease:
+    - named_individual_has_lung_disease:
+      - NamedIndividual
+      - LungDisease
+  - ns1:hasHypolipidemicDrug:
+    - named_individual_has_hypolipidemic_drug:
+      - NamedIndividual
+      - HypolipidemicDrug
+  - ns1:hasDiet:
+    - named_individual_has_diet:
+      - Diet
+      - NamedIndividual
+  - ns1:hasLipoprotein:
+    - named_individual_has_lipoprotein:
+      - Lipoprotein
+      - NamedIndividual
+  - ns1:hasTG:
+    - named_individual_has_tg:
+      - NamedIndividual
+      - Triglyceride
+  - ns1:hasMentality:
+    - named_individual_has_mentality:
+      - NamedIndividual
+      - Mentality
+  - ns1:hasCOPD:
+    - named_individual_has_copd:
+      - ChronicObstructivePulmonaryDisease
+      - NamedIndividual
+  - ns1:hasBP:
+    - named_individual_has_bp:
+      - NamedIndividual
+      - BloodPressure
+  - ns1:hasTC:
+    - named_individual_has_tc:
+      - TotalCholesterol
+      - NamedIndividual
+  - ns1:hasHyperlipidemia:
+    - named_individual_has_hyperlipidemia:
+      - Hyperlipidemia
+      - NamedIndividual
+  - ns1:hasCHD:
+    - named_individual_has_chd:
+      - CoronaryHeartDisease
+      - NamedIndividual
+  - ns1:hasExercise:
+    - named_individual_has_exercise:
+      - Exercise
+      - NamedIndividual
+  - ns1:hasAge:
+    - named_individual_has_age:
+      - NamedIndividual
+      - Age
+  - ns1:hasStomachDisease:
+    - named_individual_has_stomach_disease:
+      - StomachDisease
+      - NamedIndividual
+  - ns1:hasSkinDisease:
+    - named_individual_has_skin_disease:
+      - SkinDisease
+      - NamedIndividual
+  - ns1:hasPregnancy:
+    - named_individual_has_pregnancy:
+      - Pregnancy
+      - NamedIndividual
+  - ns1:hasLiverDisease:
+    - named_individual_has_liver_disease:
+      - LiverDisease
+      - NamedIndividual
+  - ns1:hasHypoglycemicDrug:
+    - named_individual_has_hypoglycemic_drug:
+      - NamedIndividual
+      - HypoglycemicDrug
+  - ns1:hasUA:
+    - named_individual_has_ua:
+      - NamedIndividual
+      - UricAcid
+  - ns1:hasKidneyDisease:
+    - named_individual_has_kidney_disease:
+      - KidneyDisease
+      - NamedIndividual
+  - ns1:hasBG:
+    - named_individual_has_bg:
+      - NamedIndividual
+      - BloodGlucose
+  - ns1:hasDrinking:
+    - named_individual_has_drinking:
+      - Drinking
+      - NamedIndividual
+  - ns1:hasAntiHypertensiveDrug:
+    - named_individual_has_anti_hypertensive_drug:
+      - NamedIndividual
+      - AntiHypetensiveDrug
+  - ns1:hasSmoking:
+    - named_individual_has_smoking:
+      - Smoking
+      - NamedIndividual
+  - ns1:hasDiabetes:
+    - named_individual_has_diabetes:
+      - NamedIndividual
+      - Diabetes
+  - rdf:type:
+    - named_individual_type: Class
+  - ns1:hasGender:
+    - named_individual_has_gender:
+      - Gender
+      - NamedIndividual
+  - ns1:hasHypertension:
+    - named_individual_has_hypertension:
+      - NamedIndividual
+      - Hypertension
+  - ns1:hasBGValue:
+    - named_individual_has_bg_value: double
+  - ns1:hasLDLValue:
+    - named_individual_has_ldl_value: double
+  - ns1:hasCHDValue:
+    - named_individual_has_chd_value: true
+  - ns1:hasDailyDrinking:
+    - named_individual_has_daily_drinking: double
+  - ns1:hasTCValue:
+    - named_individual_has_tc_value: double
+  - ns1:hasPregnancyValue:
+    - named_individual_has_pregnancy_value: true
+  - ns1:hasBMIValue:
+    - named_individual_has_bmi_value: double
+  - ns1:hasSBPValue:
+    - named_individual_has_sbp_value: integer
+  - ns1:hasTGValue:
+    - named_individual_has_tg_value: double
+  - ns1:hasDietLevel:
+    - named_individual_has_diet_level: string
+  - ns1:hasSkinDiseaseValue:
+    - named_individual_has_skin_disease_value: true
+  - ns1:hasDBPValue:
+    - named_individual_has_dbp_value: integer
+  - ns1:hasHypolipidemicDrugValue:
+    - named_individual_has_hypolipidemic_drug_value: integer
+  - ns1:hasAgeValue:
+    - named_individual_has_age_value: integer
+  - ns1:hasDiabetesValue:
+    - named_individual_has_diabetes_value: true
+  - ns1:hasLiverDiseaseValue:
+    - named_individual_has_liver_disease_value: true
+  - ns1:hasEyeDiseaseValue:
+    - named_individual_has_eye_disease_value: true
+  - ns1:hasUAValue:
+    - named_individual_has_ua_value: double
+  - ns1:hasAntiHypertensiveDrugValue:
+    - named_individual_has_anti_hypertensive_drug_value: integer
+  - ns1:hasHyperlipidemiaValue:
+    - named_individual_has_hyperlipidemia_value: true
+  - ns1:hasInsulinValue:
+    - named_individual_has_insulin_value: true
+  - ns1:hasCOPDValue:
+    - named_individual_has_copd_value: true
+  - ns1:hasStomachDiseaseValue:
+    - named_individual_has_stomach_disease_value: true
+  - ns1:hasDailyCigarettes:
+    - named_individual_has_daily_cigarettes: integer
+  - ns1:hasGenderValue:
+    - named_individual_has_gender_value: string
+  - ns1:hasPHQ9Value:
+    - named_individual_has_phq9_value: integer
+  - ns1:hasHDLValue:
+    - named_individual_has_hdl_value: double
+  - ns1:hasHypertensionValue:
+    - named_individual_has_hypertension_value: true
+  - ns1:hasStrokeValue:
+    - named_individual_has_stroke_value: true
+  - ns1:hasKidneyDiseaseValue:
+    - named_individual_has_kidney_disease_value: true
+  - ns1:hasLungDiseaseValue:
+    - named_individual_has_lung_disease_value: true
+  - ns1:hasHypoglycemicDrugValue:
+    - named_individual_has_hypoglycemic_drug_value: integer
+  - ns1:hasIPAQLevel:
+    - named_individual_has_ipaq_level: string
+- DatavaluedPropertyAtom:
+  - ns2:argument1:
+    - datavalued_property_atom_argument1: Variable
+  - ns2:argument2:
+    - datavalued_property_atom_argument2:
+      - Variable
+      - true
+      - string
+      - integer
+  - ns2:propertyPredicate:
+    - datavalued_property_atom_property_predicate:
+      - FunctionalProperty
+      - DatatypeProperty
+- BodyMassIndex:
+  - rdf:type:
+    - body_mass_index_type: Class
+  - ns1:hasBMIValue:
+    - body_mass_index_has_bmi_value: double
+- Gender:
+  - rdf:type:
+    - gender_type: Class
+  - ns1:hasGenderValue:
+    - gender_has_gender_value: string
+- Stroke:
+  - rdf:type:
+    - stroke_type: Class
+  - ns1:hasStrokeValue:
+    - stroke_has_stroke_value: true
+- Lipoprotein:
+  - rdf:type:
+    - lipoprotein_type: Class
+  - ns1:hasLDLValue:
+    - lipoprotein_has_ldl_value: double
+  - ns1:hasHDLValue:
+    - lipoprotein_has_hdl_value: double
+- Triglyceride:
+  - rdf:type:
+    - triglyceride_type: Class
+  - ns1:hasTGValue:
+    - triglyceride_has_tg_value: double
+- List:
+  - rdf:rest:
+    - list_rest: List
+  - rdf:first:
+    - list_first:
+      - Variable
+      - decimal
+      - integer
+- AntiHypetensiveDrug:
+  - rdf:type:
+    - anti_hypetensive_drug_type: Class
+  - ns1:hasAntiHypertensiveDrugValue:
+    - anti_hypetensive_drug_has_anti_hypertensive_drug_value: integer
+- ChronicObstructivePulmonaryDisease:
+  - rdf:type:
+    - chronic_obstructive_pulmonary_disease_type: Class
+  - ns1:hasCOPDValue:
+    - chronic_obstructive_pulmonary_disease_has_copd_value: true
+- DatatypeProperty:
+  - rdfs:range:
+    - datatype_property_range: Datatype
+  - rdfs:domain:
+    - datatype_property_domain: Class
+- HypolipidemicDrug:
+  - rdf:type:
+    - hypolipidemic_drug_type: Class
+  - ns1:hasHypolipidemicDrugValue:
+    - hypolipidemic_drug_has_hypolipidemic_drug_value: integer
+- SkinDisease:
+  - rdf:type:
+    - skin_disease_type: Class
+  - ns1:hasSkinDiseaseValue:
+    - skin_disease_has_skin_disease_value: true
+- CoronaryHeartDisease:
+  - rdf:type:
+    - coronary_heart_disease_type: Class
+  - ns1:hasCHDValue:
+    - coronary_heart_disease_has_chd_value: true
+- Exercise:
+  - rdf:type:
+    - exercise_type: Class
+  - ns1:hasIPAQLevel:
+    - exercise_has_ipaq_level: string
+- BloodGlucose:
+  - rdf:type:
+    - blood_glucose_type: Class
+  - ns1:hasBGValue:
+    - blood_glucose_has_bg_value: double
+- ClassAtom:
+  - ns2:argument1:
+    - class_atom_argument1: Variable
+  - ns2:classPredicate:
+    - class_atom_class_predicate: Class
+- TotalCholesterol:
+  - rdf:type:
+    - total_cholesterol_type: Class
+  - ns1:hasTCValue:
+    - total_cholesterol_has_tc_value: double
+- Education:
+  - rdf:type:
+    - education_type: Class
+- Mentality:
+  - rdf:type:
+    - mentality_type: Class
+  - ns1:hasPHQ9Value:
+    - mentality_has_phq9_value: integer
+- Age:
+  - rdf:type:
+    - age_type: Class
+  - ns1:hasAgeValue:
+    - age_has_age_value: integer
+- Hyperlipidemia:
+  - rdf:type:
+    - hyperlipidemia_type: Class
+  - ns1:hasHyperlipidemiaValue:
+    - hyperlipidemia_has_hyperlipidemia_value: true
+- Drinking:
+  - rdf:type:
+    - drinking_type: Class
+  - ns1:hasDailyDrinking:
+    - drinking_has_daily_drinking: double
+- AtomList:
+  - rdf:rest:
+    - atom_list_rest: AtomList
+  - rdf:first:
+    - atom_list_first:
+      - DatavaluedPropertyAtom
+      - ClassAtom
+      - IndividualPropertyAtom
+      - BuiltinAtom
+- Diabetes:
+  - rdf:type:
+    - diabetes_type: Class
+  - ns1:hasDiabetesValue:
+    - diabetes_has_diabetes_value: true
+- ObjectProperty:
+  - rdfs:range:
+    - object_property_range: Class
+  - rdfs:domain:
+    - object_property_domain: Class
+- KidneyDisease:
+  - rdf:type:
+    - kidney_disease_type: Class
+  - ns1:hasKidneyDiseaseValue:
+    - kidney_disease_has_kidney_disease_value: true
+- EyeDisease:
+  - rdf:type:
+    - eye_disease_type: Class
+  - ns1:hasEyeDiseaseValue:
+    - eye_disease_has_eye_disease_value: true
+- StomachDisease:
+  - rdf:type:
+    - stomach_disease_type: Class
+  - ns1:hasStomachDiseaseValue:
+    - stomach_disease_has_stomach_disease_value: true
+- LungDisease:
+  - rdf:type:
+    - lung_disease_type: Class
+  - ns1:hasLungDiseaseValue:
+    - lung_disease_has_lung_disease_value: true
+- Class:
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Restriction
+      - Class
+- BloodPressure:
+  - rdf:type:
+    - blood_pressure_type: Class
+  - ns1:hasSBPValue:
+    - blood_pressure_has_sbp_value: integer
+  - ns1:hasDBPValue:
+    - blood_pressure_has_dbp_value: integer
+- UricAcid:
+  - rdf:type:
+    - uric_acid_type: Class
+  - ns1:hasUAValue:
+    - uric_acid_has_ua_value: double
+- IndividualPropertyAtom:
+  - ns2:argument1:
+    - individual_property_atom_argument1: Variable
+  - ns2:argument2:
+    - individual_property_atom_argument2: Variable
+  - ns2:propertyPredicate:
+    - individual_property_atom_property_predicate:
+      - FunctionalProperty
+      - ObjectProperty
+- Smoking:
+  - rdf:type:
+    - smoking_type: Class
+  - ns1:hasDailyCigarettes:
+    - smoking_has_daily_cigarettes: integer
+- Imp:
+  - ns2:body:
+    - imp_body: AtomList
+  - ns2:head:
+    - imp_head: AtomList
+  - rdfs:comment:
+    - imp_comment: string
+  - ns3:isRuleEnabled:
+    - imp_is_rule_enabled: true
+  - rdfs:label:
+    - imp_label: string
+- Pregnancy:
+  - rdf:type:
+    - pregnancy_type: Class
+  - ns1:hasPregnancyValue:
+    - pregnancy_has_pregnancy_value: true
+- PatientProfile:
+  - ns1:hasBMI:
+    - patient_profile_has_bmi:
+      - NamedIndividual
+      - BodyMassIndex
+  - ns1:hasEyeDisease:
+    - patient_profile_has_eye_disease:
+      - EyeDisease
+      - NamedIndividual
+  - ns1:hasStroke:
+    - patient_profile_has_stroke:
+      - Stroke
+      - NamedIndividual
+  - ns1:hasLungDisease:
+    - patient_profile_has_lung_disease:
+      - NamedIndividual
+      - LungDisease
+  - ns1:hasHypolipidemicDrug:
+    - patient_profile_has_hypolipidemic_drug:
+      - HypolipidemicDrug
+      - NamedIndividual
+  - ns1:hasDiet:
+    - patient_profile_has_diet:
+      - NamedIndividual
+      - Diet
+  - ns1:hasLipoprotein:
+    - patient_profile_has_lipoprotein:
+      - Lipoprotein
+      - NamedIndividual
+  - ns1:hasTG:
+    - patient_profile_has_tg:
+      - NamedIndividual
+      - Triglyceride
+  - ns1:hasMentality:
+    - patient_profile_has_mentality:
+      - Mentality
+      - NamedIndividual
+  - ns1:hasCOPD:
+    - patient_profile_has_copd:
+      - ChronicObstructivePulmonaryDisease
+      - NamedIndividual
+  - ns1:hasBP:
+    - patient_profile_has_bp:
+      - BloodPressure
+      - NamedIndividual
+  - ns1:hasTC:
+    - patient_profile_has_tc:
+      - TotalCholesterol
+      - NamedIndividual
+  - ns1:hasHyperlipidemia:
+    - patient_profile_has_hyperlipidemia:
+      - Hyperlipidemia
+      - NamedIndividual
+  - ns1:hasCHD:
+    - patient_profile_has_chd:
+      - CoronaryHeartDisease
+      - NamedIndividual
+  - ns1:hasExercise:
+    - patient_profile_has_exercise:
+      - Exercise
+      - NamedIndividual
+  - ns1:hasAge:
+    - patient_profile_has_age:
+      - NamedIndividual
+      - Age
+  - ns1:hasStomachDisease:
+    - patient_profile_has_stomach_disease:
+      - NamedIndividual
+      - StomachDisease
+  - ns1:hasSkinDisease:
+    - patient_profile_has_skin_disease:
+      - SkinDisease
+      - NamedIndividual
+  - ns1:hasPregnancy:
+    - patient_profile_has_pregnancy:
+      - NamedIndividual
+      - Pregnancy
+  - ns1:hasLiverDisease:
+    - patient_profile_has_liver_disease:
+      - NamedIndividual
+      - LiverDisease
+  - ns1:hasHypoglycemicDrug:
+    - patient_profile_has_hypoglycemic_drug:
+      - NamedIndividual
+      - HypoglycemicDrug
+  - ns1:hasUA:
+    - patient_profile_has_ua:
+      - UricAcid
+      - NamedIndividual
+  - ns1:hasKidneyDisease:
+    - patient_profile_has_kidney_disease:
+      - KidneyDisease
+      - NamedIndividual
+  - ns1:hasBG:
+    - patient_profile_has_bg:
+      - BloodGlucose
+      - NamedIndividual
+  - ns1:hasDrinking:
+    - patient_profile_has_drinking:
+      - NamedIndividual
+      - Drinking
+  - ns1:hasAntiHypertensiveDrug:
+    - patient_profile_has_anti_hypertensive_drug:
+      - AntiHypetensiveDrug
+      - NamedIndividual
+  - ns1:hasSmoking:
+    - patient_profile_has_smoking:
+      - Smoking
+      - NamedIndividual
+  - ns1:hasDiabetes:
+    - patient_profile_has_diabetes:
+      - Diabetes
+      - NamedIndividual
+  - rdf:type:
+    - patient_profile_type: Class
+  - ns1:hasGender:
+    - patient_profile_has_gender:
+      - NamedIndividual
+      - Gender
+  - ns1:hasHypertension:
+    - patient_profile_has_hypertension:
+      - NamedIndividual
+      - Hypertension

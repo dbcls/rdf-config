@@ -1,0 +1,148 @@
+- FunctionalProperty:
+  - rdfs:domain:
+    - functional_property_domain: Class
+  - rdfs:range:
+    - functional_property_range: Class
+  - rdfs:comment:
+    - functional_property_comment: string
+  - rdfs:label:
+    - functional_property_label: string
+  - skos:definition:
+    - functional_property_definition: string
+- NamedIndividual:
+  - owl:sameAs:
+    - named_individual_same_as:
+      - NamedIndividual
+      - Class
+  - skos:example:
+    - named_individual_example: string
+  - skos:prefLabel:
+    - named_individual_pref_label: string
+  - skos:changeNote:
+    - named_individual_change_note: string
+  - owl:deprecated:
+    - named_individual_deprecated: string
+  - skos:notation:
+    - named_individual_notation: string
+  - skos:definition:
+    - named_individual_definition: string
+  - skos:note:
+    - named_individual_note: string
+- ObjectProperty:
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of:
+      - SymmetricProperty
+      - ObjectProperty
+      - TransitiveProperty
+  - owl:inverseOf:
+    - object_property_inverse_of:
+      - ObjectProperty
+      - TransitiveProperty
+  - rdfs:domain:
+    - object_property_domain: Class
+  - rdfs:range:
+    - object_property_range: Class
+  - rdfs:comment:
+    - object_property_comment: string
+  - skos:scopeNote:
+    - object_property_scope_note: string
+  - rdfs:label:
+    - object_property_label: string
+  - skos:definition:
+    - object_property_definition:
+      - string
+      - string
+- DatatypeProperty:
+  - skos:scopeNote:
+    - datatype_property_scope_note: string
+  - rdfs:label:
+    - datatype_property_label: string
+  - skos:definition:
+    - datatype_property_definition: string
+- AnnotationProperty:
+  - rdfs:subPropertyOf:
+    - annotation_property_sub_property_of: AnnotationProperty
+  - rdfs:comment:
+    - annotation_property_comment: string
+  - skos:scopeNote:
+    - annotation_property_scope_note: string
+  - skos:example:
+    - annotation_property_example: string
+  - rdfs:label:
+    - annotation_property_label: string
+  - skos:definition:
+    - annotation_property_definition: string
+- Ontology:
+  - rdfs:comment:
+    - ontology_comment: string
+  - owl:versionInfo:
+    - ontology_version_info: string
+  - dc:description:
+    - ontology_description: string
+  - dc:creator:
+    - ontology_creator: string
+  - dc:contributor:
+    - ontology_contributor: string
+  - rdfs:label:
+    - ontology_label: string
+  - dc:title:
+    - ontology_title: string
+- TransitiveProperty:
+  - rdfs:subPropertyOf:
+    - transitive_property_sub_property_of:
+      - SymmetricProperty
+      - ObjectProperty
+  - owl:inverseOf:
+    - transitive_property_inverse_of:
+      - TransitiveProperty
+      - ObjectProperty
+  - rdfs:comment:
+    - transitive_property_comment: string
+  - skos:scopeNote:
+    - transitive_property_scope_note: string
+  - rdfs:label:
+    - transitive_property_label: string
+  - skos:definition:
+    - transitive_property_definition:
+      - string
+      - string
+- Class:
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+  - rdfs:subClassOf:
+    - class_sub_class_of: Class
+  - owl:sameAs:
+    - class_same_as:
+      - NamedIndividual
+      - Class
+  - ns1:prefixIRI:
+    - class_prefix_iri: string
+  - skos:scopeNote:
+    - class_scope_note: string
+  - skos:example:
+    - class_example: string
+  - skos:prefLabel:
+    - class_pref_label: string
+  - skos:changeNote:
+    - class_change_note: string
+  - owl:deprecated:
+    - class_deprecated: string
+  - skos:notation:
+    - class_notation: string
+  - rdfs:label:
+    - class_label: string
+  - skos:definition:
+    - class_definition: string
+  - skos:note:
+    - class_note: string
+- SymmetricProperty:
+  - rdfs:subPropertyOf:
+    - symmetric_property_sub_property_of:
+      - ObjectProperty
+      - SymmetricProperty
+  - rdfs:comment:
+    - symmetric_property_comment: string
+  - rdfs:label:
+    - symmetric_property_label: string
+  - skos:definition:
+    - symmetric_property_definition: string

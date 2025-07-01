@@ -1,0 +1,24 @@
+- Class:
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+  - rdfs:subClassOf:
+    - class_sub_class_of: Class
+- FunctionalProperty:
+  - rdfs:range:
+    - functional_property_range: Class
+  - rdfs:domain:
+    - functional_property_domain: Class
+  - owl:inverseOf:
+    - functional_property_inverse_of: ObjectProperty
+- DatatypeProperty:
+  - rdfs:domain:
+    - datatype_property_domain: Class
+- ObjectProperty:
+  - rdfs:range:
+    - object_property_range: Class
+  - rdfs:domain:
+    - object_property_domain: Class
+  - owl:inverseOf:
+    - object_property_inverse_of:
+      - FunctionalProperty
+      - ObjectProperty

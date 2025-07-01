@@ -1,0 +1,37 @@
+- ObjectProperty:
+  - owl:inverseOf:
+    - object_property_inverse_of:
+      - ObjectProperty
+      - InverseFunctionalProperty
+  - rdfs:domain:
+    - object_property_domain: Class
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of: ObjectProperty
+  - rdfs:comment:
+    - object_property_comment: string
+- Class:
+  - owl:equivalentClass:
+    - class_equivalent_class: Class
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Class
+      - Restriction
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+  - rdfs:comment:
+    - class_comment: string
+- Restriction:
+  - owl:someValuesFrom:
+    - restriction_some_values_from: Class
+  - owl:allValuesFrom:
+    - restriction_all_values_from: Class
+  - owl:onProperty:
+    - restriction_on_property:
+      - InverseFunctionalProperty
+      - ObjectProperty
+- InverseFunctionalProperty:
+  - owl:inverseOf:
+    - inverse_functional_property_inverse_of: ObjectProperty
+- Ontology:
+  - rdfs:comment:
+    - ontology_comment: string

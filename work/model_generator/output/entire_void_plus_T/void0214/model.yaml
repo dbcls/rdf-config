@@ -1,0 +1,65 @@
+- DataRecord:
+  - schema:mainEntity:
+    - data_record_main_entity:
+      - OBI_0000747
+      - Sample
+  - schema:isPartOf:
+    - data_record_is_part_of: Dataset
+  - schema:dateCreated:
+    - data_record_date_created: Date
+  - schema:dateModified:
+    - data_record_date_modified: Date
+  - schema:identifier:
+    - data_record_identifier: string
+- OBI_0000747:
+  - schema:additionalProperty:
+    - obi_0000747_additional_property:
+      - PropertyValue
+      - DefinedTerm
+  - schema:sameAs:
+    - obi_0000747_same_as: DataRecord
+  - schema:name:
+    - obi_0000747_name: string
+  - schema:subjectOf:
+    - obi_0000747_subject_of: string
+  - schema:description:
+    - obi_0000747_description: string
+  - schema:identifier:
+    - obi_0000747_identifier: string
+- DefinedTerm:
+  - schema:valueReference:
+    - defined_term_value_reference:
+      - PropertyValue
+      - DefinedTerm
+  - schema:name:
+    - defined_term_name: string
+  - schema:termCode:
+    - defined_term_term_code: string
+  - schema:value:
+    - defined_term_value: string
+- PropertyValue:
+  - schema:valueReference:
+    - property_value_value_reference:
+      - PropertyValue
+      - DefinedTerm
+  - schema:name:
+    - property_value_name: string
+  - schema:termCode:
+    - property_value_term_code: string
+  - schema:value:
+    - property_value_value: string
+- Sample:
+  - schema:additionalProperty:
+    - sample_additional_property:
+      - DefinedTerm
+      - PropertyValue
+  - schema:sameAs:
+    - sample_same_as: DataRecord
+  - schema:name:
+    - sample_name: string
+  - schema:subjectOf:
+    - sample_subject_of: string
+  - schema:description:
+    - sample_description: string
+  - schema:identifier:
+    - sample_identifier: string

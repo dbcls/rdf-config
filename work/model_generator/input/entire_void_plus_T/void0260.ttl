@@ -1,0 +1,345 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sbm: <http://sparqlbuilder.org/2015/09/rdf-metadata-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://rdfportal.org/ns/> .
+
+<http://rdfportal.org/ns/4cbad0d22ef7d46a7fd82db9f33b7c92>
+    void:classPartition [
+        void:class <http://purl.jp/bio/01/quanto/ontology/sos#BaseRatio> ;
+        void:entities 3991946 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.jp/bio/01/quanto/ontology/sos#SequenceReadAmount> ;
+        void:entities 3991946 ;
+        a void:Dataset
+    ], [
+        void:class owl:Class ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class owl:DatatypeProperty ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.jp/bio/01/quanto/ontology/sos#SequenceReadLength> ;
+        void:entities 7983892 ;
+        a void:Dataset
+    ], [
+        void:class <http://vocab.jst.go.jp/terms/sti#Chemical> ;
+        void:entities 3582148 ;
+        a void:Dataset
+    ], [
+        void:class owl:ObjectProperty ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.jp/bio/01/quanto/ontology/sos#SequenceStatisticsReport> ;
+        void:entities 1995973 ;
+        a void:Dataset
+    ], [
+        void:class <http://semanticscience.org/resource/CHEMINF_000007> ;
+        void:entities 3582148 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.jp/bio/01/quanto/ontology/sos#PhredQualityScore> ;
+        void:entities 3991946 ;
+        a void:Dataset
+    ] ;
+    void:classes 10 ;
+    void:distinctObjects 45799332 ;
+    void:distinctSubjects 29120002 ;
+    void:properties 23 ;
+    void:propertyPartition [
+        void:property <http://purl.jp/bio/01/quanto/ontology/sos#filteredSequences> ;
+        void:triples 1995973 ;
+        sbm:classRelation [
+            void:triples 1995973 ;
+            sbm:objectClass <http://purl.jp/bio/01/quanto/ontology/sos#SequenceReadAmount> ;
+            sbm:subjectClass <http://purl.jp/bio/01/quanto/ontology/sos#SequenceStatisticsReport> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.jp/bio/01/quanto/ontology/sos#filename> ;
+        void:triples 1995973 ;
+        sbm:classRelation [
+            void:triples 1995973 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.jp/bio/01/quanto/ontology/sos#SequenceStatisticsReport> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dcterms:contributor ;
+        void:triples 3991946 ;
+        sbm:classRelation [
+            void:triples 3991946 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.jp/bio/01/quanto/ontology/sos#SequenceStatisticsReport> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.jp/bio/01/quanto/ontology/sos#maxSequenceLength> ;
+        void:triples 1995973 ;
+        sbm:classRelation [
+            void:triples 1995973 ;
+            sbm:objectClass <http://purl.jp/bio/01/quanto/ontology/sos#SequenceReadLength> ;
+            sbm:subjectClass <http://purl.jp/bio/01/quanto/ontology/sos#SequenceStatisticsReport> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.jp/bio/01/quanto/ontology/sos#minSequenceLength> ;
+        void:triples 1995973 ;
+        sbm:classRelation [
+            void:triples 1995973 ;
+            sbm:objectClass <http://purl.jp/bio/01/quanto/ontology/sos#SequenceReadLength> ;
+            sbm:subjectClass <http://purl.jp/bio/01/quanto/ontology/sos#SequenceStatisticsReport> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.jp/bio/01/quanto/ontology/sos#percentGC> ;
+        void:triples 1995973 ;
+        sbm:classRelation [
+            void:triples 1995973 ;
+            sbm:objectClass <http://purl.jp/bio/01/quanto/ontology/sos#BaseRatio> ;
+            sbm:subjectClass <http://purl.jp/bio/01/quanto/ontology/sos#SequenceStatisticsReport> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://semanticscience.org/resource/SIO_000300> ;
+        void:triples 3582148 ;
+        sbm:classRelation [
+            void:triples 3582148 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://semanticscience.org/resource/CHEMINF_000007> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdf:type ;
+        void:triples 29120003 ;
+        sbm:classRelation [
+            void:triples 3582148 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://semanticscience.org/resource/CHEMINF_000007> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.org/pav/version> ;
+        void:triples 1995973 ;
+        sbm:classRelation [
+            void:triples 1995973 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.jp/bio/01/quanto/ontology/sos#SequenceStatisticsReport> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.jp/bio/01/quanto/ontology/sos#overallNContent> ;
+        void:triples 1995973 ;
+        sbm:classRelation [
+            void:triples 1995973 ;
+            sbm:objectClass <http://purl.jp/bio/01/quanto/ontology/sos#BaseRatio> ;
+            sbm:subjectClass <http://purl.jp/bio/01/quanto/ontology/sos#SequenceStatisticsReport> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdf:value ;
+        void:triples 19959730 ;
+        sbm:classRelation [
+            void:triples 3991946 ;
+            sbm:objectDatatype xsd:double ;
+            sbm:subjectClass <http://purl.jp/bio/01/quanto/ontology/sos#PhredQualityScore> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3991946 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://purl.jp/bio/01/quanto/ontology/sos#SequenceReadLength> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3991946 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://purl.jp/bio/01/quanto/ontology/sos#SequenceReadAmount> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3991946 ;
+            sbm:objectDatatype xsd:double ;
+            sbm:subjectClass <http://purl.jp/bio/01/quanto/ontology/sos#BaseRatio> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3991946 ;
+            sbm:objectDatatype xsd:double ;
+            sbm:subjectClass <http://purl.jp/bio/01/quanto/ontology/sos#SequenceReadLength> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.jp/bio/01/quanto/ontology/sos#fileType> ;
+        void:triples 1995973 ;
+        sbm:classRelation [
+            void:triples 1995973 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.jp/bio/01/quanto/ontology/sos#SequenceStatisticsReport> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.jp/bio/01/quanto/ontology/sos#fastqcVersion> ;
+        void:triples 1995973 ;
+        sbm:classRelation [
+            void:triples 1995973 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.jp/bio/01/quanto/ontology/sos#SequenceStatisticsReport> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.jp/bio/01/quanto/ontology/sos#meanSequenceLength> ;
+        void:triples 1995973 ;
+        sbm:classRelation [
+            void:triples 1995973 ;
+            sbm:objectClass <http://purl.jp/bio/01/quanto/ontology/sos#SequenceReadLength> ;
+            sbm:subjectClass <http://purl.jp/bio/01/quanto/ontology/sos#SequenceStatisticsReport> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.jp/bio/01/quanto/ontology/sos#encoding> ;
+        void:triples 1995973 ;
+        sbm:classRelation [
+            void:triples 1995973 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.jp/bio/01/quanto/ontology/sos#SequenceStatisticsReport> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.jp/bio/01/quanto/ontology/sos#overallMedianBaseCallQuality> ;
+        void:triples 1995973 ;
+        sbm:classRelation [
+            void:triples 1995973 ;
+            sbm:objectClass <http://purl.jp/bio/01/quanto/ontology/sos#PhredQualityScore> ;
+            sbm:subjectClass <http://purl.jp/bio/01/quanto/ontology/sos#SequenceStatisticsReport> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.jp/bio/01/quanto/ontology/sos#overallMeanBaseCallQuality> ;
+        void:triples 1995973 ;
+        sbm:classRelation [
+            void:triples 1995973 ;
+            sbm:objectClass <http://purl.jp/bio/01/quanto/ontology/sos#PhredQualityScore> ;
+            sbm:subjectClass <http://purl.jp/bio/01/quanto/ontology/sos#SequenceStatisticsReport> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.jp/bio/01/quanto/ontology/sos#medianSequenceLength> ;
+        void:triples 1995973 ;
+        sbm:classRelation [
+            void:triples 1995973 ;
+            sbm:objectClass <http://purl.jp/bio/01/quanto/ontology/sos#SequenceReadLength> ;
+            sbm:subjectClass <http://purl.jp/bio/01/quanto/ontology/sos#SequenceStatisticsReport> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:label ;
+        void:triples 3582151 ;
+        sbm:classRelation [
+            void:triples 3582148 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://semanticscience.org/resource/CHEMINF_000007> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dcterms:identifier ;
+        void:triples 5578121 ;
+        sbm:classRelation [
+            void:triples 1995973 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.jp/bio/01/quanto/ontology/sos#SequenceStatisticsReport> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3582148 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://vocab.jst.go.jp/terms/sti#Chemical> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://semanticscience.org/resource/CHEMINF_000200> ;
+        void:triples 3582148 ;
+        sbm:classRelation [
+            void:triples 3582148 ;
+            sbm:objectClass <http://semanticscience.org/resource/CHEMINF_000007> ;
+            sbm:subjectClass <http://vocab.jst.go.jp/terms/sti#Chemical> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.jp/bio/01/quanto/ontology/sos#totalSequences> ;
+        void:triples 1995973 ;
+        sbm:classRelation [
+            void:triples 1995973 ;
+            sbm:objectClass <http://purl.jp/bio/01/quanto/ontology/sos#SequenceReadAmount> ;
+            sbm:subjectClass <http://purl.jp/bio/01/quanto/ontology/sos#SequenceStatisticsReport> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dcterms:created ;
+        void:triples 1995973 ;
+        sbm:classRelation [
+            void:triples 1995973 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.jp/bio/01/quanto/ontology/sos#SequenceStatisticsReport> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ] ;
+    void:sparqlEndpoint <https://rdfportal.org/primary/sparql> ;
+    void:triples 129275437 ;
+    a void:Dataset, sd:Graph .

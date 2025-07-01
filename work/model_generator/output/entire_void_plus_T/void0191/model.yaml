@@ -1,0 +1,51 @@
+- Ontology:
+  - ns1:date:
+    - ontology_date: string
+  - ns1:auto-generated-by:
+    - ontology_auto-generated-by: string
+  - ns1:id_space:
+    - ontology_id_space: string
+  - ns1:hasOBOFormatVersion:
+    - ontology_has_obo_format_version: string
+  - ns1:saved-by:
+    - ontology_saved-by: string
+- ObjectProperty:
+  - rdfs:domain:
+    - object_property_domain: Class
+  - rdfs:range:
+    - object_property_range: Class
+  - ns1:id:
+    - object_property_id: string
+  - ns1:is_metadata_tag:
+    - object_property_is_metadata_tag: true
+- Restriction:
+  - owl:onProperty:
+    - restriction_on_property: ObjectProperty
+  - owl:someValuesFrom:
+    - restriction_some_values_from: Class
+- Class:
+  - ns2:has_datatype:
+    - class_has_datatype: Class
+  - ns2:has_context:
+    - class_has_context: Class
+  - ns2:has_enum:
+    - class_has_enum: Class
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Class
+      - Restriction
+  - ns3:treeView:
+    - class_tree_view: Class
+  - rdfs:comment:
+    - class_comment: string
+  - rdfs:label:
+    - class_label: string
+  - skos:notation:
+    - class_notation: string
+  - ns4:IAO_0000115:
+    - class_iao_0000115: string
+  - ns1:id:
+    - class_id: string
+- AnnotationProperty:
+  - rdfs:label:
+    - annotation_property_label: string

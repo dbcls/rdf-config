@@ -1,0 +1,32 @@
+- Dataset:
+  - void:subset:
+    - dataset_subset: Dataset
+  - dc:title:
+    - dataset_title:
+      - string
+      - string
+  - void:entities:
+    - dataset_entities: long
+  - void:uriSpace:
+    - dataset_uri_space: string
+  - dc:description:
+    - dataset_description:
+      - string
+      - string
+  - void:triples:
+    - dataset_triples: long
+  - void:distinctSubjects:
+    - dataset_distinct_subjects: long
+  - dc:created:
+    - dataset_created: '2000-01-01'
+  - dc:modified:
+    - dataset_modified: '2000-01-01'
+- DatasetDescription:
+  - foaf:primaryTopic:
+    - dataset_description_primary_topic: Dataset
+  - ns1:createdOn:
+    - dataset_description_created_on: '2000-01-01'
+  - dc:title:
+    - dataset_description_title: string
+  - dc:description:
+    - dataset_description_description: string

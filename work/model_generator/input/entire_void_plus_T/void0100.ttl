@@ -1,0 +1,949 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sbm: <http://sparqlbuilder.org/2015/09/rdf-metadata-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://rdfportal.org/ns/> .
+
+<http://rdfportal.org/ns/18e08e609a8643c46fccd4adba927ec7>
+    void:classPartition [
+        void:class <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02505> ;
+        void:entities 23 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01373> ;
+        void:entities 1114 ;
+        a void:Dataset
+    ], [
+        void:class owl:NamedIndividual ;
+        void:entities 3494 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02403> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01379> ;
+        void:entities 568 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02401> ;
+        void:entities 34 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:00715> ;
+        void:entities 127 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:00716> ;
+        void:entities 500 ;
+        a void:Dataset
+    ], [
+        void:class owl:Class ;
+        void:entities 3087 ;
+        a void:Dataset
+    ], [
+        void:class owl:ObjectProperty ;
+        void:entities 14 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:00713> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01374> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02778> ;
+        void:entities 8 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01376> ;
+        void:entities 120 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:00718> ;
+        void:entities 505 ;
+        a void:Dataset
+    ], [
+        void:class owl:SymmetricProperty ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class owl:AnnotationProperty ;
+        void:entities 7 ;
+        a void:Dataset
+    ], [
+        void:class owl:TransitiveProperty ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01378> ;
+        void:entities 18 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:00140> ;
+        void:entities 99 ;
+        a void:Dataset
+    ], [
+        void:class owl:Restriction ;
+        void:entities 72 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02506> ;
+        void:entities 142 ;
+        a void:Dataset
+    ], [
+        void:class owl:Ontology ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02402> ;
+        void:entities 148 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01377> ;
+        void:entities 26 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01847> ;
+        void:entities 58 ;
+        a void:Dataset
+    ] ;
+    void:classes 26 ;
+    void:distinctObjects 33299 ;
+    void:distinctSubjects 6688 ;
+    void:properties 19 ;
+    void:propertyPartition [
+        void:property <http://www.semanticweb.org/admin/ontologies/2022/7/MIO#involving_gene> ;
+        void:triples 1937 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:00713> ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:00716> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01374> ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01379> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 23 ;
+            sbm:objectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02401> ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02505> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 58 ;
+            sbm:objectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01373> ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01847> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11 ;
+            sbm:objectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02401> ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:00718> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 168 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02506> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 26 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01377> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 178 ;
+            sbm:objectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02402> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01374> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02403> ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:00718> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1687 ;
+            sbm:objectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01373> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 486 ;
+            sbm:objectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01373> ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:00718> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 120 ;
+            sbm:objectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01373> ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01376> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 58 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01847> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 15 ;
+            sbm:objectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01373> ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01378> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02778> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1937 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 66 ;
+            sbm:objectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02401> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02403> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 456 ;
+            sbm:objectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01373> ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:00716> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 168 ;
+            sbm:objectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02402> ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02506> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 503 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:00718> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02402> ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:00718> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:00713> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01373> ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02778> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02402> ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01379> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 26 ;
+            sbm:objectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01373> ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01377> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 554 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01379> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 23 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02505> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 126 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01376> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01374> ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01376> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 457 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:00716> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 15 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01378> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01374> ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:00718> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 28 ;
+            sbm:objectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02401> ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01379> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 519 ;
+            sbm:objectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01373> ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01379> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02401> ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01376> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dc:description ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:someValuesFrom ;
+        void:triples 72 ;
+        sbm:classRelation [
+            void:triples 72 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:onProperty ;
+        void:triples 72 ;
+        sbm:classRelation [
+            void:triples 66 ;
+            sbm:objectClass owl:TransitiveProperty ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 72 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:MIO_ID ;
+        void:triples 3087 ;
+        sbm:classRelation [
+            void:triples 3087 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dc:creator ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dc:title ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:disjointWith ;
+        void:triples 27 ;
+        sbm:classRelation [
+            void:triples 27 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdf:type ;
+        void:triples 10173 ;
+        sbm:classRelation [
+            void:triples 58 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01847> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 18 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01378> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01374> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 148 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02402> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 99 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:00140> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 127 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:00715> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:00713> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 505 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:00718> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 120 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01376> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 23 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02505> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 142 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02506> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 568 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01379> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1114 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01373> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 500 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:00716> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02403> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 34 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02401> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02778> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 26 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01377> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3494 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:label ;
+        void:triples 6576 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:AnnotationProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 120 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01376> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 500 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:00716> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 99 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:00140> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3477 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 18 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01378> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 142 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02506> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 568 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01379> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 148 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02402> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3087 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 23 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02505> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01374> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 58 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01847> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 26 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01377> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 34 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02401> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02778> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02403> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1098 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01373> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 505 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:00718> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 127 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:00715> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:range ;
+        void:triples 14 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:SymmetricProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 14 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dc:language ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:versionInfo ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:domain ;
+        void:triples 15 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:SymmetricProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 15 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:seeAlso ;
+        void:triples 13704 ;
+        sbm:classRelation [
+            void:triples 164 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02402> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2247 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01373> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01374> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 83 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02401> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9416 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1054 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02506> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 141 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01847> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 511 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01379> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01377> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02403> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 65 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02505> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4279 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:subClassOf ;
+        void:triples 3663 ;
+        sbm:classRelation [
+            void:triples 3591 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 72 ;
+            sbm:objectClass owl:Restriction ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:isDefinedBy ;
+        void:triples 3857 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01378> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01376> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2466 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 58 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01847> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1098 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01373> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 148 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02402> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1384 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:AnnotationProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01377> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 33 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02401> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 22 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02505> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02506> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01374> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02403> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01379> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ;
+        void:triples 6153 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 511 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01379> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2027 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:TransitiveProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1098 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01373> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 58 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01847> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01374> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 22 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02505> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:AnnotationProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 144 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02506> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4120 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 32 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02401> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:01377> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02403> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 148 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/admin/ontologies/2022/7/MIO:02402> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:comment ;
+        void:triples 116 ;
+        sbm:classRelation [
+            void:triples 116 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ] ;
+    void:sparqlEndpoint <https://rdfportal.org/bioportal/sparql> ;
+    void:triples 49487 ;
+    a void:Dataset, sd:Graph .

@@ -1,0 +1,503 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sbm: <http://sparqlbuilder.org/2015/09/rdf-metadata-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://rdfportal.org/ns/> .
+
+<http://rdfportal.org/ns/5d190238e4eab9ad866695c4bfc48461>
+    void:classPartition [
+        void:class <http://www.semanticweb.org/MGB/ontologies/MGBD#Cisplatin> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class owl:NamedIndividual ;
+        void:entities 5 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/MGB/ontologies/MGBD#Platinol_AQ> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class owl:Class ;
+        void:entities 10 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/MGB/ontologies/MGBD#Cabazitaxel> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/MGB/ontologies/MGBD#Taxotere> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/MGB/ontologies/MGBD#Cabometyx> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/MGB/ontologies/MGBD#Docetaxel> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/MGB/ontologies/MGBD#Carboplatin> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/MGB/ontologies/MGBD#Cabozatinib> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/MGB/ontologies/MGBD#Paraplatin> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.semanticweb.org/MGB/ontologies/MGBD#Jevtana> ;
+        void:entities 1 ;
+        a void:Dataset
+    ] ;
+    void:classes 12 ;
+    void:distinctObjects 21 ;
+    void:distinctSubjects 14 ;
+    void:properties 4 ;
+    void:propertyPartition [
+        void:property <http://www.semanticweb.org/MGB/ontologies/MGBD#AltLabel> ;
+        void:triples 4 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Jevtana> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Taxotere> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Docetaxel> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Cabometyx> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Cabozatinib> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Cabazitaxel> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:label ;
+        void:triples 3 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Cabazitaxel> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Cabozatinib> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Jevtana> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Docetaxel> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Cabometyx> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Taxotere> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdf:type ;
+        void:triples 27 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Taxotere> ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Docetaxel> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Taxotere> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Cisplatin> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Cabazitaxel> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Carboplatin> ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Paraplatin> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Docetaxel> ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Taxotere> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Paraplatin> ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Paraplatin> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Taxotere> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Docetaxel> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Jevtana> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Docetaxel> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Platinol_AQ> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Jevtana> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Paraplatin> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Paraplatin> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Carboplatin> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Cabazitaxel> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Taxotere> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 10 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Jevtana> ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Jevtana> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Carboplatin> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Jevtana> ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Cabazitaxel> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Cabozatinib> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Paraplatin> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Platinol_AQ> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Jevtana> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Jevtana> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Cisplatin> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Carboplatin> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Platinol_AQ> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Docetaxel> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Carboplatin> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Carboplatin> ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Carboplatin> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Cisplatin> ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Platinol_AQ> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Paraplatin> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Cabometyx> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Docetaxel> ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Docetaxel> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Cisplatin> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Cabazitaxel> ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Cabazitaxel> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Cabazitaxel> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Platinol_AQ> ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Cisplatin> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Paraplatin> ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Carboplatin> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Cabazitaxel> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Docetaxel> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Platinol_AQ> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Taxotere> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Cisplatin> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Platinol_AQ> ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Platinol_AQ> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Taxotere> ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Taxotere> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Cabazitaxel> ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Jevtana> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Cisplatin> ;
+            sbm:subjectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Cisplatin> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:subClassOf ;
+        void:triples 5 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Cabazitaxel> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Taxotere> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Jevtana> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Platinol_AQ> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Carboplatin> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Paraplatin> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Cisplatin> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.semanticweb.org/MGB/ontologies/MGBD#Docetaxel> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ] ;
+    void:sparqlEndpoint <https://rdfportal.org/bioportal/sparql> ;
+    void:triples 39 ;
+    a void:Dataset, sd:Graph .

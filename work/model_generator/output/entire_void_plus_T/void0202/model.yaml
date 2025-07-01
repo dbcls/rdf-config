@@ -1,0 +1,202 @@
+- Ontology:
+  - owl:versionInfo:
+    - ontology_version_info: string
+  - rdfs:comment:
+    - ontology_comment: string
+  - dc:title:
+    - ontology_title: string
+  - dc:description:
+    - ontology_description: string
+  - rdfs:label:
+    - ontology_label: string
+- List:
+  - rdf:rest:
+    - list_rest: List
+  - rdf:first:
+    - list_first:
+      - string
+      - 123.45
+- Restriction:
+  - owl:onClass:
+    - restriction_on_class: Class
+  - owl:onProperty:
+    - restriction_on_property:
+      - DatatypeProperty
+      - ObjectProperty
+      - FunctionalProperty
+  - owl:someValuesFrom:
+    - restriction_some_values_from:
+      - Datatype
+      - Class
+  - owl:allValuesFrom:
+    - restriction_all_values_from: Class
+  - owl:minCardinality:
+    - restriction_min_cardinality: nonNegativeInteger
+  - owl:cardinality:
+    - restriction_cardinality: nonNegativeInteger
+  - owl:maxQualifiedCardinality:
+    - restriction_max_qualified_cardinality: nonNegativeInteger
+  - owl:maxCardinality:
+    - restriction_max_cardinality: nonNegativeInteger
+  - owl:qualifiedCardinality:
+    - restriction_qualified_cardinality: nonNegativeInteger
+  - owl:hasValue:
+    - restriction_has_value: true
+- Thing:
+  - rdfs:isDefinedBy:
+    - thing_is_defined_by: Ontology
+  - rdf:type:
+    - thing_type: Class
+  - rdfs:comment:
+    - thing_comment: string
+  - rdfs:label:
+    - thing_label: string
+- Organelle:
+  - rdfs:isDefinedBy:
+    - organelle_is_defined_by: Ontology
+  - rdf:type:
+    - organelle_type: Class
+  - rdfs:label:
+    - organelle_label: string
+- MassMeasurementMethod:
+  - rdfs:isDefinedBy:
+    - mass_measurement_method_is_defined_by: Ontology
+  - rdf:type:
+    - mass_measurement_method_type: Class
+  - rdfs:comment:
+    - mass_measurement_method_comment: string
+  - rdfs:label:
+    - mass_measurement_method_label: string
+- Status:
+  - rdfs:isDefinedBy:
+    - status_is_defined_by: Ontology
+  - rdf:type:
+    - status_type: Class
+  - rdfs:comment:
+    - status_comment: string
+  - rdfs:label:
+    - status_label: string
+- StructureDeterminationMethod:
+  - rdfs:isDefinedBy:
+    - structure_determination_method_is_defined_by: Ontology
+  - rdf:type:
+    - structure_determination_method_type: Class
+  - rdfs:comment:
+    - structure_determination_method_comment: string
+  - rdfs:label:
+    - structure_determination_method_label: string
+- ProteinExistence:
+  - rdfs:isDefinedBy:
+    - protein_existence_is_defined_by: Ontology
+  - rdf:type:
+    - protein_existence_type: Class
+  - rdfs:comment:
+    - protein_existence_comment: string
+  - rdfs:label:
+    - protein_existence_label: string
+- DatatypeProperty:
+  - rdfs:range:
+    - datatype_property_range: Datatype
+  - rdfs:isDefinedBy:
+    - datatype_property_is_defined_by: Ontology
+  - rdfs:subPropertyOf:
+    - datatype_property_sub_property_of: DatatypeProperty
+  - rdfs:domain:
+    - datatype_property_domain: Class
+  - rdfs:comment:
+    - datatype_property_comment: string
+  - owl:deprecated:
+    - datatype_property_deprecated: true
+  - rdfs:label:
+    - datatype_property_label: string
+- ObjectProperty:
+  - rdfs:range:
+    - object_property_range: Class
+  - rdfs:isDefinedBy:
+    - object_property_is_defined_by: Ontology
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of:
+      - DatatypeProperty
+      - ObjectProperty
+  - owl:inverseOf:
+    - object_property_inverse_of: ObjectProperty
+  - rdfs:domain:
+    - object_property_domain: Class
+  - rdfs:comment:
+    - object_property_comment:
+      - string
+      - anyURI
+  - owl:deprecated:
+    - object_property_deprecated: true
+  - rdfs:label:
+    - object_property_label: string
+- FunctionalProperty:
+  - rdfs:range:
+    - functional_property_range:
+      - Class
+      - Datatype
+  - rdfs:isDefinedBy:
+    - functional_property_is_defined_by: Ontology
+  - rdfs:subPropertyOf:
+    - functional_property_sub_property_of: DatatypeProperty
+  - rdfs:domain:
+    - functional_property_domain: Class
+  - rdfs:comment:
+    - functional_property_comment: string
+  - rdfs:label:
+    - functional_property_label: string
+- Class:
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Restriction
+      - Class
+  - rdfs:isDefinedBy:
+    - class_is_defined_by: Ontology
+  - owl:equivalentClass:
+    - class_equivalent_class:
+      - Class
+      - Restriction
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+  - rdfs:seeAlso:
+    - class_see_also: Class
+  - rdf:type:
+    - class_type: Class
+  - rdfs:comment:
+    - class_comment:
+      - string
+      - string
+  - owl:deprecated:
+    - class_deprecated: true
+  - rdfs:label:
+    - class_label: string
+- Datatype:
+  - owl:oneOf:
+    - datatype_one_of: List
+- InverseFunctionalProperty:
+  - rdfs:range:
+    - inverse_functional_property_range: Class
+  - rdfs:isDefinedBy:
+    - inverse_functional_property_is_defined_by: Ontology
+  - rdfs:domain:
+    - inverse_functional_property_domain: Class
+  - rdfs:label:
+    - inverse_functional_property_label: string
+- Rank:
+  - rdfs:isDefinedBy:
+    - rank_is_defined_by: Ontology
+  - rdf:type:
+    - rank_type: Class
+  - rdfs:comment:
+    - rank_comment: string
+  - rdfs:label:
+    - rank_label: string
+- NamedIndividual:
+  - rdfs:isDefinedBy:
+    - named_individual_is_defined_by: Ontology
+  - rdf:type:
+    - named_individual_type: Class
+  - rdfs:comment:
+    - named_individual_comment: string
+  - rdfs:label:
+    - named_individual_label: string

@@ -1,0 +1,119 @@
+- Restriction:
+  - owl:someValuesFrom:
+    - restriction_some_values_from: Class
+  - owl:allValuesFrom:
+    - restriction_all_values_from: Class
+  - owl:onProperty:
+    - restriction_on_property:
+      - ObjectProperty
+      - FunctionalProperty
+      - TransitiveProperty
+- ObjectProperty:
+  - owl:inverseOf:
+    - object_property_inverse_of:
+      - TransitiveProperty
+      - ObjectProperty
+  - rdfs:range:
+    - object_property_range: Class
+  - rdfs:domain:
+    - object_property_domain: Class
+  - rdfs:label:
+    - object_property_label:
+      - string
+      - string
+  - rdfs:comment:
+    - object_property_comment: string
+- DatatypeProperty:
+  - rdfs:domain:
+    - datatype_property_domain: Class
+  - skos:altLabel:
+    - datatype_property_alt_label: string
+  - rdfs:label:
+    - datatype_property_label: string
+- Class:
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Class
+      - Restriction
+  - owl:equivalentClass:
+    - class_equivalent_class: Class
+  - rdfs:seeAlso:
+    - class_see_also: Class
+  - skos:altLabel:
+    - class_alt_label: string
+  - ns1:DEFINITION:
+    - class_definition: string
+  - ns2:offset:
+    - class_offset: string
+  - ns2:umls_cui:
+    - class_umls_cui: string
+  - ns2:mutated_content:
+    - class_mutated_content: string
+  - ns2:mesh_id:
+    - class_mesh_id: string
+  - ns2:entrezgene_id:
+    - class_entrezgene_id: string
+  - ns2:encoding:
+    - class_encoding: string
+  - skos:definition:
+    - class_definition: string
+  - ns2:uniprot_id:
+    - class_uniprot_id: string
+  - ns2:count:
+    - class_count: string
+  - ns2:omim_no:
+    - class_omim_no: string
+  - ns2:accession_no:
+    - class_accession_no: string
+  - ns2:chromosomal_locus:
+    - class_chromosomal_locus: string
+  - rdfs:label:
+    - class_label: string
+  - rdfs:comment:
+    - class_comment: string
+  - ns2:ref_seq:
+    - class_ref_seq: string
+  - ns2:original_content:
+    - class_original_content: string
+- FunctionalProperty:
+  - rdfs:range:
+    - functional_property_range: Class
+  - rdfs:domain:
+    - functional_property_domain: Class
+  - rdfs:label:
+    - functional_property_label: string
+- AnnotationProperty:
+  - rdfs:domain:
+    - annotation_property_domain: Class
+  - skos:altLabel:
+    - annotation_property_alt_label: string
+  - rdfs:label:
+    - annotation_property_label: string
+- Ontology:
+  - ns3:creator:
+    - ontology_creator: string
+  - ns3:publisher:
+    - ontology_publisher: string
+  - ns3:title:
+    - ontology_title: string
+  - ns3:format:
+    - ontology_format: string
+  - rdfs:label:
+    - ontology_label: string
+  - ns3:contributor:
+    - ontology_contributor: string
+  - ns3:language:
+    - ontology_language: string
+  - ns3:created:
+    - ontology_created: string
+- TransitiveProperty:
+  - owl:inverseOf:
+    - transitive_property_inverse_of:
+      - TransitiveProperty
+      - ObjectProperty
+  - rdfs:label:
+    - transitive_property_label: string
+  - rdfs:comment:
+    - transitive_property_comment: string

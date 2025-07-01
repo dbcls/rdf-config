@@ -1,0 +1,709 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sbm: <http://sparqlbuilder.org/2015/09/rdf-metadata-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://rdfportal.org/ns/> .
+
+<http://rdfportal.org/ns/1dfdeeeadd1d0dd90cab9851dcc5b9a9>
+    void:classPartition [
+        void:class owl:Class ;
+        void:entities 32918 ;
+        a void:Dataset
+    ] ;
+    void:classes 1 ;
+    void:distinctObjects 442466 ;
+    void:distinctSubjects 32985 ;
+    void:properties 67 ;
+    void:propertyPartition [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#Locus_Group> ;
+        void:triples 32880 ;
+        sbm:classRelation [
+            void:triples 32880 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#Pubmed_IDs> ;
+        void:triples 19855 ;
+        sbm:classRelation [
+            void:triples 19855 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#Date_Symbol_Changed> ;
+        void:triples 5346 ;
+        sbm:classRelation [
+            void:triples 5346 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:subClassOf ;
+        void:triples 32917 ;
+        sbm:classRelation [
+            void:triples 32917 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#Previous_Names> ;
+        void:triples 8137 ;
+        sbm:classRelation [
+            void:triples 8137 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#RefSeq__mapped_data_supplied_by_NCBI_> ;
+        void:triples 26705 ;
+        sbm:classRelation [
+            void:triples 26705 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#RefSeq_IDs> ;
+        void:triples 21053 ;
+        sbm:classRelation [
+            void:triples 21053 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#MEROPS_LINK> ;
+        void:triples 719 ;
+        sbm:classRelation [
+            void:triples 719 ;
+            sbm:objectDatatype rdf:XMLLiteral ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#Orphanet_ID> ;
+        void:triples 2285 ;
+        sbm:classRelation [
+            void:triples 2285 ;
+            sbm:objectDatatype rdf:XMLLiteral ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#COSMIC_LINK> ;
+        void:triples 16679 ;
+        sbm:classRelation [
+            void:triples 16679 ;
+            sbm:objectDatatype rdf:XMLLiteral ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#Enzyme_IDs> ;
+        void:triples 1294 ;
+        sbm:classRelation [
+            void:triples 1294 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#VEGA_IDs> ;
+        void:triples 14967 ;
+        sbm:classRelation [
+            void:triples 14967 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#Intermediate_Filament_DB_LINK> ;
+        void:triples 69 ;
+        sbm:classRelation [
+            void:triples 69 ;
+            sbm:objectDatatype rdf:XMLLiteral ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#Previous_Symbols> ;
+        void:triples 9108 ;
+        sbm:classRelation [
+            void:triples 9108 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#KZNF_Gene_Catalog_ID> ;
+        void:triples 593 ;
+        sbm:classRelation [
+            void:triples 593 ;
+            sbm:objectDatatype rdf:XMLLiteral ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#IMGT_GENE-DB_LINK> ;
+        void:triples 660 ;
+        sbm:classRelation [
+            void:triples 660 ;
+            sbm:objectDatatype rdf:XMLLiteral ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#CD_ID> ;
+        void:triples 372 ;
+        sbm:classRelation [
+            void:triples 372 ;
+            sbm:objectDatatype rdf:XMLLiteral ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#Date_Modified> ;
+        void:triples 32766 ;
+        sbm:classRelation [
+            void:triples 32766 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#miRNA_miRBase_ID> ;
+        void:triples 956 ;
+        sbm:classRelation [
+            void:triples 956 ;
+            sbm:objectDatatype rdf:XMLLiteral ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#miRNA_miRBase_LINK> ;
+        void:triples 942 ;
+        sbm:classRelation [
+            void:triples 942 ;
+            sbm:objectDatatype rdf:XMLLiteral ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#Name_Aliases> ;
+        void:triples 6746 ;
+        sbm:classRelation [
+            void:triples 6746 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#Date_Name_Changed> ;
+        void:triples 8481 ;
+        sbm:classRelation [
+            void:triples 8481 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#Chromosome> ;
+        void:triples 29437 ;
+        sbm:classRelation [
+            void:triples 29437 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#Date_Approved> ;
+        void:triples 28765 ;
+        sbm:classRelation [
+            void:triples 28765 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#COSMIC_ID> ;
+        void:triples 16679 ;
+        sbm:classRelation [
+            void:triples 16679 ;
+            sbm:objectDatatype rdf:XMLLiteral ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#Approved_Name> ;
+        void:triples 32880 ;
+        sbm:classRelation [
+            void:triples 32880 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#UCSC_ID__mapped_data_supplied_by_UCSC_> ;
+        void:triples 19192 ;
+        sbm:classRelation [
+            void:triples 19192 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#Mouse_Genome_Database_ID> ;
+        void:triples 10819 ;
+        sbm:classRelation [
+            void:triples 10819 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#Mouse_Genome_Database_ID__mapped_data_supplied_by_MGI_> ;
+        void:triples 17477 ;
+        sbm:classRelation [
+            void:triples 17477 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#CCDS_IDs> ;
+        void:triples 18062 ;
+        sbm:classRelation [
+            void:triples 18062 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#Approved_Symbol> ;
+        void:triples 32880 ;
+        sbm:classRelation [
+            void:triples 32880 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#Secondary_IDs> ;
+        void:triples 24 ;
+        sbm:classRelation [
+            void:triples 24 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#Entrez_Gene_ID__mapped_data_supplied_by_NCBI_> ;
+        void:triples 29174 ;
+        sbm:classRelation [
+            void:triples 29174 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#Entrez_Gene_ID> ;
+        void:triples 25834 ;
+        sbm:classRelation [
+            void:triples 25834 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#Aliases> ;
+        void:triples 35424 ;
+        sbm:classRelation [
+            void:triples 35424 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#Horde_LINK> ;
+        void:triples 856 ;
+        sbm:classRelation [
+            void:triples 856 ;
+            sbm:objectDatatype rdf:XMLLiteral ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#piRNABank_ID> ;
+        void:triples 114 ;
+        sbm:classRelation [
+            void:triples 114 ;
+            sbm:objectDatatype rdf:XMLLiteral ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#Status> ;
+        void:triples 32880 ;
+        sbm:classRelation [
+            void:triples 32880 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#Ensembl_ID__mapped_data_supplied_by_Ensembl_> ;
+        void:triples 22174 ;
+        sbm:classRelation [
+            void:triples 22174 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#MEROPS_ID> ;
+        void:triples 721 ;
+        sbm:classRelation [
+            void:triples 721 ;
+            sbm:objectDatatype rdf:XMLLiteral ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#snoRNABase_ID> ;
+        void:triples 401 ;
+        sbm:classRelation [
+            void:triples 401 ;
+            sbm:objectDatatype rdf:XMLLiteral ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#Horde_ID> ;
+        void:triples 1001 ;
+        sbm:classRelation [
+            void:triples 1001 ;
+            sbm:objectDatatype rdf:XMLLiteral ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#HGNC_ID> ;
+        void:triples 32880 ;
+        sbm:classRelation [
+            void:triples 32880 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#Locus_Specific_Databases> ;
+        void:triples 32880 ;
+        sbm:classRelation [
+            void:triples 32880 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#IUPHAR_LINK> ;
+        void:triples 558 ;
+        sbm:classRelation [
+            void:triples 558 ;
+            sbm:objectDatatype rdf:XMLLiteral ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#Locus_Type> ;
+        void:triples 32880 ;
+        sbm:classRelation [
+            void:triples 32880 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#Rat_Genome_Database_ID__mapped_data_supplied_by_RGD_> ;
+        void:triples 14993 ;
+        sbm:classRelation [
+            void:triples 14993 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#CD_LINK> ;
+        void:triples 371 ;
+        sbm:classRelation [
+            void:triples 371 ;
+            sbm:objectDatatype rdf:XMLLiteral ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#IMGT_GENE-DB_ID> ;
+        void:triples 661 ;
+        sbm:classRelation [
+            void:triples 661 ;
+            sbm:objectDatatype rdf:XMLLiteral ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#IUPHAR_ID> ;
+        void:triples 558 ;
+        sbm:classRelation [
+            void:triples 558 ;
+            sbm:objectDatatype rdf:XMLLiteral ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#Orphanet_LINK> ;
+        void:triples 2279 ;
+        sbm:classRelation [
+            void:triples 2279 ;
+            sbm:objectDatatype rdf:XMLLiteral ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#Rfam_ID> ;
+        void:triples 31 ;
+        sbm:classRelation [
+            void:triples 31 ;
+            sbm:objectDatatype rdf:XMLLiteral ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#GDB_ID__mapped_data_> ;
+        void:triples 13328 ;
+        sbm:classRelation [
+            void:triples 13328 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#Record_Type> ;
+        void:triples 32880 ;
+        sbm:classRelation [
+            void:triples 32880 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#Ensembl_Gene_ID> ;
+        void:triples 4152 ;
+        sbm:classRelation [
+            void:triples 4152 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#Pseudogene_ID> ;
+        void:triples 1190 ;
+        sbm:classRelation [
+            void:triples 1190 ;
+            sbm:objectDatatype rdf:XMLLiteral ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#snoRNABase_LINK> ;
+        void:triples 400 ;
+        sbm:classRelation [
+            void:triples 400 ;
+            sbm:objectDatatype rdf:XMLLiteral ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#Pseudogene_LINK> ;
+        void:triples 1189 ;
+        sbm:classRelation [
+            void:triples 1189 ;
+            sbm:objectDatatype rdf:XMLLiteral ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#piRNABank_LINK> ;
+        void:triples 114 ;
+        sbm:classRelation [
+            void:triples 114 ;
+            sbm:objectDatatype rdf:XMLLiteral ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#OMIM_ID__mapped_data_supplied_by_NCBI_> ;
+        void:triples 13789 ;
+        sbm:classRelation [
+            void:triples 13789 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#Intermediate_Filament_DB_ID> ;
+        void:triples 69 ;
+        sbm:classRelation [
+            void:triples 69 ;
+            sbm:objectDatatype rdf:XMLLiteral ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#Gene_Family_Tag> ;
+        void:triples 10240 ;
+        sbm:classRelation [
+            void:triples 10240 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#Rfam_LINK> ;
+        void:triples 28 ;
+        sbm:classRelation [
+            void:triples 28 ;
+            sbm:objectDatatype rdf:XMLLiteral ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#Accession_Numbers> ;
+        void:triples 18996 ;
+        sbm:classRelation [
+            void:triples 18996 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#UniProt_ID__mapped_data_supplied_by_UniProt_> ;
+        void:triples 19539 ;
+        sbm:classRelation [
+            void:triples 19539 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#Primary_IDs> ;
+        void:triples 31 ;
+        sbm:classRelation [
+            void:triples 31 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ncicb.nci.nih.gov/xml/owl/EVS/Hugo.owl#KZNF_Gene_Catalog_LINK> ;
+        void:triples 593 ;
+        sbm:classRelation [
+            void:triples 593 ;
+            sbm:objectDatatype rdf:XMLLiteral ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ] ;
+    void:sparqlEndpoint <https://rdfportal.org/bioportal/sparql> ;
+    void:triples 865938 ;
+    a void:Dataset, sd:Graph .

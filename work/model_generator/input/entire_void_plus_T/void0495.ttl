@@ -1,0 +1,383 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sbm: <http://sparqlbuilder.org/2015/09/rdf-metadata-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://rdfportal.org/ns/> .
+
+<http://rdfportal.org/ns/98514445745a96c84e7c0bda87bb3fce>
+    void:classPartition [
+        void:class owl:NamedIndividual ;
+        void:entities 486 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.loc.gov/mads/rdf/v1#Authority> ;
+        void:entities 485 ;
+        a void:Dataset
+    ], [
+        void:class skos:ConceptScheme ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://id.loc.gov/ontologies/RecordInfo#RecordInfo> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class skos:Concept ;
+        void:entities 485 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.org/vocab/changeset/schema#ChangeSet> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.loc.gov/mads/rdf/v1#MADSScheme> ;
+        void:entities 1 ;
+        a void:Dataset
+    ] ;
+    void:classes 7 ;
+    void:distinctObjects 1466 ;
+    void:distinctSubjects 508 ;
+    void:properties 14 ;
+    void:propertyPartition [
+        void:property <http://www.loc.gov/mads/rdf/v1#adminMetadata> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass <http://id.loc.gov/ontologies/RecordInfo#RecordInfo> ;
+            sbm:subjectClass <http://www.loc.gov/mads/rdf/v1#MADSScheme> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://id.loc.gov/ontologies/RecordInfo#RecordInfo> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://id.loc.gov/ontologies/RecordInfo#RecordInfo> ;
+            sbm:subjectClass skos:ConceptScheme ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:label ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass skos:ConceptScheme ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.loc.gov/mads/rdf/v1#MADSScheme> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.loc.gov/ontologies/RecordInfo#recordChangeDate> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:dateTime ;
+            sbm:subjectClass <http://id.loc.gov/ontologies/RecordInfo#RecordInfo> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdf:type ;
+        void:triples 1480 ;
+        sbm:classRelation [
+            void:triples 970 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass skos:Concept ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://purl.org/vocab/changeset/schema#ChangeSet> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://id.loc.gov/ontologies/RecordInfo#RecordInfo> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 972 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 970 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.loc.gov/mads/rdf/v1#Authority> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass skos:ConceptScheme ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.loc.gov/mads/rdf/v1#MADSScheme> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://id.loc.gov/ontologies/RecordInfo#recordStatus> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://id.loc.gov/ontologies/RecordInfo#RecordInfo> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.loc.gov/mads/rdf/v1#hasTopMemberOfMADSScheme> ;
+        void:triples 485 ;
+        sbm:classRelation [
+            void:triples 485 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.loc.gov/mads/rdf/v1#MADSScheme> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 485 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass skos:ConceptScheme ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 485 ;
+            sbm:objectClass skos:Concept ;
+            sbm:subjectClass <http://www.loc.gov/mads/rdf/v1#MADSScheme> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 485 ;
+            sbm:objectClass <http://www.loc.gov/mads/rdf/v1#Authority> ;
+            sbm:subjectClass skos:ConceptScheme ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 485 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 485 ;
+            sbm:objectClass skos:Concept ;
+            sbm:subjectClass skos:ConceptScheme ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 485 ;
+            sbm:objectClass <http://www.loc.gov/mads/rdf/v1#Authority> ;
+            sbm:subjectClass <http://www.loc.gov/mads/rdf/v1#MADSScheme> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 485 ;
+            sbm:objectClass skos:Concept ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 485 ;
+            sbm:objectClass <http://www.loc.gov/mads/rdf/v1#Authority> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.loc.gov/mads/rdf/v1#authoritativeLabel> ;
+        void:triples 962 ;
+        sbm:classRelation [
+            void:triples 962 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass skos:Concept ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 962 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 962 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.loc.gov/mads/rdf/v1#Authority> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.org/vocab/changeset/schema#createdDate> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:dateTime ;
+            sbm:subjectClass <http://purl.org/vocab/changeset/schema#ChangeSet> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.org/vocab/changeset/schema#subjectOfChange> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass <http://www.loc.gov/mads/rdf/v1#MADSScheme> ;
+            sbm:subjectClass <http://purl.org/vocab/changeset/schema#ChangeSet> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://purl.org/vocab/changeset/schema#ChangeSet> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass skos:ConceptScheme ;
+            sbm:subjectClass <http://purl.org/vocab/changeset/schema#ChangeSet> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:comment ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.loc.gov/mads/rdf/v1#MADSScheme> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass skos:ConceptScheme ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.org/vocab/changeset/schema#changeReason> ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.org/vocab/changeset/schema#ChangeSet> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property skos:hasTopConcept ;
+        void:triples 485 ;
+        sbm:classRelation [
+            void:triples 485 ;
+            sbm:objectClass skos:Concept ;
+            sbm:subjectClass skos:ConceptScheme ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 485 ;
+            sbm:objectClass skos:Concept ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 485 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass <http://www.loc.gov/mads/rdf/v1#MADSScheme> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 485 ;
+            sbm:objectClass skos:Concept ;
+            sbm:subjectClass <http://www.loc.gov/mads/rdf/v1#MADSScheme> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 485 ;
+            sbm:objectClass <http://www.loc.gov/mads/rdf/v1#Authority> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 485 ;
+            sbm:objectClass <http://www.loc.gov/mads/rdf/v1#Authority> ;
+            sbm:subjectClass <http://www.loc.gov/mads/rdf/v1#MADSScheme> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 485 ;
+            sbm:objectClass <http://www.loc.gov/mads/rdf/v1#Authority> ;
+            sbm:subjectClass skos:ConceptScheme ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 485 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 485 ;
+            sbm:objectClass owl:NamedIndividual ;
+            sbm:subjectClass skos:ConceptScheme ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property skos:changeNote ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass <http://purl.org/vocab/changeset/schema#ChangeSet> ;
+            sbm:subjectClass skos:ConceptScheme ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://purl.org/vocab/changeset/schema#ChangeSet> ;
+            sbm:subjectClass <http://www.loc.gov/mads/rdf/v1#MADSScheme> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://purl.org/vocab/changeset/schema#ChangeSet> ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property skos:prefLabel ;
+        void:triples 962 ;
+        sbm:classRelation [
+            void:triples 962 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass skos:Concept ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 962 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.loc.gov/mads/rdf/v1#Authority> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 962 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:NamedIndividual ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ] ;
+    void:sparqlEndpoint <https://rdfportal.org/bioportal/sparql> ;
+    void:triples 4391 ;
+    a void:Dataset, sd:Graph .

@@ -1,0 +1,2029 @@
+- ChenodeoxycholicAcid:
+  - rdf:type:
+    - chenodeoxycholic_acid_type: Class
+  - ns1:hasOccurrenceIn:
+    - chenodeoxycholic_acid_has_occurrence_in: 12345
+- PatellarTendon:
+  - rdf:type:
+    - patellar_tendon_type: Class
+- Study:
+  - ns1:hasPatient:
+    - study_has_patient:
+      - NamedIndividual
+      - Patient
+  - rdf:type:
+    - study_type: Class
+  - ns1:hasReference:
+    - study_has_reference: string
+- AgeatDeath:
+  - rdf:type:
+    - ageat_death_type: Class
+  - ns1:age:
+    - ageat_death_age: 12345
+- CerebellarMalformation:
+  - ns1:hasObservableTrait:
+    - cerebellar_malformation_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:hasPresence:
+    - cerebellar_malformation_has_presence:
+      - 'No'
+      - NamedIndividual
+  - rdf:type:
+    - cerebellar_malformation_type: Class
+- AchillesTendinitis:
+  - ns1:hasObservableTrait:
+    - achilles_tendinitis_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:hasPresence:
+    - achilles_tendinitis_has_presence:
+      - NamedIndividual
+      - 'Yes'
+  - rdf:type:
+    - achilles_tendinitis_type: Class
+- ShortStature:
+  - ns1:hasObservableTrait:
+    - short_stature_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:hasPresence:
+    - short_stature_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - short_stature_type: Class
+- Hallucinations:
+  - ns1:hasPresence:
+    - hallucinations_has_presence:
+      - NamedIndividual
+      - 'Yes'
+  - rdf:type:
+    - hallucinations_type: Class
+- Hypothyroidism:
+  - ns1:hasObservableTrait:
+    - hypothyroidism_has_observable_trait:
+      - ClinicalManifestation
+      - NamedIndividual
+  - ns1:hasPresence:
+    - hypothyroidism_has_presence:
+      - NamedIndividual
+      - 'Yes'
+  - rdf:type:
+    - hypothyroidism_type: Class
+- AbnormalAxialSkeletonMorphology:
+  - ns1:hasObservableTrait:
+    - abnormal_axial_skeleton_morphology_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:hasPresence:
+    - abnormal_axial_skeleton_morphology_has_presence:
+      - NamedIndividual
+      - 'No'
+  - rdf:type:
+    - abnormal_axial_skeleton_morphology_type: Class
+- AbnormalityoftheVertebralColumn:
+  - ns1:hasObservableTrait:
+    - abnormalityofthe_vertebral_column_has_observable_trait:
+      - ClinicalManifestation
+      - NamedIndividual
+  - ns1:hasPresence:
+    - abnormalityofthe_vertebral_column_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - abnormalityofthe_vertebral_column_type: Class
+- AnginaPectoris:
+  - ns1:hasPresence:
+    - angina_pectoris_has_presence:
+      - NamedIndividual
+      - 'Yes'
+  - rdf:type:
+    - angina_pectoris_type: Class
+- VitaminEPreparation:
+  - rdf:type:
+    - vitamin_e_preparation_type: Class
+- Epilepsy:
+  - ns1:hasObservableTrait:
+    - epilepsy_has_observable_trait:
+      - ClinicalManifestation
+      - NamedIndividual
+  - ns1:hasPresence:
+    - epilepsy_has_presence:
+      - 'No'
+      - NamedIndividual
+      - 'Yes'
+  - rdf:type:
+    - epilepsy_type: Class
+- Female:
+  - rdf:type:
+    - female_type: Class
+- ClinicalManifestation:
+  - ns1:occursBefore:
+    - clinical_manifestation_occurs_before:
+      - NamedIndividual
+      - CerebrotendinousXanthomatosis
+      - Stable
+      - Worsening
+      - ClinicalManifestation
+  - ns1:assessedby:
+    - clinical_manifestation_assessedby:
+      - MRIofBrain
+      - NamedIndividual
+  - ns1:occursAfter:
+    - clinical_manifestation_occurs_after:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:isClinicalManifestationOf:
+    - clinical_manifestation_is_clinical_manifestation_of:
+      - Patient
+      - NamedIndividual
+  - rdf:type:
+    - clinical_manifestation_type: Class
+  - ns1:diagnosedby:
+    - clinical_manifestation_diagnosedby:
+      - MRIofSpine
+      - NamedIndividual
+      - CTofSkull
+      - MRIofBrain
+  - ns1:occursSameTime:
+    - clinical_manifestation_occurs_same_time:
+      - ClinicalManifestation
+      - NamedIndividual
+  - ns1:hasFeature:
+    - clinical_manifestation_has_feature:
+      - NamedIndividual
+      - CholestanolLevel
+      - FindingSite
+  - ns1:isObservableTraitof:
+    - clinical_manifestation_is_observable_traitof:
+      - EDSSGrade8.0
+      - Hypothyroidism
+      - MotorRetardation
+      - ChiariTypeI
+      - AbnormalityoftheVertebralColumn
+      - AutoinmuneThyroiditis
+      - ElevatedPlasmaCholestanol
+      - MixedDemyelinatingandAxonalPolyneuropathy
+      - ImpairedVibrationSensationintheLowerLimbs
+      - Diarrhea
+      - Dysdiadochokinesis
+      - Alopecia
+      - PeripheralNeuropathy
+      - EDSSGrade8.5
+      - PeripheralAxonalNeuropathy
+      - CognitiveImpairment
+      - EDSSGrade4.5
+      - BabinskiSign
+      - Leukoaraiosis
+      - AbnormalAxialSkeletonMorphology
+      - Clubfoot
+      - DistalLowerLimbMuscleWeakness
+      - HerniatedDisk
+      - PsychomotorRetardation
+      - TendonXanthomatosis
+      - MyopathicFacies
+      - AbnormalityoftheDentateNucleus
+      - JointDislocationsinYoungAdult
+      - Arachnodactyly
+      - NeurologicalSpeechImpairment
+      - CariousTeeth
+      - AbnormalityoftheFace
+      - HeadTitubation
+      - BehaviouralorPsychiatricAbnormality
+      - InabilitytoWalk
+      - StillUnassistedWalking
+      - LactoseIntolerance
+      - ElevatedPlasmaCholestanol-5to10TimesNormal
+      - CoarseFacies
+      - Dysmetria
+      - AbnormalPeripheralMyelination
+      - GaitDisturbance
+      - Paraparesis
+      - EDSSGrade0.0
+      - ElevatedPlasmaCholestanol-2to4TimesNormal
+      - MentalRetardation
+      - Kyphosis
+      - EDSSGrade6.0
+      - HighArchedPalate
+      - RheumatoidArthritis
+      - CleftUpperLip
+      - EDSSGrade7.0
+      - IntestinalMalrotation
+      - Kyphoscoliosis
+      - MarfansSyndrome
+      - AchillesTendinitis
+      - PyramidalSigns
+      - Scoliosis
+      - DemyelinatingPeripheralNeuropathy
+      - ElevatedPlasmaCholestanol-morethan10TimesNormal
+      - VisualLoss
+      - Epilepsy
+      - Cataract
+      - NamedIndividual
+      - Dysarthria
+      - ChronicDiarrhea
+      - AbnormalityoftheCerebrum
+      - MuscleAtrophy
+      - ShortStature
+      - AbnormalFacialShape
+      - Ataxia
+      - EDSSGrade3.5
+      - EDSSGrade9.0
+      - Xanthomatosis
+      - CerebralAtrophy
+      - ClubbingofFingersandToes
+      - Parkinsonism
+      - EDSSGrade4.0
+      - MisalignmentofTeeth
+      - Nephrolithiasis
+      - ThyroidNodule
+      - DryCough
+      - CerebellarMalformation
+      - Dementia
+      - Cholelithiasis
+      - Dysphagia
+      - CeliacDisease
+  - ns1:hasOccurrenceIn:
+    - clinical_manifestation_has_occurrence_in: 12345
+- NamedIndividual:
+  - ns1:hasObservableTrait:
+    - named_individual_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:hasGeneMutation:
+    - named_individual_has_gene_mutation:
+      - NamedIndividual
+      - GeneticMutation
+  - ns1:occursBefore:
+    - named_individual_occurs_before:
+      - Stable
+      - Worsening
+      - CerebrotendinousXanthomatosis
+      - ClinicalManifestation
+      - NamedIndividual
+  - ns1:assessedby:
+    - named_individual_assessedby:
+      - FindingofMedicalResearchCouncilGradeofMusclePower
+      - NamedIndividual
+      - MRIofBrain
+  - ns1:occursAfter:
+    - named_individual_occurs_after:
+      - NamedIndividual
+      - ClinicalManifestation
+      - CerebrotendinousXanthomatosis
+  - ns1:hasPresence:
+    - named_individual_has_presence:
+      - 'No'
+      - 'Yes'
+      - NamedIndividual
+  - ns1:hasDiagnosticStudies:
+    - named_individual_has_diagnostic_studies:
+      - T2weightedMRIofBrain
+      - CTofSkull
+      - MRIofSpine
+      - SomatosensoryEvokedPotentials
+      - VisualEvokedPotentials
+      - MotorNerveConductionStudies
+      - MRIofBrain
+      - NamedIndividual
+      - Electroencephalography
+  - ns1:hasGender:
+    - named_individual_has_gender:
+      - Male
+      - Female
+      - NamedIndividual
+  - ns1:hasConsanguinity:
+    - named_individual_has_consanguinity:
+      - NamedIndividual
+      - Consanguinity
+  - ns1:hasSite:
+    - named_individual_has_site:
+      - DorsalMuscleofFoot
+      - PatellarTendon
+      - Digit
+      - NamedIndividual
+      - ElbowRegion
+      - KneeRegion
+      - AchillesTendon
+  - ns1:hasDrug:
+    - named_individual_has_drug:
+      - ChenodeoxycholicAcid
+      - Atorvastatin
+      - Aspirin
+      - NamedIndividual
+  - ns1:hasPatient:
+    - named_individual_has_patient:
+      - NamedIndividual
+      - Patient
+  - ns1:hasDiagnosis:
+    - named_individual_has_diagnosis:
+      - NamedIndividual
+      - CerebrotendinousXanthomatosis
+  - ns1:isClinicalManifestationOf:
+    - named_individual_is_clinical_manifestation_of:
+      - Patient
+      - NamedIndividual
+  - rdf:type:
+    - named_individual_type: Class
+  - ns1:hasEvolution:
+    - named_individual_has_evolution:
+      - Dead
+      - Stable
+      - NamedIndividual
+      - Worsening
+  - ns1:diagnosedby:
+    - named_individual_diagnosedby:
+      - MRIofSpine
+      - MRIofBrain
+      - CTofSkull
+      - NamedIndividual
+  - ns1:hasClinicalManifestation:
+    - named_individual_has_clinical_manifestation:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:hasMRCGrade:
+    - named_individual_has_mrc_grade:
+      - NamedIndividual
+      - MedicalResearchCouncilGradeMusclePower
+  - ns1:isPatientIn:
+    - named_individual_is_patient_in:
+      - Study
+      - NamedIndividual
+  - ns1:occursSameTime:
+    - named_individual_occurs_same_time:
+      - ClinicalManifestation
+      - NamedIndividual
+  - ns1:isGeneMutationOf:
+    - named_individual_is_gene_mutation_of:
+      - NamedIndividual
+      - Patient
+  - ns1:hasFeature:
+    - named_individual_has_feature:
+      - FindingSite
+      - NamedIndividual
+      - CholestanolLevel
+  - ns1:isObservableTraitof:
+    - named_individual_is_observable_traitof:
+      - CariousTeeth
+      - ThyroidNodule
+      - ElevatedPlasmaCholestanol-5to10TimesNormal
+      - EDSSGrade6.0
+      - MixedDemyelinatingandAxonalPolyneuropathy
+      - Alopecia
+      - TendonXanthomatosis
+      - Paraparesis
+      - MisalignmentofTeeth
+      - HerniatedDisk
+      - MuscleAtrophy
+      - ShortStature
+      - RheumatoidArthritis
+      - Cholelithiasis
+      - EDSSGrade7.0
+      - IntestinalMalrotation
+      - VisualLoss
+      - AbnormalityoftheDentateNucleus
+      - ChronicDiarrhea
+      - AutoinmuneThyroiditis
+      - PyramidalSigns
+      - CleftUpperLip
+      - ClubbingofFingersandToes
+      - Leukoaraiosis
+      - Nephrolithiasis
+      - EDSSGrade4.0
+      - Clubfoot
+      - MotorRetardation
+      - Ataxia
+      - Xanthomatosis
+      - EDSSGrade0.0
+      - EDSSGrade8.5
+      - BehaviouralorPsychiatricAbnormality
+      - BabinskiSign
+      - Scoliosis
+      - Parkinsonism
+      - PsychomotorRetardation
+      - CerebellarMalformation
+      - AbnormalFacialShape
+      - Dementia
+      - Hypothyroidism
+      - Kyphosis
+      - Diarrhea
+      - ElevatedPlasmaCholestanol
+      - CognitiveImpairment
+      - AbnormalPeripheralMyelination
+      - PeripheralNeuropathy
+      - MentalRetardation
+      - AbnormalityoftheFace
+      - EDSSGrade8.0
+      - EDSSGrade3.5
+      - DryCough
+      - EDSSGrade9.0
+      - Arachnodactyly
+      - EDSSGrade4.5
+      - HeadTitubation
+      - AbnormalAxialSkeletonMorphology
+      - Dysdiadochokinesis
+      - Dysarthria
+      - ChiariTypeI
+      - CerebralAtrophy
+      - CoarseFacies
+      - AchillesTendinitis
+      - StillUnassistedWalking
+      - AbnormalityoftheVertebralColumn
+      - DemyelinatingPeripheralNeuropathy
+      - ElevatedPlasmaCholestanol-morethan10TimesNormal
+      - Kyphoscoliosis
+      - GaitDisturbance
+      - Cataract
+      - NamedIndividual
+      - Epilepsy
+      - Dysphagia
+      - InabilitytoWalk
+      - CeliacDisease
+      - ImpairedVibrationSensationintheLowerLimbs
+      - NeurologicalSpeechImpairment
+      - LactoseIntolerance
+      - ElevatedPlasmaCholestanol-2to4TimesNormal
+      - MarfansSyndrome
+      - JointDislocationsinYoungAdult
+      - DistalLowerLimbMuscleWeakness
+      - MyopathicFacies
+      - PeripheralAxonalNeuropathy
+      - AbnormalityoftheCerebrum
+      - HighArchedPalate
+      - Dysmetria
+  - ns1:hasTreatment:
+    - named_individual_has_treatment:
+      - VitaminEPreparation
+      - Pravastatin
+      - Aspirin
+      - ChenodeoxycholicAcid
+      - HMGCoAReductaseInhibitor
+      - Simvastatin
+      - NamedIndividual
+      - Lovastatin
+      - Atorvastatin
+  - ns1:hasReference:
+    - named_individual_has_reference: string
+  - ns1:mutation:
+    - named_individual_mutation: string
+  - ns1:age:
+    - named_individual_age: 12345
+  - ns1:hasUnit:
+    - named_individual_has_unit: string
+  - ns1:hasValue:
+    - named_individual_has_value: 123.45
+  - ns1:duration:
+    - named_individual_duration: 12345
+  - rdfs:comment:
+    - named_individual_comment: string
+  - ns1:hasOccurrenceIn:
+    - named_individual_has_occurrence_in: 12345
+  - ns1:hasGrade:
+    - named_individual_has_grade: 123.45
+  - ns1:unit:
+    - named_individual_unit: string
+  - ns1:caseNumber:
+    - named_individual_case_number: string
+- ObjectProperty:
+  - owl:inverseOf:
+    - object_property_inverse_of:
+      - TransitiveProperty
+      - ObjectProperty
+      - SymmetricProperty
+  - rdfs:range:
+    - object_property_range: Class
+  - rdfs:domain:
+    - object_property_domain: Class
+  - rdfs:comment:
+    - object_property_comment: string
+- EDSSGrade3.5:
+  - ns1:hasObservableTrait:
+    - edss_grade3.5_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - rdf:type:
+    - edss_grade3.5_type: Class
+  - ns1:hasGrade:
+    - edss_grade3.5_has_grade: 123.45
+- Depression:
+  - ns1:hasPresence:
+    - depression_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - depression_type: Class
+- Clubfoot:
+  - ns1:hasObservableTrait:
+    - clubfoot_has_observable_trait:
+      - ClinicalManifestation
+      - NamedIndividual
+  - ns1:hasPresence:
+    - clubfoot_has_presence:
+      - 'Yes'
+      - 'No'
+      - NamedIndividual
+  - rdf:type:
+    - clubfoot_type: Class
+- IndividualPropertyAtom:
+  - ns2:argument2:
+    - individual_property_atom_argument2:
+      - Variable
+      - NamedIndividual
+      - Study
+  - ns2:propertyPredicate:
+    - individual_property_atom_property_predicate: ObjectProperty
+  - ns2:argument1:
+    - individual_property_atom_argument1: Variable
+- BuiltinAtom:
+  - ns2:arguments:
+    - builtin_atom_arguments: List
+- ClassAtom:
+  - ns2:classPredicate:
+    - class_atom_class_predicate: Class
+  - ns2:argument1:
+    - class_atom_argument1: Variable
+- AbnormalPeripheralMyelination:
+  - ns1:hasObservableTrait:
+    - abnormal_peripheral_myelination_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:hasPresence:
+    - abnormal_peripheral_myelination_has_presence:
+      - NamedIndividual
+      - 'Yes'
+  - rdf:type:
+    - abnormal_peripheral_myelination_type: Class
+  - ns1:hasOccurrenceIn:
+    - abnormal_peripheral_myelination_has_occurrence_in: 12345
+- Ataxia:
+  - ns1:hasObservableTrait:
+    - ataxia_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:hasPresence:
+    - ataxia_has_presence:
+      - 'Yes'
+      - NamedIndividual
+      - 'No'
+  - rdf:type:
+    - ataxia_type: Class
+- Alopecia:
+  - ns1:hasObservableTrait:
+    - alopecia_has_observable_trait:
+      - ClinicalManifestation
+      - NamedIndividual
+  - ns1:hasPresence:
+    - alopecia_has_presence:
+      - NamedIndividual
+      - 'Yes'
+  - rdf:type:
+    - alopecia_type: Class
+- Permanent:
+  - rdf:type:
+    - permanent_type: Class
+- EDSSGrade8.5:
+  - ns1:hasObservableTrait:
+    - edss_grade8.5_has_observable_trait:
+      - ClinicalManifestation
+      - NamedIndividual
+  - rdf:type:
+    - edss_grade8.5_type: Class
+  - ns1:hasGrade:
+    - edss_grade8.5_has_grade: 123.45
+- ElevatedPlasmaCholestanol:
+  - ns1:hasObservableTrait:
+    - elevated_plasma_cholestanol_has_observable_trait:
+      - ClinicalManifestation
+      - NamedIndividual
+  - ns1:hasPresence:
+    - elevated_plasma_cholestanol_has_presence:
+      - 'No'
+      - NamedIndividual
+      - 'Yes'
+  - rdf:type:
+    - elevated_plasma_cholestanol_type: Class
+- ProgressiveNeurologicDeterioration:
+  - ns1:hasPresence:
+    - progressive_neurologic_deterioration_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - progressive_neurologic_deterioration_type: Class
+- MuscleAtrophy:
+  - ns1:hasObservableTrait:
+    - muscle_atrophy_has_observable_trait:
+      - ClinicalManifestation
+      - NamedIndividual
+  - ns1:hasPresence:
+    - muscle_atrophy_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - muscle_atrophy_type: Class
+- Normal:
+  - rdf:type:
+    - normal_type: Class
+- Electroencephalography:
+  - rdf:type:
+    - electroencephalography_type: Class
+- MixedDemyelinatingandAxonalPolyneuropathy:
+  - ns1:hasObservableTrait:
+    - mixed_demyelinatingand_axonal_polyneuropathy_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:hasPresence:
+    - mixed_demyelinatingand_axonal_polyneuropathy_has_presence:
+      - NamedIndividual
+      - 'Yes'
+  - rdf:type:
+    - mixed_demyelinatingand_axonal_polyneuropathy_type: Class
+- IntestinalMalrotation:
+  - ns1:hasObservableTrait:
+    - intestinal_malrotation_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:hasPresence:
+    - intestinal_malrotation_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - intestinal_malrotation_type: Class
+- PseudobulbarParalysis:
+  - ns1:hasPresence:
+    - pseudobulbar_paralysis_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - pseudobulbar_paralysis_type: Class
+- Xanthomatosis:
+  - ns1:hasObservableTrait:
+    - xanthomatosis_has_observable_trait:
+      - ClinicalManifestation
+      - NamedIndividual
+  - ns1:hasPresence:
+    - xanthomatosis_has_presence:
+      - 'Yes'
+      - NamedIndividual
+      - 'No'
+  - rdf:type:
+    - xanthomatosis_type: Class
+- TransitiveProperty:
+  - rdfs:range:
+    - transitive_property_range: Class
+  - rdfs:domain:
+    - transitive_property_domain: Class
+- Lovastatin:
+  - rdf:type:
+    - lovastatin_type: Class
+- AbnormalFacialShape:
+  - ns1:hasObservableTrait:
+    - abnormal_facial_shape_has_observable_trait:
+      - ClinicalManifestation
+      - NamedIndividual
+  - ns1:hasPresence:
+    - abnormal_facial_shape_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - abnormal_facial_shape_type: Class
+- ViralHepatitis:
+  - ns1:hasPresence:
+    - viral_hepatitis_has_presence:
+      - NamedIndividual
+      - 'Yes'
+  - rdf:type:
+    - viral_hepatitis_type: Class
+- CeliacDisease:
+  - ns1:hasObservableTrait:
+    - celiac_disease_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:hasPresence:
+    - celiac_disease_has_presence:
+      - NamedIndividual
+      - 'Yes'
+  - rdf:type:
+    - celiac_disease_type: Class
+- AnnotationProperty:
+  - rdfs:range:
+    - annotation_property_range: Class
+  - rdfs:domain:
+    - annotation_property_domain: Class
+- GaitDisturbance:
+  - ns1:hasObservableTrait:
+    - gait_disturbance_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:hasPresence:
+    - gait_disturbance_has_presence:
+      - NamedIndividual
+      - 'Yes'
+  - rdf:type:
+    - gait_disturbance_type: Class
+  - ns1:hasOccurrenceIn:
+    - gait_disturbance_has_occurrence_in: 12345
+- CerebrotendinousXanthomatosis:
+  - ns1:occursBefore:
+    - cerebrotendinous_xanthomatosis_occurs_before:
+      - Worsening
+      - Stable
+      - NamedIndividual
+  - ns1:occursAfter:
+    - cerebrotendinous_xanthomatosis_occurs_after:
+      - NamedIndividual
+      - ClinicalManifestation
+  - rdf:type:
+    - cerebrotendinous_xanthomatosis_type: Class
+  - ns1:hasOccurrenceIn:
+    - cerebrotendinous_xanthomatosis_has_occurrence_in: 12345
+- Arachnodactyly:
+  - ns1:hasObservableTrait:
+    - arachnodactyly_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:hasPresence:
+    - arachnodactyly_has_presence:
+      - NamedIndividual
+      - 'Yes'
+  - rdf:type:
+    - arachnodactyly_type: Class
+- KneeRegion:
+  - rdf:type:
+    - knee_region_type: Class
+- MRIofBrain:
+  - rdf:type:
+    - mr_iof_brain_type: Class
+- EDSSGrade7.0:
+  - ns1:hasObservableTrait:
+    - edss_grade7.0_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - rdf:type:
+    - edss_grade7.0_type: Class
+  - ns1:hasGrade:
+    - edss_grade7.0_has_grade: 123.45
+- HerniatedDisk:
+  - ns1:hasObservableTrait:
+    - herniated_disk_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:hasPresence:
+    - herniated_disk_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - herniated_disk_type: Class
+- Xanthelasma:
+  - ns1:hasPresence:
+    - xanthelasma_has_presence:
+      - NamedIndividual
+      - 'Yes'
+  - rdf:type:
+    - xanthelasma_type: Class
+- PyramidalSigns:
+  - ns1:hasObservableTrait:
+    - pyramidal_signs_has_observable_trait:
+      - ClinicalManifestation
+      - NamedIndividual
+  - ns1:hasPresence:
+    - pyramidal_signs_has_presence:
+      - NamedIndividual
+      - 'Yes'
+      - 'No'
+  - rdf:type:
+    - pyramidal_signs_type: Class
+- ChiariTypeI:
+  - ns1:hasObservableTrait:
+    - chiari_type_i_has_observable_trait:
+      - ClinicalManifestation
+      - NamedIndividual
+  - ns1:hasPresence:
+    - chiari_type_i_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - chiari_type_i_type: Class
+- Restriction:
+  - owl:someValuesFrom:
+    - restriction_some_values_from: Class
+  - owl:onProperty:
+    - restriction_on_property:
+      - FunctionalProperty
+      - DatatypeProperty
+      - ObjectProperty
+  - owl:allValuesFrom:
+    - restriction_all_values_from: Class
+  - owl:hasValue:
+    - restriction_has_value: string
+  - owl:cardinality:
+    - restriction_cardinality: nonNegativeInteger
+  - owl:minCardinality:
+    - restriction_min_cardinality: nonNegativeInteger
+- ElevatedPlasmaCholestanol-2to4TimesNormal:
+  - ns1:hasObservableTrait:
+    - elevated_plasma_cholestanol-2to4_times_normal_has_observable_trait:
+      - ClinicalManifestation
+      - NamedIndividual
+  - ns1:hasPresence:
+    - elevated_plasma_cholestanol-2to4_times_normal_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - elevated_plasma_cholestanol-2to4_times_normal_type: Class
+- 'Yes':
+  - rdf:type:
+    - yes_type: Class
+- BabinskiSign:
+  - ns1:hasObservableTrait:
+    - babinski_sign_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:hasPresence:
+    - babinski_sign_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - babinski_sign_type: Class
+  - ns1:hasOccurrenceIn:
+    - babinski_sign_has_occurrence_in: 12345
+- AggressiveBehaviour:
+  - ns1:hasPresence:
+    - aggressive_behaviour_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - aggressive_behaviour_type: Class
+- HighArchedPalate:
+  - ns1:hasObservableTrait:
+    - high_arched_palate_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:hasPresence:
+    - high_arched_palate_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - high_arched_palate_type: Class
+- Altered:
+  - rdf:type:
+    - altered_type: Class
+- ClubbingofFingersandToes:
+  - ns1:hasObservableTrait:
+    - clubbingof_fingersand_toes_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:hasPresence:
+    - clubbingof_fingersand_toes_has_presence:
+      - NamedIndividual
+      - 'Yes'
+  - rdf:type:
+    - clubbingof_fingersand_toes_type: Class
+- ThyroidNodule:
+  - ns1:hasObservableTrait:
+    - thyroid_nodule_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:hasPresence:
+    - thyroid_nodule_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - thyroid_nodule_type: Class
+- ElevatedPlasmaCholestanol-morethan10TimesNormal:
+  - ns1:hasObservableTrait:
+    - elevated_plasma_cholestanol-morethan10_times_normal_has_observable_trait:
+      - ClinicalManifestation
+      - NamedIndividual
+  - ns1:hasPresence:
+    - elevated_plasma_cholestanol-morethan10_times_normal_has_presence:
+      - NamedIndividual
+      - 'Yes'
+  - rdf:type:
+    - elevated_plasma_cholestanol-morethan10_times_normal_type: Class
+- Fractures:
+  - ns1:hasPresence:
+    - fractures_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - fractures_type: Class
+- ChronicDiarrhea:
+  - ns1:hasObservableTrait:
+    - chronic_diarrhea_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:hasPresence:
+    - chronic_diarrhea_has_presence:
+      - 'Yes'
+      - NamedIndividual
+      - 'No'
+  - rdf:type:
+    - chronic_diarrhea_type: Class
+- Parkinsonism:
+  - ns1:hasObservableTrait:
+    - parkinsonism_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:hasPresence:
+    - parkinsonism_has_presence:
+      - 'Yes'
+      - NamedIndividual
+      - 'No'
+  - rdf:type:
+    - parkinsonism_type: Class
+- ProgressiveNeurologicDysfunction-Spinalform:
+  - ns1:hasPresence:
+    - progressive_neurologic_dysfunction-spinalform_has_presence:
+      - NamedIndividual
+      - 'Yes'
+  - rdf:type:
+    - progressive_neurologic_dysfunction-spinalform_type: Class
+- High:
+  - rdf:type:
+    - high_type: Class
+- Therapy:
+  - ns1:hasDrug:
+    - therapy_has_drug:
+      - Atorvastatin
+      - NamedIndividual
+      - Aspirin
+      - ChenodeoxycholicAcid
+  - rdf:type:
+    - therapy_type: Class
+  - ns1:hasOccurrenceIn:
+    - therapy_has_occurrence_in: 12345
+- Delusions:
+  - ns1:hasPresence:
+    - delusions_has_presence:
+      - NamedIndividual
+      - 'Yes'
+  - rdf:type:
+    - delusions_type: Class
+- Digit:
+  - rdf:type:
+    - digit_type: Class
+- CoarseFacies:
+  - ns1:hasObservableTrait:
+    - coarse_facies_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:hasPresence:
+    - coarse_facies_has_presence:
+      - NamedIndividual
+      - 'Yes'
+  - rdf:type:
+    - coarse_facies_type: Class
+- JuvenileCataract:
+  - ns1:hasPresence:
+    - juvenile_cataract_has_presence:
+      - 'Yes'
+      - 'No'
+      - NamedIndividual
+  - rdf:type:
+    - juvenile_cataract_type: Class
+- Occasional:
+  - rdf:type:
+    - occasional_type: Class
+- 'No':
+  - rdf:type:
+    - no_type: Class
+- GeneticMutation:
+  - rdf:type:
+    - genetic_mutation_type: Class
+  - ns1:isGeneMutationOf:
+    - genetic_mutation_is_gene_mutation_of:
+      - Patient
+      - NamedIndividual
+  - ns1:mutation:
+    - genetic_mutation_mutation: string
+- ImpairedVibrationSensationintheLowerLimbs:
+  - ns1:hasObservableTrait:
+    - impaired_vibration_sensationinthe_lower_limbs_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:hasPresence:
+    - impaired_vibration_sensationinthe_lower_limbs_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - impaired_vibration_sensationinthe_lower_limbs_type: Class
+  - ns1:hasOccurrenceIn:
+    - impaired_vibration_sensationinthe_lower_limbs_has_occurrence_in: 12345
+- Aspirin:
+  - rdf:type:
+    - aspirin_type: Class
+  - ns1:hasOccurrenceIn:
+    - aspirin_has_occurrence_in: 12345
+- Stable:
+  - ns1:occursAfter:
+    - stable_occurs_after:
+      - NamedIndividual
+      - ClinicalManifestation
+      - CerebrotendinousXanthomatosis
+  - rdf:type:
+    - stable_type: Class
+  - ns1:hasOccurrenceIn:
+    - stable_has_occurrence_in: 12345
+- Consanguinity:
+  - ns1:hasPresence:
+    - consanguinity_has_presence:
+      - 'Yes'
+      - NamedIndividual
+      - 'No'
+  - rdf:type:
+    - consanguinity_type: Class
+- VisualEvokedPotentials:
+  - ns1:hasPresence:
+    - visual_evoked_potentials_has_presence:
+      - NamedIndividual
+      - 'Yes'
+  - rdf:type:
+    - visual_evoked_potentials_type: Class
+- EDSSGrade6.0:
+  - ns1:hasObservableTrait:
+    - edss_grade6.0_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - rdf:type:
+    - edss_grade6.0_type: Class
+  - ns1:hasGrade:
+    - edss_grade6.0_has_grade: 123.45
+- MarfansSyndrome:
+  - ns1:hasObservableTrait:
+    - marfans_syndrome_has_observable_trait:
+      - ClinicalManifestation
+      - NamedIndividual
+  - ns1:hasPresence:
+    - marfans_syndrome_has_presence:
+      - NamedIndividual
+      - 'Yes'
+  - rdf:type:
+    - marfans_syndrome_type: Class
+- EDSSGrade8.0:
+  - ns1:hasObservableTrait:
+    - edss_grade8.0_has_observable_trait:
+      - ClinicalManifestation
+      - NamedIndividual
+  - rdf:type:
+    - edss_grade8.0_type: Class
+  - ns1:hasGrade:
+    - edss_grade8.0_has_grade: 123.45
+- TuberousXanthoma:
+  - ns1:hasPresence:
+    - tuberous_xanthoma_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - tuberous_xanthoma_type: Class
+- Arthritis:
+  - ns1:hasPresence:
+    - arthritis_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - arthritis_type: Class
+- FindingSite:
+  - ns1:hasSite:
+    - finding_site_has_site:
+      - Digit
+      - KneeRegion
+      - AchillesTendon
+      - NamedIndividual
+      - PatellarTendon
+      - DorsalMuscleofFoot
+      - ElbowRegion
+  - rdf:type:
+    - finding_site_type: Class
+- VisualLoss:
+  - ns1:hasObservableTrait:
+    - visual_loss_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:hasPresence:
+    - visual_loss_has_presence:
+      - NamedIndividual
+      - 'Yes'
+  - rdf:type:
+    - visual_loss_type: Class
+  - ns1:hasOccurrenceIn:
+    - visual_loss_has_occurrence_in: 12345
+- SerumCholesterolLow:
+  - ns1:hasPresence:
+    - serum_cholesterol_low_has_presence:
+      - NamedIndividual
+      - 'Yes'
+  - rdf:type:
+    - serum_cholesterol_low_type: Class
+- MyopathicFacies:
+  - ns1:hasObservableTrait:
+    - myopathic_facies_has_observable_trait:
+      - ClinicalManifestation
+      - NamedIndividual
+  - ns1:hasPresence:
+    - myopathic_facies_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - myopathic_facies_type: Class
+- RheumatoidArthritis:
+  - ns1:hasObservableTrait:
+    - rheumatoid_arthritis_has_observable_trait:
+      - ClinicalManifestation
+      - NamedIndividual
+  - ns1:hasPresence:
+    - rheumatoid_arthritis_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - rheumatoid_arthritis_type: Class
+- LactoseIntolerance:
+  - ns1:hasObservableTrait:
+    - lactose_intolerance_has_observable_trait:
+      - ClinicalManifestation
+      - NamedIndividual
+  - ns1:hasPresence:
+    - lactose_intolerance_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - lactose_intolerance_type: Class
+- Scoliosis:
+  - ns1:hasObservableTrait:
+    - scoliosis_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:hasPresence:
+    - scoliosis_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - scoliosis_type: Class
+- SerumCholesterolNormal:
+  - ns1:hasPresence:
+    - serum_cholesterol_normal_has_presence:
+      - NamedIndividual
+      - 'Yes'
+  - rdf:type:
+    - serum_cholesterol_normal_type: Class
+- ElevatedPlasmaCholestanol-5to10TimesNormal:
+  - ns1:hasObservableTrait:
+    - elevated_plasma_cholestanol-5to10_times_normal_has_observable_trait:
+      - ClinicalManifestation
+      - NamedIndividual
+  - ns1:hasPresence:
+    - elevated_plasma_cholestanol-5to10_times_normal_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - elevated_plasma_cholestanol-5to10_times_normal_type: Class
+- Dysarthria:
+  - ns1:hasObservableTrait:
+    - dysarthria_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:hasPresence:
+    - dysarthria_has_presence:
+      - NamedIndividual
+      - 'Yes'
+  - rdf:type:
+    - dysarthria_type: Class
+  - ns1:hasOccurrenceIn:
+    - dysarthria_has_occurrence_in: 12345
+- RightandLeft:
+  - rdf:type:
+    - rightand_left_type: Class
+- AtomList:
+  - rdf:rest:
+    - atom_list_rest: AtomList
+  - rdf:first:
+    - atom_list_first:
+      - BuiltinAtom
+      - IndividualPropertyAtom
+      - ClassAtom
+      - DatavaluedPropertyAtom
+- CleftUpperLip:
+  - ns1:hasObservableTrait:
+    - cleft_upper_lip_has_observable_trait:
+      - ClinicalManifestation
+      - NamedIndividual
+  - ns1:hasPresence:
+    - cleft_upper_lip_has_presence:
+      - NamedIndividual
+      - 'Yes'
+  - rdf:type:
+    - cleft_upper_lip_type: Class
+- EDSSGrade4.0:
+  - ns1:hasObservableTrait:
+    - edss_grade4.0_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - rdf:type:
+    - edss_grade4.0_type: Class
+  - ns1:hasGrade:
+    - edss_grade4.0_has_grade: 123.45
+- Male:
+  - rdf:type:
+    - male_type: Class
+- Osteoporosis:
+  - ns1:hasPresence:
+    - osteoporosis_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - osteoporosis_type: Class
+- BehaviouralorPsychiatricAbnormality:
+  - ns1:hasObservableTrait:
+    - behaviouralor_psychiatric_abnormality_has_observable_trait:
+      - ClinicalManifestation
+      - NamedIndividual
+  - ns1:hasPresence:
+    - behaviouralor_psychiatric_abnormality_has_presence:
+      - NamedIndividual
+      - 'No'
+      - 'Yes'
+  - rdf:type:
+    - behaviouralor_psychiatric_abnormality_type: Class
+  - ns1:hasOccurrenceIn:
+    - behaviouralor_psychiatric_abnormality_has_occurrence_in: 12345
+- Diarrhea:
+  - ns1:hasObservableTrait:
+    - diarrhea_has_observable_trait:
+      - ClinicalManifestation
+      - NamedIndividual
+  - ns1:hasPresence:
+    - diarrhea_has_presence:
+      - 'Yes'
+      - 'No'
+      - NamedIndividual
+  - rdf:type:
+    - diarrhea_type: Class
+  - ns1:hasOccurrenceIn:
+    - diarrhea_has_occurrence_in: 12345
+- Dysmetria:
+  - ns1:hasObservableTrait:
+    - dysmetria_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:hasPresence:
+    - dysmetria_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - dysmetria_type: Class
+  - ns1:hasOccurrenceIn:
+    - dysmetria_has_occurrence_in: 12345
+- Cholelithiasis:
+  - ns1:hasObservableTrait:
+    - cholelithiasis_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:hasPresence:
+    - cholelithiasis_has_presence:
+      - NamedIndividual
+      - 'Yes'
+  - rdf:type:
+    - cholelithiasis_type: Class
+- DistalLowerLimbMuscleWeakness:
+  - ns1:hasObservableTrait:
+    - distal_lower_limb_muscle_weakness_has_observable_trait:
+      - ClinicalManifestation
+      - NamedIndividual
+  - ns1:assessedby:
+    - distal_lower_limb_muscle_weakness_assessedby:
+      - NamedIndividual
+      - FindingofMedicalResearchCouncilGradeofMusclePower
+  - ns1:hasPresence:
+    - distal_lower_limb_muscle_weakness_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - distal_lower_limb_muscle_weakness_type: Class
+  - ns1:hasOccurrenceIn:
+    - distal_lower_limb_muscle_weakness_has_occurrence_in: 12345
+- Dementia:
+  - ns1:hasObservableTrait:
+    - dementia_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:hasPresence:
+    - dementia_has_presence:
+      - NamedIndividual
+      - 'Yes'
+      - 'No'
+  - rdf:type:
+    - dementia_type: Class
+- ElbowRegion:
+  - rdf:type:
+    - elbow_region_type: Class
+- CerebralAtrophy:
+  - ns1:hasObservableTrait:
+    - cerebral_atrophy_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:hasPresence:
+    - cerebral_atrophy_has_presence:
+      - 'Yes'
+      - 'No'
+      - NamedIndividual
+  - rdf:type:
+    - cerebral_atrophy_type: Class
+- HMGCoAReductaseInhibitor:
+  - rdf:type:
+    - hmg_co_a_reductase_inhibitor_type: Class
+- WithinReferenceRange:
+  - rdf:type:
+    - within_reference_range_type: Class
+- Leukoaraiosis:
+  - ns1:hasObservableTrait:
+    - leukoaraiosis_has_observable_trait:
+      - ClinicalManifestation
+      - NamedIndividual
+  - ns1:hasPresence:
+    - leukoaraiosis_has_presence:
+      - NamedIndividual
+      - 'No'
+      - 'Yes'
+  - rdf:type:
+    - leukoaraiosis_type: Class
+- EDSSGrade0.0:
+  - ns1:hasObservableTrait:
+    - edss_grade0.0_has_observable_trait:
+      - ClinicalManifestation
+      - NamedIndividual
+  - rdf:type:
+    - edss_grade0.0_type: Class
+  - ns1:hasGrade:
+    - edss_grade0.0_has_grade: 123.45
+- Kyphoscoliosis:
+  - ns1:hasObservableTrait:
+    - kyphoscoliosis_has_observable_trait:
+      - ClinicalManifestation
+      - NamedIndividual
+  - ns1:hasPresence:
+    - kyphoscoliosis_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - kyphoscoliosis_type: Class
+- TendonXanthomatosis:
+  - ns1:hasObservableTrait:
+    - tendon_xanthomatosis_has_observable_trait:
+      - ClinicalManifestation
+      - NamedIndividual
+  - ns1:hasPresence:
+    - tendon_xanthomatosis_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - tendon_xanthomatosis_type: Class
+- PsychomotorRetardation:
+  - ns1:hasObservableTrait:
+    - psychomotor_retardation_has_observable_trait:
+      - ClinicalManifestation
+      - NamedIndividual
+  - ns1:hasPresence:
+    - psychomotor_retardation_has_presence:
+      - NamedIndividual
+      - 'No'
+      - 'Yes'
+  - rdf:type:
+    - psychomotor_retardation_type: Class
+- Dysphagia:
+  - ns1:hasObservableTrait:
+    - dysphagia_has_observable_trait:
+      - ClinicalManifestation
+      - NamedIndividual
+  - ns1:hasPresence:
+    - dysphagia_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - dysphagia_type: Class
+  - ns1:hasOccurrenceIn:
+    - dysphagia_has_occurrence_in: 12345
+- PectusExcavatum:
+  - ns1:hasPresence:
+    - pectus_excavatum_has_presence:
+      - NamedIndividual
+      - 'Yes'
+  - rdf:type:
+    - pectus_excavatum_type: Class
+- MisalignmentofTeeth:
+  - ns1:hasObservableTrait:
+    - misalignmentof_teeth_has_observable_trait:
+      - ClinicalManifestation
+      - NamedIndividual
+  - ns1:hasPresence:
+    - misalignmentof_teeth_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - misalignmentof_teeth_type: Class
+  - ns1:hasOccurrenceIn:
+    - misalignmentof_teeth_has_occurrence_in: 12345
+- DemyelinatingPeripheralNeuropathy:
+  - ns1:hasObservableTrait:
+    - demyelinating_peripheral_neuropathy_has_observable_trait:
+      - ClinicalManifestation
+      - NamedIndividual
+  - ns1:hasPresence:
+    - demyelinating_peripheral_neuropathy_has_presence:
+      - NamedIndividual
+      - 'Yes'
+  - rdf:type:
+    - demyelinating_peripheral_neuropathy_type: Class
+- CholestanolLevel:
+  - rdf:type:
+    - cholestanol_level_type: Class
+  - ns1:hasUnit:
+    - cholestanol_level_has_unit: string
+  - ns1:hasValue:
+    - cholestanol_level_has_value: 123.45
+- Atorvastatin:
+  - rdf:type:
+    - atorvastatin_type: Class
+  - ns1:hasOccurrenceIn:
+    - atorvastatin_has_occurrence_in: 12345
+- ChildhoodOnsetChronicDiarrhea:
+  - ns1:hasPresence:
+    - childhood_onset_chronic_diarrhea_has_presence:
+      - 'Yes'
+      - 'No'
+      - NamedIndividual
+  - rdf:type:
+    - childhood_onset_chronic_diarrhea_type: Class
+- Low:
+  - rdf:type:
+    - low_type: Class
+- PeripheralAxonalNeuropathy:
+  - ns1:hasObservableTrait:
+    - peripheral_axonal_neuropathy_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:hasPresence:
+    - peripheral_axonal_neuropathy_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - peripheral_axonal_neuropathy_type: Class
+- DatavaluedPropertyAtom:
+  - ns2:argument2:
+    - datavalued_property_atom_argument2:
+      - Variable
+      - string
+  - ns2:propertyPredicate:
+    - datavalued_property_atom_property_predicate:
+      - DatatypeProperty
+      - FunctionalProperty
+  - ns2:argument1:
+    - datavalued_property_atom_argument1: Variable
+- Nephrolithiasis:
+  - ns1:hasObservableTrait:
+    - nephrolithiasis_has_observable_trait:
+      - ClinicalManifestation
+      - NamedIndividual
+  - ns1:hasPresence:
+    - nephrolithiasis_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - nephrolithiasis_type: Class
+- Dysdiadochokinesis:
+  - ns1:hasObservableTrait:
+    - dysdiadochokinesis_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:hasPresence:
+    - dysdiadochokinesis_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - dysdiadochokinesis_type: Class
+  - ns1:hasOccurrenceIn:
+    - dysdiadochokinesis_has_occurrence_in: 12345
+- Hyperreflexia:
+  - ns1:hasPresence:
+    - hyperreflexia_has_presence:
+      - 'Yes'
+      - 'No'
+      - NamedIndividual
+  - rdf:type:
+    - hyperreflexia_type: Class
+- T2weightedMRIofBrain:
+  - ns1:hasPresence:
+    - t2weighted_mr_iof_brain_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - t2weighted_mr_iof_brain_type: Class
+  - ns1:hasOccurrenceIn:
+    - t2weighted_mr_iof_brain_has_occurrence_in: 12345
+- Urolithiasis:
+  - ns1:hasPresence:
+    - urolithiasis_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - urolithiasis_type: Class
+- AbnormalityoftheDentateNucleus:
+  - ns1:hasObservableTrait:
+    - abnormalityofthe_dentate_nucleus_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:hasPresence:
+    - abnormalityofthe_dentate_nucleus_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - abnormalityofthe_dentate_nucleus_type: Class
+- AutoinmuneThyroiditis:
+  - ns1:hasObservableTrait:
+    - autoinmune_thyroiditis_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:hasPresence:
+    - autoinmune_thyroiditis_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - autoinmune_thyroiditis_type: Class
+- SymmetricProperty:
+  - owl:inverseOf:
+    - symmetric_property_inverse_of:
+      - ObjectProperty
+      - SymmetricProperty
+  - rdfs:range:
+    - symmetric_property_range: Class
+  - rdfs:domain:
+    - symmetric_property_domain: Class
+- SerumCholesterolRaised:
+  - ns1:hasPresence:
+    - serum_cholesterol_raised_has_presence:
+      - NamedIndividual
+      - 'Yes'
+  - rdf:type:
+    - serum_cholesterol_raised_type: Class
+- PeripheralNeuropathy:
+  - ns1:hasObservableTrait:
+    - peripheral_neuropathy_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:hasPresence:
+    - peripheral_neuropathy_has_presence:
+      - NamedIndividual
+      - 'Yes'
+      - 'No'
+  - rdf:type:
+    - peripheral_neuropathy_type: Class
+- Electroneurography:
+  - ns1:hasPresence:
+    - electroneurography_has_presence:
+      - NamedIndividual
+      - 'Yes'
+  - rdf:type:
+    - electroneurography_type: Class
+- AbnormalityoftheCerebrum:
+  - ns1:hasObservableTrait:
+    - abnormalityofthe_cerebrum_has_observable_trait:
+      - ClinicalManifestation
+      - NamedIndividual
+  - ns1:hasPresence:
+    - abnormalityofthe_cerebrum_has_presence:
+      - NamedIndividual
+      - 'No'
+  - rdf:type:
+    - abnormalityofthe_cerebrum_type: Class
+- MRIofSpine:
+  - ns1:hasPresence:
+    - mr_iof_spine_has_presence:
+      - NamedIndividual
+      - 'No'
+  - rdf:type:
+    - mr_iof_spine_type: Class
+- FunctionalProperty:
+  - rdfs:domain:
+    - functional_property_domain: Class
+- Worsening:
+  - ns1:occursAfter:
+    - worsening_occurs_after:
+      - CerebrotendinousXanthomatosis
+      - ClinicalManifestation
+      - NamedIndividual
+  - rdf:type:
+    - worsening_type: Class
+  - ns1:hasOccurrenceIn:
+    - worsening_has_occurrence_in: 12345
+- ProgressiveNeurologicDysfunction-Classicalform:
+  - ns1:hasPresence:
+    - progressive_neurologic_dysfunction-classicalform_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - progressive_neurologic_dysfunction-classicalform_type: Class
+- Duration:
+  - rdf:type:
+    - duration_type: Class
+  - ns1:duration:
+    - duration_duration: 12345
+  - ns1:unit:
+    - duration_unit: string
+- MedicalResearchCouncilGradeMusclePower:
+  - rdf:type:
+    - medical_research_council_grade_muscle_power_type: Class
+  - rdfs:comment:
+    - medical_research_council_grade_muscle_power_comment: string
+- OutsideReferenceRange:
+  - rdf:type:
+    - outside_reference_range_type: Class
+- MotorRetardation:
+  - ns1:hasObservableTrait:
+    - motor_retardation_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:hasPresence:
+    - motor_retardation_has_presence:
+      - 'No'
+      - NamedIndividual
+      - 'Yes'
+  - rdf:type:
+    - motor_retardation_type: Class
+- EDSSGrade9.0:
+  - ns1:hasObservableTrait:
+    - edss_grade9.0_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - rdf:type:
+    - edss_grade9.0_type: Class
+  - ns1:hasGrade:
+    - edss_grade9.0_has_grade: 123.45
+- RespiratoryInsufficiency:
+  - ns1:hasPresence:
+    - respiratory_insufficiency_has_presence:
+      - NamedIndividual
+      - 'Yes'
+  - rdf:type:
+    - respiratory_insufficiency_type: Class
+- List:
+  - rdf:rest:
+    - list_rest: List
+  - rdf:first:
+    - list_first:
+      - Variable
+      - long
+      - string
+- CognitiveImpairment:
+  - ns1:hasObservableTrait:
+    - cognitive_impairment_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:hasPresence:
+    - cognitive_impairment_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - cognitive_impairment_type: Class
+  - ns1:hasOccurrenceIn:
+    - cognitive_impairment_has_occurrence_in: 12345
+- CTofSkull:
+  - ns1:hasPresence:
+    - c_tof_skull_has_presence:
+      - NamedIndividual
+      - 'Yes'
+  - rdf:type:
+    - c_tof_skull_type: Class
+- Class:
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Restriction
+      - Class
+  - owl:equivalentClass:
+    - class_equivalent_class:
+      - Class
+      - Restriction
+  - ns1:OMIM:
+    - class_omim: string
+  - ns1:HPO:
+    - class_hpo: string
+  - ns1:UMLS:
+    - class_umls: string
+  - rdfs:comment:
+    - class_comment:
+      - string
+      - string
+  - ns1:SNOMEDCT:
+    - class_snomedct: string
+  - ns3:prefixIRI:
+    - class_prefix_iri: string
+- BorderlineLow:
+  - rdf:type:
+    - borderline_low_type: Class
+- Kyphosis:
+  - ns1:hasObservableTrait:
+    - kyphosis_has_observable_trait:
+      - ClinicalManifestation
+      - NamedIndividual
+  - ns1:hasPresence:
+    - kyphosis_has_presence:
+      - NamedIndividual
+      - 'Yes'
+  - rdf:type:
+    - kyphosis_type: Class
+- Imp:
+  - ns2:head:
+    - imp_head: AtomList
+  - rdf:type:
+    - imp_type: Class
+  - ns2:body:
+    - imp_body: AtomList
+  - ns4:isRuleEnabled:
+    - imp_is_rule_enabled: true
+- AbnormalityoftheFace:
+  - ns1:hasObservableTrait:
+    - abnormalityofthe_face_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:hasPresence:
+    - abnormalityofthe_face_has_presence:
+      - 'No'
+      - NamedIndividual
+  - rdf:type:
+    - abnormalityofthe_face_type: Class
+- Cataract:
+  - ns1:hasObservableTrait:
+    - cataract_has_observable_trait:
+      - ClinicalManifestation
+      - NamedIndividual
+  - ns1:hasPresence:
+    - cataract_has_presence:
+      - 'Yes'
+      - 'No'
+      - NamedIndividual
+  - rdf:type:
+    - cataract_type: Class
+- Simvastatin:
+  - rdf:type:
+    - simvastatin_type: Class
+- HeadTitubation:
+  - ns1:hasObservableTrait:
+    - head_titubation_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:hasPresence:
+    - head_titubation_has_presence:
+      - NamedIndividual
+      - 'Yes'
+  - rdf:type:
+    - head_titubation_type: Class
+  - ns1:hasOccurrenceIn:
+    - head_titubation_has_occurrence_in: 12345
+- MyocardialInfarction:
+  - ns1:hasPresence:
+    - myocardial_infarction_has_presence:
+      - NamedIndividual
+      - 'Yes'
+  - rdf:type:
+    - myocardial_infarction_type: Class
+- SomatosensoryEvokedPotentials:
+  - ns1:hasPresence:
+    - somatosensory_evoked_potentials_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - somatosensory_evoked_potentials_type: Class
+- EDSSGrade4.5:
+  - ns1:hasObservableTrait:
+    - edss_grade4.5_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - rdf:type:
+    - edss_grade4.5_type: Class
+  - ns1:hasGrade:
+    - edss_grade4.5_has_grade: 123.45
+- DatatypeProperty:
+  - rdfs:domain:
+    - datatype_property_domain: Class
+  - rdfs:comment:
+    - datatype_property_comment: string
+- AchillesTendon:
+  - rdf:type:
+    - achilles_tendon_type: Class
+- Eyelid:
+  - rdf:type:
+    - eyelid_type: Class
+- GingivalOvergrowth:
+  - ns1:hasPresence:
+    - gingival_overgrowth_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - gingival_overgrowth_type: Class
+- Spasticity:
+  - ns1:hasPresence:
+    - spasticity_has_presence:
+      - NamedIndividual
+      - 'Yes'
+      - 'No'
+  - rdf:type:
+    - spasticity_type: Class
+- StillUnassistedWalking:
+  - ns1:hasObservableTrait:
+    - still_unassisted_walking_has_observable_trait:
+      - ClinicalManifestation
+      - NamedIndividual
+  - ns1:hasPresence:
+    - still_unassisted_walking_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - still_unassisted_walking_type: Class
+  - ns1:hasOccurrenceIn:
+    - still_unassisted_walking_has_occurrence_in: 12345
+- SerumCholesterolNormaltoLow:
+  - ns1:hasPresence:
+    - serum_cholesterol_normalto_low_has_presence:
+      - NamedIndividual
+      - 'Yes'
+      - 'No'
+  - rdf:type:
+    - serum_cholesterol_normalto_low_type: Class
+- NerveConductionStudy:
+  - rdf:type:
+    - nerve_conduction_study_type: Class
+- FindingofMedicalResearchCouncilGradeofMusclePower:
+  - ns1:hasPresence:
+    - findingof_medical_research_council_gradeof_muscle_power_has_presence:
+      - NamedIndividual
+      - 'Yes'
+  - rdf:type:
+    - findingof_medical_research_council_gradeof_muscle_power_type: Class
+  - ns1:hasMRCGrade:
+    - findingof_medical_research_council_gradeof_muscle_power_has_mrc_grade:
+      - NamedIndividual
+      - MedicalResearchCouncilGradeMusclePower
+  - ns1:hasOccurrenceIn:
+    - findingof_medical_research_council_gradeof_muscle_power_has_occurrence_in: 12345
+- InabilitytoWalk:
+  - ns1:hasObservableTrait:
+    - inabilityto_walk_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:hasPresence:
+    - inabilityto_walk_has_presence:
+      - NamedIndividual
+      - 'Yes'
+  - rdf:type:
+    - inabilityto_walk_type: Class
+  - ns1:hasOccurrenceIn:
+    - inabilityto_walk_has_occurrence_in: 12345
+- MentalRetardation:
+  - ns1:hasObservableTrait:
+    - mental_retardation_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:hasPresence:
+    - mental_retardation_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - mental_retardation_type: Class
+- NeurologicalSpeechImpairment:
+  - ns1:hasObservableTrait:
+    - neurological_speech_impairment_has_observable_trait:
+      - ClinicalManifestation
+      - NamedIndividual
+  - ns1:hasPresence:
+    - neurological_speech_impairment_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - neurological_speech_impairment_type: Class
+  - ns1:hasOccurrenceIn:
+    - neurological_speech_impairment_has_occurrence_in: 12345
+- MotorNerveConductionStudies:
+  - rdf:type:
+    - motor_nerve_conduction_studies_type: Class
+- BorderlineHigh:
+  - rdf:type:
+    - borderline_high_type: Class
+- DorsalMuscleofFoot:
+  - rdf:type:
+    - dorsal_muscleof_foot_type: Class
+- CariousTeeth:
+  - ns1:hasObservableTrait:
+    - carious_teeth_has_observable_trait:
+      - ClinicalManifestation
+      - NamedIndividual
+  - ns1:hasPresence:
+    - carious_teeth_has_presence:
+      - 'Yes'
+      - NamedIndividual
+  - rdf:type:
+    - carious_teeth_type: Class
+- Paraparesis:
+  - ns1:hasObservableTrait:
+    - paraparesis_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:hasPresence:
+    - paraparesis_has_presence:
+      - NamedIndividual
+      - 'Yes'
+  - rdf:type:
+    - paraparesis_type: Class
+- Patient:
+  - ns1:hasGeneMutation:
+    - patient_has_gene_mutation:
+      - GeneticMutation
+      - NamedIndividual
+  - ns1:hasDiagnosticStudies:
+    - patient_has_diagnostic_studies:
+      - MotorNerveConductionStudies
+      - VisualEvokedPotentials
+      - SomatosensoryEvokedPotentials
+      - MRIofBrain
+      - MRIofSpine
+      - Electroencephalography
+      - NamedIndividual
+      - T2weightedMRIofBrain
+      - CTofSkull
+  - ns1:hasGender:
+    - patient_has_gender:
+      - Female
+      - NamedIndividual
+      - Male
+  - ns1:hasConsanguinity:
+    - patient_has_consanguinity:
+      - Consanguinity
+      - NamedIndividual
+  - ns1:hasDiagnosis:
+    - patient_has_diagnosis:
+      - NamedIndividual
+      - CerebrotendinousXanthomatosis
+  - rdf:type:
+    - patient_type: Class
+  - ns1:hasEvolution:
+    - patient_has_evolution:
+      - Stable
+      - Dead
+      - Worsening
+      - NamedIndividual
+  - ns1:hasClinicalManifestation:
+    - patient_has_clinical_manifestation:
+      - ClinicalManifestation
+      - NamedIndividual
+  - ns1:isPatientIn:
+    - patient_is_patient_in:
+      - NamedIndividual
+      - Study
+  - ns1:hasTreatment:
+    - patient_has_treatment:
+      - Lovastatin
+      - HMGCoAReductaseInhibitor
+      - VitaminEPreparation
+      - ChenodeoxycholicAcid
+      - Pravastatin
+      - Simvastatin
+      - Atorvastatin
+      - NamedIndividual
+      - Aspirin
+  - ns1:hasReference:
+    - patient_has_reference: string
+  - ns1:caseNumber:
+    - patient_case_number: string
+- Dead:
+  - rdf:type:
+    - dead_type: Class
+  - ns1:hasOccurrenceIn:
+    - dead_has_occurrence_in: 12345
+- JointDislocationsinYoungAdult:
+  - ns1:hasObservableTrait:
+    - joint_dislocationsin_young_adult_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:hasPresence:
+    - joint_dislocationsin_young_adult_has_presence:
+      - NamedIndividual
+      - 'Yes'
+  - rdf:type:
+    - joint_dislocationsin_young_adult_type: Class
+  - ns1:hasOccurrenceIn:
+    - joint_dislocationsin_young_adult_has_occurrence_in: 12345
+- DryCough:
+  - ns1:hasObservableTrait:
+    - dry_cough_has_observable_trait:
+      - NamedIndividual
+      - ClinicalManifestation
+  - ns1:hasPresence:
+    - dry_cough_has_presence:
+      - NamedIndividual
+      - 'Yes'
+  - rdf:type:
+    - dry_cough_type: Class
+  - ns1:hasOccurrenceIn:
+    - dry_cough_has_occurrence_in: 12345
+- Pravastatin:
+  - rdf:type:
+    - pravastatin_type: Class

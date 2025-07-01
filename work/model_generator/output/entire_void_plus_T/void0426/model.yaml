@@ -1,0 +1,88 @@
+- Class:
+  - ns1:prefixIRI:
+    - class_prefix_iri: string
+- Concept:
+  - skos:topConceptOf:
+    - concept_top_concept_of:
+      - NamedIndividual
+      - ConceptScheme
+  - skos:narrower:
+    - concept_narrower:
+      - Concept
+      - NamedIndividual
+  - skos:broader:
+    - concept_broader:
+      - Concept
+      - NamedIndividual
+  - rdf:type:
+    - concept_type: Class
+  - skos:inScheme:
+    - concept_in_scheme:
+      - ConceptScheme
+      - NamedIndividual
+  - skos:definitions:
+    - concept_definitions: string
+  - skos:prefLabel:
+    - concept_pref_label: string
+- NamedIndividual:
+  - skos:topConceptOf:
+    - named_individual_top_concept_of:
+      - NamedIndividual
+      - ConceptScheme
+  - skos:hasTopConcept:
+    - named_individual_has_top_concept:
+      - NamedIndividual
+      - Concept
+  - skos:narrower:
+    - named_individual_narrower:
+      - Concept
+      - NamedIndividual
+  - skos:broader:
+    - named_individual_broader:
+      - Concept
+      - NamedIndividual
+  - rdf:type:
+    - named_individual_type: Class
+  - skos:inScheme:
+    - named_individual_in_scheme:
+      - NamedIndividual
+      - ConceptScheme
+  - dc:creator:
+    - named_individual_creator: string
+  - ns2:pav:version:
+    - named_individual_pav:version: string
+  - dc:title:
+    - named_individual_title: string
+  - ns2:pav:lastUpdatedOn:
+    - named_individual_pav:last_updated_on: string
+  - dc:contributor:
+    - named_individual_contributor: string
+  - skos:definitions:
+    - named_individual_definitions: string
+  - ns2:pav:createdOn:
+    - named_individual_pav:created_on: string
+  - skos:prefLabel:
+    - named_individual_pref_label: string
+  - dc:description:
+    - named_individual_description: string
+- ConceptScheme:
+  - skos:hasTopConcept:
+    - concept_scheme_has_top_concept:
+      - NamedIndividual
+      - Concept
+  - rdf:type:
+    - concept_scheme_type: Class
+  - dc:creator:
+    - concept_scheme_creator: string
+  - ns2:pav:version:
+    - concept_scheme_pav:version: string
+  - dc:title:
+    - concept_scheme_title: string
+  - ns2:pav:lastUpdatedOn:
+    - concept_scheme_pav:last_updated_on: string
+  - dc:contributor:
+    - concept_scheme_contributor: string
+  - ns2:pav:createdOn:
+    - concept_scheme_pav:created_on: string
+  - dc:description:
+    - concept_scheme_description: string

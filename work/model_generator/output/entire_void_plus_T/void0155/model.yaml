@@ -1,0 +1,4473 @@
+- aminoAcid:
+  - rdf:type:
+    - amino_acid_type:
+      - Class
+      - Class
+  - ns1:has_absolute_configuration:
+    - amino_acid_has_absolute_configuration:
+      - absolute_configuration
+      - NamedIndividual
+  - rdfs:label:
+    - amino_acid_label: string
+- VocabularyEncodingScheme:
+  - rdfs:label:
+    - vocabulary_encoding_scheme_label: string
+  - dc:issued:
+    - vocabulary_encoding_scheme_issued: '2000-01-01'
+  - rdfs:comment:
+    - vocabulary_encoding_scheme_comment: string
+- FunctionalProperty:
+  - rdf:type:
+    - functional_property_type: Class
+  - owl:inverseOf:
+    - functional_property_inverse_of:
+      - FunctionalProperty
+      - InverseFunctionalProperty
+      - AnnotationProperty
+      - SymmetricProperty
+      - ObjectProperty
+      - Property
+  - rdfs:domain:
+    - functional_property_domain:
+      - Class
+      - Class
+  - rdfs:isDefinedBy:
+    - functional_property_is_defined_by: Ontology
+  - owl:propertyDisjointWith:
+    - functional_property_property_disjoint_with:
+      - DatatypeProperty
+      - FunctionalProperty
+  - ns16:inSubset:
+    - functional_property_in_subset: AnnotationProperty
+  - rdfs:range:
+    - functional_property_range:
+      - Datatype
+      - NamedIndividual
+      - Class
+      - Class
+  - ns9:RO_0001900:
+    - functional_property_ro_0001900: NamedIndividual
+  - rdfs:subPropertyOf:
+    - functional_property_sub_property_of:
+      - TransitiveProperty
+      - DatatypeProperty
+      - FunctionalProperty
+      - ObjectProperty
+      - SymmetricProperty
+  - ns9:IAO_0000412:
+    - functional_property_iao_0000412:
+      - Ontology
+      - NamedIndividual
+  - ns9:IAO_0000114:
+    - functional_property_iao_0000114:
+      - NamedIndividual
+      - Thing
+      - IAO_0000078
+  - ns17:EFO_URI:
+    - functional_property_efo_uri: string
+  - ns16:created_by:
+    - functional_property_created_by: string
+  - ns16:hasDbXref:
+    - functional_property_has_db_xref: string
+  - dc11:identifier:
+    - functional_property_identifier: string
+  - ns18:subset:
+    - functional_property_subset:
+      - string
+      - string
+  - ns9:IAO_0000112:
+    - functional_property_iao_0000112: string
+  - ns9:IAO_0000111:
+    - functional_property_iao_0000111: string
+  - ns16:id:
+    - functional_property_id: string
+  - ns19:FMAID:
+    - functional_property_fmaid: string
+  - ns16:shorthand:
+    - functional_property_shorthand: string
+  - skos:note:
+    - functional_property_note: string
+  - ns16:hasOBONamespace:
+    - functional_property_has_obo_namespace: string
+  - rdfs:label:
+    - functional_property_label:
+      - string
+      - string
+  - vs:term_status:
+    - functional_property_term_status: string
+  - ns16:is_metadata_tag:
+    - functional_property_is_metadata_tag: true
+  - ns16:creation_date:
+    - functional_property_creation_date: dateTime
+  - rdfs:seeAlso:
+    - functional_property_see_also: anyURI
+  - dc:issued:
+    - functional_property_issued: '2000-01-01'
+  - ns9:IAO_0000118:
+    - functional_property_iao_0000118: string
+  - ns5:informativeReference:
+    - functional_property_informative_reference: anyURI
+  - skos:definition:
+    - functional_property_definition: string
+  - rdfs:comment:
+    - functional_property_comment:
+      - string
+      - string
+  - ns9:IAO_0000116:
+    - functional_property_iao_0000116: string
+  - ns9:IAO_0000115:
+    - functional_property_iao_0000115:
+      - string
+      - string
+  - ns9:IAO_0000117:
+    - functional_property_iao_0000117: string
+  - dc:description:
+    - functional_property_description:
+      - LatexString
+      - HTML
+      - string
+- Molecule:
+  - rdf:type:
+    - molecule_type:
+      - Class
+      - Class
+- Person:
+  - rdf:type:
+    - person_type:
+      - Class
+      - Class
+  - rdfs:label:
+    - person_label: string
+  - foaf:name:
+    - person_name: string
+- ReflexiveProperty:
+  - rdf:type:
+    - reflexive_property_type: Class
+  - owl:inverseOf:
+    - reflexive_property_inverse_of:
+      - ObjectProperty
+      - ReflexiveProperty
+      - TransitiveProperty
+  - rdfs:isDefinedBy:
+    - reflexive_property_is_defined_by:
+      - Ontology
+      - string
+  - rdfs:subPropertyOf:
+    - reflexive_property_sub_property_of:
+      - SymmetricProperty
+      - ObjectProperty
+      - TransitiveProperty
+  - dc11:identifier:
+    - reflexive_property_identifier: string
+  - ns18:subset:
+    - reflexive_property_subset: string
+  - ns18:equivalentTo:
+    - reflexive_property_equivalent_to: string
+  - rdfs:label:
+    - reflexive_property_label: string
+  - rdfs:comment:
+    - reflexive_property_comment: string
+  - ns9:IAO_0000115:
+    - reflexive_property_iao_0000115: string
+  - skos:example:
+    - reflexive_property_example: string
+  - dc:description:
+    - reflexive_property_description: string
+- Nanopublication:
+  - ns4:hasAssertion:
+    - nanopublication_has_assertion:
+      - IHCEvidence
+      - Assertion
+  - prov:wasGeneratedBy:
+    - nanopublication_was_generated_by:
+      - ECO_0000205
+      - ECO_0000218
+  - ns4:hasPublicationInfo:
+    - nanopublication_has_publication_info: PublicationInfo
+  - ns21:usedData:
+    - nanopublication_used_data:
+      - GeneProduct
+      - C15426
+  - ns4:hasProvenance:
+    - nanopublication_has_provenance: Provenance
+  - prov:wasDerivedFrom:
+    - nanopublication_was_derived_from: BAO_0000415
+  - ns23:authoredBy:
+    - nanopublication_authored_by: string
+  - ns23:createdBy:
+    - nanopublication_created_by: string
+  - ns24:evidence:
+    - nanopublication_evidence: string
+- SignednessType:
+  - rdf:type:
+    - signedness_type_type:
+      - Class
+      - Class
+  - rdfs:isDefinedBy:
+    - signedness_type_is_defined_by: Ontology
+  - rdfs:label:
+    - signedness_type_label: string
+  - ns25:literal:
+    - signedness_type_literal: string
+- Organization:
+  - rdf:type:
+    - organization_type:
+      - Class
+      - Class
+  - rdfs:isDefinedBy:
+    - organization_is_defined_by: Ontology
+  - rdfs:label:
+    - organization_label: string
+- C15426:
+  - dc:created:
+    - c15426_created: dateTime
+  - ns23:versionNumber:
+    - c15426_version_number: integer
+- AnnotationProperty:
+  - rdf:type:
+    - annotation_property_type: Class
+  - owl:inverseOf:
+    - annotation_property_inverse_of:
+      - Property
+      - ObjectProperty
+      - FunctionalProperty
+  - rdfs:domain:
+    - annotation_property_domain:
+      - Class
+      - Class
+  - ns16:hasDbXref:
+    - annotation_property_has_db_xref:
+      - Property
+      - AnnotationProperty
+      - ObjectProperty
+      - string
+  - rdfs:isDefinedBy:
+    - annotation_property_is_defined_by:
+      - Ontology
+      - NamedIndividual
+      - Thing
+  - rdfs:subClassOf:
+    - annotation_property_sub_class_of: Class
+  - ns9:UBPROP_0000101:
+    - annotation_property_ubprop_0000101:
+      - ObjectProperty
+      - TransitiveProperty
+  - rdfs:seeAlso:
+    - annotation_property_see_also:
+      - AnnotationProperty
+      - ObjectProperty
+      - SymmetricProperty
+      - string
+      - anyURI
+  - ns2:rangeIncludes:
+    - annotation_property_range_includes:
+      - AgentClass
+      - Class
+      - Class
+  - ns16:hasScope:
+    - annotation_property_has_scope: AnnotationProperty
+  - prov:qualifiedForm:
+    - annotation_property_qualified_form:
+      - Class
+      - ObjectProperty
+  - ns9:UBPROP_0000100:
+    - annotation_property_ubprop_0000100: Class
+  - rdfs:range:
+    - annotation_property_range:
+      - Class
+      - Datatype
+      - Class
+  - rdfs:subPropertyOf:
+    - annotation_property_sub_property_of:
+      - InverseFunctionalProperty
+      - AnnotationProperty
+      - DatatypeProperty
+      - Property
+      - SymmetricProperty
+      - ObjectProperty
+  - owl:equivalentProperty:
+    - annotation_property_equivalent_property:
+      - ObjectProperty
+      - Property
+  - ns9:IAO_0000412:
+    - annotation_property_iao_0000412: NamedIndividual
+  - ns9:IAO_0000114:
+    - annotation_property_iao_0000114:
+      - Thing
+      - IAO_0000078
+      - NamedIndividual
+      - string
+  - ns16:hasBroadSynonym:
+    - annotation_property_has_broad_synonym: string
+  - dc:date:
+    - annotation_property_date: dateTime
+  - ns16:created_by:
+    - annotation_property_created_by: string
+  - ns9:IAO_0000233:
+    - annotation_property_iao_0000233:
+      - string
+      - string
+  - ns16:hasDefinition:
+    - annotation_property_has_definition: string
+  - dc11:identifier:
+    - annotation_property_identifier: string
+  - skos:scopeNote:
+    - annotation_property_scope_note: string
+  - ns9:IAO_0000112:
+    - annotation_property_iao_0000112:
+      - string
+      - string
+  - prov:component:
+    - annotation_property_component: string
+  - ns9:IAO_0000111:
+    - annotation_property_iao_0000111: string
+  - ns16:id:
+    - annotation_property_id: string
+  - ns19:FMAID:
+    - annotation_property_fmaid: string
+  - foaf:page:
+    - annotation_property_page: anyURI
+  - ns16:shorthand:
+    - annotation_property_shorthand: string
+  - prov:dm:
+    - annotation_property_dm: anyURI
+  - skos:note:
+    - annotation_property_note: string
+  - ns16:hasOBONamespace:
+    - annotation_property_has_obo_namespace: string
+  - ns17:reason_for_obsolescence:
+    - annotation_property_reason_for_obsolescence: string
+  - rdfs:label:
+    - annotation_property_label:
+      - string
+      - string
+  - dc:created:
+    - annotation_property_created: '2000-01-01'
+  - vs:term_status:
+    - annotation_property_term_status: string
+  - dc11:creator:
+    - annotation_property_creator: string
+  - ns9:OMO_0002000:
+    - annotation_property_omo_0002000: string
+  - ns16:is_metadata_tag:
+    - annotation_property_is_metadata_tag: true
+  - dc11:description:
+    - annotation_property_description: string
+  - ns9:IAO_0100001:
+    - annotation_property_iao_0100001: string
+  - ns16:creation_date:
+    - annotation_property_creation_date: dateTime
+  - ns9:UBPROP_0000008:
+    - annotation_property_ubprop_0000008: string
+  - dc:issued:
+    - annotation_property_issued: '2000-01-01'
+  - owl:deprecated:
+    - annotation_property_deprecated: true
+  - ns9:IAO_0000600:
+    - annotation_property_iao_0000600: string
+  - ns9:IAO_0000118:
+    - annotation_property_iao_0000118: string
+  - prov:category:
+    - annotation_property_category: string
+  - ns26:created_in:
+    - annotation_property_created_in: string
+  - ns8:comment:
+    - annotation_property_comment: string
+  - ns9:IAO_0000119:
+    - annotation_property_iao_0000119:
+      - string
+      - string
+  - skos:definition:
+    - annotation_property_definition: string
+  - ns9:is_metadata_tag:
+    - annotation_property_is_metadata_tag: true
+  - ns16:hasRelatedSynonym:
+    - annotation_property_has_related_synonym: string
+  - ns16:hasExactSynonym:
+    - annotation_property_has_exact_synonym: string
+  - ns9:IAO_0000425:
+    - annotation_property_iao_0000425: string
+  - ns9:RO_0002423:
+    - annotation_property_ro_0002423: string
+  - ns5:deprecated:
+    - annotation_property_deprecated: true
+  - ns9:UBPROP_0000012:
+    - annotation_property_ubprop_0000012: string
+  - ns17:obsoleted_in_version:
+    - annotation_property_obsoleted_in_version: string
+  - rdfs:comment:
+    - annotation_property_comment:
+      - HTML
+      - string
+      - string
+  - dc:creator:
+    - annotation_property_creator: string
+  - prov:n:
+    - annotation_property_n: anyURI
+  - ns16:is_class_level:
+    - annotation_property_is_class_level: true
+  - ns9:IAO_0000234:
+    - annotation_property_iao_0000234: string
+  - prov:definition:
+    - annotation_property_definition: string
+  - ns9:IAO_0000232:
+    - annotation_property_iao_0000232:
+      - string
+      - string
+  - ns9:IAO_0000116:
+    - annotation_property_iao_0000116:
+      - string
+      - string
+  - ns9:IAO_0000115:
+    - annotation_property_iao_0000115:
+      - string
+      - string
+  - prov:inverse:
+    - annotation_property_inverse: string
+  - ns16:hasNarrowSynonym:
+    - annotation_property_has_narrow_synonym: string
+  - skos:example:
+    - annotation_property_example: string
+  - ns9:IAO_0000117:
+    - annotation_property_iao_0000117:
+      - string
+      - string
+  - dc:description:
+    - annotation_property_description:
+      - string
+      - HTML
+      - string
+  - prov:constraints:
+    - annotation_property_constraints: anyURI
+  - ns9:UBPROP_0000013:
+    - annotation_property_ubprop_0000013: string
+- BitEncodingType:
+  - rdf:type:
+    - bit_encoding_type_type:
+      - Class
+      - Class
+  - rdfs:isDefinedBy:
+    - bit_encoding_type_is_defined_by: Ontology
+  - ns5:bits:
+    - bit_encoding_type_bits: integer
+  - rdfs:label:
+    - bit_encoding_type_label: string
+- AtomList:
+  - rdf:rest:
+    - atom_list_rest:
+      - AtomList
+      - List
+  - rdf:first:
+    - atom_list_first:
+      - IndividualPropertyAtom
+      - ClassAtom
+- glycanDatabaseCategory:
+  - rdf:type:
+    - glycan_database_category_type:
+      - Class
+      - Class
+  - rdfs:label:
+    - glycan_database_category_label: string
+  - rdfs:comment:
+    - glycan_database_category_comment: string
+- OntologyProperty:
+  - rdf:type:
+    - ontology_property_type: Class
+  - rdfs:domain:
+    - ontology_property_domain:
+      - Class
+      - Class
+  - rdfs:range:
+    - ontology_property_range:
+      - Class
+      - Class
+  - rdfs:label:
+    - ontology_property_label: string
+  - rdfs:comment:
+    - ontology_property_comment: string
+- Label:
+  - rdf:type:
+    - label_type:
+      - Class
+      - Class
+  - rdfs:label:
+    - label_label: string
+  - rdfs:comment:
+    - label_comment: string
+- DeprecatedProperty:
+  - rdf:type:
+    - deprecated_property_type: Class
+  - rdfs:domain:
+    - deprecated_property_domain:
+      - Class
+      - Class
+  - rdfs:isDefinedBy:
+    - deprecated_property_is_defined_by: Ontology
+  - rdfs:range:
+    - deprecated_property_range:
+      - Class
+      - Class
+      - Datatype
+  - rdfs:subPropertyOf:
+    - deprecated_property_sub_property_of: DeprecatedProperty
+  - owl:equivalentProperty:
+    - deprecated_property_equivalent_property:
+      - Property
+      - AnnotationProperty
+  - rdfs:label:
+    - deprecated_property_label: string
+  - rdfs:comment:
+    - deprecated_property_comment: string
+- Person:
+  - rdf:type:
+    - person_type:
+      - Class
+      - Class
+  - rdfs:label:
+    - person_label: string
+  - foaf:name:
+    - person_name: string
+- GraphRole:
+  - rdf:type:
+    - graph_role_type:
+      - Class
+      - Class
+  - ns8:filePrefix:
+    - graph_role_file_prefix: string
+  - rdfs:label:
+    - graph_role_label: string
+  - dc:description:
+    - graph_role_description: string
+- GraphMetaData:
+  - rdf:type:
+    - graph_meta_data_type:
+      - Class
+      - Class
+  - rdfs:isDefinedBy:
+    - graph_meta_data_is_defined_by: Ontology
+  - ns8:hasOwner:
+    - graph_meta_data_has_owner:
+      - Party
+      - NamedIndividual
+  - ns8:hasSteward:
+    - graph_meta_data_has_steward:
+      - NamedIndividual
+      - Party
+  - ns8:hasGraphRole:
+    - graph_meta_data_has_graph_role:
+      - GraphRole
+      - NamedIndividual
+  - ns8:usesNonImportedResource:
+    - graph_meta_data_uses_non_imported_resource:
+      - DatatypeProperty
+      - ObjectProperty
+      - AnnotationProperty
+      - Property
+  - dc:abstract:
+    - graph_meta_data_abstract: string
+  - ns8:graphTitle:
+    - graph_meta_data_graph_title: string
+  - dc:contributor:
+    - graph_meta_data_contributor: string
+  - dc:title:
+    - graph_meta_data_title: string
+  - ns8:name:
+    - graph_meta_data_name: string
+  - ns8:latestPublishedVersion:
+    - graph_meta_data_latest_published_version: anyURI
+  - ns8:revision:
+    - graph_meta_data_revision: string
+  - ns8:previousPublishedVersion:
+    - graph_meta_data_previous_published_version: anyURI
+  - ns8:intent:
+    - graph_meta_data_intent: string
+  - ns8:rdfxmlFileURL:
+    - graph_meta_data_rdfxml_file_url: anyURI
+  - rdfs:label:
+    - graph_meta_data_label: string
+  - dc:created:
+    - graph_meta_data_created: '2000-01-01'
+  - ns8:description:
+    - graph_meta_data_description: string
+  - ns8:title:
+    - graph_meta_data_title: string
+  - ns8:namespace:
+    - graph_meta_data_namespace: anyURI
+  - ns5:informativeReference:
+    - graph_meta_data_informative_reference: anyURI
+  - dc:subject:
+    - graph_meta_data_subject: string
+  - ns8:logo:
+    - graph_meta_data_logo: anyURI
+  - ns8:turtleFileURL:
+    - graph_meta_data_turtle_file_url: anyURI
+  - dc:rights:
+    - graph_meta_data_rights: string
+  - dc:creator:
+    - graph_meta_data_creator: string
+  - ns8:owner:
+    - graph_meta_data_owner: string
+  - ns8:graphName:
+    - graph_meta_data_graph_name: string
+  - ns8:withAttributionTo:
+    - graph_meta_data_with_attribution_to: string
+  - ns8:namespacePrefix:
+    - graph_meta_data_namespace_prefix: string
+  - dc:modified:
+    - graph_meta_data_modified:
+      - dateTime
+      - '2000-01-01'
+  - dc:description:
+    - graph_meta_data_description: HTML
+- Ontology:
+  - owl:versionIRI:
+    - ontology_version_iri: Ontology
+  - rdf:type:
+    - ontology_type:
+      - Class
+      - Class
+  - dc11:source:
+    - ontology_source:
+      - Ontology
+      - string
+      - anyURI
+  - ns9:IAO_0000700:
+    - ontology_iao_0000700: Class
+  - dc:contributor:
+    - ontology_contributor:
+      - Person
+      - NamedIndividual
+      - Person
+      - string
+  - rdfs:isDefinedBy:
+    - ontology_is_defined_by: Ontology
+  - ns16:hasSubset:
+    - ontology_has_subset: AnnotationProperty
+  - dc:source:
+    - ontology_source: Ontology
+  - rdfs:seeAlso:
+    - ontology_see_also:
+      - Ontology
+      - anyURI
+  - ns8:hasGraphMetadata:
+    - ontology_has_graph_metadata:
+      - NamedIndividual
+      - GraphMetaData
+  - dc:creator:
+    - ontology_creator:
+      - Person
+      - Person
+      - Person
+      - NamedIndividual
+      - anyURI
+      - string
+  - ns26:has_format:
+    - ontology_has_format: Class
+  - ns27:preferredNamespacePrefix:
+    - ontology_preferred_namespace_prefix:
+      - string
+      - string
+  - ns27:preferredNamespaceUri:
+    - ontology_preferred_namespace_uri: string
+  - dc11:rights:
+    - ontology_rights: string
+  - owl:versionInfo:
+    - ontology_version_info:
+      - '2000-01-01'
+      - string
+      - string
+      - decimal
+  - ns19:primary_author_and_curator:
+    - ontology_primary_author_and_curator: string
+  - ns16:saved-by:
+    - ontology_saved-by: string
+  - dc11:identifier:
+    - ontology_identifier: string
+  - dc:isReferencedBy:
+    - ontology_is_referenced_by: anyURI
+  - doap:mailing-list:
+    - ontology_mailing-list: anyURI
+  - ns16:logical-definition-view-relation:
+    - ontology_logical-definition-view-relation: string
+  - dc:title:
+    - ontology_title:
+      - string
+      - string
+  - ns9:idspace:
+    - ontology_idspace: string
+  - ns19:technical_support:
+    - ontology_technical_support: string
+  - ns16:treat-xrefs-as-reverse-genus-differentia:
+    - ontology_treat-xrefs-as-reverse-genus-differentia: string
+  - dc:license:
+    - ontology_license: string
+  - dc11:contributor:
+    - ontology_contributor:
+      - string
+      - string
+  - ns16:treat-xrefs-as-equivalent:
+    - ontology_treat-xrefs-as-equivalent: string
+  - rdfs:label:
+    - ontology_label:
+      - string
+      - string
+  - dc:created:
+    - ontology_created: '2000-01-01'
+  - ns16:treat-xrefs-as-is_a:
+    - ontology_treat-xrefs-as-is_a: string
+  - ns16:date:
+    - ontology_date: string
+  - dc11:creator:
+    - ontology_creator:
+      - string
+      - string
+  - dc11:description:
+    - ontology_description:
+      - string
+      - string
+  - dc:language:
+    - ontology_language: language
+  - dc11:date:
+    - ontology_date:
+      - dateTime
+      - string
+      - string
+  - ns19:creator:
+    - ontology_creator: string
+  - dc:issued:
+    - ontology_issued:
+      - '2000-01-01'
+      - dateTime
+  - foaf:homepage:
+    - ontology_homepage: anyURI
+  - doap:GitRepository:
+    - ontology_git_repository: anyURI
+  - doap:SVNRepository:
+    - ontology_svn_repository: anyURI
+  - ns16:default-namespace:
+    - ontology_default-namespace: string
+  - ns16:auto-generated-by:
+    - ontology_auto-generated-by: string
+  - dc11:title:
+    - ontology_title:
+      - string
+      - string
+  - ns16:hasOBOFormatVersion:
+    - ontology_has_obo_format_version: string
+  - ns26:next_id:
+    - ontology_next_id: string
+  - dc11:publisher:
+    - ontology_publisher: anyURI
+  - ns16:savedBy:
+    - ontology_saved_by: string
+  - ns9:format-version:
+    - ontology_format-version: string
+  - ns16:treat-xrefs-as-genus-differentia:
+    - ontology_treat-xrefs-as-genus-differentia: string
+  - dc:rights:
+    - ontology_rights: string
+  - doap:bug-database:
+    - ontology_bug-database: anyURI
+  - ns16:treat-xrefs-as-has-subclass:
+    - ontology_treat-xrefs-as-has-subclass: string
+  - ns28:defaultLanguage:
+    - ontology_default_language: string
+  - rdfs:comment:
+    - ontology_comment:
+      - string
+      - string
+  - ns9:remark:
+    - ontology_remark: string
+  - ns9:date:
+    - ontology_date: string
+  - dc:format:
+    - ontology_format: string
+  - dc11:subject:
+    - ontology_subject:
+      - string
+      - string
+  - doap:Version:
+    - ontology_version: string
+  - schema:comment:
+    - ontology_comment: string
+  - dc:modified:
+    - ontology_modified:
+      - '2000-01-01'
+      - dateTime
+      - gYear
+  - dc:description:
+    - ontology_description:
+      - string
+      - string
+  - ns19:contributing_author:
+    - ontology_contributing_author: string
+  - ns29:citesAsAuthority:
+    - ontology_cites_as_authority: anyURI
+  - dc11:format:
+    - ontology_format:
+      - string
+      - string
+- CardinalityType:
+  - rdf:type:
+    - cardinality_type_type:
+      - NamedIndividual
+      - Class
+      - Class
+  - rdfs:isDefinedBy:
+    - cardinality_type_is_defined_by: Ontology
+  - rdfs:label:
+    - cardinality_type_label: string
+  - ns5:literal:
+    - cardinality_type_literal: string
+  - ns5:informativeReference:
+    - cardinality_type_informative_reference: anyURI
+  - dc:description:
+    - cardinality_type_description: LatexString
+- CLO_0000008:
+  - rdf:type:
+    - clo_0000008_type:
+      - Class
+      - Class
+  - rdfs:label:
+    - clo_0000008_label:
+      - string
+      - string
+  - ns9:IAO_0000118:
+    - clo_0000008_iao_0000118: string
+  - ns9:IAO_0000119:
+    - clo_0000008_iao_0000119: string
+  - ns9:IAO_0000115:
+    - clo_0000008_iao_0000115: string
+  - ns9:IAO_0000117:
+    - clo_0000008_iao_0000117: string
+- CLO_0037343:
+  - rdf:type:
+    - clo_0037343_type:
+      - Class
+      - Class
+  - rdfs:label:
+    - clo_0037343_label: string
+  - ns9:IAO_0000119:
+    - clo_0037343_iao_0000119: string
+  - ns9:IAO_0000115:
+    - clo_0037343_iao_0000115: string
+  - ns9:IAO_0000117:
+    - clo_0037343_iao_0000117: string
+- NamedIndividual:
+  - rdf:type:
+    - named_individual_type:
+      - NamedIndividual
+      - AnnotationProperty
+      - Class
+      - AgentClass
+      - Class
+      - Restriction
+  - owl:inverseOf:
+    - named_individual_inverse_of:
+      - ObjectProperty
+      - NamedIndividual
+      - Property
+  - rdfs:domain:
+    - named_individual_domain: Class
+  - ns1:has_absolute_configuration:
+    - named_individual_has_absolute_configuration:
+      - NamedIndividual
+      - absolute_configuration
+  - rdfs:isDefinedBy:
+    - named_individual_is_defined_by: Ontology
+  - ns8:hasOwner:
+    - named_individual_has_owner:
+      - Party
+      - NamedIndividual
+  - rdfs:subClassOf:
+    - named_individual_sub_class_of:
+      - NamedIndividual
+      - Class
+      - AspectClass
+      - Restriction
+      - Class
+  - ns8:hasSteward:
+    - named_individual_has_steward:
+      - NamedIndividual
+      - Party
+  - ns8:hasLicenseType:
+    - named_individual_has_license_type: NamedIndividual
+  - ns8:hasGraphRole:
+    - named_individual_has_graph_role:
+      - NamedIndividual
+      - GraphRole
+  - owl:equivalentClass:
+    - named_individual_equivalent_class: Class
+  - rdfs:seeAlso:
+    - named_individual_see_also:
+      - Thing
+      - NamedIndividual
+      - anyURI
+  - skos:exactMatch:
+    - named_individual_exact_match: NamedIndividual
+  - doap:file-release:
+    - named_individual_file-release:
+      - Version
+      - NamedIndividual
+      - Thing
+  - rdfs:range:
+    - named_individual_range:
+      - Class
+      - Datatype
+      - Class
+  - ns1:has_category:
+    - named_individual_has_category:
+      - NamedIndividual
+      - glycan_database_category
+  - dc:isReplacedBy:
+    - named_individual_is_replaced_by:
+      - Property
+      - NamedIndividual
+      - ObjectProperty
+  - rdfs:subPropertyOf:
+    - named_individual_sub_property_of:
+      - ObjectProperty
+      - DatatypeProperty
+      - TransitiveProperty
+      - Property
+  - ns8:usesNonImportedResource:
+    - named_individual_uses_non_imported_resource:
+      - ObjectProperty
+      - Property
+      - DatatypeProperty
+      - AnnotationProperty
+  - ns9:IAO_0000114:
+    - named_individual_iao_0000114:
+      - Thing
+      - IAO_0000078
+      - NamedIndividual
+  - ns17:EFO_URI:
+    - named_individual_efo_uri: string
+  - dc:abstract:
+    - named_individual_abstract: string
+  - doap:revision:
+    - named_individual_revision: string
+  - ns5:dbpediaMatch:
+    - named_individual_dbpedia_match: anyURI
+  - ns8:graphTitle:
+    - named_individual_graph_title: string
+  - ns1:has_abbreviation:
+    - named_individual_has_abbreviation: string
+  - ns16:hasDbXref:
+    - named_individual_has_db_xref: string
+  - owl:versionInfo:
+    - named_individual_version_info: string
+  - ns9:IAO_0000233:
+    - named_individual_iao_0000233: string
+  - dc:contributor:
+    - named_individual_contributor: string
+  - skos:scopeNote:
+    - named_individual_scope_note: string
+  - ns17:organizational_class:
+    - named_individual_organizational_class: string
+  - prov:component:
+    - named_individual_component: string
+  - dc:title:
+    - named_individual_title: string
+  - ns9:IAO_0000111:
+    - named_individual_iao_0000111:
+      - string
+      - string
+  - ns8:name:
+    - named_individual_name: string
+  - ns8:dateCreated:
+    - named_individual_date_created: dateUnion
+  - ns8:latestPublishedVersion:
+    - named_individual_latest_published_version: anyURI
+  - ns8:filePrefix:
+    - named_individual_file_prefix: string
+  - ns5:bits:
+    - named_individual_bits: integer
+  - ns5:allowedPattern:
+    - named_individual_allowed_pattern: string
+  - ns1:has_url_template:
+    - named_individual_has_url_template: string
+  - ns8:revision:
+    - named_individual_revision: string
+  - ns8:previousPublishedVersion:
+    - named_individual_previous_published_version: anyURI
+  - ns8:intent:
+    - named_individual_intent: string
+  - dc11:contributor:
+    - named_individual_contributor: string
+  - ns8:rdfxmlFileURL:
+    - named_individual_rdfxml_file_url: anyURI
+  - rdfs:label:
+    - named_individual_label:
+      - string
+      - string
+  - dc:created:
+    - named_individual_created: '2000-01-01'
+  - ns8:description:
+    - named_individual_description: string
+  - dc11:creator:
+    - named_individual_creator: string
+  - ns17:definition_citation:
+    - named_individual_definition_citation: string
+  - ns8:title:
+    - named_individual_title: string
+  - dc11:description:
+    - named_individual_description:
+      - string
+      - string
+  - ns8:namespace:
+    - named_individual_namespace: anyURI
+  - dc11:author:
+    - named_individual_author: string
+  - dc11:date:
+    - named_individual_date: '2000-01-01'
+  - ns25:literal:
+    - named_individual_literal: string
+  - ns5:literal:
+    - named_individual_literal: string
+  - ns9:IAO_0000118:
+    - named_individual_iao_0000118: string
+  - prov:category:
+    - named_individual_category: string
+  - ns5:informativeReference:
+    - named_individual_informative_reference: anyURI
+  - dc11:title:
+    - named_individual_title:
+      - string
+      - string
+  - ns9:IAO_0000119:
+    - named_individual_iao_0000119:
+      - string
+      - string
+  - skos:definition:
+    - named_individual_definition: string
+  - ns8:lastUpdated:
+    - named_individual_last_updated: dateUnion
+  - ns16:hasRelatedSynonym:
+    - named_individual_has_related_synonym: string
+  - dc:subject:
+    - named_individual_subject: string
+  - ns8:logo:
+    - named_individual_logo: anyURI
+  - ns16:hasExactSynonym:
+    - named_individual_has_exact_synonym:
+      - string
+      - string
+  - ns5:bytes:
+    - named_individual_bytes: integer
+  - ns8:turtleFileURL:
+    - named_individual_turtle_file_url: anyURI
+  - dc:rights:
+    - named_individual_rights: string
+  - ns5:deprecated:
+    - named_individual_deprecated: true
+  - ns28:defaultLanguage:
+    - named_individual_default_language: string
+  - rdfs:comment:
+    - named_individual_comment:
+      - string
+      - string
+      - HTML
+  - dc:creator:
+    - named_individual_creator: string
+  - ns8:owner:
+    - named_individual_owner: string
+  - ns8:website:
+    - named_individual_website: anyURI
+  - ns9:IAO_0000234:
+    - named_individual_iao_0000234: string
+  - prov:definition:
+    - named_individual_definition: string
+  - ns5:plainTextDescription:
+    - named_individual_plain_text_description: string
+  - dc11:subject:
+    - named_individual_subject:
+      - string
+      - string
+  - ns9:IAO_0000116:
+    - named_individual_iao_0000116: string
+  - ns9:IAO_0000115:
+    - named_individual_iao_0000115:
+      - string
+      - string
+  - ns8:graphName:
+    - named_individual_graph_name: string
+  - ns8:withAttributionTo:
+    - named_individual_with_attribution_to: string
+  - ns8:namespacePrefix:
+    - named_individual_namespace_prefix: string
+  - ns9:IAO_0000117:
+    - named_individual_iao_0000117:
+      - string
+      - string
+  - ns8:url:
+    - named_individual_url: anyURI
+  - dc:modified:
+    - named_individual_modified:
+      - dateTime
+      - '2000-01-01'
+  - dc:description:
+    - named_individual_description:
+      - LatexString
+      - string
+      - HTML
+  - foaf:name:
+    - named_individual_name: string
+  - dc11:format:
+    - named_individual_format: string
+- CatalogEntry:
+  - rdf:type:
+    - catalog_entry_type:
+      - Class
+      - Class
+  - rdfs:label:
+    - catalog_entry_label: string
+- glycanDatabase:
+  - rdf:type:
+    - glycan_database_type:
+      - Class
+      - Class
+  - ns1:has_category:
+    - glycan_database_has_category:
+      - NamedIndividual
+      - glycan_database_category
+  - ns1:has_abbreviation:
+    - glycan_database_has_abbreviation: string
+  - ns1:has_url_template:
+    - glycan_database_has_url_template: string
+  - rdfs:label:
+    - glycan_database_label: string
+  - rdfs:seeAlso:
+    - glycan_database_see_also: anyURI
+  - foaf:name:
+    - glycan_database_name: string
+- Party:
+  - rdf:type:
+    - party_type:
+      - Class
+      - Class
+  - ns8:name:
+    - party_name: string
+  - rdfs:label:
+    - party_label: string
+  - ns8:website:
+    - party_website: anyURI
+  - ns8:graphName:
+    - party_graph_name: string
+  - ns8:url:
+    - party_url: anyURI
+  - dc:description:
+    - party_description: HTML
+- DatatypeProperty:
+  - rdf:type:
+    - datatype_property_type: Class
+  - rdfs:domain:
+    - datatype_property_domain:
+      - Class
+      - Class
+  - rdfs:isDefinedBy:
+    - datatype_property_is_defined_by:
+      - NamedIndividual
+      - Ontology
+      - Thing
+      - string
+  - owl:propertyDisjointWith:
+    - datatype_property_property_disjoint_with:
+      - DatatypeProperty
+      - FunctionalProperty
+  - rdfs:seeAlso:
+    - datatype_property_see_also:
+      - DatatypeProperty
+      - AnnotationProperty
+      - ObjectProperty
+      - string
+      - anyURI
+  - prov:unqualifiedForm:
+    - datatype_property_unqualified_form: DatatypeProperty
+  - prov:qualifiedForm:
+    - datatype_property_qualified_form:
+      - DatatypeProperty
+      - Class
+  - prov:sharesDefinitionWith:
+    - datatype_property_shares_definition_with: Class
+  - rdfs:range:
+    - datatype_property_range:
+      - Class
+      - Datatype
+      - Class
+  - rdfs:subPropertyOf:
+    - datatype_property_sub_property_of:
+      - DatatypeProperty
+      - AnnotationProperty
+      - Property
+  - ns9:IAO_0000412:
+    - datatype_property_iao_0000412: NamedIndividual
+  - skos:altLabel:
+    - datatype_property_alt_label: string
+  - ns16:hasDbXref:
+    - datatype_property_has_db_xref: string
+  - dc11:identifier:
+    - datatype_property_identifier: string
+  - ns18:subset:
+    - datatype_property_subset:
+      - string
+      - string
+  - skos:scopeNote:
+    - datatype_property_scope_note: string
+  - prov:component:
+    - datatype_property_component: string
+  - ns16:id:
+    - datatype_property_id: string
+  - ns19:FMAID:
+    - datatype_property_fmaid: string
+  - prov:editorialNote:
+    - datatype_property_editorial_note:
+      - string
+      - string
+  - ns16:shorthand:
+    - datatype_property_shorthand: string
+  - prov:dm:
+    - datatype_property_dm: anyURI
+  - skos:note:
+    - datatype_property_note: string
+  - ns16:hasOBONamespace:
+    - datatype_property_has_obo_namespace: string
+  - dc:source:
+    - datatype_property_source: anyURI
+  - rdfs:label:
+    - datatype_property_label:
+      - string
+      - string
+  - vs:term_status:
+    - datatype_property_term_status: string
+  - ns16:is_metadata_tag:
+    - datatype_property_is_metadata_tag: true
+  - dc11:description:
+    - datatype_property_description: string
+  - dc:issued:
+    - datatype_property_issued: '2000-01-01'
+  - prov:category:
+    - datatype_property_category: string
+  - ns5:informativeReference:
+    - datatype_property_informative_reference: anyURI
+  - ns8:comment:
+    - datatype_property_comment: string
+  - skos:definition:
+    - datatype_property_definition: string
+  - ns5:deprecated:
+    - datatype_property_deprecated: true
+  - rdfs:comment:
+    - datatype_property_comment:
+      - string
+      - string
+  - prov:definition:
+    - datatype_property_definition: string
+  - ns5:plainTextDescription:
+    - datatype_property_plain_text_description: string
+  - ns9:IAO_0000115:
+    - datatype_property_iao_0000115: string
+  - dc:description:
+    - datatype_property_description:
+      - HTML
+      - LatexString
+      - string
+      - string
+- AgentClass:
+  - rdf:type:
+    - agent_class_type:
+      - Class
+      - Class
+  - rdfs:label:
+    - agent_class_label: string
+  - dc:issued:
+    - agent_class_issued: '2000-01-01'
+  - rdfs:comment:
+    - agent_class_comment: string
+- SymmetricProperty:
+  - rdf:type:
+    - symmetric_property_type: Class
+  - owl:inverseOf:
+    - symmetric_property_inverse_of:
+      - FunctionalProperty
+      - SymmetricProperty
+      - ObjectProperty
+      - TransitiveProperty
+      - InverseFunctionalProperty
+  - rdfs:domain:
+    - symmetric_property_domain: Class
+  - rdfs:isDefinedBy:
+    - symmetric_property_is_defined_by:
+      - Ontology
+      - anyURI
+  - ns9:RO_0040042:
+    - symmetric_property_ro_0040042: Class
+  - ns16:inSubset:
+    - symmetric_property_in_subset: AnnotationProperty
+  - rdfs:seeAlso:
+    - symmetric_property_see_also:
+      - Class
+      - ObjectProperty
+      - AnnotationProperty
+      - anyURI
+      - string
+  - rdfs:range:
+    - symmetric_property_range: Class
+  - ns9:RO_0001900:
+    - symmetric_property_ro_0001900: NamedIndividual
+  - rdfs:subPropertyOf:
+    - symmetric_property_sub_property_of:
+      - AnnotationProperty
+      - TransitiveProperty
+      - Property
+      - ObjectProperty
+      - SymmetricProperty
+  - ns9:IAO_0000412:
+    - symmetric_property_iao_0000412:
+      - Ontology
+      - NamedIndividual
+  - ns9:IAO_0000114:
+    - symmetric_property_iao_0000114:
+      - IAO_0000078
+      - NamedIndividual
+      - Thing
+  - ns17:EFO_URI:
+    - symmetric_property_efo_uri: string
+  - skos:altLabel:
+    - symmetric_property_alt_label: string
+  - ns16:hasDbXref:
+    - symmetric_property_has_db_xref: string
+  - dc11:identifier:
+    - symmetric_property_identifier: string
+  - ns18:subset:
+    - symmetric_property_subset: string
+  - ns9:IAO_0000112:
+    - symmetric_property_iao_0000112:
+      - string
+      - string
+  - prov:component:
+    - symmetric_property_component: string
+  - ns18:equivalentTo:
+    - symmetric_property_equivalent_to:
+      - anyURI
+      - string
+  - ns9:IAO_0000111:
+    - symmetric_property_iao_0000111: string
+  - ns16:id:
+    - symmetric_property_id: string
+  - ns19:FMAID:
+    - symmetric_property_fmaid: string
+  - ns16:shorthand:
+    - symmetric_property_shorthand: string
+  - prov:dm:
+    - symmetric_property_dm: anyURI
+  - ns9:IAO_0000424:
+    - symmetric_property_iao_0000424: string
+  - ns16:hasOBONamespace:
+    - symmetric_property_has_obo_namespace: string
+  - ns16:hasAlternativeId:
+    - symmetric_property_has_alternative_id: string
+  - rdfs:label:
+    - symmetric_property_label:
+      - string
+      - string
+  - ns9:IAO_0000589:
+    - symmetric_property_iao_0000589: string
+  - ns9:IAO_0000118:
+    - symmetric_property_iao_0000118:
+      - string
+      - string
+  - prov:category:
+    - symmetric_property_category: string
+  - skos:closeMatch:
+    - symmetric_property_close_match: anyURI
+  - skos:definition:
+    - symmetric_property_definition: string
+  - ns16:hasRelatedSynonym:
+    - symmetric_property_has_related_synonym: string
+  - ns16:hasExactSynonym:
+    - symmetric_property_has_exact_synonym: string
+  - ns16:is_transitive:
+    - symmetric_property_is_transitive: true
+  - dc:alternative:
+    - symmetric_property_alternative: string
+  - ns19:definition:
+    - symmetric_property_definition: string
+  - rdfs:comment:
+    - symmetric_property_comment:
+      - string
+      - string
+  - prov:n:
+    - symmetric_property_n: anyURI
+  - prov:definition:
+    - symmetric_property_definition: string
+  - ns9:IAO_0000232:
+    - symmetric_property_iao_0000232: string
+  - ns9:IAO_0000116:
+    - symmetric_property_iao_0000116:
+      - string
+      - anyURI
+      - string
+  - ns9:IAO_0000115:
+    - symmetric_property_iao_0000115:
+      - string
+      - string
+  - prov:inverse:
+    - symmetric_property_inverse: string
+  - schema:comment:
+    - symmetric_property_comment: string
+  - skos:example:
+    - symmetric_property_example: string
+  - ns9:IAO_0000117:
+    - symmetric_property_iao_0000117: string
+  - dc:description:
+    - symmetric_property_description: string
+  - prov:constraints:
+    - symmetric_property_constraints: anyURI
+- msFragmentType:
+  - rdf:type:
+    - ms_fragment_type_type:
+      - Class
+      - Class
+  - rdfs:label:
+    - ms_fragment_type_label: string
+- DateTimeStringEncodingType:
+  - rdf:type:
+    - date_time_string_encoding_type_type:
+      - Class
+      - Class
+  - rdfs:isDefinedBy:
+    - date_time_string_encoding_type_is_defined_by: Ontology
+  - ns5:allowedPattern:
+    - date_time_string_encoding_type_allowed_pattern: string
+  - rdfs:label:
+    - date_time_string_encoding_type_label: string
+- SemanticDistribution:
+  - ns10:accessURL:
+    - semantic_distribution_access_url: string
+- AllDisjointClasses:
+  - rdf:type:
+    - all_disjoint_classes_type: Class
+  - dc11:identifier:
+    - all_disjoint_classes_identifier: string
+- EndianType:
+  - rdf:type:
+    - endian_type_type:
+      - NamedIndividual
+      - Class
+      - Class
+  - rdfs:isDefinedBy:
+    - endian_type_is_defined_by: Ontology
+  - rdfs:label:
+    - endian_type_label: string
+  - ns25:literal:
+    - endian_type_literal: string
+- repeatAttribute:
+  - rdf:type:
+    - repeat_attribute_type:
+      - Class
+      - Class
+  - rdfs:label:
+    - repeat_attribute_label: string
+- b368683:
+  - rdf:type:
+    - b368683_type:
+      - Class
+      - Class
+      - Restriction
+  - ns9:IAO_0000114:
+    - b368683_iao_0000114:
+      - Thing
+      - NamedIndividual
+      - IAO_0000078
+- configuration:
+  - rdf:type:
+    - configuration_type:
+      - Class
+      - Class
+  - rdfs:label:
+    - configuration_label: string
+- Topology:
+  - rdf:type:
+    - topology_type:
+      - Class
+      - Class
+- Organization:
+  - schemas:name:
+    - organization_name: string
+  - foaf:name:
+    - organization_name: string
+- OrganismScope:
+  - rdf:type:
+    - organism_scope_type:
+      - Class
+      - Class
+- Class:
+  - ns18:SIO_000028:
+    - class_sio_000028: Class
+  - ns19:homonym_of:
+    - class_homonym_of: Class
+  - rdf:type:
+    - class_type:
+      - Class
+      - Class
+  - ns26:comment_handle:
+    - class_comment_handle: AnnotationProperty
+  - ns30:spatially_disjoint_from:
+    - class_spatially_disjoint_from: Class
+  - ns16:hasBroadSynonym:
+    - class_has_broad_synonym:
+      - DatatypeProperty
+      - Property
+      - AnnotationProperty
+      - string
+      - string
+  - skos:narrowMatch:
+    - class_narrow_match:
+      - Class
+      - Property
+  - ns9:PO_0040001:
+    - class_po_0040001: Class
+  - ns9:OBI_0000312:
+    - class_obi_0000312: Class
+  - ns9:RO_0002171:
+    - class_ro_0002171: Class
+  - rdfs:isDefinedBy:
+    - class_is_defined_by:
+      - Thing
+      - NamedIndividual
+      - Ontology
+      - string
+      - anyURI
+      - string
+  - ns9:ECO_9000000:
+    - class_eco_9000000: Class
+  - ns31:exactMatch:
+    - class_exact_match: Class
+  - ns26:ontology_used:
+    - class_ontology_used:
+      - Class
+      - string
+  - ns9:RO_0002092:
+    - class_ro_0002092: Class
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Restriction
+      - NamedIndividual
+      - AspectClass
+      - Class
+      - Datatype
+      - Class
+  - ns18:SIO_000204:
+    - class_sio_000204: Class
+  - ns9:RO_0002174:
+    - class_ro_0002174: Class
+  - ns32:part_of:
+    - class_part_of: Class
+  - ns9:RO_0002175:
+    - class_ro_0002175: Class
+  - ns18:SIO_000061:
+    - class_sio_000061:
+      - Class
+      - DeprecatedClass
+  - ns16:replacedBy:
+    - class_replaced_by:
+      - Class
+      - Class
+  - ns31:part_of_progression_of_disease:
+    - class_part_of_progression_of_disease: Class
+  - ns18:SIO_001157:
+    - class_sio_001157: Class
+  - owl:complementOf:
+    - class_complement_of:
+      - Restriction
+      - Class
+  - ns18:SIO_000008:
+    - class_sio_000008:
+      - DeprecatedClass
+      - Class
+  - ns9:RO_0000057:
+    - class_ro_0000057: Class
+  - ns16:inSubset:
+    - class_in_subset: AnnotationProperty
+  - ns9:BFO_0000062:
+    - class_bfo_0000062: Class
+  - ns33:treeView:
+    - class_tree_view: Class
+  - owl:equivalentClass:
+    - class_equivalent_class:
+      - Datatype
+      - Restriction
+      - AgentClass
+      - Class
+      - Class
+  - ns9:RO_0002161:
+    - class_ro_0002161: Class
+  - ns18:SIO_000244:
+    - class_sio_000244: Class
+  - ns9:RO_0001025:
+    - class_ro_0001025: Class
+  - ns31:disease_shares_features_of:
+    - class_disease_shares_features_of: Class
+  - ns9:RO_0002475:
+    - class_ro_0002475: Class
+  - ns9:IAO_0100001:
+    - class_iao_0100001:
+      - Class
+      - string
+  - ns31:disease_causes_feature:
+    - class_disease_causes_feature: Class
+  - rdfs:seeAlso:
+    - class_see_also:
+      - ObjectProperty
+      - Class
+      - string
+      - string
+      - anyURI
+  - ns8:hasGraphMetadata:
+    - class_has_graph_metadata:
+      - GraphMetaData
+      - NamedIndividual
+  - ns31:predisposes_towards:
+    - class_predisposes_towards: Class
+  - ns9:BFO_0000051:
+    - class_bfo_0000051: Class
+  - ns30:present_in_taxon:
+    - class_present_in_taxon: Class
+  - ns18:SIO_000068:
+    - class_sio_000068: Class
+  - prov:unqualifiedForm:
+    - class_unqualified_form:
+      - AnnotationProperty
+      - ObjectProperty
+  - skos:closeMatch:
+    - class_close_match: Class
+  - ns18:SIO_000096:
+    - class_sio_000096: Class
+  - skos:exactMatch:
+    - class_exact_match:
+      - NamedIndividual
+      - Class
+      - string
+  - skos:relatedMatch:
+    - class_related_match: Class
+  - ns9:RO_0000056:
+    - class_ro_0000056: Class
+  - ns9:RO_0004029:
+    - class_ro_0004029: Class
+  - ns9:IAO_0000231:
+    - class_iao_0000231:
+      - NamedIndividual
+      - IAO_0000078
+      - string
+  - ns31:excluded_subClassOf:
+    - class_excluded_sub_class_of: Class
+  - owl:disjointWith:
+    - class_disjoint_with:
+      - Restriction
+      - Class
+      - Class
+  - ns9:BFO_0000066:
+    - class_bfo_0000066: Class
+  - ns26:oldParent:
+    - class_old_parent: Class
+  - ns9:RO_0002160:
+    - class_ro_0002160: Class
+  - ns18:SIO_000128:
+    - class_sio_000128: Class
+  - ns9:RO_0002093:
+    - class_ro_0002093: Class
+  - ns18:SIO_000325:
+    - class_sio_000325: Class
+  - ns31:disease_has_major_feature:
+    - class_disease_has_major_feature: Class
+  - ns9:RO_0002604:
+    - class_ro_0002604: Class
+  - ns9:RO_0002213:
+    - class_ro_0002213: Class
+  - skos:broadMatch:
+    - class_broad_match:
+      - Class
+      - AnnotationProperty
+      - Property
+  - ns9:RO_0002211:
+    - class_ro_0002211: Class
+  - ns19:homonym_for:
+    - class_homonym_for: Class
+  - ns32:develops_from:
+    - class_develops_from: Class
+  - ns18:SIO_000365:
+    - class_sio_000365: Class
+  - ns30:sexually_homologous_to:
+    - class_sexually_homologous_to: Class
+  - ns9:BFO_0000063:
+    - class_bfo_0000063: Class
+  - ns30:dubious_for_taxon:
+    - class_dubious_for_taxon: Class
+  - ns9:RO_0000053:
+    - class_ro_0000053: Class
+  - ns18:SIO_000011:
+    - class_sio_000011: Class
+  - ns9:RO_0002220:
+    - class_ro_0002220: Class
+  - ns9:RO_0002212:
+    - class_ro_0002212: Class
+  - ns9:OBI_0000295:
+    - class_obi_0000295: Class
+  - ns9:IAO_0000412:
+    - class_iao_0000412:
+      - Ontology
+      - NamedIndividual
+  - ns9:RO_0002173:
+    - class_ro_0002173: Class
+  - ns34:crossSpeciesExactMatch:
+    - class_cross_species_exact_match: Class
+  - ns9:RO_0004022:
+    - class_ro_0004022: Class
+  - ns16:consider:
+    - class_consider:
+      - Class
+      - string
+      - true
+      - anyURI
+  - ns9:IAO_0000114:
+    - class_iao_0000114:
+      - Thing
+      - IAO_0000078
+      - NamedIndividual
+      - string
+  - ns9:UBPROP_0000106:
+    - class_ubprop_0000106: nonNegativeInteger
+  - ns9:RO_0004050:
+    - class_ro_0004050: string
+  - foaf:depiction:
+    - class_depiction:
+      - anyURI
+      - string
+  - ns17:EFO_URI:
+    - class_efo_uri: string
+  - skos:altLabel:
+    - class_alt_label: string
+  - ns9:RO_0002581:
+    - class_ro_0002581: string
+  - ns26:refactor_comment:
+    - class_refactor_comment: string
+  - dc:date:
+    - class_date: dateTime
+  - dc11:source:
+    - class_source: string
+  - ns19:RadLex_ID:
+    - class_rad_lex_id: string
+  - ns9:IAO_0006012:
+    - class_iao_0006012: string
+  - ns5:dbpediaMatch:
+    - class_dbpedia_match: anyURI
+  - ns35:hasRelatedSynonym:
+    - class_has_related_synonym: string
+  - ns16:created_by:
+    - class_created_by: string
+  - ns19:CMA_label:
+    - class_cma_label: string
+  - ns16:hasDbXref:
+    - class_has_db_xref: string
+  - ns9:UBPROP_0000009:
+    - class_ubprop_0000009: string
+  - ns9:IAO_0000233:
+    - class_iao_0000233:
+      - string
+      - anyURI
+  - dc:contributor:
+    - class_contributor: string
+  - ns19:Talairach:
+    - class_talairach: string
+  - ns16:hasDefinition:
+    - class_has_definition: string
+  - ns19:fma0329122:
+    - class_fma0329122: string
+  - dc11:identifier:
+    - class_identifier: string
+  - ns9:CLO_0037294:
+    - class_clo_0037294: string
+  - ns18:subset:
+    - class_subset:
+      - string
+      - string
+  - skos:scopeNote:
+    - class_scope_note: string
+  - ns9:IAO_0000112:
+    - class_iao_0000112:
+      - string
+      - string
+  - ns19:PIRADSv2:
+    - class_pirad_sv2: string
+  - ns17:organizational_class:
+    - class_organizational_class:
+      - string
+      - true
+  - ns26:is_deprecation_candidate:
+    - class_is_deprecation_candidate: true
+  - prov:component:
+    - class_component: string
+  - ns18:equivalentTo:
+    - class_equivalent_to:
+      - string
+      - anyURI
+  - ns19:preferred_name:
+    - class_preferred_name: string
+  - ns26:obsolete_since:
+    - class_obsolete_since:
+      - decimal
+      - string
+  - ns31:excluded_synonym:
+    - class_excluded_synonym: string
+  - ns17:SRA_label:
+    - class_sra_label: string
+  - ns9:UBPROP_0000002:
+    - class_ubprop_0000002: string
+  - dc:title:
+    - class_title: string
+  - ns9:CLO_0037244:
+    - class_clo_0037244: integer
+  - ns9:IAO_0000111:
+    - class_iao_0000111:
+      - string
+      - string
+  - ns9:UBPROP_0000015:
+    - class_ubprop_0000015: string
+  - ns26:related_term:
+    - class_related_term: string
+  - ns16:id:
+    - class_id: string
+  - ns9:CLO_0037275:
+    - class_clo_0037275: string
+  - ns19:FMAID:
+    - class_fmaid:
+      - string
+      - integer
+  - ns19:non-English_equivalent:
+    - class_non-english_equivalent: string
+  - ns26:is_refactor_candidate:
+    - class_is_refactor_candidate: true
+  - ns9:BFO_0000180:
+    - class_bfo_0000180: string
+  - ns17:ArrayExpress_label:
+    - class_array_express_label: string
+  - ns9:UBPROP_0000014:
+    - class_ubprop_0000014: string
+  - ns26:regex:
+    - class_regex: string
+  - ns36:isDefinedBy:
+    - class_is_defined_by: string
+  - prov:dm:
+    - class_dm: anyURI
+  - ns9:UBPROP_0000001:
+    - class_ubprop_0000001: string
+  - ns9:UBPROP_0000103:
+    - class_ubprop_0000103: nonNegativeInteger
+  - ns9:IAO_creation_date:
+    - class_iao_creation_date: string
+  - ns18:similarTo:
+    - class_similar_to:
+      - anyURI
+      - string
+  - ns26:deprecation_comment:
+    - class_deprecation_comment: string
+  - ns35:hasBroadSynonym:
+    - class_has_broad_synonym:
+      - string
+      - string
+  - ns9:UBPROP_0000111:
+    - class_ubprop_0000111: nonNegativeInteger
+  - ns16:hasOBONamespace:
+    - class_has_obo_namespace: string
+  - dc:source:
+    - class_source: anyURI
+  - ns37:inchikey:
+    - class_inchikey: string
+  - ns16:hasAlternativeId:
+    - class_has_alternative_id: string
+  - owl:incompatibleWith:
+    - class_incompatible_with: string
+  - ns17:reason_for_obsolescence:
+    - class_reason_for_obsolescence: string
+  - ns9:namespace:
+    - class_namespace: string
+  - ns9:UBPROP_0000104:
+    - class_ubprop_0000104: nonNegativeInteger
+  - ns9:BFO_0000179:
+    - class_bfo_0000179: string
+  - ns9:UBPROP_0000112:
+    - class_ubprop_0000112: 12345
+  - rdfs:label:
+    - class_label:
+      - string
+      - string
+  - ns35:hasExactSynonym:
+    - class_has_exact_synonym: string
+  - ns17:gwas_trait:
+    - class_gwas_trait: true
+  - ns17:source_definition:
+    - class_source_definition: string
+  - vs:term_status:
+    - class_term_status: string
+  - ns9:CLO_0037334:
+    - class_clo_0037334: string
+  - dc11:creator:
+    - class_creator: string
+  - ns16:hasHumanReadableId:
+    - class_has_human_readable_id: string
+  - ns38:has_rank:
+    - class_has_rank: string
+  - ns17:definition_citation:
+    - class_definition_citation: string
+  - ns37:inchi:
+    - class_inchi: string
+  - ns9:ECO_9000002:
+    - class_eco_9000002: string
+  - dc11:description:
+    - class_description:
+      - string
+      - string
+  - ns18:example:
+    - class_example: string
+  - ns16:creation_date:
+    - class_creation_date:
+      - string
+      - dateTime
+  - ns9:OBI_9991118:
+    - class_obi_9991118: string
+  - ns39:createdBy:
+    - class_created_by: string
+  - ns9:CLO_0037290:
+    - class_clo_0037290: string
+  - ns9:UBPROP_0000008:
+    - class_ubprop_0000008: string
+  - dc11:date:
+    - class_date:
+      - dateTime
+      - string
+  - ns36:creation_date:
+    - class_creation_date: dateTime
+  - ns19:EuProstate27:
+    - class_eu_prostate27: string
+  - ns40:seeAlso:
+    - class_see_also: string
+  - ns9:IAO_0000589:
+    - class_iao_0000589: string
+  - dc:issued:
+    - class_issued: '2000-01-01'
+  - owl:deprecated:
+    - class_deprecated: true
+  - ns19:JHU_DTI-81:
+    - class_jhu_dti-81: string
+  - ns9:OBI_0001886:
+    - class_obi_0001886: string
+  - ns9:IAO_0000600:
+    - class_iao_0000600: string
+  - ns9:IAO_0000118:
+    - class_iao_0000118:
+      - string
+      - string
+  - prov:category:
+    - class_category: string
+  - ns19:reference:
+    - class_reference: string
+  - ns19:JHU_White-Matter_Tractography_Atlas:
+    - class_jhu_white-matter_tractography_atlas: string
+  - ns19:Neurolex:
+    - class_neurolex: string
+  - ns9:UBPROP_0000006:
+    - class_ubprop_0000006: anyURI
+  - ns36:seeAlso:
+    - class_see_also:
+      - string
+      - anyURI
+  - ns5:informativeReference:
+    - class_informative_reference: anyURI
+  - ns26:media_type:
+    - class_media_type: string
+  - prov:editorsDefinition:
+    - class_editors_definition: string
+  - ns26:created_in:
+    - class_created_in:
+      - string
+      - decimal
+  - ns37:charge:
+    - class_charge: string
+  - ns8:comment:
+    - class_comment: string
+  - ns9:IAO_0000119:
+    - class_iao_0000119:
+      - string
+      - string
+  - skos:definition:
+    - class_definition: string
+  - ns26:notRecommendedForAnnotation:
+    - class_not_recommended_for_annotation: true
+  - ns9:OBI_0001847:
+    - class_obi_0001847: string
+  - foaf:depicted_by:
+    - class_depicted_by: anyURI
+  - ns16:hasRelatedSynonym:
+    - class_has_related_synonym:
+      - string
+      - string
+  - ns9:UBPROP_0000005:
+    - class_ubprop_0000005: string
+  - ns26:file_extension:
+    - class_file_extension: string
+  - ns9:UBPROP_0000007:
+    - class_ubprop_0000007: string
+  - ns16:hasExactSynonym:
+    - class_has_exact_synonym:
+      - string
+      - decimal
+      - string
+  - ns33:prefixIRI:
+    - class_prefix_iri: string
+  - ns37:formula:
+    - class_formula: string
+  - ns9:IAO_0000028:
+    - class_iao_0000028: string
+  - ns18:broaderThan:
+    - class_broader_than: string
+  - ns26:isdebtag:
+    - class_isdebtag: true
+  - ns37:monoisotopicmass:
+    - class_monoisotopicmass: string
+  - dc:alternative:
+    - class_alternative:
+      - string
+      - string
+  - ns5:deprecated:
+    - class_deprecated: true
+  - ns9:UBPROP_0000012:
+    - class_ubprop_0000012: string
+  - ns9:UBPROP_0000107:
+    - class_ubprop_0000107: nonNegativeInteger
+  - ns16:note:
+    - class_note: string
+  - ns37:mass:
+    - class_mass: string
+  - ns17:obsoleted_in_version:
+    - class_obsoleted_in_version: string
+  - ns17:branch_class:
+    - class_branch_class: string
+  - ns19:definition:
+    - class_definition: string
+  - rdfs:comment:
+    - class_comment:
+      - true
+      - HTML
+      - string
+      - string
+  - ns9:IAO_0000601:
+    - class_iao_0000601: string
+  - ns9:UBPROP_0000105:
+    - class_ubprop_0000105: nonNegativeInteger
+  - prov:n:
+    - class_n: anyURI
+  - skos:notation:
+    - class_notation: string
+  - ns26:example:
+    - class_example: string
+  - ns9:CLO_0037192:
+    - class_clo_0037192: string
+  - ns9:CLO_0000178:
+    - class_clo_0000178:
+      - string
+      - string
+  - ns35:hasNarrowSynonym:
+    - class_has_narrow_synonym: string
+  - ns9:UBPROP_0000011:
+    - class_ubprop_0000011: string
+  - skos:prefLabel:
+    - class_pref_label: string
+  - ns19:slot_synonym:
+    - class_slot_synonym: string
+  - ns9:IAO_0000234:
+    - class_iao_0000234: string
+  - ns9:CLO_0037333:
+    - class_clo_0037333: string
+  - prov:definition:
+    - class_definition:
+      - string
+      - string
+  - ns37:smiles:
+    - class_smiles: string
+  - ns9:UBPROP_0000010:
+    - class_ubprop_0000010: string
+  - ns19:DK__Freesurfer_:
+    - class_dk__freesurfer_: string
+  - ns9:IAO_0000232:
+    - class_iao_0000232:
+      - string
+      - string
+  - ns5:plainTextDescription:
+    - class_plain_text_description: string
+  - ns9:IAO_0000116:
+    - class_iao_0000116:
+      - string
+      - string
+  - ns9:IAO_0000115:
+    - class_iao_0000115:
+      - string
+      - string
+  - ns9:UBPROP_0000004:
+    - class_ubprop_0000004: string
+  - ns9:IAO_0000602:
+    - class_iao_0000602: string
+  - ns16:hasNarrowSynonym:
+    - class_has_narrow_synonym: string
+  - ns26:documentation:
+    - class_documentation: string
+  - ns16:xref:
+    - class_xref: string
+  - ns9:UBPROP_0000108:
+    - class_ubprop_0000108: nonNegativeInteger
+  - ns17:primary_source:
+    - class_primary_source: string
+  - schema:comment:
+    - class_comment:
+      - string
+      - string
+  - ns9:UBPROP_0000003:
+    - class_ubprop_0000003: string
+  - skos:example:
+    - class_example: string
+  - ns19:AAL:
+    - class_aal: string
+  - ns9:IAO_0000117:
+    - class_iao_0000117:
+      - string
+      - string
+  - ns19:synonym:
+    - class_synonym: string
+  - ns19:EuProstate16:
+    - class_eu_prostate16: string
+  - dc:description:
+    - class_description:
+      - LatexString
+      - HTML
+      - string
+      - string
+  - prov:constraints:
+    - class_constraints: anyURI
+  - ns19:Eponym:
+    - class_eponym: string
+  - ns9:UBPROP_0000013:
+    - class_ubprop_0000013: string
+- DatasetDescription:
+  - rdf:type:
+    - dataset_description_type:
+      - Class
+      - Class
+  - foaf:primaryTopic:
+    - dataset_description_primary_topic: Dataset
+  - dc:date:
+    - dataset_description_date: '2000-01-01'
+  - owl:versionInfo:
+    - dataset_description_version_info: string
+  - dc:title:
+    - dataset_description_title: string
+  - dc:creator:
+    - dataset_description_creator: string
+  - dc:description:
+    - dataset_description_description: string
+- relativeConfiguration:
+  - rdf:type:
+    - relative_configuration_type:
+      - Class
+      - Class
+  - rdfs:label:
+    - relative_configuration_label: string
+- Restriction:
+  - rdf:type:
+    - restriction_type: Class
+  - owl:allValuesFrom:
+    - restriction_all_values_from:
+      - Class
+      - Class
+      - Restriction
+      - Datatype
+      - NamedIndividual
+  - rdfs:subClassOf:
+    - restriction_sub_class_of:
+      - Class
+      - Restriction
+  - owl:onDataRange:
+    - restriction_on_data_range:
+      - Datatype
+      - Class
+  - owl:hasValue:
+    - restriction_has_value:
+      - OBI_0000245
+      - CLO_0037340
+      - NamedIndividual
+      - CLO_0000008
+      - b368683
+      - string
+      - true
+      - integer
+  - owl:disjointWith:
+    - restriction_disjoint_with: Restriction
+  - owl:someValuesFrom:
+    - restriction_some_values_from:
+      - OBI_0000245
+      - Class
+      - Datatype
+      - Restriction
+      - NamedIndividual
+      - Class
+  - owl:onProperty:
+    - restriction_on_property:
+      - SymmetricProperty
+      - FunctionalProperty
+      - DatatypeProperty
+      - ReflexiveProperty
+      - NamedIndividual
+      - InverseFunctionalProperty
+      - Property
+      - AsymmetricProperty
+      - AnnotationProperty
+      - ObjectProperty
+      - IrreflexiveProperty
+      - TransitiveProperty
+  - owl:onClass:
+    - restriction_on_class: Class
+  - dc11:identifier:
+    - restriction_identifier: string
+  - owl:hasSelf:
+    - restriction_has_self: true
+  - owl:minCardinality:
+    - restriction_min_cardinality: nonNegativeInteger
+  - owl:qualifiedCardinality:
+    - restriction_qualified_cardinality: nonNegativeInteger
+  - owl:cardinality:
+    - restriction_cardinality: nonNegativeInteger
+  - owl:maxQualifiedCardinality:
+    - restriction_max_qualified_cardinality: nonNegativeInteger
+  - owl:maxCardinality:
+    - restriction_max_cardinality: nonNegativeInteger
+  - owl:minQualifiedCardinality:
+    - restriction_min_qualified_cardinality: nonNegativeInteger
+- AspectClass:
+  - rdf:type:
+    - aspect_class_type:
+      - Class
+      - Class
+  - rdfs:isDefinedBy:
+    - aspect_class_is_defined_by: Ontology
+  - rdfs:subClassOf:
+    - aspect_class_sub_class_of:
+      - NamedIndividual
+      - Restriction
+      - AspectClass
+      - Class
+  - rdfs:label:
+    - aspect_class_label: string
+  - rdfs:comment:
+    - aspect_class_comment:
+      - HTML
+      - string
+- Person:
+  - schemas:affiliation:
+    - person_affiliation: Organization
+  - schemas:name:
+    - person_name: string
+- Taxon:
+  - rdf:type:
+    - taxon_type: Class
+  - rdfs:subClassOf:
+    - taxon_sub_class_of: Taxon
+  - ns12:geneticCode:
+    - taxon_genetic_code: GeneticCode
+  - ns12:geneticCodeMt:
+    - taxon_genetic_code_mt: GeneticCode
+  - ns12:rank:
+    - taxon_rank: Rank
+  - owl:sameAs:
+    - taxon_same_as: Class
+  - dc:identifier:
+    - taxon_identifier: integer
+  - ns12:genbankCommonName:
+    - taxon_genbank_common_name: string
+  - ns12:uniqueName:
+    - taxon_unique_name: string
+  - ns12:inPart:
+    - taxon_in_part: string
+  - ns12:equivalentName:
+    - taxon_equivalent_name: string
+  - ns12:blastName:
+    - taxon_blast_name: string
+  - ns12:acronym:
+    - taxon_acronym: string
+  - rdfs:label:
+    - taxon_label: string
+  - ns12:includes:
+    - taxon_includes: string
+  - ns12:genbankAcronym:
+    - taxon_genbank_acronym: string
+  - ns12:commonName:
+    - taxon_common_name: string
+  - ns12:authority:
+    - taxon_authority: string
+  - ns12:synonym:
+    - taxon_synonym: string
+  - ns12:typeMaterial:
+    - taxon_type_material: string
+  - ns12:scientificName:
+    - taxon_scientific_name: string
+- solvent:
+  - rdf:type:
+    - solvent_type:
+      - Class
+      - Class
+  - rdfs:label:
+    - solvent_label: string
+  - rdfs:comment:
+    - solvent_comment: string
+- SCRPopulation:
+  - ns13:mappedTo:
+    - scr_population_mapped_to: TopicalDescriptor
+  - ns13:preferredConcept:
+    - scr_population_preferred_concept: Concept
+  - ns13:preferredMappedTo:
+    - scr_population_preferred_mapped_to: TopicalDescriptor
+  - ns13:preferredTerm:
+    - scr_population_preferred_term: Term
+  - ns13:concept:
+    - scr_population_concept: Concept
+  - ns13:dateRevised:
+    - scr_population_date_revised: '2000-01-01'
+  - ns13:frequency:
+    - scr_population_frequency: 12345
+  - rdfs:label:
+    - scr_population_label: string
+  - ns13:identifier:
+    - scr_population_identifier: string
+  - ns13:dateCreated:
+    - scr_population_date_created: '2000-01-01'
+  - ns13:active:
+    - scr_population_active: true
+- PublicationType:
+  - rdf:type:
+    - publication_type_type: Class
+  - ns13:preferredConcept:
+    - publication_type_preferred_concept: Concept
+  - ns13:broaderDescriptor:
+    - publication_type_broader_descriptor: PublicationType
+  - ns13:treeNumber:
+    - publication_type_tree_number: TreeNumber
+  - ns13:preferredTerm:
+    - publication_type_preferred_term: Term
+  - ns13:concept:
+    - publication_type_concept: Concept
+  - ns13:seeAlso:
+    - publication_type_see_also: PublicationType
+  - ns13:dateRevised:
+    - publication_type_date_revised: '2000-01-01'
+  - ns13:previousIndexing:
+    - publication_type_previous_indexing: string
+  - ns13:dateEstablished:
+    - publication_type_date_established: '2000-01-01'
+  - rdfs:label:
+    - publication_type_label: string
+  - ns13:historyNote:
+    - publication_type_history_note: string
+  - ns13:identifier:
+    - publication_type_identifier: string
+  - ns13:dateCreated:
+    - publication_type_date_created: '2000-01-01'
+  - ns13:nlmClassificationNumber:
+    - publication_type_nlm_classification_number: string
+  - ns13:active:
+    - publication_type_active: true
+  - ns13:annotation:
+    - publication_type_annotation: string
+- DisallowedDescriptorQualifierPair:
+  - rdf:type:
+    - disallowed_descriptor_qualifier_pair_type: Class
+  - ns13:hasQualifier:
+    - disallowed_descriptor_qualifier_pair_has_qualifier: Qualifier
+  - ns13:hasDescriptor:
+    - disallowed_descriptor_qualifier_pair_has_descriptor: TopicalDescriptor
+  - ns13:useInstead:
+    - disallowed_descriptor_qualifier_pair_use_instead:
+      - AllowedDescriptorQualifierPair
+      - TopicalDescriptor
+      - DisallowedDescriptorQualifierPair
+  - ns13:lastActiveYear:
+    - disallowed_descriptor_qualifier_pair_last_active_year: string
+  - rdfs:label:
+    - disallowed_descriptor_qualifier_pair_label: string
+  - ns13:active:
+    - disallowed_descriptor_qualifier_pair_active: true
+- FloatingPointEncodingType:
+  - rdf:type:
+    - floating_point_encoding_type_type:
+      - Class
+      - Class
+  - rdfs:isDefinedBy:
+    - floating_point_encoding_type_is_defined_by: Ontology
+  - rdfs:label:
+    - floating_point_encoding_type_label: string
+  - ns5:bytes:
+    - floating_point_encoding_type_bytes: integer
+- Concept:
+  - rdf:type:
+    - concept_type: Class
+  - ns13:narrowerConcept:
+    - concept_narrower_concept: Concept
+  - ns13:Concept:
+    - concept_concept: Concept
+  - ns13:term:
+    - concept_term: Term
+  - ns13:relatedConcept:
+    - concept_related_concept: Concept
+  - ns13:preferredTerm:
+    - concept_preferred_term: Term
+  - ns13:broaderConcept:
+    - concept_broader_concept: Concept
+  - ns13:casn1_label:
+    - concept_casn1_label: string
+  - ns13:lastActiveYear:
+    - concept_last_active_year: string
+  - ns13:relatedRegistryNumber:
+    - concept_related_registry_number: string
+  - ns13:registryNumber:
+    - concept_registry_number: string
+  - rdfs:label:
+    - concept_label: string
+  - ns13:scopeNote:
+    - concept_scope_note: string
+  - ns13:identifier:
+    - concept_identifier: string
+  - ns13:active:
+    - concept_active: true
+- Agent:
+  - rdf:type:
+    - agent_type:
+      - Class
+      - AgentClass
+      - Class
+  - rdfs:label:
+    - agent_label: string
+  - dc11:description:
+    - agent_description: string
+- StringEncodingType:
+  - rdf:type:
+    - string_encoding_type_type:
+      - Class
+      - Class
+  - rdfs:isDefinedBy:
+    - string_encoding_type_is_defined_by: Ontology
+  - rdfs:label:
+    - string_encoding_type_label: string
+  - ns5:bytes:
+    - string_encoding_type_bytes: integer
+- ByteEncodingType:
+  - rdf:type:
+    - byte_encoding_type_type:
+      - Class
+      - Class
+  - rdfs:isDefinedBy:
+    - byte_encoding_type_is_defined_by: Ontology
+  - rdfs:label:
+    - byte_encoding_type_label: string
+  - ns5:bytes:
+    - byte_encoding_type_bytes: integer
+- CLO_0037340:
+  - rdf:type:
+    - clo_0037340_type:
+      - Class
+      - Class
+  - rdfs:label:
+    - clo_0037340_label: string
+  - ns9:IAO_0000118:
+    - clo_0037340_iao_0000118: string
+  - ns9:IAO_0000119:
+    - clo_0037340_iao_0000119: string
+  - rdfs:comment:
+    - clo_0037340_comment: string
+  - ns9:IAO_0000117:
+    - clo_0037340_iao_0000117: string
+- DatatypeProperty:
+  - rdfs:domain:
+    - datatype_property_domain:
+      - Class
+      - Class
+  - rdfs:label:
+    - datatype_property_label: string
+  - rdfs:comment:
+    - datatype_property_comment: string
+- GeneProduct:
+  - ns9:BFO_0000066:
+    - gene_product_bfo_0000066:
+      - TS-1150
+      - TS-0726
+      - TS-1288
+      - TS-1250
+      - TS-1282
+      - TS-0099
+      - TS-0013
+      - TS-2377
+      - TS-1248
+      - TS-1251
+      - TS-1275
+      - TS-1286
+      - TS-1264
+      - TS-2170
+      - TS-2031
+      - TS-1276
+      - TS-0193
+      - TS-2109
+      - TS-2171
+      - TS-0012
+      - TS-1252
+      - TS-1281
+      - TS-2373
+      - TS-1257
+      - TS-1259
+      - TS-1246
+      - TS-1269
+      - TS-2397
+      - TS-0283
+      - TS-1284
+      - TS-2166
+      - TS-2177
+      - TS-2378
+      - TS-0500
+      - TS-2399
+      - TS-2398
+      - TS-2176
+      - TS-2159
+      - TS-1253
+      - TS-1262
+      - TS-2396
+      - TS-1272
+      - TS-2172
+      - TS-0454
+      - TS-1266
+      - TS-2158
+      - TS-2376
+      - TS-1119
+      - TS-1256
+      - TS-1260
+      - TS-1271
+      - TS-0935
+      - TS-1274
+      - TS-2407
+      - TS-1242
+      - TS-1268
+      - TS-0576
+      - TS-2168
+      - TS-0862
+      - TS-2392
+      - TS-1263
+      - TS-1239
+      - TS-1279
+      - TS-0452
+      - TS-2174
+      - TS-1247
+      - TS-1278
+      - TS-1277
+      - TS-2372
+      - TS-1030
+      - TS-2096
+      - TS-0030
+      - TS-1254
+      - TS-1283
+      - TS-1088
+      - TS-2374
+      - TS-1070
+      - TS-1280
+      - TS-1273
+  - ns42:nlx_qual_1010003:
+    - gene_product_nlx_qual_1010003: string
+- IrreflexiveProperty:
+  - rdf:type:
+    - irreflexive_property_type: Class
+  - owl:inverseOf:
+    - irreflexive_property_inverse_of:
+      - AsymmetricProperty
+      - ObjectProperty
+      - IrreflexiveProperty
+  - rdfs:domain:
+    - irreflexive_property_domain: Class
+  - rdfs:isDefinedBy:
+    - irreflexive_property_is_defined_by: Ontology
+  - rdfs:range:
+    - irreflexive_property_range: Class
+  - ns9:RO_0001900:
+    - irreflexive_property_ro_0001900: NamedIndividual
+  - rdfs:subPropertyOf:
+    - irreflexive_property_sub_property_of:
+      - TransitiveProperty
+      - ObjectProperty
+      - ReflexiveProperty
+  - ns9:IAO_0000412:
+    - irreflexive_property_iao_0000412: Ontology
+  - ns16:hasDbXref:
+    - irreflexive_property_has_db_xref: string
+  - dc11:identifier:
+    - irreflexive_property_identifier: string
+  - ns18:subset:
+    - irreflexive_property_subset: string
+  - ns9:IAO_0000112:
+    - irreflexive_property_iao_0000112: string
+  - ns18:equivalentTo:
+    - irreflexive_property_equivalent_to: string
+  - ns16:id:
+    - irreflexive_property_id: string
+  - ns16:shorthand:
+    - irreflexive_property_shorthand: string
+  - ns16:hasOBONamespace:
+    - irreflexive_property_has_obo_namespace: string
+  - rdfs:label:
+    - irreflexive_property_label:
+      - string
+      - string
+  - ns9:IAO_0000118:
+    - irreflexive_property_iao_0000118: string
+  - ns9:IAO_0000119:
+    - irreflexive_property_iao_0000119: string
+  - ns16:hasRelatedSynonym:
+    - irreflexive_property_has_related_synonym: string
+  - ns9:IAO_0000232:
+    - irreflexive_property_iao_0000232: string
+  - ns9:IAO_0000115:
+    - irreflexive_property_iao_0000115: string
+  - skos:example:
+    - irreflexive_property_example: string
+  - ns9:IAO_0000117:
+    - irreflexive_property_iao_0000117: string
+  - dc:description:
+    - irreflexive_property_description: string
+- TreeNumber:
+  - rdf:type:
+    - tree_number_type: Class
+  - ns13:parentTreeNumber:
+    - tree_number_parent_tree_number: TreeNumber
+  - ns13:lastActiveYear:
+    - tree_number_last_active_year: string
+  - rdfs:label:
+    - tree_number_label: string
+  - ns13:active:
+    - tree_number_active: true
+- Qualifier:
+  - rdf:type:
+    - qualifier_type: Class
+  - ns13:preferredConcept:
+    - qualifier_preferred_concept: Concept
+  - ns13:treeNumber:
+    - qualifier_tree_number: TreeNumber
+  - ns13:preferredTerm:
+    - qualifier_preferred_term: Term
+  - ns13:concept:
+    - qualifier_concept: Concept
+  - ns13:broaderQualifier:
+    - qualifier_broader_qualifier: Qualifier
+  - ns13:dateRevised:
+    - qualifier_date_revised: '2000-01-01'
+  - ns13:lastActiveYear:
+    - qualifier_last_active_year: string
+  - ns13:dateEstablished:
+    - qualifier_date_established: '2000-01-01'
+  - rdfs:label:
+    - qualifier_label: string
+  - ns13:historyNote:
+    - qualifier_history_note: string
+  - ns13:identifier:
+    - qualifier_identifier: string
+  - ns13:dateCreated:
+    - qualifier_date_created: '2000-01-01'
+  - ns13:active:
+    - qualifier_active: true
+  - ns13:onlineNote:
+    - qualifier_online_note: string
+  - ns13:annotation:
+    - qualifier_annotation: string
+- Version:
+  - rdf:type:
+    - version_type:
+      - AnnotationProperty
+      - Class
+      - Class
+  - rdfs:seeAlso:
+    - version_see_also:
+      - NamedIndividual
+      - Thing
+  - doap:file-release:
+    - version_file-release:
+      - NamedIndividual
+      - Thing
+      - Version
+  - doap:revision:
+    - version_revision: string
+  - rdfs:label:
+    - version_label: string
+- evidenceType:
+  - rdf:type:
+    - evidence_type_type:
+      - Class
+      - Class
+  - rdfs:label:
+    - evidence_type_label: string
+- IndividualPropertyAtom:
+  - ns7:argument1:
+    - individual_property_atom_argument1: Variable
+  - ns7:argument2:
+    - individual_property_atom_argument2: Variable
+  - ns7:propertyPredicate:
+    - individual_property_atom_property_predicate:
+      - SymmetricProperty
+      - ObjectProperty
+      - InverseFunctionalProperty
+      - TransitiveProperty
+      - FunctionalProperty
+- SCRProtocol:
+  - rdf:type:
+    - scr_protocol_type: Class
+  - ns13:mappedTo:
+    - scr_protocol_mapped_to:
+      - TopicalDescriptor
+      - AllowedDescriptorQualifierPair
+  - ns13:preferredConcept:
+    - scr_protocol_preferred_concept: Concept
+  - ns13:preferredMappedTo:
+    - scr_protocol_preferred_mapped_to:
+      - TopicalDescriptor
+      - AllowedDescriptorQualifierPair
+      - DisallowedDescriptorQualifierPair
+  - ns13:indexerConsiderAlso:
+    - scr_protocol_indexer_consider_also: TopicalDescriptor
+  - ns13:pharmacologicalAction:
+    - scr_protocol_pharmacological_action: TopicalDescriptor
+  - ns13:preferredTerm:
+    - scr_protocol_preferred_term: Term
+  - ns13:concept:
+    - scr_protocol_concept: Concept
+  - ns13:dateRevised:
+    - scr_protocol_date_revised: '2000-01-01'
+  - ns13:previousIndexing:
+    - scr_protocol_previous_indexing: string
+  - ns13:note:
+    - scr_protocol_note: string
+  - ns13:frequency:
+    - scr_protocol_frequency: 12345
+  - ns13:lastActiveYear:
+    - scr_protocol_last_active_year: string
+  - rdfs:label:
+    - scr_protocol_label: string
+  - ns13:identifier:
+    - scr_protocol_identifier: string
+  - ns13:dateCreated:
+    - scr_protocol_date_created: '2000-01-01'
+  - ns13:source:
+    - scr_protocol_source: string
+  - ns13:active:
+    - scr_protocol_active: true
+- chemicalRelease:
+  - rdf:type:
+    - chemical_release_type:
+      - Class
+      - Class
+  - rdfs:label:
+    - chemical_release_label: string
+  - rdfs:comment:
+    - chemical_release_comment: string
+- SCRAnatomy:
+  - ns13:preferredConcept:
+    - scr_anatomy_preferred_concept: Concept
+  - ns13:preferredMappedTo:
+    - scr_anatomy_preferred_mapped_to:
+      - TopicalDescriptor
+      - AllowedDescriptorQualifierPair
+  - ns13:indexerConsiderAlso:
+    - scr_anatomy_indexer_consider_also: TopicalDescriptor
+  - ns13:preferredTerm:
+    - scr_anatomy_preferred_term: Term
+  - ns13:concept:
+    - scr_anatomy_concept: Concept
+  - ns13:dateRevised:
+    - scr_anatomy_date_revised: '2000-01-01'
+  - ns13:note:
+    - scr_anatomy_note: string
+  - ns13:lastActiveYear:
+    - scr_anatomy_last_active_year: string
+  - rdfs:label:
+    - scr_anatomy_label: string
+  - ns13:identifier:
+    - scr_anatomy_identifier: string
+  - ns13:dateCreated:
+    - scr_anatomy_date_created: '2000-01-01'
+  - ns13:active:
+    - scr_anatomy_active: true
+- DeprecatedClass:
+  - rdf:type:
+    - deprecated_class_type:
+      - Class
+      - Class
+  - rdfs:isDefinedBy:
+    - deprecated_class_is_defined_by: Ontology
+  - rdfs:subClassOf:
+    - deprecated_class_sub_class_of:
+      - DeprecatedClass
+      - Class
+  - ns18:SIO_000364:
+    - deprecated_class_sio_000364: Taxon
+  - owl:equivalentClass:
+    - deprecated_class_equivalent_class: Class
+  - ns18:SIO_000066:
+    - deprecated_class_sio_000066: Taxon
+  - ns18:SIO_000253:
+    - deprecated_class_sio_000253: Taxon
+  - ns35:hasRelatedSynonym:
+    - deprecated_class_has_related_synonym: string
+  - rdfs:label:
+    - deprecated_class_label: string
+  - ns35:hasExactSynonym:
+    - deprecated_class_has_exact_synonym: string
+  - rdfs:seeAlso:
+    - deprecated_class_see_also: string
+  - owl:deprecated:
+    - deprecated_class_deprecated: true
+  - rdfs:comment:
+    - deprecated_class_comment: string
+- MoleculeScope:
+  - rdf:type:
+    - molecule_scope_type:
+      - Class
+      - Class
+- BooleanEncodingType:
+  - rdf:type:
+    - boolean_encoding_type_type:
+      - Class
+      - Class
+  - rdfs:isDefinedBy:
+    - boolean_encoding_type_is_defined_by: Ontology
+  - ns5:bits:
+    - boolean_encoding_type_bits: integer
+  - rdfs:label:
+    - boolean_encoding_type_label: string
+  - dc11:description:
+    - boolean_encoding_type_description: string
+  - ns5:bytes:
+    - boolean_encoding_type_bytes: integer
+- SCRChemical:
+  - rdf:type:
+    - scr_chemical_type: Class
+  - ns13:mappedTo:
+    - scr_chemical_mapped_to:
+      - AllowedDescriptorQualifierPair
+      - TopicalDescriptor
+  - ns13:preferredConcept:
+    - scr_chemical_preferred_concept: Concept
+  - ns13:preferredMappedTo:
+    - scr_chemical_preferred_mapped_to:
+      - AllowedDescriptorQualifierPair
+      - TopicalDescriptor
+  - ns13:indexerConsiderAlso:
+    - scr_chemical_indexer_consider_also:
+      - AllowedDescriptorQualifierPair
+      - TopicalDescriptor
+      - DisallowedDescriptorQualifierPair
+  - ns13:pharmacologicalAction:
+    - scr_chemical_pharmacological_action: TopicalDescriptor
+  - ns13:preferredTerm:
+    - scr_chemical_preferred_term: Term
+  - ns13:concept:
+    - scr_chemical_concept: Concept
+  - ns13:dateRevised:
+    - scr_chemical_date_revised: '2000-01-01'
+  - ns13:previousIndexing:
+    - scr_chemical_previous_indexing: string
+  - ns13:note:
+    - scr_chemical_note: string
+  - ns13:frequency:
+    - scr_chemical_frequency: 12345
+  - ns13:lastActiveYear:
+    - scr_chemical_last_active_year: string
+  - rdfs:label:
+    - scr_chemical_label: string
+  - ns13:identifier:
+    - scr_chemical_identifier: string
+  - ns13:dateCreated:
+    - scr_chemical_date_created: '2000-01-01'
+  - ns13:source:
+    - scr_chemical_source: string
+  - ns13:active:
+    - scr_chemical_active: true
+- carbohydrateFormat:
+  - rdf:type:
+    - carbohydrate_format_type:
+      - Class
+      - Class
+  - rdfs:label:
+    - carbohydrate_format_label: string
+- OBI_0000245:
+  - rdf:type:
+    - obi_0000245_type:
+      - Class
+      - Restriction
+      - Class
+  - rdfs:subClassOf:
+    - obi_0000245_sub_class_of: Class
+  - ns9:IAO_0000114:
+    - obi_0000245_iao_0000114:
+      - Thing
+      - NamedIndividual
+      - IAO_0000078
+  - ns16:hasDbXref:
+    - obi_0000245_has_db_xref: string
+  - ns9:IAO_0000111:
+    - obi_0000245_iao_0000111: string
+  - rdfs:label:
+    - obi_0000245_label: string
+  - ns17:definition_citation:
+    - obi_0000245_definition_citation: string
+  - ns9:IAO_0000119:
+    - obi_0000245_iao_0000119: string
+  - ns9:IAO_0000115:
+    - obi_0000245_iao_0000115: string
+  - ns9:IAO_0000117:
+    - obi_0000245_iao_0000117: string
+- GeneticCode:
+  - rdf:type:
+    - genetic_code_type: Class
+  - rdfs:label:
+    - genetic_code_label: string
+- SCROrganism:
+  - rdf:type:
+    - scr_organism_type: Class
+  - ns13:mappedTo:
+    - scr_organism_mapped_to: TopicalDescriptor
+  - ns13:preferredConcept:
+    - scr_organism_preferred_concept: Concept
+  - ns13:preferredMappedTo:
+    - scr_organism_preferred_mapped_to: TopicalDescriptor
+  - ns13:indexerConsiderAlso:
+    - scr_organism_indexer_consider_also: TopicalDescriptor
+  - ns13:preferredTerm:
+    - scr_organism_preferred_term: Term
+  - ns13:concept:
+    - scr_organism_concept: Concept
+  - ns13:dateRevised:
+    - scr_organism_date_revised: '2000-01-01'
+  - ns13:previousIndexing:
+    - scr_organism_previous_indexing: string
+  - ns13:note:
+    - scr_organism_note: string
+  - ns13:frequency:
+    - scr_organism_frequency: 12345
+  - ns13:lastActiveYear:
+    - scr_organism_last_active_year: string
+  - rdfs:label:
+    - scr_organism_label: string
+  - ns13:identifier:
+    - scr_organism_identifier: string
+  - ns13:dateCreated:
+    - scr_organism_date_created: '2000-01-01'
+  - ns13:source:
+    - scr_organism_source: string
+  - ns13:active:
+    - scr_organism_active: true
+- linkageType:
+  - rdf:type:
+    - linkage_type_type:
+      - Class
+      - Class
+  - rdfs:label:
+    - linkage_type_label: string
+  - rdfs:comment:
+    - linkage_type_comment: string
+- Rank:
+  - rdf:type:
+    - rank_type: Class
+  - rdfs:label:
+    - rank_label: string
+- IntegerEncodingType:
+  - rdf:type:
+    - integer_encoding_type_type:
+      - Class
+      - Class
+  - rdfs:isDefinedBy:
+    - integer_encoding_type_is_defined_by: Ontology
+  - rdfs:label:
+    - integer_encoding_type_label: string
+  - ns5:bytes:
+    - integer_encoding_type_bytes: integer
+- Imp:
+  - ns7:head:
+    - imp_head: AtomList
+  - ns7:body:
+    - imp_body: AtomList
+  - ns43:isRuleEnabled:
+    - imp_is_rule_enabled: true
+  - rdfs:label:
+    - imp_label: string
+  - rdfs:comment:
+    - imp_comment: string
+- AllowedDescriptorQualifierPair:
+  - rdf:type:
+    - allowed_descriptor_qualifier_pair_type: Class
+  - ns13:hasQualifier:
+    - allowed_descriptor_qualifier_pair_has_qualifier: Qualifier
+  - ns13:hasDescriptor:
+    - allowed_descriptor_qualifier_pair_has_descriptor:
+      - TopicalDescriptor
+      - GeographicalDescriptor
+  - ns13:lastActiveYear:
+    - allowed_descriptor_qualifier_pair_last_active_year: string
+  - rdfs:label:
+    - allowed_descriptor_qualifier_pair_label: string
+  - ns13:active:
+    - allowed_descriptor_qualifier_pair_active: true
+- symbolFormat:
+  - rdf:type:
+    - symbol_format_type:
+      - Class
+      - Class
+  - rdfs:label:
+    - symbol_format_label: string
+  - rdfs:comment:
+    - symbol_format_comment: string
+- ObjectProperty:
+  - ns9:RO_0004036:
+    - object_property_ro_0004036:
+      - TransitiveProperty
+      - ObjectProperty
+  - ns9:RO_0004050:
+    - object_property_ro_0004050:
+      - ObjectProperty
+      - TransitiveProperty
+  - rdf:type:
+    - object_property_type: Class
+  - owl:inverseOf:
+    - object_property_inverse_of:
+      - ReflexiveProperty
+      - AsymmetricProperty
+      - InverseFunctionalProperty
+      - AnnotationProperty
+      - ObjectProperty
+      - SymmetricProperty
+      - TransitiveProperty
+      - Property
+      - IrreflexiveProperty
+      - FunctionalProperty
+      - NamedIndividual
+  - rdfs:domain:
+    - object_property_domain:
+      - Restriction
+      - Class
+      - Class
+  - ns16:hasDbXref:
+    - object_property_has_db_xref:
+      - ObjectProperty
+      - AnnotationProperty
+      - Property
+      - string
+  - rdfs:isDefinedBy:
+    - object_property_is_defined_by:
+      - Ontology
+      - NamedIndividual
+      - anyURI
+      - string
+  - owl:propertyDisjointWith:
+    - object_property_property_disjoint_with: ObjectProperty
+  - ns9:RO_0002579:
+    - object_property_ro_0002579:
+      - TransitiveProperty
+      - ObjectProperty
+  - ns9:RO_0040042:
+    - object_property_ro_0040042: Class
+  - ns16:inSubset:
+    - object_property_in_subset: AnnotationProperty
+  - ns9:IAO_0100001:
+    - object_property_iao_0100001: ObjectProperty
+  - rdfs:seeAlso:
+    - object_property_see_also:
+      - DatatypeProperty
+      - Property
+      - AnnotationProperty
+      - Class
+      - ObjectProperty
+      - SymmetricProperty
+      - anyURI
+      - string
+  - prov:unqualifiedForm:
+    - object_property_unqualified_form:
+      - AnnotationProperty
+      - ObjectProperty
+  - ns2:rangeIncludes:
+    - object_property_range_includes:
+      - Class
+      - Class
+      - AgentClass
+  - skos:closeMatch:
+    - object_property_close_match:
+      - ObjectProperty
+      - anyURI
+  - ns9:RO_0002575:
+    - object_property_ro_0002575:
+      - TransitiveProperty
+      - ObjectProperty
+  - prov:qualifiedForm:
+    - object_property_qualified_form:
+      - Class
+      - ObjectProperty
+  - ns9:IAO_0000231:
+    - object_property_iao_0000231: NamedIndividual
+  - prov:sharesDefinitionWith:
+    - object_property_shares_definition_with: Class
+  - ns9:RO_0004049:
+    - object_property_ro_0004049:
+      - TransitiveProperty
+      - ObjectProperty
+  - rdfs:range:
+    - object_property_range:
+      - NamedIndividual
+      - Restriction
+      - Class
+      - Class
+      - Datatype
+  - dc:isReplacedBy:
+    - object_property_is_replaced_by:
+      - NamedIndividual
+      - Property
+      - ObjectProperty
+  - skos:broadMatch:
+    - object_property_broad_match: ObjectProperty
+  - ns9:RO_0001900:
+    - object_property_ro_0001900: NamedIndividual
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of:
+      - FunctionalProperty
+      - DatatypeProperty
+      - IrreflexiveProperty
+      - AsymmetricProperty
+      - ReflexiveProperty
+      - SymmetricProperty
+      - InverseFunctionalProperty
+      - NamedIndividual
+      - Property
+      - ObjectProperty
+      - TransitiveProperty
+      - AnnotationProperty
+  - owl:equivalentProperty:
+    - object_property_equivalent_property:
+      - AnnotationProperty
+      - ObjectProperty
+      - Property
+  - ns9:IAO_0000412:
+    - object_property_iao_0000412:
+      - Ontology
+      - NamedIndividual
+  - ns9:IAO_0000114:
+    - object_property_iao_0000114:
+      - NamedIndividual
+      - IAO_0000078
+      - Thing
+  - ns17:EFO_URI:
+    - object_property_efo_uri: string
+  - skos:altLabel:
+    - object_property_alt_label: string
+  - ns16:hasBroadSynonym:
+    - object_property_has_broad_synonym: string
+  - dc11:source:
+    - object_property_source: string
+  - ns19:RO_ID:
+    - object_property_ro_id: string
+  - ns16:created_by:
+    - object_property_created_by: string
+  - ns16:hasDefinition:
+    - object_property_has_definition: string
+  - dc11:identifier:
+    - object_property_identifier: string
+  - ns18:subset:
+    - object_property_subset:
+      - string
+      - string
+  - skos:scopeNote:
+    - object_property_scope_note: string
+  - ns9:IAO_0000112:
+    - object_property_iao_0000112:
+      - string
+      - true
+      - string
+  - prov:component:
+    - object_property_component: string
+  - ns18:equivalentTo:
+    - object_property_equivalent_to:
+      - anyURI
+      - string
+  - ns9:IAO_0000111:
+    - object_property_iao_0000111:
+      - string
+      - string
+  - ns16:id:
+    - object_property_id: string
+  - ns19:FMAID:
+    - object_property_fmaid: string
+  - prov:editorialNote:
+    - object_property_editorial_note: string
+  - ns16:shorthand:
+    - object_property_shorthand: string
+  - prov:dm:
+    - object_property_dm: anyURI
+  - ns9:UBPROP_0000001:
+    - object_property_ubprop_0000001: string
+  - ns9:is_symmetric:
+    - object_property_is_symmetric: string
+  - ns9:IAO_0000424:
+    - object_property_iao_0000424:
+      - string
+      - string
+  - ns16:hasOBONamespace:
+    - object_property_has_obo_namespace: string
+  - dc:source:
+    - object_property_source:
+      - anyURI
+      - string
+  - ns16:hasAlternativeId:
+    - object_property_has_alternative_id: string
+  - rdfs:label:
+    - object_property_label:
+      - string
+      - string
+  - vs:term_status:
+    - object_property_term_status: string
+  - ns16:is_metadata_tag:
+    - object_property_is_metadata_tag: true
+  - dc11:description:
+    - object_property_description: string
+  - ns16:creation_date:
+    - object_property_creation_date:
+      - dateTime
+      - string
+  - ns16:isCyclic:
+    - object_property_is_cyclic:
+      - true
+      - string
+  - ns9:IAO_0000589:
+    - object_property_iao_0000589: string
+  - dc:issued:
+    - object_property_issued: '2000-01-01'
+  - owl:deprecated:
+    - object_property_deprecated: true
+  - ns9:IAO_0000600:
+    - object_property_iao_0000600:
+      - string
+      - true
+  - ns9:IAO_0000118:
+    - object_property_iao_0000118:
+      - string
+      - string
+      - true
+  - prov:category:
+    - object_property_category: string
+  - ns9:IAO_0000426:
+    - object_property_iao_0000426: string
+  - ns5:informativeReference:
+    - object_property_informative_reference: anyURI
+  - prov:editorsDefinition:
+    - object_property_editors_definition:
+      - string
+      - string
+  - ns8:comment:
+    - object_property_comment: string
+  - ns9:IAO_0000119:
+    - object_property_iao_0000119:
+      - string
+      - string
+      - anyURI
+  - skos:definition:
+    - object_property_definition:
+      - string
+      - string
+  - ns16:hasRelatedSynonym:
+    - object_property_has_related_synonym: string
+  - ns16:hasExactSynonym:
+    - object_property_has_exact_synonym: string
+  - ns16:is_transitive:
+    - object_property_is_transitive: true
+  - ns9:is_reflexive:
+    - object_property_is_reflexive: string
+  - ns9:transitive_over:
+    - object_property_transitive_over: string
+  - dc:alternative:
+    - object_property_alternative:
+      - string
+      - string
+  - ns9:is_anti_symmetric:
+    - object_property_is_anti_symmetric: string
+  - ns5:deprecated:
+    - object_property_deprecated: true
+  - ns19:definition:
+    - object_property_definition: string
+  - rdfs:comment:
+    - object_property_comment:
+      - string
+      - string
+  - dc:creator:
+    - object_property_creator: string
+  - prov:n:
+    - object_property_n: anyURI
+  - ns19:slot_synonym:
+    - object_property_slot_synonym: string
+  - prov:definition:
+    - object_property_definition: string
+  - ns9:IAO_0000232:
+    - object_property_iao_0000232:
+      - string
+      - anyURI
+      - string
+  - ns5:plainTextDescription:
+    - object_property_plain_text_description: string
+  - ns9:IAO_0000116:
+    - object_property_iao_0000116:
+      - anyURI
+      - string
+      - true
+      - string
+  - ns9:IAO_0000115:
+    - object_property_iao_0000115:
+      - string
+      - string
+  - prov:inverse:
+    - object_property_inverse: string
+  - ns16:hasNarrowSynonym:
+    - object_property_has_narrow_synonym: string
+  - schema:comment:
+    - object_property_comment: string
+  - skos:example:
+    - object_property_example: string
+  - ns9:IAO_0000117:
+    - object_property_iao_0000117:
+      - string
+      - string
+  - ns19:synonym:
+    - object_property_synonym: string
+  - dc:description:
+    - object_property_description:
+      - string
+      - LatexString
+      - HTML
+      - string
+  - prov:constraints:
+    - object_property_constraints: anyURI
+  - ns29:citesAsAuthority:
+    - object_property_cites_as_authority: anyURI
+- GeographicalDescriptor:
+  - rdf:type:
+    - geographical_descriptor_type: Class
+  - ns13:preferredConcept:
+    - geographical_descriptor_preferred_concept: Concept
+  - ns13:broaderDescriptor:
+    - geographical_descriptor_broader_descriptor:
+      - TopicalDescriptor
+      - GeographicalDescriptor
+  - ns13:treeNumber:
+    - geographical_descriptor_tree_number: TreeNumber
+  - ns13:preferredTerm:
+    - geographical_descriptor_preferred_term: Term
+  - ns13:allowableQualifier:
+    - geographical_descriptor_allowable_qualifier: Qualifier
+  - ns13:concept:
+    - geographical_descriptor_concept: Concept
+  - ns13:dateRevised:
+    - geographical_descriptor_date_revised: '2000-01-01'
+  - ns13:previousIndexing:
+    - geographical_descriptor_previous_indexing: string
+  - ns13:dateEstablished:
+    - geographical_descriptor_date_established: '2000-01-01'
+  - rdfs:label:
+    - geographical_descriptor_label: string
+  - ns13:historyNote:
+    - geographical_descriptor_history_note: string
+  - ns13:identifier:
+    - geographical_descriptor_identifier: string
+  - ns13:dateCreated:
+    - geographical_descriptor_date_created: '2000-01-01'
+  - ns13:active:
+    - geographical_descriptor_active: true
+  - ns13:onlineNote:
+    - geographical_descriptor_online_note: string
+  - ns13:annotation:
+    - geographical_descriptor_annotation: string
+- Term:
+  - rdf:type:
+    - term_type: Class
+  - ns13:lexicalTag:
+    - term_lexical_tag: string
+  - ns13:altLabel:
+    - term_alt_label: string
+  - ns13:lastActiveYear:
+    - term_last_active_year: string
+  - ns13:sortVersion:
+    - term_sort_version: string
+  - ns13:entryVersion:
+    - term_entry_version: string
+  - ns13:abbreviation:
+    - term_abbreviation: string
+  - ns13:prefLabel:
+    - term_pref_label: string
+  - ns13:thesaurusID:
+    - term_thesaurus_id: string
+  - ns13:identifier:
+    - term_identifier: string
+  - ns13:dateCreated:
+    - term_date_created: '2000-01-01'
+  - ns13:active:
+    - term_active: true
+- Property:
+  - rdf:type:
+    - property_type: Class
+  - owl:inverseOf:
+    - property_inverse_of:
+      - InverseFunctionalProperty
+      - AnnotationProperty
+      - FunctionalProperty
+      - Property
+      - TransitiveProperty
+      - ObjectProperty
+      - NamedIndividual
+  - rdfs:domain:
+    - property_domain:
+      - Class
+      - Class
+  - ns16:hasDbXref:
+    - property_has_db_xref:
+      - AnnotationProperty
+      - ObjectProperty
+      - Property
+      - string
+  - rdfs:isDefinedBy:
+    - property_is_defined_by: Ontology
+  - ns2:domainIncludes:
+    - property_domain_includes: Class
+  - ns2:rangeIncludes:
+    - property_range_includes:
+      - AgentClass
+      - Class
+      - Datatype
+      - Class
+  - rdfs:range:
+    - property_range:
+      - Datatype
+      - Class
+      - Class
+  - rdfs:subPropertyOf:
+    - property_sub_property_of:
+      - AnnotationProperty
+      - NamedIndividual
+      - DatatypeProperty
+      - Property
+      - ObjectProperty
+      - SymmetricProperty
+      - FunctionalProperty
+      - TransitiveProperty
+      - InverseFunctionalProperty
+  - owl:equivalentProperty:
+    - property_equivalent_property:
+      - Property
+      - ObjectProperty
+      - AnnotationProperty
+  - dc11:identifier:
+    - property_identifier: string
+  - skos:scopeNote:
+    - property_scope_note: string
+  - ns16:id:
+    - property_id: string
+  - ns16:shorthand:
+    - property_shorthand: string
+  - skos:note:
+    - property_note: string
+  - ns16:hasOBONamespace:
+    - property_has_obo_namespace: string
+  - rdfs:label:
+    - property_label:
+      - string
+      - string
+  - vs:term_status:
+    - property_term_status: string
+  - ns16:is_metadata_tag:
+    - property_is_metadata_tag: true
+  - dc11:description:
+    - property_description: string
+  - dc:issued:
+    - property_issued: '2000-01-01'
+  - skos:definition:
+    - property_definition:
+      - string
+      - string
+  - rdfs:comment:
+    - property_comment:
+      - string
+      - string
+  - ns16:is_class_level:
+    - property_is_class_level: true
+  - ns9:IAO_0000115:
+    - property_iao_0000115: string
+  - skos:example:
+    - property_example: string
+  - dc:description:
+    - property_description: string
+- AllDifferent:
+  - rdf:type:
+    - all_different_type: Class
+- substituentType:
+  - rdf:type:
+    - substituent_type_type:
+      - Class
+      - Class
+  - rdfs:label:
+    - substituent_type_label: string
+  - rdfs:comment:
+    - substituent_type_comment: string
+- GlycosidaseTreatment:
+  - rdf:type:
+    - glycosidase_treatment_type:
+      - Class
+      - Class
+  - rdfs:label:
+    - glycosidase_treatment_label: string
+  - rdfs:comment:
+    - glycosidase_treatment_comment: string
+- adductIon:
+  - rdf:type:
+    - adduct_ion_type:
+      - Class
+      - Class
+  - rdfs:label:
+    - adduct_ion_label: string
+- TopicalDescriptor:
+  - rdf:type:
+    - topical_descriptor_type: Class
+  - ns13:preferredConcept:
+    - topical_descriptor_preferred_concept: Concept
+  - ns13:broaderDescriptor:
+    - topical_descriptor_broader_descriptor:
+      - TopicalDescriptor
+      - GeographicalDescriptor
+  - ns13:treeNumber:
+    - topical_descriptor_tree_number: TreeNumber
+  - ns13:pharmacologicalAction:
+    - topical_descriptor_pharmacological_action: TopicalDescriptor
+  - ns13:preferredTerm:
+    - topical_descriptor_preferred_term: Term
+  - ns13:allowableQualifier:
+    - topical_descriptor_allowable_qualifier: Qualifier
+  - ns13:concept:
+    - topical_descriptor_concept: Concept
+  - ns13:seeAlso:
+    - topical_descriptor_see_also:
+      - PublicationType
+      - TopicalDescriptor
+  - ns13:dateRevised:
+    - topical_descriptor_date_revised: '2000-01-01'
+  - ns13:previousIndexing:
+    - topical_descriptor_previous_indexing: string
+  - ns13:lastActiveYear:
+    - topical_descriptor_last_active_year: string
+  - ns13:dateEstablished:
+    - topical_descriptor_date_established: '2000-01-01'
+  - ns13:publicMeSHNote:
+    - topical_descriptor_public_me_sh_note: string
+  - rdfs:label:
+    - topical_descriptor_label: string
+  - ns13:historyNote:
+    - topical_descriptor_history_note: string
+  - ns13:identifier:
+    - topical_descriptor_identifier: string
+  - ns13:considerAlso:
+    - topical_descriptor_consider_also: string
+  - ns13:dateCreated:
+    - topical_descriptor_date_created: '2000-01-01'
+  - ns13:nlmClassificationNumber:
+    - topical_descriptor_nlm_classification_number: string
+  - ns13:active:
+    - topical_descriptor_active: true
+  - ns13:onlineNote:
+    - topical_descriptor_online_note: string
+  - ns13:annotation:
+    - topical_descriptor_annotation: string
+- SemanticAsset:
+  - rdf:type:
+    - semantic_asset_type:
+      - Class
+      - Class
+  - dc:creator:
+    - semantic_asset_creator: Person
+  - ns27:preferredNamespacePrefix:
+    - semantic_asset_preferred_namespace_prefix: string
+  - ns27:preferredNamespaceUri:
+    - semantic_asset_preferred_namespace_uri: string
+  - dc:title:
+    - semantic_asset_title: string
+  - dc:created:
+    - semantic_asset_created: '2000-01-01'
+  - dc:modified:
+    - semantic_asset_modified: '2000-01-01'
+  - dc:description:
+    - semantic_asset_description: string
+- OrderedType:
+  - rdf:type:
+    - ordered_type_type:
+      - Class
+      - Class
+  - rdfs:isDefinedBy:
+    - ordered_type_is_defined_by: Ontology
+  - rdfs:label:
+    - ordered_type_label: string
+  - ns5:literal:
+    - ordered_type_literal: string
+  - ns5:plainTextDescription:
+    - ordered_type_plain_text_description: string
+- Dataset:
+  - rdf:type:
+    - dataset_type:
+      - Class
+      - Class
+  - void:exampleResource:
+    - dataset_example_resource: TopicalDescriptor
+  - void:vocabulary:
+    - dataset_vocabulary: Ontology
+  - dc:publisher:
+    - dataset_publisher: string
+  - dc:title:
+    - dataset_title: string
+  - void:dataDump:
+    - dataset_data_dump: string
+  - dc:created:
+    - dataset_created: '2000-01-01'
+  - rdfs:comment:
+    - dataset_comment: string
+  - dc:creator:
+    - dataset_creator: string
+  - void:uriSpace:
+    - dataset_uri_space: string
+  - dc:description:
+    - dataset_description: string
+- Axiom:
+  - rdf:type:
+    - axiom_type: Class
+  - owl:annotatedSource:
+    - axiom_annotated_source:
+      - ObjectProperty
+      - FunctionalProperty
+      - IrreflexiveProperty
+      - SymmetricProperty
+      - AnnotationProperty
+      - AsymmetricProperty
+      - Class
+      - TransitiveProperty
+  - rdfs:isDefinedBy:
+    - axiom_is_defined_by: Class
+  - owl:annotatedTarget:
+    - axiom_annotated_target:
+      - DatatypeProperty
+      - Restriction
+      - Class
+      - ObjectProperty
+      - AnnotationProperty
+      - NamedIndividual
+      - Property
+      - Class
+      - string
+      - anyURI
+      - true
+      - string
+  - owl:annotatedProperty:
+    - axiom_annotated_property:
+      - AnnotationProperty
+      - ObjectProperty
+      - DatatypeProperty
+      - Property
+  - dc11:contributor:
+    - axiom_contributor:
+      - NamedIndividual
+      - Agent
+  - ns16:hasSynonymType:
+    - axiom_has_synonym_type: AnnotationProperty
+  - ns16:SynonymTypeProperty:
+    - axiom_synonym_type_property:
+      - AnnotationProperty
+      - string
+  - ns16:conflicts_with:
+    - axiom_conflicts_with: string
+  - ns9:RO_0002582:
+    - axiom_ro_0002582: true
+  - ns16:missing_from:
+    - axiom_missing_from: string
+  - ns16:laterality:
+    - axiom_laterality: string
+  - ns9:RO_0002581:
+    - axiom_ro_0002581: true
+  - ns16:min_cardinality:
+    - axiom_min_cardinality: string
+  - ns19:TA_ID:
+    - axiom_ta_id: string
+  - ns19:English_equivalent:
+    - axiom_english_equivalent: string
+  - skos:narrowMatch:
+    - axiom_narrow_match: string
+  - ns16:http://purl.obolibrary.org/obo/IAO_0000233:
+    - axiom_http://purl.obolibrary.org/obo/iao_0000233: string
+  - ns19:other_Latin_equivalents:
+    - axiom_other_latin_equivalents: string
+  - ns16:cases:
+    - axiom_cases: string
+  - ns16:hasDbXref:
+    - axiom_has_db_xref:
+      - anyURI
+      - string
+  - ns9:IAO_0000233:
+    - axiom_iao_0000233: string
+  - ns16:todo:
+    - axiom_todo: string
+  - ns19:Date_entered_modified:
+    - axiom_date_entered_modified: string
+  - ns44:mapping_provider:
+    - axiom_mapping_provider: string
+  - ns16:not_supported_by:
+    - axiom_not_supported_by: string
+  - ns16:proportion:
+    - axiom_proportion: string
+  - ns19:name:
+    - axiom_name: string
+  - ns16:gene:
+    - axiom_gene: string
+  - ns19:term_status:
+    - axiom_term_status: string
+  - ns16:quote:
+    - axiom_quote: string
+  - ns16:different_relation_from:
+    - axiom_different_relation_from: string
+  - ns16:id:
+    - axiom_id: string
+  - ns16:ontology:
+    - axiom_ontology: string
+  - ns16:exactly:
+    - axiom_exactly: string
+  - ns16:exceptions:
+    - axiom_exceptions: string
+  - prov:dm:
+    - axiom_dm: string
+  - ns16:external_class_label:
+    - axiom_external_class_label: string
+  - ns16:stage:
+    - axiom_stage: string
+  - ns16:date_retrieved:
+    - axiom_date_retrieved: string
+  - rdfs:label:
+    - axiom_label: string
+  - ns16:is_about:
+    - axiom_is_about: string
+  - ns19:author:
+    - axiom_author: string
+  - ns17:definition_citation:
+    - axiom_definition_citation: string
+  - ns16:external_class:
+    - axiom_external_class: string
+  - ns16:order:
+    - axiom_order: string
+  - ns16:possible_exception:
+    - axiom_possible_exception: string
+  - rdfs:seeAlso:
+    - axiom_see_also:
+      - anyURI
+      - string
+  - ns39:createdBy:
+    - axiom_created_by: string
+  - ns16:specialization_within:
+    - axiom_specialization_within: string
+  - ns16:component:
+    - axiom_component: string
+  - ns16:status:
+    - axiom_status: string
+  - ns16:is_indirect:
+    - axiom_is_indirect: string
+  - ns16:modified_from:
+    - axiom_modified_from: string
+  - ns16:count:
+    - axiom_count: string
+  - ns16:external_ontology:
+    - axiom_external_ontology: string
+  - ns16:connected_by:
+    - axiom_connected_by: string
+  - ns16:is_redundant:
+    - axiom_is_redundant: string
+  - ns19:abbreviation:
+    - axiom_abbreviation: string
+  - ns19:reference:
+    - axiom_reference: string
+  - skos:closeMatch:
+    - axiom_close_match: string
+  - ns19:modified_by:
+    - axiom_modified_by: string
+  - ns16:cardonality:
+    - axiom_cardonality: string
+  - ns16:inferred_by:
+    - axiom_inferred_by: string
+  - ns16:consistent_with:
+    - axiom_consistent_with: string
+  - ns16:hasScope:
+    - axiom_has_scope: string
+  - ns16:inconsistent_with:
+    - axiom_inconsistent_with: string
+  - ns16:url:
+    - axiom_url: string
+  - ns16:submitter:
+    - axiom_submitter: string
+  - ns19:modification:
+    - axiom_modification: string
+  - ns16:contributor:
+    - axiom_contributor: string
+  - ns16:notes:
+    - axiom_notes: string
+  - ns16:is_entailed:
+    - axiom_is_entailed: string
+  - ns16:evidence:
+    - axiom_evidence: string
+  - ns19:language:
+    - axiom_language: string
+  - ns16:exception:
+    - axiom_exception: string
+  - ns16:taxon:
+    - axiom_taxon: string
+  - ns16:exceptions_url:
+    - axiom_exceptions_url: string
+  - ns16:region:
+    - axiom_region: string
+  - ns16:src:
+    - axiom_src: string
+  - ns16:version:
+    - axiom_version: string
+  - ns16:note:
+    - axiom_note: string
+  - ns16:contradicted_by:
+    - axiom_contradicted_by: string
+  - rdfs:comment:
+    - axiom_comment:
+      - string
+      - string
+  - ns16:ontology_class:
+    - axiom_ontology_class: string
+  - ns16:reference:
+    - axiom_reference: string
+  - ns16:source:
+    - axiom_source: string
+  - ns16:http://purl.org/dc/terms/source:
+    - axiom_http://purl.org/dc/terms/source: string
+  - prov:definition:
+    - axiom_definition: string
+  - ns9:IAO_0000116:
+    - axiom_iao_0000116: string
+  - ns9:IAO_0000115:
+    - axiom_iao_0000115: string
+  - ns16:editor:
+    - axiom_editor: string
+  - ns16:composition:
+    - axiom_composition: string
+  - ns16:min_count:
+    - axiom_min_count: string
+  - ns19:outdated_meaning:
+    - axiom_outdated_meaning: string
+  - ns16:is_inferred:
+    - axiom_is_inferred: string
+  - ns19:authority:
+    - axiom_authority: string
+  - ns16:isAbout:
+    - axiom_is_about: string
+  - ns19:contributing_author:
+    - axiom_contributing_author: string
+  - ns19:Eponym:
+    - axiom_eponym: true
+  - ns16:conflicts:
+    - axiom_conflicts: string
+- TransitiveProperty:
+  - rdf:type:
+    - transitive_property_type: Class
+  - owl:inverseOf:
+    - transitive_property_inverse_of:
+      - Property
+      - TransitiveProperty
+      - ReflexiveProperty
+      - AsymmetricProperty
+      - ObjectProperty
+  - rdfs:domain:
+    - transitive_property_domain: Class
+  - rdfs:isDefinedBy:
+    - transitive_property_is_defined_by:
+      - Ontology
+      - string
+  - ns9:RO_0002579:
+    - transitive_property_ro_0002579:
+      - ObjectProperty
+      - TransitiveProperty
+  - ns9:RO_0040042:
+    - transitive_property_ro_0040042: Class
+  - ns16:inSubset:
+    - transitive_property_in_subset: AnnotationProperty
+  - ns9:RO_0004049:
+    - transitive_property_ro_0004049:
+      - ObjectProperty
+      - TransitiveProperty
+  - rdfs:range:
+    - transitive_property_range: Class
+  - ns9:RO_0001900:
+    - transitive_property_ro_0001900: NamedIndividual
+  - rdfs:subPropertyOf:
+    - transitive_property_sub_property_of:
+      - ObjectProperty
+      - SymmetricProperty
+      - AnnotationProperty
+      - TransitiveProperty
+      - Property
+  - ns9:IAO_0000412:
+    - transitive_property_iao_0000412:
+      - Ontology
+      - NamedIndividual
+  - ns9:IAO_0000114:
+    - transitive_property_iao_0000114:
+      - NamedIndividual
+      - Thing
+      - IAO_0000078
+  - ns17:EFO_URI:
+    - transitive_property_efo_uri: string
+  - dc11:source:
+    - transitive_property_source: string
+  - ns16:created_by:
+    - transitive_property_created_by: string
+  - ns16:hasDbXref:
+    - transitive_property_has_db_xref: string
+  - dc11:identifier:
+    - transitive_property_identifier: string
+  - ns18:subset:
+    - transitive_property_subset: string
+  - skos:scopeNote:
+    - transitive_property_scope_note: string
+  - ns9:IAO_0000112:
+    - transitive_property_iao_0000112:
+      - string
+      - string
+  - ns18:equivalentTo:
+    - transitive_property_equivalent_to: string
+  - ns9:IAO_0000111:
+    - transitive_property_iao_0000111: string
+  - ns16:id:
+    - transitive_property_id: string
+  - ns19:FMAID:
+    - transitive_property_fmaid: string
+  - ns16:shorthand:
+    - transitive_property_shorthand: string
+  - ns16:hasOBONamespace:
+    - transitive_property_has_obo_namespace: string
+  - dc:source:
+    - transitive_property_source: string
+  - rdfs:label:
+    - transitive_property_label:
+      - string
+      - string
+  - ns16:creation_date:
+    - transitive_property_creation_date: string
+  - rdfs:seeAlso:
+    - transitive_property_see_also:
+      - string
+      - anyURI
+  - ns9:IAO_0000589:
+    - transitive_property_iao_0000589: string
+  - ns9:IAO_0000600:
+    - transitive_property_iao_0000600: true
+  - ns9:IAO_0000118:
+    - transitive_property_iao_0000118:
+      - string
+      - string
+  - ns9:IAO_0000119:
+    - transitive_property_iao_0000119: string
+  - skos:definition:
+    - transitive_property_definition:
+      - string
+      - string
+  - ns16:hasRelatedSynonym:
+    - transitive_property_has_related_synonym: string
+  - ns16:hasExactSynonym:
+    - transitive_property_has_exact_synonym: string
+  - dc:alternative:
+    - transitive_property_alternative: string
+  - ns19:definition:
+    - transitive_property_definition: string
+  - rdfs:comment:
+    - transitive_property_comment:
+      - string
+      - string
+  - ns19:slot_synonym:
+    - transitive_property_slot_synonym: string
+  - ns9:IAO_0000232:
+    - transitive_property_iao_0000232: string
+  - ns9:IAO_0000116:
+    - transitive_property_iao_0000116:
+      - string
+      - string
+  - ns9:IAO_0000115:
+    - transitive_property_iao_0000115:
+      - string
+      - string
+  - ns16:hasNarrowSynonym:
+    - transitive_property_has_narrow_synonym: string
+  - schema:comment:
+    - transitive_property_comment: string
+  - skos:example:
+    - transitive_property_example: string
+  - ns9:IAO_0000117:
+    - transitive_property_iao_0000117:
+      - string
+      - string
+  - dc:description:
+    - transitive_property_description:
+      - string
+      - string
+- ringType:
+  - rdf:type:
+    - ring_type_type:
+      - Class
+      - Class
+  - rdfs:label:
+    - ring_type_label: string
+  - rdfs:comment:
+    - ring_type_comment: string
+- IAO_0000078:
+  - rdf:type:
+    - iao_0000078_type:
+      - Class
+      - Class
+  - ns9:IAO_0000114:
+    - iao_0000078_iao_0000114:
+      - Thing
+      - IAO_0000078
+      - NamedIndividual
+  - ns9:IAO_0000111:
+    - iao_0000078_iao_0000111: string
+  - rdfs:label:
+    - iao_0000078_label: string
+  - ns9:IAO_0000119:
+    - iao_0000078_iao_0000119: string
+  - ns9:IAO_0000115:
+    - iao_0000078_iao_0000115: string
+  - ns9:IAO_0000117:
+    - iao_0000078_iao_0000117:
+      - string
+      - string
+- syntheticType:
+  - rdf:type:
+    - synthetic_type_type:
+      - Class
+      - Class
+  - rdfs:label:
+    - synthetic_type_label: string
+  - rdfs:comment:
+    - synthetic_type_comment: string
+- SCRDisease:
+  - rdf:type:
+    - scr_disease_type: Class
+  - ns13:mappedTo:
+    - scr_disease_mapped_to:
+      - AllowedDescriptorQualifierPair
+      - TopicalDescriptor
+  - ns13:preferredConcept:
+    - scr_disease_preferred_concept: Concept
+  - ns13:preferredMappedTo:
+    - scr_disease_preferred_mapped_to:
+      - DisallowedDescriptorQualifierPair
+      - AllowedDescriptorQualifierPair
+      - TopicalDescriptor
+  - ns13:indexerConsiderAlso:
+    - scr_disease_indexer_consider_also:
+      - AllowedDescriptorQualifierPair
+      - TopicalDescriptor
+  - ns13:preferredTerm:
+    - scr_disease_preferred_term: Term
+  - ns13:concept:
+    - scr_disease_concept: Concept
+  - ns13:dateRevised:
+    - scr_disease_date_revised: '2000-01-01'
+  - ns13:previousIndexing:
+    - scr_disease_previous_indexing: string
+  - ns13:note:
+    - scr_disease_note: string
+  - ns13:frequency:
+    - scr_disease_frequency: 12345
+  - ns13:lastActiveYear:
+    - scr_disease_last_active_year: string
+  - rdfs:label:
+    - scr_disease_label: string
+  - ns13:identifier:
+    - scr_disease_identifier: string
+  - ns13:dateCreated:
+    - scr_disease_date_created: '2000-01-01'
+  - ns13:source:
+    - scr_disease_source: string
+  - ns13:active:
+    - scr_disease_active: true
+- anomer:
+  - rdf:type:
+    - anomer_type:
+      - Class
+      - Class
+  - rdfs:label:
+    - anomer_label: string
+- IHCEvidence:
+  - rdf:type:
+    - ihc_evidence_type: ECO_0000087
+  - rdfs:comment:
+    - ihc_evidence_comment: string
+- List:
+  - rdf:type:
+    - list_type:
+      - Class
+      - Class
+  - rdfs:isDefinedBy:
+    - list_is_defined_by: Ontology
+  - rdf:rest:
+    - list_rest: List
+  - rdfs:label:
+    - list_label: string
+  - rdfs:comment:
+    - list_comment: string
+  - rdf:first:
+    - list_first: string
+- CheckTag:
+  - rdf:type:
+    - check_tag_type: Class
+  - ns13:preferredConcept:
+    - check_tag_preferred_concept: Concept
+  - ns13:preferredTerm:
+    - check_tag_preferred_term: Term
+  - ns13:dateRevised:
+    - check_tag_date_revised: '2000-01-01'
+  - ns13:dateEstablished:
+    - check_tag_date_established: '2000-01-01'
+  - rdfs:label:
+    - check_tag_label: string
+  - ns13:historyNote:
+    - check_tag_history_note: string
+  - ns13:identifier:
+    - check_tag_identifier: string
+  - ns13:dateCreated:
+    - check_tag_date_created: '2000-01-01'
+  - ns13:active:
+    - check_tag_active: true
+  - ns13:annotation:
+    - check_tag_annotation: string
+- InverseFunctionalProperty:
+  - rdf:type:
+    - inverse_functional_property_type: Class
+  - owl:inverseOf:
+    - inverse_functional_property_inverse_of:
+      - InverseFunctionalProperty
+      - Property
+      - ObjectProperty
+      - FunctionalProperty
+      - SymmetricProperty
+  - rdfs:domain:
+    - inverse_functional_property_domain:
+      - Class
+      - Class
+  - rdfs:isDefinedBy:
+    - inverse_functional_property_is_defined_by: Ontology
+  - rdfs:range:
+    - inverse_functional_property_range:
+      - Class
+      - Class
+      - Datatype
+  - ns9:RO_0001900:
+    - inverse_functional_property_ro_0001900: NamedIndividual
+  - rdfs:subPropertyOf:
+    - inverse_functional_property_sub_property_of:
+      - DatatypeProperty
+      - InverseFunctionalProperty
+      - ObjectProperty
+      - AnnotationProperty
+      - Property
+  - ns9:IAO_0000412:
+    - inverse_functional_property_iao_0000412:
+      - Ontology
+      - NamedIndividual
+  - ns17:EFO_URI:
+    - inverse_functional_property_efo_uri: string
+  - ns16:hasDbXref:
+    - inverse_functional_property_has_db_xref: string
+  - dc11:identifier:
+    - inverse_functional_property_identifier: string
+  - ns9:IAO_0000112:
+    - inverse_functional_property_iao_0000112: string
+  - ns9:IAO_0000111:
+    - inverse_functional_property_iao_0000111: string
+  - ns16:id:
+    - inverse_functional_property_id: string
+  - ns16:shorthand:
+    - inverse_functional_property_shorthand: string
+  - ns16:hasOBONamespace:
+    - inverse_functional_property_has_obo_namespace: string
+  - rdfs:label:
+    - inverse_functional_property_label:
+      - string
+      - string
+  - vs:term_status:
+    - inverse_functional_property_term_status: string
+  - ns16:is_metadata_tag:
+    - inverse_functional_property_is_metadata_tag: true
+  - ns9:IAO_0000118:
+    - inverse_functional_property_iao_0000118: string
+  - rdfs:comment:
+    - inverse_functional_property_comment: string
+  - ns9:IAO_0000116:
+    - inverse_functional_property_iao_0000116: string
+  - ns9:IAO_0000115:
+    - inverse_functional_property_iao_0000115:
+      - string
+      - string
+  - skos:example:
+    - inverse_functional_property_example: string
+  - dc:description:
+    - inverse_functional_property_description: string
+- ClassAtom:
+  - ns7:argument1:
+    - class_atom_argument1: Variable
+  - ns7:classPredicate:
+    - class_atom_class_predicate: Class
+- Assertion:
+  - rdf:type:
+    - assertion_type: ECO_0000087
+  - rdfs:comment:
+    - assertion_comment: string
+- coreModificationType:
+  - rdf:type:
+    - core_modification_type_type:
+      - Class
+      - Class
+  - rdfs:label:
+    - core_modification_type_label: string
+  - rdfs:comment:
+    - core_modification_type_comment: string
+- AsymmetricProperty:
+  - rdf:type:
+    - asymmetric_property_type: Class
+  - owl:inverseOf:
+    - asymmetric_property_inverse_of:
+      - IrreflexiveProperty
+      - TransitiveProperty
+      - ObjectProperty
+      - AsymmetricProperty
+  - rdfs:domain:
+    - asymmetric_property_domain: Class
+  - rdfs:isDefinedBy:
+    - asymmetric_property_is_defined_by: Ontology
+  - rdfs:range:
+    - asymmetric_property_range: Class
+  - rdfs:subPropertyOf:
+    - asymmetric_property_sub_property_of:
+      - TransitiveProperty
+      - ReflexiveProperty
+      - ObjectProperty
+      - SymmetricProperty
+  - ns9:IAO_0000412:
+    - asymmetric_property_iao_0000412: Ontology
+  - ns16:hasDbXref:
+    - asymmetric_property_has_db_xref: string
+  - dc11:identifier:
+    - asymmetric_property_identifier: string
+  - ns18:subset:
+    - asymmetric_property_subset: string
+  - ns9:IAO_0000112:
+    - asymmetric_property_iao_0000112: string
+  - ns18:equivalentTo:
+    - asymmetric_property_equivalent_to: string
+  - ns16:id:
+    - asymmetric_property_id: string
+  - ns16:shorthand:
+    - asymmetric_property_shorthand: string
+  - ns16:hasOBONamespace:
+    - asymmetric_property_has_obo_namespace: string
+  - rdfs:label:
+    - asymmetric_property_label:
+      - string
+      - string
+  - ns9:IAO_0000118:
+    - asymmetric_property_iao_0000118: string
+  - ns16:hasRelatedSynonym:
+    - asymmetric_property_has_related_synonym: string
+  - rdfs:comment:
+    - asymmetric_property_comment: string
+  - ns9:IAO_0000232:
+    - asymmetric_property_iao_0000232: string
+  - ns9:IAO_0000115:
+    - asymmetric_property_iao_0000115: string
+  - skos:example:
+    - asymmetric_property_example: string
+  - ns9:IAO_0000117:
+    - asymmetric_property_iao_0000117: string
+  - dc:description:
+    - asymmetric_property_description: string
+- Class:
+  - rdf:type:
+    - class_type:
+      - Class
+      - Class
+  - rdfs:isDefinedBy:
+    - class_is_defined_by: Ontology
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Class
+      - Class
+  - owl:equivalentClass:
+    - class_equivalent_class:
+      - AgentClass
+      - Class
+      - Class
+  - ns8:hasGraphMetadata:
+    - class_has_graph_metadata:
+      - GraphMetaData
+      - NamedIndividual
+  - owl:disjointWith:
+    - class_disjoint_with:
+      - Class
+      - Class
+  - rdfs:label:
+    - class_label:
+      - string
+      - string
+  - vs:term_status:
+    - class_term_status: string
+  - dc:issued:
+    - class_issued: '2000-01-01'
+  - ns33:prefixIRI:
+    - class_prefix_iri: string
+  - rdfs:comment:
+    - class_comment:
+      - string
+      - string
+  - dc:description:
+    - class_description: string
+- enzymaticRelease:
+  - rdf:type:
+    - enzymatic_release_type:
+      - Class
+      - Class
+  - rdfs:label:
+    - enzymatic_release_label: string
+  - rdfs:comment:
+    - enzymatic_release_comment: string
+- CharEncodingType:
+  - rdf:type:
+    - char_encoding_type_type:
+      - Class
+      - Class
+  - rdfs:isDefinedBy:
+    - char_encoding_type_is_defined_by: Ontology
+  - rdfs:label:
+    - char_encoding_type_label: string
+  - dc11:description:
+    - char_encoding_type_description: string
+  - ns5:bytes:
+    - char_encoding_type_bytes: integer
+- monosaccharideNotationScheme:
+  - rdf:type:
+    - monosaccharide_notation_scheme_type:
+      - Class
+      - Class
+  - rdfs:label:
+    - monosaccharide_notation_scheme_label: string
+  - rdfs:comment:
+    - monosaccharide_notation_scheme_comment: string
+- absoluteConfiguration:
+  - rdf:type:
+    - absolute_configuration_type:
+      - Class
+      - Class
+  - rdfs:label:
+    - absolute_configuration_label: string
+- Datatype:
+  - rdf:type:
+    - datatype_type:
+      - Class
+      - Class
+  - rdfs:isDefinedBy:
+    - datatype_is_defined_by:
+      - Ontology
+      - NamedIndividual
+  - owl:onDatatype:
+    - datatype_on_datatype: Datatype
+  - rdfs:subClassOf:
+    - datatype_sub_class_of:
+      - Datatype
+      - Class
+      - Class
+  - owl:oneOf:
+    - datatype_one_of: List
+  - owl:equivalentClass:
+    - datatype_equivalent_class:
+      - Datatype
+      - Class
+  - dc11:identifier:
+    - datatype_identifier: string
+  - dc:source:
+    - datatype_source: anyURI
+  - rdfs:label:
+    - datatype_label:
+      - string
+      - string
+  - dc11:description:
+    - datatype_description: string
+  - dc:issued:
+    - datatype_issued: '2000-01-01'
+  - ns33:prefixIRI:
+    - datatype_prefix_iri: string
+  - ns5:deprecated:
+    - datatype_deprecated: true
+  - rdfs:comment:
+    - datatype_comment:
+      - string
+      - string
+  - dc:description:
+    - datatype_description:
+      - string
+      - string
+- Thing:
+  - rdf:type:
+    - thing_type:
+      - AnnotationProperty
+      - Class
+      - Class
+  - rdfs:seeAlso:
+    - thing_see_also:
+      - Thing
+      - NamedIndividual
+  - doap:file-release:
+    - thing_file-release:
+      - Version
+      - Thing
+      - NamedIndividual
+  - ns9:IAO_0000114:
+    - thing_iao_0000114:
+      - IAO_0000078
+      - Thing
+      - NamedIndividual
+  - doap:revision:
+    - thing_revision: string
+  - ns9:IAO_0000111:
+    - thing_iao_0000111: string
+  - rdfs:label:
+    - thing_label:
+      - string
+      - string
+  - ns9:IAO_0000115:
+    - thing_iao_0000115: string
+  - ns9:IAO_0000117:
+    - thing_iao_0000117: string
+- Strand:
+  - rdf:type:
+    - strand_type:
+      - Class
+      - Class

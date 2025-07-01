@@ -1,0 +1,162 @@
+- DescriptionType:
+  - rdf:type:
+    - description_type_type: Class
+  - rdfs:comment:
+    - description_type_comment: string
+  - rdfs:label:
+    - description_type_label: string
+- Ontology:
+  - dc11:rights:
+    - ontology_rights: string
+  - dc11:contributor:
+    - ontology_contributor: string
+  - rdfs:comment:
+    - ontology_comment: string
+  - dc11:title:
+    - ontology_title: string
+  - dc11:creator:
+    - ontology_creator: string
+  - owl:versionInfo:
+    - ontology_version_info: string
+  - dc11:date:
+    - ontology_date: string
+  - dc11:description:
+    - ontology_description: string
+- MetadataScheme:
+  - rdf:type:
+    - metadata_scheme_type: Class
+  - rdfs:comment:
+    - metadata_scheme_comment: string
+  - rdfs:label:
+    - metadata_scheme_label: string
+  - ns1:hasURL:
+    - metadata_scheme_has_url: anyURI
+- AgentIdentifierScheme:
+  - rdf:type:
+    - agent_identifier_scheme_type: Class
+  - rdfs:comment:
+    - agent_identifier_scheme_comment: string
+  - rdfs:label:
+    - agent_identifier_scheme_label: string
+  - ns1:hasURL:
+    - agent_identifier_scheme_has_url: anyURI
+- Class:
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Class
+      - Restriction
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+  - rdfs:comment:
+    - class_comment: string
+  - rdfs:label:
+    - class_label: string
+- NamedIndividual:
+  - rdf:type:
+    - named_individual_type: Class
+  - rdfs:comment:
+    - named_individual_comment:
+      - string
+      - string
+  - rdfs:label:
+    - named_individual_label:
+      - string
+      - string
+  - dc11:description:
+    - named_individual_description: string
+  - ns1:hasURL:
+    - named_individual_has_url: anyURI
+- IdentifierScheme:
+  - rdf:type:
+    - identifier_scheme_type: Class
+  - rdfs:comment:
+    - identifier_scheme_comment: string
+  - rdfs:label:
+    - identifier_scheme_label:
+      - string
+      - string
+  - ns1:hasURL:
+    - identifier_scheme_has_url: anyURI
+- InverseFunctionalProperty:
+  - rdfs:range:
+    - inverse_functional_property_range: Class
+  - rdfs:comment:
+    - inverse_functional_property_comment: string
+  - rdfs:label:
+    - inverse_functional_property_label: string
+- PersonalIdentifierScheme:
+  - rdf:type:
+    - personal_identifier_scheme_type: Class
+  - rdfs:comment:
+    - personal_identifier_scheme_comment: string
+  - rdfs:label:
+    - personal_identifier_scheme_label: string
+  - ns1:hasURL:
+    - personal_identifier_scheme_has_url: anyURI
+- ObjectProperty:
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of: ObjectProperty
+  - rdfs:range:
+    - object_property_range:
+      - Class
+      - Restriction
+  - rdfs:domain:
+    - object_property_domain:
+      - Restriction
+      - Class
+  - rdfs:comment:
+    - object_property_comment: string
+  - rdfs:label:
+    - object_property_label: string
+- FunderIdentifierScheme:
+  - rdf:type:
+    - funder_identifier_scheme_type: Class
+  - rdfs:comment:
+    - funder_identifier_scheme_comment: string
+  - rdfs:label:
+    - funder_identifier_scheme_label: string
+  - ns1:hasURL:
+    - funder_identifier_scheme_has_url: anyURI
+- ResourceIdentifierScheme:
+  - rdf:type:
+    - resource_identifier_scheme_type: Class
+  - rdfs:comment:
+    - resource_identifier_scheme_comment:
+      - string
+      - string
+  - rdfs:label:
+    - resource_identifier_scheme_label: string
+  - dc11:description:
+    - resource_identifier_scheme_description: string
+  - ns1:hasURL:
+    - resource_identifier_scheme_has_url: anyURI
+- OrganizationIdentifierScheme:
+  - rdf:type:
+    - organization_identifier_scheme_type: Class
+  - rdfs:comment:
+    - organization_identifier_scheme_comment: string
+  - rdfs:label:
+    - organization_identifier_scheme_label: string
+  - ns1:hasURL:
+    - organization_identifier_scheme_has_url: anyURI
+- Restriction:
+  - owl:allValuesFrom:
+    - restriction_all_values_from:
+      - Class
+      - Restriction
+  - owl:onProperty:
+    - restriction_on_property:
+      - ObjectProperty
+      - InverseFunctionalProperty
+  - owl:someValuesFrom:
+    - restriction_some_values_from: Class
+  - owl:hasValue:
+    - restriction_has_value:
+      - NamedIndividual
+      - ResourceIdentifierScheme
+  - owl:onClass:
+    - restriction_on_class: Class
+  - owl:qualifiedCardinality:
+    - restriction_qualified_cardinality: nonNegativeInteger
+  - owl:cardinality:
+    - restriction_cardinality: nonNegativeInteger

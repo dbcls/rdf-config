@@ -1,0 +1,86 @@
+- ObjectProperty:
+  - rdfs:range:
+    - object_property_range: Class
+  - rdfs:domain:
+    - object_property_domain: Class
+  - owl:inverseOf:
+    - object_property_inverse_of:
+      - AsymmetricProperty
+      - ObjectProperty
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of:
+      - AsymmetricProperty
+      - ObjectProperty
+  - rdfs:label:
+    - object_property_label: string
+  - rdfs:comment:
+    - object_property_comment: string
+- Class:
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Restriction
+      - Class
+  - ns1:ncit:crossReference:
+    - class_ncit:cross_reference: string
+  - ns1:ncit:synonym:
+    - class_ncit:synonym: string
+  - rdfs:label:
+    - class_label:
+      - string
+      - string
+  - ns1:umls:cui:
+    - class_umls:cui: string
+  - rdfs:seeAlso:
+    - class_see_also: anyURI
+  - rdfs:comment:
+    - class_comment: string
+  - skos:definition:
+    - class_definition: string
+  - ns1:ncit:abbreviation:
+    - class_ncit:abbreviation: string
+- AnnotationProperty:
+  - ns1:ncit:synonym:
+    - annotation_property_ncit:synonym: string
+  - rdfs:label:
+    - annotation_property_label: string
+  - rdfs:isDefinedBy:
+    - annotation_property_is_defined_by: anyURI
+  - dc:source:
+    - annotation_property_source: anyURI
+  - skos:definition:
+    - annotation_property_definition: string
+- AsymmetricProperty:
+  - rdfs:range:
+    - asymmetric_property_range: Class
+  - rdfs:domain:
+    - asymmetric_property_domain: Class
+  - owl:inverseOf:
+    - asymmetric_property_inverse_of:
+      - AsymmetricProperty
+      - ObjectProperty
+  - rdfs:label:
+    - asymmetric_property_label: string
+  - rdfs:comment:
+    - asymmetric_property_comment: string
+- Restriction:
+  - owl:someValuesFrom:
+    - restriction_some_values_from: Class
+  - owl:onProperty:
+    - restriction_on_property:
+      - AsymmetricProperty
+      - ObjectProperty
+- Ontology:
+  - dc:creator:
+    - ontology_creator: string
+  - dc:title:
+    - ontology_title: string
+  - dc:license:
+    - ontology_license: string
+  - dc:date:
+    - ontology_date: string
+  - owl:versionInfo:
+    - ontology_version_info: string
+  - rdfs:comment:
+    - ontology_comment: string

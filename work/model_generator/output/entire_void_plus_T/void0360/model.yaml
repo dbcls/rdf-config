@@ -1,0 +1,43 @@
+- List:
+  - rdf:type:
+    - list_type: Class
+  - rdfs:isDefinedBy:
+    - list_is_defined_by: Ontology
+  - rdfs:comment:
+    - list_comment: string
+  - rdfs:label:
+    - list_label: string
+- Class:
+  - rdfs:isDefinedBy:
+    - class_is_defined_by: Ontology
+  - rdfs:comment:
+    - class_comment: string
+  - rdfs:label:
+    - class_label: string
+- Ontology:
+  - dc11:date:
+    - ontology_date: string
+  - dc11:description:
+    - ontology_description: string
+  - dc11:title:
+    - ontology_title: string
+- Property:
+  - rdf:type:
+    - property_type: Class
+  - rdfs:range:
+    - property_range: Class
+  - rdfs:isDefinedBy:
+    - property_is_defined_by: Ontology
+  - rdfs:domain:
+    - property_domain: Class
+  - rdfs:comment:
+    - property_comment: string
+  - rdfs:label:
+    - property_label: string
+- Datatype:
+  - rdfs:isDefinedBy:
+    - datatype_is_defined_by: Ontology
+  - rdfs:comment:
+    - datatype_comment: string
+  - rdfs:label:
+    - datatype_label: string

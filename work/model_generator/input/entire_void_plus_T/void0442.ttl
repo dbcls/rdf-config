@@ -1,0 +1,684 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sbm: <http://sparqlbuilder.org/2015/09/rdf-metadata-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://rdfportal.org/ns/> .
+
+<http://rdfportal.org/ns/855646dd9cd65742ac72d2a858fe12a5>
+    void:classPartition [
+        void:class owl:Class ;
+        void:entities 10 ;
+        a void:Dataset
+    ], [
+        void:class owl:Restriction ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.fao.org/aims/aos/languagecode.owl#type> ;
+        void:entities 6 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.fao.org/aims/aos/languagecode.owl#ISO639-1> ;
+        void:entities 185 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.fao.org/aims/aos/languagecode.owl#language> ;
+        void:entities 7642 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.fao.org/aims/aos/languagecode.owl#scope> ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class owl:DatatypeProperty ;
+        void:entities 10 ;
+        a void:Dataset
+    ], [
+        void:class owl:ObjectProperty ;
+        void:entities 11 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.fao.org/aims/aos/languagecode.owl#ISO639-3> ;
+        void:entities 7670 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.fao.org/aims/aos/languagecode.owl#ISO639-2T> ;
+        void:entities 419 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.fao.org/aims/aos/languagecode.owl#ISO639-2B> ;
+        void:entities 419 ;
+        a void:Dataset
+    ] ;
+    void:classes 11 ;
+    void:distinctObjects 25421 ;
+    void:distinctSubjects 15561 ;
+    void:properties 28 ;
+    void:propertyPartition [
+        void:property <http://www.fao.org/aims/aos/languagecode.owl#hasType> ;
+        void:triples 7849 ;
+        sbm:classRelation [
+            void:triples 419 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#type> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-2T> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 185 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#type> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-1> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#language> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-2T> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#language> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-2B> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#scope> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-2T> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#language> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-1> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 426 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#language> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-3> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#scope> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-3> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#scope> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-2B> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7642 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#type> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-3> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 419 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#type> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-2B> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:domain ;
+        void:triples 12 ;
+        sbm:classRelation [
+            void:triples 4 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:onProperty ;
+        void:triples 3 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:DatatypeProperty ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.fao.org/aims/aos/languagecode.owl#isPredecessorOf> ;
+        void:triples 17 ;
+        sbm:classRelation [
+            void:triples 8 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-2B> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-3> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-3> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-3> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 10 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-2T> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-3> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:inverseOf ;
+        void:triples 8 ;
+        sbm:classRelation [
+            void:triples 8 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:label ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.fao.org/aims/aos/languagecode.owl#isTypeOf> ;
+        void:triples 7849 ;
+        sbm:classRelation [
+            void:triples 7642 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-3> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#type> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 419 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-2B> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#type> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-2B> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#scope> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-2T> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#scope> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-3> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#scope> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 185 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-1> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#type> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 419 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-2T> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#type> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-2B> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#language> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 426 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-3> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#language> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-2T> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#language> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-1> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#language> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.fao.org/aims/aos/languagecode.owl#isValid> ;
+        void:triples 7877 ;
+        sbm:classRelation [
+            void:triples 185 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-1> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 419 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-2B> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 419 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-2T> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7670 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-3> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:minCardinality ;
+        void:triples 3 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass owl:Restriction ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.fao.org/aims/aos/languagecode.owl#hasScope> ;
+        void:triples 7849 ;
+        sbm:classRelation [
+            void:triples 419 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#scope> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-2T> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#type> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-2B> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7642 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#scope> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-3> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 419 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#scope> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-2B> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 185 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#scope> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-1> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#type> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-3> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#type> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-2T> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.fao.org/aims/aos/languagecode.owl#isValidUntil> ;
+        void:triples 7877 ;
+        sbm:classRelation [
+            void:triples 7670 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-3> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 185 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-1> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 419 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-2T> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 419 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-2B> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdf:type ;
+        void:triples 16379 ;
+        sbm:classRelation [
+            void:triples 8 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#type> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#scope> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8486 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-3> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1235 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-2T> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 185 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-1> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1213 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-2B> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7643 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#language> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.fao.org/aims/aos/languagecode.owl#hasChineseName> ;
+        void:triples 262 ;
+        sbm:classRelation [
+            void:triples 262 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#language> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.fao.org/aims/aos/languagecode.owl#hasSpanishName> ;
+        void:triples 652 ;
+        sbm:classRelation [
+            void:triples 652 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#language> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:subPropertyOf ;
+        void:triples 9 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass owl:DatatypeProperty ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.fao.org/aims/aos/languagecode.owl#isSuccessorOf> ;
+        void:triples 17 ;
+        sbm:classRelation [
+            void:triples 10 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-3> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-2T> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-3> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-3> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-3> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-2B> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.fao.org/aims/aos/languagecode.owl#hasRussianName> ;
+        void:triples 584 ;
+        sbm:classRelation [
+            void:triples 584 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#language> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:range ;
+        void:triples 15 ;
+        sbm:classRelation [
+            void:triples 11 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.fao.org/aims/aos/languagecode.owl#hasISO639-3Code> ;
+        void:triples 7642 ;
+        sbm:classRelation [
+            void:triples 397 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-2B> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#language> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7642 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-3> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#language> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-3> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#type> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 419 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-2T> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#language> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.fao.org/aims/aos/languagecode.owl#hasISO639-2Code> ;
+        void:triples 441 ;
+        sbm:classRelation [
+            void:triples 419 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-2T> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#language> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 419 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-2B> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#language> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 419 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-3> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#language> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:disjointWith ;
+        void:triples 2 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.fao.org/aims/aos/languagecode.owl#hasISO639-1Code> ;
+        void:triples 185 ;
+        sbm:classRelation [
+            void:triples 185 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-1> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#language> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.fao.org/aims/aos/languagecode.owl#isCodeOf> ;
+        void:triples 7849 ;
+        sbm:classRelation [
+            void:triples 185 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#language> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-1> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 419 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#language> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-2T> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7642 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#language> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-3> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#type> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-3> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 419 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#language> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-2B> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.fao.org/aims/aos/languagecode.owl#isScopeOf> ;
+        void:triples 7849 ;
+        sbm:classRelation [
+            void:triples 7642 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-3> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#scope> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-2B> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#type> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-2T> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#type> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 419 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-2T> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#scope> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 419 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-2B> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#scope> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-3> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#type> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 185 ;
+            sbm:objectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-1> ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#scope> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.fao.org/aims/aos/languagecode.owl#isValidFrom> ;
+        void:triples 7888 ;
+        sbm:classRelation [
+            void:triples 7681 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-3> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 423 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-2B> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 424 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-2T> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 185 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#ISO639-1> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.fao.org/aims/aos/languagecode.owl#hasFrenchName> ;
+        void:triples 830 ;
+        sbm:classRelation [
+            void:triples 830 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#language> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:subClassOf ;
+        void:triples 11 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectClass owl:Restriction ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.fao.org/aims/aos/languagecode.owl#hasEnglishName> ;
+        void:triples 7642 ;
+        sbm:classRelation [
+            void:triples 7642 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#language> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.fao.org/aims/aos/languagecode.owl#type> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ] ;
+    void:sparqlEndpoint <https://rdfportal.org/bioportal/sparql> ;
+    void:triples 97602 ;
+    a void:Dataset, sd:Graph .

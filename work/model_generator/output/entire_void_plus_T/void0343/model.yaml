@@ -1,0 +1,127 @@
+- AtomList:
+  - rdf:first:
+    - atom_list_first:
+      - DatavaluedPropertyAtom
+      - ClassAtom
+      - BuiltinAtom
+  - rdf:rest:
+    - atom_list_rest: AtomList
+- pathologicaldisease-relevantProcess:
+  - rdf:type:
+    - pathologicaldisease-relevant_process_type: Class
+  - ns2:specificity_level:
+    - pathologicaldisease-relevant_process_specificity_level: integer
+  - rdfs:label:
+    - pathologicaldisease-relevant_process_label: string
+  - ns2:Lancet_score:
+    - pathologicaldisease-relevant_process_lancet_score: integer
+- physiologicaldisease-relevantProcess:
+  - ns2:part_of:
+    - physiologicaldisease-relevant_process_part_of:
+      - NamedIndividual
+      - physiologicaldisease-relevantProcess
+  - rdf:type:
+    - physiologicaldisease-relevant_process_type: Class
+  - ns2:specificity_level:
+    - physiologicaldisease-relevant_process_specificity_level: integer
+  - rdfs:label:
+    - physiologicaldisease-relevant_process_label: string
+  - ns2:Lancet_score:
+    - physiologicaldisease-relevant_process_lancet_score: integer
+- Ontology:
+  - rdfs:seeAlso:
+    - ontology_see_also: string
+  - rdfs:label:
+    - ontology_label: string
+- DatatypeProperty:
+  - rdfs:subPropertyOf:
+    - datatype_property_sub_property_of: DatatypeProperty
+  - rdfs:label:
+    - datatype_property_label: string
+- ClassAtom:
+  - ns1:argument1:
+    - class_atom_argument1: Variable
+  - ns1:classPredicate:
+    - class_atom_class_predicate: Class
+- ObjectProperty:
+  - rdfs:label:
+    - object_property_label: string
+- Imp:
+  - ns1:head:
+    - imp_head: AtomList
+  - ns1:body:
+    - imp_body: AtomList
+- DatavaluedPropertyAtom:
+  - ns1:propertyPredicate:
+    - datavalued_property_atom_property_predicate: DatatypeProperty
+  - ns1:argument1:
+    - datavalued_property_atom_argument1: Variable
+  - ns1:argument2:
+    - datavalued_property_atom_argument2: Variable
+- List:
+  - rdf:first:
+    - list_first:
+      - Variable
+      - integer
+  - rdf:rest:
+    - list_rest: List
+- gene-relateddisease-relevantProcess:
+  - rdf:type:
+    - gene-relateddisease-relevant_process_type: Class
+  - ns2:specificity_level:
+    - gene-relateddisease-relevant_process_specificity_level: integer
+  - rdfs:label:
+    - gene-relateddisease-relevant_process_label: string
+- environmentaldisease-relevantProcess:
+  - ns2:part_of:
+    - environmentaldisease-relevant_process_part_of:
+      - environmentaldisease-relevantProcess
+      - NamedIndividual
+  - rdf:type:
+    - environmentaldisease-relevant_process_type: Class
+  - ns2:specificity_level:
+    - environmentaldisease-relevant_process_specificity_level: integer
+  - rdfs:label:
+    - environmentaldisease-relevant_process_label: string
+  - ns2:Lancet_score:
+    - environmentaldisease-relevant_process_lancet_score: integer
+- Class:
+  - rdfs:subClassOf:
+    - class_sub_class_of: Class
+  - rdfs:isDefinedBy:
+    - class_is_defined_by: string
+  - rdfs:comment:
+    - class_comment: string
+  - rdfs:seeAlso:
+    - class_see_also: string
+  - rdfs:label:
+    - class_label: string
+- BuiltinAtom:
+  - ns1:arguments:
+    - builtin_atom_arguments: List
+- moleculardisease-relevantProcess:
+  - ns2:part_of:
+    - moleculardisease-relevant_process_part_of:
+      - moleculardisease-relevantProcess
+      - NamedIndividual
+  - rdf:type:
+    - moleculardisease-relevant_process_type: Class
+  - ns2:specificity_level:
+    - moleculardisease-relevant_process_specificity_level: integer
+  - rdfs:label:
+    - moleculardisease-relevant_process_label: string
+- NamedIndividual:
+  - ns2:part_of:
+    - named_individual_part_of:
+      - physiologicaldisease-relevantProcess
+      - environmentaldisease-relevantProcess
+      - moleculardisease-relevantProcess
+      - NamedIndividual
+  - rdf:type:
+    - named_individual_type: Class
+  - ns2:specificity_level:
+    - named_individual_specificity_level: integer
+  - rdfs:label:
+    - named_individual_label: string
+  - ns2:Lancet_score:
+    - named_individual_lancet_score: integer

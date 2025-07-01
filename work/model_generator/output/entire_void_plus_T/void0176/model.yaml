@@ -1,0 +1,34 @@
+- Ontology:
+  - dc11:date:
+    - ontology_date: string
+  - dc11:contributor:
+    - ontology_contributor: Literal
+- Restriction:
+  - owl:onClass:
+    - restriction_on_class: Class
+  - owl:onProperty:
+    - restriction_on_property: ObjectProperty
+  - owl:allValuesFrom:
+    - restriction_all_values_from: Class
+  - owl:someValuesFrom:
+    - restriction_some_values_from: Class
+  - owl:minQualifiedCardinality:
+    - restriction_min_qualified_cardinality: nonNegativeInteger
+  - owl:qualifiedCardinality:
+    - restriction_qualified_cardinality: nonNegativeInteger
+- Class:
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Restriction
+      - Class
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+  - skos:definition:
+    - class_definition: string
+- ObjectProperty:
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of: ObjectProperty
+  - rdfs:domain:
+    - object_property_domain: Class
+  - rdfs:range:
+    - object_property_range: Class

@@ -1,0 +1,1061 @@
+- Resource:
+  - rdf:type:
+    - resource_type: Class
+  - ns1:isAppropriateForInterventionGoal:
+    - resource_is_appropriate_for_intervention_goal:
+      - AcquisitionGoal
+      - CessationGoal
+      - NamedIndividual
+      - InterventionGoal
+  - ns1:maximumUserAge:
+    - resource_maximum_user_age: integer
+  - ns1:appropriateForPhysicalOpportunity:
+    - resource_appropriate_for_physical_opportunity: integer
+  - ns1:sourceURL:
+    - resource_source_url: string
+  - ns1:itemText:
+    - resource_item_text: string
+  - ns1:appropriateForLocation:
+    - resource_appropriate_for_location: integer
+  - ns1:appropriateForPsychologicalCapability:
+    - resource_appropriate_for_psychological_capability: integer
+  - rdfs:label:
+    - resource_label: string
+  - ns1:appropriateForAutomaticMotivation:
+    - resource_appropriate_for_automatic_motivation: integer
+  - ns1:minimumUserAge:
+    - resource_minimum_user_age: integer
+  - ns1:appropriateForReflectiveMotivation:
+    - resource_appropriate_for_reflective_motivation: integer
+  - ns1:provideLink:
+    - resource_provide_link: true
+  - ns1:appropriateForPhysicalCapability:
+    - resource_appropriate_for_physical_capability: integer
+  - ns1:itemName:
+    - resource_item_name: string
+  - ns1:appropriateForSocialOpportunity:
+    - resource_appropriate_for_social_opportunity: integer
+  - rdfs:comment:
+    - resource_comment: string
+- Tip:
+  - rdf:type:
+    - tip_type: Class
+  - ns1:isAppropriateForInterventionGoal:
+    - tip_is_appropriate_for_intervention_goal:
+      - CessationGoal
+      - InterventionGoal
+      - AcquisitionGoal
+      - NamedIndividual
+  - ns1:isWarrantedBy:
+    - tip_is_warranted_by:
+      - '00278'
+      - '00319'
+      - '00241'
+      - BehaviourChangeTechnique
+      - '00237'
+      - '00266'
+      - '00253'
+      - '00324'
+      - '00274'
+      - '00219'
+      - NamedIndividual
+      - '00295'
+      - '00246'
+  - ns1:maximumUserAge:
+    - tip_maximum_user_age: integer
+  - ns1:appropriateForPhysicalOpportunity:
+    - tip_appropriate_for_physical_opportunity: integer
+  - ns1:sourceURL:
+    - tip_source_url: string
+  - ns1:itemText:
+    - tip_item_text: string
+  - ns1:appropriateForLocation:
+    - tip_appropriate_for_location: integer
+  - ns1:appropriateForPsychologicalCapability:
+    - tip_appropriate_for_psychological_capability: integer
+  - rdfs:label:
+    - tip_label: string
+  - ns1:provideJournal:
+    - tip_provide_journal: true
+  - ns1:appropriateForAutomaticMotivation:
+    - tip_appropriate_for_automatic_motivation: integer
+  - ns1:minimumUserAge:
+    - tip_minimum_user_age: integer
+  - ns1:appropriateForReflectiveMotivation:
+    - tip_appropriate_for_reflective_motivation: integer
+  - ns1:provideLink:
+    - tip_provide_link: true
+  - ns1:appropriateForPhysicalCapability:
+    - tip_appropriate_for_physical_capability: integer
+  - ns1:itemName:
+    - tip_item_name: string
+  - ns1:appropriateForSocialOpportunity:
+    - tip_appropriate_for_social_opportunity: integer
+  - rdfs:comment:
+    - tip_comment: string
+  - ns1:canRepeat:
+    - tip_can_repeat: integer
+- AssessmentItem:
+  - ns1:evaluatesConstruct:
+    - assessment_item_evaluates_construct:
+      - COMBConstruct
+      - Motivation
+      - Construct
+      - Capability
+      - Opportunity
+      - NamedIndividual
+  - ns1:isSpecificToGoal:
+    - assessment_item_is_specific_to_goal:
+      - CessationGoal
+      - AcquisitionGoal
+      - InterventionGoal
+      - NamedIndividual
+  - rdf:type:
+    - assessment_item_type: Class
+  - ns1:canAssessCOMBConstruct:
+    - assessment_item_can_assess_comb_construct:
+      - Opportunity
+      - NamedIndividual
+      - COMBConstruct
+      - Construct
+      - Motivation
+      - Capability
+  - ns1:assessmentItemText:
+    - assessment_item_assessment_item_text: string
+  - ns1:assessmentItemExamples:
+    - assessment_item_assessment_item_examples: string
+  - rdfs:label:
+    - assessment_item_label: string
+  - ns1:assessmentItemID:
+    - assessment_item_assessment_item_id: string
+  - rdfs:comment:
+    - assessment_item_comment: string
+- PhysicalOpportunityAssessment:
+  - ns1:evaluatesConstruct:
+    - physical_opportunity_assessment_evaluates_construct:
+      - Construct
+      - COMBConstruct
+      - Opportunity
+      - NamedIndividual
+  - ns1:isSpecificToGoal:
+    - physical_opportunity_assessment_is_specific_to_goal:
+      - NamedIndividual
+      - InterventionGoal
+      - CessationGoal
+      - AcquisitionGoal
+  - rdf:type:
+    - physical_opportunity_assessment_type: Class
+- InterventionFuction:
+  - ns1:hasMostCommonBCT:
+    - intervention_fuction_has_most_common_bct:
+      - NamedIndividual
+      - '00219'
+      - '00229'
+      - '00295'
+      - '00257'
+      - '00266'
+      - '00274'
+      - BehaviourChangeTechnique
+      - '00246'
+      - '00253'
+      - '00237'
+      - '00241'
+  - ns1:hasCommonBCT:
+    - intervention_fuction_has_common_bct:
+      - '00266'
+      - '00319'
+      - '00308'
+      - '00257'
+      - '00290'
+      - '00219'
+      - '00246'
+      - '00302'
+      - '00324'
+      - '00237'
+      - '00278'
+      - '00241'
+      - BehaviourChangeTechnique
+      - NamedIndividual
+      - '00229'
+      - '00253'
+      - '00274'
+      - '00295'
+  - rdf:type:
+    - intervention_fuction_type: Class
+  - ns1:isEffectiveForTDFDomain:
+    - intervention_fuction_is_effective_for_tdf_domain:
+      - NamedIndividual
+      - TDFDomain
+      - Construct
+  - rdfs:comment:
+    - intervention_fuction_comment: string
+- '00324':
+  - rdf:type:
+    - 00324_type: Class
+  - ns1:isAppropriateForInterventionFunciton:
+    - 00324_is_appropriate_for_intervention_funciton:
+      - InterventionFuction
+      - NamedIndividual
+  - rdfs:label:
+    - 00324_label: string
+  - rdfs:comment:
+    - 00324_comment: string
+- TDFDomain:
+  - rdf:type:
+    - tdf_domain_type: Class
+  - ns1:hasEffectiveInterventionFunction:
+    - tdf_domain_has_effective_intervention_function:
+      - InterventionFuction
+      - NamedIndividual
+  - ns1:isRelatedToCOMB:
+    - tdf_domain_is_related_to_comb:
+      - COMBConstruct
+      - NamedIndividual
+      - Opportunity
+      - Capability
+      - Motivation
+      - Construct
+  - rdfs:label:
+    - tdf_domain_label: string
+  - rdfs:comment:
+    - tdf_domain_comment: string
+- Task:
+  - rdf:type:
+    - task_type: Class
+  - ns1:isAppropriateForInterventionGoal:
+    - task_is_appropriate_for_intervention_goal:
+      - AcquisitionGoal
+      - NamedIndividual
+      - CessationGoal
+      - InterventionGoal
+  - ns1:isWarrantedBy:
+    - task_is_warranted_by:
+      - '00237'
+      - '00246'
+      - NamedIndividual
+      - '00257'
+      - '00219'
+      - BehaviourChangeTechnique
+      - '00241'
+  - ns1:maximumUserAge:
+    - task_maximum_user_age: integer
+  - ns1:appropriateForPhysicalOpportunity:
+    - task_appropriate_for_physical_opportunity: integer
+  - ns1:sourceURL:
+    - task_source_url: string
+  - ns1:itemText:
+    - task_item_text: string
+  - ns1:appropriateForLocation:
+    - task_appropriate_for_location: integer
+  - ns1:appropriateForPsychologicalCapability:
+    - task_appropriate_for_psychological_capability: integer
+  - rdfs:label:
+    - task_label: string
+  - ns1:provideJournal:
+    - task_provide_journal: true
+  - ns1:appropriateForAutomaticMotivation:
+    - task_appropriate_for_automatic_motivation: integer
+  - ns1:minimumUserAge:
+    - task_minimum_user_age: integer
+  - ns1:appropriateForReflectiveMotivation:
+    - task_appropriate_for_reflective_motivation: integer
+  - ns1:provideLink:
+    - task_provide_link: true
+  - ns1:appropriateForPhysicalCapability:
+    - task_appropriate_for_physical_capability: integer
+  - ns1:itemName:
+    - task_item_name: string
+  - ns1:appropriateForSocialOpportunity:
+    - task_appropriate_for_social_opportunity: integer
+  - rdfs:comment:
+    - task_comment: string
+  - ns1:canRepeat:
+    - task_can_repeat: integer
+- '00274':
+  - rdf:type:
+    - 00274_type: Class
+  - ns1:isAppropriateForInterventionFunciton:
+    - 00274_is_appropriate_for_intervention_funciton:
+      - InterventionFuction
+      - NamedIndividual
+  - ns1:isMostAppropriateForInterventionFunction:
+    - 00274_is_most_appropriate_for_intervention_function:
+      - NamedIndividual
+      - InterventionFuction
+  - rdfs:label:
+    - 00274_label: string
+  - rdfs:comment:
+    - 00274_comment: string
+- Actor:
+  - ns1:hasObstacle:
+    - actor_has_obstacle:
+      - Obstacle
+      - NamedIndividual
+  - rdf:type:
+    - actor_type: Class
+  - ns1:hasInterventionGoal:
+    - actor_has_intervention_goal:
+      - AcquisitionGoal
+      - NamedIndividual
+      - InterventionGoal
+  - ns1:actorName:
+    - actor_actor_name: string
+  - ns1:PhysicalCapabilityScore:
+    - actor_physical_capability_score: integer
+  - ns1:ReflectiveMotivationScore:
+    - actor_reflective_motivation_score: integer
+  - ns1:SocialOpportunityScore:
+    - actor_social_opportunity_score: integer
+  - ns1:physicalActivityLevel:
+    - actor_physical_activity_level: integer
+  - ns1:actorHomeProvince:
+    - actor_actor_home_province: integer
+  - ns1:PhyscologicalCapabilityScore:
+    - actor_physcological_capability_score: integer
+  - ns1:PhysicalOpportunityScore:
+    - actor_physical_opportunity_score: integer
+  - ns1:dailySodiumIntake:
+    - actor_daily_sodium_intake: integer
+  - ns1:AutomaticMotivationScore:
+    - actor_automatic_motivation_score: integer
+  - ns1:age:
+    - actor_age: integer
+- '00319':
+  - rdf:type:
+    - '00319_type': Class
+  - ns1:isAppropriateForInterventionFunciton:
+    - '00319_is_appropriate_for_intervention_funciton':
+      - NamedIndividual
+      - InterventionFuction
+  - rdfs:label:
+    - '00319_label': string
+  - rdfs:comment:
+    - '00319_comment': string
+- Ontology:
+  - rdfs:comment:
+    - ontology_comment: string
+- '00253':
+  - rdf:type:
+    - 00253_type: Class
+  - ns1:isAppropriateForInterventionFunciton:
+    - 00253_is_appropriate_for_intervention_funciton:
+      - InterventionFuction
+      - NamedIndividual
+  - ns1:isMostAppropriateForInterventionFunction:
+    - 00253_is_most_appropriate_for_intervention_function:
+      - InterventionFuction
+      - NamedIndividual
+  - rdfs:label:
+    - 00253_label: string
+  - rdfs:comment:
+    - 00253_comment: string
+- Motivation:
+  - rdf:type:
+    - motivation_type: Class
+  - ns1:isRelatedToTDF:
+    - motivation_is_related_to_tdf:
+      - TDFDomain
+      - NamedIndividual
+      - Construct
+  - rdfs:comment:
+    - motivation_comment: string
+- '00241':
+  - rdf:type:
+    - 00241_type: Class
+  - ns1:isAppropriateForInterventionFunciton:
+    - 00241_is_appropriate_for_intervention_funciton:
+      - InterventionFuction
+      - NamedIndividual
+  - ns1:isMostAppropriateForInterventionFunction:
+    - 00241_is_most_appropriate_for_intervention_function:
+      - NamedIndividual
+      - InterventionFuction
+  - rdfs:label:
+    - 00241_label: string
+  - rdfs:comment:
+    - 00241_comment: string
+- COMBConstruct:
+  - rdf:type:
+    - comb_construct_type: Class
+  - ns1:isRelatedToTDF:
+    - comb_construct_is_related_to_tdf:
+      - TDFDomain
+      - Construct
+      - NamedIndividual
+  - rdfs:comment:
+    - comb_construct_comment: string
+- Construct:
+  - rdf:type:
+    - construct_type: Class
+  - ns1:hasEffectiveInterventionFunction:
+    - construct_has_effective_intervention_function:
+      - NamedIndividual
+      - InterventionFuction
+  - ns1:isRelatedToCOMB:
+    - construct_is_related_to_comb:
+      - Construct
+      - COMBConstruct
+      - NamedIndividual
+      - Capability
+      - Motivation
+      - Opportunity
+  - ns1:isRelatedToTDF:
+    - construct_is_related_to_tdf:
+      - TDFDomain
+      - Construct
+      - NamedIndividual
+  - rdfs:label:
+    - construct_label: string
+  - rdfs:comment:
+    - construct_comment: string
+- Obstacle:
+  - rdf:type:
+    - obstacle_type: Class
+  - ns1:hasRelevantTDF:
+    - obstacle_has_relevant_tdf:
+      - NamedIndividual
+      - Construct
+      - TDFDomain
+  - rdfs:comment:
+    - obstacle_comment: string
+- DatatypeProperty:
+  - rdfs:domain:
+    - datatype_property_domain: Class
+  - rdfs:subPropertyOf:
+    - datatype_property_sub_property_of:
+      - FunctionalProperty
+      - DatatypeProperty
+  - rdfs:comment:
+    - datatype_property_comment: string
+- '00290':
+  - rdf:type:
+    - '00290_type': Class
+  - ns1:isAppropriateForInterventionFunciton:
+    - '00290_is_appropriate_for_intervention_funciton':
+      - InterventionFuction
+      - NamedIndividual
+  - rdfs:label:
+    - '00290_label': string
+  - rdfs:comment:
+    - '00290_comment': string
+- InterventionItem:
+  - rdf:type:
+    - intervention_item_type: Class
+  - ns1:isAppropriateForInterventionGoal:
+    - intervention_item_is_appropriate_for_intervention_goal:
+      - CessationGoal
+      - InterventionGoal
+      - NamedIndividual
+      - AcquisitionGoal
+  - ns1:isWarrantedBy:
+    - intervention_item_is_warranted_by:
+      - '00219'
+      - '00253'
+      - '00237'
+      - '00319'
+      - BehaviourChangeTechnique
+      - '00241'
+      - '00274'
+      - '00266'
+      - '00257'
+      - '00324'
+      - '00295'
+      - NamedIndividual
+      - '00246'
+      - '00278'
+  - ns1:maximumUserAge:
+    - intervention_item_maximum_user_age: integer
+  - ns1:appropriateForPhysicalOpportunity:
+    - intervention_item_appropriate_for_physical_opportunity: integer
+  - ns1:sourceURL:
+    - intervention_item_source_url: string
+  - ns1:itemText:
+    - intervention_item_item_text: string
+  - ns1:appropriateForLocation:
+    - intervention_item_appropriate_for_location: integer
+  - ns1:appropriateForPsychologicalCapability:
+    - intervention_item_appropriate_for_psychological_capability: integer
+  - rdfs:label:
+    - intervention_item_label: string
+  - ns1:provideJournal:
+    - intervention_item_provide_journal: true
+  - ns1:appropriateForAutomaticMotivation:
+    - intervention_item_appropriate_for_automatic_motivation: integer
+  - ns1:minimumUserAge:
+    - intervention_item_minimum_user_age: integer
+  - ns1:appropriateForReflectiveMotivation:
+    - intervention_item_appropriate_for_reflective_motivation: integer
+  - ns1:provideLink:
+    - intervention_item_provide_link: true
+  - ns1:appropriateForPhysicalCapability:
+    - intervention_item_appropriate_for_physical_capability: integer
+  - ns1:itemName:
+    - intervention_item_item_name: string
+  - ns1:appropriateForSocialOpportunity:
+    - intervention_item_appropriate_for_social_opportunity: integer
+  - rdfs:comment:
+    - intervention_item_comment: string
+  - ns1:canRepeat:
+    - intervention_item_can_repeat: integer
+- Opportunity:
+  - rdf:type:
+    - opportunity_type: Class
+  - ns1:isRelatedToTDF:
+    - opportunity_is_related_to_tdf:
+      - TDFDomain
+      - Construct
+      - NamedIndividual
+  - rdfs:comment:
+    - opportunity_comment: string
+- CessationGoal:
+  - rdf:type:
+    - cessation_goal_type: Class
+- '00295':
+  - rdf:type:
+    - '00295_type': Class
+  - ns1:isAppropriateForInterventionFunciton:
+    - '00295_is_appropriate_for_intervention_funciton':
+      - InterventionFuction
+      - NamedIndividual
+  - ns1:isMostAppropriateForInterventionFunction:
+    - '00295_is_most_appropriate_for_intervention_function':
+      - InterventionFuction
+      - NamedIndividual
+  - rdfs:label:
+    - '00295_label': string
+  - rdfs:comment:
+    - '00295_comment': string
+- Assessment:
+  - ns1:evaluatesConstruct:
+    - assessment_evaluates_construct:
+      - Construct
+      - Capability
+      - NamedIndividual
+      - COMBConstruct
+      - Motivation
+      - Opportunity
+  - ns1:isSpecificToGoal:
+    - assessment_is_specific_to_goal:
+      - AcquisitionGoal
+      - InterventionGoal
+      - NamedIndividual
+      - CessationGoal
+  - rdf:type:
+    - assessment_type: Class
+- '00246':
+  - rdf:type:
+    - 00246_type: Class
+  - ns1:isAppropriateForInterventionFunciton:
+    - 00246_is_appropriate_for_intervention_funciton:
+      - InterventionFuction
+      - NamedIndividual
+  - ns1:isMostAppropriateForInterventionFunction:
+    - 00246_is_most_appropriate_for_intervention_function:
+      - NamedIndividual
+      - InterventionFuction
+  - rdfs:label:
+    - 00246_label: string
+  - rdfs:comment:
+    - 00246_comment: string
+- BehaviourChangeTechnique:
+  - rdf:type:
+    - behaviour_change_technique_type: Class
+  - ns1:isAppropriateForInterventionFunciton:
+    - behaviour_change_technique_is_appropriate_for_intervention_funciton:
+      - InterventionFuction
+      - NamedIndividual
+  - ns1:isMostAppropriateForInterventionFunction:
+    - behaviour_change_technique_is_most_appropriate_for_intervention_function:
+      - NamedIndividual
+      - InterventionFuction
+  - rdfs:label:
+    - behaviour_change_technique_label: string
+  - rdfs:comment:
+    - behaviour_change_technique_comment: string
+- Class:
+  - rdfs:subClassOf:
+    - class_sub_class_of: Class
+  - rdfs:label:
+    - class_label: string
+  - rdfs:comment:
+    - class_comment: string
+- SocialOpportunityAssessment:
+  - ns1:evaluatesConstruct:
+    - social_opportunity_assessment_evaluates_construct:
+      - COMBConstruct
+      - NamedIndividual
+      - Opportunity
+      - Construct
+  - ns1:isSpecificToGoal:
+    - social_opportunity_assessment_is_specific_to_goal:
+      - NamedIndividual
+      - InterventionGoal
+      - AcquisitionGoal
+      - CessationGoal
+  - rdf:type:
+    - social_opportunity_assessment_type: Class
+- '00257':
+  - rdf:type:
+    - 00257_type: Class
+  - ns1:isAppropriateForInterventionFunciton:
+    - 00257_is_appropriate_for_intervention_funciton:
+      - NamedIndividual
+      - InterventionFuction
+  - ns1:isMostAppropriateForInterventionFunction:
+    - 00257_is_most_appropriate_for_intervention_function:
+      - InterventionFuction
+      - NamedIndividual
+  - rdfs:label:
+    - 00257_label: string
+  - rdfs:comment:
+    - 00257_comment: string
+- PsychologicalCapabilityAssessment:
+  - ns1:evaluatesConstruct:
+    - psychological_capability_assessment_evaluates_construct:
+      - NamedIndividual
+      - Capability
+      - COMBConstruct
+      - Construct
+  - ns1:isSpecificToGoal:
+    - psychological_capability_assessment_is_specific_to_goal:
+      - NamedIndividual
+      - CessationGoal
+      - AcquisitionGoal
+      - InterventionGoal
+  - rdf:type:
+    - psychological_capability_assessment_type: Class
+- '00278':
+  - rdf:type:
+    - '00278_type': Class
+  - ns1:isAppropriateForInterventionFunciton:
+    - '00278_is_appropriate_for_intervention_funciton':
+      - InterventionFuction
+      - NamedIndividual
+  - rdfs:label:
+    - '00278_label': string
+  - rdfs:comment:
+    - '00278_comment': string
+- '00219':
+  - rdf:type:
+    - '00219_type': Class
+  - ns1:isAppropriateForInterventionFunciton:
+    - '00219_is_appropriate_for_intervention_funciton':
+      - NamedIndividual
+      - InterventionFuction
+  - ns1:isMostAppropriateForInterventionFunction:
+    - '00219_is_most_appropriate_for_intervention_function':
+      - NamedIndividual
+      - InterventionFuction
+  - rdfs:label:
+    - '00219_label': string
+  - rdfs:comment:
+    - '00219_comment': string
+- PhysicalCapabilityAssessment:
+  - ns1:evaluatesConstruct:
+    - physical_capability_assessment_evaluates_construct:
+      - Capability
+      - NamedIndividual
+      - COMBConstruct
+      - Construct
+  - ns1:isSpecificToGoal:
+    - physical_capability_assessment_is_specific_to_goal:
+      - InterventionGoal
+      - NamedIndividual
+      - AcquisitionGoal
+      - CessationGoal
+  - rdf:type:
+    - physical_capability_assessment_type: Class
+- NamedIndividual:
+  - ns1:hasObstacle:
+    - named_individual_has_obstacle:
+      - NamedIndividual
+      - Obstacle
+  - ns1:hasMostCommonBCT:
+    - named_individual_has_most_common_bct:
+      - BehaviourChangeTechnique
+      - NamedIndividual
+      - '00237'
+      - '00257'
+      - '00274'
+      - '00246'
+      - '00266'
+      - '00253'
+      - '00229'
+      - '00295'
+      - '00219'
+      - '00241'
+  - ns1:evaluatesConstruct:
+    - named_individual_evaluates_construct:
+      - NamedIndividual
+      - Motivation
+      - Capability
+      - COMBConstruct
+      - Opportunity
+      - Construct
+  - ns1:hasCommonBCT:
+    - named_individual_has_common_bct:
+      - '00237'
+      - '00274'
+      - '00241'
+      - '00295'
+      - '00257'
+      - '00324'
+      - '00266'
+      - '00302'
+      - '00246'
+      - '00229'
+      - BehaviourChangeTechnique
+      - '00278'
+      - '00290'
+      - NamedIndividual
+      - '00253'
+      - '00308'
+      - '00319'
+      - '00219'
+  - ns1:isSpecificToGoal:
+    - named_individual_is_specific_to_goal:
+      - InterventionGoal
+      - CessationGoal
+      - AcquisitionGoal
+      - NamedIndividual
+  - rdf:type:
+    - named_individual_type: Class
+  - ns1:isAppropriateForInterventionFunciton:
+    - named_individual_is_appropriate_for_intervention_funciton:
+      - InterventionFuction
+      - NamedIndividual
+  - ns1:hasRelevantTDF:
+    - named_individual_has_relevant_tdf:
+      - NamedIndividual
+      - Construct
+      - TDFDomain
+  - ns1:isAppropriateForInterventionGoal:
+    - named_individual_is_appropriate_for_intervention_goal:
+      - InterventionGoal
+      - NamedIndividual
+      - CessationGoal
+      - AcquisitionGoal
+  - ns1:hasEffectiveInterventionFunction:
+    - named_individual_has_effective_intervention_function:
+      - NamedIndividual
+      - InterventionFuction
+  - ns1:isWarrantedBy:
+    - named_individual_is_warranted_by:
+      - '00241'
+      - '00246'
+      - '00295'
+      - '00253'
+      - NamedIndividual
+      - '00319'
+      - '00237'
+      - '00257'
+      - '00274'
+      - BehaviourChangeTechnique
+      - '00278'
+      - '00219'
+      - '00324'
+      - '00266'
+  - ns1:hasInterventionGoal:
+    - named_individual_has_intervention_goal:
+      - InterventionGoal
+      - NamedIndividual
+      - AcquisitionGoal
+  - ns1:canAssessCOMBConstruct:
+    - named_individual_can_assess_comb_construct:
+      - NamedIndividual
+      - Capability
+      - Opportunity
+      - Motivation
+      - COMBConstruct
+      - Construct
+  - ns1:isMostAppropriateForInterventionFunction:
+    - named_individual_is_most_appropriate_for_intervention_function:
+      - NamedIndividual
+      - InterventionFuction
+  - ns1:isRelatedToCOMB:
+    - named_individual_is_related_to_comb:
+      - NamedIndividual
+      - Construct
+      - Motivation
+      - Capability
+      - Opportunity
+      - COMBConstruct
+  - ns1:isEffectiveForTDFDomain:
+    - named_individual_is_effective_for_tdf_domain:
+      - NamedIndividual
+      - Construct
+      - TDFDomain
+  - ns1:isRelatedToTDF:
+    - named_individual_is_related_to_tdf:
+      - Construct
+      - TDFDomain
+      - NamedIndividual
+  - ns1:assessmentItemText:
+    - named_individual_assessment_item_text: string
+  - ns1:maximumUserAge:
+    - named_individual_maximum_user_age: integer
+  - ns1:appropriateForPhysicalOpportunity:
+    - named_individual_appropriate_for_physical_opportunity: integer
+  - ns1:actorName:
+    - named_individual_actor_name: string
+  - ns1:sourceURL:
+    - named_individual_source_url: string
+  - ns1:itemText:
+    - named_individual_item_text: string
+  - ns1:PhysicalCapabilityScore:
+    - named_individual_physical_capability_score: integer
+  - ns1:assessmentItemExamples:
+    - named_individual_assessment_item_examples: string
+  - ns1:ReflectiveMotivationScore:
+    - named_individual_reflective_motivation_score: integer
+  - ns1:SocialOpportunityScore:
+    - named_individual_social_opportunity_score: integer
+  - ns1:appropriateForLocation:
+    - named_individual_appropriate_for_location: integer
+  - ns1:appropriateForPsychologicalCapability:
+    - named_individual_appropriate_for_psychological_capability: integer
+  - rdfs:label:
+    - named_individual_label: string
+  - ns1:physicalActivityLevel:
+    - named_individual_physical_activity_level: integer
+  - ns1:provideJournal:
+    - named_individual_provide_journal: true
+  - ns1:assessmentItemID:
+    - named_individual_assessment_item_id: string
+  - ns1:appropriateForAutomaticMotivation:
+    - named_individual_appropriate_for_automatic_motivation: integer
+  - ns1:minimumUserAge:
+    - named_individual_minimum_user_age: integer
+  - ns1:actorHomeProvince:
+    - named_individual_actor_home_province: integer
+  - ns1:appropriateForReflectiveMotivation:
+    - named_individual_appropriate_for_reflective_motivation: integer
+  - ns1:provideLink:
+    - named_individual_provide_link: true
+  - ns1:appropriateForPhysicalCapability:
+    - named_individual_appropriate_for_physical_capability: integer
+  - ns1:itemName:
+    - named_individual_item_name: string
+  - ns1:PhyscologicalCapabilityScore:
+    - named_individual_physcological_capability_score: integer
+  - ns1:PhysicalOpportunityScore:
+    - named_individual_physical_opportunity_score: integer
+  - ns1:appropriateForSocialOpportunity:
+    - named_individual_appropriate_for_social_opportunity: integer
+  - ns1:dailySodiumIntake:
+    - named_individual_daily_sodium_intake: integer
+  - ns1:AutomaticMotivationScore:
+    - named_individual_automatic_motivation_score: integer
+  - ns1:age:
+    - named_individual_age: integer
+  - rdfs:comment:
+    - named_individual_comment: string
+  - ns1:canRepeat:
+    - named_individual_can_repeat: integer
+- AcquisitionGoal:
+  - rdf:type:
+    - acquisition_goal_type: Class
+- '00237':
+  - rdf:type:
+    - 00237_type: Class
+  - ns1:isAppropriateForInterventionFunciton:
+    - 00237_is_appropriate_for_intervention_funciton:
+      - InterventionFuction
+      - NamedIndividual
+  - ns1:isMostAppropriateForInterventionFunction:
+    - 00237_is_most_appropriate_for_intervention_function:
+      - NamedIndividual
+      - InterventionFuction
+  - rdfs:label:
+    - 00237_label: string
+  - rdfs:comment:
+    - 00237_comment: string
+- ReflectiveMotivationAssessment:
+  - ns1:evaluatesConstruct:
+    - reflective_motivation_assessment_evaluates_construct:
+      - Construct
+      - COMBConstruct
+      - Motivation
+      - NamedIndividual
+  - ns1:isSpecificToGoal:
+    - reflective_motivation_assessment_is_specific_to_goal:
+      - AcquisitionGoal
+      - NamedIndividual
+      - CessationGoal
+      - InterventionGoal
+  - rdf:type:
+    - reflective_motivation_assessment_type: Class
+- COMBAssessmentItem:
+  - ns1:isSpecificToGoal:
+    - comb_assessment_item_is_specific_to_goal:
+      - NamedIndividual
+      - InterventionGoal
+      - AcquisitionGoal
+      - CessationGoal
+  - rdf:type:
+    - comb_assessment_item_type: Class
+  - ns1:canAssessCOMBConstruct:
+    - comb_assessment_item_can_assess_comb_construct:
+      - Construct
+      - NamedIndividual
+      - Opportunity
+      - Capability
+      - Motivation
+      - COMBConstruct
+  - ns1:assessmentItemText:
+    - comb_assessment_item_assessment_item_text: string
+  - ns1:assessmentItemExamples:
+    - comb_assessment_item_assessment_item_examples: string
+  - rdfs:label:
+    - comb_assessment_item_label: string
+  - ns1:assessmentItemID:
+    - comb_assessment_item_assessment_item_id: string
+  - rdfs:comment:
+    - comb_assessment_item_comment: string
+- '00266':
+  - rdf:type:
+    - 00266_type: Class
+  - ns1:isAppropriateForInterventionFunciton:
+    - 00266_is_appropriate_for_intervention_funciton:
+      - InterventionFuction
+      - NamedIndividual
+  - ns1:isMostAppropriateForInterventionFunction:
+    - 00266_is_most_appropriate_for_intervention_function:
+      - InterventionFuction
+      - NamedIndividual
+  - rdfs:label:
+    - 00266_label: string
+  - rdfs:comment:
+    - 00266_comment: string
+- Patient:
+  - ns1:hasObstacle:
+    - patient_has_obstacle:
+      - NamedIndividual
+      - Obstacle
+  - rdf:type:
+    - patient_type: Class
+  - ns1:hasInterventionGoal:
+    - patient_has_intervention_goal:
+      - NamedIndividual
+      - AcquisitionGoal
+      - InterventionGoal
+  - ns1:actorName:
+    - patient_actor_name: string
+  - ns1:PhysicalCapabilityScore:
+    - patient_physical_capability_score: integer
+  - ns1:ReflectiveMotivationScore:
+    - patient_reflective_motivation_score: integer
+  - ns1:SocialOpportunityScore:
+    - patient_social_opportunity_score: integer
+  - ns1:physicalActivityLevel:
+    - patient_physical_activity_level: integer
+  - ns1:actorHomeProvince:
+    - patient_actor_home_province: integer
+  - ns1:PhyscologicalCapabilityScore:
+    - patient_physcological_capability_score: integer
+  - ns1:PhysicalOpportunityScore:
+    - patient_physical_opportunity_score: integer
+  - ns1:dailySodiumIntake:
+    - patient_daily_sodium_intake: integer
+  - ns1:AutomaticMotivationScore:
+    - patient_automatic_motivation_score: integer
+  - ns1:age:
+    - patient_age: integer
+- ObjectProperty:
+  - rdfs:domain:
+    - object_property_domain: Class
+  - rdfs:range:
+    - object_property_range: Class
+  - owl:inverseOf:
+    - object_property_inverse_of: ObjectProperty
+- InterventionGoal:
+  - rdf:type:
+    - intervention_goal_type: Class
+- '00302':
+  - rdf:type:
+    - 00302_type: Class
+  - ns1:isAppropriateForInterventionFunciton:
+    - 00302_is_appropriate_for_intervention_funciton:
+      - InterventionFuction
+      - NamedIndividual
+  - rdfs:label:
+    - 00302_label: string
+  - rdfs:comment:
+    - 00302_comment: string
+- '00229':
+  - rdf:type:
+    - '00229_type': Class
+  - ns1:isAppropriateForInterventionFunciton:
+    - '00229_is_appropriate_for_intervention_funciton':
+      - InterventionFuction
+      - NamedIndividual
+  - ns1:isMostAppropriateForInterventionFunction:
+    - '00229_is_most_appropriate_for_intervention_function':
+      - NamedIndividual
+      - InterventionFuction
+  - rdfs:label:
+    - '00229_label': string
+  - rdfs:comment:
+    - '00229_comment': string
+- FunctionalProperty:
+  - rdfs:domain:
+    - functional_property_domain: Class
+  - rdfs:subPropertyOf:
+    - functional_property_sub_property_of:
+      - FunctionalProperty
+      - DatatypeProperty
+  - rdfs:comment:
+    - functional_property_comment: string
+- AutomaticMotivationAssessment:
+  - ns1:evaluatesConstruct:
+    - automatic_motivation_assessment_evaluates_construct:
+      - Construct
+      - NamedIndividual
+      - COMBConstruct
+      - Motivation
+  - ns1:isSpecificToGoal:
+    - automatic_motivation_assessment_is_specific_to_goal:
+      - NamedIndividual
+      - CessationGoal
+      - InterventionGoal
+      - AcquisitionGoal
+  - rdf:type:
+    - automatic_motivation_assessment_type: Class
+- COMBAssessment:
+  - ns1:evaluatesConstruct:
+    - comb_assessment_evaluates_construct:
+      - Motivation
+      - COMBConstruct
+      - NamedIndividual
+      - Construct
+      - Capability
+      - Opportunity
+  - ns1:isSpecificToGoal:
+    - comb_assessment_is_specific_to_goal:
+      - InterventionGoal
+      - CessationGoal
+      - AcquisitionGoal
+      - NamedIndividual
+  - rdf:type:
+    - comb_assessment_type: Class
+- '00308':
+  - rdf:type:
+    - '00308_type': Class
+  - ns1:isAppropriateForInterventionFunciton:
+    - '00308_is_appropriate_for_intervention_funciton':
+      - InterventionFuction
+      - NamedIndividual
+  - rdfs:label:
+    - '00308_label': string
+  - rdfs:comment:
+    - '00308_comment': string
+- Capability:
+  - rdf:type:
+    - capability_type: Class
+  - ns1:isRelatedToTDF:
+    - capability_is_related_to_tdf:
+      - TDFDomain
+      - NamedIndividual
+      - Construct
+  - rdfs:comment:
+    - capability_comment: string

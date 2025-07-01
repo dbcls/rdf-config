@@ -1,0 +1,112 @@
+- ObjectProperty:
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of:
+      - SymmetricProperty
+      - ObjectProperty
+      - TransitiveProperty
+  - rdfs:range:
+    - object_property_range: Class
+  - rdfs:domain:
+    - object_property_domain: Class
+  - owl:inverseOf:
+    - object_property_inverse_of:
+      - ObjectProperty
+      - TransitiveProperty
+  - rdfs:label:
+    - object_property_label: string
+  - dc11:source:
+    - object_property_source: string
+  - ns1:definition:
+    - object_property_definition: string
+- SymmetricProperty:
+  - rdfs:subPropertyOf:
+    - symmetric_property_sub_property_of:
+      - ObjectProperty
+      - SymmetricProperty
+  - rdfs:range:
+    - symmetric_property_range: Class
+  - rdfs:domain:
+    - symmetric_property_domain: Class
+  - rdfs:label:
+    - symmetric_property_label: string
+  - ns1:definition:
+    - symmetric_property_definition: string
+- Ontology:
+  - dc11:description:
+    - ontology_description: string
+  - dc11:format:
+    - ontology_format: string
+  - dc11:subject:
+    - ontology_subject: string
+  - dc11:publisher:
+    - ontology_publisher: string
+  - owl:versionInfo:
+    - ontology_version_info: string
+  - dc11:title:
+    - ontology_title: string
+  - dc11:rights:
+    - ontology_rights: string
+  - dc11:creator:
+    - ontology_creator: string
+  - dc11:identifier:
+    - ontology_identifier: string
+- Restriction:
+  - owl:onProperty:
+    - restriction_on_property:
+      - ObjectProperty
+      - TransitiveProperty
+  - owl:allValuesFrom:
+    - restriction_all_values_from:
+      - Restriction
+      - Class
+  - owl:someValuesFrom:
+    - restriction_some_values_from:
+      - Restriction
+      - Class
+- TransitiveProperty:
+  - rdfs:subPropertyOf:
+    - transitive_property_sub_property_of:
+      - ObjectProperty
+      - TransitiveProperty
+      - SymmetricProperty
+  - rdfs:range:
+    - transitive_property_range: Class
+  - rdfs:domain:
+    - transitive_property_domain: Class
+  - owl:inverseOf:
+    - transitive_property_inverse_of:
+      - TransitiveProperty
+      - ObjectProperty
+  - rdfs:label:
+    - transitive_property_label: string
+  - ns1:definition:
+    - transitive_property_definition: string
+- Class:
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Class
+      - Restriction
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+  - owl:equivalentClass:
+    - class_equivalent_class:
+      - Class
+      - Restriction
+  - owl:complementOf:
+    - class_complement_of:
+      - Class
+      - Restriction
+  - rdfs:seeAlso:
+    - class_see_also: string
+  - rdfs:comment:
+    - class_comment: string
+  - rdfs:label:
+    - class_label: string
+  - owl:versionInfo:
+    - class_version_info: string
+  - ns1:synonym:
+    - class_synonym: string
+  - ns1:definition:
+    - class_definition: string
+  - owl:priorVersion:
+    - class_prior_version: string

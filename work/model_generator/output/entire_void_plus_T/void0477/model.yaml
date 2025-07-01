@@ -1,0 +1,157 @@
+- TransitiveProperty:
+  - rdfs:isDefinedBy:
+    - transitive_property_is_defined_by: Ontology
+  - owl:inverseOf:
+    - transitive_property_inverse_of:
+      - ObjectProperty
+      - TransitiveProperty
+      - Property
+  - rdfs:subPropertyOf:
+    - transitive_property_sub_property_of:
+      - ObjectProperty
+      - SymmetricProperty
+      - Property
+  - skos:scopeNote:
+    - transitive_property_scope_note: string
+  - skos:definition:
+    - transitive_property_definition:
+      - string
+      - string
+  - rdfs:label:
+    - transitive_property_label: string
+  - rdfs:comment:
+    - transitive_property_comment: string
+- AnnotationProperty:
+  - rdfs:isDefinedBy:
+    - annotation_property_is_defined_by: Ontology
+  - rdfs:subPropertyOf:
+    - annotation_property_sub_property_of:
+      - AnnotationProperty
+      - Property
+  - skos:example:
+    - annotation_property_example: string
+  - skos:scopeNote:
+    - annotation_property_scope_note: string
+  - skos:definition:
+    - annotation_property_definition: string
+  - rdfs:label:
+    - annotation_property_label: string
+  - rdfs:comment:
+    - annotation_property_comment: string
+- Ontology:
+  - dc:title:
+    - ontology_title: string
+  - dc:description:
+    - ontology_description: string
+  - dc:creator:
+    - ontology_creator: string
+  - dc:contributor:
+    - ontology_contributor: string
+- FunctionalProperty:
+  - rdfs:isDefinedBy:
+    - functional_property_is_defined_by: Ontology
+  - rdfs:domain:
+    - functional_property_domain: Class
+  - skos:definition:
+    - functional_property_definition: string
+  - rdfs:label:
+    - functional_property_label: string
+  - rdfs:comment:
+    - functional_property_comment: string
+- Property:
+  - rdfs:isDefinedBy:
+    - property_is_defined_by: Ontology
+  - rdfs:domain:
+    - property_domain: Class
+  - owl:inverseOf:
+    - property_inverse_of:
+      - Property
+      - TransitiveProperty
+      - ObjectProperty
+  - rdfs:subPropertyOf:
+    - property_sub_property_of:
+      - SymmetricProperty
+      - AnnotationProperty
+      - ObjectProperty
+      - Property
+      - TransitiveProperty
+  - rdfs:range:
+    - property_range: Class
+  - skos:example:
+    - property_example: string
+  - skos:scopeNote:
+    - property_scope_note: string
+  - skos:definition:
+    - property_definition:
+      - string
+      - string
+  - rdfs:label:
+    - property_label: string
+  - rdfs:comment:
+    - property_comment: string
+- Class:
+  - rdfs:isDefinedBy:
+    - class_is_defined_by: Ontology
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+  - rdfs:subClassOf:
+    - class_sub_class_of: Class
+  - skos:example:
+    - class_example: string
+  - skos:scopeNote:
+    - class_scope_note: string
+  - skos:definition:
+    - class_definition: string
+  - rdfs:label:
+    - class_label: string
+- SymmetricProperty:
+  - rdfs:isDefinedBy:
+    - symmetric_property_is_defined_by: Ontology
+  - rdfs:subPropertyOf:
+    - symmetric_property_sub_property_of:
+      - SymmetricProperty
+      - ObjectProperty
+      - Property
+  - skos:definition:
+    - symmetric_property_definition: string
+  - rdfs:label:
+    - symmetric_property_label: string
+  - rdfs:comment:
+    - symmetric_property_comment: string
+- DatatypeProperty:
+  - rdfs:isDefinedBy:
+    - datatype_property_is_defined_by: Ontology
+  - skos:scopeNote:
+    - datatype_property_scope_note: string
+  - skos:definition:
+    - datatype_property_definition: string
+  - rdfs:label:
+    - datatype_property_label: string
+- ObjectProperty:
+  - rdfs:isDefinedBy:
+    - object_property_is_defined_by: Ontology
+  - rdfs:domain:
+    - object_property_domain: Class
+  - owl:inverseOf:
+    - object_property_inverse_of:
+      - Property
+      - ObjectProperty
+      - TransitiveProperty
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of:
+      - Property
+      - SymmetricProperty
+      - TransitiveProperty
+      - ObjectProperty
+  - rdfs:range:
+    - object_property_range: Class
+  - skos:scopeNote:
+    - object_property_scope_note: string
+  - skos:definition:
+    - object_property_definition:
+      - string
+      - string
+  - rdfs:label:
+    - object_property_label: string
+  - rdfs:comment:
+    - object_property_comment: string

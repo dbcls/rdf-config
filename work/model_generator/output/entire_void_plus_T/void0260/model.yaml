@@ -1,0 +1,72 @@
+- BaseRatio:
+  - rdf:value:
+    - base_ratio_value: double
+- SequenceReadAmount:
+  - rdf:value:
+    - sequence_read_amount_value: integer
+- Class:
+  - rdfs:label:
+    - class_label: string
+- DatatypeProperty:
+  - rdfs:label:
+    - datatype_property_label: string
+- SequenceReadLength:
+  - rdf:value:
+    - sequence_read_length_value:
+      - integer
+      - double
+- Chemical:
+  - ns3:CHEMINF_000200:
+    - chemical_cheminf_000200: CHEMINF_000007
+  - dc:identifier:
+    - chemical_identifier: string
+- ObjectProperty:
+  - rdfs:label:
+    - object_property_label: string
+- SequenceStatisticsReport:
+  - ns1:filteredSequences:
+    - sequence_statistics_report_filtered_sequences: SequenceReadAmount
+  - ns1:maxSequenceLength:
+    - sequence_statistics_report_max_sequence_length: SequenceReadLength
+  - ns1:minSequenceLength:
+    - sequence_statistics_report_min_sequence_length: SequenceReadLength
+  - ns1:percentGC:
+    - sequence_statistics_report_percent_gc: BaseRatio
+  - ns1:overallNContent:
+    - sequence_statistics_report_overall_n_content: BaseRatio
+  - ns1:meanSequenceLength:
+    - sequence_statistics_report_mean_sequence_length: SequenceReadLength
+  - ns1:overallMedianBaseCallQuality:
+    - sequence_statistics_report_overall_median_base_call_quality: PhredQualityScore
+  - ns1:overallMeanBaseCallQuality:
+    - sequence_statistics_report_overall_mean_base_call_quality: PhredQualityScore
+  - ns1:medianSequenceLength:
+    - sequence_statistics_report_median_sequence_length: SequenceReadLength
+  - ns1:totalSequences:
+    - sequence_statistics_report_total_sequences: SequenceReadAmount
+  - ns1:filename:
+    - sequence_statistics_report_filename: string
+  - dc:contributor:
+    - sequence_statistics_report_contributor: string
+  - ns4:version:
+    - sequence_statistics_report_version: string
+  - ns1:fileType:
+    - sequence_statistics_report_file_type: string
+  - ns1:fastqcVersion:
+    - sequence_statistics_report_fastqc_version: string
+  - ns1:encoding:
+    - sequence_statistics_report_encoding: string
+  - dc:identifier:
+    - sequence_statistics_report_identifier: string
+  - dc:created:
+    - sequence_statistics_report_created: string
+- CHEMINF_000007:
+  - rdf:type:
+    - cheminf_000007_type: Class
+  - ns3:SIO_000300:
+    - cheminf_000007_sio_000300: string
+  - rdfs:label:
+    - cheminf_000007_label: string
+- PhredQualityScore:
+  - rdf:value:
+    - phred_quality_score_value: double

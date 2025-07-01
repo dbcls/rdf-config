@@ -1,0 +1,261 @@
+- Class:
+  - ns1:isExactConceptFor:
+    - class_is_exact_concept_for:
+      - ConditionMetaClass
+      - NamedIndividual
+      - Class
+  - ns1:isInSensitiveDefinitionOf:
+    - class_is_in_sensitive_definition_of:
+      - Class
+      - SyndromeMetaClass
+      - NamedIndividual
+  - rdf:type:
+    - class_type: Class
+  - ns1:hasExternalCodings:
+    - class_has_external_codings:
+      - Class
+      - NamedIndividual
+      - CodingMetaClass
+  - ns1:hasSynonymousConcepts:
+    - class_has_synonymous_concepts:
+      - NamedIndividual
+      - Class
+      - ConceptMetaClass
+  - ns1:isRelatedTo:
+    - class_is_related_to:
+      - Class
+      - NamedIndividual
+      - ConditionMetaClass
+  - ns1:hasExactConcept:
+    - class_has_exact_concept:
+      - ConceptMetaClass
+      - Class
+      - NamedIndividual
+  - ns1:hasSpecificDefinition:
+    - class_has_specific_definition:
+      - ConditionMetaClass
+      - Class
+      - NamedIndividual
+  - ns1:hasRelatedConcepts:
+    - class_has_related_concepts:
+      - Class
+      - ConceptMetaClass
+      - NamedIndividual
+  - rdfs:subClassOf:
+    - class_sub_class_of: Class
+  - ns1:isSynonymousTo:
+    - class_is_synonymous_to:
+      - ConditionMetaClass
+      - Class
+      - NamedIndividual
+  - ns1:hasSensitiveDefinition:
+    - class_has_sensitive_definition:
+      - NamedIndividual
+      - ConditionMetaClass
+      - Class
+  - ns1:isInSpecificDefinitionOf:
+    - class_is_in_specific_definition_of:
+      - Class
+      - SyndromeMetaClass
+      - NamedIndividual
+  - ns1:codingSystemName:
+    - class_coding_system_name: string
+  - ns1:codeTitle:
+    - class_code_title: string
+  - ns1:codeID:
+    - class_code_id: 12345
+  - ns1:inclusionKeywords:
+    - class_inclusion_keywords: string
+  - ns1:exclusionKeywords:
+    - class_exclusion_keywords: string
+- InverseFunctionalProperty:
+  - rdfs:range:
+    - inverse_functional_property_range: Class
+  - rdfs:domain:
+    - inverse_functional_property_domain: Class
+  - owl:inverseOf:
+    - inverse_functional_property_inverse_of:
+      - FunctionalProperty
+      - InverseFunctionalProperty
+      - ObjectProperty
+- Datatype:
+  - rdf:type:
+    - datatype_type: Class
+- CodingMetaClass:
+  - rdf:type:
+    - coding_meta_class_type: Class
+  - rdfs:subClassOf:
+    - coding_meta_class_sub_class_of: Class
+  - ns1:codingSystemName:
+    - coding_meta_class_coding_system_name: string
+  - ns1:codeTitle:
+    - coding_meta_class_code_title: string
+  - ns1:codeID:
+    - coding_meta_class_code_id: 12345
+- ConditionMetaClass:
+  - ns1:isInSensitiveDefinitionOf:
+    - condition_meta_class_is_in_sensitive_definition_of:
+      - SyndromeMetaClass
+      - NamedIndividual
+      - Class
+  - rdf:type:
+    - condition_meta_class_type: Class
+  - ns1:hasExternalCodings:
+    - condition_meta_class_has_external_codings:
+      - Class
+      - CodingMetaClass
+      - NamedIndividual
+  - ns1:hasSynonymousConcepts:
+    - condition_meta_class_has_synonymous_concepts:
+      - Class
+      - ConceptMetaClass
+      - NamedIndividual
+  - ns1:hasExactConcept:
+    - condition_meta_class_has_exact_concept:
+      - ConceptMetaClass
+      - Class
+      - NamedIndividual
+  - ns1:hasRelatedConcepts:
+    - condition_meta_class_has_related_concepts:
+      - Class
+      - NamedIndividual
+      - ConceptMetaClass
+  - rdfs:subClassOf:
+    - condition_meta_class_sub_class_of: Class
+  - ns1:isInSpecificDefinitionOf:
+    - condition_meta_class_is_in_specific_definition_of:
+      - Class
+      - NamedIndividual
+      - SyndromeMetaClass
+- DatatypeProperty:
+  - rdfs:domain:
+    - datatype_property_domain: Class
+- ObjectProperty:
+  - rdfs:range:
+    - object_property_range: Class
+  - rdfs:domain:
+    - object_property_domain: Class
+  - owl:inverseOf:
+    - object_property_inverse_of:
+      - ObjectProperty
+      - FunctionalProperty
+      - InverseFunctionalProperty
+- SyndromeMetaClass:
+  - rdf:type:
+    - syndrome_meta_class_type: Class
+  - ns1:hasSpecificDefinition:
+    - syndrome_meta_class_has_specific_definition:
+      - NamedIndividual
+      - ConditionMetaClass
+      - Class
+  - rdfs:subClassOf:
+    - syndrome_meta_class_sub_class_of: Class
+  - ns1:hasSensitiveDefinition:
+    - syndrome_meta_class_has_sensitive_definition:
+      - Class
+      - NamedIndividual
+      - ConditionMetaClass
+- ConceptMetaClass:
+  - ns1:isExactConceptFor:
+    - concept_meta_class_is_exact_concept_for:
+      - Class
+      - NamedIndividual
+      - ConditionMetaClass
+  - rdf:type:
+    - concept_meta_class_type: Class
+  - ns1:isRelatedTo:
+    - concept_meta_class_is_related_to:
+      - Class
+      - NamedIndividual
+      - ConditionMetaClass
+  - rdfs:subClassOf:
+    - concept_meta_class_sub_class_of: Class
+  - ns1:isSynonymousTo:
+    - concept_meta_class_is_synonymous_to:
+      - NamedIndividual
+      - ConditionMetaClass
+      - Class
+  - ns1:inclusionKeywords:
+    - concept_meta_class_inclusion_keywords: string
+  - ns1:exclusionKeywords:
+    - concept_meta_class_exclusion_keywords: string
+- FunctionalProperty:
+  - rdfs:range:
+    - functional_property_range: Class
+  - rdfs:domain:
+    - functional_property_domain: Class
+  - owl:inverseOf:
+    - functional_property_inverse_of:
+      - ObjectProperty
+      - FunctionalProperty
+      - InverseFunctionalProperty
+- NamedIndividual:
+  - ns1:isExactConceptFor:
+    - named_individual_is_exact_concept_for:
+      - NamedIndividual
+      - ConditionMetaClass
+      - Class
+  - ns1:isInSensitiveDefinitionOf:
+    - named_individual_is_in_sensitive_definition_of:
+      - SyndromeMetaClass
+      - NamedIndividual
+      - Class
+  - rdf:type:
+    - named_individual_type: Class
+  - ns1:hasExternalCodings:
+    - named_individual_has_external_codings:
+      - Class
+      - NamedIndividual
+      - CodingMetaClass
+  - ns1:hasSynonymousConcepts:
+    - named_individual_has_synonymous_concepts:
+      - NamedIndividual
+      - ConceptMetaClass
+      - Class
+  - ns1:isRelatedTo:
+    - named_individual_is_related_to:
+      - Class
+      - NamedIndividual
+      - ConditionMetaClass
+  - ns1:hasExactConcept:
+    - named_individual_has_exact_concept:
+      - NamedIndividual
+      - Class
+      - ConceptMetaClass
+  - ns1:hasSpecificDefinition:
+    - named_individual_has_specific_definition:
+      - Class
+      - NamedIndividual
+      - ConditionMetaClass
+  - ns1:hasRelatedConcepts:
+    - named_individual_has_related_concepts:
+      - Class
+      - NamedIndividual
+      - ConceptMetaClass
+  - rdfs:subClassOf:
+    - named_individual_sub_class_of: Class
+  - ns1:isSynonymousTo:
+    - named_individual_is_synonymous_to:
+      - ConditionMetaClass
+      - Class
+      - NamedIndividual
+  - ns1:hasSensitiveDefinition:
+    - named_individual_has_sensitive_definition:
+      - ConditionMetaClass
+      - NamedIndividual
+      - Class
+  - ns1:isInSpecificDefinitionOf:
+    - named_individual_is_in_specific_definition_of:
+      - NamedIndividual
+      - SyndromeMetaClass
+      - Class
+  - ns1:codingSystemName:
+    - named_individual_coding_system_name: string
+  - ns1:codeTitle:
+    - named_individual_code_title: string
+  - ns1:codeID:
+    - named_individual_code_id: 12345
+  - ns1:inclusionKeywords:
+    - named_individual_inclusion_keywords: string
+  - ns1:exclusionKeywords:
+    - named_individual_exclusion_keywords: string

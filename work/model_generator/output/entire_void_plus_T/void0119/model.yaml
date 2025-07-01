@@ -1,0 +1,266 @@
+- NamedIndividual:
+  - rdf:type:
+    - named_individual_type: Class
+  - rdfs:label:
+    - named_individual_label: string
+  - dc11:description:
+    - named_individual_description: string
+- Restriction:
+  - owl:someValuesFrom:
+    - restriction_some_values_from:
+      - Class
+      - Restriction
+  - owl:onProperty:
+    - restriction_on_property:
+      - ObjectProperty
+      - DatatypeProperty
+      - SymmetricProperty
+      - FunctionalProperty
+      - TransitiveProperty
+  - owl:hasValue:
+    - restriction_has_value:
+      - true
+      - integer
+      - string
+- Ontology:
+  - ns1:contributing_author:
+    - ontology_contributing_author: string
+  - ns1:primary_author_and_curator:
+    - ontology_primary_author_and_curator: string
+  - owl:versionInfo:
+    - ontology_version_info: string
+  - rdfs:comment:
+    - ontology_comment: string
+  - ns1:creator:
+    - ontology_creator: string
+  - ns1:technical_support:
+    - ontology_technical_support: string
+- Class:
+  - ns1:homonym_of:
+    - class_homonym_of: Class
+  - owl:equivalentClass:
+    - class_equivalent_class:
+      - Restriction
+      - Class
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Class
+      - Restriction
+  - ns1:homonym_for:
+    - class_homonym_for: Class
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+  - ns1:DK__Freesurfer_:
+    - class_dk__freesurfer_: string
+  - ns1:CMA_label:
+    - class_cma_label: string
+  - ns1:definition:
+    - class_definition: string
+  - rdfs:label:
+    - class_label:
+      - string
+      - string
+  - ns1:slot_synonym:
+    - class_slot_synonym: string
+  - ns1:Eponym:
+    - class_eponym: string
+  - ns1:reference:
+    - class_reference: string
+  - rdfs:comment:
+    - class_comment: string
+  - ns1:PIRADSv2:
+    - class_pirad_sv2: string
+  - ns1:Neurolex:
+    - class_neurolex: string
+  - ns1:fma0329122:
+    - class_fma0329122: string
+  - ns1:FMAID:
+    - class_fmaid:
+      - string
+      - integer
+  - ns1:Talairach:
+    - class_talairach: string
+  - dc11:description:
+    - class_description: string
+  - ns1:JHU_DTI-81:
+    - class_jhu_dti-81: string
+  - ns1:synonym:
+    - class_synonym: string
+  - ns1:EuProstate27:
+    - class_eu_prostate27: string
+  - ns1:RadLex_ID:
+    - class_rad_lex_id: string
+  - ns1:preferred_name:
+    - class_preferred_name: string
+  - ns1:JHU_White-Matter_Tractography_Atlas:
+    - class_jhu_white-matter_tractography_atlas: string
+  - ns1:non-English_equivalent:
+    - class_non-english_equivalent: string
+  - ns1:EuProstate16:
+    - class_eu_prostate16: string
+  - ns1:AAL:
+    - class_aal: string
+- Datatype:
+  - owl:oneOf:
+    - datatype_one_of: List
+- List:
+  - rdf:rest:
+    - list_rest: List
+  - rdf:first:
+    - list_first: string
+- Axiom:
+  - owl:annotatedProperty:
+    - axiom_annotated_property: AnnotationProperty
+  - dc11:contributor:
+    - axiom_contributor:
+      - NamedIndividual
+      - Agent
+  - owl:annotatedSource:
+    - axiom_annotated_source:
+      - AnnotationProperty
+      - Class
+  - owl:annotatedTarget:
+    - axiom_annotated_target:
+      - Restriction
+      - Class
+      - string
+      - string
+  - ns1:contributing_author:
+    - axiom_contributing_author: string
+  - ns1:language:
+    - axiom_language: string
+  - ns1:TA_ID:
+    - axiom_ta_id: string
+  - ns1:Eponym:
+    - axiom_eponym: true
+  - ns1:reference:
+    - axiom_reference: string
+  - rdfs:comment:
+    - axiom_comment: string
+  - ns1:name:
+    - axiom_name: string
+  - ns1:modification:
+    - axiom_modification: string
+  - ns1:English_equivalent:
+    - axiom_english_equivalent: string
+  - ns1:term_status:
+    - axiom_term_status: string
+  - ns1:author:
+    - axiom_author: string
+  - ns1:authority:
+    - axiom_authority: string
+  - ns1:other_Latin_equivalents:
+    - axiom_other_latin_equivalents: string
+  - ns1:outdated_meaning:
+    - axiom_outdated_meaning: string
+  - ns1:modified_by:
+    - axiom_modified_by: string
+  - ns1:Date_entered_modified:
+    - axiom_date_entered_modified: string
+  - ns1:abbreviation:
+    - axiom_abbreviation: string
+- SymmetricProperty:
+  - rdfs:subPropertyOf:
+    - symmetric_property_sub_property_of: ObjectProperty
+  - rdfs:range:
+    - symmetric_property_range: Class
+  - owl:inverseOf:
+    - symmetric_property_inverse_of:
+      - ObjectProperty
+      - SymmetricProperty
+  - rdfs:domain:
+    - symmetric_property_domain: Class
+  - ns1:definition:
+    - symmetric_property_definition: string
+  - rdfs:label:
+    - symmetric_property_label: string
+  - ns1:FMAID:
+    - symmetric_property_fmaid: string
+- ObjectProperty:
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of:
+      - TransitiveProperty
+      - ObjectProperty
+      - SymmetricProperty
+  - rdfs:range:
+    - object_property_range: Class
+  - owl:inverseOf:
+    - object_property_inverse_of:
+      - ObjectProperty
+      - SymmetricProperty
+      - TransitiveProperty
+  - rdfs:domain:
+    - object_property_domain: Class
+  - ns1:definition:
+    - object_property_definition: string
+  - rdfs:label:
+    - object_property_label: string
+  - ns1:slot_synonym:
+    - object_property_slot_synonym: string
+  - ns1:FMAID:
+    - object_property_fmaid: string
+  - ns1:RO_ID:
+    - object_property_ro_id: string
+  - ns1:synonym:
+    - object_property_synonym: string
+- Agent:
+  - rdf:type:
+    - agent_type: Class
+  - rdfs:label:
+    - agent_label: string
+  - dc11:description:
+    - agent_description: string
+- FunctionalProperty:
+  - rdfs:range:
+    - functional_property_range:
+      - Class
+      - Datatype
+  - rdfs:domain:
+    - functional_property_domain: Class
+  - rdfs:label:
+    - functional_property_label: string
+  - ns1:FMAID:
+    - functional_property_fmaid: string
+- TransitiveProperty:
+  - rdfs:subPropertyOf:
+    - transitive_property_sub_property_of:
+      - TransitiveProperty
+      - ObjectProperty
+  - rdfs:range:
+    - transitive_property_range: Class
+  - owl:inverseOf:
+    - transitive_property_inverse_of:
+      - TransitiveProperty
+      - ObjectProperty
+  - rdfs:domain:
+    - transitive_property_domain: Class
+  - ns1:definition:
+    - transitive_property_definition: string
+  - rdfs:label:
+    - transitive_property_label: string
+  - ns1:slot_synonym:
+    - transitive_property_slot_synonym: string
+  - ns1:FMAID:
+    - transitive_property_fmaid: string
+- AnnotationProperty:
+  - rdfs:subPropertyOf:
+    - annotation_property_sub_property_of: AnnotationProperty
+  - rdfs:domain:
+    - annotation_property_domain: Class
+  - rdfs:label:
+    - annotation_property_label:
+      - string
+      - string
+  - rdfs:comment:
+    - annotation_property_comment: string
+  - ns1:FMAID:
+    - annotation_property_fmaid: string
+- DatatypeProperty:
+  - rdfs:range:
+    - datatype_property_range: Datatype
+  - rdfs:domain:
+    - datatype_property_domain: Class
+  - rdfs:label:
+    - datatype_property_label: string
+  - ns1:FMAID:
+    - datatype_property_fmaid: string

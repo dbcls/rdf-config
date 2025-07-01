@@ -1,0 +1,131 @@
+- Restriction:
+  - owl:someValuesFrom:
+    - restriction_some_values_from: Class
+  - owl:onProperty:
+    - restriction_on_property:
+      - ObjectProperty
+      - TransitiveProperty
+- Class:
+  - ns1:part_of:
+    - class_part_of: Class
+  - ns2:start_stage:
+    - class_start_stage: Class
+  - ns2:end_stage:
+    - class_end_stage: Class
+  - ns3:IAO_0100001:
+    - class_iao_0100001:
+      - Class
+      - string
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Class
+      - Restriction
+  - ns2:preceded_by:
+    - class_preceded_by: Class
+  - ns4:inSubset:
+    - class_in_subset: AnnotationProperty
+  - ns1:develops_from:
+    - class_develops_from: Class
+  - ns5:treeView:
+    - class_tree_view: Class
+  - ns4:hasExactSynonym:
+    - class_has_exact_synonym: string
+  - ns4:hasDbXref:
+    - class_has_db_xref: string
+  - owl:deprecated:
+    - class_deprecated: true
+  - ns4:hasNarrowSynonym:
+    - class_has_narrow_synonym: string
+  - ns4:hasRelatedSynonym:
+    - class_has_related_synonym: string
+  - ns4:created_by:
+    - class_created_by: string
+  - ns4:hasAlternativeId:
+    - class_has_alternative_id: string
+  - ns4:consider:
+    - class_consider: string
+  - rdfs:label:
+    - class_label: string
+  - ns4:hasBroadSynonym:
+    - class_has_broad_synonym: string
+  - ns4:creation_date:
+    - class_creation_date: string
+  - ns3:IAO_0000115:
+    - class_iao_0000115: string
+  - rdfs:comment:
+    - class_comment: string
+  - ns4:hasOBONamespace:
+    - class_has_obo_namespace: string
+  - skos:notation:
+    - class_notation: string
+  - ns4:id:
+    - class_id: string
+- Axiom:
+  - ns4:hasSynonymType:
+    - axiom_has_synonym_type: AnnotationProperty
+  - owl:annotatedProperty:
+    - axiom_annotated_property: AnnotationProperty
+  - owl:annotatedSource:
+    - axiom_annotated_source:
+      - ObjectProperty
+      - Class
+  - ns4:hasDbXref:
+    - axiom_has_db_xref: string
+  - owl:annotatedTarget:
+    - axiom_annotated_target: string
+  - rdfs:comment:
+    - axiom_comment: string
+- Ontology:
+  - ns3:IAO_0000700:
+    - ontology_iao_0000700: Class
+  - ns4:default-namespace:
+    - ontology_default-namespace: string
+  - dc11:description:
+    - ontology_description: string
+  - dc:license:
+    - ontology_license: string
+  - ns4:date:
+    - ontology_date: string
+  - ns4:treat-xrefs-as-genus-differentia:
+    - ontology_treat-xrefs-as-genus-differentia: string
+  - dc11:title:
+    - ontology_title: string
+  - rdfs:comment:
+    - ontology_comment: string
+  - ns4:NamespaceIdRule:
+    - ontology_namespace_id_rule: string
+  - ns4:hasOBOFormatVersion:
+    - ontology_has_obo_format_version: string
+  - ns4:saved-by:
+    - ontology_saved-by: string
+- ObjectProperty:
+  - ns4:hasDbXref:
+    - object_property_has_db_xref: string
+  - ns4:shorthand:
+    - object_property_shorthand: string
+  - rdfs:label:
+    - object_property_label: string
+  - ns3:IAO_0000115:
+    - object_property_iao_0000115: string
+  - ns4:hasOBONamespace:
+    - object_property_has_obo_namespace: string
+  - ns4:id:
+    - object_property_id: string
+- TransitiveProperty:
+  - ns4:hasDbXref:
+    - transitive_property_has_db_xref: string
+  - ns4:shorthand:
+    - transitive_property_shorthand: string
+  - rdfs:label:
+    - transitive_property_label: string
+  - ns4:hasOBONamespace:
+    - transitive_property_has_obo_namespace: string
+  - ns4:id:
+    - transitive_property_id: string
+- AnnotationProperty:
+  - rdfs:subPropertyOf:
+    - annotation_property_sub_property_of: AnnotationProperty
+  - rdfs:label:
+    - annotation_property_label: string
+  - rdfs:comment:
+    - annotation_property_comment: string

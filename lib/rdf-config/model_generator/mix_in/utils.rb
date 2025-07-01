@@ -26,7 +26,7 @@ class RDFConfig
         def split_uri(uri)
           parsed_uri = URI.parse(uri)
           term = parsed_uri.fragment
-          term = uri.split('/').last if term.nil?
+          term = uri.to_s.split('/').last if term.nil?
 
           [uri.to_s.delete_suffix(term), term]
         end

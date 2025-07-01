@@ -1,0 +1,157 @@
+- Collection:
+  - skos:member:
+    - collection_member:
+      - MD_KeywordTypeCode
+      - MD_ProgressCode
+      - Concept
+      - MD_CharacterSetCode
+      - DS_AssociationTypeCode
+      - MD_SpatialRepresentationTypeCode
+      - DS_InitiativeTypeCode
+  - skos:prefLabel:
+    - collection_pref_label: string
+- Restriction:
+  - owl:onProperty:
+    - restriction_on_property:
+      - DatatypeProperty
+      - ObjectProperty
+  - owl:allValuesFrom:
+    - restriction_all_values_from:
+      - Datatype
+      - Class
+  - owl:cardinality:
+    - restriction_cardinality: nonNegativeInteger
+  - owl:minCardinality:
+    - restriction_min_cardinality: nonNegativeInteger
+  - owl:maxCardinality:
+    - restriction_max_cardinality: nonNegativeInteger
+- DSAssociationTypeCode:
+  - rdf:type:
+    - ds_association_type_code_type: Class
+  - skos:inScheme:
+    - ds_association_type_code_in_scheme: ConceptScheme
+  - skos:prefLabel:
+    - ds_association_type_code_pref_label: string
+  - rdfs:isDefinedBy:
+    - ds_association_type_code_is_defined_by: string
+- Concept:
+  - rdf:type:
+    - concept_type: Class
+  - skos:inScheme:
+    - concept_in_scheme: ConceptScheme
+  - skos:prefLabel:
+    - concept_pref_label: string
+  - rdfs:isDefinedBy:
+    - concept_is_defined_by: string
+- DatatypeProperty:
+  - rdfs:range:
+    - datatype_property_range: Datatype
+  - rdfs:domain:
+    - datatype_property_domain: Class
+  - skos:definition:
+    - datatype_property_definition: string
+  - rdfs:isDefinedBy:
+    - datatype_property_is_defined_by: string
+  - rdfs:label:
+    - datatype_property_label: string
+- Class:
+  - owl:equivalentClass:
+    - class_equivalent_class: Class
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Restriction
+      - Class
+  - ns2:isAbstract:
+    - class_is_abstract: true
+  - skos:definition:
+    - class_definition: string
+  - rdfs:isDefinedBy:
+    - class_is_defined_by: string
+  - rdfs:label:
+    - class_label: string
+- List:
+  - rdf:rest:
+    - list_rest: List
+  - rdf:first:
+    - list_first: string
+- DSInitiativeTypeCode:
+  - rdf:type:
+    - ds_initiative_type_code_type: Class
+  - skos:inScheme:
+    - ds_initiative_type_code_in_scheme: ConceptScheme
+  - skos:prefLabel:
+    - ds_initiative_type_code_pref_label: string
+  - rdfs:isDefinedBy:
+    - ds_initiative_type_code_is_defined_by: string
+- MDSpatialRepresentationTypeCode:
+  - rdf:type:
+    - md_spatial_representation_type_code_type: Class
+  - skos:inScheme:
+    - md_spatial_representation_type_code_in_scheme: ConceptScheme
+  - skos:prefLabel:
+    - md_spatial_representation_type_code_pref_label: string
+  - rdfs:isDefinedBy:
+    - md_spatial_representation_type_code_is_defined_by: string
+- MDKeywordTypeCode:
+  - rdf:type:
+    - md_keyword_type_code_type: Class
+  - skos:inScheme:
+    - md_keyword_type_code_in_scheme: ConceptScheme
+  - skos:prefLabel:
+    - md_keyword_type_code_pref_label: string
+  - rdfs:isDefinedBy:
+    - md_keyword_type_code_is_defined_by: string
+- Datatype:
+  - owl:equivalentClass:
+    - datatype_equivalent_class: Datatype
+  - owl:oneOf:
+    - datatype_one_of: List
+  - rdfs:isDefinedBy:
+    - datatype_is_defined_by: string
+  - rdfs:label:
+    - datatype_label: string
+- MDProgressCode:
+  - rdf:type:
+    - md_progress_code_type: Class
+  - skos:inScheme:
+    - md_progress_code_in_scheme: ConceptScheme
+  - skos:prefLabel:
+    - md_progress_code_pref_label: string
+  - rdfs:isDefinedBy:
+    - md_progress_code_is_defined_by: string
+- ObjectProperty:
+  - rdfs:range:
+    - object_property_range: Class
+  - rdfs:domain:
+    - object_property_domain: Class
+  - skos:prefLabel:
+    - object_property_pref_label: string
+  - rdfs:isDefinedBy:
+    - object_property_is_defined_by: string
+  - ns2:aggregationType:
+    - object_property_aggregation_type: string
+  - rdfs:label:
+    - object_property_label: string
+- ConceptScheme:
+  - dc:isFormatOf:
+    - concept_scheme_is_format_of: Class
+  - skos:prefLabel:
+    - concept_scheme_pref_label: string
+  - rdfs:isDefinedBy:
+    - concept_scheme_is_defined_by: string
+- Ontology:
+  - owl:versionInfo:
+    - ontology_version_info: string
+  - dc:source:
+    - ontology_source: string
+  - rdfs:label:
+    - ontology_label: string
+- MDCharacterSetCode:
+  - rdf:type:
+    - md_character_set_code_type: Class
+  - skos:inScheme:
+    - md_character_set_code_in_scheme: ConceptScheme
+  - skos:prefLabel:
+    - md_character_set_code_pref_label: string
+  - rdfs:isDefinedBy:
+    - md_character_set_code_is_defined_by: string

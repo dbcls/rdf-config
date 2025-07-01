@@ -1,0 +1,33 @@
+- ObjectProperty:
+  - ns1:IAO_0000115:
+    - object_property_iao_0000115: string
+  - rdfs:label:
+    - object_property_label: string
+- Class:
+  - skos:hasTopConcept:
+    - class_has_top_concept: Class
+  - rdfs:subClassOf:
+    - class_sub_class_of: Restriction
+  - dc11:Contributor:
+    - class_contributor: string
+  - dc11:date:
+    - class_date: decimal
+  - skos:altLabel:
+    - class_alt_label: string
+  - dc11:Date:
+    - class_date: decimal
+  - skos:prefLabel:
+    - class_pref_label: string
+  - dc11:identifier:
+    - class_identifier: string
+  - dc11:Title:
+    - class_title: string
+  - rdfs:label:
+    - class_label: string
+  - skos:definition:
+    - class_definition: string
+- Restriction:
+  - owl:onProperty:
+    - restriction_on_property: ObjectProperty
+  - owl:someValuesFrom:
+    - restriction_some_values_from: Class

@@ -1,0 +1,157 @@
+- Class:
+  - owl:equivalentClass:
+    - class_equivalent_class: Class
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Class
+      - Restriction
+  - owl:complementOf:
+    - class_complement_of:
+      - Restriction
+      - Class
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+  - rdfs:label:
+    - class_label: string
+  - dc:created:
+    - class_created:
+      - string
+      - string
+      - '2000-01-01'
+  - dc:creator:
+    - class_creator:
+      - '2000-01-01'
+      - string
+      - string
+  - rdfs:seeAlso:
+    - class_see_also:
+      - anyURI
+      - string
+  - skos:definition:
+    - class_definition:
+      - string
+      - string
+  - skos:altLabel:
+    - class_alt_label: string
+  - ns1:isOrganizational:
+    - class_is_organizational:
+      - true
+      - string
+  - rdfs:comment:
+    - class_comment: string
+  - ns2:defaultLanguage:
+    - class_default_language: string
+  - ns1:isImplementedIn:
+    - class_is_implemented_in:
+      - string
+      - anyURI
+- ObjectProperty:
+  - rdfs:range:
+    - object_property_range: Class
+  - rdfs:domain:
+    - object_property_domain: Class
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of:
+      - SymmetricProperty
+      - ObjectProperty
+      - ReflexiveProperty
+  - owl:inverseOf:
+    - object_property_inverse_of: ObjectProperty
+  - rdfs:label:
+    - object_property_label: string
+  - dc:created:
+    - object_property_created: '2000-01-01'
+  - dc:creator:
+    - object_property_creator: string
+  - rdfs:seeAlso:
+    - object_property_see_also: anyURI
+  - skos:definition:
+    - object_property_definition: string
+- SymmetricProperty:
+  - rdfs:label:
+    - symmetric_property_label: string
+  - dc:created:
+    - symmetric_property_created: '2000-01-01'
+  - dc:creator:
+    - symmetric_property_creator: string
+  - skos:definition:
+    - symmetric_property_definition: string
+- FunctionalProperty:
+  - rdfs:domain:
+    - functional_property_domain: Class
+  - rdfs:label:
+    - functional_property_label: string
+  - skos:definition:
+    - functional_property_definition: string
+- ReflexiveProperty:
+  - rdfs:label:
+    - reflexive_property_label: string
+  - dc:created:
+    - reflexive_property_created: '2000-01-01'
+  - dc:creator:
+    - reflexive_property_creator: string
+  - skos:definition:
+    - reflexive_property_definition: string
+- Restriction:
+  - owl:equivalentClass:
+    - restriction_equivalent_class: Restriction
+  - owl:onProperty:
+    - restriction_on_property:
+      - ReflexiveProperty
+      - SymmetricProperty
+      - FunctionalProperty
+      - ObjectProperty
+      - DatatypeProperty
+  - owl:allValuesFrom:
+    - restriction_all_values_from:
+      - Class
+      - Restriction
+  - owl:someValuesFrom:
+    - restriction_some_values_from: Class
+  - owl:onClass:
+    - restriction_on_class: Class
+  - owl:qualifiedCardinality:
+    - restriction_qualified_cardinality: nonNegativeInteger
+  - owl:hasValue:
+    - restriction_has_value: integer
+  - owl:maxQualifiedCardinality:
+    - restriction_max_qualified_cardinality: nonNegativeInteger
+  - owl:minQualifiedCardinality:
+    - restriction_min_qualified_cardinality: nonNegativeInteger
+- DatatypeProperty:
+  - rdfs:domain:
+    - datatype_property_domain: Class
+  - rdfs:label:
+    - datatype_property_label: string
+  - skos:definition:
+    - datatype_property_definition: string
+- Axiom:
+  - owl:annotatedProperty:
+    - axiom_annotated_property: AnnotationProperty
+  - owl:annotatedSource:
+    - axiom_annotated_source:
+      - ObjectProperty
+      - Class
+  - rdfs:comment:
+    - axiom_comment:
+      - string
+      - string
+  - owl:annotatedTarget:
+    - axiom_annotated_target:
+      - string
+      - anyURI
+- Ontology:
+  - rdfs:label:
+    - ontology_label: string
+  - rdfs:seeAlso:
+    - ontology_see_also: anyURI
+  - skos:definition:
+    - ontology_definition: string
+  - owl:versionInfo:
+    - ontology_version_info: decimal
+  - rdfs:comment:
+    - ontology_comment: string
+  - ns2:defaultLanguage:
+    - ontology_default_language: string
+  - dc:rights:
+    - ontology_rights: string

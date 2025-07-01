@@ -1,0 +1,254 @@
+- AsymmetricProperty:
+  - rdfs:range:
+    - asymmetric_property_range: Class
+  - rdfs:subPropertyOf:
+    - asymmetric_property_sub_property_of:
+      - IrreflexiveProperty
+      - AsymmetricProperty
+      - TransitiveProperty
+      - ObjectProperty
+  - rdfs:domain:
+    - asymmetric_property_domain: Class
+  - owl:deprecated:
+    - asymmetric_property_deprecated:
+      - string
+      - true
+  - rdfs:label:
+    - asymmetric_property_label: string
+  - skos:definition:
+    - asymmetric_property_definition: string
+- ObjectProperty:
+  - rdfs:range:
+    - object_property_range: Class
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of:
+      - TransitiveProperty
+      - AsymmetricProperty
+      - ReflexiveProperty
+      - ObjectProperty
+      - IrreflexiveProperty
+  - rdfs:domain:
+    - object_property_domain: Class
+  - owl:inverseOf:
+    - object_property_inverse_of:
+      - SymmetricProperty
+      - ObjectProperty
+      - FunctionalProperty
+      - InverseFunctionalProperty
+      - ReflexiveProperty
+      - IrreflexiveProperty
+  - rdfs:comment:
+    - object_property_comment:
+      - string
+      - string
+  - owl:deprecated:
+    - object_property_deprecated:
+      - true
+      - string
+  - rdfs:label:
+    - object_property_label: string
+  - skos:definition:
+    - object_property_definition:
+      - string
+      - anyURI
+  - rdfs:seeAlso:
+    - object_property_see_also: anyURI
+- SymmetricProperty:
+  - rdfs:range:
+    - symmetric_property_range: Class
+  - rdfs:domain:
+    - symmetric_property_domain: Class
+  - owl:inverseOf:
+    - symmetric_property_inverse_of:
+      - InverseFunctionalProperty
+      - FunctionalProperty
+      - SymmetricProperty
+      - IrreflexiveProperty
+      - ObjectProperty
+  - rdfs:label:
+    - symmetric_property_label: string
+  - skos:definition:
+    - symmetric_property_definition: string
+- FunctionalProperty:
+  - rdfs:range:
+    - functional_property_range: Class
+  - rdfs:domain:
+    - functional_property_domain: Class
+  - owl:inverseOf:
+    - functional_property_inverse_of:
+      - FunctionalProperty
+      - SymmetricProperty
+      - ObjectProperty
+      - InverseFunctionalProperty
+  - rdfs:label:
+    - functional_property_label: string
+  - skos:definition:
+    - functional_property_definition: string
+- Class:
+  - owl:equivalentClass:
+    - class_equivalent_class:
+      - Class
+      - Restriction
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Restriction
+      - Class
+  - owl:complementOf:
+    - class_complement_of:
+      - Restriction
+      - Class
+  - rdfs:comment:
+    - class_comment: string
+  - owl:deprecated:
+    - class_deprecated:
+      - string
+      - true
+  - rdfs:label:
+    - class_label:
+      - anyURI
+      - string
+  - skos:definition:
+    - class_definition: string
+  - skos:altLabel:
+    - class_alt_label: string
+  - rdfs:seeAlso:
+    - class_see_also:
+      - anyURI
+      - string
+- IrreflexiveProperty:
+  - rdfs:range:
+    - irreflexive_property_range: Class
+  - rdfs:subPropertyOf:
+    - irreflexive_property_sub_property_of:
+      - TransitiveProperty
+      - IrreflexiveProperty
+      - ObjectProperty
+      - AsymmetricProperty
+  - rdfs:domain:
+    - irreflexive_property_domain: Class
+  - owl:inverseOf:
+    - irreflexive_property_inverse_of:
+      - IrreflexiveProperty
+      - ObjectProperty
+      - SymmetricProperty
+  - owl:deprecated:
+    - irreflexive_property_deprecated:
+      - true
+      - string
+  - rdfs:label:
+    - irreflexive_property_label: string
+  - skos:definition:
+    - irreflexive_property_definition: string
+- Axiom:
+  - owl:annotatedProperty:
+    - axiom_annotated_property: AnnotationProperty
+  - owl:annotatedTarget:
+    - axiom_annotated_target:
+      - Class
+      - anyURI
+      - string
+  - owl:annotatedSource:
+    - axiom_annotated_source: Class
+  - rdfs:comment:
+    - axiom_comment:
+      - anyURI
+      - string
+  - rdfs:seeAlso:
+    - axiom_see_also:
+      - string
+      - anyURI
+      - string
+- Restriction:
+  - owl:onClass:
+    - restriction_on_class: Class
+  - owl:onProperty:
+    - restriction_on_property:
+      - InverseFunctionalProperty
+      - ObjectProperty
+      - AsymmetricProperty
+      - IrreflexiveProperty
+      - TransitiveProperty
+      - ReflexiveProperty
+      - SymmetricProperty
+      - FunctionalProperty
+  - rdfs:subClassOf:
+    - restriction_sub_class_of: Restriction
+  - owl:someValuesFrom:
+    - restriction_some_values_from:
+      - Restriction
+      - Class
+  - owl:qualifiedCardinality:
+    - restriction_qualified_cardinality: nonNegativeInteger
+  - owl:minQualifiedCardinality:
+    - restriction_min_qualified_cardinality: nonNegativeInteger
+  - owl:maxQualifiedCardinality:
+    - restriction_max_qualified_cardinality: nonNegativeInteger
+- DatatypeProperty:
+  - rdfs:domain:
+    - datatype_property_domain: Class
+  - rdfs:label:
+    - datatype_property_label: string
+  - skos:definition:
+    - datatype_property_definition: string
+- InverseFunctionalProperty:
+  - rdfs:range:
+    - inverse_functional_property_range: Class
+  - rdfs:domain:
+    - inverse_functional_property_domain: Class
+  - owl:inverseOf:
+    - inverse_functional_property_inverse_of:
+      - FunctionalProperty
+      - InverseFunctionalProperty
+      - SymmetricProperty
+      - ObjectProperty
+  - rdfs:label:
+    - inverse_functional_property_label: string
+  - skos:definition:
+    - inverse_functional_property_definition: string
+- Ontology:
+  - ns1:defaultLanguage:
+    - ontology_default_language: string
+  - rdfs:comment:
+    - ontology_comment: string
+  - owl:priorVersion:
+    - ontology_prior_version: anyURI
+  - owl:versionInfo:
+    - ontology_version_info: anyURI
+  - rdfs:label:
+    - ontology_label: string
+  - rdfs:seeAlso:
+    - ontology_see_also: anyURI
+- TransitiveProperty:
+  - rdfs:range:
+    - transitive_property_range: Class
+  - rdfs:subPropertyOf:
+    - transitive_property_sub_property_of:
+      - IrreflexiveProperty
+      - TransitiveProperty
+      - ObjectProperty
+      - AsymmetricProperty
+  - rdfs:domain:
+    - transitive_property_domain: Class
+  - owl:deprecated:
+    - transitive_property_deprecated:
+      - string
+      - true
+  - rdfs:label:
+    - transitive_property_label: string
+  - skos:definition:
+    - transitive_property_definition: string
+- ReflexiveProperty:
+  - owl:inverseOf:
+    - reflexive_property_inverse_of:
+      - ReflexiveProperty
+      - ObjectProperty
+  - rdfs:comment:
+    - reflexive_property_comment: string
+  - rdfs:label:
+    - reflexive_property_label: string
+  - skos:definition:
+    - reflexive_property_definition: anyURI
+  - rdfs:seeAlso:
+    - reflexive_property_see_also: anyURI

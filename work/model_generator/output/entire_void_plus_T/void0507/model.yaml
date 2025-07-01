@@ -1,0 +1,142 @@
+- TransitiveProperty:
+  - ns1:IAO_0000115:
+    - transitive_property_iao_0000115: string
+  - ns2:hasDbXref:
+    - transitive_property_has_db_xref: string
+  - rdfs:label:
+    - transitive_property_label:
+      - string
+      - string
+- AnnotationProperty:
+  - rdfs:subPropertyOf:
+    - annotation_property_sub_property_of: AnnotationProperty
+  - ns1:IAO_0000115:
+    - annotation_property_iao_0000115: string
+  - rdfs:label:
+    - annotation_property_label:
+      - string
+      - string
+- Restriction:
+  - owl:someValuesFrom:
+    - restriction_some_values_from: Class
+  - owl:onProperty:
+    - restriction_on_property:
+      - SymmetricProperty
+      - ObjectProperty
+      - AsymmetricProperty
+      - TransitiveProperty
+- Ontology:
+  - dc11:title:
+    - ontology_title: string
+  - owl:versionInfo:
+    - ontology_version_info: string
+  - dc:contributor:
+    - ontology_contributor: string
+  - dc:description:
+    - ontology_description: string
+  - dc:license:
+    - ontology_license: string
+- ObjectProperty:
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of:
+      - ObjectProperty
+      - AsymmetricProperty
+      - TransitiveProperty
+  - ns1:IAO_0000115:
+    - object_property_iao_0000115: string
+  - ns2:hasDbXref:
+    - object_property_has_db_xref:
+      - string
+      - string
+  - ns2:hasExactSynonym:
+    - object_property_has_exact_synonym: string
+  - rdfs:label:
+    - object_property_label:
+      - string
+      - string
+- Axiom:
+  - owl:annotatedProperty:
+    - axiom_annotated_property: AnnotationProperty
+  - owl:annotatedSource:
+    - axiom_annotated_source:
+      - AsymmetricProperty
+      - TransitiveProperty
+      - SymmetricProperty
+      - ObjectProperty
+      - Class
+      - AnnotationProperty
+  - ns1:IAO_0000115:
+    - axiom_iao_0000115:
+      - string
+      - string
+  - ns2:creation_date:
+    - axiom_creation_date:
+      - string
+      - string
+  - dc:contributor:
+    - axiom_contributor:
+      - string
+      - string
+  - ns1:AISM_0000171:
+    - axiom_aism_0000171:
+      - string
+      - string
+  - owl:annotatedTarget:
+    - axiom_annotated_target:
+      - string
+      - string
+  - rdfs:comment:
+    - axiom_comment: string
+- SymmetricProperty:
+  - ns1:IAO_0000115:
+    - symmetric_property_iao_0000115: string
+  - rdfs:label:
+    - symmetric_property_label: string
+- AsymmetricProperty:
+  - ns1:IAO_0000115:
+    - asymmetric_property_iao_0000115: string
+  - rdfs:label:
+    - asymmetric_property_label: string
+- Class:
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Restriction
+      - Class
+  - ns1:IAO_0000115:
+    - class_iao_0000115:
+      - string
+      - string
+  - ns2:hasRelatedSynonym:
+    - class_has_related_synonym:
+      - string
+      - string
+  - ns2:id:
+    - class_id: string
+  - dc11:creator:
+    - class_creator: string
+  - ns2:hasDbXref:
+    - class_has_db_xref:
+      - string
+      - string
+  - dc11:identifier:
+    - class_identifier: string
+  - ns2:hasExactSynonym:
+    - class_has_exact_synonym:
+      - string
+      - string
+  - dc11:source:
+    - class_source:
+      - string
+      - string
+  - rdfs:comment:
+    - class_comment:
+      - string
+      - string
+  - rdfs:label:
+    - class_label:
+      - string
+      - string
+  - owl:deprecated:
+    - class_deprecated:
+      - string
+      - true

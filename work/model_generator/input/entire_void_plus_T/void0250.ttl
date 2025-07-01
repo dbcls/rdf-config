@@ -1,0 +1,387 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sbm: <http://sparqlbuilder.org/2015/09/rdf-metadata-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://rdfportal.org/ns/> .
+
+<http://rdfportal.org/ns/4957d6fd46ffac9a4a4736357ddfb95a>
+    void:classPartition [
+        void:class <http://ddbj.nig.ac.jp/ontologies/taxonomy/Rank> ;
+        void:entities 45 ;
+        a void:Dataset
+    ], [
+        void:class owl:FunctionalProperty ;
+        void:entities 5 ;
+        a void:Dataset
+    ], [
+        void:class owl:DatatypeProperty ;
+        void:entities 28 ;
+        a void:Dataset
+    ], [
+        void:class <http://ddbj.nig.ac.jp/ontologies/taxonomy/GeneticCode> ;
+        void:entities 20 ;
+        a void:Dataset
+    ], [
+        void:class owl:ObjectProperty ;
+        void:entities 7 ;
+        a void:Dataset
+    ], [
+        void:class <http://ddbj.nig.ac.jp/ontologies/taxonomy/Taxon> ;
+        void:entities 2503233 ;
+        a void:Dataset
+    ], [
+        void:class owl:Class ;
+        void:entities 4 ;
+        a void:Dataset
+    ], [
+        void:class owl:Ontology ;
+        void:entities 1 ;
+        a void:Dataset
+    ] ;
+    void:classes 8 ;
+    void:distinctObjects 21857360 ;
+    void:distinctSubjects 2503338 ;
+    void:properties 25 ;
+    void:propertyPartition [
+        void:property rdfs:range ;
+        void:triples 35 ;
+        sbm:classRelation [
+            void:triples 4 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ddbj.nig.ac.jp/ontologies/taxonomy/rank> ;
+        void:triples 2503233 ;
+        sbm:classRelation [
+            void:triples 2503233 ;
+            sbm:objectClass <http://ddbj.nig.ac.jp/ontologies/taxonomy/Rank> ;
+            sbm:subjectClass <http://ddbj.nig.ac.jp/ontologies/taxonomy/Taxon> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ddbj.nig.ac.jp/ontologies/taxonomy/typeMaterial> ;
+        void:triples 219403 ;
+        sbm:classRelation [
+            void:triples 219403 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://ddbj.nig.ac.jp/ontologies/taxonomy/Taxon> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ddbj.nig.ac.jp/ontologies/taxonomy/genbankAcronym> ;
+        void:triples 25 ;
+        sbm:classRelation [
+            void:triples 25 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://ddbj.nig.ac.jp/ontologies/taxonomy/Taxon> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ddbj.nig.ac.jp/ontologies/taxonomy/geneticCode> ;
+        void:triples 2503233 ;
+        sbm:classRelation [
+            void:triples 2503146 ;
+            sbm:objectClass <http://ddbj.nig.ac.jp/ontologies/taxonomy/GeneticCode> ;
+            sbm:subjectClass <http://ddbj.nig.ac.jp/ontologies/taxonomy/Taxon> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:comment ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ddbj.nig.ac.jp/ontologies/taxonomy/equivalentName> ;
+        void:triples 56561 ;
+        sbm:classRelation [
+            void:triples 56561 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://ddbj.nig.ac.jp/ontologies/taxonomy/Taxon> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ddbj.nig.ac.jp/ontologies/taxonomy/scientificName> ;
+        void:triples 2503233 ;
+        sbm:classRelation [
+            void:triples 2503233 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://ddbj.nig.ac.jp/ontologies/taxonomy/Taxon> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:label ;
+        void:triples 2503338 ;
+        sbm:classRelation [
+            void:triples 2503233 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://ddbj.nig.ac.jp/ontologies/taxonomy/Taxon> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 45 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://ddbj.nig.ac.jp/ontologies/taxonomy/Rank> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 28 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://ddbj.nig.ac.jp/ontologies/taxonomy/GeneticCode> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ddbj.nig.ac.jp/ontologies/taxonomy/blastName> ;
+        void:triples 230 ;
+        sbm:classRelation [
+            void:triples 230 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://ddbj.nig.ac.jp/ontologies/taxonomy/Taxon> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:domain ;
+        void:triples 35 ;
+        sbm:classRelation [
+            void:triples 5 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 28 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ddbj.nig.ac.jp/ontologies/taxonomy/includes> ;
+        void:triples 74948 ;
+        sbm:classRelation [
+            void:triples 74948 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://ddbj.nig.ac.jp/ontologies/taxonomy/Taxon> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ddbj.nig.ac.jp/ontologies/taxonomy/authority> ;
+        void:triples 669846 ;
+        sbm:classRelation [
+            void:triples 669846 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://ddbj.nig.ac.jp/ontologies/taxonomy/Taxon> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ddbj.nig.ac.jp/ontologies/taxonomy/geneticCodeMt> ;
+        void:triples 1687985 ;
+        sbm:classRelation [
+            void:triples 1687977 ;
+            sbm:objectClass <http://ddbj.nig.ac.jp/ontologies/taxonomy/GeneticCode> ;
+            sbm:subjectClass <http://ddbj.nig.ac.jp/ontologies/taxonomy/Taxon> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ddbj.nig.ac.jp/ontologies/taxonomy/synonym> ;
+        void:triples 245604 ;
+        sbm:classRelation [
+            void:triples 245604 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://ddbj.nig.ac.jp/ontologies/taxonomy/Taxon> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ddbj.nig.ac.jp/ontologies/taxonomy/commonName> ;
+        void:triples 14641 ;
+        sbm:classRelation [
+            void:triples 14641 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://ddbj.nig.ac.jp/ontologies/taxonomy/Taxon> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ddbj.nig.ac.jp/ontologies/taxonomy/inPart> ;
+        void:triples 667 ;
+        sbm:classRelation [
+            void:triples 667 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://ddbj.nig.ac.jp/ontologies/taxonomy/Taxon> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ddbj.nig.ac.jp/ontologies/taxonomy/acronym> ;
+        void:triples 2086 ;
+        sbm:classRelation [
+            void:triples 2086 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://ddbj.nig.ac.jp/ontologies/taxonomy/Taxon> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdf:type ;
+        void:triples 2503343 ;
+        sbm:classRelation [
+            void:triples 2503233 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://ddbj.nig.ac.jp/ontologies/taxonomy/Taxon> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://ddbj.nig.ac.jp/ontologies/taxonomy/GeneticCode> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 45 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://ddbj.nig.ac.jp/ontologies/taxonomy/Rank> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ddbj.nig.ac.jp/ontologies/taxonomy/genbankCommonName> ;
+        void:triples 30328 ;
+        sbm:classRelation [
+            void:triples 30328 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://ddbj.nig.ac.jp/ontologies/taxonomy/Taxon> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:subPropertyOf ;
+        void:triples 23 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:DatatypeProperty ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 23 ;
+            sbm:objectClass owl:DatatypeProperty ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:subClassOf ;
+        void:triples 2503233 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2503232 ;
+            sbm:objectClass <http://ddbj.nig.ac.jp/ontologies/taxonomy/Taxon> ;
+            sbm:subjectClass <http://ddbj.nig.ac.jp/ontologies/taxonomy/Taxon> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://ddbj.nig.ac.jp/ontologies/taxonomy/uniqueName> ;
+        void:triples 231794 ;
+        sbm:classRelation [
+            void:triples 231794 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://ddbj.nig.ac.jp/ontologies/taxonomy/Taxon> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dcterms:identifier ;
+        void:triples 2503233 ;
+        sbm:classRelation [
+            void:triples 2503233 ;
+            sbm:objectDatatype xsd:integer ;
+            sbm:subjectClass <http://ddbj.nig.ac.jp/ontologies/taxonomy/Taxon> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:versionInfo ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:date ;
+            sbm:subjectClass owl:Ontology ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ] ;
+    void:sparqlEndpoint <https://rdfportal.org/primary/sparql> ;
+    void:triples 35848031 ;
+    a void:Dataset, sd:Graph .

@@ -1,0 +1,58 @@
+- SymmetricProperty:
+  - rdfs:domain:
+    - symmetric_property_domain: Class
+  - rdfs:subPropertyOf:
+    - symmetric_property_sub_property_of:
+      - ObjectProperty
+      - SymmetricProperty
+  - rdfs:range:
+    - symmetric_property_range: Class
+  - rdfs:isDefinedBy:
+    - symmetric_property_is_defined_by: Ontology
+  - rdfs:label:
+    - symmetric_property_label: string
+- DatatypeProperty:
+  - rdfs:domain:
+    - datatype_property_domain: Class
+  - rdfs:subPropertyOf:
+    - datatype_property_sub_property_of: DatatypeProperty
+  - rdfs:isDefinedBy:
+    - datatype_property_is_defined_by: Ontology
+  - rdfs:label:
+    - datatype_property_label: string
+- Restriction:
+  - owl:onProperty:
+    - restriction_on_property: ObjectProperty
+  - owl:allValuesFrom:
+    - restriction_all_values_from: Class
+- Ontology:
+  - dc:description:
+    - ontology_description: string
+  - owl:versionInfo:
+    - ontology_version_info: string
+  - dc:title:
+    - ontology_title: string
+- ObjectProperty:
+  - rdfs:domain:
+    - object_property_domain: Class
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of:
+      - SymmetricProperty
+      - ObjectProperty
+  - rdfs:range:
+    - object_property_range: Class
+  - rdfs:isDefinedBy:
+    - object_property_is_defined_by: Ontology
+  - rdfs:comment:
+    - object_property_comment: string
+  - rdfs:label:
+    - object_property_label: string
+- Class:
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Class
+      - Restriction
+  - rdfs:isDefinedBy:
+    - class_is_defined_by: Ontology
+  - rdfs:label:
+    - class_label: string

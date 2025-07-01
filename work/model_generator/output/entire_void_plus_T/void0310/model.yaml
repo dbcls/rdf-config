@@ -1,0 +1,94 @@
+- DatatypeProperty:
+  - rdfs:subPropertyOf:
+    - datatype_property_sub_property_of: DatatypeProperty
+  - rdfs:label:
+    - datatype_property_label: string
+  - ns1:OPB_01768:
+    - datatype_property_opb_01768: string
+- AnnotationProperty:
+  - rdfs:label:
+    - annotation_property_label:
+      - string
+      - string
+  - owl:priorVersion:
+    - annotation_property_prior_version: string
+  - rdfs:comment:
+    - annotation_property_comment: string
+- FunctionalProperty:
+  - owl:inverseOf:
+    - functional_property_inverse_of:
+      - ObjectProperty
+      - FunctionalProperty
+  - rdfs:subPropertyOf:
+    - functional_property_sub_property_of: ObjectProperty
+  - rdfs:label:
+    - functional_property_label: string
+  - rdfs:comment:
+    - functional_property_comment: string
+  - ns1:OPB_01768:
+    - functional_property_opb_01768: string
+- ObjectProperty:
+  - owl:inverseOf:
+    - object_property_inverse_of:
+      - FunctionalProperty
+      - ObjectProperty
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of:
+      - FunctionalProperty
+      - ObjectProperty
+  - rdfs:label:
+    - object_property_label:
+      - string
+      - string
+  - rdfs:comment:
+    - object_property_comment: string
+  - ns1:OPB_01768:
+    - object_property_opb_01768: string
+- Class:
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Restriction
+      - Class
+  - rdfs:label:
+    - class_label:
+      - string
+      - string
+  - dc11:creator:
+    - class_creator: string
+  - rdfs:comment:
+    - class_comment: string
+  - ns1:OPB_00097:
+    - class_opb_00097: string
+  - ns1:OPB_01068:
+    - class_opb_01068: string
+  - ns1:OPB_01768:
+    - class_opb_01768: string
+  - ns1:OPB_01370:
+    - class_opb_01370: string
+  - ns1:OPB_01748:
+    - class_opb_01748: string
+  - ns1:OPB_00072:
+    - class_opb_00072: string
+  - ns1:OPB_01746:
+    - class_opb_01746: string
+  - rdfs:seeAlso:
+    - class_see_also: string
+  - ns1:OPB_00103:
+    - class_opb_00103: string
+  - ns1:OPB_01611:
+    - class_opb_01611: string
+- Restriction:
+  - owl:onClass:
+    - restriction_on_class: Class
+  - owl:someValuesFrom:
+    - restriction_some_values_from: Class
+  - owl:equivalentClass:
+    - restriction_equivalent_class: Restriction
+  - owl:onProperty:
+    - restriction_on_property:
+      - ObjectProperty
+      - FunctionalProperty
+  - owl:qualifiedCardinality:
+    - restriction_qualified_cardinality: nonNegativeInteger
+  - owl:minQualifiedCardinality:
+    - restriction_min_qualified_cardinality: nonNegativeInteger

@@ -1,0 +1,625 @@
+- ImpactFloormatFailure:
+  - rdf:type:
+    - impact_floormat_failure_type: Class
+  - rdfs:label:
+    - impact_floormat_failure_label: string
+- PresentOnAdmission:
+  - rdf:type:
+    - present_on_admission_type: Class
+  - rdfs:label:
+    - present_on_admission_label: string
+- AssociatedState:
+  - rdf:type:
+    - associated_state_type: Class
+  - ns3:nameEnglishLong:
+    - associated_state_name_english_long: string
+  - ns3:nameLocal:
+    - associated_state_name_local: string
+  - rdfs:label:
+    - associated_state_label: string
+  - ns3:nameEnglish:
+    - associated_state_name_english: string
+- EmergencyServicePersonnel:
+  - rdf:type:
+    - emergency_service_personnel_type: Class
+  - rdfs:label:
+    - emergency_service_personnel_label: string
+- TemporalUnit:
+  - rdf:type:
+    - temporal_unit_type: Class
+  - rdfs:label:
+    - temporal_unit_label: string
+- DetectionAtCommunityCare:
+  - rdf:type:
+    - detection_at_community_care_type: Class
+  - rdfs:label:
+    - detection_at_community_care_label: string
+- AlarmMatFailure:
+  - rdf:type:
+    - alarm_mat_failure_type: Class
+  - rdfs:label:
+    - alarm_mat_failure_label: string
+- FallMechanism:
+  - rdf:type:
+    - fall_mechanism_type: Class
+  - rdfs:label:
+    - fall_mechanism_label: string
+- InvoluntaryActivity:
+  - rdf:type:
+    - involuntary_activity_type: Class
+  - rdfs:label:
+    - involuntary_activity_label: string
+- FullyDependentTerritory:
+  - rdf:type:
+    - fully_dependent_territory_type: Class
+  - ns3:nameLocalLong:
+    - fully_dependent_territory_name_local_long: string
+  - ns3:nameEnglishLong:
+    - fully_dependent_territory_name_english_long: string
+  - rdfs:comment:
+    - fully_dependent_territory_comment: string
+  - ns3:nameLocal:
+    - fully_dependent_territory_name_local: string
+  - rdfs:label:
+    - fully_dependent_territory_label: string
+  - ns3:nameEnglish:
+    - fully_dependent_territory_name_english: string
+- Garment:
+  - rdf:type:
+    - garment_type: Class
+  - rdfs:label:
+    - garment_label: string
+- Restriction:
+  - owl:allValuesFrom:
+    - restriction_all_values_from:
+      - Class
+      - Datatype
+  - owl:someValuesFrom:
+    - restriction_some_values_from: Class
+  - owl:onProperty:
+    - restriction_on_property:
+      - ObjectProperty
+      - DatatypeProperty
+  - owl:onClass:
+    - restriction_on_class: Class
+  - owl:onDataRange:
+    - restriction_on_data_range: Datatype
+  - owl:hasValue:
+    - restriction_has_value:
+      - Role
+      - NamedIndividual
+      - FallMechanism
+      - Thing
+  - owl:cardinality:
+    - restriction_cardinality: nonNegativeInteger
+  - owl:maxCardinality:
+    - restriction_max_cardinality: nonNegativeInteger
+  - owl:maxQualifiedCardinality:
+    - restriction_max_qualified_cardinality: nonNegativeInteger
+- Sheet:
+  - rdf:type:
+    - sheet_type: Class
+  - rdfs:label:
+    - sheet_label: string
+- MobilityAidFailure:
+  - rdf:type:
+    - mobility_aid_failure_type: Class
+  - rdfs:label:
+    - mobility_aid_failure_label: string
+- HealthcareWorker:
+  - rdf:type:
+    - healthcare_worker_type: Class
+  - rdfs:label:
+    - healthcare_worker_label: string
+- IndependentState:
+  - rdf:type:
+    - independent_state_type: Class
+  - owl:sameAs:
+    - independent_state_same_as:
+      - Thing
+      - IndependentState
+      - NamedIndividual
+  - ns3:nameLocalLong:
+    - independent_state_name_local_long: string
+  - ns3:nameEnglishLong:
+    - independent_state_name_english_long: string
+  - rdfs:comment:
+    - independent_state_comment: string
+  - ns3:nameLocal:
+    - independent_state_name_local: string
+  - rdfs:label:
+    - independent_state_label: string
+  - ns3:nameEnglish:
+    - independent_state_name_english: string
+- VoluntaryActivity:
+  - rdf:type:
+    - voluntary_activity_type: Class
+  - rdfs:label:
+    - voluntary_activity_label: string
+- CallBellFailure:
+  - rdf:type:
+    - call_bell_failure_type: Class
+  - rdfs:label:
+    - call_bell_failure_label: string
+- NamedIndividual:
+  - ns10:isAnatomicalPartOfDirectly:
+    - named_individual_is_anatomical_part_of_directly:
+      - HumanBodyAnatomicalPart
+      - NamedIndividual
+      - Thing
+  - ns10:hasAnatomicalPart:
+    - named_individual_has_anatomical_part:
+      - HumanBodyAnatomicalPart
+      - NamedIndividual
+      - Thing
+  - rdf:type:
+    - named_individual_type: Class
+  - ns3:referencesCountry:
+    - named_individual_references_country:
+      - AssociatedState
+      - Thing
+      - NamedIndividual
+      - FullyDependentTerritory
+      - VirtuallyAnnexedTerritory
+      - OccupiedTerritory
+      - UnclaimableTerritory
+      - IndependentState
+      - VirtualTerritory
+      - IndependenceDisputedState
+  - owl:sameAs:
+    - named_individual_same_as:
+      - NamedIndividual
+      - Thing
+      - IndependentState
+  - ns10:isAnatomicalPartOf:
+    - named_individual_is_anatomical_part_of:
+      - NamedIndividual
+      - HumanBodyAnatomicalPart
+      - Thing
+  - ns10:hasAnatomicalPartDirectly:
+    - named_individual_has_anatomical_part_directly:
+      - Thing
+      - HumanBodyAnatomicalPart
+      - NamedIndividual
+  - ns3:nameLocalLong:
+    - named_individual_name_local_long: string
+  - ns3:countryCodeISO3166Alpha2:
+    - named_individual_country_code_iso3166_alpha2: string
+  - ns3:nameEnglishLong:
+    - named_individual_name_english_long: string
+  - ns3:countryCodeISO3166Alpha3:
+    - named_individual_country_code_iso3166_alpha3: string
+  - rdfs:comment:
+    - named_individual_comment: string
+  - ns3:nameLocal:
+    - named_individual_name_local: string
+  - rdfs:label:
+    - named_individual_label:
+      - string
+      - string
+  - ns3:countryCodeUNNumeric3:
+    - named_individual_country_code_un_numeric3: unsignedInt
+  - ns3:countryNameISO3166Short:
+    - named_individual_country_name_iso3166_short: string
+  - ns3:nameEnglish:
+    - named_individual_name_english: string
+- DegreeOfHarm:
+  - rdf:type:
+    - degree_of_harm_type: Class
+  - rdfs:label:
+    - degree_of_harm_label: string
+- PersonalAlertFailure:
+  - rdf:type:
+    - personal_alert_failure_type: Class
+  - rdfs:label:
+    - personal_alert_failure_label: string
+- HospitalArea:
+  - rdf:type:
+    - hospital_area_type: Class
+  - rdfs:label:
+    - hospital_area_label: string
+- HumanBodySide:
+  - rdf:type:
+    - human_body_side_type: Class
+  - rdfs:label:
+    - human_body_side_label: string
+- BedrailsFailure:
+  - rdf:type:
+    - bedrails_failure_type: Class
+  - rdfs:label:
+    - bedrails_failure_label: string
+- ObjectProperty:
+  - rdfs:range:
+    - object_property_range: Class
+  - rdfs:domain:
+    - object_property_domain: Class
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of:
+      - TransitiveProperty
+      - ObjectProperty
+  - owl:inverseOf:
+    - object_property_inverse_of:
+      - ObjectProperty
+      - TransitiveProperty
+  - rdfs:label:
+    - object_property_label:
+      - string
+      - string
+- SafetyHelmetFailure:
+  - rdf:type:
+    - safety_helmet_failure_type: Class
+  - rdfs:label:
+    - safety_helmet_failure_label: string
+- FloorSurface:
+  - rdf:type:
+    - floor_surface_type: Class
+  - rdfs:label:
+    - floor_surface_label: string
+- Chair:
+  - rdf:type:
+    - chair_type: Class
+  - rdfs:label:
+    - chair_label: string
+- Gender:
+  - rdf:type:
+    - gender_type: Class
+  - rdfs:label:
+    - gender_label: string
+- DuringAdmissionDetection:
+  - rdf:type:
+    - during_admission_detection_type: Class
+  - rdfs:label:
+    - during_admission_detection_label: string
+- IndependenceDisputedState:
+  - rdf:type:
+    - independence_disputed_state_type: Class
+  - ns3:nameLocal:
+    - independence_disputed_state_name_local: string
+  - rdfs:label:
+    - independence_disputed_state_label: string
+  - ns3:nameEnglish:
+    - independence_disputed_state_name_english: string
+- ConfirmedStatusOfFall:
+  - rdf:type:
+    - confirmed_status_of_fall_type: Class
+  - rdfs:label:
+    - confirmed_status_of_fall_label: string
+- DatatypeProperty:
+  - rdfs:range:
+    - datatype_property_range: Datatype
+  - rdfs:domain:
+    - datatype_property_domain: Class
+  - rdfs:subPropertyOf:
+    - datatype_property_sub_property_of: DatatypeProperty
+  - rdfs:comment:
+    - datatype_property_comment: string
+  - rdfs:label:
+    - datatype_property_label: string
+- RiskAssessmentResult:
+  - rdf:type:
+    - risk_assessment_result_type: Class
+  - rdfs:label:
+    - risk_assessment_result_label: string
+- Thing:
+  - ns10:isAnatomicalPartOfDirectly:
+    - thing_is_anatomical_part_of_directly:
+      - HumanBodyAnatomicalPart
+      - Thing
+      - NamedIndividual
+  - ns10:hasAnatomicalPart:
+    - thing_has_anatomical_part:
+      - NamedIndividual
+      - Thing
+      - HumanBodyAnatomicalPart
+  - rdf:type:
+    - thing_type: Class
+  - ns3:referencesCountry:
+    - thing_references_country:
+      - AssociatedState
+      - FullyDependentTerritory
+      - VirtualTerritory
+      - NamedIndividual
+      - IndependentState
+      - UnclaimableTerritory
+      - IndependenceDisputedState
+      - VirtuallyAnnexedTerritory
+      - Thing
+      - OccupiedTerritory
+  - owl:sameAs:
+    - thing_same_as:
+      - Thing
+      - IndependentState
+      - NamedIndividual
+  - ns10:isAnatomicalPartOf:
+    - thing_is_anatomical_part_of:
+      - Thing
+      - HumanBodyAnatomicalPart
+      - NamedIndividual
+  - ns10:hasAnatomicalPartDirectly:
+    - thing_has_anatomical_part_directly:
+      - HumanBodyAnatomicalPart
+      - Thing
+      - NamedIndividual
+  - ns3:nameLocalLong:
+    - thing_name_local_long: string
+  - ns3:countryCodeISO3166Alpha2:
+    - thing_country_code_iso3166_alpha2: string
+  - ns3:nameEnglishLong:
+    - thing_name_english_long: string
+  - ns3:countryCodeISO3166Alpha3:
+    - thing_country_code_iso3166_alpha3: string
+  - rdfs:comment:
+    - thing_comment: string
+  - ns3:nameLocal:
+    - thing_name_local: string
+  - rdfs:label:
+    - thing_label:
+      - string
+      - string
+  - ns3:countryCodeUNNumeric3:
+    - thing_country_code_un_numeric3: unsignedInt
+  - ns3:countryNameISO3166Short:
+    - thing_country_name_iso3166_short: string
+  - ns3:nameEnglish:
+    - thing_name_english: string
+- MovingActivity:
+  - rdf:type:
+    - moving_activity_type: Class
+  - rdfs:label:
+    - moving_activity_label: string
+- HipProtectorFailure:
+  - rdf:type:
+    - hip_protector_failure_type: Class
+  - rdfs:label:
+    - hip_protector_failure_label: string
+- BedrailsLeftDown:
+  - rdf:type:
+    - bedrails_left_down_type: Class
+  - rdfs:label:
+    - bedrails_left_down_label: string
+- ActivitiesOfDailyLiving:
+  - rdf:type:
+    - activities_of_daily_living_type: Class
+  - rdfs:label:
+    - activities_of_daily_living_label: string
+- TransitiveProperty:
+  - rdfs:range:
+    - transitive_property_range: Class
+  - rdfs:domain:
+    - transitive_property_domain: Class
+  - owl:inverseOf:
+    - transitive_property_inverse_of:
+      - ObjectProperty
+      - TransitiveProperty
+  - rdfs:label:
+    - transitive_property_label:
+      - string
+      - string
+- UnclaimableTerritory:
+  - rdf:type:
+    - unclaimable_territory_type: Class
+  - ns3:nameLocal:
+    - unclaimable_territory_name_local: string
+  - rdfs:label:
+    - unclaimable_territory_label: string
+  - ns3:nameEnglish:
+    - unclaimable_territory_name_english: string
+- VirtuallyAnnexedTerritory:
+  - rdf:type:
+    - virtually_annexed_territory_type: Class
+  - ns3:nameLocal:
+    - virtually_annexed_territory_name_local: string
+  - rdfs:label:
+    - virtually_annexed_territory_label: string
+  - ns3:nameEnglish:
+    - virtually_annexed_territory_name_english: string
+- MovingInBed:
+  - rdf:type:
+    - moving_in_bed_type: Class
+  - rdfs:label:
+    - moving_in_bed_label: string
+- Role:
+  - rdf:type:
+    - role_type: Class
+  - rdfs:label:
+    - role_label: string
+- Ontology:
+  - rdfs:seeAlso:
+    - ontology_see_also:
+      - NamedIndividual
+      - Thing
+  - ns15:relatedCPs:
+    - ontology_related_c_ps: string
+  - ns15:extractedFrom:
+    - ontology_extracted_from: string
+  - rdfs:comment:
+    - ontology_comment:
+      - string
+      - string
+  - ns15:scenarios:
+    - ontology_scenarios: string
+  - owl:priorVersion:
+    - ontology_prior_version: string
+  - dc11:creator:
+    - ontology_creator:
+      - string
+      - string
+  - ns15:coversRequirements:
+    - ontology_covers_requirements: string
+  - owl:versionInfo:
+    - ontology_version_info: string
+  - rdfs:label:
+    - ontology_label: string
+  - ns15:hasConsequences:
+    - ontology_has_consequences: string
+  - ns15:hasIntent:
+    - ontology_has_intent: string
+  - ns15:isSpecializationOf:
+    - ontology_is_specialization_of: string
+- ISO3166DefinedCountry:
+  - rdf:type:
+    - iso3166_defined_country_type: Class
+  - ns3:referencesCountry:
+    - iso3166_defined_country_references_country:
+      - NamedIndividual
+      - OccupiedTerritory
+      - IndependentState
+      - AssociatedState
+      - VirtualTerritory
+      - FullyDependentTerritory
+      - VirtuallyAnnexedTerritory
+      - Thing
+      - IndependenceDisputedState
+      - UnclaimableTerritory
+  - ns3:countryCodeISO3166Alpha2:
+    - iso3166_defined_country_country_code_iso3166_alpha2: string
+  - ns3:countryCodeISO3166Alpha3:
+    - iso3166_defined_country_country_code_iso3166_alpha3: string
+  - rdfs:label:
+    - iso3166_defined_country_label: string
+  - ns3:countryCodeUNNumeric3:
+    - iso3166_defined_country_country_code_un_numeric3: unsignedInt
+  - ns3:countryNameISO3166Short:
+    - iso3166_defined_country_country_name_iso3166_short: string
+- VirtualTerritory:
+  - rdf:type:
+    - virtual_territory_type: Class
+  - rdfs:comment:
+    - virtual_territory_comment: string
+  - ns3:nameLocal:
+    - virtual_territory_name_local: string
+  - rdfs:label:
+    - virtual_territory_label: string
+  - ns3:nameEnglish:
+    - virtual_territory_name_english: string
+- ChemicalRestraintFailure:
+  - rdf:type:
+    - chemical_restraint_failure_type: Class
+  - rdfs:label:
+    - chemical_restraint_failure_label: string
+- FallHeight:
+  - rdf:type:
+    - fall_height_type: Class
+  - rdfs:label:
+    - fall_height_label: string
+- Undergarment:
+  - rdf:type:
+    - undergarment_type: Class
+  - rdfs:label:
+    - undergarment_label: string
+- Climbing:
+  - rdf:type:
+    - climbing_type: Class
+  - rdfs:label:
+    - climbing_label: string
+- ClothesFastening:
+  - rdf:type:
+    - clothes_fastening_type: Class
+  - rdfs:label:
+    - clothes_fastening_label: string
+- HealthcareProfessional:
+  - rdf:type:
+    - healthcare_professional_type: Class
+  - rdfs:label:
+    - healthcare_professional_label: string
+- PhysicalRestraintFailure:
+  - rdf:type:
+    - physical_restraint_failure_type: Class
+  - rdfs:label:
+    - physical_restraint_failure_label: string
+- HumanRestraintFailure:
+  - rdf:type:
+    - human_restraint_failure_type: Class
+  - rdfs:label:
+    - human_restraint_failure_label: string
+- OccupiedTerritory:
+  - rdf:type:
+    - occupied_territory_type: Class
+  - ns3:nameLocal:
+    - occupied_territory_name_local: string
+  - rdfs:label:
+    - occupied_territory_label: string
+  - ns3:nameEnglish:
+    - occupied_territory_name_english: string
+- PieceOfFurniture:
+  - rdf:type:
+    - piece_of_furniture_type: Class
+  - rdfs:label:
+    - piece_of_furniture_label: string
+- HumanBodyAnatomicalPart:
+  - ns10:isAnatomicalPartOfDirectly:
+    - human_body_anatomical_part_is_anatomical_part_of_directly:
+      - Thing
+      - HumanBodyAnatomicalPart
+      - NamedIndividual
+  - ns10:hasAnatomicalPart:
+    - human_body_anatomical_part_has_anatomical_part:
+      - HumanBodyAnatomicalPart
+      - NamedIndividual
+      - Thing
+  - rdf:type:
+    - human_body_anatomical_part_type: Class
+  - ns10:isAnatomicalPartOf:
+    - human_body_anatomical_part_is_anatomical_part_of:
+      - NamedIndividual
+      - Thing
+      - HumanBodyAnatomicalPart
+  - ns10:hasAnatomicalPartDirectly:
+    - human_body_anatomical_part_has_anatomical_part_directly:
+      - HumanBodyAnatomicalPart
+      - NamedIndividual
+      - Thing
+  - rdfs:label:
+    - human_body_anatomical_part_label:
+      - string
+      - string
+- StationaryActivity:
+  - rdf:type:
+    - stationary_activity_type: Class
+  - rdfs:label:
+    - stationary_activity_label: string
+- PressureUlcerStage:
+  - rdf:type:
+    - pressure_ulcer_stage_type: Class
+  - rdfs:label:
+    - pressure_ulcer_stage_label: string
+- BedLinen:
+  - rdf:type:
+    - bed_linen_type: Class
+  - rdfs:label:
+    - bed_linen_label: string
+- Class:
+  - owl:equivalentClass:
+    - class_equivalent_class:
+      - Restriction
+      - Class
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Restriction
+      - Class
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+  - rdfs:comment:
+    - class_comment:
+      - string
+      - string
+  - ns15:isCloneOf:
+    - class_is_clone_of: string
+  - rdfs:label:
+    - class_label:
+      - string
+      - string
+  - ns16:prefixIRI:
+    - class_prefix_iri: string
+- FunctionalProperty:
+  - rdfs:range:
+    - functional_property_range: Class
+  - rdfs:domain:
+    - functional_property_domain: Class
+  - rdfs:label:
+    - functional_property_label: string
+- Footwear:
+  - rdf:type:
+    - footwear_type: Class
+  - rdfs:label:
+    - footwear_label: string

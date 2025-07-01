@@ -1,0 +1,81 @@
+- AnnotationProperty:
+  - rdfs:label:
+    - annotation_property_label: string
+- Class:
+  - ns1:develops_from:
+    - class_develops_from: Class
+  - ns2:treeView:
+    - class_tree_view: Class
+  - ns1:part_of:
+    - class_part_of: Class
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Restriction
+      - Class
+  - ns3:hasOBONamespace:
+    - class_has_obo_namespace: string
+  - ns3:hasExactSynonym:
+    - class_has_exact_synonym: string
+  - ns4:IAO_0000115:
+    - class_iao_0000115: string
+  - rdfs:label:
+    - class_label: string
+  - ns3:created_by:
+    - class_created_by: string
+  - ns3:hasNarrowSynonym:
+    - class_has_narrow_synonym: string
+  - ns3:hasBroadSynonym:
+    - class_has_broad_synonym: string
+  - rdfs:comment:
+    - class_comment: string
+  - ns3:id:
+    - class_id: string
+  - ns3:creation_date:
+    - class_creation_date: string
+  - ns3:hasRelatedSynonym:
+    - class_has_related_synonym: string
+  - skos:notation:
+    - class_notation: string
+- Restriction:
+  - owl:someValuesFrom:
+    - restriction_some_values_from: Class
+  - owl:onProperty:
+    - restriction_on_property:
+      - ObjectProperty
+      - TransitiveProperty
+- Axiom:
+  - owl:annotatedProperty:
+    - axiom_annotated_property: AnnotationProperty
+  - owl:annotatedSource:
+    - axiom_annotated_source: Class
+  - ns3:hasDbXref:
+    - axiom_has_db_xref: string
+  - owl:annotatedTarget:
+    - axiom_annotated_target: string
+- Ontology:
+  - ns3:hasOBOFormatVersion:
+    - ontology_has_obo_format_version: string
+  - ns3:saved-by:
+    - ontology_saved-by: string
+  - ns3:auto-generated-by:
+    - ontology_auto-generated-by: string
+  - ns3:NamespaceIdRule:
+    - ontology_namespace_id_rule: string
+  - ns3:date:
+    - ontology_date: string
+  - ns3:default-namespace:
+    - ontology_default-namespace: string
+- TransitiveProperty:
+  - ns3:hasOBONamespace:
+    - transitive_property_has_obo_namespace: string
+  - rdfs:label:
+    - transitive_property_label: string
+  - ns3:id:
+    - transitive_property_id: string
+- ObjectProperty:
+  - ns3:hasOBONamespace:
+    - object_property_has_obo_namespace: string
+  - rdfs:label:
+    - object_property_label: string
+  - ns3:id:
+    - object_property_id: string

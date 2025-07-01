@@ -1,0 +1,79 @@
+- Axiom:
+  - owl:annotatedSource:
+    - axiom_annotated_source: Class
+  - owl:annotatedProperty:
+    - axiom_annotated_property: AnnotationProperty
+  - ns1:ECO_0000218:
+    - axiom_eco_0000218: string
+  - owl:annotatedTarget:
+    - axiom_annotated_target: string
+- Restriction:
+  - owl:someValuesFrom:
+    - restriction_some_values_from: Class
+  - owl:onProperty:
+    - restriction_on_property:
+      - DatatypeProperty
+      - ObjectProperty
+  - owl:hasValue:
+    - restriction_has_value: string
+- Class:
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Restriction
+      - Class
+  - ns2:reason_for_obsolescence:
+    - class_reason_for_obsolescence: string
+  - skos:notation:
+    - class_notation:
+      - string
+      - string
+  - ns3:Orphanet_C022:
+    - class_orphanet_c022: string
+  - ns3:Orphanet_C016:
+    - class_orphanet_c016: string
+  - ns2:definition:
+    - class_definition: string
+  - ns4:hasDbXref:
+    - class_has_db_xref: string
+  - ns3:Orphanet_C017:
+    - class_orphanet_c017: string
+  - ns3:symbol:
+    - class_symbol: string
+  - ns3:Orphanet_C055:
+    - class_orphanet_c055: string
+  - rdfs:label:
+    - class_label:
+      - string
+      - string
+  - ns2:alternative_term:
+    - class_alternative_term: string
+  - ns2:definition_citation:
+    - class_definition_citation: string
+- Ontology:
+  - owl:versionIRI:
+    - ontology_version_iri: Ontology
+  - dc:license:
+    - ontology_license: Class
+  - dc11:creator:
+    - ontology_creator: string
+  - owl:versionInfo:
+    - ontology_version_info: string
+  - dc:modified:
+    - ontology_modified: dateTime
+  - dc:created:
+    - ontology_created: dateTime
+- DatatypeProperty:
+  - ns2:definition:
+    - datatype_property_definition: string
+  - rdfs:label:
+    - datatype_property_label: string
+- ObjectProperty:
+  - ns2:definition:
+    - object_property_definition: string
+  - rdfs:label:
+    - object_property_label: string
+- AnnotationProperty:
+  - ns2:definition:
+    - annotation_property_definition: string
+  - rdfs:label:
+    - annotation_property_label: string

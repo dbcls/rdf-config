@@ -1,0 +1,82 @@
+- NamedIndividual:
+  - skos:narrower:
+    - named_individual_narrower:
+      - NamedIndividual
+      - Concept
+  - rdf:type:
+    - named_individual_type: Class
+  - skos:inScheme:
+    - named_individual_in_scheme:
+      - NamedIndividual
+      - ConceptScheme
+  - skos:broader:
+    - named_individual_broader:
+      - NamedIndividual
+      - Concept
+  - skos:topConceptOf:
+    - named_individual_top_concept_of:
+      - NamedIndividual
+      - ConceptScheme
+  - skos:hasTopConcept:
+    - named_individual_has_top_concept:
+      - NamedIndividual
+      - Concept
+  - ns1:createdOn:
+    - named_individual_created_on: string
+  - skos:definition:
+    - named_individual_definition: string
+  - ns1:version:
+    - named_individual_version: string
+  - dc:description:
+    - named_individual_description: string
+  - skos:prefLabel:
+    - named_individual_pref_label: string
+  - ns1:modifiedOn:
+    - named_individual_modified_on: string
+  - dc:title:
+    - named_individual_title: string
+- Concept:
+  - skos:narrower:
+    - concept_narrower:
+      - NamedIndividual
+      - Concept
+  - rdf:type:
+    - concept_type: Class
+  - skos:inScheme:
+    - concept_in_scheme:
+      - NamedIndividual
+      - ConceptScheme
+  - skos:broader:
+    - concept_broader:
+      - Concept
+      - NamedIndividual
+  - skos:topConceptOf:
+    - concept_top_concept_of:
+      - NamedIndividual
+      - ConceptScheme
+  - skos:definition:
+    - concept_definition: string
+  - skos:prefLabel:
+    - concept_pref_label: string
+- ConceptScheme:
+  - rdf:type:
+    - concept_scheme_type: Class
+  - skos:hasTopConcept:
+    - concept_scheme_has_top_concept:
+      - Concept
+      - NamedIndividual
+  - ns1:createdOn:
+    - concept_scheme_created_on: string
+  - ns1:version:
+    - concept_scheme_version: string
+  - dc:description:
+    - concept_scheme_description: string
+  - skos:prefLabel:
+    - concept_scheme_pref_label: string
+  - ns1:modifiedOn:
+    - concept_scheme_modified_on: string
+  - dc:title:
+    - concept_scheme_title: string
+- Class:
+  - ns2:prefixIRI:
+    - class_prefix_iri: string

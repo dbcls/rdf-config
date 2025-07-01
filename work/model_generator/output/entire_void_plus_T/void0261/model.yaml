@@ -1,0 +1,70 @@
+- Class:
+  - rdfs:subClassOf:
+    - class_sub_class_of: Class
+  - rdfs:comment:
+    - class_comment: string
+  - rdfs:label:
+    - class_label: string
+- InverseFunctionalProperty:
+  - rdfs:range:
+    - inverse_functional_property_range: Class
+  - rdfs:domain:
+    - inverse_functional_property_domain: Class
+  - rdfs:seeAlso:
+    - inverse_functional_property_see_also: Class
+  - rdfs:subPropertyOf:
+    - inverse_functional_property_sub_property_of: InverseFunctionalProperty
+  - rdfs:comment:
+    - inverse_functional_property_comment: string
+  - rdfs:label:
+    - inverse_functional_property_label: string
+- List:
+  - rdf:rest:
+    - list_rest: List
+  - rdf:first:
+    - list_first:
+      - 12345
+      - string
+- Restriction:
+  - owl:onProperty:
+    - restriction_on_property:
+      - DatatypeProperty
+      - InverseFunctionalProperty
+  - owl:cardinality:
+    - restriction_cardinality: nonNegativeInteger
+  - owl:maxCardinality:
+    - restriction_max_cardinality: nonNegativeInteger
+  - owl:minCardinality:
+    - restriction_min_cardinality: nonNegativeInteger
+- ObjectProperty:
+  - owl:inverseOf:
+    - object_property_inverse_of: ObjectProperty
+  - rdfs:range:
+    - object_property_range: Class
+  - rdfs:domain:
+    - object_property_domain: Class
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of: ObjectProperty
+  - rdfs:comment:
+    - object_property_comment: string
+  - rdfs:label:
+    - object_property_label: string
+- Ontology:
+  - rdfs:comment:
+    - ontology_comment: string
+  - rdfs:label:
+    - ontology_label: string
+- DatatypeProperty:
+  - rdfs:range:
+    - datatype_property_range: DataRange
+  - rdfs:domain:
+    - datatype_property_domain: Class
+  - rdfs:subPropertyOf:
+    - datatype_property_sub_property_of: DatatypeProperty
+  - rdfs:comment:
+    - datatype_property_comment: string
+  - rdfs:label:
+    - datatype_property_label: string
+- DataRange:
+  - owl:oneOf:
+    - data_range_one_of: List

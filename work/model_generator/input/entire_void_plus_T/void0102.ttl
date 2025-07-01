@@ -1,0 +1,111 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sbm: <http://sparqlbuilder.org/2015/09/rdf-metadata-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://rdfportal.org/ns/> .
+
+<http://rdfportal.org/ns/191b8d56005c1c04e73e1162201ea905>
+    void:classPartition [
+        void:class owl:FunctionalProperty ;
+        void:entities 17 ;
+        a void:Dataset
+    ], [
+        void:class owl:ObjectProperty ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class owl:DatatypeProperty ;
+        void:entities 15 ;
+        a void:Dataset
+    ], [
+        void:class <http://www.owl-ontologies.com/unnamed.owl#radlex_metaclass> ;
+        void:entities 6101 ;
+        a void:Dataset
+    ] ;
+    void:classes 4 ;
+    void:distinctObjects 7175 ;
+    void:distinctSubjects 6171 ;
+    void:properties 5 ;
+    void:propertyPartition [
+        void:property rdfs:subClassOf ;
+        void:triples 6103 ;
+        sbm:classRelation [
+            void:triples 6100 ;
+            sbm:objectClass <http://www.owl-ontologies.com/unnamed.owl#radlex_metaclass> ;
+            sbm:subjectClass <http://www.owl-ontologies.com/unnamed.owl#radlex_metaclass> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.owl-ontologies.com/unnamed.owl#Is_A> ;
+        void:triples 6099 ;
+        sbm:classRelation [
+            void:triples 6099 ;
+            sbm:objectClass <http://www.owl-ontologies.com/unnamed.owl#radlex_metaclass> ;
+            sbm:subjectClass <http://www.owl-ontologies.com/unnamed.owl#radlex_metaclass> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:domain ;
+        void:triples 17 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 14 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdf:type ;
+        void:triples 6154 ;
+        sbm:classRelation [
+            void:triples 6101 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://www.owl-ontologies.com/unnamed.owl#radlex_metaclass> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://www.owl-ontologies.com/unnamed.owl#Preferred_Name> ;
+        void:triples 6101 ;
+        sbm:classRelation [
+            void:triples 6101 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://www.owl-ontologies.com/unnamed.owl#radlex_metaclass> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ] ;
+    void:sparqlEndpoint <https://rdfportal.org/bioportal/sparql> ;
+    void:triples 24570 ;
+    a void:Dataset, sd:Graph .

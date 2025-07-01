@@ -1,0 +1,69 @@
+- Axiom:
+  - owl:annotatedSource:
+    - axiom_annotated_source: Class
+  - owl:annotatedProperty:
+    - axiom_annotated_property: AnnotationProperty
+  - owl:annotatedTarget:
+    - axiom_annotated_target: string
+  - ns1:hasDbXref:
+    - axiom_has_db_xref: string
+  - rdfs:comment:
+    - axiom_comment: string
+- Class:
+  - rdfs:subClassOf:
+    - class_sub_class_of: Class
+  - ns2:IAO_0100001:
+    - class_iao_0100001: Class
+  - ns1:hasDbXref:
+    - class_has_db_xref: string
+  - ns1:id:
+    - class_id: string
+  - ns1:hasExactSynonym:
+    - class_has_exact_synonym: string
+  - ns1:created_by:
+    - class_created_by: string
+  - ns1:hasOBONamespace:
+    - class_has_obo_namespace: string
+  - owl:deprecated:
+    - class_deprecated: true
+  - ns1:hasAlternativeId:
+    - class_has_alternative_id: string
+  - ns1:hasRelatedSynonym:
+    - class_has_related_synonym: string
+  - rdfs:label:
+    - class_label:
+      - string
+      - string
+  - rdfs:comment:
+    - class_comment:
+      - true
+      - string
+  - ns1:creation_date:
+    - class_creation_date: string
+  - ns2:IAO_0000115:
+    - class_iao_0000115: string
+- Ontology:
+  - ns2:IAO_0000700:
+    - ontology_iao_0000700: Class
+  - dc11:description:
+    - ontology_description: string
+  - ns1:hasOBOFormatVersion:
+    - ontology_has_obo_format_version: string
+  - ns1:default-namespace:
+    - ontology_default-namespace: string
+  - dc11:title:
+    - ontology_title: string
+  - ns1:date:
+    - ontology_date: string
+  - ns1:saved-by:
+    - ontology_saved-by: string
+- ObjectProperty:
+  - ns1:id:
+    - object_property_id: string
+  - ns1:hasOBONamespace:
+    - object_property_has_obo_namespace: string
+  - rdfs:label:
+    - object_property_label: string
+- AnnotationProperty:
+  - rdfs:label:
+    - annotation_property_label: string

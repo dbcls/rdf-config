@@ -1,0 +1,4202 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sbm: <http://sparqlbuilder.org/2015/09/rdf-metadata-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://rdfportal.org/ns/> .
+
+<http://rdfportal.org/ns/2c0544f688656cff12b9b69af828aaf3>
+    void:classPartition [
+        void:class <http://purl.uniprot.org/core/Non-standard_Residue_Annotation> ;
+        void:entities 21440 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Non-adjacent_Residues_Annotation> ;
+        void:entities 2552 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Book_Citation> ;
+        void:entities 781 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Nucleotide_Resource> ;
+        void:entities 286377154 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Gene> ;
+        void:entities 240468233 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Temperature_Dependence_Annotation> ;
+        void:entities 2870 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Glycosylation_Annotation> ;
+        void:entities 205984 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Alternative_Promoter_Usage_Annotation> ;
+        void:entities 316 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Subcellular_Location_Annotation> ;
+        void:entities 47507629 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Non-terminal_Residue_Annotation> ;
+        void:entities 42763256 ;
+        a void:Dataset
+    ], [
+        void:class <http://biohackathon.org/resource/faldo#InRangePosition> ;
+        void:entities 12160 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/RNA_Editing_Annotation> ;
+        void:entities 634 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Caution_Annotation> ;
+        void:entities 166435340 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Allergen_Annotation> ;
+        void:entities 947 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Patent_Citation> ;
+        void:entities 134 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Tissue> ;
+        void:entities 21894286 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Propeptide_Annotation> ;
+        void:entities 57286 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Beta_Strand_Annotation> ;
+        void:entities 338259 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Resource> ;
+        void:entities 340042435 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/PH_Dependence_Annotation> ;
+        void:entities 5029 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Mass_Spectrometry_Annotation> ;
+        void:entities 7511 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Induction_Annotation> ;
+        void:entities 168181 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Toxic_Dose_Annotation> ;
+        void:entities 851 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Developmental_Stage_Annotation> ;
+        void:entities 14150 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Plasmid> ;
+        void:entities 1339921 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Structured_Name> ;
+        void:entities 285097228 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Non_Self_Interaction> ;
+        void:entities 103482 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Part> ;
+        void:entities 1999055 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Thesis_Citation> ;
+        void:entities 1484 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/External_Sequence> ;
+        void:entities 130792 ;
+        a void:Dataset
+    ], [
+        void:class <http://biohackathon.org/resource/faldo#OneOfPosition> ;
+        void:entities 352 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Sequence_Conflict_Annotation> ;
+        void:entities 157722 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Submission_Citation> ;
+        void:entities 395553 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Disease_Annotation> ;
+        void:entities 8273 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Chain_Annotation> ;
+        void:entities 19220633 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Mutagenesis_Annotation> ;
+        void:entities 94580 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Sequence_Uncertainty_Annotation> ;
+        void:entities 120615 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/PTM_Annotation> ;
+        void:entities 1967982 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Modified_Residue_Annotation> ;
+        void:entities 4836548 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Erroneous_Termination_Annotation> ;
+        void:entities 1143 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Domain_Annotation> ;
+        void:entities 2504025 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Interaction> ;
+        void:entities 106439 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Erroneous_Translation_Annotation> ;
+        void:entities 443 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Binding_Site_Annotation> ;
+        void:entities 92139006 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Lipidation_Annotation> ;
+        void:entities 487391 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Repeat_Annotation> ;
+        void:entities 9832766 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Ribosomal_Frameshifting> ;
+        void:entities 768 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Catalytic_Activity_Annotation> ;
+        void:entities 37373003 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Alternative_Splicing_Annotation> ;
+        void:entities 24126 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Domain_Extent_Annotation> ;
+        void:entities 191884634 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Disulfide_Bond_Annotation> ;
+        void:entities 5906128 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Region_Annotation> ;
+        void:entities 93698547 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Intramembrane_Annotation> ;
+        void:entities 5618 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Absorption_Annotation> ;
+        void:entities 133 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Turn_Annotation> ;
+        void:entities 80219 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Topological_Domain_Annotation> ;
+        void:entities 619949 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Active_Site_Annotation> ;
+        void:entities 19050635 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Subunit_Annotation> ;
+        void:entities 20264117 ;
+        a void:Dataset
+    ], [
+        void:class <http://biohackathon.org/resource/faldo#Position> ;
+        void:entities 1421991798 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Simple_Sequence> ;
+        void:entities 252170924 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Citation_Statement> ;
+        void:entities 295956981 ;
+        a void:Dataset
+    ], [
+        void:class rdf:Statement ;
+        void:entities 3825143295 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Unknown_Sequence> ;
+        void:entities 274 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Helix_Annotation> ;
+        void:entities 331916 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Natural_Variant_Annotation> ;
+        void:entities 103573 ;
+        a void:Dataset
+    ], [
+        void:class <http://biohackathon.org/resource/faldo#ExactPosition> ;
+        void:entities 1421979286 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Electronic_Citation> ;
+        void:entities 507 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Transposon> ;
+        void:entities 143 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Tissue_Specificity_Annotation> ;
+        void:entities 50781 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Modified_Sequence> ;
+        void:entities 41011 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Sequence_Caution_Annotation> ;
+        void:entities 2941 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Site_Annotation> ;
+        void:entities 4924911 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Redox_Potential_Annotation> ;
+        void:entities 128 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Nucleotide_Binding_Annotation> ;
+        void:entities 4817869 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Kinetics_Annotation> ;
+        void:entities 9058 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Erroneous_Gene_Model_Prediction_Annotation> ;
+        void:entities 13309 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Annotation> ;
+        void:entities 1288736 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Transit_Peptide_Annotation> ;
+        void:entities 9825 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Pharmaceutical_Annotation> ;
+        void:entities 166 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Motif_Annotation> ;
+        void:entities 2615165 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Cross-link_Annotation> ;
+        void:entities 103664 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Transmembrane_Annotation> ;
+        void:entities 217935243 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Similarity_Annotation> ;
+        void:entities 83660309 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Coiled_Coil_Annotation> ;
+        void:entities 11290813 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Strain> ;
+        void:entities 243572936 ;
+        a void:Dataset
+    ], [
+        void:class <http://biohackathon.org/resource/faldo#Region> ;
+        void:entities 816256958 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Protein> ;
+        void:entities 252170924 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Alternative_Sequence_Annotation> ;
+        void:entities 53056 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Transcript_Resource> ;
+        void:entities 100261706 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Structure_Resource> ;
+        void:entities 192818 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Erroneous_Initiation_Annotation> ;
+        void:entities 36003 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Disruption_Phenotype_Annotation> ;
+        void:entities 20272 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Signal_Peptide_Annotation> ;
+        void:entities 18134976 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Observation_Citation> ;
+        void:entities 223 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Initiator_Methionine_Annotation> ;
+        void:entities 110985 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Activity_Regulation_Annotation> ;
+        void:entities 642452 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Pathway_Annotation> ;
+        void:entities 17678098 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Participant> ;
+        void:entities 30333 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Cofactor_Annotation> ;
+        void:entities 22868837 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Function_Annotation> ;
+        void:entities 36892307 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Peptide_Annotation> ;
+        void:entities 13787 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Compositional_Bias_Annotation> ;
+        void:entities 75716090 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Biotechnology_Annotation> ;
+        void:entities 1851 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Frameshift_Annotation> ;
+        void:entities 7847 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Zinc_Finger_Annotation> ;
+        void:entities 764165 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Polymorphism_Annotation> ;
+        void:entities 1487 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Alternative_Initiation_Annotation> ;
+        void:entities 1045 ;
+        a void:Dataset
+    ], [
+        void:class <http://purl.uniprot.org/core/Self_Interaction> ;
+        void:entities 2957 ;
+        a void:Dataset
+    ] ;
+    void:classes 108 ;
+    void:distinctObjects 10520032519 ;
+    void:distinctSubjects 11253966336 ;
+    void:properties 84 ;
+    void:propertyPartition [
+        void:property <http://purl.uniprot.org/core/maximum> ;
+        void:triples 133 ;
+        sbm:classRelation [
+            void:triples 133 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Absorption_Annotation> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/component> ;
+        void:triples 853804 ;
+        sbm:classRelation [
+            void:triples 853804 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Part> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://biohackathon.org/resource/faldo#position> ;
+        void:triples 1421979286 ;
+        sbm:classRelation [
+            void:triples 1421979286 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#ExactPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1421979286 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#Position> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/measuredError> ;
+        void:triples 1225 ;
+        sbm:classRelation [
+            void:triples 1225 ;
+            sbm:objectDatatype xsd:decimal ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Mass_Spectrometry_Annotation> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/experiments> ;
+        void:triples 106439 ;
+        sbm:classRelation [
+            void:triples 2957 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Self_Interaction> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 103482 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Non_Self_Interaction> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 106439 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Interaction> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/alternativeName> ;
+        void:triples 28953537 ;
+        sbm:classRelation [
+            void:triples 27781850 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Structured_Name> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1171687 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Structured_Name> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Part> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/frameshift> ;
+        void:triples 12 ;
+        sbm:classRelation [
+            void:triples 12 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass <http://purl.uniprot.org/core/RNA_Editing_Annotation> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property skos:prefLabel ;
+        void:triples 59306955 ;
+        sbm:classRelation [
+            void:triples 59306955 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Gene> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/isolatedFrom> ;
+        void:triples 16544847 ;
+        sbm:classRelation [
+            void:triples 5334597 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Tissue> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:seeAlso ;
+        void:triples 3081917203 ;
+        sbm:classRelation [
+            void:triples 100566645 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Transcript_Resource> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 66245 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Resource> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 508 ;
+            sbm:objectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Transcript_Resource> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 348411 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Structure_Resource> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 35395 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Transcript_Resource> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Unknown_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Resource> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 286377845 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Nucleotide_Resource> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1234 ;
+            sbm:objectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Resource> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 34097 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Transcript_Resource> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 76174 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Resource> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2676667081 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Resource> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://biohackathon.org/resource/faldo#possiblePosition> ;
+        void:triples 352 ;
+        sbm:classRelation [
+            void:triples 352 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Position> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#Position> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 352 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#ExactPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#OneOfPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 352 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#ExactPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#Position> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 352 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Position> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#OneOfPosition> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/resolution> ;
+        void:triples 181063 ;
+        sbm:classRelation [
+            void:triples 181063 ;
+            sbm:objectDatatype xsd:decimal ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Structure_Resource> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/annotation> ;
+        void:triples 1257912496 ;
+        sbm:classRelation [
+            void:triples 53056 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Alternative_Sequence_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 768 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Ribosomal_Frameshifting> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 764165 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Zinc_Finger_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4817869 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Nucleotide_Binding_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2870 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Temperature_Dependence_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1967982 ;
+            sbm:objectClass <http://purl.uniprot.org/core/PTM_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 110985 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Initiator_Methionine_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5906128 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Disulfide_Bond_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 851 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Toxic_Dose_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 331916 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Helix_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 166435340 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Caution_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2552 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Non-adjacent_Residues_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4924911 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Site_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 22868837 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Cofactor_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20264117 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Subunit_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 57286 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Propeptide_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1288736 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 92139006 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Binding_Site_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 217935243 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Transmembrane_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 191884634 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Domain_Extent_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 166 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Pharmaceutical_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9832766 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Repeat_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 133 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Absorption_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 14150 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Developmental_Stage_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2504025 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Domain_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1143 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Erroneous_Termination_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 128 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Redox_Potential_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 42763256 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Non-terminal_Residue_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 103573 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Natural_Variant_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17678098 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Pathway_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2941 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Sequence_Caution_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 94580 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Mutagenesis_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4836548 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Residue_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 80219 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Turn_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 947 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Allergen_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 36892307 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Function_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 103664 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Cross-link_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 19220638 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Chain_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 634 ;
+            sbm:objectClass <http://purl.uniprot.org/core/RNA_Editing_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1045 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Alternative_Initiation_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 642452 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Activity_Regulation_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 487391 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Lipidation_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 338259 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Beta_Strand_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7511 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Mass_Spectrometry_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 443 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Erroneous_Translation_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 619949 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Topological_Domain_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 75716090 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Compositional_Bias_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 83660309 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Similarity_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7847 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Frameshift_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2615165 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Motif_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5029 ;
+            sbm:objectClass <http://purl.uniprot.org/core/PH_Dependence_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 316 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Alternative_Promoter_Usage_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1851 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Biotechnology_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 47507629 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Subcellular_Location_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5618 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Intramembrane_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9058 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Kinetics_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 36003 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Erroneous_Initiation_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 24126 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Alternative_Splicing_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 21440 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Non-standard_Residue_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 18134976 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Signal_Peptide_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 120615 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Sequence_Uncertainty_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 205984 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Glycosylation_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 50781 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Tissue_Specificity_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 13788 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Peptide_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8273 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Disease_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 157722 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Sequence_Conflict_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20272 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Disruption_Phenotype_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 37373003 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Catalytic_Activity_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 93698547 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Region_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 13309 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Erroneous_Gene_Model_Prediction_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 168181 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Induction_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1487 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Polymorphism_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11290813 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Coiled_Coil_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 19050635 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Active_Site_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9825 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Transit_Peptide_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdf:value ;
+        void:triples 252211935 ;
+        sbm:classRelation [
+            void:triples 252170924 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2099 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 41011 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/author> ;
+        void:triples 1711591 ;
+        sbm:classRelation [
+            void:triples 556 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Patent_Citation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3071 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Book_Citation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 325 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Observation_Citation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1622 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Electronic_Citation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1591 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Thesis_Citation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1704426 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Submission_Citation> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/context> ;
+        void:triples 294896237 ;
+        sbm:classRelation [
+            void:triples 174 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Transposon> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Citation_Statement> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 18541034 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Tissue> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 18541034 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Tissue> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Citation_Statement> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 275191973 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Strain> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Citation_Statement> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1163056 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Plasmid> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Citation_Statement> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 174 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Transposon> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1163056 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Plasmid> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 275191973 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Strain> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/fullName> ;
+        void:triples 285094775 ;
+        sbm:classRelation [
+            void:triples 285094775 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Structured_Name> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/md5Checksum> ;
+        void:triples 252170924 ;
+        sbm:classRelation [
+            void:triples 1768 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 252170924 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/translatedFrom> ;
+        void:triples 44852231 ;
+        sbm:classRelation [
+            void:triples 121411 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Nucleotide_Resource> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/substitution> ;
+        void:triples 415992 ;
+        sbm:classRelation [
+            void:triples 101641 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Mutagenesis_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 53056 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Alternative_Sequence_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 103573 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Natural_Variant_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 157722 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Sequence_Conflict_Annotation> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/certain> ;
+        void:triples 20 ;
+        sbm:classRelation [
+            void:triples 20 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Absorption_Annotation> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/submittedName> ;
+        void:triples 149757739 ;
+        sbm:classRelation [
+            void:triples 149757739 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Structured_Name> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/title> ;
+        void:triples 297459 ;
+        sbm:classRelation [
+            void:triples 696 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Book_Citation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 506 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Electronic_Citation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 295147 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Submission_Citation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Observation_Citation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 129 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Patent_Citation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 973 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Thesis_Citation> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/fragment> ;
+        void:triples 26334169 ;
+        sbm:classRelation [
+            void:triples 26334169 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 38 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/locatedOn> ;
+        void:triples 331137701 ;
+        sbm:classRelation [
+            void:triples 4286588 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Transcribed_RNA> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Nucleotide_Resource> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1754349 ;
+            sbm:objectClass <http://purl.uniprot.org/core/MRNA> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Nucleotide_Resource> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1836184 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Genomic_RNA> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Nucleotide_Resource> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3005 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Unassigned_DNA> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Nucleotide_Resource> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 31433 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Other_RNA> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Nucleotide_Resource> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 366 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Unassigned_RNA> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Nucleotide_Resource> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 277092852 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Genomic_DNA> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Nucleotide_Resource> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1386920 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Viral_cRNA> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Nucleotide_Resource> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16906 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Other_DNA> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Nucleotide_Resource> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/volume> ;
+        void:triples 65 ;
+        sbm:classRelation [
+            void:triples 65 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Book_Citation> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dcterms:identifier ;
+        void:triples 10 ;
+        sbm:classRelation [
+            void:triples 5 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Book_Citation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Electronic_Citation> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/editor> ;
+        void:triples 1366 ;
+        sbm:classRelation [
+            void:triples 1366 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Book_Citation> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/pages> ;
+        void:triples 754 ;
+        sbm:classRelation [
+            void:triples 754 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Book_Citation> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/modified> ;
+        void:triples 504341848 ;
+        sbm:classRelation [
+            void:triples 1768 ;
+            sbm:objectDatatype xsd:date ;
+            sbm:subjectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 252170924 ;
+            sbm:objectDatatype xsd:date ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 252170924 ;
+            sbm:objectDatatype xsd:date ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/locusName> ;
+        void:triples 5373657 ;
+        sbm:classRelation [
+            void:triples 5373657 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Gene> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/encodedBy> ;
+        void:triples 240468233 ;
+        sbm:classRelation [
+            void:triples 240468233 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Gene> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/cdAntigenName> ;
+        void:triples 1562 ;
+        sbm:classRelation [
+            void:triples 1562 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Structured_Name> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/group> ;
+        void:triples 9647 ;
+        sbm:classRelation [
+            void:triples 9643 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Submission_Citation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Book_Citation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Observation_Citation> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/basedOn> ;
+        void:triples 41011 ;
+        sbm:classRelation [
+            void:triples 331 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 41011 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 318 ;
+            sbm:objectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 315 ;
+            sbm:objectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/internationalNonproprietaryName> ;
+        void:triples 28 ;
+        sbm:classRelation [
+            void:triples 28 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Structured_Name> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/shortName> ;
+        void:triples 15846640 ;
+        sbm:classRelation [
+            void:triples 15846640 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Structured_Name> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://biohackathon.org/resource/faldo#begin> ;
+        void:triples 816260898 ;
+        sbm:classRelation [
+            void:triples 816247687 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#ExactPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#Region> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6519 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#InRangePosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#Region> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6509 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Position> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#InRangePosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 183 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#OneOfPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#Region> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6509 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#ExactPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#InRangePosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6509 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#ExactPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#Position> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 816254389 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Position> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#Region> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6509 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Position> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#Position> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/catalyticActivity> ;
+        void:triples 37373003 ;
+        sbm:classRelation [
+            void:triples 37373003 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Catalytic_Activity> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Catalytic_Activity_Annotation> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://biohackathon.org/resource/faldo#reference> ;
+        void:triples 1421991798 ;
+        sbm:classRelation [
+            void:triples 2772 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#ExactPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 33 ;
+            sbm:objectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#InRangePosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 57 ;
+            sbm:objectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#OneOfPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1421989026 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#Position> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 61773 ;
+            sbm:objectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#Position> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 12160 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#InRangePosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 352 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#OneOfPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1421976514 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#ExactPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 61683 ;
+            sbm:objectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#ExactPosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2772 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#Position> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/date> ;
+        void:triples 398673 ;
+        sbm:classRelation [
+            void:triples 134 ;
+            sbm:objectDatatype xsd:date ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Patent_Citation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 223 ;
+            sbm:objectDatatype xsd:gYearMonth ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Observation_Citation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 781 ;
+            sbm:objectDatatype xsd:gYear ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Book_Citation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1484 ;
+            sbm:objectDatatype xsd:gYear ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Thesis_Citation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 498 ;
+            sbm:objectDatatype xsd:gYear ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Electronic_Citation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 395553 ;
+            sbm:objectDatatype xsd:gYearMonth ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Submission_Citation> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/measuredAffinity> ;
+        void:triples 26842 ;
+        sbm:classRelation [
+            void:triples 26842 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Kinetics_Annotation> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/participant> ;
+        void:triples 209921 ;
+        sbm:classRelation [
+            void:triples 2957 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Participant> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Self_Interaction> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 209921 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Participant> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Interaction> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 206964 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Participant> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Non_Self_Interaction> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/locator> ;
+        void:triples 507 ;
+        sbm:classRelation [
+            void:triples 507 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Electronic_Citation> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:comment ;
+        void:triples 964556758 ;
+        sbm:classRelation [
+            void:triples 9830342 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Repeat_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2615165 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Motif_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 425 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Erroneous_Translation_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 12848 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Propeptide_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 947 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Allergen_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2854 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Sequence_Caution_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 552553 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Disulfide_Bond_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 27343 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Transcript_Resource> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4978 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Intramembrane_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 166 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Pharmaceutical_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 21440 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Non-standard_Residue_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2504025 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Domain_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4836548 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Modified_Residue_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 416 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/RNA_Editing_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 14150 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Developmental_Stage_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1967982 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/PTM_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20272 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Disruption_Phenotype_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 93698544 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Region_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 335 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Ribosomal_Frameshifting> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 14490 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Erroneous_Initiation_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 168181 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Induction_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 75716090 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Compositional_Bias_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 110985 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Initiator_Methionine_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8450952 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Chain_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5029 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/PH_Dependence_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2870 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Temperature_Dependence_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 851 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Toxic_Dose_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 13787 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Peptide_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1143 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Erroneous_Termination_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1851 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Biotechnology_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 487391 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Lipidation_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 729074 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Zinc_Finger_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8273 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Disease_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 83660309 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Similarity_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 43 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Alternative_Initiation_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 36892307 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Function_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 47 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Absorption_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 128 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Redox_Potential_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 67 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Alternative_Promoter_Usage_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 205984 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Glycosylation_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3207802 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Resource> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 217935097 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Transmembrane_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 120385 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Sequence_Uncertainty_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9818 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Transit_Peptide_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 65235 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Natural_Variant_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1311957 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Subcellular_Location_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1288736 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 53056 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Alternative_Sequence_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 681 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Signal_Peptide_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 103664 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Cross-link_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1035 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Erroneous_Gene_Model_Prediction_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2668 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Alternative_Splicing_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1487 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Polymorphism_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 191884634 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Domain_Extent_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20264117 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Subunit_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 166435340 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Caution_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 94580 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Mutagenesis_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 50781 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Tissue_Specificity_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8337747 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Cofactor_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 12962043 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Active_Site_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1668 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Mass_Spectrometry_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3229 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Kinetics_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3929 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 166 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Frameshift_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 619949 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Topological_Domain_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4802102 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Nucleotide_Binding_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 642452 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Activity_Regulation_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4439118 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Binding_Site_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4924911 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Site_Annotation> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://biohackathon.org/resource/faldo#location> ;
+        void:triples 2859 ;
+        sbm:classRelation [
+            void:triples 2859 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Position> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/RNA_Editing_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2859 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#ExactPosition> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/RNA_Editing_Annotation> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdf:object ;
+        void:triples 3825143350 ;
+        sbm:classRelation [
+            void:triples 22086 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Book_Citation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 35938 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Erroneous_Initiation_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 205134 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Glycosylation_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 17659677 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Pathway_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 510 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Observation_Citation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 331916 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Helix_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 103140 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Cross-link_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2595488 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Motif_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 22086 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Book_Citation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Citation_Statement> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 212514658 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Submission_Citation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 487391 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Lipidation_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 13271 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Erroneous_Gene_Model_Prediction_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 92126911 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Binding_Site_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11290707 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Coiled_Coil_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 217934043 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Transmembrane_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 18133317 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Signal_Peptide_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 628 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Electronic_Citation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 115302 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Thesis_Citation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Citation_Statement> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 42752635 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Non-terminal_Residue_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 762704 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Zinc_Finger_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 92838 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Mutagenesis_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9745705 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Repeat_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 156396 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Sequence_Conflict_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 115302 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Thesis_Citation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 628 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Electronic_Citation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Citation_Statement> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 618845 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Topological_Domain_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 80219 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Turn_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2794 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#ExactPosition> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 214 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Patent_Citation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 986563944 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1142 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Erroneous_Termination_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 212514658 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Submission_Citation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Citation_Statement> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5541 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Intramembrane_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 443 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Erroneous_Translation_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 21270 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Non-standard_Residue_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 23641258 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Tissue> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9421 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Transit_Peptide_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 69124 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Natural_Variant_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 66 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 273958361 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Strain> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 119575 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Sequence_Uncertainty_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 510 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Observation_Citation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Citation_Statement> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 214 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Patent_Citation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Citation_Statement> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7506 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Peptide_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7511 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Mass_Spectrometry_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 75716090 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Compositional_Bias_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 191859337 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Domain_Extent_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 37334713 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Catalytic_Activity> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 18661785 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Chain_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2492827 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Plasmid> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 50414 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Alternative_Sequence_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4817297 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Nucleotide_Binding_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 110298 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Initiator_Methionine_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2546 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Non-adjacent_Residues_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 55089 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Propeptide_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 19048958 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Active_Site_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2939 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Sequence_Caution_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 338259 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Beta_Strand_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4836272 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Residue_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7826 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Frameshift_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2794 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Position> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5902503 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Disulfide_Bond_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 93674845 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Region_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4921918 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Site_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/scope> ;
+        void:triples 296551284 ;
+        sbm:classRelation [
+            void:triples 296551284 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 296551284 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Citation_Statement> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/translatedTo> ;
+        void:triples 100277047 ;
+        sbm:classRelation [
+            void:triples 4497508 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Transcript_Resource> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Transcript_Resource> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/complete> ;
+        void:triples 3040138 ;
+        sbm:classRelation [
+            void:triples 3040138 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/reviewed> ;
+        void:triples 252170924 ;
+        sbm:classRelation [
+            void:triples 252170924 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/version> ;
+        void:triples 504341848 ;
+        sbm:classRelation [
+            void:triples 252170924 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 252170924 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1768 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/oldMnemonic> ;
+        void:triples 197931 ;
+        sbm:classRelation [
+            void:triples 197931 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdf:subject ;
+        void:triples 3825143295 ;
+        sbm:classRelation [
+            void:triples 321963688 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Gene> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 38744 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Tissue_Specificity_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 32457593 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Cofactor_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20253489 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Subunit_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1304586 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Subcellular_Location_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1025 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Polymorphism_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 247 ;
+            sbm:objectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 164751 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Induction_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4656 ;
+            sbm:objectClass <http://purl.uniprot.org/core/PH_Dependence_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 341082698 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Structured_Name> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1273764 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8061 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Disease_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2372870646 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Protein> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 295956981 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Protein> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Citation_Statement> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 81 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Absorption_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 18 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Unknown_Sequence> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 794 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Toxic_Dose_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 89 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Pharmaceutical_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2959 ;
+            sbm:objectClass <http://purl.uniprot.org/core/RNA_Editing_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20253 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Disruption_Phenotype_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 36861699 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Function_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 19 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Alternative_Promoter_Usage_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2548 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Temperature_Dependence_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 293424622 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Citation_Statement> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 40694778 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Catalytic_Activity_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4478 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 293424622 ;
+            sbm:objectClass rdf:Statement ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 37852 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Kinetics_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 114 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Ribosomal_Frameshifting> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2432 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 569 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Allergen_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1108566 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Part> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11456 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Developmental_Stage_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 64 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Redox_Potential_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2494520 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Domain_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 272 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Alternative_Splicing_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 83659966 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Similarity_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1963438 ;
+            sbm:objectClass <http://purl.uniprot.org/core/PTM_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 641238 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Activity_Regulation_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Alternative_Initiation_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 166435260 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Caution_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1641 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Biotechnology_Annotation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:sameAs ;
+        void:triples 107057 ;
+        sbm:classRelation [
+            void:triples 718 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Participant> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2444 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Participant> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 266 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Chain_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Participant> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 19142 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Transcript_Resource> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Transcript_Resource> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 26790 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Protein> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Participant> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Propeptide_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Participant> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 23 ;
+            sbm:objectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Participant> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 27 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Peptide_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Participant> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/sequence> ;
+        void:triples 252421434 ;
+        sbm:classRelation [
+            void:triples 2046 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Subcellular_Location_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 40 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Peptide_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Domain_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Peptide_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Caution_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1023 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 24 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Unknown_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Ribosomal_Frameshifting> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 13 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Cofactor_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 12 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Disruption_Phenotype_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 288 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Catalytic_Activity_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 636 ;
+            sbm:objectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Alternative_Initiation_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 254 ;
+            sbm:objectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Alternative_Promoter_Usage_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1379 ;
+            sbm:objectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Ribosomal_Frameshifting> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1341 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Modified_Residue_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 941 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Alternative_Promoter_Usage_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Induction_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 43 ;
+            sbm:objectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Sequence_Conflict_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 136 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/PTM_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 241 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Chain_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Cofactor_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 245 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Chain_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Chain_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Similarity_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/PH_Dependence_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4544 ;
+            sbm:objectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 18 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Unknown_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Alternative_Promoter_Usage_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 25 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Activity_Regulation_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 38 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Developmental_Stage_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 53 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Domain_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2833 ;
+            sbm:objectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Alternative_Splicing_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 98 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Cross-link_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1125 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Peptide_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Function_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 25212 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Alternative_Splicing_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Unknown_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Alternative_Initiation_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Chain_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Polymorphism_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3992 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Chain_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/PTM_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Peptide_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Cofactor_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Peptide_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Pharmaceutical_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Tissue_Specificity_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 33 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Topological_Domain_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Peptide_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Temperature_Dependence_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 505 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Function_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 674 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Sequence_Conflict_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1100 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Subcellular_Location_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Disulfide_Bond_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Chain_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Disruption_Phenotype_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Peptide_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Unknown_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Tissue_Specificity_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9592 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Chain_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Subunit_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Sequence_Caution_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 821 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Chain_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Catalytic_Activity_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 270 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Subunit_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Unknown_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Function_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 680 ;
+            sbm:objectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 20 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Disruption_Phenotype_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Chain_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Allergen_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 184 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Chain_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Activity_Regulation_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 286 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Unknown_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 71 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Developmental_Stage_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Initiator_Methionine_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 40506 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Alternative_Splicing_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Unknown_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Activity_Regulation_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Sequence_Caution_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 252172884 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Chain_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Biotechnology_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1453 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Alternative_Initiation_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Unknown_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Cofactor_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Caution_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Pathway_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 21 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Unknown_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Subcellular_Location_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Unknown_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/PTM_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Temperature_Dependence_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Site_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 50 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Lipidation_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Erroneous_Termination_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 62 ;
+            sbm:objectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Function_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 974 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Function_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Coiled_Coil_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 71 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Induction_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 68 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Peptide_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Subunit_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 41472 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 70 ;
+            sbm:objectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Subcellular_Location_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 93 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Frameshift_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 48 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Kinetics_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Erroneous_Gene_Model_Prediction_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Biotechnology_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 90868 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Chain_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Subcellular_Location_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Polymorphism_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Unknown_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Subunit_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 25 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Domain_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 53 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Mutagenesis_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 224 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Tissue_Specificity_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 22 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Mass_Spectrometry_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 251 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Unknown_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Alternative_Splicing_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Peptide_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/PH_Dependence_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 52 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Activity_Regulation_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Active_Site_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 42 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Ribosomal_Frameshifting> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Frameshift_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 193 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Natural_Variant_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 15 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Chain_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Developmental_Stage_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 358 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Alternative_Promoter_Usage_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 13 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Chain_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Induction_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Chain_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Kinetics_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Peptide_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Disruption_Phenotype_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Chain_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Toxic_Dose_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 432 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Tissue_Specificity_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 385 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Chain_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Mass_Spectrometry_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 88 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Peptide_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Tissue_Specificity_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Temperature_Dependence_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Chain_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Temperature_Dependence_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 67 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Glycosylation_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1311 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Alternative_Initiation_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Pathway_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Caution_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 324 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Catalytic_Activity_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Chain_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Caution_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Intramembrane_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 171 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Peptide_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/PTM_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 35 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Kinetics_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 30 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Motif_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/RNA_Editing_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Peptide_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Developmental_Stage_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 138 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/PTM_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 30 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Mass_Spectrometry_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3509 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Chain_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/PH_Dependence_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Transit_Peptide_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Disease_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1073 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Peptide_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Subcellular_Location_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 15 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Chain_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Tissue_Specificity_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 47 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Induction_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 13 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Peptide_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Induction_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2821 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Chain_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Domain_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Peptide_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Toxic_Dose_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Erroneous_Initiation_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 411 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Subunit_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 13 ;
+            sbm:objectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Modified_Residue_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 125 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Initiator_Methionine_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 19 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Region_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Cofactor_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Binding_Site_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 19 ;
+            sbm:objectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/PTM_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9294 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Chain_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Function_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1103 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Peptide_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Mass_Spectrometry_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Chain_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Disease_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 42 ;
+            sbm:objectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Subunit_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Domain_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Unknown_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Catalytic_Activity_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Erroneous_Initiation_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/PH_Dependence_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 65 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Unknown_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1478 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Ribosomal_Frameshifting> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 13 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Transmembrane_Annotation> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/created> ;
+        void:triples 252170924 ;
+        sbm:classRelation [
+            void:triples 252170924 ;
+            sbm:objectDatatype xsd:date ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/allergenName> ;
+        void:triples 863 ;
+        sbm:classRelation [
+            void:triples 863 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Structured_Name> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/measuredActivity> ;
+        void:triples 9076 ;
+        sbm:classRelation [
+            void:triples 9076 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Kinetics_Annotation> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/precursor> ;
+        void:triples 556603 ;
+        sbm:classRelation [
+            void:triples 143 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 556603 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/publisher> ;
+        void:triples 493 ;
+        sbm:classRelation [
+            void:triples 493 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Book_Citation> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/domain> ;
+        void:triples 1145251 ;
+        sbm:classRelation [
+            void:triples 1145251 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Part> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/institution> ;
+        void:triples 1484 ;
+        sbm:classRelation [
+            void:triples 1484 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Thesis_Citation> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/place> ;
+        void:triples 2034 ;
+        sbm:classRelation [
+            void:triples 781 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Book_Citation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1253 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Thesis_Citation> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/mass> ;
+        void:triples 271391560 ;
+        sbm:classRelation [
+            void:triples 1768 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 252170924 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Peptide_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 19220636 ;
+            sbm:objectDatatype xsd:int ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Chain_Annotation> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/mnemonic> ;
+        void:triples 252170924 ;
+        sbm:classRelation [
+            void:triples 252170924 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/name> ;
+        void:triples 84531 ;
+        sbm:classRelation [
+            void:triples 781 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Book_Citation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2788 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 30995 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 51878 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 379 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Unknown_Sequence> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 498 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Electronic_Citation> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/modification> ;
+        void:triples 61994 ;
+        sbm:classRelation [
+            void:triples 61994 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Alternative_Sequence_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 477 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Alternative_Sequence_Annotation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/measuredValue> ;
+        void:triples 7511 ;
+        sbm:classRelation [
+            void:triples 7511 ;
+            sbm:objectDatatype xsd:decimal ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Mass_Spectrometry_Annotation> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/transcribedFrom> ;
+        void:triples 100242578 ;
+        sbm:classRelation [
+            void:triples 219633 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Transcript_Resource> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Transcript_Resource> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:label ;
+        void:triples 276118327 ;
+        sbm:classRelation [
+            void:triples 1330907 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Plasmid> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 143 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Transposon> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 243572936 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Strain> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 21909127 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Tissue> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 29513 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Participant> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://biohackathon.org/resource/faldo#end> ;
+        void:triples 816259895 ;
+        sbm:classRelation [
+            void:triples 5654 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#ExactPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#InRangePosition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 192 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#OneOfPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#Region> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 816246741 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#ExactPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#Region> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5654 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Position> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#Position> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 816254241 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Position> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#Region> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5654 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#ExactPosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#Position> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7308 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#InRangePosition> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#Region> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5654 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Position> ;
+            sbm:subjectClass <http://biohackathon.org/resource/faldo#InRangePosition> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/submittedTo> ;
+        void:triples 395553 ;
+        sbm:classRelation [
+            void:triples 395553 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Submission_Citation> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property skos:altLabel ;
+        void:triples 2708070 ;
+        sbm:classRelation [
+            void:triples 2708070 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Gene> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/citation> ;
+        void:triples 314559325 ;
+        sbm:classRelation [
+            void:triples 11 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Thesis_Citation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 334 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Book_Citation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Patent_Citation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 115302 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Thesis_Citation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 212514658 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Submission_Citation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 22086 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Book_Citation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 29 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Patent_Citation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 12089 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Submission_Citation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Nucleotide_Resource> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 628 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Electronic_Citation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 229 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Electronic_Citation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 59489 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Thesis_Citation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 471 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Submission_Citation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Observation_Citation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Observation_Citation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 214 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Patent_Citation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 13666447 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Submission_Citation> ;
+            sbm:subjectClass rdf:Statement ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 123 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Electronic_Citation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Nucleotide_Resource> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 510 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Observation_Citation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 34 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Book_Citation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Nucleotide_Resource> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 21 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Patent_Citation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Nucleotide_Resource> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 52 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Thesis_Citation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Nucleotide_Resource> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 10 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Electronic_Citation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 24 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Book_Citation> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/ecName> ;
+        void:triples 40805894 ;
+        sbm:classRelation [
+            void:triples 40805894 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Structured_Name> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/orfName> ;
+        void:triples 255343435 ;
+        sbm:classRelation [
+            void:triples 255343435 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Gene> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/interaction> ;
+        void:triples 206849 ;
+        sbm:classRelation [
+            void:triples 203892 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Non_Self_Interaction> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2957 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Self_Interaction> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 206849 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Interaction> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/xeno> ;
+        void:triples 106439 ;
+        sbm:classRelation [
+            void:triples 2957 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Self_Interaction> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 103482 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Non_Self_Interaction> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 106439 ;
+            sbm:objectDatatype xsd:boolean ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Interaction> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/conflictingSequence> ;
+        void:triples 348089 ;
+        sbm:classRelation [
+            void:triples 7847 ;
+            sbm:objectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Frameshift_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 443 ;
+            sbm:objectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Erroneous_Translation_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 157722 ;
+            sbm:objectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Sequence_Conflict_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1143 ;
+            sbm:objectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Erroneous_Termination_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 36003 ;
+            sbm:objectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Erroneous_Initiation_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 13309 ;
+            sbm:objectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Erroneous_Gene_Model_Prediction_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2941 ;
+            sbm:objectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Sequence_Caution_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 128681 ;
+            sbm:objectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/range> ;
+        void:triples 824244436 ;
+        sbm:classRelation [
+            void:triples 4817869 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Nucleotide_Binding_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4924911 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Site_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 120615 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Sequence_Uncertainty_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 53056 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Alternative_Sequence_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 487391 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Lipidation_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4836548 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Modified_Residue_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 619949 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Topological_Domain_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5618 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Intramembrane_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 217935243 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Transmembrane_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9832766 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Repeat_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2552 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Non-adjacent_Residues_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 338259 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Beta_Strand_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 19220638 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Chain_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 157722 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Sequence_Conflict_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 13788 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Peptide_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 110985 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Initiator_Methionine_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 191884634 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Domain_Extent_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 148302 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Cross-link_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2615165 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Motif_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 764165 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Zinc_Finger_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 93698547 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Region_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9825 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Transit_Peptide_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 75716090 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Compositional_Bias_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 103573 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Natural_Variant_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 205984 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Glycosylation_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11290813 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Coiled_Coil_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 21440 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Non-standard_Residue_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 18134976 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Signal_Peptide_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 80219 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Turn_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 331916 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Helix_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 92139006 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Binding_Site_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 57286 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Propeptide_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 42763256 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Non-terminal_Residue_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 94580 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Mutagenesis_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11656116 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Disulfide_Bond_Annotation> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 19050635 ;
+            sbm:objectClass <http://biohackathon.org/resource/faldo#Region> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Active_Site_Annotation> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/recommendedName> ;
+        void:triples 106386043 ;
+        sbm:classRelation [
+            void:triples 104386988 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Structured_Name> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1999055 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Structured_Name> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Part> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/potentialSequence> ;
+        void:triples 33017245 ;
+        sbm:classRelation [
+            void:triples 32857186 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Simple_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2324 ;
+            sbm:objectClass <http://purl.uniprot.org/core/External_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 160018 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Modified_Sequence> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://purl.uniprot.org/core/encodedIn> ;
+        void:triples 5527230 ;
+        sbm:classRelation [
+            void:triples 1339921 ;
+            sbm:objectClass <http://purl.uniprot.org/core/Plasmid> ;
+            sbm:subjectClass <http://purl.uniprot.org/core/Protein> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ] ;
+    void:sparqlEndpoint <https://rdfportal.org/sib/sparql> ;
+    void:triples 53201971131 ;
+    a void:Dataset, sd:Graph .

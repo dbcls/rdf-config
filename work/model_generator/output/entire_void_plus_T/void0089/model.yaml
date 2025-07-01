@@ -1,0 +1,127 @@
+- FunctionalProperty:
+  - rdfs:subPropertyOf:
+    - functional_property_sub_property_of:
+      - InverseFunctionalProperty
+      - FunctionalProperty
+      - TransitiveProperty
+      - ObjectProperty
+  - rdfs:range:
+    - functional_property_range: Class
+  - owl:inverseOf:
+    - functional_property_inverse_of:
+      - InverseFunctionalProperty
+      - ObjectProperty
+      - FunctionalProperty
+  - rdfs:domain:
+    - functional_property_domain: Class
+  - dc11:description:
+    - functional_property_description: string
+  - rdfs:label:
+    - functional_property_label: string
+- TransitiveProperty:
+  - rdfs:subPropertyOf:
+    - transitive_property_sub_property_of:
+      - ObjectProperty
+      - TransitiveProperty
+  - rdfs:range:
+    - transitive_property_range: Class
+  - owl:inverseOf:
+    - transitive_property_inverse_of:
+      - TransitiveProperty
+      - ObjectProperty
+  - rdfs:domain:
+    - transitive_property_domain: Class
+  - dc11:description:
+    - transitive_property_description: string
+  - rdfs:label:
+    - transitive_property_label: string
+- InverseFunctionalProperty:
+  - rdfs:subPropertyOf:
+    - inverse_functional_property_sub_property_of:
+      - InverseFunctionalProperty
+      - ObjectProperty
+      - TransitiveProperty
+      - FunctionalProperty
+  - rdfs:range:
+    - inverse_functional_property_range: Class
+  - owl:inverseOf:
+    - inverse_functional_property_inverse_of:
+      - InverseFunctionalProperty
+      - FunctionalProperty
+      - ObjectProperty
+  - rdfs:domain:
+    - inverse_functional_property_domain: Class
+  - dc11:description:
+    - inverse_functional_property_description: string
+  - rdfs:label:
+    - inverse_functional_property_label: string
+- Class:
+  - owl:equivalentClass:
+    - class_equivalent_class:
+      - Restriction
+      - Class
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Class
+      - Restriction
+  - owl:complementOf:
+    - class_complement_of: Class
+  - owl:disjointWith:
+    - class_disjoint_with: Class
+  - ns1:persianTitle:
+    - class_persian_title: string
+  - rdfs:seeAlso:
+    - class_see_also: string
+  - dc11:description:
+    - class_description: string
+  - ns1:diseaseDescription:
+    - class_disease_description: string
+  - rdfs:comment:
+    - class_comment: string
+  - ns1:englishTitle:
+    - class_english_title: string
+  - rdfs:label:
+    - class_label: string
+- Restriction:
+  - owl:onProperty:
+    - restriction_on_property:
+      - FunctionalProperty
+      - ObjectProperty
+      - InverseFunctionalProperty
+      - TransitiveProperty
+  - owl:onClass:
+    - restriction_on_class: Class
+  - owl:someValuesFrom:
+    - restriction_some_values_from: Class
+  - owl:qualifiedCardinality:
+    - restriction_qualified_cardinality: nonNegativeInteger
+- SymmetricProperty:
+  - rdfs:range:
+    - symmetric_property_range: Class
+  - rdfs:domain:
+    - symmetric_property_domain: Class
+  - dc11:description:
+    - symmetric_property_description: string
+  - rdfs:label:
+    - symmetric_property_label: string
+- ObjectProperty:
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of:
+      - FunctionalProperty
+      - TransitiveProperty
+      - InverseFunctionalProperty
+      - ObjectProperty
+  - rdfs:range:
+    - object_property_range: Class
+  - owl:inverseOf:
+    - object_property_inverse_of:
+      - InverseFunctionalProperty
+      - ObjectProperty
+      - FunctionalProperty
+      - TransitiveProperty
+  - rdfs:domain:
+    - object_property_domain: Class
+  - dc11:description:
+    - object_property_description: string
+  - rdfs:label:
+    - object_property_label: string

@@ -1,0 +1,100 @@
+- NamedIndividual:
+  - mads:adminMetadata:
+    - named_individual_admin_metadata: RecordInfo
+  - rdf:type:
+    - named_individual_type: Class
+  - mads:hasTopMemberOfMADSScheme:
+    - named_individual_has_top_member_of_mads_scheme:
+      - NamedIndividual
+      - Concept
+      - Authority
+  - skos:hasTopConcept:
+    - named_individual_has_top_concept:
+      - Concept
+      - Authority
+      - NamedIndividual
+  - skos:changeNote:
+    - named_individual_change_note: ChangeSet
+  - rdfs:label:
+    - named_individual_label: string
+  - mads:authoritativeLabel:
+    - named_individual_authoritative_label: string
+  - rdfs:comment:
+    - named_individual_comment: string
+  - skos:prefLabel:
+    - named_individual_pref_label: string
+- Authority:
+  - rdf:type:
+    - authority_type: Class
+  - mads:authoritativeLabel:
+    - authority_authoritative_label: string
+  - skos:prefLabel:
+    - authority_pref_label: string
+- ConceptScheme:
+  - mads:adminMetadata:
+    - concept_scheme_admin_metadata: RecordInfo
+  - rdf:type:
+    - concept_scheme_type: Class
+  - mads:hasTopMemberOfMADSScheme:
+    - concept_scheme_has_top_member_of_mads_scheme:
+      - NamedIndividual
+      - Authority
+      - Concept
+  - skos:hasTopConcept:
+    - concept_scheme_has_top_concept:
+      - Concept
+      - Authority
+      - NamedIndividual
+  - skos:changeNote:
+    - concept_scheme_change_note: ChangeSet
+  - rdfs:label:
+    - concept_scheme_label: string
+  - rdfs:comment:
+    - concept_scheme_comment: string
+- RecordInfo:
+  - rdf:type:
+    - record_info_type: Class
+  - ns1:recordChangeDate:
+    - record_info_record_change_date: dateTime
+  - ns1:recordStatus:
+    - record_info_record_status: string
+- Concept:
+  - rdf:type:
+    - concept_type: Class
+  - mads:authoritativeLabel:
+    - concept_authoritative_label: string
+  - skos:prefLabel:
+    - concept_pref_label: string
+- ChangeSet:
+  - rdf:type:
+    - change_set_type: Class
+  - ns2:subjectOfChange:
+    - change_set_subject_of_change:
+      - MADSScheme
+      - NamedIndividual
+      - ConceptScheme
+  - ns2:createdDate:
+    - change_set_created_date: dateTime
+  - ns2:changeReason:
+    - change_set_change_reason: string
+- MADSScheme:
+  - mads:adminMetadata:
+    - mads_scheme_admin_metadata: RecordInfo
+  - rdf:type:
+    - mads_scheme_type: Class
+  - mads:hasTopMemberOfMADSScheme:
+    - mads_scheme_has_top_member_of_mads_scheme:
+      - NamedIndividual
+      - Concept
+      - Authority
+  - skos:hasTopConcept:
+    - mads_scheme_has_top_concept:
+      - NamedIndividual
+      - Concept
+      - Authority
+  - skos:changeNote:
+    - mads_scheme_change_note: ChangeSet
+  - rdfs:label:
+    - mads_scheme_label: string
+  - rdfs:comment:
+    - mads_scheme_comment: string

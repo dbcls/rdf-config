@@ -1,0 +1,124 @@
+- FunctionalProperty:
+  - rdfs:isDefinedBy:
+    - functional_property_is_defined_by:
+      - NamedIndividual
+      - Vocabulary
+      - Ontology
+  - rdfs:comment:
+    - functional_property_comment: string
+  - rdfs:label:
+    - functional_property_label: string
+  - skos:definition:
+    - functional_property_definition: string
+- Restriction:
+  - owl:allValuesFrom:
+    - restriction_all_values_from: Class
+  - owl:onProperty:
+    - restriction_on_property:
+      - FunctionalProperty
+      - InverseFunctionalProperty
+      - ObjectProperty
+  - owl:cardinality:
+    - restriction_cardinality: nonNegativeInteger
+  - owl:minCardinality:
+    - restriction_min_cardinality: nonNegativeInteger
+- Class:
+  - rdfs:isDefinedBy:
+    - class_is_defined_by:
+      - Ontology
+      - Vocabulary
+      - NamedIndividual
+  - rdfs:subClassOf:
+    - class_sub_class_of: Restriction
+  - skos:example:
+    - class_example: string
+  - rdfs:comment:
+    - class_comment: string
+  - rdfs:label:
+    - class_label: string
+  - skos:definition:
+    - class_definition: string
+- ObjectProperty:
+  - owl:inverseOf:
+    - object_property_inverse_of: ObjectProperty
+  - rdfs:isDefinedBy:
+    - object_property_is_defined_by:
+      - NamedIndividual
+      - Vocabulary
+      - Ontology
+  - skos:example:
+    - object_property_example: string
+  - rdfs:comment:
+    - object_property_comment: string
+  - rdfs:label:
+    - object_property_label: string
+  - skos:definition:
+    - object_property_definition: string
+- NamedIndividual:
+  - rdf:type:
+    - named_individual_type: Class
+  - dc:creator:
+    - named_individual_creator: Agent
+  - dc:created:
+    - named_individual_created: '2000-01-01'
+  - dc:title:
+    - named_individual_title: string
+  - ns2:preferredNamespacePrefix:
+    - named_individual_preferred_namespace_prefix: string
+  - ns2:preferredNamespaceUri:
+    - named_individual_preferred_namespace_uri: string
+  - rdfs:comment:
+    - named_individual_comment: string
+  - owl:versionInfo:
+    - named_individual_version_info: string
+  - dc:description:
+    - named_individual_description: string
+  - dc:rights:
+    - named_individual_rights: string
+- Ontology:
+  - rdf:type:
+    - ontology_type: Class
+  - dc:creator:
+    - ontology_creator: Agent
+  - dc:created:
+    - ontology_created: '2000-01-01'
+  - dc:title:
+    - ontology_title: string
+  - ns2:preferredNamespacePrefix:
+    - ontology_preferred_namespace_prefix: string
+  - ns2:preferredNamespaceUri:
+    - ontology_preferred_namespace_uri: string
+  - rdfs:comment:
+    - ontology_comment: string
+  - owl:versionInfo:
+    - ontology_version_info: string
+  - dc:description:
+    - ontology_description: string
+  - dc:rights:
+    - ontology_rights: string
+- Vocabulary:
+  - rdf:type:
+    - vocabulary_type: Class
+  - dc:creator:
+    - vocabulary_creator: Agent
+  - dc:created:
+    - vocabulary_created: '2000-01-01'
+  - dc:title:
+    - vocabulary_title: string
+  - ns2:preferredNamespacePrefix:
+    - vocabulary_preferred_namespace_prefix: string
+  - ns2:preferredNamespaceUri:
+    - vocabulary_preferred_namespace_uri: string
+  - rdfs:comment:
+    - vocabulary_comment: string
+  - owl:versionInfo:
+    - vocabulary_version_info: string
+  - dc:description:
+    - vocabulary_description: string
+  - dc:rights:
+    - vocabulary_rights: string
+- Agent:
+  - rdf:type:
+    - agent_type: Class
+  - foaf:name:
+    - agent_name: string

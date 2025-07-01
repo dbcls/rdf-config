@@ -1,0 +1,1224 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sbm: <http://sparqlbuilder.org/2015/09/rdf-metadata-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://rdfportal.org/ns/> .
+
+<http://rdfportal.org/ns/64f7dd8837c0cff4f5fca41a8cb415cc>
+    void:classPartition [
+        void:class <http://schema.org/Organization> ;
+        void:entities 19 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/EventStatusType> ;
+        void:entities 4 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/DigitalDocumentPermissionType> ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/MusicAlbumReleaseType> ;
+        void:entities 4 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/OfferItemCondition> ;
+        void:entities 4 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/SteeringPositionValue> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/MusicAlbumProductionType> ;
+        void:entities 9 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/BoardingPolicyType> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/DayOfWeek> ;
+        void:entities 8 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/LegalValueLevel> ;
+        void:entities 4 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/RestrictedDiet> ;
+        void:entities 11 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/MedicalEvidenceLevel> ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/ContactPointOption> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/DriveWheelConfigurationValue> ;
+        void:entities 4 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/RsvpResponseType> ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/InfectiousAgentClass> ;
+        void:entities 6 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/Audience> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/GamePlayMode> ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/GenderType> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/Boolean> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/DataType> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/DeliveryMethod> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/DrugCostCategory> ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/MedicalSpecialty> ;
+        void:entities 42 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/DrugPrescriptionStatus> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/MapCategoryType> ;
+        void:entities 4 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/MedicalStudyStatus> ;
+        void:entities 10 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/ItemAvailability> ;
+        void:entities 9 ;
+        a void:Dataset
+    ], [
+        void:class rdf:Property ;
+        void:entities 1216 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/LegalForceStatus> ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/CarUsageType> ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/ActionStatusType> ;
+        void:entities 4 ;
+        a void:Dataset
+    ], [
+        void:class rdfs:Class ;
+        void:entities 783 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/PaymentStatusType> ;
+        void:entities 5 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/MedicalProcedureType> ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class rdfs:Datatype ;
+        void:entities 13 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/PhysicalExam> ;
+        void:entities 14 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/ReservationStatusType> ;
+        void:entities 4 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/MusicReleaseFormatType> ;
+        void:entities 7 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/PhysicalActivityCategory> ;
+        void:entities 7 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/MedicalTrialDesign> ;
+        void:entities 9 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/MedicalImagingTechnique> ;
+        void:entities 6 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/OrderStatus> ;
+        void:entities 8 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/MedicalObservationalStudyDesign> ;
+        void:entities 6 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/MedicalDevicePurpose> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/ItemListOrderType> ;
+        void:entities 3 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/BookFormatType> ;
+        void:entities 5 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/DrugPregnancyCategory> ;
+        void:entities 6 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/GameServerStatus> ;
+        void:entities 4 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/MedicalAudience> ;
+        void:entities 2 ;
+        a void:Dataset
+    ], [
+        void:class <http://schema.org/MedicineSystem> ;
+        void:entities 6 ;
+        a void:Dataset
+    ] ;
+    void:classes 51 ;
+    void:distinctObjects 5267 ;
+    void:distinctSubjects 2287 ;
+    void:properties 11 ;
+    void:propertyPartition [
+        void:property rdfs:domain ;
+        void:triples 1784 ;
+        sbm:classRelation [
+            void:triples 1784 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass rdf:Property ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:range ;
+        void:triples 1579 ;
+        sbm:classRelation [
+            void:triples 855 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass rdf:Property ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 724 ;
+            sbm:objectClass rdfs:Datatype ;
+            sbm:subjectClass rdf:Property ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://schema.org/inverseOf> ;
+        void:triples 34 ;
+        sbm:classRelation [
+            void:triples 34 ;
+            sbm:objectClass rdf:Property ;
+            sbm:subjectClass rdf:Property ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://schema.org/category> ;
+        void:triples 237 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/BookFormatType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 154 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass rdf:Property ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 68 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass rdfs:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/LegalValueLevel> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 63 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass rdfs:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 161 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass rdf:Property ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/LegalForceStatus> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property dcterms:source ;
+        void:triples 600 ;
+        sbm:classRelation [
+            void:triples 115 ;
+            sbm:objectClass <http://schema.org/Organization> ;
+            sbm:subjectClass rdfs:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://schema.org/Organization> ;
+            sbm:subjectClass <http://schema.org/CarUsageType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass <http://schema.org/Organization> ;
+            sbm:subjectClass <http://schema.org/LegalForceStatus> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://schema.org/Organization> ;
+            sbm:subjectClass <http://schema.org/DayOfWeek> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://schema.org/Organization> ;
+            sbm:subjectClass <http://schema.org/MusicAlbumReleaseType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectClass <http://schema.org/Organization> ;
+            sbm:subjectClass <http://schema.org/MusicReleaseFormatType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://schema.org/Organization> ;
+            sbm:subjectClass <http://schema.org/SteeringPositionValue> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 225 ;
+            sbm:objectClass <http://schema.org/Organization> ;
+            sbm:subjectClass rdf:Property ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://schema.org/Organization> ;
+            sbm:subjectClass <http://schema.org/LegalValueLevel> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9 ;
+            sbm:objectClass <http://schema.org/Organization> ;
+            sbm:subjectClass <http://schema.org/MusicAlbumProductionType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://schema.org/Organization> ;
+            sbm:subjectClass <http://schema.org/DriveWheelConfigurationValue> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:comment ;
+        void:triples 2278 ;
+        sbm:classRelation [
+            void:triples 14 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/PhysicalExam> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/DayOfWeek> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 42 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/MedicalSpecialty> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/EventStatusType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/LegalValueLevel> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/MedicalDevicePurpose> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/DeliveryMethod> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/MedicalAudience> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/RsvpResponseType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/GameServerStatus> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/GenderType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/MusicReleaseFormatType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/MedicalTrialDesign> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/DrugPrescriptionStatus> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/DriveWheelConfigurationValue> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/DrugCostCategory> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/OrderStatus> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/GamePlayMode> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/ActionStatusType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/ReservationStatusType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass rdfs:Datatype ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/DrugPregnancyCategory> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/ItemAvailability> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/MedicineSystem> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/MusicAlbumProductionType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 783 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass rdfs:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/MedicalEvidenceLevel> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/DigitalDocumentPermissionType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/ContactPointOption> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/LegalForceStatus> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/MedicalObservationalStudyDesign> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/Boolean> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/OfferItemCondition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/MedicalProcedureType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/PaymentStatusType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 10 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/MedicalStudyStatus> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1222 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass rdf:Property ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/MapCategoryType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/Audience> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 19 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/Organization> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/BoardingPolicyType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/MedicalImagingTechnique> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/RestrictedDiet> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/CarUsageType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/BookFormatType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/PhysicalActivityCategory> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/SteeringPositionValue> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/ItemListOrderType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/MusicAlbumReleaseType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/DataType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/InfectiousAgentClass> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:subPropertyOf ;
+        void:triples 126 ;
+        sbm:classRelation [
+            void:triples 124 ;
+            sbm:objectClass rdf:Property ;
+            sbm:subjectClass rdf:Property ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdf:type ;
+        void:triples 2288 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/Audience> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/DriveWheelConfigurationValue> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/InfectiousAgentClass> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/BoardingPolicyType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 19 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/Organization> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass rdfs:Datatype ;
+            sbm:subjectClass <http://schema.org/Boolean> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/RestrictedDiet> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/PhysicalActivityCategory> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/MedicalImagingTechnique> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 43 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/MedicalSpecialty> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/MapCategoryType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/EventStatusType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/ItemListOrderType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/CarUsageType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/MusicAlbumReleaseType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/DeliveryMethod> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/ActionStatusType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/OrderStatus> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/MedicineSystem> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/PaymentStatusType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/DrugCostCategory> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/Boolean> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/ItemAvailability> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/DataType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/MusicReleaseFormatType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/GamePlayMode> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/OfferItemCondition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/GenderType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/MedicalTrialDesign> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass rdfs:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/MedicalDevicePurpose> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/MusicAlbumProductionType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/DayOfWeek> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/SteeringPositionValue> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/MedicalEvidenceLevel> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/LegalForceStatus> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/MedicalObservationalStudyDesign> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/BookFormatType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/DigitalDocumentPermissionType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/LegalValueLevel> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/MedicalProcedureType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/ContactPointOption> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/DrugPrescriptionStatus> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/DrugPregnancyCategory> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/GameServerStatus> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 10 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/MedicalStudyStatus> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/RsvpResponseType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 14 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/PhysicalExam> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/ReservationStatusType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/MedicalAudience> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:subClassOf ;
+        void:triples 839 ;
+        sbm:classRelation [
+            void:triples 20 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/MedicalSpecialty> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass rdfs:Datatype ;
+            sbm:subjectClass rdfs:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass <http://schema.org/DataType> ;
+            sbm:subjectClass rdfs:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass <http://schema.org/MedicalProcedureType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 818 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass rdfs:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:label ;
+        void:triples 2272 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/LegalForceStatus> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/GamePlayMode> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/DriveWheelConfigurationValue> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/SteeringPositionValue> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/MedicalImagingTechnique> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass rdfs:Datatype ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 11 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/RestrictedDiet> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/InfectiousAgentClass> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/ItemAvailability> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/Boolean> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/MedicalEvidenceLevel> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/DrugPregnancyCategory> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/OfferItemCondition> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1203 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass rdf:Property ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/Audience> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 19 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/Organization> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/MedicalTrialDesign> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/CarUsageType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/DrugPrescriptionStatus> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/MedicalAudience> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/GenderType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/ContactPointOption> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1216 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass rdf:Property ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/DayOfWeek> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/ActionStatusType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 42 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/MedicalSpecialty> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/BookFormatType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 783 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass rdfs:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/PhysicalActivityCategory> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/MedicalProcedureType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/BoardingPolicyType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/MedicineSystem> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 772 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass rdfs:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/MedicalObservationalStudyDesign> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/ItemListOrderType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/DataType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/MapCategoryType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/RsvpResponseType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/EventStatusType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/LegalValueLevel> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/ReservationStatusType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/DrugCostCategory> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/BookFormatType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 8 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/OrderStatus> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/MusicAlbumProductionType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 10 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/MedicalStudyStatus> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/MedicalDevicePurpose> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/PaymentStatusType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/DeliveryMethod> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 14 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/PhysicalExam> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/MusicAlbumReleaseType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/DigitalDocumentPermissionType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/MusicReleaseFormatType> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://schema.org/GameServerStatus> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://schema.org/supersededBy> ;
+        void:triples 86 ;
+        sbm:classRelation [
+            void:triples 14 ;
+            sbm:objectClass rdfs:Class ;
+            sbm:subjectClass rdfs:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 69 ;
+            sbm:objectClass rdf:Property ;
+            sbm:subjectClass rdf:Property ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass <http://schema.org/MedicalSpecialty> ;
+            sbm:subjectClass <http://schema.org/MedicalSpecialty> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ] ;
+    void:sparqlEndpoint <https://rdfportal.org/bioportal/sparql> ;
+    void:triples 12872 ;
+    a void:Dataset, sd:Graph .

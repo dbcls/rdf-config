@@ -1,0 +1,131 @@
+- Class:
+  - ns1:has_parent_hydride:
+    - class_has_parent_hydride: Class
+  - ns2:BFO_0000051:
+    - class_bfo_0000051: Class
+  - ns1:is_conjugate_acid_of:
+    - class_is_conjugate_acid_of: Class
+  - ns1:has_functional_parent:
+    - class_has_functional_parent: Class
+  - ns2:RO_0000087:
+    - class_ro_0000087: Class
+  - ns3:inSubset:
+    - class_in_subset: AnnotationProperty
+  - ns1:is_conjugate_base_of:
+    - class_is_conjugate_base_of: Class
+  - ns1:is_enantiomer_of:
+    - class_is_enantiomer_of: Class
+  - ns2:IAO_0100001:
+    - class_iao_0100001: Class
+  - ns1:is_tautomer_of:
+    - class_is_tautomer_of: Class
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Class
+      - Restriction
+  - ns1:is_substituent_group_from:
+    - class_is_substituent_group_from: Class
+  - ns4:treeView:
+    - class_tree_view: Class
+  - skos:notation:
+    - class_notation: string
+  - ns5:smiles:
+    - class_smiles: string
+  - ns5:inchi:
+    - class_inchi: string
+  - ns5:mass:
+    - class_mass: string
+  - ns5:charge:
+    - class_charge: string
+  - ns3:hasDbXref:
+    - class_has_db_xref: string
+  - rdfs:label:
+    - class_label: string
+  - owl:deprecated:
+    - class_deprecated: true
+  - ns2:IAO_0000115:
+    - class_iao_0000115: string
+  - ns3:id:
+    - class_id: string
+  - ns3:hasOBONamespace:
+    - class_has_obo_namespace: string
+  - ns3:hasExactSynonym:
+    - class_has_exact_synonym: string
+  - ns5:monoisotopicmass:
+    - class_monoisotopicmass: string
+  - ns3:hasAlternativeId:
+    - class_has_alternative_id: string
+  - ns5:inchikey:
+    - class_inchikey: string
+  - ns5:formula:
+    - class_formula: string
+  - ns3:hasRelatedSynonym:
+    - class_has_related_synonym: string
+- Restriction:
+  - owl:someValuesFrom:
+    - restriction_some_values_from: Class
+  - owl:onProperty:
+    - restriction_on_property:
+      - TransitiveProperty
+      - ObjectProperty
+- TransitiveProperty:
+  - ns3:shorthand:
+    - transitive_property_shorthand: string
+  - ns3:hasDbXref:
+    - transitive_property_has_db_xref: string
+  - rdfs:label:
+    - transitive_property_label: string
+  - ns3:id:
+    - transitive_property_id: string
+  - ns3:hasOBONamespace:
+    - transitive_property_has_obo_namespace: string
+  - ns3:is_cyclic:
+    - transitive_property_is_cyclic: true
+- Axiom:
+  - ns3:hasSynonymType:
+    - axiom_has_synonym_type: AnnotationProperty
+  - owl:annotatedSource:
+    - axiom_annotated_source: Class
+  - owl:annotatedProperty:
+    - axiom_annotated_property: AnnotationProperty
+  - ns3:source:
+    - axiom_source: string
+  - ns3:hasDbXref:
+    - axiom_has_db_xref: string
+  - owl:annotatedTarget:
+    - axiom_annotated_target: string
+- AnnotationProperty:
+  - rdfs:subPropertyOf:
+    - annotation_property_sub_property_of: AnnotationProperty
+  - rdfs:comment:
+    - annotation_property_comment: string
+  - rdfs:label:
+    - annotation_property_label: string
+- Ontology:
+  - ns3:saved-by:
+    - ontology_saved-by: string
+  - rdfs:comment:
+    - ontology_comment: string
+  - ns3:date:
+    - ontology_date: string
+  - ns3:default-namespace:
+    - ontology_default-namespace: string
+  - ns3:hasOBOFormatVersion:
+    - ontology_has_obo_format_version: string
+- ObjectProperty:
+  - owl:inverseOf:
+    - object_property_inverse_of: ObjectProperty
+  - ns3:shorthand:
+    - object_property_shorthand: string
+  - ns3:hasDbXref:
+    - object_property_has_db_xref: string
+  - rdfs:label:
+    - object_property_label: string
+  - ns3:id:
+    - object_property_id: string
+  - ns3:hasOBONamespace:
+    - object_property_has_obo_namespace: string
+  - ns3:is_cyclic:
+    - object_property_is_cyclic: true
+  - ns3:is_transitive:
+    - object_property_is_transitive: true

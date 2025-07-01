@@ -1,0 +1,46 @@
+- NamedIndividual:
+  - rdf:type:
+    - named_individual_type: Class
+  - skos:inScheme:
+    - named_individual_in_scheme:
+      - ConceptScheme
+      - NamedIndividual
+  - rdfs:comment:
+    - named_individual_comment: string
+  - rdfs:label:
+    - named_individual_label: string
+  - skos:prefLabel:
+    - named_individual_pref_label: string
+  - skos:definition:
+    - named_individual_definition: string
+  - dc:title:
+    - named_individual_title: string
+  - skos:altLabel:
+    - named_individual_alt_label: string
+- Class:
+  - ns1:prefixIRI:
+    - class_prefix_iri: string
+- Concept:
+  - rdf:type:
+    - concept_type: Class
+  - skos:inScheme:
+    - concept_in_scheme:
+      - ConceptScheme
+      - NamedIndividual
+  - rdfs:comment:
+    - concept_comment: string
+  - skos:prefLabel:
+    - concept_pref_label: string
+  - skos:definition:
+    - concept_definition: string
+  - skos:altLabel:
+    - concept_alt_label: string
+- ConceptScheme:
+  - rdf:type:
+    - concept_scheme_type: Class
+  - rdfs:label:
+    - concept_scheme_label: string
+  - skos:definition:
+    - concept_scheme_definition: string
+  - dc:title:
+    - concept_scheme_title: string

@@ -1,0 +1,76 @@
+- OrthologGroup:
+  - ns1:inDataset:
+    - ortholog_group_in_dataset: Dataset
+  - ns1:member:
+    - ortholog_group_member:
+      - Domain
+      - Region
+  - ns3:dist:
+    - ortholog_group_dist: decimal
+  - ns3:funcTigr:
+    - ortholog_group_func_tigr: string
+  - rdfs:label:
+    - ortholog_group_label: string
+  - ns3:funcKegg:
+    - ortholog_group_func_kegg: string
+  - ns3:funcMbgd:
+    - ortholog_group_func_mbgd: string
+  - ns3:funcCog:
+    - ortholog_group_func_cog: string
+  - dc:identifier:
+    - ortholog_group_identifier: string
+  - ns3:score:
+    - ortholog_group_score: decimal
+  - ns3:memberCount:
+    - ortholog_group_member_count: integer
+  - dc:description:
+    - ortholog_group_description: string
+- Region:
+  - ns2:end:
+    - region_end: ExactPosition
+  - ns2:begin:
+    - region_begin: ExactPosition
+  - rdfs:label:
+    - region_label: string
+  - dc:identifier:
+    - region_identifier: string
+  - ns3:domainEnd:
+    - region_domain_end: integer
+  - ns3:domainBegin:
+    - region_domain_begin: integer
+- HomologGroup:
+  - ns1:inDataset:
+    - homolog_group_in_dataset: Dataset
+  - ns1:member:
+    - homolog_group_member: OrthologGroup
+  - dc:identifier:
+    - homolog_group_identifier: string
+  - ns3:memberCount:
+    - homolog_group_member_count: integer
+- ExactPosition:
+  - ns2:position:
+    - exact_position_position: integer
+- Dataset:
+  - ns4:version:
+    - dataset_version: string
+  - dc:title:
+    - dataset_title: string
+  - ns3:organismCount:
+    - dataset_organism_count: integer
+  - dc:description:
+    - dataset_description: string
+  - dc:created:
+    - dataset_created: dateTime
+- Domain:
+  - ns2:end:
+    - domain_end: ExactPosition
+  - ns2:begin:
+    - domain_begin: ExactPosition
+  - rdfs:label:
+    - domain_label: string
+  - dc:identifier:
+    - domain_identifier: string
+  - ns3:domainEnd:
+    - domain_domain_end: integer
+  - ns3:domainBegin:
+    - domain_domain_begin: integer

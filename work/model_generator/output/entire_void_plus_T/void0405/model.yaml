@@ -1,0 +1,96 @@
+- Concept:
+  - skos:topConceptOf:
+    - concept_top_concept_of:
+      - ConceptScheme
+      - NamedIndividual
+  - skos:inScheme:
+    - concept_in_scheme:
+      - NamedIndividual
+      - ConceptScheme
+  - rdf:type:
+    - concept_type:
+      - Class
+      - Concept
+      - NamedIndividual
+  - skos:prefLabel:
+    - concept_pref_label: string
+  - skos:definition:
+    - concept_definition: string
+- NamedIndividual:
+  - skos:topConceptOf:
+    - named_individual_top_concept_of:
+      - ConceptScheme
+      - NamedIndividual
+  - skos:inScheme:
+    - named_individual_in_scheme:
+      - ConceptScheme
+      - NamedIndividual
+  - skos:hasTopConcept:
+    - named_individual_has_top_concept:
+      - Class
+      - Concept
+      - class-gemeinde_long
+      - NamedIndividual
+  - rdf:type:
+    - named_individual_type:
+      - NamedIndividual
+      - Concept
+      - Class
+  - skos:note:
+    - named_individual_note: string
+  - skos:prefLabel:
+    - named_individual_pref_label: string
+  - dc:license:
+    - named_individual_license: string
+  - skos:definition:
+    - named_individual_definition: string
+- Class:
+  - skos:topConceptOf:
+    - class_top_concept_of:
+      - ConceptScheme
+      - NamedIndividual
+  - skos:inScheme:
+    - class_in_scheme:
+      - ConceptScheme
+      - NamedIndividual
+  - rdf:type:
+    - class_type: Class
+  - skos:prefLabel:
+    - class_pref_label: string
+  - ns2:prefixIRI:
+    - class_prefix_iri: string
+  - skos:definition:
+    - class_definition: string
+- ConceptScheme:
+  - skos:hasTopConcept:
+    - concept_scheme_has_top_concept:
+      - Class
+      - NamedIndividual
+      - Concept
+      - class-gemeinde_long
+  - rdf:type:
+    - concept_scheme_type: Class
+  - skos:note:
+    - concept_scheme_note: string
+  - skos:prefLabel:
+    - concept_scheme_pref_label: string
+  - dc:license:
+    - concept_scheme_license: string
+  - skos:definition:
+    - concept_scheme_definition: string
+- class-gemeindeLong:
+  - skos:topConceptOf:
+    - class-gemeinde_long_top_concept_of:
+      - ConceptScheme
+      - NamedIndividual
+  - skos:inScheme:
+    - class-gemeinde_long_in_scheme:
+      - NamedIndividual
+      - ConceptScheme
+  - rdf:type:
+    - class-gemeinde_long_type:
+      - Class
+      - NamedIndividual
+      - Concept
+  - skos:prefLabel:
+    - class-gemeinde_long_pref_label: string

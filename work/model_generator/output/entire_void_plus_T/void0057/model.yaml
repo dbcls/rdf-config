@@ -1,0 +1,127 @@
+- TransitiveProperty:
+  - rdfs:subPropertyOf:
+    - transitive_property_sub_property_of: ObjectProperty
+  - ns1:IAO_0000115:
+    - transitive_property_iao_0000115: string
+  - rdfs:label:
+    - transitive_property_label: string
+  - ns1:IAO_0000427:
+    - transitive_property_iao_0000427: true
+  - ns2:hasDbXref:
+    - transitive_property_has_db_xref: string
+  - ns2:hasOBONamespace:
+    - transitive_property_has_obo_namespace: string
+  - ns2:shorthand:
+    - transitive_property_shorthand: string
+  - ns2:id:
+    - transitive_property_id: string
+- ReflexiveProperty:
+  - rdfs:subPropertyOf:
+    - reflexive_property_sub_property_of: ObjectProperty
+  - ns1:IAO_0000115:
+    - reflexive_property_iao_0000115: string
+  - rdfs:label:
+    - reflexive_property_label: string
+  - ns1:IAO_0000427:
+    - reflexive_property_iao_0000427: true
+  - ns2:hasDbXref:
+    - reflexive_property_has_db_xref: string
+  - ns2:hasOBONamespace:
+    - reflexive_property_has_obo_namespace: string
+  - ns2:shorthand:
+    - reflexive_property_shorthand: string
+  - ns2:id:
+    - reflexive_property_id: string
+- Class:
+  - ns1:UMLS_TUI_T162:
+    - class_umls_tui_t162: Class
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Restriction
+      - Class
+  - ns1:UMLS_TUI_T163:
+    - class_umls_tui_t163: Class
+  - ns1:UMLS_TUI_T188:
+    - class_umls_tui_t188: Class
+  - ns3:treeView:
+    - class_tree_view: Class
+  - ns4:branch_of:
+    - class_branch_of: Class
+  - ns1:UMLS_TUI_T155:
+    - class_umls_tui_t155: Class
+  - ns1:UMLS_TUI_T152:
+    - class_umls_tui_t152: Class
+  - ns4:performed_on:
+    - class_performed_on: Class
+  - ns1:UMLS_TUI_T151:
+    - class_umls_tui_t151: Class
+  - ns5:part_of:
+    - class_part_of: Class
+  - ns1:IAO_0000115:
+    - class_iao_0000115: string
+  - ns2:hasBroadSynonym:
+    - class_has_broad_synonym: string
+  - skos:notation:
+    - class_notation: string
+  - rdfs:label:
+    - class_label: string
+  - ns2:hasDbXref:
+    - class_has_db_xref: string
+  - ns2:hasOBONamespace:
+    - class_has_obo_namespace: string
+  - ns2:hasExactSynonym:
+    - class_has_exact_synonym: string
+  - ns2:hasNarrowSynonym:
+    - class_has_narrow_synonym: string
+  - ns2:id:
+    - class_id: string
+- Ontology:
+  - ns2:pairwise-disjoint:
+    - ontology_pairwise-disjoint: string
+  - ns2:default-namespace:
+    - ontology_default-namespace: string
+  - ns2:hasOBOFormatVersion:
+    - ontology_has_obo_format_version: string
+  - ns2:date:
+    - ontology_date: string
+- AnnotationProperty:
+  - rdfs:label:
+    - annotation_property_label: string
+- Axiom:
+  - owl:annotatedProperty:
+    - axiom_annotated_property: AnnotationProperty
+  - owl:annotatedSource:
+    - axiom_annotated_source:
+      - ReflexiveProperty
+      - TransitiveProperty
+      - ObjectProperty
+      - Class
+  - owl:annotatedTarget:
+    - axiom_annotated_target: string
+  - ns2:hasDbXref:
+    - axiom_has_db_xref: string
+- ObjectProperty:
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of:
+      - TransitiveProperty
+      - ObjectProperty
+      - ReflexiveProperty
+  - ns1:IAO_0000115:
+    - object_property_iao_0000115: string
+  - rdfs:label:
+    - object_property_label: string
+  - ns1:IAO_0000427:
+    - object_property_iao_0000427: true
+  - ns2:hasDbXref:
+    - object_property_has_db_xref: string
+  - ns2:hasOBONamespace:
+    - object_property_has_obo_namespace: string
+  - ns2:shorthand:
+    - object_property_shorthand: string
+  - ns2:id:
+    - object_property_id: string
+- Restriction:
+  - owl:someValuesFrom:
+    - restriction_some_values_from: Class
+  - owl:onProperty:
+    - restriction_on_property: ObjectProperty

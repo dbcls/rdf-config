@@ -1,0 +1,27 @@
+- Ontology:
+  - dc11:title:
+    - ontology_title: string
+- Property:
+  - rdfs:subPropertyOf:
+    - property_sub_property_of: Property
+  - rdfs:domain:
+    - property_domain: Class
+  - rdfs:range:
+    - property_range: Class
+  - rdfs:isDefinedBy:
+    - property_is_defined_by: Ontology
+  - rdfs:comment:
+    - property_comment: string
+  - rdfs:label:
+    - property_label: string
+- Class:
+  - rdfs:subClassOf:
+    - class_sub_class_of: Class
+  - rdf:type:
+    - class_type: Class
+  - rdfs:isDefinedBy:
+    - class_is_defined_by: Ontology
+  - rdfs:comment:
+    - class_comment: string
+  - rdfs:label:
+    - class_label: string

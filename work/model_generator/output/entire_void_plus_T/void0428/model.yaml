@@ -1,0 +1,53 @@
+- b8085394:
+  - rdf:type:
+    - b8085394_type: Restriction
+- ObjectProperty:
+  - owl:equivalentProperty:
+    - object_property_equivalent_property: ObjectProperty
+  - owl:inverseOf:
+    - object_property_inverse_of: ObjectProperty
+  - rdfs:subPropertyOf:
+    - object_property_sub_property_of: ObjectProperty
+  - rdfs:comment:
+    - object_property_comment: b8085414
+  - rdfs:label:
+    - object_property_label: string
+- Class:
+  - rdfs:subClassOf:
+    - class_sub_class_of:
+      - Class
+      - Restriction
+  - rdfs:comment:
+    - class_comment:
+      - string
+      - Literal
+  - rdfs:label:
+    - class_label:
+      - string
+      - string
+- PatientGoup-HIV1:
+  - rdfs:comment:
+    - patient_goup-hiv1_comment: Literal
+- Axiom:
+  - owl:annotatedTarget:
+    - axiom_annotated_target: Restriction
+  - owl:annotatedSource:
+    - axiom_annotated_source: Class
+  - rdfs:comment:
+    - axiom_comment: Literal
+- Restriction:
+  - owl:someValuesFrom:
+    - restriction_some_values_from: Class
+  - owl:allValuesFrom:
+    - restriction_all_values_from: Class
+  - owl:onProperty:
+    - restriction_on_property: ObjectProperty
+- b8088570:
+  - rdf:type:
+    - b8088570_type: Restriction
+- b8085414:
+  - rdf:type:
+    - b8085414_type: Restriction
+- NamedIndividual:
+  - rdfs:comment:
+    - named_individual_comment: Literal

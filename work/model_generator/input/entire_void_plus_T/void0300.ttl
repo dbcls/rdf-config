@@ -1,0 +1,751 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sbm: <http://sparqlbuilder.org/2015/09/rdf-metadata-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://rdfportal.org/ns/> .
+
+<http://rdfportal.org/ns/5af4b81eee8ab28f62a68fa7bdf17bc2>
+    void:classPartition [
+        void:class owl:FunctionalProperty ;
+        void:entities 29 ;
+        a void:Dataset
+    ], [
+        void:class <http://who.int/icd#TermSection> ;
+        void:entities 34 ;
+        a void:Dataset
+    ], [
+        void:class <http://who.int/icd#SnomedReferenceSection> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://who.int/icd#EditorialStatusValueSet> ;
+        void:entities 6 ;
+        a void:Dataset
+    ], [
+        void:class owl:Class ;
+        void:entities 1551 ;
+        a void:Dataset
+    ], [
+        void:class <http://who.int/icd#InclusionTerm> ;
+        void:entities 221 ;
+        a void:Dataset
+    ], [
+        void:class <http://who.int/icd#ClinicalDescriptionSection> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://who.int/icd#CausalMechanismAndRiskFactorsSection> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://who.int/icd#DefinitionSection> ;
+        void:entities 62 ;
+        a void:Dataset
+    ], [
+        void:class owl:ObjectProperty ;
+        void:entities 41 ;
+        a void:Dataset
+    ], [
+        void:class <http://who.int/icd#ICD10NotesAndHintsSection> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class owl:DatatypeProperty ;
+        void:entities 26 ;
+        a void:Dataset
+    ], [
+        void:class <http://who.int/icd#DiagnosticCriteriaSection> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://who.int/icd#LinearizationSection> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://who.int/icd#ExclusionTerm> ;
+        void:entities 348 ;
+        a void:Dataset
+    ], [
+        void:class <http://who.int/icd#FunctionalImpactSection> ;
+        void:entities 1 ;
+        a void:Dataset
+    ], [
+        void:class <http://who.int/icd#DefinitionTerm> ;
+        void:entities 775 ;
+        a void:Dataset
+    ], [
+        void:class <http://who.int/icd#ClamlReference> ;
+        void:entities 347 ;
+        a void:Dataset
+    ], [
+        void:class <http://who.int/icd#TitleTerm> ;
+        void:entities 1553 ;
+        a void:Dataset
+    ] ;
+    void:classes 19 ;
+    void:distinctObjects 9502 ;
+    void:distinctSubjects 4940 ;
+    void:properties 22 ;
+    void:propertyPartition [
+        void:property rdfs:comment ;
+        void:triples 12 ;
+        sbm:classRelation [
+            void:triples 6 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 5 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://who.int/icd#language> ;
+        void:triples 2897 ;
+        sbm:classRelation [
+            void:triples 775 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://who.int/icd#DefinitionTerm> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 221 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://who.int/icd#InclusionTerm> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 348 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://who.int/icd#ExclusionTerm> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1553 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://who.int/icd#TitleTerm> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://who.int/icd#exclusion> ;
+        void:triples 348 ;
+        sbm:classRelation [
+            void:triples 348 ;
+            sbm:objectClass <http://who.int/icd#ExclusionTerm> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdf:type ;
+        void:triples 5005 ;
+        sbm:classRelation [
+            void:triples 75 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://who.int/icd#TermSection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 348 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://who.int/icd#ExclusionTerm> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 221 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://who.int/icd#InclusionTerm> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 775 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://who.int/icd#DefinitionTerm> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 347 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://who.int/icd#ClamlReference> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://who.int/icd#LinearizationSection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 35 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://who.int/icd#ClinicalDescriptionSection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 6 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://who.int/icd#EditorialStatusValueSet> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://who.int/icd#CausalMechanismAndRiskFactorsSection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://who.int/icd#FunctionalImpactSection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 103 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://who.int/icd#DefinitionSection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://who.int/icd#DiagnosticCriteriaSection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1553 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://who.int/icd#TitleTerm> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://who.int/icd#SnomedReferenceSection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://who.int/icd#ICD10NotesAndHintsSection> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://who.int/icd#definition> ;
+        void:triples 775 ;
+        sbm:classRelation [
+            void:triples 4 ;
+            sbm:objectClass <http://who.int/icd#DefinitionTerm> ;
+            sbm:subjectClass <http://who.int/icd#TermSection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://who.int/icd#DefinitionTerm> ;
+            sbm:subjectClass <http://who.int/icd#DefinitionSection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 773 ;
+            sbm:objectClass <http://who.int/icd#DefinitionTerm> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://who.int/icf#code> ;
+        void:triples 1495 ;
+        sbm:classRelation [
+            void:triples 1495 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:disjointWith ;
+        void:triples 246 ;
+        sbm:classRelation [
+            void:triples 138 ;
+            sbm:objectClass <http://who.int/icd#TermSection> ;
+            sbm:subjectClass <http://who.int/icd#DefinitionSection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 54 ;
+            sbm:objectClass <http://who.int/icd#DefinitionSection> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 246 ;
+            sbm:objectClass <http://who.int/icd#DefinitionSection> ;
+            sbm:subjectClass <http://who.int/icd#DefinitionSection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 112 ;
+            sbm:objectClass <http://who.int/icd#TermSection> ;
+            sbm:subjectClass <http://who.int/icd#TermSection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 46 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 46 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://who.int/icd#TermSection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 46 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://who.int/icd#DefinitionSection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 52 ;
+            sbm:objectClass <http://who.int/icd#TermSection> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 133 ;
+            sbm:objectClass <http://who.int/icd#DefinitionSection> ;
+            sbm:subjectClass <http://who.int/icd#TermSection> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property skos:altLabel ;
+        void:triples 1495 ;
+        sbm:classRelation [
+            void:triples 1495 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:label ;
+        void:triples 4528 ;
+        sbm:classRelation [
+            void:triples 28 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1541 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 221 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://who.int/icd#InclusionTerm> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://who.int/icd#DiagnosticCriteriaSection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://who.int/icd#FunctionalImpactSection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://who.int/icd#ClinicalDescriptionSection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 18 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 14 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://who.int/icd#LinearizationSection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://who.int/icd#SnomedReferenceSection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 34 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://who.int/icd#TermSection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 348 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://who.int/icd#ExclusionTerm> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 62 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://who.int/icd#DefinitionSection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1553 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://who.int/icd#TitleTerm> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 775 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://who.int/icd#DefinitionTerm> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://who.int/icd#ICD10NotesAndHintsSection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://who.int/icd#CausalMechanismAndRiskFactorsSection> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:subClassOf ;
+        void:triples 1593 ;
+        sbm:classRelation [
+            void:triples 1543 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 53 ;
+            sbm:objectClass <http://who.int/icd#TermSection> ;
+            sbm:subjectClass <http://who.int/icd#DefinitionSection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 60 ;
+            sbm:objectClass <http://who.int/icd#DefinitionSection> ;
+            sbm:subjectClass <http://who.int/icd#DefinitionSection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://who.int/icd#FunctionalImpactSection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 32 ;
+            sbm:objectClass <http://who.int/icd#TermSection> ;
+            sbm:subjectClass <http://who.int/icd#TermSection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://who.int/icd#FunctionalImpactSection> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://who.int/icd#CausalMechanismAndRiskFactorsSection> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://who.int/icd#SnomedReferenceSection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://who.int/icd#ICD10NotesAndHintsSection> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 32 ;
+            sbm:objectClass <http://who.int/icd#DefinitionSection> ;
+            sbm:subjectClass <http://who.int/icd#TermSection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 30 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://who.int/icd#DefinitionSection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16 ;
+            sbm:objectClass <http://who.int/icd#TermSection> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://who.int/icd#CausalMechanismAndRiskFactorsSection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://who.int/icd#DiagnosticCriteriaSection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://who.int/icd#LinearizationSection> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 16 ;
+            sbm:objectClass <http://who.int/icd#DefinitionSection> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://who.int/icd#LinearizationSection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://who.int/icd#ClinicalDescriptionSection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://who.int/icd#ICD10NotesAndHintsSection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://who.int/icd#ClinicalDescriptionSection> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 25 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass <http://who.int/icd#TermSection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://who.int/icd#DiagnosticCriteriaSection> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 4 ;
+            sbm:objectClass <http://who.int/icd#SnomedReferenceSection> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://who.int/icd#icdCode> ;
+        void:triples 1495 ;
+        sbm:classRelation [
+            void:triples 1495 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:equivalentClass ;
+        void:triples 1 ;
+        sbm:classRelation [
+            void:triples 1 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://who.int/icd#clamlReferences> ;
+        void:triples 347 ;
+        sbm:classRelation [
+            void:triples 347 ;
+            sbm:objectClass <http://who.int/icd#ClamlReference> ;
+            sbm:subjectClass <http://who.int/icd#ExclusionTerm> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:domain ;
+        void:triples 65 ;
+        sbm:classRelation [
+            void:triples 24 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 29 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 41 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:range ;
+        void:triples 54 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectClass rdfs:Datatype ;
+            sbm:subjectClass owl:DatatypeProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 31 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 7 ;
+            sbm:objectClass owl:Class ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 2 ;
+            sbm:objectClass rdfs:Datatype ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://who.int/icd#clamlKind> ;
+        void:triples 1495 ;
+        sbm:classRelation [
+            void:triples 1495 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property rdfs:subPropertyOf ;
+        void:triples 9 ;
+        sbm:classRelation [
+            void:triples 3 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9 ;
+            sbm:objectClass owl:FunctionalProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:FunctionalProperty ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 9 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://who.int/icd#label> ;
+        void:triples 2897 ;
+        sbm:classRelation [
+            void:triples 221 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://who.int/icd#InclusionTerm> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1553 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://who.int/icd#TitleTerm> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 348 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://who.int/icd#ExclusionTerm> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 775 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://who.int/icd#DefinitionTerm> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://who.int/icd#inclusion> ;
+        void:triples 221 ;
+        sbm:classRelation [
+            void:triples 221 ;
+            sbm:objectClass <http://who.int/icd#InclusionTerm> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://who.int/icd#text> ;
+        void:triples 347 ;
+        sbm:classRelation [
+            void:triples 347 ;
+            sbm:objectDatatype xsd:string ;
+            sbm:subjectClass <http://who.int/icd#ClamlReference> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property owl:inverseOf ;
+        void:triples 3 ;
+        sbm:classRelation [
+            void:triples 2 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:FunctionalProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 1 ;
+            sbm:objectClass owl:FunctionalProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 3 ;
+            sbm:objectClass owl:ObjectProperty ;
+            sbm:subjectClass owl:ObjectProperty ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ], [
+        void:property <http://who.int/icd#icdTitle> ;
+        void:triples 1553 ;
+        sbm:classRelation [
+            void:triples 1507 ;
+            sbm:objectClass <http://who.int/icd#TitleTerm> ;
+            sbm:subjectClass owl:Class ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 31 ;
+            sbm:objectClass <http://who.int/icd#TitleTerm> ;
+            sbm:subjectClass <http://who.int/icd#TermSection> ;
+            a sbm:ClassRelation
+        ], [
+            void:triples 58 ;
+            sbm:objectClass <http://who.int/icd#TitleTerm> ;
+            sbm:subjectClass <http://who.int/icd#DefinitionSection> ;
+            a sbm:ClassRelation
+        ] ;
+        a void:Dataset
+    ] ;
+    void:sparqlEndpoint <https://rdfportal.org/bioportal/sparql> ;
+    void:triples 26929 ;
+    a void:Dataset, sd:Graph .
