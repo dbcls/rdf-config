@@ -4,6 +4,7 @@ require 'forwardable'
 require_relative 'convert/mix_in/convert_util'
 require_relative 'convert/config_parser'
 require_relative 'convert/rdf_generator'
+require_relative 'convert/yaml/parser'
 require_relative 'convert/validator'
 require_relative 'convert/macro'
 
@@ -21,7 +22,7 @@ class RDFConfig
     SOURCE_MACRO_NAME = 'source'
     ROOT_MACRO_NAME = 'root'
     SYSTEM_MACRO_NAMES = [SOURCE_MACRO_NAME, ROOT_MACRO_NAME].freeze
-    JSON_LD_FORMATS = Validator::VALID_CONVERT_TYPES - %w[:turtle :context]
+    JSON_LD_FORMATS = Validator::VALID_CONVERT_TYPES - %w[:turtle :ntriples :context]
 
     attr_reader :source_subject_map, :subject_config, :object_config, :subject_object_map,
                 :convert_method, :macro_names, :format, :output_path
@@ -30,20 +31,31 @@ class RDFConfig
                    :subject_converts, :object_converts, :source_subject_map, :source_format_map, :macro_names,
                    :variable_convert, :convert_variable_names, :has_rdf_type_object?
 
+    def_delegators :@yaml_parser,
+                   :subject_names, :object_names, :variable_names
+
     def initialize(config, opts)
       @config = config
       @format = opts[:format] || ':turtle'
       @output_path = opts[:output_path]
       @generate_context = %w[:context context].include?(@format)
 
-      @config_parser = ConfigParser.new(config, convert_source: opts[:convert_source])
+      @yaml_parser = Yaml::Parser.new(config.config_file_path('convert'))
+      @yaml_parser.parse
+
+      validator = Validator.new(config, **opts.merge(convert: self, yaml_parser: @yaml_parser))
+      validator.pre_validate
+
+      @config_parser = ConfigParser.new(
+        config, convert_source: opts[:convert_source], yaml_parser: @yaml_parser
+      )
       @config_parser.parse
+
       @convert_method = {
-        subject_converts: @config_parser.subject_converts,
-        object_converts: @config_parser.object_converts
+        subject_converts: subject_converts,
+        object_converts: object_converts
       }
 
-      validator = Validator.new(config, **opts.merge(convert: self))
       validator.validate
 
       @source = begin
@@ -57,7 +69,7 @@ class RDFConfig
 
     def generate
       case @format
-      when ':turtle'
+      when ':turtle', ':ntriples'
         rdf_generator.generate
       when ':jsonld'
         json_ld_generator.generate
@@ -130,24 +142,11 @@ class RDFConfig
     end
 
     def subject_convert_by_name(subject_name)
-      subject_converts.select { |convert| convert.keys.first == subject_name }.first
+      @convert_method[:subject_converts][subject_name]
     end
 
     def bnode_name?(variable_name)
       /\A_BNODE\d+_\z/ =~ variable_name
-    end
-
-    def subject_names
-      @convert_method[:subject_converts].map { |hash| hash.keys.first }
-    end
-
-    def object_names
-      # ToDo: Subjectが複数ある場合に正常に動作するか確認する
-      @convert_method[:object_converts].values.map { |converts| converts.map { |convert| convert.keys.first} }.flatten.uniq
-    end
-
-    def variable_names
-      subject_names + object_names
     end
   end
 end

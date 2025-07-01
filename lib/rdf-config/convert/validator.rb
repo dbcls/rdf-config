@@ -9,11 +9,25 @@ class RDFConfig
     class Validator < RDFConfig::Validator
       include MixIn::ConvertUtil
 
-      VALID_CONVERT_TYPES = %w[:turtle :jsonld :jsonl :context]
+      VALID_CONVERT_TYPES = %w[:turtle :ntriples :jsonld :jsonl :context]
 
       def initialize(config, **opts)
         super
         @convert = opts[:convert]
+        @yaml_parser = opts[:yaml_parser]
+      end
+
+      def pre_validate
+        unless @yaml_parser.nodes_doc.children.size == 1 && @yaml_parser.nodes_doc.children.first.is_a?(Psych::Nodes::Sequence)
+          @validator.add_error("#{@yaml_parser.yaml_file} must be an array of conversion settings for each subject.")
+          return false
+        end
+
+        validate_subjects
+
+        @errors += @yaml_parser.errors
+
+        raise InvalidConfig, format_error_message if error?
       end
 
       def validate
@@ -35,10 +49,19 @@ class RDFConfig
 
       private
 
+      def validate_subjects
+        subject_names = @yaml_parser.subject_names
+        duplicate_subject_names = subject_names.select { |subject_name| subject_names.count(subject_name) > 1 }.uniq
+
+        unless duplicate_subject_names.empty?
+          @validator.add_error("Duplicate subject name in convert.yaml: #{duplicate_subject_names.join(', ')}")
+        end
+      end
+
       def validate_convert_type
         return if VALID_CONVERT_TYPES.include?(@convert.format)
 
-        add_error(%(Invalid value of --convert option. Valid --convert option values are: #{VALID_CONVERT_TYPES.join(', ')}))
+        add_error(%(Invalid value of --convert option. Valid --convert option values are #{VALID_CONVERT_TYPES.join(', ')}))
       end
 
       def validate_context_path

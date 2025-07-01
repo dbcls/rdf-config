@@ -45,13 +45,13 @@ class RDFConfig
         target = if last_separator_pos.nil?
                    xpath
                  else
-                   xpath[last_separator_pos + 1..]
+                   xpath[last_separator_pos + 1..-1]
                  end
         converted_value = case target
                           when 'text()'
                             @element&.text
                           else
-                            @element&.attribute(target[1..]).value
+                            @element&.attribute(target[1..-1]).value
                           end
         converted_value = converted_value.to_s
 

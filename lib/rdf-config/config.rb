@@ -61,14 +61,14 @@ class RDFConfig
       File.expand_path(config_file_path, @config_dir)
     end
 
-    private
-
     def config_file_path(name)
       fpath = Pathname.new(@config_dir).join("#{name}.yaml").to_path
       raise ConfigNotFound, "Config file (#{fpath}) does not exist." unless File.exist?(fpath)
 
       fpath
     end
+
+    private
 
     def read_config(config_file_path)
       config = if Gem::Version.create(RUBY_VERSION) >= Gem::Version.create('3.1')

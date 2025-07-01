@@ -19,11 +19,11 @@
             - $quality: pick(2)
             - switch($quality):
                 "HT":
-                    - $quality: str("high-throughput")
+                    - $quality: "high-throughput"
                 "LC":
-                    - $quality: str("literature-curated")
-                :default:
-                    - $quality: str("unknown")
+                    - $quality: "literature-curated"
+                default:
+                    - $quality: "unknown"
             # high_qualityカラムから生成する場合
             # - switch("high_quality"):
             #     "True":
@@ -51,5 +51,5 @@
             - split(":")
             - pick(2)
             - switch:
-                "HT": str("high")
-                "LC": str("low")
+                "HT": "high"
+                "LC": "low"

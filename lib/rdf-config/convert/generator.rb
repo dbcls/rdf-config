@@ -85,10 +85,10 @@ class RDFConfig
       end
 
       def generate_by_objects(subject_name, row)
-        object_converts(subject_name).each do |object_convert|
+        object_converts(subject_name).each do |object_name, object_converts|
           # next if @converter.converter_variable?(object_name)
 
-          generate_by_object_convert(row, object_convert)
+          generate_by_object_convert(row, object_name.to_s, object_converts)
         end
       end
 
@@ -96,10 +96,9 @@ class RDFConfig
         @convert.convert_method[:object_converts][subject_name]
       end
 
-      def generate_by_object_convert(row, object_convert)
-        object_name = object_convert.keys.first
+      def generate_by_object_convert(row, object_name, object_converts)
         if convert_variable?(object_name)
-          @converter.convert_value(row, object_convert)
+          @converter.convert_value(row, object_converts)
           return
         end
 
@@ -109,7 +108,7 @@ class RDFConfig
         subject_name = triple.subject.name
         return unless @subject_node.key?(subject_name)
 
-        values = @converter.convert_value(row, object_convert)
+        values = @converter.convert_value(row, object_converts)
         if values.is_a?(Array)
           if @subject_node[subject_name].size > values.size
             (@subject_node[subject_name].size - values.size).times { values << '' }

@@ -18,8 +18,8 @@
             - skip("NA")
         - gender:
             - switch("Gender"):
-                "male": str("obo:PATO_0000384")
-                "female": str("obo:PATO_0000383")
+                "male": obo:PATO_0000384
+                "female": obo:PATO_0000383
 
         # [] a m2r:Assay
         # 取得方法不明
@@ -74,13 +74,13 @@
         - reference_allele: tsv("Reference_Allele")
         - variant_consequence:
             - switch("Variant_Classification"):
-                "Missense_Mutation": str("sio:SO_0001583")
-                "Silent": str("sio:SO_0001819")
-                "Splice_Site": str("sio:SO_0001630")
-                "De_novo_Start_OutOfFrame": str("sio:SO_0001589")
-                "Nonsense_Mutation": str("sio:SO_0001587")
-                "Nonstop_Mutation": str("sio:SO_0001578")
-                "Start_Codon_SNP": str("sio:SO_0002012")
+                "Missense_Mutation": sio:SO_0001583
+                "Silent": sio:SO_0001819
+                "Splice_Site": sio:SO_0001630
+                "De_novo_Start_OutOfFrame": sio:SO_0001589
+                "Nonsense_Mutation": sio:SO_0001587
+                "Nonstop_Mutation": sio:SO_0001578
+                "Start_Codon_SNP": sio:SO_0002012
         - variant_type: tsv("Variant_Type")
         - codon_change: tsv("Codon_Change")
         - dna_change: tsv("cDNA_Change")

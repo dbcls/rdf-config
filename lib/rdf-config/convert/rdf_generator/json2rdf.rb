@@ -11,7 +11,7 @@ class RDFConfig
         root_def = @convert.convert_method[subject_name].select { |method_def| method_def[:method_name_] == ROOT_MACRO_NAME }.first
 
         path = root_def[:args_][:arg_][1..-2]
-        path = path[1..] if path[0] == '.'
+        path = path[1..-1] if path[0] == '.'
 
         path
       end

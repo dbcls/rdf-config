@@ -16,10 +16,8 @@ class RDFConfig
       def initialize(config, convert)
         super
 
-        @json_ld = {
-          '@context' => {}
-        }
-        @context = {}
+        @context = ContextGenerator.new(config).prefix_key_value_pairs
+
         @node = {}
         @type_in_context = false
 
@@ -37,24 +35,23 @@ class RDFConfig
         process_all_sources(per_line: per_line)
         refine_nodes unless per_line
 
-        # json_data = @node.map { |id, hash| { '@id' => id }.merge(hash) }
-        @json_ld.merge!(data: final_nodes)
+        json_ld = {
+          '@context' => @context,
+          data: final_nodes
+        }
 
-        # puts JSON.pretty_generate(@json_ld)
-        puts JSON.generate(@json_ld)
+        puts JSON.generate(json_ld)
       end
 
       private
 
       def generate_context
-        add_prefixes_to_context
-
         @subject_node.each_key do |subject_name|
-          @json_ld['@context'][subject_name] = '@id'
-          @json_ld['@context'][subject_type_key(subject_name)] = TYPE_KEY if @type_in_context
+          @context[subject_name] = '@id'
+          @context[subject_type_key(subject_name)] = TYPE_KEY if @type_in_context
         end
 
-        @json_ld['@context']['data'] = '@graph'
+        @context['data'] = '@graph'
 
         @object_triple_map.each do |object_name, triple|
           next if triple.nil?
@@ -68,7 +65,7 @@ class RDFConfig
             datatype = extract_rdf_datatype(object.value)
             hash[TYPE_KEY] = datatype unless datatype.nil?
           end
-          @json_ld['@context'][object_name] = hash
+          @context[object_name] = hash
         end
       end
 
@@ -138,12 +135,6 @@ class RDFConfig
       def add_subject_relation(triple, subject_node, object_node)
         @object_triple_map[triple.object_name] = triple unless @object_triple_map.key?(triple.object_name)
         add_node(subject_node, { triple.object_name => object_node })
-      end
-
-      def add_prefixes_to_context
-        @config.prefix.each do |prefix, uri|
-          @json_ld['@context'][prefix] = uri[1..-2]
-        end
       end
 
       def type_value_by_subject(subject)
@@ -314,7 +305,7 @@ class RDFConfig
               new_node[variable_name] = value
             else
               generate_blank_node(subject_uri, triple)
-              bnode = blank_node(subject_uri, triple.predicates[..-2].map(&:uri).join('/'))
+              bnode = blank_node(subject_uri, triple.predicates[0..-2].map(&:uri).join('/'))
               bnode[variable_name] = value
             end
           else

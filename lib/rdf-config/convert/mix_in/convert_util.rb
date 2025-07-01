@@ -26,7 +26,7 @@ class RDFConfig
 
         def ext_by_file_path(file_path)
           ext = File.extname(file_path)
-          ext = ext[1..] if ext.to_s.size.positive?
+          ext = ext[1..-1] if ext.to_s.size.positive?
 
           ext
         end

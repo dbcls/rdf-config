@@ -28,8 +28,9 @@ class RDFConfig
         @target_value = row
         @converted_values.clear
 
-        variable_name = converts.keys.first
-        converts[variable_name].each do |method_def|
+        # variable_name = converts.keys.first
+        # converts[variable_name].each do |method_def|
+        converts.each do |method_def|
           if method_def.is_a?(Processor::SwitchProcessor)
             method_def.process(self)
             next

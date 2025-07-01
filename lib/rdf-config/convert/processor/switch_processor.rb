@@ -20,6 +20,11 @@ class RDFConfig
 
         def parse_convert_process(config_parser)
           @convert_process.each do |case_value, convert_processes|
+            case_value = if case_value.to_s == 'default' && !case_value.quoted?
+                           :default
+                         else
+                           case_value.to_s
+                         end
             @method_defs[case_value] = []
             Array(convert_processes).each do |convert_process|
               @method_defs[case_value] << config_parser.parse_converter(@variable_name, convert_process)

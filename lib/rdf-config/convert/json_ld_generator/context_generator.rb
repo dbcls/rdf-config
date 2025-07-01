@@ -7,6 +7,8 @@ class RDFConfig
     class ContextGenerator
       include MixIn::ConvertUtil
 
+      GEN_DELIMS  = %w(: / ? # [ ] @)
+
       def initialize(config, **opts)
         @config = config
         @opts = opts
@@ -20,7 +22,7 @@ class RDFConfig
       end
 
       def generate_by_convert_config
-        { '@context' => @prefix_hash.merge(@context_map.values.reduce(&:merge).reject { |k, _| k.to_s.empty? }) }
+        { '@context' => prefix_key_value_pairs.merge(@context_map.values.reduce(&:merge).reject { |k, _| k.to_s.empty? }) }
       end
 
       def context_for_data_hash(subject_name, data_hash)
@@ -35,6 +37,16 @@ class RDFConfig
         variable_context = variable_names.map { |variable| [variable, @context_map[subject_name][variable]] }.to_h
 
         prefix_context.merge(variable_context)
+      end
+
+      def prefix_key_value_pairs
+        @prefix_hash.map do |prefix, uri|
+          if GEN_DELIMS.include?(uri[-1])
+            [ prefix, uri ]
+          else
+            [ prefix, { '@id' => uri, '@prefix' => true } ]
+          end
+        end.to_h
       end
 
       private

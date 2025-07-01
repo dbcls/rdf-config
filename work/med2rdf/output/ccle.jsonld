@@ -2,8 +2,14 @@
   "@context": {
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "ccle": "http://med2rdf.org/ontology/ccle#",
-    "cclec": "https://portals.broadinstitute.org/ccle/page?cell_line=",
-    "ccleg": "https://portals.broadinstitute.org/ccle/page?gene=",
+    "cclec": {
+      "@id": "https://portals.broadinstitute.org/ccle/page?cell_line=",
+      "@prefix": true
+    },
+    "ccleg": {
+      "@id": "https://portals.broadinstitute.org/ccle/page?gene=",
+      "@prefix": true
+    },
     "faldo": "http://biohackathon.org/resource/faldo#",
     "hco": "http://identifiers.org/hco/",
     "m2r": "http://med2rdf.org/ontology#",

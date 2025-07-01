@@ -25,7 +25,8 @@ class RDFConfig
       end
 
       def output_rdf
-        RDF::Writer.for(:turtle).new(**rdf_writer_opts) do |writer|
+        rdf_format = @convert.format.start_with?(':') ? @convert.format[1..-1] : @convert.format
+        RDF::Writer.for(rdf_format.to_sym).new(**rdf_writer_opts) do |writer|
           @statements.each do |statement|
             if !statement[:triple].nil? && statement[:triple].predicates.size > 1
               property_path_statements(statement).each do |rdf_statement|

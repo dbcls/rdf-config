@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 
 gemspec
 
+gem 'csv'
 gem 'getoptlong'
 gem 'ostruct'
 gem 'parslet'
