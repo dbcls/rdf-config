@@ -57,11 +57,7 @@ class RDFConfig
         uris = predicate.flatten
         next if uris.empty?
 
-        constraint = if uris.size == 1
-                       uris.first
-                     else
-                       "[#{uris.join(' ')}]"
-                     end
+        constraint = "[ #{uris.join(' ')} ]"
 
         lines << [RDF_TYPE, constraint_text(constraint, quantifier)].join(' ')
       end
