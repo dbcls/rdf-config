@@ -1,331 +1,331 @@
-- ito:Dataset:
+- Ns1Ito:Dataset:
   - rdf:type:
-    - ito:dataset_type: Class
-- NamedIndividual:
+    - ns1_ito:dataset_type: OwlClass
+- OwlNamedIndividual:
   - dc11:source:
-    - named_individual_source:
-      - NamedIndividual
-      - ito:Dataset
+    - owl_named_individual_source:
+      - OwlNamedIndividual
+      - Ns1Ito:Dataset
   - ns1:ito:has_input:
-    - named_individual_ito:has_input:
-      - NamedIndividual
-      - ito:Benchmark_dataset
+    - owl_named_individual_ito:has_input:
+      - OwlNamedIndividual
+      - Ns1Ito:BenchmarkDataset
   - rdf:type:
-    - named_individual_type: Class
+    - owl_named_individual_type: OwlClass
   - rdfs:seeAlso:
-    - named_individual_see_also:
-      - data_0971
-      - NamedIndividual
-      - ito:Software
+    - owl_named_individual_see_also:
+      - Ns2Data_0971
+      - OwlNamedIndividual
+      - Ns1Ito:Software
       - string
   - ns1:ito:ITO_61421:
-    - named_individual_ito:ito_61421: decimal
+    - owl_named_individual_ito:ito_61421: decimal
   - ns1:ito:ITO_61425:
-    - named_individual_ito:ito_61425: decimal
+    - owl_named_individual_ito:ito_61425: decimal
   - ns1:ito:ITO_61426:
-    - named_individual_ito:ito_61426: decimal
+    - owl_named_individual_ito:ito_61426: decimal
   - ns3:creation_date:
-    - named_individual_creation_date: dateTime
+    - owl_named_individual_creation_date: dateTime
   - ns3:date:
-    - named_individual_date: '2000-01-01'
+    - owl_named_individual_date: '2000-01-01'
   - ns1:ito:ITO_61418:
-    - named_individual_ito:ito_61418: decimal
+    - owl_named_individual_ito:ito_61418: decimal
   - ns1:ito:ITO_15911:
-    - named_individual_ito:ito_15911: decimal
+    - owl_named_individual_ito:ito_15911: decimal
   - ns1:ito:ITO_61428:
-    - named_individual_ito:ito_61428: decimal
+    - owl_named_individual_ito:ito_61428: decimal
   - rdfs:label:
-    - named_individual_label: string
+    - owl_named_individual_label: string
   - ns1:ito:ITO_61430:
-    - named_individual_ito:ito_61430: decimal
+    - owl_named_individual_ito:ito_61430: decimal
   - ns1:ito:ITO_61427:
-    - named_individual_ito:ito_61427: decimal
+    - owl_named_individual_ito:ito_61427: decimal
   - ns1:ito:ITO_61431:
-    - named_individual_ito:ito_61431: decimal
+    - owl_named_individual_ito:ito_61431: decimal
   - ns1:ito:ITO_61420:
-    - named_individual_ito:ito_61420: decimal
+    - owl_named_individual_ito:ito_61420: decimal
   - ns1:ito:papers_with_code_id:
-    - named_individual_ito:papers_with_code_id: string
+    - owl_named_individual_ito:papers_with_code_id: string
   - ns1:ito:ITO_61419:
-    - named_individual_ito:ito_61419: decimal
+    - owl_named_individual_ito:ito_61419: decimal
   - ns1:ito:ITO_61423:
-    - named_individual_ito:ito_61423: decimal
+    - owl_named_individual_ito:ito_61423: decimal
   - ns1:ito:ITO_61422:
-    - named_individual_ito:ito_61422: decimal
+    - owl_named_individual_ito:ito_61422: decimal
   - ns1:ito:ITO_61424:
-    - named_individual_ito:ito_61424: decimal
+    - owl_named_individual_ito:ito_61424: decimal
   - ns1:ito:ITO_61429:
-    - named_individual_ito:ito_61429: decimal
+    - owl_named_individual_ito:ito_61429: decimal
   - ns2:refactor_comment:
-    - named_individual_refactor_comment: string
-- Restriction:
+    - owl_named_individual_refactor_comment: string
+- OwlRestriction:
   - owl:onProperty:
-    - restriction_on_property: ObjectProperty
+    - owl_restriction_on_property: OwlObjectProperty
   - owl:hasValue:
-    - restriction_has_value:
-      - ito:Software
-      - ito:Benchmark_dataset
-      - NamedIndividual
+    - owl_restriction_has_value:
+      - Ns1Ito:Software
+      - Ns1Ito:BenchmarkDataset
+      - OwlNamedIndividual
   - owl:someValuesFrom:
-    - restriction_some_values_from: Class
-- ObjectProperty:
+    - owl_restriction_some_values_from: OwlClass
+- OwlObjectProperty:
   - rdfs:subPropertyOf:
-    - object_property_sub_property_of: ObjectProperty
+    - owl_object_property_sub_property_of: OwlObjectProperty
   - rdfs:range:
-    - object_property_range: Class
+    - owl_object_property_range: OwlClass
   - rdfs:domain:
-    - object_property_domain: Class
+    - owl_object_property_domain: OwlClass
   - owl:inverseOf:
-    - object_property_inverse_of: ObjectProperty
+    - owl_object_property_inverse_of: OwlObjectProperty
   - ns3:creation_date:
-    - object_property_creation_date: string
+    - owl_object_property_creation_date: string
   - ns3:hasDefinition:
-    - object_property_has_definition: string
+    - owl_object_property_has_definition: string
   - rdfs:label:
-    - object_property_label: string
+    - owl_object_property_label: string
   - ns3:hasRelatedSynonym:
-    - object_property_has_related_synonym: string
+    - owl_object_property_has_related_synonym: string
   - rdfs:comment:
-    - object_property_comment: string
+    - owl_object_property_comment: string
   - rdfs:seeAlso:
-    - object_property_see_also: string
+    - owl_object_property_see_also: string
   - ns3:created_by:
-    - object_property_created_by: string
+    - owl_object_property_created_by: string
   - ns2:refactor_comment:
-    - object_property_refactor_comment: string
-- data_0971:
+    - owl_object_property_refactor_comment: string
+- Ns2Data_0971:
   - dc11:source:
-    - data_0971_source:
-      - NamedIndividual
-      - ito:Dataset
+    - ns2_data_0971_source:
+      - OwlNamedIndividual
+      - Ns1Ito:Dataset
   - rdf:type:
-    - data_0971_type: Class
+    - ns2_data_0971_type: OwlClass
   - ns3:creation_date:
-    - data_0971_creation_date: dateTime
+    - ns2_data_0971_creation_date: dateTime
   - ns3:date:
-    - data_0971_date: '2000-01-01'
+    - ns2_data_0971_date: '2000-01-01'
   - rdfs:label:
-    - data_0971_label: string
+    - ns2_data_0971_label: string
   - ns1:ito:papers_with_code_id:
-    - data_0971_ito:papers_with_code_id: string
+    - ns2_data_0971_ito:papers_with_code_id: string
   - ns2:refactor_comment:
-    - data_0971_refactor_comment: string
-- ito:ITO_61417:
+    - ns2_data_0971_refactor_comment: string
+- Ns1Ito:ITO_61417:
   - ns1:ito:has_input:
-    - ito:ito_61417_ito:has_input:
-      - NamedIndividual
-      - ito:Benchmark_dataset
+    - ns1_ito:ito_61417_ito:has_input:
+      - OwlNamedIndividual
+      - Ns1Ito:BenchmarkDataset
   - rdf:type:
-    - ito:ito_61417_type: Class
+    - ns1_ito:ito_61417_type: OwlClass
   - rdfs:seeAlso:
-    - ito:ito_61417_see_also:
-      - ito:Software
-      - data_0971
-      - NamedIndividual
+    - ns1_ito:ito_61417_see_also:
+      - Ns1Ito:Software
+      - Ns2Data_0971
+      - OwlNamedIndividual
       - string
   - ns1:ito:ITO_61421:
-    - ito:ito_61417_ito:ito_61421: decimal
+    - ns1_ito:ito_61417_ito:ito_61421: decimal
   - ns1:ito:ITO_61425:
-    - ito:ito_61417_ito:ito_61425: decimal
+    - ns1_ito:ito_61417_ito:ito_61425: decimal
   - ns1:ito:ITO_61426:
-    - ito:ito_61417_ito:ito_61426: decimal
+    - ns1_ito:ito_61417_ito:ito_61426: decimal
   - ns3:date:
-    - ito:ito_61417_date: '2000-01-01'
+    - ns1_ito:ito_61417_date: '2000-01-01'
   - ns1:ito:ITO_61418:
-    - ito:ito_61417_ito:ito_61418: decimal
+    - ns1_ito:ito_61417_ito:ito_61418: decimal
   - ns1:ito:ITO_61428:
-    - ito:ito_61417_ito:ito_61428: decimal
+    - ns1_ito:ito_61417_ito:ito_61428: decimal
   - rdfs:label:
-    - ito:ito_61417_label: string
+    - ns1_ito:ito_61417_label: string
   - ns1:ito:ITO_61430:
-    - ito:ito_61417_ito:ito_61430: decimal
+    - ns1_ito:ito_61417_ito:ito_61430: decimal
   - ns1:ito:ITO_61427:
-    - ito:ito_61417_ito:ito_61427: decimal
+    - ns1_ito:ito_61417_ito:ito_61427: decimal
   - ns1:ito:ITO_61431:
-    - ito:ito_61417_ito:ito_61431: decimal
+    - ns1_ito:ito_61417_ito:ito_61431: decimal
   - ns1:ito:ITO_61420:
-    - ito:ito_61417_ito:ito_61420: decimal
+    - ns1_ito:ito_61417_ito:ito_61420: decimal
   - ns1:ito:ITO_61419:
-    - ito:ito_61417_ito:ito_61419: decimal
+    - ns1_ito:ito_61417_ito:ito_61419: decimal
   - ns1:ito:ITO_61423:
-    - ito:ito_61417_ito:ito_61423: decimal
+    - ns1_ito:ito_61417_ito:ito_61423: decimal
   - ns1:ito:ITO_61422:
-    - ito:ito_61417_ito:ito_61422: decimal
+    - ns1_ito:ito_61417_ito:ito_61422: decimal
   - ns1:ito:ITO_61424:
-    - ito:ito_61417_ito:ito_61424: decimal
+    - ns1_ito:ito_61417_ito:ito_61424: decimal
   - ns1:ito:ITO_61429:
-    - ito:ito_61417_ito:ito_61429: decimal
-- ito:ITO_00372:
+    - ns1_ito:ito_61417_ito:ito_61429: decimal
+- Ns1Ito:ITO_00372:
   - rdf:type:
-    - ito:ito_00372_type: Class
-- Class:
+    - ns1_ito:ito_00372_type: OwlClass
+- OwlClass:
   - dc11:source:
-    - class_source:
-      - ito:Dataset
-      - NamedIndividual
+    - owl_class_source:
+      - Ns1Ito:Dataset
+      - OwlNamedIndividual
   - owl:equivalentClass:
-    - class_equivalent_class: Class
+    - owl_class_equivalent_class: OwlClass
   - rdfs:subClassOf:
-    - class_sub_class_of:
-      - Class
-      - Restriction
+    - owl_class_sub_class_of:
+      - OwlClass
+      - OwlRestriction
   - owl:disjointWith:
-    - class_disjoint_with: Class
+    - owl_class_disjoint_with: OwlClass
   - rdfs:seeAlso:
-    - class_see_also:
-      - Class
-      - NamedIndividual
-      - DatatypeProperty
-      - data_0971
+    - owl_class_see_also:
+      - OwlClass
+      - OwlNamedIndividual
+      - OwlDatatypeProperty
+      - Ns2Data_0971
       - string
   - ns3:creation_date:
-    - class_creation_date:
+    - owl_class_creation_date:
       - string
       - dateTime
   - ns3:hasDefinition:
-    - class_has_definition:
+    - owl_class_has_definition:
       - string
       - string
   - rdfs:label:
-    - class_label:
+    - owl_class_label:
       - string
       - string
   - rdfs:isDefinedBy:
-    - class_is_defined_by: string
+    - owl_class_is_defined_by: string
   - ns3:hasRelatedSynonym:
-    - class_has_related_synonym: string
+    - owl_class_has_related_synonym: string
   - dc11:date:
-    - class_date: dateTime
+    - owl_class_date: dateTime
   - ns2:documentation:
-    - class_documentation: string
+    - owl_class_documentation: string
   - ns3:hasDbXref:
-    - class_has_db_xref: string
+    - owl_class_has_db_xref: string
   - ns1:ito:papers_with_code_id:
-    - class_ito:papers_with_code_id: string
+    - owl_class_ito:papers_with_code_id: string
   - ns3:hasBroadSynonym:
-    - class_has_broad_synonym: string
+    - owl_class_has_broad_synonym: string
   - ns2:is_refactor_candidate:
-    - class_is_refactor_candidate: string
+    - owl_class_is_refactor_candidate: string
   - rdfs:comment:
-    - class_comment: string
+    - owl_class_comment: string
   - ns3:hasExactSynonym:
-    - class_has_exact_synonym: string
+    - owl_class_has_exact_synonym: string
   - ns3:hasNarrowSynonym:
-    - class_has_narrow_synonym: string
+    - owl_class_has_narrow_synonym: string
   - ns2:file_extension:
-    - class_file_extension: string
+    - owl_class_file_extension: string
   - ns2:example:
-    - class_example: string
+    - owl_class_example: string
   - ns3:created_by:
-    - class_created_by: string
+    - owl_class_created_by: string
   - ns2:refactor_comment:
-    - class_refactor_comment: string
+    - owl_class_refactor_comment: string
   - skos:altLabel:
-    - class_alt_label: string
-- Ontology:
+    - owl_class_alt_label: string
+- OwlOntology:
   - ns3:date:
-    - ontology_date: '2000-01-01'
+    - owl_ontology_date: '2000-01-01'
   - rdfs:label:
-    - ontology_label: string
+    - owl_ontology_label: string
   - dc11:creator:
-    - ontology_creator: string
+    - owl_ontology_creator: string
   - owl:versionInfo:
-    - ontology_version_info: string
-- data_3442:
+    - owl_ontology_version_info: string
+- Ns2Data_3442:
   - dc11:source:
-    - data_3442_source:
-      - NamedIndividual
-      - ito:Dataset
+    - ns2_data_3442_source:
+      - OwlNamedIndividual
+      - Ns1Ito:Dataset
   - rdf:type:
-    - data_3442_type: Class
+    - ns2_data_3442_type: OwlClass
   - rdfs:label:
-    - data_3442_label: string
+    - ns2_data_3442_label: string
   - ns1:ito:papers_with_code_id:
-    - data_3442_ito:papers_with_code_id: string
-- ito:ITO_00926:
+    - ns2_data_3442_ito:papers_with_code_id: string
+- Ns1Ito:ITO_00926:
   - rdf:type:
-    - ito:ito_00926_type: Class
-- ito:Software:
+    - ns1_ito:ito_00926_type: OwlClass
+- Ns1Ito:Software:
   - dc11:source:
-    - ito:software_source:
-      - NamedIndividual
-      - ito:Dataset
+    - ns1_ito:software_source:
+      - OwlNamedIndividual
+      - Ns1Ito:Dataset
   - rdf:type:
-    - ito:software_type: Class
+    - ns1_ito:software_type: OwlClass
   - rdfs:seeAlso:
-    - ito:software_see_also:
-      - NamedIndividual
-      - data_0971
+    - ns1_ito:software_see_also:
+      - OwlNamedIndividual
+      - Ns2Data_0971
   - ns3:creation_date:
-    - ito:software_creation_date: dateTime
+    - ns1_ito:software_creation_date: dateTime
   - rdfs:label:
-    - ito:software_label: string
+    - ns1_ito:software_label: string
   - ns1:ito:papers_with_code_id:
-    - ito:software_ito:papers_with_code_id: string
+    - ns1_ito:software_ito:papers_with_code_id: string
   - ns2:refactor_comment:
-    - ito:software_refactor_comment: string
-- DatatypeProperty:
+    - ns1_ito:software_refactor_comment: string
+- OwlDatatypeProperty:
   - dc11:source:
-    - datatype_property_source:
-      - ito:Dataset
-      - NamedIndividual
+    - owl_datatype_property_source:
+      - Ns1Ito:Dataset
+      - OwlNamedIndividual
   - rdfs:subPropertyOf:
-    - datatype_property_sub_property_of: DatatypeProperty
+    - owl_datatype_property_sub_property_of: OwlDatatypeProperty
   - ns3:creation_date:
-    - datatype_property_creation_date:
+    - owl_datatype_property_creation_date:
       - string
       - dateTime
   - ns3:hasDefinition:
-    - datatype_property_has_definition: string
+    - owl_datatype_property_has_definition: string
   - rdfs:label:
-    - datatype_property_label: string
+    - owl_datatype_property_label: string
   - ns1:ito:papers_with_code_id:
-    - datatype_property_ito:papers_with_code_id: string
+    - owl_datatype_property_ito:papers_with_code_id: string
   - rdfs:comment:
-    - datatype_property_comment: string
+    - owl_datatype_property_comment: string
   - rdfs:seeAlso:
-    - datatype_property_see_also: string
+    - owl_datatype_property_see_also: string
   - ns3:created_by:
-    - datatype_property_created_by: string
+    - owl_datatype_property_created_by: string
   - ns2:refactor_comment:
-    - datatype_property_refactor_comment: string
-- ito:ITO_01137:
+    - owl_datatype_property_refactor_comment: string
+- Ns1Ito:ITO_01137:
   - rdf:type:
-    - ito:ito_01137_type: Class
-- Axiom:
+    - ns1_ito:ito_01137_type: OwlClass
+- OwlAxiom:
   - owl:annotatedSource:
-    - axiom_annotated_source:
-      - ObjectProperty
-      - Class
+    - owl_axiom_annotated_source:
+      - OwlObjectProperty
+      - OwlClass
   - owl:annotatedProperty:
-    - axiom_annotated_property: AnnotationProperty
+    - owl_axiom_annotated_property: OwlAnnotationProperty
   - rdfs:comment:
-    - axiom_comment: string
+    - owl_axiom_comment: string
   - owl:annotatedTarget:
-    - axiom_annotated_target: string
-- ito:BenchmarkDataset:
+    - owl_axiom_annotated_target: string
+- Ns1Ito:BenchmarkDataset:
   - dc11:source:
-    - ito:benchmark_dataset_source:
-      - NamedIndividual
-      - ito:Dataset
+    - ns1_ito:benchmark_dataset_source:
+      - OwlNamedIndividual
+      - Ns1Ito:Dataset
   - rdf:type:
-    - ito:benchmark_dataset_type: Class
+    - ns1_ito:benchmark_dataset_type: OwlClass
   - ns3:creation_date:
-    - ito:benchmark_dataset_creation_date: dateTime
+    - ns1_ito:benchmark_dataset_creation_date: dateTime
   - rdfs:label:
-    - ito:benchmark_dataset_label: string
+    - ns1_ito:benchmark_dataset_label: string
   - ns1:ito:papers_with_code_id:
-    - ito:benchmark_dataset_ito:papers_with_code_id: string
+    - ns1_ito:benchmark_dataset_ito:papers_with_code_id: string
   - ns2:refactor_comment:
-    - ito:benchmark_dataset_refactor_comment: string
-- AnnotationProperty:
+    - ns1_ito:benchmark_dataset_refactor_comment: string
+- OwlAnnotationProperty:
   - ns3:hasDefinition:
-    - annotation_property_has_definition: string
+    - owl_annotation_property_has_definition: string
   - rdfs:label:
-    - annotation_property_label: string
+    - owl_annotation_property_label: string
   - ns3:hasRelatedSynonym:
-    - annotation_property_has_related_synonym: string
+    - owl_annotation_property_has_related_synonym: string
   - ns3:hasBroadSynonym:
-    - annotation_property_has_broad_synonym: string
+    - owl_annotation_property_has_broad_synonym: string
   - rdfs:comment:
-    - annotation_property_comment: string
+    - owl_annotation_property_comment: string

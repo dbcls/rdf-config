@@ -1,86 +1,86 @@
-- ObjectProperty:
+- OwlObjectProperty:
   - rdfs:range:
-    - object_property_range: Class
+    - owl_object_property_range: OwlClass
   - rdfs:domain:
-    - object_property_domain: Class
+    - owl_object_property_domain: OwlClass
   - owl:inverseOf:
-    - object_property_inverse_of:
-      - AsymmetricProperty
-      - ObjectProperty
+    - owl_object_property_inverse_of:
+      - OwlAsymmetricProperty
+      - OwlObjectProperty
   - rdfs:subPropertyOf:
-    - object_property_sub_property_of:
-      - AsymmetricProperty
-      - ObjectProperty
+    - owl_object_property_sub_property_of:
+      - OwlAsymmetricProperty
+      - OwlObjectProperty
   - rdfs:label:
-    - object_property_label: string
+    - owl_object_property_label: string
   - rdfs:comment:
-    - object_property_comment: string
-- Class:
+    - owl_object_property_comment: string
+- OwlClass:
   - owl:disjointWith:
-    - class_disjoint_with: Class
+    - owl_class_disjoint_with: OwlClass
   - rdfs:subClassOf:
-    - class_sub_class_of:
-      - Restriction
-      - Class
+    - owl_class_sub_class_of:
+      - OwlRestriction
+      - OwlClass
   - ns1:ncit:crossReference:
-    - class_ncit:cross_reference: string
+    - owl_class_ncit:cross_reference: string
   - ns1:ncit:synonym:
-    - class_ncit:synonym: string
+    - owl_class_ncit:synonym: string
   - rdfs:label:
-    - class_label:
+    - owl_class_label:
       - string
       - string
   - ns1:umls:cui:
-    - class_umls:cui: string
+    - owl_class_umls:cui: string
   - rdfs:seeAlso:
-    - class_see_also: anyURI
+    - owl_class_see_also: anyURI
   - rdfs:comment:
-    - class_comment: string
+    - owl_class_comment: string
   - skos:definition:
-    - class_definition: string
+    - owl_class_definition: string
   - ns1:ncit:abbreviation:
-    - class_ncit:abbreviation: string
-- AnnotationProperty:
+    - owl_class_ncit:abbreviation: string
+- OwlAnnotationProperty:
   - ns1:ncit:synonym:
-    - annotation_property_ncit:synonym: string
+    - owl_annotation_property_ncit:synonym: string
   - rdfs:label:
-    - annotation_property_label: string
+    - owl_annotation_property_label: string
   - rdfs:isDefinedBy:
-    - annotation_property_is_defined_by: anyURI
+    - owl_annotation_property_is_defined_by: anyURI
   - dc:source:
-    - annotation_property_source: anyURI
+    - owl_annotation_property_source: anyURI
   - skos:definition:
-    - annotation_property_definition: string
-- AsymmetricProperty:
+    - owl_annotation_property_definition: string
+- OwlAsymmetricProperty:
   - rdfs:range:
-    - asymmetric_property_range: Class
+    - owl_asymmetric_property_range: OwlClass
   - rdfs:domain:
-    - asymmetric_property_domain: Class
+    - owl_asymmetric_property_domain: OwlClass
   - owl:inverseOf:
-    - asymmetric_property_inverse_of:
-      - AsymmetricProperty
-      - ObjectProperty
+    - owl_asymmetric_property_inverse_of:
+      - OwlAsymmetricProperty
+      - OwlObjectProperty
   - rdfs:label:
-    - asymmetric_property_label: string
+    - owl_asymmetric_property_label: string
   - rdfs:comment:
-    - asymmetric_property_comment: string
-- Restriction:
+    - owl_asymmetric_property_comment: string
+- OwlRestriction:
   - owl:someValuesFrom:
-    - restriction_some_values_from: Class
+    - owl_restriction_some_values_from: OwlClass
   - owl:onProperty:
-    - restriction_on_property:
-      - AsymmetricProperty
-      - ObjectProperty
-- Ontology:
+    - owl_restriction_on_property:
+      - OwlAsymmetricProperty
+      - OwlObjectProperty
+- OwlOntology:
   - dc:creator:
-    - ontology_creator: string
+    - owl_ontology_creator: string
   - dc:title:
-    - ontology_title: string
+    - owl_ontology_title: string
   - dc:license:
-    - ontology_license: string
+    - owl_ontology_license: string
   - dc:date:
-    - ontology_date: string
+    - owl_ontology_date: string
   - owl:versionInfo:
-    - ontology_version_info: string
+    - owl_ontology_version_info: string
   - rdfs:comment:
-    - ontology_comment: string
+    - owl_ontology_comment: string

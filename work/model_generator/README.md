@@ -1,12 +1,9 @@
 # 実行方法
 ```
-% bundle exec rdf-config --model --input void --output work/model_generator/output /path/to/mesh_void_plus.ttl
+% bundle exec rdf-config --model :void --output work/model_generator/output /path/to/mesh_void_plus.ttl
 ```
 
 以下のように修正予定
-```
-% bundle exec rdf-config --model :void --output work/model_generator/output /path/to/mesh_void_plus.ttl
-```
 
 senberoで確認
 ```

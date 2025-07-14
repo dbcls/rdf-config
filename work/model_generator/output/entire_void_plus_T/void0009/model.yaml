@@ -1,128 +1,128 @@
-- AtAge_30To_39:
+- Ns1AtAge_30To_39:
   - rdf:type:
-    - at_age_30_to_39_type: Class
-- DifferentIndividualsAtom:
+    - ns1_at_age_30_to_39_type: OwlClass
+- Ns2DifferentIndividualsAtom:
   - ns2:argument2:
-    - different_individuals_atom_argument2: Variable
+    - ns2_different_individuals_atom_argument2: Variable
   - ns2:argument1:
-    - different_individuals_atom_argument1: Variable
-- PositiveButResolved:
+    - ns2_different_individuals_atom_argument1: Variable
+- Ns1PositiveButResolved:
   - rdf:type:
-    - positive_but_resolved_type: Class
-- InInfancy:
+    - ns1_positive_but_resolved_type: OwlClass
+- Ns1InInfancy:
   - rdf:type:
-    - in_infancy_type: Class
-- IndividualPropertyAtom:
+    - ns1_in_infancy_type: OwlClass
+- Ns2IndividualPropertyAtom:
   - ns2:argument2:
-    - individual_property_atom_argument2: Variable
+    - ns2_individual_property_atom_argument2: Variable
   - ns2:propertyPredicate:
-    - individual_property_atom_property_predicate:
-      - ObjectProperty
-      - SymmetricProperty
+    - ns2_individual_property_atom_property_predicate:
+      - OwlObjectProperty
+      - OwlSymmetricProperty
   - ns2:argument1:
-    - individual_property_atom_argument1: Variable
-- AtAge_60AndOlder:
+    - ns2_individual_property_atom_argument1: Variable
+- Ns1AtAge_60AndOlder:
   - rdf:type:
-    - at_age_60_and_older_type: Class
-- ClassAtom:
+    - ns1_at_age_60_and_older_type: OwlClass
+- Ns2ClassAtom:
   - ns2:classPredicate:
-    - class_atom_class_predicate: Class
+    - ns2_class_atom_class_predicate: OwlClass
   - ns2:argument1:
-    - class_atom_argument1: Variable
-- AtAge_20To_29:
+    - ns2_class_atom_argument1: Variable
+- Ns1AtAge_20To_29:
   - rdf:type:
-    - at_age_20_to_29_type: Class
-- AtAge_50To_59:
+    - ns1_at_age_20_to_29_type: OwlClass
+- Ns1AtAge_50To_59:
   - rdf:type:
-    - at_age_50_to_59_type: Class
-- DatatypeProperty:
+    - ns1_at_age_50_to_59_type: OwlClass
+- OwlDatatypeProperty:
   - rdfs:domain:
-    - datatype_property_domain: Class
-- Negative:
+    - owl_datatype_property_domain: OwlClass
+- Ns1Negative:
   - rdf:type:
-    - negative_type: Class
-- Imp:
+    - ns1_negative_type: OwlClass
+- Ns2Imp:
   - ns2:head:
-    - imp_head: AtomList
+    - ns2_imp_head: Ns2AtomList
   - ns2:body:
-    - imp_body: AtomList
-- Unknown:
+    - ns2_imp_body: Ns2AtomList
+- Ns1Unknown:
   - rdf:type:
-    - unknown_type: Class
-- ObjectProperty:
+    - ns1_unknown_type: OwlClass
+- OwlObjectProperty:
   - rdfs:domain:
-    - object_property_domain: Class
+    - owl_object_property_domain: OwlClass
   - owl:inverseOf:
-    - object_property_inverse_of:
-      - ObjectProperty
-      - SymmetricProperty
-      - InverseFunctionalProperty
-      - FunctionalProperty
+    - owl_object_property_inverse_of:
+      - OwlObjectProperty
+      - OwlSymmetricProperty
+      - OwlInverseFunctionalProperty
+      - OwlFunctionalProperty
   - rdfs:subPropertyOf:
-    - object_property_sub_property_of: ObjectProperty
+    - owl_object_property_sub_property_of: OwlObjectProperty
   - rdfs:range:
-    - object_property_range: Class
+    - owl_object_property_range: OwlClass
   - rdfs:comment:
-    - object_property_comment: string
+    - owl_object_property_comment: string
   - owl:versionInfo:
-    - object_property_version_info: string
-- Class:
+    - owl_object_property_version_info: string
+- OwlClass:
   - owl:equivalentClass:
-    - class_equivalent_class: Class
+    - owl_class_equivalent_class: OwlClass
   - owl:disjointWith:
-    - class_disjoint_with: Class
+    - owl_class_disjoint_with: OwlClass
   - rdfs:subClassOf:
-    - class_sub_class_of: Class
+    - owl_class_sub_class_of: OwlClass
   - rdfs:comment:
-    - class_comment: string
+    - owl_class_comment: string
   - owl:versionInfo:
-    - class_version_info: string
-- Positive:
+    - owl_class_version_info: string
+- Ns1Positive:
   - rdf:type:
-    - positive_type: Class
-- AtAge_40To_49:
+    - ns1_positive_type: OwlClass
+- Ns1AtAge_40To_49:
   - rdf:type:
-    - at_age_40_to_49_type: Class
-- AgeUnknown:
+    - ns1_at_age_40_to_49_type: OwlClass
+- Ns1AgeUnknown:
   - rdf:type:
-    - age_unknown_type: Class
-- AtomList:
+    - ns1_age_unknown_type: OwlClass
+- Ns2AtomList:
   - rdf:rest:
-    - atom_list_rest: AtomList
+    - ns2_atom_list_rest: Ns2AtomList
   - rdf:first:
-    - atom_list_first:
-      - IndividualPropertyAtom
-      - DifferentIndividualsAtom
-      - ClassAtom
-- SymmetricProperty:
+    - ns2_atom_list_first:
+      - Ns2IndividualPropertyAtom
+      - Ns2DifferentIndividualsAtom
+      - Ns2ClassAtom
+- OwlSymmetricProperty:
   - rdfs:domain:
-    - symmetric_property_domain: Class
+    - owl_symmetric_property_domain: OwlClass
   - owl:inverseOf:
-    - symmetric_property_inverse_of:
-      - ObjectProperty
-      - SymmetricProperty
+    - owl_symmetric_property_inverse_of:
+      - OwlObjectProperty
+      - OwlSymmetricProperty
   - rdfs:subPropertyOf:
-    - symmetric_property_sub_property_of: ObjectProperty
-- FunctionalProperty:
+    - owl_symmetric_property_sub_property_of: OwlObjectProperty
+- OwlFunctionalProperty:
   - rdfs:domain:
-    - functional_property_domain: Class
+    - owl_functional_property_domain: OwlClass
   - owl:inverseOf:
-    - functional_property_inverse_of:
-      - InverseFunctionalProperty
-      - ObjectProperty
+    - owl_functional_property_inverse_of:
+      - OwlInverseFunctionalProperty
+      - OwlObjectProperty
   - rdfs:range:
-    - functional_property_range: Class
-- InverseFunctionalProperty:
+    - owl_functional_property_range: OwlClass
+- OwlInverseFunctionalProperty:
   - rdfs:domain:
-    - inverse_functional_property_domain: Class
+    - owl_inverse_functional_property_domain: OwlClass
   - owl:inverseOf:
-    - inverse_functional_property_inverse_of:
-      - ObjectProperty
-      - FunctionalProperty
+    - owl_inverse_functional_property_inverse_of:
+      - OwlObjectProperty
+      - OwlFunctionalProperty
   - rdfs:range:
-    - inverse_functional_property_range: Class
+    - owl_inverse_functional_property_range: OwlClass
   - owl:versionInfo:
-    - inverse_functional_property_version_info: string
-- BeforeAge_20:
+    - owl_inverse_functional_property_version_info: string
+- Ns1BeforeAge_20:
   - rdf:type:
-    - before_age_20_type: Class
+    - ns1_before_age_20_type: OwlClass

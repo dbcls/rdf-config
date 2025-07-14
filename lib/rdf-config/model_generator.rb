@@ -4,8 +4,12 @@ class RDFConfig
   class ModelGenerator
     class UnsupportedFormat < StandardError; end
 
+    DEFAULT_INPUT_FORMAT = 'void'
+
     def initialize(**opts)
-      @input_format = opts[:input]
+      @input_format = opts[:input] || DEFAULT_INPUT_FORMAT
+      @input_format = @input_format[1..-1] if @input_format.start_with?(':')
+
       @output_dir = opts[:output].first
       @input_file = opts[:output].last
     end

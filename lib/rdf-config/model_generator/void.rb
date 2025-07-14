@@ -23,7 +23,8 @@ class RDFConfig
         @output_dir = output_dir
 
         @graph = RDF::Graph.load(@input_file, format: :turtle)
-        @subject_uris = []
+        @subject_class_uris = []
+        @subject_name = {}
         @property = {}
         @prefix = {}
         @ns_number = 1
@@ -38,6 +39,7 @@ class RDFConfig
       def generate
         parse
         output_prefix
+        generate_subject_names
         output_model
       end
 
@@ -45,7 +47,7 @@ class RDFConfig
 
       def parse
         fetch_subject_uris
-        @subject_uris.each do |subject_uri|
+        @subject_class_uris.each do |subject_uri|
           # warn subject_uri
           fetch_property_by_subject(subject_uri)
         end
@@ -60,14 +62,13 @@ class RDFConfig
       end
 
       def output_model
-        @subject_uris.each do |subject_uri|
-          _, subject_name = split_uri(subject_uri)
-          subject_name = snake_to_camel(subject_name)
+        @subject_class_uris.each do |subject_class_uri|
+          subject_name = subject_name_by_class_uri(subject_class_uri)
 
           subject = {
             subject_name => []
           }
-          @property[subject_uri].each do |predicate_uri, object|
+          @property[subject_class_uri].each do |predicate_uri, object|
             obj_example = if object.is_a?(Array)
                             object.map { |obj| object_example_value(obj) }
                           else
@@ -94,9 +95,9 @@ class RDFConfig
         end
 
         @graph.query(query) do |solution|
-          subject_uri = solution[:resource_class]
-          register_prefix(subject_uri)
-          add_subject_uri(subject_uri)
+          subject_class_uri = solution[:resource_class]
+          register_prefix(subject_class_uri)
+          add_subject_class_uri(subject_class_uri)
         end
       end
 
@@ -139,7 +140,7 @@ class RDFConfig
       end
 
       def dump
-        @subject_uris.each do |subject_uri|
+        @subject_class_uris.each do |subject_uri|
           puts qname(subject_uri)
           @property[subject_uri].each do |property|
             puts "    #{qname(property[:predicate])} #{qname(property[:object])}"
@@ -147,13 +148,15 @@ class RDFConfig
         end
       end
 
-      def add_subject_uri(subject_uri)
-        # warn "add_subject_uri: #{subject_uri}"
-        @subject_uris << subject_uri
+      def generate_subject_names
+        @subject_name = @subject_class_uris.map { |uri| [uri, subject_name_by_class_uri(uri)] }.to_h
+      end
+
+      def add_subject_class_uri(subject_class_uri)
+        @subject_class_uris << subject_class_uri
       end
 
       def add_property(subject_uri, predicate_uri, object)
-        # warn "add_property: #{subject_uri} #{predicate_uri} #{object}"
         register_prefix(predicate_uri)
         register_prefix(object)
 

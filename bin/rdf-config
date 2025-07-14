@@ -39,7 +39,6 @@ args = GetoptLong.new(
   ['--convert',         GetoptLong::OPTIONAL_ARGUMENT],
   ['--format',          GetoptLong::OPTIONAL_ARGUMENT],
   ['--model',           GetoptLong::OPTIONAL_ARGUMENT],
-  ['--input',           GetoptLong::OPTIONAL_ARGUMENT],
   ['--output',          GetoptLong::OPTIONAL_ARGUMENT],
   ['--debug',           GetoptLong::OPTIONAL_ARGUMENT]
 )
@@ -117,7 +116,6 @@ opt_values.each do |opt_name, values|
     opts[:format] = value
   when '--model'
     opts[:mode] = :model
-  when '--input'
     opts[:input] = value
   when '--output'
     opts[:output] = value

@@ -1,69 +1,69 @@
-- Restriction:
+- OwlRestriction:
   - owl:onClass:
-    - restriction_on_class: Class
+    - owl_restriction_on_class: OwlClass
   - owl:onProperty:
-    - restriction_on_property: ObjectProperty
+    - owl_restriction_on_property: OwlObjectProperty
   - owl:someValuesFrom:
-    - restriction_some_values_from: Class
+    - owl_restriction_some_values_from: OwlClass
   - owl:allValuesFrom:
-    - restriction_all_values_from:
-      - NamedIndividual
-      - status
-      - Class
+    - owl_restriction_all_values_from:
+      - OwlNamedIndividual
+      - Ns1Status
+      - OwlClass
   - owl:maxQualifiedCardinality:
-    - restriction_max_qualified_cardinality: nonNegativeInteger
-- FunctionalProperty:
+    - owl_restriction_max_qualified_cardinality: nonNegativeInteger
+- OwlFunctionalProperty:
   - rdfs:range:
-    - functional_property_range: Datatype
+    - owl_functional_property_range: Datatype
   - rdfs:domain:
-    - functional_property_domain: Class
-- priority:
+    - owl_functional_property_domain: OwlClass
+- Ns1Priority:
   - rdf:type:
-    - priority_type: Class
-- Class:
+    - ns1_priority_type: OwlClass
+- OwlClass:
   - rdf:type:
-    - class_type: Class
+    - owl_class_type: OwlClass
   - rdfs:subClassOf:
-    - class_sub_class_of:
-      - Class
-      - Restriction
+    - owl_class_sub_class_of:
+      - OwlClass
+      - OwlRestriction
   - rdfs:label:
-    - class_label: string
+    - owl_class_label: string
   - rdfs:comment:
-    - class_comment: string
-- status:
+    - owl_class_comment: string
+- Ns1Status:
   - rdf:type:
-    - status_type: Class
+    - ns1_status_type: OwlClass
   - rdfs:subClassOf:
-    - status_sub_class_of:
-      - Class
-      - Restriction
-- plasmidConstructionStep:
+    - ns1_status_sub_class_of:
+      - OwlClass
+      - OwlRestriction
+- Ns1PlasmidConstructionStep:
   - rdf:type:
-    - plasmid_construction_step_type: Class
-- Thing:
+    - ns1_plasmid_construction_step_type: OwlClass
+- OwlThing:
   - rdf:type:
-    - thing_type: Class
-- ObjectProperty:
+    - owl_thing_type: OwlClass
+- OwlObjectProperty:
   - rdfs:range:
-    - object_property_range: Class
+    - owl_object_property_range: OwlClass
   - rdfs:subPropertyOf:
-    - object_property_sub_property_of: ObjectProperty
+    - owl_object_property_sub_property_of: OwlObjectProperty
   - rdfs:domain:
-    - object_property_domain: Class
+    - owl_object_property_domain: OwlClass
   - rdfs:comment:
-    - object_property_comment: string
-- NamedIndividual:
+    - owl_object_property_comment: string
+- OwlNamedIndividual:
   - rdf:type:
-    - named_individual_type: Class
+    - owl_named_individual_type: OwlClass
   - rdfs:subClassOf:
-    - named_individual_sub_class_of:
-      - Class
-      - Restriction
-- DatatypeProperty:
+    - owl_named_individual_sub_class_of:
+      - OwlClass
+      - OwlRestriction
+- OwlDatatypeProperty:
   - rdfs:range:
-    - datatype_property_range: Datatype
+    - owl_datatype_property_range: Datatype
   - rdfs:subPropertyOf:
-    - datatype_property_sub_property_of: DatatypeProperty
+    - owl_datatype_property_sub_property_of: OwlDatatypeProperty
   - rdfs:domain:
-    - datatype_property_domain: Class
+    - owl_datatype_property_domain: OwlClass

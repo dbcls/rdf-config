@@ -6,6 +6,14 @@ class RDFConfig
   class ModelGenerator
     module MixIn
       module Utils
+        def subject_name_by_class_uri(class_uri)
+          namespace, subject_name = split_uri(class_uri)
+          prefix = @prefix[namespace]
+          subject_name = [prefix.to_s.capitalize, subject_name].join('_') unless prefix.nil?
+
+          snake_to_camel(subject_name)
+        end
+
         def object_example_value(object)
           case object
           when RDF::XSD.string
@@ -19,7 +27,11 @@ class RDFConfig
           when RDF::XSD.date
             '2000-01-01'
           else
-            split_uri(object).last
+            if @subject_name.key?(object)
+              @subject_name[object]
+            else
+              split_uri(object).last
+            end
           end
         end
 
