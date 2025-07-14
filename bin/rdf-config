@@ -39,6 +39,7 @@ args = GetoptLong.new(
   ['--convert',         GetoptLong::OPTIONAL_ARGUMENT],
   ['--context',         GetoptLong::OPTIONAL_ARGUMENT],
   ['--output',          GetoptLong::OPTIONAL_ARGUMENT],
+  ['--output-interval', GetoptLong::OPTIONAL_ARGUMENT],
   ['--debug',           GetoptLong::OPTIONAL_ARGUMENT]
 )
 args.ordering = GetoptLong::RETURN_IN_ORDER
@@ -62,7 +63,7 @@ rescue StandardError
   exit(1)
 end
 
-ONLY_ONE_VALUE_OPTS = %w[--convert --context --output]
+ONLY_ONE_VALUE_OPTS = %w[--convert --context --output --output-interval].freeze
 arg_values = []
 opt_values.each do |opt_name, values|
   next if values.empty?
@@ -118,6 +119,8 @@ opt_values.each do |opt_name, values|
   when '--convert'
     opts[:mode] = :convert
     opts[:format] = value
+  when '--output-interval'
+    opts[:output_interval] = value
   when '--output'
     opts[:output_path] = value
   when '--debug'

@@ -143,7 +143,14 @@ class RDFConfig
 
       def parse_subject_converts(subject_name)
         @yaml_parser.subject_converts(subject_name).map do |subject_convert|
-          add_subject_convert(subject_name, parse_converter(subject_name, subject_convert))
+          if subject_convert.is_a?(Hash) && subject_convert.values.first.is_a?(Array)
+            key = subject_convert.keys.first
+            subject_convert[key].each do |value|
+              add_subject_convert(subject_name, parse_converter(subject_name, { key => value }))
+            end
+          else
+            add_subject_convert(subject_name, parse_converter(subject_name, subject_convert))
+          end
         end
       end
 

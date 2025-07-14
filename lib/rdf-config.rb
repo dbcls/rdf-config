@@ -18,6 +18,12 @@ require_relative 'rdf-config/grasp'
 require_relative 'rdf-config/shex'
 require_relative 'rdf-config/convert'
 
+class Integer
+  def delimited_string
+    self.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\1,').reverse
+  end
+end
+
 class RDFConfig
   def initialize(opts = {})
     @config = if opts[:config_dir].is_a?(Array)

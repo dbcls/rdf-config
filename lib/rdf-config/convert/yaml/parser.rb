@@ -90,7 +90,12 @@ class RDFConfig
         end
 
         def parse_subject_converts(subject_converts)
-          @subject_convert[@subject_name] = node_to_ruby(subject_converts)
+          converts = node_to_ruby(subject_converts)
+          if converts.is_a?(Array)
+            @subject_convert[@subject_name] = converts
+          else
+            @subject_convert[@subject_name] = [converts]
+          end
         end
 
         def parse_object_converts(object_converts)

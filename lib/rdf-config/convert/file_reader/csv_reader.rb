@@ -21,6 +21,10 @@ class RDFConfig
         end
       end
 
+      def source
+        File.basename(@source_file)
+      end
+
       private
 
       def csv_opts

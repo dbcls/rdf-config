@@ -23,6 +23,10 @@ class RDFConfig
         disconnect
       end
 
+      def source
+        @table_name
+      end
+
       private
 
       def connect

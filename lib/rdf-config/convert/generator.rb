@@ -7,6 +7,8 @@ class RDFConfig
     class Generator
       include RDFConfig::Convert::MixIn::ConvertUtil
 
+      READ_DONE_LINES = 1000
+
       def initialize(config, convert)
         @config = config
         @convert = convert

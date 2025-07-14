@@ -34,19 +34,21 @@
 
 - EnsemblGene:
     - source("CCLE_DepMap_18q3_RNAseq_RPKM_20180718_head1001.txt")
+    # - source("CCLE_DepMap_18q3_RNAseq_RPKM_20180718.txt")
     - subject:
         - tsv("Name")
-        - replace(/\.\d+$/, "")
+        - delete(/\.\d+$/)
         - prepend("ccleg:")
     - objects:
         - ensg_label: tsv("Description")
         - ensg_see_also:
             - tsv("Name")
-            - replace(/\.\d+$/, "")
+            - delete(/\.\d+$/)
             - prepend("http://rdf.ebi.ac.uk/resource/ensembl/")
 
 - EntrezGene:
     - source("CCLE_DepMap_18q3_maf_20180718_head1001.txt")
+    # - source("CCLE_DepMap_18q3_maf_20180718.txt")
     - subject:
         - tsv("Hugo_Symbol")
         - prepend("ccleg:")
@@ -58,19 +60,24 @@
 
 - Variation:
     - source("CCLE_DepMap_18q3_maf_20180718_head1001.txt")
+    # - source("CCLE_DepMap_18q3_maf_20180718.txt")
     - $chr: tsv("Chromosome")
     - $ncbi_build: tsv("NCBI_Build")
+    - $gene: tsv("Hugo_Symbol")
+    - $label:
+          - tsv("Protein_Change")
+          - delete(/^p\./)
+    # - subject: "cclev:$gene-$label"
     - subject:
-        - tsv("Hugo_Symbol")
-        - prepend("ccleg:")
+        # - tsv("Protein_Change")
+        # - delete(/^p\./)
+        - $label
+        - replace('>', '_')
+        - prepend("cclev:$gene-")
     - objects:
-        - variation_label:
-            - tsv("Protein_Change")
-            - replace(/^p\./, "")
+        - variation_label: $label
         - alternative_allele: tsv("Tumor_Seq_Allele1")
-        - variant_gene:
-            - tsv("Hugo_Symbol")
-            - prepend("ccleg:")
+        - variant_gene: "ccleg:$gene"
         - reference_allele: tsv("Reference_Allele")
         - variant_consequence:
             - switch("Variant_Classification"):
@@ -93,7 +100,7 @@
             - prepend("ccleg:")
         - variant_transcript_see_also:
             - tsv("Annotation_Transcript")
-            - replace(/\.\d+$/, "")
+            - delete(/\.\d+$/)
             - prepend("transcript:")
         - snp_start_pos: tsv("Start_position")
         - snp_start_reference: "hco:$chr#GRCh$ncbi_build"

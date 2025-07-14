@@ -23,9 +23,10 @@ class RDFConfig
     ROOT_MACRO_NAME = 'root'
     SYSTEM_MACRO_NAMES = [SOURCE_MACRO_NAME, ROOT_MACRO_NAME].freeze
     JSON_LD_FORMATS = Validator::VALID_CONVERT_TYPES - %w[:turtle :ntriples :context]
+    DEFAULT_OUTPUT_INTERVAL = 10
 
     attr_reader :source_subject_map, :subject_config, :object_config, :subject_object_map,
-                :convert_method, :macro_names, :format, :output_path
+                :convert_method, :macro_names, :format, :output_path, :output_interval
 
     def_delegators :@config_parser,
                    :subject_converts, :object_converts, :source_subject_map, :source_format_map, :macro_names,
@@ -38,6 +39,9 @@ class RDFConfig
       @config = config
       @format = opts[:format] || ':turtle'
       @output_path = opts[:output_path]
+      @output_interval = opts[:output_interval].to_s.to_i
+      @output_interval = DEFAULT_OUTPUT_INTERVAL if @output_interval.zero?
+
       @generate_context = %w[:context context].include?(@format)
 
       @yaml_parser = Yaml::Parser.new(config.config_file_path('convert'))

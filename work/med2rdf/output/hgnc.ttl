@@ -1,11 +1,139 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix hgnc: <http://identifiers.org/hgnc/> .
+@prefix ido: <http://rdf.identifiers.org/ontology/> .
 @prefix idt: <http://identifiers.org/> .
 @prefix m2r: <http://med2rdf.org/ontology/med2rdf#> .
 @prefix obo: <http://purl.obolibrary.org/obo/> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+hgnc:23336 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "A2ML1";
+  obo:so_part_of "12p13.31";
+  dct:description "alpha-2-macroglobulin like 1";
+  dct:identifier 23336;
+  dct:references idt:pubmed\/16298998;
+  rdfs:seeAlso idt:uniprot\/A8K2U0 .
+
+hgnc:24086 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "A1CF";
+  obo:so_part_of "10q11.23";
+  dct:description "APOBEC1 complementation factor";
+  dct:identifier 24086;
+  dct:references idt:pubmed\/11815617,
+    idt:pubmed\/11072063;
+  rdfs:seeAlso idt:uniprot\/Q9NQ94 .
+
+hgnc:27057 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "A2M-AS1";
+  obo:so_part_of "12p13.31";
+  dct:description "A2M antisense RNA 1";
+  dct:identifier 27057 .
+
+hgnc:30005 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "A3GALT2";
+  obo:so_part_of "1p35.1";
+  dct:description "alpha 1,3-galactosyltransferase 2";
+  dct:identifier 30005;
+  dct:references idt:pubmed\/10854427,
+    idt:pubmed\/18630988;
+  rdfs:seeAlso idt:uniprot\/U3KPV4 .
+
+hgnc:37133 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "A1BG-AS1";
+  obo:so_part_of "19q13.43";
+  dct:description "A1BG antisense RNA 1";
+  dct:identifier 37133 .
+
+hgnc:41022 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "A2ML1-AS1";
+  obo:so_part_of "12p13.31";
+  dct:description "A2ML1 antisense RNA 1";
+  dct:identifier 41022 .
+
+hgnc:41523 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "A2ML1-AS2";
+  obo:so_part_of "12p13.31";
+  dct:description "A2ML1 antisense RNA 2";
+  dct:identifier 41523 .
+
+hgnc:5 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "A1BG";
+  obo:so_part_of "19q13.43";
+  dct:description "alpha-1-B glycoprotein";
+  dct:identifier 5;
+  dct:references idt:pubmed\/2591067;
+  rdfs:seeAlso idt:uniprot\/P04217 .
+
+hgnc:7 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "A2M";
+  obo:so_part_of "12p13.31";
+  dct:description "alpha-2-macroglobulin";
+  dct:identifier 7;
+  dct:references idt:pubmed\/2408344,
+    idt:pubmed\/9697696;
+  rdfs:seeAlso idt:uniprot\/P01023 .
+
+hgnc:8 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "A2MP1";
+  obo:so_part_of "12p13.31";
+  dct:description "alpha-2-macroglobulin pseudogene 1";
+  dct:identifier 8;
+  dct:references idt:pubmed\/2478422 .
+
+idt:pubmed\/10854427 a idt:pubmed;
+  dct:identifier 10854427 .
+
+idt:pubmed\/11072063 a idt:pubmed;
+  dct:identifier 11072063 .
+
+idt:pubmed\/11815617 a idt:pubmed;
+  dct:identifier 11815617 .
+
+idt:pubmed\/16298998 a idt:pubmed;
+  dct:identifier 16298998 .
+
+idt:pubmed\/18630988 a idt:pubmed;
+  dct:identifier 18630988 .
+
+idt:pubmed\/2408344 a idt:pubmed;
+  dct:identifier 2408344 .
+
+idt:pubmed\/2478422 a idt:pubmed;
+  dct:identifier 2478422 .
+
+idt:pubmed\/2591067 a idt:pubmed;
+  dct:identifier 2591067 .
+
+idt:pubmed\/9697696 a idt:pubmed;
+  dct:identifier 9697696 .
+
+idt:uniprot\/A8K2U0 a idt:uniprot;
+  dct:identifier "A8K2U0" .
+
+idt:uniprot\/P01023 a idt:uniprot;
+  dct:identifier "P01023" .
+
+idt:uniprot\/P04217 a idt:uniprot;
+  dct:identifier "P04217" .
+
+idt:uniprot\/Q9NQ94 a idt:uniprot;
+  dct:identifier "Q9NQ94" .
+
+idt:uniprot\/U3KPV4 a idt:uniprot;
+  dct:identifier "U3KPV4" .
 
 hgnc:13666 a obo:SO_0000704,
     m2r:Gene;
@@ -17,14 +145,295 @@ hgnc:13666 a obo:SO_0000704,
     idt:pubmed\/12196509;
   rdfs:seeAlso idt:uniprot\/Q9NRG9 .
 
-hgnc:14114 a obo:SO_0000704,
+hgnc:17 a obo:SO_0000704,
     m2r:Gene;
-  rdfs:label "ABCB10P1";
-  obo:so_part_of "15q11.2";
-  dct:description "ABCB10 pseudogene 1";
-  dct:identifier 14114;
-  dct:references idt:pubmed\/7766993,
-    idt:pubmed\/10922475 .
+  rdfs:label "AADAC";
+  obo:so_part_of "3q25.1";
+  dct:description "arylacetamide deacetylase";
+  dct:identifier 17;
+  dct:references idt:pubmed\/8063807,
+    idt:pubmed\/9299245;
+  rdfs:seeAlso idt:uniprot\/P22760 .
+
+hgnc:17968 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "A4GNT";
+  obo:so_part_of "3q22.3";
+  dct:description "alpha-1,4-N-acetylglucosaminyltransferase";
+  dct:identifier 17968;
+  dct:references idt:pubmed\/10430883;
+  rdfs:seeAlso idt:uniprot\/Q9UNA3 .
+
+hgnc:18149 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "A4GALT";
+  obo:so_part_of "22q13.2";
+  dct:description "alpha 1,4-galactosyltransferase (P1PK blood group)";
+  dct:identifier 18149;
+  dct:references idt:pubmed\/10854428,
+    idt:pubmed\/20971946;
+  rdfs:seeAlso idt:uniprot\/Q9NPC4 .
+
+hgnc:18226 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "AACSP1";
+  obo:so_part_of "5q35.3";
+  dct:description "acetoacetyl-CoA synthetase pseudogene 1";
+  dct:identifier 18226 .
+
+hgnc:21298 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "AACS";
+  obo:so_part_of "12q24.31";
+  dct:description "acetoacetyl-CoA synthetase";
+  dct:identifier 21298;
+  dct:references idt:pubmed\/12623130,
+    idt:pubmed\/17762044;
+  rdfs:seeAlso idt:uniprot\/Q86V21 .
+
+hgnc:24427 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "AADACL2";
+  obo:so_part_of "3q25.1";
+  dct:description "arylacetamide deacetylase like 2";
+  dct:identifier 24427;
+  dct:references idt:pubmed\/25715734;
+  rdfs:seeAlso idt:uniprot\/Q6P093 .
+
+hgnc:32037 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "AADACL3";
+  obo:so_part_of "1p36.21";
+  dct:description "arylacetamide deacetylase like 3";
+  dct:identifier 32037;
+  rdfs:seeAlso idt:uniprot\/Q5VUY0 .
+
+hgnc:32038 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "AADACL4";
+  obo:so_part_of "1p36.21";
+  dct:description "arylacetamide deacetylase like 4";
+  dct:identifier 32038;
+  rdfs:seeAlso idt:uniprot\/Q5VUY2 .
+
+hgnc:50301 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "AADACL2-AS1";
+  obo:so_part_of "3q25.1";
+  dct:description "AADACL2 antisense RNA 1";
+  dct:identifier 50301 .
+
+idt:pubmed\/10430883 a idt:pubmed;
+  dct:identifier 10430883 .
+
+idt:pubmed\/10854428 a idt:pubmed;
+  dct:identifier 10854428 .
+
+idt:pubmed\/11062474 a idt:pubmed;
+  dct:identifier 11062474 .
+
+idt:pubmed\/12196509 a idt:pubmed;
+  dct:identifier 12196509 .
+
+idt:pubmed\/12623130 a idt:pubmed;
+  dct:identifier 12623130 .
+
+idt:pubmed\/17762044 a idt:pubmed;
+  dct:identifier 17762044 .
+
+idt:pubmed\/20971946 a idt:pubmed;
+  dct:identifier 20971946 .
+
+idt:pubmed\/25715734 a idt:pubmed;
+  dct:identifier 25715734 .
+
+idt:pubmed\/8063807 a idt:pubmed;
+  dct:identifier 8063807 .
+
+idt:pubmed\/9299245 a idt:pubmed;
+  dct:identifier 9299245 .
+
+idt:uniprot\/P22760 a idt:uniprot;
+  dct:identifier "P22760" .
+
+idt:uniprot\/Q5VUY0 a idt:uniprot;
+  dct:identifier "Q5VUY0" .
+
+idt:uniprot\/Q5VUY2 a idt:uniprot;
+  dct:identifier "Q5VUY2" .
+
+idt:uniprot\/Q6P093 a idt:uniprot;
+  dct:identifier "Q6P093" .
+
+idt:uniprot\/Q86V21 a idt:uniprot;
+  dct:identifier "Q86V21" .
+
+idt:uniprot\/Q9NPC4 a idt:uniprot;
+  dct:identifier "Q9NPC4" .
+
+idt:uniprot\/Q9NRG9 a idt:uniprot;
+  dct:identifier "Q9NRG9" .
+
+idt:uniprot\/Q9UNA3 a idt:uniprot;
+  dct:identifier "Q9UNA3" .
+
+hgnc:15886 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "AAR2";
+  obo:so_part_of "20q11.23";
+  dct:description "AAR2 splicing factor";
+  dct:identifier 15886;
+  dct:references idt:pubmed\/26527271;
+  rdfs:seeAlso idt:uniprot\/Q9Y312 .
+
+hgnc:17929 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "AADAT";
+  obo:so_part_of "4q33";
+  dct:description "aminoadipate aminotransferase";
+  dct:identifier 17929;
+  dct:references idt:pubmed\/12126930,
+    idt:pubmed\/10441733,
+    idt:pubmed\/18056995;
+  rdfs:seeAlso idt:uniprot\/Q8N5Z0 .
+
+hgnc:18 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "AAMP";
+  obo:so_part_of "2q35";
+  dct:description "angio associated migratory cell protein";
+  dct:identifier 18;
+  dct:references idt:pubmed\/7743515;
+  rdfs:seeAlso idt:uniprot\/Q13685 .
+
+hgnc:19 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "AANAT";
+  obo:so_part_of "17q25.1";
+  dct:description "aralkylamine N-acetyltransferase";
+  dct:identifier 19;
+  dct:references idt:pubmed\/8661026;
+  rdfs:seeAlso idt:uniprot\/Q16613 .
+
+hgnc:19679 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "AAK1";
+  obo:so_part_of "2p13.3";
+  dct:description "AP2 associated kinase 1";
+  dct:identifier 19679;
+  dct:references idt:pubmed\/11877461,
+    idt:pubmed\/12471243;
+  rdfs:seeAlso idt:uniprot\/Q2M2I8 .
+
+hgnc:20 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "AARS1";
+  obo:so_part_of "16q22.1";
+  dct:description "alanyl-tRNA synthetase 1";
+  dct:identifier 20;
+  dct:references idt:pubmed\/8595897;
+  rdfs:seeAlso idt:uniprot\/P49588 .
+
+hgnc:25662 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "AAGAB";
+  obo:so_part_of "15q23";
+  dct:description "alpha and gamma adaptin binding protein";
+  dct:identifier 25662;
+  dct:references idt:pubmed\/11230166,
+    idt:pubmed\/10477754;
+  rdfs:seeAlso idt:uniprot\/Q6PD74 .
+
+hgnc:30205 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "AAMDC";
+  obo:so_part_of "11q14.1";
+  dct:description "adipogenesis associated Mth938 domain containing";
+  dct:identifier 30205;
+  dct:references idt:pubmed\/22279136;
+  rdfs:seeAlso idt:uniprot\/Q9H7C9 .
+
+hgnc:33842 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "AARD";
+  obo:so_part_of "8q24.11";
+  dct:description "alanine and arginine rich domain containing protein";
+  dct:identifier 33842;
+  dct:references idt:pubmed\/27959439;
+  rdfs:seeAlso idt:uniprot\/Q4LEZ3 .
+
+hgnc:50305 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "AADACP1";
+  obo:so_part_of "3q25.1";
+  dct:description "arylacetamide deacetylase pseudogene 1";
+  dct:identifier 50305 .
+
+idt:pubmed\/10441733 a idt:pubmed;
+  dct:identifier 10441733 .
+
+idt:pubmed\/10477754 a idt:pubmed;
+  dct:identifier 10477754 .
+
+idt:pubmed\/11230166 a idt:pubmed;
+  dct:identifier 11230166 .
+
+idt:pubmed\/11877461 a idt:pubmed;
+  dct:identifier 11877461 .
+
+idt:pubmed\/12126930 a idt:pubmed;
+  dct:identifier 12126930 .
+
+idt:pubmed\/12471243 a idt:pubmed;
+  dct:identifier 12471243 .
+
+idt:pubmed\/18056995 a idt:pubmed;
+  dct:identifier 18056995 .
+
+idt:pubmed\/22279136 a idt:pubmed;
+  dct:identifier 22279136 .
+
+idt:pubmed\/26527271 a idt:pubmed;
+  dct:identifier 26527271 .
+
+idt:pubmed\/27959439 a idt:pubmed;
+  dct:identifier 27959439 .
+
+idt:pubmed\/7743515 a idt:pubmed;
+  dct:identifier 7743515 .
+
+idt:pubmed\/8595897 a idt:pubmed;
+  dct:identifier 8595897 .
+
+idt:pubmed\/8661026 a idt:pubmed;
+  dct:identifier 8661026 .
+
+idt:uniprot\/P49588 a idt:uniprot;
+  dct:identifier "P49588" .
+
+idt:uniprot\/Q13685 a idt:uniprot;
+  dct:identifier "Q13685" .
+
+idt:uniprot\/Q16613 a idt:uniprot;
+  dct:identifier "Q16613" .
+
+idt:uniprot\/Q2M2I8 a idt:uniprot;
+  dct:identifier "Q2M2I8" .
+
+idt:uniprot\/Q4LEZ3 a idt:uniprot;
+  dct:identifier "Q4LEZ3" .
+
+idt:uniprot\/Q6PD74 a idt:uniprot;
+  dct:identifier "Q6PD74" .
+
+idt:uniprot\/Q8N5Z0 a idt:uniprot;
+  dct:identifier "Q8N5Z0" .
+
+idt:uniprot\/Q9H7C9 a idt:uniprot;
+  dct:identifier "Q9H7C9" .
+
+idt:uniprot\/Q9Y312 a idt:uniprot;
+  dct:identifier "Q9Y312" .
 
 hgnc:14235 a obo:SO_0000704,
     m2r:Gene;
@@ -36,6 +445,292 @@ hgnc:14235 a obo:SO_0000704,
     idt:pubmed\/11286508,
     idt:pubmed\/18022563;
   rdfs:seeAlso idt:uniprot\/Q9NRN7 .
+
+hgnc:17366 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "AASS";
+  obo:so_part_of "7q31.32";
+  dct:description "aminoadipate-semialdehyde synthase";
+  dct:identifier 17366;
+  dct:references idt:pubmed\/10775527,
+    idt:pubmed\/36128717;
+  rdfs:seeAlso idt:uniprot\/Q9UDR5 .
+
+hgnc:19235 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "AATF";
+  obo:so_part_of "17q12";
+  dct:description "apoptosis antagonizing transcription factor";
+  dct:identifier 19235;
+  dct:references idt:pubmed\/11027528,
+    idt:pubmed\/10783144;
+  rdfs:seeAlso idt:uniprot\/Q9NY61 .
+
+hgnc:21022 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "AARS2";
+  obo:so_part_of "6p21.1";
+  dct:description "alanyl-tRNA synthetase 2, mitochondrial";
+  dct:identifier 21022;
+  dct:references idt:pubmed\/15779907,
+    idt:pubmed\/21549344;
+  rdfs:seeAlso idt:uniprot\/Q5JTZ9 .
+
+hgnc:23993 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "AASDH";
+  obo:so_part_of "4q12";
+  dct:description "aminoadipate-semialdehyde dehydrogenase";
+  dct:identifier 23993;
+  dct:references idt:pubmed\/15865210,
+    idt:pubmed\/12712191,
+    idt:pubmed\/17762044;
+  rdfs:seeAlso idt:uniprot\/Q4L235 .
+
+hgnc:28417 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "AARSD1";
+  obo:so_part_of "17q21.31";
+  dct:description "alanyl-tRNA synthetase domain containing 1";
+  dct:identifier 28417;
+  dct:references idt:pubmed\/26884463;
+  rdfs:seeAlso idt:uniprot\/Q9BTE6 .
+
+hgnc:49894 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "AARS1P1";
+  obo:so_part_of "4q28.3";
+  dct:description "alanyl-tRNA synthetase 1 pseudogene 1";
+  dct:identifier 49894 .
+
+hgnc:51526 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "AATBC";
+  obo:so_part_of "21q22.3";
+  dct:description "apoptosis associated transcript in bladder cancer";
+  dct:identifier 51526;
+  dct:references idt:pubmed\/25473900 .
+
+hgnc:54994 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "AARSD1P1";
+  obo:so_part_of "Xq13.2";
+  dct:description "AARSD1 pseudogene 1";
+  dct:identifier 54994 .
+
+hgnc:58262 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "AASDHPPT-AS1";
+  obo:so_part_of "11q22.3";
+  dct:description "AASDHPPT antisense RNA 1";
+  dct:identifier 58262 .
+
+idt:pubmed\/10775527 a idt:pubmed;
+  dct:identifier 10775527 .
+
+idt:pubmed\/10783144 a idt:pubmed;
+  dct:identifier 10783144 .
+
+idt:pubmed\/11027528 a idt:pubmed;
+  dct:identifier 11027528 .
+
+idt:pubmed\/11286508 a idt:pubmed;
+  dct:identifier 11286508 .
+
+idt:pubmed\/12712191 a idt:pubmed;
+  dct:identifier 12712191 .
+
+idt:pubmed\/12815048 a idt:pubmed;
+  dct:identifier 12815048 .
+
+idt:pubmed\/15779907 a idt:pubmed;
+  dct:identifier 15779907 .
+
+idt:pubmed\/15865210 a idt:pubmed;
+  dct:identifier 15865210 .
+
+idt:pubmed\/17762044 a idt:pubmed;
+  dct:identifier 17762044 .
+
+idt:pubmed\/18022563 a idt:pubmed;
+  dct:identifier 18022563 .
+
+idt:pubmed\/21549344 a idt:pubmed;
+  dct:identifier 21549344 .
+
+idt:pubmed\/25473900 a idt:pubmed;
+  dct:identifier 25473900 .
+
+idt:pubmed\/26884463 a idt:pubmed;
+  dct:identifier 26884463 .
+
+idt:pubmed\/36128717 a idt:pubmed;
+  dct:identifier 36128717 .
+
+idt:uniprot\/Q4L235 a idt:uniprot;
+  dct:identifier "Q4L235" .
+
+idt:uniprot\/Q5JTZ9 a idt:uniprot;
+  dct:identifier "Q5JTZ9" .
+
+idt:uniprot\/Q9BTE6 a idt:uniprot;
+  dct:identifier "Q9BTE6" .
+
+idt:uniprot\/Q9NRN7 a idt:uniprot;
+  dct:identifier "Q9NRN7" .
+
+idt:uniprot\/Q9NY61 a idt:uniprot;
+  dct:identifier "Q9NY61" .
+
+idt:uniprot\/Q9UDR5 a idt:uniprot;
+  dct:identifier "Q9UDR5" .
+
+hgnc:21 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "AATK";
+  obo:so_part_of "17q25.3";
+  dct:description "apoptosis associated tyrosine kinase";
+  dct:identifier 21;
+  dct:references idt:pubmed\/9734811,
+    idt:pubmed\/10083745,
+    idt:pubmed\/22573681;
+  rdfs:seeAlso idt:uniprot\/Q6ZMQ8 .
+
+hgnc:22 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "AAVS1";
+  obo:so_part_of "19q13";
+  dct:description "adeno-associated virus integration site 1";
+  dct:identifier 22;
+  dct:references idt:pubmed\/1334463 .
+
+hgnc:23 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "ABAT";
+  obo:so_part_of "16p13.2";
+  dct:description "4-aminobutyrate aminotransferase";
+  dct:identifier 23;
+  dct:references idt:pubmed\/7721088;
+  rdfs:seeAlso idt:uniprot\/P80404 .
+
+hgnc:29 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "ABCA1";
+  obo:so_part_of "9q31.1";
+  dct:description "ATP binding cassette subfamily A member 1";
+  dct:identifier 29;
+  dct:references idt:pubmed\/8088782,
+    idt:pubmed\/10431236,
+    idt:pubmed\/10431237,
+    idt:pubmed\/10431238;
+  rdfs:seeAlso idt:uniprot\/O95477 .
+
+hgnc:32 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "ABCA2";
+  obo:so_part_of "9q34.3";
+  dct:description "ATP binding cassette subfamily A member 2";
+  dct:identifier 32;
+  dct:references idt:pubmed\/8088782;
+  rdfs:seeAlso idt:uniprot\/Q9BZC7 .
+
+hgnc:33 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "ABCA3";
+  obo:so_part_of "16p13.3";
+  dct:description "ATP binding cassette subfamily A member 3";
+  dct:identifier 33;
+  dct:references idt:pubmed\/8706931;
+  rdfs:seeAlso idt:uniprot\/Q99758 .
+
+hgnc:34 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "ABCA4";
+  obo:so_part_of "1p22.1";
+  dct:description "ATP binding cassette subfamily A member 4";
+  dct:identifier 34;
+  dct:references idt:pubmed\/9490294;
+  rdfs:seeAlso idt:uniprot\/P78363 .
+
+hgnc:35 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "ABCA5";
+  obo:so_part_of "17q24.3";
+  dct:description "ATP binding cassette subfamily A member 5";
+  dct:identifier 35;
+  dct:references idt:pubmed\/8894702;
+  rdfs:seeAlso idt:uniprot\/Q8WWZ7 .
+
+hgnc:49667 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "ABALON";
+  obo:so_part_of "20q11.21";
+  dct:description "apoptotic BCL2L1-antisense long non-coding RNA";
+  dct:identifier 49667 .
+
+hgnc:55707 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "ABCA3P1";
+  obo:so_part_of "16p12.2";
+  dct:description "ABCA3 pseudogene 1";
+  dct:identifier 55707 .
+
+idt:pubmed\/10083745 a idt:pubmed;
+  dct:identifier 10083745 .
+
+idt:pubmed\/10431236 a idt:pubmed;
+  dct:identifier 10431236 .
+
+idt:pubmed\/10431237 a idt:pubmed;
+  dct:identifier 10431237 .
+
+idt:pubmed\/10431238 a idt:pubmed;
+  dct:identifier 10431238 .
+
+idt:pubmed\/1334463 a idt:pubmed;
+  dct:identifier 1334463 .
+
+idt:pubmed\/22573681 a idt:pubmed;
+  dct:identifier 22573681 .
+
+idt:pubmed\/7721088 a idt:pubmed;
+  dct:identifier 7721088 .
+
+idt:pubmed\/8706931 a idt:pubmed;
+  dct:identifier 8706931 .
+
+idt:pubmed\/8894702 a idt:pubmed;
+  dct:identifier 8894702 .
+
+idt:pubmed\/9490294 a idt:pubmed;
+  dct:identifier 9490294 .
+
+idt:pubmed\/9734811 a idt:pubmed;
+  dct:identifier 9734811 .
+
+idt:uniprot\/O95477 a idt:uniprot;
+  dct:identifier "O95477" .
+
+idt:uniprot\/P78363 a idt:uniprot;
+  dct:identifier "P78363" .
+
+idt:uniprot\/P80404 a idt:uniprot;
+  dct:identifier "P80404" .
+
+idt:uniprot\/Q6ZMQ8 a idt:uniprot;
+  dct:identifier "Q6ZMQ8" .
+
+idt:uniprot\/Q8WWZ7 a idt:uniprot;
+  dct:identifier "Q8WWZ7" .
+
+idt:uniprot\/Q99758 a idt:uniprot;
+  dct:identifier "Q99758" .
+
+idt:uniprot\/Q9BZC7 a idt:uniprot;
+  dct:identifier "Q9BZC7" .
+
+idt:pubmed\/8088782 a idt:pubmed;
+  dct:identifier 8088782 .
 
 hgnc:14637 a obo:SO_0000704,
     m2r:Gene;
@@ -58,273 +753,6 @@ hgnc:14638 a obo:SO_0000704,
   dct:references idt:pubmed\/12697998;
   rdfs:seeAlso idt:uniprot\/Q86UQ4 .
 
-hgnc:14639 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "ABCC11";
-  obo:so_part_of "16q12.1";
-  dct:description "ATP binding cassette subfamily C member 11";
-  dct:identifier 14639;
-  dct:references idt:pubmed\/11483364,
-    idt:pubmed\/11435397;
-  rdfs:seeAlso idt:uniprot\/Q96J66 .
-
-hgnc:14640 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "ABCC12";
-  obo:so_part_of "16q12.1";
-  dct:description "ATP binding cassette subfamily C member 12";
-  dct:identifier 14640;
-  dct:references idt:pubmed\/11435397,
-    idt:pubmed\/11483364;
-  rdfs:seeAlso idt:uniprot\/Q96J65 .
-
-hgnc:15886 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "AAR2";
-  obo:so_part_of "20q11.23";
-  dct:description "AAR2 splicing factor";
-  dct:identifier 15886;
-  dct:references idt:pubmed\/26527271;
-  rdfs:seeAlso idt:uniprot\/Q9Y312 .
-
-hgnc:16022 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "ABCC13";
-  obo:so_part_of "21q11.2";
-  dct:description "ATP binding cassette subfamily C member 13 (pseudogene)";
-  dct:identifier 16022;
-  dct:references idt:pubmed\/12445816,
-    idt:pubmed\/15203202 .
-
-hgnc:17 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "AADAC";
-  obo:so_part_of "3q25.1";
-  dct:description "arylacetamide deacetylase";
-  dct:identifier 17;
-  dct:references idt:pubmed\/8063807,
-    idt:pubmed\/9299245;
-  rdfs:seeAlso idt:uniprot\/P22760 .
-
-hgnc:17366 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "AASS";
-  obo:so_part_of "7q31.32";
-  dct:description "aminoadipate-semialdehyde synthase";
-  dct:identifier 17366;
-  dct:references idt:pubmed\/10775527,
-    idt:pubmed\/36128717;
-  rdfs:seeAlso idt:uniprot\/Q9UDR5 .
-
-hgnc:17929 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "AADAT";
-  obo:so_part_of "4q33";
-  dct:description "aminoadipate aminotransferase";
-  dct:identifier 17929;
-  dct:references idt:pubmed\/12126930,
-    idt:pubmed\/10441733,
-    idt:pubmed\/18056995;
-  rdfs:seeAlso idt:uniprot\/Q8N5Z0 .
-
-hgnc:17968 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "A4GNT";
-  obo:so_part_of "3q22.3";
-  dct:description "alpha-1,4-N-acetylglucosaminyltransferase";
-  dct:identifier 17968;
-  dct:references idt:pubmed\/10430883;
-  rdfs:seeAlso idt:uniprot\/Q9UNA3 .
-
-hgnc:18 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "AAMP";
-  obo:so_part_of "2q35";
-  dct:description "angio associated migratory cell protein";
-  dct:identifier 18;
-  dct:references idt:pubmed\/7743515;
-  rdfs:seeAlso idt:uniprot\/Q13685 .
-
-hgnc:18149 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "A4GALT";
-  obo:so_part_of "22q13.2";
-  dct:description "alpha 1,4-galactosyltransferase (P1PK blood group)";
-  dct:identifier 18149;
-  dct:references idt:pubmed\/10854428,
-    idt:pubmed\/20971946;
-  rdfs:seeAlso idt:uniprot\/Q9NPC4 .
-
-hgnc:18226 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "AACSP1";
-  obo:so_part_of "5q35.3";
-  dct:description "acetoacetyl-CoA synthetase pseudogene 1";
-  dct:identifier 18226 .
-
-hgnc:19 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "AANAT";
-  obo:so_part_of "17q25.1";
-  dct:description "aralkylamine N-acetyltransferase";
-  dct:identifier 19;
-  dct:references idt:pubmed\/8661026;
-  rdfs:seeAlso idt:uniprot\/Q16613 .
-
-hgnc:19235 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "AATF";
-  obo:so_part_of "17q12";
-  dct:description "apoptosis antagonizing transcription factor";
-  dct:identifier 19235;
-  dct:references idt:pubmed\/11027528,
-    idt:pubmed\/10783144;
-  rdfs:seeAlso idt:uniprot\/Q9NY61 .
-
-hgnc:19679 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "AAK1";
-  obo:so_part_of "2p13.3";
-  dct:description "AP2 associated kinase 1";
-  dct:identifier 19679;
-  dct:references idt:pubmed\/11877461,
-    idt:pubmed\/12471243;
-  rdfs:seeAlso idt:uniprot\/Q2M2I8 .
-
-hgnc:20 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "AARS1";
-  obo:so_part_of "16q22.1";
-  dct:description "alanyl-tRNA synthetase 1";
-  dct:identifier 20;
-  dct:references idt:pubmed\/8595897;
-  rdfs:seeAlso idt:uniprot\/P49588 .
-
-hgnc:21 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "AATK";
-  obo:so_part_of "17q25.3";
-  dct:description "apoptosis associated tyrosine kinase";
-  dct:identifier 21;
-  dct:references idt:pubmed\/9734811,
-    idt:pubmed\/10083745,
-    idt:pubmed\/22573681;
-  rdfs:seeAlso idt:uniprot\/Q6ZMQ8 .
-
-hgnc:21022 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "AARS2";
-  obo:so_part_of "6p21.1";
-  dct:description "alanyl-tRNA synthetase 2, mitochondrial";
-  dct:identifier 21022;
-  dct:references idt:pubmed\/15779907,
-    idt:pubmed\/21549344;
-  rdfs:seeAlso idt:uniprot\/Q5JTZ9 .
-
-hgnc:21298 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "AACS";
-  obo:so_part_of "12q24.31";
-  dct:description "acetoacetyl-CoA synthetase";
-  dct:identifier 21298;
-  dct:references idt:pubmed\/12623130,
-    idt:pubmed\/17762044;
-  rdfs:seeAlso idt:uniprot\/Q86V21 .
-
-hgnc:22 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "AAVS1";
-  obo:so_part_of "19q13";
-  dct:description "adeno-associated virus integration site 1";
-  dct:identifier 22;
-  dct:references idt:pubmed\/1334463 .
-
-hgnc:23 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "ABAT";
-  obo:so_part_of "16p13.2";
-  dct:description "4-aminobutyrate aminotransferase";
-  dct:identifier 23;
-  dct:references idt:pubmed\/7721088;
-  rdfs:seeAlso idt:uniprot\/P80404 .
-
-hgnc:23336 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "A2ML1";
-  obo:so_part_of "12p13.31";
-  dct:description "alpha-2-macroglobulin like 1";
-  dct:identifier 23336;
-  dct:references idt:pubmed\/16298998;
-  rdfs:seeAlso idt:uniprot\/A8K2U0 .
-
-hgnc:23993 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "AASDH";
-  obo:so_part_of "4q12";
-  dct:description "aminoadipate-semialdehyde dehydrogenase";
-  dct:identifier 23993;
-  dct:references idt:pubmed\/15865210,
-    idt:pubmed\/12712191,
-    idt:pubmed\/17762044;
-  rdfs:seeAlso idt:uniprot\/Q4L235 .
-
-hgnc:24086 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "A1CF";
-  obo:so_part_of "10q11.23";
-  dct:description "APOBEC1 complementation factor";
-  dct:identifier 24086;
-  dct:references idt:pubmed\/11815617,
-    idt:pubmed\/11072063;
-  rdfs:seeAlso idt:uniprot\/Q9NQ94 .
-
-hgnc:24427 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "AADACL2";
-  obo:so_part_of "3q25.1";
-  dct:description "arylacetamide deacetylase like 2";
-  dct:identifier 24427;
-  dct:references idt:pubmed\/25715734;
-  rdfs:seeAlso idt:uniprot\/Q6P093 .
-
-hgnc:25662 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "AAGAB";
-  obo:so_part_of "15q23";
-  dct:description "alpha and gamma adaptin binding protein";
-  dct:identifier 25662;
-  dct:references idt:pubmed\/11230166,
-    idt:pubmed\/10477754;
-  rdfs:seeAlso idt:uniprot\/Q6PD74 .
-
-hgnc:27057 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "A2M-AS1";
-  obo:so_part_of "12p13.31";
-  dct:description "A2M antisense RNA 1";
-  dct:identifier 27057 .
-
-hgnc:28417 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "AARSD1";
-  obo:so_part_of "17q21.31";
-  dct:description "alanyl-tRNA synthetase domain containing 1";
-  dct:identifier 28417;
-  dct:references idt:pubmed\/26884463;
-  rdfs:seeAlso idt:uniprot\/Q9BTE6 .
-
-hgnc:29 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "ABCA1";
-  obo:so_part_of "9q31.1";
-  dct:description "ATP binding cassette subfamily A member 1";
-  dct:identifier 29;
-  dct:references idt:pubmed\/8088782,
-    idt:pubmed\/10431236,
-    idt:pubmed\/10431237,
-    idt:pubmed\/10431238;
-  rdfs:seeAlso idt:uniprot\/O95477 .
-
 hgnc:30 a obo:SO_0000704,
     m2r:Gene;
   rdfs:label "ABCA10";
@@ -335,122 +763,12 @@ hgnc:30 a obo:SO_0000704,
     idt:pubmed\/11435397;
   rdfs:seeAlso idt:uniprot\/Q8WWZ4 .
 
-hgnc:30005 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "A3GALT2";
-  obo:so_part_of "1p35.1";
-  dct:description "alpha 1,3-galactosyltransferase 2";
-  dct:identifier 30005;
-  dct:references idt:pubmed\/10854427,
-    idt:pubmed\/18630988;
-  rdfs:seeAlso idt:uniprot\/U3KPV4 .
-
-hgnc:30205 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "AAMDC";
-  obo:so_part_of "11q14.1";
-  dct:description "adipogenesis associated Mth938 domain containing";
-  dct:identifier 30205;
-  dct:references idt:pubmed\/22279136;
-  rdfs:seeAlso idt:uniprot\/Q9H7C9 .
-
 hgnc:31 a obo:SO_0000704,
     m2r:Gene;
   rdfs:label "ABCA11P";
   obo:so_part_of "4p16.3";
   dct:description "ATP binding cassette subfamily A member 11, pseudogene";
   dct:identifier 31 .
-
-hgnc:31129 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "ABCB10P3";
-  obo:so_part_of "15q13.1";
-  dct:description "ABCB10 pseudogene 3";
-  dct:identifier 31129 .
-
-hgnc:31130 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "ABCB10P4";
-  obo:so_part_of "15q13.1";
-  dct:description "ABCB10 pseudogene 4";
-  dct:identifier 31130 .
-
-hgnc:32 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "ABCA2";
-  obo:so_part_of "9q34.3";
-  dct:description "ATP binding cassette subfamily A member 2";
-  dct:identifier 32;
-  dct:references idt:pubmed\/8088782;
-  rdfs:seeAlso idt:uniprot\/Q9BZC7 .
-
-hgnc:32037 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "AADACL3";
-  obo:so_part_of "1p36.21";
-  dct:description "arylacetamide deacetylase like 3";
-  dct:identifier 32037;
-  rdfs:seeAlso idt:uniprot\/Q5VUY0 .
-
-hgnc:32038 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "AADACL4";
-  obo:so_part_of "1p36.21";
-  dct:description "arylacetamide deacetylase like 4";
-  dct:identifier 32038;
-  rdfs:seeAlso idt:uniprot\/Q5VUY2 .
-
-hgnc:32972 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "ABCA17P";
-  obo:so_part_of "16p13.3";
-  dct:description "ATP binding cassette subfamily A member 17, pseudogene";
-  dct:identifier 32972;
-  dct:references idt:pubmed\/16968533 .
-
-hgnc:33 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "ABCA3";
-  obo:so_part_of "16p13.3";
-  dct:description "ATP binding cassette subfamily A member 3";
-  dct:identifier 33;
-  dct:references idt:pubmed\/8706931;
-  rdfs:seeAlso idt:uniprot\/Q99758 .
-
-hgnc:33352 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "ABCC6P1";
-  obo:so_part_of "16p12.3";
-  dct:description "ATP binding cassette subfamily C member 6 pseudogene 1";
-  dct:identifier 33352;
-  dct:references idt:pubmed\/18405356,
-    idt:pubmed\/22873774 .
-
-hgnc:33353 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "ABCC6P2";
-  obo:so_part_of "16p13.11";
-  dct:description "ATP binding cassette subfamily C member 6 pseudogene 2";
-  dct:identifier 33353;
-  dct:references idt:pubmed\/22873774 .
-
-hgnc:33842 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "AARD";
-  obo:so_part_of "8q24.11";
-  dct:description "alanine and arginine rich domain containing protein";
-  dct:identifier 33842;
-  dct:references idt:pubmed\/27959439;
-  rdfs:seeAlso idt:uniprot\/Q4LEZ3 .
-
-hgnc:34 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "ABCA4";
-  obo:so_part_of "1p22.1";
-  dct:description "ATP binding cassette subfamily A member 4";
-  dct:identifier 34;
-  dct:references idt:pubmed\/9490294;
-  rdfs:seeAlso idt:uniprot\/P78363 .
 
 hgnc:34405 a obo:SO_0000704,
     m2r:Gene;
@@ -459,15 +777,6 @@ hgnc:34405 a obo:SO_0000704,
   dct:description "ATP binding cassette subfamily A member 15, pseudogene";
   dct:identifier 34405;
   dct:references idt:pubmed\/35414504 .
-
-hgnc:35 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "ABCA5";
-  obo:so_part_of "17q24.3";
-  dct:description "ATP binding cassette subfamily A member 5";
-  dct:identifier 35;
-  dct:references idt:pubmed\/8894702;
-  rdfs:seeAlso idt:uniprot\/Q8WWZ7 .
 
 hgnc:36 a obo:SO_0000704,
     m2r:Gene;
@@ -488,13 +797,6 @@ hgnc:37 a obo:SO_0000704,
     idt:pubmed\/11435699,
     idt:pubmed\/12917409;
   rdfs:seeAlso idt:uniprot\/Q8IZY2 .
-
-hgnc:37133 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "A1BG-AS1";
-  obo:so_part_of "19q13.43";
-  dct:description "A1BG antisense RNA 1";
-  dct:identifier 37133 .
 
 hgnc:38 a obo:SO_0000704,
     m2r:Gene;
@@ -522,6 +824,86 @@ hgnc:39983 a obo:SO_0000704,
   dct:description "ABCA9 antisense RNA 1";
   dct:identifier 39983 .
 
+idt:pubmed\/10094194 a idt:pubmed;
+  dct:identifier 10094194 .
+
+idt:pubmed\/10873640 a idt:pubmed;
+  dct:identifier 10873640 .
+
+idt:pubmed\/11435699 a idt:pubmed;
+  dct:identifier 11435699 .
+
+idt:pubmed\/12150964 a idt:pubmed;
+  dct:identifier 12150964 .
+
+idt:pubmed\/12379217 a idt:pubmed;
+  dct:identifier 12379217 .
+
+idt:pubmed\/12697998 a idt:pubmed;
+  dct:identifier 12697998 .
+
+idt:pubmed\/12821155 a idt:pubmed;
+  dct:identifier 12821155 .
+
+idt:pubmed\/12915478 a idt:pubmed;
+  dct:identifier 12915478 .
+
+idt:pubmed\/12917409 a idt:pubmed;
+  dct:identifier 12917409 .
+
+idt:pubmed\/23560799 a idt:pubmed;
+  dct:identifier 23560799 .
+
+idt:pubmed\/35414504 a idt:pubmed;
+  dct:identifier 35414504 .
+
+idt:pubmed\/8845852 a idt:pubmed;
+  dct:identifier 8845852 .
+
+idt:pubmed\/8894702 a idt:pubmed;
+  dct:identifier 8894702 .
+
+idt:uniprot\/O94911 a idt:uniprot;
+  dct:identifier "O94911" .
+
+idt:uniprot\/Q86UK0 a idt:uniprot;
+  dct:identifier "Q86UK0" .
+
+idt:uniprot\/Q86UQ4 a idt:uniprot;
+  dct:identifier "Q86UQ4" .
+
+idt:uniprot\/Q8IUA7 a idt:uniprot;
+  dct:identifier "Q8IUA7" .
+
+idt:uniprot\/Q8IZY2 a idt:uniprot;
+  dct:identifier "Q8IZY2" .
+
+idt:uniprot\/Q8N139 a idt:uniprot;
+  dct:identifier "Q8N139" .
+
+idt:uniprot\/Q8WWZ4 a idt:uniprot;
+  dct:identifier "Q8WWZ4" .
+
+idt:pubmed\/11435397 a idt:pubmed;
+  dct:identifier 11435397 .
+
+hgnc:14114 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "ABCB10P1";
+  obo:so_part_of "15q11.2";
+  dct:description "ABCB10 pseudogene 1";
+  dct:identifier 14114;
+  dct:references idt:pubmed\/7766993,
+    idt:pubmed\/10922475 .
+
+hgnc:32972 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "ABCA17P";
+  obo:so_part_of "16p13.3";
+  dct:description "ATP binding cassette subfamily A member 17, pseudogene";
+  dct:identifier 32972;
+  dct:references idt:pubmed\/16968533 .
+
 hgnc:40 a obo:SO_0000704,
     m2r:Gene;
   rdfs:label "ABCB1";
@@ -531,13 +913,6 @@ hgnc:40 a obo:SO_0000704,
   dct:references idt:pubmed\/3027054;
   rdfs:seeAlso idt:uniprot\/P08183 .
 
-hgnc:40055 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "ABCC5-AS1";
-  obo:so_part_of "3q27.1";
-  dct:description "ABCC5 antisense RNA 1";
-  dct:identifier 40055 .
-
 hgnc:41 a obo:SO_0000704,
     m2r:Gene;
   rdfs:label "ABCB10";
@@ -546,36 +921,6 @@ hgnc:41 a obo:SO_0000704,
   dct:identifier 41;
   dct:references idt:pubmed\/7766993;
   rdfs:seeAlso idt:uniprot\/Q9NRK6 .
-
-hgnc:41022 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "A2ML1-AS1";
-  obo:so_part_of "12p13.31";
-  dct:description "A2ML1 antisense RNA 1";
-  dct:identifier 41022 .
-
-hgnc:41523 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "A2ML1-AS2";
-  obo:so_part_of "12p13.31";
-  dct:description "A2ML1 antisense RNA 2";
-  dct:identifier 41523 .
-
-hgnc:42 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "ABCB11";
-  obo:so_part_of "2q31.1";
-  dct:description "ATP binding cassette subfamily B member 11";
-  dct:identifier 42;
-  dct:references idt:pubmed\/9806540;
-  rdfs:seeAlso idt:uniprot\/O95342 .
-
-hgnc:42662 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "ABCD1P5";
-  obo:so_part_of "2p11.1";
-  dct:description "ATP binding cassette subfamily D member 1 pseudogene 5";
-  dct:identifier 42662 .
 
 hgnc:45 a obo:SO_0000704,
     m2r:Gene;
@@ -625,29 +970,6 @@ hgnc:49 a obo:SO_0000704,
   dct:references idt:pubmed\/8894702;
   rdfs:seeAlso idt:uniprot\/Q9NUT2 .
 
-hgnc:49667 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "ABALON";
-  obo:so_part_of "20q11.21";
-  dct:description "apoptotic BCL2L1-antisense long non-coding RNA";
-  dct:identifier 49667 .
-
-hgnc:49894 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "AARS1P1";
-  obo:so_part_of "4q28.3";
-  dct:description "alanyl-tRNA synthetase 1 pseudogene 1";
-  dct:identifier 49894 .
-
-hgnc:5 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "A1BG";
-  obo:so_part_of "19q13.43";
-  dct:description "alpha-1-B glycoprotein";
-  dct:identifier 5;
-  dct:references idt:pubmed\/2591067;
-  rdfs:seeAlso idt:uniprot\/P04217 .
-
 hgnc:50 a obo:SO_0000704,
     m2r:Gene;
   rdfs:label "ABCB9";
@@ -657,19 +979,89 @@ hgnc:50 a obo:SO_0000704,
   dct:references idt:pubmed\/8894702;
   rdfs:seeAlso idt:uniprot\/Q9NP78 .
 
-hgnc:50301 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "AADACL2-AS1";
-  obo:so_part_of "3q25.1";
-  dct:description "AADACL2 antisense RNA 1";
-  dct:identifier 50301 .
+idt:pubmed\/10922475 a idt:pubmed;
+  dct:identifier 10922475 .
 
-hgnc:50305 a obo:SO_0000704,
+idt:pubmed\/11313316 a idt:pubmed;
+  dct:identifier 11313316 .
+
+idt:pubmed\/12960149 a idt:pubmed;
+  dct:identifier 12960149 .
+
+idt:pubmed\/16968533 a idt:pubmed;
+  dct:identifier 16968533 .
+
+idt:pubmed\/2892668 a idt:pubmed;
+  dct:identifier 2892668 .
+
+idt:pubmed\/3027054 a idt:pubmed;
+  dct:identifier 3027054 .
+
+idt:pubmed\/9110174 a idt:pubmed;
+  dct:identifier 9110174 .
+
+idt:pubmed\/9143506 a idt:pubmed;
+  dct:identifier 9143506 .
+
+idt:uniprot\/O75027 a idt:uniprot;
+  dct:identifier "O75027" .
+
+idt:uniprot\/P08183 a idt:uniprot;
+  dct:identifier "P08183" .
+
+idt:uniprot\/P21439 a idt:uniprot;
+  dct:identifier "P21439" .
+
+idt:uniprot\/Q2M3G0 a idt:uniprot;
+  dct:identifier "Q2M3G0" .
+
+idt:uniprot\/Q9NP58 a idt:uniprot;
+  dct:identifier "Q9NP58" .
+
+idt:uniprot\/Q9NP78 a idt:uniprot;
+  dct:identifier "Q9NP78" .
+
+idt:uniprot\/Q9NRK6 a idt:uniprot;
+  dct:identifier "Q9NRK6" .
+
+idt:uniprot\/Q9NUT2 a idt:uniprot;
+  dct:identifier "Q9NUT2" .
+
+idt:pubmed\/7766993 a idt:pubmed;
+  dct:identifier 7766993 .
+
+idt:pubmed\/8894702 a idt:pubmed;
+  dct:identifier 8894702 .
+
+hgnc:31129 a obo:SO_0000704,
     m2r:Gene;
-  rdfs:label "AADACP1";
-  obo:so_part_of "3q25.1";
-  dct:description "arylacetamide deacetylase pseudogene 1";
-  dct:identifier 50305 .
+  rdfs:label "ABCB10P3";
+  obo:so_part_of "15q13.1";
+  dct:description "ABCB10 pseudogene 3";
+  dct:identifier 31129 .
+
+hgnc:31130 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "ABCB10P4";
+  obo:so_part_of "15q13.1";
+  dct:description "ABCB10 pseudogene 4";
+  dct:identifier 31130 .
+
+hgnc:40055 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "ABCC5-AS1";
+  obo:so_part_of "3q27.1";
+  dct:description "ABCC5 antisense RNA 1";
+  dct:identifier 40055 .
+
+hgnc:42 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "ABCB11";
+  obo:so_part_of "2q31.1";
+  dct:description "ATP binding cassette subfamily B member 11";
+  dct:identifier 42;
+  dct:references idt:pubmed\/9806540;
+  rdfs:seeAlso idt:uniprot\/O95342 .
 
 hgnc:51 a obo:SO_0000704,
     m2r:Gene;
@@ -681,23 +1073,6 @@ hgnc:51 a obo:SO_0000704,
     idt:pubmed\/1360704;
   rdfs:seeAlso idt:uniprot\/P33527 .
 
-hgnc:51526 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "AATBC";
-  obo:so_part_of "21q22.3";
-  dct:description "apoptosis associated transcript in bladder cancer";
-  dct:identifier 51526;
-  dct:references idt:pubmed\/25473900 .
-
-hgnc:52 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "ABCC10";
-  obo:so_part_of "6p21.1";
-  dct:description "ATP binding cassette subfamily C member 10";
-  dct:identifier 52;
-  dct:references idt:pubmed\/8894702;
-  rdfs:seeAlso idt:uniprot\/Q5T3U5 .
-
 hgnc:53 a obo:SO_0000704,
     m2r:Gene;
   rdfs:label "ABCC2";
@@ -707,13 +1082,6 @@ hgnc:53 a obo:SO_0000704,
   dct:references idt:pubmed\/8797578,
     idt:pubmed\/9284939;
   rdfs:seeAlso idt:uniprot\/Q92887 .
-
-hgnc:53628 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "ABCF1-DT";
-  obo:so_part_of "6p21.33";
-  dct:description "ABCF1 divergent transcript";
-  dct:identifier 53628 .
 
 hgnc:54 a obo:SO_0000704,
     m2r:Gene;
@@ -725,13 +1093,6 @@ hgnc:54 a obo:SO_0000704,
     idt:pubmed\/9827529;
   rdfs:seeAlso idt:uniprot\/O15438 .
 
-hgnc:54994 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "AARSD1P1";
-  obo:so_part_of "Xq13.2";
-  dct:description "AARSD1 pseudogene 1";
-  dct:identifier 54994 .
-
 hgnc:55 a obo:SO_0000704,
     m2r:Gene;
   rdfs:label "ABCC4";
@@ -741,13 +1102,6 @@ hgnc:55 a obo:SO_0000704,
   dct:references idt:pubmed\/8894702,
     idt:pubmed\/9661885;
   rdfs:seeAlso idt:uniprot\/O15439 .
-
-hgnc:55707 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "ABCA3P1";
-  obo:so_part_of "16p12.2";
-  dct:description "ABCA3 pseudogene 1";
-  dct:identifier 55707 .
 
 hgnc:56 a obo:SO_0000704,
     m2r:Gene;
@@ -769,12 +1123,111 @@ hgnc:57 a obo:SO_0000704,
     idt:pubmed\/11439001;
   rdfs:seeAlso idt:uniprot\/O95255 .
 
-hgnc:58262 a obo:SO_0000704,
+idt:pubmed\/11439001 a idt:pubmed;
+  dct:identifier 11439001 .
+
+idt:pubmed\/1360704 a idt:pubmed;
+  dct:identifier 1360704 .
+
+idt:pubmed\/8098549 a idt:pubmed;
+  dct:identifier 8098549 .
+
+idt:pubmed\/8797578 a idt:pubmed;
+  dct:identifier 8797578 .
+
+idt:pubmed\/9284939 a idt:pubmed;
+  dct:identifier 9284939 .
+
+idt:pubmed\/9661885 a idt:pubmed;
+  dct:identifier 9661885 .
+
+idt:pubmed\/9721217 a idt:pubmed;
+  dct:identifier 9721217 .
+
+idt:pubmed\/9806540 a idt:pubmed;
+  dct:identifier 9806540 .
+
+idt:uniprot\/O15438 a idt:uniprot;
+  dct:identifier "O15438" .
+
+idt:uniprot\/O15439 a idt:uniprot;
+  dct:identifier "O15439" .
+
+idt:uniprot\/O15440 a idt:uniprot;
+  dct:identifier "O15440" .
+
+idt:uniprot\/O95255 a idt:uniprot;
+  dct:identifier "O95255" .
+
+idt:uniprot\/O95342 a idt:uniprot;
+  dct:identifier "O95342" .
+
+idt:uniprot\/P33527 a idt:uniprot;
+  dct:identifier "P33527" .
+
+idt:uniprot\/Q92887 a idt:uniprot;
+  dct:identifier "Q92887" .
+
+idt:pubmed\/9827529 a idt:pubmed;
+  dct:identifier 9827529 .
+
+idt:pubmed\/8894702 a idt:pubmed;
+  dct:identifier 8894702 .
+
+hgnc:14639 a obo:SO_0000704,
     m2r:Gene;
-  rdfs:label "AASDHPPT-AS1";
-  obo:so_part_of "11q22.3";
-  dct:description "AASDHPPT antisense RNA 1";
-  dct:identifier 58262 .
+  rdfs:label "ABCC11";
+  obo:so_part_of "16q12.1";
+  dct:description "ATP binding cassette subfamily C member 11";
+  dct:identifier 14639;
+  dct:references idt:pubmed\/11483364,
+    idt:pubmed\/11435397;
+  rdfs:seeAlso idt:uniprot\/Q96J66 .
+
+hgnc:14640 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "ABCC12";
+  obo:so_part_of "16q12.1";
+  dct:description "ATP binding cassette subfamily C member 12";
+  dct:identifier 14640;
+  dct:references idt:pubmed\/11435397,
+    idt:pubmed\/11483364;
+  rdfs:seeAlso idt:uniprot\/Q96J65 .
+
+hgnc:16022 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "ABCC13";
+  obo:so_part_of "21q11.2";
+  dct:description "ATP binding cassette subfamily C member 13 (pseudogene)";
+  dct:identifier 16022;
+  dct:references idt:pubmed\/12445816,
+    idt:pubmed\/15203202 .
+
+hgnc:33352 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "ABCC6P1";
+  obo:so_part_of "16p12.3";
+  dct:description "ATP binding cassette subfamily C member 6 pseudogene 1";
+  dct:identifier 33352;
+  dct:references idt:pubmed\/18405356,
+    idt:pubmed\/22873774 .
+
+hgnc:33353 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "ABCC6P2";
+  obo:so_part_of "16p13.11";
+  dct:description "ATP binding cassette subfamily C member 6 pseudogene 2";
+  dct:identifier 33353;
+  dct:references idt:pubmed\/22873774 .
+
+hgnc:52 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "ABCC10";
+  obo:so_part_of "6p21.1";
+  dct:description "ATP binding cassette subfamily C member 10";
+  dct:identifier 52;
+  dct:references idt:pubmed\/8894702;
+  rdfs:seeAlso idt:uniprot\/Q5T3U5 .
 
 hgnc:59 a obo:SO_0000704,
     m2r:Gene;
@@ -814,6 +1267,83 @@ hgnc:62 a obo:SO_0000704,
   dct:identifier 62;
   dct:references idt:pubmed\/8829626,
     idt:pubmed\/9215666 .
+
+idt:pubmed\/12445816 a idt:pubmed;
+  dct:identifier 12445816 .
+
+idt:pubmed\/15034580 a idt:pubmed;
+  dct:identifier 15034580 .
+
+idt:pubmed\/15203202 a idt:pubmed;
+  dct:identifier 15203202 .
+
+idt:pubmed\/18405356 a idt:pubmed;
+  dct:identifier 18405356 .
+
+idt:pubmed\/6795626 a idt:pubmed;
+  dct:identifier 6795626 .
+
+idt:pubmed\/7716548 a idt:pubmed;
+  dct:identifier 7716548 .
+
+idt:pubmed\/7920639 a idt:pubmed;
+  dct:identifier 7920639 .
+
+idt:pubmed\/8441467 a idt:pubmed;
+  dct:identifier 8441467 .
+
+idt:pubmed\/8829626 a idt:pubmed;
+  dct:identifier 8829626 .
+
+idt:pubmed\/8894702 a idt:pubmed;
+  dct:identifier 8894702 .
+
+idt:pubmed\/9215666 a idt:pubmed;
+  dct:identifier 9215666 .
+
+idt:pubmed\/9457174 a idt:pubmed;
+  dct:identifier 9457174 .
+
+idt:uniprot\/O60706 a idt:uniprot;
+  dct:identifier "O60706" .
+
+idt:uniprot\/P33897 a idt:uniprot;
+  dct:identifier "P33897" .
+
+idt:uniprot\/Q09428 a idt:uniprot;
+  dct:identifier "Q09428" .
+
+idt:uniprot\/Q5T3U5 a idt:uniprot;
+  dct:identifier "Q5T3U5" .
+
+idt:uniprot\/Q96J65 a idt:uniprot;
+  dct:identifier "Q96J65" .
+
+idt:uniprot\/Q96J66 a idt:uniprot;
+  dct:identifier "Q96J66" .
+
+idt:pubmed\/11435397 a idt:pubmed;
+  dct:identifier 11435397 .
+
+idt:pubmed\/11483364 a idt:pubmed;
+  dct:identifier 11483364 .
+
+idt:pubmed\/22873774 a idt:pubmed;
+  dct:identifier 22873774 .
+
+hgnc:42662 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "ABCD1P5";
+  obo:so_part_of "2p11.1";
+  dct:description "ATP binding cassette subfamily D member 1 pseudogene 5";
+  dct:identifier 42662 .
+
+hgnc:53628 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "ABCF1-DT";
+  obo:so_part_of "6p21.33";
+  dct:description "ABCF1 divergent transcript";
+  dct:identifier 53628 .
 
 hgnc:63 a obo:SO_0000704,
     m2r:Gene;
@@ -879,16 +1409,6 @@ hgnc:69 a obo:SO_0000704,
   dct:references idt:pubmed\/7539425;
   rdfs:seeAlso idt:uniprot\/P61221 .
 
-hgnc:7 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "A2M";
-  obo:so_part_of "12p13.31";
-  dct:description "alpha-2-macroglobulin";
-  dct:identifier 7;
-  dct:references idt:pubmed\/2408344,
-    idt:pubmed\/9697696;
-  rdfs:seeAlso idt:uniprot\/P01023 .
-
 hgnc:70 a obo:SO_0000704,
     m2r:Gene;
   rdfs:label "ABCF1";
@@ -898,250 +1418,17 @@ hgnc:70 a obo:SO_0000704,
   dct:references idt:pubmed\/9790762;
   rdfs:seeAlso idt:uniprot\/Q8NE71 .
 
-hgnc:8 a obo:SO_0000704,
-    m2r:Gene;
-  rdfs:label "A2MP1";
-  obo:so_part_of "12p13.31";
-  dct:description "alpha-2-macroglobulin pseudogene 1";
-  dct:identifier 8;
-  dct:references idt:pubmed\/2478422 .
-
-idt:pubmed\/10083745 a idt:pubmed;
-  dct:identifier 10083745 .
-
-idt:pubmed\/10094194 a idt:pubmed;
-  dct:identifier 10094194 .
-
-idt:pubmed\/10430883 a idt:pubmed;
-  dct:identifier 10430883 .
-
-idt:pubmed\/10431236 a idt:pubmed;
-  dct:identifier 10431236 .
-
-idt:pubmed\/10431237 a idt:pubmed;
-  dct:identifier 10431237 .
-
-idt:pubmed\/10431238 a idt:pubmed;
-  dct:identifier 10431238 .
-
-idt:pubmed\/10441733 a idt:pubmed;
-  dct:identifier 10441733 .
-
-idt:pubmed\/10477754 a idt:pubmed;
-  dct:identifier 10477754 .
-
 idt:pubmed\/10591208 a idt:pubmed;
   dct:identifier 10591208 .
-
-idt:pubmed\/10775527 a idt:pubmed;
-  dct:identifier 10775527 .
-
-idt:pubmed\/10783144 a idt:pubmed;
-  dct:identifier 10783144 .
-
-idt:pubmed\/10854427 a idt:pubmed;
-  dct:identifier 10854427 .
-
-idt:pubmed\/10854428 a idt:pubmed;
-  dct:identifier 10854428 .
-
-idt:pubmed\/10873640 a idt:pubmed;
-  dct:identifier 10873640 .
-
-idt:pubmed\/10922475 a idt:pubmed;
-  dct:identifier 10922475 .
-
-idt:pubmed\/11027528 a idt:pubmed;
-  dct:identifier 11027528 .
-
-idt:pubmed\/11062474 a idt:pubmed;
-  dct:identifier 11062474 .
-
-idt:pubmed\/11072063 a idt:pubmed;
-  dct:identifier 11072063 .
-
-idt:pubmed\/11230166 a idt:pubmed;
-  dct:identifier 11230166 .
-
-idt:pubmed\/11286508 a idt:pubmed;
-  dct:identifier 11286508 .
-
-idt:pubmed\/11313316 a idt:pubmed;
-  dct:identifier 11313316 .
-
-idt:pubmed\/11435699 a idt:pubmed;
-  dct:identifier 11435699 .
-
-idt:pubmed\/11439001 a idt:pubmed;
-  dct:identifier 11439001 .
-
-idt:pubmed\/11815617 a idt:pubmed;
-  dct:identifier 11815617 .
-
-idt:pubmed\/11877461 a idt:pubmed;
-  dct:identifier 11877461 .
-
-idt:pubmed\/12126930 a idt:pubmed;
-  dct:identifier 12126930 .
-
-idt:pubmed\/12150964 a idt:pubmed;
-  dct:identifier 12150964 .
-
-idt:pubmed\/12196509 a idt:pubmed;
-  dct:identifier 12196509 .
-
-idt:pubmed\/12379217 a idt:pubmed;
-  dct:identifier 12379217 .
-
-idt:pubmed\/12445816 a idt:pubmed;
-  dct:identifier 12445816 .
-
-idt:pubmed\/12471243 a idt:pubmed;
-  dct:identifier 12471243 .
-
-idt:pubmed\/12623130 a idt:pubmed;
-  dct:identifier 12623130 .
-
-idt:pubmed\/12697998 a idt:pubmed;
-  dct:identifier 12697998 .
-
-idt:pubmed\/12712191 a idt:pubmed;
-  dct:identifier 12712191 .
-
-idt:pubmed\/12815048 a idt:pubmed;
-  dct:identifier 12815048 .
-
-idt:pubmed\/12821155 a idt:pubmed;
-  dct:identifier 12821155 .
-
-idt:pubmed\/12915478 a idt:pubmed;
-  dct:identifier 12915478 .
-
-idt:pubmed\/12917409 a idt:pubmed;
-  dct:identifier 12917409 .
-
-idt:pubmed\/12960149 a idt:pubmed;
-  dct:identifier 12960149 .
 
 idt:pubmed\/1301993 a idt:pubmed;
   dct:identifier 1301993 .
 
-idt:pubmed\/1334463 a idt:pubmed;
-  dct:identifier 1334463 .
-
-idt:pubmed\/1360704 a idt:pubmed;
-  dct:identifier 1360704 .
-
-idt:pubmed\/15034580 a idt:pubmed;
-  dct:identifier 15034580 .
-
-idt:pubmed\/15203202 a idt:pubmed;
-  dct:identifier 15203202 .
-
-idt:pubmed\/15779907 a idt:pubmed;
-  dct:identifier 15779907 .
-
-idt:pubmed\/15865210 a idt:pubmed;
-  dct:identifier 15865210 .
-
-idt:pubmed\/16298998 a idt:pubmed;
-  dct:identifier 16298998 .
-
-idt:pubmed\/16968533 a idt:pubmed;
-  dct:identifier 16968533 .
-
-idt:pubmed\/18022563 a idt:pubmed;
-  dct:identifier 18022563 .
-
-idt:pubmed\/18056995 a idt:pubmed;
-  dct:identifier 18056995 .
-
-idt:pubmed\/18405356 a idt:pubmed;
-  dct:identifier 18405356 .
-
-idt:pubmed\/18630988 a idt:pubmed;
-  dct:identifier 18630988 .
-
-idt:pubmed\/20971946 a idt:pubmed;
-  dct:identifier 20971946 .
-
-idt:pubmed\/21549344 a idt:pubmed;
-  dct:identifier 21549344 .
-
-idt:pubmed\/22279136 a idt:pubmed;
-  dct:identifier 22279136 .
-
-idt:pubmed\/22573681 a idt:pubmed;
-  dct:identifier 22573681 .
-
-idt:pubmed\/23560799 a idt:pubmed;
-  dct:identifier 23560799 .
-
-idt:pubmed\/2408344 a idt:pubmed;
-  dct:identifier 2408344 .
-
-idt:pubmed\/2478422 a idt:pubmed;
-  dct:identifier 2478422 .
-
-idt:pubmed\/25473900 a idt:pubmed;
-  dct:identifier 25473900 .
-
-idt:pubmed\/25715734 a idt:pubmed;
-  dct:identifier 25715734 .
-
-idt:pubmed\/2591067 a idt:pubmed;
-  dct:identifier 2591067 .
-
-idt:pubmed\/26527271 a idt:pubmed;
-  dct:identifier 26527271 .
-
-idt:pubmed\/26884463 a idt:pubmed;
-  dct:identifier 26884463 .
-
-idt:pubmed\/27959439 a idt:pubmed;
-  dct:identifier 27959439 .
-
-idt:pubmed\/2892668 a idt:pubmed;
-  dct:identifier 2892668 .
-
-idt:pubmed\/3027054 a idt:pubmed;
-  dct:identifier 3027054 .
-
 idt:pubmed\/33845046 a idt:pubmed;
   dct:identifier 33845046 .
 
-idt:pubmed\/35414504 a idt:pubmed;
-  dct:identifier 35414504 .
-
-idt:pubmed\/36128717 a idt:pubmed;
-  dct:identifier 36128717 .
-
-idt:pubmed\/6795626 a idt:pubmed;
-  dct:identifier 6795626 .
-
 idt:pubmed\/7539425 a idt:pubmed;
   dct:identifier 7539425 .
-
-idt:pubmed\/7716548 a idt:pubmed;
-  dct:identifier 7716548 .
-
-idt:pubmed\/7721088 a idt:pubmed;
-  dct:identifier 7721088 .
-
-idt:pubmed\/7743515 a idt:pubmed;
-  dct:identifier 7743515 .
-
-idt:pubmed\/7920639 a idt:pubmed;
-  dct:identifier 7920639 .
-
-idt:pubmed\/8063807 a idt:pubmed;
-  dct:identifier 8063807 .
-
-idt:pubmed\/8098549 a idt:pubmed;
-  dct:identifier 8098549 .
-
-idt:pubmed\/8441467 a idt:pubmed;
-  dct:identifier 8441467 .
 
 idt:pubmed\/8449508 a idt:pubmed;
   dct:identifier 8449508 .
@@ -1149,293 +1436,30 @@ idt:pubmed\/8449508 a idt:pubmed;
 idt:pubmed\/8577752 a idt:pubmed;
   dct:identifier 8577752 .
 
-idt:pubmed\/8595897 a idt:pubmed;
-  dct:identifier 8595897 .
-
-idt:pubmed\/8661026 a idt:pubmed;
-  dct:identifier 8661026 .
-
-idt:pubmed\/8706931 a idt:pubmed;
-  dct:identifier 8706931 .
-
-idt:pubmed\/8797578 a idt:pubmed;
-  dct:identifier 8797578 .
-
-idt:pubmed\/8829626 a idt:pubmed;
-  dct:identifier 8829626 .
-
-idt:pubmed\/8845852 a idt:pubmed;
-  dct:identifier 8845852 .
-
-idt:pubmed\/9110174 a idt:pubmed;
-  dct:identifier 9110174 .
-
-idt:pubmed\/9143506 a idt:pubmed;
-  dct:identifier 9143506 .
-
 idt:pubmed\/9266848 a idt:pubmed;
   dct:identifier 9266848 .
-
-idt:pubmed\/9284939 a idt:pubmed;
-  dct:identifier 9284939 .
-
-idt:pubmed\/9299245 a idt:pubmed;
-  dct:identifier 9299245 .
 
 idt:pubmed\/9302272 a idt:pubmed;
   dct:identifier 9302272 .
 
-idt:pubmed\/9457174 a idt:pubmed;
-  dct:identifier 9457174 .
-
-idt:pubmed\/9490294 a idt:pubmed;
-  dct:identifier 9490294 .
-
-idt:pubmed\/9661885 a idt:pubmed;
-  dct:identifier 9661885 .
-
-idt:pubmed\/9697696 a idt:pubmed;
-  dct:identifier 9697696 .
-
-idt:pubmed\/9721217 a idt:pubmed;
-  dct:identifier 9721217 .
-
-idt:pubmed\/9734811 a idt:pubmed;
-  dct:identifier 9734811 .
-
 idt:pubmed\/9790762 a idt:pubmed;
   dct:identifier 9790762 .
-
-idt:pubmed\/9806540 a idt:pubmed;
-  dct:identifier 9806540 .
-
-idt:uniprot\/A8K2U0 a idt:uniprot;
-  dct:identifier "A8K2U0" .
 
 idt:uniprot\/O14678 a idt:uniprot;
   dct:identifier "O14678" .
 
-idt:uniprot\/O15438 a idt:uniprot;
-  dct:identifier "O15438" .
-
-idt:uniprot\/O15439 a idt:uniprot;
-  dct:identifier "O15439" .
-
-idt:uniprot\/O15440 a idt:uniprot;
-  dct:identifier "O15440" .
-
-idt:uniprot\/O60706 a idt:uniprot;
-  dct:identifier "O60706" .
-
-idt:uniprot\/O75027 a idt:uniprot;
-  dct:identifier "O75027" .
-
-idt:uniprot\/O94911 a idt:uniprot;
-  dct:identifier "O94911" .
-
-idt:uniprot\/O95255 a idt:uniprot;
-  dct:identifier "O95255" .
-
-idt:uniprot\/O95342 a idt:uniprot;
-  dct:identifier "O95342" .
-
-idt:uniprot\/O95477 a idt:uniprot;
-  dct:identifier "O95477" .
-
-idt:uniprot\/P01023 a idt:uniprot;
-  dct:identifier "P01023" .
-
-idt:uniprot\/P04217 a idt:uniprot;
-  dct:identifier "P04217" .
-
-idt:uniprot\/P08183 a idt:uniprot;
-  dct:identifier "P08183" .
-
-idt:uniprot\/P21439 a idt:uniprot;
-  dct:identifier "P21439" .
-
-idt:uniprot\/P22760 a idt:uniprot;
-  dct:identifier "P22760" .
-
 idt:uniprot\/P28288 a idt:uniprot;
   dct:identifier "P28288" .
-
-idt:uniprot\/P33527 a idt:uniprot;
-  dct:identifier "P33527" .
-
-idt:uniprot\/P33897 a idt:uniprot;
-  dct:identifier "P33897" .
-
-idt:uniprot\/P49588 a idt:uniprot;
-  dct:identifier "P49588" .
 
 idt:uniprot\/P61221 a idt:uniprot;
   dct:identifier "P61221" .
 
-idt:uniprot\/P78363 a idt:uniprot;
-  dct:identifier "P78363" .
-
-idt:uniprot\/P80404 a idt:uniprot;
-  dct:identifier "P80404" .
-
-idt:uniprot\/Q09428 a idt:uniprot;
-  dct:identifier "Q09428" .
-
-idt:uniprot\/Q13685 a idt:uniprot;
-  dct:identifier "Q13685" .
-
-idt:uniprot\/Q16613 a idt:uniprot;
-  dct:identifier "Q16613" .
-
-idt:uniprot\/Q2M2I8 a idt:uniprot;
-  dct:identifier "Q2M2I8" .
-
-idt:uniprot\/Q2M3G0 a idt:uniprot;
-  dct:identifier "Q2M3G0" .
-
-idt:uniprot\/Q4L235 a idt:uniprot;
-  dct:identifier "Q4L235" .
-
-idt:uniprot\/Q4LEZ3 a idt:uniprot;
-  dct:identifier "Q4LEZ3" .
-
-idt:uniprot\/Q5JTZ9 a idt:uniprot;
-  dct:identifier "Q5JTZ9" .
-
-idt:uniprot\/Q5T3U5 a idt:uniprot;
-  dct:identifier "Q5T3U5" .
-
-idt:uniprot\/Q5VUY0 a idt:uniprot;
-  dct:identifier "Q5VUY0" .
-
-idt:uniprot\/Q5VUY2 a idt:uniprot;
-  dct:identifier "Q5VUY2" .
-
-idt:uniprot\/Q6P093 a idt:uniprot;
-  dct:identifier "Q6P093" .
-
-idt:uniprot\/Q6PD74 a idt:uniprot;
-  dct:identifier "Q6PD74" .
-
-idt:uniprot\/Q6ZMQ8 a idt:uniprot;
-  dct:identifier "Q6ZMQ8" .
-
-idt:uniprot\/Q86UK0 a idt:uniprot;
-  dct:identifier "Q86UK0" .
-
-idt:uniprot\/Q86UQ4 a idt:uniprot;
-  dct:identifier "Q86UQ4" .
-
-idt:uniprot\/Q86V21 a idt:uniprot;
-  dct:identifier "Q86V21" .
-
-idt:uniprot\/Q8IUA7 a idt:uniprot;
-  dct:identifier "Q8IUA7" .
-
-idt:uniprot\/Q8IZY2 a idt:uniprot;
-  dct:identifier "Q8IZY2" .
-
-idt:uniprot\/Q8N139 a idt:uniprot;
-  dct:identifier "Q8N139" .
-
-idt:uniprot\/Q8N5Z0 a idt:uniprot;
-  dct:identifier "Q8N5Z0" .
-
 idt:uniprot\/Q8NE71 a idt:uniprot;
   dct:identifier "Q8NE71" .
-
-idt:uniprot\/Q8WWZ4 a idt:uniprot;
-  dct:identifier "Q8WWZ4" .
-
-idt:uniprot\/Q8WWZ7 a idt:uniprot;
-  dct:identifier "Q8WWZ7" .
-
-idt:uniprot\/Q92887 a idt:uniprot;
-  dct:identifier "Q92887" .
-
-idt:uniprot\/Q96J65 a idt:uniprot;
-  dct:identifier "Q96J65" .
-
-idt:uniprot\/Q96J66 a idt:uniprot;
-  dct:identifier "Q96J66" .
-
-idt:uniprot\/Q99758 a idt:uniprot;
-  dct:identifier "Q99758" .
-
-idt:uniprot\/Q9BTE6 a idt:uniprot;
-  dct:identifier "Q9BTE6" .
-
-idt:uniprot\/Q9BZC7 a idt:uniprot;
-  dct:identifier "Q9BZC7" .
-
-idt:uniprot\/Q9H7C9 a idt:uniprot;
-  dct:identifier "Q9H7C9" .
-
-idt:uniprot\/Q9NP58 a idt:uniprot;
-  dct:identifier "Q9NP58" .
-
-idt:uniprot\/Q9NP78 a idt:uniprot;
-  dct:identifier "Q9NP78" .
-
-idt:uniprot\/Q9NPC4 a idt:uniprot;
-  dct:identifier "Q9NPC4" .
-
-idt:uniprot\/Q9NQ94 a idt:uniprot;
-  dct:identifier "Q9NQ94" .
-
-idt:uniprot\/Q9NRG9 a idt:uniprot;
-  dct:identifier "Q9NRG9" .
-
-idt:uniprot\/Q9NRK6 a idt:uniprot;
-  dct:identifier "Q9NRK6" .
-
-idt:uniprot\/Q9NRN7 a idt:uniprot;
-  dct:identifier "Q9NRN7" .
-
-idt:uniprot\/Q9NUT2 a idt:uniprot;
-  dct:identifier "Q9NUT2" .
-
-idt:uniprot\/Q9NY61 a idt:uniprot;
-  dct:identifier "Q9NY61" .
 
 idt:uniprot\/Q9UBJ2 a idt:uniprot;
   dct:identifier "Q9UBJ2" .
 
-idt:uniprot\/Q9UDR5 a idt:uniprot;
-  dct:identifier "Q9UDR5" .
-
-idt:uniprot\/Q9UNA3 a idt:uniprot;
-  dct:identifier "Q9UNA3" .
-
-idt:uniprot\/Q9Y312 a idt:uniprot;
-  dct:identifier "Q9Y312" .
-
-idt:uniprot\/U3KPV4 a idt:uniprot;
-  dct:identifier "U3KPV4" .
-
-idt:pubmed\/11483364 a idt:pubmed;
-  dct:identifier 11483364 .
-
-idt:pubmed\/17762044 a idt:pubmed;
-  dct:identifier 17762044 .
-
-idt:pubmed\/22873774 a idt:pubmed;
-  dct:identifier 22873774 .
-
-idt:pubmed\/7766993 a idt:pubmed;
-  dct:identifier 7766993 .
-
-idt:pubmed\/8088782 a idt:pubmed;
-  dct:identifier 8088782 .
-
-idt:pubmed\/9827529 a idt:pubmed;
-  dct:identifier 9827529 .
-
-idt:pubmed\/11435397 a idt:pubmed;
-  dct:identifier 11435397 .
-
 idt:pubmed\/9215666 a idt:pubmed;
   dct:identifier 9215666 .
 
-idt:pubmed\/8894702 a idt:pubmed;
-  dct:identifier 8894702 .

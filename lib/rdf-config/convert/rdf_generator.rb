@@ -9,6 +9,8 @@ class RDFConfig
       def initialize(config, convert)
         super
 
+        @rdf_format = @convert.format.start_with?(':') ? @convert.format[1..-1] : @convert.format
+
         @statements = []
         @subject_stack = []
       end
@@ -25,8 +27,7 @@ class RDFConfig
       end
 
       def output_rdf
-        rdf_format = @convert.format.start_with?(':') ? @convert.format[1..-1] : @convert.format
-        RDF::Writer.for(rdf_format.to_sym).new(**rdf_writer_opts) do |writer|
+        rdf = RDF::Writer.for(@rdf_format.to_sym).buffer(**rdf_writer_opts) do |writer|
           @statements.each do |statement|
             if !statement[:triple].nil? && statement[:triple].predicates.size > 1
               property_path_statements(statement).each do |rdf_statement|
@@ -37,6 +38,19 @@ class RDFConfig
             end
           end
         end
+
+        rdf = reject_prefix_lines(rdf) if turtle_format?
+        puts rdf
+
+        @statements = []
+      end
+
+      def turtle_format?
+        @rdf_format.to_s == 'turtle'
+      end
+
+      def ntriples_format?
+        @rdf_format.to_s == 'ntriples'
       end
 
       private
@@ -304,6 +318,26 @@ class RDFConfig
         end
 
         @bnode[bnode_key]
+      end
+
+      def reject_prefix_lines(turtle)
+        turtle.to_s.split("\n").reject { |line| line.start_with?('@prefix') }.join("\n")
+      end
+
+      def output_prefixes
+        puts @prefixes.map { |prefix, uri| "@prefix #{prefix}: <#{uri}> ." }.join("\n")
+      end
+
+      def format_text
+        ft = @convert.format.to_s.start_with?(':') ? @convert.format.to_s[1..-1] : @convert.format.to_s
+        case ft
+        when 'turtle'
+          'Turtle'
+        when 'ntriples'
+          'N-Triples'
+        else
+          'unknown'
+        end
       end
     end
   end
