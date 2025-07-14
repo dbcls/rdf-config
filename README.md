@@ -124,24 +124,24 @@ By running `--sparql` without an argument, available SPARQL query names will be 
 
 ```
 % bundle exec rdf-config --config config/mesh --sparql
-Usage: --sparql query_name[:endpoint_name]
-Available SPARQL query names: sparql, tree_pair, list_qual_for_desc
-Available SPARQL query parameters:
+Usage: --sparql query_name [--query var=value] [--endpoint endpoint_name]
+Available SPARQL query names: sparql, tree_pair, list_qual_for_desc, object_variable, object_variable_of_duplicated_subjects, togodx
+Preset SPARQL query parameters (use --query to override):
   tree_pair: parent_tree_number
-Available SPARQL endpoint names: endpoint, med2rdf, integbio
+  list_qual_for_desc: qualifier_active, allowed_descriptor_qualifier_pair_active
+Available SPARQL endpoint names: endpoint, rdfportal
 ```
 
-If multiple sparql endpoints are provided in the `endpoint.yaml` file, the config (endpoint) name can be specified as `--sparql :endpoint_name` (default endpoint_name is `endpoint`) or in combination with the sparql name as `--sparql sparql_name:endpoint_name`.
+If multiple SPARQL endpoints are provided in the endpoint.yaml file, the desired endpoint can be specified using the --endpoint option as --endpoint `endpoint_name` (the default is `endpoint`).
 
 ```
-% bundle exec rdf-config --config config/mesh --sparql :med2rdf
-% bundle exec rdf-config --config config/mesh --sparql tree_pair:med2rdf
+% bundle exec rdf-config --config config/mesh --sparql tree_pair --endpoint rdfportal
 ```
 
 ### Generate ShEx
 
 ```
-% bundle exec rdf-config --config config/nbrc --shex
+% bundle exec rdf-config --config config/refex --shex
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
@@ -178,8 +178,8 @@ PREFIX refexo: <http://purl.jp/bio/01/refexo#>
 ```
 % bundle exec rdf-config --config config/refex --grasp
 Grasp files have been created successfully.
-% ls grasp/refex/
-query.graphql  schema/
+% ls grasp
+index.graphql        RefExEntry.graphql   RefExSample.graphql
 ```
 
 ### Generate TogoStanza
