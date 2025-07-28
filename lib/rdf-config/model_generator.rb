@@ -7,11 +7,15 @@ class RDFConfig
     DEFAULT_INPUT_FORMAT = 'void'
 
     def initialize(**opts)
-      @input_format = opts[:input] || DEFAULT_INPUT_FORMAT
+      @opts = opts
+
+      @input_format = @opts[:input] || DEFAULT_INPUT_FORMAT
       @input_format = @input_format[1..-1] if @input_format.start_with?(':')
 
-      @output_dir = opts[:output].first
-      @input_file = opts[:output].last
+      @output_dir = @opts[:output].first
+      @input_file = @opts[:output].last
+
+      @opts.merge!(senbero: true)
     end
 
     def generate
@@ -21,8 +25,8 @@ class RDFConfig
     def generator
       case @input_format
       when 'void'
-        require_relative 'model_generator/void'
-        Void.new(@input_file, @input_format, @output_dir)
+        require_relative 'model_generator/void/ntriples_lines_parser'
+        Void::NTriplesLinesParser.new(@input_file, @output_dir, **@opts)
       else
         raise UnsupportedFormat, %(Format "#{@input_format}" is not supported.)
       end
