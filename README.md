@@ -138,10 +138,42 @@ If multiple SPARQL endpoints are provided in the endpoint.yaml file, the desired
 % bundle exec rdf-config --config config/mesh --sparql tree_pair --endpoint rdfportal
 ```
 
-### Generate RDF and JSON-LD from CSV, TSV, and DuckDB
+### Generate RDF from CSV, TSV, DuckDB, and SQLite3
 
 ```
-% bundle exec rdf-config --config config_dir --convert :turtle [input_source]
+% bundle exec rdf-config --config config_dir --convert [format] [input_source]
+```
+
+Available values for `format` are:
+
+* `:ntriples`: Outputs in N-Triples format
+* `:turtle`:  Outputs in Turtle format
+* `:jsonld`:  Outputs in JSON-LD format
+* `:jsonl`:  Outputs in JSON-LD lines format
+* `:context`:  Outputs a JSON-LD context for JSON-LD lines
+
+```
+% wget https://storage.googleapis.com/public-download-files/hgnc/tsv/tsv/hgnc_complete_set.txt
+% bundle exec rdf-config --config config/hgnc --convert :turtle hgnc_complete_set.txt
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix hgnc: <http://identifiers.org/hgnc/> .
+@prefix ido: <http://rdf.identifiers.org/ontology/> .
+@prefix idt: <http://identifiers.org/> .
+@prefix m2r: <http://med2rdf.org/ontology/med2rdf#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+hgnc:23336 a obo:SO_0000704,
+    m2r:Gene;
+  rdfs:label "A2ML1";
+  obo:so_part_of "12p13.31";
+  dct:description "alpha-2-macroglobulin like 1";
+  dct:identifier 23336;
+  dct:references idt:pubmed\/16298998;
+  rdfs:seeAlso idt:uniprot\/A8K2U0 .
 ```
 
 ### Generate ShEx
