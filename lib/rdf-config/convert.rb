@@ -30,7 +30,7 @@ class RDFConfig
 
     def_delegators :@config_parser,
                    :subject_converts, :object_converts, :source_subject_map, :source_format_map, :macro_names,
-                   :variable_convert, :convert_variable_names, :has_rdf_type_object?
+                   :variable_convert, :convert_variable_names, :has_rdf_type_object?, :source_file_for
 
     def_delegators :@yaml_parser,
                    :subject_names, :object_names, :variable_names
@@ -143,10 +143,6 @@ class RDFConfig
           CSV2JSON_LD.new(@config, self)
         end
       end
-    end
-
-    def subject_convert_by_name(subject_name)
-      @convert_method[:subject_converts][subject_name]
     end
 
     def bnode_name?(variable_name)

@@ -11,6 +11,12 @@ class RDFConfig
 
       VALID_CONVERT_TYPES = %w[:turtle :ntriples :jsonld :jsonl :context]
 
+      class << self
+        def format_error_message(errors)
+          errors.map { |error| "  * #{error}" }.unshift('ERROR:').join("\n")
+        end
+      end
+
       def initialize(config, **opts)
         super
         @convert = opts[:convert]
@@ -19,11 +25,8 @@ class RDFConfig
 
       def pre_validate
         unless @yaml_parser.nodes_doc.children.size == 1 && @yaml_parser.nodes_doc.children.first.is_a?(Psych::Nodes::Sequence)
-          @validator.add_error("#{@yaml_parser.yaml_file} must be an array of conversion settings for each subject.")
-          return false
+          @yaml_parser.add_error("#{@yaml_parser.yaml_file} must be an array of conversion settings for each subject.")
         end
-
-        validate_subjects
 
         @errors += @yaml_parser.errors
 
@@ -34,7 +37,7 @@ class RDFConfig
         validate_convert_type
         validate_context_path if context_mode?
         validate_variable_name
-        # validate_exist_source
+        validate_specified_source unless context_mode?
         validate_source_file_path unless context_mode?
         validate_source_format unless context_mode?
         validate_macro_name
@@ -44,7 +47,7 @@ class RDFConfig
       end
 
       def format_error_message
-        @errors.map { |error| "  * #{error}" }.unshift('ERROR:').join("\n")
+        self.class.format_error_message(@errors)
       end
 
       private
@@ -54,7 +57,7 @@ class RDFConfig
         duplicate_subject_names = subject_names.select { |subject_name| subject_names.count(subject_name) > 1 }.uniq
 
         unless duplicate_subject_names.empty?
-          @validator.add_error("Duplicate subject name in convert.yaml: #{duplicate_subject_names.join(', ')}")
+          add_error("Duplicate subject name in convert.yaml: #{duplicate_subject_names.join(', ')}")
         end
       end
 
@@ -109,18 +112,27 @@ class RDFConfig
         end
       end
 
-      def validate_exist_source
-        @convert.subject_converts.each do |subject_convert|
-          subject_convert.each do |subject_name, subject_configs|
-            next if subject_configs.first[:method_name_].start_with?(SOURCE_MACRO_NAME)
+      def validate_specified_source
+        @yaml_parser.subject_names.each do |subject_name|
+          source_file = @convert.source_file_for(subject_name)
 
-            add_error(%(The source must be set for the subject "#{subject_name}".))
+          if source_file.nil?
+            add_error(%(No source file specified for the subject "#{subject_name}".))
           end
         end
       end
 
       def validate_source_file_path
-        @convert.source_subject_map.each_key do |file_path|
+        source_files = @convert.source_subject_map.keys.uniq.map do |file_path|
+          formats = @convert.source_format_map[file_path] || []
+          if formats.include?('duckdb')
+            rdb_source_file(file_path)
+          else
+            file_path
+          end
+        end.uniq
+
+        source_files.each do |file_path|
           if file_path.nil?
             add_error(%(#{@convert.source_subject_map[nil].join(', ')}: Since source file is not specified in convert.yaml, please specify the source file.))
           else

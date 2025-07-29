@@ -5,7 +5,7 @@ require_relative 'processor/switch_processor'
 class RDFConfig
   class Convert
     class Converter
-      ROW_TARGET_METHODS = %w[csv json xml].freeze
+      ROW_TARGET_METHODS = %w[col tsv csv json xml].freeze
       # VARIABLE_REGEXP = /\$\{([a-zA-Z]\w*)\}|\$([a-z_]\w+)\W*/
       VARIABLE_REGEXP = /\$[a-z_]\w+/
       NOT_MAP_METHOS = %w[pick]

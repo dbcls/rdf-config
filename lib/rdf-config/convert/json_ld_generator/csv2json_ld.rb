@@ -18,6 +18,7 @@ class RDFConfig
 
         @context = ContextGenerator.new(config).prefix_key_value_pairs
 
+        @node_per_line = {}
         @node = {}
         @type_in_context = false
 
@@ -27,8 +28,7 @@ class RDFConfig
         @print_perline_progress = true
 
         @nest_node = false
-        @subject_value_map = {}
-        @triple = {}
+        @object_triple_map = {}
       end
 
       def generate(per_line: false)
@@ -74,13 +74,27 @@ class RDFConfig
           line_number = 1
           start_time = Time.now
         end
+
         @reader.each_row do |row|
-          @node = {} if per_line
+          clear_bnode_cache
           @converter.push_target_row(row, clear_variable: true)
           generate_by_row(row)
           if per_line
+            @node = @node_per_line
             refine_nodes
+            @node.each do |subject_uri, node_hash|
+              @node[subject_uri] = modeling_node(node_hash)
+            end
             output_jsonl_lines
+            @node = {}
+            @node_per_line = {}
+          else
+            @node_per_line.each do |subject_uri, node_hash|
+              modeling_node(node_hash).each do |variable_name, node_value|
+                add_node(@node, subject_uri, { variable_name => node_value })
+              end
+            end
+            @node_per_line = {}
           end
           @converter.pop_target_row
           next unless @print_perline_progress
@@ -101,15 +115,17 @@ class RDFConfig
       def process_source(source, subject_names, per_line: false)
         @converter.clear_target_rows
         @reader = @convert.file_reader(source: source)
+
+        @source = source
         @subject_names = subject_names
         generate_graph(per_line: per_line)
-        generate_context
+        generate_context unless per_line
       end
 
       def generate_subject(subject_name, subject_value)
         subject_uri = subject_value.dup
         add_subject_node(subject_name, subject_uri)
-        add_node(subject_uri, { subject_name => subject_uri })
+        add_node(@node_per_line, subject_uri, { subject_name => subject_uri })
         add_subject_type_node(subject_name, subject_uri) unless @convert.has_rdf_type_object?
       end
 
@@ -124,7 +140,8 @@ class RDFConfig
         subject_iri = @subject_node[subject_name][value_idx]
         subject_iri = @subject_node[subject_name].first if subject_iri.nil?
 
-        add_node(subject_iri,
+        add_node(@node_per_line,
+                 subject_iri,
                  object_hash_by_triple(triple, cast_data_type(values[value_idx], triple.object)))
       end
 
@@ -134,7 +151,7 @@ class RDFConfig
 
       def add_subject_relation(triple, subject_node, object_node)
         @object_triple_map[triple.object_name] = triple unless @object_triple_map.key?(triple.object_name)
-        add_node(subject_node, { triple.object_name => object_node })
+        add_node(@node_per_line, subject_node, { triple.object_name => object_node })
       end
 
       def type_value_by_subject(subject)
@@ -147,28 +164,31 @@ class RDFConfig
         end
       end
 
-      def add_node(key, object_hash)
-        object_key = object_hash.keys.first
-        return if @check_node_duplicate && @node.key?(key) && @node[key][object_key] == object_hash[object_key]
+      def add_node(node, subject_uri, node_hash)
+        object_key = node_hash.keys.first
+        return if @check_node_duplicate && node.key?(subject_uri) && node[subject_uri][object_key] == node_hash[object_key]
 
-        node_value = if object_hash[object_key].is_a?(RDF::Literal) && !object_hash[object_key].language.to_s.empty?
-                       {
-                         '@value' => object_hash[object_key].to_s,
-                         '@language' => object_hash[object_key].language
-                       }
-                     else
-                       object_hash[object_key]
-                     end
-
-        if @node.key?(key)
-          if @node[key].key?(object_key)
-            @node[key][object_key] = [@node[key][object_key]] unless @node[key][object_key].is_a?(Array)
-            @node[key][object_key] << node_value
+        node_value = add_language(node_hash[object_key])
+        if node.key?(subject_uri)
+          if node[subject_uri].key?(object_key)
+            node[subject_uri][object_key] = [node[subject_uri][object_key]] unless node[subject_uri][object_key].is_a?(Array)
+            node[subject_uri][object_key] << node_value
           else
-            @node[key][object_key] = node_value
+            node[subject_uri][object_key] = node_value
           end
         else
-          @node[key] = { object_key => node_value }
+          node[subject_uri] = { object_key => node_value }
+        end
+      end
+
+      def add_language(node_value)
+        if node_value.is_a?(RDF::Literal) && !node_value.language.to_s.empty?
+          {
+            '@value' => node_value.to_s,
+            '@language' => node_value.language
+          }
+        else
+          node_value
         end
       end
 
@@ -179,7 +199,7 @@ class RDFConfig
         json_object_type = type_value_by_subject(subject)
         return if json_object_type.nil?
 
-        add_node(subject_uri, { subject_type_key(subject_name) => json_object_type })
+        add_node(@node_per_line, subject_uri, { subject_type_key(subject_name) => json_object_type })
       end
 
       def bnode_uri?(uri)
@@ -288,15 +308,15 @@ class RDFConfig
       def final_nodes
         if @nest_node
           nest_generator = JsonLdGenerator::NestGenerator.new(@model, @node)
-          nest_generator.generate.map { |node| modeling_node(node) }
+          nest_generator.generate
         else
-          @node.values.map { |node| modeling_node(node) }
+          @node.values
         end
       end
 
-      def modeling_node(node)
+      def modeling_node(node, subject_uri: nil)
         new_node = {}
-        subject_uri = node.select { |variable_name, _| variable_name =~ /\A[A-Z]/ }.values.first
+        subject_uri = node.select { |variable_name, _| variable_name =~ /\A[A-Z]/ }.values.first if subject_uri.nil?
         node.each do |variable_name, value|
           if variable_name =~ /\A[a-z]/
             triple = triple_by_object_name(variable_name)
@@ -326,7 +346,7 @@ class RDFConfig
       end
 
       def triple_by_object_name(object_name)
-        @triple[object_name] ||= @model.find_by_object_name(object_name)
+        @object_triple_map[object_name] ||= @model.find_by_object_name(object_name)
       end
 
       def generate_blank_node(subject_uri, triple)

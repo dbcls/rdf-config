@@ -57,13 +57,6 @@ class RDFConfig
         end
       end
 
-      def process_source(source, subject_names, per_line: false)
-        @converter.clear_target_rows
-        @reader = @convert.file_reader(source: source)
-        @subject_names = subject_names
-        generate_graph(per_line: per_line)
-      end
-
       def process_node
         @jsonld_context = @config.prefix.transform_values { |uri| uri[1..-2] }
         final_nodes.each do |data_hash|

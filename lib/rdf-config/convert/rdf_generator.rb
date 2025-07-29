@@ -13,6 +13,8 @@ class RDFConfig
 
         @statements = []
         @subject_stack = []
+
+        @one_row_statements = []
       end
 
       def generate
@@ -28,14 +30,8 @@ class RDFConfig
 
       def output_rdf
         rdf = RDF::Writer.for(@rdf_format.to_sym).buffer(**rdf_writer_opts) do |writer|
-          @statements.each do |statement|
-            if !statement[:triple].nil? && statement[:triple].predicates.size > 1
-              property_path_statements(statement).each do |rdf_statement|
-                writer << rdf_statement
-              end
-            else
-              writer << statement[:statement]
-            end
+          @statements.flatten.each do |statement|
+            writer << statement
           end
         end
 
@@ -111,7 +107,7 @@ class RDFConfig
                           triple = @model.find_by_object_name(object_name)
                           triple.predicates.last.uri
                         end
-        @statements << RDF::Statement.new(
+        @one_row_statements << RDF::Statement.new(
           @subject_stack[-2], predicate_node(predicate_uri), @subject_stack.last
         )
       end
@@ -122,7 +118,7 @@ class RDFConfig
         return if converted_value.is_a?(String) && converted_value.strip.empty?
 
         triple = @model.find_by_object_name(variable_name)
-        @statements << RDF::Statement.new(
+        @one_row_statements << RDF::Statement.new(
           subject,
           predicate_node(triple.predicates.last.uri),
           object_node_by_triple(triple, converted_value)
@@ -141,7 +137,7 @@ class RDFConfig
 
       def add_subject_type_node(subject_name, subject)
         @model.find_subject(subject_name).types.each do |rdf_type|
-          @statements << {
+          @one_row_statements << {
             statement: RDF::Statement.new(subject, RDF.type, uri_node(rdf_type)),
             triple: nil
           }
@@ -242,18 +238,18 @@ class RDFConfig
 
       def rdftype_only_subject_uris
         subject_uris.select do |subject_uri|
-          @statements.select { |statement| statement[:statement].subject.to_s == subject_uri }
-                     .reject { |statement| statement[:statement].predicate == RDF.type }
-                     .empty?
+          @one_row_statements.select { |statement| statement[:statement].subject.to_s == subject_uri }
+                             .reject { |statement| statement[:statement].predicate == RDF.type }
+                             .empty?
         end
       end
 
       def remove_rdftype_only_statemtns(remove_subject_uris)
-        @statements.reject! { |statement| remove_subject_uris.include?(statement[:statement].subject.to_s) }
+        @one_row_statements.reject! { |statement| remove_subject_uris.include?(statement[:statement].subject.to_s) }
       end
 
       def remove_no_connection_statements(valid_subject_uris)
-        @statements.reject! { |statement| remove_statement?(statement, valid_subject_uris) }
+        @one_row_statements.reject! { |statement| remove_statement?(statement, valid_subject_uris) }
       end
 
       def remove_statement?(statement, valid_subject_uris)
@@ -273,7 +269,23 @@ class RDFConfig
       end
 
       def subject_uris
-        @statements.map { |statement| statement[:statement].subject }.map(&:to_s).uniq
+        @one_row_statements.map { |statement| statement[:statement].subject }.map(&:to_s).uniq
+      end
+
+      def add_statements_for_row
+        refine_statements
+
+        @one_row_statements.each do |statement|
+          if !statement[:triple].nil? && statement[:triple].predicates.size > 1
+            property_path_statements(statement).each do |rdf_statement|
+              @statements << rdf_statement
+            end
+          else
+            @statements << statement[:statement]
+          end
+        end
+
+        @one_row_statements = []
       end
 
       def property_path_statements(statement)

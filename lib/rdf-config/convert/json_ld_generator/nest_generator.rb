@@ -48,19 +48,25 @@ class RDFConfig
         def object_value(subject_name, variable_name, value)
           return value if [subject_name, '@type'].include?(variable_name)
 
-          triple = @model.find_by_object_name(variable_name)
-          return if triple.nil?
-
-          if triple.object.is_a?(Model::Subject) || triple.object.is_a?(Model::ValueList)
-            Array(value).map do |v|
-              if @node.key?(v)
-                process_node(@node[v])
-              else
-                v
-              end
+          if value.is_a?(Hash)
+            value.each do |var_name, var_val|
+              value[var_name] = object_value(subject_name, var_name, var_val)
             end
           else
-            value
+            triple = @model.find_by_object_name(variable_name)
+            return value if triple.nil?
+
+            if triple.object.is_a?(Model::Subject) || triple.object.is_a?(Model::ValueList)
+              Array(value).map do |v|
+                if @node.key?(v)
+                  process_node(@node[v])
+                else
+                  v
+                end
+              end
+            else
+              value
+            end
           end
         end
 

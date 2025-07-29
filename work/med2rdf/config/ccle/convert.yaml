@@ -1,36 +1,96 @@
 - CCLE:
-    - source("Cell_lines_annotations_20181226.txt")
+    # - source("Cell_lines_annotations_20181226.txt", :tsv)
+    - source("ccle.duckdb", :duckdb, "cell_lines_annotations")
     - subject:
-        - tsv("CCLE_ID")
+        - col("CCLE_ID")
         - prepend("cclec:")
     - objects:
         - ccle_label:
-            - tsv("Name")
+            - col("Name")
             - skip("NA")
         - hist_primary:
-            - tsv("Histology")
+            - col("Histology")
             - skip("NA")
         - hist_secondary:
-            - tsv("Hist_Subtype1")
+            - col("Hist_Subtype1")
             - skip("NA", "NS")
         - site_primary:
-            - tsv("Site_Primary")
+            - col("Site_Primary")
             - skip("NA")
         - gender:
             - switch("Gender"):
                 "male": obo:PATO_0000384
                 "female": obo:PATO_0000383
 
-        # [] a m2r:Assay
-        # 取得方法不明
-        # - assay_gene: ccleg:ENSG00000000003
-        - assay_sample:
-            - tsv("CCLE_ID")
-            - prepend("cclec:")
-        # 取得方法不明
-        # - exp_val: # for test
-        #     - str("12.26012")
-        #     - to_float
+        # - ccle_see_also: ""
+        # 元のMed2RDFのconverterでは
+        # http://sparql.hegroup.org/sparql に対してSPARQL検索をして値を取得している
+        #
+        # PREFIX obo: <http://www.geneontology.org/formats/oboInOwl#>
+        # SELECT DISTINCT ?x ?cell
+        # FROM <http://purl.obolibrary.org/obo/merged/BTO>
+        # WHERE
+        # {
+        #   { ?x rdfs:label ?cell. }
+        #   UNION { ?x obo:hasRelatedSynonym ?cell . }
+        # }
+
+- CCLE:
+    - source("ccle.duckdb", :duckdb, "ccle_gene_expressions")
+    - $subject:
+        - col("ccle_CCLE_ID")
+        - prepend("cclec:")
+    - subject: $subject
+    - objects:
+        - assay_gene:
+            - col("gene_exp_ensembl_gene_id")
+            - delete(/\.\d+\z/)
+            - prepend("ccleg:")
+        - assay_sample: $subject
+        - exp_val: col("gene_exp_gene_expression")
+
+- CCLE:
+    - source("ccle.duckdb", :duckdb, "ccle_depmap_mafs")
+    - $chr: col("maf_Chromosome")
+    - $ncbi_build: col("maf_NCBI_Build")
+    - $gene: col("maf_Hugo_Symbol")
+    - $variation_label:
+          - col("maf_Protein_Change")
+          - delete(/^p\./)
+    - subject:
+          - col("ccle_CCLE_ID")
+          - prepend("cclec:")
+    - objects:
+          # variation
+          - ccle_variation_label: $variation_label
+          - ccle_snp_start_pos: col("maf_Start_position")
+          - ccle_snp_start_reference: "hco:$chr#GRCh$ncbi_build"
+          - ccle_snp_end_pos: col("maf_End_position")
+          - ccle_snp_end_reference: "hco:$chr#GRCh$ncbi_build"
+          - ccle_alternative_allele: col("maf_Tumor_Seq_Allele1")
+          - ccle_variant_gene: "ccleg:$gene"
+          - ccle_reference_allele: col("maf_Reference_Allele")
+          - ccle_variant_transcript_label: col("maf_Annotation_Transcript")
+          - ccle_variant_transcript_gene:
+                - col("maf_Hugo_Symbol")
+                - prepend("ccleg:")
+          - ccle_variant_transcript_see_also:
+                - col("maf_Annotation_Transcript")
+                - delete(/\.\d+$/)
+                - prepend("transcript:")
+          - ccle_variant_consequence:
+                - switch("maf_Variant_Classification"):
+                      "Missense_Mutation": sio:SO_0001583
+                      "Silent": sio:SO_0001819
+                      "Splice_Site": sio:SO_0001630
+                      "De_novo_Start_OutOfFrame": sio:SO_0001589
+                      "Nonsense_Mutation": sio:SO_0001587
+                      "Nonstop_Mutation": sio:SO_0001578
+                      "Start_Codon_SNP": sio:SO_0002012
+          - ccle_variant_type: col("maf_Variant_Type")
+          - ccle_codon_change: col("maf_Codon_Change")
+          - ccle_dna_change: col("maf_cDNA_Change")
+          - ccle_protein_change: col("maf_Protein_Change")
 
 - EnsemblGene:
     - source("CCLE_DepMap_18q3_RNAseq_RPKM_20180718_head1001.txt")
@@ -57,6 +117,8 @@
         - entrez_gene_id:
             - tsv("Entrez_Gene_Id")
             - skip("0")
+
+---
 
 - Variation:
     - source("CCLE_DepMap_18q3_maf_20180718_head1001.txt")

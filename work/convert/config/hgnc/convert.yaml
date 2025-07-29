@@ -1,4 +1,4 @@
-HGNC:
+- HGNC:
   - source("hgnc-subset.tsv")
   - subject:
     - tsv("hgnc_id")
@@ -12,7 +12,7 @@ HGNC:
     - description: tsv("name")
     - location: tsv("location")
 
-UniProt:
+- UniProt:
   - source("hgnc-subset.tsv")
   - subject:
     - tsv("uniprot_ids")
@@ -20,7 +20,7 @@ UniProt:
   - objects:
     - uniprot_id: tsv("uniprot_ids")
 
-PubMed:
+- PubMed:
   - source("hgnc-subset.tsv")
   - subject:
     - tsv("pubmed_id")

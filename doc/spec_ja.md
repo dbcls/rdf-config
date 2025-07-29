@@ -256,10 +256,10 @@ RDF-config では、対象となる目的語の名前から、必要となる pr
 
 ## convert.yaml
 
-CSVファイル、TSVファイルからRDFやJSON-LDを生成するルール（手順）を定義するファイルで、下記のYAML形式で記述する。
+CSVファイル、TSVファイルやDuckDBからRDFやJSON-LDを生成するルール（手順）を定義するファイルで、下記のYAML形式で記述する。
 
 ```yaml
-主語名1:
+- 主語名1:
   # 変換元ファイルパスの設定や変数に値を設定する処理
   - 処理1-1
   - 処理1-2
@@ -277,7 +277,7 @@ CSVファイル、TSVファイルからRDFやJSON-LDを生成するルール（�
     - 目的語名1-3: 目的語名1-3の生成処理
     # ... 以降、主語名1に結びつく目的語の生成ルールが続く
 
-主語名2:
+- 主語名2:
   # 変換元ファイルパスの設定や変数に値を設定する処理
   - 処理2-1
   - 処理2-2
@@ -317,7 +317,7 @@ CSVファイル、TSVファイルからRDFやJSON-LDを生成するルール（�
 |--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | append       | `append(str)`<br/>値の末尾にstr追加する。 |
 | capitalize   | `capitalize`<br/>値（文字列）の先頭を大文字にする。 |
-| change_value | `change_value(rule1, rule2, ...)`<br/>引数に配列渡し、その配列の1番目の要素を2番目の要素に変更する。<br/>例えば `chage_value(['E', 'en'], ['J', 'ja'])`とすると、'E' は 'en' に、'J' は 'ja' に変更される。 |
+| col          | `col(col_name)`<br/>CSV, TSV, DuckDBテーブルのcol_nameカラムの値を取得する。<br/>`source(...)`でファイルフォーマットを指定した場合は、`col(col_name)`でカラムの値を取得する。|
 | csv          | `csv(col_name)`<br/>CSVのcol_nameカラムの値を取得する。 |
 | datatype     | `datatype(type)`<br/>`type`には`xsd:date`等のRDFでのデータ型を指定し、オブジェクトのリテラル値がそのデータ型となるようにする。 |
 | delete       | `delete(pattern)`<br/>`pattern`にマッチする部分を削除する。`pattern`には文字列または正規表現を指定する。 |
@@ -327,9 +327,10 @@ CSVファイル、TSVファイルからRDFやJSON-LDを生成するルール（�
 | lang         | `lang(lang_tag)`<br/>オブジェクトのリテラル値に対して、RDFの言語タグ（"ja"や"en"等）を設定する。 |
 | prepend      | `prepend(str)`<br/>値の先頭に引数で指定された文字列を追加する。 |
 | replace      | `replace(pattern, replace)`<br/>`pattern`にマッチする部分を`replace`で置き換える。<br/>`pattern`には置き換える文字列か正規表現を指定し、文字列を指定した場合は全く同じ文字列にだけマッチする。 |
-| source       | `source(filepath)`<br/>変換対象とするファイルのパスを指定する。 |
+| source       | `source(file_path[, file_format[, table_name]])`<br/>変換対象とするファイルのパス、ファイルのフォーマット、テーブル名（DuckDBの場合）を指定する。<br/>ファイルのフォーマットは、`:csv`, `:tsv`, `:duckdb` のいずれかを指定し、`:csv`, `:tsv`の場合は省略可能である。（この場合、`convert.yaml`内の`csv`や`tsv`が使用される）。<br/>`:duckdb`を指定した場合は、table_nameも指定する必要がある。|
 | skip         | `skip(str1, str2, ...)`<br/>引数に任意個の文字列を指定し、処理対象の値が引数で指定された文字列の場合、その値が目的語となるトリプルを生成しない。 |
 | split        | `split(sep)`<br/>値を`sep`で分割する。 |
+| switch       | `switch(exp)`<br/>"val1":<br/>&nbsp;&nbsp;switch(exp)の値がval1の場合の変換処理<br/>"val2":<br/>&nbsp;&nbsp;switch(exp)の値がval2の場合の変換処理<br/>...<br/>default:<br/>&nbsp;&nbsp;switch(exp)の値が上記以外の場合の変換処理<br/><br/>`switch(exp)` で値を参照し、その値で変換処理を分ける。<br/>`switch(exp)` は、以下の書き方ができる。<br/><ul><li>`switch`: その時点で変換処理対象となっている値を参照する。</li><li>`switch("col_name")`: 現在処理中の行の"col_name"カラムの値を参照する。</li><li>`switch($var_name)`: 変数 `$var_name` の値を参照する。</li></ul>|
 | to_bool      | `to_bool`<br/>値を真偽値に変換する。 |
 | to_float     | `to_float`<br/>値を小数に変換する。 |
 | to_int       | `to_int`<br/>値を整数に変換する。 |
@@ -346,7 +347,7 @@ CSVファイル、TSVファイルからRDFやJSON-LDを生成するルール（�
 以下は、主語に対する`convert.yaml`の記述例である。
 
 ```yaml
-MySubject:
+- MySubject:
   - source("/path/to/csv_file.csv")
   - subject: 
     - csv("id_column")
@@ -372,7 +373,7 @@ http://example.org/my_subject/1
 
 以下は、目的語に対する`convert.yaml`の記述例である。
 ```yaml
-MySubject:
+- MySubject:
   - source("/path/to/csv_file.csv")
   - subject:
     - csv("id_column")
@@ -398,7 +399,7 @@ MySubject:
 例えば `model.yaml`で以下のように、目的語の例に言語タグやデータ型が付与されているとする。  
 `model.yaml`（目的語の例に言語タグやデータ型が付与されている）
 ```yaml
-MySubject <http://example.org/my_subject/1>
+- MySubject <http://example.org/my_subject/1>:
   - my:label:
     - my_label "マイラベル"@ja
   - my:date:
@@ -409,7 +410,7 @@ MySubject <http://example.org/my_subject/1>
 生成されるRDFでは、`model.yaml`の目的語の例に従って、言語タグやデータ型が付与される。  
 `convert.yaml`（言語タグやデータ型の付与処理を省略したパターン）
 ```yaml
-MySubject:
+- MySubject:
   - source("/path/to/csv_file.csv")
   - subject:
     - csv("id_column")
@@ -426,14 +427,14 @@ MySubject:
 例えば、以下の`model.yaml`と`convert.yaml`を考える。  
 `model.yaml`
 ```yaml
-MySubject <http://example.org/my_subject/1>
+- MySubject <http://example.org/my_subject/1>:
   - rdfs:seeAlso:
     - uniprot: <http://identifiers.org/uniprot/Q9NQ94>
 ```
 
 `convert.yaml`
 ```yaml
-MySubject:
+- MySubject:
   - source("/path/to/csv_file.csv")
   - subject:
     - csv("id_column")
@@ -451,8 +452,8 @@ MySubject:
 `convert.yaml`では、変数に値をセットし、それを別の場所で参照することができる。  
 変数を値にセットするには、キーに変数名を記述し、そのキーに対応する値の部分に、変数の値を生成するルールを記述する。
 
-```YAML
-主語名:
+```yaml
+- 主語名:
   - source("/path/to/file.csv")
   - $var1: 変数$var1の生成処理
   - subject:
@@ -497,7 +498,7 @@ TSVファイル（`person.tsv`）
 
 `convert.yaml`
 ```yaml
-Person:
+- Person:
   - source("/path/to/person.tsv")
   - $id: tsv("person_id")
   - subject:

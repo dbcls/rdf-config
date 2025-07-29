@@ -23,7 +23,7 @@
 | `--grasp [出力ディレクトリ]` | Graspの設定ファイル（GraphQLのスキーマファイルとクエリファイル）を生成する。<br/>Graspの設定ファイルは、`grasp/`以下か、指定した出力ディレクトリに生成される。 |
 | `--grasp-ns [出力ディレクトリ]` | `--grasp`で出力されるGraphQLのtype名は`model.yaml`の主語名となるが、<br/>名前衝突を避けるため`--config`で指定したディレクトリ名を<br/>Capitalizeした文字列を主語のプレフィックスにつける。 |
 | `--shex` | ShExを標準出力に表示する。 |
-| `--convert [--format 出力フォーマット]` | CSVファイルからRDFやJSON-LDを生成する。| 
+| `--convert 出力フォーマット [入力元ファイルまたはディレクトリ]` | CSVファイル、TSVファイルやDuckDBのテーブルからRDFやJSON-LDを生成する。|
 
 ### オプションごとの設定名の表示
 
@@ -392,18 +392,39 @@ stanza/stanzas/refex-entry
 
 ### RDF, JSON-LDの生成について
 
-CSVファイル、XMLファイル、JSONファイルからRDFやJSON-LDを生成するには、rdf-config に --convert オプションを付けて実行する。
+CSVファイル、TSVファイル、DuckDBからRDFやJSON-LDを生成するには、rdf-config に --convert オプションを付けて実行する。
 ```
-% rdf-config --config 設定ファイルのディレクトリ名 --convert [--format 出力フォーマット]
+% rdf-config --config 設定ファイルのディレクトリ名 --convert 生成するファイルのフォーマット [入力元ファイルまたはディレクトリ]
 ```
 生成されたRDFやJSON-LDは標準出力に出力される。
 
-`--format`オプションには生成するファイルフォーマットを指定する。出力フォーマットには以下の値を指定することができる。
-* `turtle` Turtleを生成する。
-* `json-ld` JSON-LDを生成する。
-* `jsonl` JSON-LDをJSON Linesで生成する。
+`--convert`オプションには生成するファイルフォーマットを指定する。出力フォーマットには以下の値を指定することができる。
+* `:turtle` Turtleを生成する。
+* `:ntriples` N-Triplesを生成する。
+* `:jsonld` JSON-LDを生成する。
+* `:jsonl` JSON-LDをJSON Linesで生成する。
+* `:context` JSON-LDのコンテキスト（@context）を生成する。
 
-`--format`オプションが指定されない場合はTurtleが生成される。
+入力元ファイルまたはディレクトリ には、以下を指定することができる。
+* 変換元のファイル（CSVファイル、TSVファイル）のパス
+  * `convert.yaml` の `source(...)` で変換元のファイルが記述されている場合でも、ここで指定した変換元ファイルが使用される。
+* 変換元ファイルがあるディレクトリのパス
+  * `convert.yaml` の `source(...)` で変換元のファイルが相対パス（例えばファイル名のみ）の場合、ここで指定したディレクトリからの相対パスとなる。
+
+DuckDBを使用する場合は、Gemfileとして `Gemfile.duckdb` を使用する必要がある。  
+Gemfileとして `Gemfile.duckdb` を使用するには、環境変数`BUNDLE_GEMFILE`に`Gemfile.duckdb`を設定する。  
+具体的には
+```
+% export BUNDLE_GEMFILE=Gemfile.duckdb
+% bundle install
+% bundle exec rdf-config ...
+```
+のように、`BUNDLE_GEMFILE`環境変数をexportするか
+```
+% BUNDLE_GEMFILE=Gemfile.duckdb bundle install
+% BUNDLE_GEMFILE=Gemfile.duckdb bundle exec rdf-config ...
+```
+のように、bundle実行の度に`BUNDLE_GEMFILE`環境変数を設定する。
 
 #### 実行例
 RDF, JSON-LD, JSON Linesの生成の例として、以下のTSVファイルと`convert.yaml`から生成するとする。

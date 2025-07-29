@@ -2,27 +2,27 @@
 
 require 'psych'
 require_relative 'scalar_node'
+require_relative '../../convert'
 
 class RDFConfig
   class Convert
     class Yaml
       class Parser
-        attr_reader :yaml_file, :subject_names, :object_name, :nodes_doc, :errors,
-                    :pre_process, :subject_convert, :object_convert
+        attr_reader :yaml_file, :nodes_doc, :converts, :errors
 
         def initialize(yaml_file)
           @yaml_file = yaml_file
           @nodes_doc = Psych.parse_file(yaml_file)
 
-          @subject_names = []
-          @object_name = {}
-
-          @pre_process = {}
-          @subject_convert = {}
-          @object_convert = {}
-
-          @subject_name = nil
           @errors = []
+
+          unless @nodes_doc.children.size == 1 && @nodes_doc.children.first.is_a?(Psych::Nodes::Sequence)
+            add_error("#{@yaml_file} must be an array of conversion settings for each subject.")
+            raise InvalidConfig, Validator.format_error_message(@errors)
+          end
+
+          @converts = []
+          @convert = {}
         end
 
         def parse
@@ -31,21 +31,62 @@ class RDFConfig
 
           # children of root_node are array of a subject
           root_node.children.each do |subject_mapping|
+            @convert = {}
+            @source = nil
             parse_subject(subject_mapping)
+            @converts << @convert
           end
+
+          validate
+        end
+
+        def subject_names
+          @converts.map { |convert| convert[:subject_name] }.uniq
         end
 
         def object_names
-          @object_name.values.flatten.map(&:to_s)
+          @converts.map { |convert| convert[:object_convert] }
+                   .map { |object_converts| object_converts.map(&:keys) }
+                   .flatten.uniq
         end
 
         def variable_names
-          @subject_names + object_names
+          subject_names + object_names
         end
 
         def error?
           @errors.size > 0
         end
+
+        def dump
+          @converts.each do |convert|
+            puts "Subject name: #{convert[:subject_name].inspect}"
+            puts '  pre process'
+            convert[:pre_process].each do |pre_process|
+              puts ['    ', pre_process.inspect].join
+            end
+
+            puts '  subject convert'
+            convert[:subject_convert].each do |subject_convert|
+              puts ['    ', subject_convert.inspect].join
+            end
+
+            puts '  object convert'
+            convert[:object_convert].each do |object_converts|
+              object_converts.each do |object_name, object_convert_rules|
+                puts ['    ', object_name.inspect].join
+                object_convert_rules = [object_convert_rules] unless object_convert_rules.is_a?(Array)
+                object_convert_rules.each do |object_convert|
+                  puts ['      ', object_convert.inspect].join
+                end
+              end
+            end
+
+            puts
+          end
+        end
+
+        private
 
         def parse_subject(subject_mapping)
           unless subject_mapping.is_a?(Psych::Nodes::Mapping)
@@ -53,10 +94,9 @@ class RDFConfig
             return
           end
 
-          @subject_name = subject_mapping.children[0].value
-          @subject_names << @subject_name
+          subject_name = subject_mapping.children[0].value
           unless subject_mapping.children.size == 2
-            add_error("Invalid subject config: #{@subject_name}")
+            add_error("Invalid subject config: #{subject_name}")
             return
           end
 
@@ -65,15 +105,17 @@ class RDFConfig
             return
           end
 
-          @pre_process[@subject_name] = []
-          @object_convert[@subject_name] = {}
+          @convert[:subject_name] = subject_name
+          @convert[:pre_process] = []
+          @convert[:subject_convert] = []
+          @convert[:object_convert] = []
 
           # subject rules are preprocessed_rules, subject_convert_rules or object_convert_rules
           subject_rules = subject_mapping.children[1].children
           subject_rules.each do |subject_rule|
             case subject_rule
             when Psych::Nodes::Scalar
-              @pre_process[@subject_name] << ScalarNode.new(subject_rule)
+              parse_pre_process_convert(subject_rule)
             when Psych::Nodes::Mapping
               key = subject_rule.children[0].value
               if key == 'subject'
@@ -81,7 +123,7 @@ class RDFConfig
               elsif key == 'objects'
                 parse_object_converts(subject_rule.children[1])
               else
-                @pre_process[@subject_name] << node_to_ruby(subject_rule)
+                parse_pre_process_convert(subject_rule)
               end
             else
               add_error("Invalid subject_config: #{@subject_name}")
@@ -89,12 +131,22 @@ class RDFConfig
           end
         end
 
+        def parse_pre_process_convert(pre_process_convert)
+          case pre_process_convert
+          when Psych::Nodes::Scalar
+            @convert[:pre_process] << ScalarNode.new(pre_process_convert)
+          when Psych::Nodes::Mapping
+            convert = node_to_ruby(pre_process_convert)
+            @convert[:pre_process] << convert.map { |k, v| v.is_a?(Array) ? [k, v] : [k, [v]] }.to_h
+          end
+        end
+
         def parse_subject_converts(subject_converts)
           converts = node_to_ruby(subject_converts)
           if converts.is_a?(Array)
-            @subject_convert[@subject_name] = converts
+            @convert[:subject_convert] = converts
           else
-            @subject_convert[@subject_name] = [converts]
+            @convert[:subject_convert] = [converts]
           end
         end
 
@@ -121,10 +173,8 @@ class RDFConfig
           end
 
           object_name = ScalarNode.new(object_convert.children[0])
-          add_object_name(object_name)
           object_convert_rule = node_to_ruby(object_convert.children[1])
-          @object_convert[@subject_name][object_name] =
-            object_convert_rule.is_a?(Array) ? object_convert_rule : [object_convert_rule]
+          @convert[:object_convert] << { object_name.to_s => object_convert_rule }
         end
 
         def node_to_ruby(node)
@@ -142,49 +192,26 @@ class RDFConfig
           end
         end
 
-        def subject_converts(subject_name)
-          @pre_process[subject_name] + @subject_convert[subject_name]
-        end
+        def validate
+          if @converts.size == 0
+            add_error("No configuration found for convert.")
+          else
+            @converts.each do |convert|
+              if convert[:subject_convert].nil? || convert[:subject_convert].empty?
+                add_error("No subject convert found for subject #{convert[:subject_name]}")
+              end
 
-        def add_object_name(object_name)
-          @object_name[@subject_name] ||= []
+              if convert[:object_convert].nil? || convert[:object_convert].empty?
+                add_error("No object convert found for subject #{convert[:subject_name]}")
+              end
+            end
+          end
 
-          @object_name[@subject_name] << object_name.to_s
+          raise InvalidConfig, Validator.format_error_message(@errors) if error?
         end
 
         def add_error(msg)
           @errors << msg
-        end
-
-        def dump
-          puts '----- pre process -----'
-          @pre_process.each do |subject, rules|
-            puts subject
-            rules.each do |rule|
-              puts "  #{rule.inspect}"
-            end
-          end
-          puts
-
-          puts '----- subject convert -----'
-          @subject_convert.each do |subject, rules|
-            puts subject
-            rules.each do |rule|
-              puts "  #{rule.inspect}"
-            end
-          end
-          puts
-
-          puts '----- object convert -----'
-          @object_convert.each do |subject_name, object_convert|
-            puts subject_name
-            object_convert.each do |object_name, object_rules|
-              puts "  #{object_name}"
-              object_rules.each do |object_rule|
-                puts "    #{object_rule.inspect}"
-              end
-            end
-          end
         end
       end
     end
