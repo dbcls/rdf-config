@@ -1,0 +1,70 @@
+- Expression bgee:EXPRESSION_281674:
+  - a: genex:Expression
+  - genex:hasExpressionLevel: 
+    - expression_level: 29.2877
+  - genex:hasSequenceUnit: 
+    - sequence_unit: Gene
+  - genex:hasFDRpvalue:
+    - expression_fdr_pvalue: 2.79049e-06
+  - genex:hasExpressionCondition: 
+    - expression_condition: ExpressionCondition
+
+- Gene oma:GENE_ENSG00000216412:
+  - a: orth:Gene
+  - lscr:xrefUniprot: 
+    - gene_uniprot_id: up:P02654
+  - lscr:xrefNCBIGene:
+    - gene_ncbigene_id: ncbigene:118230125
+  - lscr:xrefEnsemblGene: 
+    - gene_ensembl_id: ensg:ENSG00000130208
+  - orth:organism:
+    - []:
+      - obo:RO_0002162:
+        - taxonomy: Taxon
+  - genex:isExpressedIn:
+    - gene_expression_condition: ExpressionCondition, AnatomicalEntity, ExpressionConditionStrain, ExpressionConditionDevelopmentalStage
+  - rdfs:label: 
+    - gene_name: "RPL12P2"
+  - rdfs:seeAlso: 
+    - links_bgee: "https://bgee.org/?page=gene&gene_id=ENSG00000216412"	
+  - dcterms:description: 
+    - gene_description: "ribosomal protein L12 pseudogene 2 [Source:HGNC Symbol;Acc:HGNC:16070]"
+  - dcterms:identifier:
+    - gene_identifier: "ENSG00000216412" 
+    
+- ExpressionCondition bgee:EXPRESSION_CONDITION_147743:
+  - a: genex:ExpressionCondition
+  - genex:hasSex: 
+    - expression_condition_sex: "any"
+  - genex:hasStrain:
+    - strain: ExpressionConditionStrain
+  - genex:hasDevelopmentalStage:    
+    - developmental_stage_obo: ExpressionConditionDevelopmentalStage
+  - genex:hasAnatomicalEntity:
+    - anatomical_entity_obo: AnatomicalEntity
+  
+- AnatomicalEntity obo:CL_0000654:
+  - a: genex:AnatomicalEntity
+  - rdfs:label: 
+    - anatomical_entity_name:  "primary oocyte"
+  - dcterms:description:
+    - anatomical_entity_description: "A primary oocyte is an oocyte that has not completed female meosis I."
+
+- ExpressionConditionStrain bgee:STRAIN_3d4eba69908860b0d838be983fd7f9c8:
+  - a: efo:EFO_0005135
+  - rdfs:label: 
+    - expression_condition_strain: "wild-type"
+    
+- ExpressionConditionDevelopmentalStage obo:DmojDv_0000007:
+  - a: efo:EFO_0000399
+  - rdfs:label: 
+    - expression_condition_developmental_stage: "days 5-8 of fully formed stage (Drosophila mojavensis)"
+
+- Taxon taxonomy:10090:
+  - a: core:Taxon
+  - core:rank: 
+    - rank: core:Species
+  - core:commonName: 
+    - taxonomy_common_name: "human"
+  - core:scientificName:
+    - taxonomy_scientific_name: "Homo sapiens"
