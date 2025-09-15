@@ -1,57 +1,145 @@
-- Growth growth:10:
+- Growth growth:1136:
   - a: schema:GrowthCondition
   - schema:growthTemperature:
     - growth_temperature: 30
   - schema:hasGrowthIndicator:
     - growth_indicator: true 
+  - schema:hasOxygenRequirement:
+    - oxygen_requirement: "anaerobic"
+  - schema:incubationPeriod:
+    - incubation_period: "2-3 days"
   - schema:partOfMedium: Medium
-  - schema:relatedToStrain: <https://purl.dsmz.de/mediadive/strain/9>
+  - schema:relatedToStrain: Strain
 
-- Medium mediadive:1:
+- MediumComposition medium_composition:65015:
+  - a: schema:MediumComposition
+  - schema:containsIngredient: Ingredient
+  - schema:gramsPerLiter: 
+    - medium_composition_grams_per_liter: 0.45
+  - schema:isOptionalIngredient:
+    - optional_ingredient: false
+  - schema:mmolPerLiter:
+    - mmol_per_liter: 3.30676
+  - schema:modificationDifference:
+    - modification_difference: false
+  - schema:partOfMedium: Medium
+
+- Medium mediadive:148:
   - a: schema:CultureMedium
   - dct:identifier:
-    - id: <https://identifiers.org/mediadive.medium:1>
+    - id: <https://identifiers.org/mediadive.medium:148>
   - rdfs:label:
-    - label: "NUTRIENT AGAR"
+    - label: "DESULFUROMONAS SP. MEDIUM"
   - schema:belongsToGroup: 
-    - group: "NUTRIENT AGAR"
+    - group: "DESULFUROMONAS SP. MEDIUM"
   - schema:fromSource:
     - source: "DSMZ"
+  - schema:hasFinalPH:
+    - final_ph: "7.0-7.2"
   - schema:hasLinkToSource:
-    - source_url: <https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1.pdf>
+    - source_url: <https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium148.pdf>
   - schema:hasMainSolution:
     - main_solution: Solution
   - schema:hasMaxPH:
-    - max_ph: 7.0
+    - max_ph: 7.2
   - schema:hasMinPH:
     - min_ph: 7.0
   - schema:includesSolution:
-    - solution: Solution
+    - included_solution: Solution
   - schema:isComplex:
     - is_complex: true
 
-- Solution solution:1:
+- SolutionRecipe solution_recipe:1572:
+  - a: schema:SolutionRecipe
+  - dct:identifier:
+    - solution_recipe_identifier: 1572
+  - schema:gramsPerLiter:
+    - grams_per_liter: 1.0
+  - schema:includesIngredient:
+    - ingredient: Ingredient
+  - schema:ingredientAmount:
+    - ingredient_amout: 1.0
+  - schema:ingredientUnit:
+    - ingredient_unit: "g"
+  - schema:isIngredientOptional:
+    - ingredient_optional: false
+  - schema:mmolPerLiter:
+    - ingredient_mmol_per_liter: 7.34835
+  - schema:partOfSolution: Solution
+  - schema:positionInRecipe:
+    - ingredient_position_in_recipe: 0
+
+- Ingredient ingredient:11:
+  - a: schema:Ingredient
+  - dct:identifier:
+    - ingredient_id: 11
+  - rdfs:label: 
+    - ingredient_label: "KH2PO4"
+  - schema:belongsToGroup:
+    - ingredient_group: "KH2PO4"
+  - schema:hasCAS:
+    - cas: "7778-77-0"
+  - schema:hasChEBI:
+    - chebi: 63036
+  - schema:hasDensity: 
+    - ingredient_density: 2.34
+  - schema:hasFormula: 
+    - ingredient_formula: "H3O4P.K"
+  - schema:hasGMO:
+    - gmo: <http://purl.jp/bio/10/gmo/GMO_"001006>
+  - schema:hasMass: 
+    - ingredient_mass: 136.085
+  - schema:hasPubChem:
+    - pubchem: 516951
+  - schema:hasSynonym:
+    - ingredient_synonym: "Monopotassium dihydrogen phosphate"
+  - schema:hasZVG:
+    -  zvg: 4860
+  - schema:isComplexCarbonSource: 
+    - complex_carbon_source: false
+
+- Equipment equipment:100:
+  - a: schema:Equipment
+  - dct:identifier:
+    - equipment_id: 100
+  - rdfs:label:
+    - equipent_lable: "Hungate tubes"
+  - schema:usedInSolution:
+    - equipment_solution: Solution
+
+- Step step:380:
+  - a: schema:OperationalStep
+  - dct:identifier:
+    - step_id: 380
+  - schema:description:
+    - step_description: "Dissolve ingredients (except carbonate, vitamins and sulfide), sparge medium with 100% N2 gas for 30 - 45 min to make it anoxic. Dispense medium under same gas atmosphere into anoxic Hungate-type tubes or serum vials. After autoclaving complete the medium by adding vitamins and sulfide from separately sterilized anoxic stock solutions prepared under 100% N2 gas and carbonate from a sterile anoxic stock solution prepared under 80% N2 and 20% CO2 gas atmosphere. Vitamins are sterilized by filtration. Adjust pH of the complete medium to 7.0-7.2, if necessary."
+  - schema:partOfMedium: Medium
+  - schema:relatedToSolution: Solution
+  - schema:stepOrder:
+    - step_order: 1
+
+- Solution solution:258:
   - a: schema:Solution
   - dct:identifier:
-    - solution_id: "1"
+    - solution_id: "258"
   - rdfs:label:
-    - solution_label: "Main sol. 1"
+    - solution_label: "Main sol. 148"
   - schema:firstDefinedInMedium:
-    - first_defined_in_medium: mediadive:1
+    - first_defined_in_medium: mediadive:148
   - schema:hasVolume:
-    - volume: "1000"
+    - volume: "1003"
 
-- Strain strain:9:
+- Strain strain:1011:
   - a: schema:Strain
   - dct:identifier:
-    - strain_id: 9
+    - strain_id: 1011
   - schema:belongsTaxGroup:
     - tax_group: "Bacterium"
   - schema:hasBacDiveID:
-    - bacdive_id: 1172
+    - bacdive_id: 4229 
   - schema:hasDSMNumber:
-    - dsm_number: 10
+    - dsm_number: 1397
   - schema:hasSpecies:
-    - species: Bacillus subtilis"
+    - species: "Desulfuromonas acetexigens"
   - schema:hasSynonym:
-    - strain_synonum: "ATCC 6051"
+    - strain_synonum: "ATCC 51529"
