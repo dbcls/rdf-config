@@ -1,22 +1,33 @@
-- Medium mediadive:C1:
+- Medium mediadive:1:
   - a: schema:CultureMedium
   - dct:identifier:
-    - id: <https://identifiers.org/mediadive.medium:C1>
+    - id: <https://identifiers.org/mediadive.medium:1>
   - rdfs:label:
-    - label: "ABM"
+    - label: "NUTRIENT AGAR"
   - schema:belongsToGroup: 
-    - group: "ABM"
+    - group: "NUTRIENT AGAR"
   - schema:fromSource:
-    - source: "CCAP"
+    - source: "DSMZ"
   - schema:hasLinkToSource:
-    - source_url: <https://www.ccap.ac.uk/wp-content/uploads/MR_ABM.pdf>
+    - source_url: <https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1.pdf>
   - schema:hasMainSolution:
-    - main_solution: solution:5992
+    - main_solution: Solution
   - schema:hasMaxPH:
-    - max_ph: 3.0
+    - max_ph: 7.0
   - schema:hasMinPH:
-    - min_ph: 3.0
+    - min_ph: 7.0
   - schema:includesSolution:
-    - solution: solution:5992
+    - solution: Solution
   - schema:isComplex:
-    - is_complex: false
+    - is_complex: true
+
+- Solution solution:1:
+  - a: schema:Solution
+  - dct:identifier:
+    - solution_id: "1"
+  - rdfs:label:
+    - solution_label: "Main sol. 1"
+  - schema:firstDefinedInMedium:
+    - first_defined_in_medium: mediadive:1
+  - schema:hasVolume:
+    - volume: "1000"
