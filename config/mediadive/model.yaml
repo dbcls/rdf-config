@@ -1,3 +1,12 @@
+- Growth growth:10:
+  - a: schema:GrowthCondition
+  - schema:growthTemperature:
+    - growth_temperature: 30
+  - schema:hasGrowthIndicator:
+    - growth_indicator: true 
+  - schema:partOfMedium: Medium
+  - schema:relatedToStrain: <https://purl.dsmz.de/mediadive/strain/9>
+
 - Medium mediadive:1:
   - a: schema:CultureMedium
   - dct:identifier:
@@ -31,3 +40,18 @@
     - first_defined_in_medium: mediadive:1
   - schema:hasVolume:
     - volume: "1000"
+
+- Strain strain:9:
+  - a: schema:Strain
+  - dct:identifier:
+    - strain_id: 9
+  - schema:belongsTaxGroup:
+    - tax_group: "Bacterium"
+  - schema:hasBacDiveID:
+    - bacdive_id: 1172
+  - schema:hasDSMNumber:
+    - dsm_number: 10
+  - schema:hasSpecies:
+    - species: Bacillus subtilis"
+  - schema:hasSynonym:
+    - strain_synonum: "ATCC 6051"
