@@ -331,3 +331,68 @@
   - schema:hasDocumentType:
     - reference_document_type: "catalogue"
 
+- Entichment enrichment:15449:
+  - a:
+    - schema:EnrichmentProcedure
+    - schema:IsolationInformation
+    - schema:IsolationProcedures
+    - schema:Origin
+  - rdfs:label:
+    - enrichment_label: "w+Sarc (water agar + nutrient bacteria cells)"
+  - schema:describesStrain: Strain
+
+- NutritionType nutrition_type:1077:
+  - a:
+    - schema:MetabolicPhenotype
+    - schema:NutritionType
+    - schema:Phenotype
+  - rdfs:label:
+    - nutrition_type_label: "chemoheterotroph"
+  - schema:describesStrain: Strain
+  - schema:hasReference: Reference
+
+- Pathogenicity pathogenicity:12983:
+  - a:
+    - schema:ConceptualEntity
+    - schema:Pathogenicity
+  - schema:describesStrain: Strain
+  - schema:hasReference: Reference
+  - schema:isAnimalPathogen:
+    - is_animal_pathgen: "yes"
+  - schema:isHumanPathogen:
+    - is_human_pathggen: "yes"
+  - schema:isPathogen:
+    - is_pathgen: "unknown"
+  - schema:isPlantPathogen:
+    - is_plant_pathgen: "unknown"
+
+- Pigmentation pigmentation:1:
+  - a:
+    - schema:CellMorphology
+    - schema:CellPigmentation
+    - schema:MicrobialPhenotype
+    - schema:Phenotype
+  - rdfs:label:
+    - pigmentation_label: "orange"
+  - schema:describesStrain: Strain
+  - schema:hasPigmentInformation:
+    - pigment_information: true
+  - schema:hasPigmentName:
+    - piment_name: "orange"
+  - schema:hasPigmentProduction:
+    - pigment_production: true
+  - schema:hasReference: Reference
+
+- SporeFormation spore_formation:10:
+  - a: 
+    - schema:MicrobialPhenotype
+    - schema:Phenotype
+    - schema:SporeFormation
+  - rdfs:comment:
+    - spore_formation_comment: "Formation of spore chains: spira, spore surface: spiny"
+  - rdfs:label:
+    - spore_formation_label: "spore-forming"
+  - schema:describesStrain: Strain
+  - schema:hasAbility:
+    - spore_formation_ability: true
+  - schema:hasReference: Reference
