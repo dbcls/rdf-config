@@ -1,0 +1,254 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX schema: <https://purl.dsmz.de/schema/>
+PREFIX strain: <https://purl.dsmz.de/bacdive/strain/>
+PREFIX reference: <https://purl.dsmz.de/bacdive/reference/>
+PREFIX cell_shape: <https://purl.dsmz.de/bacdive/cell_shape/>
+PREFIX culture_medium: <https://purl.dsmz.de/mediadive/culture_medium/>
+PREFIX cell_motility: <https://purl.dsmz.de/bacdive/cell_motility/>
+PREFIX colony_morphology: <https://purl.dsmz.de/bacdive/colony_morphology/>
+PREFIX culture_collection_number: <https://purl.dsmz.de/bacdive/culture_collection_number/>
+PREFIX culture_ph: <https://purl.dsmz.de/bacdive/culture_pH/>
+PREFIX culture_temp: <https://purl.dsmz.de/bacdive/culture_temp/>
+PREFIX enzyme: <https://purl.dsmz.de/bacdive/enzyme/>
+PREFIX gc_content: <https://purl.dsmz.de/bacdive/gc_content/>
+PREFIX gram_stain: <https://purl.dsmz.de/bacdive/gram_stain/>
+PREFIX halophily: <https://purl.dsmz.de/bacdive/halophily/>
+PREFIX isolation: <https://purl.dsmz.de/bacdive/isolation/>
+PREFIX location: <https://purl.dsmz.de/bacdive/location/>
+PREFIX oxygen_tolerance: <https://purl.dsmz.de/bacdive/oxygen_tolerance/>
+PREFIX risk_assessment: <https://purl.dsmz.de/bacdive/risk_assessment/>
+PREFIX sequence_16s: <https://purl.dsmz.de/bacdive/sequence_16S/>
+PREFIX sequence_genomes: <https://purl.dsmz.de/bacdive/sequence_genomes/>
+PREFIX strain_designation: <https://purl.dsmz.de/bacdive/strain_designation/>
+PREFIX nutrition_type: <https://purl.dsmz.de/bacdive/nutrition_type/>
+PREFIX pathogenicity: <https://purl.dsmz.de/bacdive/pathogenicity/>
+PREFIX pigmentation: <https://purl.dsmz.de/bacdive/pigmentation/>
+PREFIX enrichment: <https://purl.dsmz.de/bacdive/enrichment>
+PREFIX spore_formation: <https://purl.dsmz.de/bacdive/spore_formation>
+<StrainShape> {
+  a [ schema:Strain ] ;
+  dct:description xsd:string ;
+  rdfs:hasScientificName xsd:string ;
+  rdfs:label xsd:string ;
+  schema:hasBacDiveID xsd:integer ;
+  schema:hasClass xsd:string ;
+  schema:hasDesignation xsd:string ;
+  schema:hasDomain xsd:string ;
+  schema:hasFamily xsd:string ;
+  schema:hasGenus xsd:string ;
+  schema:hasOrder xsd:string ;
+  schema:hasPhylum xsd:string ;
+  schema:hasReference @<ReferenceShape> ;
+  schema:hasSpecies xsd:string ;
+  schema:hasSpeciesEpithet xsd:string ;
+  schema:hasStrainNames xsd:string ;
+  schema:hasStrainNumber xsd:string ;
+  schema:hasTaxID xsd:integer ;
+  schema:hasTaxonomicRank xsd:string ;
+  schema:isTypeStrain xsd:trueclass ;
+  schema:matchesTaxIDLevel xsd:string
+}
+<CellMotilityShape> {
+  a [ schema:CellMotility schema:MicrobialPhenotype schema:Phenotype ] ;
+  rdfs:label xsd:falseclass ;
+  schema:describesStrain @<StrainShape> ;
+  schema:hasPhenotypeInformation xsd:falseclass ;
+  schema:hasReference @<ReferenceShape> ;
+  schema:isMotile xsd:falseclass
+}
+<CellShapeShape> {
+  a [ schema:CellMorphology schema:CellShape schema:Phenotype ] ;
+  rdfs:label xsd:string ;
+  schema:describesStrain @<StrainShape> ;
+  schema:hasReference @<ReferenceShape>
+}
+<ColonyMorphologyShape> {
+  a [ schema:ColonyMorphology schema:MicrobialPhenotype schema:Phenotype ] ;
+  schema:describesStrain @<StrainShape> ;
+  schema:hasColonyColor xsd:string ;
+  schema:hasColonyMorphologyInformation xsd:string ;
+  schema:hasColonyShape xsd:string ;
+  schema:hasReference @<ReferenceShape>
+}
+<CultureCollectionNumberShape> {
+  a [ schema:CultureCollectionNumber schema:Identifier schema:OrganismIdentifier schema:StrainNumber ] ;
+  rdfs:label xsd:string ;
+  schema:describesStrain @<StrainShape> ;
+  schema:hasLink xsd:string ;
+  schema:hasReference @<ReferenceShape>
+}
+<CultureMediumShape> {
+  a [ schema:ConceptualEntity schema:CultureCondition schema:CultureMedium ] ;
+  rdfs:label xsd:string ;
+  schema:describesStrain @<StrainShape> ;
+  schema:hasGrowthInformation xsd:trueclass ;
+  schema:hasMediaDiveID xsd:string ;
+  schema:hasMediaLink IRI ;
+  schema:hasMediumGrowth xsd:trueclass ;
+  schema:hasReference @<ReferenceShape> ;
+  schema:providedBy xsd:string
+}
+<CulturePHShape> {
+  a [ schema:ConceptualEntity schema:CultureCondition schema:CulturePH ] ;
+  rdfs:label xsd:string ;
+  schema:describesStrain @<StrainShape> ;
+  schema:hasGrowthInformation xsd:string ;
+  schema:hasPHRangeEnd xsd:float ;
+  schema:hasPHRangeStart xsd:float ;
+  schema:hasReference @<ReferenceShape> ;
+  schema:hasTestAbility xsd:string ;
+  schema:hasTestType xsd:string
+}
+<CultureTempShape> {
+  a [ schema:ConceptualEntity schema:CultureCondition schema:CultureTemperature ] ;
+  rdfs:label xsd:string ;
+  schema:describesStrain @<StrainShape> ;
+  schema:growthObserved xsd:string ;
+  schema:hasGrowthInformation xsd:float ;
+  schema:hasReference @<ReferenceShape> ;
+  schema:hasTemperatureRangeEnd xsd:float ;
+  schema:hasTemperatureRangeStart xsd:float ;
+  schema:hasTestType xsd:string
+}
+<EnzymeShape> {
+  a [ schema:Enzyme schema:GeneProduct schema:Protein ] ;
+  rdfs:label xsd:string ;
+  schema:describesStrain @<StrainShape> ;
+  schema:hasActivity xsd:string ;
+  schema:hasECNumber xsd:string ;
+  schema:hasEnzyme xsd:string ;
+  schema:hasReference @<ReferenceShape>
+}
+<GCContentShape> {
+  a [ schema:GCContent schema:MolecularProperty schema:PropertyOrAttribute ] ;
+  rdfs:label xsd:string ;
+  schema:describesStrain @<StrainShape> ;
+  schema:hasGCContentRangeEnd xsd:float ;
+  schema:hasGCContentRangeStart xsd:float ;
+  schema:hasGCInformation xsd:float ;
+  schema:hasGCMethod xsd:string ;
+  schema:hasReference @<ReferenceShape>
+}
+<GramStainShape> {
+  a [ schema:CellMorphology schema:GramStain schema:MicrobialPhenotype schema:Phenotype ] ;
+  rdfs:label xsd:string ;
+  schema:describesStrain @<StrainShape> ;
+  schema:hasGramStain xsd:string ;
+  schema:hasPhenotypeInformation xsd:string ;
+  schema:hasReference @<ReferenceShape>
+}
+<HalophilyShape> {
+  a [ schema:MetabolicPhenotype schema:Phenotype schema:SaltTolerance ] ;
+  schema:describesStrain @<StrainShape> ;
+  schema:hasReference @<ReferenceShape>
+}
+<IsolationShape> {
+  a [ schema:IsolationInformation schema:IsolationSource schema:Origin ] ;
+  rdfs:label xsd:string ;
+  schema:describesStrain @<StrainShape>
+}
+<LocationShape> {
+  a [ schema:LocationOfOrigin schema:Origin ] ;
+  rdfs:label xsd:string ;
+  schema:describesStrain @<StrainShape> ;
+  schema:hasCountry xsd:string ;
+  schema:hasLatitude xsd:float ;
+  schema:hasLocation xsd:float ;
+  schema:hasLongitude xsd:float
+}
+<OxygenToleranceShape> {
+  a [ schema:MetabolicPhenotype schema:OxygenTolerance schema:Phenotype ] ;
+  schema:describesStrain @<StrainShape> ;
+  schema:hasGrowthInformation xsd:string ;
+  schema:hasOxygenTolerance xsd:string ;
+  schema:hasReference @<ReferenceShape>
+}
+<RiskAssessmentShape> {
+  a [ schema:RiskAssessment ] ;
+  rdfs:comment xsd:string ;
+  rdfs:label xsd:string ;
+  schema:describesStrain @<StrainShape> ;
+  schema:hasBiosafetyLevel xsd:string ;
+  schema:hasReference @<ReferenceShape>
+}
+<Sequence16SShape> {
+  a [ schema:16SSequence schema:NucleotideSequence schema:RNASequence schema:rRNASequence ] ;
+  rdfs:label xsd:string ;
+  schema:describesStrain @<StrainShape> ;
+  schema:fromSequenceDB xsd:string ;
+  schema:hasReference @<ReferenceShape> ;
+  schema:hasSequenceAccession xsd:string ;
+  schema:hasSequenceInformation xsd:string ;
+  schema:hasSequenceLength xsd:integer ;
+  schema:hasTaxID xsd:integer
+}
+<SequenceGenomesShape> {
+  a [ schema:DNASequence schema:GenomeSequence schema:NucleotideSequence ] ;
+  rdfs:label xsd:string ;
+  schema:describesStrain @<StrainShape> ;
+  schema:fromSequenceDB xsd:string ;
+  schema:hasAssemblyLevel xsd:string ;
+  schema:hasReference @<ReferenceShape> ;
+  schema:hasSequenceAccession xsd:string ;
+  schema:hasSequenceInformation xsd:string ;
+  schema:hasTaxID xsd:integer
+}
+<StrainDesignationShape> {
+  a [ schema:Identifier schema:OrganismIdentifier schema:StrainDesignation schema:StrainNumber ] ;
+  rdfs:label xsd:string ;
+  schema:describesStrain @<StrainShape> ;
+  schema:hasReference @<ReferenceShape>
+}
+<ReferenceShape> {
+  a [ schema:Reference ] ;
+  dct:creator xsd:string ;
+  rdfs:seeAlso IRI ;
+  schema:hasBibliographicInformation xsd:string ;
+  schema:hasCatalogueID xsd:string ;
+  schema:hasCatalogueInformation xsd:string ;
+  schema:hasCatalogueInstitution xsd:string ;
+  schema:hasDocumentType xsd:string
+}
+<EntichmentShape> {
+  a [ schema:EnrichmentProcedure schema:IsolationInformation schema:IsolationProcedures schema:Origin ] ;
+  rdfs:label xsd:string ;
+  schema:describesStrain @<StrainShape>
+}
+<NutritionTypeShape> {
+  a [ schema:MetabolicPhenotype schema:NutritionType schema:Phenotype ] ;
+  rdfs:label xsd:string ;
+  schema:describesStrain @<StrainShape> ;
+  schema:hasReference @<ReferenceShape>
+}
+<PathogenicityShape> {
+  a [ schema:ConceptualEntity schema:Pathogenicity ] ;
+  schema:describesStrain @<StrainShape> ;
+  schema:hasReference @<ReferenceShape> ;
+  schema:isAnimalPathogen xsd:string ;
+  schema:isHumanPathogen xsd:string ;
+  schema:isPathogen xsd:string ;
+  schema:isPlantPathogen xsd:string
+}
+<PigmentationShape> {
+  a [ schema:CellMorphology schema:CellPigmentation schema:MicrobialPhenotype schema:Phenotype ] ;
+  rdfs:label xsd:string ;
+  schema:describesStrain @<StrainShape> ;
+  schema:hasPigmentInformation xsd:trueclass ;
+  schema:hasPigmentName xsd:string ;
+  schema:hasPigmentProduction xsd:trueclass ;
+  schema:hasReference @<ReferenceShape>
+}
+<SporeFormationShape> {
+  a [ schema:MicrobialPhenotype schema:Phenotype schema:SporeFormation ] ;
+  rdfs:comment xsd:string ;
+  rdfs:label xsd:string ;
+  schema:describesStrain @<StrainShape> ;
+  schema:hasAbility xsd:trueclass ;
+  schema:hasReference @<ReferenceShape>
+}
