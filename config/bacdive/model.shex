@@ -9,6 +9,7 @@ PREFIX schema: <https://purl.dsmz.de/schema/>
 PREFIX strain: <https://purl.dsmz.de/bacdive/strain/>
 PREFIX reference: <https://purl.dsmz.de/bacdive/reference/>
 PREFIX cell_shape: <https://purl.dsmz.de/bacdive/cell_shape/>
+PREFIX cell_size: <https://purl.dsmz.de/bacdive/cell_size/>
 PREFIX culture_medium: <https://purl.dsmz.de/mediadive/culture_medium/>
 PREFIX cell_motility: <https://purl.dsmz.de/bacdive/cell_motility/>
 PREFIX colony_morphology: <https://purl.dsmz.de/bacdive/colony_morphology/>
@@ -68,12 +69,36 @@ PREFIX spore_formation: <https://purl.dsmz.de/bacdive/spore_formation>
   schema:describesStrain @<StrainShape> ;
   schema:hasReference @<ReferenceShape>
 }
+<CellSizeShape> {
+  a [ schema:CellMorphology schema:CellSize schema:MicrobialPhenotype schema:Phenotype ] ;
+  rdfs:label xsd:string ;
+  schema:describesStrain @<StrainShape> ;
+  schema:hasLength xsd:string ;
+  schema:hasLengthRangeEnd xsd:float ;
+  schema:hasLengthRangeStart xsd:float ;
+  schema:hasLengthUnit xsd:string ;
+  schema:hasPhenotypeInformation xsd:float ;
+  schema:hasReference @<ReferenceShape> ;
+  schema:hasWidth xsd:float ? ;
+  schema:hasWidthRangeEnd xsd:float ? ;
+  schema:hasWidthRangeStart xsd:float ? ;
+  schema:hasWidthUnit xsd:string ?
+}
 <ColonyMorphologyShape> {
   a [ schema:ColonyMorphology schema:MicrobialPhenotype schema:Phenotype ] ;
   schema:describesStrain @<StrainShape> ;
-  schema:hasColonyColor xsd:string ;
-  schema:hasColonyMorphologyInformation xsd:string ;
-  schema:hasColonyShape xsd:string ;
+  schema:hasColonyColor xsd:string ? ;
+  schema:hasColonyLength xsd:string ? ;
+  schema:hasColonyLengthRangeEnd xsd:float ? ;
+  schema:hasColonyLengthRangeStart xsd:float ? ;
+  schema:hasColonyMorphologyInformation xsd:string ? ;
+  schema:hasGrowthInformation  ;
+  schema:hasIncubationInformation xsd:string ? ;
+  schema:hasIncubationPeriod xsd:string ? ;
+  schema:hasIncubationPeriodRangeEnd xsd:float ? ;
+  schema:hasIncubationPeriodRangeStart xsd:float ? ;
+  schema:hasMediumComposition  ;
+  schema:hasColonyShape xsd:string ? ;
   schema:hasReference @<ReferenceShape>
 }
 <CultureCollectionNumberShape> {
