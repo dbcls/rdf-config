@@ -67,6 +67,35 @@
   - schema:hasReference:
     - cell_shape_reference: Reference
 
+- CellSize cell_size:1000:
+  - a:
+    - schema:CellMorphology
+    - schema:CellSize
+    - schema:MicrobialPhenotype
+    - schema:Phenotype
+  - rdfs:label:
+    - cell_size_label: "1.2-1.6 µm x 0.6 µm"
+  - schema:describesStrain: Strain
+  - schema:hasLength:
+    - cell_size_length: "1.2-1.6"
+  - schema:hasLengthRangeEnd:
+    - cell_size_length_range_end: 1.20
+  - schema:hasLengthRangeStart:
+    - cell_size_length_range_start: 1.20
+  - schema:hasLengthUnit:
+    - cell_size_length_unit: "µm"
+  - schema:hasPhenotypeInformation:
+    - cell_size_phenotype_information: 0.6
+  - schema:hasReference: Reference
+  - schema:hasWidth?:
+    - cell_size_width: 0.6
+  - schema:hasWidthRangeEnd?:
+    - cell_size_width_range_end: 0.60
+  - schema:hasWidthRangeStart?:
+    - cell_size_width_range_start: 0.60
+  - schema:hasWidthUnit?:
+    - cell_size_width_unit: "µm"
+
 - ColonyMorphology colony_morphology:8686:
   - a:
     - schema:ColonyMorphology
