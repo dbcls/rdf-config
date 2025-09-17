@@ -168,7 +168,12 @@
     - action_details: "7.5"
   - schema:actionType:
     - action_type: "pH"
+  - schema:modifiedAmount?:
+    - modified_amount: 150.0
+  - schema:modifiedUnit?:
+    - modified_unit: "g/l"
   - schema:partOfModification: Modification
+  - schema:relatedIngredient?: Ingredient
 
 - Gas gas:1:
   - a: schema:GasComponent
