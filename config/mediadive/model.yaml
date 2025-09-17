@@ -128,6 +128,8 @@
     - first_defined_in_medium: mediadive:148
   - schema:hasVolume:
     - volume: "1003"
+  - schema:isStockSolution:
+    - is_stock_solution: false
 
 - Strain strain:1011:
   - a: schema:Strain
@@ -143,3 +145,27 @@
     - species: "Desulfuromonas acetexigens"
   - schema:hasSynonym:
     - strain_synonum: "ATCC 51529"
+
+- Modification modification:1:
+  - a: schema:Modification
+  - schema:appliesToMedium: Medium
+  - schema:appliesToSolution: Solution
+  - schema:description:
+    - modification_description: "Use washed agar and adjust to pH 5.0-5.5."
+
+- ModificationDetail modification_detail:10:
+  - a: schema:ModificationDetail
+  - schema:actionDetails:
+    - action_details: "7.5"
+  - schema:actionType:
+    - action_type: "pH"
+  - schema:partOfModification: Modification
+
+- Gas gas:1:
+  - a: schema:GasComponent
+  - schema:gasPercentage:
+    - gas_percentage: 100.00
+  - schema:gasType:
+    - gas_type: "N2"
+  - schema:partOfMedium: Medium
+
