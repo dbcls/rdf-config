@@ -102,11 +102,28 @@
     - schema:MicrobialPhenotype
     - schema:Phenotype
   - schema:describesStrain: Strain
-  - schema:hasColonyColor:
+  - schema:hasColonyColor?:
     - colony_color: "red"
-  - schema:hasColonyMorphologyInformation:
+  - schema:hasColonyLength?: "1"
+  - schema:hasColonyLengthRangeEnd?:
+    - colony_length_range_end: 1.00
+  - schema:hasColonyLengthRangeStart?:
+    - colony_length_range_start: 1.00
+  - schema:hasColonyMorphologyInformation?:
     - colony_morphology_information: "circular"
-  - schema:hasColonyShape:
+  - schema:hasGrowthInformation?:
+    - growth_information: 
+  - schema:hasIncubationInformation?:
+    - incubation_information: "10-14 days"
+  - schema:hasIncubationPeriod?:
+    - incubation_period: "10-14 days"
+  - schema:hasIncubationPeriodRangeEnd?:
+    - incubation_period_range_end: 14.00
+  - schema:hasIncubationPeriodRangeStart?:
+    - incubation_period_range_start: 10.00
+  - schema:hasMediumComposition?:
+    - medium_composition:  
+  - schema:hasColonyShape?:
     - colony_shape: "circular"
   - schema:hasReference: Reference
 
