@@ -1,0 +1,128 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX d3o: <https://purl.dsmz.de/schema/>
+PREFIX enzyme: <https://purl.dsmz.de/brenda/enzyme/>
+PREFIX tissue: <https://purl.dsmz.de/brenda/tissue/>
+PREFIX activator: <https://purl.dsmz.de/brenda/activator/>
+PREFIX cofactor: <https://purl.dsmz.de/brenda/cofactor/>
+PREFIX reaction: <https://purl.dsmz.de/brenda/reaction/>
+PREFIX inhibitor: <https://purl.dsmz.de/brenda/inhibitor/>
+PREFIX localization: <https://purl.dsmz.de/brenda/localization/>
+PREFIX compound: <https://purl.dsmz.de/brenda/compound/>
+PREFIX organism: <https://purl.dsmz.de/brenda/organism/>
+PREFIX ec: <https://purl.dsmz.de/brenda/ec/>
+PREFIX product: <https://purl.dsmz.de/brenda/product/>
+PREFIX substrate: <https://purl.dsmz.de/brenda/substrate/>
+PREFIX pathway: <https://purl.dsmz.de/brenda/pathway/>
+PREFIX reference: <https://purl.dsmz.de/brenda/reference/>
+PREFIX structure: <https://purl.dsmz.de/brenda/structure/>
+<EnzymeShape> {
+  a [ d3o:Enzyme d3o:Protein d3o:GeneProduct ] ;
+  d3o:isClassifiedAs @<ECNumberShape> + ;
+  d3o:foundIn @<OrganismShape> ;
+  d3o:hasIdentifier IRI * ;
+  d3o:hasReference @<ReferenceShape> *
+}
+<ECNumberShape> {
+  a [ d3o:ECNumber d3o:EnzymeIdentifier d3o:MoleculeIdentifier d3o:Identifier ] ;
+  rdfs:label xsd:string ;
+  d3o:hasSynonyms xsd:string + ;
+  dct:description xsd:string ;
+  d3o:hasSystematicName xsd:string
+}
+<TissueShape> {
+  a [ d3o:Tissue d3o:AnatomicStructure ] ;
+  rdfs:label xsd:string ;
+  d3o:expresses @<EnzymeShape> * ;
+  d3o:partOf @<OrganismShape> * ;
+  d3o:hasReference @<ReferenceShape> *
+}
+<ActivatorShape> {
+  a [ d3o:Activator d3o:Effector d3o:ChemicalRole d3o:ConceptualEntity ] ;
+  d3o:activates @<EnzymeShape> + ;
+  d3o:foundIn @<OrganismShape> + ;
+  d3o:affectsClass @<ECNumberShape> + ;
+  d3o:refersToCompound @<CompoundShape> ;
+  d3o:hasReference @<ReferenceShape> +
+}
+<InhibitorShape> {
+  a [ d3o:Inhibitor d3o:Effector d3o:ChemicalRole d3o:ConceptualEntity ] ;
+  d3o:inhibits @<EnzymeShape> + ;
+  d3o:foundIn @<OrganismShape> + ;
+  d3o:affectsClass @<ECNumberShape> + ;
+  d3o:refersToCompound @<CompoundShape> ;
+  d3o:hasReference @<ReferenceShape> +
+}
+<CofactorShape> {
+  a [ d3o:Cofactor d3o:ChemicalRole d3o:ConceptualEntity ] ;
+  d3o:isCofactorOf @<EnzymeShape> + ;
+  d3o:refersToCompound @<CompoundShape> ;
+  d3o:hasReference @<ReferenceShape> +
+}
+<ReactionShape> {
+  a [ d3o:Reaction ] ;
+  rdfs:label xsd:string ;
+  d3o:catalyzedBy @<EnzymeShape> * ;
+  d3o:catalyzedByClass @<ECNumberShape> + ;
+  d3o:isIubmbReaction xsd:trueclass ;
+  d3o:partOf @<PathwayShape> * ;
+  d3o:hasReference @<ReferenceShape> *
+}
+<LocalizationShape> {
+  a [ d3o:Localization ] ;
+  rdfs:label xsd:string ;
+  d3o:expresses @<EnzymeShape> * ;
+  d3o:partOf @<OrganismShape> * ;
+  d3o:hasReference @<ReferenceShape> *
+}
+<OrganismShape> {
+  a [ d3o:BiologicalMaterial ] ;
+  rdfs:label xsd:string ;
+  d3o:hasSynonym xsd:string * ;
+  d3o:hasTaxID xsd:integer ? ;
+  d3o:hasIdentifier IRI ?
+}
+<ProductShape> {
+  a [ d3o:Product d3o:ChemicalRole d3o:ConceptualEntity ] ;
+  d3o:partOf @<ReactionShape> + ;
+  d3o:refersToCompound @<CompoundShape>
+}
+<SubstrateShape> {
+  a [ d3o:Substrate d3o:ChemicalRole d3o:ConceptualEntity ] ;
+  d3o:partOf @<ReactionShape> + ;
+  d3o:refersToCompound @<CompoundShape>
+}
+<PathwayShape> {
+  a [ d3o:Pathway ] ;
+  rdfs:label xsd:string ;
+  d3o:hasReaction @<ReactionShape> +
+}
+<CompoundShape> {
+  a [ d3o:ChemicalMaterial d3o:ChemicalCompound ] ;
+  rdfs:label xsd:string ;
+  d3o:hasIdentifier xsd:integer ;
+  d3o:hasSynonym xsd:string * ;
+  d3o:hasStructure @<StructureShape> +
+}
+<ReferenceShape> {
+  a [ d3o:Reference ] ;
+  dct:title xsd:string ;
+  d3o:hasBibliographicInformation xsd:string ;
+  dct:creator xsd:string ;
+  d3o:hasVolume xsd:string ;
+  d3o:hasJournalAbbreviation xsd:string ;
+  d3o:hasPageRange xsd:string ;
+  dct:issued xsd:string ;
+  d3o:hasPubMedID xsd:string ;
+  d3o:hasPMCID xsd:string ?
+}
+<StructureShape> {
+  a [ d3o:MolecularStructure ] ;
+  d3o:hasInChI xsd:string ;
+  d3o:hasInChIKey xsd:string
+}
