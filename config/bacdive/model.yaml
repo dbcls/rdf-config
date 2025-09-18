@@ -366,15 +366,19 @@
 
 - Reference reference:6490:
   - a: schema:Reference
-  - dct:creator:
+  - dct:creator?:
     - reference_creator: "Curators of the DSMZ"
+  - dct:identifier?:
+    - reference_id: "10.60712/SI-ID54296.1"
+  - dct:title?:
+    - reference_title: "StrainInfo: A central database for resolving microbial strain identifiers"
   - rdfs:seeAlso: <https://www.dsmz.de/collection/catalogue/details/culture/DSM-16746>
-  - schema:hasBibliographicInformation:
+  - schema:hasBibliographicInformation?:
     - reference_bibliographic_information: "catalogue"
-  - schema:hasCatalogueID:
+  - schema:hasCatalogueID?:
     - reference_catalogue_id: "DSM 16746"
-  - schema:hasCatalogueInformation: "Leibniz Institut DSMZ-Deutsche Sammlung von Mikroorganismen und Zellkulturen GmbH"
-  - schema:hasCatalogueInstitution:
+  - schema:hasCatalogueInformation?: "Leibniz Institut DSMZ-Deutsche Sammlung von Mikroorganismen und Zellkulturen GmbH"
+  - schema:hasCatalogueInstitution?:
     - reference_catalogue_institution: "Leibniz Institut DSMZ-Deutsche Sammlung von Mikroorganismen und Zellkulturen GmbH"
   - schema:hasDocumentType:
     - reference_document_type: "catalogue"
