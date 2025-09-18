@@ -34,26 +34,26 @@ PREFIX enrichment: <https://purl.dsmz.de/bacdive/enrichment>
 PREFIX spore_formation: <https://purl.dsmz.de/bacdive/spore_formation>
 <StrainShape> {
   a [ schema:Strain ] ;
-  dct:description xsd:string ;
-  rdfs:hasScientificName xsd:string ;
-  rdfs:label xsd:string ;
+  dct:description xsd:string ? ;
+  rdfs:hasScientificName xsd:string ? ;
+  rdfs:label xsd:string ? ;
   schema:hasBacDiveID xsd:integer ;
   schema:hasClass xsd:string ;
-  schema:hasDesignation xsd:string ;
-  schema:hasDomain xsd:string ;
+  schema:hasDesignation xsd:string ? ;
+  schema:hasDomain xsd:string ? ;
   schema:hasFamily xsd:string ;
   schema:hasGenus xsd:string ;
   schema:hasOrder xsd:string ;
   schema:hasPhylum xsd:string ;
-  schema:hasReference @<ReferenceShape> ;
-  schema:hasSpecies xsd:string ;
-  schema:hasSpeciesEpithet xsd:string ;
+  schema:hasReference @<ReferenceShape> ? ;
+  schema:hasSpecies xsd:string * ;
+  schema:hasSpeciesEpithet xsd:string ? ;
   schema:hasStrainNames xsd:string ;
-  schema:hasStrainNumber xsd:string ;
-  schema:hasTaxID xsd:integer ;
+  schema:hasStrainNumber xsd:string ? ;
+  schema:hasTaxID xsd:integer * ;
   schema:hasTaxonomicRank xsd:string ;
   schema:isTypeStrain xsd:trueclass ;
-  schema:matchesTaxIDLevel xsd:string
+  schema:matchesTaxIDLevel xsd:string ?
 }
 <CellMotilityShape> {
   a [ schema:CellMotility schema:MicrobialPhenotype schema:Phenotype ] ;
@@ -146,8 +146,8 @@ PREFIX spore_formation: <https://purl.dsmz.de/bacdive/spore_formation>
   rdfs:label xsd:string ;
   schema:describesStrain @<StrainShape> ;
   schema:hasActivity xsd:string ;
-  schema:hasECNumber xsd:string ;
-  schema:hasEnzyme xsd:string ;
+  schema:hasECNumber xsd:string ? ;
+  schema:hasEnzyme xsd:string ? ;
   schema:hasReference @<ReferenceShape>
 }
 <GCContentShape> {
@@ -171,6 +171,7 @@ PREFIX spore_formation: <https://purl.dsmz.de/bacdive/spore_formation>
 <HalophilyShape> {
   a [ schema:MetabolicPhenotype schema:Phenotype schema:SaltTolerance ] ;
   schema:describesStrain @<StrainShape> ;
+  rdfs:label xsd:string ;
   schema:hasReference @<ReferenceShape>
 }
 <IsolationShape> {
@@ -180,7 +181,7 @@ PREFIX spore_formation: <https://purl.dsmz.de/bacdive/spore_formation>
 }
 <LocationShape> {
   a [ schema:LocationOfOrigin schema:Origin ] ;
-  rdfs:label xsd:string ;
+  rdfs:label xsd:string ? ;
   schema:describesStrain @<StrainShape> ;
   schema:hasCountry xsd:string ;
   schema:hasLatitude xsd:float ;
@@ -232,12 +233,14 @@ PREFIX spore_formation: <https://purl.dsmz.de/bacdive/spore_formation>
 }
 <ReferenceShape> {
   a [ schema:Reference ] ;
-  dct:creator xsd:string ;
+  dct:creator xsd:string ? ;
+  dct:identifier xsd:string ? ;
+  dct:title xsd:string ? ;
   rdfs:seeAlso IRI ;
-  schema:hasBibliographicInformation xsd:string ;
-  schema:hasCatalogueID xsd:string ;
-  schema:hasCatalogueInformation xsd:string ;
-  schema:hasCatalogueInstitution xsd:string ;
+  schema:hasBibliographicInformation xsd:string ? ;
+  schema:hasCatalogueID xsd:string ? ;
+  schema:hasCatalogueInformation xsd:string ? ;
+  schema:hasCatalogueInstitution xsd:string ? ;
   schema:hasDocumentType xsd:string
 }
 <EntichmentShape> {
@@ -262,16 +265,17 @@ PREFIX spore_formation: <https://purl.dsmz.de/bacdive/spore_formation>
 }
 <PigmentationShape> {
   a [ schema:CellMorphology schema:CellPigmentation schema:MicrobialPhenotype schema:Phenotype ] ;
-  rdfs:label xsd:string ;
+  rdfs:label xsd:string ? ;
   schema:describesStrain @<StrainShape> ;
+  schema:hasPigmentColor xsd:string ? ;
   schema:hasPigmentInformation xsd:trueclass ;
-  schema:hasPigmentName xsd:string ;
+  schema:hasPigmentName xsd:string ? ;
   schema:hasPigmentProduction xsd:trueclass ;
   schema:hasReference @<ReferenceShape>
 }
 <SporeFormationShape> {
   a [ schema:MicrobialPhenotype schema:Phenotype schema:SporeFormation ] ;
-  rdfs:comment xsd:string ;
+  rdfs:comment xsd:string ? ;
   rdfs:label xsd:string ;
   schema:describesStrain @<StrainShape> ;
   schema:hasAbility xsd:trueclass ;
