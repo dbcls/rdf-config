@@ -61,6 +61,13 @@
           - faldo:position:
             - end: 111766744
           - faldo:reference: hco:12\#GRCh38
+  - fantao:hasRefTss*:
+    - []:
+      - a: fantao:ReferenceTss
+      - rdfs:seeAlso:
+        - reftss: reftss:Rfhg_156435.1
+      - dct:identifier:
+        - reftss_id "Rfhg_156435.1"
   - fantao:hasTssTranscript*:
     - []:
       - a: fantao:NearestTssTranscript
@@ -91,17 +98,9 @@
           - sio:SIO_000300:
             - tss_nearest_transcript_distance: 143
           - sio:SIO_000221: obo:UO_0000244  # has_unit base_pair
-  - fantao:hasRefTss*:
-    - []:
-      - a: fantao:ReferenceTss
-      - rdfs:seeAlso:
-        - reftss: reftss:Rfhg_156435.1
-      - dct:identifier:
-        - reftss_id "Rfhg_156435.1"
   - fantao:hasTssTranscript*:
     - []:
       - a: fantao:TssTranscript
-      - a?: fantao:NearestTssTranscript
       - rdfs:seeAlso*:
         - []:
           - a: fantao:Ensembl
@@ -129,7 +128,7 @@
           - sio:SIO_000300:
             - tss_transcript_distance: 143
           - sio:SIO_000221: obo:UO_0000244  # has_unit base_pair
-  - fantao:hasOverlappedScreenCcre:
+  - fantao:hasOverlappedScreenCcre*:
     - []:
       - a: fantao:ScreenCcre
       - dct:identifier:
@@ -138,7 +137,7 @@
         - screen_ccre_type: "pELS,CTCF-bound"
       - foaf:page:
         - screen_ccre_page: foaf:EH38D2607681
-  - fantao:hasOverlappedAntigen:
+  - fantao:hasOverlappedAntigen*:
     - []:
       - a: fantao:ChipAtlasAntigen
       - rdfs:seeAlso:
@@ -162,3 +161,15 @@
               - a: fantao:Qscore
               - sio:SIO_000300:
                 - q_score: 2594
+  - fantao:hasOverlappedFantom5CagePeak*:
+    - []:
+      - a: fantao:Fantom5CagePeak
+      - dct:identifier:
+        - fantom5_cage_peak_id: "hg19::chr12:112204714..112204781,+;hg_128048.1"
+      - rdfs:label:
+        - fantom5_cage_peak_name: "p1@ALDH2"
+  - fantao:hasOverlappedFantom5Enhancer*:
+    - []:
+      - a: fantao:Fantom5Enhancer
+      - dct:identifier:
+        - fantom5_enhancer_id: "chr1:1125525-1125715"
