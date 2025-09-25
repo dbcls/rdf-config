@@ -24,7 +24,7 @@
           - rdfs:seeAlso:
             - promoter_hgnc: hgnc:404
           - dct:identifier:
-            - promoter_hgnc_id: hgnc:404
+            - promoter_hgnc_id: "404"
       - rdfs:seeAlso*:
         - []:
           - a: fantao:Mgi
@@ -61,6 +61,36 @@
           - faldo:position:
             - end: 111766744
           - faldo:reference: hco:12\#GRCh38
+  - fantao:hasTssTranscript*:
+    - []:
+      - a: fantao:NearestTssTranscript
+      - rdfs:seeAlso*:
+        - []:
+          - a: fantao:Ensembl
+          - rdfs:seeAlso:
+            - nearest_ensembl: ensembl:ENST00000416293.7
+          - dct:identifier:
+            - nearest_ensembl_id: "ENST00000416293.7"
+      - rdfs:seeAlso*:
+        - []:
+          - a: fantao:RefSeq
+          - rdfs:seeAlso:
+            - nearest_refseq: refseq:NM_001204889.2
+          - dct:identifier:
+            - nearest_refseq_id: "NM_001204889.2"
+      - rdfs:seeAlso*:
+        - []:
+          - a: fantao:Insdc
+          - rdfs:seeAlso:
+            - nearest_insdc: insdc:BC002967
+          - dct:identifier:
+            - nearest_insdc_id: "BC002967"
+      - sio:SIO_000216:
+        - []:
+          - a: fantao:TssDistance
+          - sio:SIO_000300:
+            - tss_nearest_transcript_distance: 143
+          - sio:SIO_000221: obo:UO_0000244  # has_unit base_pair
   - fantao:hasRefTss*:
     - []:
       - a: fantao:ReferenceTss
