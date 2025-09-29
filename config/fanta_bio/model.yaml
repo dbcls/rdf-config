@@ -1,16 +1,23 @@
 - FantaBioCre fanta:FCHS_104205:
   - a: fantao:CisRegulatoryElement
+  - a: fantao:PLA  # promoter level activity
+  - a: fantao:ELA  # enhancer level activity
   - dct:identifier:
     - cre_id: "FCHS_104205"
   - rdfs:label:
     - cre_name: "cp4@ALDH2"
   - skos:altLabel*:
     - cre_old_name: "cp6@ALDH2"
+  - sio:SIO_000216:
+    - []:
+      - a: fantao:Directionality
+      - sio:SIO_000300:
+        - directionality: -1
   - obo:RO_0002162:  # in_taxon
     - tax: tax:9606
-  - fantao:hasPromoter:
+  - sio:SIO_000395:  # to_regulate
     - []:
-      - a: fantao:Promoter
+      - a: obo:SO_0000123  # transcriptionally_regulated
       - rdfs:seeAlso:
         - []:
           - a: fantao:NcbiGene
@@ -61,16 +68,16 @@
           - faldo:position:
             - end: 111766744
           - faldo:reference: hco:12\#GRCh38
-  - fantao:hasRefTss*:
+  - fantao:hasRefTSS*:
     - []:
-      - a: fantao:ReferenceTss
+      - a: fantao:ReferenceTSS
       - rdfs:seeAlso:
         - reftss: reftss:Rfhg_156435.1
       - dct:identifier:
         - reftss_id "Rfhg_156435.1"
-  - fantao:hasTss*:
+  - fantao:hasTSS*:
     - []:
-      - a: fantao:NearestTss
+      - a: fantao:NearestTSS
       - rdfs:seeAlso*:
         - []:
           - a: fantao:Ensembl
@@ -94,13 +101,13 @@
             - nearest_insdc_id: "BC002967"
       - sio:SIO_000216:
         - []:
-          - a: fantao:TssDistance
+          - a: fantao:TSSDistance
           - sio:SIO_000300:
             - tss_nearest_transcript_distance: 143
           - sio:SIO_000221: obo:UO_0000244  # has_unit base_pair
-  - fantao:hasTss*:
+  - fantao:hasTSS*:
     - []:
-      - a: fantao:Tss
+      - a: fantao:TSS
       - rdfs:seeAlso*:
         - []:
           - a: fantao:Ensembl
@@ -124,11 +131,11 @@
             - insdc_id: "BC002967"
       - sio:SIO_000216:
         - []:
-          - a: fantao:TssDistance
+          - a: fantao:TSSDistance
           - sio:SIO_000300:
             - tss_transcript_distance: 143
           - sio:SIO_000221: obo:UO_0000244  # has_unit base_pair
-  - fantao:hasOverlappedAnotation*:
+  - fantao:hasOverlappedAnnotation*:
     - []:
       - a: fantao:ScreenCcre
       - dct:identifier:
@@ -136,7 +143,7 @@
       - rdfs:label:
         - screen_ccre_type: "pELS,CTCF-bound"
       - foaf:page:
-        - screen_ccre_page: foaf:EH38D2607681
+        - screen_ccre_page: screen:EH38D2607681
   - fantao:hasOverlappedAnnotation*:
     - []:
       - a: fantao:ChipAtlasAntigen
@@ -149,9 +156,9 @@
           - a: fantao:MaxQscore
           - sio:SIO_000300:  # has_value
             - max_qscore: 2594
-      - fantao:experiment:
+      - fantao:hasExperiment:
         - []:
-          - a: fantao:Experiment
+          - a: sio:SIO_000994  # experiment
           - rdfs:seeAlso:
             - sra: sra:SRX6813404
           - dct:identifier:
