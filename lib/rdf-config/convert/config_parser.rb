@@ -1,3 +1,4 @@
+# coding: utf-8
 # frozen_string_literal: true
 
 require 'yaml'
@@ -360,7 +361,7 @@ class RDFConfig
       end
 
       def absolute_source_file_path(source_file)
-        if File.absolute_path?(source_file)
+        if absolute_path?(source_file)
           source_file
         else
           File.absolute_path(source_file, @source_base_dir)
