@@ -1,0 +1,59 @@
+- Glycan <http://rdf.glycoinfo.org/glycan/G20239CJ>:
+    - a: glycan:Saccharide
+    - sio:SIO_000128: # is contained in
+      - pathway: Pathway
+- Pathway reactome:Pathway355:
+  - a: biopax3:Pathway
+  - sio:SIO_000128: # is contained in
+      - parent_pathway: Parentpathway
+  - biopax3:organism:
+    - organism: Organism
+  - biopax3:displayName:
+    - pathway_label: "Keratan sulfate degradation"
+  - biopax3:pathwayComponent:
+    - reaction: Reaction
+  - biopax3:xref:
+    - xref1: Ref1
+- Ref1 reactome:UnificationXref35730:
+  - a: biopax3:UnificationXref
+  - biopax3:db:
+    - pathway_db: "Reactome"
+  - biopax3:id:
+    - pathway_id: "R-HSA-2022857"
+- Organism reactome:BioSource1:
+  - a: biopax3:BioSource
+  - biopax3:name:
+    - organism_label: "Homo sapiens"
+- Reaction reactome:BiochemicalReaction2763:
+  - a: biopax3:BiochemicalReaction
+  - biopax3:displayName:
+    - reaction_label: "HEXB cleaves the terminal GalNAc from keratan sulfate"
+  - biopax3:left:
+    - left: Smallmolecule
+- Smallmolecule reactome:SmallMolecule1224:
+  - a: biopax3:SmallMolecule
+  - biopax3:displayName:
+    - molecule_label: "GlcNAc-Gal-GlcNAc(S)-Gal"
+  - biopax3:xref+:
+    - xref2: Ref2
+    - xref3: Ref3
+- Ref2 reactome:RelationshipXref2363:
+  - a: biopax3:RelationshipXref
+  - biopax3:db:
+    - kegg_db: "KEGG Glycan"
+  - biopax3:id:
+    - kegg_id: "G13033"
+- Ref3 glycosmos_b:RelationshipXref2363:
+  - a: biopax3:RelationshipXref
+  - biopax3:db:
+    - glytoucan_db: "GlyTouCan"
+  - biopax3:id:
+    - glytoucan_id: "G20239CJ"
+
+- Parentpathway reactome:Pathway331:
+  - a: biopax3:Pathway
+  - biopax3:displayName:
+    - parent_pathway_label: "Metabolism"
+
+
+  

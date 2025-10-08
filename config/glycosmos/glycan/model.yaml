@@ -1,0 +1,157 @@
+- WurcsSubsumption <http://rdf.glycoinfo.org/glycan/WURCS%3D2.0%2F2%2C2%2C1%2F%5Ba2112h-1a_1-5_2*NCC%2F3%3DO%5D%5Ba2112h-1b_1-5%5D%2F1-2%2Fa3-b1>:
+    - a: sbsmpt:Linkage_defined_saccharide
+    - rdfs:label:
+        - wurcssubsumption_label: "WURCS=2.0/2,2,1/[a2112h-1a_1-5_2*NCC/3=O][a2112h-1b_1-5]/1-2/a3-b1"
+    - sbsmpt:has_topology:
+        - topology: Topology
+    - mass:WURCSMassCalculator:
+        - mass: 383.14276063
+    - dcterms:source:
+        - glycan: Glycan1
+- Topology <http://rdf.glycoinfo.org/glycan/WURCS%3D2.0%2F2%2C2%2C1%2F%5Ba2112h-1x_1-5_2*NCC%2F3%3DO%5D%5Ba2112h-1x_1-5%5D%2F1-2%2Fa%3F-b1>:
+    - a: sbsmpt:Glycosidic_topology
+    - dcterms:source:
+        - glycan_topology: <http://rdf.glycoinfo.org/glycan/G67200RM>
+    - sbsmpt:subsumes:
+        - subsumes: <http://rdf.glycoinfo.org/glycan/WURCS%3D2.0%2F2%2C2%2C1%2F%5Ba2112h-1a_1-5_2*NCC%2F3%3DO%5D%5Ba2112h-1b_1-5%5D%2F1-2%2Fa3-b1>
+- Glycan1 <http://rdf.glycoinfo.org/glycan/G00031MO>:
+    - a: glycan:Saccharide
+    - dcterms:identifier:
+        - glytoucanid: "G00031MO"
+    - glytoucanowl:has_primary_id:
+        - glytoucanid2: "G00031MO"
+    - skos:altLabel:
+        - glycan_label: "Gal(b1-3)GalNAc(a1-"
+    - glycan:has_glycosequence:
+        - glycancondensed: Glycancondensed
+        - glycoct: Glycoct
+        - iupaccondensed: Iupaccondensed
+        - iupacextended: Iupacextended
+        - wurcs: Wurcs
+    - sio:SIO_000255: # has annotation
+        - []:
+            - glycan:is_from_source:
+                - taxon1: Taxon1
+            - sio:SIO_000772: # has evidence
+                - evidence: Evidence
+    - glycan:has_resource_entry*:
+        - glyconnect: Glyconnect
+        - cid: Cid
+        - sid: Sid
+        - obo: Chebi
+    - glycan:has_reference*:
+        - []:
+            - dcterms:references:
+                - pmid1: Pubmed
+            - sio:SIO_000253: # has source
+                - source1: <http://glycosmos.org/database/GlycoEpitope>
+        - []:
+            - dcterms:references:
+                - pmid2: pubmed:21551457
+            - sio:SIO_000253: # has source
+                - source2: <http://glycosmos.org/database/BCSDB>
+        - []:
+            - dcterms:references:
+                - pmid3: pubmed:34191522
+            - sio:SIO_000253: # has source
+                - source3: <http://glycosmos.org/database/GlyGen>
+        - []:
+            - dcterms:references:
+                - pmid4: pubmed:33030205
+            - sio:SIO_000253: # has source
+                - source4: <http://glycosmos.org/database/PubChem>
+- Pubmed pubmed:10365852:
+    - a:
+        - bibo:Article
+    - dcterms:title:
+        - pmid_title: "Expression of sialyl-Tn, Tn and T antigens in primary liver cancer."
+    - dcterms:identifier:
+        - pmid_id: "10365852"
+- Taxon1 <http://rdf.glycoinfo.org/source/9606>:
+    - a: glycan:Source
+    - rdfs:seeAlso:
+        - ddbj_tax: <http://identifiers.org/taxonomy/9606>
+- Evidence <http://rdf.glycoinfo.org/dbid/glycoepitope/EP0020>:
+    - a: sio:SIO_001394 # evidence
+    - rdfs:label:
+        - evidence_lable: "GlycoEpitope"
+    - dcterms:identifier:
+        - evidence_id: "EP0020"
+- Glycancondensed <http://rdf.glycoinfo.org/glycan/G00031MO_glycam_condensed>:
+    - a: glycan:Glycosequence
+    - glycan:has_sequence:
+        - glycamcondenseddata: "DGalpb1-3DGalpNAca1-OH"
+    - glycosmosowl:has_linkt_to_glycam:
+        - condensed: <http://glycam.org/url?condensed=DGalpb1-3DGalpNAca1-OH>
+- Glycoct <http://rdf.glycoinfo.org/glycan/G00031MO_glycoct>:
+    - a: glycan:Glycosequence
+    - glycan:has_sequence:
+        - glycoctdata: "RES1b:a-dgal-HEX-1:52s:n-acetyl3b:b-dgal-HEX-1:5LIN1:1d(2+1)2n2:1o(3+1)3d"
+- Iupaccondensed <http://rdf.glycoinfo.org/glycan/G00031MO_iupac_condensed>:
+    - a: glycan:Glycosequence
+    - glycan:has_sequence:
+        - iupaccondenseddata: "Gal(b1-3)GalNAc(a1-"
+- Iupacextended <http://rdf.glycoinfo.org/glycan/G00031MO_iupac_extended>:
+    - a: glycan:Glycosequence
+    - glycan:has_sequence:
+        - iupacextendeddata: "β-D-Galp-(1→3)-α-D-GalpNAc-(1→"
+- Wurcs <http://rdf.glycoinfo.org/glycan/G00031MO_wurcs>:
+    - a: glycan:Glycosequence
+    - glycan:has_sequence:
+        - wurcsdata: "WURCS=2.0/2,2,1/[a2112h-1a_1-5_2*NCC/3=O][a2112h-1b_1-5]/1-2/a3-b1"
+    - glycan:in_carbohydrate_format:
+        - formatwurcs: glycan:carbohydrate_format_wurcs
+- Glyconnect glyconnect:1947:
+    - a: glycan:Resource_entry
+    - rdfs:label:
+        - glyconnect_label: "GlyConnect structure"
+    - dcterms:identifier:
+        - glyconnect_id: "1947"
+- Cid cid:CID5288347:
+    - a: glycan:Resource_entry
+    - rdfs:label:
+        - cid_label: "PubChem Compound"
+    - dcterms:identifier:
+        - cid_id: "5288347"
+- Sid sid:SID252294787:
+    - a: glycan:Resource_entry
+    - rdfs:label:
+        - sid_label: "PubChem Substance"
+    - dcterms:identifier:
+        - sid_id: "252294787"
+- Chebi obo:CHEBI_61820:
+    - a: glycan:Resource_entry
+    - rdfs:label:
+        - chebi_label: "ChEBI"
+    - dcterms:identifier:
+        - chebi_id: "61820"
+- Glycan2 <http://rdf.glycoinfo.org/glycan/G00407UJ>:
+    - a: glycan:Saccharide
+    - sio:SIO_000255:
+        - []:
+            - glycan:has_taxon:
+                - taxon: Taxon2
+            - glycan:has_tissue:
+                - tissue: Tissue
+            - dcterms:references:
+                - reference: Reference
+- Taxon2 <http://rdf.glycoinfo.org/source/7955>:
+    - a: glycan:Source
+    - dcterms:identifier:
+        - taxon_id: "7955"
+    - skos:prefLabel:
+        - taxon_label: "Danio rerio"
+    - rdfs:seeAlso:
+        - ddbj_taxon: <http://identifiers.org/taxonomy/7955>
+- Tissue <http://purl.obolibrary.org/obo/UBERON_0002535>:
+    - a: owl:Class
+    - go:id:
+        - uberon_id: "UBERON:0002535"
+    - rdfs:label:
+        - uberon_label: "gill"
+- Reference <http://doi.org/10.1038/s41467-018-06950-3>:
+    - a: bibo:Article
+    - dcterms:identifier:
+        - doi: "10.1038/s41467-018-06950-3"
+    - rdfs:label:
+        - reference_label: "Yamakawa N et al. Systems glycomics of adult zebrafish identifies organ-specific sialylation and glycosylation patterns. Nat Commun. 2018;9(1):4647. Published 2018 Nov 7. doi:10.1038/s41467-018-06950-3"

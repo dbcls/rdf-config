@@ -1,0 +1,108 @@
+- Lectin lectin:GL_000491:
+  - a:
+    - sugarbind:Lectin
+  - rdfs:label:
+    - protein_name: "Galectin-3"
+  - skos:altLabel:
+    - altlabel1: "Gal3"
+    - altlabel2: "Human Galectin 3al3"
+  - glycan:has_taxon:
+    - taxon: taxonomy:9606
+  - rdfs:seeAlso:
+    - uniprot: Uniprot
+  - rdfs:seeAlso:
+    - lfdb: Lfdb
+  - rdfs:seeAlso:
+    - unilectin: Unilectin
+  - rdfs:seeAlso:
+    - carbogrove: Carbogrove
+  - mcaw:has_mcawdb_resource:
+    - mcaw: Mcaw
+- Uniprot uniprot:P17931:
+  - a:
+    - up:Protein
+  - rdfs:seeAlso:
+    - pdb: Pdb
+  - rdfs:seeAlso:
+    - unilectin_uniprot: <http://purl.uniprot.org/unilectin/P17931>
+- Pdb pdb:1A3K:
+  - a:
+    - up:Structure_Resource
+- Lfdb lfdb:LfDB0056:
+  - a:
+    - glycan:Lectin
+  - lfdb_owl:has_lectin_name:
+    - lectin_name: "Galectin-3 (Human)"
+  - lfdb_owl:has_fac:
+    - fac: Fac
+- Fac lfdb:LfDB0056#facid77:
+  - a: 
+    - lfdb_owl:FAC-FD
+  - lfdb_owl:has_interaction_graph:
+    - interaction_graph: InteractionGraph
+- InteractionGraph lfdb:LfDB0056#interaction_graph:
+  - a:
+    - lfdb_owl:Interaction_graph
+  - lfdb_owl:has_binding_affinity:
+    - binding_affinity: BindingAffinity
+- BindingAffinity lfdb:LfDB0056#facid77_38939:
+  - a:
+    - glycan:Evidence_binding_lectin
+  - glycan:has_affinity_to:
+    - affinity: Affinity
+  - glycan:captured_by:
+    - captured_by: Lfdb
+  - glycan:has_affinity_value:
+    - affinity_value: AffinityValue
+- Affinity <http://jcggdb.jp/idb/jcggdb/JCGG-STR000015/facid77>:
+  - a:
+    - lfdb_owl:Pa_sugar_chains
+  - rdfs:seeAlso:
+    - jcggdb: <http://identifiers.org/jcggdb/JCGG-STR000015>
+- AffinityValue <http://acgg.asia/lfdb2/LfDB0056/facid77$38939+v_v0>:
+  - a:
+    - lfdb_owl:V_minus_v0
+  - sio:SIO_000216:
+    - value: 36.425
+
+- Unilectin unilectin:P17931:
+  - a:
+     - <https://unilectin.unige.ch/rdf/unilectin3D/wikipage#Lectin>
+- Mcaw mcaw:104:
+  - a:
+     - sugarbind:Lectin
+- Carbogrove carbogrove:P17931:
+  - a:
+     - sugarbind:Lectin
+  - carbogrove_o:CommonName:
+    - carbogrove_common_name: "Gal 3"
+  - carbogrove_o:LectinName:
+    - carbogrove_lectin_name: "Human Galectin 3"
+  - carbogrove_o:ResultID:
+    - result_id: ResultID
+- ResultID carbogrove_r:1027 :
+    - a: rdfs:Resource
+    - carbogrove_o:Complexity:
+        - complexity: "Default"
+    - carbogrove_o:DataID:
+        - data_id: DataID
+    - carbogrove_o:DataSource:
+        - data_source: "CFG"
+    - carbogrove_o:Provider:
+        - provider: "Investigator Provided"
+- DataID carbogrove_d:204 :
+    - a: rdfs:Resource
+    - sio:SIO_000255:
+        - []:
+          - carbogrove_o:BindingIntensity:
+              - binding_intensity: 134.121
+          - carbogrove_o:Concentration:
+              - concentration: "0.5"
+          - carbogrove_o:GlycanID:
+              - glycan_id: GlycanID
+          - carbogrove_o:Stdev:
+              - stdev: 17.8705
+- GlycanID carbogrove_d:CFG_V5.0_608 :
+    - a: rdfs:Resource
+    - gco:has_saccharide:
+      - gtc: glycoinfo:G18988VX

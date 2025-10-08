@@ -1,0 +1,93 @@
+- Glycoprotein glycoprotein:P04062 :
+  - a:
+    - glycan:Glycoprotein
+  - rdfs:label:
+    - protein_name: "Lysosomal acid glucosylceramidase"
+  - rdfs:seeAlso:
+    - uniprot: Uniprot
+  - rdfs:seeAlso:
+    - glyconnect: Glyconnect
+  - rdfs:seeAlso:
+    - glygen: Glygen
+  - rdfs:seeAlso:
+    - gpdb: Gpdb
+  - rdfs:seeAlso:
+    - oglcnac: Oglcnac
+  - rdfs:seeAlso:
+    - pubchem: Pubchem
+  - rdfs:seeAlso:
+    - swisslipid: Swisslipid
+  - rdfs:seeAlso:
+    - hmdb: Hmdb
+  - rdfs:seeAlso:
+    - raftprot: Raftprot
+  - rdfs:seeAlso:
+    - oglcnacatlas: Oglcnacatlas
+  - glycan:has_taxon:
+    - taxon: taxonomy:9606
+  - gco:glycosylated_at:
+    - glycosylationsite: Glycosylationsite
+- Glycosylationsite glycosmos_glycosylationsite:SITE00332529:
+  - a:
+    - gco:Glycosylation_Site
+  - gco:has_saccharide:
+    - gtc: glycoinfo:G25451PN
+  - faldo:location:
+    - location: Location
+  - dcterms:references:
+    - pubmed: pubmed:29741879
+  - sio:SIO_000772:
+    - evidence: <http://rdf.glycoinfo.org/dbid/glygen/P04062>
+- Location glycosmos_location:LOC00332529:
+  - a:
+    - faldo:ExactPosition
+  - faldo:position:
+    - position: "185"
+- Uniprot uniprot:P04062:
+  - a:
+    - up:Protein
+  - up:organism:
+    - taxon_uniprot: uniprot_taxon:9606
+  - up:classifiedWith:
+    - go: Go
+  - up:encodedBy:
+    - gene: Gene
+  - rdfs:seeAlso:
+    - geneid: uniprot_geneid:2629
+- Go obo:GO_0005764:
+  - a:
+    - <http://www.w3.org/2002/07/owl#Class>
+  - rdfs:label:
+    - go_term: "lysosome"
+- Gene uniprot_P04062:gene:
+  - a:
+    - up:Gene
+  - skos:prefLabel:
+    - preflabel: "GBA1"
+- Glyconnect glyconnect:1271:
+  - a:
+    - gco:Referenced_protein
+- Glygen glygen:P04062:
+  - a:
+    - sio:SIO_010043 # protein
+- Gpdb gpdb:GPDB0011346:
+  - a:
+     - glycan:Glycoprotein
+- Oglcnac oglcnac:P04062:
+  - a:
+    - sio:SIO_010043 # protein
+- Pubchem pubchem:P04062:
+  - a:
+     - sio:SIO_010043 # protein
+- Swisslipid swisslipids:SLP:000001387:
+  - a:
+     - sio:SIO_010043 # protein
+- Hmdb hmdb:HMDBP01795:
+  - a:
+     - sio:SIO_010043 # protein
+- Raftprot raftprot:P04062:
+  - a:
+     - sio:SIO_010043 # protein
+- Oglcnacatlas oglcnacatlas:P04062:
+  - a:
+     - sio:SIO_010043 # protein

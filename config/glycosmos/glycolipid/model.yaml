@@ -1,0 +1,44 @@
+- Glycolipid glycolipid:LMSP0601AM02 :
+  - a:
+    - glycan:Glycolipid
+  - rdfs:seeAlso*:
+    - lipidmaps: Lipidmaps
+    - cid: cid:CID44262061
+    - chebi: obo:CHEBI_60327
+    - swisslipids: Swisslipids
+- Lipidmaps lipidmaps:LMSP0601AM02:
+  - a: owl:Class
+  - rdfs:label+:
+    - lipidmaps_label1: "GalNAcbeta1-4(NeuAcalpha2-3)Galbeta1-4Glcbeta-Cer(d18:1/18:0)"
+    - lipidmaps_label2: "GM2(d18:1/18:0)"
+  - rdfs:subClassOf:
+    - subclass: Subclass
+  - chebi:formula:
+    - formula: "C67H121N3O26"
+  - chebi:inchi:
+    - inchi: "InChI=1S/C67H121N3O26/c1-5-7-9-11-13-15-17-19-20-22-24-26-28-30-32-34-50(80)70-43(44(77)33-31-29-27-25-23-21-18-16-14-12-10-8-6-2)40-89-64-57(85)56(84)59(48(38-73)91-64)93-65-58(86)62(60(49(39-74)92-65)94-63-52(69-42(4)76)55(83)54(82)47(37-72)90-63)96-67(66(87)88)35-45(78)51(68-41(3)75)61(95-67)53(81)46(79)36-71/h31,33,43-49,51-65,71-74,77-79,81-86H,5-30,32,34-40H2,1-4H3,(H,68,75)(H,69,76)(H,70,80)(H,87,88)/b33-31+/t43-,44+,45-,46+,47+,48+,49+,51+,52+,53+,54-,55+,56+,57+,58+,59+,60-,61+,62+,63-,64+,65-,67-/m0/s1"
+  - chebi:inchikey:
+    - inchikey: "GIVLTTJNORAZON-HDBOBKCLSA-N"
+  - chebi:monoisotopicmass:
+    - mass: 1383.823837
+- Subclass category:40601:
+  - rdfs:subClassOf:
+    - main: Main
+  - rdfs:label:
+    - subclass_label: "Gangliosides"
+- Main category:406:
+  - rdfs:subClassOf:
+    - category: Category
+  - rdfs:label:
+    - main_label: "Acidic glycosphingolipids"
+- Category category:1:
+  - rdfs:label:
+    - category_label: "Sphingolipids"
+- Swisslipids swisslipids:SLM:000389697:
+  - a:
+    - sio:SIO_010011
+  - rdfs:label:
+    - swisslipids_label: "Ganglioside GM2 (d18:1(4E)/18:0)"
+  - dcterms:references*:
+    - pmid1: pubmed:12118248
+    - pmid2: pubmed:16934889
