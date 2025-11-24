@@ -1117,11 +1117,26 @@
 
 - SimilarityAnnotation <http://purl.uniprot.org/uniprot/Q9BYF1#SIP3C3646B8E7B3D163>:
   - a: core:Similarity_Annotation
-
-- SiteAnnotation <http://purl.uniprot.org/uniprot/P0C0L4#SIP55654F9D8452DD68>:
-  - a: core:Site_Annotation
-  - rdf:comment:
+  - rdfs:comment:
     - sim_desc: "Belongs to the peptidase M2 family."
+
+- SiteAnnotation <http://purl.uniprot.org/uniprot/A0A004#SIPA03BA46FEB19AEFF>:
+  - a: core:Site_Annotation
+  - rdfs:comment:
+    - site_desc: 	"Important for beta-aspartyl-AMP intermediate formation"
+  - core:range:
+    - []:
+      - a: faldo:Region
+      - faldo:begin:
+        - []:
+          - a: faldo:Position
+          - faldo:position:
+            - site_begin: 365
+      - faldo:end:
+        - []:
+          - a: faldo:Position
+          - faldo:position:
+            - site_end: 365
 
 - SubcellularLocationAnnotation <http://purl.uniprot.org/uniprot/Q9BYF1#SIPA37239D978A32E27>:
   - a: core:Subcellular_Location_Annotation
