@@ -7,24 +7,173 @@
     - hgnc_id:
       - tsv("hgnc_id")
       - delete(/^HGNC:/)
-      - to_int
     - description: tsv("name")
     - location: tsv("location")
+    - alt_label:
+      - $alias_symbol: tsv("alias_symbol")
+      - $alias_name: tsv("alias_name")
+      - join($alias_symbol, $alias_name, "|")
+      - split("|")
+    - history_note: tsv("status")
+
+- NCBIGene:
+  - subject:
+    - tsv("entrez_id")
+    - prepend("http://identifiers.org/ncbigene/")
+  - objects:
+    - ncbigene_id: tsv("entrez_id")
+
+- Ensembl:
+  - subject:
+    - tsv("ensembl_gene_id")
+    - prepend("http://identifiers.org/ensembl/")
+  - objects:
+    - ensembl_id: tsv("ensembl_gene_id")
+
+- ENA:
+  - subject:
+    - tsv("ena")
+    - split("|")
+    - delete(/\A\s+|\s+\z/)
+    - prepend("http://identifiers.org/ena.embl/")
+  - objects:
+    - ena_id: 
+      - tsv("ena")
+      - split("|")
+      - delete(/\A\s+|\s+\z/)
+
+- INSDC:
+  - subject:
+    - tsv("ena")
+    - split("|")
+    - delete(/\A\s+|\s+\z/)
+    - prepend("http://identifiers.org/insdc/")
+  - objects:
+    - insdc_id: 
+      - tsv("ena")
+      - split("|")
+      - delete(/\A\s+|\s+\z/)
+
+- RefSeq:
+  - subject:
+    - tsv("refseq_accession")
+    - split("|")
+    - delete(/\A\s+|\s+\z/)
+    - prepend("http://identifiers.org/refseq/")
+  - objects:
+    - refseq_id: 
+      - tsv("refseq_accession")
+      - split("|")
+      - delete(/\A\s+|\s+\z/)
+
+- CCDS:
+  - subject:
+    - tsv("ccds_id")
+    - split("|")
+    - delete(/\A\s+|\s+\z/)
+    - prepend("http://identifiers.org/ccds/")
+  - objects:
+    - ccds_id:
+      - tsv("ccds_id")
+      - split("|")
+      - delete(/\A\s+|\s+\z/)
 
 - UniProt:
   - subject:
     - tsv("uniprot_ids")
+    - split("|")
+    - delete(/\A\s+|\s+\z/)
     - prepend("http://identifiers.org/uniprot/")
   - objects:
-    - uniprot_id: tsv("uniprot_ids")
+    - uniprot_id: 
+      - tsv("uniprot_ids")
+      - split("|")
+      - delete(/\A\s+|\s+\z/)
 
 - PubMed:
   - subject:
     - tsv("pubmed_id")
     - split("|")
+    - delete(/\A\s+|\s+\z/)
     - prepend("http://identifiers.org/pubmed/")
   - objects:
     - pubmed_id:
       - tsv("pubmed_id")
       - split("|")
-      - to_int
+      - delete(/\A\s+|\s+\z/)
+
+- MGI:
+  - subject:
+    - tsv("mgd_id")
+    - split("|")
+    - delete(/\A\s+|\s+\z/)
+    - prepend("http://identifiers.org/mgi/")
+  - objects:
+    - mgi_id: 
+      - tsv("mgd_id")
+      - split("|")
+      - delete(/\A\s+|\s+\z/)
+
+- RGD:
+  - subject:
+    - tsv("rgd_id")
+    - split("|")
+    - delete(/\A\s+|\s+\z/)
+    - delete(/^RGD:/)
+    - prepend("http://identifiers.org/rgd/")
+  - objects:
+    - rgd_id:
+      - tsv("rgd_id")
+      - split("|")
+      - delete(/\A\s+|\s+\z/)
+      - delete(/^RGD:/)
+
+- LRG:
+  - subject:
+    - tsv("lsdb")
+    - split("|")
+    - replace(/\A(?!LRG_\d+\z).*\z/, "")
+    - prepend("http://identifiers.org/lrg/")
+  - objects:
+    - lrg_id: 
+      - tsv("lsdb")
+      - split("|")
+      - replace(/\A(?!LRG_\d+\z).*\z/, "")
+
+- OMIM:
+  - subject:
+    - tsv("omim_id")
+    - split("|")
+    - delete(/\A\s+|\s+\z/)
+    - prepend("http://identifiers.org/mim/")
+  - objects:
+    - omim_id: 
+      - tsv("omim_id")
+      - split("|")
+      - delete(/\A\s+|\s+\z/)
+
+- Orphanet:
+  - subject:
+    - tsv("orphanet")
+    - prepend("http://identifiers.org/orphanet/")
+  - objects:
+    - orphanet_id: tsv("orphanet")
+
+- MiRBase:
+  - subject:
+    - tsv("mirbase")
+    - prepend("http://identifiers.org/mirbase/")
+  - objects:
+    - mirbase_id: tsv("mirbase")
+
+- EC:
+  - subject:
+    - tsv("enzyme_id")
+    - split("|")
+    - delete(/\A\s+|\s+\z/)
+    - prepend("http://identifiers.org/ec-code/")
+  - objects:
+    - ec_id: 
+      - tsv("enzyme_id")
+      - split("|")
+      - delete(/\A\s+|\s+\z/)
