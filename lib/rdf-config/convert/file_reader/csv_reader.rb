@@ -28,10 +28,16 @@ class RDFConfig
       private
 
       def csv_opts
-        {
+        opts = {
           col_sep: @col_sep,
           headers: :first_row
         }
+
+        if @col_sep == "\t"
+          opts[:quote_char] = nil
+        end
+
+        opts
       end
     end
   end
