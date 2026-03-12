@@ -429,7 +429,7 @@
     - reference_primary_subject_term: <http://id.nlm.nih.gov/mesh/D011499>
   ## pc_reference_discusses_by_textming_*.ttl
   - vocab:discussesAsDerivedByTextMining*:
-    - reference_disscusses_as_derived_by_text_mining: [PubChemCompound, PubChemGene, PubChemDisease]
+    - reference_discusses_as_derived_by_text_mining: [PubChemCompound, PubChemGene, PubChemDisease]
   ## pc_reference_startingpage*.ttl
   - prism:startingPage:
     - reference_starting_page: "2667"
@@ -446,7 +446,7 @@
   - frapo:isSupportedBy:
     - reference_grant: PubChemGrant
   ## pc_reference_identifier*.ttl
-  ### Can dcterms:identifer have a URI as an object?
+  ### Can dcterms:identifier have a URI as an object?
   - dcterms:identifier:
     - reference_identifier: <https://doi.org/10.2210/pdb4pwh/>
   ## pc_reference_issn*.ttl
@@ -631,7 +631,7 @@
 
 - PubChemCell cell:CELLID1:
   - a: obo:CLO_0000031  # cell line
-  - a: obo:SIO_010054   # cell line  ## Both of these are assinged.
+  - a: obo:SIO_010054   # cell line  ## Both of these are assigned.
   - up:organism:
     - cell_organism: PubChemTaxonomy
   - skos:prefLabel:
@@ -647,7 +647,7 @@
 
 - PubChemDisease disease:DZID2725:
   - a: obo:DOID_4         # Disease
-  - a: obo:MONDO_0000001  # disease or disorder  ## Both of these are assinged.
+  - a: obo:MONDO_0000001  # disease or disorder  ## Both of these are assigned.
   - skos:prefLabel:
     - disease_pref_label: "Chromosome 18 ring"
   - skos:altLabel*:
