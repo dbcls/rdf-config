@@ -4,7 +4,7 @@
   - core:recommendedName*:
     - recommended_name_node: RecommendedNameNode
   - core:submittedName*:
-    - submitted_name_node: SubmitedNameNode
+    - submitted_name_node: SubmittedNameNode
   - core:alternativeName*:
     - alternative_name_node: AlternativeNameNode
   - core:mnemonic:
@@ -214,10 +214,10 @@
   - core:ecName?:
     - recommended_ec: "3.4.17.23"
 
-- SubmitedNameNode up:A0A2R3N0P2#SIPE4C7423F69FEF7A2:
+- SubmittedNameNode up:A0A2R3N0P2#SIPE4C7423F69FEF7A2:
   - a: core:Structured_Name
   - core:fullName+:
-    - submited_name: "Aldoketomutase"
+    - submitted_name: "Aldoketomutase"
   - core:ecName?:
     - submitted_ec: "5.2.1.8"
 
@@ -339,7 +339,7 @@
 
 - AllergenAnnotation <http://purl.uniprot.org/uniprot/Q9BQE9#SIP21C424C523E246F6>:
   - a: core:Allergen_Annotation
-  - rdfs:commnet:
+  - rdfs:comment:
     - allergen_desc: "Causes an allergic reaction in human..."
 
 - AlternativeInitiationAnnotation <http://purl.uniprot.org/uniprot/Q68CP4#SIP253410AED6FBB7FC>:
@@ -384,7 +384,7 @@
 - Annotation <http://purl.uniprot.org/uniprot/O14994#SIP7D3E6C3AD70A5B22>:
   - a: core:Annotation
   - rdfs:comment:
-    - annnotation_desc: "Starts at an alternative upstream CUG codon."
+    - annotation_desc: "Starts at an alternative upstream CUG codon."
   - core:sequence?:
     - annotation_spec_seq: isoforms:P15692-16
 
@@ -1258,9 +1258,9 @@
     - core:Non_Self_Interaction
   - core:experiments:
     - exp_num: 8
-  - core:participant+: IntactPaticipant
+  - core:participant+: IntactParticipant
   
-- IntactPaticipant <http://purl.uniprot.org/intact/EBI-1391211>:
+- IntactParticipant <http://purl.uniprot.org/intact/EBI-1391211>:
   - a: core:Participant
   - owl:sameAs:
     - intaract_seq: up:Q9H2X3
@@ -1302,4 +1302,3 @@
     - submit_to: "UniProtKB"
   - core:group?:
     - citation_group: "Alzheimer's Disease Genetics Consortium"
-
