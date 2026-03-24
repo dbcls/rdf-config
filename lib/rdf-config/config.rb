@@ -1,5 +1,6 @@
 require 'yaml'
 require 'pathname'
+require 'find'
 
 class RDFConfig
   class Config
@@ -19,9 +20,18 @@ class RDFConfig
 
     class << self
       def config_names(config_root_dir = CONFIG_ROOT_DIR)
-        Dir.entries(config_root_dir).reject { |name| name.length.positive? && name[0] == '.' }
-           .select { |name| File.directory?(File.join(config_root_dir, name)) }
-           .sort
+        config_root_path = Pathname.new(File.expand_path(config_root_dir))
+
+        Find.find(config_root_path.to_s).each_with_object([]) do |path, names|
+          next unless File.directory?(path)
+          next if path == config_root_path.to_s
+
+          if File.basename(path).start_with?('.')
+            Find.prune
+          else
+            names << Pathname.new(path).relative_path_from(config_root_path).to_s
+          end
+        end.sort
       end
     end
 
