@@ -555,3 +555,24 @@ TogoStanza を生成する際に必要な metadata.json ファイルのための
       required: true                  # 省略可能パラメータかどうか (true/false)
 ```
 
+## description.yaml
+
+`config/` 配下の各データセットディレクトリには、データセットの表示名と説明文を保持する `description.yaml` を置くことができる。
+
+```yaml
+dataset:
+  name: データセット名
+  description: データセットの簡潔な説明
+variables:
+  SubjectName: 主語の説明
+  attribute_name: 属性の説明
+```
+
+このファイルは、以下のトップレベルキーからなる。
+
+* `dataset`: データセットのメタデータを保持するマッピング
+* `dataset.name`: データセットの表示名を表す文字列
+* `dataset.description`: データセットの簡潔な説明を表す文字列
+* `variables`: `model.yaml` に現れる主語名または属性名を説明文へ対応付ける省略可能なマッピング
+
+`variables` の説明文は、変数名だけでは意味が十分に伝わらない場合にだけ追加すればよい。

@@ -4,7 +4,7 @@ require 'find'
 
 class RDFConfig
   class Config
-    CONFIG_NAMES = %i[model sparql prefix endpoint stanza metadata schema convert].freeze
+    CONFIG_NAMES = %i[model sparql prefix endpoint stanza metadata schema convert description].freeze
 
     CONFIG_NAMES.each do |name|
       define_method name do

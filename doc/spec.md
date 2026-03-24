@@ -285,4 +285,24 @@ Stanza name:
       required: true                  # Whether it is an optional parameter or not (true/false)
 ```
 
+## description.yaml
 
+Each dataset directory under `config/` may contain a `description.yaml` file that stores a human-readable dataset name and description.
+
+```yaml
+dataset:
+  name: Example dataset name
+  description: A short description of the dataset.
+variables:
+  SubjectName: A subject description.
+  attribute_name: An attribute description.
+```
+
+The file consists of the following top-level keys.
+
+* `dataset`: A mapping that stores the dataset metadata.
+* `dataset.name`: A string representing the display name of the dataset.
+* `dataset.description`: A string representing a short explanation of the dataset.
+* `variables`: An optional mapping from subject or attribute names in `model.yaml` to human-readable descriptions.
+
+Descriptions in `variables` should be added only when they provide useful clarification beyond what is obvious from the variable name itself.
