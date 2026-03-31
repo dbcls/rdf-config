@@ -1,14 +1,17 @@
 # frozen_string_literal: true
 
+require_relative '../mix_in/json_ld_util'
+
 class RDFConfig
   class Convert
     class JsonLdGenerator
       class NestGenerator
-        def initialize(model, node)
+        include MixIn::JsonLdUtil
+
+        def initialize(model, node, convert_subject_names)
           @model = model
           @node = node
-
-          @subject_names = @model.subject_names
+          @convert_subject_names = convert_subject_names
 
           @nested_nodes = []
         end
@@ -70,23 +73,21 @@ class RDFConfig
           end
         end
 
-        def subject_name_by_node(node)
-          node.keys.find { |name| @subject_names.include?(name) }
-        end
-
         def root_subjects
           object_subjects = []
-          @model.each do |triple|
-            if triple.object.is_a?(Model::Subject)
-              object_subjects << triple.object.name
-            elsif triple.object.is_a?(Model::ValueList)
-              triple.object.values.each do |object_subject|
-                object_subjects << object_subject.name if object_subject.is_a?(Model::Subject)
+          @convert_subject_names.each do |subject_name|
+            @model.triples_by_subject_name(subject_name).each do |triple|
+              if triple.object.is_a?(Model::Subject)
+                object_subjects << triple.object.name
+              elsif triple.object.is_a?(Model::ValueList)
+                triple.object.values.each do |object_subject|
+                  object_subjects << object_subject.name if object_subject.is_a?(Model::Subject)
+                end
               end
             end
           end
 
-          @model.subjects.map(&:name) - object_subjects.uniq
+          @convert_subject_names - object_subjects.uniq
         end
       end
     end

@@ -8,7 +8,7 @@ class RDFConfig
           @macro_names = macro_names
           @required_macros = []
           macro_names.each do |macro_name|
-            next if SYSTEM_MACRO_NAMES.include?(macro_name)
+            next if SYSTEM_MACRO_NAMES.include?(macro_name) || Convert.internal_macro?(macro_name)
 
             add_macro(macro_name)
           end

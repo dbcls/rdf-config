@@ -1,0 +1,1181 @@
+- DbNSFP:
+  - subject:
+    - $chr: col("#chr")
+    - $pos: col("pos(1-based)")
+    - $alt: col("alt")
+    - $ref: col("ref")
+    - $pra: join($pos, $ref, $alt, "-")
+    - $hco: join("http://identifiers.org/hco/", $chr, "/GRCh38", "")
+    - $var: join($hco, $pra, "#")
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+  - objects:
+    - dbsnp:
+      - col("rs_dbSNP")
+      - skip(".")
+
+- Variation:
+  - subject:
+    - $var
+  - objects:
+    - variation_label: join($chr, $pos, $ref, $alt, "-")
+    - alt_allele: $alt
+    - ref_allele: $ref
+    - ref_amino_acid: col("aaref")
+    - alt_amino_acid: col("aaalt")
+
+- Location:
+  - subject:
+    - join($hco, $pos, "#")
+  - objects:
+    - position:
+      - $pos
+    - reference:
+      - $hco
+
+- Gene:
+  - subject:
+    - col("Ensembl_geneid")
+    - split(";")
+    - prepend("ensembl:")
+  - objects:
+    - gene_label:
+      - col("genename")
+      - split(";")
+    - gene_id:
+      - col("Ensembl_geneid")
+      - split(";")
+      - prepend("ensembl:")
+
+- Transcript:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("ensembl:")
+  - objects:
+    - transcript_id:
+      - col("Ensembl_transcriptid")
+      - split(";")
+
+- Protein:
+  - subject:
+    - col("Ensembl_proteinid")
+    - split(";")
+    - prepend("ensembl:")
+  - objects:
+    - protein_id:
+      - col("Ensembl_proteinid")
+      - split(";")
+
+- SIFT:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-SIFT")
+  - objects:
+    - sift_score:
+      - col("SIFT_score")
+      - split(";")
+      - skip(".")
+      # - to_float
+    - sift_rankscore:
+      - col("SIFT_converted_rankscore")
+      - skip(".")
+      # - to_float
+    - sift_pred:
+      - col("SIFT_pred")
+      - split(";")
+      - skip(".")
+
+- SIFT4G:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-SIFT4G")
+  - objects:
+    - sift4g_score:
+      - col("SIFT4G_score")
+      - split(";")
+      - skip(".")
+      # - to_float
+    - sift4g_rankscore:
+      - col("SIFT4G_converted_rankscore")
+      - skip(".")
+      # - to_float
+    - sift4g_pred:
+      - col("SIFT4G_pred")
+      - split(";")
+      - skip(".")
+
+- PROVEAN:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-PROVEAN")
+  - objects:
+    - provean_score:
+      - col("PROVEAN_score")
+      - split(";")
+      - skip(".")
+      # - to_float
+    - provean_rankscore:
+      - col("PROVEAN_converted_rankscore")
+      - skip(".")
+      # - to_float
+    - provean_pred:
+      - col("PROVEAN_pred")
+      - split(";")
+      - skip(".")
+
+- Polyphen2Hdiv:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-Polyphen2Hdiv")
+  - objects:
+    - polyphen2_hdiv_score:
+      - col("Polyphen2_HDIV_score")
+      - split(";")
+      - skip(".")
+      # - to_float
+    - polyphen2_hdiv_rankscore:
+      - col("Polyphen2_HDIV_rankscore")
+      - skip(".")
+      # - to_float
+    - polyphen2_hdiv_pred:
+      - col("Polyphen2_HDIV_pred")
+      - split(";")
+      - skip(".")
+
+- Polyphen2Hvar:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-Polyphen2Hvar")
+  - objects:
+    - polyphen2_hvar_score:
+      - col("Polyphen2_HVAR_score")
+      - split(";")
+      - skip(".")
+      # - to_float
+    - polyphen2_hvar_rankscore:
+      - col("Polyphen2_HVAR_rankscore")
+      - skip(".")
+      # - to_float
+    - polyphen2_hvar_pred:
+      - col("Polyphen2_HVAR_pred")
+      - split(";")
+      - skip(".")
+
+- LRT:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-LRT")
+  - objects:
+    - lrt_score:
+      - col("LRT_score")
+      - skip(".")
+      # - to_float
+    - lrt_rankscore:
+      - col("LRT_converted_rankscore")
+      - skip(".")
+      # - to_float
+    - lrt_pred:
+      - col("LRT_pred")
+      - skip(".")
+
+- MutationTaster:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-MutationTaster")
+  - objects:
+    - mutation_taster_score:
+      - col("MutationTaster_score")
+      - split(";")
+      - skip(".")
+      # - to_float
+    - mutation_taster_rankscore:
+      - col("MutationTaster_converted_rankscore")
+      - skip(".")
+      # - to_float
+    - mutation_taster_pred:
+      - col("MutationTaster_pred")
+      - split(";")
+      - skip(".")
+
+- MutationAssessor:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-MutationAssessor")
+  - objects:
+    - mutation_assessor_score:
+      - col("MutationAssessor_score")
+      - split(";")
+      - skip(".")
+      # - to_float
+    - mutation_assessor_rankscore:
+      - col("MutationAssessor_rankscore")
+      - skip(".")
+      # - to_float
+    - mutation_assessor_pred:
+      - col("MutationAssessor_pred")
+      - split(";")
+      - skip(".")
+
+- FATHMM:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-FATHMM")
+  - objects:
+    - fathmm_score:
+      - col("FATHMM_score")
+      - split(";")
+      - skip(".")
+      # - to_float
+    - fathmm_rankscore:
+      - col("FATHMM_converted_rankscore")
+      - skip(".")
+      # - to_float
+    - fathmm_pred:
+      - col("FATHMM_pred")
+      - split(";")
+      - skip(".")
+
+- FathmmMklCoding:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-FathmmMklCoding")
+  - objects:
+    - fathmm_mkl_coding_score:
+      - col("fathmm-MKL_coding_score")
+      - skip(".")
+      # - to_float
+    - fathmm_mkl_coding_rankscore:
+      - col("fathmm-MKL_coding_rankscore")
+      - skip(".")
+      # - to_float
+    - fathmm_mkl_coding_pred:
+      - col("fathmm-MKL_coding_pred")
+      - skip(".")
+
+- FathmmXfCoding:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-FathmmXfCoding")
+  - objects:
+    - fathmm_xf_coding_score:
+      - col("fathmm-XF_coding_score")
+      - skip(".")
+      # - to_float
+    - fathmm_xf_coding_rankscore:
+      - col("fathmm-XF_coding_rankscore")
+      - skip(".")
+      # - to_float
+    - fathmm_xf_coding_pred:
+      - col("fathmm-XF_coding_pred")
+      - skip(".")
+
+- CADD:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-CADD")
+  - objects:
+    - cadd_score:
+      - col("CADD_raw")
+      - skip(".")
+      # - to_float
+    - cadd_rankscore:
+      - col("CADD_raw_rankscore")
+      - skip(".")
+      # - to_float
+
+- CADDHg19:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-CADDHg19")
+  - objects:
+    - cadd_hg19_score:
+      - col("CADD_raw_hg19")
+      - skip(".")
+      # - to_float
+    - cadd_hg19_rankscore:
+      - col("CADD_raw_rankscore_hg19")
+      - skip(".")
+      # - to_float
+
+- CADDPhred:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-CADDPhred")
+  - objects:
+    - cadd_phred_score:
+      - col("CADD_phred")
+      - skip(".")
+      # - to_float
+
+- CADDPhredHg19:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-CADDPhredHg19")
+  - objects:
+    - cadd_phred_hg19_score:
+      - col("CADD_phred_hg19")
+      - skip(".")
+      # - to_float
+
+- VEST4:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-VEST4")
+  - objects:
+    - vest4_score:
+      - col("VEST4_score")
+      - split(";")
+      - skip(".")
+      # - to_float
+    - vest4_rankscore:
+      - col("VEST4_rankscore")
+      - skip(".")
+      # - to_float
+
+- IntegratedFitcons:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-IntegratedFitcons")
+  - objects:
+    - integrated_fit_cons_score:
+      - col("integrated_fitCons_score")
+      - skip(".")
+      # - to_float
+    - integrated_fit_cons_rankscore:
+      - col("integrated_fitCons_rankscore")
+      - skip(".")
+      # - to_float
+
+- GM12878Fitcons:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-GM12878Fitcons")
+  - objects:
+    - gm12878_fit_cons_score:
+      - col("GM12878_fitCons_score")
+      - skip(".")
+      # - to_float
+    - gm12878_fit_cons_rankscore:
+      - col("GM12878_fitCons_rankscore")
+      - skip(".")
+      # - to_float
+
+- H1HescFitcons:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-H1HescFitcons")
+  - objects:
+    - h1_hesc_fit_cons_score:
+      - col("H1-hESC_fitCons_score")
+      - skip(".")
+      # - to_float
+    - h1_hesc_fit_cons_rankscore:
+      - col("H1-hESC_fitCons_rankscore")
+      - skip(".")
+      # - to_float
+
+- HUVECFitcons:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-HUVECFitcons")
+  - objects:
+    - huvec_fit_cons_score:
+      - col("HUVEC_fitCons_score")
+      - skip(".")
+      # - to_float
+    - huvec_fit_cons_rankscore:
+      - col("HUVEC_fitCons_rankscore")
+      - skip(".")
+      # - to_float
+
+- LINSIGHT:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-LINSIGHT")
+  - objects:
+    - linsight_score:
+      - col("LINSIGHT")
+      - skip(".")
+      # - to_float
+    - linsight_rankscore:
+      - col("LINSIGHT_rankscore")
+      - skip(".")
+      # - to_float
+
+- DANN:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-DANN")
+  - objects:
+    - dann_score:
+      - col("DANN_score")
+      - skip(".")
+      # - to_float
+    - dann_rankscore:
+      - col("DANN_rankscore")
+      - skip(".")
+      # - to_float
+
+- MetaLR:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-MetaLR")
+  - objects:
+    - meta_lr_score:
+      - col("MetaLR_score")
+      - skip(".")
+      # - to_float
+    - meta_lr_rankscore:
+      - col("MetaLR_rankscore")
+      - skip(".")
+      # - to_float
+    - meta_lr_pred:
+      - col("MetaLR_pred")
+      - skip(".")
+
+- MetaSVM:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-MetaSVM")
+  - objects:
+    - meta_svm_score:
+      - col("MetaSVM_score")
+      - skip(".")
+      # - to_float
+    - meta_svm_rankscore:
+      - col("MetaSVM_rankscore")
+      - skip(".")
+      # - to_float
+    - meta_svm_pred:
+      - col("MetaSVM_pred")
+      - skip(".")
+
+- GenoCanyon:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-GenoCanyon")
+  - objects:
+    - geno_canyon_score:
+      - col("GenoCanyon_score")
+      - skip(".")
+      # - to_float
+    - geno_canyon_rankscore:
+      - col("GenoCanyon_rankscore")
+      - skip(".")
+      # - to_float
+
+- EigenRawCoding:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-EigenRawCoding")
+  - objects:
+    - eigen_raw_coding_score:
+      - col("Eigen-raw_coding")
+      - skip(".")
+      # - to_float
+    - eigen_raw_coding_rankscore:
+      - col("Eigen-raw_coding_rankscore")
+      - skip(".")
+      # - to_float
+
+- EigenPhredCoding:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-EigenPhredCoding")
+  - objects:
+    - eigen_phred_coding_score:
+      - col("Eigen-phred_coding")
+      - skip(".")
+      # - to_float
+
+- EigenPcRawCoding:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-EigenPcRawCoding")
+  - objects:
+    - eigen_pc_raw_coding_score:
+      - col("Eigen-PC-raw_coding")
+      - skip(".")
+      # - to_float
+    - eigen_pc_raw_coding_rankscore:
+      - col("Eigen-PC-raw_coding_rankscore")
+      - skip(".")
+      # - to_float
+
+- EigenPcPhredCoding:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-EigenPcPhredCoding")
+  - objects:
+    - eigen_pc_phred_coding_score:
+      - col("Eigen-PC-phred_coding")
+      - skip(".")
+      # - to_float
+
+- MCap:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-MCap")
+  - objects:
+    - m_cap_score:
+      - col("M-CAP_score")
+      - skip(".")
+      # - to_float
+    - m_cap_rankscore:
+      - col("M-CAP_rankscore")
+      - skip(".")
+      # - to_float
+    - m_cap_pred:
+      - col("M-CAP_pred")
+      - skip(".")
+
+- REVEL:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-REVEL")
+  - objects:
+    - revel_score:
+      - col("REVEL_score")
+      - split(";")
+      - skip(".")
+      # - to_float
+    - revel_rankscore:
+      - col("REVEL_rankscore")
+      - skip(".")
+      # - to_float
+
+- MutPred:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-MutPred")
+  - objects:
+    - mut_pred_score:
+      - col("MutPred_score")
+      - split(";")
+      - skip(".")
+      # - to_float
+    - mut_pred_rankscore:
+      - col("MutPred_rankscore")
+      - skip(".")
+      # - to_float
+
+- MVP:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-MVP")
+  - objects:
+    - mvp_score:
+      - col("MVP_score")
+      - split(";")
+      - skip(".")
+      # - to_float
+    - mvp_rankscore:
+      - col("MVP_rankscore")
+      - skip(".")
+      # - to_float
+
+- MPC:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-MPC")
+  - objects:
+    - mpc_score:
+      - col("MPC_score")
+      - split(";")
+      - skip(".")
+      # - to_float
+    - mpc_rankscore:
+      - col("MPC_rankscore")
+      - skip(".")
+      # - to_float
+
+- PrimateAI:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-PrimateAI")
+  - objects:
+    - primate_ai_score:
+      - col("PrimateAI_score")
+      - skip(".")
+      # - to_float
+    - primate_ai_rankscore:
+      - col("PrimateAI_rankscore")
+      - skip(".")
+      # - to_float
+    - primate_ai_pred:
+      - col("PrimateAI_pred")
+      - skip(".")
+
+- DEOGEN2:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-DEOGEN2")
+  - objects:
+    - deogen2_score:
+      - col("DEOGEN2_score")
+      - split(";")
+      - skip(".")
+      # - to_float
+    - deogen2_rankscore:
+      - col("DEOGEN2_rankscore")
+      - skip(".")
+      # - to_float
+    - deogen2_pred:
+      - col("DEOGEN2_pred")
+      - split(";")
+      - skip(".")
+
+- BayesDelAddAF:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-BayesDelAddAF")
+  - objects:
+    - bayes_del_add_af_score:
+      - col("BayesDel_addAF_score")
+      - skip(".")
+      # - to_float
+    - bayes_del_add_af_rankscore:
+      - col("BayesDel_addAF_rankscore")
+      - skip(".")
+      # - to_float
+    - bayes_del_add_af_pred:
+      - col("BayesDel_addAF_pred")
+      - skip(".")
+
+- BayesDelNoAF:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-BayesDelNoAF")
+  - objects:
+    - bayes_del_no_af_score:
+      - col("BayesDel_noAF_score")
+      - skip(".")
+      # - to_float
+    - bayes_del_no_af_rankscore:
+      - col("BayesDel_noAF_rankscore")
+      - skip(".")
+      # - to_float
+    - bayes_del_no_af_pred:
+      - col("BayesDel_noAF_pred")
+      - skip(".")
+
+- ClinPred:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-ClinPred")
+  - objects:
+    - clin_pred_score:
+      - col("ClinPred_score")
+      - skip(".")
+      # - to_float
+    - clin_pred_rankscore:
+      - col("ClinPred_rankscore")
+      - skip(".")
+      # - to_float
+    - clin_pred_pred:
+      - col("ClinPred_pred")
+      - skip(".")
+
+- LISTS2:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-LISTS2")
+  - objects:
+    - list_s2_score:
+      - col("LIST-S2_score")
+      - split(";")
+      - skip(".")
+      # - to_float
+    - list_s2_rankscore:
+      - col("LIST-S2_rankscore")
+      - skip(".")
+      # - to_float
+    - list_s2_pred:
+      - col("LIST-S2_pred")
+      - split(";")
+      - skip(".")
+
+- MetaRNN:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-MetaRNN")
+  - objects:
+    - meta_rnn_score:
+      - col("MetaRNN_score")
+      - split(";")
+      - skip(".")
+      # - to_float
+    - meta_rnn_rankscore:
+      - col("MetaRNN_rankscore")
+      - skip(".")
+      # - to_float
+    - meta_rnn_pred:
+      - col("MetaRNN_pred")
+      - split(";")
+      - skip(".")
+
+- GMVP:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-GMVP")
+  - objects:
+    - gmvp_score:
+      - col("gMVP_score")
+      - split(";")
+      - skip(".")
+      # - to_float
+    - gmvp_rankscore:
+      - col("gMVP_rankscore")
+      - skip(".")
+      # - to_float
+
+- VARITYR:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-VARITYR")
+  - objects:
+    - varity_r_score:
+      - col("VARITY_R_score")
+      - split(";")
+      - skip(".")
+      # - to_float
+    - varity_r_rankscore:
+      - col("VARITY_R_rankscore")
+      - skip(".")
+      # - to_float
+
+- VARITYEr:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-VARITYEr")
+  - objects:
+    - varity_er_score:
+      - col("VARITY_ER_score")
+      - split(";")
+      - skip(".")
+      # - to_float
+    - varity_er_rankscore:
+      - col("VARITY_ER_rankscore")
+      - skip(".")
+      # - to_float
+
+- VARITYRLoo:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-VARITYRLoo")
+  - objects:
+    - varity_r_loo_score:
+      - col("VARITY_R_LOO_score")
+      - split(";")
+      - skip(".")
+      # - to_float
+    - varity_r_loo_rankscore:
+      - col("VARITY_R_LOO_rankscore")
+      - skip(".")
+      # - to_float
+
+- VARITYErLoo:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-VARITYErLoo")
+  - objects:
+    - varity_er_loo_score:
+      - col("VARITY_ER_LOO_score")
+      - split(";")
+      - skip(".")
+      # - to_float
+    - varity_er_loo_rankscore:
+      - col("VARITY_ER_LOO_rankscore")
+      - skip(".")
+      # - to_float
+
+- ESM1b:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-ESM1b")
+  - objects:
+    - esm1b_score:
+      - col("ESM1b_score")
+      - split(";")
+      - skip(".")
+      # - to_float
+    - esm1b_rankscore:
+      - col("ESM1b_rankscore")
+      - skip(".")
+      # - to_float
+    - esm1b_pred:
+      - col("ESM1b_pred")
+      - split(";")
+      - skip(".")
+
+- EVE:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-EVE")
+  - objects:
+    - eve_score:
+      - col("EVE_score")
+      - split(";")
+      - skip(".")
+      # - to_float
+    - eve_rankscore:
+      - col("EVE_rankscore")
+      - skip(".")
+      # - to_float
+    - eve_class10_pred:
+      - col("EVE_Class10_pred")
+      - split(";")
+      - skip(".")
+    - eve_class20_pred:
+      - col("EVE_Class20_pred")
+      - split(";")
+      - skip(".")
+    - eve_class25_pred:
+      - col("EVE_Class25_pred")
+      - split(";")
+      - skip(".")
+    - eve_class30_pred:
+      - col("EVE_Class30_pred")
+      - split(";")
+      - skip(".")
+    - eve_class40_pred:
+      - col("EVE_Class40_pred")
+      - split(";")
+      - skip(".")
+    - eve_class50_pred:
+      - col("EVE_Class50_pred")
+      - split(";")
+      - skip(".")
+    - eve_class60_pred:
+      - col("EVE_Class60_pred")
+      - split(";")
+      - skip(".")
+    - eve_class70_pred:
+      - col("EVE_Class70_pred")
+      - split(";")
+      - skip(".")
+    - eve_class75_pred:
+      - col("EVE_Class75_pred")
+      - split(";")
+      - skip(".")
+    - eve_class80_pred:
+      - col("EVE_Class80_pred")
+      - split(";")
+      - skip(".")
+    - eve_class90_pred:
+      - col("EVE_Class90_pred")
+      - split(";")
+      - skip(".")
+
+- AlphaMissense:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-AlphaMissense")
+  - objects:
+    - alpha_missense_score:
+      - col("AlphaMissense_score")
+      - split(";")
+      - skip(".")
+      # - to_float
+    - alpha_missense_rankscore:
+      - col("AlphaMissense_rankscore")
+      - skip(".")
+      # - to_float
+    - alpha_missense_pred:
+      - col("AlphaMissense_pred")
+      - split(";")
+      - skip(".")
+
+- PHACTBoost:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-PHACTBoost")
+  - objects:
+    - phact_boost_score:
+      - col("PHACTboost_score")
+      - split(";")
+      - skip(".")
+      # - to_float
+    - phact_boost_rankscore:
+      - col("PHACTboost_rankscore")
+      - skip(".")
+      # - to_float
+
+- MutFormer:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-MutFormer")
+  - objects:
+    - mut_former_score:
+      - col("MutFormer_score")
+      - skip(".")
+      # - to_float
+    - mut_former_rankscore:
+      - col("MutFormer_rankscore")
+      - skip(".")
+      # - to_float
+
+- PhyloP100wayVertebrate:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-PhyloP100wayVertebrate")
+  - objects:
+    - phylo_p100way_vertebrate_score:
+      - col("phyloP100way_vertebrate")
+      - skip(".")
+      # - to_float
+    - phylo_p100way_vertebrate_rankscore:
+      - col("phyloP100way_vertebrate_rankscore")
+      - skip(".")
+      # - to_float
+
+- PhyloP470wayMammalian:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-PhyloP470wayMammalian")
+  - objects:
+    - phylo_p470way_mammalian_score:
+      - col("phyloP470way_mammalian")
+      - skip(".")
+      # - to_float
+    - phylo_p470way_mammalian_rankscore:
+      - col("phyloP470way_mammalian_rankscore")
+      - skip(".")
+      # - to_float
+
+- PhyloP17wayPrimate:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-PhyloP17wayPrimate")
+  - objects:
+    - phylo_p17way_primate_score:
+      - col("phyloP17way_primate")
+      - skip(".")
+      # - to_float
+    - phylo_p17way_primate_rankscore:
+      - col("phyloP17way_primate_rankscore")
+      - skip(".")
+      # - to_float
+
+- PhastCons100wayVertebrate:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-PhastCons100wayVertebrate")
+  - objects:
+    - phast_cons100way_vertebrate_score:
+      - col("phastCons100way_vertebrate")
+      - skip(".")
+      # - to_float
+    - phast_cons100way_vertebrate_rankscore:
+      - col("phastCons100way_vertebrate_rankscore")
+      - skip(".")
+      # - to_float
+
+- PhastCons470wayMammalian:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-PhastCons470wayMammalian")
+  - objects:
+    - phast_cons470way_mammalian_score:
+      - col("phastCons470way_mammalian")
+      - skip(".")
+      # - to_float
+    - phast_cons470way_mammalian_rankscore:
+      - col("phastCons470way_mammalian_rankscore")
+      - skip(".")
+      # - to_float
+
+- PhastCons17wayPrimate:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-PhastCons17wayPrimate")
+  - objects:
+    - phast_cons17way_primate_score:
+      - col("phastCons17way_primate")
+      - skip(".")
+      # - to_float
+    - phast_cons17way_primate_rankscore:
+      - col("phastCons17way_primate_rankscore")
+      - skip(".")
+      # - to_float
+
+- GERPRs:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-GERPRs")
+  - objects:
+    - gerp_rs_score:
+      - col("GERP++_RS")
+      - skip(".")
+      # - to_float
+    - gerp_rs_rankscore:
+      - col("GERP++_RS_rankscore")
+      - skip(".")
+      # - to_float
+
+- SiPhy29wayLogodds:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-SiPhy29wayLogodds")
+  - objects:
+    - si_phy_29way_log_odds_score:
+      - col("SiPhy_29way_logOdds")
+      - skip(".")
+      # - to_float
+    - si_phy_29way_log_odds_rankscore:
+      - col("SiPhy_29way_logOdds_rankscore")
+      - skip(".")
+      # - to_float
+
+- BStatistic:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-BStatistic")
+  - objects:
+    - bstatistic_score:
+      - col("bStatistic")
+      - skip(".")
+      # - to_int
+    - bstatistic_rankscore:
+      - col("bStatistic_converted_rankscore")
+      - skip(".")
+      # - to_float
+
+- Gerp91Mammals:
+  - subject:
+    - col("Ensembl_transcriptid")
+    - split(";")
+    - prepend("$var-")
+    - append("-Gerp91Mammals")
+  - objects:
+    - gerp_91_mammals_score:
+      - col("GERP_91_mammals")
+      - skip(".")
+      # - to_float
+    - gerp_91_mammals_rankscore:
+      - col("GERP_91_mammals_rankscore")
+      - skip(".")
+      # - to_float
+

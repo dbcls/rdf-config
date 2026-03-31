@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
+require 'json'
 require 'rdf/turtle'
 require_relative 'generator'
+require_relative '../../../rust/rust_rdf_turtle/rust_rdf_turtle'
 
 class RDFConfig
   class Convert
@@ -29,16 +31,54 @@ class RDFConfig
       end
 
       def output_rdf
-        rdf = RDF::Writer.for(@rdf_format.to_sym).buffer(**rdf_writer_opts) do |writer|
-          @statements.flatten.each do |statement|
-            writer << statement
-          end
+        # statements = @statements.flatten.uniq
+        # @statements = []
+
+        # return if statements.empty?
+
+        # rdf = RDF::Writer.for(@rdf_format.to_sym).buffer(**rdf_writer_opts) do |writer|
+        #   statements.each do |statement|
+        #     writer << statement
+        #   end
+        # end
+
+        @intermediate_statements.uniq!
+
+        # Todo: Ignore HGNC invalid IRI
+        @intermediate_statements.reject! do |statement|
+          statement[:type] == 'triple' && (statement[:s].include?('|') || statement[:o].to_s.include?('|'))
         end
+
+        rdf_type = "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+        rdf_type_only_subjects = @intermediate_statements.group_by { |h| h[:s] }
+                                                         .select { |_s, group| group.all? { |h| h[:p] == rdf_type } }
+                                                         .keys
+        @intermediate_statements = @intermediate_statements.reject do |h|
+          rdf_type_only_subjects.include?(h[:s]) || rdf_type_only_subjects.include?(h[:o])
+        end
+
+        if false
+          rust_rdf_prog = File.join(__dir__, '..', '..', '..', 'rust/rust_rdf_turtle_prog/target/release/ttl_writer')
+          rdf = IO.popen([rust_rdf_prog], 'r+') do |io|
+            intermediate_prefixes.each do |prefix|
+              io.puts prefix.to_json
+            end
+
+            @intermediate_statements.each do |statement|
+              io.puts statement.to_json
+            end
+
+            io.close_write
+            io.read
+          end
+        else
+          rdf = RustRdfTurtle.generate_turtle(@intermediate_statements)
+        end
+
+        init_intermediate_prefixes
 
         rdf = reject_prefix_lines(rdf) if turtle_format?
         puts rdf
-
-        @statements = []
       end
 
       def turtle_format?
@@ -137,9 +177,17 @@ class RDFConfig
 
       def add_subject_type_node(subject_name, subject)
         @model.find_subject(subject_name).types.each do |rdf_type|
-          @one_row_statements << {
-            statement: RDF::Statement.new(subject, RDF.type, uri_node(rdf_type)),
-            triple: nil
+          # @one_row_statements << {
+          #   statement: RDF::Statement.new(subject, RDF.type, uri_node(rdf_type)),
+          #   triple: nil
+          # }
+          @intermediate_statements << {
+            type: 'triple',
+            s_kind: 'iri',
+            s: subject,
+            p: 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type',
+            o_kind: 'iri',
+            o: uri_node(rdf_type)
           }
         end
       end
@@ -156,16 +204,19 @@ class RDFConfig
       def object_node_by_triple(triple, object_value)
         case triple.object
         when Model::Subject
-          uri_node(object_value)
+          # uri_node(object_value)
+          { o_kind: 'iri', o: object_value }
         when Model::Literal
           literal_node(object_value, triple.object)
         when Model::URI
-          uri_node(object_value)
+          # uri_node(object_value)
+          { o_kind: 'iri', o: object_value }
         when Model::ValueList
           if triple.object.first_instance.is_a?(Model::Literal)
             literal_node(object_value, triple.object)
           else
-            uri_node(object_value)
+            # uri_node(object_value)
+            { o_kind: 'iri', o: object_value }
           end
         when Model::Unknown
           literal_node(object_value, triple.object)
@@ -175,9 +226,11 @@ class RDFConfig
       def uri_node(uri)
         prefix, local_part = uri.to_s.split(':', 2)
         if @prefixes.key?(prefix)
-          RDF::URI.new("#{@prefixes[prefix]}#{local_part}")
+          # RDF::URI.new("#{@prefixes[prefix]}#{local_part}")
+          "#{@prefixes[prefix]}#{local_part}"
         else
-          RDF::URI.new(uri)
+          # RDF::URI.new(uri)
+          uri
         end
       end
 
@@ -188,15 +241,22 @@ class RDFConfig
         when String
           literal_node_by_string_value(value, literal_object)
         when Integer
-          RDF::Literal::Integer.new(value)
+          # RDF::Literal::Integer.new(value)
+          # { o_kind: 'literal_plain', o: Integer(value) }
+          { o_kind: 'literal_dt', o: value, datatype: 'http://www.w3.org/2001/XMLSchema#integer' }
         when Float
-          RDF::Literal::Decimal.new(value)
+          # RDF::Literal::Decimal.new(value)
+          # { o_kind: 'literal_plain', o: Float(value) }
+          { o_kind: 'literal_dt', o: value, datatype: 'http://www.w3.org/2001/XMLSchema#decimal' }
         when Date
-          RDF::Literal::Date.new(value)
+          # RDF::Literal::Date.new(value)
+          { o_kind: 'literal_dt', o: value, datatype: 'http://www.w3.org/2001/XMLSchema#date' }
         when TrueClass, FalseClass
-          RDF::Literal::Boolean.new(to_bool(value))
+          # RDF::Literal::Boolean.new(to_bool(value))
+          { o_kind: 'literal_dt', o: value, datatype: 'http://www.w3.org/2001/XMLSchema#boolean' }
         else
-          RDF::Literal.new(value)
+          # RDF::Literal.new(value)
+          { o_kind: 'literal_plain', o: value }
         end
       end
 
@@ -204,18 +264,17 @@ class RDFConfig
         if /.+\^\^(.+)\z/ =~ literal_object.value
           prefix, local_part = $1.split(':', 2)
           if prefix == 'xsd'
-            RDF::Literal.new(value, datatype: eval("RDF::XSD.#{local_part}"))
+            # RDF::Literal.new(value, datatype: eval("RDF::XSD.#{local_part}"))
+            { o_kind: 'literal_dt', o: value, datatype: "http://www.w3.org/2001/XMLSchema##{local_part}" }
           else
             # TODO Other datatype or lang tag
-            RDF::Literal.new(value)
+            # RDF::Literal.new(value)
+            { o_kind: 'literal_plain', o: value }
           end
         else
-          RDF::Literal.new(value)
+          # RDF::Literal.new(value)
+          { o_kind: 'literal_plain', o: value }
         end
-      end
-
-      def to_bool(value)
-        !['0', 'f', 'false', ''].include?(value.to_s.strip.downcase)
       end
 
       def rdf_writer_opts
@@ -278,10 +337,28 @@ class RDFConfig
         @one_row_statements.each do |statement|
           if !statement[:triple].nil? && statement[:triple].predicates.size > 1
             property_path_statements(statement).each do |rdf_statement|
-              @statements << rdf_statement
+              add_statement(rdf_statement)
             end
           else
-            @statements << statement[:statement]
+            add_statement(statement[:statement])
+          end
+
+          object_subjects = if statement[:triple]&.object.is_a?(Model::Subject)
+                              [statement[:triple].object]
+                            elsif statement[:triple].is_a?(Model::ValueList)
+                              statement[:triple].object.value.select { |object| object.is_a?(Model::Subject) }
+                            else
+                              []
+                            end
+          object_subjects.each do |object_subject|
+            triples = @model.rdf_type_triples_by_subject_name(object_subject.name)
+            triples.each do |triple|
+              next if @convert.subject_names.include?(triple.subject.name)
+
+              add_statement(
+                RDF::Statement.new(@statements.last.object, RDF.type, uri_node(triple.object.value))
+              )
+            end
           end
         end
 
@@ -350,6 +427,10 @@ class RDFConfig
         else
           'unknown'
         end
+      end
+
+      def add_statement(statement)
+        @statements << statement
       end
     end
   end

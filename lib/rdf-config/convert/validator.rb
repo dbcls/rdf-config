@@ -9,11 +9,25 @@ class RDFConfig
     class Validator < RDFConfig::Validator
       include MixIn::ConvertUtil
 
+      VALID_SOURCE_TYPES = %w[csv tsv duckdb sqlite3].freeze
       VALID_CONVERT_TYPES = %w[:turtle :ntriples :jsonld :jsonl :context]
 
       class << self
         def format_error_message(errors)
-          errors.map { |error| "  * #{error}" }.unshift('ERROR:').join("\n")
+          errors.map do |error|
+            lines = if error.is_a?(Array)
+                      error
+                    else
+                      error.split("\n")
+                    end
+            lines.map.with_index do |line, idx|
+              if idx.zero?
+                "  * #{line}"
+              else
+                "    #{line}"
+              end
+            end.join("\n")
+          end.unshift('ERROR:').join("\n")
         end
       end
 
@@ -40,6 +54,7 @@ class RDFConfig
         validate_specified_source unless context_mode?
         validate_source_file_path unless context_mode?
         validate_source_format unless context_mode?
+        # validate_source unless context_mode?
         validate_macro_name
         validate_convert_variable_name
 
@@ -123,22 +138,21 @@ class RDFConfig
       end
 
       def validate_source_file_path
-        source_files = @convert.source_subject_map.keys.uniq.map do |file_path|
-          formats = @convert.source_format_map[file_path] || []
-          if formats.include?('duckdb')
-            rdb_source_file(file_path)
-          else
-            file_path
-          end
-        end.uniq
+        # sources = @convert.source_subject_map.keys.uniq.map do |source|
+        #   formats = @convert.source_format_map[source] || []
+        #   if (formats & RDB_FILE_EXTENSIONS).empty?
+        #     source
+        #   else
+        #     rdb_source_file(source)
+        #   end
+        # end.uniq
 
-        source_files.each do |file_path|
-          if file_path.nil?
+        @convert.source_subject_map.keys.uniq.each do |source|
+          if source.nil?
             add_error(%(#{@convert.source_subject_map[nil].join(', ')}: Since source file is not specified in convert.yaml, please specify the source file.))
           else
-            formats = @convert.source_format_map[file_path] || []
-            file_path = rdb_source_file(file_path) if formats.include?('duckdb')
-            add_error(%(Source file "#{file_path}" does not exist.)) unless File.exist?(file_path)
+            source = rdb_source_file(source) if source.is_a?(Array)
+            add_error(%(Source file "#{source}" does not exist.)) unless File.exist?(source)
           end
         end
       end
@@ -147,22 +161,37 @@ class RDFConfig
         @convert.source_format_map.each do |source_file_path, formats|
           next unless formats.is_a?(Array)
 
-          if formats.empty?
-            add_error("There is no file format specification for the source file (#{source_file_path}) in the settings in convert.yaml.")
+          source_file_path = rdb_source_file(source_file_path) if source_file_path.is_a?(Array)
+          if formats.empty? || formats.include?(UNKNOWN_SOURCE_TYPE)
+            add_error("There is no file format specification for the source file (#{source_file_path}) .")
           elsif formats.uniq.size > 1
-            add_error("In the settings in convert.yaml, there are multiple file format specifications (#{formats.join(', ')}) for the same source file (#{source_file_path}) .")
+            add_error("There are multiple file format specifications (#{formats.join(', ')}) for the same source file (#{source_file_path}) .")
+          elsif !VALID_SOURCE_TYPES.include?(formats.first)
+            error_lines = [
+              "Invalid format (#{formats.first}) is specified for source file (#{source_file_path}) .",
+              "Valid formats are #{VALID_SOURCE_TYPES.join(', ')}"
+            ]
+            add_error(error_lines)
           end
         end
       end
 
+      def validate_source
+        # source_processor = @convert.source_processor
+        # source_processor.validate
+        # source_processor.errors.each do |error|
+        #   add_error(error)
+        # end
+      end
+
       def validate_macro_name
         @convert.macro_names.each do |macro_name|
-          next if SYSTEM_MACRO_NAMES.include?(macro_name)
+          next if SYSTEM_MACRO_NAMES.include?(macro_name) || Convert.internal_macro?(macro_name)
 
           macro_file_path = File.join(__dir__, MACRO_DIR_NAME, "#{macro_name}.rb")
           next if File.exist?(macro_file_path)
 
-          add_error(%(Macro "#{macro_name}" is not defined.))
+          add_error(%(Macro "#{macro_name}" is not found.))
         end
       end
 

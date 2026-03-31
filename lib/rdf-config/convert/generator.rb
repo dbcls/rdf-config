@@ -29,6 +29,13 @@ class RDFConfig
 
         @bnode_id = 0
         @bnode = {}
+
+        @intermediate_statement = {}
+        init_intermediate_prefixes
+      end
+
+      def inspect
+        "#<#{self.class}:0x#{object_id.to_s(16)}>"
       end
 
       private
@@ -121,7 +128,7 @@ class RDFConfig
         values.each_with_index do |value, idx|
           next if value.to_s.empty?
 
-          generate_by_triple(triple, values, idx)
+          @intermediate_statements << generate_by_triple(triple, values, idx)
         end
       end
 
@@ -196,6 +203,21 @@ class RDFConfig
 
       def clear_bnode_cache
         @bnode = {}
+      end
+
+      def intermediate_prefixes
+        prefixes = []
+
+        @prefixes.each do |prefix, iri|
+          prefixes << { type: 'prefix', prefix: prefix, iri: iri }
+        end
+
+        prefixes
+      end
+
+      def init_intermediate_prefixes
+        @intermediate_statements =
+          @config.prefix.map { |prefix, iri| { type: :prefix, prefix: prefix, iri: iri[1..-2] } }
       end
     end
   end

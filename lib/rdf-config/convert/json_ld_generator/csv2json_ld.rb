@@ -3,6 +3,7 @@
 require 'json'
 require_relative '../generator'
 require_relative '../mix_in/convert_util'
+require_relative '../mix_in/json_ld_util'
 require_relative 'context_generator'
 require_relative 'nest_generator'
 
@@ -10,6 +11,7 @@ class RDFConfig
   class Convert
     class CSV2JSON_LD < Generator
       include MixIn::ConvertUtil
+      include MixIn::JsonLdUtil
 
       TYPE_KEY = '@type'
 
@@ -140,9 +142,31 @@ class RDFConfig
         subject_iri = @subject_node[subject_name][value_idx]
         subject_iri = @subject_node[subject_name].first if subject_iri.nil?
 
-        add_node(@node_per_line,
-                 subject_iri,
-                 object_hash_by_triple(triple, cast_data_type(values[value_idx], triple.object)))
+        object_hash = object_hash_by_triple(triple, cast_data_type(values[value_idx], triple.object))
+        add_node(@node_per_line, subject_iri, object_hash)
+        add_rdf_type_for_object(triple, object_hash)
+      end
+
+      def add_rdf_type_for_object(triple, object_hash)
+        object_subjects = if triple.object.is_a?(Model::Subject)
+                            [triple.object]
+                          elsif triple.is_a?(Model::ValueList)
+                            triple.object.value.select { |object| object.is_a?(Model::Subject) }
+                          else
+                            []
+                          end
+        object_subjects.each do |object_subject|
+          rdf_type_triples = @model.rdf_type_triples_by_subject_name(object_subject.name)
+          rdf_type_triples.each do |rdf_type_triple|
+            next if @convert.subject_names.include?(rdf_type_triple.subject.name)
+
+            subject_iri = object_hash.values.first
+            subject_name = rdf_type_triple.subject.name
+            add_node(@node_per_line, subject_iri, { subject_name => subject_iri })
+            add_node(@node_per_line, subject_iri, { TYPE_KEY => rdf_type_triple.object.value })
+            add_subject_node(subject_name, subject_iri)
+          end
+        end
       end
 
       def object_hash_by_triple(triple, values)
@@ -218,6 +242,8 @@ class RDFConfig
           target_value.to_s.to_i
         when Float
           target_value.to_s.to_f
+        when TrueClass, FalseClass
+          to_bool(target_value)
         else
           target_value
         end
@@ -242,7 +268,12 @@ class RDFConfig
       end
 
       def rdftype_only_subject_uris
-        @node.keys.select { |subject_uri| rdftype_only?(subject_uri) }
+        @node.select do |subject_uri, node_value|
+          subject_name_in_node_value = if node_value.is_a?(Hash)
+                                         subject_name_by_node(node_value)
+                                       end
+          rdftype_only?(subject_uri) && @subject_names.include?(subject_name_in_node_value)
+        end.keys
       end
 
       def rdftype_only?(subject_uri)
@@ -307,7 +338,7 @@ class RDFConfig
 
       def final_nodes
         if @nest_node
-          nest_generator = JsonLdGenerator::NestGenerator.new(@model, @node)
+          nest_generator = JsonLdGenerator::NestGenerator.new(@model, @node, @subject_names)
           nest_generator.generate
         else
           @node.values

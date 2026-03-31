@@ -1,8 +1,12 @@
 require 'csv'
+require_relative '../../../../rust/rust_tsv/rust_tsv'
+require_relative 'row_adapter'
 
 class RDFConfig
   class Convert
     class CSVReader
+      BATCH_SIZE = 10000
+
       def initialize(source_file, file_format)
         @source_file = source_file
         case file_format
@@ -15,9 +19,18 @@ class RDFConfig
         @line_no = 1
       end
 
-      def each_row(&block)
-        CSV.foreach(@source_file, **csv_opts) do |row|
-          block.call(row)
+      def each_row(use_rust: true, &block)
+        if use_rust
+          RustTsv.each_batch(@source_file, true, BATCH_SIZE) do |header, rows|
+            rows.each do |fields|
+              row = RowAdapter.new(header, fields)
+              block.call(row)
+            end
+          end
+        else
+          CSV.foreach(@source_file, **csv_opts) do |row|
+            block.call(row)
+          end
         end
       end
 

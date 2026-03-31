@@ -25,6 +25,8 @@ class Integer
 end
 
 class RDFConfig
+  class ProgrammingError < StandardError; end
+
   def initialize(opts = {})
     @config = if opts[:config_dir].is_a?(Array)
                 opts[:config_dir].map { |config_dir| Config.new(config_dir) }
@@ -59,6 +61,10 @@ class RDFConfig
     when :context
       convert
     end
+  end
+
+  def verbose?
+    @opts[:verbose]
   end
 
   def generate_sparql

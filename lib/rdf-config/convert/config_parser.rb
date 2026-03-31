@@ -1,4 +1,3 @@
-# coding: utf-8
 # frozen_string_literal: true
 
 require 'yaml'
@@ -6,6 +5,7 @@ require 'forwardable'
 require_relative 'validator'
 require_relative 'mix_in/convert_util'
 require_relative 'parser/method_parser'
+require_relative 'config_parser/source_processor'
 
 class RDFConfig
   class Convert
@@ -24,12 +24,22 @@ class RDFConfig
       SUBJECT_KEY = 'subject'
       OBJECTS_KEY = 'objects'
 
+      class << self
+        def translate_parslet_result(parslet_result, convert_variable_name)
+          {
+            method_name_: parslet_result[:method_name_].to_str,
+            args_: parslet_result.key?(:args_) ? parslet_result[:args_].map { |k, v| [k, v.to_s] }.to_h : nil,
+            variable_name: convert_variable_name
+          }
+        end
+      end
+
       def initialize(config, **opts)
         @config = config
 
         @yaml_parser = opts[:yaml_parser]
 
-        @target_source_file_path = nil
+        @target_source = nil
         @source_base_dir = Dir.pwd
         @convert_source = nil
         @convert_source_is_file = false
@@ -38,7 +48,7 @@ class RDFConfig
           if File.file?(convert_source)
             @convert_source = convert_source
             @convert_source_is_file = true
-            @target_source_file_path = convert_source
+            @target_source = convert_source
           elsif File.directory?(convert_source)
             @source_base_dir = convert_source
           else
@@ -76,7 +86,12 @@ class RDFConfig
           parse_convert_config(convert_config)
         end
 
-        @source_subject_map = { @convert_source => subject_names } if @convert_source_is_file
+        if @convert_source_is_file
+          subject_names.each do |subject_name|
+            add_source_subject_map(@convert_source, subject_name)
+          end
+          add_source_format_map(@convert_source, source_type_for(@convert_source))
+        end
       end
 
       # TODO 設定ファイルの分割に対応する
@@ -131,14 +146,10 @@ class RDFConfig
         end
 
         method_def = if is_macro
-                       {
-                         method_name_: method[:method_name_].to_str,
-                         args_: method.key?(:args_) ? method[:args_].map { |k, v| [k, v.to_s] }.to_h : nil,
-                         variable_name: convert_variable_name
-                       }
+                       self.class.translate_parslet_result(method, convert_variable_name)
                      else
                        {
-                         method_name_: 'str',
+                         method_name_: TO_S_MACRO_NAME,
                          args_: { arg_: converter },
                          variable_name: convert_variable_name
                        }
@@ -149,7 +160,7 @@ class RDFConfig
         if macro_name == SOURCE_MACRO_NAME
           process_source_macro(method_def, variable_name)
         elsif Convert::SOURCE_FORMATS.include?(macro_name)
-          add_source_format_map(@target_source_file_path, macro_name)
+          add_source_format_map(@target_source, macro_name)
         end
 
         method_def
@@ -166,6 +177,16 @@ class RDFConfig
         source_subject_map = @source_subject_map.select { |_, subject_names| subject_names.include?(subject_name) }
 
         source_subject_map.keys.first
+      end
+
+      def source_format_for(source_key)
+        @source_format_map[source_key].first
+      rescue StandardError => e
+        raise ProgrammingError, "[BUG] #{e.class}: Cannot find source file format for #{source_key}"
+      end
+
+      def inspect
+        "#<#{self.class}:0x#{object_id.to_s(16)}>"
       end
 
       private
@@ -317,47 +338,23 @@ class RDFConfig
       end
 
       def process_source_macro(method_def, variable_name)
-        args = method_def[:args_].keys.map do |hash|
-          if hash == :arg_
-            method_def[:args_][:arg_].to_s[1..-2]
-          else
-            value = hash.values.first
-            if value.is_a?(Parslet::Slice)
-              value.to_s[1..-2]
-            elsif value.is_a?(Hash)
-              value.values.first.to_s
-            else
-              value.to_s
-            end
-          end
-        end
+        source_processor = SourceProcessor.new
+        source_macro_args = source_processor.parse_method_def(method_def)
+        source_macro_args[0] = if @convert_source_is_file
+                                 @convert_source
+                               else
+                                 absolute_source_file_path(source_macro_args[0])
+                               end
+        source_processor.parse_args(*source_macro_args)
 
-        if args[1].to_s == 'duckdb'
-          process_source_macro_for_rdb(args, variable_name)
+        if source_processor.source_is_rdb?
+          @target_source = [source_macro_args[0], source_processor.rdb_table_name]
         else
-          process_source_macro_for_file(args, variable_name)
+          @target_source = source_macro_args[0]
         end
-      end
 
-      def process_source_macro_for_file(source_macro_args, variable_name)
-        @target_source_file_path = if @convert_source_is_file
-                                     @convert_source
-                                   else
-                                     absolute_source_file_path(source_macro_args[0])
-                                   end
-        add_source_subject_map(@target_source_file_path, variable_name)
-        add_source_format_map(@target_source_file_path, source_macro_args[1])
-      end
-
-      # source_macro_args: [rdb_file_path, rdb_type (ex. duckdb), table_name]
-      def process_source_macro_for_rdb(source_macro_args, variable_name)
-        @target_source_file_path = if @convert_source_is_file
-                                     @convert_source
-                                   else
-                                     [absolute_source_file_path(source_macro_args[0]), source_macro_args[2]].join('.')
-                                   end
-        add_source_subject_map(@target_source_file_path, variable_name)
-        add_source_format_map(@target_source_file_path, source_macro_args[1])
+        add_source_subject_map(@target_source, variable_name)
+        add_source_format_map(@target_source, source_processor.source_type)
       end
 
       def absolute_source_file_path(source_file)
@@ -374,13 +371,13 @@ class RDFConfig
         @source_subject_map[source] << subject_name unless @source_subject_map[source].include?(subject_name)
       end
 
-      def add_source_format_map(source, macro_name)
+      def add_source_format_map(source, format)
         source = @convert_source if @convert_source_is_file
         @source_format_map[source] = [] unless @source_format_map.key?(source)
 
-        return if macro_name.nil?
+        return if format.nil?
 
-        @source_format_map[source] << macro_name unless @source_format_map[source].include?(macro_name)
+        @source_format_map[source] << format unless @source_format_map[source].include?(format)
       end
 
       def add_variable_convert(variable_name, convert)
@@ -411,7 +408,7 @@ class RDFConfig
       end
 
       def convert_queue_key
-        [@subject_name, @target_source_file_path]
+        [@subject_name, @target_source]
       end
 
       def add_convert_method(variable_name, method)

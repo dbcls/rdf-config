@@ -105,6 +105,8 @@ class RDFConfig
 
         if target_value.to_s.empty?
           ''
+        elsif method_name == TO_S_MACRO_NAME
+          args[0].to_s
         else
           if ROW_TARGET_METHODS.include?(method_name)
             @macro.send(method_name, target_row, *args)
