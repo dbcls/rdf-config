@@ -36,7 +36,7 @@
   - oboinowl:id:
     - id: "CHEBI:201963"
   - oboinowl:inSubset?:
-    - in_subset: AnnotationProperty #3_STAR: manually curated by ChEBI
+    - in_subset: AnnotationPropertyData #3_STAR: manually curated by ChEBI
   - owl:deprecated?:
     - deprecated: "true"
   - obo:IAO_0000115?:
@@ -60,14 +60,15 @@
   - obochebi:smiles?:
     - smiles: "CCCCCCCC(C(O)=O)C(O)=O"
 
-- AnnotationProperty obo:chebi#3_STAR:
+- AnnotationPropertyData obo:chebi#3_STAR:
   - a: owl:AnnotationProperty
   - rdfs:label?:
-    - annotation_property: "has_obo_namespace"
+    - annotation_property_label: "has_obo_namespace"
   - rdfs:subPropertyOf?:
-    - annotation_propertyof: AnnotationProperty
+    - annotation_propertyof: AnnotationPropertyData
+#    - is_subproperty_of: oboinowl:SubsetProperty   # oboinowl:SynonymTypeProperty
   - rdfs:comment?:
-    - annotation_comment: "Annotated by 3rd party"
+    - annotation_property_comment: "Preliminary entries"  # "Annotated by 3rd party"(obo:chebi#2_STAR), "Manually annotated by ChEBI Team"(obo:chebi#3_STAR)
 
 - ObjectProperty obochebi_sha:has_major_microspecies_at_pH_7_3:   # obochebi_sha:has_functional_parent, obochebi_sha:has_parent_hydride, obochebi_sha:is_conjugate_acid_of, obochebi_sha:is_conjugate_base_of, obochebi_sha:is_enantiomer_of, obochebi_sha:is_substituent_group_from, obochebi_sha:is_tautomer_of, obo:BFO_0000051, obo:RO_0000087
   - a: owl:ObjectProperty
@@ -89,15 +90,6 @@
   - oboinowl:shorthand?:
     - object_property_shorthand: "has_role"
     
-- AnnotationProperty oboinowl:hasOBONamespace:
-  - a: owl:AnnotationProperty
-  - rdfs:subPropertyOf?:
-    - is_subproperty_of: oboinowl:SubsetProperty   # oboinowl:SynonymTypeProperty
-  - rdfs:label?:
-    - annotation_property_label: "has_obo_namespace"
-  - rdfs:comment?:
-    - annotation_property_comment: "Preliminary entries"  # "Annotated by 3rd party"(obo:chebi#2_STAR), "Manually annotated by ChEBI Team"(obo:chebi#3_STAR)
-
 # AnnotationPropertyの主語
 # rdfs:label
 # oboinowl:hasOBONamespace
