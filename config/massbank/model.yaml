@@ -1,0 +1,107 @@
+- MassBankRecordDataset massbank:MSBNK-CASMI_2016-SM828451#Dataset:
+  - rdf:type:
+    - schema:Dataset
+  - dcterms:identifier:
+    - dct_id_dataset: "MSBNK-CASMI_2016-SM828451"
+  - skos:definition:
+    - skos_def_dataset: "1-Hydroxyanthraquinone; LC-ESI-QFT; MS2; CE: 35 NCE; R=35000; [M-H]-"
+  - dcterms:date:
+    - dct_date_dataset: '"2016-12-12"^^xsd:date'
+  - dcterms:creator:
+    - dct_creator_dataset: "Krauss M, Schymanski EL, Weidauer C, Schupke H, UFZ and Eawag"
+  - dcterms:license:
+    - dct_license_dataset: <https://creativecommons.org/licenses/by/4.0/>
+  - dcterms:rights:
+    - dct_rights_dataset: "Copyright (C) 2016 UFZ/Eawag"
+  - schema:citation:
+    - schema_citation_dataset: "Schymanski, E. L.; Ruttkies, C.; Krauss, M.; Brouard, C.; Kind, T.; Dührkop, K.; Allen, F.; Vaniya, A.; Verdegem, D.; Böcker, S.; et al. Critical Assessment of Small Molecule Identification 2016: Automated Methods. Journal of Cheminformatics 2017, 9 (1). DOI:10.1186/s13321-017-0207-1"
+  - rdfs:comment:
+    - rdfs_comment_dataset1: "CONFIDENCE standard compound"
+    - rdfs_comment_dataset2: "INTERNAL_ID 8284"
+
+- MassBankRecordChemicalSubstance massbank:MSBNK-CASMI_2016-SM828451#ChemicalSubstance:
+  - rdf:type:
+    - schema:chemicalsubstance
+  - schema:url:
+    - sch_url_chemicalsubstance: massbank:MSBNK-CASMI_2016-SM828451
+  - dcterms:identifier:
+    - dct_id_chemicalsubstance: "MSBNK-CASMI_2016-SM828451"
+  - schema:name:
+    - schema_name_chemicalsubstance: "1-Hydroxyanthraquinone"
+  - schema:alternateName:
+    - schema_altname_chemicalsubstance: "1-hydroxyanthracene-9,10-dione"
+  - schema:molecularFormula:
+    - schema_molformula_chemicalsubstance: "C14H8O3"
+  - schema:monoisotopicMolecularWeight:
+    - schema_monoisotopic_molweight_chemicalsubstance: '"224.04734"^^xsd:double'
+  - schema:smiles:
+    - schema_smiles_chemicalsubstance: "Oc1cccc2C(=O)c3ccccc3C(=O)c12"
+  - schema:inChI:
+    - schema_inchi_chemicalsubstance: inchi:InChI=1S/C14H8O3/c15-11-7-3-6-10-12(11)14(17)9-5-2-1-4-8(9)13(10)16/h1-7,15H
+  - schema:inChIKey:
+    - schema_inchikey_chemicalsubstance: inchikey:BTLXPCBPYBNQNR-UHFFFAOYSA-N
+  - rdfs:seeAlso:
+    - rdfs_seealso_cas: cas:129-43-1
+    - rdfs_seealso_chebi: chebi:28807
+    - rdfs_seealso_kegg: kegg:C02980
+    - rdfs_seealso_pubchem: pubchem:8512
+    - rdfs_seealso_chemspider: chemspider:8198
+    - rdfs_seealso_comptox: comptox:DTXSID1020722
+
+- MassBankRecordAnalyticalConditions massbank:MSBNK-CASMI_2016-SM828451#AnalyticalConditions:
+  - rdf:type:
+    - mbo:analytical_methods_and_conditions
+  - mbo:ac_instrument:
+    - mbo_ac_instrument: "Q Exactive Plus Orbitrap Thermo Scientific"
+  - mbo:instrument_type:
+    - mbo_instrument_type: "LC-ESI-QFT"
+  - mbo:ms_type:
+    - mbo_ms_type: "MS2"
+  - mbo:ion_mode:
+    - mbo_ion_mode: "NEGATIVE"
+  - mbo:ionization:
+    - mbo_ionization: "ESI"
+  - mbo:fragmentation_mode:
+    - mbos_fragmentation_mode: "HCD"
+  - mbo:collision_energy:
+    - mbo_collision_energy: "35 (nominal)"
+  - mbo:resolution:
+    - mbo_resolution: "35000"
+  - mbo:column_name:
+    - mbo_column_name: "Kinetex C18 EVO 2.6 um, 2.1x50 mm, precolumn 2.1x5 mm, Phenomenex"
+  - mbo:flow_gradient:
+    - mbo_flow_gradient: "95/5 at 0 min, 95/5 at 1 min, 0/100 at 13 min, 0/100 at 24 min"
+  - mbo:flow_rate:
+    - mbo_flow_rate: "300 uL/min"
+  - mbo:retention_time:
+    - mbo_retention_time: "10.747 min"
+  - mbo:solvent:
+    - mbo_solvent1: "SOLVENT A water with 0.1% formic acid"
+    - mbo_solvent2: "SOLVENT B methanol with 0.1% formic acid"
+
+- MassBankRecordMassSpectra massbank:MSBNK-CASMI_2016-SM828451#MassSpectra:
+  - rdf:type:
+    - mbo:mass_spectral_data
+  - mbo:base_peak:
+    - mbo_base_peak: '"223.0399"^^xsd:double'
+  - mbo:precursor_mz:
+    - mbo_precursor_mz: '"223.0401"^^xsd:double'
+  - mbo:precursor_type:
+    - mbo_precursor_type: "[M-H]-"
+  - rdfs:comment:
+    - rdfs_comment_massspectra1: "RECALIBRATE loess on assigned fragments and MS1"
+    - rdfs_comment_massspectra2: "REANALYZE Peaks with additional N2/O included"
+    - rdfs_comment_massspectra3: "WHOLE RMassBank 2.3.1"
+
+- MassBankRecordPeakInfo massbank:MSBNK-CASMI_2016-SM828451#PeakInfo:
+  - rdf:type:
+    - mbo:peak_information
+  - mbo:pk_splash:
+    - mbo_pk_splash: splash:splash10-00di-0090000000-9ad379bebb31573fadc6
+  - mbo:pk_annotation:
+    - mbo_pk_annotation: "m/z tentative_formula formula_count mass error(ppm)\n  195.0451 C13H7O2- 1 195.0452 -0.29\n  223.04 C14H7O3- 1 223.0401 -0.42"
+  - mbo:pk_num_peak:
+    - mbo_pk_num_peak: '"2"^^xsd:int'
+  - mbo:pk_peak:
+    - mbo_pk_peak: "m/z int. rel.int.\n  195.0451 6290848 61\n  223.04 101544648 999"
+

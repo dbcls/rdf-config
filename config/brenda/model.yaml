@@ -1,0 +1,197 @@
+- Enzyme enzyme:18:
+  - a: 
+    - d3o:Enzyme
+    - d3o:Protein
+    - d3o:GeneProduct
+  - d3o:isClassifiedAs+:
+    - enzyme_classified_as: ECNumber
+  - d3o:foundIn:
+    - enzyme_found_in: Organism
+  - d3o:hasIdentifier*:
+    - enzyme_identifier: <http://purl.uniprot.org/uniprot/P56216>
+  - d3o:hasReference*:
+    - enzyme_reference: Reference
+
+- ECNumber ec:1.1.1.1:
+  - a:
+    - d3o:ECNumber
+    - d3o:EnzymeIdentifier
+    - d3o:MoleculeIdentifier
+    - d3o:Identifier
+  - rdfs:label:
+    - ec_number_label: "NADPH:quinone reductase"
+  - d3o:hasSynonyms+:
+    - ec_number_synonym: "NADPH:quinone oxidoreductase"
+  - dct:description:
+    - ec_number_description: "An enzyme that catalyzes the reduction of quinones."
+  - d3o:hasSystematicName:
+    - ec_number_systematic_name: "NADPH:quinone oxidoreductase"
+
+- Tissue tissue:233:
+  - a: 
+    - d3o:Tissue
+    - d3o:AnatomicStructure
+  - rdfs:label:
+    - tissue_label: "cerebral cortex"
+  - d3o:expresses*:
+    - tissue_expresses: Enzyme
+  - d3o:partOf*:
+    - tissue_is_part_of: Organism
+  - d3o:hasReference*:
+    - tissue_reference: Reference
+
+- Activator activator:3247:
+  - a: 
+    - d3o:Activator
+    - d3o:Effector
+    - d3o:ChemicalRole
+    - d3o:ConceptualEntity
+  # - rdfs:label:
+  #   - activator_label: "Mg2+"
+  - d3o:activates+:
+    - activator_activates: Enzyme
+  - d3o:foundIn+:
+    - activator_found_in: Organism
+  - d3o:affectsClass+:
+    - activator_affects_class: ECNumber
+  - d3o:refersToCompound:
+    - activator_is_compound: Compound
+  - d3o:hasReference+:
+    - activator_reference: Reference
+  
+- Inhibitor inhibitor:3247:
+  - a: 
+    - d3o:Inhibitor
+    - d3o:Effector
+    - d3o:ChemicalRole
+    - d3o:ConceptualEntity
+  - d3o:inhibits+:
+    - inhibitor_inhibits: Enzyme
+  - d3o:foundIn+:
+    - inhibitor_found_in: Organism
+  - d3o:affectsClass+:
+    - inhibitor_affects_class: ECNumber
+  - d3o:refersToCompound:
+    - inhibitor_is_compound: Compound
+  - d3o:hasReference+:
+    - inhibitor_reference: Reference
+
+- Cofactor cofactor:3247:
+  - a: 
+    - d3o:Cofactor
+    - d3o:ChemicalRole
+    - d3o:ConceptualEntity
+  - d3o:isCofactorOf+:
+    - cofactor_is_cofactor_of: Enzyme
+  - d3o:refersToCompound:
+    - cofactor_is_compound: Compound
+  - d3o:hasReference+:
+    - cofactor_reference: Reference
+
+- Reaction reaction:I_917:
+  - a:
+    - d3o:Reaction
+  - rdfs:label:
+    - reaction_label: "salutaridinol + NADP+ = salutaridine + NADPH + H+"
+  - d3o:catalyzedBy*:
+    - reaction_catalyzed_by: Enzyme
+  - d3o:catalyzedByClass+:
+    - reaction_catalyzed_by_class: ECNumber
+  - d3o:isIubmbReaction:
+    - reaction_is_iubmb_reaction: true
+  - d3o:partOf*:
+    - reaction_part_of_pathway: Pathway
+  - d3o:hasReference*:
+    - reaction_reference: Reference
+
+- Localization localization:31969:
+  - a: d3o:Localization
+  - rdfs:label:
+    - localization_label: "chloroplast membrane"
+  - d3o:expresses*:
+    - localization_expresses: Enzyme
+  - d3o:partOf*:
+    - localization_part_of: Organism
+  - d3o:hasReference*:
+    - localization_reference: Reference
+  
+- Organism organism:11833:
+  - a: d3o:BiologicalMaterial
+  - rdfs:label:
+    - organism_label: "Homo sapiens"
+  - d3o:hasSynonym*:
+    - organism_synonym: "Human"
+  - d3o:hasTaxID?:
+    - organism_taxid: 9606
+  - d3o:hasIdentifier?:
+    - bacdive_identifier: <https://purl.dsmz.de/bacdive/strain/12810>
+  - rdf:type:
+    - organism_type: d3o:OrganismGroup
+
+- Product product:337:
+  - a:
+    - d3o:Product
+    - d3o:ChemicalRole
+    - d3o:ConceptualEntity
+  - d3o:partOf+:
+    - product_of_reaction: Reaction
+  - d3o:refersToCompound:
+    - product_is_compound: Compound
+
+- Substrate substrate:12345:
+  - a:
+    - d3o:Substrate
+    - d3o:ChemicalRole
+    - d3o:ConceptualEntity
+  - d3o:partOf+:
+    - substrate_of_reaction: Reaction
+  - d3o:refersToCompound:
+    - substrate_is_compound: Compound
+
+- Pathway pathway:12345:
+  - a: d3o:Pathway
+  - rdfs:label:
+    - pathway_name: "Glycolysis"
+  - d3o:hasReaction+:
+    - pathway_has_reaction: Reaction
+
+- Compound compound:3247:
+  - a:
+    - d3o:ChemicalMaterial
+    - d3o:ChemicalCompound
+  - rdfs:label:
+    - compound_name: "NADPH"
+  - d3o:hasIdentifier:
+    - compound_brenda_identifier: 5
+  - d3o:hasSynonym*:
+    - compound_synonym: "Nicotinamide adenine dinucleotide-diphosphate"
+  - d3o:hasStructure+:
+    - compound_structure: Structure
+
+- Reference reference:776243:
+  - a: d3o:Reference
+  - dct:title:
+    - reference_title: "Comparison of catalytic functions and expression patterns of two pinene synthases from Wurfbainia villosa"
+  - d3o:hasBibliographicInformation:
+    - reference_bibliographic_information: "Zhongguo Zhong Yao Za Zhi"
+  - dct:creator:
+    - reference_creator: "Ling, X.; Lin, X.; Huang, L.; Yang, P.; Yang, J."
+  - d3o:hasVolume:
+    - reference_volume: "48"
+  - d3o:hasJournalAbbreviation:
+    - reference_journal_abbreviation: "Nucleic Acids Res."
+  - d3o:hasPageRange:
+    - reference_page_range: "D344-D349"
+  - dct:issued:
+    - reference_issued: '"2023"^^<http://www.w3.org/2001/XMLSchema#gYear>'
+  - d3o:hasPubMedID:
+    - reference_pubmed_identifier: "36872227"
+  - d3o:hasPMCID?:
+    - reference_pmc_identifier: "PMC327796"
+  
+- Structure structure:3247:
+  - a: d3o:MolecularStructure
+  - d3o:hasInChI:
+    - structure_inchi: "InChI=1S/C3H6O2/c1-2-3(4)5/h2H2,1H3,(H,4,5)/p-1"
+  - d3o:hasInChIKey:
+    - structure_inchi_key: "InChIKey=XBDQKXXYIPTUBI-UHFFFAOYSA-M"

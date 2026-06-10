@@ -1,0 +1,110 @@
+- Gene glycogene:28 :
+  - a:
+    - glycan:Glycogene
+  - rdfs:label:
+    - symbol: "ABO"
+  - dcterms:description:
+    - description: "ABO, alpha 1-3-N-acetylgalactosaminyltransferase and alpha 1-3-galactosyltransferase"
+  - glycan:has_taxon:
+    - taxon: taxonomy:9606
+  - sio:SIO_000255:
+    - []:  # 空白ノード
+      - up:classifiedWith:
+        - go: obo:GO_0004380
+      - dcterms:references:
+        - pmid: pubmed:21873635
+      - sio:SIO_000772: # has evidence
+        - evidence: Eco
+      - sio:SIO_000253: # has source
+        - source: <http://glycosmos.org/database/NCBI>
+  - rdfs:seeAlso:
+    # - fgdb: fgdb:CGxxxx
+    - uniprot: Uniprot
+    - alliancegenome: alliancegenome:HGNC:79
+    - kegggene: KeggGene
+    - ggdb: Ggdb
+    - ncbi: <http://identifiers.org/ncbigene/28>
+- Eco obo:ECO_0000318:
+  - a: owl:Class
+  - rdfs:label:
+    - evidence_label: "biological aspect of ancestor evidence used in manual assertion"
+  - go:hasExactSynonym:
+    - synonym: "IBA"
+- Uniprot uniprot_gene:28:
+  - a:
+    - up:Resource
+- Ggdb ggdb:gg085:
+  - a:
+    - ggdb_owl:Glycogene
+  - ggdb:has_gene:
+    - ggdb_gene: Ggdbgene
+  - ggdb:has_gene_symbol:
+    - ggdb_symbol: "B(ABO)"
+  - ggdb:has_acceptor_substrates:
+    - ggdb_acceptor: Ggdbacceptor
+- Ggdbgene ggdb:gg085_gene:
+  - a:
+    - up:Gene
+  - sio:SIO_000008: # has attribute
+    - attribute: Ggdbgeneid
+- Ggdbgeneid ggdb:gg085_gene:
+  - a:
+    - <http://edamontology.org/data_2295> # Gene ID
+  - dcterms:identifier:
+    - gene_id: "28"
+- Ggdbacceptor ggdb:gg085_acceptor_substrates_reference6782678:
+  - a:
+    - ggdb_owl:Reference
+  - ggdb_owl:has_reaction:
+    - reaction: Reaction
+- Reaction ggdb:gg085_acceptor_substrates_2231:
+  - a:
+    - ggdb_owl:Substrate_transferred
+  - ggdb_owl:has_acceptor:
+    - acceptor: Acceptor
+  - ggdb_owl:has_donor:
+    - donor: Donor
+  - ggdb_owl:has_product:
+    - product: Product
+- Donor ggdb_owl:UDP-Gal:
+  - a:
+    - ggdb_owl:Donor
+  - rdfs:label:
+    - donor_label: "UDP-Gal"
+- Acceptor ggdb:gg085_acceptor_2231:
+  - a:
+    - ggdb_owl:Acceptor
+  - dcterms:identifier:
+    - acceptor_id: "JCGG-STR033516"
+  - rdfs:seeAlso:
+    - acceptor_jcggdb: jcggdb:JCGG-STR033516
+- Product ggdb:gg085_product_2231:
+  - a:
+    - ggdb_owl:Product
+  - dcterms:identifier:
+    - product_id: "JCGG-STR001855"
+  - rdfs:seeAlso:
+    - product_jcggdb: jcggdb:JCGG-STR033530
+- Glycan glycoinfo:G00059MO:
+  - a:
+    - glycan:Saccharide
+  - glycan:has_resource_entry:
+    - resource: Resource
+- Resource glycoinfo:resource_G00059MO_jcggdb_aist_JCGG-STR002182:
+  - a:
+    - glycan:Resource_entry
+  - dcterms:identifier:
+    - resource_id: "JCGG-STR001855"
+- KeggGene kegg_gene:hsa:28:
+  - a:
+    - orth:Gene
+- Hgnc hgnc:79:
+  - a:
+    - obo:SO_0000704
+  - rdfs:seeAlso:
+    - ncbi2: <http://identifiers.org/ncbigene/28>
+  - rdfs:label:
+    - hgnc_label: "ABO"
+  - skos:altLabel:
+    - hgnc_altlabel: "A3GALT1"
+

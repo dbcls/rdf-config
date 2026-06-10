@@ -1,11 +1,10 @@
 - UniProt up:Q9BYF1:
   - a:
     - core:Protein
-    - chembl:UniprotRef
   - core:recommendedName*:
     - recommended_name_node: RecommendedNameNode
   - core:submittedName*:
-    - submitted_name_node: SubmitedNameNode
+    - submitted_name_node: SubmittedNameNode
   - core:alternativeName*:
     - alternative_name_node: AlternativeNameNode
   - core:mnemonic:
@@ -48,16 +47,6 @@
     - potential_seq: isoforms:A0A7I2V2E9-1
   - rdfs:seeAlso*:
     - db_resource: DbResource
-  - rdfs:seeAlso*:
-    - insdc_cds: InsdcCds
-  - rdfs:seeAlso*:
-    - ncbigene: NcbiGene
-  - rdfs:seeAlso*:
-    - nextprot: Nextprot
-  - rdfs:seeAlso*:
-    - reactome: Reactome
-  - rdfs:seeAlso*:
-    - pdb: Pdb
   - core:citation*: Citation
   - core:classifiedWith*:
     - go: GO
@@ -225,10 +214,10 @@
   - core:ecName?:
     - recommended_ec: "3.4.17.23"
 
-- SubmitedNameNode up:A0A2R3N0P2#SIPE4C7423F69FEF7A2:
+- SubmittedNameNode up:A0A2R3N0P2#SIPE4C7423F69FEF7A2:
   - a: core:Structured_Name
   - core:fullName+:
-    - submited_name: "Aldoketomutase"
+    - submitted_name: "Aldoketomutase"
   - core:ecName?:
     - submitted_ec: "5.2.1.8"
 
@@ -320,23 +309,6 @@
   - core:database:
     - database: <http://purl.uniprot.org/database/EMBL>
 
-- InsdcCds <http://purl.uniprot.org/embl-cds/AAF78220.1>:
-  - a: core:Nucleotide_Resource
-  - core:locatedOn:
-    - insdc: <http://purl.uniprot.org/embl/AF241254>
-
-- NcbiGene <http://identifiers.org/ncbigene/59272>:
-  - a: idorg:ncbigene
-
-- Nextprot <http://nextprot.org/rdf/entry/NX_Q9BYF1>:
-  - a: <http://nextprot.org/rdf#Entry>
-
-- Reactome <http://identifiers.org/reactome/R-HSA-2022377>:
-  - a: chembl:ReactomeRef
-
-- Pdb <http://rdf.wwpdb.org/pdb/7A97>:
-  - a: pdbx:datablock
-
 - AbsorptionAnnotation <http://purl.uniprot.org/uniprot/P04000#SIPD7876B25E46F0DAD>:
   - a: core:Absorption_Annotation
   - core:maximum:
@@ -367,7 +339,7 @@
 
 - AllergenAnnotation <http://purl.uniprot.org/uniprot/Q9BQE9#SIP21C424C523E246F6>:
   - a: core:Allergen_Annotation
-  - rdfs:commnet:
+  - rdfs:comment:
     - allergen_desc: "Causes an allergic reaction in human..."
 
 - AlternativeInitiationAnnotation <http://purl.uniprot.org/uniprot/Q68CP4#SIP253410AED6FBB7FC>:
@@ -412,7 +384,7 @@
 - Annotation <http://purl.uniprot.org/uniprot/O14994#SIP7D3E6C3AD70A5B22>:
   - a: core:Annotation
   - rdfs:comment:
-    - annnotation_desc: "Starts at an alternative upstream CUG codon."
+    - annotation_desc: "Starts at an alternative upstream CUG codon."
   - core:sequence?:
     - annotation_spec_seq: isoforms:P15692-16
 
@@ -1145,11 +1117,26 @@
 
 - SimilarityAnnotation <http://purl.uniprot.org/uniprot/Q9BYF1#SIP3C3646B8E7B3D163>:
   - a: core:Similarity_Annotation
-
-- SiteAnnotation <http://purl.uniprot.org/uniprot/P0C0L4#SIP55654F9D8452DD68>:
-  - a: core:Site_Annotation
-  - rdf:comment:
+  - rdfs:comment:
     - sim_desc: "Belongs to the peptidase M2 family."
+
+- SiteAnnotation <http://purl.uniprot.org/uniprot/A0A004#SIPA03BA46FEB19AEFF>:
+  - a: core:Site_Annotation
+  - rdfs:comment:
+    - site_desc: 	"Important for beta-aspartyl-AMP intermediate formation"
+  - core:range:
+    - []:
+      - a: faldo:Region
+      - faldo:begin:
+        - []:
+          - a: faldo:Position
+          - faldo:position:
+            - site_begin: 365
+      - faldo:end:
+        - []:
+          - a: faldo:Position
+          - faldo:position:
+            - site_end: 365
 
 - SubcellularLocationAnnotation <http://purl.uniprot.org/uniprot/Q9BYF1#SIPA37239D978A32E27>:
   - a: core:Subcellular_Location_Annotation
@@ -1271,9 +1258,9 @@
     - core:Non_Self_Interaction
   - core:experiments:
     - exp_num: 8
-  - core:participant+: IntactPaticipant
+  - core:participant+: IntactParticipant
   
-- IntactPaticipant <http://purl.uniprot.org/intact/EBI-1391211>:
+- IntactParticipant <http://purl.uniprot.org/intact/EBI-1391211>:
   - a: core:Participant
   - owl:sameAs:
     - intaract_seq: up:Q9H2X3
@@ -1315,4 +1302,3 @@
     - submit_to: "UniProtKB"
   - core:group?:
     - citation_group: "Alzheimer's Disease Genetics Consortium"
-

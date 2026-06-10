@@ -1,0 +1,61 @@
+# GlyCosmos Disease
+- Disease disease:DOID:12799 :
+  - a:
+    - glycan:Disease
+  - rdfs:seeAlso:
+    - do: Do
+  - sio:SIO_000255: # has annotation
+    - []:
+      - sio:SIO_000001: # is related to
+        - gene1: Glycogene1
+      - sio:SIO_000772+: # has evidence
+        - evidence1: Evidence1
+        - evidence2: Evidence2
+        # - evidence3: Evidence3
+  - sio:SIO_000255: # has annotation
+    - []:
+      - sio:SIO_000001: # is related to
+        - gene2: Glycogene2
+      - sio:SIO_000772+: # has evidence
+        - evidence4: Evidence4
+  - sio:SIO_000255: # has annotation
+    - []:
+      - sio:SIO_000001: # is related to
+        - glycoprotein: Glycoprotein
+      - sio:SIO_000772+: # has evidence
+        - evidence5: Evidence5
+- Do obo:DOID_12799:
+  - a: owl:Class
+  - go:id:
+    - go_id: "DOID:12799"
+  - rdfs:label:
+    - disease_label: "mucopolysaccharidosis II"
+  - obo:IAO_0000115: # definition
+    - definition: "A mucopolysaccharidosis characterized by a deficiency of the lysosomal enzyme iduronate sulfatase."
+  - go:hasDbXref*:
+    - gard: "GARD:6675"
+    - mesh: "MESH:D016532"
+    - nci: "NCI:C61260"
+    - omim: "OMIM:309900"
+    - umls: "UMLS_CUI:C0026705"
+- Glycogene1 glycogene:3423 :
+  - a:
+    - glycan:Glycogene
+- Evidence1 <http://jcggdb.jp/rdf/diseases/ggdonto#CON00032> :
+  - a:
+    - sio:SIO_001394 # evidence
+- Evidence2 <https://www.alliancegenome.org/disease/DOID:12799> :
+  - a:
+    - sio:SIO_001394 # evidence
+- Glycogene2 glycogene:15931 :
+  - a:
+    - glycan:Glycogene
+- Evidence4 <https://www.alliancegenome.org/disease/DOID:12799> :
+  - a:
+    - sio:SIO_001394 # evidence
+- Glycoprotein glycoprotein:P22304 :
+  - a:
+    - glycan:Glycoprotein
+- Evidence5 <http://jcggdb.jp/rdf/diseases/ggdonto#CON00032> :
+  - a:
+    - sio:SIO_001394 # evidence

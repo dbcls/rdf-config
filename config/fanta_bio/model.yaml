@@ -1,0 +1,182 @@
+- FantaBioCre fanta:FCHS_104205:
+  - a: fantao:CisRegulatoryElement
+  - a: fantao:PLA  # promoter level activity
+  - a: fantao:ELA  # enhancer level activity
+  - dct:identifier:
+    - cre_id: "FCHS_104205"
+  - rdfs:label:
+    - cre_name: "cp4@ALDH2"
+  - skos:altLabel*:
+    - cre_old_name: "cp6@ALDH2"
+  - sio:SIO_000216:
+    - []:
+      - a: fantao:Directionality
+      - sio:SIO_000300:
+        - directionality: -1
+  - obo:RO_0002162:  # in_taxon
+    - tax: tax:9606
+  - sio:SIO_000395:  # to_regulate
+    - []:
+      - a: obo:SO_0000123  # transcriptionally_regulated
+      - rdfs:seeAlso:
+        - []:
+          - a: fantao:NcbiGene
+          - rdfs:seeAlso:
+            - promoter_ncbigene: ncbigene:217
+          - dct:identifier:
+            - promoter_ncbigene_id: "217"
+      - rdfs:seeAlso*:
+        - []:
+          - a: fantao:Hgnc
+          - rdfs:seeAlso:
+            - promoter_hgnc: hgnc:404
+          - dct:identifier:
+            - promoter_hgnc_id: "404"
+      - rdfs:seeAlso*:
+        - []:
+          - a: fantao:Mgi
+          - rdfs:seeAlso*:
+            - promoter_mgi: mgi:99600
+          - dct:identifier:
+            - promoter_mgi_id: "99600"
+      - rdfs:seeAlso*:
+        - []:
+          - a: fantao:UniProt
+          - rdfs:seeAlso:
+            - promoter_uniprot: uniprot:P05091
+          - dct:identifier:
+            - promoter_uniprot_id: "P05091"
+      - rdfs:label:
+        - promoter_symbol: "ALDH2"
+      - skos:altLabel*:
+        - promoter_synonym: "Ahd-5"
+      - dct:alternative:
+        - promoter_name: "aldehyde dehydrogenase 2 family member"
+  - faldo:location:
+    - []:
+      - a: faldo:Region
+      - faldo:begin:
+        - []:
+          - a: faldo:ExactPosition
+          - faldo:position:
+            - begin: 111766441
+          - faldo:reference:
+            - chromosome: hco:12\/GRCh38
+      - faldo:end:
+        - []:
+          - a: faldo:ExactPosition
+          - faldo:position:
+            - end: 111766744
+          - faldo:reference: hco:12\/GRCh38
+  - fantao:hasRefTSS*:
+    - []:
+      - a: fantao:ReferenceTSS
+      - rdfs:seeAlso:
+        - reftss: reftss:Rfhg_156435.1
+      - dct:identifier:
+        - reftss_id "Rfhg_156435.1"
+  - fantao:hasTSS*:
+    - []:
+      - a: fantao:NearestTSS
+      - rdfs:seeAlso*:
+        - []:
+          - a: fantao:Ensembl
+          - rdfs:seeAlso:
+            - nearest_ensembl: ensembl:ENST00000416293.7
+          - dct:identifier:
+            - nearest_ensembl_id: "ENST00000416293.7"
+      - rdfs:seeAlso*:
+        - []:
+          - a: fantao:RefSeq
+          - rdfs:seeAlso:
+            - nearest_refseq: refseq:NM_001204889.2
+          - dct:identifier:
+            - nearest_refseq_id: "NM_001204889.2"
+      - rdfs:seeAlso*:
+        - []:
+          - a: fantao:Insdc
+          - rdfs:seeAlso:
+            - nearest_insdc: insdc:BC002967
+          - dct:identifier:
+            - nearest_insdc_id: "BC002967"
+      - sio:SIO_000216:
+        - []:
+          - a: fantao:TSSDistance
+          - sio:SIO_000300:
+            - tss_nearest_transcript_distance: 143
+          - sio:SIO_000221: obo:UO_0000244  # has_unit base_pair
+  - fantao:hasTSS*:
+    - []:
+      - a: fantao:TSS
+      - rdfs:seeAlso*:
+        - []:
+          - a: fantao:Ensembl
+          - rdfs:seeAlso:
+            - ensembl: ensembl:ENST00000416293.7
+          - dct:identifier:
+            - ensembl_id: "ENST00000416293.7"
+      - rdfs:seeAlso*:
+        - []:
+          - a: fantao:RefSeq
+          - rdfs:seeAlso:
+            - refseq: refseq:NM_001204889.2
+          - dct:identifier:
+            - refseq_id: "NM_001204889.2"
+      - rdfs:seeAlso*:
+        - []:
+          - a: fantao:Insdc
+          - rdfs:seeAlso:
+            - insdc: insdc:BC002967
+          - dct:identifier:
+            - insdc_id: "BC002967"
+      - sio:SIO_000216:
+        - []:
+          - a: fantao:TSSDistance
+          - sio:SIO_000300:
+            - tss_transcript_distance: 143
+          - sio:SIO_000221: obo:UO_0000244  # has_unit base_pair
+  - fantao:hasOverlappedAnnotation*:
+    - []:
+      - a: fantao:ScreenCcre
+      - dct:identifier:
+        - screen_ccre_id: "EH38D2607681"
+      - rdfs:label:
+        - screen_ccre_type: "pELS,CTCF-bound"
+      - foaf:page:
+        - screen_ccre_page: screen:EH38D2607681
+  - fantao:hasOverlappedAnnotation*:
+    - []:
+      - a: fantao:ChipAtlasAntigen
+      - rdfs:seeAlso:
+        - transcription_factor: ncbigene:468
+      - rdfs:label:
+        - transcription_factor_symbol: "ATF4"
+      - sio:SIO_000216:   # has_measurement_value
+        - []:
+          - a: fantao:MaxQscore
+          - sio:SIO_000300:  # has_value
+            - max_qscore: 2594
+      - fantao:hasExperiment:
+        - []:
+          - a: sio:SIO_000994  # experiment
+          - rdfs:seeAlso:
+            - sra: sra:SRX6813404
+          - dct:identifier:
+            - sra_id: "SRX6813404"
+          - sio:SIO_000216:
+            - []:
+              - a: fantao:Qscore
+              - sio:SIO_000300:
+                - q_score: 2594
+  - fantao:hasOverlappedAnnotation*:
+    - []:
+      - a: fantao:Fantom5CagePeak
+      - dct:identifier:
+        - fantom5_cage_peak_id: "hg19::chr12:112204714..112204781,+;hg_128048.1"
+      - rdfs:label:
+        - fantom5_cage_peak_name: "p1@ALDH2"
+  - fantao:hasOverlappedAnnotation*:
+    - []:
+      - a: fantao:Fantom5Enhancer
+      - dct:identifier:
+        - fantom5_enhancer_id: "chr1:1125525-1125715"

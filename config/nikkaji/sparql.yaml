@@ -1,5 +1,5 @@
 sparql:
-    decription: systematic name and chemical formula for caffeine
+    description: systematic name and chemical formula for caffeine
     variables: [nikkaji_number, label, systematic_name, chem_formula]
     parameters:
         nikkaji_number: "J2.330B"
@@ -7,7 +7,7 @@ sparql:
 # 名前をキーに：言語タグがあると、タグを含めてクオートしないといけないが、
 # シングルクオートがダブルクオートに変換されてしまい、うまく動かない
 sparql2:
-    decription: systematic name and chemical formula for caffeine
+    description: systematic name and chemical formula for caffeine
     variables: [nikkaji_number, label, systematic_name, chem_formula]
     parameters:
         label: '"カフェイン"@ja'
@@ -15,7 +15,7 @@ sparql2:
 # rdf:List
 # untested as of sep17 2020
 sparql3:
-    decription: component nikkaji id  for caffeine hydrate
+    description: component nikkaji id for caffeine hydrate
     variables: [nikkaji_number, label, component_nikkaji_id]
     parameters:
         nikkaji_number: "J244.705C"

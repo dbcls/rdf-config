@@ -1,0 +1,138 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX schema: <https://purl.dsmz.de/schema/>
+PREFIX mediadive: <https://purl.dsmz.de/mediadive/medium/>
+PREFIX solution: <https://purl.dsmz.de/mediadive/solution/>
+PREFIX solution_recipe: <https://purl.dsmz.de/mediadive/solution_recipe/>
+PREFIX gas: <https://purl.dsmz.de/mediadive/gas/>
+PREFIX equipment: <https://purl.dsmz.de/mediadive/equipment/>
+PREFIX ingredient: <https://purl.dsmz.de/mediadive/ingredient/>
+PREFIX strain: <https://purl.dsmz.de/mediadive/strain/>
+PREFIX growth: <https://purl.dsmz.de/mediadive/growth/>
+PREFIX medium_composition: <https://purl.dsmz.de/mediadive/medium_composition/>
+PREFIX step: <https://purl.dsmz.de/mediadive/step/>
+PREFIX modification: <https://purl.dsmz.de/mediadive/modification/>
+PREFIX modification_detail: <https://purl.dsmz.de/mediadive/modification_detail/>
+<GrowthShape> {
+  a [ schema:GrowthCondition ] ;
+  schema:growthPH xsd:float ? ;
+  schema:growthTemperature xsd:integer ;
+  schema:hasGrowthIndicator xsd:trueclass ;
+  schema:hasOxygenRequirement xsd:string ? ;
+  schema:incubationPeriod xsd:string ? ;
+  schema:partOfMedium @<MediumShape> ;
+  schema:relatedToStrain @<StrainShape>
+}
+<MediumCompositionShape> {
+  a [ schema:MediumComposition ] ;
+  schema:containsIngredient @<IngredientShape> ;
+  schema:gramsPerLiter xsd:float ? ;
+  schema:isOptionalIngredient xsd:falseclass ;
+  schema:mmolPerLiter xsd:float ? ;
+  schema:modificationDifference xsd:falseclass ;
+  schema:modifiedBy @<ModificationShape> ? ;
+  schema:partOfMedium @<MediumShape>
+}
+<MediumShape> {
+  a [ schema:CultureMedium ] ;
+  dct:identifier IRI ;
+  rdfs:label xsd:string ;
+  schema:belongsToGroup xsd:string ;
+  schema:fromSource xsd:string ;
+  schema:hasFinalPH xsd:string ? ;
+  schema:hasLinkToSource IRI ;
+  schema:hasMainSolution @<SolutionShape> ;
+  schema:hasMaxPH xsd:float ? ;
+  schema:hasMinPH xsd:float ? ;
+  schema:includesSolution @<SolutionShape> ;
+  schema:isComplex xsd:trueclass
+}
+<SolutionRecipeShape> {
+  a [ schema:SolutionRecipe ] ;
+  dct:identifier xsd:integer ;
+  schema:gramsPerLiter xsd:float ? ;
+  schema:includesIngredient @<IngredientShape> ? ;
+  schema:ingredientAmount xsd:float ;
+  schema:ingredientUnit xsd:string ;
+  schema:isIngredientOptional xsd:falseclass ;
+  schema:mmolPerLiter xsd:float ? ;
+  schema:partOfSolution @<SolutionShape> ;
+  schema:positionInRecipe xsd:integer
+}
+<IngredientShape> {
+  a [ schema:Ingredient ] ;
+  dct:identifier xsd:integer ? ;
+  rdfs:label xsd:string ? ;
+  schema:belongsToGroup xsd:string ? ;
+  schema:hasCAS xsd:string ? ;
+  schema:hasChEBI xsd:integer ? ;
+  schema:hasDensity xsd:float ? ;
+  schema:hasFormula xsd:string ? ;
+  schema:hasGMO IRI ? ;
+  schema:hasKEGG xsd:string ? ;
+  schema:hasMass xsd:float ? ;
+  schema:hasMetaCyc xsd:string ? ;
+  schema:hasPubChem xsd:integer ? ;
+  schema:hasSVGImage  ;
+  schema:hasSynonym xsd:string ;
+  schema:hasZVG xsd:integer ? ;
+  schema:isComplexCarbonSource xsd:falseclass ?
+}
+<EquipmentShape> {
+  a [ schema:Equipment ] ;
+  dct:identifier xsd:integer ;
+  rdfs:label xsd:string ;
+  schema:usedInSolution @<SolutionShape>
+}
+<StepShape> {
+  a [ schema:OperationalStep ] ;
+  dct:identifier xsd:integer ;
+  schema:description xsd:string ;
+  schema:partOfMedium @<MediumShape> ;
+  schema:positionInRecipe xsd:integer ? ;
+  schema:relatedToSolution @<SolutionShape> ;
+  schema:stepOrder xsd:integer
+}
+<SolutionShape> {
+  a [ schema:Solution ] ;
+  dct:identifier xsd:string ;
+  rdfs:label xsd:string ;
+  schema:firstDefinedInMedium IRI ;
+  schema:hasVolume xsd:string ;
+  schema:isStockSolution xsd:falseclass ?
+}
+<StrainShape> {
+  a [ schema:Strain ] ;
+  dct:identifier xsd:integer ;
+  schema:belongsTaxGroup xsd:string ;
+  schema:hasBacDiveID xsd:integer ? ;
+  schema:hasDSMNumber xsd:integer ;
+  schema:hasSpecies xsd:string ;
+  schema:hasSynonym xsd:string ?
+}
+<ModificationShape> {
+  a [ schema:Modification ] ;
+  schema:appliesToMedium @<MediumShape> ;
+  schema:appliesToSolution @<SolutionShape> ;
+  schema:description xsd:string
+}
+<ModificationDetailShape> {
+  a [ schema:ModificationDetail ] ;
+  schema:actionDetails xsd:string ;
+  schema:actionType xsd:string ;
+  schema:modifiedAmount xsd:float ? ;
+  schema:modifiedUnit xsd:string ? ;
+  schema:partOfModification @<ModificationShape> ;
+  schema:relatedIngredient @<IngredientShape> ?
+}
+<GasShape> {
+  a [ schema:GasComponent ] ;
+  schema:gasPercentage xsd:float ;
+  schema:gasType xsd:string ;
+  schema:partOfMedium @<MediumShape>
+}

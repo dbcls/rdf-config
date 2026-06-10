@@ -1,0 +1,452 @@
+- Strain strain:38:
+  - a: schema:Strain
+  - dct:description?:
+    - strain_description: "Belnapia moabensis CP2C is an aerobe, non-halophilic, mesophilic bacterium that forms circular colonies and was isolated from biological soil crusts."
+  - rdfs:hasScientificName?: 
+    - scientific_name: "Belnapia moabensis Reddy et al. 2006" 
+  - rdfs:label?:
+    - strain_label: "Belnapia moabensis 38"
+  - schema:hasBacDiveID: 
+    - strain_bacdive_id: 38
+  - schema:hasClass: 
+    - strain_class: "Alphaproteobacteria"
+  - schema:hasDesignation?:
+    - strain_designation: "CP2C"
+  - schema:hasDomain?:
+    - strain_domain: "Bacteria"
+  - schema:hasFamily:
+    - strain_family: "Acetobacteraceae"
+  - schema:hasGenus:
+    - strain_genus: "Belnapia"
+  - schema:hasOrder:
+    - strain_order: "Rhizobiales"
+  - schema:hasPhylum:
+    - strain_phylum: "Proteobacteria"
+  - schema:hasReference?:
+    - strain_reference: Reference
+  - schema:hasSpecies*:
+    - strain_species: "Belnapia moabensis"
+  - schema:hasSpeciesEpithet?:
+    - strain_species_epithet: "moabensis"
+  - schema:hasStrainNames:
+    - strain_names: "CP2C"
+  - schema:hasStrainNumber?:
+    - strain_number: "DSM 16746, ATCC BAA-1043, CIP 109215"
+  - schema:hasTaxID*:
+    - strain_taxid: 1121106
+  - schema:hasTaxonomicRank:
+    - strain_taxonomic_rank: "Acetobacteraceae"
+  - schema:isTypeStrain:
+    - strain_is_typestrain: true
+  - schema:matchesTaxIDLevel?:
+    - strain_taxid_level: "species"
+
+- CellMotility cell_motility:50:
+  - a:
+    - schema:CellMotility
+    - schema:MicrobialPhenotype
+    - schema:Phenotype
+  - rdfs:label:
+    - cell_motility_label: false
+  - schema:describesStrain: Strain
+  - schema:hasPhenotypeInformation:
+    - cell_motility_phyenotype_information: false
+  - schema:hasReference:
+    - cell_motility_reference: Reference
+  - schema:isMotile:
+    - is_motile: false
+
+- CellShape cell_shape:50:
+  - a:
+    - schema:CellMorphology
+    - schema:CellShape
+    - schema:Phenotype
+  - rdfs:label:
+    - cell_shape_label: "coccus-shaped"
+  - schema:describesStrain: Strain
+  - schema:hasReference:
+    - cell_shape_reference: Reference
+
+- CellSize cell_size:1000:
+  - a:
+    - schema:CellMorphology
+    - schema:CellSize
+    - schema:MicrobialPhenotype
+    - schema:Phenotype
+  - rdfs:label:
+    - cell_size_label: "1.2-1.6 µm x 0.6 µm"
+  - schema:describesStrain: Strain
+  - schema:hasLength:
+    - cell_size_length: "1.2-1.6"
+  - schema:hasLengthRangeEnd:
+    - cell_size_length_range_end: 1.20
+  - schema:hasLengthRangeStart:
+    - cell_size_length_range_start: 1.20
+  - schema:hasLengthUnit:
+    - cell_size_length_unit: "µm"
+  - schema:hasPhenotypeInformation:
+    - cell_size_phenotype_information: 0.6
+  - schema:hasReference: Reference
+  - schema:hasWidth?:
+    - cell_size_width: 0.6
+  - schema:hasWidthRangeEnd?:
+    - cell_size_width_range_end: 0.60
+  - schema:hasWidthRangeStart?:
+    - cell_size_width_range_start: 0.60
+  - schema:hasWidthUnit?:
+    - cell_size_width_unit: "µm"
+
+- ColonyMorphology colony_morphology:8686:
+  - a:
+    - schema:ColonyMorphology
+    - schema:MicrobialPhenotype
+    - schema:Phenotype
+  - schema:describesStrain: Strain
+  - schema:hasColonyColor?:
+    - colony_color: "red"
+  - schema:hasColonyLength?: "1"
+  - schema:hasColonyLengthRangeEnd?:
+    - colony_length_range_end: 1.00
+  - schema:hasColonyLengthRangeStart?:
+    - colony_length_range_start: 1.00
+  - schema:hasColonyMorphologyInformation?:
+    - colony_morphology_information: "circular"
+  - schema:hasGrowthInformation?:
+    - growth_information: 
+  - schema:hasIncubationInformation?:
+    - incubation_information: "10-14 days"
+  - schema:hasIncubationPeriod?:
+    - incubation_period: "10-14 days"
+  - schema:hasIncubationPeriodRangeEnd?:
+    - incubation_period_range_end: 14.00
+  - schema:hasIncubationPeriodRangeStart?:
+    - incubation_period_range_start: 10.00
+  - schema:hasMediumComposition?:
+    - medium_composition:  
+  - schema:hasColonyShape?:
+    - colony_shape: "circular"
+  - schema:hasReference: Reference
+
+- CultureCollectionNumber culture_collection_number:156:
+  - a:
+    - schema:CultureCollectionNumber
+    - schema:Identifier
+    - schema:OrganismIdentifier
+    - schema:StrainNumber
+  - rdfs:label:
+    - culture_collection_number_label: "DSM 16746"
+  - schema:describesStrain: Strain
+  - schema:hasLink: "https://www.dsmz.de/collection/catalogue/details/culture/DSM-16746"
+  - schema:hasReference:
+    - culture_collection_number_reference: Reference
+
+- CultureMedium culture_medium:92428:
+  - a:
+    - schema:ConceptualEntity
+    - schema:CultureCondition
+    - schema:CultureMedium
+  - rdfs:label: "REACTIVATION WITH LIQUID MEDIUM 830 (DSMZ Medium 830c)"
+  - schema:describesStrain: Strain
+  - schema:hasGrowthInformation:
+    - culture_medium_growth_information: true
+  - schema:hasMediaDiveID:
+    - mediadive_id: "830c"
+  - schema:hasMediaLink:
+    - medium_link: <https://mediadive.dsmz.de/medium/830c>
+  - schema:hasMediumGrowth:
+    - medium_growth: true
+  - schema:hasReference:
+    - culture_medium_reference: Reference
+  - schema:providedBy: "MediaDive"
+
+- CulturePH culture_ph:52:
+  - a:
+    - schema:ConceptualEntity
+    - schema:CultureCondition
+    - schema:CulturePH
+  - rdfs:label: "6-8"
+  - schema:describesStrain: Strain
+  - schema:hasGrowthInformation:
+    - culture_ph_growth_information: "6.00"
+  - schema:hasPHRangeEnd:
+    - ph_range_end: 8.00
+  - schema:hasPHRangeStart:
+    - ph_range_start: 6.00
+  - schema:hasReference:
+    - culture_ph_reference: Reference
+  - schema:hasTestAbility:
+    - culture_ph_test_ability: "positive"
+  - schema:hasTestType:
+    - culture_ph_test_type: "growth"
+
+- CultureTemp culture_temp:27553:
+  - a:
+    - schema:ConceptualEntity
+    - schema:CultureCondition
+    - schema:CultureTemperature
+  - rdfs:label:
+    - culture_temp_label: "15-30"
+  - schema:describesStrain: Strain
+  - schema:growthObserved:
+    - culture_temp_growth_observed: "positive"
+  - schema:hasGrowthInformation:
+    - culture_temp_growth_information: 15.00
+  - schema:hasReference:
+    - culture_temp_reference: Reference
+  - schema:hasTemperatureRangeEnd:
+    - temperature_range_end: 30.00
+  - schema:hasTemperatureRangeStart:
+    - temperature_range_start: 15.00
+  - schema:hasTestType:
+    - culture_temp_test_type: "growth"
+
+
+- Enzyme enzyme:1886:
+  - a:
+    - schema:Enzyme
+    - schema:GeneProduct
+    - schema:Protein
+  - rdfs:label: "arginine decarboxylase"
+  - schema:describesStrain: Strain
+  - schema:hasActivity:
+    - enzyme_activity: "-"
+  - schema:hasECNumber?:
+    - enzyme_ec_number: "4.1.1.19"
+  - schema:hasEnzyme?:
+    - enzyme: "4.1.1.19"
+  - schema:hasReference:
+    - enzyme_reference: Reference
+
+- GCContent gc_content:7751:
+  - a:
+    - schema:GCContent
+    - schema:MolecularProperty
+    - schema:PropertyOrAttribute
+  - rdfs:label: "75 mol%"
+  - schema:describesStrain: Strain
+  - schema:hasGCContentRangeEnd:
+    - gc_content_range_end: 75.00
+  - schema:hasGCContentRangeStart:
+    - gc_content_range_start: 75.00
+  - schema:hasGCInformation:
+    - gc_content_gc_information: 75.00
+  - schema:hasGCMethod:
+    - gc_content_gc_method: "thermal denaturation, midpoint method (Tm)"
+  - schema:hasReference:
+    - gc_content_reference: Reference
+
+- GramStain gram_stain:50:
+  - a: 
+    - schema:CellMorphology
+    - schema:GramStain
+    - schema:MicrobialPhenotype
+    - schema:Phenotype
+  - rdfs:label:
+    - gram_stain_label: "Gram negative"
+  - schema:describesStrain: Strain 
+  - schema:hasGramStain: 
+    - gram_stain: "negative"
+  - schema:hasPhenotypeInformation:
+    - gram_stain_phenotype_information: "negative"
+  - schema:hasReference:
+    - gram_stain_reference: Reference
+
+- Halophily halophily:1255:
+  - a: 
+    - schema:MetabolicPhenotype
+    - schema:Phenotype
+    - schema:SaltTolerance
+  - schema:describesStrain: Strain
+  - rdfs:label:
+    - halophily_label: "non-halophilic | 0 %"
+  - schema:hasReference:
+    - halophily_reference: Reference
+
+- Isolation isolation:23404:
+  - a:
+    - schema:IsolationInformation
+    - schema:IsolationSource
+    - schema:Origin
+  - rdfs:label: "biological soil crusts"
+  - schema:describesStrain: Strain
+
+- Location location:23404:
+  - a: 
+    - schema:LocationOfOrigin
+    - schema:Origin
+  - rdfs:label?: "Moab (Colorado Plateau), USA"
+  - schema:describesStrain: Strain
+  - schema:hasCountry:
+    - location_country: "USA"
+  - schema:hasLatitude:
+    - location_latitude: 38.5831
+  - schema:hasLocation:
+    - location: -109.524
+  - schema:hasLongitude:
+    - location_longitude: -109.524
+
+- OxygenTolerance oxygen_tolerance:4746:
+  - a:
+    - schema:MetabolicPhenotype
+    - schema:OxygenTolerance
+    - schema:Phenotype
+  - schema:describesStrain: Strain
+  - schema:hasGrowthInformation: "aerobe"
+  - schema:hasOxygenTolerance: "aerobe"
+  - schema:hasReference: Reference
+
+- RiskAssessment risk_assessment:34669:
+  - a: schema:RiskAssessment
+  - rdfs:comment:
+    - risk_assessment_comment: "Risk group (German classification)"
+  - rdfs:label:
+    - risk_assessment_label: "Risk group 1"
+  - schema:describesStrain: Strain
+  - schema:hasBiosafetyLevel:
+    - biosafety_level: "1"
+  - schema:hasReference:
+    - risk_assessment_reference: Reference
+
+- Sequence16S sequence_16s:AJ871428:
+  - a:
+    - schema:16SSequence
+    - schema:NucleotideSequence
+    - schema:RNASequence
+    - schema:rRNASequence
+  - rdfs:label:
+    - sequence_16s_label: "Belnapia moabensis partial 16S rRNA gene, type strain CP2CT"
+  - schema:describesStrain: Strain
+  - schema:fromSequenceDB:
+    - sequence_16s_sequence_db: "ena"
+  - schema:hasReference:
+    - sequence_16s_reference: Reference
+  - schema:hasSequenceAccession:
+    - sequence_16s_sequence_accession: "AJ871428"
+  - schema:hasSequenceInformation:
+    - sequence_16s_sequence_information: "AJ871428"
+  - schema:hasSequenceLength:
+    - sequence_16s_sequence_length: 1453
+  - schema:hasTaxID:
+    - sequence_16s_taxid: 365533
+
+
+- SequenceGenomes sequence_genomes:1121106.3:
+  - a:
+    - schema:DNASequence
+    - schema:GenomeSequence
+    - schema:NucleotideSequence
+  - rdfs:label:
+    - sequence_genomes_label: "Belnapia moabensis DSM 16746"
+  - schema:describesStrain: Strain
+  - schema:fromSequenceDB:
+    - sequence_genomes_sequence_db: "patric"
+  - schema:hasAssemblyLevel:
+    - sequence_genomes_assembly_level: "wgs"
+  - schema:hasReference:
+    - sequence_genomes_reference: Reference
+  - schema:hasSequenceAccession:
+    - sequence_genomes_sequence_accession: "1121106.3"
+  - schema:hasSequenceInformation:
+    - sequence_genomes_sequence_information: "1121106.3"
+  - schema:hasTaxID:
+    - sequence_genomes_taxid: 1121106
+
+
+- StrainDesignation strain_designation:100857:
+  - a:
+    - schema:Identifier
+    - schema:OrganismIdentifier
+    - schema:StrainDesignation
+    - schema:StrainNumber
+  - rdfs:label:
+    - strain_designation_label: "CP2C"
+  - schema:describesStrain: Strain
+  - schema:hasReference:
+    - strain_designation_reference: Reference
+
+- Reference reference:6490:
+  - a: schema:Reference
+  - dct:creator?:
+    - reference_creator: "Curators of the DSMZ"
+  - dct:identifier?:
+    - reference_id: "10.60712/SI-ID54296.1"
+  - dct:title?:
+    - reference_title: "StrainInfo: A central database for resolving microbial strain identifiers"
+  - rdfs:seeAlso: <https://www.dsmz.de/collection/catalogue/details/culture/DSM-16746>
+  - schema:hasBibliographicInformation?:
+    - reference_bibliographic_information: "catalogue"
+  - schema:hasCatalogueID?:
+    - reference_catalogue_id: "DSM 16746"
+  - schema:hasCatalogueInformation?: "Leibniz Institut DSMZ-Deutsche Sammlung von Mikroorganismen und Zellkulturen GmbH"
+  - schema:hasCatalogueInstitution?:
+    - reference_catalogue_institution: "Leibniz Institut DSMZ-Deutsche Sammlung von Mikroorganismen und Zellkulturen GmbH"
+  - schema:hasDocumentType:
+    - reference_document_type: "catalogue"
+
+- Entichment enrichment:15449:
+  - a:
+    - schema:EnrichmentProcedure
+    - schema:IsolationInformation
+    - schema:IsolationProcedures
+    - schema:Origin
+  - rdfs:label:
+    - enrichment_label: "w+Sarc (water agar + nutrient bacteria cells)"
+  - schema:describesStrain: Strain
+
+- NutritionType nutrition_type:1077:
+  - a:
+    - schema:MetabolicPhenotype
+    - schema:NutritionType
+    - schema:Phenotype
+  - rdfs:label:
+    - nutrition_type_label: "chemoheterotroph"
+  - schema:describesStrain: Strain
+  - schema:hasReference: Reference
+
+- Pathogenicity pathogenicity:12983:
+  - a:
+    - schema:ConceptualEntity
+    - schema:Pathogenicity
+  - schema:describesStrain: Strain
+  - schema:hasReference: Reference
+  - schema:isAnimalPathogen:
+    - is_animal_pathgen: "yes"
+  - schema:isHumanPathogen:
+    - is_human_pathggen: "yes"
+  - schema:isPathogen:
+    - is_pathgen: "unknown"
+  - schema:isPlantPathogen:
+    - is_plant_pathgen: "unknown"
+
+- Pigmentation pigmentation:1:
+  - a:
+    - schema:CellMorphology
+    - schema:CellPigmentation
+    - schema:MicrobialPhenotype
+    - schema:Phenotype
+  - rdfs:label?:
+    - pigmentation_label: "orange"
+  - schema:describesStrain: Strain
+  - schema:hasPigmentColor?:
+    - pigment_color: "yellow"
+  - schema:hasPigmentInformation:
+    - pigment_information: true
+  - schema:hasPigmentName?:
+    - piment_name: "orange"
+  - schema:hasPigmentProduction:
+    - pigment_production: true
+  - schema:hasReference: Reference
+
+- SporeFormation spore_formation:10:
+  - a: 
+    - schema:MicrobialPhenotype
+    - schema:Phenotype
+    - schema:SporeFormation
+  - rdfs:comment?:
+    - spore_formation_comment: "Formation of spore chains: spira, spore surface: spiny"
+  - rdfs:label:
+    - spore_formation_label: "spore-forming"
+  - schema:describesStrain: Strain
+  - schema:hasAbility:
+    - spore_formation_ability: true
+  - schema:hasReference: Reference
