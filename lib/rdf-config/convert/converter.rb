@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'addressable/uri'
+require 'rdf'
 require_relative 'processor/switch_processor'
 
 class RDFConfig
@@ -13,7 +15,8 @@ class RDFConfig
       attr_accessor :convert_variable_names
       attr_reader :target_value
 
-      def initialize(convert_method, macro)
+      def initialize(config, convert_method, macro)
+        @config = config
         @convert_method = convert_method
         @macro = macro
 
@@ -23,7 +26,7 @@ class RDFConfig
         @variable = {}
       end
 
-      def convert_value(row, converts)
+      def convert_value(row, converts, value_is_uri)
         @element = row
         @target_value = row
         @converted_values.clear
@@ -41,7 +44,7 @@ class RDFConfig
           exec_method(method_def)
         end
 
-        @converted_values.last
+        finalize_value(value_is_uri)
       end
 
       def exec_method(method_def)
@@ -71,6 +74,12 @@ class RDFConfig
         args.map! { |arg| expand_variable(arg) }
 
         value = exec_converter(method_def, *args)
+        if value.is_a?(String)
+          value = value.strip if value.is_a?(String)
+        elsif value.is_a?(Array)
+          value = value.map { |v| v.strip if v.is_a?(String) }
+        end
+
         if method_def[:variable_name].nil?
           @target_value = value
           @converted_values << value
@@ -105,6 +114,8 @@ class RDFConfig
 
         if target_value.to_s.empty?
           ''
+        elsif method_name == TO_S_MACRO_NAME
+          args[0].to_s
         else
           if ROW_TARGET_METHODS.include?(method_name)
             @macro.send(method_name, target_row, *args)
@@ -112,6 +123,45 @@ class RDFConfig
             @macro.send(method_name, target_value, *args)
           end
         end
+      end
+
+      def finalize_value(value_is_uri)
+        final_value = @converted_values.last
+        return final_value if final_value.to_s.empty?
+
+        if final_value.is_a?(String)
+          final_value = final_value.strip
+        elsif final_value.is_a?(Array)
+          final_value = final_value.map { |v| v.strip if v.is_a?(String) }
+        end
+        return final_value unless value_is_uri
+
+        if final_value.is_a?(Array)
+          final_value.map { |v| refine_uri(v.to_s) }
+        else
+          refine_uri(final_value.to_s)
+        end
+      end
+
+      def refine_uri(value)
+        uri = RDF::URI(value)
+        if uri.valid?
+          if uri.scheme.to_s.start_with?('http') || @config.prefix.key?(uri.scheme)
+            value
+          else
+            Addressable::URI.encode_component(
+              value.to_s.strip,
+              Addressable::URI::CharacterClasses::PATH
+            )
+          end
+        else
+          Addressable::URI.encode_component(
+            value.to_s.strip,
+            Addressable::URI::CharacterClasses::PATH
+          )
+        end
+      rescue
+        value
       end
 
       def expand_variable(variable)

@@ -1,0 +1,789 @@
+- TCGAFile:
+  - source("files.tsv")
+  - subject:
+    - col("file_id")
+    - prepend("tcgaf:")
+  - objects:
+    - file_id:
+      - col("file_id")
+    - file_name:
+      - col("file_name")
+    - file_size:
+      - col("file_size")
+      # - to_int
+    - data_type:
+      - col("data_type")
+    - data_category:
+      - col("data_category")
+    - data_format:
+      - col("data_format")
+    - experimental_strategy:
+      - col("experimental_strategy")
+    - platform:
+      - col("platform")
+    - access:
+      - col("access")
+    - case_id:
+      - col("case_id")
+      - prepend("tcgac:")
+    - file_project_id:
+      - col("project_id")
+      - prepend("tcgap:")
+
+- TCGACase:
+  - source("clinical.tsv")
+  - subject:
+    - col("clin_case_id")
+    - prepend("tcgac:")
+  - objects:
+    - clinical_case_id:
+      - col("clin_case_id")
+    - clinical_project_id:
+      - col("clin_project_id")
+      - prepend("tcgap:")
+    - clinical_consent_type:
+      - col("clin_consent_type")
+    - clinical_days_to_consent:
+      - col("clin_days_to_consent")
+      # - to_int
+    - clinical_days_to_lost_to_followup:
+      - col("clin_days_to_lost_to_followup")
+      # - to_int
+    - clinical_disease_type:
+      - col("clin_disease_type")
+    - clinical_index_date:
+      - col("clin_index_date")
+    - clinical_lost_to_followup:
+      - col("clin_lost_to_followup")
+    - clinical_primary_site:
+      - col("clin_primary_site")
+    - clinical_cases_submitter_id:
+      - col("clin_cases_submitter_id")
+    - clinical_age_at_index:
+      - col("clin_age_at_index")
+      # - to_int
+    - clinical_age_is_obfuscated:
+      - col("clin_age_is_obfuscated")
+      # - to_bool
+    - clinical_cause_of_death:
+      - col("clin_cause_of_death")
+    - clinical_cause_of_death_source:
+      - col("clin_cause_of_death_source")
+    - clinical_country_of_birth:
+      - col("clin_country_of_birth")
+    - clinical_country_of_residence_at_enrollment:
+      - col("clin_country_of_residence_at_enrollment")
+    - clinical_days_to_birth:
+      - col("clin_days_to_birth")
+      # - to_int
+    - clinical_days_to_death:
+      - col("clin_days_to_death")
+      # - to_int
+    - clinical_demographic_id:
+      - col("clin_demographic_id")
+    - clinical_education_level:
+      - col("clin_education_level")
+    - clinical_ethnicity:
+      - col("clin_ethnicity")
+    - clinical_gender:
+      - col("clin_gender")
+    - clinical_marital_status:
+      - col("clin_marital_status")
+    - clinical_occupation_duration_years:
+      - col("clin_occupation_duration_years")
+      # - to_int
+    - clinical_population_group:
+      - col("clin_population_group")
+    - clinical_premature_at_birth:
+      - col("clin_premature_at_birth")
+    - clinical_race:
+      - col("clin_race")
+    - clinical_demographic_submitter_id:
+      - col("clin_demographic_submitter_id")
+    - clinical_vital_status:
+      - col("clin_vital_status")
+    - clinical_weeks_gestation_at_birth:
+      - col("clin_weeks_gestation_at_birth")
+      # - to_float
+    - clinical_year_of_birth:
+      - col("clin_year_of_birth")
+      # - to_int
+    - clinical_year_of_death:
+      - col("clin_year_of_death")
+      # - to_int
+    - clinical_adrenal_hormone:
+      - col("clin_adrenal_hormone")
+    - clinical_age_at_diagnosis:
+      - col("clin_age_at_diagnosis")
+      # - to_int
+    - clinical_ajcc_clinical_m:
+      - col("clin_ajcc_clinical_m")
+    - clinical_ajcc_clinical_n:
+      - col("clin_ajcc_clinical_n")
+    - clinical_ajcc_clinical_stage:
+      - col("clin_ajcc_clinical_stage")
+    - clinical_ajcc_clinical_t:
+      - col("clin_ajcc_clinical_t")
+    - clinical_ajcc_pathologic_m:
+      - col("clin_ajcc_pathologic_m")
+    - clinical_ajcc_pathologic_n:
+      - col("clin_ajcc_pathologic_n")
+    - clinical_ajcc_pathologic_stage:
+      - col("clin_ajcc_pathologic_stage")
+    - clinical_ajcc_pathologic_t:
+      - col("clin_ajcc_pathologic_t")
+    - clinical_ajcc_serum_tumor_markers:
+      - col("clin_ajcc_serum_tumor_markers")
+    - clinical_ajcc_staging_system_edition:
+      - col("clin_ajcc_staging_system_edition")
+    - clinical_ann_arbor_b_symptoms:
+      - col("clin_ann_arbor_b_symptoms")
+    - clinical_ann_arbor_b_symptoms_described:
+      - col("clin_ann_arbor_b_symptoms_described")
+    - clinical_ann_arbor_clinical_stage:
+      - col("clin_ann_arbor_clinical_stage")
+    - clinical_ann_arbor_extranodal_involvement:
+      - col("clin_ann_arbor_extranodal_involvement")
+    - clinical_ann_arbor_pathologic_stage:
+      - col("clin_ann_arbor_pathologic_stage")
+    - clinical_best_overall_response:
+      - col("clin_best_overall_response")
+    - clinical_burkitt_lymphoma_clinical_variant:
+      - col("clin_burkitt_lymphoma_clinical_variant")
+    - clinical_calgb_risk_group:
+      - col("clin_calgb_risk_group")
+    - clinical_cancer_detection_method:
+      - col("clin_cancer_detection_method")
+    - clinical_child_pugh_classification:
+      - col("clin_child_pugh_classification")
+    - clinical_clark_level:
+      - col("clin_clark_level")
+    - clinical_classification_of_tumor:
+      - col("clin_classification_of_tumor")
+    - clinical_cog_liver_stage:
+      - col("clin_cog_liver_stage")
+    - clinical_cog_neuroblastoma_risk_group:
+      - col("clin_cog_neuroblastoma_risk_group")
+    - clinical_cog_renal_stage:
+      - col("clin_cog_renal_stage")
+    - clinical_cog_rhabdomyosarcoma_risk_group:
+      - col("clin_cog_rhabdomyosarcoma_risk_group")
+    - clinical_contiguous_organ_invaded:
+      - col("clin_contiguous_organ_invaded")
+    - clinical_days_to_best_overall_response:
+      - col("clin_days_to_best_overall_response")
+      # - to_int
+    - clinical_days_to_diagnosis:
+      - col("clin_days_to_diagnosis")
+      # - to_int
+    - clinical_days_to_last_follow_up:
+      - col("clin_days_to_last_follow_up")
+      # - to_float
+    - clinical_days_to_last_known_disease_status:
+      - col("clin_days_to_last_known_disease_status")
+      # - to_float
+    - clinical_days_to_recurrence:
+      - col("clin_days_to_recurrence")
+      # - to_float
+    - clinical_diagnosis_id:
+      - col("clin_diagnosis_id")
+    - clinical_diagnosis_is_primary_disease:
+      - col("clin_diagnosis_is_primary_disease")
+      # - to_bool
+    - clinical_double_expressor_lymphoma:
+      - col("clin_double_expressor_lymphoma")
+    - clinical_double_hit_lymphoma:
+      - col("clin_double_hit_lymphoma")
+    - clinical_eln_risk_classification:
+      - col("clin_eln_risk_classification")
+    - clinical_enneking_msts_grade:
+      - col("clin_enneking_msts_grade")
+    - clinical_enneking_msts_metastasis:
+      - col("clin_enneking_msts_metastasis")
+    - clinical_enneking_msts_stage:
+      - col("clin_enneking_msts_stage")
+    - clinical_enneking_msts_tumor_site:
+      - col("clin_enneking_msts_tumor_site")
+    - clinical_ensat_clinical_m:
+      - col("clin_ensat_clinical_m")
+    - clinical_ensat_pathologic_n:
+      - col("clin_ensat_pathologic_n")
+    - clinical_ensat_pathologic_stage:
+      - col("clin_ensat_pathologic_stage")
+    - clinical_ensat_pathologic_t:
+      - col("clin_ensat_pathologic_t")
+    - clinical_esophageal_columnar_dysplasia_degree:
+      - col("clin_esophageal_columnar_dysplasia_degree")
+    - clinical_esophageal_columnar_metaplasia_present:
+      - col("clin_esophageal_columnar_metaplasia_present")
+    - clinical_fab_morphology_code:
+      - col("clin_fab_morphology_code")
+    - clinical_figo_stage:
+      - col("clin_figo_stage")
+    - clinical_figo_staging_edition_year:
+      - col("clin_figo_staging_edition_year")
+    - clinical_first_symptom_longest_duration:
+      - col("clin_first_symptom_longest_duration")
+    - clinical_first_symptom_prior_to_diagnosis:
+      - col("clin_first_symptom_prior_to_diagnosis")
+    - clinical_gastric_esophageal_junction_involvement:
+      - col("clin_gastric_esophageal_junction_involvement")
+    - clinical_gleason_grade_group:
+      - col("clin_gleason_grade_group")
+    - clinical_gleason_grade_tertiary:
+      - col("clin_gleason_grade_tertiary")
+    - clinical_gleason_patterns_percent:
+      - col("clin_gleason_patterns_percent")
+      # - to_int
+    - clinical_gleason_score:
+      - col("clin_gleason_score")
+      # - to_int
+    - clinical_goblet_cells_columnar_mucosa_present:
+      - col("clin_goblet_cells_columnar_mucosa_present")
+    - clinical_icd_10_code:
+      - col("clin_icd_10_code")
+    - clinical_igcccg_stage:
+      - col("clin_igcccg_stage")
+    - clinical_inpc_grade:
+      - col("clin_inpc_grade")
+    - clinical_inpc_histologic_group:
+      - col("clin_inpc_histologic_group")
+    - clinical_inrg_stage:
+      - col("clin_inrg_stage")
+    - clinical_inss_stage:
+      - col("clin_inss_stage")
+    - clinical_international_prognostic_index:
+      - col("clin_international_prognostic_index")
+    - clinical_irs_group:
+      - col("clin_irs_group")
+    - clinical_irs_stage:
+      - col("clin_irs_stage")
+    - clinical_ishak_fibrosis_score:
+      - col("clin_ishak_fibrosis_score")
+    - clinical_iss_stage:
+      - col("clin_iss_stage")
+    - clinical_last_known_disease_status:
+      - col("clin_last_known_disease_status")
+    - clinical_laterality:
+      - col("clin_laterality")
+    - clinical_diagnoses_margin_distance:
+      - col("clin_diagnoses_margin_distance")
+      # - to_float
+    - clinical_diagnoses_margins_involved_site:
+      - col("clin_diagnoses_margins_involved_site")
+    - clinical_masaoka_stage:
+      - col("clin_masaoka_stage")
+    - clinical_max_tumor_bulk_site:
+      - col("clin_max_tumor_bulk_site")
+    - clinical_medulloblastoma_molecular_classification:
+      - col("clin_medulloblastoma_molecular_classification")
+    - clinical_melanoma_known_primary:
+      - col("clin_melanoma_known_primary")
+    - clinical_metastasis_at_diagnosis:
+      - col("clin_metastasis_at_diagnosis")
+    - clinical_metastasis_at_diagnosis_site:
+      - col("clin_metastasis_at_diagnosis_site")
+    - clinical_method_of_diagnosis:
+      - col("clin_method_of_diagnosis")
+    - clinical_micropapillary_features:
+      - col("clin_micropapillary_features")
+    - clinical_mitosis_karyorrhexis_index:
+      - col("clin_mitosis_karyorrhexis_index")
+    - clinical_mitotic_count:
+      - col("clin_mitotic_count")
+    - clinical_morphology:
+      - col("clin_morphology")
+    - clinical_ovarian_specimen_status:
+      - col("clin_ovarian_specimen_status")
+    - clinical_ovarian_surface_involvement:
+      - col("clin_ovarian_surface_involvement")
+    - clinical_papillary_renal_cell_type:
+      - col("clin_papillary_renal_cell_type")
+    - clinical_pediatric_kidney_staging:
+      - col("clin_pediatric_kidney_staging")
+    - clinical_peritoneal_fluid_cytological_status:
+      - col("clin_peritoneal_fluid_cytological_status")
+    - clinical_pregnant_at_diagnosis:
+      - col("clin_pregnant_at_diagnosis")
+    - clinical_primary_diagnosis:
+      - col("clin_primary_diagnosis")
+    - clinical_primary_disease:
+      - col("clin_primary_disease")
+    - clinical_primary_gleason_grade:
+      - col("clin_primary_gleason_grade")
+    - clinical_prior_malignancy:
+      - col("clin_prior_malignancy")
+    - clinical_prior_treatment:
+      - col("clin_prior_treatment")
+    - clinical_progression_or_recurrence:
+      - col("clin_progression_or_recurrence")
+    - clinical_diagnoses_residual_disease:
+      - col("clin_diagnoses_residual_disease")
+    - clinical_satellite_nodule_present:
+      - col("clin_satellite_nodule_present")
+    - clinical_secondary_gleason_grade:
+      - col("clin_secondary_gleason_grade")
+    - clinical_site_of_resection_or_biopsy:
+      - col("clin_site_of_resection_or_biopsy")
+    - clinical_sites_of_involvement:
+      - col("clin_sites_of_involvement")
+    - clinical_sites_of_involvement_count:
+      - col("clin_sites_of_involvement_count")
+      # - to_int
+    - clinical_diagnoses_submitter_id:
+      - col("clin_diagnoses_submitter_id")
+    - clinical_supratentorial_localization:
+      - col("clin_supratentorial_localization")
+    - clinical_synchronous_malignancy:
+      - col("clin_synchronous_malignancy")
+    - clinical_tissue_or_organ_of_origin:
+      - col("clin_tissue_or_organ_of_origin")
+    - clinical_diagnoses_tumor_burden:
+      - col("clin_diagnoses_tumor_burden")
+      # - to_float
+    - clinical_tumor_confined_to_organ_of_origin:
+      - col("clin_tumor_confined_to_organ_of_origin")
+    - clinical_tumor_depth:
+      - col("clin_tumor_depth")
+      # - to_float
+    - clinical_tumor_focality:
+      - col("clin_tumor_focality")
+    - clinical_tumor_grade:
+      - col("clin_tumor_grade")
+    - clinical_tumor_grade_category:
+      - col("clin_tumor_grade_category")
+    - clinical_tumor_of_origin:
+      - col("clin_tumor_of_origin")
+    - clinical_tumor_regression_grade:
+      - col("clin_tumor_regression_grade")
+    - clinical_uicc_clinical_m:
+      - col("clin_uicc_clinical_m")
+    - clinical_uicc_clinical_n:
+      - col("clin_uicc_clinical_n")
+    - clinical_uicc_clinical_stage:
+      - col("clin_uicc_clinical_stage")
+    - clinical_uicc_clinical_t:
+      - col("clin_uicc_clinical_t")
+    - clinical_uicc_pathologic_m:
+      - col("clin_uicc_pathologic_m")
+    - clinical_uicc_pathologic_n:
+      - col("clin_uicc_pathologic_n")
+    - clinical_uicc_pathologic_stage:
+      - col("clin_uicc_pathologic_stage")
+    - clinical_uicc_pathologic_t:
+      - col("clin_uicc_pathologic_t")
+    - clinical_uicc_staging_system_edition:
+      - col("clin_uicc_staging_system_edition")
+    - clinical_ulceration_indicator:
+      - col("clin_ulceration_indicator")
+    - clinical_weiss_assessment_findings:
+      - col("clin_weiss_assessment_findings")
+    - clinical_weiss_assessment_score:
+      - col("clin_weiss_assessment_score")
+    - clinical_who_cns_grade:
+      - col("clin_who_cns_grade")
+    - clinical_who_nte_grade:
+      - col("clin_who_nte_grade")
+    - clinical_wilms_tumor_histologic_subtype:
+      - col("clin_wilms_tumor_histologic_subtype")
+    - clinical_year_of_diagnosis:
+      - col("clin_year_of_diagnosis")
+      # - to_int
+    - clinical_chemo_concurrent_to_radiation:
+      - col("clin_chemo_concurrent_to_radiation")
+    - clinical_clinical_trial_indicator:
+      - col("clin_clinical_trial_indicator")
+    - clinical_course_number:
+      - col("clin_course_number")
+      # - to_float
+    - clinical_days_to_treatment_end:
+      - col("clin_days_to_treatment_end")
+      # - to_int
+    - clinical_days_to_treatment_start:
+      - col("clin_days_to_treatment_start")
+      # - to_int
+    - clinical_drug_category:
+      - col("clin_drug_category")
+    - clinical_embolic_agent:
+      - col("clin_embolic_agent")
+    - clinical_initial_disease_status:
+      - col("clin_initial_disease_status")
+    - clinical_lesions_treated_number:
+      - col("clin_lesions_treated_number")
+      # - to_float
+    - clinical_treatments_margin_distance:
+      - col("clin_treatments_margin_distance")
+      # - to_float
+    - clinical_treatments_margin_status:
+      - col("clin_treatments_margin_status")
+    - clinical_treatments_margins_involved_site:
+      - col("clin_treatments_margins_involved_site")
+    - clinical_number_of_cycles:
+      - col("clin_number_of_cycles")
+      # - to_int
+    - clinical_number_of_fractions:
+      - col("clin_number_of_fractions")
+      # - to_float
+    - clinical_prescribed_dose:
+      - col("clin_prescribed_dose")
+      # - to_float
+    - clinical_prescribed_dose_units:
+      - col("clin_prescribed_dose_units")
+    - clinical_pretreatment:
+      - col("clin_pretreatment")
+    - clinical_protocol_identifier:
+      - col("clin_protocol_identifier")
+    - clinical_radiosensitizing_agent:
+      - col("clin_radiosensitizing_agent")
+    - clinical_reason_treatment_ended:
+      - col("clin_reason_treatment_ended")
+    - clinical_reason_treatment_not_given:
+      - col("clin_reason_treatment_not_given")
+    - clinical_regimen_or_line_of_therapy:
+      - col("clin_regimen_or_line_of_therapy")
+    - clinical_treatments_residual_disease:
+      - col("clin_treatments_residual_disease")
+    - clinical_route_of_administration:
+      - col("clin_route_of_administration")
+    - clinical_treatments_submitter_id:
+      - col("clin_treatments_submitter_id")
+    - clinical_therapeutic_agents:
+      - col("clin_therapeutic_agents")
+    - clinical_therapeutic_level_achieved:
+      - col("clin_therapeutic_level_achieved")
+      # - to_bool
+    - clinical_therapeutic_levels_achieved:
+      - col("clin_therapeutic_levels_achieved")
+    - clinical_therapeutic_target_level:
+      - col("clin_therapeutic_target_level")
+    - clinical_treatments_timepoint_category:
+      - col("clin_treatments_timepoint_category")
+    - clinical_treatment_anatomic_site:
+      - col("clin_treatment_anatomic_site")
+    - clinical_treatment_anatomic_sites:
+      - col("clin_treatment_anatomic_sites")
+    - clinical_treatment_arm:
+      - col("clin_treatment_arm")
+    - clinical_treatment_dose:
+      - col("clin_treatment_dose")
+      # - to_int
+    - clinical_treatment_dose_max:
+      - col("clin_treatment_dose_max")
+      # - to_float
+    - clinical_treatment_dose_units:
+      - col("clin_treatment_dose_units")
+    - clinical_treatment_duration:
+      - col("clin_treatment_duration")
+      # - to_int
+    - clinical_treatment_effect:
+      - col("clin_treatment_effect")
+    - clinical_treatment_effect_indicator:
+      - col("clin_treatment_effect_indicator")
+    - clinical_treatment_frequency:
+      - col("clin_treatment_frequency")
+    - clinical_treatment_id:
+      - col("clin_treatment_id")
+    - clinical_treatment_intent_type:
+      - col("clin_treatment_intent_type")
+    - clinical_treatment_or_therapy:
+      - col("clin_treatment_or_therapy")
+    - clinical_treatment_outcome:
+      - col("clin_treatment_outcome")
+    - clinical_treatment_outcome_duration:
+      - col("clin_treatment_outcome_duration")
+      # - to_int
+    - clinical_treatment_type:
+      - col("clin_treatment_type")
+    - clinical_additional_pathology_findings:
+      - col("clin_additional_pathology_findings")
+    - clinical_anaplasia_present:
+      - col("clin_anaplasia_present")
+    - clinical_anaplasia_present_type:
+      - col("clin_anaplasia_present_type")
+    - clinical_bone_marrow_malignant_cells:
+      - col("clin_bone_marrow_malignant_cells")
+    - clinical_breslow_thickness:
+      - col("clin_breslow_thickness")
+      # - to_float
+    - clinical_circumferential_resection_margin:
+      - col("clin_circumferential_resection_margin")
+      # - to_float
+    - clinical_columnar_mucosa_present:
+      - col("clin_columnar_mucosa_present")
+    - clinical_consistent_pathology_review:
+      - col("clin_consistent_pathology_review")
+    - clinical_days_to_pathology_detail:
+      - col("clin_days_to_pathology_detail")
+      # - to_int
+    - clinical_dysplasia_degree:
+      - col("clin_dysplasia_degree")
+    - clinical_dysplasia_type:
+      - col("clin_dysplasia_type")
+    - clinical_epithelioid_cell_percent:
+      - col("clin_epithelioid_cell_percent")
+      # - to_float
+    - clinical_epithelioid_cell_percent_range:
+      - col("clin_epithelioid_cell_percent_range")
+    - clinical_extracapsular_extension:
+      - col("clin_extracapsular_extension")
+    - clinical_extracapsular_extension_present:
+      - col("clin_extracapsular_extension_present")
+    - clinical_extranodal_extension:
+      - col("clin_extranodal_extension")
+    - clinical_extraocular_nodule_size:
+      - col("clin_extraocular_nodule_size")
+    - clinical_extrascleral_extension:
+      - col("clin_extrascleral_extension")
+      # - to_bool
+    - clinical_extrascleral_extension_present:
+      - col("clin_extrascleral_extension_present")
+    - clinical_extrathyroid_extension:
+      - col("clin_extrathyroid_extension")
+    - clinical_greatest_tumor_dimension:
+      - col("clin_greatest_tumor_dimension")
+      # - to_float
+    - clinical_gross_tumor_weight:
+      - col("clin_gross_tumor_weight")
+      # - to_float
+    - clinical_histologic_progression_type:
+      - col("clin_histologic_progression_type")
+    - clinical_intratubular_germ_cell_neoplasia_present:
+      - col("clin_intratubular_germ_cell_neoplasia_present")
+    - clinical_largest_extrapelvic_peritoneal_focus:
+      - col("clin_largest_extrapelvic_peritoneal_focus")
+    - clinical_lymph_node_dissection_method:
+      - col("clin_lymph_node_dissection_method")
+    - clinical_lymph_node_dissection_site:
+      - col("clin_lymph_node_dissection_site")
+    - clinical_lymph_node_involved_site:
+      - col("clin_lymph_node_involved_site")
+    - clinical_lymph_node_involvement:
+      - col("clin_lymph_node_involvement")
+    - clinical_lymph_nodes_positive:
+      - col("clin_lymph_nodes_positive")
+      # - to_int
+    - clinical_lymph_nodes_removed:
+      - col("clin_lymph_nodes_removed")
+    - clinical_lymph_nodes_tested:
+      - col("clin_lymph_nodes_tested")
+      # - to_int
+    - clinical_lymphatic_invasion_present:
+      - col("clin_lymphatic_invasion_present")
+    - clinical_pathology_details_margin_status:
+      - col("clin_pathology_details_margin_status")
+    - clinical_measurement_type:
+      - col("clin_measurement_type")
+    - clinical_measurement_unit:
+      - col("clin_measurement_unit")
+    - clinical_metaplasia_present:
+      - col("clin_metaplasia_present")
+    - clinical_micrometastasis_present:
+      - col("clin_micrometastasis_present")
+    - clinical_morphologic_architectural_pattern:
+      - col("clin_morphologic_architectural_pattern")
+    - clinical_necrosis_percent:
+      - col("clin_necrosis_percent")
+      # - to_float
+    - clinical_necrosis_present:
+      - col("clin_necrosis_present")
+    - clinical_non_nodal_regional_disease:
+      - col("clin_non_nodal_regional_disease")
+    - clinical_non_nodal_tumor_deposits:
+      - col("clin_non_nodal_tumor_deposits")
+    - clinical_number_proliferating_cells:
+      - col("clin_number_proliferating_cells")
+      # - to_int
+    - clinical_pathology_detail_id:
+      - col("clin_pathology_detail_id")
+    - clinical_percent_tumor_invasion:
+      - col("clin_percent_tumor_invasion")
+      # - to_float
+    - clinical_percent_tumor_nuclei:
+      - col("clin_percent_tumor_nuclei")
+      # - to_float
+    - clinical_perineural_invasion_present:
+      - col("clin_perineural_invasion_present")
+    - clinical_peripancreatic_lymph_nodes_positive:
+      - col("clin_peripancreatic_lymph_nodes_positive")
+    - clinical_peripancreatic_lymph_nodes_tested:
+      - col("clin_peripancreatic_lymph_nodes_tested")
+      # - to_int
+    - clinical_prcc_type:
+      - col("clin_prcc_type")
+    - clinical_prostatic_chips_positive_count:
+      - col("clin_prostatic_chips_positive_count")
+      # - to_float
+    - clinical_prostatic_chips_total_count:
+      - col("clin_prostatic_chips_total_count")
+      # - to_float
+    - clinical_prostatic_involvement_percent:
+      - col("clin_prostatic_involvement_percent")
+      # - to_float
+    - clinical_residual_tumor:
+      - col("clin_residual_tumor")
+    - clinical_residual_tumor_measurement:
+      - col("clin_residual_tumor_measurement")
+    - clinical_rhabdoid_percent:
+      - col("clin_rhabdoid_percent")
+      # - to_float
+    - clinical_rhabdoid_present:
+      - col("clin_rhabdoid_present")
+    - clinical_sarcomatoid_percent:
+      - col("clin_sarcomatoid_percent")
+      # - to_float
+    - clinical_sarcomatoid_present:
+      - col("clin_sarcomatoid_present")
+    - clinical_size_extraocular_nodule:
+      - col("clin_size_extraocular_nodule")
+      # - to_float
+    - clinical_spindle_cell_percent:
+      - col("clin_spindle_cell_percent")
+      # - to_float
+    - clinical_spindle_cell_percent_range:
+      - col("clin_spindle_cell_percent_range")
+    - clinical_pathology_details_submitter_id:
+      - col("clin_pathology_details_submitter_id")
+    - clinical_pathology_details_timepoint_category:
+      - col("clin_pathology_details_timepoint_category")
+    - clinical_transglottic_extension:
+      - col("clin_transglottic_extension")
+    - clinical_tumor_basal_diameter:
+      - col("clin_tumor_basal_diameter")
+      # - to_float
+    - clinical_pathology_details_tumor_burden:
+      - col("clin_pathology_details_tumor_burden")
+      # - to_float
+    - clinical_tumor_depth_descriptor:
+      - col("clin_tumor_depth_descriptor")
+    - clinical_tumor_depth_measurement:
+      - col("clin_tumor_depth_measurement")
+      # - to_float
+    - clinical_tumor_infiltrating_lymphocytes:
+      - col("clin_tumor_infiltrating_lymphocytes")
+    - clinical_tumor_infiltrating_macrophages:
+      - col("clin_tumor_infiltrating_macrophages")
+    - clinical_tumor_largest_dimension_diameter:
+      - col("clin_tumor_largest_dimension_diameter")
+      # - to_float
+    - clinical_tumor_length_measurement:
+      - col("clin_tumor_length_measurement")
+      # - to_float
+    - clinical_tumor_level_prostate:
+      - col("clin_tumor_level_prostate")
+    - clinical_tumor_shape:
+      - col("clin_tumor_shape")
+    - clinical_tumor_thickness:
+      - col("clin_tumor_thickness")
+      # - to_float
+    - clinical_tumor_width_measurement:
+      - col("clin_tumor_width_measurement")
+      # - to_float
+    - clinical_vascular_invasion_present:
+      - col("clin_vascular_invasion_present")
+    - clinical_vascular_invasion_type:
+      - col("clin_vascular_invasion_type")
+    - clinical_zone_of_origin_prostate:
+      - col("clin_zone_of_origin_prostate")
+
+- TCGASample:
+  - source("sample.tsv")
+  - subject:
+    - col("sample_submitter_id")
+    - prepend("tcgas:")
+  - objects:
+    - sample_project_id:
+      - col("project_id")
+      - prepend("tcgap:")
+    - sample_case_id:
+      - col("case_id")
+      - prepend("tcgac:")
+    - sample_case_submitter_id:
+      - col("case_submitter_id")
+    - sample_id:
+      - col("sample_id")
+    - sample_submitter_id:
+      - col("sample_submitter_id")
+    - sample_biospecimen_anatomic_site:
+      - col("biospecimen_anatomic_site")
+    - sample_biospecimen_laterality:
+      - col("biospecimen_laterality")
+    - sample_catalog_reference:
+      - col("catalog_reference")
+    - sample_composition:
+      - col("composition")
+    - sample_current_weight:
+      - col("current_weight")
+      # - to_float
+    - sample_days_to_collection:
+      - col("days_to_collection")
+      # - to_int
+    - sample_days_to_sample_procurement:
+      - col("days_to_sample_procurement")
+      # - to_int
+    - sample_diagnosis_pathologically_confirmed:
+      - col("diagnosis_pathologically_confirmed")
+    - sample_distance_normal_to_tumor:
+      - col("distance_normal_to_tumor")
+    - sample_distributor_reference:
+      - col("distributor_reference")
+    - sample_freezing_method:
+      - col("freezing_method")
+    - sample_growth_rate:
+      - col("growth_rate")
+      # - to_int # changed from str
+    - sample_initial_weight:
+      - col("initial_weight")
+      # - to_float
+    - sample_intermediate_dimension:
+      - col("intermediate_dimension")
+      # - to_float
+    - sample_is_ffpe:
+      - col("is_ffpe")
+      # - to_bool
+    - sample_longest_dimension:
+      - col("longest_dimension")
+      # - to_float
+    - sample_method_of_sample_procurement:
+      - col("method_of_sample_procurement")
+    - sample_oct_embedded:
+      - col("oct_embedded")
+    - sample_passage_count:
+      - col("passage_count")
+      # - to_int
+    - sample_pathology_report_uuid:
+      - col("pathology_report_uuid")
+    - sample_preservation_method:
+      - col("preservation_method")
+    - sample_ordinal:
+      - col("sample_ordinal")
+      # - to_int
+    - sample_type:
+      - col("sample_type")
+    - sample_type_id:
+      - col("sample_type_id")
+      # - to_int
+    - sample_shortest_dimension:
+      - col("shortest_dimension")
+      # - to_float
+    - sample_specimen_type:
+      - col("specimen_type")
+    - sample_state:
+      - col("state")
+    - sample_time_between_clamping_and_freezing:
+      - col("time_between_clamping_and_freezing")
+      # - to_float
+    - sample_time_between_excision_and_freezing:
+      - col("time_between_excision_and_freezing")
+      # - to_float
+    - sample_tissue_collection_type:
+      - col("tissue_collection_type")
+    - sample_tissue_type:
+      - col("tissue_type")
+    - sample_tumor_code:
+      - col("tumor_code")
+    - sample_tumor_code_id:
+      - col("tumor_code_id")
+      # - to_int # changed to str
+    - sample_tumor_descriptor:
+      - col("tumor_descriptor")
+

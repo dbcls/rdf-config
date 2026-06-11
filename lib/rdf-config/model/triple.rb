@@ -55,6 +55,12 @@ class RDFConfig
         @predicates.size > 1
       end
 
+      def object_is_uri?
+        @object.uri?
+      rescue
+        false
+      end
+
       def ==(other)
         subject.name == other.subject.name &&
           property_path == other.property_path &&

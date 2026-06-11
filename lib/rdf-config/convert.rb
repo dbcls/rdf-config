@@ -21,19 +21,37 @@ class RDFConfig
     SOURCE_FORMATS = %w[csv tsv json xml].freeze
     SOURCE_MACRO_NAME = 'source'
     ROOT_MACRO_NAME = 'root'
+    TO_S_MACRO_NAME = '_str'
+    DUCKDB_FILE_EXTENSIONS = %w[duckdb].freeze
+    SQLITE3_FILE_EXTENSIONS = %w[sqlite3 sqlite db].freeze
+    UNKNOWN_SOURCE_TYPE= 'unknown'
+    RDB_FILE_EXTENSIONS = (DUCKDB_FILE_EXTENSIONS + SQLITE3_FILE_EXTENSIONS).freeze
+    VALID_SOURCE_TYPES = %i[csv tsv duckdb sqlite3]
     SYSTEM_MACRO_NAMES = [SOURCE_MACRO_NAME, ROOT_MACRO_NAME].freeze
+    TABLE_FORMATS = %w[csv tsv txt duckdb sqlite3].freeze
     JSON_LD_FORMATS = Validator::VALID_CONVERT_TYPES - %w[:turtle :ntriples :context]
     DEFAULT_OUTPUT_INTERVAL = 10
+    RUST_CLI_FILE = File.absolute_path(
+      File.join(__dir__, '..', '..', 'rust/target/release/rdf-config')
+    )
 
     attr_reader :source_subject_map, :subject_config, :object_config, :subject_object_map,
                 :convert_method, :macro_names, :format, :output_path, :output_interval
 
     def_delegators :@config_parser,
-                   :subject_converts, :object_converts, :source_subject_map, :source_format_map, :macro_names,
-                   :variable_convert, :convert_variable_names, :has_rdf_type_object?, :source_file_for
+                   :source_processor, :subject_converts, :split_subject, :object_converts,
+                   :source_subject_map, :source_format_map,
+                   :source_file_for, :source_format_for, :macro_names,
+                   :variable_convert, :convert_variable_names, :has_rdf_type_object?
 
     def_delegators :@yaml_parser,
                    :subject_names, :object_names, :variable_names
+
+    class << self
+      def internal_macro?(macro_name)
+        macro_name.start_with?('_')
+      end
+    end
 
     def initialize(config, opts)
       @config = config
@@ -67,11 +85,17 @@ class RDFConfig
       rescue StandardError
         nil
       end
-
-      @source_file_format = source_format_map[@source].first
     end
 
     def generate
+      if executable_file?(RUST_CLI_FILE)
+        run_rust_converter
+      else
+        run_ruby_converter
+      end
+    end
+
+    def run_ruby_converter
       case @format
       when ':turtle', ':ntriples'
         rdf_generator.generate
@@ -84,43 +108,64 @@ class RDFConfig
       end
     end
 
-    def file_reader(source: @source, file_format: @source_file_format)
-      file_format = ext_by_file_path(source) if file_format.to_s.empty?
+    def run_rust_converter
+      cmds = [
+        RUST_CLI_FILE,
+        '--config', @config.config_dir,
+        '--convert', @format
+      ]
+      cmds << @source unless @source.nil?
 
-      case file_format
+      success = system(*cmds)
+
+      unless success
+        status = $?
+        exit_code = status.exitstatus
+
+        # warn "Rust program (#{RUST_CLI_FILE}) failed with exit status #{exit_code}"
+        exit exit_code || 1
+      end
+    end
+
+    def file_reader(source: @source)
+      source_format = source_format_for(source)
+      case source_format
       when 'csv', 'tsv'
         require_relative 'convert/file_reader/csv_reader'
-        CSVReader.new(source, file_format)
-      when 'duckdb'
+        CSVReader.new(source, source_format)
+      when *DUCKDB_FILE_EXTENSIONS
         require_relative 'convert/file_reader/duckdb_reader'
         DuckdbReader.new(rdb_source_file(source), rdb_source_table(source))
+      when *SQLITE3_FILE_EXTENSIONS
+        require_relative 'convert/file_reader/sqlite3_reader'
+        SQLite3Reader.new(rdb_source_file(source), rdb_source_table(source))
       when 'json'
         require_relative 'convert/file_reader/json_reader'
-        JSONReader.new(@source)
+        JSONReader.new(source)
       when 'xml'
         require_relative 'convert/file_reader/xml_reader'
-        XMLReader.new(@source)
+        XMLReader.new(source)
       end
     end
 
     def rdf_converter
       macro = Macro.get_instance(*macro_names)
-      case @source_file_format
-      when 'csv', 'tsv', 'duckdb'
+      case source_format_for(@source)
+      when *TABLE_FORMATS
         require_relative 'convert/converter/csv_converter'
-        CSVConverter.new(@convert_method, macro)
+        CSVConverter.new(@config, @convert_method, macro)
       when 'json'
         require_relative 'convert/converter/json_converter'
-        JSONConverter.new(@convert_method, macro)
+        JSONConverter.new(@config, @convert_method, macro)
       when 'xml'
         require_relative 'convert/converter/xml_converter'
-        XMLConverter.new(@convert_method, macro)
+        XMLConverter.new(@config, @convert_method, macro)
       end
     end
 
     def rdf_generator
-      case @source_file_format
-      when 'csv', 'tsv', 'duckdb'
+      case source_format_for(@source)
+      when *TABLE_FORMATS
         require_relative 'convert/rdf_generator/csv2rdf'
         CSV2RDF.new(@config, self)
       when 'json'
@@ -133,8 +178,8 @@ class RDFConfig
     end
 
     def json_ld_generator
-      case @source_file_format
-      when 'csv', 'tsv', 'duckdb'
+      case source_format_for(@source)
+      when *TABLE_FORMATS
         if @format == ':jsonl' || @generate_context
           require_relative 'convert/json_ld_generator/csv2json_lines'
           CSV2JSON_Lines.new(@config, self)
@@ -147,6 +192,10 @@ class RDFConfig
 
     def bnode_name?(variable_name)
       /\A_BNODE\d+_\z/ =~ variable_name
+    end
+
+    def executable_file?(path)
+      File.file?(path) && File.executable?(path)
     end
   end
 end

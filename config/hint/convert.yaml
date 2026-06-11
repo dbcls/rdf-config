@@ -1,0 +1,36 @@
+- HiNT:
+    - source("HomoSapiens_binary_all.txt", :tsv)
+    - $uniprot_a: col("Uniprot_A")
+    - $uniprot_b: col("Uniprot_B")
+    - subject: "hnt:$uniprot_a-$uniprot_b"
+    - objects:
+        - data_source: "http://identifiers.org/HINT"
+        - display_name: "$uniprot_a-$uniprot_b"
+        - evidence:
+            - col("pmid:method:quality:type")
+            - split(":")
+            - $pmid: pick(0)
+            - $method: pick(1)
+            - $quality: pick(2)
+            - switch($quality):
+                "HT":
+                    - $quality: "high-throughput"
+                "LC":
+                    - $quality: "literature-curated"
+                default:
+                    - $quality: "unknown"
+            - "pint:evidence-pubmed_$pmid-MI_$method-$quality"
+        - name: "$uniprot_a-$uniprot_b"
+        - pair0: "uni:$uniprot_a"
+        - pair1: "uni:$uniprot_b"
+        - network_variety:
+            - col("pmid:method:quality:type")
+            - split(":")
+            - pick(3)
+        - accuracy:
+            - col("pmid:method:quality:type")
+            - split(":")
+            - pick(2)
+            - switch:
+                "HT": "high"
+                "LC": "low"

@@ -60,6 +60,8 @@ class RDFConfig
       def process_node
         @jsonld_context = @config.prefix.transform_values { |uri| uri[1..-2] }
         final_nodes.each do |data_hash|
+          next unless data_hash.is_a?(Hash)
+
           subject_name = data_hash.keys.select { |key| @model.subject?(key) }.first
           @jsonld_context =
             @jsonld_context.merge(@context_generator.context_for_data_hash(subject_name, data_hash))

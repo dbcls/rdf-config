@@ -29,16 +29,19 @@ class RDFConfig
       end
 
       def output_rdf
+        statements = @statements.flatten.uniq
+        @statements = []
+
+        return if statements.empty?
+
         rdf = RDF::Writer.for(@rdf_format.to_sym).buffer(**rdf_writer_opts) do |writer|
-          @statements.flatten.each do |statement|
+          statements.each do |statement|
             writer << statement
           end
         end
 
         rdf = reject_prefix_lines(rdf) if turtle_format?
         puts rdf
-
-        @statements = []
       end
 
       def turtle_format?
@@ -61,7 +64,7 @@ class RDFConfig
                  uri_node(subject_value)
                end
         add_subject_node(subject_name, node)
-        add_subject_type_node(subject_name, node) unless @convert.has_rdf_type_object?
+        add_subject_type_node(subject_name, node) # unless @convert.has_rdf_type_object?
       end
 
       def generate_bnode_subject(subject_name)
@@ -184,13 +187,20 @@ class RDFConfig
       def literal_node(value, literal_object)
         return value if value.is_a?(RDF::Literal)
 
+        value = value.strip if value.is_a?(String)
+
         case literal_object.value
         when String
           literal_node_by_string_value(value, literal_object)
         when Integer
           RDF::Literal::Integer.new(value)
         when Float
-          RDF::Literal::Decimal.new(value)
+          if /\A[+-]?(?:\d+(?:\.\d*)?|\.\d+)[eE][+-]?\d+\z/.match?(value.to_s)
+            RDF::Literal::Double.new(value)
+          else
+            value = "#{value}.0" if /\A[+-]?\d+\z/.match?(value.to_s)
+            RDF::Literal::Decimal.new(value)
+          end
         when Date
           RDF::Literal::Date.new(value)
         when TrueClass, FalseClass
@@ -204,18 +214,14 @@ class RDFConfig
         if /.+\^\^(.+)\z/ =~ literal_object.value
           prefix, local_part = $1.split(':', 2)
           if prefix == 'xsd'
-            RDF::Literal.new(value, datatype: eval("RDF::XSD.#{local_part}"))
+            RDF::Literal.new(value.to_s, datatype: eval("RDF::XSD.#{local_part}"))
           else
             # TODO Other datatype or lang tag
-            RDF::Literal.new(value)
+            RDF::Literal.new(value.to_s)
           end
         else
-          RDF::Literal.new(value)
+          RDF::Literal.new(value.to_s)
         end
-      end
-
-      def to_bool(value)
-        !['0', 'f', 'false', ''].include?(value.to_s.strip.downcase)
       end
 
       def rdf_writer_opts
@@ -278,10 +284,28 @@ class RDFConfig
         @one_row_statements.each do |statement|
           if !statement[:triple].nil? && statement[:triple].predicates.size > 1
             property_path_statements(statement).each do |rdf_statement|
-              @statements << rdf_statement
+              add_statement(rdf_statement)
             end
           else
-            @statements << statement[:statement]
+            add_statement(statement[:statement])
+          end
+
+          object_subjects = if statement[:triple]&.object.is_a?(Model::Subject)
+                              [statement[:triple].object]
+                            elsif statement[:triple].is_a?(Model::ValueList)
+                              statement[:triple].object.value.select { |object| object.is_a?(Model::Subject) }
+                            else
+                              []
+                            end
+          object_subjects.each do |object_subject|
+            triples = @model.rdf_type_triples_by_subject_name(object_subject.name)
+            triples.each do |triple|
+              next if @convert.subject_names.include?(triple.subject.name)
+
+              add_statement(
+                RDF::Statement.new(@statements.last.object, RDF.type, uri_node(triple.object.value))
+              )
+            end
           end
         end
 
@@ -350,6 +374,10 @@ class RDFConfig
         else
           'unknown'
         end
+      end
+
+      def add_statement(statement)
+        @statements << statement
       end
     end
   end

@@ -12,6 +12,7 @@ require 'rdf-config/sparql/variables_handler'
 class RDFConfig
   class SPARQLConfigNotFound < StandardError; end
   class InvalidSPARQLConfig < StandardError; end
+  class InvalidQueryOption < StandardError; end
 
   class SPARQL
     OPTIONS_VALID_KEYS = %w[distinct order_by offset limit].freeze
@@ -27,6 +28,11 @@ class RDFConfig
       @opts = default_option.merge(opts)
       @opts[:query_name] = opts[:sparql]
       @opts[:join] = [@opts[:join]] if @opts.key?(:join) && @opts[:join].is_a?(String)
+
+      if opts.key?(:query) && opts[:query].to_s.strip.empty?
+        raise InvalidQueryOption,
+              "Error: option '--query' requires a value. Expected 'variable_name' or 'variable_name=value'."
+      end
 
       @values = parameters.reject { |model_variable, value| value.to_s.empty? }
       @namespaces = {}

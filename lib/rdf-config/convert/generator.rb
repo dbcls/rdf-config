@@ -21,6 +21,7 @@ class RDFConfig
 
         @source = nil
         @subject_convert = nil
+        @is_subject_splitted = false
 
         @subject_node = {}
         @subject_names = []
@@ -29,6 +30,10 @@ class RDFConfig
 
         @bnode_id = 0
         @bnode = {}
+      end
+
+      def inspect
+        "#<#{self.class}:0x#{object_id.to_s(16)}>"
       end
 
       private
@@ -46,13 +51,14 @@ class RDFConfig
           converts = @convert.variable_convert.select { |key, value| key == variable_name }
           next if converts.empty?
 
-          @converter.convert_value(row, converts)
+          @converter.convert_value(row, converts, false)
         end
       end
 
       def generate_by_subjects(row)
         @subject_names.each do |subject_name|
           @subject_convert = subject_convert_for(subject_name)
+          @is_subject_splitted = subject_convert_has_split_method?
           generate_by_subject(row, subject_name)
         end
       end
@@ -64,7 +70,7 @@ class RDFConfig
         else
           return if @subject_convert.nil?
 
-          subject_uris = @converter.convert_value(row, @subject_convert)
+          subject_uris = @converter.convert_value(row, @subject_convert, true)
           return if subject_uris.to_s.empty?
 
           subject_uris = [subject_uris] unless subject_uris.is_a?(Array)
@@ -99,7 +105,7 @@ class RDFConfig
 
       def generate_by_object_convert(row, object_name, object_converts)
         if convert_variable?(object_name)
-          @converter.convert_value(row, object_converts)
+          @converter.convert_value(row, object_converts, false)
           return
         end
 
@@ -109,20 +115,52 @@ class RDFConfig
         subject_name = triple.subject.name
         return unless @subject_node.key?(subject_name)
 
-        values = @converter.convert_value(row, object_converts)
-        if values.is_a?(Array)
+        values = @converter.convert_value(row, object_converts, triple.object_is_uri?)
+        if values.is_a?(Array) && @is_subject_splitted
+          if values.size != @subject_node[subject_name].size
+            warn split_count_mismatch_warning(row, subject_name, object_name, object_converts, values)
+          end
+
           if @subject_node[subject_name].size > values.size
             (@subject_node[subject_name].size - values.size).times { values << '' }
+          elsif @subject_node[subject_name].size < values.size
+            values = values[0..@subject_node[subject_name].size - 1]
           end
-        else
-          values = Array.new(@subject_node[subject_name].size, values)
         end
 
+        values = Array.new(@subject_node[subject_name].size, values) unless values.is_a?(Array)
         values.each_with_index do |value, idx|
           next if value.to_s.empty?
 
           generate_by_triple(triple, values, idx)
         end
+      end
+
+      def split_count_mismatch_warning(row, subject_name, object_name, object_converts, values)
+        subject_column = ''
+        subject_value = ''
+        col_convert = @subject_convert.select { |convert| convert[:method_name_] == 'col' }.first
+        unless col_convert.nil?
+          subject_column = col_convert[:args_][:arg_].to_s[1..-2]
+          subject_value = row[subject_column]
+        end
+
+        object_column = ''
+        object_value = ''
+        col_convert = object_converts.select { |convert| convert[:method_name_] == 'col' }.first
+        unless col_convert.nil?
+          object_column = col_convert[:args_][:arg_].to_s[1..-2]
+          object_value = row[object_column]
+        end
+
+        warning = ["Warning: split count mismatch at #{@reader.source_name}:#{@reader.line_no}:"]
+        warning << "subject '#{subject_name}' (count=#{@subject_node[subject_name].size},"
+        warning << %Q/cols: #{subject_column}="#{subject_value}")/
+        warning << 'vs'
+        warning << "object '#{object_name}' (count=#{values.size},"
+        warning << %Q/cols: #{object_column}="#{object_value}")/
+
+        warning.join(' ')
       end
 
       def triple_by_object(object_name)
@@ -144,10 +182,20 @@ class RDFConfig
       end
 
       def generate_one_subject_relation(triple, subject_nodes, object_nodes)
-        if subject_nodes.size == 1
-          generate_one2multi_subject_relation(triple, subject_nodes.first, object_nodes)
+        if @convert.split_subject[triple.object.name] == false
+          generate_multi2one_subject_relation(triple, subject_nodes, object_nodes)
         else
-          generate_one2one_subject_relation(triple, subject_nodes, object_nodes)
+          if subject_nodes.size == 1
+            generate_one2multi_subject_relation(triple, subject_nodes.first, object_nodes)
+          else
+            generate_one2one_subject_relation(triple, subject_nodes, object_nodes)
+          end
+        end
+      end
+
+      def generate_multi2one_subject_relation(triple, subject_nodes, object_nodes)
+        subject_nodes.each do |subject_node|
+          add_subject_relation(triple, subject_node, object_nodes.first)
         end
       end
 
@@ -163,6 +211,10 @@ class RDFConfig
 
           add_subject_relation(triple, nodes[0], nodes[1])
         end
+      end
+
+      def subject_convert_has_split_method?
+        @subject_convert.select { |convert| convert[:method_name_].to_s == 'split' }.any?
       end
 
       def subject_convert_for(subject_name)

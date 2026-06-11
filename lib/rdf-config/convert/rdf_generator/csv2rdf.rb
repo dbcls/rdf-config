@@ -1,6 +1,5 @@
 require 'rdf/turtle'
 require_relative '../rdf_generator'
-require_relative '../macros/csv'
 
 class RDFConfig
   class Convert
@@ -12,8 +11,7 @@ class RDFConfig
           @source = source
           @subject_names = subject_names
 
-          file_format = @convert.source_format_map[source].first
-          @reader = @convert.file_reader(source: source, file_format: file_format)
+          @reader = @convert.file_reader(source: source)
           generate_statements
         end
 

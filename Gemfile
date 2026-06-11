@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 
 gemspec
 
+gem 'addressable'
 gem 'csv'
 gem 'getoptlong'
 gem 'ostruct'
@@ -12,5 +13,3 @@ gem 'rdf'
 gem 'rdf-turtle'
 gem 'rdf-xsd'
 gem 'rexml'
-
-#gem 'rubocop'
