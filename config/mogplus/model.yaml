@@ -1,0 +1,145 @@
+# RDF-config model.yaml for MOG+ VCF/VEP RDF
+# Generated for the RDF produced by convert_vcf_vep_to_rdf_v6.rb
+
+- Variant <http://identifiers.org/mogplus/v3/1/GRCm39#3050118-G-A>:
+  - a: gvo:SNV
+  - dct:identifier?: variant_id
+  - faldo:location:
+    - []:
+      - a: faldo:ExactPosition
+      - faldo:position:
+        - faldo_position: 3050118
+      - faldo:reference:
+        - reference_sequence: <http://identifiers.org/mco/1/GRCm39>
+  - gvo:pos:
+    - position: 3050118
+  - gvo:ref:
+    - reference_allele: G
+  - gvo:alt:
+    - alternate_allele: A
+  - gvo:pos_vcf:
+    - vcf_position: 3050118
+  - gvo:ref_vcf:
+    - vcf_reference_allele: G
+  - gvo:alt_vcf:
+    - vcf_alternate_allele: A
+  - gvo:qual?:
+    - variant_quality: 1785.77
+  - gvo:filter?:
+    - filter_status: PASS
+
+  # Frequently used VCF INFO fields represented as direct shortcut properties.
+  - vcf:allele_count?:
+    - allele_count: 3
+  - vcf:allele_frequency?:
+    - allele_frequency: 1
+  - vcf:allele_number?:
+    - allele_number: 4
+  - vcf:read_depth?:
+    - read_depth: 137
+  - vcf:quality_by_depth?:
+    - quality_by_depth: 15.93
+  - vcf:mapping_quality?:
+    - mapping_quality: 60
+  - vcf:fisher_strand?:
+    - fisher_strand: 4.099
+  - vcf:strand_odds_ratio?:
+    - strand_odds_ratio: 1.22
+  - vcf:base_quality_rank_sum?:
+    - base_quality_rank_sum: -0.412
+  - vcf:mapping_quality_rank_sum?:
+    - mapping_quality_rank_sum: 0
+  - vcf:read_position_rank_sum?:
+    - read_position_rank_sum: 0.338
+  - vcf:excess_heterozygosity?:
+    - excess_heterozygosity: 3.0103
+  - vcf:mle_allele_count?:
+    - mle_allele_count: 2
+  - vcf:mle_allele_frequency?:
+    - mle_allele_frequency: 1
+
+  # Generic representation of arbitrary VCF INFO key-value fields.
+  - vcf:has_info_field*:
+    - info_field: InfoField
+
+  # Structured VEP CSQ annotations.
+  - vep:has_consequence*:
+    - consequence_annotation: ConsequenceAnnotation
+
+- InfoField <http://identifiers.org/mogplus/v3/1/GRCm39#3050118-G-A/info/AF-10>:
+  - a: vcf:InfoField
+  - vcf:info_key:
+    - info_key: AF
+  - rdf:value:
+    - info_value: 1
+  - vcf:raw_value?:
+    - raw_info_value: "1"
+  - vcf:defined_by?:
+    - info_field_definition: InfoFieldDefinition
+
+- InfoFieldDefinition <http://identifiers.org/mogplus/v3/GRCm39/vcf/header/info/AF>:
+  - a: vcf:InfoFieldDefinition
+  - vcf:id:
+    - info_definition_id: AF
+  - vcf:number?:
+    - info_number: A
+  - vcf:type?:
+    - info_type: Float
+  - dct:description?:
+    - info_description: Allele Frequency, for each ALT allele, in the same order as listed
+
+- ConsequenceAnnotation <http://identifiers.org/mogplus/v3/1/GRCm39#3050118-G-A/vep/1>:
+  - a: vep:ConsequenceAnnotation
+  - vep:allele?:
+    - consequence_allele: A
+  - vep:consequence?:
+    - sequence_ontology_term: so:0001628
+  - vep:consequence_label?:
+    - consequence_label: intergenic_variant
+  - rdfs:label?:
+    - consequence_name: intergenic_variant
+  - vep:impact?:
+    - impact: MODIFIER
+
+  # Additional VEP CSQ fields are optional because they depend on the CSQ format
+  # and may be empty for intergenic variants.
+  - vep:symbol?:
+    - gene_symbol: Xkr4
+  - vep:gene?:
+    - ensembl_gene: ensg:ENSMUSG00000051951
+  - vep:feature_type?:
+    - feature_type: Transcript
+  - vep:feature?:
+    - ensembl_feature: ensg:ENSMUST00000070533
+  - vep:biotype?:
+    - biotype: protein_coding
+  - vep:exon?:
+    - exon: 1/3
+  - vep:intron?:
+    - intron: 1/2
+  - vep:hgvsc?:
+    - hgvsc: ENSMUST00000070533.5:c.123A>G
+  - vep:hgvsp?:
+    - hgvsp: ENSMUSP00000070648.5:p.Lys41Arg
+  - vep:cdna_position?:
+    - cdna_position: 123
+  - vep:cds_position?:
+    - cds_position: 123
+  - vep:protein_position?:
+    - protein_position: 41
+  - vep:amino_acids?:
+    - amino_acids: K/R
+  - vep:codons?:
+    - codons: aAa/aGa
+  - vep:existing_variation?:
+    - existing_variation: rs12345
+  - vep:distance?:
+    - distance: 3820
+  - vep:strand?:
+    - strand: -1
+  - vep:flags?:
+    - flags: MANE_SELECT
+  - vep:symbol_source?:
+    - symbol_source: MGI
+  - vep:hgnc_id?:
+    - hgnc_id: HGNC:12345
