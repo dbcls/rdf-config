@@ -1,0 +1,428 @@
+# =============================================================================
+# JoGo Haplotype Database — rdf-config model.yaml
+# =============================================================================
+# クラス名は略記コードに統一し、意味は schema.yaml の label/description で与える:
+#   AHaplotype     アミノ酸配列レベル (individual)  ← ahaplotypesummary  (ahapid  a0001)
+#   CHaplotype     コーディング(CDS)レベル          ← chaplotypesummary  (chapid  c0001)
+#   THaplotype     転写産物レベル                   ← thaplotypesummary  (thapid  t0001)
+#   GHaplotype     遺伝子本体レベル                 ← ghaplotypesummary  (ghapid  g0001)
+#   ACHaplotype    A+C 複合                         ← achaplotypesummary   (achapid   a0001c0001)
+#   ACTHaplotype   A+C+T 複合                       ← acthaplotypesummary  (acthapid  a0001c0001t0001)
+#   ACTGHaplotype  A+C+T+G 複合(サンプル単位の完全) ← actghaplotypesummary (actghapid a0001c0001t0001g0004)
+#   UHaplotype     上流レベル                       ← regions/<rn>/flanks upstream   (uid u0001)
+#   DHaplotype     下流レベル                       ← regions/<rn>/flanks downstream (did d0001)
+#   個別 A/C/T/G は各レベル独立採番。複合は ahapid/chapid/thapid/ghapid で個別を参照。
+#   U/D は flanks を uid/did で集計 (total + 集団別 frequency を a/c/t/g と同形で保持)。
+#
+# ID 規則:
+#   - ハプロタイプ階層部分はコロン無しが正式 (例 a1c1t1g4 ／ データの a0001c0001…)
+#   - dcterms:identifier はゼロパディングを除去した形 (a0001→a1, c0010→c10)
+#   - skos:altLabel にゼロパディング付きの元表記 (a0001 等)
+#   - ゼロのみ (a0000) は除去すると空になるため a0 とする
+#   - URI ローカル部にも除去済み正準 ID を使用 (jogo_hap:ALDH2:a1)
+#
+# サンプルハプロタイプ (phasing):
+#   - a〜actg は regions/<rn>/samples、u/d は flanks から、各ハプロタイプが
+#     jogo:hasSampleHaplotype で保持。SampleHaplotype は gene_key スコープ
+#     (jogo_sample:ALDH2:HG02074.hp1)、jogo:sample で Sample へ。
+#   - REF(参照ゲノム homoSapiens_grch38/chm13v2) は sample 扱いから除外。
+#
+# 保留:
+#   - flank variants (upstream_gene_variant/downstream_gene_variant) は入力データ再検討中のため未格納。
+#
+# 必要な prefix (prefix.yaml 側で定義 / 出典 prefix_page.tsv):
+#   jogo:        <http://jogo.csml.org/ontology#>
+#   jogo_gene:   <http://jogo.csml.org/rdf/gene/>
+#   jogo_hap:    <http://jogo.csml.org/rdf/haplotype/>
+#   jogo_var:    <http://jogo.csml.org/rdf/variant/>
+#   jogo_pop:    <http://jogo.csml.org/rdf/population/>
+#   hco:         <http://identifiers.org/hco/>
+#   hgnc:        <http://identifiers.org/hgnc/>
+#   ensembl:     <http://identifiers.org/ensembl/>
+#   faldo:       <http://biohackathon.org/resource/faldo#>
+#   gvo:         <http://genome-variation.org/resource/gvo#>
+#   foaf:        <http://xmlns.com/foaf/0.1/>
+#   dcterms:     <http://purl.org/dc/terms/>
+#   skos:        <http://www.w3.org/2004/02/skos/core#>
+#   rdfs:        <http://www.w3.org/2000/01/rdf-schema#>
+#
+# foaf:page (Web 詳細ページ, prefix_page.tsv より):
+#   gene: https://jogo.csml.org/gene?genename={regionname5000}
+#   hap : https://jogo.csml.org/haplotype_detail?hapid={padded hapid}&regionname={regionname5000}
+# =============================================================================
+
+
+# -----------------------------------------------------------------------------
+# 遺伝子領域 (maneinfo)
+# -----------------------------------------------------------------------------
+- GeneRegion jogo_gene:ALDH2:
+  - a: jogo:GeneRegion
+  - rdfs:label:
+    - symbol: "ALDH2"
+  - dcterms:description:
+    - name: "aldehyde dehydrogenase 2 family member"
+  - jogo:regionName:
+    - regionname5000: "ALDH2_chr12_111761933_111822532"
+  - jogo:maneStatus:
+    - mane_status: "MANE Select"
+  - jogo:maneVersion:
+    - ver: "v1.2"
+  - foaf:page:
+    - gene_page: <https://jogo.csml.org/gene?genename=ALDH2_chr12_111761933_111822532>
+  # --- 個別レベルのハプロタイプ一覧 ---
+  - jogo:aHaplotype+:
+    - a_hap: AHap
+  - jogo:cHaplotype+:
+    - c_hap: CHap
+  - jogo:tHaplotype+:
+    - t_hap: THap
+  - jogo:gHaplotype+:
+    - g_hap: GHap
+  # --- 複合レベルのハプロタイプ一覧 ---
+  - jogo:acHaplotype+:
+    - ac_hap: ACHap
+  - jogo:actHaplotype+:
+    - act_hap: ACTHap
+  - jogo:actgHaplotype+:
+    - actg_hap: ACTGHap
+  # 上流/下流レベル(U/D)は今版では出力しない (次版で対応。ontology には class は残置)
+  # --- 外部 DB ---
+  - rdfs:seeAlso:
+    - hgnc: hgnc:404
+  - rdfs:seeAlso:
+    - ensembl_gene: ensembl:ENSG00000111275
+  # --- ゲノム座標 (faldo) ---
+  - faldo:location:
+    - []:
+      - a: faldo:Region
+      - faldo:begin:
+        - []:
+          - a: faldo:ExactPosition
+          - faldo:position:
+            - start: 111766933
+          - faldo:reference:
+            - start_ref: hco:12\/GRCh38
+      - faldo:end:
+        - []:
+          - a: faldo:ExactPosition
+          - faldo:position:
+            - end: 111817532
+          - faldo:reference:
+            - end_ref: hco:12\/GRCh38
+
+
+# =============================================================================
+# 個別レベルのハプロタイプ (A / C / T / G)
+# =============================================================================
+
+# --- A: アミノ酸配列レベル (ahaplotypesummary) -------------------------------
+- AHap jogo_hap:ALDH2:a1:
+  - a: jogo:AHaplotype
+  - dcterms:identifier:
+    - ahapid: "ALDH2:a1"           # ← gene symbol + ゼロパディング除去
+  - skos:altLabel:
+    - ahapid_padded: "ALDH2:a0001"
+  - foaf:page:
+    - a_page: <https://jogo.csml.org/haplotype_detail?hapid=a0001&regionname=ALDH2_chr12_111761933_111822532>
+  - jogo:sequenceLength:           # alen = アミノ酸残基数
+    - alen: 517
+  - jogo:totalCount:               # total = 観測ハプロタイプ本数
+    - a_total: 311
+  - jogo:isGRCh38Reference:
+    - a_grch38p0: 1
+  - jogo:isCHM13Reference:
+    - a_chm13v2: 1
+  - jogo:isMANEReference:
+    - a_maneref: 1
+  - jogo:hasVariant*:              # avariants 由来
+    - a_variant: Variant
+  - jogo:frequency*:               # *_total を集団ごとに pivot
+    - []:
+      - a: jogo:PopulationFrequency
+      - jogo:population:
+        - a_freq_pop: Pop
+      - jogo:alleleCount:
+        - a_freq_count: 87
+  - jogo:hasSampleHaplotype*:      # region/samples 由来 (この a を持つ sample-haplotype)
+    - a_sample_hap: SampleHap
+
+# --- C: コーディング(CDS)レベル (chaplotypesummary) --------------------------
+- CHap jogo_hap:ALDH2:c1:
+  - a: jogo:CHaplotype
+  - dcterms:identifier:
+    - chapid: "ALDH2:c1"
+  - skos:altLabel:
+    - chapid_padded: "ALDH2:c0001"
+  - foaf:page:
+    - c_page: <https://jogo.csml.org/haplotype_detail?hapid=c0001&regionname=ALDH2_chr12_111761933_111822532>
+  - jogo:sequenceLength:           # clen = CDS 塩基長
+    - clen: 1554
+  - jogo:totalCount:
+    - c_total: 305
+  - jogo:isGRCh38Reference:
+    - c_grch38p0: 1
+  - jogo:isCHM13Reference:
+    - c_chm13v2: 1
+  - jogo:isMANEReference:
+    - c_maneref: 1
+  - jogo:hasVariant*:              # cvariants 由来
+    - c_variant: Variant
+  - jogo:frequency*:
+    - []:
+      - a: jogo:PopulationFrequency
+      - jogo:population:
+        - c_freq_pop: Pop
+      - jogo:alleleCount:
+        - c_freq_count: 87
+  - jogo:hasSampleHaplotype*:
+    - c_sample_hap: SampleHap
+
+# --- T: 転写産物レベル (thaplotypesummary) -----------------------------------
+- THap jogo_hap:ALDH2:t1:
+  - a: jogo:THaplotype
+  - dcterms:identifier:
+    - thapid: "ALDH2:t1"
+  - skos:altLabel:
+    - thapid_padded: "ALDH2:t0001"
+  - foaf:page:
+    - t_page: <https://jogo.csml.org/haplotype_detail?hapid=t0001&regionname=ALDH2_chr12_111761933_111822532>
+  - jogo:sequenceLength:           # tlen = 転写産物塩基長
+    - tlen: 8009
+  - jogo:totalCount:
+    - t_total: 48
+  - jogo:isGRCh38Reference:
+    - t_grch38p0: 0
+  - jogo:isCHM13Reference:
+    - t_chm13v2: 0
+  - jogo:isMANEReference:
+    - t_maneref: 0
+  - jogo:hasVariant*:              # tvariants 由来
+    - t_variant: Variant
+  - jogo:frequency*:
+    - []:
+      - a: jogo:PopulationFrequency
+      - jogo:population:
+        - t_freq_pop: Pop
+      - jogo:alleleCount:
+        - t_freq_count: 48
+  - jogo:hasSampleHaplotype*:
+    - t_sample_hap: SampleHap
+
+# --- G: 遺伝子本体レベル (ghaplotypesummary) ---------------------------------
+- GHap jogo_hap:ALDH2:g1:
+  - a: jogo:GHaplotype
+  - dcterms:identifier:
+    - ghapid: "ALDH2:g1"
+  - skos:altLabel:
+    - ghapid_padded: "ALDH2:g0001"
+  - foaf:page:
+    - g_page: <https://jogo.csml.org/haplotype_detail?hapid=g0001&regionname=ALDH2_chr12_111761933_111822532>
+  - jogo:sequenceLength:           # glen = 遺伝子本体長(イントロン込み; Ins/Del で haplotype 毎に異なる)
+    - glen: 50599
+  - jogo:totalCount:
+    - g_total: 19
+  - jogo:isGRCh38Reference:
+    - g_grch38p0: 0
+  - jogo:isCHM13Reference:
+    - g_chm13v2: 0
+  - jogo:isMANEReference:
+    - g_maneref: 0
+  - jogo:hasVariant*:              # gvariants 由来
+    - g_variant: Variant
+  - jogo:frequency*:
+    - []:
+      - a: jogo:PopulationFrequency
+      - jogo:population:
+        - g_freq_pop: Pop
+      - jogo:alleleCount:
+        - g_freq_count: 19
+  - jogo:hasSampleHaplotype*:
+    - g_sample_hap: SampleHap
+
+
+# =============================================================================
+# 複合レベルのハプロタイプ (AC / ACT / ACTG)
+# =============================================================================
+
+# --- AC (achaplotypesummary) ------------------------------------------------
+- ACHap jogo_hap:ALDH2:a1c1:
+  - a: jogo:ACHaplotype
+  - dcterms:identifier:
+    - achapid: "ALDH2:a1c1"        # ← gene symbol + ゼロパディング除去
+  - skos:altLabel:
+    - achapid_padded: "ALDH2:a0001c0001"
+  - foaf:page:
+    - ac_page: <https://jogo.csml.org/haplotype_detail?hapid=a0001c0001&regionname=ALDH2_chr12_111761933_111822532>
+  - jogo:sequenceLength:           # aclen = 複合レベルの配列長 (Ins/Del で haplotype 毎に異なる)
+    - aclen: 1554
+  - jogo:aHaplotype:
+    - ac_ahapid: AHap
+  - jogo:cHaplotype:
+    - ac_chapid: CHap
+  - jogo:totalCount:
+    - ac_total: 305
+  - jogo:frequency*:
+    - []:
+      - a: jogo:PopulationFrequency
+      - jogo:population:
+        - ac_freq_pop: Pop
+      - jogo:alleleCount:
+        - ac_freq_count: 87
+  - jogo:hasSampleHaplotype*:
+    - ac_sample_hap: SampleHap
+
+# --- ACT (acthaplotypesummary) ----------------------------------------------
+- ACTHap jogo_hap:ALDH2:a1c1t1:
+  - a: jogo:ACTHaplotype
+  - dcterms:identifier:
+    - acthapid: "ALDH2:a1c1t1"
+  - skos:altLabel:
+    - acthapid_padded: "ALDH2:a0001c0001t0001"
+  - foaf:page:
+    - act_page: <https://jogo.csml.org/haplotype_detail?hapid=a0001c0001t0001&regionname=ALDH2_chr12_111761933_111822532>
+  - jogo:sequenceLength:           # actlen = 複合レベルの配列長
+    - actlen: 3449
+  - jogo:aHaplotype:
+    - act_ahapid: AHap
+  - jogo:cHaplotype:
+    - act_chapid: CHap
+  - jogo:tHaplotype:
+    - act_thapid: THap
+  - jogo:totalCount:
+    - act_total: 29
+  - jogo:frequency*:
+    - []:
+      - a: jogo:PopulationFrequency
+      - jogo:population:
+        - act_freq_pop: Pop
+      - jogo:alleleCount:
+        - act_freq_count: 29
+  - jogo:hasSampleHaplotype*:
+    - act_sample_hap: SampleHap
+
+# --- ACTG (actghaplotypesummary) — サンプル単位の完全ハプロタイプ -----------
+- ACTGHap jogo_hap:ALDH2:a1c1t1g4:
+  - a: jogo:ACTGHaplotype
+  - dcterms:identifier:
+    - actghapid: "ALDH2:a1c1t1g4"
+  - skos:altLabel:
+    - actghapid_padded: "ALDH2:a0001c0001t0001g0004"
+  - foaf:page:
+    - actg_page: <https://jogo.csml.org/haplotype_detail?hapid=a0001c0001t0001g0004&regionname=ALDH2_chr12_111761933_111822532>
+  - jogo:sequenceLength:           # actglen = 複合レベルの配列長
+    - actglen: 8321
+  - jogo:aHaplotype:
+    - actg_ahapid: AHap
+  - jogo:cHaplotype:
+    - actg_chapid: CHap
+  - jogo:tHaplotype:
+    - actg_thapid: THap
+  - jogo:gHaplotype:
+    - actg_ghapid: GHap
+  - jogo:totalCount:
+    - actg_total: 6
+  - jogo:frequency*:
+    - []:
+      - a: jogo:PopulationFrequency
+      - jogo:population:
+        - actg_freq_pop: Pop
+      - jogo:alleleCount:
+        - actg_freq_count: 6
+  - jogo:hasSampleHaplotype*:
+    - actg_sample_hap: SampleHap
+
+
+# 上流/下流レベルのハプロタイプ (U / D) は今版では出力しない。
+# gt_summary に u/d の変異メンバーシップが無く u0001/u0002 を区別できないため。
+# ontology の jogo:UHaplotype / jogo:DHaplotype は次版のため残置。
+
+
+# =============================================================================
+# サンプルハプロタイプ (region 毎の phasing, hp1/hp2)
+#   出典: regions/<rn>/samples (a〜actg)。REF(参照ゲノム)は除外。
+#   URI は gene region 毎の phasing なので gene_key スコープ (ALDH2:HG02074.hp1)。
+# =============================================================================
+- SampleHap jogo_sample:ALDH2:HG02074.hp1:
+  - a: jogo:SampleHaplotype
+  - dcterms:identifier:
+    - sample_hap_id: "ALDH2:HG02074.hp1"
+  - jogo:sample:
+    - sample: Sample
+
+# Sample 本体は samples.ttl / templates/population.ttl 側で定義 (ここは参照シェイプ)
+- Sample jogo_sample:HG02074:
+  - a: jogo:Sample
+  - dcterms:identifier:
+    - sample_id: "HG02074"
+
+
+# =============================================================================
+# バリアント (avariants / cvariants / tvariants / gvariants) — 2ノード構成
+#   Variant        : 遺伝子別レコード。頻度/snpEff注釈/hgvs を持ち、gene_key でスコープ
+#                    (jogo_var:<gene_key>:<chr-pos-ref-alt>)。haplotype の hasVariant 先。
+#   GenomicVariant : gene非依存の正準ゲノム変異 (jogo_var:<chr-pos-ref-alt>)。class/ref/alt/
+#                    location を持ち座標ベースで全遺伝子共有。記述は TogoVar RDF (GVO/FALDO) 準拠。
+#   双方向リンク: Variant jogo:genomicVariant→ GenomicVariant / GenomicVariant jogo:hasGeneVariant→ Variant
+# =============================================================================
+
+# --- 遺伝子別レコード -------------------------------------------------------
+- Variant jogo_var:ALDH2:12-111790546-C-A:
+  - a: jogo:Variant
+  - jogo:alleleCount:
+    - ac: 1
+  - jogo:alleleNumber:
+    - an: 342
+  - jogo:alleleFrequency:
+    - af: 0.00292
+  - jogo:annotation:
+    - snpeff_annotation: "missense_variant"
+  - jogo:annotationImpact:
+    - snpeff_annotation_impact: "MODERATE"
+  - jogo:hgvsC:
+    - snpeff_hgvs_c: "c.665C>A"
+  - jogo:hgvsP:
+    - snpeff_hgvs_p: "p.Ala222Asp"
+  - jogo:genomicVariant:
+    - genomic_variant: GenomicVariant
+
+# --- 共通(gene非依存)ゲノム変異 ---------------------------------------------
+- GenomicVariant jogo_var:12-111790546-C-A:
+  - a: gvo:SNV                     # gvo:Variation のサブクラス。ref/alt長で SNV/MNV/Ins/Del/Indel を判定
+  - dcterms:identifier:
+    - var_id: "12-111790546-C-A"
+  - gvo:ref:
+    - ref: "C"
+  - gvo:alt:
+    - alt: "A"
+  - faldo:location:
+    - []:
+      - a: faldo:ExactPosition
+      - faldo:position:
+        - pos: 111790546
+      - faldo:reference:
+        - var_ref: hco:12\/GRCh38
+  # TogoVar 登録を見据え、TogoVar の変異 URI へ rdfs:seeAlso で接続
+  - rdfs:seeAlso:
+    - togovar_variant: <http://identifiers.org/hco/12/GRCh38#111790546-C-A>
+  - jogo:hasGeneVariant:
+    - has_gene_variant: Variant
+
+
+# =============================================================================
+# 集団 (population) — *_total の集団コードに対応
+# =============================================================================
+- Pop jogo_pop:JPT:
+  - a: jogo:Population
+  - dcterms:identifier:
+    - pop_code: "JPT"
+  - rdfs:label:
+    - pop_label: "Japanese in Tokyo, Japan"
+  - jogo:superPopulation:
+    - super_pop: SuperPop
+
+- SuperPop jogo_pop:EAS:
+  - a: jogo:SuperPopulation
+  - dcterms:identifier:
+    - super_pop_code: "EAS"
+  - rdfs:label:
+    - super_pop_label: "East Asian"
