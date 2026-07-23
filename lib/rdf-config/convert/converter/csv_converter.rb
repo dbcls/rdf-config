@@ -5,7 +5,7 @@ class RDFConfig
   class Convert
     class CSVConverter < Converter
       def macro_names
-        %w[csv tsv]
+        %w[csv tsv col]
       end
 
       # def set_path_variable_map; end

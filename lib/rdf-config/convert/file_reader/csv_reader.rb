@@ -3,6 +3,8 @@ require 'csv'
 class RDFConfig
   class Convert
     class CSVReader
+      attr_reader :line_no
+
       def initialize(source_file, file_format)
         @source_file = source_file
         case file_format
@@ -12,22 +14,38 @@ class RDFConfig
           @col_sep = "\t"
         end
 
-        @line_no = 1
+        @line_no = 2
       end
 
       def each_row(&block)
         CSV.foreach(@source_file, **csv_opts) do |row|
           block.call(row)
+
+          @line_no += 1
         end
+      end
+
+      def source
+        File.basename(@source_file)
+      end
+
+      def source_name
+        @source_file
       end
 
       private
 
       def csv_opts
-        {
+        opts = {
           col_sep: @col_sep,
           headers: :first_row
         }
+
+        if @col_sep == "\t"
+          opts[:quote_char] = nil
+        end
+
+        opts
       end
     end
   end

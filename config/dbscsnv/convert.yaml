@@ -1,9 +1,9 @@
 - DbscSNV:
   - subject:
-    - $chr: tsv("hg38_chr")
-    - $pos: tsv("hg38_pos")
-    - $alt: tsv("alt")
-    - $ref: tsv("ref")
+    - $chr: col("hg38_chr")
+    - $pos: col("hg38_pos")
+    - $alt: col("alt")
+    - $ref: col("ref")
     - $pra: join($pos, $ref, $alt, "-")
     - $hco: join("http://identifiers.org/hco/", $chr, "/GRCh38", "")
     - $var: join($hco, $pra, "#")
@@ -21,23 +21,23 @@
     - prepend("$var-")
   - objects:
     - is_ensembl:
-      - tsv("Ensembl?")
+      - col("Ensembl?")
       - split(";")
       - skip(".")
     - ensembl_region:
-      - tsv("Ensembl_region")
+      - col("Ensembl_region")
       - split(";")
       - skip(".")
     - ensembl_gene_id:
-      - tsv("Ensembl_gene")
+      - col("Ensembl_gene")
       - split(";")
       - skip(".")
     - ensembl_functional_consequence:
-      - tsv("Ensembl_functional_consequence")
+      - col("Ensembl_functional_consequence")
       - split(";")
       - skip(".")
     - ensembl_id_c_change_p_change:
-      - tsv("Ensembl_id_c.change_p.change")
+      - col("Ensembl_id_c.change_p.change")
       - split(";")
       - skip(".")
 
@@ -47,23 +47,23 @@
     - prepend("$var-")
   - objects:
     - is_refseq:
-      - tsv("RefSeq?")
+      - col("RefSeq?")
       - split(";")
       - skip(".")
     - refseq_region:
-      - tsv("RefSeq_region")
+      - col("RefSeq_region")
       - split(";")
       - skip(".")
     - refseq_gene:
-      - tsv("RefSeq_gene")
+      - col("RefSeq_gene")
       - split(";")
       - skip(".")
     - refseq_functional_consequence:
-      - tsv("RefSeq_functional_consequence")
+      - col("RefSeq_functional_consequence")
       - split(";")
       - skip(".")
     - refseq_id_c_change_p_change:
-      - tsv("RefSeq_id_c.change_p.change")
+      - col("RefSeq_id_c.change_p.change")
       - split(";")
       - skip(".")
 
@@ -73,10 +73,9 @@
     - append("-RandomForest")
   - objects:
     - random_forest_score:
-      - tsv("rf_score")
+      - col("rf_score")
       - split(";")
       - skip(".")
-      - to_float
 
 - AdaBoost:
   - subject:
@@ -84,7 +83,6 @@
     - append("-AdaBoost")
   - objects:
     - ada_boost_score:
-      - tsv("ada_score")
+      - col("ada_score")
       - split(";")
       - skip(".")
-      - to_float

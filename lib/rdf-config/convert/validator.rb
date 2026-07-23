@@ -1,20 +1,62 @@
 # frozen_string_literal: true
 
 require_relative '../validator'
+require_relative 'mix_in/convert_util'
+require_relative 'json_ld_generator/csv2json_lines'
+require_relative 'file_reader/tsv_detector'
 
 class RDFConfig
   class Convert
     class Validator < RDFConfig::Validator
+      include MixIn::ConvertUtil
+
+      VALID_SOURCE_TYPES = %w[csv tsv duckdb sqlite3].freeze
+      VALID_CONVERT_TYPES = %w[:turtle :ntriples :jsonld :jsonl :context]
+
+      class << self
+        def format_error_message(errors)
+          errors.map do |error|
+            lines = if error.is_a?(Array)
+                      error
+                    else
+                      error.split("\n")
+                    end
+            lines.map.with_index do |line, idx|
+              if idx.zero?
+                "  * #{line}"
+              else
+                "    #{line}"
+              end
+            end.join("\n")
+          end.unshift('ERROR:').join("\n")
+        end
+      end
+
       def initialize(config, **opts)
         super
         @convert = opts[:convert]
+        @yaml_parser = opts[:yaml_parser]
+      end
+
+      def pre_validate
+        unless @yaml_parser.nodes_doc.children.size == 1 && @yaml_parser.nodes_doc.children.first.is_a?(Psych::Nodes::Sequence)
+          @yaml_parser.add_error("#{@yaml_parser.yaml_file} must be an array of conversion settings for each subject.")
+        end
+
+        @errors += @yaml_parser.errors
+
+        raise InvalidConfig, format_error_message if error?
       end
 
       def validate
+        validate_convert_type
+        validate_context_path if context_mode?
         validate_variable_name
-        # validate_exist_source
-        validate_source_file_path
-        validate_source_format
+        validate_object_names_vs_prefixes
+        validate_specified_source unless context_mode?
+        validate_source_file_path unless context_mode?
+        validate_source_format unless context_mode?
+        validate_source unless context_mode?
         validate_macro_name
         validate_convert_variable_name
 
@@ -22,10 +64,60 @@ class RDFConfig
       end
 
       def format_error_message
-        @errors.map { |error| "  * #{error}" }.unshift('ERROR:').join("\n")
+        self.class.format_error_message(@errors)
       end
 
       private
+
+      def validate_subjects
+        subject_names = @yaml_parser.subject_names
+        duplicate_subject_names = subject_names.select { |subject_name| subject_names.count(subject_name) > 1 }.uniq
+
+        unless duplicate_subject_names.empty?
+          add_error("Duplicate subject name in convert.yaml: #{duplicate_subject_names.join(', ')}")
+        end
+      end
+
+      def validate_convert_type
+        return if VALID_CONVERT_TYPES.include?(@convert.format)
+
+        add_error(%(Invalid value of --convert option. Valid --convert option values are #{VALID_CONVERT_TYPES.join(', ')}))
+      end
+
+      def validate_context_path
+        return if @convert.output_path.to_s.strip.empty?
+
+        if File.file?(@convert.output_path)
+          validate_output_file_path(@convert.output_path)
+        elsif File.directory?(@convert.output_path)
+          validate_output_dir_path(@convert.output_path)
+        else
+          validate_output_file_path(@convert.output_path)
+        end
+      end
+
+      def validate_output_file_path(output_file_path)
+        if File.exist?(output_file_path)
+          add_error("Output file: #{output_file_path} already exists.")
+        else
+          validate_output_dir_path(File.dirname(output_file_path))
+        end
+      end
+
+      def validate_output_dir_path(output_dir_path)
+        if File.exist?(output_dir_path)
+          if File.writable?(output_dir_path)
+            context_file_path = File.join(output_dir_path, Convert::CSV2JSON_Lines::DEFAULT_CONTEXT_FILE_NAME)
+            if File.exist?(context_file_path)
+              add_error("Output file: #{context_file_path} already exists.")
+            end
+          else
+            add_error("You do not have write permission for #{output_dir_path}")
+          end
+        else
+          add_error("Output directory: #{output_dir_path} does not exist.")
+        end
+      end
 
       def validate_variable_name
         @convert.variable_names.each do |variable_name|
@@ -37,22 +129,39 @@ class RDFConfig
         end
       end
 
-      def validate_exist_source
-        @convert.subject_converts.each do |subject_convert|
-          subject_convert.each do |subject_name, subject_configs|
-            next if subject_configs.first[:method_name_].start_with?(SOURCE_MACRO_NAME)
+      def validate_object_names_vs_prefixes
+        duplicated_names = @model.object_names & @config.prefix.keys
+        return if duplicated_names.empty?
 
-            add_error(%(The source must be set for the subject "#{subject_name}".))
+        add_error("model.yaml object names (#{duplicated_names.join(', ')}) collide with prefix.yaml prefixes")
+      end
+
+      def validate_specified_source
+        @yaml_parser.subject_names.each do |subject_name|
+          source_file = @convert.source_file_for(subject_name)
+
+          if source_file.nil?
+            add_error(%(No source file specified for the subject "#{subject_name}".))
           end
         end
       end
 
       def validate_source_file_path
-        @convert.source_subject_map.each_key do |file_path|
-          if file_path.nil?
-            add_error(%(#{@convert.source_subject_map[nil].join(', ')}: Since source file is not specified in convert.yaml, please specify the source file in the --convert option.))
-          elsif !File.exist?(file_path)
-            add_error(%(Source file "#{file_path}" does not exist.))
+        # sources = @convert.source_subject_map.keys.uniq.map do |source|
+        #   formats = @convert.source_format_map[source] || []
+        #   if (formats & RDB_FILE_EXTENSIONS).empty?
+        #     source
+        #   else
+        #     rdb_source_file(source)
+        #   end
+        # end.uniq
+
+        @convert.source_subject_map.keys.uniq.each do |source|
+          if source.nil?
+            add_error(%(#{@convert.source_subject_map[nil].join(', ')}: Since source file is not specified in convert.yaml, please specify the source file.))
+          else
+            source = rdb_source_file(source) if source.is_a?(Array)
+            add_error(%(Source file "#{source}" does not exist.)) unless File.exist?(source)
           end
         end
       end
@@ -61,22 +170,50 @@ class RDFConfig
         @convert.source_format_map.each do |source_file_path, formats|
           next unless formats.is_a?(Array)
 
-          if formats.empty?
-            add_error("There is no file format specification for the source file (#{source_file_path}) in the settings in convert.yaml.")
-          elsif formats.size > 1
-            add_error("In the settings in convert.yaml, there are multiple file format specifications (#{formats.join(', ')}) for the same source file (#{source_file_path}) .")
+          source_file_path = rdb_source_file(source_file_path) if source_file_path.is_a?(Array)
+          if formats.empty? || formats.include?(UNKNOWN_SOURCE_TYPE)
+            add_error("There is no file format specification for the source file (#{source_file_path}) .")
+          elsif formats.uniq.size > 1
+            add_error("There are multiple file format specifications (#{formats.join(', ')}) for the same source file (#{source_file_path}) .")
+          elsif !VALID_SOURCE_TYPES.include?(formats.first)
+            error_lines = [
+              "Invalid format (#{formats.first}) is specified for source file (#{source_file_path}) .",
+              "Valid formats are #{VALID_SOURCE_TYPES.join(', ')}"
+            ]
+            add_error(error_lines)
           end
         end
       end
 
+      def validate_source
+        @convert.source_subject_map.keys.uniq.each do |source_attrs|
+          source_file = if source_attrs.is_a?(Array)
+                          source_attrs.first
+                        else
+                          source_attrs
+                        end
+          file_ext = ext_by_file_path(source_file)
+          next if file_ext != 'txt'
+
+          check_txt_file(source_file)
+        end
+      end
+
+      def check_txt_file(text_file_path)
+        tsv_check_result = TsvDetector.new(text_file_path).detect
+        return if tsv_check_result.tsv?
+
+        add_error("#{text_file_path}: not a TSV file (reason: #{tsv_check_result.reason})")
+      end
+
       def validate_macro_name
         @convert.macro_names.each do |macro_name|
-          next if SYSTEM_MACRO_NAMES.include?(macro_name)
+          next if SYSTEM_MACRO_NAMES.include?(macro_name) || Convert.internal_macro?(macro_name)
 
           macro_file_path = File.join(__dir__, MACRO_DIR_NAME, "#{macro_name}.rb")
           next if File.exist?(macro_file_path)
 
-          add_error(%(Macro "#{macro_name}" is not defined.))
+          add_error(%(Macro "#{macro_name}" is not found.))
         end
       end
 
@@ -90,6 +227,10 @@ class RDFConfig
 
       def valid_variable_name?(variable_name)
         /\A\$[a-z]\w+\z/ =~ variable_name
+      end
+
+      def context_mode?
+        %w[:context context].include?(@opts[:format]) || !@convert.output_path.nil?
       end
     end
   end

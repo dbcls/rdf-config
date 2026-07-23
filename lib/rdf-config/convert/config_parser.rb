@@ -1,39 +1,77 @@
 # frozen_string_literal: true
 
 require 'yaml'
+require 'forwardable'
+require_relative 'validator'
 require_relative 'mix_in/convert_util'
+require_relative 'parser/method_parser'
+require_relative 'config_parser/source_processor'
 
 class RDFConfig
   class Convert
     class ConfigParser
       class ParseError < StandardError; end
 
+      extend Forwardable
       include MixIn::ConvertUtil
 
-      attr_reader :subject_converts, :object_converts, :variable_converts, :source_subject_map, :source_format_map,
+      attr_reader :subject_converts, :split_subject, :object_converts, :source_subject_map, :source_format_map,
                   :macro_names, :variable_convert, :convert_variable_names
+
+      def_delegators :@yaml_parser, :subject_names, :object_names
 
       CONFIG_FILES_KEY = 'config_files'
       SUBJECT_KEY = 'subject'
       OBJECTS_KEY = 'objects'
 
+      class << self
+        def translate_parslet_result(parslet_result, convert_variable_name)
+          {
+            method_name_: parslet_result[:method_name_].to_str,
+            args_: parslet_result.key?(:args_) ? parslet_result[:args_].map { |k, v| [k, v.to_s] }.to_h : nil,
+            variable_name: convert_variable_name
+          }
+        end
+      end
+
       def initialize(config, **opts)
         @config = config
+
+        @yaml_parser = opts[:yaml_parser]
+
+        @target_source = nil
+        @source_base_dir = Dir.pwd
+        @convert_source = nil
+        @convert_source_is_file = false
+        if opts[:convert_source]
+          convert_source = File.absolute_path(File.expand_path(opts[:convert_source]))
+          if File.file?(convert_source)
+            @convert_source = convert_source
+            @convert_source_is_file = true
+            @target_source = convert_source
+          elsif File.directory?(convert_source)
+            @source_base_dir = convert_source
+          else
+            raise ParseError, Validator.format_error_message(["Source for convert does not exist: #{convert_source}"])
+          end
+        end
 
         @validator = Validator.new(config)
 
         @model = Model.instance(config)
         @method_parser = MethodParser.new
+        @source_processor = SourceProcessor.new
 
-        @subject_converts = []
+        @subject_converts = {}
+        @split_subject = {}
         @object_converts = {}
         @source_subject_map = {}
+        @macro_names = []
 
         @variable_convert = {}
         @convert_variable_names = []
 
         @source_format_map = {}
-        @target_source_file_path = nil
 
         @subject_config = {}
         @object_config = {}
@@ -42,16 +80,24 @@ class RDFConfig
         @subject_object_map = {}
         @bnode_no = 0
 
-        @macro_names = []
-
-        @convert_source = opts[:convert_source]
-        @convert_source_file = (@convert_source if !@convert_source.nil? && File.file?(@convert_source))
+        @subject_name = nil
       end
 
       def parse
-        validate_config(@config.convert)
-        raise InvalidConfig, @validator.format_error_message if @validator.error?
+        @yaml_parser.converts.each do |convert_config|
+          parse_convert_config(convert_config)
+        end
 
+        if @convert_source_is_file
+          subject_names.each do |subject_name|
+            add_source_subject_map(@convert_source, subject_name)
+          end
+          add_source_format_map(@convert_source, source_type_for(@convert_source))
+        end
+      end
+
+      # TODO 設定ファイルの分割に対応する
+      def parse_old
         @config.convert.each do |convert_config|
           key = convert_config.keys.first
           if key == CONFIG_FILES_KEY
@@ -64,10 +110,60 @@ class RDFConfig
             load_config_files(config_files)
             raise InvalidConfig, @validator.format_error_message if @validator.error?
           else
+            # parse_convert_configs
             # key is subject name
-            parse_subject_config(key, convert_config[key])
+            # @subject_converts[key] = []
+            # parse_subject_converts(key)
+            # parse_object_converts(key)
           end
         end
+      end
+
+      def parse_converter(variable_name, converter)
+        if converter.is_a?(Hash)
+          name = converter.keys.first.value
+          if convert_variable?(name)
+            convert_variable_name = name
+            converter = converter.values.first
+          else
+            if name.start_with?('switch')
+              require_relative 'processor/switch_processor'
+              switch_processor = Processor::SwitchProcessor.new(variable_name, name, converter.values.first)
+              switch_processor.parse_convert_process(self)
+              return switch_processor
+            end
+          end
+        elsif convert_variable?(variable_name)
+          convert_variable_name = variable_name
+        else
+          convert_variable_name = nil
+        end
+
+        is_macro = !converter.quoted?
+        begin
+          method = @method_parser.parse(converter.value)
+        rescue Parslet::ParseFailed => e
+          # Here comes the case where the converter is not a method definition
+          is_macro = false
+        end
+
+        method_def = if is_macro
+                       self.class.translate_parslet_result(method, convert_variable_name)
+                     else
+                       {
+                         method_name_: TO_S_MACRO_NAME,
+                         args_: { arg_: converter },
+                         variable_name: convert_variable_name
+                       }
+                     end
+        macro_name = method_def[:method_name_].to_s
+        add_macro_name(macro_name)
+
+        if macro_name == SOURCE_MACRO_NAME && !@convert_source_is_file
+          process_source_macro(method_def, variable_name)
+        end
+
+        method_def
       end
 
       def has_rdf_type_object?
@@ -77,11 +173,105 @@ class RDFConfig
         end.count.positive?
       end
 
-      def object_names
-        @object_config.keys
+      def source_file_for(subject_name)
+        source_subject_map = @source_subject_map.select { |_, subject_names| subject_names.include?(subject_name) }
+
+        source_subject_map.keys.first
+      end
+
+      def source_format_for(source_key)
+        @source_format_map[source_key].first
+      rescue StandardError => e
+        raise ProgrammingError, "[BUG] #{e.class}: Cannot find source file format for #{source_key}"
+      end
+
+      def inspect
+        "#<#{self.class}:0x#{object_id.to_s(16)}>"
       end
 
       private
+
+      def parse_convert_config(convert_config)
+        @subject_name = convert_config[:subject_name]
+        parse_convert_pre_process(convert_config[:pre_process])
+        parse_subject_converts(convert_config[:subject_convert])
+        parse_object_converts(convert_config[:object_convert])
+      end
+
+      def parse_convert_pre_process(convert_pre_processes)
+        pre_process_converters = []
+        convert_pre_processes.each do |pre_process|
+          converters = if pre_process.is_a?(Hash)
+                         pre_process.map do |key, value|
+                           if value.is_a?(Array)
+                             value.map { |v| parse_converter(@subject_name, { key => v }) }
+                           else
+                             parse_converter(@subject_name, { key => value })
+                           end
+                         end.flatten
+                       else
+                         [ parse_converter(@subject_name, pre_process) ]
+                       end
+          converters.each do |converter|
+            if converter[:method_name_] == 'source'
+              @convert_source = convert_source_args(converter) if @convert_source.nil?
+            else
+              pre_process_converters << converter
+            end
+          end
+        end
+
+        pre_process_converters.each do |converter|
+          add_subject_convert(converter)
+        end
+      end
+
+      def convert_source_args(source_converter)
+        source_converter[:args_].keys.map do |key|
+          arg = if key == :arg_
+                  source_converter[:args_][:arg_]
+                elsif key.is_a?(Hash)
+                  if key[:arg_] && key[:arg_].is_a?(Hash) && key[:arg_].key?(:symbol)
+                    key[:arg_][:symbol].to_s
+                  else
+                    key[:arg_].to_s
+                  end
+                end
+
+          arg.gsub(/\A"(.+)"\z/, '\1')
+        end
+      end
+
+      def parse_subject_converts(subject_converts)
+        subject_converts.each do |subject_convert|
+          if subject_convert.is_a?(Hash) && subject_convert.values.first.is_a?(Array)
+            key = subject_convert.keys.first
+            subject_convert[key].each do |value|
+              add_subject_convert(parse_converter(@subject_name, { key => value }))
+            end
+          else
+            add_subject_convert(parse_converter(@subject_name, subject_convert))
+          end
+        end
+      end
+
+      def parse_object_converts(object_converts)
+        object_converts.each do |object_convert|
+          parse_object_convert(object_convert)
+        end
+      end
+
+      def parse_object_convert(object_convert)
+        object_convert.each do |object_name, object_converts|
+          if object_converts.is_a?(Array)
+            object_converts.each do |object_converter|
+              add_object_convert(object_name, parse_converter(object_name, object_converter))
+            end
+          else
+            add_object_convert(object_name, parse_converter(object_name, object_converts))
+          end
+        end
+      end
 
       def load_config_files(config_files)
         config_files = [config_files.to_s] unless config_files.is_a?(Array)
@@ -97,6 +287,7 @@ class RDFConfig
 
       def load_config_file(config_file_path)
         convert_config = YAML.load_file(config_file_path)
+        # TODO ファイルが分割されている場合、分割されたファイルを読み込んだ際にValidationを行う
         if validate_config(convert_config, convert_config_file_path: config_file_path)
           load_config(convert_config)
         end
@@ -119,7 +310,7 @@ class RDFConfig
         end
 
         unless @source_subject_map.values.flatten.include?(subject_name)
-          add_source_subject_map(@convert_source_file, subject_name) unless @source_subject_map.value?(subject_name)
+          add_source_subject_map(convert_source_file, subject_name) unless @source_subject_map.value?(subject_name)
         end
 
         @subject_name_stack.pop
@@ -128,7 +319,7 @@ class RDFConfig
       def parse_subject_convert_step(subject_name, convert_step)
         case convert_step
         when Hash
-          parse_hash_convert_step(subject_name, convert_step)
+          add_subject_convert(subject_name, convert_step)
         when String
           unless convert_step.start_with?(SOURCE_MACRO_NAME)
             raise ParseError, "ERROR: Unexpected convert setting: #{subject_name}, #{convert_step}"
@@ -140,151 +331,52 @@ class RDFConfig
         end
       end
 
-      def parse_hash_convert_step(subject_name, convert_step)
-        if convert_step.key?(SUBJECT_KEY)
-          subject_converts = parse_subject_converts(subject_name, convert_step[SUBJECT_KEY])
-          add_subject_convert(subject_name, subject_converts)
-        elsif convert_step.key?(OBJECTS_KEY)
-          parse_objects_config(subject_name, convert_step[OBJECTS_KEY])
-        elsif convert_variable?(convert_step.keys.first)
-          parse_variable_config(convert_step)
-        else
-          raise ParseError, "ERROR: Unexpected convert setting: #{subject_name}, #{convert_step}"
-        end
-      end
-
-      def parse_subject_converts(subject_name, subject_convert_steps)
-        subject_converts = []
-        subject_convert_steps.each do |subject_convert|
-          subject_converts << parse_converter(subject_name, subject_convert)
-          @subject_config[subject_name] << subject_convert
-        end
-
-        subject_converts
-      end
-
       def parse_bnode_config(bnode_config)
         subject_name = bnode_name
         @subject_object_map[@subject_name_stack.last] << subject_name
         parse_subject_config(subject_name, bnode_config)
       end
 
-      def parse_objects_config(subject_name, objects_config)
-        objects_config.each do |object_config|
-          object_name = object_config.keys.first
-          if @model.subject?(object_name)
-            parse_subject_config(object_name, object_config[object_name], child: true)
-            @subject_object_map[subject_name] << object_name
-          elsif object_name.to_s == '[]'
-            parse_bnode_config(object_config[object_name])
-          else
-            add_object_convert(subject_name, object_name, parse_object_config(object_name, object_config))
-          end
-        end
-      end
+      def process_source_macro(method_def, variable_name)
+        source_macro_args = @source_processor.parse_method_def(method_def)
+        source_macro_args[0] = if @convert_source_is_file
+                                 @convert_source
+                               else
+                                 absolute_source_file_path(source_macro_args[0])
+                               end
+        @source_processor.parse_args(*source_macro_args)
 
-      def parse_object_config(object_name, object_config)
-        converts = []
-        @subject_object_map[@subject_name_stack.last] << object_name
-
-        @object_config[object_name] = if object_config[object_name].is_a?(Array)
-                                        object_config[object_name]
-                                      else
-                                        [object_config[object_name]]
-                                      end
-
-        @object_config[object_name].each do |obj_conf|
-          converts << parse_converter(object_name, obj_conf)
-        end
-
-        @object_config[object_name].unshift({ _subject_name: @subject_name_stack.last })
-
-        converts
-      end
-
-      def parse_variable_config(variable_convert)
-        variable_name = variable_convert.keys.first
-        convert_def = parse_converter(variable_name, variable_convert[variable_name])
-        add_variable_convert(variable_name, convert_def)
-        add_convert_variable_name(variable_name)
-      end
-
-      def parse_converter(variable_name, converter)
-        if converter.is_a?(Hash)
-          convert_variable_name = converter.keys.first
-          converter = converter[convert_variable_name]
-        elsif convert_variable?(variable_name)
-          convert_variable_name = variable_name
+        if @source_processor.source_is_rdb?
+          @target_source = [source_macro_args[0], @source_processor.rdb_table_name]
         else
-          convert_variable_name = nil
+          @target_source = source_macro_args[0]
         end
 
-        is_macro = true
-        begin
-          method = @method_parser.parse(converter)
-        rescue Parslet::ParseFailed => e
-          # Here comes tha case where the converter is not a method definition
-          is_macro = false
-        end
-
-        method_def = if is_macro
-                       {
-                         method_name_: method[:method_name_].to_str,
-                         args_: method.key?(:args_) ? method[:args_].map { |k, v| [k, v.to_s] }.to_h : nil,
-                         variable_name: convert_variable_name
-                       }
-                     else
-                       {
-                         method_name_: 'str',
-                         args_: { arg_: converter },
-                         variable_name: convert_variable_name
-                       }
-                     end
-        macro_name = method_def[:method_name_].to_s
-        add_macro_name(macro_name)
-
-        if macro_name == SOURCE_MACRO_NAME
-          process_source_macro(method_def[:args_][:arg_][1..-2], variable_name)
-        elsif Convert::SOURCE_FORMATS.include?(macro_name)
-          add_source_format_map(@target_source_file_path, macro_name)
-        end
-
-        if @source_file_format.nil? && !method.nil? && SOURCE_FORMATS.include?(method[:method_name_])
-          @source_file_format = method[:method_name_]
-        end
-
-        method_def
+        add_source_subject_map(@target_source, variable_name)
+        add_source_format_map(@target_source, @source_processor.source_type)
       end
 
-      def process_source_macro(source_by_config, variable_name)
-        @target_source_file_path = source_file_path(source_by_config)
-        add_source_subject_map(@target_source_file_path, variable_name)
-        @source_format_map[@target_source_file_path] = [] unless @source_format_map.key?(@target_source_file_path)
+      def absolute_source_file_path(source_file)
+        if absolute_path?(source_file)
+          source_file
+        else
+          File.absolute_path(source_file, @source_base_dir)
+        end
       end
 
       def add_source_subject_map(source, subject_name)
         @source_subject_map[source] = [] unless @source_subject_map.key?(source)
 
-        @source_subject_map[source] << subject_name
+        @source_subject_map[source] << subject_name unless @source_subject_map[source].include?(subject_name)
       end
 
-      def add_source_format_map(source, macro_name)
-        source = @convert_source_file unless @convert_source_file.nil?
+      def add_source_format_map(source, format)
+        source = @convert_source if @convert_source_is_file
         @source_format_map[source] = [] unless @source_format_map.key?(source)
 
-        @source_format_map[source] << macro_name unless @source_format_map[source].include?(macro_name)
-      end
+        return if format.nil?
 
-      def source_file_path(source_by_config)
-        return @convert_source_file if @convert_source_file
-
-        if absolute_path?(source_by_config)
-          source_by_config
-        elsif source_by_config.start_with?('~')
-          File.expand_path(source_by_config)
-        else
-          File.expand_path(source_by_config, @convert_source)
-        end
+        @source_format_map[source] << format unless @source_format_map[source].include?(format)
       end
 
       def add_variable_convert(variable_name, convert)
@@ -292,13 +384,33 @@ class RDFConfig
         @variable_convert[variable_name] << convert
       end
 
-      def add_subject_convert(subject_name, convert)
-        @subject_converts << { subject_name => convert }
+      def add_subject_convert(convert)
+        key = convert_queue_key
+
+        if @subject_converts.key?(key)
+          @subject_converts[key] << convert
+        else
+          @subject_converts[key] = [ convert ]
+        end
+
+        @split_subject[@subject_name] = false unless @split_subject.key?(@subject_name)
+        @split_subject[@subject_name] = true if convert[:method_name_] == 'split'
       end
 
-      def add_object_convert(subject_name, object_name, convert)
-        @object_converts[subject_name] = [] unless @object_converts.key?(subject_name)
-        @object_converts[subject_name] << { object_name => convert }
+      def add_object_convert(object_name, convert)
+        key = convert_queue_key
+
+        @object_converts[key] = {} unless @object_converts.key?(key)
+
+        if @object_converts[key].key?(object_name)
+          @object_converts[key][object_name] << convert
+        else
+          @object_converts[key][object_name] = [ convert ]
+        end
+      end
+
+      def convert_queue_key
+        [@subject_name, @target_source]
       end
 
       def add_convert_method(variable_name, method)
@@ -366,26 +478,6 @@ class RDFConfig
           path =~ /\A[a-zA-Z]:\\/ || path.start_with?('\\')
         else
           path.start_with?('/')
-        end
-      end
-
-      def validate_config(convert_config, convert_config_file_path: 'convert.yaml')
-        unless convert_config.is_a?(Array)
-          @validator.add_error("#{convert_config_file_path} must be an array of conversion settings for each subject.")
-          return false
-        end
-
-        validate_subjects(convert_config)
-      end
-
-      def validate_subjects(convert_config)
-        subject_names = convert_config.map { |subject_convert| subject_convert.keys.first }
-        duplicate_subject_names = subject_names.select { |subject_name|  subject_names.count(subject_name) > 1 }.uniq
-        if duplicate_subject_names.empty?
-          true
-        else
-          @validator.add_error("Duplicate subject name in convert.yaml: #{duplicate_subject_names.join(', ')}")
-          false
         end
       end
     end

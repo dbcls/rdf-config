@@ -1,0 +1,62 @@
+# To create the DuckDB database for CIViC (civic.duckdb), run ./convert/build_civic_duckdb.sh.
+# % ./convert/build_civic_duckdb.sh
+
+- Gene:
+    - source("convert/civic.duckdb", :duckdb, "feature_variants")
+    - subject:
+        - col("features_feature_id")
+        - prepend("gene:")
+    - objects:
+        - gene_identifier: col("features_feature_id")
+        - gene_label: col("features_name")
+        - ncbi_gene:
+            - col("features_entrez_id")
+            - prepend("ncbigene:")
+        - variation:
+            - col("variants_variant_id")
+            - prepend("variants:")
+
+- Variation:
+    - source("convert/civic.duckdb", :duckdb, "variants")
+    - subject:
+        - col("variant_id")
+        - prepend("variants:")
+    - objects:
+        - variation_identifier: col("variant_id")
+        - variation_label: col("variant")
+        - reference_build: col("reference_build")
+        - transcript_label: col("representative_transcript")
+        - ensembl_version: col("ensembl_version")
+        - ensembl_transcript:
+            - col("representative_transcript")
+            - replace(/\..*$/, "")
+            - prepend("enst:")
+        - variant_type:
+            - col("variant_types")
+            - skip("N/A")
+            - split(",")
+            - prepend("civic:")
+
+- Evidence:
+    - source("convert/civic.duckdb", :duckdb, "clinical_evidences")
+    - subject:
+        - col("evidence_id")
+        - prepend("evidence_items:")
+    - objects:
+        - evidence_description: col("evidence_statement")
+        - clinical_significance: col("significance")
+        - evidence_direction: col("evidence_direction")
+        - evidence_type: col("evidence_type")
+        - rating: col("rating")
+        - evidence_level: col("evidence_level")
+        - evidence_status: col("evidence_status")
+        - citation: col("citation")
+        - pubmed_id:
+            - switch("source_type"):
+                "PubMed":
+                    - col("citation_id")
+                    - prepend("pubmed:")
+        - drug:
+            - col("therapies")
+            - split(",")
+            - prepend("civic:drug_")

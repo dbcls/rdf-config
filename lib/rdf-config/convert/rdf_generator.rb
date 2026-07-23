@@ -9,8 +9,12 @@ class RDFConfig
       def initialize(config, convert)
         super
 
+        @rdf_format = @convert.format.start_with?(':') ? @convert.format[1..-1] : @convert.format
+
         @statements = []
         @subject_stack = []
+
+        @one_row_statements = []
       end
 
       def generate
@@ -25,11 +29,27 @@ class RDFConfig
       end
 
       def output_rdf
-        RDF::Writer.for(:turtle).new(**rdf_writer_opts) do |writer|
-          @statements.each do |statement|
-            writer << statement[:statement]
+        statements = @statements.flatten.uniq
+        @statements = []
+
+        return if statements.empty?
+
+        rdf = RDF::Writer.for(@rdf_format.to_sym).buffer(**rdf_writer_opts) do |writer|
+          statements.each do |statement|
+            writer << statement
           end
         end
+
+        rdf = reject_prefix_lines(rdf) if turtle_format?
+        puts rdf
+      end
+
+      def turtle_format?
+        @rdf_format.to_s == 'turtle'
+      end
+
+      def ntriples_format?
+        @rdf_format.to_s == 'ntriples'
       end
 
       private
@@ -44,7 +64,7 @@ class RDFConfig
                  uri_node(subject_value)
                end
         add_subject_node(subject_name, node)
-        add_subject_type_node(subject_name, node) unless @convert.has_rdf_type_object?
+        add_subject_type_node(subject_name, node) # unless @convert.has_rdf_type_object?
       end
 
       def generate_bnode_subject(subject_name)
@@ -90,7 +110,7 @@ class RDFConfig
                           triple = @model.find_by_object_name(object_name)
                           triple.predicates.last.uri
                         end
-        @statements << RDF::Statement.new(
+        @one_row_statements << RDF::Statement.new(
           @subject_stack[-2], predicate_node(predicate_uri), @subject_stack.last
         )
       end
@@ -101,7 +121,7 @@ class RDFConfig
         return if converted_value.is_a?(String) && converted_value.strip.empty?
 
         triple = @model.find_by_object_name(variable_name)
-        @statements << RDF::Statement.new(
+        @one_row_statements << RDF::Statement.new(
           subject,
           predicate_node(triple.predicates.last.uri),
           object_node_by_triple(triple, converted_value)
@@ -120,7 +140,7 @@ class RDFConfig
 
       def add_subject_type_node(subject_name, subject)
         @model.find_subject(subject_name).types.each do |rdf_type|
-          @statements << {
+          @one_row_statements << {
             statement: RDF::Statement.new(subject, RDF.type, uri_node(rdf_type)),
             triple: nil
           }
@@ -167,13 +187,20 @@ class RDFConfig
       def literal_node(value, literal_object)
         return value if value.is_a?(RDF::Literal)
 
+        value = value.strip if value.is_a?(String)
+
         case literal_object.value
         when String
           literal_node_by_string_value(value, literal_object)
         when Integer
           RDF::Literal::Integer.new(value)
         when Float
-          RDF::Literal::Decimal.new(value)
+          if /\A[+-]?(?:\d+(?:\.\d*)?|\.\d+)[eE][+-]?\d+\z/.match?(value.to_s)
+            RDF::Literal::Double.new(value)
+          else
+            value = "#{value}.0" if /\A[+-]?\d+\z/.match?(value.to_s)
+            RDF::Literal::Decimal.new(value)
+          end
         when Date
           RDF::Literal::Date.new(value)
         when TrueClass, FalseClass
@@ -187,18 +214,14 @@ class RDFConfig
         if /.+\^\^(.+)\z/ =~ literal_object.value
           prefix, local_part = $1.split(':', 2)
           if prefix == 'xsd'
-            RDF::Literal.new(value, datatype: eval("RDF::XSD.#{local_part}"))
+            RDF::Literal.new(value.to_s, datatype: eval("RDF::XSD.#{local_part}"))
           else
             # TODO Other datatype or lang tag
-            RDF::Literal.new(value)
+            RDF::Literal.new(value.to_s)
           end
         else
-          RDF::Literal.new(value)
+          RDF::Literal.new(value.to_s)
         end
-      end
-
-      def to_bool(value)
-        !['0', 'f', 'false', ''].include?(value.to_s.strip.downcase)
       end
 
       def rdf_writer_opts
@@ -221,18 +244,18 @@ class RDFConfig
 
       def rdftype_only_subject_uris
         subject_uris.select do |subject_uri|
-          @statements.select { |statement| statement[:statement].subject.to_s == subject_uri }
-                     .reject { |statement| statement[:statement].predicate == RDF.type }
-                     .empty?
+          @one_row_statements.select { |statement| statement[:statement].subject.to_s == subject_uri }
+                             .reject { |statement| statement[:statement].predicate == RDF.type }
+                             .empty?
         end
       end
 
       def remove_rdftype_only_statemtns(remove_subject_uris)
-        @statements.reject! { |statement| remove_subject_uris.include?(statement[:statement].subject.to_s) }
+        @one_row_statements.reject! { |statement| remove_subject_uris.include?(statement[:statement].subject.to_s) }
       end
 
       def remove_no_connection_statements(valid_subject_uris)
-        @statements.reject! { |statement| remove_statement?(statement, valid_subject_uris) }
+        @one_row_statements.reject! { |statement| remove_statement?(statement, valid_subject_uris) }
       end
 
       def remove_statement?(statement, valid_subject_uris)
@@ -252,7 +275,109 @@ class RDFConfig
       end
 
       def subject_uris
-        @statements.map { |statement| statement[:statement].subject }.map(&:to_s).uniq
+        @one_row_statements.map { |statement| statement[:statement].subject }.map(&:to_s).uniq
+      end
+
+      def add_statements_for_row
+        refine_statements
+
+        @one_row_statements.each do |statement|
+          if !statement[:triple].nil? && statement[:triple].predicates.size > 1
+            property_path_statements(statement).each do |rdf_statement|
+              add_statement(rdf_statement)
+            end
+          else
+            add_statement(statement[:statement])
+          end
+
+          object_subjects = if statement[:triple]&.object.is_a?(Model::Subject)
+                              [statement[:triple].object]
+                            elsif statement[:triple].is_a?(Model::ValueList)
+                              statement[:triple].object.value.select { |object| object.is_a?(Model::Subject) }
+                            else
+                              []
+                            end
+          object_subjects.each do |object_subject|
+            triples = @model.rdf_type_triples_by_subject_name(object_subject.name)
+            triples.each do |triple|
+              next if @convert.subject_names.include?(triple.subject.name)
+
+              add_statement(
+                RDF::Statement.new(@statements.last.object, RDF.type, uri_node(triple.object.value))
+              )
+            end
+          end
+        end
+
+        @one_row_statements = []
+      end
+
+      def property_path_statements(statement)
+        statements = []
+
+        predicates = statement[:triple].predicates
+        paths =
+          (1...predicates.length).map { |i| predicates[0...i].map(&:uri).join('/') }
+
+        subject = statement[:statement].subject
+        paths.each do |path|
+          num_paths = path.split(/\s*\/\s*/).size
+          object_bnode = bnode_by_bnode_key(bnode_key(statement[:statement].subject, path))
+          statements << RDF::Statement.new(
+            subject,
+            predicate_node(path.split(/\s*\/\s*/).last),
+            object_bnode
+          )
+
+          types = predicates[num_paths-1].objects.first.values.first.select { |h| h.key?('a') }
+          if types.size > 0
+            types.each do |rdf_type|
+              statements << RDF::Statement.new(object_bnode, RDF.type, uri_node(rdf_type['a']))
+            end
+          end
+
+          subject = object_bnode
+        end
+
+        statements << RDF::Statement.new(
+          subject,
+          predicate_node(predicates.last.uri),
+          statement[:statement].object
+        )
+
+        statements
+      end
+
+      def bnode_by_bnode_key(bnode_key)
+        unless @bnode.key?(bnode_key)
+          @bnode[bnode_key] = RDF::Node.new
+        end
+
+        @bnode[bnode_key]
+      end
+
+      def reject_prefix_lines(turtle)
+        turtle.to_s.split("\n").reject { |line| line.start_with?('@prefix') }.join("\n")
+      end
+
+      def output_prefixes
+        puts @prefixes.map { |prefix, uri| "@prefix #{prefix}: <#{uri}> ." }.join("\n")
+      end
+
+      def format_text
+        ft = @convert.format.to_s.start_with?(':') ? @convert.format.to_s[1..-1] : @convert.format.to_s
+        case ft
+        when 'turtle'
+          'Turtle'
+        when 'ntriples'
+          'N-Triples'
+        else
+          'unknown'
+        end
+      end
+
+      def add_statement(statement)
+        @statements << statement
       end
     end
   end

@@ -1,30 +1,182 @@
+# Input file
+#   https://storage.googleapis.com/public-download-files/hgnc/tsv/tsv/hgnc_complete_set.txt
+
 - HGNC:
   - subject:
-    - tsv("hgnc_id")
+    - col("hgnc_id")
     - downcase
   - objects:
-    - gene_id: tsv("symbol")
+    - gene_id: col("symbol")
     - hgnc_id:
-      - tsv("hgnc_id")
+      - col("hgnc_id")
       - delete(/^HGNC:/)
-      - to_int
-    - description: tsv("name")
-    - location: tsv("location")
+    - description: col("name")
+    - location: col("location")
+    - alt_label:
+      - $alias_symbol: col("alias_symbol")
+      - $alias_name: col("alias_name")
+      - join($alias_symbol, $alias_name, "|")
+      - split("|")
+    - history_note: col("status")
+
+- NCBIGene:
+  - subject:
+    - col("entrez_id")
+    - prepend("http://identifiers.org/ncbigene/")
+  - objects:
+    - ncbigene_id: col("entrez_id")
+
+- Ensembl:
+  - subject:
+    - col("ensembl_gene_id")
+    - prepend("http://identifiers.org/ensembl/")
+  - objects:
+    - ensembl_id: col("ensembl_gene_id")
+
+- ENA:
+  - subject:
+    - col("ena")
+    - split("|")
+    - delete(/\A\s+|\s+\z/)
+    - prepend("http://identifiers.org/ena.embl/")
+  - objects:
+    - ena_id: 
+      - col("ena")
+      - split("|")
+      - delete(/\A\s+|\s+\z/)
+
+- INSDC:
+  - subject:
+    - col("ena")
+    - split("|")
+    - delete(/\A\s+|\s+\z/)
+    - prepend("http://identifiers.org/insdc/")
+  - objects:
+    - insdc_id: 
+      - col("ena")
+      - split("|")
+      - delete(/\A\s+|\s+\z/)
+
+- RefSeq:
+  - subject:
+    - col("refseq_accession")
+    - split("|")
+    - delete(/\A\s+|\s+\z/)
+    - prepend("http://identifiers.org/refseq/")
+  - objects:
+    - refseq_id: 
+      - col("refseq_accession")
+      - split("|")
+      - delete(/\A\s+|\s+\z/)
+
+- CCDS:
+  - subject:
+    - col("ccds_id")
+    - split("|")
+    - delete(/\A\s+|\s+\z/)
+    - prepend("http://identifiers.org/ccds/")
+  - objects:
+    - ccds_id:
+      - col("ccds_id")
+      - split("|")
+      - delete(/\A\s+|\s+\z/)
 
 - UniProt:
   - subject:
-    - tsv("uniprot_ids")
+    - col("uniprot_ids")
+    - split("|")
+    - delete(/\A\s+|\s+\z/)
     - prepend("http://identifiers.org/uniprot/")
   - objects:
-    - uniprot_id: tsv("uniprot_ids")
+    - uniprot_id: 
+      - col("uniprot_ids")
+      - split("|")
+      - delete(/\A\s+|\s+\z/)
 
 - PubMed:
   - subject:
-    - tsv("pubmed_id")
+    - col("pubmed_id")
     - split("|")
+    - delete(/\A\s+|\s+\z/)
     - prepend("http://identifiers.org/pubmed/")
   - objects:
     - pubmed_id:
-      - tsv("pubmed_id")
+      - col("pubmed_id")
       - split("|")
-      - to_int
+      - delete(/\A\s+|\s+\z/)
+
+- MGI:
+  - subject:
+    - col("mgd_id")
+    - split("|")
+    - delete(/\A\s+|\s+\z/)
+    - prepend("http://identifiers.org/mgi/")
+  - objects:
+    - mgi_id: 
+      - col("mgd_id")
+      - split("|")
+      - delete(/\A\s+|\s+\z/)
+
+- RGD:
+  - subject:
+    - col("rgd_id")
+    - split("|")
+    - delete(/\A\s+|\s+\z/)
+    - delete(/^RGD:/)
+    - prepend("http://identifiers.org/rgd/")
+  - objects:
+    - rgd_id:
+      - col("rgd_id")
+      - split("|")
+      - delete(/\A\s+|\s+\z/)
+      - delete(/^RGD:/)
+
+- LRG:
+  - subject:
+    - col("lsdb")
+    - split("|")
+    - replace(/\A(?!LRG_\d+\z).*\z/, "")
+    - prepend("http://identifiers.org/lrg/")
+  - objects:
+    - lrg_id: 
+      - col("lsdb")
+      - split("|")
+      - replace(/\A(?!LRG_\d+\z).*\z/, "")
+
+- OMIM:
+  - subject:
+    - col("omim_id")
+    - split("|")
+    - delete(/\A\s+|\s+\z/)
+    - prepend("http://identifiers.org/mim/")
+  - objects:
+    - omim_id: 
+      - col("omim_id")
+      - split("|")
+      - delete(/\A\s+|\s+\z/)
+
+- Orphanet:
+  - subject:
+    - col("orphanet")
+    - prepend("http://identifiers.org/orphanet/")
+  - objects:
+    - orphanet_id: col("orphanet")
+
+- MiRBase:
+  - subject:
+    - col("mirbase")
+    - prepend("http://identifiers.org/mirbase/")
+  - objects:
+    - mirbase_id: col("mirbase")
+
+- EC:
+  - subject:
+    - col("enzyme_id")
+    - split("|")
+    - delete(/\A\s+|\s+\z/)
+    - prepend("http://identifiers.org/ec-code/")
+  - objects:
+    - ec_id: 
+      - col("enzyme_id")
+      - split("|")
+      - delete(/\A\s+|\s+\z/)

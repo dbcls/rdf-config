@@ -9,16 +9,17 @@ require 'fileutils'
 require 'open3'
 
 require_relative 'rdf-config/config'
-require_relative 'rdf-config/sparql'
-require_relative 'rdf-config/stanza/javascript'
-require_relative 'rdf-config/stanza/ruby'
-require_relative 'rdf-config/schema/senbero'
-require_relative 'rdf-config/schema/chart'
-require_relative 'rdf-config/grasp'
-require_relative 'rdf-config/shex'
-require_relative 'rdf-config/convert'
+require_relative 'rdf-config/model'
+
+class Integer
+  def delimited_string
+    self.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\1,').reverse
+  end
+end
 
 class RDFConfig
+  class ProgrammingError < StandardError; end
+
   def initialize(opts = {})
     @config = if opts[:config_dir].is_a?(Array)
                 opts[:config_dir].map { |config_dir| Config.new(config_dir) }
@@ -50,10 +51,18 @@ class RDFConfig
       generate_shex
     when :convert
       convert
+    when :context
+      convert
     end
   end
 
+  def verbose?
+    @opts[:verbose]
+  end
+
   def generate_sparql
+    require_relative 'rdf-config/sparql'
+
     sparql = SPARQL.new(@config, @opts)
     if sparql.print_usage?
       sparql.print_usage
@@ -64,17 +73,23 @@ class RDFConfig
   end
 
   def generate_sparql_url
+    require_relative 'rdf-config/sparql'
+
     sparql = SPARQL.new(@config, @opts)
     puts sparql.generate(url_encode: true)
     sparql.print_warnings
   end
 
   def run_sparql
+    require_relative 'rdf-config/sparql'
+
     sparql = SPARQL.new(@model, @opts)
     sparql.run
   end
 
   def generate_stanza_rb
+    require_relative 'rdf-config/stanza/ruby'
+
     stanza = Stanza::Ruby.new(@config, @opts)
     stanza.generate
   rescue Stanza::StanzaConfigNotFound, Stanza::StanzaExecutionFailure => e
@@ -82,6 +97,8 @@ class RDFConfig
   end
 
   def generate_stanza_js
+    require_relative 'rdf-config/stanza/javascript'
+
     stanza = Stanza::JavaScript.new(@config, @opts)
     if stanza.print_usage?
       stanza.print_usage
@@ -93,27 +110,37 @@ class RDFConfig
   end
 
   def generate_senbero
+    require_relative 'rdf-config/schema/senbero'
+
     senbero = Schema::Senbero.new(@config)
     senbero.generate
   end
 
   def generate_chart
+    require_relative 'rdf-config/schema/chart'
+
     schema = Schema::Chart.new(@config, @opts)
     schema.generate
   end
 
   def generate_grasp
+    require_relative 'rdf-config/grasp'
+
     grasp = Grasp.new(@config, @opts)
     grasp.generate
   end
 
   def generate_shex
+    require_relative 'rdf-config/shex'
+
     shex = Shex.new(@config)
     puts shex.generate
     shex.print_warnings
   end
 
   def convert
+    require_relative 'rdf-config/convert'
+
     convert = Convert.new(@config, @opts)
     convert.generate
   end

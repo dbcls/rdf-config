@@ -3,8 +3,8 @@
 require 'forwardable'
 require_relative 'convert/mix_in/convert_util'
 require_relative 'convert/config_parser'
-require_relative 'convert/method_parser'
 require_relative 'convert/rdf_generator'
+require_relative 'convert/yaml/parser'
 require_relative 'convert/validator'
 require_relative 'convert/macro'
 
@@ -21,28 +21,66 @@ class RDFConfig
     SOURCE_FORMATS = %w[csv tsv json xml].freeze
     SOURCE_MACRO_NAME = 'source'
     ROOT_MACRO_NAME = 'root'
+    TO_S_MACRO_NAME = '_str'
+    DUCKDB_FILE_EXTENSIONS = %w[duckdb].freeze
+    SQLITE3_FILE_EXTENSIONS = %w[sqlite3 sqlite db].freeze
+    UNKNOWN_SOURCE_TYPE= 'unknown'
+    RDB_FILE_EXTENSIONS = (DUCKDB_FILE_EXTENSIONS + SQLITE3_FILE_EXTENSIONS).freeze
+    VALID_SOURCE_TYPES = %i[csv tsv duckdb sqlite3]
     SYSTEM_MACRO_NAMES = [SOURCE_MACRO_NAME, ROOT_MACRO_NAME].freeze
-    JSON_LD_SYMBOLS = %w[jsonld json-ld json_ld jsonl].freeze
+    TABLE_FORMATS = %w[csv tsv txt duckdb sqlite3].freeze
+    JSON_LD_FORMATS = Validator::VALID_CONVERT_TYPES - %w[:turtle :ntriples :context]
+    DEFAULT_OUTPUT_INTERVAL = 10
+    RUST_CLI_FILE = File.absolute_path(
+      File.join(__dir__, '..', '..', 'rust/target/release/rdf-config')
+    )
 
     attr_reader :source_subject_map, :subject_config, :object_config, :subject_object_map,
-                :convert_method, :macro_names
+                :convert_method, :macro_names, :format, :output_path, :output_interval
 
     def_delegators :@config_parser,
-                   :subject_converts, :object_converts, :source_subject_map, :source_format_map, :macro_names,
+                   :source_processor, :subject_converts, :split_subject, :object_converts,
+                   :source_subject_map, :source_format_map,
+                   :source_file_for, :source_format_for, :macro_names,
                    :variable_convert, :convert_variable_names, :has_rdf_type_object?
+
+    def_delegators :@yaml_parser,
+                   :subject_names, :object_names, :variable_names
+
+    class << self
+      def internal_macro?(macro_name)
+        macro_name.start_with?('_')
+      end
+    end
 
     def initialize(config, opts)
       @config = config
-      @format = opts[:format] || 'rdf'
+      @format = opts[:format] || ':turtle'
 
-      @config_parser = ConfigParser.new(config, convert_source: opts[:convert_source])
+      opts[:convert_source] = opts[:config_dir] unless opts.key?(:convert_source)
+
+      @output_path = opts[:output_path]
+      @output_interval = opts[:output_interval].to_s.to_i
+      @output_interval = DEFAULT_OUTPUT_INTERVAL if @output_interval.zero?
+
+      @generate_context = %w[:context context].include?(@format)
+
+      @yaml_parser = Yaml::Parser.new(config.config_file_path('convert'))
+      @yaml_parser.parse
+
+      validator = Validator.new(config, **opts.merge(convert: self, yaml_parser: @yaml_parser))
+      validator.pre_validate
+
+      @config_parser = ConfigParser.new(
+        config, convert_source: opts[:convert_source], yaml_parser: @yaml_parser
+      )
       @config_parser.parse
+
       @convert_method = {
-        subject_converts: @config_parser.subject_converts,
-        object_converts: @config_parser.object_converts
+        subject_converts: subject_converts,
+        object_converts: object_converts
       }
 
-      validator = Validator.new(config, **opts.merge(convert: self))
       validator.validate
 
       @source = begin
@@ -50,56 +88,101 @@ class RDFConfig
       rescue StandardError
         nil
       end
-
-      @source_file_format = source_format_map[@source].first
     end
 
     def generate
-      if JSON_LD_SYMBOLS.include?(@format)
-        if @format == 'jsonl'
-          json_ld_generator.generate_json_lines
-        else
-          json_ld_generator.generate
-        end
+      if executable_file?(RUST_CLI_FILE)
+        run_rust_converter
       else
-        rdf_generator.generate
+        run_ruby_converter
       end
     end
 
-    def file_reader(source: @source, file_format: @source_file_format)
-      file_format = ext_by_file_path(source) if file_format.to_s.empty?
+    def run_ruby_converter
+      case @format
+      when ':turtle', ':ntriples'
+        rdf_generator.generate
+      when ':jsonld'
+        json_ld_generator.generate
+      when ':jsonl'
+        json_ld_generator.generate(per_line: true)
+      when ':context'
+        json_ld_generator.generate_context
+      end
+    end
 
-      case file_format
+    def run_rust_converter
+      cmds = [
+        RUST_CLI_FILE,
+        '--chunk-size', '1',
+        '--config', @config.config_dir,
+        '--convert', @format
+      ]
+
+      unless @source.nil?
+        if @source.is_a?(Array)
+          cmds << @source.first
+        else
+          cmds << @source.to_s
+        end
+      end
+
+      success = system(*cmds)
+
+      unless success
+        status = $?
+        exit_code = status.exitstatus
+
+        # warn "Rust program (#{RUST_CLI_FILE}) failed with exit status #{exit_code}"
+        exit exit_code || 1
+      end
+    end
+
+    def file_reader(source: @source)
+      source_format = source_format_for(source)
+      case source_format
       when 'csv', 'tsv'
         require_relative 'convert/file_reader/csv_reader'
-        CSVReader.new(source, file_format)
+        CSVReader.new(source, source_format)
+      when *DUCKDB_FILE_EXTENSIONS
+        require_relative 'convert/file_reader/duckdb_reader'
+        DuckdbReader.new(rdb_source_file(source), rdb_source_table(source))
+      when *SQLITE3_FILE_EXTENSIONS
+        require_relative 'convert/file_reader/sqlite3_reader'
+        SQLite3Reader.new(rdb_source_file(source), rdb_source_table(source))
       when 'json'
         require_relative 'convert/file_reader/json_reader'
-        JSONReader.new(@source)
+        JSONReader.new(source)
       when 'xml'
         require_relative 'convert/file_reader/xml_reader'
-        XMLReader.new(@source)
+        XMLReader.new(source)
       end
     end
 
     def rdf_converter
       macro = Macro.get_instance(*macro_names)
-      case @source_file_format
-      when 'csv', 'tsv'
+
+      if @generate_context
         require_relative 'convert/converter/csv_converter'
-        CSVConverter.new(@convert_method, macro)
+        return CSVConverter.new(@config, @convert_method, macro)
+      end
+
+      case source_format_for(@source)
+      when *TABLE_FORMATS
+        require_relative 'convert/converter/csv_converter'
+        CSVConverter.new(@config, @convert_method, macro)
       when 'json'
         require_relative 'convert/converter/json_converter'
-        JSONConverter.new(@convert_method, macro)
+        JSONConverter.new(@config, @convert_method, macro)
       when 'xml'
         require_relative 'convert/converter/xml_converter'
-        XMLConverter.new(@convert_method, macro)
+        XMLConverter.new(@config, @convert_method, macro)
       end
     end
 
     def rdf_generator
-      case @source_file_format
-      when 'csv', 'tsv'
+      case source_format_for(@source)
+      when *TABLE_FORMATS
         require_relative 'convert/rdf_generator/csv2rdf'
         CSV2RDF.new(@config, self)
       when 'json'
@@ -112,32 +195,29 @@ class RDFConfig
     end
 
     def json_ld_generator
-      case @source_file_format
-      when 'csv', 'tsv'
-        require_relative 'convert/json_ld_generator/csv2json_ld'
-        CSV2JSON_LD.new(@config, self)
+      if @generate_context
+        require_relative 'convert/json_ld_generator/csv2json_lines'
+        return CSV2JSON_Lines.new(@config, self)
       end
-    end
 
-    def subject_convert_by_name(subject_name)
-      subject_converts.select { |convert| convert.keys.first == subject_name }.first
+      case source_format_for(@source)
+      when *TABLE_FORMATS
+        if @format == ':jsonl'
+          require_relative 'convert/json_ld_generator/csv2json_lines'
+          CSV2JSON_Lines.new(@config, self)
+        else
+          require_relative 'convert/json_ld_generator/csv2json_ld'
+          CSV2JSON_LD.new(@config, self)
+        end
+      end
     end
 
     def bnode_name?(variable_name)
       /\A_BNODE\d+_\z/ =~ variable_name
     end
 
-    def subject_names
-      @convert_method[:subject_converts].map { |hash| hash.keys.first }
-    end
-
-    def object_names
-      # ToDo: Subjectが複数ある場合に正常に動作するか確認する
-      @convert_method[:object_converts].values.map { |converts| converts.map { |convert| convert.keys.first} }.flatten.uniq
-    end
-
-    def variable_names
-      subject_names + object_names
+    def executable_file?(path)
+      File.file?(path) && File.executable?(path)
     end
   end
 end

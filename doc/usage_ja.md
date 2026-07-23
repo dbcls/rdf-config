@@ -23,7 +23,7 @@
 | `--grasp [出力ディレクトリ]` | Graspの設定ファイル（GraphQLのスキーマファイルとクエリファイル）を生成する。<br/>Graspの設定ファイルは、`grasp/`以下か、指定した出力ディレクトリに生成される。 |
 | `--grasp-ns [出力ディレクトリ]` | `--grasp`で出力されるGraphQLのtype名は`model.yaml`の主語名となるが、<br/>名前衝突を避けるため`--config`で指定したディレクトリ名を<br/>Capitalizeした文字列を主語のプレフィックスにつける。 |
 | `--shex` | ShExを標準出力に表示する。 |
-| `--convert [--format 出力フォーマット]` | CSVファイルからRDFやJSON-LDを生成する。| 
+| `--convert 出力フォーマット [入力元ファイルまたはディレクトリ]` | CSVファイル、TSVファイルやDuckDBのテーブルからRDFやJSON-LDを生成する。|
 
 ### オプションごとの設定名の表示
 
@@ -392,18 +392,42 @@ stanza/stanzas/refex-entry
 
 ### RDF, JSON-LDの生成について
 
-CSVファイル、XMLファイル、JSONファイルからRDFやJSON-LDを生成するには、rdf-config に --convert オプションを付けて実行する。
+CSVファイル、TSVファイル、DuckDB、SQLite3からRDFやJSON-LDを生成するには、rdf-config に --convert オプションを付けて実行する。
 ```
-% rdf-config --config 設定ファイルのディレクトリ名 --convert [--format 出力フォーマット]
+% rdf-config --config 設定ファイルのディレクトリ名 --convert 生成するファイルのフォーマット [入力元ファイルまたはディレクトリ]
 ```
 生成されたRDFやJSON-LDは標準出力に出力される。
 
-`--format`オプションには生成するファイルフォーマットを指定する。出力フォーマットには以下の値を指定することができる。
-* `turtle` Turtleを生成する。
-* `json-ld` JSON-LDを生成する。
-* `jsonl` JSON-LDをJSON Linesで生成する。
+`--convert`オプションには生成するファイルフォーマットを指定する。出力フォーマットには以下の値を指定することができる。
+* `:turtle` Turtleを生成する。
+* `:ntriples` N-Triplesを生成する。
+* `:jsonld` JSON-LDを生成する。
+* `:jsonl` JSON-LDをJSON Linesで生成する。
+* `:context` JSON-LDのコンテキスト（@context）を生成する。
 
-`--format`オプションが指定されない場合はTurtleが生成される。
+入力元ファイルまたはディレクトリ には、以下を指定することができる。
+* 変換元のファイル（CSVファイル、TSVファイル）のパス
+  * `convert.yaml` の `source(...)` で変換元のファイルが記述されている場合でも、ここで指定した変換元ファイルが使用される。
+* 変換元ファイルがあるディレクトリのパス
+  * `convert.yaml` の `source(...)` で変換元のファイルが相対パス（例えばファイル名のみ）の場合、ここで指定したディレクトリからの相対パスとなる。
+
+入力元ファイルまたはディレクトリを指定しなかった場合は、入力元ディレクトリが、`--config`オプションで指定されたディレクトリとなる。
+
+#### DuckDB, SQLite3の利用
+入力（変換元）にDuckDBを使用する場合は、Gemfileとして `Gemfile.duckdb`、SQLite3を使用する場合は、Gemfileとして `Gemfile.sqlite3` を使用する必要がある。使用するGemfileは、環境変数`BUNDLE_GEMFILE`に設定する。  
+例えば、入力（変換元）にDuckDBを使用する場合、環境変数`BUNDLE_GEMFILE`に`Gemfile.duckdb`を設定する。  
+具体的には
+```
+% export BUNDLE_GEMFILE=Gemfile.duckdb
+% bundle install
+% bundle exec rdf-config ...
+```
+のように、`BUNDLE_GEMFILE`環境変数をexportするか
+```
+% BUNDLE_GEMFILE=Gemfile.duckdb bundle install
+% BUNDLE_GEMFILE=Gemfile.duckdb bundle exec rdf-config ...
+```
+のように、bundle実行の度に`BUNDLE_GEMFILE`環境変数を設定する。
 
 #### 実行例
 RDF, JSON-LD, JSON Linesの生成の例として、以下のTSVファイルと`convert.yaml`から生成するとする。
@@ -648,3 +672,67 @@ idt:uniprot\/Q9NQ94 a idt:uniprot;
 {"@context":{"rdf":"http://www.w3.org/1999/02/22-rdf-syntax-ns#","dct":"http://purl.org/dc/terms/","idt":"http://identifiers.org/","PubMed":"@id","pubmed_id":{"@id":"dct:identifier"}},"PubMed":"http://identifiers.org/pubmed/11815617","@type":"idt:pubmed","pubmed_id":11815617}
 {"@context":{"rdf":"http://www.w3.org/1999/02/22-rdf-syntax-ns#","dct":"http://purl.org/dc/terms/","idt":"http://identifiers.org/","PubMed":"@id","pubmed_id":{"@id":"dct:identifier"}},"PubMed":"http://identifiers.org/pubmed/11072063","@type":"idt:pubmed","pubmed_id":11072063}
 ```
+
+#### Rust版 convertの利用
+convertには、Rustで作成されたプログラム（`rust`ディレクトリ配下）を用意しており、Rust版のconvertは、Ruby版のconvertと同等の機能を持つ。  
+Ruby版はconvertの処理速度が遅く、dbnsfp等、入力データが大きい場合やconvert.yamlで設定された変換処理数が多い場合、Ruby版では変換処理に時間がかかり、処理が数日たっても終わらないことがある。  
+Rust版はRuby版に比べて、convertの処理が速いため、Ruby版でconvert処理の完了に時間がかかる場合は、Rust版を使用することで、convertの処理を完了させることができる。
+
+Rust版を使用するには、ソースプログラムをbuildする必要がある。ソースプログラムのbuildは以下のように実行する。
+```
+% cd rust
+% cargo build --release
+```
+
+入力（変換元）として DuckDBやSQLite3を使用する場合、`cargo build` で以下のように指定する。
+DuckDBを使用する場合
+```
+% cargo build --release --features duckdb
+```
+
+SQLite3を使用する場合
+```
+% cargo build --release --features sqlite
+```
+
+DuckDB, SQLite3の両方を使用する場合
+```
+% cargo build --release --features all
+```
+
+`cargo build` に成功すると `rust/target/release/rdf-config`ファイル（Rust版のrdf-config convertの実行ファイル）が生成される。  
+`bundle exec rdf-config --convert ...` を実行すると、
+* `rust/target/release/rdf-config`ファイルがある場合はRust版のconvert
+* `rust/target/release/rdf-config`ファイルがない場合はRuby版のconvert
+
+が実行される。  
+このため、通常はRuby版またはRust版を意識して実行方法を変更する必要はない。  
+
+#### Ruby版を明示的に実行する方法
+`cargo build` でRust版の実行ファイルを生成すると、それ以降Rust版のconvertが実行される。  
+`cargo build`実行後にRuby版を実行したい場合は、Rust版の実行ファイルを一時的に別の名前へ変更してから、`bundle exec rdf-config --convert ...` を実行する。
+
+```
+% mv rust/target/release/rdf-config rust/target/release/rdf-config.bak
+% bundle exec rdf-config --convert ...
+```
+
+`rust/target/release/rdf-config` が存在しないため、Ruby版のconvertが実行される。
+
+Rust版を再び使用する場合は、実行ファイルの名前を元に戻す。
+```
+% mv rust/target/release/rdf-config.bak rust/target/release/rdf-config
+```
+
+Rust版の実行ファイルを削除してRuby版を実行することもできる。
+```
+% rm rust/target/release/rdf-config
+% bundle exec rdf-config --convert ...
+```
+
+削除したRust版を再び使用する場合は、ソースプログラムのbuildを再実行する。
+```
+% cd rust
+% cargo build --release
+```
+

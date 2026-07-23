@@ -7,7 +7,7 @@
   - rdfs:label+:
     - label: "Acute myeloid leukemia"
   - skos:definition:
-    - definition: "CEBPA-associated familial acute myeloid leukemia (AML) is defined as AML in which a heterozygous germline CEBPA pathogenic variant is present in a family in which multiple individuals have AML. In contrast, sporadic CEBPA-associated AML is defined as AML in which a CEBPA pathogenic variant(s) is identified in leukemic cells but not in the non-leukemic cells. Too few individuals with CEBPA-associated familial AML have been reported to be certain about the natural history of the disease. In the majority of individuals, the age of onset of familial AML appears to be earlier than sporadic AML; disease onset has been reported in persons as young as age 1.8 years and older than age 45 years. The prognosis of CEBPA-associated familial AML appears to be favorable compared with sporadic CEBPA-associated AML. Individuals with CEBPA-associated familial AML who have been cured of their initial disease may be at greater risk of developing additional independent leukemic episodes in addition to the risk of relapse due to preexisting clones."
+    - description: "CEBPA-associated familial acute myeloid leukemia (AML) is ..."
   - mo:disease_has_associated_gene+:
     - disease_has_associated_gene: MedGen  # medgen:C1334291
   - mo:expanded_form_of+:
@@ -49,7 +49,7 @@
       - dct:source:
         - mgdef_source: mo:GeneReviews
       - skos:definition:
-        - mgdef_definition: "CEBPA-associated familial acute myeloid leukemia (AML) is defined as AML in which a heterozygous germline CEBPA pathogenic variant is present in a family in which multiple individuals have AML. In contrast, sporadic CEBPA-associated AML is defined as AML in which a CEBPA pathogenic variant(s) is identified in leukemic cells but not in the non-leukemic cells. Too few individuals with CEBPA-associated familial AML have been reported to be certain about the natural history of the disease. In the majority of individuals, the age of onset of familial AML appears to be earlier than sporadic AML; disease onset has been reported in persons as young as age 1.8 years and older than age 45 years. The prognosis of CEBPA-associated familial AML appears to be favorable compared with sporadic CEBPA-associated AML. Individuals with CEBPA-associated familial AML who have been cured of their initial disease may be at greater risk of developing additional independent leukemic episodes in addition to the risk of relapse due to preexisting clones."
+        - mgdef_definition: "CEBPA-associated familial acute myeloid leukemia (AML) is ..."
   - mo:mgconso+:
     - []:
       - mo:aui:
@@ -80,7 +80,7 @@
       - rdf:value:
         - mgsat_value: "CN004254"
       - rdfs:label+:
-        - metaui_label: "NCBI_ALTERNATE_ID"
+        - mgsat_label: "NCBI_ALTERNATE_ID"
       - mo:suppress:
         - mgsat_suppress: mo:N
 
@@ -104,6 +104,7 @@
     - mgrel_rela: "manifestation_of"
 
 - MedGenUid medgen:9730:
+  - a: mo:MGUID
   - dct:references+:
     - pubmed: pubmed:182115
   - rdfs:label:
@@ -112,7 +113,8 @@
     - mengen_cid: MedGen    # medgen:C0023467 Acute myeloid leukemia
 
 - NCBIGene ncbigene:221927:
-  - ncbigeneo:taxid:
+  - a: mo:NCBIGene
+  - ncbigeneo:taxid*:
     - taxonomy: taxonomy:9606
   - obo:RO_0003302:
-    - medgen: medgen:C3281029
+    - medgen: MedGen

@@ -1,0 +1,95 @@
+# frozen_string_literal: true
+
+require_relative '../mix_in/json_ld_util'
+
+class RDFConfig
+  class Convert
+    class JsonLdGenerator
+      class NestGenerator
+        include MixIn::JsonLdUtil
+
+        def initialize(model, node, convert_subject_names)
+          @model = model
+          @node = node
+          @convert_subject_names = convert_subject_names
+
+          @nested_nodes = []
+        end
+
+        def generate
+          root_subjects.each do |subject_name|
+            node = @node.select { |_, object_hash| object_hash.keys.include?(subject_name) }
+            if node.empty?
+              @nested_nodes << @node.values.first
+            else
+              node.each_value do |object_hash|
+                @nested_nodes << process_node(object_hash)
+              end
+            end
+          end
+
+          @nested_nodes
+        end
+
+        def process_node(node)
+          new_node = {}
+          subject_name = subject_name_by_node(node)
+          node.each do |variable_name, value|
+            new_value = object_value(subject_name, variable_name, value)
+            next if new_value.nil? || (new_value.is_a?(Array) && new_value.empty?)
+
+            new_node[variable_name] = if new_value.is_a?(Array) && new_value.size == 1
+                                        new_value.first
+                                      else
+                                        new_value
+                                      end
+          end
+
+          new_node
+        end
+
+        def object_value(subject_name, variable_name, value)
+          return value if [subject_name, '@type'].include?(variable_name)
+
+          if value.is_a?(Hash)
+            value.each do |var_name, var_val|
+              value[var_name] = object_value(subject_name, var_name, var_val)
+            end
+          else
+            triple = @model.find_by_object_name(variable_name)
+            return value if triple.nil?
+
+            if triple.object.is_a?(Model::Subject) || triple.object.is_a?(Model::ValueList)
+              Array(value).map do |v|
+                if @node.key?(v)
+                  process_node(@node[v])
+                else
+                  v
+                end
+              end
+            else
+              value
+            end
+          end
+        end
+
+        def root_subjects
+          object_subjects = []
+          @convert_subject_names.each do |subject_name|
+            @model.triples_by_subject_name(subject_name).each do |triple|
+              if triple.object.is_a?(Model::Subject)
+                object_subjects << triple.object.name
+              elsif triple.object.is_a?(Model::ValueList)
+                triple.object.values.each do |object_subject|
+                  object_subjects << object_subject.name if object_subject.is_a?(Model::Subject)
+                end
+              end
+            end
+          end
+
+          @convert_subject_names - object_subjects.uniq
+        end
+      end
+    end
+  end
+end

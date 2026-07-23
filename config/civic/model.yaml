@@ -5,7 +5,7 @@
   - rdfs:label:
     - gene_label: "CCND3"
   - rdfs:seeAlso:
-    - ncbigene: ncbigene:896
+    - ncbi_gene: ncbigene:896
   - m2r:variation:
     - variation: Variation # LOSS
 
@@ -31,13 +31,13 @@
   - m2r:disease:
     - disease: civic:T-cellLeukemia
   - m2r:transcript:
-    - enst: enst:ENST00000372991
+    - ensembl_transcript: enst:ENST00000372991
   - civico:variant_type:
     - variant_type: civic:loss_of_function_variant
   - m2r:evidence:
     - evidence: Evidence
 
-- Evidence evidence:263:
+- Evidence evidence_items:263:
   - a: m2r:Evidence
   - dct:description:
     - evidence_description: "Treatment of Notch-driven T-cell leukemia in Ccnd3 knockout mice with Palbociclib (PD-0332991) significantly increased median survival."
@@ -56,7 +56,6 @@
   - civico:citation:
     - citation: "Sawai et al., 2012, Cancer Cell"
   - dct:references:
-    - pubmed: pubmed:23079656
+    - pubmed_id: pubmed:23079656
   - civico:drug:
     - drug: civic:drug_Palbociclib
-

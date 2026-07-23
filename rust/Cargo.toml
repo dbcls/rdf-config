@@ -1,0 +1,31 @@
+[package]
+name = "rdf-config"
+version = "0.1.0"
+edition = "2024"
+description = "Convert tabular data (TSV/CSV, optionally DuckDB/SQLite) to RDF in Turtle, N-Triples, or JSON-LD format using model.yaml and convert.yaml rules"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["preserve_order"] }
+serde_yaml = "0.9"
+csv = "1"
+regex = "1"
+indexmap = { version = "2", features = ["serde"] }
+anyhow = "1"
+oxrdf = "0.3.3"
+
+# Optional database input backends. Both bundle and compile their native
+# engine, which is slow, so they are disabled by default — TSV/CSV users pay
+# nothing for them. Enable only the format(s) you actually read from:
+#   cargo build --release --features duckdb         # DuckDB input
+#   cargo build --release --features sqlite         # SQLite input
+#   cargo build --release --features all            # both
+duckdb = { version = "1.10502", features = ["bundled"], optional = true }
+rusqlite = { version = "0.39", features = ["bundled"], optional = true }
+
+[features]
+default = []
+duckdb = ["dep:duckdb"]
+sqlite = ["dep:rusqlite"]
+all = ["duckdb", "sqlite"]
