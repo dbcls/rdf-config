@@ -1,4 +1,4 @@
-- ShapeRegistrationrecord _:BN77d5a9eaae624960be857524f70cf8f3:
+- ShapeRegistrationrecord cvcl:BN77d5a9eaae624960be857524f70cf8f3:
   - rdf:type: cello:RegistrationRecord
   - rdfs:label:
     - rdfs_label_of_registrationrecord: "HB-10564"
@@ -134,7 +134,7 @@
   - cello:hasAnecdotalComment*:
     - cello_hasanecdotalcomment_of_cellline: ShapeAnecdotalcomment
 
-- ShapeSpecies _:BN42621c3a74e840ba922aecd0824edf04:
+- ShapeSpecies cvcl:BN42621c3a74e840ba922aecd0824edf04:
   - rdf:type: cello:Species
   - cello:isIdentifiedByXref:
     - cello_isidentifiedbyxref_of_species: [ShapeConcept, ShapeXref]
@@ -145,7 +145,7 @@
   - cello:name:
     - cello_name_of_species: "Mus musculus (Mouse)"
 
-- ShapeMoabisotype _:BN8ab4aa8c8af14ed3b5b4da716964e8ec:
+- ShapeMoabisotype cvcl:BN8ab4aa8c8af14ed3b5b4da716964e8ec:
   - rdf:type: cello:MoAbIsotype
   - cello:hasAntibodyHeavyChain:
     - cello_hasantibodyheavychain_of_moabisotype: ShapeImmunoglobulinheavychain
@@ -154,21 +154,21 @@
   - cello:hasSource*:
     - cello_hassource_of_moabisotype: ShapeSource
 
-- ShapeImmunoglobulinheavychain _:BN7b060375eac64eeaa19a0164dd7294fc:
+- ShapeImmunoglobulinheavychain cvcl:BN7b060375eac64eeaa19a0164dd7294fc:
   - rdf:type: cello:ImmunoglobulinHeavyChain
   - rdfs:label:
     - rdfs_label_of_immunoglobulinheavychain: "IgG2a"
   - cello:name:
     - cello_name_of_immunoglobulinheavychain: "IgG2a"
 
-- ShapeImmunoglobulinlightchain _:BN26de36ae3be0435594a52813783fae44:
+- ShapeImmunoglobulinlightchain cvcl:BN26de36ae3be0435594a52813783fae44:
   - rdf:type: cello:ImmunoglobulinLightChain
   - rdfs:label:
     - rdfs_label_of_immunoglobulinlightchain: "Not determined"
   - cello:name:
     - cello_name_of_immunoglobulinlightchain: "Not determined"
 
-- ShapeProtein _:BN39c97ae010fc4926ae52133444a7256e:
+- ShapeProtein cvcl:BN39c97ae010fc4926ae52133444a7256e:
   - rdf:type: cello:Protein
   - rdfs:label:
     - rdfs_label_of_protein: "Human PLA2G4A"
@@ -181,7 +181,7 @@
   - rdfs:comment?:
     - rdfs_comment_of_protein: "Binds to APP42"
 
-- ShapeDiscontinuationrecord _:BN9d0ff54b294b428d8c089cb304452218:
+- ShapeDiscontinuationrecord cvcl:BN9d0ff54b294b428d8c089cb304452218:
   - rdf:type: cello:DiscontinuationRecord
   - cello:hasProvider:
     - cello_hasprovider_of_discontinuationrecord: ShapeOrganization
@@ -190,14 +190,14 @@
   - cello:seeAlsoXref?:
     - cello_seealsoxref_of_discontinuationrecord: ShapeXref
 
-- ShapeHlatyping _:BN9f2d91d7ebd245c3b5490ebdc68fd1f2:
+- ShapeHlatyping cvcl:BN9f2d91d7ebd245c3b5490ebdc68fd1f2:
   - rdf:type: cello:HLAtyping
   - cello:hasSource:
     - cello_hassource_of_hlatyping: ShapeSource
   - cello:includesObservation+:
     - cello_includesobservation_of_hlatyping: ShapeObservation
 
-- ShapeSource _:BN8d8d20826d9f488eb0cde0a8b6b4314f:
+- ShapeSource cvcl:BN8d8d20826d9f488eb0cde0a8b6b4314f:
   - rdf:type: cello:Source
   - cello:originatesFrom?:
     - cello_originatesfrom_of_source: xref:IPD-IMGT-HLA_c1adfa5c573798841138a4009d3a6768
@@ -206,7 +206,7 @@
   - cello:name?:
     - cello_name_of_source: "from parent cell line HuP-T3"
 
-- ShapeObservation _:BN6435688c5d4c4e25a8ac21a988915db4:
+- ShapeObservation cvcl:BN6435688c5d4c4e25a8ac21a988915db4:
   - rdf:type: schema:Observation
   - cello:hasTarget:
     - cello_hastarget_of_observation: [ShapeMarker, ShapeHlagene, ShapeGene]
@@ -223,7 +223,7 @@
   - cello:hasSource*:
     - cello_hassource_of_observation: ShapeSource
 
-- ShapeHlagene _:BNf42b2e163c694ed280d5721b56402768:
+- ShapeHlagene cvcl:BNf42b2e163c694ed280d5721b56402768:
   - rdf:type: cello:HLAGene
   - rdfs:label:
     - rdfs_label_of_hlagene: "HLA-A"
@@ -232,12 +232,12 @@
   - cello:isIdentifiedByXref:
     - cello_isidentifiedbyxref_of_hlagene: ShapeXref
 
-- ShapeHlaallele _:BN668cc61995114929a0d2f35e5daa482c:
+- ShapeHlaallele cvcl:BN668cc61995114929a0d2f35e5daa482c:
   - rdf:type: cello:HLAAllele
   - cello:alleleIdentifier:
     - cello_alleleidentifier_of_hlaallele: "HLA-A*03"
 
-- ShapeAnatomicalentity _:BN978ba0ddef154e57be5e5e93079d7f80:
+- ShapeAnatomicalentity cvcl:BN978ba0ddef154e57be5e5e93079d7f80:
   - rdf:type: cello:AnatomicalEntity
   - cello:siteType:
     - cello_sitetype_of_anatomicalentity: "In situ"
@@ -252,7 +252,7 @@
   - rdfs:comment?:
     - rdfs_comment_of_anatomicalentity: "From a right ischial pressure ulcer"
 
-- ShapeCelltype _:BN6a2871a9da444d8da1fba4753c343fee:
+- ShapeCelltype cvcl:BN6a2871a9da444d8da1fba4753c343fee:
   - rdf:type: cello:CellType
   - rdfs:label:
     - rdfs_label_of_celltype: "B-cell"
@@ -263,7 +263,7 @@
   - cello:isIdentifiedByIRI?:
     - cello_isidentifiedbyiri_of_celltype: CL:0000236
 
-- ShapeChemicalentity _:BNebb5e175723f4f679c7072a1d8884d53:
+- ShapeChemicalentity cvcl:BNebb5e175723f4f679c7072a1d8884d53:
   - rdf:type: cello:ChemicalEntity
   - rdfs:label:
     - rdfs_label_of_chemicalentity: "Epstein-Barr virus (EBV)"
@@ -276,21 +276,21 @@
   - rdfs:comment?:
     - rdfs_comment_of_chemicalentity: "pSV3-neo"
 
-- ShapePopulation _:BNa0f6fd213afd455dbff11cc54f5a00bb:
+- ShapePopulation cvcl:BNa0f6fd213afd455dbff11cc54f5a00bb:
   - rdf:type: cello:Population
   - rdfs:label:
     - rdfs_label_of_population: "Caucasian; French Canadian"
   - cello:name:
     - cello_name_of_population: "Caucasian; French Canadian"
 
-- ShapeMiscellaneousinfocomment _:BNca1c0ba1a80d4734a9a9f1cd0e4e2d1e:
+- ShapeMiscellaneousinfocomment cvcl:BNca1c0ba1a80d4734a9a9f1cd0e4e2d1e:
   - rdf:type: cello:MiscellaneousInfoComment
   - rdfs:comment:
     - rdfs_comment_of_miscellaneousinfocomment: "As the immunized splenic B-cells are from VelocImmune mice the produced mAB is of human origin"
   - cello:hasSource*:
     - cello_hassource_of_miscellaneousinfocomment: ShapeSource
 
-- ShapeDisease _:BNa2bde4f353ae4f4e95ad473647bcc64c:
+- ShapeDisease cvcl:BNa2bde4f353ae4f4e95ad473647bcc64c:
   - rdf:type: cello:Disease
   - cello:isIdentifiedByXref:
     - cello_isidentifiedbyxref_of_disease: [ShapeConcept, ShapeXref]
@@ -301,7 +301,7 @@
   - cello:name:
     - cello_name_of_disease: "Mouse mesothelioma"
 
-- ShapeBreed _:BNc0700dff957c4d0e9777c6943cb68ca0:
+- ShapeBreed cvcl:BNc0700dff957c4d0e9777c6943cb68ca0:
   - rdf:type: cello:Breed
   - rdfs:label:
     - rdfs_label_of_breed: "C57BL/6"
@@ -312,21 +312,21 @@
   - cello:isIdentifiedByIRI*:
     - cello_isidentifiedbyiri_of_breed: OLS:VBO_0200054
 
-- ShapeCharacteristicscomment _:BN1fdecf07ce394f72a4976233f32d8ee3:
+- ShapeCharacteristicscomment cvcl:BN1fdecf07ce394f72a4976233f32d8ee3:
   - rdf:type: cello:CharacteristicsComment
   - rdfs:comment:
     - rdfs_comment_of_characteristicscomment: "Established from parent cell line after two passages in the peritoneal cavity of C57BL/6 mice (PubMed=28159921)"
   - cello:hasSource*:
     - cello_hassource_of_characteristicscomment: ShapeSource
 
-- ShapeShorttandemrepeatprofile _:BNd2b309a5500a4b38bd89108e78589bbe:
+- ShapeShorttandemrepeatprofile cvcl:BNd2b309a5500a4b38bd89108e78589bbe:
   - rdf:type: cello:ShortTandemRepeatProfile
   - cello:hasSource+:
     - cello_hassource_of_shorttandemrepeatprofile: ShapeSource
   - cello:includesObservation+:
     - cello_includesobservation_of_shorttandemrepeatprofile: ShapeObservation
 
-- ShapeGene _:BNac5e667334ed4afe9c4f204d13267dbc:
+- ShapeGene cvcl:BNac5e667334ed4afe9c4f204d13267dbc:
   - rdf:type: cello:Gene
   - rdfs:label:
     - rdfs_label_of_gene: "AMELX"
@@ -337,17 +337,17 @@
   - cello:isIdentifiedByIRI?:
     - cello_isidentifiedbyiri_of_gene: <http://purl.uniprot.org/uniprot/P00552>
 
-- ShapeMarker _:BN6e5f22802cf248dcb65789c5dd9b4b37:
+- ShapeMarker cvcl:BN6e5f22802cf248dcb65789c5dd9b4b37:
   - rdf:type: cello:Marker
   - cello:markerId:
     - cello_markerid_of_marker: "CSF1PO"
 
-- ShapeStrallele _:BNe01c4fa39496408da6cac4b8b8cbbe62:
+- ShapeStrallele cvcl:BNe01c4fa39496408da6cac4b8b8cbbe62:
   - rdf:type: cello:STRAllele
   - cello:repeatNumber:
     - cello_repeatnumber_of_strallele: 12
 
-- ShapeSequencevariationinfo _:BN5c55731c7d08429e93c79e849f463626:
+- ShapeSequencevariationinfo cvcl:BN5c55731c7d08429e93c79e849f463626:
   - rdf:type: cello:SequenceVariationInfo
   - cello:variationStatus:
     - cello_variationstatus_of_sequencevariationinfo: "Natural"
@@ -356,7 +356,7 @@
   - cello:hasSource*:
     - cello_hassource_of_sequencevariationinfo: ShapeSource
 
-- ShapeGenefusion _:BN0aa629588152402c962342ed3225f50b:
+- ShapeGenefusion cvcl:BN0aa629588152402c962342ed3225f50b:
   - rdf:type: cello:GeneFusion
   - cello:noneReported:
     - cello_nonereported_of_genefusion: "false"
@@ -369,7 +369,7 @@
   - rdfs:comment?:
     - rdfs_comment_of_genefusion: "BRD3 exon 15 fused to NUTM1 exon 2"
 
-- ShapeGeneticintegration _:BNa6f70debd9f8483b80ec5efa33b33dad:
+- ShapeGeneticintegration cvcl:BNa6f70debd9f8483b80ec5efa33b33dad:
   - rdf:type: cello:GeneticIntegration
   - cello:hasGenomeModificationMethod:
     - cello_hasgenomemodificationmethod_of_geneticintegration: ShapeGenomemodificationmethod
@@ -378,7 +378,7 @@
   - rdfs:comment?:
     - rdfs_comment_of_geneticintegration: "Bright red fluorescent protein derived from eqFP578"
 
-- ShapeDoublingtime _:BN7a51cf181ce045b8ba10bd696ab31022:
+- ShapeDoublingtime cvcl:BN7a51cf181ce045b8ba10bd696ab31022:
   - rdf:type: cello:DoublingTime
   - cello:duration:
     - cello_duration_of_doublingtime: "40.32 hours"
@@ -387,7 +387,7 @@
   - rdfs:comment?:
     - rdfs_comment_of_doublingtime: "At 7th passage"
 
-- ShapeDoublingtimerange _:BNa74d8c1c1de74ea1b362f927d16f3420:
+- ShapeDoublingtimerange cvcl:BNa74d8c1c1de74ea1b362f927d16f3420:
   - rdf:type: cello:DoublingTimeRange
   - schema:minValue:
     - schema_minvalue_of_doublingtimerange: 40
@@ -396,14 +396,14 @@
   - schema:unitCode:
     - schema_unitcode_of_doublingtimerange: "HUR"
 
-- ShapeOmicsinfo _:BNedf062543ecd42239f25049b916ace33:
+- ShapeOmicsinfo cvcl:BNedf062543ecd42239f25049b916ace33:
   - rdf:type: cello:OmicsInfo
   - schema:category:
     - schema_category_of_omicsinfo: "Genomics"
   - rdfs:comment:
     - rdfs_comment_of_omicsinfo: "Genomics; Whole genome sequencing."
 
-- ShapeGenemutation _:BN05c69eca9d38406b92ee43f8e3a34de6:
+- ShapeGenemutation cvcl:BN05c69eca9d38406b92ee43f8e3a34de6:
   - rdf:type: cello:GeneMutation
   - cello:noneReported:
     - cello_nonereported_of_genemutation: "false"
@@ -424,12 +424,12 @@
   - rdfs:comment?:
     - rdfs_comment_of_genemutation: "In 10% of cells"
 
-- ShapeProblematiccelllinecomment _:BNb9da9cdc335f43edb31b8dbbe5bad501:
+- ShapeProblematiccelllinecomment cvcl:BNb9da9cdc335f43edb31b8dbbe5bad501:
   - rdf:type: cello:ProblematicCellLineComment
   - rdfs:comment:
     - rdfs_comment_of_problematiccelllinecomment: "Misidentified/contaminated. Not from strain BALB/c as originally assigned but from a NIH Swiss strain derivative (PubMed=27844419)."
 
-- ShapeGeneknockout _:BNc035c40fbc2449bd89745d6963844983:
+- ShapeGeneknockout cvcl:BNc035c40fbc2449bd89745d6963844983:
   - rdf:type: cello:GeneKnockout
   - cello:hasGenomeModificationMethod:
     - cello_hasgenomemodificationmethod_of_geneknockout: ShapeGenomemodificationmethod
@@ -438,14 +438,14 @@
   - rdfs:comment?:
     - rdfs_comment_of_geneknockout: "1 of 2 alleles: C*12:02, leaving C*07:01 intact"
 
-- ShapeKaryotypicinfocomment _:BN53a886e255564fba9c22714e6fd40a87:
+- ShapeKaryotypicinfocomment cvcl:BN53a886e255564fba9c22714e6fd40a87:
   - rdf:type: cello:KaryotypicInfoComment
   - rdfs:comment:
     - rdfs_comment_of_karyotypicinfocomment: "Hypertriploid (CelloPub=CLPUB00698)"
   - cello:hasSource*:
     - cello_hassource_of_karyotypicinfocomment: ShapeSource
 
-- ShapeGenedeletion _:BNff014ad628de449cb376b9de392da7cb:
+- ShapeGenedeletion cvcl:BNff014ad628de449cb376b9de392da7cb:
   - rdf:type: cello:GeneDeletion
   - cello:noneReported:
     - cello_nonereported_of_genedeletion: "false"
@@ -460,35 +460,35 @@
   - rdfs:comment?:
     - rdfs_comment_of_genedeletion: "Somatic LOH"
 
-- ShapeVirologycomment _:BNc8bd6d72ee174d4c8107cc69c620f316:
+- ShapeVirologycomment cvcl:BNc8bd6d72ee174d4c8107cc69c620f316:
   - rdf:type: cello:VirologyComment
   - rdfs:comment:
     - rdfs_comment_of_virologycomment: "Susceptible to infection and early propagation by guinea pig adenovirus (GPAdV) (PubMed=32226606)"
   - cello:hasSource*:
     - cello_hassource_of_virologycomment: ShapeSource
 
-- ShapeSenescencecomment _:BN805de2b40f71462aa8da974bd6b6fdc1:
+- ShapeSenescencecomment cvcl:BN805de2b40f71462aa8da974bd6b6fdc1:
   - rdf:type: cello:SenescenceComment
   - rdfs:comment:
     - rdfs_comment_of_senescencecomment: "Senesces at 34 PDL (PubMed=9649131)"
   - cello:hasSource*:
     - cello_hassource_of_senescencecomment: ShapeSource
 
-- ShapeBiotechnologycomment _:BN5c392b0c68a14481b7c71500b32fa790:
+- ShapeBiotechnologycomment cvcl:BN5c392b0c68a14481b7c71500b32fa790:
   - rdf:type: cello:BiotechnologyComment
   - rdfs:comment:
     - rdfs_comment_of_biotechnologycomment: "Was used to produce the monoclonal antibody Edrecolomab (Panorex) which was evaluated as a therapeutic agent against stage III colorectal carcinoma. Was never approved by FDA but was used in Germany in 1995"
   - cello:hasSource*:
     - cello_hassource_of_biotechnologycomment: ShapeSource
 
-- ShapeDonorinfocomment _:BN77bc5653504b432b8b13ad726980d843:
+- ShapeDonorinfocomment cvcl:BN77bc5653504b432b8b13ad726980d843:
   - rdf:type: cello:DonorInfoComment
   - rdfs:comment:
     - rdfs_comment_of_donorinfocomment: "At sampling donor was not affected with Li-Fraumeni syndrome"
   - cello:hasSource*:
     - cello_hassource_of_donorinfocomment: ShapeSource
 
-- ShapeMisspellingrecord _:BNa72160d6711d4e3ebd6f163462fc33f6:
+- ShapeMisspellingrecord cvcl:BNa72160d6711d4e3ebd6f163462fc33f6:
   - rdf:type: cello:MisspellingRecord
   - rdfs:label:
     - rdfs_label_of_misspellingrecord: "11CF"
@@ -503,28 +503,28 @@
   - rdfs:comment?:
     - rdfs_comment_of_misspellingrecord: "Occasionally."
 
-- ShapeCautioncomment _:BN0531f9a08f284e1dbce937bc473387a6:
+- ShapeCautioncomment cvcl:BN0531f9a08f284e1dbce937bc473387a6:
   - rdf:type: cello:CautionComment
   - rdfs:comment:
     - rdfs_comment_of_cautioncomment: "The reported STR profile from Wistar of this cell line was changed at one point between February 2016 when we retrieved them and entered them in Cellosaurus and May 2018. The major changes were: Amelogenin"
   - cello:hasSource*:
     - cello_hassource_of_cautioncomment: ShapeSource
 
-- ShapeGenomeancestry _:BN8da072aa74ea4520ac99c22fcee7d199:
+- ShapeGenomeancestry cvcl:BN8da072aa74ea4520ac99c22fcee7d199:
   - rdf:type: cello:GenomeAncestry
   - cello:hasSource:
     - cello_hassource_of_genomeancestry: ShapeSource
   - cello:hasComponent{7}:
     - cello_hascomponent_of_genomeancestry: ShapePopulationpercentage
 
-- ShapePopulationpercentage _:BN54e2e9fc77394cfebe3fdb96e1916a80:
+- ShapePopulationpercentage cvcl:BN54e2e9fc77394cfebe3fdb96e1916a80:
   - rdf:type: cello:PopulationPercentage
   - cello:hasPopulation:
     - cello_haspopulation_of_populationpercentage: ShapePopulation
   - cello:percentage:
     - cello_percentage_of_populationpercentage: "1.06"
 
-- ShapeMicrosatelliteinstability _:BNd20ac6f674b04c039449cdc63f1bbcf3:
+- ShapeMicrosatelliteinstability cvcl:BNd20ac6f674b04c039449cdc63f1bbcf3:
   - rdf:type: cello:MicrosatelliteInstability
   - cello:hasMicrosatelliteInstabilityStatus:
     - cello_hasmicrosatelliteinstabilitystatus_of_microsatelliteinstability: ShapeMicrosatelliteinstabilitystatus
@@ -533,7 +533,7 @@
   - rdfs:comment?:
     - rdfs_comment_of_microsatelliteinstability: "After >50 passages"
 
-- ShapeRepeatexpansion _:BN91e3612fd78e475fbd1699c8ae313ee2:
+- ShapeRepeatexpansion cvcl:BN91e3612fd78e475fbd1699c8ae313ee2:
   - rdf:type: cello:RepeatExpansion
   - cello:noneReported:
     - cello_nonereported_of_repeatexpansion: "false"
@@ -550,14 +550,14 @@
   - rdfs:comment?:
     - rdfs_comment_of_repeatexpansion: "Has 185, 540 or 770 repeats due to instability of the expanded allele during iPSC reprogramming"
 
-- ShapeAnecdotalcomment _:BN36f6b36d932c466f8d7e374eb8736554:
+- ShapeAnecdotalcomment cvcl:BN36f6b36d932c466f8d7e374eb8736554:
   - rdf:type: cello:AnecdotalComment
   - rdfs:comment:
     - rdfs_comment_of_anecdotalcomment: "Because of the loss of this hybridoma, a new recombinant mAB (R1D3) was created de novo using the sequence of remaining stocks of the mAB 1D3 (PubMed=36378644)"
   - cello:hasSource*:
     - cello_hassource_of_anecdotalcomment: ShapeSource
 
-- ShapeGenetriplication _:BNf583b50a2fb34ab0bb93aae9d864f1b5:
+- ShapeGenetriplication cvcl:BNf583b50a2fb34ab0bb93aae9d864f1b5:
   - rdf:type: cello:GeneTriplication
   - cello:noneReported:
     - cello_nonereported_of_genetriplication: "false"
@@ -572,7 +572,7 @@
   - rdfs:comment?:
     - rdfs_comment_of_genetriplication: "Has 2 copies on one chromosome and 1 on the other"
 
-- ShapeGenequadruplication _:BN888abadcc980454b81d07d1f7d6758fe:
+- ShapeGenequadruplication cvcl:BN888abadcc980454b81d07d1f7d6758fe:
   - rdf:type: cello:GeneQuadruplication
   - cello:noneReported:
     - cello_nonereported_of_genequadruplication: "false"
@@ -585,7 +585,7 @@
   - cello:ofGene:
     - cello_ofgene_of_genequadruplication: ShapeGene
 
-- ShapeGeneextensiveamplification _:BN3a267b335338467fa4820c580a07ecd6:
+- ShapeGeneextensiveamplification cvcl:BN3a267b335338467fa4820c580a07ecd6:
   - rdf:type: cello:GeneExtensiveAmplification
   - cello:noneReported:
     - cello_nonereported_of_geneextensiveamplification: "false"
@@ -600,7 +600,7 @@
   - cello:ofGene:
     - cello_ofgene_of_geneextensiveamplification: ShapeGene
 
-- ShapeGeneduplication _:BNa3684747b52c4158bfb9f33f823998f0:
+- ShapeGeneduplication cvcl:BNa3684747b52c4158bfb9f33f823998f0:
   - rdf:type: cello:GeneDuplication
   - cello:noneReported:
     - cello_nonereported_of_geneduplication: "false"
@@ -734,7 +734,7 @@
   - skos:altLabel?:
     - skos_altlabel_of_organization: "Abcam cell line products"
 
-- ShapePerson _:BN70b651c1ad9e43f9a1bed11201240f4d:
+- ShapePerson cvcl:BN70b651c1ad9e43f9a1bed11201240f4d:
   - rdf:type: schema:Person
   - rdfs:label:
     - rdfs_label_of_person: "Draayer H.A."
