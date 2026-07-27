@@ -10,7 +10,20 @@
     - cello_inregister_of_registrationrecord: Organization
 
 - Cellline cvcl:CVCL_B0T9:
-  - rdf:type: cello:CellLine
+  - rdf:type: cello:Hybridoma
+  - rdf:type: cello:TransformedCellLine
+  - rdf:type: cello:CancerCellLine
+  - rdf:type: cello:FiniteCellLine
+  - rdf:type: cello:SpontaneouslyImmortalizedCellLine
+  - rdf:type: cello:InducedPluripotentStemCell
+  - rdf:type: cello:TelomeraseImmortalizedCellLine
+  - rdf:type: cello:UndefinedCellLineType
+  - rdf:type: cello:HybridCellLine
+  - rdf:type: cello:EmbryonicStemCell
+  - rdf:type: cello:SomaticStemCell
+  - rdf:type: cello:FactorDependentCellLine
+  - rdf:type: cello:StromalCellLine
+  - rdf:type: cello:ConditionallyImmortalizedCellLine
   - rdfs:seeAlso+:
     - rdfs_seealso_of_cellline: <https://www.cellosaurus.org/CVCL_B0T9>
   - cello:accession+:
@@ -668,7 +681,24 @@
     - skos_altlabel_of_xref: "Cercopithecine herpesvirus 15"
 
 - Database db:4DN:
-  - rdf:type: cello:Database
+  - rdf:type: cello:BiologicalSampleResources
+  - rdf:type: owl:NamedIndividual
+  - rdf:type: cello:CellLineCollectionsProviders
+  - rdf:type: cello:GeneExpressionDatabases
+  - rdf:type: cello:AnatomyCellTypeResources
+  - rdf:type: cello:CrispScreensRepositories
+  - rdf:type: cello:CellLineDatabasesResources
+  - rdf:type: cello:ReferenceResources
+  - rdf:type: cello:OrganismSpecificDatabases
+  - rdf:type: cello:ChemistryResources
+  - rdf:type: cello:PolymorphismAndMutationDatabases
+  - rdf:type: cello:SequenceDatabases
+  - rdf:type: cello:ExperimentalVariablesResources
+  - rdf:type: cello:MedicalResources
+  - rdf:type: cello:MetabolomicDatabases
+  - rdf:type: cello:Taxonomy
+  - rdf:type: cello:ProteomicDatabases
+  - rdf:type: cello:EncyclopedicResources
   - cello:alternativeName:
     - cello_alternativename_of_database: "4D Nucleome Data Portal"
   - skos:altLabel:
@@ -765,6 +795,17 @@
 
 - Genomemodificationmethod cello:GenomeModificationMethodNOS:
   - rdf:type: cello:GenomeModificationMethod
+  - rdf:type: FBcv:0003008
+  - rdf:type: NCIt:C17262
+  - rdf:type: NCIt:C44386
+  - rdf:type: OBI:0001152
+  - rdf:type: OBI:0001154
+  - rdf:type: OBI:0002626
+  - rdf:type: OBI:0003134
+  - rdf:type: OBI:0003135
+  - rdf:type: OBI:0003137
+  - rdf:type: OBI:0600059
+  - rdf:type: FBcv:0005070
   - rdfs:label:
     - rdfs_label_of_genomemodificationmethod: "Genome modification method NOS"
   - cello:name:
@@ -773,7 +814,20 @@
     - rdfs_isdefinedby_of_genomemodificationmethod: <https://purl.expasy.org/cellosaurus/rdf/ontology/>
 
 - Publication pub:PubMed_7bc8ba5c7541d3ab0067c498bc626bd7:
-  - rdf:type: cello:Publication
+  - rdf:type: fabio:JournalArticle
+  - rdf:type: fabio:PatentDocument
+  - rdf:type: fabio:DoctoralThesis
+  - rdf:type: fabio:MastersThesis
+  - rdf:type: cello:PrivaDocentThesis
+  - rdf:type: cello:MedicalDegreeThesis
+  - rdf:type: fabio:BachelorsThesis
+  - rdf:type: cello:VeterinaryMedicalDegreeThesis
+  - rdf:type: cello:MedicalDegreeMasterThesis
+  - rdf:type: fabio:Book
+  - rdf:type: fabio:BookChapter
+  - rdf:type: fabio:ConferencePaper
+  - rdf:type: cello:TechnicalDocument
+  - rdf:type: cello:MiscellaneousDocument
   - cello:creator*:
     - cello_creator_of_publication: [Person, Organization]
   - cello:internalId:
