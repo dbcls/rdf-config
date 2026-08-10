@@ -6,13 +6,15 @@ class RDFConfig
   class ModelGenerator
     class Void
       class QueryParser < Void
-        def initialize(input_file, output_dir)
+        def initialize(input_file, output_dir, **opts)
           super
 
-          @graph = RDF::Graph.load(@input_file, format: :turtle)
-          @subject_class_uris = []
+          @graph = RDF::Graph.load(@input_file, format: :ntriples)
           @subject_name = {}
           @model = []
+
+          @property = {}
+          @namespace = {}
         end
 
         def parse
@@ -33,7 +35,7 @@ class RDFConfig
 
         def output_model
           @subject_class_uris.each do |subject_class_uri|
-            subject_name = subject_name_by_class_uri(subject_class_uri)
+            subject_name = subject_name_for(subject_class_uri)
 
             subject = {
               subject_name => []

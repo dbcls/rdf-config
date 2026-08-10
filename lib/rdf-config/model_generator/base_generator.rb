@@ -42,14 +42,15 @@ class RDFConfig
       MODEL_YAML_FILE = 'model.yaml'
 
       def initialize(input_file, output_dir, **opts)
-        @input_file = input_file
-        @output_dir = output_dir
+        @input_file = File.absolute_path(File.expand_path(input_file))
+        @output_dir = File.absolute_path(File.expand_path(output_dir))
         @opts = opts
 
         @user_defined_namespace = {}
         @new_namespace = {}
         @ns_number = 0
 
+        @subject_class_uris = []
         @triples = []
         @rdf_types = {}
 
@@ -63,9 +64,11 @@ class RDFConfig
 
       def generate
         parse
+        warn "Generating model.yaml and prefix.yaml in the #{@output_dir}"
         output_model
         output_prefix
-        # run_senbero if @opts[:senbero]
+        warn "model.yaml and prefix.yaml have been successfully generated in the #{@output_dir}"
+        run_senbero if @opts[:senbero]
       end
 
       def run_senbero
@@ -81,7 +84,7 @@ class RDFConfig
         rdf_config.generate_senbero
       end
 
-      def model_yaml
+      def rdf_config_model
         subject = {}
         @triples.each do |triple|
           subject_name = subject_name_for(triple[SUBJECT])
@@ -93,7 +96,25 @@ class RDFConfig
 
         subject.map do |subject_name, property_hash|
           { subject_name => property_hash }
-        end.to_yaml.sub(/\A---\n/, '')
+        end
+      end
+
+      def model_yaml
+        lines = []
+        rdf_config_model.each do |model_by_subject|
+          model_by_subject.each do |subject_name, property_models|
+            lines << "- #{subject_name}:"
+            property_models.each do |property_model|
+              lines += model_yaml_lines_for_property(property_model)
+            end
+          end
+        end
+
+        lines
+      end
+
+      def model_yaml_using_psych
+        rdf_config_model.to_yaml.sub(/\A---\n/, '')
       end
 
       def dump_triples
@@ -119,6 +140,39 @@ class RDFConfig
 
       private
 
+      def model_yaml_lines_for_property(property_model)
+        lines = []
+        property_model.each do |predicate_uri, objects|
+          if rdf_type?(predicate_uri)
+            lines << "  - a: #{objects}"
+          else
+            lines << "  - #{predicate_uri}:"
+            ensure_array(objects).each do |object|
+              lines += model_yaml_lines_for_objects(object)
+            end
+          end
+        end
+
+        lines
+      end
+
+      def model_yaml_lines_for_objects(objects)
+        lines = []
+        objects.each do |object_name, example_values|
+          example_values = ensure_array(example_values)
+          if example_values.size == 1
+            lines << "    - #{object_name}: #{example_values.first}"
+          else
+            lines << "    - #{object_name}:"
+            example_values.each do |example_value|
+              lines << "      - #{example_value}"
+            end
+          end
+        end
+
+        lines
+      end
+
       def output_model
         File.open(model_yaml_file, 'w') do |f|
           f.puts model_yaml
@@ -143,7 +197,7 @@ class RDFConfig
       end
 
       def hash_for_property(subject_name, predicate_uri, objects)
-        objects = [objects] unless objects.is_a?(Array)
+        objects = ensure_array(objects)
         if rdf_type?(predicate_uri)
           rdf_type = if objects.size == 1
                        qname_for(objects.first)
@@ -158,7 +212,7 @@ class RDFConfig
                           objects.map { |object| object_example_value(object) }
                         end
           variable_name = variable_name(subject_name, predicate_uri.to_s)
-          { qname_for(predicate_uri) => [{ variable_name => obj_example }] }
+          { qname_for(predicate_uri) => { variable_name => obj_example } }
         end
       end
 
@@ -199,6 +253,14 @@ class RDFConfig
         subject_name = [prefix.to_s, subject_class_local_part].join('_') unless prefix.nil?
 
         snake_to_camel(subject_name)
+      end
+
+      def add_subject_class_uri(subject_class_uri)
+        @subject_class_uris << subject_class_uri
+      end
+
+      def subject_class_uri?(uri)
+        @subject_class_uris.include?(to_rdf_uri_notation(uri))
       end
     end
   end

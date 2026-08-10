@@ -17,9 +17,10 @@ class RDFConfig
           line_number = 1
           File.foreach(@input_file) do |triple|
             process_void_triple(triple)
-            warn "Raad #{line_number} lines done. (#{@triples.size} triples)" if line_number % 10000 == 0
+            warn "Raad #{line_number} lines done. (#{@triples.size} triples for RDF-config model)" if line_number % 10000 == 0
             line_number += 1
           end
+          warn "Raad #{line_number} lines done. (#{@triples.size} triples for RDF-config model)"
         end
 
         def dump_sd_graph
@@ -51,6 +52,10 @@ class RDFConfig
         def process_void_triple(triple)
           subject, predicate, object, _ = triple.split(/\s+/)
           case predicate
+          when '<http://rdfs.org/ns/void#class>'
+            # @class_partition[subject] = {} unless @class_partition.key?(subject)
+            # @class_partition[subject][:subject_class_uri] = object
+            add_subject_class_uri(object)
           when '<http://rdfs.org/ns/void#propertyPartition>'
             # add_sd_graph(subject)
             # @sd_graph[subject][:property_partitions] << object
@@ -74,9 +79,6 @@ class RDFConfig
           #   add_sd_graph(subject)
           #   @sd_graph[subject][:class_partitions] << object
           #   @class_partition[object] = {} unless @class_partition.key?(object)
-          # when '<http://rdfs.org/ns/void#class>'
-          #   @class_partition[subject] = {} unless @class_partition.key?(subject)
-          #   @class_partition[subject][:subject_class_uri] = object
           # when '<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>'
           #   @rdf_types[subject] = [] unless @rdf_types.key?(subject)
           #   @rdf_types[subject] << object
@@ -128,7 +130,7 @@ class RDFConfig
 
         def add_class_relation_object_class(class_relation_subject, object_class)
           add_class_relation(class_relation_subject)
-          @class_relation[class_relation_subject][:object_class] = object_class
+          @class_relation[class_relation_subject][:object_class_uri] = object_class
         end
 
         def add_triple_by_property_partition_object(property_partition_object)
@@ -147,7 +149,7 @@ class RDFConfig
 
           add_triple(subject, predicate, object)
 
-          delete_cache(class_relation_subject)
+          # delete_cache(class_relation_subject)
         end
 
         def triple_complete?(class_relation_subject)
@@ -169,10 +171,10 @@ class RDFConfig
               !@class_relation[class_relation_subject][:object_datatype].nil?)
         end
 
-        def delete_cache(class_relation_subject)
-          @class_relation.delete(class_relation_subject)
-          @property_partition.delete_if { |k, v| k == :class_relation_subject && v == class_relation_subject }
-        end
+        # def delete_cache(class_relation_subject)
+        #   @class_relation.delete(class_relation_subject)
+        #   @property_partition.delete_if { |k, v| k == :class_relation_subject && v == class_relation_subject }
+        # end
 
         def predicate_uri(property_partition_object)
           @property_partition[property_partition_object][:predicate_uri]

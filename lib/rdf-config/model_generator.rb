@@ -15,7 +15,9 @@ class RDFConfig
       @output_dir = @opts[:output].first
       @input_file = @opts[:output].last
 
-      @opts.merge!(senbero: true)
+      # @opts.merge!(senbero: true)
+
+      @parser_type = 'lines'
     end
 
     def generate
@@ -25,8 +27,14 @@ class RDFConfig
     def generator
       case @input_format
       when 'void'
-        require_relative 'model_generator/void/ntriples_lines_parser'
-        Void::NTriplesLinesParser.new(@input_file, @output_dir, **@opts)
+        case @parser_type
+        when 'lines'
+          require_relative 'model_generator/void/ntriples_lines_parser'
+          Void::NTriplesLinesParser.new(@input_file, @output_dir, **@opts)
+        when 'query'
+          require_relative 'model_generator/void/query_parser'
+          Void::QueryParser.new(@input_file, @output_dir, **@opts)
+        end
       else
         raise UnsupportedFormat, %(Format "#{@input_format}" is not supported.)
       end

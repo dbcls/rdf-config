@@ -24,17 +24,17 @@ class RDFConfig
         predicate_uri = uri_string(predicate_uri)
         object = uri_string(object)
 
-        # triple = @triples.find do |triple|
-        #   triple[SUBJECT] == subject_class_uri && triple[PREDICATE] == predicate_uri
-        # end
+        triple = @triples.find do |triple|
+          triple[SUBJECT] == subject_class_uri && triple[PREDICATE] == predicate_uri
+        end
 
-        # if triple.nil?
-        #   @triples << [subject_class_uri, predicate_uri, [object]]
-        # else
-        #   triple[OBJECT] << object unless triple[2].include?(object)
-        # end
+        if triple.nil?
+          @triples << [subject_class_uri, predicate_uri, [object]]
+        else
+          triple[OBJECT] << object unless triple[2].include?(object)
+        end
 
-        @triples << [subject_class_uri.dup, predicate_uri.dup, object.dup]
+        # @triples << [subject_class_uri.dup, predicate_uri.dup, object.dup]
       end
 
       def generate_subject_names

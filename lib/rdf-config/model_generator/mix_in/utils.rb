@@ -11,23 +11,40 @@ class RDFConfig
         INDENT = ' ' * 4
 
         def object_example_value(object)
-          case object
-          when RDF::XSD.string
-            'string'
-          when RDF::XSD.int, RDF::XSD.integer
-            12345
-          when RDF::XSD.float, RDF::XSD.decimal
-            123.45
-          when RDF::XSD.boolean
-            true
-          when RDF::XSD.date
-            '2000-01-01'
+          if xsd_datatype_uri?(object)
+            object_example_value_for_xsd_datatype(object)
           else
-            # if @subject_name.key?(object)
-            #   @subject_name[object]
-            # else
-              split_uri(object).last
-            # end
+            if subject_class_uri?(object)
+              subject_name_for(object)
+            else
+              qname_for(object)
+            end
+          end
+        end
+
+        def object_example_value_for_xsd_datatype(object)
+          _, local_part = split_uri(object)
+          type_comment = "# xsd:#{local_part}"
+
+          case local_part
+          when 'string'
+            "string #{type_comment}"
+          when 'int', 'integer', 'short', 'long', 'nonNegativeInteger', 'positiveInteger', 'unsignedInt', 'unsignedLong', 'unsignedShort'
+            "12345  #{type_comment}"
+          when 'negativeInteger', 'nonPositiveInteger'
+            "-12345  #{type_comment}"
+          when 'float', 'double', 'decimal'
+            "123.45  #{type_comment}"
+          when 'boolean'
+            "true #{type_comment}"
+          when 'date'
+            "2000-01-01 #{type_comment}"
+          when 'dateTime'
+            "2000-01-01 12:00:00 #{type_comment}"
+          when 'anyURI'
+            "http://example.com/ #{type_comment}"
+          else
+            %('"example value"^^xsd:#{local_part}')
           end
         end
 
@@ -40,6 +57,14 @@ class RDFConfig
           end
         end
 
+        def to_rdf_uri_notation(uri)
+          if uri =~ /\Ahttps?:\/\//
+            "<#{uri}>"
+          else
+            uri
+          end
+        end
+
         def split_uri(uri)
           uri_str = uri_string(uri)
           parsed_uri = URI.parse(uri_str)
@@ -47,6 +72,11 @@ class RDFConfig
           local_part = uri_str.split('/').last if local_part.nil?
 
           [uri_str.delete_suffix(local_part), local_part]
+        end
+
+        def xsd_datatype_uri?(uri)
+          uri = RDF::URI(uri_string(uri))
+          RDF::XSD.to_a.map(&:to_s).include?(uri)
         end
 
         def camel_to_snake(str)
@@ -77,6 +107,16 @@ class RDFConfig
 
         def change_extension(path, new_extension)
           path.sub(/\.[^.]+\z/, new_extension)
+        end
+
+        def ensure_array(value)
+          if value.is_a?(Array)
+            value
+          elsif value.nil?
+            []
+          else
+            [value]
+          end
         end
       end
     end
