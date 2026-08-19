@@ -15,42 +15,28 @@
         - directionality: -1
   - obo:RO_0002162:  # in_taxon
     - tax: tax:9606
+  # A CRE may cover several genes; they share this one node, so the labels,
+  # synonyms and names of every gene appear here together.
   - sio:SIO_000395:  # to_regulate
     - []:
       - a: obo:SO_0000123  # transcriptionally_regulated
-      - rdfs:seeAlso:
-        - []:
-          - a: fantao:NcbiGene
-          - rdfs:seeAlso:
-            - promoter_ncbigene: ncbigene:217
-          - dct:identifier:
-            - promoter_ncbigene_id: "217"
       - rdfs:seeAlso*:
-        - []:
-          - a: fantao:Hgnc
-          - rdfs:seeAlso:
-            - promoter_hgnc: hgnc:404
-          - dct:identifier:
-            - promoter_hgnc_id: "404"
+        - promoter_ncbigene: NcbiGene 
       - rdfs:seeAlso*:
-        - []:
-          - a: fantao:Mgi
-          - rdfs:seeAlso*:
-            - promoter_mgi: mgi:99600
-          - dct:identifier:
-            - promoter_mgi_id: "99600"
+        - promoter_hgnc: Hgnc
       - rdfs:seeAlso*:
-        - []:
-          - a: fantao:UniProt
-          - rdfs:seeAlso:
-            - promoter_uniprot: uniprot:P05091
-          - dct:identifier:
-            - promoter_uniprot_id: "P05091"
-      - rdfs:label:
+        - promoter_mgi: Mgi
+      - rdfs:seeAlso*:
+        - promoter_uniprot: UniProt
+      # The primary identifier of each gene: HGNC/MGI where one exists,
+      # NCBI Gene otherwise. Also listed above among the cross-references.
+      - fantao:hasTSSGeneSource*:
+        - promoter_gene_source: hgnc:404
+      - rdfs:label*:
         - promoter_symbol: "ALDH2"
       - skos:altLabel*:
         - promoter_synonym: "Ahd-5"
-      - dct:alternative:
+      - dct:alternative*:
         - promoter_name: "aldehyde dehydrogenase 2 family member"
   - faldo:location:
     - []:
@@ -67,38 +53,24 @@
           - a: faldo:ExactPosition
           - faldo:position:
             - end: 111766744
-          - faldo:reference: hco:12\/GRCh38
+          - faldo:reference:
+            - chromosome_end: hco:12\/GRCh38
   - fantao:hasRefTSS*:
     - []:
       - a: fantao:ReferenceTSS
       - rdfs:seeAlso:
         - reftss: reftss:Rfhg_156435.1
       - dct:identifier:
-        - reftss_id "Rfhg_156435.1"
+        - reftss_id: "Rfhg_156435.1"
   - fantao:hasTSS*:
     - []:
       - a: fantao:NearestTSS
       - rdfs:seeAlso*:
-        - []:
-          - a: fantao:Ensembl
-          - rdfs:seeAlso:
-            - nearest_ensembl: ensembl:ENST00000416293.7
-          - dct:identifier:
-            - nearest_ensembl_id: "ENST00000416293.7"
+        - nearest_ensembl: Ensembl
       - rdfs:seeAlso*:
-        - []:
-          - a: fantao:RefSeq
-          - rdfs:seeAlso:
-            - nearest_refseq: refseq:NM_001204889.2
-          - dct:identifier:
-            - nearest_refseq_id: "NM_001204889.2"
+        - nearest_refseq: RefSeq
       - rdfs:seeAlso*:
-        - []:
-          - a: fantao:Insdc
-          - rdfs:seeAlso:
-            - nearest_insdc: insdc:BC002967
-          - dct:identifier:
-            - nearest_insdc_id: "BC002967"
+        - nearest_insdc: Insdc
       - sio:SIO_000216:
         - []:
           - a: fantao:TSSDistance
@@ -109,26 +81,11 @@
     - []:
       - a: fantao:TSS
       - rdfs:seeAlso*:
-        - []:
-          - a: fantao:Ensembl
-          - rdfs:seeAlso:
-            - ensembl: ensembl:ENST00000416293.7
-          - dct:identifier:
-            - ensembl_id: "ENST00000416293.7"
+        - ensembl: Ensembl
       - rdfs:seeAlso*:
-        - []:
-          - a: fantao:RefSeq
-          - rdfs:seeAlso:
-            - refseq: refseq:NM_001204889.2
-          - dct:identifier:
-            - refseq_id: "NM_001204889.2"
+        - refseq: RefSeq
       - rdfs:seeAlso*:
-        - []:
-          - a: fantao:Insdc
-          - rdfs:seeAlso:
-            - insdc: insdc:BC002967
-          - dct:identifier:
-            - insdc_id: "BC002967"
+        - insdc: Insdc
       - sio:SIO_000216:
         - []:
           - a: fantao:TSSDistance
@@ -180,3 +137,27 @@
       - a: fantao:Fantom5Enhancer
       - dct:identifier:
         - fantom5_enhancer_id: "chr1:1125525-1125715"
+
+# Entries of the external databases the CRE links to. Each is stated once per
+# file, and its rdf:type is what tells the source databases apart.
+
+- NcbiGene ncbigene:217:
+  - a: <http://identifiers.org/ncbigene>
+
+- Hgnc hgnc:404:
+  - a: <http://identifiers.org/hgnc>
+
+- Mgi mgi:99600:
+  - a: <http://identifiers.org/mgi>
+
+- UniProt uniprot:P05091:
+  - a: <http://identifiers.org/uniprot>
+
+- Ensembl ensembl:ENST00000416293.7:
+  - a: <http://identifiers.org/ensembl>
+
+- RefSeq refseq:NM_001204889.2:
+  - a: <http://identifiers.org/refseq>
+
+- Insdc insdc:BC002967:
+  - a: <http://identifiers.org/insdc>
