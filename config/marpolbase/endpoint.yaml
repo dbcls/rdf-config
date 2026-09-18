@@ -1,0 +1,13 @@
+# 公開エンドポイント（2026-09-17 に稼働）。
+# 対象は 7 グラフ。**supporting ontology を含めているのは、SO の rdfs:subClassOf* を
+# 同じエンドポイントで辿れるようにするため**。
+endpoint:
+  - https://marchantia.info/sparql
+  - graph:
+    - http://marchantia.info/rdf/graph/MpTak_v7.1/function
+    - http://marchantia.info/rdf/graph/MpTak_v7.1/annotation
+    - http://marchantia.info/rdf/graph/ontology/so
+    - http://marchantia.info/rdf/graph/ontology/sio
+    - http://marchantia.info/rdf/graph/ontology/faldo
+    - http://marchantia.info/rdf/graph/xref/uniprot
+    - http://marchantia.info/rdf/graph/metadata
