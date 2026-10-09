@@ -1,0 +1,76 @@
+# RDF-config model for Mouse Chromosome Ontology (MCO)
+# Source ontology: https://github.com/med2rdf/mco/blob/main/mco.ttl
+
+- Ontology <http://identifiers.org/mco/>:
+  - a: owl:Ontology
+  - dct:license?:
+    - license:
+  - rdfs:seeAlso*:
+    - ontology_see_also:
+  - owl:versionInfo?:
+    - ontology_version: '"2024-09-13"^^xsd:date'
+
+- CoreClass mco:MouseChromosome mco:MouseGenomeBuild:
+  - a: owl:Class
+  - rdfs:label:
+    - core_class_label: "Mouse chromosome"
+  - skos:definition?:
+    - core_class_definition: "Collection of mouse chromosomes"
+  - skos:broader?:
+    - broader_sequence_ontology_term: obo:SO_0000340
+  - rdfs:seeAlso*:
+    - core_class_see_also:
+
+- ObjectProperty mco:build mco:insdc mco:refseq mco:ucsc mco:ensembl:
+  - a: owl:ObjectProperty
+  - rdfs:label:
+    - object_property_label: "build"
+  - rdfs:domain?:
+    - object_property_domain: CoreClass
+  - rdfs:range?:
+    - object_property_range: CoreClass
+
+- DatatypeProperty mco:length:
+  - a: owl:DatatypeProperty
+  - rdfs:label:
+    - datatype_property_label: "length"
+  - rdfs:domain?:
+    - datatype_property_domain: CoreClass
+  - rdfs:range?:
+    - datatype_property_range: xsd:integer
+
+- MouseChromosomeType mco:2:
+  - a: owl:Class
+  - rdfs:label:
+    - chromosome_type_label: "Mouse chromosome 2"
+  - rdfs:subClassOf:
+    - chromosome_type_parent: mco:MouseChromosome
+
+- MouseGenomeBuildType mco:GRCm39 mco:GRCm38:
+  - a: owl:Class
+  - rdfs:label:
+    - genome_build_type_label: "GRCm39"
+  - skos:definition?:
+    - genome_build_type_definition: "Genome Reference Consortium Mouse Build 39"
+  - skos:altLabel*:
+    - genome_build_type_alt_label: "mm39"
+  - rdfs:subClassOf:
+    - genome_build_type_parent: mco:MouseGenomeBuild
+
+- MouseChromosome mco:2/GRCm39:
+  - a:
+    - chromosome_type: MouseChromosomeType
+  - mco:build:
+    - chromosome_build: MouseGenomeBuildType
+  - mco:length:
+    - chromosome_length: 181755017
+  - skos:altLabel?:
+    - chromosome_alt_label: "GPC_000001313"
+  - mco:insdc?:
+    - insdc_accession: <http://identifiers.org/insdc/CM000995.3>
+  - mco:refseq?:
+    - refseq_accession: <http://identifiers.org/refseq/NC_000068.8>
+  - mco:ucsc?:
+    - ucsc_browser: <http://genome.ucsc.edu/cgi-bin/hgTracks?db=mm39&position=chr2>
+  - mco:ensembl*:
+    - ensembl_resource: <http://rdf.ebi.ac.uk/resource/ensembl/mus_musculus/GRCm39/2>

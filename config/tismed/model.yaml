@@ -1,0 +1,43 @@
+- TismedGene ensg:ENSG00000000938:
+  - a: tismedo:ts_evaluated_gene
+  - rdfs:label:
+    - gene_label: "FGR"
+  - tismedo:hasGeneExpressionSpecificity*:
+    - []:
+      - a: tismedo:GeneExpressionSpecificity
+      - tismedo:supportDatasetCount:
+        - tismedo_supportdatasetcount_of_geneexpressionspecificity: 2
+      - tismedo:isPositivelySpecificTo:
+        - tismedo_ispositivelyspecificto_of_geneexpressionspecificity: TismedTissue
+      - tismedo:hasTissueSpecificProtein:
+        - tismedo_hastissuespecificprotein_of_geneexpressionspecificity: false
+      - tismedo:meanSpmAdjustValue:
+        - tismedo_meanspmadjustvalue_of_geneexpressionspecificity: 0.91
+      - tismedo:tScore:
+        - tismedo_tscore_of_geneexpressionspecificity: 1
+
+- TismedProtein uniprot:A0JNW5:
+  - a: tismedo:ts_evaluated_protein
+  - rdfs:label:
+    - protein_label: "Bridge-like lipid transfer protein family member 3B (Syntaxin-6 Habc-interacting protein of 164 kDa) (UHRF1-binding protein 1-like)"
+  - tismedo:hasProteinExpressionSpecificity*:
+    - []:
+      - a: tismedo:ProteinExpressionSpecificity
+      - tismedo:supportDatasetCount:
+        - tismedo_supportdatasetcount_of_proteinexpressionspecificity: 2
+      - tismedo:meanSpmAdjustValue:
+        - tismedo_meanspmadjustvalue_of_proteinexpressionspecificity: 0.83
+      - tismedo:isPositivelySpecificTo:
+        - tismedo_ispositivelyspecificto_of_proteinexpressionspecificity: TismedTissue
+      - tismedo:tScore:
+        - tismedo_tscore_of_proteinexpressionspecificity: 0.64
+
+- TismedTissue tismedo:TISMEDT_000084:
+  - a: owl:Class
+  - rdfs:label:
+    - tissue_label: "Cardiovascular System"
+  - rdfs:subClassOf*:
+    - tissue_superclass: TismedTissue
+  - skos:closeMatch*:
+    - tissue_xref: obo:UBERON_0004535
+
