@@ -1,0 +1,106 @@
+- Gene ensembl:ENSG00000163631 ensembl:ENSG00000000003:
+  - a: obo:SO_0000704
+  # RNA tissue specificity
+  - hpao:tissueSpecificity:
+    - tissue_specificity: hpao:Enriched
+  - hpao:tissueDistribution:
+    - tissue_distribution: hpao:DetectedInMany
+  - hpao:tissueSpecificityScore?:
+    - tissue_specificity_score: '"134"^^xsd:decimal'
+  # RNA single cell type specificity
+  - hpao:cellTypeSpecificity:
+    - cell_type_specificity: hpao:Enriched
+  - hpao:cellTypeDistribution:
+    - cell_type_distribution: hpao:DetectedInSome
+  - hpao:cellTypeSpecificityScore?:
+    - cell_type_specificity_score: '"4"^^xsd:decimal'
+  # RNA single cell type group specificity
+  - hpao:cellTypeGroupSpecificity:
+    - cell_type_group_specificity: hpao:Enriched
+  - hpao:cellTypeGroupDistribution:
+    - cell_type_group_distribution: hpao:DetectedInSome
+  - hpao:cellTypeGroupSpecificityScore?:
+    - cell_type_group_specificity_score: '"4"^^xsd:decimal'
+  # tissues / cell types / cell type groups listed in the "... specific nTPM|nCPM" columns
+  # (coEnrichedIn = HPA "Group enriched")
+  - hpao:enrichedIn*:
+    - enriched_in: [Tissue, SingleCellType, SingleCellTypeGroup]
+  - hpao:coEnrichedIn*:
+    - co_enriched_in: [Tissue, SingleCellType, SingleCellTypeGroup]
+  - hpao:enhancedIn*:
+    - enhanced_in: [Tissue, SingleCellType, SingleCellTypeGroup]
+  - hpao:rnaExpression*:
+    - []:
+      - hpao:anatomicalEntity:
+        - expression_anatomical_entity: [Tissue, SingleCellType, SingleCellTypeGroup]
+      - hpao:nTPM?:
+        - ntpm: '"198523.8"^^xsd:decimal'
+      - hpao:nCPM?:
+        - ncpm: '"81391.2"^^xsd:decimal'
+
+- Tissue hpao:HPAT_000018:
+  - a:
+    - owl:Class
+    - hpao:Tissue
+  - dcterms:identifier:
+    - tissue_id: HPAT_000018
+  - rdfs:label:
+    - tissue_label: liver
+  - skos:exactMatch?:
+    - tissue_caloha: caloha:TS-0564
+  - skos:closeMatch?:
+    - tissue_uberon: obo:UBERON_0002107
+
+- SingleCellType hpao:HPAC_000063 hpao:HPAC_000070:
+  - a:
+    - owl:Class
+    - hpao:SingleCellType
+  - dcterms:identifier:
+    - cell_type_id: HPAC_000063
+  - rdfs:label:
+    - cell_type_label: Hepatocytes
+  - rdfs:subClassOf:
+    - cell_type_group: SingleCellTypeGroup
+  - skos:exactMatch?:
+    - cell_type_caloha_exact: caloha:TS-0454
+  # CALOHA close matches and Cell Ontology
+  - skos:closeMatch*:
+    - cell_type_close_match: obo:CL_0000182 caloha:TS-2535
+
+- SingleCellTypeGroup hpao:HPACG_000022 hpao:HPACG_000052:
+  - a:
+    - owl:Class
+    - hpao:SingleCellTypeGroup
+  - dcterms:identifier:
+    - cell_type_group_id: HPACG_000022
+  - rdfs:label:
+    - cell_type_group_label: Hepatocytes
+  - rdfs:subClassOf:
+    - cell_type_class: SingleCellTypeClass
+  # Cell Ontology
+  - skos:closeMatch?:
+    - cell_type_group_cl: obo:CL_0000182
+
+- SingleCellTypeClass hpao:HPACC_000012:
+  - a:
+    - owl:Class
+    - hpao:SingleCellTypeClass
+  - dcterms:identifier:
+    - cell_type_class_id: HPACC_000012
+  - rdfs:label:
+    - cell_type_class_label: specialized epithelial cells
+
+- Dataset hpa:dataset:
+  - a: dcterms:Dataset
+  - dcterms:title:
+    - dataset_title: Human Protein Atlas RNA tissue and single cell type specificity
+  - dcterms:source:
+    - dataset_source: <https://www.proteinatlas.org/about/download>
+  - dcterms:license:
+    - dataset_license: <https://creativecommons.org/licenses/by/4.0/>
+  - pav:version?:
+    - hpa_version: "25.1"
+  - dcterms:issued?:
+    - hpa_release_date: '"2026-05-25"^^xsd:date'
+  - dcterms:created:
+    - dataset_created: '"2026-10-19"^^xsd:date'
