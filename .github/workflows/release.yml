@@ -1,0 +1,174 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  BINARY_NAME: rdf-config
+
+jobs:
+  build:
+    name: Build ${{ matrix.name }}
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # Linux x86_64 - musl + cross
+          - name: linux-x86_64
+            os: ubuntu-24.04
+            target: x86_64-unknown-linux-musl
+            build_tool: cross
+
+          # Linux ARM64 - musl + cross
+          - name: linux-aarch64
+            os: ubuntu-24.04
+            target: aarch64-unknown-linux-musl
+            build_tool: cross
+
+          # Windows x86_64
+          - name: windows-x86_64
+            os: windows-2025
+            target: x86_64-pc-windows-msvc
+            build_tool: cargo
+
+          # macOS Intel
+          - name: macos-x86_64
+            os: macos-15-intel
+            target: x86_64-apple-darwin
+            build_tool: cargo
+
+          # macOS Apple Silicon
+          - name: macos-aarch64
+            os: macos-15
+            target: aarch64-apple-darwin
+            build_tool: cargo
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.target }}
+
+      # Linux のときだけ cross をインストール
+      - name: Install cross
+        if: matrix.build_tool == 'cross'
+        run: cargo install cross --locked
+
+      # Linux
+      - name: Build with cross
+        if: matrix.build_tool == 'cross'
+        run: >
+          cross build
+          --release
+          --target ${{ matrix.target }}
+          --manifest-path rust/Cargo.toml
+          --features all
+
+      # Windows / macOS
+      - name: Build with cargo
+        if: matrix.build_tool == 'cargo'
+        run: >
+          cargo build
+          --release
+          --target ${{ matrix.target }}
+          --manifest-path rust/Cargo.toml
+          --features all
+
+      # Linux / macOS
+      - name: Package Unix binary
+        if: runner.os != 'Windows'
+        shell: bash
+        run: |
+          VERSION="${GITHUB_REF_NAME}"
+          ARCHIVE_NAME="${BINARY_NAME}-${VERSION}-${{ matrix.name }}"
+
+          mkdir -p "${ARCHIVE_NAME}"
+
+          cp \
+            "rust/target/${{ matrix.target }}/release/${BINARY_NAME}" \
+            "${ARCHIVE_NAME}/"
+
+          if [ -f README.md ]; then
+            cp README.md "${ARCHIVE_NAME}/"
+          fi
+
+          if [ -f LICENSE ]; then
+            cp LICENSE "${ARCHIVE_NAME}/"
+          fi
+
+          tar czf "${ARCHIVE_NAME}.tar.gz" "${ARCHIVE_NAME}"
+
+      # Windows
+      - name: Package Windows binary
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $version = "${{ github.ref_name }}"
+          $archiveName = "${env:BINARY_NAME}-${version}-${{ matrix.name }}"
+
+          New-Item -ItemType Directory -Path $archiveName
+
+          Copy-Item `
+            "rust/target/${{ matrix.target }}/release/${env:BINARY_NAME}.exe" `
+            "$archiveName/"
+
+          if (Test-Path "README.md") {
+            Copy-Item "README.md" "$archiveName/"
+          }
+
+          if (Test-Path "LICENSE") {
+            Copy-Item "LICENSE" "$archiveName/"
+          }
+
+          Compress-Archive `
+            -Path $archiveName `
+            -DestinationPath "${archiveName}.zip"
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.name }}
+          path: |
+            *.tar.gz
+            *.zip
+
+  release:
+    name: Create GitHub Release
+
+    if: startsWith(github.ref, 'refs/tags/v')
+
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Download artifacts
+        uses: actions/download-artifact@v5
+        with:
+          path: artifacts
+          merge-multiple: true
+
+      - name: Show artifacts
+        run: ls -lah artifacts
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${GITHUB_REF_NAME}" \
+            artifacts/* \
+            --title "${GITHUB_REF_NAME}" \
+            --generate-notes
