@@ -1,0 +1,134 @@
+# LOTUS frozen CSV v11 (2026-04-13), converted by dbcls/togomcp/scripts/lotus.
+# Examples are from complete records in the supplied head/tail RDF excerpt.
+# Fields missing from the excerpt but emitted by the converter are noted below.
+# Optional repeatable attributes (*) accommodate missing values and per-QID merges.
+# External links are URI examples only: no unasserted external rdf:type is required.
+# Inline OWL vocabulary definitions are not instance-data entities in this model.
+
+- Occurrence occurrence:Q100138042_Q1709343_Q44391663:
+  - a: lotus:Occurrence
+  - lotus:structure:
+    - occurrence_structure: Structure
+  - lotus:organism:
+    - occurrence_organism: Organism
+  - dct:references:
+    - occurrence_reference: Reference
+  # Converter emits true only; absence does not mean false.
+  - lotus:manuallyValidated?:
+    - manually_validated: '"true"^^xsd:boolean'
+
+- Structure wikidata:Q999767:
+  - a: schema:MolecularEntity
+  - rdfs:label*:
+    - structure_name: "Fendiline"
+  - schema:inChIKey*:
+    - inchikey: "NMKSAYKQLCHXDK-UHFFFAOYSA-N"
+  - schema:inChI*:
+    - inchi: "InChI=1S/C23H25N/c1-19(20-11-5-2-6-12-20)24-18-17-23(21-13-7-3-8-14-21)22-15-9-4-10-16-22/h2-16,19,23-24H,17-18H2,1H3"
+  - schema:smiles*:
+    - smiles: "CC(C1=CC=CC=C1)NCCC(C2=CC=CC=C2)C3=CC=CC=C3"
+  - lotus:smiles2D*:
+    - smiles_2d: "CC(C1=CC=CC=C1)NCCC(C2=CC=CC=C2)C3=CC=CC=C3"
+  - schema:molecularFormula*:
+    - molecular_formula: "C23H25N"
+  - schema:iupacName*:
+    - iupac_name: "3,3-diphenyl-N-(1-phenylethyl)propan-1-amine"
+  - lotus:exactMass*:
+    - exact_mass: '"315.198699802"^^xsd:decimal'
+  - lotus:xlogp*:
+    - xlogp: '"5.5"^^xsd:decimal'
+  - lotus:stereocenterCount*:
+    - stereocenter_count: 1
+  - lotus:unspecifiedStereocenterCount*:
+    - unspecified_stereocenter_count: 1
+  - lotus:npclassifierPathway*:
+    - npclassifier_pathway: "Alkaloids"
+  - lotus:npclassifierSuperclass*:
+    - npclassifier_superclass: "Pseudoalkaloids"
+  - lotus:npclassifierClass*:
+    - npclassifier_class: "Phenylalanine-derived alkaloids"
+  - lotus:classyfireKingdom*:
+    - classyfire_kingdom: "Organic compounds"
+  - lotus:classyfireSuperclass*:
+    - classyfire_superclass: "Benzenoids"
+  - lotus:classyfireClass*:
+    - classyfire_class: "Benzene and substituted derivatives"
+  - lotus:classyfireDirectParent*:
+    - classyfire_direct_parent: "Diphenylmethanes"
+  - lotus:chemontId*:
+    - chemont_id: "CHEMONTID:0000369"
+  - rdfs:seeAlso*:
+    - structure_external_link: pubchem:CID3336
+
+- Organism wikidata:Q98121623:
+  - a: dwc:Taxon
+  - rdfs:label*:
+    - organism_label: "Stoebe vulgaris"
+  - dwc:scientificName*:
+    - scientific_name: "Stoebe vulgaris"
+  - lotus:taxonDomain*:
+    - taxon_domain: "Eukaryota"
+  - dwc:kingdom*:
+    - taxon_kingdom: "Archaeplastida"
+  - dwc:phylum*:
+    - taxon_phylum: "Streptophyta"
+  - dwc:class*:
+    - taxon_class: "Magnoliopsida"
+  - dwc:order*:
+    - taxon_order: "Asterales"
+  - dwc:family*:
+    - taxon_family: "Asteraceae"
+  # Taxonomic ranks are literals, not links to parent taxa.
+  - dwc:tribe*:
+    - taxon_tribe: "Gnaphalieae"
+  - dwc:genus*:
+    - taxon_genus: "Stoebe"
+  - lotus:taxonSpecies*:
+    - taxon_species: "Stoebe vulgaris"
+  # Converter-supported string field; no example observed in the excerpt.
+  - lotus:taxonVarietas*:
+    - taxon_varietas: ""
+  # One repeatable URI field for NCBI Taxonomy, GBIF and Open Tree of Life links.
+  - rdfs:seeAlso*:
+    - organism_external_link: taxonomy:1237821
+
+- Reference wikidata:Q98156156:
+  - a: dct:BibliographicResource
+  - bibo:doi*:
+    - reference_doi: "10.3390/MD18080385"
+  - bibo:pmid*:
+    - reference_pmid: "32722304"
+  - dct:title*:
+    - reference_title: "New Antifungal Metabolites from the Mariana Trench Sediment-Associated Actinomycete Streptomyces sp. SY1965"
+  - rdfs:label*:
+    - reference_label: "New Antifungal Metabolites from the Mariana Trench Sediment-Associated Actinomycete Streptomyces sp. SY1965"
+  - dct:issued*:
+    - reference_issued: '"2020-07-24"^^xsd:date'
+  - dct:isPartOf*:
+    - reference_journal: wikidata:Q2122804
+  # URI values may be DOI, PubMed or PMC links; --refs-nt supplies enrichment.
+  - rdfs:seeAlso*:
+    - reference_external_link: <https://doi.org/10.3390/MD18080385>
+
+- Dataset <http://rdfportal.org/dataset/lotus>:
+  - a: void:Dataset
+  - dct:title:
+    - dataset_title: "LOTUS natural products occurrences"
+  - dct:description:
+    - dataset_description: "Structure-organism occurrences of natural products, each documented by a literature reference. Converted from the LOTUS frozen CSV export."
+  - dct:creator:
+    - dataset_creator: "The LOTUS Initiative"
+  - dct:publisher:
+    - dataset_publisher: "Database Center for Life Science (DBCLS)"
+  - dct:issued:
+    - dataset_issued: '"2026-04-13"^^xsd:date'
+  - pav:version:
+    - dataset_version: "v11"
+  - dct:source:
+    - dataset_source: <https://doi.org/10.5281/zenodo.19360665>
+  - pav:retrievedFrom:
+    - dataset_retrieved_from: <https://doi.org/10.5281/zenodo.19360665>
+  - pav:createdOn:
+    - dataset_created_on: '"2026-10-03T10:04:34+00:00"^^xsd:dateTime'
+  - void:sparqlEndpoint:
+    - dataset_endpoint: <https://rdfportal.org/primary/sparql>
