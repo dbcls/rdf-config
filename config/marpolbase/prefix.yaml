@@ -1,0 +1,65 @@
+# MarpolBase RDF（統合版）の接頭辞。
+#
+# 対象は**公開している RDF 全体**（機能 + 構造 + 外部リンク + 文献）。
+#
+# URI は 3 層に分ける。
+#   版非依存 : gene / transcript / cds / protein — アノテーション更新で実体が変わらない
+#   版依存   : exon / cds_segment / utr / sequence / region / position
+#   語彙     : ontology/ 配下の独自プロパティ。インスタンス空間と混ぜない
+# scheme は DBCLS ガイドライン 1.2.9 に従い http。詳細ページ（https）は foaf:page で結ぶ。
+
+mpb: <http://marchantia.info/rdf/>
+mpo: <http://marchantia.info/ontology/>
+
+# --- 版非依存の実体 ---
+mpgene: <http://marchantia.info/rdf/gene/>
+mptx: <http://marchantia.info/rdf/transcript/>
+mpcds: <http://marchantia.info/rdf/cds/>
+mpprot: <http://marchantia.info/rdf/protein/>
+
+# --- 版依存の実体（構造アノテーション）---
+mpexon: <http://marchantia.info/rdf/MpTak_v7.1/exon/>
+mpseg: <http://marchantia.info/rdf/MpTak_v7.1/cds_segment/>
+mputr: <http://marchantia.info/rdf/MpTak_v7.1/utr/>
+mpord: <http://marchantia.info/rdf/MpTak_v7.1/ordered/>   # 順序付きリスト項目（SIO）
+mpseq: <http://marchantia.info/rdf/MpTak_v7.1/sequence/>
+mpreg: <http://marchantia.info/rdf/MpTak_v7.1/region/>
+mppos: <http://marchantia.info/rdf/MpTak_v7.1/position/>
+
+# --- 機能アノテーション側 ---
+mpog: <http://marchantia.info/rdf/orthogroup/>
+mpkog: <http://marchantia.info/rdf/kog/>
+mppaper: <http://marchantia.info/rdf/paper/>
+mplit: <http://marchantia.info/rdf/litassert/>
+mpcond: <http://marchantia.info/rdf/condition/>
+mprun: <http://marchantia.info/rdf/run/>
+mpenr: <http://marchantia.info/rdf/enriched/>
+mpcoex: <http://marchantia.info/rdf/coexp/>
+mpvocab: <http://marchantia.info/rdf/vocab/>
+mpmethod: <http://marchantia.info/rdf/method/>
+mpdataset: <http://marchantia.info/rdf/dataset/>
+
+# --- 外部 ---
+pubmed: <http://identifiers.org/pubmed/>
+insdc: <http://identifiers.org/insdc/>
+taxon: <http://identifiers.org/taxonomy/>
+pfam: <http://identifiers.org/pfam/>
+kegg: <http://identifiers.org/kegg.orthology/>
+uniprot: <http://purl.uniprot.org/uniprot/>
+
+faldo: <http://biohackathon.org/resource/faldo#>
+obo: <http://purl.obolibrary.org/obo/>
+so: <http://purl.obolibrary.org/obo/so#>
+insdc_ontology: <http://ddbj.nig.ac.jp/ontologies/nucleotide/>
+fabio: <http://purl.org/spar/fabio/>
+prov: <http://www.w3.org/ns/prov#>
+dcat: <http://www.w3.org/ns/dcat#>
+dcterms: <http://purl.org/dc/terms/>
+skos: <http://www.w3.org/2004/02/skos/core#>
+sio: <http://semanticscience.org/resource/>
+foaf: <http://xmlns.com/foaf/0.1/>
+void: <http://rdfs.org/ns/void#>
+owl: <http://www.w3.org/2002/07/owl#>
+rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+xsd: <http://www.w3.org/2001/XMLSchema#>

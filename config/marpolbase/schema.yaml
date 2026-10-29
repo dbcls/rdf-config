@@ -1,0 +1,31 @@
+# スキーマ図のサブセット（RDF-config spec の schema.yaml）。
+# **主語が 23 あるので全体図は読めない。** 用途ごとに切り出す。
+#   rdf-config --config config/marpolbase --schema <名前> ":nest"
+#
+# **schema.yaml を置くと、引数なしの `--schema` は名前の一覧を出すだけになり
+# 全体図が作れなくなる。** variables を持たない項目は「図の表題だけを指定する」
+# 意味になる（spec）ので、全体図用に title を 1 つ置いてある:
+#   rdf-config --config config/marpolbase --schema title > schema.svg
+
+title:
+  description: MarpolBase RDF data model
+
+gene_core:
+  description: 遺伝子を中心にした最小の図（機能と構造の結節点）
+  variables: [Gene, OrthoGroup, Transcript, Region]
+
+literature:
+  description: 遺伝子と文献の関係（evidence / role を持つノード経由）
+  variables: [Gene, GeneLiteratureAssertion, Paper]
+
+expression:
+  description: 実験条件・SRA run・高発現判定・共発現
+  variables: [Condition, SequencingRun, ConditionEnrichedGene, CoexpressionEdge, DerivationMethod, VocabularyConcept, VocabularyScheme]
+
+structure:
+  description: 転写産物の構造（エクソン・CDS・UTR・タンパク質）と順序
+  variables: [Transcript, Exon, ExonOrder, Utr, Cds, CdsSegment, CdsSegmentOrder, Protein]
+
+coordinates:
+  description: FALDO による座標（Region / Position / Sequence / Assembly）
+  variables: [Region, Position, Sequence, Assembly]
