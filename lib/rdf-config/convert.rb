@@ -91,7 +91,7 @@ class RDFConfig
     end
 
     def generate
-      if executable_file?(RUST_CLI_FILE)
+      if executable_file?(rust_cli_file)
         run_rust_converter
       else
         run_ruby_converter
@@ -113,7 +113,7 @@ class RDFConfig
 
     def run_rust_converter
       cmds = [
-        RUST_CLI_FILE,
+        rust_cli_file,
         '--chunk-size', '1',
         '--config', @config.config_dir,
         '--convert', @format
@@ -133,7 +133,7 @@ class RDFConfig
         status = $?
         exit_code = status.exitstatus
 
-        # warn "Rust program (#{RUST_CLI_FILE}) failed with exit status #{exit_code}"
+        # warn "Rust program (#{rust_cli_file}) failed with exit status #{exit_code}"
         exit exit_code || 1
       end
     end
@@ -214,6 +214,14 @@ class RDFConfig
 
     def bnode_name?(variable_name)
       /\A_BNODE\d+_\z/ =~ variable_name
+    end
+
+    def rust_cli_file
+      if Gem.win_platform?
+        [RUST_CLI_FILE, '.exe'].join
+      else
+        RUST_CLI_FILE
+      end
     end
 
     def executable_file?(path)

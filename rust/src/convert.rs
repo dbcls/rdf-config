@@ -42,6 +42,7 @@ fn parse_subject_rule(name: &str, value: &Value) -> Result<SubjectRule> {
         variables: Vec::new(),
         steps: Vec::new(),
     };
+    let mut object_variables = Vec::new();
     let mut object_rules = Vec::new();
 
     for item in items {
@@ -69,7 +70,9 @@ fn parse_subject_rule(name: &str, value: &Value) -> Result<SubjectRule> {
                     if key == "subject" {
                         subject_pipeline = parse_subject_pipeline(v)?;
                     } else if key == "objects" {
-                        object_rules = parse_object_rules(v)?;
+                        let (vars, rules) = parse_object_rules(v)?;
+                        object_variables = vars;
+                        object_rules = rules;
                     } else if key.starts_with('$') {
                         // Variable definition at top level
                         let pipeline = parse_pipeline_value(v)?;
@@ -94,6 +97,7 @@ fn parse_subject_rule(name: &str, value: &Value) -> Result<SubjectRule> {
         source_table,
         pre_variables,
         subject_pipeline,
+        object_variables,
         object_rules,
     })
 }
@@ -138,29 +142,33 @@ fn parse_subject_pipeline(value: &Value) -> Result<SubjectPipeline> {
     Ok(SubjectPipeline { variables, steps })
 }
 
-fn parse_object_rules(value: &Value) -> Result<Vec<ObjectRule>> {
+/// Parse the `objects:` section.
+///
+/// Returns `(variables, rules)`: entries whose key starts with `$` are
+/// variable definitions (`VariableDef`), everything else is an object rule.
+/// Keeping them apart means `$xxx` never reaches model.yaml name validation
+/// and is never mistaken for an object downstream.
+fn parse_object_rules(value: &Value) -> Result<(Vec<VariableDef>, Vec<ObjectRule>)> {
+    let mut variables = Vec::new();
     let mut rules = Vec::new();
 
     let items = match value {
         Value::Sequence(seq) => seq,
-        _ => return Ok(rules),
+        _ => return Ok((variables, rules)),
     };
 
     for item in items {
         if let Value::Mapping(mapping) = item {
             for (k, v) in mapping {
                 let key = yaml_value_to_string(k);
+                let pipeline = parse_pipeline_value(v)?;
 
                 if key.starts_with('$') {
-                    // Variable definition inside objects section
-                    // This is handled as a special rule
-                    let pipeline = parse_pipeline_value(v)?;
-                    rules.push(ObjectRule {
+                    variables.push(VariableDef {
                         name: key,
                         pipeline,
                     });
                 } else {
-                    let pipeline = parse_pipeline_value(v)?;
                     rules.push(ObjectRule {
                         name: key,
                         pipeline,
@@ -170,7 +178,7 @@ fn parse_object_rules(value: &Value) -> Result<Vec<ObjectRule>> {
         }
     }
 
-    Ok(rules)
+    Ok((variables, rules))
 }
 
 fn parse_pipeline_value(value: &Value) -> Result<Vec<Operation>> {

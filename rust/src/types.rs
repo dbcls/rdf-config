@@ -329,6 +329,7 @@ pub struct SubjectRule {
     pub source_table: Option<String>,         // optional source() table name (3rd arg, DuckDB only)
     pub pre_variables: Vec<VariableDef>,      // top-level variable definitions
     pub subject_pipeline: SubjectPipeline,
+    pub object_variables: Vec<VariableDef>,
     pub object_rules: Vec<ObjectRule>,
 }
 

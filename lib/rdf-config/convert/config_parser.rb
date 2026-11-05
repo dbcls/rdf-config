@@ -60,7 +60,6 @@ class RDFConfig
 
         @model = Model.instance(config)
         @method_parser = MethodParser.new
-        @source_processor = SourceProcessor.new
 
         @subject_converts = {}
         @split_subject = {}
@@ -263,12 +262,21 @@ class RDFConfig
 
       def parse_object_convert(object_convert)
         object_convert.each do |object_name, object_converts|
+          object_name = object_name.to_s
           if object_converts.is_a?(Array)
             object_converts.each do |object_converter|
-              add_object_convert(object_name, parse_converter(object_name, object_converter))
+              if object_converter.is_a?(Hash)
+                parse_object_convert(object_converter)
+              else
+                add_object_convert(object_name, parse_converter(object_name, object_converter))
+              end
             end
           else
-            add_object_convert(object_name, parse_converter(object_name, object_converts))
+            if object_converts.is_a?(Hash)
+              parse_object_convert(object_converts)
+            else
+              add_object_convert(object_name, parse_converter(object_name, object_converts))
+            end
           end
         end
       end
@@ -338,22 +346,23 @@ class RDFConfig
       end
 
       def process_source_macro(method_def, variable_name)
-        source_macro_args = @source_processor.parse_method_def(method_def)
+        source_processor = SourceProcessor.new
+        source_macro_args = source_processor.parse_method_def(method_def)
         source_macro_args[0] = if @convert_source_is_file
                                  @convert_source
                                else
                                  absolute_source_file_path(source_macro_args[0])
                                end
-        @source_processor.parse_args(*source_macro_args)
+        source_processor.parse_args(*source_macro_args)
 
-        if @source_processor.source_is_rdb?
-          @target_source = [source_macro_args[0], @source_processor.rdb_table_name]
+        if source_processor.source_is_rdb?
+          @target_source = [source_macro_args[0], source_processor.rdb_table_name]
         else
           @target_source = source_macro_args[0]
         end
 
         add_source_subject_map(@target_source, variable_name)
-        add_source_format_map(@target_source, @source_processor.source_type)
+        add_source_format_map(@target_source, source_processor.source_type)
       end
 
       def absolute_source_file_path(source_file)

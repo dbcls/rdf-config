@@ -158,19 +158,19 @@ fn process_single_row(
         // ── object triples ──
         let mut obj_vars = local_vars.clone();
 
-        // Separate inline variable defs ($xxx) from real object rules
-        let mut real_obj_rules: Vec<&ObjectRule> = Vec::new();
-        for obj_rule in &rule.object_rules {
-            if obj_rule.name.starts_with('$') {
-                // Variable definition in objects section
-                let val = exec_pipeline(&obj_rule.pipeline, "", row, &obj_vars, prefixes)?;
-                if let PipelineValue::Single(v) = &val {
-                    obj_vars.insert(obj_rule.name.clone(), v.clone());
-                }
-            } else {
-                real_obj_rules.push(obj_rule);
+        // Variables defined directly under `objects:` ($xxx). They are all
+        // evaluated, in definition order, before any object rule runs, so
+        // every object in this subject rule can reference them. The object
+        // pipeline executor is used so inline `$var:` defs and `switch`
+        // inside the variable's own pipeline work too.
+        for var_def in &rule.object_variables {
+            let val = exec_object_pipeline(&var_def.pipeline, "", row, &mut obj_vars, prefixes)?;
+            if let PipelineValue::Single(v) = &val {
+                obj_vars.insert(var_def.name.clone(), v.clone());
             }
         }
+
+        let real_obj_rules: Vec<&ObjectRule> = rule.object_rules.iter().collect();
 
         // Track blank node IDs across all object rules of this subject rule.
         // Key = the predicate path from the subject to a blank node, e.g.
