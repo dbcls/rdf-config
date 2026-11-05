@@ -247,8 +247,6 @@ To view the stanza, run (cd stanza; npx togostanza serve) and open http://localh
 % docker run --rm -it -u $(id -u):$(id -g) -v <path to config file dir>:/config dbcls/rdf-config:latest rdf-config --config /config/<config dir name> [options]
 ```
 
-See available docker image tags other than `latest` at [Docker Hub](https://hub.docker.com/r/dbcls/rdf-config).
-
 ## Authors
 
 * Toshiaki Katayama (DBCLS)
