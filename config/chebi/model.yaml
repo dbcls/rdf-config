@@ -1,138 +1,93 @@
-- ChebiMolecule obo:CHEBI_35213:
+# ChEBI 2.0; examples checked against release 257.
+- ChebiMolecule obo:CHEBI_27732:
   - a: owl:Class
-  - rdfs:subClassOf+:
+  # Root classes and obsolete entries need not have a superclass.
+  - rdfs:subClassOf*:
     - subclassof: ChebiMolecule
-    - []:
-      - a: owl:Restriction
-      - owl:onProperty*:
-        - on_property: ObjectProperty   # obo:chebi#has_functional_parent, obo:chebi#has_parent_hydride, obo:chebi#is_conjugate_acid_of, obo:chebi#is_conjugate_base_of, obo:chebi#is_enantiomer_of, obo:chebi#is_substituent_group_from, obo:chebi#is_tautomer_of, obo:BFO_0000051, obo:RO_0000087
-      - owl:someValuesFrom*:
-        - some_values_from: ChebiMolecule 
-#      - a: owl:Axiom
-#      - oboinowl:hasDbXref:
-#        - axiom_has_db_xref: "KEGG_COMPOUND"
-#      - oboinowl:hasSynonymType:
-#        - axiom_has_synonym_type: obo:chebi#IUPAC_NAME   # obo:chebi#BRAND_NAME, obo:chebi#INN
-#      - oboinowl:source:
-#        - axiom_source: "KEGG COMPOUND"
-#      - owl:annotatedProperty:
-#        - axiom_annotated_property: oboinowl:hasDbXref   # oboinowl:hasExactSynonym, oboinowl:hasRelatedSynonym
-#      - owl:annotatedSource:
-#        - axiom_annotated_source: ChebiMolecule
-#      - owl:annotatedTarget:
-#        - axiom_annotated_target: "CAS:21008-67-3"   # "(+)-Atherospermoline", "PMID:25111086"
-  - rdfs:label:
-    - label: "PG(14:1(9Z)/18:3(9Z,12Z,15Z))"
-  - oboinowl:hasOBONamespace:
+    - restriction: ChebiRestriction
+  # Obsolete entries may contain only a type, obsolescence reason and replacement.
+  - rdfs:label?:
+    - label: "caffeine"
+  - oboinowl:hasOBONamespace?:
     - has_obo_namespace: "chebi_ontology"
   - oboinowl:hasAlternativeId*:
-    - has_alternative_id: "CHEBI:13109"
+    - has_alternative_id: "CHEBI:22982"
   - oboinowl:hasDbXref*:
-    - molecule_has_db_xref: "LIPID_MAPS_instance:LMST03010014"
+    - molecule_has_db_xref: "kegg.compound:C07481"
   - oboinowl:hasExactSynonym*:
-    - has_exact_synonym: "(2S)-2-amino-5-oxopentanoic acid"
+    - has_exact_synonym: "1,3,7-trimethyl-3,7-dihydro-1H-purine-2,6-dione"
   - oboinowl:hasRelatedSynonym*:
-    - has_related_synonym: "alpha-L-Fuc-(1->2)-beta-D-Gal-(1->3)-alpha-D-GalNAc-yl group"
-  - oboinowl:id:
-    - id: "CHEBI:201963"
+    - has_related_synonym: "Caffeine"
+  - oboinowl:id?:
+    - id: "CHEBI:27732"
   - oboinowl:inSubset?:
-    - in_subset: AnnotationPropertyData #3_STAR: manually curated by ChEBI
+    - in_subset: AnnotationPropertyData
   - owl:deprecated?:
-    - deprecated: "true"
+    - deprecated: '"true"^^xsd:boolean'
   - obo:IAO_0000115?:
-    - definition: "A 1,2-diacyl-sn-glycero-3-phosphoethanolamine in which the 1- and 2-acyl groups are specified as octadecanoyl and (7Z,10Z,13Z,16Z)-docosatetraenoyl respectively."
-  - obo:IAO_0000231?:   # has obsolescence reason
-    - has_obsolescence_reason: obo:IAO_0000227   # terms merged
-  - obo:IAO_0100001?:   # term replaced by
-    - term_replaced_by: ChebiMolecule
-  - obochebi:charge?:
-    - charge: "0"
-  - obochebi:formula*:
-    - formula: "CH6N4S"
-  - obochebi:inchi?:
-    - inchi: "InChI=1S/C21H29N3O2/c1-22-11-21(12-24(13-21)9-14-4-5-14)19-16-7-6-15(26-3)8-17(16)23(2)20(19)18(22)10-25/h6-8,14,18,25H,4-5,9-13H2,1-3H3/t18-/m1/s1"
-  - obochebi:inchikey?:
-    - inchikey: "HZPQKTICJQVCSW-YLJNVRNNSA-J"
-  - obochebi:mass*:
-    - mass: "246.259"
-  - obochebi:monoisotopicmass*:
-    - monoisotopicmass: "473.25259"
-  - obochebi:smiles?:
-    - smiles: "CCCCCCCC(C(O)=O)C(O)=O"
+    - definition: "A trimethylxanthine in which the three methyl groups are located at positions 1, 3, and 7. A purine alkaloid that occurs naturally in tea and coffee."
+  - obo:IAO_0000231?:
+    - has_obsolescence_reason: obo:IAO_0000227
+  - obo:IAO_0100001?:
+    # Example replacement for obsolete CHEBI:22584; keep source and target variables separate.
+    - term_replaced_by: obo:CHEBI_2762
+  - chemrof:charge?:
+    - charge: '"0"^^xsd:integer'
+  - chemrof:generalized_empirical_formula*:
+    - formula: "C8H10N4O2"
+  - chemrof:inchi_string?:
+    - inchi: "InChI=1S/C8H10N4O2/c1-10-4-9-6-5(10)7(13)12(3)8(14)11(6)2/h4H,1-3H3"
+  - chemrof:inchi_key_string?:
+    - inchikey: "RYYVLZVUVIJVGH-UHFFFAOYSA-N"
+  - chemrof:mass*:
+    - mass: '"194.194"^^xsd:decimal'
+  - chemrof:monoisotopic_mass*:
+    - monoisotopicmass: '"194.08038"^^xsd:decimal'
+  - chemrof:smiles_string?:
+    - smiles: "Cn1c(=O)c2c(ncn2C)n(C)c1=O"
+  - chemrof:wurcs_representation?:
+    # Example from CHEBI:37671 (not caffeine).
+    - wurcs: "WURCS=2.0/1,1,0/[a2122h-1b_1-5]/1/"
 
-- AnnotationPropertyData obo:chebi#3_STAR:
+- ChebiRestriction:
+  - a: owl:Restriction
+  - owl:onProperty:
+    - on_property: ObjectProperty
+  - owl:someValuesFrom:
+    # Use an IRI example to avoid reusing the source class's label/id variables.
+    - some_values_from: obo:CHEBI_35610
+
+- AnnotationPropertyData obochebi:3_STAR:
   - a: owl:AnnotationProperty
   - rdfs:label?:
-    - annotation_property_label: "has_obo_namespace"
+    - annotation_property_label: "subset_property"
   - rdfs:subPropertyOf?:
     - annotation_propertyof: AnnotationPropertyData
-#    - is_subproperty_of: oboinowl:SubsetProperty   # oboinowl:SynonymTypeProperty
   - rdfs:comment?:
-    - annotation_property_comment: "Preliminary entries"  # "Annotated by 3rd party"(obo:chebi#2_STAR), "Manually annotated by ChEBI Team"(obo:chebi#3_STAR)
+    - annotation_property_comment: "Manually annotated by ChEBI Team"
 
-- ObjectProperty obochebi_sha:has_major_microspecies_at_pH_7_3:   # obochebi_sha:has_functional_parent, obochebi_sha:has_parent_hydride, obochebi_sha:is_conjugate_acid_of, obochebi_sha:is_conjugate_base_of, obochebi_sha:is_enantiomer_of, obochebi_sha:is_substituent_group_from, obochebi_sha:is_tautomer_of, obo:BFO_0000051, obo:RO_0000087
+- ObjectProperty obo:RO_0018038:
   - a: owl:ObjectProperty
-  - a?: owl:TransitiveProperty
+  # Do not require owl:TransitiveProperty: most relations are not transitive.
   - owl:inverseOf?:
     - object_property_inverse_of: ObjectProperty
   - rdfs:label:
     - object_property_label: "has functional parent"
   - oboinowl:hasOBONamespace:
     - object_property_has_obo_namespace: "chebi_ontology"
-  - oboinowl:hasDbXref?:
-    - object_property_has_db_xref: "BFO:0000051"   # "RO:0000087"
+  - oboinowl:hasDbXref*:
+    - object_property_has_db_xref: "RO:0000087"
   - oboinowl:id:
-    - object_property_id: "is_enantiomer_of"
+    - object_property_id: "has_functional_parent"
   - oboinowl:is_cyclic:
-    - object_property_is_cyclic: "true"   # 0
+    - object_property_is_cyclic: '"false"^^xsd:boolean'
   - oboinowl:is_transitive?:
-    - object_property_is_transitive: "false"
-  - oboinowl:shorthand?:
-    - object_property_shorthand: "has_role"
-    
-# AnnotationPropertyの主語
-# rdfs:label
-# oboinowl:hasOBONamespace
-# obo:chebi#1_STAR
-# obo:chebi#2_STAR
-# obo:chebi#3_STAR
-# obo:chebi#BRAND_NAME
-# obo:chebi#INN
-# obo:chebi#IUPAC_NAME
-# oboinowl:SubsetProperty
-# oboinowl:SynonymTypeProperty
-# oboinowl:date
-# oboinowl:default-namespace
-# oboinowl:hasAlternativeId
-# oboinowl:hasDbXref
-# oboinowl:hasExactSynonym
-# oboinowl:hasOBOFormatVersion
-# oboinowl:hasRelatedSynonym
-# oboinowl:hasSynonymType
-# oboinowl:id
-# oboinowl:inSubset
-# oboinowl:is_cyclic
-# oboinowl:is_transitive
-# oboinowl:saved-by
-# oboinowl:shorthand
-# oboinowl:source
-# owl:deprecated
-# rdfs:comment
-# obo:IAO_0000115
-# obo:IAO_0000231
-# obo:IAO_0100001
-# obo:chebi/charge
-# obo:chebi/formula
-# obo:chebi/inchi
-# obo:chebi/inchikey
-# obo:chebi/mass
-# obo:chebi/monoisotopicmass
-# obo:chebi/smiles
+    - object_property_is_transitive: '"false"^^xsd:boolean'
 
 - ChebiOwl <http://purl.obolibrary.org/obo/chebi.owl>:
   - a: owl:Ontology
   - oboinowl:date:
-    - chebi_owl_date: "29:01:2024 14:42"
+    - chebi_owl_date: "05:11:2026 18:04"
   - oboinowl:default-namespace:
     - chebi_owl_default_namespace: "chebi_ontology"
   - oboinowl:hasOBOFormatVersion:
@@ -140,69 +95,31 @@
   - oboinowl:saved-by:
     - chebi_owl_saved_by: "chebi"
   - owl:versionIRI:
-    - chebi_owl_version_iri: obo:chebi/230/chebi.owl
+    - chebi_owl_version_iri: <http://purl.obolibrary.org/obo/chebi/257/chebi.owl>
   - rdfs:comment:
-    - chebi_owl_comment: "developed by Michael Ashburner & Pankaj Jaiswal."
+    - chebi_owl_comment: "ChEBI subsumes and replaces the Chemical Ontology first. This ontology was developed by Michael Ashburner and Pankaj Jaiswal. Data was cuarated by The ChEBI Curation Team. For any queries contact chebi-help@ebi.ac.uk"
+  - owl:versionInfo?:
+    - chebi_owl_version: "257"
+  - dcterms:title?:
+    - chebi_owl_title: "ChEBI Ontology"
+  - dcterms:description?:
+    - chebi_owl_description: "Chemical Entities of Biological Interest, also known as ChEBI, is a chemical database and ontology of molecular entities focused on 'small' chemical compounds, that is part of the Open Biomedical Ontologies (OBO) effort at the European Bioinformatics Institute (EBI)."
+  - dcterms:license?:
+    - chebi_owl_license: <https://creativecommons.org/licenses/by/4.0/>
+  - foaf:homepage?:
+    - chebi_owl_homepage: '"https://www.ebi.ac.uk/chebi"^^xsd:anyURI'
 
-- TransitiveProperty obochebi_sha:is_tautomer_of:   # obo:BFO_0000051
+- TransitiveProperty obo:RO_0018036:
+  # These resources also have type owl:ObjectProperty. A type list would
+  # generate an OR condition and incorrectly include non-transitive properties.
   - a: owl:TransitiveProperty
-  - a: owl:ObjectProperty
   - rdfs:label:
-    - transitive_property_label: "is tautomer of"   # "has part"
+    - transitive_property_label: "is tautomer of"
   - oboinowl:hasOBONamespace:
     - transitive_property_has_obo_namespace: "chebi_ontology"
-  - oboinowl:hasDbXref?:
+  - oboinowl:hasDbXref*:
     - transitive_property_has_db_xref: "BFO:0000051"
   - oboinowl:id:
-    - transitive_property_id: "is_tautomer_of"   # "has part"
+    - transitive_property_id: "is_tautomer_of"
   - oboinowl:is_cyclic:
-    - transitive_property_is_cyclic: "true"   # 0
-  - oboinowl:shorthand?:
-    - transitive_property_shorthand: "has_part"
-
-
-#DbXrefについて
-#"AGR"
-#"BFO"
-#"BPDB"
-#"Beilstein"
-#"CAS"
-#"CBA"
-#"Chemspider"
-#"DrugBank"
-#"Drug_Central"
-#"FooDB"
-#"Gmelin"
-#"HMDB"
-#"KEGG"
-#"KNApSAcK"
-#"LINCS"
-#"LIPID_MAPS_instance"
-#"MetaCyc"
-#"PDBeChem"
-#"PMID"
-#"Patent"
-#"RO"
-#"Reaxys"
-#"VSDB"
-#"Wikipedia"
-#"GlyGen"
-#"GlyTouCan"
-#"YMDB"
-#"COMe"
-#"PPDB"
-#"Pesticides"
-#"UM-BBD_compID"
-#"PMCID"
-#"Pubchem"
-#"ChemIDplus"
-#"LIPID_MAPS_class"
-#"PDB"
-#"RESID"
-#"ECMDB"
-#"MolBase"
-#"WebElements"
-#"FAO/WHO_standards"
-#"PPR"
-#"CTX"
-#"SMID"
+    - transitive_property_is_cyclic: '"true"^^xsd:boolean'
