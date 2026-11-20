@@ -1,0 +1,418 @@
+# MarpolBase RDF（統合版）のモデル。
+#
+# **公開されている RDF 全体を 1 つのモデルとして記述する** —— 機能アノテーション
+# （遺伝子注釈・文献・条件・発現・共発現）と構造アノテーション、それに外部リンク。
+# **RDF そのものの生成には使わない**（変換は MarpolBase 側の ETL が行う）。
+# 用途は「公開されているデータの形を 1 枚で見せる」ことと、そこから SPARQL と
+# スキーマ図を起こすこと。
+#
+# **実例はすべて公開エンドポイントで実在を確認したもの**（2026-09-17）。
+# 中心の実例は Mp1g00710 (MpCEN1) chr1:635664-638217 (−)、転写産物 Mp1g00710.1。
+#
+# 対象グラフ（endpoint.yaml と対応）:
+#   .../MpTak_v7.1/function   機能 5,321,527
+#   .../MpTak_v7.1/annotation 構造 5,774,297
+#   .../ontology/{so,sio,faldo}  supporting ontology
+#   .../xref/uniprot          protein → UniProt の推定リンク
+#   .../metadata              データセット記述
+#
+# **Gene だけは 2 つのグラフにまたがる。** 構造側（座標・転写産物）と機能側
+# （GO/Pfam/KOG/KEGG・orthogroup・文献・発現）が同じ URI を共有していて、これが
+# 「無料の結合」を成り立たせている。下の Gene はその和である。
+
+# ---------------------------------------------------------------------------
+# 遺伝子（2 グラフの結節点）
+# ---------------------------------------------------------------------------
+
+- Gene mpgene:Mp1g00710:
+  - a:
+    - mpo:Gene                       # 機能グラフ側の型
+    - obo:SO_0001217                 # 構造グラフ側の型（protein_coding_gene）
+                                     # lnc_RNA なら SO_0002127。上位型 SO_0000704 は
+                                     # 付けず、SO を同梱して rdfs:subClassOf* で辿る
+  - dcterms:identifier:
+    - gene_id: "Mp1g00710"
+  - rdfs:label:                      # 構造グラフ側。symbol があれば symbol
+    - gene_label: '"MpCEN1"@en'
+  - skos:prefLabel?:                 # symbol（機能 3,215 / 構造 3,135 件のみ）
+    - gene_symbol: '"MpCEN1"@en'
+  - skos:altLabel*:
+    - gene_alt_label: '"Mapoly0103s0016"@en'
+  - mpo:v3Identifier?:               # v3 の遺伝子 ID（17,210 件）。UniProt の
+    - gene_v3_id: "Mapoly0103s0016"  # GN=MARPO_… と接頭辞だけが違う
+  - mpo:product?:
+    - gene_product: "centrin"
+  - mpo:functionSummary?:            # 文献または nomenclature 由来の要約（1,097 件）
+    - gene_function_summary: "Homolog of CENTRIN, essential for the motility apparatus."
+  - mpo:functionSummarySource?:
+    - gene_function_summary_source: "literature"   # literature | nomenclature
+  - mpo:hasGOTerm*:
+    - gene_go: obo:GO_0005509
+  - mpo:hasPfam*:
+    - gene_pfam: pfam:PF00533
+  - mpo:hasKEGG*:
+    - gene_kegg: kegg:K10683
+  - mpo:hasKOG*:
+    - gene_kog: mpkog:KOG0311
+  - mpo:inOrthoGroup?:
+    - gene_orthogroup: OrthoGroup
+  - rdfs:seeAlso:                    # 機能グラフ側。遺伝子詳細ページ
+    - gene_page_seealso: <https://marchantia.info/MpTak_v7.1/Mp1g00710/>
+  - foaf:page:                       # 構造グラフ側。指す先は同じページ
+    - gene_page: <https://marchantia.info/MpTak_v7.1/Mp1g00710/>
+  - obo:BFO_0000050:                 # 構造グラフ側
+    - gene_part_of: Sequence
+  - faldo:location:                  # 構造グラフ側
+    - gene_region: Region
+
+- OrthoGroup mpog:OG0008192:
+  - a: mpo:OrthoGroup
+  - dcterms:identifier:
+    - orthogroup_id: "OG0008192"
+  # メンバーは**文字列**。他種の遺伝子 ID（AT3G19920 など）を含み、URI を鋳造できる
+  # 名前空間が無いものが混ざるため
+  - mpo:hasMember+:
+    - orthogroup_member: "Mp4g19790"
+
+# ---------------------------------------------------------------------------
+# 文献
+# ---------------------------------------------------------------------------
+
+# (遺伝子, 論文) は evidence / role / note / source の 4 属性を持つのでトリプルでは
+# 表せない。ノードにする。
+- GeneLiteratureAssertion mplit:Mp1g00090.pmid35786352:
+  - a: mpo:GeneLiteratureAssertion
+  - mpo:aboutGene:
+    - assertion_gene: Gene
+  - mpo:fromPaper:
+    - assertion_paper: Paper
+  - mpo:isCoreReference:             # evidence=experimental かつ role=subject
+    - assertion_is_core: '"true"^^xsd:boolean'
+  - mpo:evidenceType:                # mpo:Experimental | mpo:Sequence | mpo:Citation
+    - assertion_evidence: mpo:Experimental
+  - mpo:geneRole:                    # mpo:Subject | mpo:Tool | mpo:Comparator | mpo:Background
+    - assertion_role: mpo:Subject
+  - mpo:textSource:                  # fulltext | fulltext+suppl | abstract | none
+    - assertion_source: "fulltext"
+  - dcterms:description:
+    - assertion_note: "Core autophagy-related gene."
+
+# URI は pmid があれば paper/pmid/<pmid>、無ければ paper/doi/<符号化した DOI>。
+# 型は paper_type により fabio:ResearchPaper / fabio:ReviewArticle / fabio:Expression。
+- Paper mppaper:pmid/35786352:
+  - a: fabio:ResearchPaper
+  - dcterms:title:
+    - paper_title: "Autophagy regulates organelle reorganization during spermiogenesis in the liverwort Marchantia polymorpha."
+  - dcterms:creator:
+    - paper_creator: "Norizuk, T., et al."
+  # **年は文字列で、曖昧さ回避の接尾辞が付くことがある**（"2024a"）。
+  # xsd:integer にキャストすると 42 件が黙って落ちる
+  - dcterms:date:
+    - paper_year: "2022"
+  - dcterms:identifier?:
+    - paper_identifier: "35786352"
+  - mpo:pmid?:
+    - paper_pmid: "35786352"
+  - mpo:doi?:
+    - paper_doi: "10.1080/15548627.2022.2096396"
+  - mpo:pmcid?:
+    - paper_pmcid: "PMC9542840"
+  - mpo:journal?:
+    - paper_journal: "Autophagy"
+  - rdfs:seeAlso*:                   # https://doi.org/… と https://pubmed.ncbi.nlm.nih.gov/…
+    - paper_link: <https://pubmed.ncbi.nlm.nih.gov/35786352>
+
+# ---------------------------------------------------------------------------
+# 実験条件と発現
+# ---------------------------------------------------------------------------
+
+# 属性は「URI（統制語彙の Concept）」と「Label（元の自由記述）」の 2 本立て。
+# 元の記述を捨てないため。tissue 以外は欠けることがある。
+- Condition mpcond:1:
+  - a: mpo:Condition
+  - dcterms:identifier:
+    - condition_id: "1"
+  - dcterms:title:
+    - condition_title: "Tak-2 archegonia female Hisanaga et al., 2021"
+  - mpo:runCount:
+    - condition_run_count: '"4"^^xsd:integer'
+  - mpo:tissue:
+    - condition_tissue: VocabularyConcept
+  - mpo:tissueLabel:
+    - condition_tissue_label: "archegonia"
+  - mpo:strain?:
+    - condition_strain: VocabularyConcept
+  - mpo:strainLabel?:
+    - condition_strain_label: "Tak-2"
+  - mpo:stage?:
+    - condition_stage: VocabularyConcept
+  - mpo:stageLabel?:
+    - condition_stage_label: "10 day white light 5 day far-red light"
+  - mpo:sex?:
+    - condition_sex: VocabularyConcept
+  - mpo:sexLabel?:
+    - condition_sex_label: "female"
+  - mpo:mutation?:
+    - condition_mutation: VocabularyConcept
+  - mpo:mutationLabel?:
+    - condition_mutation_label: "Mpkan-5ge"
+  - mpo:administration?:
+    - condition_administration: VocabularyConcept
+  - mpo:administrationLabel?:
+    - condition_administration_label: "2-4-D"
+  - mpo:infection?:
+    - condition_infection: VocabularyConcept
+  - mpo:infectionLabel?:
+    - condition_infection_label: "mock 4 dpi"
+  - mpo:dose?:
+    - condition_dose: "100 mM"
+  # ISO 8601 の duration（P4D / PT3H）。**Virtuoso は秒に正規化して返す**ので、
+  # 素の SELECT では 345600 のような数値に見える。STR() でも "345600" になる。
+  - mpo:timepoint?:
+    - condition_timepoint: '"P4D"^^xsd:duration'
+  - mpo:efpCode?:
+    - condition_efp_code: "archegonia"
+  - dcterms:description?:
+    - condition_description: "#3-1"
+  - dcterms:source?:                 # 出典論文（148 / 164 件）
+    - condition_paper: Paper
+  - mpo:referenceLabel?:
+    - condition_reference_label: "Hisanaga et al., 2021"
+  - mpo:hasRun*:                     # run を持たない条件が 3 件ある
+    - condition_run: SequencingRun
+
+- SequencingRun mprun:DRR050343:
+  - a: mpo:SequencingRun
+  - dcterms:identifier:
+    - run_id: "DRR050343"
+  - mpo:partOfCondition:
+    - run_condition: Condition
+  # BioSample / BioProject / instrument などは上流（MBEX の SRA メタデータ）が
+  # 空なので 1 件も出ていない。sample_title だけが 395 件ある
+  - mpo:sampleTitle?:
+    - run_sample_title: "9day_thalli_Tak1_1"
+
+# 「その条件で高発現」と判定された (条件, 遺伝子) の組。**全条件 × 全遺伝子の
+# 密な表は RDF に載せない**（§4.6.1 の改定）。閾値は prov:wasGeneratedBy で辿れる。
+- ConditionEnrichedGene mpenr:c1.Mp1g00180:
+  - a: mpo:ConditionEnrichedGene
+  - mpo:refCondition:
+    - enriched_condition: Condition
+  - mpo:refGene:
+    - enriched_gene: Gene
+  - mpo:meanTPM:
+    - enriched_mean_tpm: '"35.238"^^xsd:double'
+  - mpo:foldVsMedian:
+    - enriched_fold: '"35.238"^^xsd:double'
+  - prov:wasGeneratedBy:
+    - enriched_method: DerivationMethod
+
+- DerivationMethod mpmethod:enrichment-v1:
+  - a: mpo:DerivationMethod
+  - dcterms:description:
+    - method_description: "mean TPM >= 10 AND mean TPM / max(median(mean TPM across conditions), 1.0) >= 4"
+
+# 共発現エッジ。**HRR ≤ 200 かつ両端が既知遺伝子のものだけ**を格納する。
+# gene1 < gene2 の辞書順で 1 本だけ持つので、近傍を引くときは
+# `mpo:gene1|mpo:gene2` の選択パスを使う（UNION は実データで極端に遅い）。
+- CoexpressionEdge mpcoex:Mp1g00070.Mp1g00810:
+  - a: mpo:CoexpressionEdge
+  - mpo:gene1:
+    - edge_gene1: Gene
+  - mpo:gene2:
+    - edge_gene2: Gene
+  - mpo:pcc:
+    - edge_pcc: '"0.818808"^^xsd:double'
+  - mpo:hrr:
+    - edge_hrr: '"102"^^xsd:integer'
+  - mpo:mr:
+    - edge_mr: '"94.7418"^^xsd:double'
+
+# ---------------------------------------------------------------------------
+# 統制語彙（条件属性の正規化）
+# ---------------------------------------------------------------------------
+
+- VocabularyConcept mpvocab:tissue/archegonia:
+  - a: skos:Concept
+  - skos:prefLabel:
+    - concept_pref_label: '"archegonia"@en'
+  - skos:inScheme:
+    - concept_scheme: VocabularyScheme
+  - skos:altLabel*:
+    - concept_alt_label: '"ethylene 48hr"@en'
+  # PECO / PO への対応が付いている語は 37 / 338。付いていない語も prefLabel で引ける
+  - skos:exactMatch?:
+    - concept_exact_match: obo:PECO_0007267
+  - skos:broader*:                   # PO/PECO の上位語（取り込んだサブツリー）
+    - concept_broader: obo:BFO_0000001
+  - skos:note?:
+    - concept_note: "PRJDB15786"
+
+- VocabularyScheme mpvocab:scheme/administration:
+  - a: skos:ConceptScheme
+  - skos:prefLabel:
+    - scheme_label: '"administration"@en'
+
+# ---------------------------------------------------------------------------
+# 構造アノテーション（実例は Mp1g00710 に揃えてある）
+# ---------------------------------------------------------------------------
+
+- Transcript mptx:Mp1g00710.1:
+  - a: obo:SO_0000234                # mRNA（lnc_RNA なら SO_0001877）
+  - rdfs:label:
+    - transcript_label: '"Mp1g00710.1"@en'
+  - dcterms:identifier:
+    - transcript_id: "Mp1g00710.1"
+  - so:transcribed_from:             # part_of ではない（SO の定義に従う）
+    - transcript_of: Gene
+  # obo:BFO_0000051 は exon 列のみ。UTR と CDS は同じ区間を別の切り方で分けたもので、
+  # 同じ述語にぶら下げると集約クエリが二重〜三重計上する
+  - obo:BFO_0000051+:
+    - transcript_exon: Exon
+  - mpo:hasUtrSegment*:
+    - transcript_utr: Utr
+  - mpo:hasCds?:                     # 非コード転写産物には無い
+    - transcript_cds: Cds
+  - sio:SIO_000974+:                 # has ordered part（exon 列の順序）
+    - transcript_exon_order: ExonOrder
+  - faldo:location:
+    - transcript_region: Region
+
+- Exon mpexon:Mp1g00710.1.exon1:
+  - a: obo:SO_0000147
+  - rdfs:label:
+    - exon_label: '"exon 1 of Mp1g00710.1"@en'
+  - dcterms:identifier:
+    - exon_gff_id: "Mp1g00710.1.exon1"
+  - obo:BFO_0000050:
+    - exon_part_of: Transcript
+  - faldo:location:
+    - exon_region: Region
+
+# sio:SIO_000300 は owl:FunctionalProperty（1 リソース 1 値）なので、順位を持つ
+# ためだけの中間ノードが要る。1 始まり・転写産物の 5'→3' 順。
+# マイナス鎖では座標の大きい方が 1 番。
+- ExonOrder mpord:Mp1g00710.1.exon1:
+  - a: sio:SIO_001261                # ordered list item
+  - sio:SIO_000628:                  # refers to
+    - exon_order_target: Exon
+  - sio:SIO_000300:                  # has value（rank）
+    - exon_number: '"1"^^xsd:integer'
+
+- Utr mputr:Mp1g00710.1.utr1:
+  - a: obo:SO_0000204                # five_prime_UTR（3' 側は SO_0000205）
+  - rdfs:label:
+    - utr_label: '"UTR segment 1 of Mp1g00710.1 (five_prime)"@en'
+  - dcterms:identifier:
+    - utr_id: "Mp1g00710.1.utr1"
+  - mpo:gffId?:                      # 合成したときだけ元の GFF ID を残す
+    - utr_gff_id: "five_prime_utr-7"
+  - mpo:utrSegmentOf:                # obo:BFO_0000050 ではない
+    - utr_part_of: Transcript
+  - faldo:location:
+    - utr_region: Region
+
+- Cds mpcds:Mp1g00710.1:
+  - a: obo:SO_0000316
+  - rdfs:label:
+    - cds_label: '"CDS of Mp1g00710.1"@en'
+  - dcterms:identifier:
+    - cds_id: "Mp1g00710.1.cds"
+  - mpo:cdsOf:                       # obo:BFO_0000050 ではない
+    - cds_part_of: Transcript
+  - so:translates_to:
+    - cds_translates_to: Protein
+  - obo:BFO_0000051+:
+    - cds_segment: CdsSegment
+  - sio:SIO_000974+:
+    - cds_segment_order: CdsSegmentOrder
+  - faldo:location:
+    - cds_region: Region             # 全体スパン（範囲検索用）
+
+- CdsSegment mpseg:Mp1g00710.1.cds1:
+  - a: obo:SO_0000851                # CDS_region。SO_0000316 は完全な CDS の定義
+  - rdfs:label:
+    - cds_segment_label: '"CDS segment 1 of Mp1g00710.1"@en'
+  - dcterms:identifier:
+    - cds_segment_id: "Mp1g00710.1.cds1"
+  - mpo:gffId?:
+    - cds_segment_gff_id: "cds-6"
+  - obo:BFO_0000050:
+    - cds_segment_part_of: Cds
+  - mpo:phase:                       # GFF3 第 8 列。INSDC /codon_start とは 1 ずれる
+    - phase: '"0"^^xsd:integer'
+  - faldo:location:
+    - cds_segment_region: Region
+
+- CdsSegmentOrder mpord:Mp1g00710.1.cds1:
+  - a: sio:SIO_001261
+  - sio:SIO_000628:
+    - cds_segment_order_target: CdsSegment
+  - sio:SIO_000300:
+    - cds_segment_number: '"1"^^xsd:integer'
+
+- Protein mpprot:Mp1g00710.1:
+  - a: obo:SO_0000104                # polypeptide
+  - rdfs:label:                      # 産物名
+    - protein_label: '"calcium-binding protein CML"@en'
+  - dcterms:identifier:
+    - protein_id: "Mp1g00710.1.prot"
+  # **配列比較（blastp の top hit）による推定リンク。同一性の主張ではない**ので
+  # owl:sameAs ではなく rdfs:seeAlso（21,978 件）。別グラフ .../xref/uniprot にある
+  - rdfs:seeAlso?:
+    - protein_uniprot: uniprot:A0A176WPY9
+
+# ---------------------------------------------------------------------------
+# 座標（FALDO）
+# ---------------------------------------------------------------------------
+
+# min/maxPosition は strand 非依存の冗長プロパティ。**範囲検索はこちらを使う** ——
+# faldo:begin / faldo:end はマイナス鎖で begin > end になる（FALDO 準拠）ため、
+# 素朴な範囲比較を書くとマイナス鎖の feature が全部漏れる。
+- Region mpreg:chr1_635664_638217_minus:
+  - a: faldo:Region
+  - faldo:reference:
+    - region_reference: Sequence
+  - mpo:minPosition:
+    - region_min: '"635664"^^xsd:integer'
+  - mpo:maxPosition:
+    - region_max: '"638217"^^xsd:integer'
+  - faldo:begin:
+    - region_begin: Position
+  - faldo:end:
+    - region_end: Position
+
+- Position mppos:chr1_638217_minus:
+  - a:
+    - faldo:ExactPosition
+    - faldo:ReverseStrandPosition    # プラス鎖なら faldo:ForwardStrandPosition
+  - faldo:position:
+    - position: '"638217"^^xsd:integer'
+  - faldo:reference:
+    - position_reference: Sequence
+
+- Sequence mpseq:chr1:
+  - a: obo:SO_0000340                # chromosome
+  - rdfs:label:
+    - sequence_label: '"chr1"@en'
+  - dcterms:identifier:
+    - sequence_id: "chr1"
+  - insdc_ontology:sequence_length:
+    - sequence_length: '"29030296"^^xsd:integer'
+  - obo:RO_0002162:
+    - sequence_taxon: obo:NCBITaxon_3197
+  - rdfs:seeAlso:
+    - sequence_taxon_idorg: taxon:3197
+  - obo:BFO_0000050:
+    - sequence_part_of: Assembly
+
+- Assembly mpb:assembly/MpTak_v7.1:
+  - a: obo:SO_0000353                # sequence_assembly
+  - rdfs:label:
+    - assembly_label: '"MpTak v7.1"@en'
+  - dcterms:identifier:
+    - assembly_id: "MpTak_v7.1"
+  - obo:RO_0002162:
+    - assembly_taxon: obo:NCBITaxon_3197
+  - rdfs:seeAlso:
+    - assembly_taxon_idorg: taxon:3197

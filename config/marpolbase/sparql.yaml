@@ -1,0 +1,133 @@
+# 生成する SPARQL。変数名は model.yaml で定義したもの。
+#   rdf-config --config config/marpolbase --sparql <名前>
+#
+# **機能と構造をまたぐものを優先して並べてある** —— 2 つのグラフが同じ遺伝子 URI を
+# 共有していることが、この統合データセットの要点だから。
+
+gene_annotation:
+  description: 遺伝子の基本情報（symbol・産物名・v3 ID）
+  variables: [gene_id, gene_symbol, gene_product, gene_v3_id]
+  options:
+    distinct: true
+
+gene_location:
+  description: 遺伝子とそのゲノム座標（構造グラフ）
+  variables: [gene_id, gene_symbol, sequence_id, region_min, region_max]
+  options:
+    distinct: true
+
+gene_function_terms:
+  description: 遺伝子に付いた GO / Pfam / KEGG / KOG
+  variables: [gene_id, gene_symbol, gene_go, gene_pfam, gene_kegg, gene_kog]
+  options:
+    distinct: true
+
+gene_to_literature:
+  description: 遺伝子について述べた文献（evidence / role つき）
+  variables: [gene_id, gene_symbol, assertion_evidence, assertion_role, paper_pmid, paper_doi, paper_title]
+  options:
+    distinct: true
+
+paper_to_genes:
+  description: 論文で扱われた遺伝子
+  variables: [paper_pmid, paper_title, gene_id, gene_symbol, assertion_is_core]
+  options:
+    distinct: true
+
+condition_attributes:
+  description: 実験条件とその属性（統制語彙の Concept と元の記述の両方）
+  variables: [condition_id, condition_title, condition_tissue_label, condition_strain_label, condition_run_count]
+
+condition_enriched_genes:
+  description: ある条件で高発現と判定された遺伝子
+  variables: [enriched_mean_tpm, enriched_fold, enriched_gene, enriched_condition]
+
+coexpression_neighbors:
+  description: 共発現エッジ（gene1 < gene2 の辞書順で 1 本だけ格納されている）
+  variables: [edge_gene1, edge_gene2, edge_pcc, edge_hrr, edge_mr]
+
+protein_uniprot:
+  description: 転写産物・CDS・タンパク質と UniProt への推定リンク
+  variables: [transcript_id, cds_id, protein_id, protein_label, protein_uniprot]
+  options:
+    distinct: true
+
+# **順序付きリスト（sio:SIO_001261）を挟む 2 本は、中間ノードの主語名を
+# variables に書かないと正しい SPARQL にならない。** 下の注意 9 を読むこと。
+exon_structure:
+  description: 転写産物のエクソン構造を 5'→3' 順に取得する（sio:SIO_000300 の rank で並ぶ）
+  variables: [Transcript, transcript_id, ExonOrder, exon_number, exon_order_target]
+
+cds_structure:
+  description: CDS セグメントを 5'→3' 順に取得する（翻訳フレーム復元用）
+  variables: [Cds, cds_id, CdsSegmentOrder, cds_segment_number, cds_segment_order_target]
+
+utr_segments:
+  description: 転写産物の UTR セグメント（mpo:hasUtrSegment。obo:BFO_0000051 では引けない）
+  variables: [utr_id, utr_label, utr_part_of]
+
+vocabulary_to_ontology:
+  description: 統制語彙と PECO / PO の対応
+  variables: [concept_pref_label, scheme_label, concept_exact_match]
+
+# 手で書くときの注意（生成 SPARQL には現れない）:
+#
+# 1. **グラフを FROM で明示する。** 省くと Virtuoso 自身のシステムグラフ
+#    （virtrdf# / DAV など 5,763 トリプル）も検索対象に入る。
+#
+# 2. **同じトリプルが 2 グラフにあると行が重複する。** 遺伝子の skos:prefLabel は
+#    機能グラフと構造グラフの両方にあり、FROM を 2 つ並べると同じ行が 2 回返る。
+#    SELECT DISTINCT を使うこと。
+#
+# 3. **`GROUP BY ?g` でグラフ一覧を取らない。** 件数は正しいのに ?g が全行同じ
+#    グラフ名になる（Virtuoso の不具合。x86_64 でも再現）。1 グラフずつ数える。
+#
+# 4. 転写産物の「構成要素」は系列ごとに述語が違う。exon 列だけが obo:BFO_0000051 で、
+#    UTR は mpo:hasUtrSegment、CDS は mpo:hasCds。3 系列を 1 つの述語で辿ると
+#    同じ区間を重複して数える。
+#
+# 5. 座標の範囲検索は mpo:minPosition / mpo:maxPosition を使う。
+#    faldo:begin / faldo:end はマイナス鎖で begin > end になる。
+#
+# 6. **共発現の近傍は `mpo:gene1|mpo:gene2` の選択パスで引く。** UNION 版は実データ
+#    （483 万トリプル）で 43 分かかっても終わらなかった。
+#
+# 7. **FILTER の中でキャストしない。** ORDER BY を付けた瞬間に黙って無効化される。
+#    dcterms:date は "2024a" のような接尾辞つきの文字列なので特に注意。
+
+# 8. **変数の並びで生成される SPARQL が変わる。** rdf-config は変数の組から
+#    起点となる主語を推測するので、共有された変数（region_min / region_max は
+#    Region に 1 つしか定義が無く、多くの主語がそこを指す）を混ぜると
+#    遠回りな、あるいは誤った経路を組む。
+#    **この config の 13 本はすべて公開エンドポイントに対して実行し、返る行が
+#    正しいことまで確認してある**（2026-09-18、いずれも LIMIT 100 で 100 行）。
+#    **variables を編集したら必ず生成して実行し直すこと。**
+#
+# 9. **順序付きリストを挟むときは中間ノードの主語名を variables に書く。**
+#    rdf-config は variables に主語名（CamelCase）が 1 つも無いと
+#    `model.subjects.first`（この config では Gene）を起点に据える。すると
+#    エクソンの順序のように「Transcript → ExonOrder → Exon」と辿る形が
+#    `?Gene sio:SIO_000974/sio:SIO_000300 ?exon_number` のような**存在しない経路**に
+#    化ける。さらに `?Exon` が他の変数と結合されないまま残るため、**エラーにならず
+#    直積が返る**（実測: 転写産物 Mp5g01220.1 の行に別遺伝子 Mp5g01210.2 の
+#    エクソンが並んだ）。
+#    起点にしたい主語（Transcript / Cds）と中間ノード（ExonOrder /
+#    CdsSegmentOrder）を variables に含めると、
+#    `?ExonOrder sio:SIO_000300 ?exon_number ; sio:SIO_000628 ?exon_order_target`
+#    と結合された形になる。**代わりに leaf 側の id（exon_gff_id など）は諦める**
+#    —— 足すと再び Gene 起点に戻り、直積に戻る。id が要るなら生成後に
+#    `?exon_order_target dcterms:identifier ?exon_gff_id .` を手で足すこと。
+
+# **`options:` の使い方について。**
+#
+# - `distinct: true` は**2 グラフにまたがるクエリに必ず付ける**。機能グラフと構造
+#   グラフが同じ遺伝子 URI に同じトリプル（dcterms:identifier・skos:altLabel など）を
+#   持っており、Virtuoso は複数の FROM をまたいだ同一トリプルをまとめないため、
+#   付けないと行が倍になる（実測: ?g a mpo:Gene ; dcterms:identifier ?id が 36,087 行、
+#   遺伝子は 18,080）。
+#
+# - **`order_by:` は使っていない。** rdf-config が生成する `ORDER BY ?var` は
+#   キャストを伴わないが、**Virtuoso は xsd:integer / xsd:double でも辞書順に並べる**
+#   （実測: foldVsMedian を素で降順にすると先頭が 999.8228、真の最大は 48226.3445）。
+#   数値で並べたいときは、生成後に `ORDER BY DESC(xsd:double(?enriched_fold))` の形へ
+#   手で直すこと。

@@ -1,0 +1,101 @@
+# データセットの表示名・説明と、変数の意味（RDF-config spec の description.yaml）。
+# **variables は「変数名だけでは意味が伝わらないもの」に絞る。** 名前で分かるものに
+# 説明を足しても読む側の負担が増えるだけなので、単位・落とし穴・由来を書く。
+#
+# **この 1 ファイルだけ英語で書いてある。** 公開ポータルに出る説明で、上流
+# （dbcls/rdf-config）の他の description.yaml もすべて英語だから。日本語の注釈は
+# model.yaml / sparql.yaml のコメントと README.md 側にある。
+
+dataset:
+  name: MarpolBase RDF
+  description: >-
+    The complete RDF published by MarpolBase for Marchantia polymorpha. Two data
+    graphs share the same gene URIs so that functional and structural annotation
+    join without any mapping step: the functional graph (5,321,527 triples) carries
+    gene annotation, literature, conditions, enriched genes and co-expression edges,
+    and the structural graph (5,774,297 triples) carries the MpTak_v7.1 gene models
+    and their coordinates. Supporting ontologies (SO, SIO, FALDO) are loaded as
+    separate graphs so that class hierarchies can be traversed in the same endpoint.
+    Protein resources link to UniProt via rdfs:seeAlso; those links are estimated
+    from sequence similarity (blastp top hit) and are not identity assertions.
+
+variables:
+  Gene: >-
+    A gene. This is the join point between the functional and the structural graph:
+    both use the same URI, so no mapping step is needed. It therefore carries two
+    rdf:type values, mpo:Gene (functional side) and obo:SO_0001217 (structural side).
+  OrthoGroup: >-
+    An orthologous group. Its members include identifiers from other species, so they
+    are kept as strings rather than URIs.
+  GeneLiteratureAssertion: >-
+    A (gene, paper) relationship. It carries four attributes — evidence, role, note
+    and source — so it cannot be expressed as a single triple and is reified as a node.
+  Paper: >-
+    A publication. The URI is paper/pmid/<pmid> when a PMID is known, otherwise
+    paper/doi/<percent-encoded DOI>. 32 of the 510 papers are not linked to any gene:
+    they are cited only for gene names that could not be resolved to a v7.1 identifier.
+  Condition: >-
+    An RNA-seq experimental condition. Each attribute is recorded twice, once as a
+    controlled-vocabulary concept (a URI) and once as the original free text (a label),
+    so that the submitter's own wording is never discarded.
+  ConditionEnrichedGene: >-
+    A (condition, gene) pair judged to be enriched in that condition. The dense
+    condition x gene matrix is deliberately not published; only the calls are. The
+    thresholds behind a call are reachable through prov:wasGeneratedBy.
+  CoexpressionEdge: >-
+    A co-expression edge. Edges are undirected and stored only once per pair, with
+    gene1 < gene2 in lexicographic order. To retrieve the neighbours of a gene, use
+    the alternative path mpo:gene1|mpo:gene2.
+  VocabularyConcept: >-
+    A controlled-vocabulary concept used for condition attributes. Only some of the
+    concepts have been mapped to PECO or PO.
+  Region: >-
+    An interval on the genome. Use mpo:minPosition / mpo:maxPosition for range queries:
+    faldo:begin / faldo:end follow the FALDO convention, so on the minus strand
+    begin > end.
+  Position: >-
+    A coordinate. The URI is minted from position, reference sequence and strand, and
+    is therefore shared between features that start or end at the same place.
+
+  gene_v3_id: >-
+    The v3 gene identifier (Mapoly...). It differs from the ORF name in UniProt's
+    GN=MARPO_... field only by the prefix.
+  gene_symbol: >-
+    The gene symbol. A locus may carry more than one registered symbol; the one with
+    the smallest nomenclature priority number becomes skos:prefLabel and the rest
+    become skos:altLabel.
+  gene_page_seealso: >-
+    The gene page on the functional side. It points at the same page as gene_page on
+    the structural side.
+  orthogroup_member: >-
+    A member identifier, possibly from another species. Kept as a string, not a URI,
+    because there is no namespace to mint it in.
+  paper_year: >-
+    A string, not an integer. It may carry a disambiguating suffix such as "2024a";
+    casting it to xsd:integer silently drops 42 papers.
+  assertion_evidence: One of mpo:Experimental, mpo:Sequence or mpo:Citation.
+  assertion_role: One of mpo:Subject, mpo:Tool, mpo:Comparator or mpo:Background.
+  assertion_is_core: True when evidence is experimental and role is subject.
+  condition_timepoint: >-
+    An ISO 8601 duration (P4D, PT3H). Virtuoso normalises it to seconds on output, so
+    a plain SELECT shows a number such as 345600.
+  condition_run_count: >-
+    The number of SRA runs in the condition. Three conditions have no run attached.
+  enriched_fold: >-
+    Mean TPM in the condition divided by the median across all conditions. ORDER BY
+    needs an explicit xsd:double() cast: Virtuoso sorts even typed literals lexically.
+  edge_hrr: >-
+    Highest Reciprocal Rank. Only values of 200 or below are stored. ORDER BY needs an
+    explicit xsd:integer() cast.
+  region_min: The smaller coordinate of the interval. Strand-independent, so it is the one to use for range queries.
+  region_max: The larger coordinate of the interval. Strand-independent, so it is the one to use for range queries.
+  phase: >-
+    Column 8 of GFF3, taken verbatim. It is off by one from the INSDC /codon_start
+    qualifier (codon_start = phase + 1).
+  exon_number: >-
+    The 5' to 3' order within the transcript, starting at 1. On the minus strand the
+    exon with the largest coordinate is number 1.
+  protein_uniprot: >-
+    An estimate from sequence comparison (blastp top hit), not an assertion of
+    identity — hence rdfs:seeAlso rather than owl:sameAs. These links live in a
+    separate graph, .../graph/xref/uniprot.
